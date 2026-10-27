@@ -160,7 +160,7 @@ test('A3-01 | la encrucijada bloquea cierre y no permite ejecutarse dos veces',(
 
 test('A3-01 | encrucijada deshabilitada no modifica el estado',()=>{
  const t=fixture();
- t.run('game.crossCard=crossroadsDeck.findIndex(c=>c.title==="Fiebre en el refugio");game.crossOwner="human";game.crossPending=true;game.crossResolved=false;show("crossroads");');
+ t.run('game.items=[catalog.create("ration")];game.crossCard=crossroadsDeck.findIndex(c=>c.title==="Fiebre en el refugio");game.crossOwner="human";game.crossPending=true;game.crossResolved=false;show("crossroads");');
  const before=t.state('game.morale');
  t.run('crossChoose(0);');
  assert.equal(t.state('game.crossPending'),true);
