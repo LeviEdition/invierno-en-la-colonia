@@ -9,6 +9,19 @@
 5. Hacer de la **narrativa persistente el centro de la experiencia**: decisiones, personajes, memoria, consecuencias diferidas y arcos que cambian con la partida.
 6. Desarrollar después una presentación 2D que muestre esos cambios, y a largo plazo multijugador online.
 
+## Criterio transversal de calidad y revisión (acordado)
+
+**Calidad por encima de aprobación:** el asistente no debe confirmar una idea solo para acompañar al usuario. Cada propuesta relevante se evalúa con argumentos sobre coherencia narrativa, agencia del jugador, dificultad, balance, implementación, riesgos, costo y valor.
+
+- Destacar fortalezas **solo con motivos específicos**.
+- Identificar debilidades, contradicciones y riesgos, incluso cuando el boceto resulte interesante.
+- Recomendar conservar, mejorar, prototipar, posponer o descartar, fundamentando por qué.
+- Diferenciar hechos comprobados en V9.9 de hipótesis creativas, y validar propuestas mediante pruebas y partidas reproducibles.
+- Aplicar el mismo criterio crítico a las ideas del asistente y a las del usuario.
+- No modificar reglas ni `main` sin decisión explícita.
+
+**Documento de referencia:** [Protocolo de revisión crítica y control de calidad](15-protocolo-revision-critica.md).
+
 ## Etapa A — Línea base (actual)
 
 - [x] Guardar V9.9 intacta en `main`.
