@@ -1,6 +1,6 @@
-# 25 — Registro de estabilización V9.9 (C1–C3)
+# 25 — Registro de estabilización V9.9 (C1–C4)
 
-**Fecha:** 27/10/2026. **Rama de trabajo:** `fix/estabilizacion-v9-9` (nació de `refactor/arquitectura`). **Estado:** tres ajustes realizados, con pruebas de regresión y CI verde. **No promovidos a `main`.**
+**Fecha:** 27/10/2026. **Rama de trabajo:** `fix/estabilizacion-v9-9` (nació de `refactor/arquitectura`). **Estado:** cuatro ajustes realizados, con pruebas de regresión y CI verde. **No promovidos a `main`.**
 
 ## Origen del trabajo
 
@@ -36,9 +36,26 @@
 
 **Regresiones:** J2 puede subir su dado aunque J1 haya agotado los suyos; sin dados propios J2 no gasta comida; no mejora un 6; comida insuficiente impide mejorar; el aislamiento entre jugadores se conserva.
 
+### C4 — [#12](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12): foco del teclado escapa de inicio y pase
+
+**Defecto previo:** las superposiciones `#setupScreen` y `#passScreen`, pese a declararse `aria-modal`, no enfocaban sus botones al abrir ni impedían navegar con Tab a objetivos y estadísticas del tablero. También era posible dar foco a `#goalCard` detrás del pase.
+
+**Cambio acotado:** un gestor de accesibilidad para estas **dos pantallas de entrega**:
+- El foco entra automáticamente en el primer botón al cargar o abrir el diálogo.
+- Tab y Shift+Tab circulan únicamente entre sus botones; un intento de foco externo se devuelve al diálogo.
+- Los hijos del `body` ajenos al diálogo activo se vuelven temporalmente `inert`; al cerrar, se restaura la navegación del tablero.
+- Después del pase, el foco vuelve al menú del juego o a un modal que ya estaba abierto.
+- No se cambian reglas, dados, objetos ni las demás ventanas del juego. Lectores de pantalla y Android real siguen pendientes.
+
+**Pruebas de regresión:** `tests/accesibilidad-pase-c4.test.mjs`, **cinco casos** de foco inicial, ciclo Tab/Shift+Tab, contenido inerte, restauración y ausencia de bloqueo después de cerrar.
+
+**Verificación en navegador:** Chromium headless ejecutó una copia local de la V9.9 estable con **solo el parche C4 de interfaz** en viewports **1365×768, 393×852 y 320×640**. Se comprobó Tab, Shift+Tab, Enter para comenzar modo local, Enter para confirmar pase, redirección del foco fuera del diálogo, desbloqueo posterior y ausencia de errores JS. La suite CI, en cambio, corre sobre **toda la rama real** con C1–C4; no se afirma que la copia visual contenía también las correcciones anteriores.
+
+**Nota de regresión:** la primera ejecución CI detectó que un test antiguo simula `classList` sin `contains()`; se hizo opcional esa comprobación de apertura del modal. La suite completa volvió a quedar verde. Los tests nuevos con DOM simulado confirman el contrato, pero no reemplazan Chromium.
+
 ## Evidencia
 
-- [Ejecución GitHub Actions sobre rama de estabilización](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40537729389): **248 tests declarados, 245 aprobados, 0 fallidos, 3 TODO**.
+- [Última ejecución GitHub Actions sobre rama de estabilización](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40541776775): **253 tests declarados, 250 aprobados, 0 fallidos, 3 TODO**.
 - Los 3 `test.todo` son anteriores y están ligados a reglas/situaciones pendientes; **no son fallas de los arreglos nuevos**.
 - En los tests anteriores de caracterización se reemplazaron las expectativas defectuosas por expectativas de comportamiento correcto.
 - Los informes de pruebas automatizadas **no sustituyen prueba manual en Android** ni certifican balance real.
@@ -47,7 +64,7 @@
 
 | Prioridad siguiente | Issue | Motivo |
 | --- | --- | --- |
-| C4 | [#12](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12) | Foco del teclado puede salir de diálogos de setup/pase |
+| **C4 completada** | [#12](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12) | Foco de inicio/pase corregido en rama; revisión de accesibilidad real adicional pendiente |
 | C5 | [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8) + [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10) | Fortalecer guardias del motor para pase/fallecimiento |
 | C6 | [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9) | Acciones durante curación pendiente |
 | Más adelante | [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5), [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13), [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) | Estrategia IA, ergonomía móvil, selección estructurada de encrucijadas |
@@ -57,4 +74,4 @@
 
 ## Siguiente tarea única
 
-**C4/#12: aislar foco de teclado en setup y pase**, con test de Chromium real que reproduzca Tab/Enter antes y después del cambio. No mezclar con rediseño visual o con motor narrativo. Mantener el desarrollo modular y la historia estacionados durante la estabilización.
+**C5 — [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8) y [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10): fortalecer las guardias de fin de turno ante pantalla de pase o fallecimiento.** Escribir antes regresiones, modificar solo transición de turno y comprobar modo local e IA. No mezclar con correcciones de IA estratégica, móviles ni narrativa.
