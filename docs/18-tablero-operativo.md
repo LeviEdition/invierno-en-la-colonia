@@ -234,6 +234,20 @@ El creador decidió: **«por ahora, contra la IA sin tradeos; entre J1 y J2 sí�
 
 **Siguiente tarea única propuesta (pendiente de autorización):** C8/#4, preparar regresiones rojo→verde para estos modos y corregir guardas en `startTransfer()`/`chooseTransfer()`, seguida de pruebas Chromium y revisión crítica. No implementar todavía ni saltar al issue #6.
 
+### C8/#4 — Corrección aplicada y verificada, revisión crítica posterior pendiente (27/10/2026)
+
+**Autorización:** el creador aprobó «vamos con la corrección de C8» tras definir previamente que **no hay tradeos con IA pero sí cesión J1↔J2 en modo local**, conservando transferencias internas del propio grupo humano. [Informe35](35-c8-transferencias-por-modo.md) contiene precondiciones, código, 14 pruebas y resultados navegador.
+
+**Red primero:** [commit pruebas `5b4446f`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/5b4446ff8d6b0dad1b918ada94c0835fbed802a9), convierte el TODO #4 en 14 casos activos. [Actions rojo 40585772252](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40585772252) mostró **318 declaradas, 309 aprobadas, 8 fallidas y 1 TODO** (#6). Los fallos exponen accesos cruzados humano→IA, confirmaciones de turno/pase incorrecto, duplicación por cambio de equipo e ítem sustituido mientras está pendiente.
+
+**Verde después:** [commit `37d86d6`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/37d86d6bdb4707ff7ebf95a8274bd5747a08b989): filtro único `canReceiveTransfer` por modo + validaciones repetidas al confirmar (turno, propiedad, receptor, misma localidad, categoría, identidad del objeto), sin añadir IA negociadora. [Actions verde 40585960363](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40585960363): **318 declaradas, 317 aprobadas, 0 fallidas y 1 TODO #6**.
+
+**Chromium:** se verificó identidad de archivo del motor C8 Git blob **`32eb545cbdbca047ded8bc81d64b8e438e096a49`** con GitHub. **Tres recorridos de botones reales aprobados:** humano→otro superviviente propio, sin destinatarios IA; local J1→J2; local J2→J1 luego de pantalla de pase confirmada, con viewport táctil 393 × 852 px. **Sin errores JavaScript**. Pruebas con equipo preparado determinísticamente, sin Android físico ni navegación `file://`. Detalles y reservas: [35](35-c8-transferencias-por-modo.md).
+
+**No se modificó** `main`, no se fusionó PR #14 (draft/base `refactor/arquitectura`), **#4 sigue abierto**; #6 sigue como único TODO. Se recomienda revisión crítica posterior **separada** antes de aceptar/cerrar el issue.
+
+**Única tarea siguiente:** revisión crítica posterior C8/#4 (sin empezar otro issue). No cerrar #4 ni fusionar sin autorización.
+
 ## 3. Etapas posteriores: una por vez
 
 | Etapa | Propósito | Criterio para habilitar la siguiente |
@@ -300,4 +314,4 @@ Solo cambiar la etapa activa con una decisión consciente; registrar motivo, rie
 - **Propuestas narrativas (estacionadas):** `docs/12`–`docs/17`.
 - **Defectos/decisiones por resolver:** GitHub Issues.
 
-**Próxima acción única propuesta, pendiente de autorización: C8 / issue #4, escribir primero regresiones de transferencias según modo (IA: sin traspasos entre jugadores; local: J1↔J2 permitidos) y corregir después con pruebas; no tocar `main` ni fusionar PR #14.**
+**Próxima acción única: revisión crítica posterior C8/#4 tras 14 regresiones y 3 escenarios Chromium aprobados (informe35). Issue #4 sigue abierto; PR #14 borrador y `main` intacta.**
