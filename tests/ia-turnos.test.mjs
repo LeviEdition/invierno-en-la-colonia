@@ -199,7 +199,7 @@ test('C7: nunca usa equipo ni mano humana; excluye equipo de supervivientes IA m
 });
 test('C7: con victoria previa la IA no dona herramientas al pasar a fin de partida',async()=>{
  const t=fixture();stay(t);
- t.exec('game.crisis={type:"herramienta",need:2,given:0,contributions:[],fail:"moral"};game.samples=game.goal.need-1;game.botItems=[catalog.create("notes")];game.bots[0].equipment=[catalog.create("crowbar")];game.bots[1].equipment=[catalog.create("repairkit")];game.botDice=[];');
+ t.exec('game.crisis={type:"herramienta",need:2,given:0,contributions:[],fail:"moral"};game.samples=game.goal-1;game.botItems=[catalog.create("notes")];game.bots[0].equipment=[catalog.create("crowbar")];game.bots[1].equipment=[catalog.create("repairkit")];game.botDice=[];');
  await t.ai();
  assert.deepEqual(t.val('({ended:game.ended,given:game.crisis.given,eq:game.bots.map(p=>p.equipment.map(x=>x.cardId))})'),{ended:true,given:0,eq:[['crowbar'],['repairkit'],[]]});
 });
