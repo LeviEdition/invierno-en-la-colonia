@@ -46,3 +46,9 @@ Se documenta este resultado **sin modificar el juego, tests, `main`, modo local 
 **Condiciones cumplidas:** políticas C7 y C7-R1 aprobadas expresamente, regresiones rojo→verde, 303 pruebas automatizadas aprobadas (2 TODO ajenos), revisión posterior sin defectos nuevos y cuatro escenarios Chromium aprobados con modales/encrucijadas activos. **Pendiente administrativo:** autorización expresa de aceptación/cierre de #5; ningún issue se cierra ni PR se fusiona por registrar este criterio. `main` queda fuera de cambios.
 
 **Siguiente paso único recomendado:** pedir confirmación para **dar #5 por aceptado y cerrarlo administrativamente**, dejando el código solo en `fix/estabilizacion-v9-9` / PR #14 en borrador. La aceptación de un issue no equivale a publicar o fusionar la rama.
+
+## Continuidad: cierre de issue #5 — 27/10/2026
+
+El creador respondió «Continúa» a la pregunta expresa de aprobar el cierre de #5. Se registró el [comentario de cierre](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5#issuecomment-6453435186) y GitHub confirmó [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5) en estado **closed**, motivo **completed**. El alcance de aceptación fue la corrección funcional C7/C7-R1, no la totalidad del videojuego. El criterio Android físico **no obligatorio** permanece; no se afirma haberlo probado. Las cuatro pruebas Chromium y las 303 aprobadas son evidencia del cierre, no pruebas nuevas agregadas en este momento.
+
+**Estado de publicación separado:** PR #14 **draft/abierto**, `main` **sin modificación**. El cierre de issue no fusionó la corrección. Para la continuidad, el [tablero18](18-tablero-operativo.md) propone primero discutir la regla del issue #4 (transferencias entre grupos), pendiente de autorización antes de su implementación.
