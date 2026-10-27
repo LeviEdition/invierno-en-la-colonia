@@ -946,17 +946,29 @@ function equipItem(i){
 }
 
 function unequipItem(i){messageAndPaint('Los objetos equipados solo pueden transferirse a otro superviviente de la misma localidad.');}
+// C8/#4: entre grupos solo se intercambia equipamiento en modo local J1 + J2.
+function canReceiveTransfer(from,to,it){
+ return !!from&&!!to&&!!it&&!to.dead&&from.id!==to.id&&from.loc===to.loc
+  &&(game.mode==='local'||ownerOf(from)===ownerOf(to))
+  &&!equipmentOf(to).some(eq=>kind(eq)===kind(it));
+}
 function startTransfer(i){
  const p=all().find(x=>x.id===profileId);if(!p||p.dead||ownerOf(p)!==controls.side||!playable()||!p.equipment[i])return;
- const targets=alive().filter(x=>x.id!==p.id&&x.loc===p.loc&&!x.equipment.some(eq=>kind(eq)===kind(p.equipment[i])));
- if(!targets.length)return messageAndPaint('No hay un superviviente propio en esta localidad que pueda recibir el objeto.');
- pendingTransfer={fromId:p.id,itemIndex:i,targets:targets.map(x=>x.id)};show('transferTarget');
+ const it=p.equipment[i],targets=alive().filter(x=>canReceiveTransfer(p,x,it));
+ if(!targets.length)return messageAndPaint(game.mode==='local'
+  ?'No hay supervivientes disponibles en esta localidad que puedan recibir el objeto.'
+  :'No hay un superviviente de tu grupo en esta localidad que pueda recibir el objeto.');
+ pendingTransfer={fromId:p.id,itemIndex:i,itemRef:it,targets:targets.map(x=>x.id)};show('transferTarget');
 }
 function chooseTransfer(id){
- if(!pendingTransfer||!pendingTransfer.targets.includes(id))return;
- const p=all().find(x=>x.id===pendingTransfer.fromId),t=all().find(x=>x.id===id);
- if(!p||!t||p.dead||t.dead||p.loc!==t.loc)return;
- const it=p.equipment.splice(pendingTransfer.itemIndex,1)[0];if(!it)return;
+ const transfer=pendingTransfer;
+ if(!transfer||!transfer.targets.includes(id)||!playable())return;
+ const p=all().find(x=>x.id===transfer.fromId),t=all().find(x=>x.id===id);
+ const it=p?.equipment?.[transfer.itemIndex];
+ // Revalidar al confirmar: el turno, el mismo objeto y la elegibilidad del receptor
+ // pueden cambiar mientras el diálogo está abierto o por invocación directa.
+ if(!p||p.dead||ownerOf(p)!==controls.side||it!==transfer.itemRef||!canReceiveTransfer(p,t,it))return;
+ p.equipment.splice(transfer.itemIndex,1);
  t.equipment.push(it);pendingTransfer=null;message('🎒 '+p.name+' entregó '+itemTitle(it)+' a '+t.name+'.');hide();paint();
 }
 function gainSample(p){const bonus=p&&p.skill==='researcher'&&!p.bonusUsed?2:1;game.samples+=bonus;if(bonus===2){p.bonusUsed=true;message('◈ '+p.name+' duplicó la muestra mediante investigación.');}}
