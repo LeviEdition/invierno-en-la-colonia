@@ -46,6 +46,16 @@ Código y pruebas en [d4a6b3f](https://github.com/LeviEdition/invierno-en-la-col
 
 **Registro y entrega:** tablero18, este registro, matriz04, seguimientos26/27 e informe28 actualizados. Código y siete pruebas subidos a la rama del PR14; documentación en commit posterior, cuya ejecución CI se comprueba por SHA. `git diff --check`; sin fusión, revisión formal, cierre de incidencias ni cambios en `main`, C6, reglas o configuración. Siguiente tarea única propuesta: acordar prioridad IA #5, no iniciada aquí.
 
+## Revisión de diseño #5 — propuesta de prioridad de herramientas, 27/10/2026
+
+**Alcance y hechos:** lectura de `botTurn()`, `CrisisManager`, `resolveCrisis()`, catálogo, fin de turno, issue#5 y su TODO. Se confirmó aporte por carta, umbral completo, costo de equipo y posibilidad de encontrar herramientas después del bloque actual de donación. Una revisión independiente de solo lectura comprobó las alternativas; sin cambios de código.
+
+**Propuesta, no decisión:** contar herramientas al final de las acciones y aportar solo si permite completar, primero mano y luego equipo propio (incluso última herramienta), exactamente lo faltante y sin bonus. Conservar si no alcanza o ya se cumplió. Limitada a herramientas: no modificar otros recursos, reglas ni decisiones #4/#6. [Informe29](29-propuesta-prioridad-ia-herramientas.md) conserva cinco escenarios, costo estratégico y alternativa de proteger siempre el equipo.
+
+**Estado y validación:** se pidió al creador aprobar/ajustar la política; respuesta pendiente al registrar esta revisión. No se ejecutaron pruebas nuevas ni se añadió cobertura: #5 sigue sin implementar. Solo informe29, tablero18 y registro25, `git diff --check`; se verificó PR en borrador, `main` intacta y CI existente de `9041d95` verde. La ejecución del commit documental se comprueba por SHA sin atribuirle validación de la propuesta. No hay fusión ni cierre de #5.
+
+**Siguiente tarea única:** decidir con el creador y registrar la política; implementación/regresiones en un bloque posterior a su aprobación.
+
 ## Origen del trabajo
 
 [Informe A6 y lista de prioridades](24-cierre-auditoria-y-prioridades.md). A5-02 en Android físico sigue sin checklist formal y NO se afirma realizado. El usuario autorizó avanzar con correcciones conociendo esa reserva.
@@ -134,11 +144,12 @@ Código y pruebas en [d4a6b3f](https://github.com/LeviEdition/invierno-en-la-col
 | **C4 completada** | [#12](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12) | Foco de inicio/pase corregido en rama; revisión de accesibilidad real adicional pendiente |
 | **C5-R2 corregida y revisada** | [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8) + [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10) | Guardia de cola R2 añadida; regresiones, navegador y CI en informe 28 |
 | **C6-R1 corregida y revisada** | [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9) | R1 resuelto: curación espera al botín; pruebas y revisión en informe 27 |
-| Más adelante | [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5), [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13), [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) | Estrategia IA, ergonomía móvil, selección estructurada de encrucijadas |
+| **En definición, sin aprobación** | [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5) | Propuesta de prioridad de herramientas en informe29; falta decisión del creador, sin código nuevo |
+| Más adelante | [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13), [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) | Ergonomía móvil, selección estructurada de encrucijadas |
 | Requiere al creador | [#4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4), [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6) | Transferencias entre grupos y momento de elección de líder inicial |
 
 **No dar por cerrado ningún issue automáticamente:** el cambio permanece en rama, no está integrado a la versión estable. Las incidencias se podrán cerrar tras revisión/promoción y verificación correspondiente.
 
 ## Siguiente tarea única
 
-**Definir la prioridad de IA para aportar herramientas a la crisis (#5), antes de programar.** R1 y R2 corregidos y revisados con evidencia en informes 27/28; ninguna política nueva aprobada o implementada. Actualizar tablero y registro al cerrar cada revisión; no fusionar automáticamente. No fusionar, publicar una versión ni iniciar otro defecto dentro de este bloque.
+**Resolver y registrar la decisión del creador sobre prioridad IA #5, según propuesta de informe29.** R1/R2 corregidos y revisados; política #5 propuesta, no aprobada ni implementada. Actualizar tablero y registro al cerrar cada revisión; no fusionar ni iniciar otro defecto.

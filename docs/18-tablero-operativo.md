@@ -141,9 +141,17 @@ Seis regresiones fallaron antes y pasan después, con microtareas reales, J1/J2/
 
 Tablero, registro, matriz e informes 26/27/28 actualizados; C6-R1 conserva sus pruebas. PR #14 en borrador, sin aprobación formal ni fusión; `main` intacta. No se implementó #5.
 
-### Siguiente tarea única propuesta — Definir prioridad de IA en #5
+### Definición de prioridad IA #5 — propuesta revisada, decisión pendiente
 
-Acordar cuándo debe donar herramientas a la crisis y cuándo equipar o conservar, antes de modificar la IA. Definición e implementación no iniciadas en este bloque; no inventar esa política ni tocar #4/#6 sin decisión del creador.
+**27/10/2026:** se revisaron catálogo, crisis, secuencia del turno IA, pruebas existentes e issue#5, con revisión independiente de solo lectura. [Propuesta y escenarios en informe29](29-propuesta-prioridad-ia-herramientas.md). Un aporte insuficiente no reduce la penalización; la IA puede encontrar más herramientas durante las acciones y su bloque actual no reevalúa al final.
+
+**Recomendación todavía no aprobada:** para crisis de herramientas, usar equipo durante las acciones y, antes de colonia, aportar exactamente lo faltante solo si mano+equipo propio pueden completar. Priorizar mano antes de equipo, permitiendo gastar la última herramienta equipada si hace falta. Si no alcanza o ya se cumplió, conservar; no buscar el bonus extra. Mantener otros tipos de recurso y reglas sin cambios.
+
+Se presentó el costo (perder equipo valioso para evitar una penalización) y la alternativa de proteger siempre el equipo. Se solicitó decisión al creador, sin suponerla por silencio. No se implementó #5 ni se ejecutaron nuevas pruebas; no hay nueva cobertura funcional. Solo informe29, tablero y registro modificados, con `git diff --check`. Los checks del commit documental no validan una política que aún no existe en código.
+
+### Siguiente tarea única — Decidir prioridad IA #5
+
+Recibir y registrar la decisión del creador sobre la propuesta. Implementación y regresiones quedan para el bloque posterior a una política aprobada; no tocar #4/#6 ni fusionar.
 
 ## 3. Etapas posteriores: una por vez
 
@@ -211,4 +219,4 @@ Solo cambiar la etapa activa con una decisión consciente; registrar motivo, rie
 - **Propuestas narrativas (estacionadas):** `docs/12`–`docs/17`.
 - **Defectos/decisiones por resolver:** GitHub Issues.
 
-**Próxima acción única propuesta: definir prioridad de IA para aportar herramientas a la crisis (#5), antes de programar. C6-R1 y C5-R2 corregidas y revisadas. No iniciar otra tarea en este bloque ni fusionar.**
+**Próxima acción única: resolver y registrar la decisión del creador sobre la propuesta de prioridad IA #5 (informe29). Propuesta revisada, no aprobada ni implementada. C6-R1 y C5-R2 conservadas; no fusionar.**
