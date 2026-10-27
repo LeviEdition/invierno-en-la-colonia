@@ -171,6 +171,16 @@ El creador aprobó completar crisis de herramientas siempre que los aportes huma
 
 **Siguiente tarea única:** revisión crítica de C7 antes de considerar integración o ampliar la estrategia de búsqueda.
 
+### Revisión crítica posterior de C7 — 27/10/2026
+
+Revisión de solo lectura de código, contrato de búsqueda, tests y estado CI. [Informe 31](31-revision-critica-c7.md): **la rutina de donación de herramientas satisface el alcance aprobado** (mano/equipo propio, colaboración con aportes humanos, evaluación final, aporte exacto), con 295/297 pruebas aprobadas y dos TODO en [CI sobre `9907cdb3`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40572758503). No se ejecutaron pruebas dinámicas nuevas ni Chromium/Android/TalkBack, ni revisor externo.
+
+**Reserva H1/P2 (selección de botín, código inspeccionado):** la IA puntúa muestra 10 y herramienta 3 incluso cuando tomar esa herramienta completaría una crisis posible (ejemplo: linterna equipada, botín muestra+palanca, crisis de herramientas 0/2). Se pierde esa oportunidad. **H2 (límite anterior, no regresión):** comida, medicina y combustible todavía se donan antes de las búsquedas y no se reconsideran después. Esto estaba fuera del alcance de #5. Ambos escenarios requieren pruebas dirigidas antes de afirmar reproducción integral.
+
+**Estado:** revisión concluida con reserva, C7 implementada/CI verde pero #5 abierto; no modificar regla de botín ni generalizar otras crisis sin una decisión. `main` intacta, PR #14 sigue en borrador.
+
+**Tarea única siguiente:** aprobar o ajustar una política mínima C7-R1 para elegir herramientas reveladas **cuando esa elección permitiría completar la crisis**, preservando la victoria inmediata por objetivo. Después diseñar regresiones y parche solo si queda expresamente autorizado. No iniciar aún #4/#6 ni etapa D.
+
 ## 3. Etapas posteriores: una por vez
 
 | Etapa | Propósito | Criterio para habilitar la siguiente |
@@ -224,7 +234,7 @@ Los detalles están en `docs/12`–`docs/17`. **No abrir nuevos frentes para amp
 
 Si surge una idea fuera de la tarea activa:
 
-> «Es una idea para la hoja de ruta, pero ahora estamos en **la definición de prioridad de IA para #5, propuesta siguiente**. La registro y seguimos con la estabilización. ¿Querés cambiar explícitamente la prioridad?»
+> «Es una idea para la hoja de ruta, pero ahora estamos en **C7-R1: decidir la prioridad de selección de herramientas al buscar**. La registro y seguimos con la estabilización. ¿Querés cambiar explícitamente la prioridad?»
 
 Solo cambiar la etapa activa con una decisión consciente; registrar motivo, riesgos, estado de la tarea interrumpida y cómo retomarla. No es necesario prohibir las conversaciones creativas: **conversar no equivale a cambiar la etapa ni a comenzar a programar**.
 
@@ -237,4 +247,4 @@ Solo cambiar la etapa activa con una decisión consciente; registrar motivo, rie
 - **Propuestas narrativas (estacionadas):** `docs/12`–`docs/17`.
 - **Defectos/decisiones por resolver:** GitHub Issues.
 
-**Próxima acción única: revisión crítica posterior de C7/#5. Política A aprobada e implementada en rama, CI verde; no fusionar ni iniciar otro issue.**
+**Próxima acción única: decidir la regla de selección de botín C7-R1 para completar crisis alcanzables (hallazgo H1, informe31). Revisión C7 realizada con reserva; no iniciar cambios de política adicionales sin aprobación, no fusionar.**
