@@ -224,6 +224,19 @@ El creador indicó que **no considera necesaria una prueba obligatoria en Androi
 
 **Próximo bloque único propuesto, no iniciado:** [#4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4), decidir la norma para transferir herramientas/armas entre supervivientes de distintos grupos. Hay un `test.todo` de contrato; primero acordar regla y luego registrar pruebas, sin inventar diseño ni saltar a cambios de código. Issue #6 conserva su TODO independiente.
 
+## Definición de regla #4 — Transferencia por modo, 27/10/2026
+
+El creador indicó expresamente: **«por ahora cuando se juegue contra la IA no se pueda realizar tradeos [...] Pero J1 con J2 sí»**, debido a la complejidad de negociar con IA. Se registra como decisión de política, interpretando «tradeo» como **transferencia entre grupos**, distinta de reorganizar equipo entre dos supervivientes controlados por el mismo J1.
+
+**Comportamiento objetivo sin cambiar el motor todavía:**
+- Humano + IA: no hay transferencias manuales J1→IA ni IA→J1; las transferencias **entre supervivientes del propio grupo humano siguen permitidas**. El sistema automático de IA administra su propio equipo sin negociar.
+- Local J1+J2: permiten cesión equipada J1↔J2 desde el turno interactivo del **donante**, además de intra-grupo. No es trueque instantáneo ni se agrega diálogo de aceptación del destinatario.
+- Conserva las garantías: ambos vivos, misma localidad, categoría de equipamiento no repetida en destino, mismo objeto existente y mismo origen elegible al confirmar, sin ejecutar durante pantalla de pase u otro estado bloqueante. Proteger ambas fases `startTransfer()` y `chooseTransfer()` y el texto modal.
+
+[Issue #4, comentario 6453681346](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4#issuecomment-6453681346). Evidencia del defecto inicial: `startTransfer()` usa `alive()` de ambos grupos y `chooseTransfer()` solo comprueba identidad y localidad, permitiendo actualmente J1→IA en modo IA. **No se cambió HTML ni pruebas ni `test.todo`** porque la tarea de esta intervención fue acordar el criterio; no se reclamó CI nuevo para el comportamiento no implementado. PR #14 sigue borrador, `main` intacta; #4 permanece abierto.
+
+**Siguiente bloque único, sujeto a permiso:** C8/#4, escribir primero tests que exijan la nueva regla, observar CI rojo esperado y corregir las guardas; revisar UI en Chromium real. No cerrar #4 ni fusionar automáticamente y no avanzar a #6.
+
 ## Siguiente tarea única
 
-**Proponer como siguiente tarea única la definición de reglas del issue #4 (transferencias entre grupos), pendiente de autorización. #5 cerrado/completed; PR14 borrador y `main` intacta.** R1/R2 ya corregidos. Actualizar tablero y registro tras cada revisión.
+**Próximo bloque propuesto: C8/#4, test de transferencias por modo primero y corrección acotada después, sujeto a autorización. #5 cerrado; PR #14 borrador; `main` intacta.**
