@@ -87,7 +87,8 @@ Principio: **dibujar no modifica el estado del juego**.
 - [x] Preparar un ejemplo de arco conectado (no canon): `docs/13-arco-piloto.md`.
 - [ ] Conversar con el usuario el tono, el conflicto principal y las consecuencias del arco piloto.
 - [x] Acordar campañas de duración variable, con hitos narrativos integrados a los recursos mecánicos y condición inicial de victoria; especificación: `docs/16-progresion-narrativa-mecanica.md`.
-- [ ] Mapear para la campaña piloto el progreso de historia, los recursos requeridos, las rutas alternativas y los bloqueos posibles.
+- [x] Preparar **primer borrador** de mapa jugable con hitos, rutas de muestras y contingencias en `docs/17-mapa-campana-encontrar-cura.md`.
+- [ ] **Revisar y aprobar con el usuario** el mapa, el peso de la secta, las rutas alternativas y el ritmo de campaña; el borrador no es canon.
 - [ ] Aprobar el modelo mínimo de estado narrativo serializable y efectos.
 - [ ] Implementar **un solo arco vertical** con decisiones diferenciadas y repercusiones a varias rondas, con pruebas, en una rama separada y sin cambiar la V9.9 estable.
 - [ ] Comprobar persistencia, muerte de actores, reactivación, continuidad y finales variables.
