@@ -2,7 +2,7 @@
 
 **Propósito:** revisar exhaustivamente lo que YA existe en Invierno en la Colonia antes de extraer módulos del motor. No confundir funcionalidades previstas (2D isométrico, historias persistentes, modo online) con funcionalidades ya implementadas.
 
-**Tablero de ejecución:** [18 — Tablero operativo](18-tablero-operativo.md). **Etapa activa:** A, auditoría V9.9; **siguiente tarea A5-01:** navegador real y Android (A2, A3 y A4 automatizadas completadas; el cierre funcional requiere la validación visual). Los documentos de narrativa son diseño futuro y no cambian esta prioridad.
+**Tablero de ejecución:** [18 — Tablero operativo](18-tablero-operativo.md). **Etapa activa:** A, auditoría V9.9; **siguiente tarea A5-02:** prueba manual en Android físico (A5-01 ejecutada en Chromium y emulación táctil; A6 pendiente). Los documentos de narrativa son diseño futuro y no cambian esta prioridad.
 
 **Fecha de inicio:** 27/10/2026 · **Rama:** `refactor/arquitectura` · **Base:** `invierno_colonia_v9_9.html`
 
@@ -34,10 +34,10 @@ Ningún subsistema debería declararse **completo** solo por pasar una prueba un
 | 13 | Crisis y contribuciones | selección de tipo, cartas válidas, premio de sobreaporte, penalizaciones | **P**: aportes desde mano/equipo, rechazo de categoría, sobreaporte, éxito/fallo de moral; penalizaciones restantes pendientes |
 | 14 | Encrucijadas narrativas | activación, disponibilidad de opciones, gastos, efectos e IA | **P + B**: 26 pruebas de cartas, disparadores, actor, elecciones J1/J2/IA y efectos; errores [#2](https://github.com/LeviEdition/invierno-en-la-colonia/issues/2) y [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) |
 | 15 | Inteligencia artificial | selección de acciones, objetos, búsqueda/combate, encrucijadas, bloqueos | **P**: 20 pruebas de equipamiento, decisiones, desplazamiento, combate y turno completo; narrativa y DOM pendientes; [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5) |
-| 16 | Dos jugadores en mismo dispositivo | privacidad en pantalla de pase, manos, dados, selección, líder y cambio de turnos | **P + B**: [20 pruebas específicas A2-01](19-auditoria-modo-local.md) de manos/dados, pase y estados pendientes; **B**: dados [#3](https://github.com/LeviEdition/invierno-en-la-colonia/issues/3), liderazgo [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6) y salto por llamada interna [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8); privacidad visual real pendiente A5 |
+| 16 | Dos jugadores en mismo dispositivo | privacidad en pantalla de pase, manos, dados, selección, líder y cambio de turnos | **P + B**: [20 pruebas específicas A2-01](19-auditoria-modo-local.md) de manos/dados, pase y estados pendientes; **B**: dados [#3](https://github.com/LeviEdition/invierno-en-la-colonia/issues/3), liderazgo [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6) y salto por llamada interna [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8); pantalla de pase visualmente cubierta en Chromium A5-01; foco de teclado no aislado [#12](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12); Android físico pendiente |
 | 17 | Victoria, derrota y situaciones límite | objetivos, moral cero, sin supervivientes, límite de rondas, estados pendientes | **P + B**: [A4: 23 pruebas](21-auditoria-integracion-a4.md), victorias/derrotas, rescates y partidas dirigidas de 10 rondas; fallo de fin de IA [#11](https://github.com/LeviEdition/invierno-en-la-colonia/issues/11), integración visual pendiente |
-| 18 | Interfaz y accesibilidad | clics, modales, perfil, avisos, cartas, contraste, tamaño táctil y foco | **P + B**: [A3: 21 pruebas con DOM simulado](20-auditoria-modales-a3.md), hallazgos internos [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9) y [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10); **pruebas manuales reales N** |
-| 19 | Móvil y rendimiento | vista vertical, sin scroll horizontal, render y animaciones, dispositivos modestos | **N**: pruebas manuales en celular |
+| 18 | Interfaz y accesibilidad | clics, modales, perfil, avisos, cartas, contraste, tamaño táctil y foco | **P + B**: [A3: 21 pruebas simuladas](20-auditoria-modales-a3.md); [A5-01: Chromium real](22-auditoria-navegador-a5.md) comprobó menús, búsqueda, encrucijadas y modales. Defectos de contrato [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9), [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10) y foco de teclado [#12](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12); lector de pantalla pendiente |
+| 19 | Móvil y rendimiento | vista vertical, sin scroll horizontal, render y animaciones, dispositivos modestos | **P + B**: A5-01 emulación 393×852, 320×640 y 852×393 sin overflow horizontal ni errores JS; [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13) dados táctiles de 26×25 px. **Android físico, rendimiento y gestos reales: N** |
 | 20 | Guardado, reconexión y multijugador por red | persistencia general, servidor autoritativo, WebSockets | **F**: objetivos futuros, no presentes en V9.9 |
 | 21 | Narrativa persistente (prioridad creativa) y escenas 2D | historia principal, arcos conectados, memoria de decisiones, consecuencias, personajes, sprites y escenas | **F**: diseño narrativo inicial en documentos 12 y 13; **no implementado** todavía en V9.9 |
 
@@ -77,9 +77,11 @@ Ningún subsistema debería declararse **completo** solo por pasar una prueba un
 - [x] A4: 23 pruebas dirigidas de integración, incluidas victorias, derrotas y partidas de 10 rondas; no confundir con partida sin recursos manipulados.
 - [ ] Una partida natural reproducible en navegador hasta victoria/derrota, sin alterar recursos ni mazos.
 - [x] A3: 21 pruebas automáticas de modales y estados pendientes (DOM simulado).
-- [ ] Pruebas visuales en navegador de escritorio.
-- [ ] Pruebas reales en pantalla móvil vertical y con interacción táctil.
-- [ ] Rendimiento, accesibilidad y ausencia de desplazamiento horizontal.
+- [x] A5-01: pruebas visuales/automatizadas en Chromium real de escritorio, 1365×768 (sin errores JS en los recorridos elegidos).
+- [x] A5-01: emulación táctil Chromium en 393×852, 320×640 y 852×393; es emulación, no celular físico.
+- [ ] A5-02: pruebas reales en Android físico con [guía específica](23-guia-prueba-android-a5.md).
+- [x] A5-01: ausencia de desplazamiento horizontal **de página** en cuatro tamaños seleccionados; revisión inicial de foco/tamaños documentada.
+- [ ] Accesibilidad completa (teclado y TalkBack), rendimiento y ergonomía en dispositivo físico.
 
 ## Problemas confirmados durante la auditoría
 
@@ -93,6 +95,8 @@ Ningún subsistema debería declararse **completo** solo por pasar una prueba un
 8. [#9 — Acción de inventario durante curación pendiente](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9): por invocación interna, `playItem()` no bloquea la curación.
 9. [#10 — Fin de turno durante aviso de muerte](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10): llamada interna a `finishTurn()` puede avanzar sin confirmar fallecimiento.
 10. [#11 — IA alcanza meta y pierde antes de verificar](https://github.com/LeviEdition/invierno-en-la-colonia/issues/11): victoria con notas puede llegar demasiado tarde si la colonia reduce la moral a cero.
+11. [#12 — Foco de teclado escapa de setup/pase](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12): confirmado en Chromium; riesgo de accesibilidad y posible exposición a lectores de pantalla, no filtración visual demostrada.
+12. [#13 — Dados con área táctil demasiado pequeña](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13): 26×25 px en vistas móviles emuladas.
 11. **Comportamiento de diseño a revisar** (no se declara bug): una mordedura iniciada en el turno humano puede hacer que la IA sacrifique automáticamente a su superviviente con menor influencia, cortando la cadena antes de pedir una decisión humana.
 
 ## Reglas para reportar resultados
