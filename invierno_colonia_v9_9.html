@@ -570,6 +570,11 @@ function token(p){
 
 
 
+// C9/#6: la primera acción válida confirma al líder del jugador que actúa.
+function confirmStartingLeader(){
+ if(controls.side==='human')game.leaderChosen=true;
+ else if(game.mode==='local')game.localLeaderChosen=true;
+}
 function canPickStartingLeader(){return !!game&&playable()&&game.round===1&&!(controls.side==='human'?game.leaderChosen:game.localLeaderChosen);}
 function toggleFab(force){const menu=document.getElementById('fabMenu'),btn=document.getElementById('floatingActions');const open=typeof force==='boolean'?force:menu.hidden;menu.hidden=!open;btn.textContent=open?'✕':'☰';btn.setAttribute('aria-expanded',String(open));btn.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');}
 function menuGo(type){toggleFab(false);closeStatInfo();show(type);}
@@ -848,7 +853,7 @@ function consume(min){
  if(!actionDice().length)return messageAndPaint('No quedan dados de acción.'),null;
  const dice=actionDice(),i=Math.max(0,Math.min(picked,dice.length-1)),value=dice[i];
  if(value<min)return messageAndPaint('Necesitás un dado de '+min+' o más (seleccionado: '+value+').'),null;
- dice.splice(i,1);picked=Math.min(i,dice.length-1);game.leaderChosen=true;message('🎲 Dado utilizado: '+value+' (mínimo '+min+').');return value;
+ dice.splice(i,1);picked=Math.min(i,dice.length-1);confirmStartingLeader();message('🎲 Dado utilizado: '+value+' (mínimo '+min+').');return value;
 }
 function boostDie(){
  if(game.ended||!playable()||!actionDice().length||game.food<1)return messageAndPaint('Necesitás comida de la reserva y un dado disponible.');
@@ -876,7 +881,7 @@ function doMove(){
  if(p.moved)return messageAndPaint('El superviviente ya se movió durante este turno.');
  if(p.loc===target)return messageAndPaint('Elegí otro destino.');
  if(!accessible(target))return messageAndPaint('No hay espacios disponibles en el destino.');
- game.leaderChosen=true;p.loc=target;p.moved=true;message('→ '+p.name+' se movió a '+places[target]+'.');
+ confirmStartingLeader();p.loc=target;p.moved=true;message('→ '+p.name+' se movió a '+places[target]+'.');
  if(p.skill==='silent'&&!p.skillUsed){p.skillUsed=true;message('★ '+p.name+' evitó la exposición.');}else expose(p,'movimiento');
  if(!pendingBite)crossAction('move',p);verify();paint();
 }
@@ -938,7 +943,7 @@ function contributeEquipment(id,i){
 }
 function playItem(i){
  if(game.ended||!playable()||game.crossPending||pendingBite||pendingLoot||pendingLeader||deathDirector.active)return;
- if(itemEngine.use(i,person(),controls.side)){game.leaderChosen=true;verify();paint();}
+ if(itemEngine.use(i,person(),controls.side)){confirmStartingLeader();verify();paint();}
  else paint();
 }
 function toggleEquipDescription(button){
@@ -1293,7 +1298,7 @@ function renderModal(){
   html=info?'<div class="recruitStory"><div class="recruitSeal">'+(info.queued?'⌛':'♛')+'</div><h3>'+info.name+'</h3><p>'+(!info.queued?'Rescataste a <b>'+info.name+'</b> ('+info.job+'). Se incorporó directamente a tu grupo en la colonia.':'La colonia está llena y el superviviente espera una plaza disponible.')+'</p><p class="tiny">'+info.skill+'</p><button class="action" style="width:100%" onclick="dismissRecruit()">Continuar</button></div>':'';
  }else if(opened==='group'){
   const row=(side)=>'<div class="groupPanel"><h3>'+(side===controls.side?'Tu grupo':game.mode==='local'?controls.display(side):'Grupo de la IA')+'</h3>'+ownerGroup(side).filter(p=>!p.dead).map(p=>'<div class="groupMember"><div><b>'+(isLeader(p)?'♛ ':'')+p.name+'</b><small>'+p.job+' · Influencia '+p.influence+' · '+places[p.loc]+'</small></div>'+(side===controls.side&&canPickStartingLeader()&&!isLeader(p)?'<button class="action secondary" onclick="chooseLeader(\''+p.id+'\')">Elegir líder</button>':'')+'</div>').join('')+'</div>';
-  html='<p>La influencia decide el orden de propagación de mordeduras y las víctimas de desbordamientos: se expone primero la menor. Cada grupo tiene un líder; si muere, debe reemplazarse.</p>'+row('human')+row('ai')+(canPickStartingLeader()?'<p class="message">Durante la primera ronda podés designar tu líder inicial.</p>':'')+(game.rescueQueue.length?'<p class="message">Rescates pendientes: '+game.rescueQueue.length+'. Llegarán cuando haya lugar en la colonia.</p>':'');
+  html='<p>La influencia decide el orden de propagación de mordeduras y las víctimas de desbordamientos: se expone primero la menor. Cada grupo tiene un líder; si muere, debe reemplazarse.</p>'+row('human')+row('ai')+(canPickStartingLeader()?'<p class="message">Durante la primera ronda podés elegir tu líder inicial antes de gastar un dado, moverte o usar una carta.</p>':'')+(game.rescueQueue.length?'<p class="message">Rescates pendientes: '+game.rescueQueue.length+'. Llegarán cuando haya lugar en la colonia.</p>':'');
  }else if(opened==='biteChoice'){
   const p=pendingBite&&all().find(x=>x.id===pendingBite.target);
   html=p?'<div class="message">Una mordedura se propagó hasta <b>'+p.name+'</b> (influencia '+p.influence+').</div><p><b>Sacrificar:</b> el personaje muere y la propagación termina.</p><p><b>Arriesgar:</b> tirás el dado de exposición. Blanco (4–6) lo salva. Cualquier otro resultado lo mata y la mordedura puede extenderse a otra persona.</p><div class="grid2"><button class="action danger" onclick="chooseBite(\'sacrifice\')">Detener el contagio</button><button class="action" onclick="chooseBite(\'risk\')">Arriesgar tirada</button></div>':'<p>La propagación terminó.</p>';
