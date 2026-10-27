@@ -215,6 +215,83 @@ test('barricada: sin accesos libres rechaza la acción y no consume dado', () =>
   assert.deepEqual(t.val('({b:game.zones[0].b,z:game.zones[0].z,dice:game.dice})'), {b:9,z:3,dice:[6]});
 });
 
-// Defecto observado independientemente: startTransfer permite receptores del bando contrario.
-// No fijamos ese comportamiento incorrecto como requisito de regresión.
-test.todo('transferencia: impedir destinatarios del grupo adversario (issue #4)');
+// C8/#4: se valida la nueva política por modo, incluso ante invocación directa
+// a chooseTransfer(), cambios de turno o modificaciones del estado del destino.
+test('C8 IA: permite transferir dentro del grupo humano y excluye a IA de candidatos', () => {
+  const t=fixture();equip(t,'pistol');
+  t.exec('profileId="h0";startTransfer(0);');
+  assert.deepEqual(t.val('pendingTransfer.targets'),['h1','h2']);
+  t.exec('chooseTransfer("h1");');
+  assert.deepEqual(t.val('({source:game.humans[0].equipment.length,dest:game.humans[1].equipment.map(it=>it.cardId)})'),{source:0,dest:['pistol']});
+});
+test('C8 IA: rechaza selección forzada de destinatario IA desde transferencia válida', () => {
+  const t=fixture();equip(t,'pistol');
+  t.exec('profileId="h0";startTransfer(0);chooseTransfer("a0");');
+  assert.deepEqual(t.val('({source:game.humans[0].equipment.map(it=>it.cardId),dest:game.bots[0].equipment,pending:!!pendingTransfer})'),{source:['pistol'],dest:[],pending:true});
+});
+test('C8 IA: rechaza destino IA aun si se falsifica lista de destinatarios', () => {
+  const t=fixture();equip(t,'pistol');
+  t.exec('profileId="h0";startTransfer(0);pendingTransfer.targets.push("a0");chooseTransfer("a0");');
+  assert.deepEqual(t.val('({source:game.humans[0].equipment.map(it=>it.cardId),dest:game.bots[0].equipment,pending:!!pendingTransfer})'),{source:['pistol'],dest:[],pending:true});
+});
+test('C8 local: J1 puede ceder objeto equipado a J2 en misma localidad', () => {
+  const t=fixture();equip(t,'pistol');
+  t.exec('game.mode="local";profileId="h0";startTransfer(0);');
+  assert.equal(t.val('pendingTransfer.targets.includes("a0")'),true);
+  t.exec('chooseTransfer("a0");');
+  assert.deepEqual(t.val('({source:game.humans[0].equipment.length,dest:game.bots[0].equipment.map(it=>it.cardId),pending:pendingTransfer})'),{source:0,dest:['pistol'],pending:null});
+});
+test('C8 local: J2 puede ceder objeto equipado a J1 en su propio turno', () => {
+  const t=fixture();
+  t.exec('game.mode="local";game.turn="ai";game.bots[0].equipment=[catalog.create("crowbar")];profileId="a0";startTransfer(0);');
+  assert.equal(t.val('pendingTransfer.targets.includes("h0")'),true);
+  t.exec('chooseTransfer("h0");');
+  assert.deepEqual(t.val('({source:game.bots[0].equipment.length,dest:game.humans[0].equipment.map(it=>it.cardId),pending:pendingTransfer})'),{source:0,dest:['crowbar'],pending:null});
+});
+test('C8 local: J2 también conserva transferencia dentro de su grupo', () => {
+  const t=fixture();
+  t.exec('game.mode="local";game.turn="ai";game.bots[0].equipment=[catalog.create("pistol")];profileId="a0";startTransfer(0);');
+  assert.equal(t.val('pendingTransfer.targets.includes("a1")'),true);
+  t.exec('chooseTransfer("a1");');
+  assert.deepEqual(t.val('({source:game.bots[0].equipment.length,dest:game.bots[1].equipment.map(it=>it.cardId)})'),{source:0,dest:['pistol']});
+});
+test('C8: impide confirmar un traspaso con pase de turno sin confirmar', () => {
+  const t=fixture();equip(t,'pistol');
+  t.exec('game.mode="local";profileId="h0";startTransfer(0);passScreenActive=true;chooseTransfer("a0");');
+  assert.deepEqual(t.val('({source:game.humans[0].equipment.length,dest:game.bots[0].equipment.length,pending:!!pendingTransfer})'),{source:1,dest:0,pending:true});
+});
+test('C8: impide confirmar un traspaso si cambió el turno al otro propietario', () => {
+  const t=fixture();equip(t,'pistol');
+  t.exec('game.mode="local";profileId="h0";startTransfer(0);game.turn="ai";chooseTransfer("a0");');
+  assert.deepEqual(t.val('({source:game.humans[0].equipment.length,dest:game.bots[0].equipment.length,pending:!!pendingTransfer})'),{source:1,dest:0,pending:true});
+});
+test('C8: si cambia el modo de local a IA, deja de autorizar destino contrario', () => {
+  const t=fixture();equip(t,'pistol');
+  t.exec('game.mode="local";profileId="h0";startTransfer(0);game.mode="ai";chooseTransfer("a0");');
+  assert.deepEqual(t.val('({source:game.humans[0].equipment.length,dest:game.bots[0].equipment.length,pending:!!pendingTransfer})'),{source:1,dest:0,pending:true});
+});
+test('C8: si el receptor cambia de localidad, no permite transferencia pendiente', () => {
+  const t=fixture();equip(t,'pistol');
+  t.exec('game.mode="local";profileId="h0";startTransfer(0);game.bots[0].loc=3;chooseTransfer("a0");');
+  assert.deepEqual(t.val('({source:game.humans[0].equipment.length,dest:game.bots[0].equipment.length,pending:!!pendingTransfer})'),{source:1,dest:0,pending:true});
+});
+test('C8: si el receptor muere durante la selección, no permite transferencia', () => {
+  const t=fixture();equip(t,'pistol');
+  t.exec('game.mode="local";profileId="h0";startTransfer(0);game.bots[0].dead=true;chooseTransfer("a0");');
+  assert.deepEqual(t.val('({source:game.humans[0].equipment.length,dest:game.bots[0].equipment.length,pending:!!pendingTransfer})'),{source:1,dest:0,pending:true});
+});
+test('C8: si receptor consigue equipamiento del mismo tipo entre apertura y confirmación, no duplica', () => {
+  const t=fixture();equip(t,'pistol');
+  t.exec('game.mode="local";profileId="h0";startTransfer(0);game.bots[0].equipment=[catalog.create("rifle")];chooseTransfer("a0");');
+  assert.deepEqual(t.val('({source:game.humans[0].equipment.map(it=>it.cardId),dest:game.bots[0].equipment.map(it=>it.cardId),pending:!!pendingTransfer})'),{source:['pistol'],dest:['rifle'],pending:true});
+});
+test('C8: no transfiere un objeto diferente que ocupó su índice durante el modal', () => {
+  const t=fixture();equip(t,'pistol');
+  t.exec('game.mode="local";profileId="h0";startTransfer(0);game.humans[0].equipment[0]=catalog.create("crowbar");chooseTransfer("a0");');
+  assert.deepEqual(t.val('({source:game.humans[0].equipment.map(it=>it.cardId),dest:game.bots[0].equipment.map(it=>it.cardId),pending:!!pendingTransfer})'),{source:['crowbar'],dest:[],pending:true});
+});
+test('C8: una vez transferido el objeto, una segunda confirmación no lo duplica', () => {
+  const t=fixture();equip(t,'pistol');
+  t.exec('game.mode="local";profileId="h0";startTransfer(0);chooseTransfer("a0");chooseTransfer("a0");');
+  assert.deepEqual(t.val('({source:game.humans[0].equipment.length,dest:game.bots[0].equipment.map(it=>it.cardId),pending:pendingTransfer})'),{source:0,dest:['pistol'],pending:null});
+});
