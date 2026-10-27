@@ -297,6 +297,20 @@ No se implementó ninguna opción, no se cambió HTML/tests, no se cerró #6 y n
 
 **Siguiente única tarea:** revisión crítica posterior C9/#6 antes de cierre administrativo.
 
+## Revisión crítica posterior C9 y reparación C9-R1 — 27/10/2026
+
+El creador precisó que **se mantiene el liderazgo humano manual al estilo *Dead of Winter***. Se preserva la política A aplicada en C9: primera acción válida de dado/movimiento/carta fija líder inicial de J1 o J2, pero no se prohíbe a los jugadores seleccionar manualmente un sucesor si muere el líder. La IA mantiene sucesión automática.
+
+**Defecto crítico de propiedad descubierto:** al morir **el líder de J2 durante turno de J1**, el modal pedía elegir líder de J2 **sin mostrar pantalla de pase** y J1 podía designar al sucesor; se reprodujo con botones reales en Chromium antes del parche. [Informe39](39-revision-critica-c9-r1.md) documenta precondición, reproducción y reserva de simultaneidad.
+
+**Tests antes de corregir:** [commit `ed817b5`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/ed817b59825268c54aa1f183c783f19af3189c83), **5 regresiones** de propiedad de sucesor, continuidad del otro jugador, elección inicial propia y visibilidad de modal; [CI rojo 40593244756](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40593244756) **336 declaradas, 331 aprobadas, 5 fallidas, 0 TODO**.
+
+**Corrección C9-R1:** [commit `e84db6a`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/e84db6ae088f314e232e377c15cda37683cce19b): añade `leaderChoiceReady()` sensible a propietario del turno y pantalla de pase; `chooseLeader` distingue sucesión propia de elección inicial; acciones y `finishTurn` dejan continuar J1 si pendiente de otro grupo; modal solo aparece al iniciar turno dueño. [CI verde 40593438595](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40593438595): **336 declaradas, 336 aprobadas, 0 fallidas, 0 TODO**.
+
+**Chromium extra:** tres recorridos positivos con HTML exacto blob `2682f96f0d451eb0083fd9eaa3762b266f8aab60`: J2 escoge sucesor manualmente después de pase real y J1 puede seguir jugando (móvil 393×852), J1 sigue eligiendo sucesor propio al instante y la IA designa automáticamente a mayor influencia. Sin errores JS. Escenarios controlados, no partida completa ni Android físico. **Reserva:** no se probó exhaustivamente muerte simultánea de líderes J1 y J2 en mismo episodio, ya que la implementación usa una sola solicitud `pendingLeader`. No se cambió la política de sucesión ni se inició otro issue.
+
+**Estado:** C9 y C9-R1 implementadas con revisión crítica y regresiones. Falta **aceptación y cierre administrativo de #6**; PR14 draft hacia `refactor/arquitectura`, `main` intacta. Auditoría integral de alertas postergada para pulido de etapa C. **Próximo paso único:** solicitar cierre #6 con autorización explícita.
+
 ## Siguiente tarea única
 
-**Próxima tarea única: revisión crítica posterior C9/#6 antes de proponer aceptación. Política A implementada y verificada (informe38), #6 abierto; PR14 draft y `main` intacta.**
+**Próxima tarea única propuesta: aceptación y cierre administrativo del issue #6 tras revisión crítica, parche C9-R1, 336 pruebas verdes y pase J1→J2 verificado (informe39). No fusionar PR14 ni cambiar `main`.**
