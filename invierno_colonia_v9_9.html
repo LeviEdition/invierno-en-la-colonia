@@ -637,7 +637,13 @@ class ItemEngine {
  }
  moveWithFuel(p,dest,side,i){
   const hand=side==='ai'?game.botItems:game.items;
-  if(!p||p.dead||p.moved||!accessible(dest)||dest===p.loc||!hand[i]||kind(hand[i])!=='combustible')return false;
+  if(!p||p.dead)return false;
+  // UX: combustible no permite un segundo movimiento; informar igual que «Mover».
+  if(p.moved){
+   if(controls.interactive&&side===controls.side)message('⚠ El superviviente ya se movió durante este turno.');
+   return false;
+  }
+  if(!accessible(dest)||dest===p.loc||!hand[i]||kind(hand[i])!=='combustible')return false;
   const old=p.loc;p.loc=dest;p.moved=true;hand.splice(i,1);addWaste();
   message('⛽ '+p.name+' se movió de '+places[old]+' a '+places[dest]+' sin exposición.');
   if(controls.interactive&&side===controls.side)crossAction('move',p);return true;
