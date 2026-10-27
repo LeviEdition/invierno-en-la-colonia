@@ -13,7 +13,7 @@
 - [x] Guardar V9.9 intacta en `main`.
 - [x] Crear rama `refactor/arquitectura`.
 - [x] Identificar los principales módulos actuales y puntos de acoplamiento.
-- [ ] Incorporar un control automático inicial de **sintaxis y estructura**.
+- [x] Incorporar un control automático inicial de **sintaxis y estructura** (4 comprobaciones; ejecutadas con Node.js en copia verificada de la V9.9).
 - [ ] Ejecutarlo en el equipo local con Node.js.
 - [ ] Registrar una pequeña lista de pruebas manuales de las mecánicas actuales.
 
