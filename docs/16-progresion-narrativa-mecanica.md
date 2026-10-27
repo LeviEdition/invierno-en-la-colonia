@@ -14,7 +14,11 @@
 
 ## Distinción técnica imprescindible
 
-Una **muestra recolectada** no tiene por qué equivaler a una **muestra que el proyecto de investigación ya puede utilizar**.
+**Acuerdo específico para la campaña «Encontrar la cura»: las muestras del objetivo pueden existir solamente como recompensas o hallazgos de la trama**, ya que no tienen una utilidad de supervivencia independiente. Esta restricción **no se aplica** a comida, medicinas, armas, combustible, herramientas u otros recursos estratégicos; esos siguen obteniéndose mediante las mecánicas habituales.
+
+Las muestras no tendrían por qué estar en los mazos generales de búsqueda. Su **fuente** sería una escena, investigación, expedición o consecuencia narrativa específica; **su obtención efectiva** puede exigir que el jugador explore, supere un riesgo, proteja a alguien, gaste recursos o realice una acción relevante. Una escena no equivale necesariamente a una muestra entregada gratis.
+
+Una **muestra recolectada** no tiene por qué equivaler a una **muestra que el proyecto de investigación ya puede utilizar**. Para evitar complejidad innecesaria, primero habrá que decidir si es suficiente contar muestras obtenidas por hitos y registrar progreso narrativo, o si una etapa de validación científica aporta decisiones nuevas y justifica otro contador.
 
 Propuesta para el piloto «Encontrar la cura»:
 
@@ -38,17 +42,33 @@ No significa necesariamente añadir cuatro contadores visibles. Se trata de sepa
 
 ### Regla de oro: evitar bloqueos arbitrarios
 
-No implementar la idea como «el jugador puede explorar cuanto quiera, pero el mazo de muestras se apaga hasta que vea una escena predeterminada». Eso volvería falsa la libertad estratégica y podría crear una partida sin salida por falta de azar.
+**Para «Encontrar la cura», es válido retirar las muestras del mazo aleatorio general** y vincular su disponibilidad a eventos de campaña. El riesgo real no es esa vinculación, sino que todos los avances se reduzcan a «esperar hasta que aparezca la siguiente escena» o se vuelvan imposibles por haber rechazado una opción o perdido a un personaje.
+
+La muestra debe estar ligada a una causa de la trama, pero el jugador debe tener participación relevante en obtenerla. No habrá una dependencia de un sorteo aleatorio para conseguir **un recurso obligatorio** y la campaña debe ofrecer rutas de contingencia en sus puntos críticos.
 
 En cambio:
 
 - Permitir buscar materiales, investigar y prepararse incluso antes de activar una escena importante.
 - Usar hitos narrativos para **habilitar usos**, revelar información, procesar materiales, abrir localidades o activar nuevos recursos cuando tenga sentido dentro de la ficción.
 - Si un recurso esencial solo aparece después de un hito, garantizar un camino jugable y suficientemente claro para conseguirlo, sin depender de una única carta aleatoria.
-- Si el jugador reúne muestras de antemano, conservarlas; no confiscarlas para forzar el ritmo de la trama.
+- Si el jugador obtiene muestras tempranamente mediante alguna ruta narrativa válida, conservarlas; no confiscarlas para forzar el ritmo de la trama.
+- La cantidad, el tipo y la disponibilidad de muestras se podrán establecer por arco o hito narrativo; algunas recompensas pueden variar según desempeño y decisiones, pero el camino a la victoria debe seguir siendo viable.
+- No imponer siete escenas obligatorias por exigir siete muestras: una expedición podría proporcionar varias; el número debe equilibrarse con duración y tensión de la campaña.
 - Diseñar alternativas coherentes cuando mueren personajes importantes, se pierde el hospital o se rechaza a un contacto.
 - Prever claramente los casos en que el jugador pierde por haber agotado tiempo o recursos tras decisiones repetidas, no por un evento obligatorio inaccesible.
 - No hacer que las historias secundarias independientes detengan la victoria principal si el jugador las ignora.
+
+## Impacto sobre la V9.9 que habrá que revisar antes de implementar
+
+Actualmente las muestras **sí** pueden llegar por distintos canales no narrativos. En una futura implementación no basta con retirar cartas `sample` de los mazos:
+
+- **Mazos de localidades:** contienen cartas `sample` que pueden salir en búsquedas ordinarias.
+- **Notas de laboratorio (`notes`):** su efecto de investigación permite incrementar la cantidad de muestras mediante un consumible obtenido explorando.
+- **Habilidad `researcher`:** la primera muestra obtenida por un personaje con esa habilidad cuenta doble; podría alterar un progreso guionado y permitir llegar al total previsto antes de terminar la trama.
+- **Encrucijadas:** algunas dan muestras o las generan directamente, por lo que habría que decidir cuáles pertenecen a la campaña y cuáles ya no deben otorgar progreso de objetivo libremente.
+- **`gainSample()` y `verify()`:** actualmente no comprueban de qué evento procede cada muestra ni los hitos narrativos; verificar una victoria con el número suficiente puede terminar la partida antes de completar la historia.
+
+Propuesta: el futuro motor registra **la procedencia de cada avance**, concede muestras por hitos o acciones justificadas y comprueba las condiciones fijas de la campaña al declarar victoria. No programar todavía esta migración ni romper la V9.9.
 
 ## Acuerdo creativo y límite técnico
 
@@ -99,11 +119,11 @@ El boceto de campaña plantea una organización que interpreta la infección com
 
 ## Condiciones mínimas de aceptación del primer prototipo
 
-1. El jugador obtiene suficientes muestras **antes de completar los hitos**: el juego no declara victoria prematuramente y explica qué falta.
+1. El jugador no puede ganar por recolección aleatoria de muestras ajena a la campaña; si por rutas narrativas válidas alcanza el número antes de completar todos los hitos indispensables, el juego explica qué falta y no declara victoria prematura.
 2. El jugador atraviesa los hitos por más de una ruta y llega a la misma condición de victoria con epílogos distintos.
 3. Una historia secundaria independiente puede ignorarse sin impedir el objetivo principal.
 4. Morir un investigador no destruye forzosamente una partida que aún tenga alternativas narrativas razonables.
-5. Los recursos necesarios para avanzar son accesibles por acciones de juego, no únicamente por esperar un guion.
+5. La **disponibilidad de muestras** depende de la trama, pero la **obtención** puede requerir acciones y estrategia; los demás recursos de supervivencia siguen accesibles por juego ordinario y no únicamente por esperar escenas.
 6. Las escenas importantes no dependen de que una carta aleatoria concreta salga en el turno correcto.
 7. Se mide el ritmo con partidas completas: duración, densidad de decisiones, frecuencia de escenas y casos de bloqueo.
 8. Las pruebas automatizadas reproducen al menos dos rutas completas, con consecuencias y final compatibles con el objetivo fijo.
