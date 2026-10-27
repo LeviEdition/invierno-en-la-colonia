@@ -311,6 +311,18 @@ El creador precisó que **se mantiene el liderazgo humano manual al estilo *Dead
 
 **Estado:** C9 y C9-R1 implementadas con revisión crítica y regresiones. Falta **aceptación y cierre administrativo de #6**; PR14 draft hacia `refactor/arquitectura`, `main` intacta. Auditoría integral de alertas postergada para pulido de etapa C. **Próximo paso único:** solicitar cierre #6 con autorización explícita.
 
+## Cierre autorizado del issue #6 — 27/10/2026
+
+Ante propuesta expresa de aceptar y cerrar administrativamente C9/#6, el creador respondió **«cerra el issue»**. Se publicó [comentario técnico de cierre](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6#issuecomment-6455187002), con decisiones y verificaciones de [C9](38-c9-lider-inicial-j2.md) y [C9-R1](39-revision-critica-c9-r1.md), y GitHub confirmó [#6 closed/completed](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6), `closed_at=2026-10-27T22:30:07Z`.
+
+**Regla final aceptada:** líderes humanos elegidos manualmente al estilo *Dead of Winter*, sin automatizar por mayor influencia; en ronda 1, primera acción válida de dado, movimiento o carta confirma al líder inicial de cada jugador, y la elección manual de un sucesor queda exclusivamente a cargo del dueño del grupo cuando le toca turno. IA mantiene sucesión automática. La muerte simultánea de dos líderes, potencialmente afectada por el estado único `pendingLeader`, queda como **reserva transversal no certificada**.
+
+**Última CI verificada antes del cierre:** [40594225022](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40594225022), **336 declaradas, 336 aprobadas, 0 fallidas, 0 TODO**, con escenarios Chromium de pase y sucesión documentados. No se afirma que Android físico, partidas completas ni todas las combinaciones simultáneas estén ensayadas.
+
+**Control de versiones:** cierre administrativo no integra cambios. `main=d9068f4aa8d3a10bbbf1e0a8a2527744cc6952cb` permanece inalterada; `fix/estabilizacion-v9-9` contiene las correcciones; [PR14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14) sigue abierto/draft con base `refactor/arquitectura`. **No se comenzó #7**, ni se cerró PR, ni se publicó release.
+
+**Siguiente tarea única propuesta (pendiente de aprobación):** estudiar [issue #7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) sobre elección de encrucijadas de IA y definir su política según efectos en lugar de palabras. Luego continuar #13 y pulido de alertas según prioridad de estabilización, sin iniciar varios issues a la vez.
+
 ## Siguiente tarea única
 
-**Próxima tarea única propuesta: aceptación y cierre administrativo del issue #6 tras revisión crítica, parche C9-R1, 336 pruebas verdes y pase J1→J2 verificado (informe39). No fusionar PR14 ni cambiar `main`.**
+**Próximo paso único propuesto: pedir autorización para analizar las encrucijadas de IA del issue #7, sin implementar todavía. Issue #6 cerrado/completed; PR14 draft y `main` intacta.**
