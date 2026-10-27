@@ -1,14 +1,20 @@
 # 25 — Registro de estabilización V9.9 (C1–C6)
 
-**Fecha:** 27/10/2026. **Rama de trabajo:** `fix/estabilizacion-v9-9` (nació de `refactor/arquitectura`). **Estado:** C1–C4 con CI verde; C5 y C6 implementadas y comprobadas localmente, pendientes de revisión y CI remoto. **No promovidos a `main`.**
+**Fecha:** 27/10/2026. **Rama de trabajo:** `fix/estabilizacion-v9-9` (nació de `refactor/arquitectura`). **Estado:** C1–C4 con CI verde; C5 y C6 implementadas, con pruebas locales y CI remoto aprobados; revisión final de código pendiente. **No promovidos a `main`.**
 
 ## Entrega C5/C6 para revisión
 
-Código y pruebas registrados y subidos en [d4a6b3f](https://github.com/LeviEdition/invierno-en-la-colonia/commit/d4a6b3f45dc5c2563420980acf436a15e694775a) a `fix/estabilizacion-v9-9`. La referencia Git del [PR #14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14) coincide con ese commit al comprobar la subida. `main` sigue en `d9068f4` y conserva el blob estable `4ebaedad13d63c7a6762c524a52c0dd9695687b1`. Sin fusión, cierre automático de issues ni publicación de versión.
+Código y pruebas en [d4a6b3f](https://github.com/LeviEdition/invierno-en-la-colonia/commit/d4a6b3f45dc5c2563420980acf436a15e694775a), documentación de entrega en [64dcc2c](https://github.com/LeviEdition/invierno-en-la-colonia/commit/64dcc2c90714a5eab6c8dd1e1b4bd3d10d814dd3). Ambos subidos a `fix/estabilizacion-v9-9`. Al revisar, el PR #14 apunta a `64dcc2c`, abierto y en borrador, base `refactor/arquitectura`, sin revisiones formales. `main` sigue en `d9068f4`, blob estable `4ebaedad13d63c7a6762c524a52c0dd9695687b1`. Sin fusión, cierre de issues ni nueva versión.
 
-**Validación local:** `npm test`, 275 declaradas, 272 aprobadas, 0 fallidas y 3 TODO; recorridos dirigidos de Chromium documentados en C5/C6. **CI remoto sin confirmar:** el workflow está configurado para push a `fix/**`, pero no se pudo observar su ejecución ni resultado: API GraphQL y REST responden `Forbidden`; la consulta web sin autenticación devuelve 404. No se presenta esto como una prueba fallida ni aprobada. Consultar [GitHub Actions de la rama](https://github.com/LeviEdition/invierno-en-la-colonia/actions?query=branch%3Afix%2Festabilizacion-v9-9) y verificar el SHA antes de promover.
+**Validación:** [CI de código `d4a6b3f`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40552155171) y [CI de entrega `64dcc2c`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40552240429) terminaron `completed/success`. Se leyeron los logs de la segunda ejecución: **275 declaradas, 272 aprobadas, 0 fallidas/canceladas/omitidas y 3 TODO**. Los resultados de implementación de C5/C6 de abajo son históricos; este apartado determina su entrega actual.
 
-La documentación de esta entrega se registra en un commit posterior. Los estados «local/sin commit/sin subida» de las secciones de implementación describen el momento anterior a esta entrega.
+### Revisión documental y resolución de acceso — 27/10/2026
+
+- **Acciones y diagnóstico:** se verificaron presencia de autenticación y configuración sin imprimir valores; la consulta a la API, incluso pública, fallaba antes de autenticarse, con `Tunnel connection failed: 403 Forbidden`. La configuración restringida no incluía `api.github.com`. Se guardó únicamente ese dominio adicional, preservando los destinos existentes. Tras aplicar el cambio el usuario, se verificaron API, PR y ejecuciones CI correctamente; no se pidió otro token.
+- **Decisión del usuario:** toda revisión debe terminar con el tablero actualizado y todo trabajo debe documentarse. Regla persistida en `docs/15-protocolo-revision-critica.md` y en el protocolo de cierre de `docs/18-tablero-operativo.md`.
+- **Revisión de documentación:** se compararon tablero, este registro y matriz; una revisión paralela de solo lectura señaló referencias actuales obsoletas a CI pendiente, entrega local y SHA anterior del PR. Se corrigieron, conservando explícitamente los resultados históricos por etapa. No se revisó ni modificó el código del juego en este bloque.
+- **Archivos modificados y motivo:** documentos 15 (regla), 18 (estado y siguiente tarea), 25 (acciones/evidencia) y 04 (cobertura y entrega). Comprobación documental: `git diff --check`. Sin repetición local de la suite ni del navegador: los archivos ejecutables no cambiaron. La subida de esta documentación y su CI se verifican por el SHA del nuevo commit, sin anticipar su resultado ni reescribir la evidencia de `64dcc2c`.
+- **Límites y siguiente tarea:** revisión final de código C5/C6 pendiente; no confundir esta revisión documental ni CI verde con aprobación formal del PR. Android físico/TalkBack siguen pendientes. #5 sigue como propuesta posterior, sin política de IA decidida ni implementación autorizada. No se inició otra corrección ni se fusionó.
 
 ## Origen del trabajo
 
@@ -71,7 +77,7 @@ La documentación de esta entrega se registra en un commit posterior. Los estado
 
 **Resultados locales:** 45/45 en los dos archivos afectados; `npm test` termina con código 0: **255 declaradas, 252 aprobadas, 0 fallidas, 0 canceladas, 0 omitidas y 3 TODO previos**. Chromium sobre el HTML de esta rama confirmó muerte/Continuar/avance en local e IA; pase/reintentos/confirmación y ronda 2 en local. Sin errores JavaScript. Escenarios dirigidos mediante preparación de estado y llamadas internas: no se afirma un fallo explotable por clic normal, partida completa, Android físico ni accesibilidad nueva.
 
-**Revisión al cierre de la implementación C5:** cambios locales sin fusionar. `origin/main` conserva `d9068f4` y el blob estable `4ebaedad13d63c7a6762c524a52c0dd9695687b1`. No hay ejecución CI de C5; la API de GitHub denegó consultar el PR #14. No se cierran issues ni se publica una versión.
+**Revisión al cierre de la implementación C5:** cambios locales sin fusionar. `origin/main` conserva `d9068f4` y el blob estable `4ebaedad13d63c7a6762c524a52c0dd9695687b1`. En aquel momento no se había confirmado CI de C5 porque la API denegaba la consulta; la entrega actual y su CI están documentados arriba. No se cierran issues ni se publica una versión.
 
 ### C6 — #9: acciones durante curación pendiente
 
@@ -85,7 +91,8 @@ La documentación de esta entrega se registra en un commit posterior. Los estado
 
 ## Evidencia
 
-- [Última ejecución GitHub Actions sobre rama de estabilización](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40541776775): **253 tests declarados, 250 aprobados, 0 fallidos, 3 TODO**.
+- [CI confirmado de entrega C5/C6, `64dcc2c`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40552240429): **275 declaradas, 272 aprobadas, 0 fallidas/canceladas/omitidas y 3 TODO**.
+- [Evidencia histórica C4](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40541776775): 253 declaradas, 250 aprobadas, 0 fallidas y 3 TODO.
 - Los 3 `test.todo` son anteriores y están ligados a reglas/situaciones pendientes; **no son fallas de los arreglos nuevos**.
 - En los tests anteriores de caracterización se reemplazaron las expectativas defectuosas por expectativas de comportamiento correcto.
 - Los informes de pruebas automatizadas **no sustituyen prueba manual en Android** ni certifican balance real.
@@ -95,8 +102,8 @@ La documentación de esta entrega se registra en un commit posterior. Los estado
 | Prioridad siguiente | Issue | Motivo |
 | --- | --- | --- |
 | **C4 completada** | [#12](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12) | Foco de inicio/pase corregido en rama; revisión de accesibilidad real adicional pendiente |
-| **C5 completada localmente** | [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8) + [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10) | Guardias implementadas; revisión y CI remoto pendientes |
-| **C6 completada localmente** | [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9) | Bloqueo y recuperación verificados; revisión y CI remoto pendientes |
+| **C5 implementada; CI aprobado** | [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8) + [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10) | Guardias y CI verificados; revisión final de código pendiente |
+| **C6 implementada; CI aprobado** | [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9) | Bloqueo, recuperación y CI verificados; revisión final de código pendiente |
 | Más adelante | [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5), [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13), [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) | Estrategia IA, ergonomía móvil, selección estructurada de encrucijadas |
 | Requiere al creador | [#4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4), [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6) | Transferencias entre grupos y momento de elección de líder inicial |
 
@@ -104,4 +111,4 @@ La documentación de esta entrega se registra en un commit posterior. Los estado
 
 ## Siguiente tarea única
 
-**Revisión de C5/C6 en PR #14 y confirmación de GitHub Actions.** Código y pruebas subidos; resultado de CI remoto sin confirmar. No fusionar, publicar una versión ni iniciar otro defecto dentro de este bloque.
+**Revisión final del código y regresiones C5/C6 en PR #14.** Entrega y CI confirmados. Registrar su resultado en tablero y documentación al terminar, incluso si no requiere código nuevo. No fusionar, publicar una versión ni iniciar otro defecto dentro de este bloque.

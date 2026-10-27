@@ -5,21 +5,29 @@
 
 > **NORMA DE TRABAJO:** una etapa activa, una tarea activa. No empezar una fase posterior porque surgió una idea interesante; anotar la idea y retomar lo previsto. Cambiar prioridades exige una decisión explícita registrada aquí.
 
+> **REGISTRO OBLIGATORIO (acuerdo del usuario, 27/10/2026):** al terminar cada revisión, actualizar este tablero. Documentar acciones, decisiones, cambios, resultados, evidencia y límites en el registro pertinente, aunque no se haya modificado código. Véase [protocolo](15-protocolo-revision-critica.md#registro-obligatorio-de-cada-revisión-y-trabajo).
+
 ## 1. Estado comprobado y alcance
 
 - **Estable:** `main`, `invierno_colonia_v9_9.html`, SHA Git blob `4ebaedad13d63c7a6762c524a52c0dd9695687b1`. El archivo es idéntico en `main` y `refactor/arquitectura` al revisar.
 - **Auditoría:** PR [#1](https://github.com/LeviEdition/invierno-en-la-colonia/pull/1) abierto y en borrador; no fusionar por ahora.
-- **Pruebas en rama de estabilización:** C6 local: **272 ejecutables aprobadas, 0 fallidas y 3 `test.todo`** (275 declaradas). Última evidencia remota documentada, anterior a C5: **250 aprobadas y 3 TODO** en [GitHub Actions](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40541776775). Chromium verificó la interfaz C4 en tres viewports, pero Android físico/TalkBack siguen pendientes.
+- **Pruebas en rama de estabilización:** C5/C6, **272 aprobadas, 0 fallidas/canceladas/omitidas y 3 `test.todo`** (275 declaradas), confirmadas en los logs de [GitHub Actions para `64dcc2c`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40552240429). Las verificaciones dirigidas de Chromium están documentadas en C4–C6; Android físico/TalkBack siguen pendientes.
 - **Problemas registrados:** [#2](https://github.com/LeviEdition/invierno-en-la-colonia/issues/2), [#3](https://github.com/LeviEdition/invierno-en-la-colonia/issues/3), [#4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4), [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5), [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6), [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) y [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8), [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9), [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10) y [#11](https://github.com/LeviEdition/invierno-en-la-colonia/issues/11), [#12](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12) y [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13). El #4 requiere resolver una ambigüedad de reglas, no presumir que es un bug.
 - **Narrativa:** visión, objetivos, campañas y bocetos registrados en `docs/12`–`docs/17`. Son **propuestas y decisiones de diseño**, no código ni campañas implementadas.
 
 ## Entrega C5/C6 para revisión
 
-Código y pruebas registrados y subidos en [d4a6b3f](https://github.com/LeviEdition/invierno-en-la-colonia/commit/d4a6b3f45dc5c2563420980acf436a15e694775a) a `fix/estabilizacion-v9-9`. La referencia Git del [PR #14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14) coincide con ese commit al comprobar la subida. `main` sigue en `d9068f4` y conserva el blob estable `4ebaedad13d63c7a6762c524a52c0dd9695687b1`. Sin fusión, cierre automático de issues ni publicación de versión.
+Código y pruebas subidos en [d4a6b3f](https://github.com/LeviEdition/invierno-en-la-colonia/commit/d4a6b3f45dc5c2563420980acf436a15e694775a); documentación de entrega en [64dcc2c](https://github.com/LeviEdition/invierno-en-la-colonia/commit/64dcc2c90714a5eab6c8dd1e1b4bd3d10d814dd3). Al revisar, la rama y el [PR #14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14) apuntan a `64dcc2c`; está abierto, en borrador y con base `refactor/arquitectura`, sin revisiones formales registradas. `main` sigue en `d9068f4` y conserva el blob estable `4ebaedad13d63c7a6762c524a52c0dd9695687b1`. Sin fusión, cierre de issues ni publicación de versión.
 
-**Validación local:** `npm test`, 275 declaradas, 272 aprobadas, 0 fallidas y 3 TODO; recorridos dirigidos de Chromium documentados en C5/C6. **CI remoto sin confirmar:** el workflow está configurado para push a `fix/**`, pero no se pudo observar su ejecución ni resultado: API GraphQL y REST responden `Forbidden`; la consulta web sin autenticación devuelve 404. No se presenta esto como una prueba fallida ni aprobada. Consultar [GitHub Actions de la rama](https://github.com/LeviEdition/invierno-en-la-colonia/actions?query=branch%3Afix%2Festabilizacion-v9-9) y verificar el SHA antes de promover.
+**CI remoto confirmado:** [código `d4a6b3f`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40552155171) y [entrega `64dcc2c`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40552240429), ambos `completed/success`. Los logs de la entrega confirman 275 declaradas, 272 aprobadas, 0 fallidas/canceladas/omitidas y 3 TODO. La revisión del código del PR sigue pendiente: CI verde no equivale a aprobación.
 
-La documentación de esta entrega se registra en un commit posterior. Los estados «local/sin commit/sin subida» de las secciones de implementación describen el momento anterior a esta entrega.
+### Revisión documental y resolución de acceso — 27/10/2026
+
+Se comprobaron rama/PR/`main`, metadatos de CI y conteos en sus logs, y se corrigieron las referencias actuales que aún decían «CI sin confirmar». El rechazo previo provenía del proxy (`Tunnel connection failed: 403 Forbidden`): faltaba permitir `api.github.com`. Se guardó ese dominio en el borrador de configuración; el usuario aplicó el cambio y las consultas de API ahora funcionan. No hizo falta solicitar un token ni modificar el juego.
+
+Por instrucción del usuario se incorporó la obligación de actualizar el tablero tras **cada revisión** y documentar todo trabajo significativo en [protocolo 15](15-protocolo-revision-critica.md#registro-obligatorio-de-cada-revisión-y-trabajo), este tablero, [registro 25](25-registro-estabilizacion.md#revisión-documental-y-resolución-de-acceso--27102026) y matriz 04. Una revisión paralela de documentación detectó las referencias obsoletas; no se delegaron cambios de código. Esta actualización solo modifica esos cuatro documentos: se comprueba `git diff --check`, sin repetir pruebas locales de código que no cambió. Los nuevos commits documentales se comprobarán en Actions por su SHA, sin atribuirles por anticipado el resultado de `64dcc2c`.
+
+**Resultado y límites:** acceso y CI de la entrega confirmados; documentación sincronizada. No se realizó una nueva prueba de navegador o dispositivo físico ni una revisión final de código en este bloque. #5 sigue siendo una propuesta de trabajo posterior que requiere acordar la prioridad de la IA; no está iniciada ni autorizada su implementación.
 
 ## 2. Etapa activa C — estabilización; C1–C6 implementados; revisión pendiente
 
@@ -90,7 +98,7 @@ Se enfoca el diálogo de inicio/pase, se confina Tab/Shift+Tab, se hace inerte e
 
 **Corrección mínima:** añadir `passScreenActive` y `deathDirector.active` a la guardia inicial de `finishTurn()`, sin cambiar reglas ni el gestor de foco. **Validación local:** 45/45 pruebas en los dos archivos afectados; `npm test`: **252 aprobadas, 0 fallidas y 3 TODO** (255 declaradas). Chromium sobre la rama real verificó bloqueo durante fallecimiento en local/IA, Continuar y avance posterior; en local también llamadas repetidas durante pase, confirmación y llegada a ronda 2. Sin errores JS. Escenarios dirigidos, no partida completa ni Android físico.
 
-Cambios locales para revisión, sin fusionar ni modificar `main`. CI remoto de C5 no ejecutado; el resultado C4 enlazado arriba sigue siendo histórico. Detalles en [registro C5](25-registro-estabilizacion.md#c5--8-y-10-guardias-de-fin-de-turno).
+Cambios entregados en el PR #14 para revisión, sin fusionar ni modificar `main`. CI remoto de C5/C6 confirmado en la entrega registrada arriba; los resultados de implementación anteriores son históricos. Detalles en [registro C5](25-registro-estabilizacion.md#c5--8-y-10-guardias-de-fin-de-turno).
 
 ### C6 — Acciones durante curación pendiente (#9): implementada, pendiente de revisión
 
@@ -102,11 +110,11 @@ Cambios locales para revisión, sin fusionar ni modificar `main`. CI remoto de C
 
 **Evidencia:** 21 casos C6 (15 de bloqueo y 6 de recuperación) reemplazan una caracterización del fallo. Suite completa `npm test`: **272 aprobadas, 0 fallidas, 0 canceladas, 0 omitidas y 3 TODO previos** (275 declaradas). Archivo de modales: 42/42 aprobadas. Chromium sobre el HTML real comprobó seis recorridos dirigidos: curar/cancelar en J1, J2 y humano contra IA, rechazo de consumo durante la elección y consumo habilitado después; sin errores JS. No valida partida completa, Android físico ni TalkBack.
 
-Tablero, registro y matriz actualizados. Al terminar la implementación, los cambios aún estaban sin commit ni subida; la entrega posterior se registra arriba. CI remoto C6 sin confirmar. No se cierra automáticamente #9 ni se fusiona. [Registro](25-registro-estabilizacion.md#c6--9-acciones-durante-curación-pendiente).
+Tablero, registro y matriz actualizados. Al terminar la implementación, los cambios aún estaban sin commit ni subida; la entrega posterior se registra arriba. CI remoto C6 confirmado en la entrega registrada arriba. No se cierra automáticamente #9 ni se fusiona. [Registro](25-registro-estabilizacion.md#c6--9-acciones-durante-curación-pendiente).
 
-### Siguiente tarea única — Revisión de C5/C6 pendientes
+### Siguiente tarea única — Revisión final del código de C5/C6
 
-Código y pruebas ya subidos; revisar el PR #14 y comprobar el resultado de GitHub Actions para los commits entregados. No iniciar otro defecto ni decidir reglas ambiguas dentro de este bloque.
+Código, pruebas y evidencia de CI ya entregados. Revisar el código y las regresiones C5/C6 en el PR #14 y registrar hallazgos o ausencia de hallazgos; actualizar este tablero al terminar. No iniciar otro defecto ni decidir reglas ambiguas dentro de este bloque.
 
 ## 3. Etapas posteriores: una por vez
 
@@ -138,7 +146,7 @@ Código y pruebas ya subidos; revisar el PR #14 y comprobar el resultado de GitH
 **Para cerrar:**
 - Ejecutar pruebas del bloque y suite `npm test` si se modificaron pruebas/código.
 - Comprobar resultado de GitHub Actions y SHA de V9.9 cuando haya commits.
-- Actualizar esta tarea, la matriz y la documentación pertinente; incluir enlaces a commit/prueba/incidencia.
+- Actualizar este tablero tras cada revisión, incluso sin cambios de código; registrar acciones, decisiones, cambios, resultados y límites en la documentación pertinente. Actualizar la matriz cuando corresponda e incluir enlaces a commit/prueba/incidencia.
 - Explicar en lenguaje claro **qué se verificó, qué NO se verificó y cuál es la única siguiente tarea**.
 - No iniciar esa tarea siguiente en el mismo bloque de trabajo sin confirmación del usuario.
 
@@ -174,4 +182,4 @@ Solo cambiar la etapa activa con una decisión consciente; registrar motivo, rie
 - **Propuestas narrativas (estacionadas):** `docs/12`–`docs/17`.
 - **Defectos/decisiones por resolver:** GitHub Issues.
 
-**Próxima acción única: revisar C5/C6 en PR #14 y confirmar GitHub Actions para la entrega. Verificadas localmente, CI remoto sin confirmar. No iniciar otra corrección ni fusionar.**
+**Próxima acción única: revisión final del código y regresiones C5/C6 en PR #14, con registro obligatorio al terminar. CI de la entrega confirmado. No iniciar #5 ni otra corrección, ni fusionar.**
