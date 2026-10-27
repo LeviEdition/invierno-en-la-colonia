@@ -237,6 +237,20 @@ El creador indicó expresamente: **«por ahora cuando se juegue contra la IA no 
 
 **Siguiente bloque único, sujeto a permiso:** C8/#4, escribir primero tests que exijan la nueva regla, observar CI rojo esperado y corregir las guardas; revisar UI en Chromium real. No cerrar #4 ni fusionar automáticamente y no avanzar a #6.
 
+## C8 — Transferencias diferenciadas para IA y modo local (#4), 27/10/2026
+
+**Autorización del creador:** «vamos con la corrección de C8», siguiendo la norma de no permitir negociaciones con IA, pero sí transferencia entre J1 y J2 local, además de cesiones internas del humano. No se modificó #6 u otro issue.
+
+**Primero regresiones:** `tests/combate-equipamiento.test.mjs` reemplazó el único TODO #4 por **14 casos** de filtro en IA, cesión entre supervivientes J1, transferencia J1→J2/J2→J1, transferencia propia de J2, turno/pantalla de pase, variación de modo, localidad, muerte, duplicación por categoría, identidad del objeto y doble confirmación. [Commit `5b4446f`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/5b4446ff8d6b0dad1b918ada94c0835fbed802a9); [CI rojo 40585772252](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40585772252): **318 declaradas, 309 aprobadas, 8 fallidas y 1 TODO** (#6). Los fallos se atribuyen a validaciones ausentes en el código anterior.
+
+**Parche:** [`37d86d6`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/37d86d6bdb4707ff7ebf95a8274bd5747a08b989) introduce `canReceiveTransfer` dependiente de `game.mode`, reutilizado por `startTransfer` y `chooseTransfer` al generar candidatos y confirmar. `chooseTransfer` comprueba además `playable()`, pertenencia del donante al turno y que el objeto pendiente no fue sustituido. Mensaje de falta de receptores distingue modo local del modo con IA. No agrega negociación/aceptación de IA.
+
+**Verificación:** [CI verde 40585960363](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40585960363) **318 declaradas, 317 aprobadas, 0 fallidas y 1 TODO (#6)**. El antiguo TODO #4 quedó convertido en regresiones. **Chromium Playwright:** tres recorridos reales de selección por botón aprobados (humano→humano sin mostrar IA; local J1→J2; local J2→J1 tras pantalla de pase de teléfono, en viewport táctil 393 × 852), con cero errores JS observados. Se contrastó **Git blob C8 `32eb545cbdbca047ded8bc81d64b8e438e096a49`** contra GitHub; se prepararon determinísticamente las cartas y se cargó HTML por `set_content()` debido a las restricciones `file://` del entorno. No Android físico ni partida libre completa. [Informe35](35-c8-transferencias-por-modo.md).
+
+**Controles:** solo código de transferencias, sus pruebas y documentación; `main` intacta, PR #14 permanece abierto/draft y **#4 abierto**. No se ha completado la revisión crítica posterior independiente, no se ha aprobado integración.
+
+**Siguiente tarea única:** revisión crítica posterior C8/#4; no cierre de issue ni avance a #6 sin aprobación.
+
 ## Siguiente tarea única
 
-**Próximo bloque propuesto: C8/#4, test de transferencias por modo primero y corrección acotada después, sujeto a autorización. #5 cerrado; PR #14 borrador; `main` intacta.**
+**Próxima tarea única: revisión crítica posterior C8/#4 con código, 14 regresiones y 3 recorridos Chromium aprobados (informe35). #4 abierto, PR14 borrador y `main` intacta.**
