@@ -6,7 +6,8 @@
 2. Conservar el comportamiento jugable de la V9.9.
 3. Hacer que el motor de reglas funcione sin depender de HTML ni del DOM.
 4. Poder ejecutar pruebas automáticas reproducibles.
-5. Preparar una capa narrativa persistente, presentación 2D y, a largo plazo, multijugador online.
+5. Hacer de la **narrativa persistente el centro de la experiencia**: decisiones, personajes, memoria, consecuencias diferidas y arcos que cambian con la partida.
+6. Desarrollar después una presentación 2D que muestre esos cambios, y a largo plazo multijugador online.
 
 ## Etapa A — Línea base (actual)
 
@@ -30,9 +31,10 @@ Antes de reorganizar acciones, escribir pruebas del comportamiento actual:
 - [x] Sexto bloque: fase de colonia, alimentación, hambre, residuos, barricadas, oleadas, limpieza, atracción y turnos locales (28 pruebas nuevas).
 - [x] Séptimo bloque: IA, política de selección de acciones, consumo de recursos y ciclo humano→IA→colonia→nueva ronda (20 pruebas nuevas, sin narrativa).
 - [x] Octavo bloque: victorias, derrotas, líderes, sucesión, reemplazos de emergencia y rescates (30 pruebas nuevas; una TODO).
+- [x] Noveno bloque: 26 encrucijadas, disparadores, requisitos, decisiones humanas/IA y defectos de texto (26 pruebas nuevas).
 - [x] Matriz de auditoría funcional en 21 áreas, con estados y prioridad.
-- [x] GitHub Actions habilitado: suite de regresión ampliada a **148 aprobadas y 3 TODO**, ejecución completa verificada.
-- [x] Defectos anteriores a la refactorización (#2, #3, #5 y #6) y una definición pendiente sobre transferencias (#4); sin alterar la V9.9.
+- [x] GitHub Actions habilitado: suite de regresión ampliada a **174 pruebas y 3 TODO**, ejecución completa sujeta al control automático de la rama.
+- [x] Defectos anteriores a la refactorización (#2, #3, #5, #6 y #7) y una definición pendiente sobre transferencias (#4); sin alterar la V9.9.
 - Inicio de partida, objetivo, personajes, localidades y mazos.
 - Consumo y requisitos de dados.
 - Movimiento, exposición, heridas y muerte.
@@ -63,9 +65,23 @@ Separar progresivamente:
 
 Principio: **dibujar no modifica el estado del juego**.
 
-## Etapa E — Persistencia y narrativa
+## Línea prioritaria N — Narrativa primero (diseño ya iniciado)
 
-Guardar partidas con una versión de esquema, IDs estables para eventos y consecuencias diferidas. La historia narrará cambios reales en el tablero, no solo texto o moral.
+**Dirección creativa establecida:** las decisiones y sus repercusiones en personas, relaciones y conflictos son el centro del videojuego. La estrategia de recursos debe generar dilemas significativos.
+
+- [x] Auditar encrucijadas existentes y detectar carencia de memoria narrativa.
+- [x] Escribir visión narrativa persistente: `docs/12-vision-narrativa-persistente.md`.
+- [x] Preparar un ejemplo de arco conectado (no canon): `docs/13-arco-piloto.md`.
+- [ ] Conversar con el usuario el tono, el conflicto principal y las consecuencias del arco piloto.
+- [ ] Aprobar el modelo mínimo de estado narrativo serializable y efectos.
+- [ ] Implementar **un solo arco vertical** con decisiones diferenciadas y repercusiones a varias rondas, con pruebas, en una rama separada y sin cambiar la V9.9 estable.
+- [ ] Comprobar persistencia, muerte de actores, reactivación, continuidad y finales variables.
+
+La línea narrativa avanzará **junto con** la refactorización, no como contenido cosmético agregado al final. Su integración técnica comenzará cuando esté aprobado el diseño y exista un contrato mínimo fiable entre reglas e historias.
+
+## Etapa E — Motor de historia y persistencia
+
+Una vez validado el arco piloto, extender el motor narrativo para registrar hechos, promesas, relaciones, arcos, consecuencias diferidas y versiones de guardado. El sistema deberá usar las mismas reglas de estado que las acciones de tablero y alimentar la presentación 2D.
 
 ## Etapa F — Presentación 2D y red
 
@@ -73,7 +89,7 @@ Guardar partidas con una versión de esquema, IDs estables para eventos y consec
 - Diseñar sprites y recursos reutilizables según una biblia visual.
 - Más adelante, ejecutar el motor autoritativo en el servidor y conectar clientes mediante WebSockets.
 
-No se abordarán las etapas E y F antes de estabilizar el motor.
+No comenzar la **presentación 2D ni la red** antes de validar un prototipo narrativo persistente y una interfaz segura del motor. No es necesario esperar a refactorizar todo el juego para diseñar la narrativa: la historia guía los contratos técnicos desde ahora.
 
 ## Flujo de trabajo Git
 
@@ -92,4 +108,4 @@ node --version
 npm test
 ```
 
-El primer control solo comprueba estructura y sintaxis del archivo base: **no sustituye todavía pruebas de una partida**.
+La suite incluye actualmente pruebas de caracterización del motor y de encrucijadas, pero todavía necesita **pruebas visuales reales** de una partida en navegador. El control estructural original por sí solo no era suficiente.
