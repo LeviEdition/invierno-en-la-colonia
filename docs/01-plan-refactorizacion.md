@@ -23,6 +23,7 @@
 
 Antes de reorganizar acciones, escribir pruebas del comportamiento actual:
 - [x] Primer bloque de caracterización: inicio de partida, tres objetivos, dos modos, mazos y reinicio (6 pruebas nuevas).
+- [x] Segundo bloque: movimiento, movimientos inválidos, combustible y exposición (10 pruebas nuevas).
 - Inicio de partida, objetivo, personajes, localidades y mazos.
 - Consumo y requisitos de dados.
 - Movimiento, exposición, heridas y muerte.
