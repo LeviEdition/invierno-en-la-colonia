@@ -11,7 +11,7 @@
 
 - **Estable:** `main`, `invierno_colonia_v9_9.html`, SHA Git blob `4ebaedad13d63c7a6762c524a52c0dd9695687b1`. El archivo es idéntico en `main` y `refactor/arquitectura` al revisar.
 - **Auditoría:** PR [#1](https://github.com/LeviEdition/invierno-en-la-colonia/pull/1) abierto y en borrador; no fusionar por ahora.
-- **Pruebas actuales de estabilización:** C5-R2, **285 aprobadas, 0 fallidas/canceladas/omitidas y 3 TODO** (288 declaradas), confirmadas en [logs de CI sobre `c19916f`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40557908505). Evidencia anterior conservada por SHA en los informes. Android físico/TalkBack siguen pendientes.
+- **Pruebas actuales de estabilización:** C7/#5, **295 aprobadas, 0 fallidas y 2 TODO** (297 declaradas), [CI 40571819429](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40571819429) sobre `4166716`. El resultado anterior 285/3 TODO es histórico. Android físico/TalkBack siguen pendientes.
 - **Problemas registrados:** [#2](https://github.com/LeviEdition/invierno-en-la-colonia/issues/2), [#3](https://github.com/LeviEdition/invierno-en-la-colonia/issues/3), [#4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4), [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5), [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6), [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) y [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8), [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9), [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10) y [#11](https://github.com/LeviEdition/invierno-en-la-colonia/issues/11), [#12](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12) y [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13). El #4 requiere resolver una ambigüedad de reglas, no presumir que es un bug.
 - **Narrativa:** visión, objetivos, campañas y bocetos registrados en `docs/12`–`docs/17`. Son **propuestas y decisiones de diseño**, no código ni campañas implementadas.
 
@@ -163,6 +163,14 @@ Recibir y registrar la decisión del creador sobre la propuesta. Implementación
 
 **Siguiente tarea única (sin empezar aquí):** recibir y registrar la decisión explícita del creador sobre la política #5, antes de cualquier implementación.
 
+### C7/#5 — Política A aprobada, implementada y probada (27/10/2026)
+
+El creador aprobó completar crisis de herramientas siempre que los aportes humanos anteriores más la mano y equipo de la IA lo permitan. La IA usa herramientas durante su turno, realiza sus búsquedas normales y **después** decide si aportar. Prioriza mano propia y luego equipo propio de supervivientes vivos en orden determinista, solo lo necesario, sin bonificación extra. Cuando no alcanza, conserva el material: en humano + IA no hay otro turno humano antes de colonia. Esto no cambia aportes parciales humanos ni modo local.
+
+**Evidencia C7:** [informe30](30-correccion-c7-ia-herramientas.md), [código 4166716](https://github.com/LeviEdition/invierno-en-la-colonia/commit/416671673c81c4aa88d91d06209a53855efb69c8), diez regresiones nuevas, [CI 40571819429](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40571819429): **297 declaradas, 295 aprobadas, 0 fallidas, 2 TODO** (#4 y #6). No se modifica comida, medicina, combustible, decisiones de botín ni selección de lugares de búsqueda. Hallar una herramienta puede ayudar a salvar la crisis, pero la IA **no busca deliberadamente herramientas por encima de otros tipos de botín**. No se hicieron nuevos ensayos Chromium, Android físico, TalkBack ni análisis de balance. Main intacta y PR #14 en borrador; #5 permanece abierto.
+
+**Siguiente tarea única:** revisión crítica de C7 antes de considerar integración o ampliar la estrategia de búsqueda.
+
 ## 3. Etapas posteriores: una por vez
 
 | Etapa | Propósito | Criterio para habilitar la siguiente |
@@ -229,4 +237,4 @@ Solo cambiar la etapa activa con una decisión consciente; registrar motivo, rie
 - **Propuestas narrativas (estacionadas):** `docs/12`–`docs/17`.
 - **Defectos/decisiones por resolver:** GitHub Issues.
 
-**Próxima acción única: resolver y registrar la decisión del creador sobre la propuesta de prioridad IA #5 (informe29). Propuesta revisada, no aprobada ni implementada. C6-R1 y C5-R2 conservadas; no fusionar.**
+**Próxima acción única: revisión crítica posterior de C7/#5. Política A aprobada e implementada en rama, CI verde; no fusionar ni iniciar otro issue.**
