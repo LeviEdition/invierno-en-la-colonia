@@ -1,6 +1,6 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
-**Última revisión:** 27/10/2026. **Proyecto:** Invierno en la Colonia. **Rama de auditoría:** `refactor/arquitectura`.
+**Última revisión:** 27/10/2026. **Proyecto:** Invierno en la Colonia. **Rama activa de ajustes:** `fix/estabilizacion-v9-9` (base de auditoría `refactor/arquitectura`).
 **Documento operativo**: a diferencia de los documentos conceptuales, este archivo determina qué hacemos **ahora**, qué queda estacionado y qué evidencia habilita cambiar de fase.
 
 > **NORMA DE TRABAJO:** una etapa activa, una tarea activa. No empezar una fase posterior porque surgió una idea interesante; anotar la idea y retomar lo previsto. Cambiar prioridades exige una decisión explícita registrada aquí.
@@ -64,9 +64,15 @@
 
 **B1 (clasificación):** defectos de expectativa inequívoca #11, #2 y #3 pueden corregirse sin crear reglas nuevas. #4 y #6 precisan acordar comportamiento. El resto conserva clasificación y orden sugerido en el documento 24.
 
-### Tarea única siguiente C1 — Corregir verificación de victoria de IA (#11)
+### Estabilización C1–C3 — completada en rama aislada y PR en borrador
 
-Crear `fix/estabilizacion-v9-9`, **sin modificar `main` ni la rama de auditoría**. Test de regresión que espere victoria inmediata cuando la IA cumple la cantidad de muestras; cambio acotado de lógica; suite verde y pruebas de caso límite moral cero. **Después de C1**, C2 será #2, pero no mezclar ambos en un commit.
+En `fix/estabilizacion-v9-9` fueron corregidos **[#11](https://github.com/LeviEdition/invierno-en-la-colonia/issues/11)** (victoria IA al alcanzar muestras), **[#2](https://github.com/LeviEdition/invierno-en-la-colonia/issues/2)** (cartas de recursos y consumo de encrucijadas) y **[#3](https://github.com/LeviEdition/invierno-en-la-colonia/issues/3)** (dados J2). Cada cambio incluyó regresiones y la [suite CI](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40537729389) finalizó con **245 aprobadas, 0 fallidas y 3 TODO** (**248 declaradas**).
+
+**Evidencia:** [documento 25](25-estabilizacion-c1-c3.md) y [PR #14 en borrador](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14). **No fusionar ni sustituir `main` sin revisión**. Los defectos #4, #6 y #7 requieren decisiones y no se alteraron.
+
+### Próxima tarea única C4 — foco de diálogos (#12)
+
+Corregir el aislamiento de teclado en setup/pase y verificarlo en Chromium real con Tab, Shift+Tab y Enter, manteniendo el pase privado. Ampliar pruebas automatizadas, comprobar regresiones y documentar resultados. **No empezar C5 ni cambios narrativos hasta cerrar C4.**
 
 ## 3. Etapas posteriores: una por vez
 
@@ -134,4 +140,4 @@ Solo cambiar la etapa activa con una decisión consciente; registrar motivo, rie
 - **Propuestas narrativas (estacionadas):** `docs/12`–`docs/17`.
 - **Defectos/decisiones por resolver:** GitHub Issues.
 
-**Próxima acción única: C1 — corrección aislada #11 (prioridad de victoria al completar muestras con IA). A6 completada con reservas; A5-02 pendiente sin bloquear.**
+**Próxima acción única: C4 — foco y navegación por teclado en setup/pase (#12). C1–C3 corregidas con CI verde, PR #14 todavía en borrador.**
