@@ -38,3 +38,11 @@ En B1–B3 se registraron `pageerror` y errores de consola: **cero errores**. En
 **C7/C7-R1 supera los cuatro escenarios browser controlados con modales de encrucijadas activos y sin errores JavaScript visibles.** El defecto estratégico H1 corregido en C7-R1 queda respaldado tanto por ocho regresiones Node (informe32) como por la ruta real del navegador B2; la excepción de victoria se comprobó con B3 y B4. No surgió un defecto nuevo que justifique parche.
 
 Se documenta este resultado **sin modificar el juego, tests, `main`, modo local ni los issues**. PR #14 continúa en borrador y #5 abierto. Recomendación como siguiente tarea **única**: evaluar los criterios de aceptación y cierre administrativo de #5 (incluido si es necesaria comprobación táctil en Android físico antes de promoción). No cerrar el issue ni fusionar unilateralmente; no iniciar otros issues o etapa D sin resolver explícitamente el cierre de esta corrección.
+
+## Decisión de aceptación sobre Android físico — 27/10/2026
+
+**Criterio indicado por el creador:** para **C7/C7-R1 y el issue #5** no es obligatorio superar una prueba en un dispositivo Android físico antes de considerar aceptable este arreglo. Los cuatro recorridos de Chromium y la suite automatizada constituyen evidencia suficiente para **proponer** la aceptación funcional de este issue, dadas las limitaciones explícitas. Esta decisión **no** equivale a afirmar que Android/TalkBack hayan sido verificados, ni elimina futuras pruebas de interfaz móvil en la hoja de ruta.
+
+**Condiciones cumplidas:** políticas C7 y C7-R1 aprobadas expresamente, regresiones rojo→verde, 303 pruebas automatizadas aprobadas (2 TODO ajenos), revisión posterior sin defectos nuevos y cuatro escenarios Chromium aprobados con modales/encrucijadas activos. **Pendiente administrativo:** autorización expresa de aceptación/cierre de #5; ningún issue se cierra ni PR se fusiona por registrar este criterio. `main` queda fuera de cambios.
+
+**Siguiente paso único recomendado:** pedir confirmación para **dar #5 por aceptado y cerrarlo administrativamente**, dejando el código solo en `fix/estabilizacion-v9-9` / PR #14 en borrador. La aceptación de un issue no equivale a publicar o fusionar la rama.
