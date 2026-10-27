@@ -283,6 +283,20 @@ No se implementó ninguna opción, no se cambió HTML/tests, no se cerró #6 y n
 
 **Siguiente única decisión:** solicitar al creador elección **A/B** y solo entonces implementar C9 con tests rojo→verde, CI y revisión Chromium.
 
+## C9/#6 — Política A aceptada, regresiones rojo→verde y Chromium, 27/10/2026
+
+**Decisión:** el creador aprobó expresamente «J1 y J2 deben confirmar su líder inicial antes de realizar las acciones que bloquean la elección». El criterio iguala a J2 con la regla existente de J1: cerrar elección del líder predeterminado en primera ronda al **gastar dado válido, realizar movimiento válido o usar carta con éxito**; no bloquear al fallar. Los otros tipos de acción antes no bloqueaban a J1 y no se redefinen. Sucesión por fallecimiento mantiene prioridad sobre líder inicial.
+
+**Red:** [commit test `ffd14ca`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/ffd14ca2b74148f1cc83692956aa373b28dedc5c), `tests/finales-lideres.test.mjs`, convierte el TODO #6 en **12 regresiones activas**. [CI 40591148076](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40591148076): **331 declaradas, 327 aprobadas, 4 fallidas, cero TODO**. Defectos reproducidos en acciones de J2 y texto UI.
+
+**Green:** [commit código `38e7ac8`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/38e7ac87832e4ca02dbf277dcc1a8acb56ce2849) en `invierno_colonia_v9_9.html`: `confirmStartingLeader()` elige flag por controlador y sustituye asignación fija de `leaderChosen=true` en `consume`, `doMove` y `playItem` solo tras éxito; se corrigió la explicación del menú. [CI 40591238120](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40591238120): **331 declaradas, 331 aprobadas, 0 fallidas, 0 TODO**.
+
+**Browser:** cinco escenarios Chromium/Playwright con botones de interfaz; J1 y J2 tras pase de teléfono, opción disponible antes de actuar, bloqueada tras dado/carta válida, conservada si el movimiento es rechazado; selección voluntaria de Ada antes de actuar. Dos pruebas en viewport móvil simulado 393×852; **cinco aprobadas, cero pageerrors**. `git hash-object` local `b5b9f2020c5abb73fd95e0f7441db088bb746d16`, mismo blob C9 GitHub. [Informe38](38-c9-lider-inicial-j2.md) recopila escenarios, límites y cambios.
+
+**Estado:** no se modificó `main` ni fusionó PR14 (abierto/draft, base `refactor/arquitectura`); issue #6 sigue abierto; falta **revisión crítica posterior** y aceptación del creador. Auditoría general de mensajes queda como pulido al final de estabilización.
+
+**Siguiente única tarea:** revisión crítica posterior C9/#6 antes de cierre administrativo.
+
 ## Siguiente tarea única
 
-**Próxima tarea única: acordar con el creador la política A o B de #6 antes de implementar C9. #4 cerrado, PR14 borrador y `main` intacta; auditoría general de avisos postergada.**
+**Próxima tarea única: revisión crítica posterior C9/#6 antes de proponer aceptación. Política A implementada y verificada (informe38), #6 abierto; PR14 draft y `main` intacta.**
