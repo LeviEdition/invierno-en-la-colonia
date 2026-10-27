@@ -222,3 +222,39 @@ test('A2-01 | nueva partida reinicia selección y bloqueo de manos sin mezclar l
  assert.deepEqual(t.state('({turn:game.turn,hands:[game.items.length,game.botItems.length],select:selectionBySide,pass:passScreenActive})'),
  {turn:'human',hands:[7,7],select:{human:0,ai:0},pass:false});
 });
+
+test('A2-01 | una curación pendiente impide terminar J1',async()=>{
+ const t=fixture();
+ t.run('game.humans[1].wounds=1;pendingHeal={actor:"h0",targets:["h1"]};');
+ await t.run('finishTurn()');
+ assert.equal(t.state('game.turn'),'human');
+ assert.equal(t.state('opened'),'healTarget');
+ assert.match(t.node('modalContent').innerHTML,/Elegí a quién atender/);
+});
+
+test('A2-01 | sucesión pendiente impide cerrar el turno',async()=>{
+ const t=fixture();
+ t.run('pendingLeader=true;pendingLeaderSide="human";');
+ await t.run('finishTurn()');
+ assert.equal(t.state('game.turn'),'human');
+ assert.equal(t.state('opened'),'leaderChoice');
+ assert.match(t.node('modalContent').innerHTML,/Elegí el líder del Jugador 1/);
+});
+
+test('A2-01 | una mordedura pendiente impide cerrar el turno',async()=>{
+ const t=fixture();
+ t.run('pendingBite={target:"h1",victims:[]};');
+ await t.run('finishTurn()');
+ assert.equal(t.state('game.turn'),'human');
+ assert.equal(t.state('opened'),'biteChoice');
+ assert.match(t.node('modalContent').innerHTML,/Propagación de mordedura|mordedura/);
+});
+
+test('A2-01 | confirmar pase de J2 reabre correctamente selección de líder pendiente',()=>{
+ const t=fixture();
+ t.run('game.turn="ai";passScreenActive=true;showPass("ai");pendingLeader=true;pendingLeaderSide="ai";');
+ t.run('confirmPass();');
+ assert.equal(t.state('opened'),'leaderChoice');
+ assert.match(t.node('modalContent').innerHTML,/Elegí el líder del Jugador 2/);
+ assert.equal(t.state('passScreenActive'),false);
+});
