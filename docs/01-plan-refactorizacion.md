@@ -71,7 +71,7 @@ Antes de comenzar una fase nueva, cerrar la anterior con evidencia y registrar u
 
 Las etapas originales C/D/E/F que aparecen debajo contienen los detalles técnicos; el [tablero operativo](18-tablero-operativo.md) determina su ejecución efectiva.
 
-## Etapa C — Primer módulo independiente
+## Detalle futuro D1 — Primer módulo independiente
 
 Extraer un componente pequeño y con pocas dependencias, probablemente el catálogo de objetos.
 
@@ -82,7 +82,7 @@ Extraer un componente pequeño y con pocas dependencias, probablemente el catál
 
 **Criterio de aceptación:** el módulo puede probarse por separado, sin alterar la partida original.
 
-## Etapa D — Motor desacoplado
+## Detalle futuro D2 — Motor desacoplado
 
 Separar progresivamente:
 - Estado de partida y creación inicial.
@@ -93,7 +93,7 @@ Separar progresivamente:
 
 Principio: **dibujar no modifica el estado del juego**.
 
-## Línea prioritaria N — Narrativa primero (diseño ya iniciado)
+## Visión narrativa (documentada, estacionada durante la auditoría)
 
 **Dirección creativa establecida:** las decisiones y sus repercusiones en personas, relaciones y conflictos son el centro del videojuego. La estrategia de recursos debe generar dilemas significativos.
 
@@ -112,11 +112,11 @@ Principio: **dibujar no modifica el estado del juego**.
 
 **Prioridad creativa no equivale a etapa activa:** la narrativa ya orienta nuestras decisiones arquitectónicas y sus propuestas quedaron documentadas. **El diseño pendiente y la implementación narrativa están estacionados hasta completar la auditoría, definir defectos, estabilizar y alcanzar una interfaz de motor suficientemente segura.** No comenzar un arco nuevo por entusiasmo mientras sigamos en A. Cualquier excepción requiere cambiar el tablero operativo de manera explícita.
 
-## Etapa E — Motor de historia y persistencia
+## Detalle futuro E — Motor de historia y persistencia
 
 Una vez validado el arco piloto, extender el motor narrativo para registrar hechos, promesas, relaciones, arcos, consecuencias diferidas y versiones de guardado. El sistema deberá usar las mismas reglas de estado que las acciones de tablero y alimentar la presentación 2D.
 
-## Etapa F — Presentación 2D y red
+## Detalle futuro F — Presentación 2D y red
 
 - Añadir escenas isométricas como una capa visual independiente.
 - Diseñar sprites y recursos reutilizables según una biblia visual.
