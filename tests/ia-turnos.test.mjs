@@ -147,3 +147,5 @@ test('IA: derrota por tiempo tras la última ronda',async()=>{
  const t=fixture();t.exec('game.turn="human";game.max=1;game.botItems=[];game.botDice=[];game.food=20;');await t.finish();
  assert.deepEqual(t.val('({round:game.round,turn:game.turn,ended:game.ended})'),{round:2,turn:'end',ended:true});
 });
+// Estrategia pendiente: hay cartas de herramientas en equipo que la IA no ofrece a la crisis.
+test.todo('IA considera contribuir herramientas equipadas cuando la crisis las requiere (issue #5)');
