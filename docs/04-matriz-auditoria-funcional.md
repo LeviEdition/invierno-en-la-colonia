@@ -72,6 +72,10 @@ Tras la aprobación expresa del creador, los subsistemas **07 (búsqueda), 13 (c
 
 **Alcance de evidencia:** escenarios de estado preparado y temporizadores acortados; HTML inyectado en Chromium por `set_content` debido a bloqueo de `file://`; no Android físico, TalkBack, hosting ni partidas completas aleatorias. Subsistemas 07/13/15 reciben verificación de navegador **en cuatro casos**, sin certificar cobertura completa. CI previo [40577893140](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40577893140) sigue en 305/303/0/2. Siguiente tarea única: aceptación administrativa de #5; no cerrar o fusionar automáticamente.
 
+## Aceptación funcional de C7/C7-R1 y cierre de #5 — 27/10/2026
+
+**Estado actual tras autorización del creador:** [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5) **closed/completed**; [comentario con evidencias](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5#issuecomment-6453435186). La selección de herramientas de la IA y su aporte en la crisis (#5) quedan **corregidos y aceptados en rama** con ocho regresiones C7-R1, diez C7, [CI 40582012525](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40582012525): 303 aprobadas, 0 fallidas y 2 TODO (#4/#6), más cuatro recorridos controlados Chromium ([informe34](34-validacion-navegador-c7-r1.md)). Android físico no es requisito de aceptación de #5, aunque su comportamiento no fue certificado. **Este cierre NO significa que código haya llegado a `main`;** PR #14 sigue draft y sin fusión. La tabla histórica inicial de defectos más abajo conserva el estado **en el momento de la auditoría original**, no debe leerse como inventario actual. Próxima decisión propuesta: #4, reglas de transferencia entre grupos; no iniciado.
+
 ## Estados de auditoría
 
 - **Parcialmente probado (P):** hay pruebas automatizadas, pero faltan escenarios importantes.
