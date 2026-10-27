@@ -119,14 +119,13 @@ test('A2-01 | consumir dado de J2 no cambia reserva de J1',async()=>{
  assert.deepEqual(t.state('({human:game.dice,bot:game.botDice})'),{human:[6],bot:[5]});
 });
 
-test('A2-01 | comida compartida mejora dado de J2 cuando J1 tiene cero dados',async()=>{
+test('C3 #3 | J2 puede mejorar su propio dado aunque J1 no tenga ninguno',async()=>{
  const t=fixture();
  t.run('game.dice=[];game.botDice=[3];game.food=7;');
  await passToJ2(t);
  assert.equal(t.state('playable()'),true);
  t.run('boostDie();');
- // Caracterización del fallo conocido #3: la comprobación lee game.dice (J1).
- assert.deepEqual(t.state('({human:game.dice,bot:game.botDice,food:game.food})'),{human:[],bot:[3],food:7});
+ assert.deepEqual(t.state('({human:game.dice,bot:game.botDice,food:game.food})'),{human:[],bot:[4],food:6});
 });
 
 test('A2-01 | una encrucijada de ronda del J2 permanece pendiente bajo el pase',async()=>{
@@ -257,4 +256,17 @@ test('A2-01 | confirmar pase de J2 reabre correctamente selección de líder pen
  assert.equal(t.state('opened'),'leaderChoice');
  assert.match(t.node('modalContent').innerHTML,/Elegí el líder del Jugador 2/);
  assert.equal(t.state('passScreenActive'),false);
+});
+
+test('C3 #3 | J2 sin dados no puede consumir comida aunque J1 tenga dados',async()=>{
+ const t=fixture();t.run('game.dice=[5];game.botDice=[];game.food=7;');
+ await passToJ2(t);t.run('boostDie();');
+ assert.deepEqual(t.state('({human:game.dice,bot:game.botDice,food:game.food})'),{human:[5],bot:[],food:7});
+});
+test('C3 #3 | mejora del J2 respeta el límite de valor 6 y comida disponible',async()=>{
+ const t=fixture();t.run('game.dice=[];game.botDice=[6];game.food=7;');
+ await passToJ2(t);t.run('boostDie();');
+ assert.deepEqual(t.state('({bot:game.botDice,food:game.food})'),{bot:[6],food:7});
+ t.run('game.botDice=[5];game.food=0;boostDie();');
+ assert.deepEqual(t.state('({bot:game.botDice,food:game.food})'),{bot:[5],food:0});
 });
