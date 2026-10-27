@@ -13,7 +13,7 @@
 - **Problemas registrados:** [#2](https://github.com/LeviEdition/invierno-en-la-colonia/issues/2), [#3](https://github.com/LeviEdition/invierno-en-la-colonia/issues/3), [#4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4), [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5), [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6), [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) y [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8), [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9), [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10) y [#11](https://github.com/LeviEdition/invierno-en-la-colonia/issues/11), [#12](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12) y [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13). El #4 requiere resolver una ambigüedad de reglas, no presumir que es un bug.
 - **Narrativa:** visión, objetivos, campañas y bocetos registrados en `docs/12`–`docs/17`. Son **propuestas y decisiones de diseño**, no código ni campañas implementadas.
 
-## 2. Etapa activa: A — Completar auditoría funcional de V9.9
+## 2. Estado de A: cierre A6 documentado con reservas; siguiente etapa C1 tras B1
 
 **Objetivo:** saber qué hace realmente el juego, qué falla y qué no se ha probado, antes de intervenir sus reglas o extraer módulos.
 
@@ -25,8 +25,8 @@
 | A2 | Modo de dos jugadores en el mismo dispositivo | Dados/manos separados, pase de turno, interacciones y bloqueo de datos privados, casos pendientes | **Cerrado como caracterización automatizada (20 pruebas); visual pendiente A5** |
 | A3 | Interfaz, modales y secuencias de acciones | Pruebas de decisiones, cierre/apertura de diálogos, sucesión, mordeduras, esperas de IA y pantallas de pase | **21 pruebas automatizadas cerradas; interfaz real pendiente A5** |
 | A4 | Integración de partidas completas | Reproducir al menos una victoria y una derrota, modos local e IA, con finales y casos excepcionales | **23 pruebas automatizadas cerradas, incluidas partidas dirigidas de 10 rondas; naturalidad/balance pendientes** |
-| **A5** | **Verificación en navegador real y móvil** | Lista manual/evidencia de escritorio y Android, táctil, desplazamiento horizontal, accesibilidad y rendimiento básico | **A5-01 Chromium y emulación completado; ACTIVO: A5-02 Android físico** |
-| A6 | Cierre de cobertura | Matriz de 21 subsistemas actualizada con evidencia y límites explícitos; lista priorizada de defectos sin resolver | Pendiente |
+| A5 | Verificación en navegador real y móvil | Lista manual/evidencia de escritorio y Android, táctil, desplazamiento horizontal, accesibilidad y rendimiento básico | **A5-01 completado; A5-02 físico diferido y documentado (no aprobado)** |
+| **A6** | **Cierre de cobertura** | Matriz de 21 subsistemas actualizada con evidencia y límites explícitos; lista priorizada de defectos sin resolver | **Documentado con reservas en [24](24-cierre-auditoria-y-prioridades.md). Usuario autoriza pasar a ajustes.** |
 
 **Importante:** A2 y A3 pueden compartir escenarios; no marcar una interacción visual como validada solo por probar funciones con DOM simulado.
 
@@ -52,11 +52,21 @@
 
 **Defectos nuevos confirmados:** [#12](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12), foco de teclado sale de setup/pase; [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13), dados flotantes de 26×25 px para uso táctil. No se corrigieron. **Las pruebas de móvil fueron emuladas: no Android real.**
 
-### Tarea siguiente A5-02 — Prueba en Android físico
+### A5-02 — Verificación física diferida; no ejecutada
 
 **Alcance:** ejecutar [guía manual](23-guia-prueba-android-a5.md) en al menos un teléfono Android. Validar apertura, scroll vertical, acciones, dados, modales, mano del segundo jugador, pase privado, orientación y respuesta táctil. Registrar observado/esperado, modelo, navegador y capturas de fallos si se producen.
 
-**Criterio de terminado:** observaciones obtenidas **de un dispositivo físico** y hallazgos/incógnitas registrados. No marcar A5 como terminada solamente con emulación. Después, **A6**, cierre de matriz y priorización del conjunto de defectos.
+**Estado:** sin checklist de Android físico. El usuario indica que ha jugado repetidas veces con buen funcionamiento y autoriza avanzar. Se conserva como **riesgo pendiente**; no se afirma dispositivo, navegador ni pasos verificables. [Guía futura](23-guia-prueba-android-a5.md).
+
+### A6 — Lista de prioridades documentada; B1 y C1 habilitadas
+
+**Informe de cierre y priorización:** [24 — Cierre de auditoría V9.9](24-cierre-auditoria-y-prioridades.md). 238 pruebas ejecutables verdes, 3 TODO y 12 incidencias registradas (#2–#13), incluida una regla genuinamente ambigua (#4). A5-02 queda pendiente y no bloquea una **rama aislada** de correcciones por autorización expresa del creador.
+
+**B1 (clasificación):** defectos de expectativa inequívoca #11, #2 y #3 pueden corregirse sin crear reglas nuevas. #4 y #6 precisan acordar comportamiento. El resto conserva clasificación y orden sugerido en el documento 24.
+
+### Tarea única siguiente C1 — Corregir verificación de victoria de IA (#11)
+
+Crear `fix/estabilizacion-v9-9`, **sin modificar `main` ni la rama de auditoría**. Test de regresión que espere victoria inmediata cuando la IA cumple la cantidad de muestras; cambio acotado de lógica; suite verde y pruebas de caso límite moral cero. **Después de C1**, C2 será #2, pero no mezclar ambos en un commit.
 
 ## 3. Etapas posteriores: una por vez
 
@@ -109,9 +119,9 @@ Los detalles están en `docs/12`–`docs/17`. **No abrir nuevos frentes para amp
 
 ## 6. Regla para desviaciones y cambio de prioridad
 
-Si surge una idea mientras estamos auditando:
+Si surge una idea fuera de la tarea activa:
 
-> «Tiene sentido discutirla, pero estamos en **A2-01**. La registro en el estacionamiento y seguimos con la auditoría. ¿Querés cambiar explícitamente la prioridad?»
+> «Es una idea para la hoja de ruta, pero ahora estamos en **C1**. La registro y seguimos con la estabilización. ¿Querés cambiar explícitamente la prioridad?»
 
 Solo cambiar la etapa activa con una decisión consciente; registrar motivo, riesgos, estado de la tarea interrumpida y cómo retomarla. No es necesario prohibir las conversaciones creativas: **conversar no equivale a cambiar la etapa ni a comenzar a programar**.
 
@@ -124,4 +134,4 @@ Solo cambiar la etapa activa con una decisión consciente; registrar motivo, rie
 - **Propuestas narrativas (estacionadas):** `docs/12`–`docs/17`.
 - **Defectos/decisiones por resolver:** GitHub Issues.
 
-**Próxima acción única: A5-02, comprobación manual en Android físico. A5-01 Chromium y emulación completadas; A6 queda en espera.**
+**Próxima acción única: C1 — corrección aislada #11 (prioridad de victoria al completar muestras con IA). A6 completada con reservas; A5-02 pendiente sin bloquear.**
