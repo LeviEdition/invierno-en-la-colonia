@@ -86,6 +86,12 @@ Se reemplazó el `test.todo` del issue #4 por **14 regresiones ejecutables** en 
 
 [Informe36](36-revision-critica-c8.md): auditoría de `canReceiveTransfer`, `startTransfer`, `chooseTransfer`, `pendingTransfer.itemRef`, turno/pase y 14 regresiones; **no se identificaron defectos nuevos confirmados** en C8. **Seis controles adicionales Chromium** (destino IA forzado, receptor que pasa a duplicar categoría, ítem cambiado, donante muerto, pase activo, destino con categoría complementaria) aprobaron sin excepciones JS. Sumados a los 3 anteriores del informe35: **9 pruebas de navegador acotadas**; `npm test` remoto del código auditado 318 declaradas, **317 aprobadas, 0 fallidas, 1 TODO (#6)** ([CI 40586682191](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40586682191)). **Limitaciones:** no Android/TalkBack, no partida aleatoria completa; la sincronización de otros modales queda en revisión transversal P3, sin bug demostrado de #4. Solo documentación en esta revisión. **Issue #4 permanece abierto hasta su aceptación explícita**, PR14 draft, `main` intacta.
 
+## Estado operativo al reanudar C9/#6 — 27/10/2026
+
+Con permiso del creador, [issue #4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4) **cerrado/completed** luego de C8, 14 regresiones, validación Chromium y [revisión crítica 36](36-revision-critica-c8.md). La corrección permanece solo en `fix/estabilizacion-v9-9` y PR14 draft, sin integración en `main`.
+
+El siguiente defecto funcional real es [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6): durante turno local J2, las acciones `consume()`, `doMove()` y `playItem()` fijan el flag inicial de líder de **J1** y dejan `localLeaderChosen` inalterado. Código e interfaz inspeccionados y [alternativas A/B comentadas en el issue](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6#issuecomment-6454546559). **A propuesta:** bloquear nueva elección de líder inicial tras primera acción para ambos, preservando la regla previa de J1; **B:** permitir cambiar durante toda ronda 1 para ambos. **No decidido ni corregido:** se espera criterio explícito del creador, el único `test.todo` vigente sigue siendo #6. El apartado histórico de esta matriz corresponde a la auditoría original y no muestra necesariamente estados actuales.
+
 ## Estados de auditoría
 
 - **Parcialmente probado (P):** hay pruebas automatizadas, pero faltan escenarios importantes.
