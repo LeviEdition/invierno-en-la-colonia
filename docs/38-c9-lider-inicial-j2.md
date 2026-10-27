@@ -51,3 +51,11 @@ Se capturaron vistas locales de J2 antes y después de confirmar mediante dado (
 **Estado:** C9 implementada con CI verde y cinco escenarios Chromium aprobados, **pero falta revisión crítica posterior independiente**, aceptación del creador y eventual cierre administrativo del issue #6. PR #14 sigue draft; `main` sin cambios. La auditoría de avisos sigue estacionada para pulido al final de la Etapa C.
 
 **Próximo paso único recomendado:** revisión crítica posterior de C9/#6 (sin cerrar issue, sin fusionar PR, sin abrir otro issue de desarrollo).
+
+## Continuidad — Revisión crítica posterior y corrección C9-R1 (27/10/2026)
+
+La revisión descubrió un defecto real no cubierto por las 12 regresiones originales: si el líder de J2 moría durante el turno de J1, **J1 podía elegir al sucesor de J2** sin pasar el dispositivo. Se reprodujo en Chromium, se agregaron **5 pruebas C9-R1** (rojo: [40593244756](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40593244756), 331 aprobadas / 5 fallidas) y se aplicó el guardado por dueño y turno en `leaderChoiceReady()`, `chooseLeader()`, `finishTurn()`, `confirmPass()`, acciones y modales ([commit `e84db6a`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/e84db6ae088f314e232e377c15cda37683cce19b)).
+
+**Verde:** [40593438595](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40593438595): **336 declaradas, 336 aprobadas, 0 fallidas, 0 TODO**. Tres nuevos escenarios de Chromium con el HTML exacto verificado comprobaron pase real J1→J2 y elección manual solo por J2, elección inmediata al morir líder propio y sucesión automática de IA; sin errores JS. **La elección manual de líder humano se conserva**, en vez de seleccionar necesariamente al más influyente.
+
+[Informe39](39-revision-critica-c9-r1.md) es la **fuente vigente** para la evaluación posterior a C9 y sus límites. Este informe38 documenta la entrega **anterior** al descubrimiento de R1. El issue #6 sigue abierto pendiente de consentimiento para cierre administrativo, PR14 continúa abierto/draft y `main` no se modificó.
