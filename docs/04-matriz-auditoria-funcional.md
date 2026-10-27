@@ -2,9 +2,13 @@
 
 **Propósito:** revisar exhaustivamente lo que YA existe en Invierno en la Colonia antes de extraer módulos del motor. No confundir funcionalidades previstas (2D isométrico, historias persistentes, modo online) con funcionalidades ya implementadas.
 
-**Tablero de ejecución:** [18 — Tablero operativo](18-tablero-operativo.md). **Etapa activa:** A, auditoría V9.9; **siguiente tarea A5-02:** prueba manual en Android físico (A5-01 ejecutada en Chromium y emulación táctil; A6 pendiente). Los documentos de narrativa son diseño futuro y no cambian esta prioridad.
+**Tablero de ejecución:** [18 — Tablero operativo](18-tablero-operativo.md). **Etapa activa:** A, auditoría V9.9; **A6 cerrada con reservas en [informe 24](24-cierre-auditoria-y-prioridades.md):** Android físico no validado, pero el creador autoriza continuar a C1 de estabilización. Los 21 subsistemas quedaron clasificados; V9.9 estable intacta. Los documentos de narrativa son diseño futuro y no cambian esta prioridad.
 
 **Fecha de inicio:** 27/10/2026 · **Rama:** `refactor/arquitectura` · **Base:** `invierno_colonia_v9_9.html`
+
+## Cierre de cobertura A6 (con limitaciones documentadas)
+
+Los **21 subsistemas** se mantienen clasificados: 01–19 con cobertura parcial (incluidos defectos abiertos en varios); **20–21 no implementados**, fuera del alcance de V9.9. En [el informe final](24-cierre-auditoria-y-prioridades.md) figuran las 12 incidencias (#2–#13), orden propuesto y excepciones. Se aceptó **continuar sin checklist físico A5-02** por autorización explícita del creador tras partidas satisfactorias, **sin declarar que la prueba móvil física ocurrió**. Siguiente tarea **C1/#11**, en rama separada.
 
 ## Estados de auditoría
 
