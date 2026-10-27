@@ -212,6 +212,18 @@ El creador indicó que **no considera necesaria una prueba obligatoria en Androi
 
 **Próxima decisión única:** solicitar consentimiento para considerar #5 aceptado y cerrarlo administrativamente, **sin fusionar PR14 ni publicar la versión**. Cerrar el seguimiento no modifica por sí solo el código estable.
 
+## Cierre administrativo del issue #5 — 27/10/2026
+
+**Permiso:** en respuesta a «¿Aprobás que cierre el issue #5?» el creador contestó «Continúa»; se aplicó exclusivamente al cierre acordado, sin presumir fusión, integración o autorización de empezar otro issue.
+
+**Acción efectuada:** agregado [comentario técnico de cierre 6453435186](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5#issuecomment-6453435186) documentando política C7, prioridad C7-R1, pruebas rojo→verde, último CI verde, revisión, escenarios Chromium, límites y Android no obligatorio. [Issue #5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5) **cerrado con motivo `completed`**, observado `closed_at=2026-10-27T21:00:41Z`. **No se modificó** código, tests, estructura de ramas ni otros issues.
+
+**Evidencia que habilitó cierre:** [informe30](30-correccion-c7-ia-herramientas.md), [informe32](32-correccion-c7-r1-prioridad-botin.md), [informe33](33-revision-critica-c7-r1.md), [informe34](34-validacion-navegador-c7-r1.md), [CI 40582012525](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40582012525): **305 declaradas, 303 aprobadas, 0 fallidas, 2 TODO**. Cuatro escenarios de Chromium aprobados con encrucijadas y elección de botín. Android físico opcional para el issue; no hay certificación en dispositivo real.
+
+**Control de integración:** `main=d9068f4aa8d3a10bbbf1e0a8a2527744cc6952cb` sin modificación. [PR #14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14) sigue **abierto/draft**, base `refactor/arquitectura` y cabeza `fix/estabilizacion-v9-9`. Cerrar #5 **no incorpora código a `main`**.
+
+**Próximo bloque único propuesto, no iniciado:** [#4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4), decidir la norma para transferir herramientas/armas entre supervivientes de distintos grupos. Hay un `test.todo` de contrato; primero acordar regla y luego registrar pruebas, sin inventar diseño ni saltar a cambios de código. Issue #6 conserva su TODO independiente.
+
 ## Siguiente tarea única
 
-**Solicitar autorización de aceptación y cierre administrativo de #5; Android físico optativo para este issue, PR14 sin fusionar y `main` intacta.** R1/R2 ya corregidos. Actualizar tablero y registro al cerrar cada revisión; no fusionar ni iniciar otro defecto.
+**Proponer como siguiente tarea única la definición de reglas del issue #4 (transferencias entre grupos), pendiente de autorización. #5 cerrado/completed; PR14 borrador y `main` intacta.** R1/R2 ya corregidos. Actualizar tablero y registro tras cada revisión.
