@@ -147,5 +147,65 @@ test('IA: derrota por tiempo tras la última ronda',async()=>{
  const t=fixture();t.exec('game.turn="human";game.max=1;game.botItems=[];game.botDice=[];game.food=20;');await t.finish();
  assert.deepEqual(t.val('({round:game.round,turn:game.turn,ended:game.ended})'),{round:2,turn:'end',ended:true});
 });
-// Estrategia pendiente: hay cartas de herramientas en equipo que la IA no ofrece a la crisis.
-test.todo('IA considera contribuir herramientas equipadas cuando la crisis las requiere (issue #5)');
+// C7/#5: prioridad cooperativa al cerrar las acciones IA (antes de colonia).
+// Los aportes humanos anteriores ya cuentan; el humano no puede aportar después de la IA.
+test('C7: IA completa 1/2 aportado por humano usando equipo propio',async()=>{
+ const t=fixture();stay(t);
+ t.exec('game.crisis={type:"herramienta",need:2,given:1,contributions:["herramienta"],fail:"moral"};game.botItems=[];game.botDice=[];game.bots[0].equipment=[catalog.create("crowbar")];');
+ await t.ai();
+ assert.deepEqual(t.val('({given:game.crisis.given,contributions:game.crisis.contributions,eq:game.bots[0].equipment.length})'),{given:2,contributions:['herramienta','herramienta'],eq:0});
+});
+test('C7: mano antes de equipo, sin gastar herramientas equipadas si la mano completa',async()=>{
+ const t=fixture();stay(t);
+ t.exec('game.crisis={type:"herramienta",need:2,given:0,contributions:[],fail:"moral"};game.botItems=["crowbar","flashlight","repairkit"].map(id=>catalog.create(id));game.bots.forEach(p=>p.equipment=[catalog.create("crowbar")]);game.botDice=[];');
+ await t.ai();
+ assert.deepEqual(t.val('({given:game.crisis.given,hand:game.botItems.map(x=>x.cardId),eq:game.bots.map(p=>p.equipment.map(x=>x.cardId))})'),{given:2,hand:['repairkit'],eq:[['crowbar'],['crowbar'],['crowbar']]});
+});
+test('C7: mano y equipo se combinan y aportan exactamente lo necesario',async()=>{
+ const t=fixture();stay(t);
+ t.exec('game.crisis={type:"herramienta",need:2,given:0,contributions:[],fail:"moral"};game.botItems=[catalog.create("flashlight")];game.bots[0].equipment=[catalog.create("crowbar")];game.bots[1].equipment=[catalog.create("repairkit")];game.bots[2].equipment=[catalog.create("flashlight")];game.botDice=[];');
+ await t.ai();
+ assert.deepEqual(t.val('({given:game.crisis.given,hand:game.botItems.length,eq:game.bots.map(p=>p.equipment.map(x=>x.cardId))})'),{given:2,hand:0,eq:[[],['repairkit'],['flashlight']]});
+});
+test('C7: si la IA no puede completar 0/2 conserva la única herramienta',async()=>{
+ const t=fixture();stay(t);
+ t.exec('game.crisis={type:"herramienta",need:2,given:0,contributions:[],fail:"moral"};game.botItems=[catalog.create("repairkit")];game.botDice=[];');
+ await t.ai();
+ assert.deepEqual(t.val('({given:game.crisis.given,hand:game.botItems.length,eq:game.bots.map(p=>p.equipment.map(x=>x.cardId))})'),{given:0,hand:0,eq:[['repairkit'],[],[]]});
+});
+test('C7: crisis completa no recibe aportes extra ni bonus de moral',async()=>{
+ const t=fixture();stay(t);
+ t.exec('game.crisis={type:"herramienta",need:2,given:2,contributions:["herramienta","herramienta"],fail:"moral"};game.botItems=[catalog.create("crowbar")];game.bots[0].equipment=[catalog.create("repairkit")];game.botDice=[];');
+ await t.ai();
+ assert.deepEqual(t.val('({given:game.crisis.given,hand:game.botItems.length,eq:game.bots.map(p=>p.equipment.map(x=>x.cardId))})'),{given:2,hand:0,eq:[['repairkit'],['crowbar'],[]]});
+});
+test('C7: herramienta hallada y equipada en búsqueda se considera antes de colonia',async()=>{
+ const t=fixture();stay(t);
+ t.exec('game.crisis={type:"herramienta",need:2,given:0,contributions:[],fail:"moral"};game.botItems=[];game.botDice=[6];game.bots[0].loc=2;game.bots[1].equipment=[catalog.create("repairkit")];game.decks[2]=[catalog.create("crowbar")];');
+ await t.ai();
+ assert.deepEqual(t.val('({given:game.crisis.given,eq:game.bots.map(p=>p.equipment.map(x=>x.cardId)),dice:game.botDice})'),{given:2,eq:[[],[],[]],dice:[]});
+});
+test('C7: orden estable de sacrificio por orden de supervivientes de IA',async()=>{
+ const t=fixture();stay(t);
+ t.exec('game.crisis={type:"herramienta",need:2,given:0,contributions:[],fail:"moral"};game.botItems=[];game.botDice=[];game.bots[0].equipment=[catalog.create("crowbar")];game.bots[1].equipment=[catalog.create("repairkit")];game.bots[2].equipment=[catalog.create("flashlight")];');
+ await t.ai();
+ assert.deepEqual(t.val('({given:game.crisis.given,eq:game.bots.map(p=>p.equipment.map(x=>x.cardId))})'),{given:2,eq:[[],[],['flashlight']]});
+});
+test('C7: nunca usa equipo ni mano humana; excluye equipo de supervivientes IA muertos',async()=>{
+ const t=fixture();stay(t);
+ t.exec('game.crisis={type:"herramienta",need:2,given:0,contributions:[],fail:"moral"};game.botItems=[];game.botDice=[];game.items=[catalog.create("repairkit")];game.humans[0].equipment=[catalog.create("crowbar")];game.bots[0].equipment=[catalog.create("flashlight")];game.bots[1].dead=true;game.bots[1].equipment=[catalog.create("repairkit")];');
+ await t.ai();
+ assert.deepEqual(t.val('({given:game.crisis.given,humanHand:game.items.map(x=>x.cardId),humanEq:game.humans[0].equipment.map(x=>x.cardId),botEq:game.bots.map(p=>p.equipment.map(x=>x.cardId))})'),{given:0,humanHand:['repairkit'],humanEq:['crowbar'],botEq:[['flashlight'],['repairkit'],[]]});
+});
+test('C7: con victoria previa la IA no dona herramientas al pasar a fin de partida',async()=>{
+ const t=fixture();stay(t);
+ t.exec('game.crisis={type:"herramienta",need:2,given:0,contributions:[],fail:"moral"};game.samples=game.goal.need-1;game.botItems=[catalog.create("notes")];game.bots[0].equipment=[catalog.create("crowbar")];game.bots[1].equipment=[catalog.create("repairkit")];game.botDice=[];');
+ await t.ai();
+ assert.deepEqual(t.val('({ended:game.ended,given:game.crisis.given,eq:game.bots.map(p=>p.equipment.map(x=>x.cardId))})'),{ended:true,given:0,eq:[['crowbar'],['repairkit'],[]]});
+});
+test('C7: contribuciones de IA se procesan antes de colonia y evitan penalización',async()=>{
+ const t=fixture();stay(t);
+ t.exec('game.turn="human";game.crisis={type:"herramienta",need:2,given:1,contributions:["herramienta"],fail:"moral"};game.botItems=[];game.bots[0].equipment=[catalog.create("crowbar")];game.botDice=[];game.food=20;');
+ await t.finish();
+ assert.deepEqual(t.val('({round:game.round,morale:game.morale,eq:game.bots[0].equipment.length})'),{round:2,morale:9,eq:0});
+});
