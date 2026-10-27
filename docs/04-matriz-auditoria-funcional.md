@@ -56,6 +56,12 @@ Los subsistemas **07 (búsquedas), 08 (objetos), 13 (crisis) y 15 (IA)** ganan c
 
 [Informe31](31-revision-critica-c7.md): verificados código, diez regresiones y [CI sobre `9907cdb3`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40572758503) (**297 declaradas / 295 aprobadas / 0 fallidas / 2 TODO**). La entrega final de herramientas desde mano/equipo satisface la política C7 acotada por inspección. Subsistemas 07 y 15 mantienen **cobertura parcial**: H1/P2, con `beginSearch()`, revela que la elección de muestra (puntuación 10) sobre herramienta (3) puede impedir completar una crisis salvable; aún no hay regresión dinámica de ese escenario. H2: reevaluación tras búsquedas no implementada para crisis de comida/medicina/combustible (límite preexistente, sin cambio dentro de #5). No se alteraron pruebas ni motor en esta revisión; no CI nuevo de comportamiento. Tarea posterior única: decidir política acotada de elección de botín C7-R1; Android y navegador real siguen pendientes.
 
+## Actualización C7-R1 (#5) — Selección de botín condicionada por crisis, 27/10/2026
+
+Tras la aprobación expresa del creador, los subsistemas **07 (búsqueda), 13 (crisis), 15 (IA) y 17 (victoria inmediata)** cuentan con ocho regresiones adicionales en `tests/ia-turnos.test.mjs`. Cuando una herramienta revelada completa la crisis con recursos de IA y contribuciones humanas anteriores, la IA la prefiere. Se preserva una muestra que completa victoria de objetivo general (incluida la habilidad de investigador); la puntuación normal sigue vigente cuando la herramienta no completa o ya existen recursos suficientes. **CI de `f1e75ed`:** [40576075140](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40576075140), **305 declaradas, 303 aprobadas, 0 fallidas y 2 TODO** (#4/#6); tres fallos de botín anteriores reproducidos en [40575929242](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40575929242). [Informe32](32-correccion-c7-r1-prioridad-botin.md).
+
+**Límites:** cobertura aún parcial, sin búsqueda dirigida por localidades, sin cambio de crisis de otros tipos, sin Chromium/Android/TalkBack recientes ni balance demostrado. Revisión crítica posterior de C7-R1 pendiente; `main` intacta, PR14 en borrador, #5 abierto. Esta actualización no altera los estados *históricos iniciales* de la tabla de auditoría A.
+
 ## Estados de auditoría
 
 - **Parcialmente probado (P):** hay pruebas automatizadas, pero faltan escenarios importantes.
