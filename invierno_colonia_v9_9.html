@@ -1106,10 +1106,45 @@ async function botTurn(){
   verify();await pause();
  }
 }
+// C4/#12: el inicio y el pase son diálogos modales; no deben exponer el tablero por teclado.
+function handoverDialog(){
+ const pass=document.getElementById('passScreen'),setup=document.getElementById('setupScreen');
+ return pass&&!pass.hidden?pass:setup&&!setup.hidden?setup:null;
+}
+function focusHandover(dialog){dialog?.querySelector?.('button:not([disabled])')?.focus?.();}
+function syncHandoverAccessibility(){
+ const dialog=handoverDialog();
+ if(document.body?.children){
+  for(const child of document.body.children){
+   if(child.tagName!=='SCRIPT')child.inert=!!dialog&&child!==dialog;
+  }
+ }
+ if(dialog)focusHandover(dialog);
+}
+function returnFocusAfterHandover(){
+ const modal=document.getElementById('backdrop');
+ if(modal?.classList?.contains('open'))modal.querySelector?.('button')?.focus?.();
+ else document.getElementById('floatingActions')?.focus?.();
+}
+document.addEventListener('DOMContentLoaded',syncHandoverAccessibility);
+document.addEventListener('focusin',e=>{
+ const dialog=handoverDialog();
+ if(dialog&&!dialog.contains(e.target))focusHandover(dialog);
+},true);
+document.addEventListener('keydown',e=>{
+ if(e.key!=='Tab')return;
+ const dialog=handoverDialog();if(!dialog)return;
+ const buttons=[...dialog.querySelectorAll('button:not([disabled])')].filter(el=>el.getClientRects().length);
+ if(!buttons.length){e.preventDefault();return;}
+ const first=buttons[0],last=buttons[buttons.length-1],focused=document.activeElement;
+ if(!dialog.contains(focused)||(e.shiftKey&&focused===first)||(!e.shiftKey&&focused===last)){
+  e.preventDefault();(e.shiftKey?last:first).focus();
+ }
+},true);
 function showSetup(){
  if(aiRunning)return;
  hide();document.getElementById('setupScreen').hidden=false;passScreenActive=true;
- toggleFab(false);
+ toggleFab(false);syncHandoverAccessibility();
 }
 function startGame(mode){
  if(mode!=='ai'&&mode!=='local')return;
@@ -1117,7 +1152,7 @@ function startGame(mode){
  document.getElementById('setupScreen').hidden=true;
  document.getElementById('passScreen').hidden=true;
  passScreenActive=false;
- create();paint();
+ create();paint();syncHandoverAccessibility();returnFocusAfterHandover();
 }
 function showPass(side){
  if(game.mode!=='local'||game.ended)return;
@@ -1125,14 +1160,15 @@ function showPass(side){
  document.getElementById('passTitle').textContent='Turno del '+controls.display(side);
  document.getElementById('passDescription').textContent='Pasale el dispositivo al '+controls.display(side).toLowerCase()+'. Tocá «Comenzar turno» cuando esté listo.';
  el.hidden=false;passScreenActive=true;
- toggleFab(false);
+ toggleFab(false);syncHandoverAccessibility();
 }
 function confirmPass(){
  document.getElementById('passScreen').hidden=true;
  passScreenActive=false;
- paint();
+ syncHandoverAccessibility();paint();
  if(game.crossPending)show('crossroads');
  else if(pendingLeader)show('leaderChoice');
+ returnFocusAfterHandover();
 }
 async function finishTurn(){
  if(game.ended||aiRunning)return;
