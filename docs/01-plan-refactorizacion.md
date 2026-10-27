@@ -86,9 +86,13 @@ Principio: **dibujar no modifica el estado del juego**.
 - [x] Escribir visión narrativa persistente: `docs/12-vision-narrativa-persistente.md`.
 - [x] Preparar un ejemplo de arco conectado (no canon): `docs/13-arco-piloto.md`.
 - [ ] Conversar con el usuario el tono, el conflicto principal y las consecuencias del arco piloto.
+- [x] Acordar campañas de duración variable, con hitos narrativos integrados a los recursos mecánicos y condición inicial de victoria; especificación: `docs/16-progresion-narrativa-mecanica.md`.
+- [ ] Mapear para la campaña piloto el progreso de historia, los recursos requeridos, las rutas alternativas y los bloqueos posibles.
 - [ ] Aprobar el modelo mínimo de estado narrativo serializable y efectos.
 - [ ] Implementar **un solo arco vertical** con decisiones diferenciadas y repercusiones a varias rondas, con pruebas, en una rama separada y sin cambiar la V9.9 estable.
 - [ ] Comprobar persistencia, muerte de actores, reactivación, continuidad y finales variables.
+
+**Principio actualizado:** la narrativa **no es opcional para ganar la campaña**. Atravesar la trama principal y obtener recursos mecánicos son requisitos interrelacionados desde la carta inicial, aunque las rutas y los epílogos cambien. Algunas campañas serán más cortas y mecánicas, otras más largas y narrativas. Las historias secundarias independientes no deben bloquear la victoria.
 
 La línea narrativa avanzará **junto con** la refactorización, no como contenido cosmético agregado al final. Su integración técnica comenzará cuando esté aprobado el diseño y exista un contrato mínimo fiable entre reglas e historias.
 
