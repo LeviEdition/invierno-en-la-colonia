@@ -19,7 +19,7 @@
 
 Código y pruebas subidos en [d4a6b3f](https://github.com/LeviEdition/invierno-en-la-colonia/commit/d4a6b3f45dc5c2563420980acf436a15e694775a); documentación de entrega en [64dcc2c](https://github.com/LeviEdition/invierno-en-la-colonia/commit/64dcc2c90714a5eab6c8dd1e1b4bd3d10d814dd3). Al revisar, la rama y el [PR #14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14) apuntan a `64dcc2c`; está abierto, en borrador y con base `refactor/arquitectura`, sin revisiones formales registradas. `main` sigue en `d9068f4` y conserva el blob estable `4ebaedad13d63c7a6762c524a52c0dd9695687b1`. Sin fusión, cierre de issues ni publicación de versión.
 
-**CI remoto confirmado:** [código `d4a6b3f`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40552155171) y [entrega `64dcc2c`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40552240429), ambos `completed/success`. Los logs de la entrega confirman 275 declaradas, 272 aprobadas, 0 fallidas/canceladas/omitidas y 3 TODO. La revisión del código del PR sigue pendiente: CI verde no equivale a aprobación.
+**CI remoto confirmado:** [código `d4a6b3f`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40552155171) y [entrega `64dcc2c`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40552240429), ambos `completed/success`. Los logs de la entrega confirman 275 declaradas, 272 aprobadas, 0 fallidas/canceladas/omitidas y 3 TODO. La revisión final de C5/C6 se registra abajo con hallazgos; CI verde no equivale a aprobación.
 
 ### Revisión documental y resolución de acceso — 27/10/2026
 
@@ -27,9 +27,9 @@ Se comprobaron rama/PR/`main`, metadatos de CI y conteos en sus logs, y se corri
 
 Por instrucción del usuario se incorporó la obligación de actualizar el tablero tras **cada revisión** y documentar todo trabajo significativo en [protocolo 15](15-protocolo-revision-critica.md#registro-obligatorio-de-cada-revisión-y-trabajo), este tablero, [registro 25](25-registro-estabilizacion.md#revisión-documental-y-resolución-de-acceso--27102026) y matriz 04. Una revisión paralela de documentación detectó las referencias obsoletas; no se delegaron cambios de código. Esta actualización solo modifica esos cuatro documentos: se comprueba `git diff --check`, sin repetir pruebas locales de código que no cambió. Los nuevos commits documentales se comprobarán en Actions por su SHA, sin atribuirles por anticipado el resultado de `64dcc2c`.
 
-**Resultado y límites:** acceso y CI de la entrega confirmados; documentación sincronizada. No se realizó una nueva prueba de navegador o dispositivo físico ni una revisión final de código en este bloque. #5 sigue siendo una propuesta de trabajo posterior que requiere acordar la prioridad de la IA; no está iniciada ni autorizada su implementación.
+**Resultado y límites de aquella revisión documental:** acceso y CI de la entrega confirmados; documentación sincronizada. No se realizó entonces una nueva prueba de navegador o dispositivo físico ni una revisión final de código; la revisión de código posterior figura abajo. #5 sigue siendo una propuesta de trabajo posterior que requiere acordar la prioridad de la IA; no está iniciada ni autorizada su implementación.
 
-## 2. Etapa activa C — estabilización; C1–C6 implementados; revisión pendiente
+## 2. Etapa activa C — estabilización; revisión C5/C6 con hallazgos
 
 **Objetivo:** saber qué hace realmente el juego, qué falla y qué no se ha probado, antes de intervenir sus reglas o extraer módulos.
 
@@ -90,7 +90,7 @@ En `fix/estabilizacion-v9-9` fueron corregidos **[#11](https://github.com/LeviEd
 
 Se enfoca el diálogo de inicio/pase, se confina Tab/Shift+Tab, se hace inerte el tablero durante el pase y se devuelve el foco al contenido al cerrar. **Cinco regresiones nuevas**, suite 250/0/3 TODO; Chromium verificó Tab, Shift+Tab y Enter en 1365×768, 393×852 y 320×640. [Registro](25-registro-estabilizacion.md). No se afirma validación con TalkBack o Android físico.
 
-### C5 — Guardias de transición de turno (#8 y #10): implementada, pendiente de revisión
+### C5 — Guardias de transición de turno (#8 y #10): revisada, caso residual pendiente
 
 **Estado confirmado al comenzar:** rama y referencia Git del PR #14 en `5b3a663`, C4 cerrada; `main` en `d9068f4`. La consulta del PR mediante API devolvió `Forbidden`: no se confirmó en vivo su estado ni sus checks.
 
@@ -100,7 +100,7 @@ Se enfoca el diálogo de inicio/pase, se confina Tab/Shift+Tab, se hace inerte e
 
 Cambios entregados en el PR #14 para revisión, sin fusionar ni modificar `main`. CI remoto de C5/C6 confirmado en la entrega registrada arriba; los resultados de implementación anteriores son históricos. Detalles en [registro C5](25-registro-estabilizacion.md#c5--8-y-10-guardias-de-fin-de-turno).
 
-### C6 — Acciones durante curación pendiente (#9): implementada, pendiente de revisión
+### C6 — Acciones durante curación pendiente (#9): revisada, regresión pendiente
 
 **Autorización:** el usuario indica «continuemos» después de confirmar C6 como siguiente tarea. Se conservaron los cambios locales de C5; `main` y los remotos no se modificaron.
 
@@ -112,9 +112,18 @@ Cambios entregados en el PR #14 para revisión, sin fusionar ni modificar `main`
 
 Tablero, registro y matriz actualizados. Al terminar la implementación, los cambios aún estaban sin commit ni subida; la entrega posterior se registra arriba. CI remoto C6 confirmado en la entrega registrada arriba. No se cierra automáticamente #9 ni se fusiona. [Registro](25-registro-estabilizacion.md#c6--9-acciones-durante-curación-pendiente).
 
-### Siguiente tarea única — Revisión final del código de C5/C6
+### Revisión final C5/C6 — realizada con hallazgos, 27/10/2026
 
-Código, pruebas y evidencia de CI ya entregados. Revisar el código y las regresiones C5/C6 en el PR #14 y registrar hallazgos o ausencia de hallazgos; actualizar este tablero al terminar. No iniciar otro defecto ni decidir reglas ambiguas dentro de este bloque.
+**Alcance:** `5b3a663..247f819`, dos revisiones independientes de solo lectura y comprobación de reproducciones en Node/Chromium. [Informe 26 con precondiciones, acciones, esperado/observado y límites](26-revision-final-c5-c6.md).
+
+- **R1, regresión C6/P2:** llamada interna `search(); special(); chooseLoot(0)` crea botín y curación simultáneos; el nuevo `playable()` impide resolver el botín y el modal no ofrece curar/cancelar. Comparado antes/después y reproducido en J1, J2 y humano contra IA. Impide recomendar integrar C6 sin corrección.
+- **R2, residual C5/P2:** `kill(Leo); finishTurn()` en la misma pila avanza antes de la microtarea que abre la muerte. Preexistente; el bloqueo con diálogo ya visible sí funciona. No se afirma una explotación mediante clic normal.
+
+**Resultados:** 65/65 pruebas relevantes aprobadas; CI de `247f819` [aprobado](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40554797945). Los ocho experimentos de Chromium confirmaron los casos, sin errores JS; no cuentan como ocho pruebas funcionales aprobadas. Las pruebas existentes no cubren estas combinaciones. No hubo modificaciones de código ni nuevas regresiones incorporadas a la suite en esta revisión: se entrega diagnóstico, no una corrección. PR #14 sigue en borrador, sin aprobación formal ni fusión; `main` intacta.
+
+### Siguiente tarea única — C6-R1: bloqueo botín/curación
+
+Añadir regresión de decisiones superpuestas, aplicar un ajuste mínimo que preserve la resolución/cancelación y verificar modo local e IA. No iniciada en este bloque. R2 se conserva como residual posterior; no iniciar #5 ni otras correcciones.
 
 ## 3. Etapas posteriores: una por vez
 
@@ -169,7 +178,7 @@ Los detalles están en `docs/12`–`docs/17`. **No abrir nuevos frentes para amp
 
 Si surge una idea fuera de la tarea activa:
 
-> «Es una idea para la hoja de ruta, pero ahora estamos en **la revisión de C5/C6**. La registro y seguimos con la estabilización. ¿Querés cambiar explícitamente la prioridad?»
+> «Es una idea para la hoja de ruta, pero ahora estamos en **C6-R1 (bloqueo botín/curación)**. La registro y seguimos con la estabilización. ¿Querés cambiar explícitamente la prioridad?»
 
 Solo cambiar la etapa activa con una decisión consciente; registrar motivo, riesgos, estado de la tarea interrumpida y cómo retomarla. No es necesario prohibir las conversaciones creativas: **conversar no equivale a cambiar la etapa ni a comenzar a programar**.
 
@@ -182,4 +191,4 @@ Solo cambiar la etapa activa con una decisión consciente; registrar motivo, rie
 - **Propuestas narrativas (estacionadas):** `docs/12`–`docs/17`.
 - **Defectos/decisiones por resolver:** GitHub Issues.
 
-**Próxima acción única: revisión final del código y regresiones C5/C6 en PR #14, con registro obligatorio al terminar. CI de la entrega confirmado. No iniciar #5 ni otra corrección, ni fusionar.**
+**Próxima acción única: C6-R1 — corregir el bloqueo botín/curación, con regresión y ajuste mínimo. Revisión final realizada con hallazgos documentados; corrección no iniciada. No iniciar #5 ni fusionar.**

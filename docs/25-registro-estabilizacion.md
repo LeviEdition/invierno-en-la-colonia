@@ -1,6 +1,6 @@
 # 25 — Registro de estabilización V9.9 (C1–C6)
 
-**Fecha:** 27/10/2026. **Rama de trabajo:** `fix/estabilizacion-v9-9` (nació de `refactor/arquitectura`). **Estado:** C1–C4 con CI verde; C5 y C6 implementadas, con pruebas locales y CI remoto aprobados; revisión final de código pendiente. **No promovidos a `main`.**
+**Fecha:** 27/10/2026. **Rama de trabajo:** `fix/estabilizacion-v9-9` (nació de `refactor/arquitectura`). **Estado:** C1–C4 con CI verde; C5 y C6 implementadas, con pruebas locales y CI remoto aprobados; revisión final con una regresión C6 y un caso residual C5 pendientes. **No promovidos a `main`.**
 
 ## Entrega C5/C6 para revisión
 
@@ -14,7 +14,17 @@ Código y pruebas en [d4a6b3f](https://github.com/LeviEdition/invierno-en-la-col
 - **Decisión del usuario:** toda revisión debe terminar con el tablero actualizado y todo trabajo debe documentarse. Regla persistida en `docs/15-protocolo-revision-critica.md` y en el protocolo de cierre de `docs/18-tablero-operativo.md`.
 - **Revisión de documentación:** se compararon tablero, este registro y matriz; una revisión paralela de solo lectura señaló referencias actuales obsoletas a CI pendiente, entrega local y SHA anterior del PR. Se corrigieron, conservando explícitamente los resultados históricos por etapa. No se revisó ni modificó el código del juego en este bloque.
 - **Archivos modificados y motivo:** documentos 15 (regla), 18 (estado y siguiente tarea), 25 (acciones/evidencia) y 04 (cobertura y entrega). Comprobación documental: `git diff --check`. Sin repetición local de la suite ni del navegador: los archivos ejecutables no cambiaron. La subida de esta documentación y su CI se verifican por el SHA del nuevo commit, sin anticipar su resultado ni reescribir la evidencia de `64dcc2c`.
-- **Límites y siguiente tarea:** revisión final de código C5/C6 pendiente; no confundir esta revisión documental ni CI verde con aprobación formal del PR. Android físico/TalkBack siguen pendientes. #5 sigue como propuesta posterior, sin política de IA decidida ni implementación autorizada. No se inició otra corrección ni se fusionó.
+- **Límites y siguiente tarea al cerrar aquella revisión documental:** la revisión final de código C5/C6 estaba pendiente; no confundir esta revisión documental ni CI verde con aprobación formal del PR. Android físico/TalkBack siguen pendientes. #5 sigue como propuesta posterior, sin política de IA decidida ni implementación autorizada. No se inició otra corrección ni se fusionó.
+
+## Revisión final C5/C6 — 27/10/2026
+
+**Revisión realizada, sin aprobación de integración.** Se comparó `5b3a663..247f819`, con dos revisiones independientes de solo lectura; se verificaron los hallazgos en Node y Chromium y se consultó el estado del PR/CI. [Informe 26](26-revision-final-c5-c6.md) conserva alcance, ubicaciones, reproducciones, resultados y límites.
+
+- **R1/P2, regresión C6:** iniciar curación mediante `special()` mientras hay botín pendiente bloquea `chooseLoot()`. Reproducido en J1, J2 y humano contra IA; comparado con `5b3a663`, donde sí se permite resolver el botín. Requiere corrección antes de recomendar integración.
+- **R2/P2, residual preexistente C5:** una muerte en cola puede preceder a `finishTurn()` en la misma pila, antes de abrirse su microtarea. Reproducido con microtareas reales en Node y en Chromium local/IA; no es una regresión del parche ni un salto demostrado por clic normal.
+- **Validación:** 65/65 pruebas relevantes aprobadas y [CI de `247f819`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40554797945) verde. Ocho escenarios dirigidos Chromium confirman los hallazgos sin errores JS; no se contabilizan como pruebas aprobadas del juego. Sin nuevas pruebas en el repositorio, sin repetir suite local completa ni Android/TalkBack.
+- **Cambios de este bloque:** solo informe 26, tablero 18, este registro y matriz 04, comprobados con `git diff --check` y entregados en la rama de estabilización. Código, reglas, tests, `main`, workflow y configuración intactos. No se publicaron comentarios/revisiones formales de GitHub ni se cerraron issues. La ejecución CI del commit documental se comprueba por su SHA tras subirlo.
+- **Siguiente tarea única:** C6-R1, regresión y arreglo mínimo de la combinación botín/curación; no se implementó en esta revisión. R2 queda como residual posterior. #5 no iniciado ni regla de IA decidida.
 
 ## Origen del trabajo
 
@@ -102,8 +112,8 @@ Código y pruebas en [d4a6b3f](https://github.com/LeviEdition/invierno-en-la-col
 | Prioridad siguiente | Issue | Motivo |
 | --- | --- | --- |
 | **C4 completada** | [#12](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12) | Foco de inicio/pase corregido en rama; revisión de accesibilidad real adicional pendiente |
-| **C5 implementada; CI aprobado** | [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8) + [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10) | Guardias y CI verificados; revisión final de código pendiente |
-| **C6 implementada; CI aprobado** | [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9) | Bloqueo, recuperación y CI verificados; revisión final de código pendiente |
+| **C5 revisada; residual pendiente** | [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8) + [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10) | Guardias originales y CI verificados; cola previa R2 sin proteger (preexistente) |
+| **C6 revisada; regresión pendiente** | [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9) | Bloqueo aislado y CI verificados; combinación botín/curación bloqueada (R1) |
 | Más adelante | [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5), [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13), [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) | Estrategia IA, ergonomía móvil, selección estructurada de encrucijadas |
 | Requiere al creador | [#4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4), [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6) | Transferencias entre grupos y momento de elección de líder inicial |
 
@@ -111,4 +121,4 @@ Código y pruebas en [d4a6b3f](https://github.com/LeviEdition/invierno-en-la-col
 
 ## Siguiente tarea única
 
-**Revisión final del código y regresiones C5/C6 en PR #14.** Entrega y CI confirmados. Registrar su resultado en tablero y documentación al terminar, incluso si no requiere código nuevo. No fusionar, publicar una versión ni iniciar otro defecto dentro de este bloque.
+**C6-R1 — corregir el bloqueo botín/curación con prueba de regresión y ajuste mínimo.** Revisión final C5/C6 realizada con hallazgos; entrega y CI verde no resuelven R1/R2. Corrección no iniciada aquí. Registrar resultados y actualizar el tablero al terminar cada revisión. No fusionar, publicar una versión ni iniciar otro defecto dentro de este bloque.
