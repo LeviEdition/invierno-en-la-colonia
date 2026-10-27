@@ -50,7 +50,11 @@ Esta actualización sustituye el estado pendiente de R2 de los apartados anterio
 
 Los subsistemas **07 (búsquedas), 08 (objetos), 13 (crisis) y 15 (IA)** ganan cobertura mediante diez regresiones activas. La IA ahora usa sus búsquedas normales antes de evaluar la crisis de herramientas y suma aportes previos humanos + herramientas propias de mano y equipo de supervivientes vivos. Si puede completar, dona exactamente lo faltante, primero mano y después equipo; si no, conserva. No busca bonificación extra. Se eliminó el TODO #5; quedan dos TODO (#4 y #6).
 
-**Evidencia:** [informe30](30-correccion-c7-ia-herramientas.md) y [CI 40571819429](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40571819429): 297 declaradas, 295 aprobadas, 0 fallidas, 2 TODO. No se revisó la selección estratégica de botín, ni Chromium/Android, ni balance. PR #14 sin fusionar. Siguiente tarea única: revisión crítica independiente de C7.
+**Evidencia:** [informe30](30-correccion-c7-ia-herramientas.md) y [CI 40571819429](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40571819429): 297 declaradas, 295 aprobadas, 0 fallidas, 2 TODO. No se revisó la selección estratégica de botín, ni Chromium/Android, ni balance. PR #14 sin fusionar. La revisión posterior se registra en el informe31 y sustituye ese próximo paso histórico.
+
+## Revisión posterior de C7 — 27/10/2026
+
+[Informe31](31-revision-critica-c7.md): verificados código, diez regresiones y [CI sobre `9907cdb3`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40572758503) (**297 declaradas / 295 aprobadas / 0 fallidas / 2 TODO**). La entrega final de herramientas desde mano/equipo satisface la política C7 acotada por inspección. Subsistemas 07 y 15 mantienen **cobertura parcial**: H1/P2, con `beginSearch()`, revela que la elección de muestra (puntuación 10) sobre herramienta (3) puede impedir completar una crisis salvable; aún no hay regresión dinámica de ese escenario. H2: reevaluación tras búsquedas no implementada para crisis de comida/medicina/combustible (límite preexistente, sin cambio dentro de #5). No se alteraron pruebas ni motor en esta revisión; no CI nuevo de comportamiento. Tarea posterior única: decidir política acotada de elección de botín C7-R1; Android y navegador real siguen pendientes.
 
 ## Estados de auditoría
 
