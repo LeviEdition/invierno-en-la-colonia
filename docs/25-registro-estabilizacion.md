@@ -259,6 +259,16 @@ Se ejecutaron **seis controles adicionales en Chromium/Playwright real** con vie
 
 **Reserva P3:** `playable()` no bloquea *por sí solo* todos los estados modales; se considera posible refuerzo transversal, no regresión demostrada de C8. En interfaz, un destinatario que deja de ser apto después de abrir el modal puede permanecer visible, pero se rechaza sin pérdida de objeto y se puede cancelar. Sin Android físico/lector de pantalla ni rondas aleatorias completas. **Solo documentación:** #4 sigue abierto, `main` intacta, PR14 abierto/draft. La siguiente decisión única recomendada es **aceptación/cierre administrativo de #4** con aprobación del creador, no empezar #6 automáticamente.
 
+## UX — Mensaje al intentar usar combustible para moverse por segunda vez, 27/10/2026
+
+Ante pregunta del creador sobre **acciones todavía pulsables desde la UI pero ilegales**, se identificó un silencio real: al usar una carta combustible desde el inventario cuando el superviviente ya había utilizado su movimiento, `moveWithFuel()` retornaba `false` sin aviso. El creador aprobó explícitamente igualar la advertencia existente de `doMove()`: **«El superviviente ya se movió durante este turno.»**.
+
+**Regresiones primero:** `tests/movimiento-exposicion.test.mjs` suma dos casos para J1 y J2 local, verifican mensaje y preservación de carta, localidad, dado y residuos, [commit `78c55af`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/78c55af021b970427f7372860ab7a038621dbfeb); [CI rojo 40589116325](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40589116325), **320 declaradas, 317 aprobadas, 2 fallidas, 1 TODO**.
+
+**Cambio mínimo:** [`63cb294`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/63cb2949f979631c97152f971f7a2dda171672ba): en `ItemEngine.moveWithFuel()`, si `p.moved` se registra y presenta la misma advertencia usando el sistema toast/historial para el jugador del turno activo; no consume ni mueve. **CI verde 40589214682:** **320 declaradas, 319 aprobadas, 0 fallidas, 1 TODO (#6)**. Chromium real validó 3 recorridos desde botón «Usar» (J1 y J2 rechazos con aviso, J1 combustible válido), sin errores JS; **toast visible comprobado** (`role=status aria-live=polite`). Blob Git del HTML en rama = prueba `4748627825e9876809ec482cb7c10431e6c07cf9`. [Informe37](37-feedback-movimiento-con-combustible.md).
+
+**Estado:** solo cambio de feedback, no de reglas; los demás casos de UI no fueron auditados exhaustivamente. #4 sigue abierto, #6 único TODO, PR14 borrador y `main` intacta. **Única tarea propuesta:** auditar el resto de rechazos silenciosos que un jugador puede intentar realmente desde la UI, sin ampliar el motor sin aprobación.
+
 ## Siguiente tarea única
 
-**Próximo paso único propuesto: solicitar aceptación y cierre administrativo de #4 tras revisión C8 satisfactoria (informe36). El código sigue en PR14 draft, `main` intacta; no pasar a #6 sin autorización.**
+**Próximo bloque único propuesto: auditar y priorizar avisos faltantes en acciones realmente clicables desde la UI, después del caso combustible ya corregido; no cerrar #4 ni fusionar PR14 sin autorización.**
