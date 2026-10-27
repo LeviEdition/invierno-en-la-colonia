@@ -138,9 +138,9 @@ test('buscar: el rescate se incorpora a la colonia y no ocupa la mano', () => {
 
 test('IA: prefiere muestra a comida y devuelve el descarte al mazo', () => {
   const t=fixture();
-  t.exec("game.bots[0].loc=1; game.decks[1]=[catalog.create('ration'),catalog.create('sample')]; beginSearch(game.bots[0],'ai');");
+  t.exec("game.bots[0].loc=1; game.bots[0].skill='scout'; game.decks[1]=[catalog.create('ration'),catalog.create('sample')]; beginSearch(game.bots[0],'ai');");
   assert.deepEqual(t.val('({samples:game.samples,deck:game.decks[1].map(x=>x.cardId),hand:game.botItems.length})'), {
-    samples:0,deck:['sample'],hand:8,
+    samples:1,deck:['ration'],hand:7,
   });
 });
 
