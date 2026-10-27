@@ -26,9 +26,10 @@ Antes de reorganizar acciones, escribir pruebas del comportamiento actual:
 - [x] Segundo bloque: movimiento, movimientos inválidos, combustible y exposición (10 pruebas nuevas).
 - [x] Tercer bloque: reinicio de ronda, congelación, daños, cadenas de mordedura y crisis simples (11 pruebas nuevas).
 - [x] Cuarto bloque: búsquedas, ruido, mazos y efectos iniciales de objetos (17 pruebas nuevas).
+- [x] Quinto bloque: combate, armas, equipamiento, transferencias y aportes a crisis (22 pruebas nuevas; una TODO).
 - [x] Matriz de auditoría funcional en 21 áreas, con estados y prioridad.
-- [x] GitHub Actions habilitado: suite de 31 pruebas ejecutada con resultado correcto.
-- [x] Dos defectos reproducibles registrados como issues (#2 y #3), sin alterar la V9.9.
+- [x] GitHub Actions habilitado: suite de 70 pruebas ejecutada con resultado correcto (más una TODO).
+- [x] Dos defectos reproducibles (#2 y #3) y una definición pendiente sobre transferencias (#4), sin alterar la V9.9.
 - Inicio de partida, objetivo, personajes, localidades y mazos.
 - Consumo y requisitos de dados.
 - Movimiento, exposición, heridas y muerte.
