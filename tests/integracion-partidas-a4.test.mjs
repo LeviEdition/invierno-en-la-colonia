@@ -190,3 +190,32 @@ test('A4 | reinicio tras ronda elimina las contribuciones anteriores a crisis',a
  assert.deepEqual(t.val('({given:game.crisis.given,cards:game.crisis.contributions,round:game.round})'),
  {given:0,cards:[],round:2});
 });
+
+test('A4 | campaña local llega al límite original de 10 rondas si no se cumple el objetivo',async()=>{
+ const t=fixture();stable(t);
+ assert.equal(t.val('game.objective.rounds'),10);
+ assert.equal(t.val('game.objective.need'),9);
+ for(let r=1;r<=10;r++){
+  t.run('game.food=60;game.morale=9;game.zones.forEach(z=>{z.z=0;z.noise=0;z.b=0;});game.crisis={type:"comida",need:2,given:2,contributions:["comida","comida"],fail:"moral"};');
+  if(r>1)t.run('confirmPass();');
+  await both(t);
+  assert.equal(t.val('game.round'),r+1);
+ }
+ assert.equal(t.val('game.ended'),true);
+ assert.equal(t.val('game.turn'),'end');
+ assert.match(t.val('game.last'),/agotaron las rondas/);
+ assert.equal(t.val('game.log.filter(x=>x.includes("Fase de colonia:")).length'),10);
+});
+
+test('A4 | campaña IA también puede completar el máximo original sin victoria',async()=>{
+ const t=fixture('ai');stable(t);
+ assert.equal(t.val('game.max'),10);
+ for(let r=1;r<=10;r++){
+  t.run('game.food=60;game.morale=9;game.botItems=[];game.botDice=[];game.bots.forEach(p=>p.moved=true);game.zones.forEach(z=>{z.z=0;z.noise=0;z.b=0;});game.crisis={type:"comida",need:2,given:2,contributions:["comida","comida"],fail:"moral"};');
+  await t.run('finishTurn()');
+  assert.equal(t.val('game.round'),r+1);
+ }
+ assert.equal(t.val('game.ended'),true);
+ assert.match(t.val('game.last'),/agotaron las rondas/);
+ assert.equal(t.val('game.log.filter(x=>x.includes("Fase de colonia:")).length'),10);
+});
