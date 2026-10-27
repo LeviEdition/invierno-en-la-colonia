@@ -49,6 +49,20 @@ La propuesta evita perder materiales en una crisis que no se puede cumplir con l
 
 La revisión independiente de solo lectura coincide en el umbral, el costo de aportes parciales y la utilidad de contar al final; ninguna recomendación de los revisores constituye una decisión del creador. No se ejecutaron nuevas pruebas del motor o navegador: solo se revisaron código, documentación e incidencia. El [CI de `9041d95`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40558263686) continúa aprobado; no valida esta propuesta no implementada.
 
+## Segunda revisión crítica de continuidad — 27/10/2026
+
+**Alcance:** nueva lectura en GitHub de `botTurn()`, `stashLoot()`, `ItemEngine`, `CrisisManager`, `resolveCrisis()`, controlador de turno, issue #5 y estado CI. Sin ejecutar el juego ni editar ejecutables/pruebas. Estado previo: HEAD `e7d0a48`, PR #14 abierto y en borrador, base `refactor/arquitectura`; `main` en `d9068f4`, blob V9.9 `4ebaedad13d63c7a6762c524a52c0dd9695687b1`. Los tres refs se compararon con sus SHA conocidos y coincidieron.
+
+**Hallazgo técnico adicional:** `stashLoot()` equipa de inmediato una herramienta encontrada por la IA si el personaje carece de otra del tipo. Por eso tampoco basta con contar las cartas de la mano después de buscar. `CrisisManager.add()` registra aportes válidos; debe comprobarse éxito de cada aporte **antes** de retirar la carta de mano/equipo. `fromEquipment()` sirve como referencia del contrato, pero una ruta específica de IA no debe usar inventario ajeno ni controles de interacción del humano.
+
+**Evaluación estratégica:** la propuesta de completar cualquier crisis alcanzable es deliberadamente simple, **no óptima demostrada**. Donar la última palanca o linterna para evitar -1 moral puede perjudicar búsquedas futuras; una crisis que añade zombis puede justificar el sacrificio. Las herramientas equipadas tienen utilidades diferentes. Alternativa B: proteger siempre el equipo aunque se pierdan crisis superables. Alternativa C: priorizar por severidad de crisis y utilidad futura, con mayor superficie de reglas, pruebas y riesgo de balance.
+
+**Recomendación a decidir por el creador:** política A del informe (usar durante las acciones; al final, si alcanza para completar, donar lo necesario desde mano y después equipo propio de vivos; en caso contrario conservar; sin bonus), añadiendo selección determinista/documentada entre equipos y sin atribuirle optimización. No introducir puntuación estratégica por carta ni umbrales de severidad durante estabilización C. **Es una recomendación, no aprobación.** La decisión sigue pendiente; no iniciar regresiones ni implementación todavía.
+
+**CI comprobada para el commit anterior, no para esta política:** [run 40559396788](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40559396788), job `pruebas` completed/success; logs con checkout de `e7d0a48`, 288 pruebas declaradas, 285 aprobadas, 0 fallidas, 3 TODO (#4, #6, #5). No se corrió una suite nueva ni Chromium/Android en esta segunda revisión. La documentación de este bloque tiene commits posteriores a la verificación inicial; sus checks no deben asumirse aprobados sin consulta independiente.
+
+**Límites:** revisión estática dirigida, no simulación de balance ni partida natural; no se ha demostrado que donar siempre el último equipo mejore la tasa de victoria. No se modifican código, reglas, pruebas, issues, PR ni `main`. Única tarea pendiente: recibir y registrar aprobación/ajuste/rechazo de esta política para #5.
+
 ## Registro y siguiente paso
 
 Se actualizan este informe, tablero18 y registro25; no cambia la cobertura de matriz04. `git diff --check`; solo documentación. El PR14 sigue abierto en borrador, sin fusión ni cierre de #5. `main` conserva `d9068f4`. La documentación se entrega en la rama de estabilización y su CI se comprueba por el SHA del commit documental.
