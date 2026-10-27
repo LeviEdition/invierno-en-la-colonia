@@ -199,6 +199,14 @@ Revisión de solo lectura de código, contrato de búsqueda, tests y estado CI. 
 
 **Única tarea siguiente:** preparar y realizar validación manual acotada en **navegador real** del flujo completo C7/C7-R1, con encrucijadas activas, antes de decidir cierre/promoción de #5. Registrar escenarios y resultados; no iniciar otros issues sin cambio explícito de prioridad.
 
+### Smoke test C7/C7-R1 en Chromium real — 27/10/2026
+
+[Informe34](34-validacion-navegador-c7-r1.md): se obtuvo la versión exacta del HTML de esta rama, SHA Git blob `7ae72fc88381e5109b5f64929f6b017a2d5d5dc6` verificado contra GitHub, y se ejecutó en Chromium con Playwright. **Cuatro escenarios aprobados:** completar crisis 1/2 humano con palanca IA equipada y modal de ronda; elegir herramienta frente a muestra no ganadora y superar crisis con modal de búsqueda; priorizar victoria inmediata por muestra; victoria por muestra duplicada de investigador en viewport táctil 390 px. Encrucijadas/acciones confirmadas mediante interfaz real; 0 errores JS detectados. `round`, inventario, mazo y log verificados.
+
+**Evidencia y límites:** ensayos con estado reproducible preparado por Playwright, temporizadores de animación de 1750 ms acortados, sin Android físico/TalkBack ni partidas aleatorias completas; `file://` bloqueado en entorno, documento cargado mediante `page.set_content()`. **No** se alteraron HTML ni tests del repositorio. El CI anterior de `5eb8302` era verde: **305 declaradas, 303 aprobadas, 0 fallidas, 2 TODO**, [run 40577893140](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40577893140). El número no aumenta por los cuatro recorridos externos. PR14 borrador, `main` intacta, #5 abierto.
+
+**Tarea única siguiente:** evaluar aceptación y cierre **administrativo** de #5, determinando si la prueba en Android físico es requisito previo para promoción. No cerrar ni fusionar sin aprobación expresa; no empezar otros issues.
+
 ## 3. Etapas posteriores: una por vez
 
 | Etapa | Propósito | Criterio para habilitar la siguiente |
@@ -252,7 +260,7 @@ Los detalles están en `docs/12`–`docs/17`. **No abrir nuevos frentes para amp
 
 Si surge una idea fuera de la tarea activa:
 
-> «Es una idea para la hoja de ruta, pero ahora estamos en **validación manual en navegador de C7/C7-R1**. La registro y seguimos con la estabilización. ¿Querés cambiar explícitamente la prioridad?»
+> «Es una idea para la hoja de ruta, pero ahora estamos en **decisión de aceptación del issue #5**. La registro y seguimos con la estabilización. ¿Querés cambiar explícitamente la prioridad?»
 
 Solo cambiar la etapa activa con una decisión consciente; registrar motivo, riesgos, estado de la tarea interrumpida y cómo retomarla. No es necesario prohibir las conversaciones creativas: **conversar no equivale a cambiar la etapa ni a comenzar a programar**.
 
@@ -265,4 +273,4 @@ Solo cambiar la etapa activa con una decisión consciente; registrar motivo, rie
 - **Propuestas narrativas (estacionadas):** `docs/12`–`docs/17`.
 - **Defectos/decisiones por resolver:** GitHub Issues.
 
-**Próxima acción única: validación manual de C7/C7-R1 en navegador real, con encrucijadas/modales activos (informe33). Revisión crítica completada sin defectos nuevos; no fusionar ni cerrar #5 automáticamente.**
+**Próxima acción única: evaluar los criterios de aceptación/cierre del issue #5 tras cuatro escenarios Chromium aprobados (informe34); decidir si exige Android físico antes de promoción. No fusionar, cerrar issue ni iniciar nuevos trabajos automáticamente.**
