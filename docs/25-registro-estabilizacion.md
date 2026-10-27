@@ -56,6 +56,14 @@ Código y pruebas en [d4a6b3f](https://github.com/LeviEdition/invierno-en-la-col
 
 **Siguiente tarea única:** decidir con el creador y registrar la política; implementación/regresiones en un bloque posterior a su aprobación.
 
+## Seguimiento de continuidad #5 — revisión crítica y verificación de repositorio (27/10/2026)
+
+**Estado inicial confirmado:** `main=d9068f4`, `refactor/arquitectura=0933c70`, `fix/estabilizacion-v9-9=e7d0a48` (tres comparaciones idénticas a sus refs conocidas); PR #1 y PR #14 abiertos/en borrador, #14 base `refactor/arquitectura`. Blob original de V9.9 intacto. Issue #5 abierto. La ejecución [40559396788](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40559396788) fue confirmada mediante job y logs: checkout del SHA `e7d0a48`, 288 tests, 285 aprobados, 0 fallidos, 3 TODO. No significa que #5 esté arreglado.
+
+**Hallazgo nuevo de lectura:** una herramienta hallada por la IA puede equiparse inmediatamente en `stashLoot()`; la evaluación final debe revisar mano **y** equipo. Las herramientas palanca/linterna/reparación dan beneficios futuros diferentes. Donar incluso la última herramienta para evitar una penalización pequeña puede ser perjudicial, aunque una crisis grave justifique el aporte. La recomendación sigue siendo la política simple del [informe29](29-propuesta-prioridad-ia-herramientas.md), con desempate determinista entre equipos, siempre condicionada a autorización del creador. Alternativas documentadas: proteger equipo o estimar costo-beneficio (más complejidad).
+
+**Acciones y límites:** lectura remota de código, documentación, issue, PRs y logs; ninguna prueba nueva, navegador ni dispositivo físico en este bloque. No se alteró el HTML, tests, issues, PRs ni las ramas base; solo documentación en rama C. No fusionar ni presentar recomendaciones como política aprobada. **Siguiente tarea única:** decisión del creador para #5; regresiones/código solo en un bloque posterior si se aprueba.
+
 ## Origen del trabajo
 
 [Informe A6 y lista de prioridades](24-cierre-auditoria-y-prioridades.md). A5-02 en Android físico sigue sin checklist formal y NO se afirma realizado. El usuario autorizó avanzar con correcciones conociendo esa reserva.
