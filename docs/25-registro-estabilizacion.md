@@ -162,7 +162,7 @@ Código y pruebas en [d4a6b3f](https://github.com/LeviEdition/invierno-en-la-col
 | **C4 completada** | [#12](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12) | Foco de inicio/pase corregido en rama; revisión de accesibilidad real adicional pendiente |
 | **C5-R2 corregida y revisada** | [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8) + [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10) | Guardia de cola R2 añadida; regresiones, navegador y CI en informe 28 |
 | **C6-R1 corregida y revisada** | [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9) | R1 resuelto: curación espera al botín; pruebas y revisión en informe 27 |
-| **C7 y C7-R1 revisadas; validación en navegador pendiente** | [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5) | Política A y prioridad condicional de botín aprobadas y corregidas; informes30/32 |
+| **C7 y C7-R1 revisadas y probadas en Chromium; aceptación de #5 pendiente** | [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5) | Política A y prioridad condicional de botín aprobadas y corregidas; informes30/32 |
 | Más adelante | [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13), [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) | Ergonomía móvil, selección estructurada de encrucijadas |
 | Requiere al creador | [#4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4), [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6) | Transferencias entre grupos y momento de elección de líder inicial |
 
@@ -196,6 +196,14 @@ Se registraron escenarios precondición → acción → esperado → resultado d
 
 **Decisiones administrativas:** solo documentación; no hubo fusión, cambio en `main`, cierre de #5 ni apertura de nueva etapa. Próxima tarea única: validación manual con encrucijadas reales de C7/C7-R1 en navegador, evidenciando colaboración, elección de botín, prioridad de victoria y ausencia de bloqueos antes de proponer cierre/promoción.
 
+## Validación en navegador real de C7/C7-R1 — 27/10/2026
+
+Se completó la comprobación exigida tras [revisión33](33-revision-critica-c7-r1.md) con **Chromium y Playwright** sobre el HTML exacto de `fix/estabilizacion-v9-9`: `git hash-object` del archivo de prueba = GitHub blob `7ae72fc88381e5109b5f64929f6b017a2d5d5dc6`. La copia se obtuvo desde V9.9 estable hash `4ebaedad...` más diff del PR #14, comprobando identidad exacta, sin modificar la rama ni `main`.
+
+[Informe34](34-validacion-navegador-c7-r1.md): **cuatro escenarios ejecutados y aprobados con DOM y callbacks reales**: IA aporta palanca equipada tras 1/2 humano con encrucijada; herramienta salvadora frente a muestra en botín y encrucijada; muestra ganadora prevalece sin colonia; investigador duplica muestra ganadora en viewport móvil táctil 390 × 844. Modales confirmados mediante botones de interfaz, 0 errores JS registrados. Se verificó la transición a ronda 2 o fin inmediato y cartas consumidas/conservadas según la regla. Se acortaron pausas de 1750 ms y se preparó el estado aleatorio mediante Playwright; `file://` bloqueado por el entorno, HTML cargado con `page.set_content()`. Sin pruebas en Android físico/TalkBack ni partida aleatoria completa. Estos recorridos **no** son ocho pruebas Node nuevas ni se agregaron a CI.
+
+**Evidencia CI preexistente sobre motor:** [40577893140](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40577893140), 305 declaradas, 303 aprobadas, 0 fallidas y 2 TODO (#4/#6). **Acciones en repo:** solo documentación; no parche, suite de GitHub, fusión, cambio de `main` ni cierre de #5. **Próxima tarea única:** decidir criterios de aceptación administrativa y si Android físico es requisito previo a promoción, sin avanzar a otro issue.
+
 ## Siguiente tarea única
 
-**Validación manual de C7/C7-R1 en navegador real, revisión posterior completada sin defectos nuevos (informe33); sin fusionar ni iniciar otros issues.** R1/R2 ya corregidos. Actualizar tablero y registro al cerrar cada revisión; no fusionar ni iniciar otro defecto.
+**Evaluación de aceptación de #5 tras validación Chromium aprobada (informe34), incluyendo criterio Android físico; no fusionar ni iniciar otros issues.** R1/R2 ya corregidos. Actualizar tablero y registro al cerrar cada revisión; no fusionar ni iniciar otro defecto.
