@@ -2,7 +2,9 @@
 
 **Fecha:** 27/10/2026. **Rama:** `fix/estabilizacion-v9-9`. **Revisión de diseño:** código de `9041d95` (último cambio ejecutable `c19916f`), catálogo, `botTurn()`, `CrisisManager`, `resolveCrisis()`, flujo de fin de turno, prueba TODO y [issue #5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5).
 
-**Estado: propuesta pendiente de decisión explícita del creador.** Se solicitó elegir entre aprobar la política completa, conservar siempre el equipo o ajustar la propuesta. No se recibió aprobación al registrar este estado; no se cambió código ni se inició la implementación. Esta revisión de diseño se documenta conforme al acuerdo del usuario de registrar cada revisión y actualizar el tablero.
+**Estado actual (actualización C7, 27/10/2026): política A aprobada explícitamente e implementada en la rama de estabilización; pruebas y CI del código ejecutable verdes. La siguiente explicación conserva la formulación histórica de la propuesta previa a la aprobación.** Véase [informe30 de corrección C7](30-correccion-c7-ia-herramientas.md).
+
+**Estado histórico anterior: propuesta pendiente de decisión explícita del creador.** Se solicitó elegir entre aprobar la política completa, conservar siempre el equipo o ajustar la propuesta. No se recibió aprobación al registrar este estado; no se cambió código ni se inició la implementación. Esta revisión de diseño se documenta conforme al acuerdo del usuario de registrar cada revisión y actualizar el tablero.
 
 ## Hechos comprobados
 
@@ -68,3 +70,11 @@ La revisión independiente de solo lectura coincide en el umbral, el costo de ap
 Se actualizan este informe, tablero18 y registro25; no cambia la cobertura de matriz04. `git diff --check`; solo documentación. El PR14 sigue abierto en borrador, sin fusión ni cierre de #5. `main` conserva `d9068f4`. La documentación se entrega en la rama de estabilización y su CI se comprueba por el SHA del commit documental.
 
 **Siguiente tarea única: resolver la decisión de diseño #5 con el creador y registrar su respuesta.** Si aprueba la política, el paso posterior será preparar su implementación y regresiones; no se inicia dentro de esta revisión. Las decisiones de #4 y #6 siguen pendientes.
+
+## Actualización posterior: aprobación y entrega C7 — 27/10/2026
+
+El creador aprobó la política A y añadió la prioridad cooperativa: resolver las crisis de herramientas siempre que la IA pueda completar lo que falte, con aportes humanos previos incluidos, mano antes que equipo propio de vivos, orden determinista y sin bonus. Solicitó además **primero buscar ítems y luego valorar si se salva la crisis**. Esta secuencia quedó implementada al final de `botTurn()`. Un aporte parcial de IA que no completa no sirve en V9.9 humano + IA porque el turno humano ya terminó y la colonia se procesa inmediatamente; el humano sí puede dejar aportes parciales que la IA complete después.
+
+**Resultado:** [commit ejecutable `4166716`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/416671673c81c4aa88d91d06209a53855efb69c8) con diez pruebas C7 en `tests/ia-turnos.test.mjs` y [GitHub Actions 40571819429](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40571819429): 297 pruebas, 295 aprobadas, 0 fallidas y 2 TODO (#4 y #6). Informe técnico y límites en [30](30-correccion-c7-ia-herramientas.md). Queda pendiente revisión crítica independiente del cambio; no se integró a `main` ni se cerró #5.
+
+**Alcance no aprobado/implementado:** búsqueda dirigida específicamente a herramientas o cambio de la preferencia de botín ante muestras, comida y otros objetos. La IA busca con su comportamiento actual, luego reevalúa toda herramienta obtenida/equipada. Esta distinción evita equiparar «buscar antes de decidir» con una estrategia nueva para localizar materiales.
