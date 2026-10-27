@@ -203,5 +203,83 @@ test('matar dos veces al mismo personaje no resta moral dos veces', () => {
   assert.equal(t.state('game.morale'),8);
 });
 
-// Comportamiento inconsistente, pendiente de definir: no lo fijamos como regla válida.
-test.todo('modo local: fijar el liderazgo inicial de J2 al actuar igual que J1 (issue #6)');
+// C9/#6 — Política A aprobada: J1 y J2 pueden elegir líder inicial solo antes
+// de gastar un dado, moverse o usar exitosamente una carta en ronda 1.
+test('C9 J2: gastar un dado en ataque bloquea la elección inicial solo de J2', () => {
+  const t=fixture({mode:'local'});
+  t.run('game.turn="ai";selected=0;game.botDice=[6];attack();');
+  assert.deepEqual(t.state('({flagJ1:game.leaderChosen,flagJ2:game.localLeaderChosen,can:canPickStartingLeader(),dice:game.botDice.length})'),
+    {flagJ1:false,flagJ2:true,can:false,dice:0});
+  t.run('chooseLeader("a0");');
+  assert.equal(t.state('game.leaders.ai'),'a1');
+});
+test('C9 J1: gastar un dado conserva el bloqueo que ya tenía J1', () => {
+  const t=fixture({mode:'local'});
+  t.run('game.dice=[6];attack();');
+  assert.deepEqual(t.state('({flagJ1:game.leaderChosen,flagJ2:game.localLeaderChosen,can:canPickStartingLeader()})'),
+    {flagJ1:true,flagJ2:false,can:false});
+  t.run('game.turn="ai";');
+  assert.equal(t.state('canPickStartingLeader()'),true);
+});
+test('C9 J2: movimiento válido bloquea su líder, no el de J1', () => {
+  const t=fixture({mode:'local'});
+  t.run('game.turn="ai";selected=0;target=1;doMove();');
+  assert.deepEqual(t.state('({loc:game.bots[0].loc,flagJ1:game.leaderChosen,flagJ2:game.localLeaderChosen,can:canPickStartingLeader()})'),
+    {loc:1,flagJ1:false,flagJ2:true,can:false});
+});
+test('C9 J1: movimiento válido mantiene el mismo comportamiento inicial', () => {
+  const t=fixture({mode:'local'});
+  t.run('target=1;doMove();');
+  assert.deepEqual(t.state('({flagJ1:game.leaderChosen,flagJ2:game.localLeaderChosen,can:canPickStartingLeader()})'),
+    {flagJ1:true,flagJ2:false,can:false});
+});
+test('C9 J2: jugar carta válida confirma solo su líder inicial', () => {
+  const t=fixture({mode:'local'});
+  t.run('game.turn="ai";selected=0;game.botItems=[catalog.create("ration")];playItem(0);');
+  assert.deepEqual(t.state('({hand:game.botItems.length,flagJ1:game.leaderChosen,flagJ2:game.localLeaderChosen,can:canPickStartingLeader()})'),
+    {hand:0,flagJ1:false,flagJ2:true,can:false});
+});
+test('C9 J1: usar carta válida sigue cerrando su propia elección', () => {
+  const t=fixture({mode:'local'});
+  t.run('game.items=[catalog.create("ration")];playItem(0);');
+  assert.deepEqual(t.state('({flagJ1:game.leaderChosen,flagJ2:game.localLeaderChosen,can:canPickStartingLeader()})'),
+    {flagJ1:true,flagJ2:false,can:false});
+});
+test('C9: fallos por dado insuficiente no confirman el líder inicial J2', () => {
+  const t=fixture({mode:'local'});
+  t.run('game.turn="ai";game.botDice=[1];attack();');
+  assert.deepEqual(t.state('({dice:game.botDice,flagJ1:game.leaderChosen,flagJ2:game.localLeaderChosen,can:canPickStartingLeader()})'),
+    {dice:[1],flagJ1:false,flagJ2:false,can:true});
+});
+test('C9: movimiento inválido no confirma líder J2', () => {
+  const t=fixture({mode:'local'});
+  t.run('game.turn="ai";target=0;doMove();');
+  assert.deepEqual(t.state('({flagJ1:game.leaderChosen,flagJ2:game.localLeaderChosen,can:canPickStartingLeader()})'),
+    {flagJ1:false,flagJ2:false,can:true});
+});
+test('C9: carta rechazada (combustible con movimiento agotado) no confirma líder J2', () => {
+  const t=fixture({mode:'local'});
+  t.run('game.turn="ai";game.bots[0].moved=true;game.botItems=[catalog.create("gascan")];target=1;playItem(0);');
+  assert.deepEqual(t.state('({hand:game.botItems.length,flagJ1:game.leaderChosen,flagJ2:game.localLeaderChosen,can:canPickStartingLeader()})'),
+    {hand:1,flagJ1:false,flagJ2:false,can:true});
+});
+test('C9: elegir líder J2 antes de actuar lo mantiene y no permite volver a elegir', () => {
+  const t=fixture({mode:'local'});
+  t.run('game.turn="ai";chooseLeader("a0");game.botDice=[6];attack();chooseLeader("a2");');
+  assert.deepEqual(t.state('({leader:game.leaders.ai,flagJ2:game.localLeaderChosen,can:canPickStartingLeader()})'),
+    {leader:'a0',flagJ2:true,can:false});
+});
+test('C9: no se reabre elección de líder de J2 al iniciar ronda 2', () => {
+  const t=fixture({mode:'local'});
+  t.run('game.turn="ai";game.botDice=[6];attack();game.round=2;game.turn="ai";');
+  assert.equal(t.state('canPickStartingLeader()'),false);
+});
+test('C9 interfaz: grupo informa a J1 y J2 que deben elegir líder antes de actuar', () => {
+  const t=fixture({mode:'local'});
+  t.run('opened="group";renderModal();');
+  const j1=t.state('document.getElementById("modalContent").innerHTML');
+  assert.match(j1,/antes de gastar un dado, moverte o usar una carta/i);
+  t.run('game.turn="ai";renderModal();');
+  const j2=t.state('document.getElementById("modalContent").innerHTML');
+  assert.match(j2,/antes de gastar un dado, moverte o usar una carta/i);
+});
