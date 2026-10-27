@@ -248,6 +248,14 @@ El creador decidió: **«por ahora, contra la IA sin tradeos; entre J1 y J2 sí�
 
 **Única tarea siguiente:** revisión crítica posterior C8/#4 (sin empezar otro issue). No cerrar #4 ni fusionar sin autorización.
 
+### Revisión crítica posterior C8/#4 — 27/10/2026
+
+[Informe36](36-revision-critica-c8.md): auditoría separada de C8, filtros de transferencia y doble comprobación al confirmar, `pendingTransfer.itemRef`, permisos de modo local y humano+IA, control del turno, modales y los 14 casos de regresión. **Dictamen:** sin defectos nuevos confirmados ni cambios adicionales requeridos para esta corrección. Se agregaron **seis controles nuevos de Chromium real** con viewport táctil emulado, todos aprobados sin excepciones JS: destino IA forzado; receptor con arma duplicada y cancelación; ítem de origen sustituido; donante muerto; pantalla de pase activa; categorías distintas (arma + herramienta). Total acumulado de C8: **3 recorridos anteriores + 6 controles nuevos = 9 escenarios** acotados, no partidas completas ni casos agregados a CI.
+
+**Evidencia CI previa de motor:** [40586682191](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40586682191), **318 declaradas, 317 aprobadas, 0 fallidas, 1 TODO (#6)**. No se modificaron HTML o tests en esta revisión. **Límite:** hay otras ventanas/eventos pendientes que `playable()` no modela globalmente; no hay defecto C8 confirmado por la UI y no se amplía alcance sin autorización. Sin Android físico/TalkBack; `main` intacta y PR14 draft. **#4 continúa abierto**.
+
+**Próximo paso único sujeto a aprobación:** aceptación funcional y cierre administrativo del issue #4, **sin** fusionar PR14 ni pasar automáticamente a #6.
+
 ## 3. Etapas posteriores: una por vez
 
 | Etapa | Propósito | Criterio para habilitar la siguiente |
@@ -314,4 +322,4 @@ Solo cambiar la etapa activa con una decisión consciente; registrar motivo, rie
 - **Propuestas narrativas (estacionadas):** `docs/12`–`docs/17`.
 - **Defectos/decisiones por resolver:** GitHub Issues.
 
-**Próxima acción única: revisión crítica posterior C8/#4 tras 14 regresiones y 3 escenarios Chromium aprobados (informe35). Issue #4 sigue abierto; PR #14 borrador y `main` intacta.**
+**Próxima acción única propuesta: aceptar y cerrar administrativamente #4, tras revisión crítica C8 satisfactoria (informe36), 14 regresiones y 9 controles Chromium. Requiere autorización expresa; PR #14 permanece borrador y `main` intacta.**
