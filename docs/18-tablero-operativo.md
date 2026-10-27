@@ -294,6 +294,22 @@ El creador **aprobó explícitamente política A**: «J1 y J2 deben confirmar su
 
 **Siguiente único paso recomendado:** revisión crítica posterior C9/#6, sin cerrar el issue ni fusionar el PR automáticamente.
 
+### Revisión crítica C9/#6 y corrección C9-R1 — 27/10/2026
+
+**Decisión final del creador:** conservar la **elección manual del líder humano como en *Dead of Winter***, sin forzar nombramiento automático de mayor influencia. Se mantiene política A previamente aprobada: durante ronda 1 las acciones válidas de dado, movimiento y carta cierran la elección inicial **de cada jugador por separado**; sucesión tras muerte sigue siendo manual para humanos, automática para IA.
+
+**Hallazgo en revisión crítica:** si el líder **de J2 muere mientras actúa J1**, el modal de sucesión se muestra a **J1** y J1 puede elegir al sucesor del otro. Se **reprodujo en Chromium real**, incluyendo clic en «Sol» durante `game.turn='human'`. Se trata de P2 de propiedad de decisión, no del cálculo de influencia. [Informe39](39-revision-critica-c9-r1.md).
+
+**Primero las regresiones:** [tests `ed817b5`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/ed817b59825268c54aa1f183c783f19af3189c83), **5 casos** en `tests/finales-lideres.test.mjs`. [CI rojo 40593244756](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40593244756): **336 declaradas, 331 aprobadas, 5 fallidas, 0 TODO**. Se comprobó que J1 podía elegir por J2, que su turno quedaba bloqueado y que la elección propia podía verse interferida.
+
+**Parche C9-R1:** [`e84db6a`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/e84db6ae088f314e232e377c15cda37683cce19b), añade `leaderChoiceReady()` y separa la sucesión vigente **del turno de su propietario** en `chooseLeader`, guardas de acciones, pintado/modal y `finishTurn`/`confirmPass`. Si muere líder J2 durante turno J1, **J1 puede seguir y finalizar**, se muestra **pantalla real de pase** y J2 elige su sucesor después de recibir control. **CI verde 40593438595**: **336 declaradas, 336 aprobadas, 0 fallidas, 0 TODO**.
+
+**Chromium después de R1:** tres recorridos reales aprobados con blob exacto GitHub **`2682f96f0d451eb0083fd9eaa3762b266f8aab60`**: elección manual J2 tras pase J1→J2 en móvil 393×852, sucesión inmediata del dueño J1, IA sucesora automática. Cero excepciones JS detectadas. Incluida preparación determinista de muerte para reproducir el borde, no partidas completas ni Android físico. Total C9: **5 escenarios UI iniciales, 5 escenarios positivos adicionales de revisión y 3 positivos de R1**. Reserva pendiente para estabilización general: muertes simultáneas de dos líderes cuando existe solo un `pendingLeader` global.
+
+**Estado:** #6 **permanece abierto** hasta que el creador lo acepte; PR14 sigue abierto/draft hacia `refactor/arquitectura`, `main` intacta. La auditoría de mensajes quedó estacionada y no se iniciaron #7/#13.
+
+**Próximo paso único recomendado:** aprobación y cierre **administrativo** del issue #6, sin publicar ni fusionar la rama; luego elegir siguiente tarea de etapa C.
+
 ## 3. Etapas posteriores: una por vez
 
 | Etapa | Propósito | Criterio para habilitar la siguiente |
@@ -360,4 +376,4 @@ Solo cambiar la etapa activa con una decisión consciente; registrar motivo, rie
 - **Propuestas narrativas (estacionadas):** `docs/12`–`docs/17`.
 - **Defectos/decisiones por resolver:** GitHub Issues.
 
-**Próxima tarea única: revisión crítica posterior C9/#6, política A ya implementada y verificada (informe38). #6 continúa abierto; PR14 draft, `main` intacta. Auditoría general de avisos estacionada.**
+**Próxima decisión única propuesta: aceptar y cerrar administrativamente #6 tras C9 y C9-R1 validadas (informe39). Manual de liderazgo humano preservado; PR14 sigue draft y `main` intacta. No iniciar #7 sin autorización.**
