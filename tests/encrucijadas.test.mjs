@@ -104,15 +104,15 @@ test('al ganar objetos, algunas historias devuelven representaciones de texto de
  const t=fixture();t.set('La farmacia saqueada');trigger(t,'search','game.humans[0]');t.run('resolveCross(0);');
  assert.deepEqual(t.val('game.items.slice(-2)'),['medicina','medicina']);
 });
-test('falla antigua: botiquín en mano NO habilita opción de fiebre',()=>{
+test('C2 #2 | medicina estructurada habilita opción de fiebre',()=>{
  const t=fixture();t.set('Fiebre en el refugio');
  assert.equal(t.val('game.items.some(it=>it.kind==="medicina")'),true);
- assert.equal(t.val('crossOptionAllowed(crossroadsDeck[game.crossCard],0,"human")'),false);
+ assert.equal(t.val('crossOptionAllowed(crossroadsDeck[game.crossCard],0,"human")'),true);
 });
-test('falla antigua: combustible en mano NO habilita opción de generador',()=>{
+test('C2 #2 | combustible estructurado habilita opción de generador',()=>{
  const t=fixture();t.set('El generador averiado');
  assert.equal(t.val('game.items.some(it=>it.kind==="combustible")'),true);
- assert.equal(t.val('crossOptionAllowed(crossroadsDeck[game.crossCard],0,"human")'),false);
+ assert.equal(t.val('crossOptionAllowed(crossroadsDeck[game.crossCard],0,"human")'),true);
 });
 test('la IA elige opción por heurística de los textos y aplica efecto',()=>{
  const t=fixture();t.set('Golpes en la puerta','ai');t.run('game.mode="ai";');trigger(t,'move','game.bots[0]');
@@ -135,4 +135,43 @@ test('el dueño de la carta determina en qué mano se depositan las recompensas'
 test('no existe por ahora registro persistente de elección en el estado inicial',()=>{
  const t=fixture();assert.equal(t.val('Object.hasOwn(game,"storyHistory")'),false);
  assert.equal(t.val('Object.hasOwn(game,"storyFlags")'),false);
+});
+
+test('C2 #2 | tres encrucijadas consumen un único recurso de su tipo sin eliminar los demás',()=>{
+ for(const [title,kindName] of [['Fiebre en el refugio','medicina'],['El generador averiado','combustible'],['La guardia nocturna','herramienta']]){
+  const t=fixture();t.set(title);
+  t.run('game.items=[catalog.create("bandage"),catalog.create("medkit"),catalog.create("gascan"),catalog.create("crowbar"),catalog.create("ration")];');
+  const before=t.val('({count:game.items.filter(it=>kind(it)==='+JSON.stringify(kindName)+').length,morale:game.morale,b:game.zones[0].b})');
+  assert.equal(t.val('crossOptionAllowed(crossroadsDeck[game.crossCard],0,"human")'),true);
+  t.run('game.crossPending=true;resolveCross(0);');
+  assert.equal(t.val('game.items.filter(it=>kind(it)==='+JSON.stringify(kindName)+').length'),before.count-1);
+  assert.equal(t.val('game.items.length'),4);
+  assert.equal(t.val('game.crossResolved'),true);
+  assert.equal(t.val('game.morale')>=before.morale,true);
+  if(kindName==='herramienta')assert.equal(t.val('game.zones[0].b'),before.b+2);
+ }
+});
+test('C2 #2 | sin recurso la opción costosa permanece deshabilitada y no altera el juego',()=>{
+ for(const title of ['Fiebre en el refugio','El generador averiado','La guardia nocturna']){
+  const t=fixture();t.set(title);
+  t.run('game.items=[catalog.create("ration")];game.crossPending=true;');
+  assert.equal(t.val('crossOptionAllowed(crossroadsDeck[game.crossCard],0,"human")'),false);
+  assert.equal(t.val('resolveCross(0)'),false);
+  assert.deepEqual(t.val('({items:game.items.length,pending:game.crossPending})'),{items:1,pending:true});
+ }
+});
+test('C2 #2 | J2 local usa su propia medicina, no la de J1',()=>{
+ const t=fixture({mode:'local'});t.set('Fiebre en el refugio','ai');
+ t.run('game.items=[catalog.create("bandage")];game.botItems=[catalog.create("medkit")];game.crossPending=true;');
+ const morale=t.val('game.morale');
+ t.run('crossChoose(0);');
+ assert.deepEqual(t.val('({j1:game.items.length,j2:game.botItems.length,morale:game.morale,done:game.crossResolved})'),{j1:1,j2:0,morale:morale+1,done:true});
+});
+test('C2 #2 | cartas antiguas representadas por cadenas también se reconocen y consumen',()=>{
+ const t=fixture();t.set('Fiebre en el refugio');
+ t.run('game.items=["medicina"];game.crossPending=true;');
+ assert.equal(t.val('crossOptionAllowed(crossroadsDeck[game.crossCard],0,"human")'),true);
+ t.run('resolveCross(0);');
+ assert.equal(t.val('game.items.length'),0);
+ assert.equal(t.val('game.crossResolved'),true);
 });
