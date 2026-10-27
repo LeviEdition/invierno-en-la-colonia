@@ -1059,7 +1059,14 @@ async function botTurn(){
   const injured=game.bots.filter(p=>!p.dead&&(d.effect==='frost'?p.frost:p.wounds+p.frost)).sort((a,b)=>(b.wounds+b.frost)-(a.wounds+a.frost))[0];
   if((d.effect==='heal'||d.effect==='frost')&&injured){if(itemEngine.use(k,injured,'ai'))await pause();}
   else if(d.effect==='food'&&game.food<Math.ceil((alive().filter(p=>p.loc===0).length+game.helpless)/2)+1){if(itemEngine.use(k,bots.find(p=>!p.dead),'ai'))await pause();}
-  else if(d.effect==='research'){if(itemEngine.use(k,bots.find(p=>!p.dead),'ai'))await pause();}
+  else if(d.effect==='research'){
+   if(itemEngine.use(k,bots.find(p=>!p.dead),'ai')){
+    // C1/#11: una muestra completada por la IA debe ganar antes de procesar la colonia.
+    verify();
+    if(game.ended)return;
+    await pause();
+   }
+  }
   else if(d.effect==='manual'&&game.waste>=2){if(itemEngine.use(k,bots.find(p=>!p.dead),'ai'))await pause();}
  }
 
