@@ -98,6 +98,14 @@ El creador autorizó **A**: un jugador confirma a su líder inicial con la prime
 
 **Chromium:** cinco recorridos UI con botones reales y traspaso de dispositivo J1→J2, incluidos dos en viewport móvil simulado; **cinco aprobados sin errores JS**. Blob del HTML de la rama **`b5b9f2020c5abb73fd95e0f7441db088bb746d16`**, confirmado igual al archivo que probó Chromium. [Informe38](38-c9-lider-inicial-j2.md). El bloqueo se limita a las tres clases de acción previamente vigentes en J1; otros eventos y habilidades no forman parte de C9. La sucesión por muerte continúa con su flujo propio. **Issue #6 todavía abierto**; siguiente trabajo: revisión crítica posterior antes de aceptar/cerrar. PR14 draft, `main` intacta. La tabla original más abajo es registro histórico, no estado actual.
 
+## Revisión crítica C9 y reparación C9-R1 — 27/10/2026
+
+**Liderazgo humano:** elección manual del líder por cada jugador, al estilo *Dead of Winter*, **sin obligación** de mayor influencia. C9 política A sigue confirmando líder inicial al gastar dado, moverse o usar carta con éxito en ronda 1, y permite elección manual del sucesor si el líder fallece.
+
+**P2 comprobado en revisión posterior:** la muerte del líder de J2 durante turno de J1 abría selector de J2 en la pantalla de J1 y permitía elegir por el otro. [Informe39](39-revision-critica-c9-r1.md) presenta reproducción Chromium. **C9-R1**: [tests `ed817b5`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/ed817b59825268c54aa1f183c783f19af3189c83) agregaron **5 regresiones**; [CI rojo 40593244756](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40593244756): **336 declaradas, 331 aprobadas, 5 fallidas**. [Parche `e84db6a`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/e84db6ae088f314e232e377c15cda37683cce19b): turno/propietario/menú/pase restringen quién puede nombrar sucesor. [CI verde 40593438595](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40593438595): **336 declaradas, 336 aprobadas, 0 fallidas, 0 TODO**. **Tres** escenarios nuevos Chromium con pase real, sucesión propia y automatismo IA aprobados (blob `2682f96f0d451eb0083fd9eaa3762b266f8aab60`); sin errores JS.
+
+**Reservas:** no todas las combinaciones de muertes simultáneas de líderes ni rondas aleatorias fueron reproducidas; hay un único estado global `pendingLeader`, por lo cual esa concurrencia queda para validación cruzada de fin de etapa. No se probó dispositivo Android físico y no es paso obligatorio aquí. **Issue #6 abierto** a espera de aceptación/cierre administrativo; PR14 borrador sin fusión a `main`. La tabla histórica posterior no refleja el estado actual de los issues.
+
 ## Estados de auditoría
 
 - **Parcialmente probado (P):** hay pruebas automatizadas, pero faltan escenarios importantes.
