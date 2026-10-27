@@ -2,7 +2,11 @@
 
 **Fecha:** 27/10/2026. **Rama:** `fix/estabilizacion-v9-9`. **PR:** [#14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14), abierto y en borrador, base `refactor/arquitectura`. **Revisión:** `5b3a663..247f819`; el cambio ejecutable de C5/C6 está en `d4a6b3f` y los commits posteriores revisados solo cambian documentación.
 
-**Resultado:** revisión realizada, con una regresión C6 que impide recomendar su integración y un caso residual C5. No se modificó el juego, no se fusionó, no se cerraron incidencias ni se inició #5. Esta revisión documentada no es una aprobación formal en GitHub.
+**Resultado de la revisión original:** revisión realizada, con una regresión C6 que impide recomendar su integración y un caso residual C5. No se modificó el juego, no se fusionó, no se cerraron incidencias ni se inició #5. Esta revisión documentada no es una aprobación formal en GitHub.
+
+## Seguimiento posterior — 27/10/2026
+
+**R1 corregido y revisado en C6-R1:** [a5043fa](https://github.com/LeviEdition/invierno-en-la-colonia/commit/a5043fadbaa686ed9d5c4cdc8c43ab90806baa52), seis regresiones nuevas y validaciones en [informe 27](27-correccion-c6-r1.md). La descripción y resultados de esta revisión se conservan como históricos del rango `5b3a663..247f819`, no como fallo vigente de R1 después del arreglo. **R2 sigue pendiente**, propuesto como siguiente tarea sin iniciar. El estado operativo actual figura en [tablero 18](18-tablero-operativo.md).
 
 ## Alcance y método
 
@@ -72,4 +76,4 @@ void finishTurn();
 - **Documentación:** se actualizan este informe, tablero 18, registro 25 y matriz 04; `git diff --check`. La documentación se entrega en la rama de estabilización; su ejecución CI se identifica por el SHA de ese nuevo commit y no se da por aprobada de antemano.
 - **Protección de estable:** `main` continúa en `d9068f4`, blob HTML `4ebaedad13d63c7a6762c524a52c0dd9695687b1`. No hubo cambio de reglas, código, pruebas, workflow, red, credenciales ni revisión formal de GitHub en este bloque.
 
-**Siguiente tarea única: C6-R1 — corregir el bloqueo botín/curación con regresión y ajuste mínimo.** No iniciada aquí. R2 queda documentado por separado; #5 y las demás propuestas siguen sin iniciar. Android físico, TalkBack, balance y partidas naturales completas mantienen sus límites anteriores.
+**Siguiente tarea al cerrar la revisión original (histórico): C6-R1 — corregir el bloqueo botín/curación con regresión y ajuste mínimo.** No se inició en aquella revisión; el seguimiento de arriba registra su corrección posterior. R2 queda documentado por separado; #5 y las demás propuestas siguen sin iniciar. Android físico, TalkBack, balance y partidas naturales completas mantienen sus límites anteriores.

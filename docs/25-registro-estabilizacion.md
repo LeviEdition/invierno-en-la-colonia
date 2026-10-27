@@ -1,6 +1,6 @@
 # 25 — Registro de estabilización V9.9 (C1–C6)
 
-**Fecha:** 27/10/2026. **Rama de trabajo:** `fix/estabilizacion-v9-9` (nació de `refactor/arquitectura`). **Estado:** C1–C4 con CI verde; C5 y C6 implementadas, con pruebas locales y CI remoto aprobados; revisión final con una regresión C6 y un caso residual C5 pendientes. **No promovidos a `main`.**
+**Fecha:** 27/10/2026. **Rama de trabajo:** `fix/estabilizacion-v9-9` (nació de `refactor/arquitectura`). **Estado:** C1–C4 con CI verde; C5 y C6 implementadas, con pruebas locales y CI remoto aprobados; C6-R1 corregida y revisada; caso residual C5-R2 pendiente. **No promovidos a `main`.**
 
 ## Entrega C5/C6 para revisión
 
@@ -25,6 +25,16 @@ Código y pruebas en [d4a6b3f](https://github.com/LeviEdition/invierno-en-la-col
 - **Validación:** 65/65 pruebas relevantes aprobadas y [CI de `247f819`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40554797945) verde. Ocho escenarios dirigidos Chromium confirman los hallazgos sin errores JS; no se contabilizan como pruebas aprobadas del juego. Sin nuevas pruebas en el repositorio, sin repetir suite local completa ni Android/TalkBack.
 - **Cambios de este bloque:** solo informe 26, tablero 18, este registro y matriz 04, comprobados con `git diff --check` y entregados en la rama de estabilización. Código, reglas, tests, `main`, workflow y configuración intactos. No se publicaron comentarios/revisiones formales de GitHub ni se cerraron issues. La ejecución CI del commit documental se comprueba por su SHA tras subirlo.
 - **Siguiente tarea única:** C6-R1, regresión y arreglo mínimo de la combinación botín/curación; no se implementó en esta revisión. R2 queda como residual posterior. #5 no iniciado ni regla de IA decidida.
+
+## C6-R1 — Corrección del hallazgo R1, 27/10/2026
+
+**Implementada y revisada en su alcance:** [a5043fa](https://github.com/LeviEdition/invierno-en-la-colonia/commit/a5043fadbaa686ed9d5c4cdc8c43ab90806baa52). [Informe 27](27-correccion-c6-r1.md) conserva precondición/acción/esperado/observado, pruebas, diagnóstico del auxiliar y límites. Una guardia `if(pendingLoot)return;` al iniciar la rama médica/enfermera impide superponer curación con botín; no se modificaron otros permisos, habilidades o C5-R2.
+
+**Evidencia:** seis regresiones fallidas contra la versión anterior y aprobadas tras el arreglo. 48/48 en modales; `npm test`: **281 declaradas, 278 aprobadas, 0 fallidas/canceladas/omitidas y 3 TODO previos**. Chromium: 12 recorridos de curar/cancelar y recuperación en tres turnos, dos viewports; sin errores JS. Revisión independiente sin defectos; se refinó la precondición a paciente con dos daños no letales. No se valida móvil físico ni balance.
+
+**CI remoto confirmado:** [GitHub Actions sobre `a5043fa`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40556617672), `completed/success`; logs: **281 declaradas, 278 aprobadas, 0 fallidas/canceladas/omitidas y 3 TODO**.
+
+**Documentación y entrega:** tablero 18, este registro, matriz 04, seguimiento 26 e informe 27 actualizados. Código y regresiones subidos a la rama del PR #14; documentación en commit posterior. Sin comentarios de GitHub, aprobación formal, cierre de issues, fusión o cambios a `main`. Los informes anteriores describen la revisión y fallos históricos; R1 queda corregido por esta tarea. Siguiente tarea única propuesta C5-R2, no iniciada; #5 continúa estacionada.
 
 ## Origen del trabajo
 
@@ -113,7 +123,7 @@ Código y pruebas en [d4a6b3f](https://github.com/LeviEdition/invierno-en-la-col
 | --- | --- | --- |
 | **C4 completada** | [#12](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12) | Foco de inicio/pase corregido en rama; revisión de accesibilidad real adicional pendiente |
 | **C5 revisada; residual pendiente** | [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8) + [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10) | Guardias originales y CI verificados; cola previa R2 sin proteger (preexistente) |
-| **C6 revisada; regresión pendiente** | [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9) | Bloqueo aislado y CI verificados; combinación botín/curación bloqueada (R1) |
+| **C6-R1 corregida y revisada** | [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9) | R1 resuelto: curación espera al botín; pruebas y revisión en informe 27 |
 | Más adelante | [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5), [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13), [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) | Estrategia IA, ergonomía móvil, selección estructurada de encrucijadas |
 | Requiere al creador | [#4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4), [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6) | Transferencias entre grupos y momento de elección de líder inicial |
 
@@ -121,4 +131,4 @@ Código y pruebas en [d4a6b3f](https://github.com/LeviEdition/invierno-en-la-col
 
 ## Siguiente tarea única
 
-**C6-R1 — corregir el bloqueo botín/curación con prueba de regresión y ajuste mínimo.** Revisión final C5/C6 realizada con hallazgos; entrega y CI verde no resuelven R1/R2. Corrección no iniciada aquí. Registrar resultados y actualizar el tablero al terminar cada revisión. No fusionar, publicar una versión ni iniciar otro defecto dentro de este bloque.
+**C5-R2 — proteger el fin de turno con muerte ya en cola, antes de abrir el aviso.** Propuesta siguiente, no iniciada en C6-R1. R1 corregido y revisado con pruebas; R2 permanece como residual conocido. Registrar resultados y actualizar el tablero al terminar cada revisión. No fusionar, publicar una versión ni iniciar otro defecto dentro de este bloque.

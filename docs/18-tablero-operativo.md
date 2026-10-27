@@ -11,7 +11,7 @@
 
 - **Estable:** `main`, `invierno_colonia_v9_9.html`, SHA Git blob `4ebaedad13d63c7a6762c524a52c0dd9695687b1`. El archivo es idéntico en `main` y `refactor/arquitectura` al revisar.
 - **Auditoría:** PR [#1](https://github.com/LeviEdition/invierno-en-la-colonia/pull/1) abierto y en borrador; no fusionar por ahora.
-- **Pruebas en rama de estabilización:** C5/C6, **272 aprobadas, 0 fallidas/canceladas/omitidas y 3 `test.todo`** (275 declaradas), confirmadas en los logs de [GitHub Actions para `64dcc2c`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40552240429). Las verificaciones dirigidas de Chromium están documentadas en C4–C6; Android físico/TalkBack siguen pendientes.
+- **Pruebas de entrega C5/C6 (históricas; actualización C6-R1 abajo):** **272 aprobadas, 0 fallidas/canceladas/omitidas y 3 `test.todo`** (275 declaradas), confirmadas en los logs de [GitHub Actions para `64dcc2c`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40552240429). Las verificaciones dirigidas de Chromium están documentadas en C4–C6; Android físico/TalkBack siguen pendientes.
 - **Problemas registrados:** [#2](https://github.com/LeviEdition/invierno-en-la-colonia/issues/2), [#3](https://github.com/LeviEdition/invierno-en-la-colonia/issues/3), [#4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4), [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5), [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6), [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) y [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8), [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9), [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10) y [#11](https://github.com/LeviEdition/invierno-en-la-colonia/issues/11), [#12](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12) y [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13). El #4 requiere resolver una ambigüedad de reglas, no presumir que es un bug.
 - **Narrativa:** visión, objetivos, campañas y bocetos registrados en `docs/12`–`docs/17`. Son **propuestas y decisiones de diseño**, no código ni campañas implementadas.
 
@@ -29,7 +29,7 @@ Por instrucción del usuario se incorporó la obligación de actualizar el table
 
 **Resultado y límites de aquella revisión documental:** acceso y CI de la entrega confirmados; documentación sincronizada. No se realizó entonces una nueva prueba de navegador o dispositivo físico ni una revisión final de código; la revisión de código posterior figura abajo. #5 sigue siendo una propuesta de trabajo posterior que requiere acordar la prioridad de la IA; no está iniciada ni autorizada su implementación.
 
-## 2. Etapa activa C — estabilización; revisión C5/C6 con hallazgos
+## 2. Etapa activa C — estabilización; C6-R1 corregida, C5-R2 pendiente
 
 **Objetivo:** saber qué hace realmente el juego, qué falla y qué no se ha probado, antes de intervenir sus reglas o extraer módulos.
 
@@ -100,7 +100,7 @@ Se enfoca el diálogo de inicio/pase, se confina Tab/Shift+Tab, se hace inerte e
 
 Cambios entregados en el PR #14 para revisión, sin fusionar ni modificar `main`. CI remoto de C5/C6 confirmado en la entrega registrada arriba; los resultados de implementación anteriores son históricos. Detalles en [registro C5](25-registro-estabilizacion.md#c5--8-y-10-guardias-de-fin-de-turno).
 
-### C6 — Acciones durante curación pendiente (#9): revisada, regresión pendiente
+### C6 — Acciones durante curación pendiente (#9): R1 corregido en el seguimiento
 
 **Autorización:** el usuario indica «continuemos» después de confirmar C6 como siguiente tarea. Se conservaron los cambios locales de C5; `main` y los remotos no se modificaron.
 
@@ -121,9 +121,19 @@ Tablero, registro y matriz actualizados. Al terminar la implementación, los cam
 
 **Resultados:** 65/65 pruebas relevantes aprobadas; CI de `247f819` [aprobado](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40554797945). Los ocho experimentos de Chromium confirmaron los casos, sin errores JS; no cuentan como ocho pruebas funcionales aprobadas. Las pruebas existentes no cubren estas combinaciones. No hubo modificaciones de código ni nuevas regresiones incorporadas a la suite en esta revisión: se entrega diagnóstico, no una corrección. PR #14 sigue en borrador, sin aprobación formal ni fusión; `main` intacta.
 
-### Siguiente tarea única — C6-R1: bloqueo botín/curación
+### C6-R1 — Bloqueo botín/curación: corregido y revisado, 27/10/2026
 
-Añadir regresión de decisiones superpuestas, aplicar un ajuste mínimo que preserve la resolución/cancelación y verificar modo local e IA. No iniciada en este bloque. R2 se conserva como residual posterior; no iniciar #5 ni otras correcciones.
+[Informe 27](27-correccion-c6-r1.md), código/pruebas [a5043fa](https://github.com/LeviEdition/invierno-en-la-colonia/commit/a5043fadbaa686ed9d5c4cdc8c43ab90806baa52). Se impide iniciar la curación médica/enfermera mientras exista `pendingLoot`, sin relajar permisos para resolver botín ni cambiar otras habilidades. Seis regresiones fallaron antes y pasan después; 48/48 pruebas del archivo de modales. `npm test`: **281 declaradas, 278 aprobadas, 0 fallidas/canceladas/omitidas y 3 TODO previos**.
+
+Chromium completó 12 recorridos en 1365×768 y 393×852: J1/J2/humano contra IA, curar/cancelar, ruido/elección única y recuperación de búsqueda. Sin errores JS. Solo la orden tardía de habilidad se reproduce por llamada interna; las elecciones se verifican con botones reales. Una revisión independiente no encontró defectos en el ajuste. No se afirma Android físico/táctil ni todas las combinaciones de decisiones.
+
+**CI remoto confirmado:** [GitHub Actions sobre `a5043fa`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40556617672), `completed/success`; logs: **281 declaradas, 278 aprobadas, 0 fallidas/canceladas/omitidas y 3 TODO**.
+
+Tablero, registro, matriz e informes 26/27 actualizados; se conserva el hallazgo original como histórico. Sin fusión, cierre de issues ni aprobación formal del PR. `main` intacta. R2 de C5 no se modificó.
+
+### Siguiente tarea única propuesta — C5-R2: cola de fallecimiento
+
+Proteger la transición si ya hay una muerte en cola antes de abrirse su microtarea, con regresión y ajuste mínimo. No iniciada en este bloque; #5 y otras correcciones siguen estacionadas.
 
 ## 3. Etapas posteriores: una por vez
 
@@ -178,7 +188,7 @@ Los detalles están en `docs/12`–`docs/17`. **No abrir nuevos frentes para amp
 
 Si surge una idea fuera de la tarea activa:
 
-> «Es una idea para la hoja de ruta, pero ahora estamos en **C6-R1 (bloqueo botín/curación)**. La registro y seguimos con la estabilización. ¿Querés cambiar explícitamente la prioridad?»
+> «Es una idea para la hoja de ruta, pero ahora estamos en **C5-R2 (cola de fallecimiento), propuesta siguiente**. La registro y seguimos con la estabilización. ¿Querés cambiar explícitamente la prioridad?»
 
 Solo cambiar la etapa activa con una decisión consciente; registrar motivo, riesgos, estado de la tarea interrumpida y cómo retomarla. No es necesario prohibir las conversaciones creativas: **conversar no equivale a cambiar la etapa ni a comenzar a programar**.
 
@@ -191,4 +201,4 @@ Solo cambiar la etapa activa con una decisión consciente; registrar motivo, rie
 - **Propuestas narrativas (estacionadas):** `docs/12`–`docs/17`.
 - **Defectos/decisiones por resolver:** GitHub Issues.
 
-**Próxima acción única: C6-R1 — corregir el bloqueo botín/curación, con regresión y ajuste mínimo. Revisión final realizada con hallazgos documentados; corrección no iniciada. No iniciar #5 ni fusionar.**
+**Próxima acción única propuesta: C5-R2 — proteger la cola de fallecimiento antes de abrir el aviso. C6-R1 corregida y revisada, con evidencia arriba. No iniciar C5-R2 en este bloque, #5 ni fusionar.**

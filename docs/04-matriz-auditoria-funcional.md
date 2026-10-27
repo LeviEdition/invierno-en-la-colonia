@@ -30,6 +30,14 @@ Código y regresiones en [d4a6b3f](https://github.com/LeviEdition/invierno-en-la
 
 [Informe 26](26-revision-final-c5-c6.md): **R1/P2 (regresión C6, subsistemas 07/18)**, botín y curación simultáneos impiden elegir botín; **R2/P2 (residual C5 preexistente, subsistemas 02/06/16)**, la cola de fallecimiento no bloquea fin de turno antes de abrir el aviso. Las protecciones de pase, muerte visible y curación aislada mantienen sus pruebas; no cubren estas combinaciones. 65/65 pruebas relevantes verdes; CI de `247f819` aprobado. Ocho experimentos Chromium confirmaron hallazgos, no una certificación de funcionamiento. Solo documentación modificada en la revisión; `main` intacta, PR en borrador sin aprobación de integración. Siguiente tarea única **C6-R1**, no iniciada aquí; R2 pendiente posterior. Android físico y TalkBack siguen sin validación formal.
 
+## Corrección C6-R1 — 27/10/2026
+
+R1 de la revisión anterior (subsistemas 07/18) corregido en [a5043fa](https://github.com/LeviEdition/invierno-en-la-colonia/commit/a5043fadbaa686ed9d5c4cdc8c43ab90806baa52): se rechaza iniciar curación mientras se elige botín. Seis regresiones antes fallidas pasan; las rutas de ruido, elección, curar/cancelar, aislamiento de manos y nueva búsqueda permanecen verificadas. Suite: **281 declaradas, 278 aprobadas, 0 fallidas/canceladas/omitidas y 3 TODO**; modales 48/48. Chromium verificó 12 recorridos en escritorio y ventana estrecha, sin errores JS. [Informe 27 y límites](27-correccion-c6-r1.md). Revisión independiente sin defectos en el ajuste.
+
+**CI remoto confirmado:** [GitHub Actions sobre `a5043fa`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40556617672), `completed/success`; logs: **281 declaradas, 278 aprobadas, 0 fallidas/canceladas/omitidas y 3 TODO**.
+
+R2 de C5 (muerte en cola) sigue pendiente; es la siguiente tarea única propuesta, sin iniciar. No se certifican todas las combinaciones, Android físico ni TalkBack. `main` intacta y PR #14 sin fusionar. El resultado de revisión 26 anterior se conserva como evidencia histórica; C6-R1 lo actualiza para R1.
+
 ## Estados de auditoría
 
 - **Parcialmente probado (P):** hay pruebas automatizadas, pero faltan escenarios importantes.
