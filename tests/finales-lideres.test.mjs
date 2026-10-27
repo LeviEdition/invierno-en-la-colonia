@@ -283,3 +283,41 @@ test('C9 interfaz: grupo informa a J1 y J2 que deben elegir líder antes de actu
   const j2=t.state('document.getElementById("modalContent").innerHTML');
   assert.match(j2,/antes de gastar un dado, moverte o usar una carta/i);
 });
+
+test('C9-R1: J1 no puede elegir sucesor de J2 durante su propio turno', () => {
+  const t=fixture({mode:'local'});
+  t.run('kill(game.bots[1],"prueba cruzada");');
+  assert.deepEqual(t.state('({side:pendingLeaderSide,pending:pendingLeader,turn:game.turn,leader:game.leaders.ai})'),
+    {side:'ai',pending:true,turn:'human',leader:null});
+  t.run('chooseLeader("a2");');
+  assert.deepEqual(t.state('({pending:pendingLeader,leader:game.leaders.ai})'),{pending:true,leader:null});
+  t.run('game.turn="ai";chooseLeader("a2");');
+  assert.deepEqual(t.state('({pending:pendingLeader,leader:game.leaders.ai})'),{pending:false,leader:'a2'});
+});
+test('C9-R1: J1 puede seguir moviéndose cuando el sucesor pendiente pertenece a J2', () => {
+  const t=fixture({mode:'local'});
+  t.run('kill(game.bots[1],"prueba cruzada");target=1;doMove();');
+  assert.deepEqual(t.state('({loc:game.humans[0].loc,moved:game.humans[0].moved,waiting:pendingLeader,side:pendingLeaderSide})'),
+    {loc:1,moved:true,waiting:true,side:'ai'});
+});
+test('C9-R1: J1 aún puede elegir su líder inicial aunque J2 tenga un sucesor pendiente', () => {
+  const t=fixture({mode:'local'});
+  t.run('kill(game.bots[1],"prueba cruzada");chooseLeader("h2");');
+  assert.deepEqual(t.state('({j1:game.leaders.human,j2:game.leaders.ai,chosenJ1:game.leaderChosen,waiting:pendingLeader,side:pendingLeaderSide})'),
+    {j1:'h2',j2:null,chosenJ1:true,waiting:true,side:'ai'});
+});
+test('C9-R1: J2 no puede elegir sucesor de J1 antes de devolverle el turno', () => {
+  const t=fixture({mode:'local'});
+  t.run('game.turn="ai";kill(game.humans[0],"prueba cruzada");chooseLeader("h2");');
+  assert.deepEqual(t.state('({j1:game.leaders.human,waiting:pendingLeader,side:pendingLeaderSide})'),
+    {j1:null,waiting:true,side:'human'});
+  t.run('game.turn="human";chooseLeader("h2");');
+  assert.deepEqual(t.state('({j1:game.leaders.human,waiting:pendingLeader})'),{j1:'h2',waiting:false});
+});
+test('C9-R1: interfaz de J1 no debe mostrar modal de sucesión pendiente de J2', () => {
+  const t=fixture({mode:'local'});
+  t.run('kill(game.bots[1],"prueba cruzada");');
+  assert.equal(t.state('leaderChoiceReady()'),false);
+  t.run('game.turn="ai";');
+  assert.equal(t.state('leaderChoiceReady()'),true);
+});
