@@ -49,3 +49,9 @@ Se añadieron **ocho regresiones activas** a `tests/ia-turnos.test.mjs`:
 La verificación se basó en suite Node con DOM simulado en CI, no una corrida nueva de Chromium, Android físico, TalkBack o simulación de balance. Las pruebas no cubren todos los cruces de crisis, investigadores, botines, supervivientes y muertes; el motor continúa monolítico. La preferencia de botín no dirige el movimiento hacia zonas con alta probabilidad de herramientas, ni puede encontrar cartas ocultas.
 
 **No se declara C7-R1 completamente revisada ni #5 cerrado por CI verde.** Se recomienda como **único siguiente bloque** una revisión crítica posterior y acotada a C7-R1 para evaluar el orden de prioridades, evitar efectos colaterales en botines y comprobar continuidad de C7, antes de elegir otro issue o considerar integración a `main`.
+
+## Continuidad: revisión posterior de C7-R1 — 27/10/2026
+
+Se realizó la revisión crítica independiente de código por inspección, evidencia CI y cobertura de regresiones registrada en [informe33](33-revision-critica-c7-r1.md). **No se identificaron nuevos defectos dentro del cambio de puntuación aprobado**; H1 está cubierto por ocho regresiones y `gainSample()` verifica la excepción de victoria por investigador. [CI 40576507329](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40576507329) confirmó de nuevo **305 declaradas, 303 aprobadas, 0 fallidas, 2 TODO** sobre el commit auditado de documentación `46564a5`. Sin pruebas dinámicas nuevas, sin parche adicional ni cambio de reglas.
+
+**Reserva:** falta validar en navegador real encrucijadas, pausa/modal y fin de turno porque la suite IA sustituye esos componentes. Se mantiene #5 abierto, PR #14 en borrador y `main` intacta. Próximo bloque único: smoke test manual de C7/C7-R1 con juego real antes de una eventual decisión de cierre o integración.
