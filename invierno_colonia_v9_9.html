@@ -499,17 +499,21 @@ function ownerGroup(side){return side==='ai'?game.bots:game.humans;}
 function groupLeader(side){if(!game)return null;return ownerGroup(side).find(p=>!p.dead&&p.id===game.leaders?.[side])||null;}
 function isLeader(p){return !!p&&!p.dead&&game.leaders?.[ownerOf(p)]===p.id;}
 let pendingLeader=false,pendingLeaderSide='human',leaderCompletion=null,pendingRecruitInfo=null;
+// C9-R1: si muere el líder de otro jugador, decidir sucesor en el turno de su dueño.
+function leaderChoiceReady(){
+ return pendingLeader&&!passScreenActive&&(game.mode!=='local'||pendingLeaderSide===controls.side);
+}
 function chooseLeader(id){
- const side=pendingLeader?pendingLeaderSide:controls.side;
+ const succession=leaderChoiceReady(),side=succession?pendingLeaderSide:controls.side;
  const group=ownerGroup(side).filter(p=>!p.dead),p=group.find(x=>x.id===id);
- if(!p||(!pendingLeader&&!canPickStartingLeader()))return;
+ if(!p||(!succession&&!canPickStartingLeader()))return;
  game.leaders[side]=p.id;
  if(side==='human')game.leaderChosen=true;
  else game.localLeaderChosen=true;
- pendingLeader=false;
+ if(succession)pendingLeader=false;
  message('♛ '+p.name+' asume el liderazgo del '+controls.display(side)+' (influencia '+p.influence+').');
  opened='';document.getElementById('backdrop').classList.remove('open');
- if(leaderCompletion){const done=leaderCompletion;leaderCompletion=null;done();}paint();
+ if(succession&&leaderCompletion){const done=leaderCompletion;leaderCompletion=null;done();}paint();
 }
 function reviewLeader(side){
  const group=ownerGroup(side).filter(p=>!p.dead);
@@ -849,7 +853,7 @@ function chooseLoot(i){
  opened='';document.getElementById('backdrop').classList.remove('open');crossAction('search',p);verify();paint();if(pendingRecruitInfo&&!game.crossPending)show('recruitSuccess');
 }
 function consume(min){
- if(game.ended||!playable()||pendingLoot||pendingBite||pendingLeader||game.crossPending)return null;
+ if(game.ended||!playable()||pendingLoot||pendingBite||leaderChoiceReady()||game.crossPending)return null;
  if(!actionDice().length)return messageAndPaint('No quedan dados de acción.'),null;
  const dice=actionDice(),i=Math.max(0,Math.min(picked,dice.length-1)),value=dice[i];
  if(value<min)return messageAndPaint('Necesitás un dado de '+min+' o más (seleccionado: '+value+').'),null;
@@ -862,21 +866,21 @@ function boostDie(){
 }
 function pickFloatingDie(i){if(!playable()||game.ended)return;picked=i;paint();}
 function search(noise=false){
- if(!playable()||game.ended||pendingLoot||pendingBite||pendingLeader)return;
+ if(!playable()||game.ended||pendingLoot||pendingBite||leaderChoiceReady())return;
  const p=person();if(!p||p.dead||p.loc===0)return messageAndPaint('Elegí un superviviente vivo que esté fuera de la colonia.');
  if(!game.decks[p.loc].length)return messageAndPaint('No quedan cartas en esta localidad.');
  if(consume(effectiveSearch(p))===null)return;
  beginSearch(p,controls.side);paint();
 }
 function attack(){
- if(!playable()||game.ended||pendingBite||pendingLeader)return;
+ if(!playable()||game.ended||pendingBite||leaderChoiceReady())return;
  const p=person();if(!p||p.dead||!game.zones[p.loc].z)return messageAndPaint('No hay zombis que atacar con este superviviente.');
  if(consume(effectiveAttack(p))===null)return;
  itemEngine.attack(p,controls.side);
  if(!pendingBite)crossAction('attack',p);verify();paint();
 }
 function doMove(){
- if(!playable()||game.ended||pendingBite||pendingLeader)return;
+ if(!playable()||game.ended||pendingBite||leaderChoiceReady())return;
  const p=person();if(!p||p.dead)return;
  if(p.moved)return messageAndPaint('El superviviente ya se movió durante este turno.');
  if(p.loc===target)return messageAndPaint('Elegí otro destino.');
@@ -942,7 +946,7 @@ function contributeEquipment(id,i){
  CrisisManager.fromEquipment(id,i);
 }
 function playItem(i){
- if(game.ended||!playable()||game.crossPending||pendingBite||pendingLoot||pendingLeader||deathDirector.active)return;
+ if(game.ended||!playable()||game.crossPending||pendingBite||pendingLoot||leaderChoiceReady()||deathDirector.active)return;
  if(itemEngine.use(i,person(),controls.side)){confirmStartingLeader();verify();paint();}
  else paint();
 }
@@ -1230,13 +1234,13 @@ function confirmPass(){
  passScreenActive=false;
  syncHandoverAccessibility();paint();
  if(game.crossPending)show('crossroads');
- else if(pendingLeader)show('leaderChoice');
+ else if(leaderChoiceReady())show('leaderChoice');
  returnFocusAfterHandover();
 }
 async function finishTurn(){
  // El turno no puede avanzar hasta confirmar el pase o los fallecimientos, incluso en cola.
  if(game.ended||aiRunning||passScreenActive||deathDirector.active||deathDirector.pending.length)return;
- if(pendingLeader){show('leaderChoice');return;}
+ if(leaderChoiceReady()){show('leaderChoice');return;}
  if(pendingHeal||pendingLoot||pendingBite||pendingAttract||pendingTransfer){show(pendingHeal?'healTarget':pendingLoot?'lootChoice':pendingBite?'biteChoice':pendingAttract?'attractTarget':'transferTarget');return;}
  if(game.crossPending){show('crossroads');return;}
  hide();
@@ -1278,11 +1282,11 @@ async function finishTurn(){
 }
 function show(type){
  if(type==='actions'&&!playable())return;
- if(pendingBite)type='biteChoice';else if(pendingLeader)type='leaderChoice';else if(pendingLoot)type='lootChoice';else if(pendingHeal)type='healTarget';else if(pendingAttract)type='attractTarget';else if(pendingTransfer)type='transferTarget';else if(game&&game.crossPending)type='crossroads';
+ if(pendingBite)type='biteChoice';else if(leaderChoiceReady())type='leaderChoice';else if(pendingLoot)type='lootChoice';else if(pendingHeal)type='healTarget';else if(pendingAttract)type='attractTarget';else if(pendingTransfer)type='transferTarget';else if(game&&game.crossPending)type='crossroads';
  opened=type;document.getElementById('backdrop').classList.add('open');renderModal();
 }
 function hide(){
- if(pendingBite||pendingLeader||pendingLoot||pendingHeal||pendingAttract||pendingTransfer||game&&game.crossPending)return;
+ if(pendingBite||leaderChoiceReady()||pendingLoot||pendingHeal||pendingAttract||pendingTransfer||game&&game.crossPending)return;
  opened='';document.getElementById('backdrop').classList.remove('open');
 }
 function cancelAttract(){pendingAttract=null;hide();paint();}
@@ -1367,7 +1371,7 @@ function renderSite(i){
 function paint(){
  if(!game)return;
  processRescueQueue();
- if(pendingLeader&&!pendingBite&&!game.crossPending&&!game.ended){opened='leaderChoice';document.getElementById('backdrop').classList.add('open');}
+ if(leaderChoiceReady()&&!pendingBite&&!game.crossPending&&!game.ended){opened='leaderChoice';document.getElementById('backdrop').classList.add('open');}
  document.getElementById('board').innerHTML=places.map((_,i)=>renderSite(i)).join('');
  const obj=game.objective;
  document.getElementById('goalCard').innerHTML='<span class="eyebrow">⚑ OBJETIVO GENERAL</span><span class="main"><span>'+obj.name+'</span><span>'+game.samples+'/'+game.goal+'</span></span><span class="sub">'+obj.description+'</span><span class="progress"><i style="width:'+Math.min(100,game.samples/game.goal*100)+'%"></i></span>';
