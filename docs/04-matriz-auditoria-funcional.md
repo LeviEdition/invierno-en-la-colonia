@@ -2,7 +2,7 @@
 
 **Propósito:** revisar exhaustivamente lo que YA existe en Invierno en la Colonia antes de extraer módulos del motor. No confundir funcionalidades previstas (2D isométrico, historias persistentes, modo online) con funcionalidades ya implementadas.
 
-**Tablero de ejecución:** [18 — Tablero operativo](18-tablero-operativo.md). **Etapa activa:** A, auditoría V9.9; **siguiente tarea A3-01:** modales y estados pendientes (A2-01 automatizado finalizado; revisión visual diferida a A5). Los documentos de narrativa son diseño futuro y no cambian esta prioridad.
+**Tablero de ejecución:** [18 — Tablero operativo](18-tablero-operativo.md). **Etapa activa:** A, auditoría V9.9; **siguiente tarea A5-01:** navegador real y Android (A2, A3 y A4 automatizadas completadas; el cierre funcional requiere la validación visual). Los documentos de narrativa son diseño futuro y no cambian esta prioridad.
 
 **Fecha de inicio:** 27/10/2026 · **Rama:** `refactor/arquitectura` · **Base:** `invierno_colonia_v9_9.html`
 
@@ -35,8 +35,8 @@ Ningún subsistema debería declararse **completo** solo por pasar una prueba un
 | 14 | Encrucijadas narrativas | activación, disponibilidad de opciones, gastos, efectos e IA | **P + B**: 26 pruebas de cartas, disparadores, actor, elecciones J1/J2/IA y efectos; errores [#2](https://github.com/LeviEdition/invierno-en-la-colonia/issues/2) y [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) |
 | 15 | Inteligencia artificial | selección de acciones, objetos, búsqueda/combate, encrucijadas, bloqueos | **P**: 20 pruebas de equipamiento, decisiones, desplazamiento, combate y turno completo; narrativa y DOM pendientes; [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5) |
 | 16 | Dos jugadores en mismo dispositivo | privacidad en pantalla de pase, manos, dados, selección, líder y cambio de turnos | **P + B**: [20 pruebas específicas A2-01](19-auditoria-modo-local.md) de manos/dados, pase y estados pendientes; **B**: dados [#3](https://github.com/LeviEdition/invierno-en-la-colonia/issues/3), liderazgo [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6) y salto por llamada interna [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8); privacidad visual real pendiente A5 |
-| 17 | Victoria, derrota y situaciones límite | objetivos, moral cero, sin supervivientes, límite de rondas, estados pendientes | **P**: victoria, moral, tiempo, reemplazos, roster agotado, falta de espacio y rescates; integración visual pendiente |
-| 18 | Interfaz y accesibilidad | clics, modales, perfil, avisos, cartas, contraste, tamaño táctil y foco | **N**: pruebas manuales en navegador |
+| 17 | Victoria, derrota y situaciones límite | objetivos, moral cero, sin supervivientes, límite de rondas, estados pendientes | **P + B**: [A4: 23 pruebas](21-auditoria-integracion-a4.md), victorias/derrotas, rescates y partidas dirigidas de 10 rondas; fallo de fin de IA [#11](https://github.com/LeviEdition/invierno-en-la-colonia/issues/11), integración visual pendiente |
+| 18 | Interfaz y accesibilidad | clics, modales, perfil, avisos, cartas, contraste, tamaño táctil y foco | **P + B**: [A3: 21 pruebas con DOM simulado](20-auditoria-modales-a3.md), hallazgos internos [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9) y [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10); **pruebas manuales reales N** |
 | 19 | Móvil y rendimiento | vista vertical, sin scroll horizontal, render y animaciones, dispositivos modestos | **N**: pruebas manuales en celular |
 | 20 | Guardado, reconexión y multijugador por red | persistencia general, servidor autoritativo, WebSockets | **F**: objetivos futuros, no presentes en V9.9 |
 | 21 | Narrativa persistente (prioridad creativa) y escenas 2D | historia principal, arcos conectados, memoria de decisiones, consecuencias, personajes, sprites y escenas | **F**: diseño narrativo inicial en documentos 12 y 13; **no implementado** todavía en V9.9 |
@@ -74,7 +74,9 @@ Ningún subsistema debería declararse **completo** solo por pasar una prueba un
 - [ ] Validar dos rutas jugables con diferencias narrativas observables y consecuencias al menos dos rondas después.
 
 ### Bloque 5 — Integración y experiencia de usuario
-- [ ] Una partida reproducible desde inicio hasta victoria/derrota.
+- [x] A4: 23 pruebas dirigidas de integración, incluidas victorias, derrotas y partidas de 10 rondas; no confundir con partida sin recursos manipulados.
+- [ ] Una partida natural reproducible en navegador hasta victoria/derrota, sin alterar recursos ni mazos.
+- [x] A3: 21 pruebas automáticas de modales y estados pendientes (DOM simulado).
 - [ ] Pruebas visuales en navegador de escritorio.
 - [ ] Pruebas reales en pantalla móvil vertical y con interacción táctil.
 - [ ] Rendimiento, accesibilidad y ausencia de desplazamiento horizontal.
@@ -88,10 +90,13 @@ Ningún subsistema debería declararse **completo** solo por pasar una prueba un
 5. [#6 — Liderazgo inicial de J2](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6): J2 puede elegir líder después de actuar, mientras J1 queda bloqueado.
 6. [#7 — Decisiones narrativas de IA basadas en texto](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7): la IA no reconoce ciertos riesgos por diferencias de redacción.
 7. [#8 — Lógica de pase sin guardia interna](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8): `finishTurn()` permite avanzar mediante llamada directa mientras el pase está activo; no demostrado a través de controles normales.
-8. **Comportamiento de diseño a revisar** (no se declara bug): una mordedura iniciada en el turno humano puede hacer que la IA sacrifique automáticamente a su superviviente con menor influencia, cortando la cadena antes de pedir una decisión humana.
+8. [#9 — Acción de inventario durante curación pendiente](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9): por invocación interna, `playItem()` no bloquea la curación.
+9. [#10 — Fin de turno durante aviso de muerte](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10): llamada interna a `finishTurn()` puede avanzar sin confirmar fallecimiento.
+10. [#11 — IA alcanza meta y pierde antes de verificar](https://github.com/LeviEdition/invierno-en-la-colonia/issues/11): victoria con notas puede llegar demasiado tarde si la colonia reduce la moral a cero.
+11. **Comportamiento de diseño a revisar** (no se declara bug): una mordedura iniciada en el turno humano puede hacer que la IA sacrifique automáticamente a su superviviente con menor influencia, cortando la cadena antes de pedir una decisión humana.
 
 ## Reglas para reportar resultados
 
 Cada funcionalidad tendrá: **precondición → acción → estado esperado → resultado real → evidencia** (prueba automatizada o escenario manual). Los defectos se registran por separado y se corrigen en cambios específicos; no se insertan correcciones silenciosas durante la refactorización.
 
-La suite ahora contiene **194 pruebas ejecutables** (4 estructurales, 6 de estado inicial, 10 de movimiento/exposición, 11 de rondas/mordeduras/crisis, 17 de búsqueda/objetos, 22 de combate/equipamiento, 28 de colonia/turnos, 20 de IA, 30 de finales/líderes, 26 de encrucijadas y **20 de modo local A2-01**), más **3 TODO** (#4, #5 y #6). [Última ejecución comprobada](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40524535143). GitHub Actions verifica el conjunto. La cantidad de pruebas **no equivale a cobertura funcional completa**, y el motor narrativo persistente sigue siendo una propuesta por aprobar.
+La suite ahora contiene **238 pruebas ejecutables aprobadas** (194 previas, 21 de modales A3 y 23 de integración A4), más **3 TODO** (#4, #5 y #6): **241 declaradas, 0 fallidas**. [Última ejecución comprobada](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40528489536). GitHub Actions verifica el conjunto. La cantidad de pruebas **no equivale a cobertura funcional completa**, y el motor narrativo persistente sigue siendo una propuesta por aprobar.
