@@ -1,5 +1,7 @@
 # Plan de refactorización — por etapas, sin apuro
 
+> **Ejecución actual:** la fuente de verdad de **etapa activa, tarea única y criterios de terminado** es [el tablero operativo](18-tablero-operativo.md). **Estamos en A — Auditoría funcional; siguiente tarea A2-01, privacidad J1/J2.** Este documento es la planificación general, no una autorización para avanzar a distintas fases en paralelo.
+
 ## Objetivos
 
 1. Comprender el código antes de moverlo.
@@ -56,6 +58,19 @@ Antes de reorganizar acciones, escribir pruebas del comportamiento actual:
 
 En esta etapa **no corregimos silenciosamente reglas**: si encontramos un defecto, lo registramos para decidir una corrección explícita.
 
+## Compuertas de ejecución entre etapas
+
+Antes de comenzar una fase nueva, cerrar la anterior con evidencia y registrar una decisión de avance.
+
+1. **A — Auditoría completa:** falta modo local, pruebas visuales, integración y móvil. Documentar problemas y límites; no corregirlos a escondidas.
+2. **B — Decisiones y prioridad de defectos:** acordar qué es error y qué es regla deseada; clasificar impacto.
+3. **C — Estabilización:** corregir solo fallos priorizados, ejecutar regresiones y comprobar que el juego funciona en navegador real.
+4. **D — Refactorización:** separar módulos conservando el comportamiento.
+5. **E — Prototipo narrativo:** implementar memoria y un arco conectado validable.
+6. **F — Ampliación de campañas y presentación:** después de demostrar que funciona el núcleo.
+
+Las etapas originales C/D/E/F que aparecen debajo contienen los detalles técnicos; el [tablero operativo](18-tablero-operativo.md) determina su ejecución efectiva.
+
 ## Etapa C — Primer módulo independiente
 
 Extraer un componente pequeño y con pocas dependencias, probablemente el catálogo de objetos.
@@ -95,7 +110,7 @@ Principio: **dibujar no modifica el estado del juego**.
 
 **Principio actualizado:** la narrativa **no es opcional para ganar la campaña**. Atravesar la trama principal y obtener recursos mecánicos son requisitos interrelacionados desde la carta inicial, aunque las rutas y los epílogos cambien. Algunas campañas serán más cortas y mecánicas, otras más largas y narrativas. Las historias secundarias independientes no deben bloquear la victoria.
 
-La línea narrativa avanzará **junto con** la refactorización, no como contenido cosmético agregado al final. Su integración técnica comenzará cuando esté aprobado el diseño y exista un contrato mínimo fiable entre reglas e historias.
+**Prioridad creativa no equivale a etapa activa:** la narrativa ya orienta nuestras decisiones arquitectónicas y sus propuestas quedaron documentadas. **El diseño pendiente y la implementación narrativa están estacionados hasta completar la auditoría, definir defectos, estabilizar y alcanzar una interfaz de motor suficientemente segura.** No comenzar un arco nuevo por entusiasmo mientras sigamos en A. Cualquier excepción requiere cambiar el tablero operativo de manera explícita.
 
 ## Etapa E — Motor de historia y persistencia
 
