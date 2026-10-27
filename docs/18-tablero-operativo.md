@@ -9,8 +9,8 @@
 
 - **Estable:** `main`, `invierno_colonia_v9_9.html`, SHA Git blob `4ebaedad13d63c7a6762c524a52c0dd9695687b1`. El archivo es idéntico en `main` y `refactor/arquitectura` al revisar.
 - **Auditoría:** PR [#1](https://github.com/LeviEdition/invierno-en-la-colonia/pull/1) abierto y en borrador; no fusionar por ahora.
-- **Pruebas:** 194 ejecutables aprobadas, 0 fallidas y 3 `test.todo` (197 declaradas) en [GitHub Actions](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40524535143). Las pruebas automatizadas usan mayormente DOM simulado; **no sustituyen pruebas reales de interfaz**.
-- **Problemas registrados:** [#2](https://github.com/LeviEdition/invierno-en-la-colonia/issues/2), [#3](https://github.com/LeviEdition/invierno-en-la-colonia/issues/3), [#4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4), [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5), [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6), [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) y [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8). El #4 requiere resolver una ambigüedad de reglas, no presumir que es un bug.
+- **Pruebas:** 238 ejecutables aprobadas, 0 fallidas y 3 `test.todo` (**241 declaradas**) en [GitHub Actions](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40528489536). Las pruebas automatizadas usan mayormente DOM simulado; **no sustituyen pruebas reales de interfaz**.
+- **Problemas registrados:** [#2](https://github.com/LeviEdition/invierno-en-la-colonia/issues/2), [#3](https://github.com/LeviEdition/invierno-en-la-colonia/issues/3), [#4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4), [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5), [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6), [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) y [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8), [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9), [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10) y [#11](https://github.com/LeviEdition/invierno-en-la-colonia/issues/11). El #4 requiere resolver una ambigüedad de reglas, no presumir que es un bug.
 - **Narrativa:** visión, objetivos, campañas y bocetos registrados en `docs/12`–`docs/17`. Son **propuestas y decisiones de diseño**, no código ni campañas implementadas.
 
 ## 2. Etapa activa: A — Completar auditoría funcional de V9.9
@@ -23,9 +23,9 @@
 | --- | --- | --- | --- |
 | A1 | Caracterización automatizada de reglas y encrucijadas | Pruebas reproducibles del motor y matriz documentada | **Avanzado, no exhaustivo** |
 | A2 | Modo de dos jugadores en el mismo dispositivo | Dados/manos separados, pase de turno, interacciones y bloqueo de datos privados, casos pendientes | **Cerrado como caracterización automatizada (20 pruebas); visual pendiente A5** |
-| **A3** | **Interfaz, modales y secuencias de acciones** | Pruebas de decisiones, cierre/apertura de diálogos, sucesión, mordeduras, esperas de IA y pantallas de pase | **ACTIVO — siguiente tarea A3-01** |
-| A4 | Integración de partidas completas | Reproducir al menos una victoria y una derrota, modos local e IA, con finales y casos excepcionales | Pendiente |
-| A5 | Verificación en navegador real y móvil | Lista manual/evidencia de escritorio y Android, táctil, desplazamiento horizontal, accesibilidad y rendimiento básico | Pendiente |
+| A3 | Interfaz, modales y secuencias de acciones | Pruebas de decisiones, cierre/apertura de diálogos, sucesión, mordeduras, esperas de IA y pantallas de pase | **21 pruebas automatizadas cerradas; interfaz real pendiente A5** |
+| A4 | Integración de partidas completas | Reproducir al menos una victoria y una derrota, modos local e IA, con finales y casos excepcionales | **23 pruebas automatizadas cerradas, incluidas partidas dirigidas de 10 rondas; naturalidad/balance pendientes** |
+| **A5** | **Verificación en navegador real y móvil** | Lista manual/evidencia de escritorio y Android, táctil, desplazamiento horizontal, accesibilidad y rendimiento básico | **ACTIVO — siguiente tarea A5-01** |
 | A6 | Cierre de cobertura | Matriz de 21 subsistemas actualizada con evidencia y límites explícitos; lista priorizada de defectos sin resolver | Pendiente |
 
 **Importante:** A2 y A3 pueden compartir escenarios; no marcar una interacción visual como validada solo por probar funciones con DOM simulado.
@@ -36,13 +36,22 @@
 
 **Evidencia:** [docs/19-auditoria-modo-local.md](19-auditoria-modo-local.md) y [suite CI](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40524535143).
 
-### Tarea siguiente A3-01 — Modales y estados pendientes
+### A3-01 — Cerrada como caracterización automatizada
 
-**Alcance:** probar flujo entre `show()`, `hide()`, `renderModal()` y los estados `pendingLoot`, `pendingHeal`, `pendingBite`, `pendingLeader`, `pendingAttract`, `pendingTransfer` y `crossPending`. Revisar reentradas, cancelaciones, bloqueos y transiciones, sin modificar V9.9.
+**Resultado:** [informe](20-auditoria-modales-a3.md), 21 tests, defectos de contrato [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9) y [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10). Pruebas visuales pendientes.
 
-**Entregables:** pruebas de caracterización reproducibles, defectos fundamentados y casos visuales pendientes explícitos; actualización de matriz, tablero y CI.
+### A4 — Cerrada como integración automatizada dirigida
 
-**Criterio de terminado:** escenarios mínimos probados o marcados manuales, todos los hallazgos enlazados a evidencia e issues, suite verde y V9.9 original sin cambios.
+**Resultado:** [informe](21-auditoria-integracion-a4.md), 23 tests, recorridos de victoria/derrota, dos partidas dirigidas de 10 rondas, defecto de victoria de IA [#11](https://github.com/LeviEdition/invierno-en-la-colonia/issues/11).
+
+**Advertencia:** no se comprobó el balance de campañas bajo azar y recursos naturales; no se evaluó la interfaz real. **A4 automatizado completo no significa auditoría A completa.**
+
+### Tarea siguiente A5-01 — Comprobación en navegador real
+
+**Alcance inicial:** Chrome de escritorio y navegador Android. Apertura de setup, modo local, pantalla de pase, inventario y dados, modales de búsqueda, decisiones y muerte, movimiento, final de ronda, tamaños táctiles, scroll/foco.
+
+**Criterio de terminado:** pasos reproducibles con esperado/observado, capturas o evidencia verificable, incidencias y estado de la matriz actualizados; distinguir claramente observaciones de PC frente a las de celular. No afirmar validación en navegador real sin ejecutar los escenarios.
+
 
 ## 3. Etapas posteriores: una por vez
 
@@ -110,4 +119,4 @@ Solo cambiar la etapa activa con una decisión consciente; registrar motivo, rie
 - **Propuestas narrativas (estacionadas):** `docs/12`–`docs/17`.
 - **Defectos/decisiones por resolver:** GitHub Issues.
 
-**Próxima acción única: A3-01, modales y estados pendientes (A2-01 automatizada cerrada; pruebas reales en A5).**
+**Próxima acción única: A5-01, comprobación visual e interactiva en navegador real y Android. A3/A4 automatizadas cerradas.**
