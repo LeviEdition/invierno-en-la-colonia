@@ -256,6 +256,16 @@ El creador decidió: **«por ahora, contra la IA sin tradeos; entre J1 y J2 sí�
 
 **Próximo paso único sujeto a aprobación:** aceptación funcional y cierre administrativo del issue #4, **sin** fusionar PR14 ni pasar automáticamente a #6.
 
+### Corrección UX — Alerta del segundo movimiento con combustible (27/10/2026)
+
+El creador preguntó específicamente por los **controles visibles que permiten intentar una acción ilegal**, distinguiéndolos de guardas internas. Auditoría acotada del caso reproducible: pulsar **«Usar»** en carta de combustible después de que el superviviente ya se movió rechazaba la acción **sin mensaje**, aunque `doMove()` sí avisaba. Ante su indicación, se agregó **exactamente el mismo aviso** `⚠ El superviviente ya se movió durante este turno.` en el flujo `ItemEngine.moveWithFuel()` (solo intento de jugador activo), sin gastar carta ni cambiar la regla.
+
+**Pruebas antes:** [CI rojo 40589116325](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40589116325), **320 declaradas, 317 aprobadas, 2 fallidas nuevas, 1 TODO** (#6). [Commit tests `78c55af`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/78c55af021b970427f7372860ab7a038621dbfeb).
+
+**Parche y pruebas después:** [commit `63cb294`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/63cb2949f979631c97152f971f7a2dda171672ba), [CI verde 40589214682](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40589214682), **320 declaradas, 319 aprobadas, 0 fallidas, 1 TODO**. Tres rutas de Chromium con botones reales —rechazo con aviso en J1, rechazo con aviso en J2 local/táctil emulado 393×852, éxito sin modificar para combustible válido—, sin JS errors; se constató que **el toast aparece visualmente**, con rol status/aria-live polite. HTML exacto Git blob `4748627825e9876809ec482cb7c10431e6c07cf9`. [Informe37](37-feedback-movimiento-con-combustible.md) especifica evidencia/límites.
+
+**Reserva y siguiente prioridad a decidir:** esto **no certifica todos los avisos** del juego; solo se corrigió el ejemplo aprobado. Se propone auditoría priorizada **solo de acciones realmente pulsables desde interfaz** en todo C1–C8, antes de nuevos ajustes. No confundir con rechazo de llamadas artificiales ni deshabilitados por diseño. #4 sigue abierto y aceptable según revisión36, pero no fue cerrado por este cambio.
+
 ## 3. Etapas posteriores: una por vez
 
 | Etapa | Propósito | Criterio para habilitar la siguiente |
@@ -322,4 +332,4 @@ Solo cambiar la etapa activa con una decisión consciente; registrar motivo, rie
 - **Propuestas narrativas (estacionadas):** `docs/12`–`docs/17`.
 - **Defectos/decisiones por resolver:** GitHub Issues.
 
-**Próxima acción única propuesta: aceptar y cerrar administrativamente #4, tras revisión crítica C8 satisfactoria (informe36), 14 regresiones y 9 controles Chromium. Requiere autorización expresa; PR #14 permanece borrador y `main` intacta.**
+**Próxima tarea única propuesta: auditar avisos cuando el jugador pulsa acciones visibles que el juego rechaza, para priorizar silencios de interfaz (informe37). Caso de combustible ya corregido y probado. Issue #4 sigue abierto; PR14 borrador y `main` intacta.**
