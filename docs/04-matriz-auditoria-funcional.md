@@ -2,6 +2,8 @@
 
 **Propósito:** revisar exhaustivamente lo que YA existe en Invierno en la Colonia antes de extraer módulos del motor. No confundir funcionalidades previstas (2D isométrico, historias persistentes, modo online) con funcionalidades ya implementadas.
 
+**Tablero de ejecución:** [18 — Tablero operativo](18-tablero-operativo.md). **Etapa activa:** A, auditoría V9.9; **siguiente tarea A2-01:** privacidad y aislamiento del modo local. Los documentos de narrativa son diseño futuro y no cambian esta prioridad.
+
 **Fecha de inicio:** 27/10/2026 · **Rama:** `refactor/arquitectura` · **Base:** `invierno_colonia_v9_9.html`
 
 ## Estados de auditoría
