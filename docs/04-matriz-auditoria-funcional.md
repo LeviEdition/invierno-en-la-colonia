@@ -46,6 +46,12 @@ Residual R2 de revisión26 (subsistemas 02/06/16) corregido en [c19916f](https:/
 
 Esta actualización sustituye el estado pendiente de R2 de los apartados anteriores, conservados como históricos. No se validan todas las combinaciones ni móvil físico/TalkBack. `main` intacta; PR en borrador sin aprobación formal/fusión. Siguiente tarea única propuesta: definir prioridad IA #5 antes de implementar; no iniciada aquí.
 
+## Actualización C7 — política cooperativa de herramientas IA (#5), 27/10/2026
+
+Los subsistemas **07 (búsquedas), 08 (objetos), 13 (crisis) y 15 (IA)** ganan cobertura mediante diez regresiones activas. La IA ahora usa sus búsquedas normales antes de evaluar la crisis de herramientas y suma aportes previos humanos + herramientas propias de mano y equipo de supervivientes vivos. Si puede completar, dona exactamente lo faltante, primero mano y después equipo; si no, conserva. No busca bonificación extra. Se eliminó el TODO #5; quedan dos TODO (#4 y #6).
+
+**Evidencia:** [informe30](30-correccion-c7-ia-herramientas.md) y [CI 40571819429](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40571819429): 297 declaradas, 295 aprobadas, 0 fallidas, 2 TODO. No se revisó la selección estratégica de botín, ni Chromium/Android, ni balance. PR #14 sin fusionar. Siguiente tarea única: revisión crítica independiente de C7.
+
 ## Estados de auditoría
 
 - **Parcialmente probado (P):** hay pruebas automatizadas, pero faltan escenarios importantes.
