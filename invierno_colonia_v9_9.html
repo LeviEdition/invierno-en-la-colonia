@@ -833,7 +833,7 @@ function consume(min){
  dice.splice(i,1);picked=Math.min(i,dice.length-1);game.leaderChosen=true;message('🎲 Dado utilizado: '+value+' (mínimo '+min+').');return value;
 }
 function boostDie(){
- if(game.ended||!playable()||!game.dice.length||game.food<1)return messageAndPaint('Necesitás comida de la reserva y un dado disponible.');
+ if(game.ended||!playable()||!actionDice().length||game.food<1)return messageAndPaint('Necesitás comida de la reserva y un dado disponible.');
  const i=Math.max(0,Math.min(picked,actionDice().length-1));if(actionDice()[i]>=6)return messageAndPaint('El dado ya tiene valor 6.');
  game.food--;actionDice()[i]++;message('🥫 Gastaste una comida para mejorar el dado a '+actionDice()[i]+'.');paint();
 }
