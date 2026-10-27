@@ -4,9 +4,11 @@
 
 ## Principio fundamental
 
-**La carta de objetivo elegida al inicio fija la campaña y su condición de victoria durante toda la partida.** No introduciremos objetivos cambiantes en esta etapa.
+**La carta de objetivo elegida al inicio fija la campaña y su condición de victoria durante toda la partida.** No introduciremos objetivos cambiantes en esta etapa. La condición de victoria de una futura campaña puede integrar **requisitos mecánicos y narrativos establecidos desde el principio**: el jugador deberá atravesar los hitos imprescindibles de la trama y reunir los recursos correspondientes.
 
-Cumplir el objetivo equivale a **ganar**. Las decisiones, recursos, supervivientes, alianzas y conflictos determinan qué **tipo de victoria** se narra en el epílogo. Una victoria puede ser esperanzadora, agridulce o sombría, pero **no se anula retroactivamente** porque el desenlace humano sea duro.
+Cumplir **el conjunto de requisitos iniciales** equivale a **ganar**. Las decisiones, recursos, supervivientes, alianzas y conflictos determinan qué **tipo de victoria** se narra en el epílogo. Una victoria puede ser esperanzadora, agridulce o sombría, pero **no se anula retroactivamente** porque el desenlace humano sea duro.
+
+**Nota de compatibilidad:** en V9.9 ganar sigue significando llegar al contador de muestras; el requisito narrativo integrado es un acuerdo para **futuras campañas**, no algo implementado o cambiado hoy.
 
 ## Tres capas de historia
 
@@ -40,7 +42,19 @@ En la V9.9, los tres objetivos reales son:
 | Operación antídoto | 5 muestras, límite de 6 rondas |
 | Última esperanza | 9 muestras, límite de 10 rondas |
 
-**Advertencia:** hoy son variantes de recolección de muestras y dificultad, **no tres campañas narrativas ya diferenciadas**. Más adelante decidiremos si cada uno recibe una campaña distinta conservando esas condiciones, o si revisaremos el catálogo de objetivos mediante una decisión explícita de diseño. No cambiar las reglas por nuestra cuenta.
+**Advertencia:** hoy son variantes de recolección de muestras y dificultad, **no tres campañas narrativas ya diferenciadas**. La duración y los nuevos hitos narrativos de victoria serán parte de una implementación futura, sujeta a diseño, balance y pruebas. Más adelante decidiremos si cada uno recibe una campaña distinta conservando esas condiciones, o si revisaremos el catálogo de objetivos mediante una decisión explícita de diseño. No cambiar las reglas por nuestra cuenta.
+
+## Duración y desarrollo de las campañas
+
+**Decisión ampliada:** las campañas podrán ser **cortas y más mecánicas** o **largas y de mayor profundidad narrativa**, con una cantidad diferente de rondas, personajes, antagonistas y arcos. La duración se calibrará para la historia y las mecánicas, no forzando todos los argumentos a las 6–10 rondas actuales.
+
+**Integración obligatoria entre historia y recursos:** reunir el recurso del objetivo no debe permitir ignorar su trama principal. El progreso narrativo abre oportunidades de investigación, acceso, validación y uso de recursos; a su vez, las acciones y recursos mecánicos ayudan a activar los siguientes hitos de historia.
+
+La dificultad de implementación está en mantener la libertad del jugador: no retirar recompensas conseguidas ni ocultar arbitrariamente recursos esenciales solo porque no se haya visto una escena. Las etapas de campaña deben ofrecer alternativas y contingencias si un personaje central muere o si una localidad queda inutilizada.
+
+Las historias secundarias directamente relacionadas pueden modificar esa progresión. Las independientes aportan desarrollo de personajes, recursos y conflictos, sin convertirse en bloqueos artificiales de la victoria.
+
+**Documento de especificación:** [Campañas variables y progresión narrativo-mecánica](16-progresion-narrativa-mecanica.md).
 
 ## Implicaciones técnicas futuras
 
