@@ -137,3 +137,22 @@ test('movimiento con combustible: consume carta y crea residuo, evita exposició
   const after = evaluate('({ loc: game.humans[0].loc, moved: game.humans[0].moved, dead: game.humans[0].dead, hand: game.items.length, dice: game.dice, waste: game.waste })');
   assert.deepEqual(after, { loc: 1, moved: true, dead: false, hand: before.hand - 1, dice: before.dice, waste: before.waste + 1 });
 });
+
+test('UX combustible: usarlo después de moverse muestra exactamente el aviso de mover dos veces', () => {
+  const { evaluate, execute } = prepare();
+  execute('game.items=[catalog.create("gascan")];game.humans[0].moved=true;target=1;');
+  const before=evaluate('({loc:game.humans[0].loc,hand:game.items.map(it=>it.cardId),waste:game.waste,dice:game.dice.slice(),log:game.log.slice()})');
+  execute('playItem(0);');
+  const after=evaluate('({loc:game.humans[0].loc,hand:game.items.map(it=>it.cardId),waste:game.waste,dice:game.dice.slice(),last:game.last,log:game.log.slice()})');
+  assert.deepEqual({loc:after.loc,hand:after.hand,waste:after.waste,dice:after.dice}, {loc:before.loc,hand:before.hand,waste:before.waste,dice:before.dice});
+  assert.equal(after.last,'⚠ El superviviente ya se movió durante este turno.');
+  assert.equal(after.log[0],'R1 · ⚠ El superviviente ya se movió durante este turno.');
+});
+test('UX combustible: J2 local recibe el mismo aviso al usar combustible tras moverse', () => {
+  const { evaluate, execute } = prepare({mode:'local'});
+  execute('game.turn="ai";selected=0;game.botItems=[catalog.create("gascan")];game.bots[0].moved=true;target=1;');
+  execute('playItem(0);');
+  assert.deepEqual(evaluate('({loc:game.bots[0].loc,hand:game.botItems.map(it=>it.cardId),last:game.last})'),{
+    loc:0,hand:['gascan'],last:'⚠ El superviviente ya se movió durante este turno.',
+  });
+});
