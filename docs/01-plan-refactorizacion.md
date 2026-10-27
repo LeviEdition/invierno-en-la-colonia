@@ -1,6 +1,6 @@
 # Plan de refactorización — por etapas, sin apuro
 
-> **Ejecución actual:** la fuente de verdad de **etapa activa, tarea única y criterios de terminado** es [el tablero operativo](18-tablero-operativo.md). **Estamos en A — Auditoría funcional; siguiente tarea A3-01, interfaz y modales; A2-01 automatizada completada.** Este documento es la planificación general, no una autorización para avanzar a distintas fases en paralelo.
+> **Ejecución actual:** la fuente de verdad de **etapa activa, tarea única y criterios de terminado** es [el tablero operativo](18-tablero-operativo.md). **Estamos en A — Auditoría funcional; siguiente tarea A5-01, comprobación en navegador y Android; A2, A3 y A4 automatizadas completadas.** Este documento es la planificación general, no una autorización para avanzar a distintas fases en paralelo.
 
 ## Objetivos
 
@@ -48,9 +48,11 @@ Antes de reorganizar acciones, escribir pruebas del comportamiento actual:
 - [x] Octavo bloque: victorias, derrotas, líderes, sucesión, reemplazos de emergencia y rescates (30 pruebas nuevas; una TODO).
 - [x] Noveno bloque: 26 encrucijadas, disparadores, requisitos, decisiones humanas/IA y defectos de texto (26 pruebas nuevas).
 - [x] Matriz de auditoría funcional en 21 áreas, con estados y prioridad.
-- [x] GitHub Actions habilitado: suite de regresión ampliada a **194 pruebas aprobadas, 0 fallidas y 3 TODO**, ejecución completa sujeta al control automático de la rama.
+- [x] GitHub Actions habilitado: suite de regresión ampliada a **238 pruebas aprobadas, 0 fallidas y 3 TODO**, ejecución completa sujeta al control automático de la rama.
 - [x] Defectos anteriores a la refactorización (#2, #3, #5, #6 y #7), una definición pendiente sobre transferencias (#4) y un nuevo hallazgo de pase (#8); sin alterar la V9.9.
 - [x] Auditoría automatizada A2-01 del modo local: 20 casos, evidencia y límites documentados en `docs/19-auditoria-modo-local.md`; pruebas visuales pendientes A5.
+- [x] Auditoría automatizada A3 de modales y estados pendientes: 21 casos, defectos #9/#10 y límites en `docs/20-auditoria-modales-a3.md`.
+- [x] Auditoría automatizada A4 de integración: 23 casos, partidas dirigidas y hallazgo #11 en `docs/21-auditoria-integracion-a4.md`.
 - Inicio de partida, objetivo, personajes, localidades y mazos.
 - Consumo y requisitos de dados.
 - Movimiento, exposición, heridas y muerte.
@@ -63,7 +65,7 @@ En esta etapa **no corregimos silenciosamente reglas**: si encontramos un defect
 
 Antes de comenzar una fase nueva, cerrar la anterior con evidencia y registrar una decisión de avance.
 
-1. **A — Auditoría completa:** falta modo local, pruebas visuales, integración y móvil. Documentar problemas y límites; no corregirlos a escondidas.
+1. **A — Auditoría completa:** A2/A3/A4 tienen pruebas automatizadas; faltan pruebas visuales en navegador real y móvil (A5) y cierre de cobertura (A6). Documentar problemas y límites; no corregirlos a escondidas.
 2. **B — Decisiones y prioridad de defectos:** acordar qué es error y qué es regla deseada; clasificar impacto.
 3. **C — Estabilización:** corregir solo fallos priorizados, ejecutar regresiones y comprobar que el juego funciona en navegador real.
 4. **D — Refactorización:** separar módulos conservando el comportamiento.
