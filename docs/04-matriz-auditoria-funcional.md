@@ -23,12 +23,12 @@ Ningún subsistema debería declararse **completo** solo por pasar una prueba un
 | 04 | Movimiento | límites por turno, capacidad, inmovilidad, combustible, excepciones | **P**: cinco pruebas |
 | 05 | Exposición | caras del dado, lesiones, congelación, protección por habilidad | **P**: cuatro pruebas |
 | 06 | Mordeduras y muerte | orden de afectados, IA frente a humano, decisiones, moral, equipamiento y reemplazos | **P**: propagación, sacrificio, riesgo y daños |
-| 07 | Búsqueda | requisitos de dado, mazos, elección, ruido, cartas devueltas y mazo agotado | **N** |
-| 08 | Catálogo y uso de objetos | comida, medicina, herramientas, armas, combustible, notas, efectos y residuos | **P**: catálogo/mazos y combustible; resto pendiente |
+| 07 | Búsqueda | requisitos de dado, mazos, elección, ruido, cartas devueltas y mazo agotado | **P**: 13 pruebas de búsqueda y comportamiento de cartas; integración visual pendiente |
+| 08 | Catálogo y uso de objetos | comida, medicina, herramientas, armas, combustible, notas, efectos y residuos | **P**: catálogo, consumibles, equipo básico, manual y combustible; efectos avanzados pendientes |
 | 09 | Equipamiento e intercambios | equipar, límites, transferir, devolución/caída al morir, habilidades de equipo | **N** |
 | 10 | Habilidades e influencia | habilidades de personajes, usos por ronda, líderes, sucesión e influencia | **P**: resistencia y reinicio de habilidades; resto pendiente |
 | 11 | Barricadas y zombis | colocación, capacidad, llegada, desbordamiento, eliminación, atraer y limpiar | **N** |
-| 12 | Fase de colonia | consumo de comida, hambre acumulada, basura, crisis, zombis y ruido | **P**: resolución básica de crisis; resto pendiente |
+| 12 | Fase de colonia | consumo de comida, hambre acumulada, basura, crisis, zombis y ruido | **P**: crisis básica y generación de zombis por ruido; alimentación y acumulaciones pendientes |
 | 13 | Crisis y contribuciones | selección de tipo, cartas válidas, premio de sobreaporte, penalizaciones | **P**: éxito/fallo de moral; resto pendiente |
 | 14 | Encrucijadas narrativas | activación, disponibilidad de opciones, gastos, efectos e IA | **B**: cartas válidas rechazadas en varias opciones; [#2](https://github.com/LeviEdition/invierno-en-la-colonia/issues/2) |
 | 15 | Inteligencia artificial | selección de acciones, objetos, búsqueda/combate, encrucijadas, bloqueos | **N** (solo conducta parcial ante mordedura) |
@@ -50,7 +50,7 @@ Ningún subsistema debería declararse **completo** solo por pasar una prueba un
 - [ ] Derrotas, victorias y reemplazos.
 
 ### Bloque 2 — Recursos, objetos y acciones
-- [ ] Buscar, ruido, mazos y elección de cartas.
+- [x] Caracterización inicial de búsqueda, ruido, mazos y elección de cartas (17 pruebas, junto con efectos básicos de objetos).
 - [ ] Objetos consumibles, equipamiento, transferencias.
 - [ ] Dados, comida, ataque, barricadas, atraer zombis, limpieza.
 
@@ -80,4 +80,4 @@ Ningún subsistema debería declararse **completo** solo por pasar una prueba un
 
 Cada funcionalidad tendrá: **precondición → acción → estado esperado → resultado real → evidencia** (prueba automatizada o escenario manual). Los defectos se registran por separado y se corrigen en cambios específicos; no se insertan correcciones silenciosas durante la refactorización.
 
-La suite ahora contiene **31 pruebas de código** (4 estructurales, 6 de estado inicial, 10 de movimiento/exposición y 11 de rondas/mordeduras/crisis). Se verificaron localmente las 11 nuevas y, en una ejecución anterior, las 10 de movimiento. **Falta ejecutar y confirmar las 31 juntas**; el total no equivale a cobertura funcional completa.
+La suite ahora contiene **48 pruebas de código** (4 estructurales, 6 de estado inicial, 10 de movimiento/exposición, 11 de rondas/mordeduras/crisis y 17 de búsqueda/objetos). Las 17 nuevas fueron verificadas en Node.js y el conjunto debe volver a ejecutarse en GitHub Actions. La cantidad de pruebas **no equivale a cobertura funcional completa**.
