@@ -225,6 +225,51 @@ for(const [mode,side] of [['local','human'],['local','ai'],['ai','human']]){
   assert.equal(t.state('opened'),'healTarget');
   return t;
  }
+ for(const resolution of ['heal','cancel']){
+  test(`C6-R1 | ${mode}/${side}: botín antes de curación, recuperación al ${resolution}`,()=>{
+   const t=fixture({mode});
+   t.run(`game.turn=${JSON.stringify(side)};selected=0;controls.group()[0].loc=1;controls.group()[1].loc=1;controls.group()[1].wounds=1;controls.group()[1].frost=1;game.dice=[6,5];game.botDice=[6,5];game.items=[catalog.create("pistol")];game.botItems=[catalog.create("crowbar")];game.decks[1]=[catalog.create("ration"),catalog.create("bandage"),catalog.create("gascan")];search();`);
+   assert.equal(t.state('!!pendingLoot'),true);
+   assert.equal(t.state('pendingHeal'),null);
+   assert.equal(t.state('opened'),'lootChoice');
+   const before=t.state('({game,pendingLoot,pendingHeal,selected,picked,target,opened})');
+   t.run('special();special();');
+   assert.deepEqual(t.state('({game,pendingLoot,pendingHeal,selected,picked,target,opened})'),before);
+   assert.equal(t.node('backdrop').classList.contains('open'),true);
+   // La búsqueda conserva sus comandos reales después de rechazar la habilidad.
+   t.run('addNoiseSearch();');
+   assert.equal(t.state('pendingLoot.items.length'),2);
+   assert.equal(t.state('game.zones[1].noise'),1);
+   const other=t.state('controls.hand(controls.side==="human"?"ai":"human")');
+   const handSize=t.state('currentHand().length');
+   t.run('chooseLoot(0);chooseLoot(0);');
+   assert.equal(t.state('pendingLoot'),null);
+   assert.equal(t.state('currentHand().length'),handSize+1);
+   assert.equal(t.state('currentHand().at(-1).cardId'),'ration');
+   assert.deepEqual(t.state('controls.hand(controls.side==="human"?"ai":"human")'),other);
+   t.run('special();');
+   assert.equal(t.state('!!pendingHeal'),true);
+   assert.equal(t.state('opened'),'healTarget');
+   const healing=t.state('({game,pendingLoot,pendingHeal,selected,picked,target,opened})');
+   t.run('search();');
+   assert.deepEqual(t.state('({game,pendingLoot,pendingHeal,selected,picked,target,opened})'),healing);
+   if(resolution==='heal'){
+    t.run('chooseHeal(controls.group()[1].id);chooseHeal(controls.group()[1].id);');
+    assert.equal(t.state('controls.group()[0].skillUsed'),true);
+    assert.deepEqual(t.state('({wounds:controls.group()[1].wounds,frost:controls.group()[1].frost})'),side==='human'?{wounds:0,frost:1}:{wounds:1,frost:0});
+   }else{
+    t.run('cancelHeal();');
+    assert.equal(t.state('controls.group()[0].skillUsed'),false);
+    assert.deepEqual(t.state('({wounds:controls.group()[1].wounds,frost:controls.group()[1].frost})'),{wounds:1,frost:1});
+   }
+   assert.equal(t.state('pendingHeal'),null);
+   assert.equal(t.state('opened'),'');
+   assert.equal(t.state('!!playable()'),true);
+   t.run('search();');
+   assert.equal(t.state('!!pendingLoot'),true);
+   assert.equal(t.state('opened'),'lootChoice');
+  });
+ }
  for(const command of ['playItem(0)','equipItem(1)','contribute(0)','contributeEquipment(profileId,0)','startTransfer(0)']){
   test(`C6 #9 | ${mode}/${side}: ${command} no altera la partida durante curación`,()=>{
    const t=healingFixture();
