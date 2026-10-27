@@ -1,6 +1,6 @@
 # 30 — C7 / Issue #5: prioridad cooperativa de herramientas de IA en crisis
 
-**Fecha:** 27/10/2026 · **Rama:** `fix/estabilizacion-v9-9` · **PR:** [#14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14), en borrador, base `refactor/arquitectura`. **Estado:** implementación C7 realizada, pruebas automatizadas y CI aprobados sobre el commit ejecutable, revisión crítica independiente posterior pendiente. Nada fusionado a `main`.
+**Fecha:** 27/10/2026 · **Rama:** `fix/estabilizacion-v9-9` · **PR:** [#14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14), en borrador, base `refactor/arquitectura`. **Estado original:** implementación C7 realizada, pruebas automatizadas y CI aprobados sobre el commit ejecutable. **Estado posterior:** revisión crítica documentada en [informe31](31-revision-critica-c7.md), con reserva H1 sobre elección de botín. Nada fusionado a `main`.
 
 ## Autorización de diseño
 
@@ -36,3 +36,7 @@ El creador aprobó explícitamente la **política A** de [informe29](29-propuest
 Tras la aprobación, se leyó el código y los tests existentes, se publicaron primero regresiones rojas, se corrigió únicamente la donación de herramientas de IA y se comprobaron los logs del CI remoto verde. `main` estaba en `d9068f4` al inicio, conservando blob HTML `4ebaedad13d63c7a6762c524a52c0dd9695687b1`; PR #14 quedó en borrador y base `refactor/arquitectura`; no se cerró el issue #5 ni se fusionó nada.
 
 **Tarea siguiente única recomendada:** revisión crítica de solo lectura sobre C7 (con énfasis en prioridad de botín frente a herramientas, frontera fin de turno y no regresiones), antes de considerar su integración. No abrir #4/#6/#7, etapa D ni una nueva política estratégica mientras C7 no esté revisado.
+
+## Revisión crítica posterior y reserva — 27/10/2026
+
+Véase [informe31](31-revision-critica-c7.md), que contrasta código y diez regresiones C7 con [CI 40572758503](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40572758503), **297 declaradas, 295 aprobadas, 0 fallidas, 2 TODO**. La rutina de donación después de buscar no presenta nuevos problemas evidentes en inspección; en cambio, se identificó **H1**: el criterio de selección de botín sigue pudiendo descartar una herramienta que salvaría la crisis (muestra puntúa 10, herramienta 3). **H2** (no regresión): otras categorías de crisis todavía se resuelven con aportes antes de buscar. Ambos son riesgos/alcances descritos por inspección, **sin ensayo dinámico adicional del escenario**. C7 no se declara definitivamente cerrado. Próxima decisión C7-R1: si se prioriza la herramienta al encontrarla cuando salvaría la crisis, conservando prioridad de victoria inmediata; no hay nueva autorización de cambios de juego.
