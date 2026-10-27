@@ -808,7 +808,18 @@ function beginSearch(p,side){
  if(side==='human'||game.mode==='local'){
   pendingLoot={items:cards,actorId:p.id,loc:p.loc};message('⌕ '+p.name+' encontró '+cards.map(itemTitle).join(' y ')+'.');show('lootChoice');
  }else{
-  const score=it=>({muestra:10,superviviente:accessible(0)?9:0,comida:game.food<4?8:4,medicina:4,arma:3,herramienta:3,combustible:2,educacion:5}[kind(it)]||0);
+  // C7-R1: priorizar una herramienta revelada solo cuando ella completa
+  // la crisis con los recursos que ya posee la IA y aportó el humano.
+  // Una muestra que completa la victoria inmediata conserva prioridad superior.
+  const needed=game.crisis?.type==='herramienta'
+   ?game.crisis.need-game.crisis.contributions.filter(type=>type==='herramienta').length:0;
+  const held=game.botItems.filter(it=>kind(it)==='herramienta').length+
+   game.bots.filter(bot=>!bot.dead).reduce((n,bot)=>n+equipmentOf(bot).filter(it=>kind(it)==='herramienta').length,0);
+  const toolCompletes=needed>0&&held+1===needed;
+  const sampleWins=it=>kind(it)==='muestra'&&game.samples+
+   (p.skill==='researcher'&&!p.bonusUsed?2:1)>=game.goal;
+  const score=it=>sampleWins(it)?12:kind(it)==='herramienta'&&toolCompletes?11:
+   ({muestra:10,superviviente:accessible(0)?9:0,comida:game.food<4?8:4,medicina:4,arma:3,herramienta:3,combustible:2,educacion:5}[kind(it)]||0);
   const chosen=cards.slice().sort((a,b)=>score(b)-score(a))[0];game.decks[p.loc].push(...cards.filter(x=>x!==chosen));
   stashLoot(chosen,p,side);message('⌕ IA '+p.name+' encontró '+itemTitle(chosen)+'.');
  }
