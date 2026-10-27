@@ -266,6 +266,20 @@ El creador preguntó específicamente por los **controles visibles que permiten 
 
 **Reserva y siguiente prioridad a decidir:** esto **no certifica todos los avisos** del juego; solo se corrigió el ejemplo aprobado. Se propone auditoría priorizada **solo de acciones realmente pulsables desde interfaz** en todo C1–C8, antes de nuevos ajustes. No confundir con rechazo de llamadas artificiales ni deshabilitados por diseño. #4 sigue abierto y aceptable según revisión36, pero no fue cerrado por este cambio.
 
+### C8/#4 cerrado; C9/#6 pasa a definición de regla — 27/10/2026
+
+**Autorización del creador:** «sí, hagamos esto que dijiste, sigamos con la ruta», aceptando la propuesta de **cerrar administrativamente #4** y abordar después el issue #6. Se registró el [comentario de aceptación](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4#issuecomment-6454516746) y GitHub confirmó [#4 cerrado/completed](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4) (`2026-10-27T21:51:27Z`). El cierre significa aceptación de C8, **no integración**: PR14 sigue abierto/draft a `refactor/arquitectura`, `main=d9068f4aa8d3a10bbbf1e0a8a2527744cc6952cb` no se modificó.
+
+**Siguiente tarea en curso, solo análisis: C9/#6 (liderazgo inicial J2).** [Issue y opciones documentadas](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6#issuecomment-6454546559). Código verificado: `canPickStartingLeader()` distingue flags de J1 y J2, pero `consume()`, `doMove()` y `playItem()` solo marcan `game.leaderChosen`. **Observado:** J1 pierde la elección de líder inicial tras esas acciones; J2 local puede seguir cambiándolo. `tests/finales-lideres.test.mjs` conserva el único TODO (#6). Mensaje «Durante la primera ronda...» en modal no explica el bloqueo al actuar. [Última CI previa](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40589676353): **320 declaradas, 319 aprobadas, 0 fallidas, 1 TODO**.
+
+**Alternativas pendientes de aprobación:**
+- **A recomendada (cambio mínimo):** la primera acción que confirma el líder cierra esa selección en **J1 y J2**, con flags según turno y texto de UI coherente. Mantiene lo que ya hace J1. Precisar qué acciones cuentan (gastar dado, mover, usar carta; revisar habilidad/equipamiento para no dejar excepciones inadvertidas).
+- **B:** ambos pueden decidir líder durante toda la ronda 1, aunque hayan actuado. Implica cambiar también el comportamiento actual de J1 y probarlo.
+
+**Alcance actual:** solo comentario #6 y documentación. **No** se implementaron reglas nuevas, ni se alteró `main`, ni fusionó PR, ni cerró #6. Auditoría general de avisos se estaciona como pulido al cerrar Etapa C, no tarea activa.
+
+**Siguiente única decisión:** que el creador apruebe A o B para preparar regresiones rojo→verde de C9/#6.
+
 ## 3. Etapas posteriores: una por vez
 
 | Etapa | Propósito | Criterio para habilitar la siguiente |
@@ -319,7 +333,7 @@ Los detalles están en `docs/12`–`docs/17`. **No abrir nuevos frentes para amp
 
 Si surge una idea fuera de la tarea activa:
 
-> «Es una idea para la hoja de ruta, pero ahora tenemos propuesta como siguiente tarea **definir la regla del issue #4**. La registro y seguimos la estabilización. ¿Querés cambiar explícitamente la prioridad?»
+> «Es una idea para la hoja de ruta, pero ahora estamos **definiendo la regla del issue #6**. La registro y seguimos la estabilización. ¿Querés cambiar explícitamente la prioridad?»
 
 Solo cambiar la etapa activa con una decisión consciente; registrar motivo, riesgos, estado de la tarea interrumpida y cómo retomarla. No es necesario prohibir las conversaciones creativas: **conversar no equivale a cambiar la etapa ni a comenzar a programar**.
 
@@ -332,4 +346,4 @@ Solo cambiar la etapa activa con una decisión consciente; registrar motivo, rie
 - **Propuestas narrativas (estacionadas):** `docs/12`–`docs/17`.
 - **Defectos/decisiones por resolver:** GitHub Issues.
 
-**Próxima tarea única propuesta: auditar avisos cuando el jugador pulsa acciones visibles que el juego rechaza, para priorizar silencios de interfaz (informe37). Caso de combustible ya corregido y probado. Issue #4 sigue abierto; PR14 borrador y `main` intacta.**
+**Próxima tarea única: acordar política A o B del issue #6 sobre elección inicial de líder de J2 (comentario 6454546559). #4 cerrado; PR14 sigue borrador, `main` intacta. La auditoría general de avisos queda estacionada.**
