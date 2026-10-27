@@ -1,5 +1,5 @@
 // Auditoría A3: modales, decisiones pendientes y transiciones.
-// No se altera el script del juego. Los fallos antiguos se caracterizan, no se corrigen.
+// Caracterización A3 y regresiones C5 de las transiciones de turno.
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
@@ -31,7 +31,7 @@ function fixture({mode='local',face=6}={}){
  const document={getElementById:node,addEventListener(){},querySelector(selector){
    return selector==='#fabMenu button'?node('fabMenuFirstAction'):selector==='.deathContinue'?node('deathContinue'):null;
  }};
- const context=createContext({document,Math:math,queueMicrotask(){}});
+ const context=createContext({document,Math:math,queueMicrotask(){},setTimeout(fn){fn();}});
  runInContext(source,context,{filename:'invierno_colonia_v9_9.js',timeout:2500});
  runInContext('toast=()=>{};toggleFab=()=>{};gameMode='+JSON.stringify(mode)+';create();passScreenActive=false;game.crossPending=false;game.crossResolved=true;',context);
  return {run(code){return runInContext(code,context,{timeout:2500})},
@@ -217,21 +217,68 @@ test('A3-01 | la pantalla de pase impide acciones normales aunque pueda abrirse 
  assert.equal(t.node('passScreen').hidden,false);
 });
 
-test('A3-01 | debilidad interna: se permite consumir carta durante curación pendiente',()=>{
- const t=fixture();
- t.run('game.humans[1].wounds=1;pendingHeal={actor:"h0",targets:["h1"]};show("healTarget");game.items=[catalog.create("ration")];');
- const old=t.state('game.food');
- t.run('playItem(0);');
- assert.equal(t.state('game.food'),old+1);
- assert.equal(t.state('!!pendingHeal'),true);
- assert.equal(t.state('opened'),'healTarget');
-});
+for(const [mode,side] of [['local','human'],['local','ai'],['ai','human']]){
+ function healingFixture(){
+  const t=fixture({mode});
+  t.run(`game.turn=${JSON.stringify(side)};controls.group()[1].wounds=2;controls.group()[1].frost=1;game.items=[catalog.create("ration"),catalog.create("pistol")];game.botItems=[catalog.create("ration"),catalog.create("pistol")];controls.group()[0].equipment=[catalog.create("crowbar")];profileId=controls.group()[0].id;game.crisis={type:"comida",need:2,given:0,contributions:[],fail:"moral"};special();`);
+  assert.equal(t.state('!!pendingHeal'),true);
+  assert.equal(t.state('opened'),'healTarget');
+  return t;
+ }
+ for(const command of ['playItem(0)','equipItem(1)','contribute(0)','contributeEquipment(profileId,0)','startTransfer(0)']){
+  test(`C6 #9 | ${mode}/${side}: ${command} no altera la partida durante curación`,()=>{
+   const t=healingFixture();
+   if(command.startsWith('contributeEquipment'))t.run('game.crisis.type="herramienta";');
+   const before=t.state('({game,pendingHeal,pendingTransfer,selected,opened})');
+   t.run(command);
+   assert.deepEqual(t.state('({game,pendingHeal,pendingTransfer,selected,opened})'),before);
+   assert.equal(t.node('backdrop').classList.contains('open'),true);
+  });
+ }
+ test(`C6 #9 | ${mode}/${side}: elegir paciente cura una vez y libera el inventario`,()=>{
+  const t=healingFixture();
+  const field=side==='human'?'wounds':'frost';
+  const before=t.state(`controls.group()[1].${field}`);
+  t.run('chooseHeal(controls.group()[1].id);chooseHeal(controls.group()[1].id);');
+  assert.equal(t.state(`controls.group()[1].${field}`),before-1);
+  assert.equal(t.state('controls.group()[0].skillUsed'),true);
+  assert.equal(t.state('pendingHeal'),null);
+  assert.equal(t.state('opened'),'');
+  const food=t.state('game.food');
+  t.run('playItem(0);');
+  assert.equal(t.state('game.food'),food+1);
+  assert.equal(t.state('currentHand().length'),1);
+ });
+ test(`C6 #9 | ${mode}/${side}: cancelar conserva habilidad y permite equipar`,()=>{
+  const t=healingFixture();
+  t.run('cancelHeal();');
+  assert.equal(t.state('pendingHeal'),null);
+  assert.equal(t.state('controls.group()[0].skillUsed'),false);
+  assert.equal(t.state('opened'),'');
+  t.run('equipItem(1);');
+  assert.deepEqual(t.state('controls.group()[0].equipment.map(x=>x.cardId)'),['crowbar','pistol']);
+  assert.equal(t.state('currentHand().length'),1);
+ });
+}
 
-test('A3-01 | debilidad interna: se puede cerrar turno con pantalla de fallecimiento activa',async()=>{
- const t=fixture();
- t.run('game.food=30;game.zones.forEach(z=>{z.z=0;z.noise=0});game.crisis={type:"comida",need:2,given:2,contributions:["comida","comida"],fail:"moral"};kill(game.humans[1],"auditoria");deathDirector.open();');
- assert.equal(t.state('deathDirector.active'),true);
- await t.run('finishTurn()');
- assert.equal(t.state('game.turn'),'ai');
- assert.equal(t.state('deathDirector.active'),true);
-});
+for(const mode of ['local','ai']){
+ test(`C5 #10 | ${mode}: fallecimiento bloquea fin de turno y Continuar permite reintentarlo`,{timeout:2000},async()=>{
+  const t=fixture({mode});
+  t.run('game.food=30;game.zones.forEach(z=>{z.z=0;z.noise=0});game.crisis={type:"comida",need:2,given:2,contributions:["comida","comida"],fail:"moral"};game.bots.forEach(p=>p.moved=true);game.botItems=[];game.botDice=[];crossDraw=side=>{game.crossOwner=side;game.crossPending=false;game.crossResolved=true;};kill(game.humans[1],"regresion C5");deathDirector.open();');
+  assert.equal(t.state('deathDirector.active'),true);
+  const before=t.state('({game,selected,picked,target,selectionBySide,opened,passScreenActive})');
+  await t.run('finishTurn()');
+  await t.run('menuEndTurn()');
+  assert.deepEqual(t.state('({game,selected,picked,target,selectionBySide,opened,passScreenActive})'),before);
+  assert.equal(t.node('deathBackdrop').hidden,false);
+  assert.equal(t.state('deathDirector.active'),true);
+  t.run('deathDirector.continue();');
+  assert.equal(t.state('deathDirector.active'),false);
+  // Confirmar el fallecimiento no termina el turno automáticamente.
+  assert.equal(t.state('game.turn'),'human');
+  await t.run('finishTurn()');
+  assert.equal(t.state('game.round'),mode==='local'?1:2);
+  assert.equal(t.state('game.turn'),mode==='local'?'ai':'human');
+  assert.equal(t.state('aiRunning'),false);
+ });
+}

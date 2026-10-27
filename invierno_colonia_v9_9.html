@@ -405,7 +405,7 @@ const roster=[
 
 
 function special(){const p=person();if(!p||p.dead||!playable()||game.ended)return;if(p.skillUsed)return messageAndPaint('Ya usaste esta habilidad en la ronda.');if(p.skill==='builder'){const z=game.zones[p.loc];if(z.z+z.b>=zcap[p.loc])return messageAndPaint('No hay accesos libres.');z.b++;p.skillUsed=true;message('★ '+p.name+' construyó una barricada.');paint();}else if(p.skill==='medic'||p.skill==='nurse'){const targets=alive().filter(x=>x.loc===p.loc&&(p.skill==='medic'?x.wounds:x.frost));if(!targets.length)return messageAndPaint('No hay nadie que necesite ese tratamiento aquí.');pendingHeal={actor:p.id,targets:targets.map(x=>x.id)};show('healTarget');}else return messageAndPaint('La habilidad de este personaje es automática.');}
-function chooseHeal(id){if(!pendingHeal||!pendingHeal.targets.includes(id))return;const p=all().find(x=>x.id===pendingHeal.actor),t=all().find(x=>x.id===id);if(!p||!t||p.dead||t.dead||p.skillUsed||p.loc!==t.loc||!playable())return;const key=p.skill==='medic'?'wounds':'frost';if(!t[key])return; t[key]--;p.skillUsed=true;pendingHeal=null;message('✚ '+p.name+' atendió a '+t.name+' con '+p.skillName+'.');hide();paint();}
+function chooseHeal(id){if(!pendingHeal||!pendingHeal.targets.includes(id))return;const p=all().find(x=>x.id===pendingHeal.actor),t=all().find(x=>x.id===id);if(!p||!t||p.dead||t.dead||p.skillUsed||p.loc!==t.loc||!controls.interactive)return;const key=p.skill==='medic'?'wounds':'frost';if(!t[key])return; t[key]--;p.skillUsed=true;pendingHeal=null;message('✚ '+p.name+' atendió a '+t.name+' con '+p.skillName+'.');hide();paint();}
 
 
 const random=n=>Math.floor(Math.random()*n),die=()=>random(6)+1;
@@ -422,7 +422,8 @@ class TurnController {
  display(side=this.side){return side==='human'?'Jugador 1':(this.local?'Jugador 2':'IA');}
 }
 const controls=new TurnController();
-const playable=()=>controls.interactive;
+// La elección de paciente reserva las acciones normales hasta resolverla o cancelar.
+const playable=()=>controls.interactive&&!pendingHeal;
 const actionDice=()=>controls.dice();
 const currentHand=()=>controls.hand();
 
@@ -1171,7 +1172,8 @@ function confirmPass(){
  returnFocusAfterHandover();
 }
 async function finishTurn(){
- if(game.ended||aiRunning)return;
+ // El turno no puede avanzar hasta confirmar el pase o el fallecimiento.
+ if(game.ended||aiRunning||passScreenActive||deathDirector.active)return;
  if(pendingLeader){show('leaderChoice');return;}
  if(pendingHeal||pendingLoot||pendingBite||pendingAttract||pendingTransfer){show(pendingHeal?'healTarget':pendingLoot?'lootChoice':pendingBite?'biteChoice':pendingAttract?'attractTarget':'transferTarget');return;}
  if(game.crossPending){show('crossroads');return;}

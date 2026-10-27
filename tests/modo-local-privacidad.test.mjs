@@ -202,15 +202,30 @@ test('A2-01 | la pantalla vuelve a proteger el pase al comenzar ronda nueva',asy
  assert.equal(t.node('floatingDice').innerHTML,'');
 });
 
-test('A2-01 | debilidad reproducible: finishTurn permite avanzar con pantalla de pase activa',async()=>{
+test('C5 #8 | llamadas repetidas durante el pase conservan todo el estado hasta confirmar',async()=>{
  const t=fixture();stableColony(t);
  await t.run('finishTurn()');
  assert.equal(t.state('passScreenActive'),true);
- assert.equal(t.state('game.turn'),'ai');
- // Invocación directa de la función original, no interacción real con la pantalla.
+ const before=t.state('({game,selected,picked,target,selectionBySide,opened,passScreenActive})');
+ await t.run('finishTurn()');
+ await t.run('menuEndTurn()');
+ assert.deepEqual(t.state('({game,selected,picked,target,selectionBySide,opened,passScreenActive})'),before);
+ assert.equal(t.node('passScreen').hidden,false);
+ t.run('confirmPass();game.crossPending=false;game.crossResolved=true;');
  await t.run('finishTurn()');
  assert.equal(t.state('game.round'),2);
  assert.equal(t.state('game.turn'),'human');
+ const next=t.state('game');
+ await t.run('finishTurn()');
+ assert.deepEqual(t.state('game'),next);
+});
+
+test('C5 #8 | la pantalla de inicio tampoco permite terminar un turno',async()=>{
+ const t=fixture();stableColony(t);
+ t.run('showSetup();');
+ const before=t.state('game');
+ await t.run('finishTurn()');
+ assert.deepEqual(t.state('game'),before);
  assert.equal(t.state('passScreenActive'),true);
 });
 
