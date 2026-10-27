@@ -153,6 +153,16 @@ Se presentó el costo (perder equipo valioso para evitar una penalización) y la
 
 Recibir y registrar la decisión del creador sobre la propuesta. Implementación y regresiones quedan para el bloque posterior a una política aprobada; no tocar #4/#6 ni fusionar.
 
+### Continuidad verificada y segunda revisión de política #5 — 27/10/2026
+
+**Punto inicial remoto comprobado:** `main=d9068f4` y blob original V9.9 `4ebaedad13d63c7a6762c524a52c0dd9695687b1`; `refactor/arquitectura=0933c70`; `fix/estabilizacion-v9-9=e7d0a48` (sin avances frente al SHA de referencia). PR #1 y #14 abiertos, en borrador; #14 base `refactor/arquitectura`. #5 sigue abierto. [Actions 40559396788](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40559396788) confirma en logs checkout de `e7d0a48`, **288 declaradas/285 aprobadas/0 fallidas/3 TODO**. La ejecución no valida el arreglo de #5, que aún no existe.
+
+**Tarea C/B activa y única:** decidir prioridad IA de herramientas/crisis #5. Relectura de flujo IA, búsquedas, donaciones y catálogo confirmó además que `stashLoot()` puede equipar inmediatamente las herramientas encontradas. Crítica: donar la última herramienta equipada para evitar una penalización menor puede empeorar rondas futuras; políticas de preservar equipo o valorar severidad implican sacrificios distintos. [Informe29](29-propuesta-prioridad-ia-herramientas.md) y [registro25](25-registro-estabilizacion.md) documentan alternativas, recomendación acotada y pruebas/límites.
+
+**Decisión pendiente del creador, ninguna aprobación implícita:** se recomienda provisoriamente donar al final solo si se completa la crisis, usando primero mano y luego equipo propio vivo, sin bonificación extra, con desempate determinista documentado; no estimar valor táctico durante C. No se modificaron mecánicas, tests ni `main`, ni se fusionaron PRs o cerraron issues. Revisión estática, **sin nueva ejecución funcional/local, Chromium ni Android/TalkBack**. Los commits documentales posteriores deben verificarse por su propio SHA y checks.
+
+**Siguiente tarea única (sin empezar aquí):** recibir y registrar la decisión explícita del creador sobre la política #5, antes de cualquier implementación.
+
 ## 3. Etapas posteriores: una por vez
 
 | Etapa | Propósito | Criterio para habilitar la siguiente |
