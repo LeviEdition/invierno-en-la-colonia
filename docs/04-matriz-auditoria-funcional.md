@@ -30,14 +30,14 @@ Ningún subsistema debería declararse **completo** solo por pasar una prueba un
 | 11 | Barricadas y zombis | colocación, capacidad, llegada, desbordamiento, eliminación, atraer y limpiar | **P**: ataques, defensa, desbordamiento, indefensos, atraer y limpiar; combinaciones completas pendientes |
 | 12 | Fase de colonia | consumo de comida, hambre acumulada, basura, crisis, zombis y ruido | **P**: alimentación, hambre, basura, crisis, oleadas y ruido; secuencia con IA probada sin narrativa |
 | 13 | Crisis y contribuciones | selección de tipo, cartas válidas, premio de sobreaporte, penalizaciones | **P**: aportes desde mano/equipo, rechazo de categoría, sobreaporte, éxito/fallo de moral; penalizaciones restantes pendientes |
-| 14 | Encrucijadas narrativas | activación, disponibilidad de opciones, gastos, efectos e IA | **B**: cartas válidas rechazadas en varias opciones; [#2](https://github.com/LeviEdition/invierno-en-la-colonia/issues/2) |
+| 14 | Encrucijadas narrativas | activación, disponibilidad de opciones, gastos, efectos e IA | **P + B**: 26 pruebas de cartas, disparadores, actor, elecciones J1/J2/IA y efectos; errores [#2](https://github.com/LeviEdition/invierno-en-la-colonia/issues/2) y [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) |
 | 15 | Inteligencia artificial | selección de acciones, objetos, búsqueda/combate, encrucijadas, bloqueos | **P**: 20 pruebas de equipamiento, decisiones, desplazamiento, combate y turno completo; narrativa y DOM pendientes; [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5) |
 | 16 | Dos jugadores en mismo dispositivo | privacidad en pantalla de pase, manos, dados, selección, líder y cambio de turnos | **P**: inicio, turnos y líderes; **B**: dados [#3](https://github.com/LeviEdition/invierno-en-la-colonia/issues/3) y liderazgo [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6); privacidad visual pendiente |
 | 17 | Victoria, derrota y situaciones límite | objetivos, moral cero, sin supervivientes, límite de rondas, estados pendientes | **P**: victoria, moral, tiempo, reemplazos, roster agotado, falta de espacio y rescates; integración visual pendiente |
 | 18 | Interfaz y accesibilidad | clics, modales, perfil, avisos, cartas, contraste, tamaño táctil y foco | **N**: pruebas manuales en navegador |
 | 19 | Móvil y rendimiento | vista vertical, sin scroll horizontal, render y animaciones, dispositivos modestos | **N**: pruebas manuales en celular |
 | 20 | Guardado, reconexión y multijugador por red | persistencia general, servidor autoritativo, WebSockets | **F**: objetivos futuros, no presentes en V9.9 |
-| 21 | Escenarios isométricos y narrativa diferida | sprites, fondos, historias conectadas, consecuencias persistentes | **F**: objetivos futuros, no presentes en V9.9 |
+| 21 | Narrativa persistente (prioridad creativa) y escenas 2D | historia principal, arcos conectados, memoria de decisiones, consecuencias, personajes, sprites y escenas | **F**: diseño narrativo inicial en documentos 12 y 13; **no implementado** todavía en V9.9 |
 
 ## Orden recomendado de trabajo
 
@@ -60,9 +60,16 @@ Ningún subsistema debería declararse **completo** solo por pasar una prueba un
 - [x] Parte de los casos límite: sin capacidad, sin cartas, sin dados, sin supervivientes y roster agotado; faltan interacciones narrativas/visuales.
 
 ### Bloque 4 — Narrativa y modos de juego
-- [ ] Encrucijadas: activación, opciones, restricciones y resultados.
+- [x] Primera auditoría de encrucijadas: 26 cartas, efectos, requisitos, J1/J2 e IA (26 pruebas; integración visual pendiente).
 - [x] Caracterización inicial de líderes e influencia (J1, J2 e IA), con inconsistencia [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6) pendiente de definir.
 - [ ] Privacidad de manos y dados en modo local.
+
+### Bloque 4B — Núcleo narrativo prioritario (diseño, NO implementación)
+- [x] Establecer la narrativa y el impacto de decisiones como eje del juego.
+- [x] Documentar sistema de historias conectadas, memoria y consecuencias diferidas.
+- [x] Proponer un arco piloto de cuatro episodios para validar tono, agencia y efectos persistentes.
+- [ ] Aprobar el arco piloto y diseñar el estado serializable antes de programarlo.
+- [ ] Validar dos rutas jugables con diferencias narrativas observables y consecuencias al menos dos rondas después.
 
 ### Bloque 5 — Integración y experiencia de usuario
 - [ ] Una partida reproducible desde inicio hasta victoria/derrota.
@@ -77,10 +84,11 @@ Ningún subsistema debería declararse **completo** solo por pasar una prueba un
 3. [#4 — Transferencias entre grupos](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4): el equipo se puede transferir al otro grupo aunque el texto de la interfaz diga «propio». Definir si es una regla permitida antes de cambiarla.
 4. [#5 — Herramientas de IA y crisis](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5): la IA equipa herramientas y luego no considera contribuirlas desde el equipo a la crisis.
 5. [#6 — Liderazgo inicial de J2](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6): J2 puede elegir líder después de actuar, mientras J1 queda bloqueado.
-6. **Comportamiento de diseño a revisar** (no se declara bug): una mordedura iniciada en el turno humano puede hacer que la IA sacrifique automáticamente a su superviviente con menor influencia, cortando la cadena antes de pedir una decisión humana.
+6. [#7 — Decisiones narrativas de IA basadas en texto](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7): la IA no reconoce ciertos riesgos por diferencias de redacción.
+7. **Comportamiento de diseño a revisar** (no se declara bug): una mordedura iniciada en el turno humano puede hacer que la IA sacrifique automáticamente a su superviviente con menor influencia, cortando la cadena antes de pedir una decisión humana.
 
 ## Reglas para reportar resultados
 
 Cada funcionalidad tendrá: **precondición → acción → estado esperado → resultado real → evidencia** (prueba automatizada o escenario manual). Los defectos se registran por separado y se corrigen en cambios específicos; no se insertan correcciones silenciosas durante la refactorización.
 
-La suite ahora contiene **148 pruebas ejecutables aprobadas** (4 estructurales, 6 de estado inicial, 10 de movimiento/exposición, 11 de rondas/mordeduras/crisis, 17 de búsqueda/objetos, 22 de combate/equipamiento, 28 de colonia/turnos, 20 de IA y 30 de finales/líderes), más **3 TODO** (#4, #5 y #6). GitHub Actions verificó el conjunto. La cantidad de pruebas **no equivale a cobertura funcional completa**.
+La suite ahora contiene **174 pruebas ejecutables** (4 estructurales, 6 de estado inicial, 10 de movimiento/exposición, 11 de rondas/mordeduras/crisis, 17 de búsqueda/objetos, 22 de combate/equipamiento, 28 de colonia/turnos, 20 de IA, 30 de finales/líderes y 26 de encrucijadas), más **3 TODO** (#4, #5 y #6). GitHub Actions verifica el conjunto. La cantidad de pruebas **no equivale a cobertura funcional completa**, y el motor narrativo persistente sigue siendo una propuesta por aprobar.
