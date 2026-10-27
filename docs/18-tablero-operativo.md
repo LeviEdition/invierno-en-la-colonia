@@ -213,6 +213,16 @@ Revisión de solo lectura de código, contrato de búsqueda, tests y estado CI. 
 
 **Tarea siguiente única:** solicitar autorización explícita para **aceptar/cerrar administrativamente el issue #5**, sin fusionar PR #14 ni alterar `main`. No cerrar automáticamente por el solo cambio del criterio.
 
+### C7/C7-R1 — Issue #5 cerrado por decisión del creador (27/10/2026)
+
+**Autorización y cierre:** ante la propuesta expresa de «aceptar formalmente C7 y cerrar #5 sin fusionar PR #14», el creador respondió «Continúa». Se interpretó como consentimiento para el **cierre administrativo de [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5)**, **no** como permiso de integración, publicación ni de abordar otro problema. Se agregó al issue el [comentario técnico 6453435186](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5#issuecomment-6453435186) con política aprobada, implementación C7/C7-R1, regresiones, CI, Chromium y límites. El issue se verificó cerrado con `state_reason=completed`.
+
+**Criterios cumplidos:** política A (contribución de herramientas tras búsquedas, completas y deterministas), prioridad condicionada de botín, victoria inmediata, suite verde [40582012525](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40582012525) (**305 declaradas / 303 aprobadas / 0 fallidas / 2 TODO**), revisión crítica e [informe34](34-validacion-navegador-c7-r1.md) (cuatro smoke tests Chromium controlados, encrucijadas reales, 0 errores JS detectados). Android físico se considera opcional para este issue; no se afirma validación Android/TalkBack ni balance exhaustivo.
+
+**Separación esencial:** «issue cerrado» significa que se aceptó el **seguimiento funcional**, no que el parche haya entrado en la versión estable. Todos los cambios ejecutables permanecen en `fix/estabilizacion-v9-9`, [PR #14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14) **abierto y draft** hacia `refactor/arquitectura`; **`main` sigue en `d9068f4`**. La tarea se registró en este tablero y en el [registro25](25-registro-estabilizacion.md), sin iniciar otro issue.
+
+**Único paso siguiente recomendado, aún sin aprobación para trabajarlo:** **#4 — decidir la política de transferencia de objetos entre supervivientes humanos/IA**. Es un `test.todo` real y exige distinguir cesión cooperativa entre grupos de traspasos internos antes de escribir código. Comparar alternativas y su efecto sobre partidas cooperativas; no implementar ni cerrar #4 hasta que el creador elija una regla. #6 (momento de elección del líder de J2) sigue pendiente; #7 y #13 permanecen fuera del alcance de este cierre.
+
 ## 3. Etapas posteriores: una por vez
 
 | Etapa | Propósito | Criterio para habilitar la siguiente |
@@ -266,7 +276,7 @@ Los detalles están en `docs/12`–`docs/17`. **No abrir nuevos frentes para amp
 
 Si surge una idea fuera de la tarea activa:
 
-> «Es una idea para la hoja de ruta, pero ahora estamos en **decisión de aceptación del issue #5**. La registro y seguimos con la estabilización. ¿Querés cambiar explícitamente la prioridad?»
+> «Es una idea para la hoja de ruta, pero ahora tenemos propuesta como siguiente tarea **definir la regla del issue #4**. La registro y seguimos la estabilización. ¿Querés cambiar explícitamente la prioridad?»
 
 Solo cambiar la etapa activa con una decisión consciente; registrar motivo, riesgos, estado de la tarea interrumpida y cómo retomarla. No es necesario prohibir las conversaciones creativas: **conversar no equivale a cambiar la etapa ni a comenzar a programar**.
 
@@ -279,4 +289,4 @@ Solo cambiar la etapa activa con una decisión consciente; registrar motivo, rie
 - **Propuestas narrativas (estacionadas):** `docs/12`–`docs/17`.
 - **Defectos/decisiones por resolver:** GitHub Issues.
 
-**Próxima acción única: solicitar aprobación explícita para dar por aceptado y cerrar administrativamente #5 con Chromium + suite verde como evidencia suficiente. Android físico queda optativo para este issue; no fusionar PR #14 ni alterar `main`.**
+**Próxima acción única propuesta (sujeta a autorización): definir la regla del issue #4, transferencias de equipamiento dentro y entre grupos humano/IA. #5 cerrado con pruebas; PR #14 en borrador, sin fusionar ni alterar `main`.**
