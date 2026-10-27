@@ -11,7 +11,7 @@
 
 - **Estable:** `main`, `invierno_colonia_v9_9.html`, SHA Git blob `4ebaedad13d63c7a6762c524a52c0dd9695687b1`. El archivo es idéntico en `main` y `refactor/arquitectura` al revisar.
 - **Auditoría:** PR [#1](https://github.com/LeviEdition/invierno-en-la-colonia/pull/1) abierto y en borrador; no fusionar por ahora.
-- **Pruebas actuales de estabilización:** C7/#5, **295 aprobadas, 0 fallidas y 2 TODO** (297 declaradas), [CI 40571819429](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40571819429) sobre `4166716`. El resultado anterior 285/3 TODO es histórico. Android físico/TalkBack siguen pendientes.
+- **Pruebas actuales de estabilización:** C7-R1/#5, **303 aprobadas, 0 fallidas y 2 TODO** (305 declaradas), [CI 40576075140](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40576075140) sobre `f1e75ed`. Los resultados C7 295/2 y C5-R2 285/3 son históricos; Android físico/TalkBack pendientes.
 - **Problemas registrados:** [#2](https://github.com/LeviEdition/invierno-en-la-colonia/issues/2), [#3](https://github.com/LeviEdition/invierno-en-la-colonia/issues/3), [#4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4), [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5), [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6), [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) y [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8), [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9), [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10) y [#11](https://github.com/LeviEdition/invierno-en-la-colonia/issues/11), [#12](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12) y [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13). El #4 requiere resolver una ambigüedad de reglas, no presumir que es un bug.
 - **Narrativa:** visión, objetivos, campañas y bocetos registrados en `docs/12`–`docs/17`. Son **propuestas y decisiones de diseño**, no código ni campañas implementadas.
 
@@ -181,6 +181,16 @@ Revisión de solo lectura de código, contrato de búsqueda, tests y estado CI. 
 
 **Tarea única siguiente:** aprobar o ajustar una política mínima C7-R1 para elegir herramientas reveladas **cuando esa elección permitiría completar la crisis**, preservando la victoria inmediata por objetivo. Después diseñar regresiones y parche solo si queda expresamente autorizado. No iniciar aún #4/#6 ni etapa D.
 
+### C7-R1 — Regla de selección de botín aprobada y corregida (27/10/2026)
+
+**Aprobación expresa del creador:** elegir la herramienta revelada **solo si adquirirla permitiría completar** una crisis de herramientas con el inventario/equipo propio vivo y los aportes humanos previos. Una muestra que otorgue **victoria inmediata** tiene prioridad mayor, incluyendo el doble avance de investigador. No iniciar cambios de ruta de búsqueda ni reordenar aportes de otros tipos.
+
+**Evidencia reproducida antes:** ocho regresiones añadidas en [`5debdbd`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/5debdbd49289b1e464e9df7a8384b6a41f95c0fc); [CI rojo 40575929242](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40575929242) documentó 3 fallos de la selección anterior. **Corrección:** [`f1e75ed`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/f1e75edc28a317a3d6745079d19e07558987a10a), puntajes condicionados dentro de `beginSearch()`, sin cambiar `botContributeTools()` ni otras clases de crisis.
+
+**CI verde del ejecutable:** [Actions 40576075140](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40576075140): **305 declaradas, 303 aprobadas, 0 fallidas y 2 TODO** (#4/#6). [Informe32](32-correccion-c7-r1-prioridad-botin.md) registra autorización, pruebas y límites. **No se ejecutaron** pruebas nuevas de navegador, Android, TalkBack ni partida natural. PR #14 permanece en borrador, #5 abierto y `main` intacta.
+
+**Tarea única siguiente:** revisión crítica posterior del parche C7-R1; todavía no autoriza fusión/cierre del issue ni otro defecto de estabilización.
+
 ## 3. Etapas posteriores: una por vez
 
 | Etapa | Propósito | Criterio para habilitar la siguiente |
@@ -234,7 +244,7 @@ Los detalles están en `docs/12`–`docs/17`. **No abrir nuevos frentes para amp
 
 Si surge una idea fuera de la tarea activa:
 
-> «Es una idea para la hoja de ruta, pero ahora estamos en **C7-R1: decidir la prioridad de selección de herramientas al buscar**. La registro y seguimos con la estabilización. ¿Querés cambiar explícitamente la prioridad?»
+> «Es una idea para la hoja de ruta, pero ahora estamos en **revisión crítica posterior de C7-R1**. La registro y seguimos con la estabilización. ¿Querés cambiar explícitamente la prioridad?»
 
 Solo cambiar la etapa activa con una decisión consciente; registrar motivo, riesgos, estado de la tarea interrumpida y cómo retomarla. No es necesario prohibir las conversaciones creativas: **conversar no equivale a cambiar la etapa ni a comenzar a programar**.
 
@@ -247,4 +257,4 @@ Solo cambiar la etapa activa con una decisión consciente; registrar motivo, rie
 - **Propuestas narrativas (estacionadas):** `docs/12`–`docs/17`.
 - **Defectos/decisiones por resolver:** GitHub Issues.
 
-**Próxima acción única: decidir la regla de selección de botín C7-R1 para completar crisis alcanzables (hallazgo H1, informe31). Revisión C7 realizada con reserva; no iniciar cambios de política adicionales sin aprobación, no fusionar.**
+**Próxima acción única: revisión crítica posterior de C7-R1, ya aprobado, corregido y con CI verde (informe32). No iniciar otros issues, no fusionar ni cerrar #5 automáticamente.**
