@@ -168,6 +168,14 @@ Código y pruebas en [d4a6b3f](https://github.com/LeviEdition/invierno-en-la-col
 
 **No dar por cerrado ningún issue automáticamente:** el cambio permanece en rama, no está integrado a la versión estable. Las incidencias se podrán cerrar tras revisión/promoción y verificación correspondiente.
 
+## Revisión crítica posterior de C7 — 27/10/2026 (solo lectura)
+
+Se verificó que la rama estaba en `9907cdb3`, PR #14 abierto en borrador/base `refactor/arquitectura`, issue #5 abierto y `main=d9068f4`. Se leyó el flujo real de `botTurn`, `botContributeTools`, `beginSearch`, `stashLoot`, `CrisisManager`, colonia y regresiones. [CI 40572758503](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40572758503) confirmó 297 declaradas, 295 aprobadas, 0 fallidas y dos TODO. No hubo pruebas dinámicas nuevas ni revisión externa.
+
+[Informe 31](31-revision-critica-c7.md): **no se detectó un fallo nuevo en la donación de herramientas C7** por inspección, pero el criterio de botín de la IA puede favorecer una muestra (10 puntos) sobre una herramienta (3 puntos) incluso si esa herramienta salvaría la crisis. Hallazgo H1/P2 está fundado en lectura de código y requiere regresión integral. Separadamente, H2 describe el límite anterior: las crisis de comida, medicina y combustible no se reevalúan después de buscar; no es regresión de C7 ni está autorizado ampliar su alcance.
+
+Se registraron escenarios precondición → acción → esperado → resultado derivado del código y límites en el informe31 y tablero18. **Solo documentación**, sin tocar código, tests, `main`, incidencias, PR o versiones. Revisión completada **con reserva estratégica H1**; no declarar issue #5 terminado. Próxima tarea única: decidir si la elección de botín favorece una herramienta cuando efectivamente completaría la crisis, sin sacrificar una victoria inmediata por muestras. No implementar antes de esa regla explícita.
+
 ## Siguiente tarea única
 
-**Revisión crítica posterior de C7/#5, implementado y con CI verde, sin fusionar.** R1/R2 ya corregidos. Actualizar tablero y registro al cerrar cada revisión; no fusionar ni iniciar otro defecto.
+**Definición y aprobación de C7-R1: prioridad de botín para herramientas que permitan completar la crisis (informe31), sin abrir otros issues ni fusionar.** R1/R2 ya corregidos. Actualizar tablero y registro al cerrar cada revisión; no fusionar ni iniciar otro defecto.
