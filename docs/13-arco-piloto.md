@@ -86,6 +86,16 @@ Esta matriz describe **información dramática**, no solo un sistema de puntos. 
 6. La presentación debe poder mostrar un pequeño resumen del pasado: «En la ronda 1 le prometimos una señal».
 7. Un evento importante no debe perderse porque se robó otra carta aleatoria.
 
+## Aplicación del tono +16 y del desafío justo
+
+El arco debe sostener una intensidad emocional cercana a la de las grandes aventuras narrativas de supervivencia, **sin recrearse en gore ni violencia extrema**. Vera y Simón pueden sufrir pérdidas graves, pero el diseño no debe usarlos como castigo automático para quien ejerce la compasión.
+
+**Ejemplo de dificultad justa en la ruta de acogida:** la colonia obtiene un compromiso humano valioso, pero la nueva demanda de comida y medicina coincide con una crisis. Una partida bien gestionada puede anticiparse al consumo, organizar una expedición al hospital, negociar un suministro alternativo o mejorar la defensa mientras alguien cuida a Simón. La decisión inicial tiene un costo real, pero **no determina por sí sola una derrota inevitable**.
+
+**Ejemplo en la ruta de derivación:** los jugadores preservan camas y comida, pero prometen una señal que puede atraer zombis. Pueden preparar barricadas, llevar combustible, coordinar una expedición o decidir conscientemente romper la promesa. Si la rompen, quizá pierdan la confianza de Simón; esa relación no se recupera con una simple donación de +1 moral.
+
+Las consecuencias más severas deben tener **pistas identificables** y oportunidades de respuesta. No todas las personas están obligadas a sobrevivir, y una sucesión de errores puede cerrar rutas o conducir a la derrota, pero un jugador que entiende y utiliza bien las mecánicas debe conservar posibilidades razonables de salir adelante.
+
 ## Prueba de aceptación del arco piloto
 
 Al terminar **dos partidas de ejemplo** (una por cada decisión inicial), debería ser posible comparar:
@@ -95,6 +105,9 @@ Al terminar **dos partidas de ejemplo** (una por cada decisión inicial), deber�
 - Qué personajes confiaron, sospecharon, murieron o permanecieron.
 - Qué escenas, recursos y alternativas se habilitaron o bloquearon.
 - Qué parte de la conclusión cambió por decisiones anteriores.
+- Qué señales anticipaban cada peligro grave y qué alternativas estratégicas permitían mitigar su impacto.
+- Si una decisión moralmente defendible produjo una partida desafiante pero recuperable, en lugar de una derrota forzada.
+- Si el contenido mantiene una intensidad adecuada para un público objetivo de mayores de 16 años, sin violencia gráfica gratuita.
 
 Si únicamente varían los números de comida y moral, **habremos fallado el objetivo narrativo**, aunque las pruebas técnicas pasen.
 
