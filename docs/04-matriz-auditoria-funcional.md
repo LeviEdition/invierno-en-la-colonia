@@ -62,6 +62,10 @@ Tras la aprobación expresa del creador, los subsistemas **07 (búsqueda), 13 (c
 
 **Límites:** cobertura aún parcial, sin búsqueda dirigida por localidades, sin cambio de crisis de otros tipos, sin Chromium/Android/TalkBack recientes ni balance demostrado. Revisión crítica posterior de C7-R1 pendiente; `main` intacta, PR14 en borrador, #5 abierto. Esta actualización no altera los estados *históricos iniciales* de la tabla de auditoría A.
 
+## Revisión posterior de C7-R1 y reserva de aceptación — 27/10/2026
+
+[Informe33](33-revision-critica-c7-r1.md): lectura crítica posterior del sistema de puntuación, efecto de muestras e investigador, estado de herramientas propio, crisis, `stashLoot` y `botTurn`. **Sin defectos nuevos detectados** en C7-R1; los ocho tests nuevos se verificaron en [CI 40576507329](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40576507329): **305 declaradas, 303 aprobadas, cero fallidas, 2 TODO**. H1 (prioridad de botín) corregido bajo política aprobada. Estado de subsistemas 07/13/15: **parcialmente probados** hasta que se validen modales, encrucijadas y navegación real en navegador. No se cambiaron ejecutables ni casos de test en esta revisión. Siguiente única tarea: aceptación manual C7/C7-R1 en navegador, no integrar a `main` todavía.
+
 ## Estados de auditoría
 
 - **Parcialmente probado (P):** hay pruebas automatizadas, pero faltan escenarios importantes.
