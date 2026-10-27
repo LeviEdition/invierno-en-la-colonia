@@ -96,3 +96,97 @@ test('A4 | ganar mediante búsqueda y uso de recursos de tres localidades',()=>{
  {samples:7,goal:7,end:true,turn:'end',round:1});
  assert.match(t.val('game.last'),/Victoria/);
 });
+
+test('A4 | victoria bloquea gastar recursos y terminar otro turno',async()=>{
+ const t=fixture();t.run('game.samples=game.goal-1;game.items=[catalog.create("notes")];playItem(0);');
+ assert.equal(t.val('game.ended'),true);
+ const before=t.val('({food:game.food,samples:game.samples,round:game.round})');
+ await t.run('finishTurn()');assert.deepEqual(t.val('({food:game.food,samples:game.samples,round:game.round})'),before);
+});
+test('A4 | dos jugadores aportan muestras a la misma victoria',async()=>{
+ const t=fixture();stable(t);
+ t.run('game.goal=7;game.items=Array.from({length:3},()=>catalog.create("notes"));game.botItems=Array.from({length:4},()=>catalog.create("notes"));for(let i=0;i<3;i++)playItem(0);');
+ assert.equal(t.val('game.samples'),3);
+ await t.run('finishTurn()');t.run('confirmPass();for(let i=0;i<4;i++)playItem(0);');
+ assert.deepEqual(t.val('({samples:game.samples,ended:game.ended,turn:game.turn,round:game.round})'),
+ {samples:7,ended:true,turn:'end',round:1});
+});
+test('A4 | una encrucijada activada durante búsqueda frena fin de turno',async()=>{
+ const t=fixture();
+ t.run('game.humans[0].loc=1;game.dice=[6];game.decks[1].unshift(catalog.create("ration"));game.crossCard=crossroadsDeck.findIndex(c=>c.title==="La radio encendida");game.crossOwner="human";game.crossPending=false;game.crossResolved=false;search();chooseLoot(0);');
+ assert.equal(t.val('game.crossPending'),true);
+ const food=t.val('game.food');
+ await t.run('finishTurn()');assert.equal(t.val('game.turn'),'human');
+ t.run('crossChoose(1);');
+ assert.equal(t.val('game.crossPending'),false);
+ assert.equal(t.val('game.food'),food);
+ assert.equal(t.val('game.morale'),10);
+ await t.run('finishTurn()');assert.equal(t.val('game.turn'),'ai');
+});
+test('A4 | el rescate queda esperando si colonia llena y llega cuando se libera',()=>{
+ const t=fixture();
+ t.run('game.helpless=6;stashLoot(catalog.create("rescue"),game.humans[0],"human");');
+ assert.deepEqual(t.val('({queue:game.rescueQueue.length,group:game.humans.length})'),{queue:1,group:3});
+ t.run('game.helpless=5;processRescueQueue();');
+ assert.deepEqual(t.val('({queue:game.rescueQueue.length,group:game.humans.length})'),{queue:0,group:4});
+});
+test('A4 | IA completa turno y fase colonia sin asistencia',async()=>{
+ const t=fixture('ai');stable(t);
+ t.run('game.botItems=[];game.botDice=[];game.bots.forEach(p=>p.moved=true);');
+ await t.run('finishTurn()');
+ assert.deepEqual(t.val('({round:game.round,turn:game.turn,mode:game.mode,ended:game.ended})'),
+ {round:2,turn:'human',mode:'ai',ended:false});
+ assert.equal(t.val('game.log.some(x=>x.includes("Comienza el turno de la IA"))'),true);
+ assert.equal(t.val('game.log.some(x=>x.includes("Fase de colonia:"))'),true);
+});
+test('A4 | IA encuentra muestra en mazo usando búsqueda real',async()=>{
+ const t=fixture('ai');stable(t);
+ t.run('game.botItems=[];game.botDice=[6];game.bots[0].loc=1;game.bots.forEach(p=>p.moved=true);game.decks[1].unshift(catalog.create("sample"));');
+ await t.run('finishTurn()');
+ assert.equal(t.val('game.samples'),1);
+ assert.equal(t.val('game.round'),2);
+ assert.equal(t.val('game.ended'),false);
+});
+test('A4 | modo IA también alcanza derrota por límite de rondas',async()=>{
+ const t=fixture('ai');stable(t);
+ t.run('game.max=1;game.botItems=[];game.botDice=[];game.bots.forEach(p=>p.moved=true);');
+ await t.run('finishTurn()');
+ assert.deepEqual(t.val('({ended:game.ended,turn:game.turn,round:game.round})'),{ended:true,turn:'end',round:2});
+ assert.match(t.val('game.last'),/agotaron las rondas/);
+});
+test('A4 | IA puede ganar por notas si la colonia resiste hasta verificar',async()=>{
+ const t=fixture('ai');stable(t);
+ t.run('game.goal=2;game.botItems=[catalog.create("notes"),catalog.create("notes")];game.botDice=[];game.bots.forEach(p=>p.moved=true);');
+ await t.run('finishTurn()');
+ assert.equal(t.val('game.samples'),2);assert.equal(t.val('game.ended'),true);
+ assert.match(t.val('game.last'),/Victoria/);
+});
+test('A4 | bug de prioridad: IA reúne todas las muestras, pero pierde por moral al procesar colonia',async()=>{
+ const t=fixture('ai');quiet(t);
+ t.run('game.goal=2;game.food=0;game.morale=1;game.botItems=[catalog.create("notes"),catalog.create("notes")];game.botDice=[];game.bots.forEach(p=>p.moved=true);game.zones.forEach(z=>z.z=0);game.crisis={type:"comida",need:2,given:2,contributions:["comida","comida"],fail:"moral"};');
+ await t.run('finishTurn()');
+ assert.equal(t.val('game.samples'),2);
+ assert.equal(t.val('game.ended'),true);
+ assert.equal(t.val('game.morale'),0);
+ assert.match(t.val('game.last'),/Derrota/);
+});
+test('A4 | victoria de J2 evita fase de colonia posterior',async()=>{
+ const t=fixture();stable(t);
+ t.run('game.samples=game.goal-1;game.botItems=[catalog.create("notes")];');
+ await t.run('finishTurn()');t.run('confirmPass();playItem(0);');
+ assert.equal(t.val('game.ended'),true);
+ const food=t.val('game.food');
+ await t.run('finishTurn()');
+ assert.equal(t.val('game.food'),food);assert.equal(t.val('game.round'),1);
+});
+test('A4 | nueva partida reinicia progresos y reservas tras avanzar a J2',async()=>{
+ const t=fixture();stable(t);await t.run('finishTurn()');
+ t.run('confirmPass();game.food=0;game.items=[];game.samples=3;startGame("local");');
+ assert.deepEqual(t.val('({round:game.round,food:game.food,items:game.items.length,samples:game.samples,turn:game.turn})'),
+ {round:1,food:6,items:7,samples:0,turn:'human'});
+});
+test('A4 | reinicio tras ronda elimina las contribuciones anteriores a crisis',async()=>{
+ const t=fixture();stable(t);await both(t);
+ assert.deepEqual(t.val('({given:game.crisis.given,cards:game.crisis.contributions,round:game.round})'),
+ {given:0,cards:[],round:2});
+});
