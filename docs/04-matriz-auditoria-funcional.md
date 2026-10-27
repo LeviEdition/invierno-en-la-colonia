@@ -38,6 +38,14 @@ R1 de la revisión anterior (subsistemas 07/18) corregido en [a5043fa](https://g
 
 R2 de C5 (muerte en cola) sigue pendiente; es la siguiente tarea única propuesta, sin iniciar. No se certifican todas las combinaciones, Android físico ni TalkBack. `main` intacta y PR #14 sin fusionar. El resultado de revisión 26 anterior se conserva como evidencia histórica; C6-R1 lo actualiza para R1.
 
+## Corrección C5-R2 — 27/10/2026
+
+Residual R2 de revisión26 (subsistemas 02/06/16) corregido en [c19916f](https://github.com/LeviEdition/invierno-en-la-colonia/commit/c19916f609498a0e058ef19b257b0f134e0c8aa5): el fin de turno rechaza muertes en cola antes de abrir el aviso, manteniendo las esperas de una transición iniciada. Siete pruebas nuevas: seis regresiones antes fallidas y un control de muerte real durante colonia. Modales55/55; suite288 declaradas, **285 aprobadas, 0 fallidas/canceladas/omitidas y 3 TODO**. Chromium12 recorridos sin errores JS; revisión independiente sin defectos. [Informe28 y límites](28-correccion-c5-r2.md).
+
+**CI remoto confirmado:** [GitHub Actions de `c19916f`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40557908505), `completed/success`; logs: **288 declaradas, 285 aprobadas, 0 fallidas/canceladas/omitidas y 3 TODO previos**.
+
+Esta actualización sustituye el estado pendiente de R2 de los apartados anteriores, conservados como históricos. No se validan todas las combinaciones ni móvil físico/TalkBack. `main` intacta; PR en borrador sin aprobación formal/fusión. Siguiente tarea única propuesta: definir prioridad IA #5 antes de implementar; no iniciada aquí.
+
 ## Estados de auditoría
 
 - **Parcialmente probado (P):** hay pruebas automatizadas, pero faltan escenarios importantes.

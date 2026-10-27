@@ -11,7 +11,7 @@
 
 - **Estable:** `main`, `invierno_colonia_v9_9.html`, SHA Git blob `4ebaedad13d63c7a6762c524a52c0dd9695687b1`. El archivo es idéntico en `main` y `refactor/arquitectura` al revisar.
 - **Auditoría:** PR [#1](https://github.com/LeviEdition/invierno-en-la-colonia/pull/1) abierto y en borrador; no fusionar por ahora.
-- **Pruebas de entrega C5/C6 (históricas; actualización C6-R1 abajo):** **272 aprobadas, 0 fallidas/canceladas/omitidas y 3 `test.todo`** (275 declaradas), confirmadas en los logs de [GitHub Actions para `64dcc2c`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40552240429). Las verificaciones dirigidas de Chromium están documentadas en C4–C6; Android físico/TalkBack siguen pendientes.
+- **Pruebas actuales de estabilización:** C5-R2, **285 aprobadas, 0 fallidas/canceladas/omitidas y 3 TODO** (288 declaradas), confirmadas en [logs de CI sobre `c19916f`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40557908505). Evidencia anterior conservada por SHA en los informes. Android físico/TalkBack siguen pendientes.
 - **Problemas registrados:** [#2](https://github.com/LeviEdition/invierno-en-la-colonia/issues/2), [#3](https://github.com/LeviEdition/invierno-en-la-colonia/issues/3), [#4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4), [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5), [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6), [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) y [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8), [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9), [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10) y [#11](https://github.com/LeviEdition/invierno-en-la-colonia/issues/11), [#12](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12) y [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13). El #4 requiere resolver una ambigüedad de reglas, no presumir que es un bug.
 - **Narrativa:** visión, objetivos, campañas y bocetos registrados en `docs/12`–`docs/17`. Son **propuestas y decisiones de diseño**, no código ni campañas implementadas.
 
@@ -29,7 +29,7 @@ Por instrucción del usuario se incorporó la obligación de actualizar el table
 
 **Resultado y límites de aquella revisión documental:** acceso y CI de la entrega confirmados; documentación sincronizada. No se realizó entonces una nueva prueba de navegador o dispositivo físico ni una revisión final de código; la revisión de código posterior figura abajo. #5 sigue siendo una propuesta de trabajo posterior que requiere acordar la prioridad de la IA; no está iniciada ni autorizada su implementación.
 
-## 2. Etapa activa C — estabilización; C6-R1 corregida, C5-R2 pendiente
+## 2. Etapa activa C — estabilización; C6-R1 y C5-R2 corregidas y revisadas
 
 **Objetivo:** saber qué hace realmente el juego, qué falla y qué no se ha probado, antes de intervenir sus reglas o extraer módulos.
 
@@ -90,7 +90,7 @@ En `fix/estabilizacion-v9-9` fueron corregidos **[#11](https://github.com/LeviEd
 
 Se enfoca el diálogo de inicio/pase, se confina Tab/Shift+Tab, se hace inerte el tablero durante el pase y se devuelve el foco al contenido al cerrar. **Cinco regresiones nuevas**, suite 250/0/3 TODO; Chromium verificó Tab, Shift+Tab y Enter en 1365×768, 393×852 y 320×640. [Registro](25-registro-estabilizacion.md). No se afirma validación con TalkBack o Android físico.
 
-### C5 — Guardias de transición de turno (#8 y #10): revisada, caso residual pendiente
+### C5 — Guardias de transición de turno (#8 y #10): R2 corregido en el seguimiento
 
 **Estado confirmado al comenzar:** rama y referencia Git del PR #14 en `5b3a663`, C4 cerrada; `main` en `d9068f4`. La consulta del PR mediante API devolvió `Forbidden`: no se confirmó en vivo su estado ni sus checks.
 
@@ -129,11 +129,21 @@ Chromium completó 12 recorridos en 1365×768 y 393×852: J1/J2/humano contra IA
 
 **CI remoto confirmado:** [GitHub Actions sobre `a5043fa`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40556617672), `completed/success`; logs: **281 declaradas, 278 aprobadas, 0 fallidas/canceladas/omitidas y 3 TODO**.
 
-Tablero, registro, matriz e informes 26/27 actualizados; se conserva el hallazgo original como histórico. Sin fusión, cierre de issues ni aprobación formal del PR. `main` intacta. R2 de C5 no se modificó.
+Tablero, registro, matriz e informes 26/27 actualizados; se conserva el hallazgo original como histórico. Sin fusión, cierre de issues ni aprobación formal del PR. `main` intacta. En C6-R1 no se modificó R2 de C5; su corrección posterior se registra abajo.
 
-### Siguiente tarea única propuesta — C5-R2: cola de fallecimiento
+### C5-R2 — Cola de fallecimiento: corregida y revisada, 27/10/2026
 
-Proteger la transición si ya hay una muerte en cola antes de abrirse su microtarea, con regresión y ajuste mínimo. No iniciada en este bloque; #5 y otras correcciones siguen estacionadas.
+[Informe 28](28-correccion-c5-r2.md), código/pruebas [c19916f](https://github.com/LeviEdition/invierno-en-la-colonia/commit/c19916f609498a0e058ef19b257b0f134e0c8aa5). La guardia de `finishTurn()` comprueba también muertes en cola, antes de que su microtarea abra el aviso. No cambia el gestor de fallecimientos ni las esperas de una transición ya iniciada.
+
+Seis regresiones fallaron antes y pasan después, con microtareas reales, J1/J2/humano contra IA, uno/dos avisos, rechazo sin mutar estado y recuperación después de confirmar todos. Un séptimo test preserva una colonia real que espera su muerte y termina solo una vez. Archivo: 55/55; `npm test`: **285 aprobadas, 0 fallidas/canceladas/omitidas y 3 TODO** (288 declaradas). Chromium: 12 recorridos en 1365×768 y 393×852, sin errores JS; confirmación/reintento mediante botones reales tras reproducir internamente la ventana. Revisión independiente sin defectos. No se afirma Android físico ni clic normal como origen del fallo.
+
+**CI remoto confirmado:** [GitHub Actions de `c19916f`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40557908505), `completed/success`; logs: **288 declaradas, 285 aprobadas, 0 fallidas/canceladas/omitidas y 3 TODO previos**.
+
+Tablero, registro, matriz e informes 26/27/28 actualizados; C6-R1 conserva sus pruebas. PR #14 en borrador, sin aprobación formal ni fusión; `main` intacta. No se implementó #5.
+
+### Siguiente tarea única propuesta — Definir prioridad de IA en #5
+
+Acordar cuándo debe donar herramientas a la crisis y cuándo equipar o conservar, antes de modificar la IA. Definición e implementación no iniciadas en este bloque; no inventar esa política ni tocar #4/#6 sin decisión del creador.
 
 ## 3. Etapas posteriores: una por vez
 
@@ -188,7 +198,7 @@ Los detalles están en `docs/12`–`docs/17`. **No abrir nuevos frentes para amp
 
 Si surge una idea fuera de la tarea activa:
 
-> «Es una idea para la hoja de ruta, pero ahora estamos en **C5-R2 (cola de fallecimiento), propuesta siguiente**. La registro y seguimos con la estabilización. ¿Querés cambiar explícitamente la prioridad?»
+> «Es una idea para la hoja de ruta, pero ahora estamos en **la definición de prioridad de IA para #5, propuesta siguiente**. La registro y seguimos con la estabilización. ¿Querés cambiar explícitamente la prioridad?»
 
 Solo cambiar la etapa activa con una decisión consciente; registrar motivo, riesgos, estado de la tarea interrumpida y cómo retomarla. No es necesario prohibir las conversaciones creativas: **conversar no equivale a cambiar la etapa ni a comenzar a programar**.
 
@@ -201,4 +211,4 @@ Solo cambiar la etapa activa con una decisión consciente; registrar motivo, rie
 - **Propuestas narrativas (estacionadas):** `docs/12`–`docs/17`.
 - **Defectos/decisiones por resolver:** GitHub Issues.
 
-**Próxima acción única propuesta: C5-R2 — proteger la cola de fallecimiento antes de abrir el aviso. C6-R1 corregida y revisada, con evidencia arriba. No iniciar C5-R2 en este bloque, #5 ni fusionar.**
+**Próxima acción única propuesta: definir prioridad de IA para aportar herramientas a la crisis (#5), antes de programar. C6-R1 y C5-R2 corregidas y revisadas. No iniciar otra tarea en este bloque ni fusionar.**

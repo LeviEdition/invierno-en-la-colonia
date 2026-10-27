@@ -4,6 +4,10 @@
 
 **Resultado:** R1 corregido y revisado en su alcance. Se rechaza la orden de iniciar curación si todavía se está eligiendo botín. Después de terminar la búsqueda, se puede curar o cancelar normalmente. C5-R2, #5, reglas, demás habilidades y `main` quedan fuera del cambio. PR #14 permanece abierto en borrador, sin aprobación formal ni fusión.
 
+## Seguimiento posterior — 27/10/2026
+
+La siguiente tarea propuesta al cerrar C6-R1, C5-R2, se completó después en [c19916f](https://github.com/LeviEdition/invierno-en-la-colonia/commit/c19916f609498a0e058ef19b257b0f134e0c8aa5). [Informe28](28-correccion-c5-r2.md) registra pruebas, revisión, entrega y límites. Las pruebas y el alcance de este informe27 corresponden al cierre de C6-R1; el estado operativo actual está en el tablero18.
+
 ## Precondición → acción → esperado → observado → prueba
 
 - **Precondición:** Mara o Ada seleccionada, paciente válido en su localidad con una herida y una congelación, botín de una búsqueda real pendiente. Se usan dos daños, no un estado de tres daños que normalmente provocaría muerte.
@@ -36,4 +40,4 @@ Se actualizan tablero 18, registro 25, matriz 04, seguimiento del hallazgo en in
 
 El hallazgo original de revisión 26 se conserva como histórico, con seguimiento hacia esta corrección. No se cierra #9 automáticamente ni se envían comentarios/revisiones formales de GitHub. `main` conserva `d9068f4`, blob HTML `4ebaedad13d63c7a6762c524a52c0dd9695687b1`. Android físico/TalkBack, balance y partidas naturales completas no se validan en este bloque.
 
-**Siguiente tarea única propuesta: C5-R2 — proteger el fin de turno cuando la muerte ya está en cola, antes de abrir el aviso.** No iniciada en C6-R1. #5 y las decisiones de IA siguen estacionadas.
+**Siguiente tarea propuesta al cerrar C6-R1 (histórico): C5-R2 — proteger el fin de turno cuando la muerte ya está en cola, antes de abrir el aviso.** No se inició en C6-R1; su corrección posterior consta en el seguimiento de arriba. #5 y las decisiones de IA siguen estacionadas.

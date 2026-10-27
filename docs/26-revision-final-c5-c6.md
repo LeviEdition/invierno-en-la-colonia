@@ -6,7 +6,7 @@
 
 ## Seguimiento posterior — 27/10/2026
 
-**R1 corregido y revisado en C6-R1:** [a5043fa](https://github.com/LeviEdition/invierno-en-la-colonia/commit/a5043fadbaa686ed9d5c4cdc8c43ab90806baa52), seis regresiones nuevas y validaciones en [informe 27](27-correccion-c6-r1.md). La descripción y resultados de esta revisión se conservan como históricos del rango `5b3a663..247f819`, no como fallo vigente de R1 después del arreglo. **R2 sigue pendiente**, propuesto como siguiente tarea sin iniciar. El estado operativo actual figura en [tablero 18](18-tablero-operativo.md).
+**R1 corregido y revisado en C6-R1:** [a5043fa](https://github.com/LeviEdition/invierno-en-la-colonia/commit/a5043fadbaa686ed9d5c4cdc8c43ab90806baa52), seis regresiones nuevas y validaciones en [informe 27](27-correccion-c6-r1.md). La descripción y resultados de esta revisión se conservan como históricos del rango `5b3a663..247f819`, no como fallo vigente de R1 después del arreglo. **R2 corregido y revisado posteriormente en C5-R2:** [c19916f](https://github.com/LeviEdition/invierno-en-la-colonia/commit/c19916f609498a0e058ef19b257b0f134e0c8aa5), pruebas/CI y límites en [informe28](28-correccion-c5-r2.md). El estado operativo actual figura en [tablero 18](18-tablero-operativo.md).
 
 ## Alcance y método
 
