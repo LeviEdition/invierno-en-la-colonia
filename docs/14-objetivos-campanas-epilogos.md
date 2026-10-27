@@ -50,6 +50,8 @@ En la V9.9, los tres objetivos reales son:
 
 **Integración obligatoria entre historia y recursos:** reunir el recurso del objetivo no debe permitir ignorar su trama principal. El progreso narrativo abre oportunidades de investigación, acceso, validación y uso de recursos; a su vez, las acciones y recursos mecánicos ayudan a activar los siguientes hitos de historia.
 
+**Decisión específica para «Encontrar la cura»:** las muestras podrían conseguirse **solo mediante acontecimientos y objetivos de la campaña**. Su disponibilidad estaría escrita en la trama; obtenerlas puede requerir expediciones, recursos, riesgos y decisiones jugables. Los demás recursos estratégicos seguirán apareciendo en los sistemas normales de supervivencia. Habrá que adaptar el catálogo, las notas de laboratorio, habilidades de investigador y las recompensas de encrucijadas para que ninguna vía accidental permita ganar sin atravesar la trama. Detalles: [Progresión narrativo-mecánica](16-progresion-narrativa-mecanica.md).
+
 La dificultad de implementación está en mantener la libertad del jugador: no retirar recompensas conseguidas ni ocultar arbitrariamente recursos esenciales solo porque no se haya visto una escena. Las etapas de campaña deben ofrecer alternativas y contingencias si un personaje central muere o si una localidad queda inutilizada.
 
 Las historias secundarias directamente relacionadas pueden modificar esa progresión. Las independientes aportan desarrollo de personajes, recursos y conflictos, sin convertirse en bloqueos artificiales de la victoria.
