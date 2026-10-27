@@ -204,6 +204,14 @@ Se completó la comprobación exigida tras [revisión33](33-revision-critica-c7-
 
 **Evidencia CI preexistente sobre motor:** [40577893140](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40577893140), 305 declaradas, 303 aprobadas, 0 fallidas y 2 TODO (#4/#6). **Acciones en repo:** solo documentación; no parche, suite de GitHub, fusión, cambio de `main` ni cierre de #5. **Próxima tarea única:** decidir criterios de aceptación administrativa y si Android físico es requisito previo a promoción, sin avanzar a otro issue.
 
+## Criterio de aceptación #5: Android físico no obligatorio — 27/10/2026
+
+El creador indicó que **no considera necesaria una prueba obligatoria en Android físico** para la corrección C7/C7-R1. Se adopta ese criterio **para el issue #5**, sin extenderlo a cualquier entrega futura: la suite Node (305 declaradas, 303 aprobadas, 0 fallidas, 2 TODO #4/#6), las revisiones técnicas y los cuatro escenarios de Chromium controlados (informe34) bastan para **proponer** la aceptación. Android real y TalkBack **no fueron comprobados** y conservan su carácter de pruebas complementarias de interfaz; no se afirma compatibilidad completa.
+
+**Acciones:** actualizados [informe34](34-validacion-navegador-c7-r1.md) y [tablero18](18-tablero-operativo.md) para que la condición anterior no aparezca como bloqueo. No hubo cambios en HTML, pruebas, `main`, PR ni estado del issue; #5 permanece abierto y PR14 borrador.
+
+**Próxima decisión única:** solicitar consentimiento para considerar #5 aceptado y cerrarlo administrativamente, **sin fusionar PR14 ni publicar la versión**. Cerrar el seguimiento no modifica por sí solo el código estable.
+
 ## Siguiente tarea única
 
-**Evaluación de aceptación de #5 tras validación Chromium aprobada (informe34), incluyendo criterio Android físico; no fusionar ni iniciar otros issues.** R1/R2 ya corregidos. Actualizar tablero y registro al cerrar cada revisión; no fusionar ni iniciar otro defecto.
+**Solicitar autorización de aceptación y cierre administrativo de #5; Android físico optativo para este issue, PR14 sin fusionar y `main` intacta.** R1/R2 ya corregidos. Actualizar tablero y registro al cerrar cada revisión; no fusionar ni iniciar otro defecto.
