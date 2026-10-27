@@ -28,9 +28,10 @@ Antes de reorganizar acciones, escribir pruebas del comportamiento actual:
 - [x] Cuarto bloque: búsquedas, ruido, mazos y efectos iniciales de objetos (17 pruebas nuevas).
 - [x] Quinto bloque: combate, armas, equipamiento, transferencias y aportes a crisis (22 pruebas nuevas; una TODO).
 - [x] Sexto bloque: fase de colonia, alimentación, hambre, residuos, barricadas, oleadas, limpieza, atracción y turnos locales (28 pruebas nuevas).
+- [x] Séptimo bloque: IA, política de selección de acciones, consumo de recursos y ciclo humano→IA→colonia→nueva ronda (20 pruebas nuevas, sin narrativa).
 - [x] Matriz de auditoría funcional en 21 áreas, con estados y prioridad.
-- [x] GitHub Actions habilitado: suite de regresión ampliada a 98 pruebas, más una TODO.
-- [x] Dos defectos reproducibles (#2 y #3) y una definición pendiente sobre transferencias (#4), sin alterar la V9.9.
+- [x] GitHub Actions habilitado: suite de regresión ampliada a 118 pruebas, más dos TODO.
+- [x] Defectos anteriores a la refactorización (#2, #3 y #5) y una definición pendiente sobre transferencias (#4); sin alterar la V9.9.
 - Inicio de partida, objetivo, personajes, localidades y mazos.
 - Consumo y requisitos de dados.
 - Movimiento, exposición, heridas y muerte.
