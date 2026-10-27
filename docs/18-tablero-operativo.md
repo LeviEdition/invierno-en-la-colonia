@@ -223,6 +223,17 @@ Revisión de solo lectura de código, contrato de búsqueda, tests y estado CI. 
 
 **Único paso siguiente recomendado, aún sin aprobación para trabajarlo:** **#4 — decidir la política de transferencia de objetos entre supervivientes humanos/IA**. Es un `test.todo` real y exige distinguir cesión cooperativa entre grupos de traspasos internos antes de escribir código. Comparar alternativas y su efecto sobre partidas cooperativas; no implementar ni cerrar #4 hasta que el creador elija una regla. #6 (momento de elección del líder de J2) sigue pendiente; #7 y #13 permanecen fuera del alcance de este cierre.
 
+### Issue #4 — Política de transferencia por modo acordada (27/10/2026)
+
+El creador decidió: **«por ahora, contra la IA sin tradeos; entre J1 y J2 sí»**. Se distingue transferencia *entre grupos controladores* de transferencia *interna entre supervivientes propios*:
+- **Contra la IA:** J1 puede reorganizar equipo entre los supervivientes que controla, pero **no puede transferirlo a supervivientes IA**, ni recibir equipo de ellos por la función manual de transferencia. El comportamiento automático de IA no se modifica.
+- **Modo local J1 + J2:** transferencias de un objeto equipado **bidireccionales** J1↔J2, más los traspasos internos del grupo, autorizadas desde el **turno del dueño que entrega**. Sin trueque recíproco obligatorio ni aceptar un objeto durante el pase de teléfono.
+- Restricciones conservadas: remitente y receptor vivos, misma localidad, remitente propio del turno interactivo, receptor sin equipamiento de categoría duplicada, objeto aún disponible, protección frente a acciones durante el pase/modales y confirmación. Los filtros deben aplicarse en **`startTransfer()` y `chooseTransfer()`**. Texto UI adecuado para modo local.
+
+**Registro de decisión:** [comentario del issue #4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4#issuecomment-6453681346). **Alcance de esta intervención:** solo registrar reglas; no se cambiaron motor ni tests, no se ejecutaron nuevas regresiones, #4 permanece abierto, dos TODO (#4 y #6) sin resolver, PR14 sigue borrador y `main` intacta. Interpretación declarada, corregible antes de código: «sin tradeos con IA» **no** bloquea mover equipo dentro del grupo del J1.
+
+**Siguiente tarea única propuesta (pendiente de autorización):** C8/#4, preparar regresiones rojo→verde para estos modos y corregir guardas en `startTransfer()`/`chooseTransfer()`, seguida de pruebas Chromium y revisión crítica. No implementar todavía ni saltar al issue #6.
+
 ## 3. Etapas posteriores: una por vez
 
 | Etapa | Propósito | Criterio para habilitar la siguiente |
@@ -289,4 +300,4 @@ Solo cambiar la etapa activa con una decisión consciente; registrar motivo, rie
 - **Propuestas narrativas (estacionadas):** `docs/12`–`docs/17`.
 - **Defectos/decisiones por resolver:** GitHub Issues.
 
-**Próxima acción única propuesta (sujeta a autorización): definir la regla del issue #4, transferencias de equipamiento dentro y entre grupos humano/IA. #5 cerrado con pruebas; PR #14 en borrador, sin fusionar ni alterar `main`.**
+**Próxima acción única propuesta, pendiente de autorización: C8 / issue #4, escribir primero regresiones de transferencias según modo (IA: sin traspasos entre jugadores; local: J1↔J2 permitidos) y corregir después con pruebas; no tocar `main` ni fusionar PR #14.**
