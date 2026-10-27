@@ -207,6 +207,12 @@ Revisión de solo lectura de código, contrato de búsqueda, tests y estado CI. 
 
 **Tarea única siguiente:** evaluar aceptación y cierre **administrativo** de #5, determinando si la prueba en Android físico es requisito previo para promoción. No cerrar ni fusionar sin aprobación expresa; no empezar otros issues.
 
+### Decisión de criterio de aceptación #5 — 27/10/2026
+
+**Criterio del creador:** **Android físico no será una prueba obligatoria para cerrar C7/C7-R1 (#5)**. Los cuatro smoke tests controlados de Chromium, la emulación táctil y las 303 pruebas aprobadas con 2 TODO previos son evidencia suficiente para proponer aceptación de esta corrección; no equivalen a certificar Android, TalkBack, toda la experiencia móvil o la versión completa. La validación en dispositivos reales se mantiene como prueba complementaria futura, no bloqueo de este issue. Ver [informe34](34-validacion-navegador-c7-r1.md#decisión-de-aceptación-sobre-android-físico).
+
+**Tarea siguiente única:** solicitar autorización explícita para **aceptar/cerrar administrativamente el issue #5**, sin fusionar PR #14 ni alterar `main`. No cerrar automáticamente por el solo cambio del criterio.
+
 ## 3. Etapas posteriores: una por vez
 
 | Etapa | Propósito | Criterio para habilitar la siguiente |
@@ -273,4 +279,4 @@ Solo cambiar la etapa activa con una decisión consciente; registrar motivo, rie
 - **Propuestas narrativas (estacionadas):** `docs/12`–`docs/17`.
 - **Defectos/decisiones por resolver:** GitHub Issues.
 
-**Próxima acción única: evaluar los criterios de aceptación/cierre del issue #5 tras cuatro escenarios Chromium aprobados (informe34); decidir si exige Android físico antes de promoción. No fusionar, cerrar issue ni iniciar nuevos trabajos automáticamente.**
+**Próxima acción única: solicitar aprobación explícita para dar por aceptado y cerrar administrativamente #5 con Chromium + suite verde como evidencia suficiente. Android físico queda optativo para este issue; no fusionar PR #14 ni alterar `main`.**
