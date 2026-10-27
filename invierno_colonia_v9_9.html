@@ -1172,8 +1172,8 @@ function confirmPass(){
  returnFocusAfterHandover();
 }
 async function finishTurn(){
- // El turno no puede avanzar hasta confirmar el pase o el fallecimiento.
- if(game.ended||aiRunning||passScreenActive||deathDirector.active)return;
+ // El turno no puede avanzar hasta confirmar el pase o los fallecimientos, incluso en cola.
+ if(game.ended||aiRunning||passScreenActive||deathDirector.active||deathDirector.pending.length)return;
  if(pendingLeader){show('leaderChoice');return;}
  if(pendingHeal||pendingLoot||pendingBite||pendingAttract||pendingTransfer){show(pendingHeal?'healTarget':pendingLoot?'lootChoice':pendingBite?'biteChoice':pendingAttract?'attractTarget':'transferTarget');return;}
  if(game.crossPending){show('crossroads');return;}

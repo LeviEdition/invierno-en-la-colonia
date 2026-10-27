@@ -14,7 +14,7 @@ const bootstrap=/\ncreate\(\);\s*\ndocument\.getElementById\('setupScreen'\)\.hi
 assert.match(scripts[0][1],bootstrap);
 const source=scripts[0][1].replace(bootstrap,'');
 
-function fixture({mode='local',face=6}={}){
+function fixture({mode='local',face=6,realMicrotasks=false}={}){
  const random={value:(face-0.5)/6}; const math=Object.create(Math); math.random=()=>random.value;
  const nodes=new Map();
  function node(id){
@@ -31,7 +31,7 @@ function fixture({mode='local',face=6}={}){
  const document={getElementById:node,addEventListener(){},querySelector(selector){
    return selector==='#fabMenu button'?node('fabMenuFirstAction'):selector==='.deathContinue'?node('deathContinue'):null;
  }};
- const context=createContext({document,Math:math,queueMicrotask(){},setTimeout(fn){fn();}});
+ const context=createContext({document,Math:math,queueMicrotask:realMicrotasks?queueMicrotask:()=>{},setTimeout(fn){fn();}});
  runInContext(source,context,{filename:'invierno_colonia_v9_9.js',timeout:2500});
  runInContext('toast=()=>{};toggleFab=()=>{};gameMode='+JSON.stringify(mode)+';create();passScreenActive=false;game.crossPending=false;game.crossResolved=true;',context);
  return {run(code){return runInContext(code,context,{timeout:2500})},
@@ -327,3 +327,71 @@ for(const mode of ['local','ai']){
   assert.equal(t.state('aiRunning'),false);
  });
 }
+
+for(const [mode,side] of [['local','human'],['local','ai'],['ai','human']]){
+ for(const additionalDeath of [false,true]){
+  test(`C5-R2 | ${mode}/${side}: cola previa y ${additionalDeath?'dos avisos':'un aviso'} bloquean hasta confirmar`,{timeout:2000},async()=>{
+   const t=fixture({mode,realMicrotasks:true});
+   t.run(`game.turn=${JSON.stringify(side)};game.food=30;game.zones.forEach(z=>{z.z=0;z.noise=0;});game.crisis={type:"comida",need:2,given:2,contributions:["comida","comida"],fail:"moral"};game.bots.forEach(p=>p.moved=true);game.botItems=[];game.botDice=[];crossDraw=side=>{game.crossOwner=side;game.crossPending=false;game.crossResolved=true;};`);
+   // Todo ocurre en la misma pila: no abrir el diálogo ni ceder a una microtarea antes de finishTurn.
+   t.run(`kill(game.humans[1],"regresión C5-R2");
+    firstBefore=JSON.stringify({game,selected,picked,target,selectionBySide,opened,passScreenActive,aiRunning});
+    firstAttempt=finishTurn();secondAttempt=finishTurn();menuEndTurn();
+    queuedState={unchanged:firstBefore===JSON.stringify({game,selected,picked,target,selectionBySide,opened,passScreenActive,aiRunning}),active:deathDirector.active,pending:deathDirector.pending.length};`);
+   assert.deepEqual(t.state('queuedState'),{unchanged:true,active:false,pending:1});
+   assert.equal(t.node('deathBackdrop').hidden,true);
+   await Promise.all([t.run('firstAttempt'),t.run('secondAttempt')]);
+   assert.equal(t.state('deathDirector.active'),true);
+   assert.equal(t.state('deathDirector.pending.length'),0);
+   assert.equal(t.node('deathBackdrop').hidden,false);
+   if(additionalDeath){
+    // Una segunda muerte mientras se muestra la primera necesita su propia confirmación.
+    t.run('kill(game.humans[2],"segundo aviso C5-R2");');
+    await Promise.resolve();
+    assert.equal(t.state('deathDirector.pending.length'),1);
+   }
+   const before=t.state('({game,selected,picked,target,selectionBySide,opened,passScreenActive,aiRunning})');
+   await t.run('finishTurn()');
+   assert.deepEqual(t.state('({game,selected,picked,target,selectionBySide,opened,passScreenActive,aiRunning})'),before);
+   t.run('deathDirector.continue();');
+   if(additionalDeath){
+    assert.equal(t.state('deathDirector.active'),true);
+    assert.equal(t.state('deathDirector.pending.length'),0);
+    assert.equal(t.node('deathBackdrop').hidden,false);
+    await t.run('finishTurn()');
+    assert.deepEqual(t.state('({game,selected,picked,target,selectionBySide,opened,passScreenActive,aiRunning})'),before);
+    t.run('deathDirector.continue();');
+   }
+   assert.equal(t.state('deathDirector.active'),false);
+   assert.equal(t.node('deathBackdrop').hidden,true);
+   // Confirmar libera el bloqueo, sin ejecutar automáticamente las órdenes rechazadas.
+   assert.deepEqual(t.state('({game,selected,picked,target,selectionBySide,opened,passScreenActive,aiRunning})'),before);
+   await t.run('finishTurn()');
+   assert.equal(t.state('game.turn'),mode==='local'&&side==='human'?'ai':'human');
+   assert.equal(t.state('game.round'),mode==='local'&&side==='human'?1:2);
+   assert.equal(t.state('aiRunning'),false);
+   assert.equal(t.state('passScreenActive'),mode==='local');
+  });
+ }
+}
+
+test('C5-R2 | una colonia ya iniciada espera su fallecimiento y termina una sola vez',{timeout:2000},async()=>{
+ const t=fixture({mode:'local',realMicrotasks:true});
+ // Una crisis hiere a Sol (menor influencia); llega al tercer daño durante colonia.
+ t.run('game.turn="ai";game.food=30;game.zones.forEach(z=>{z.z=0;z.b=0;z.noise=0;});game.bots[2].wounds=2;game.crisis={type:"medicina",need:1,given:0,contributions:[],fail:"wound"};crossDraw=side=>{game.crossOwner=side;game.crossPending=false;game.crossResolved=true;};colonyTransition=finishTurn();');
+ await Promise.resolve();
+ assert.equal(t.state('game.bots[2].dead'),true);
+ assert.equal(t.state('deathDirector.active'),true);
+ assert.equal(t.state('game.round'),1);
+ assert.equal(t.state('aiRunning'),true);
+ const before=t.state('({round:game.round,food:game.food,morale:game.morale,log:game.log})');
+ await t.run('finishTurn()');
+ assert.deepEqual(t.state('({round:game.round,food:game.food,morale:game.morale,log:game.log})'),before);
+ t.run('deathDirector.continue();');
+ await t.run('colonyTransition');
+ assert.equal(t.state('game.round'),2);
+ assert.equal(t.state('game.turn'),'human');
+ assert.equal(t.state('aiRunning'),false);
+ assert.equal(t.state('passScreenActive'),true);
+ assert.equal(t.state('game.log.filter(x=>x.includes("Fase de colonia:")).length'),1);
+});
