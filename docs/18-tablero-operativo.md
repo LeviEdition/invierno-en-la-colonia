@@ -9,11 +9,11 @@
 
 - **Estable:** `main`, `invierno_colonia_v9_9.html`, SHA Git blob `4ebaedad13d63c7a6762c524a52c0dd9695687b1`. El archivo es idéntico en `main` y `refactor/arquitectura` al revisar.
 - **Auditoría:** PR [#1](https://github.com/LeviEdition/invierno-en-la-colonia/pull/1) abierto y en borrador; no fusionar por ahora.
-- **Pruebas:** 238 ejecutables aprobadas, 0 fallidas y 3 `test.todo` (**241 declaradas**) en [GitHub Actions](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40528489536). Las pruebas automatizadas usan mayormente DOM simulado; **no sustituyen pruebas reales de interfaz**.
+- **Pruebas en rama de estabilización:** **250 ejecutables aprobadas, 0 fallidas y 3 `test.todo`** (253 declaradas) en [GitHub Actions](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40541776775). Chromium verificó la interfaz C4 en tres viewports, pero Android físico/TalkBack siguen pendientes.
 - **Problemas registrados:** [#2](https://github.com/LeviEdition/invierno-en-la-colonia/issues/2), [#3](https://github.com/LeviEdition/invierno-en-la-colonia/issues/3), [#4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4), [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5), [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6), [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) y [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8), [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9), [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10) y [#11](https://github.com/LeviEdition/invierno-en-la-colonia/issues/11), [#12](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12) y [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13). El #4 requiere resolver una ambigüedad de reglas, no presumir que es un bug.
 - **Narrativa:** visión, objetivos, campañas y bocetos registrados en `docs/12`–`docs/17`. Son **propuestas y decisiones de diseño**, no código ni campañas implementadas.
 
-## 2. Estado de A: cierre A6 documentado con reservas; siguiente etapa C1 tras B1
+## 2. Etapa activa C — estabilización; C1–C4 realizados, siguiente C5
 
 **Objetivo:** saber qué hace realmente el juego, qué falla y qué no se ha probado, antes de intervenir sus reglas o extraer módulos.
 
@@ -68,11 +68,15 @@
 
 En `fix/estabilizacion-v9-9` fueron corregidos **[#11](https://github.com/LeviEdition/invierno-en-la-colonia/issues/11)** (victoria IA al alcanzar muestras), **[#2](https://github.com/LeviEdition/invierno-en-la-colonia/issues/2)** (cartas de recursos y consumo de encrucijadas) y **[#3](https://github.com/LeviEdition/invierno-en-la-colonia/issues/3)** (dados J2). Cada cambio incluyó regresiones y la [suite CI](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40537729389) finalizó con **245 aprobadas, 0 fallidas y 3 TODO** (**248 declaradas**).
 
-**Evidencia:** [documento 25](25-estabilizacion-c1-c3.md) y [PR #14 en borrador](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14). **No fusionar ni sustituir `main` sin revisión**. Los defectos #4, #6 y #7 requieren decisiones y no se alteraron.
+**Evidencia:** [registro C1–C4](25-registro-estabilizacion.md) y [PR #14 en borrador](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14). **No fusionar ni sustituir `main` sin revisión**. Los defectos #4, #6 y #7 requieren decisiones y no se alteraron.
 
-### Próxima tarea única C4 — foco de diálogos (#12)
+### C4 — Foco de diálogos (#12): implementado y verificado
 
-Corregir el aislamiento de teclado en setup/pase y verificarlo en Chromium real con Tab, Shift+Tab y Enter, manteniendo el pase privado. Ampliar pruebas automatizadas, comprobar regresiones y documentar resultados. **No empezar C5 ni cambios narrativos hasta cerrar C4.**
+Se enfoca el diálogo de inicio/pase, se confina Tab/Shift+Tab, se hace inerte el tablero durante el pase y se devuelve el foco al contenido al cerrar. **Cinco regresiones nuevas**, suite 250/0/3 TODO; Chromium verificó Tab, Shift+Tab y Enter en 1365×768, 393×852 y 320×640. [Registro](25-registro-estabilizacion.md). No se afirma validación con TalkBack o Android físico.
+
+### Próxima tarea única C5 — Guardias de transición de turno (#8 y #10)
+
+Reforzar fin de turno cuando la pantalla de pase o el diálogo de muerte están activos. Primero pruebas de regresión, después ajuste mínimo, luego CI y verificación local/IA. No mezclar con cambios narrativos ni reglas nuevas.
 
 ## 3. Etapas posteriores: una por vez
 
@@ -127,7 +131,7 @@ Los detalles están en `docs/12`–`docs/17`. **No abrir nuevos frentes para amp
 
 Si surge una idea fuera de la tarea activa:
 
-> «Es una idea para la hoja de ruta, pero ahora estamos en **C1**. La registro y seguimos con la estabilización. ¿Querés cambiar explícitamente la prioridad?»
+> «Es una idea para la hoja de ruta, pero ahora estamos en **C5**. La registro y seguimos con la estabilización. ¿Querés cambiar explícitamente la prioridad?»
 
 Solo cambiar la etapa activa con una decisión consciente; registrar motivo, riesgos, estado de la tarea interrumpida y cómo retomarla. No es necesario prohibir las conversaciones creativas: **conversar no equivale a cambiar la etapa ni a comenzar a programar**.
 
@@ -140,4 +144,4 @@ Solo cambiar la etapa activa con una decisión consciente; registrar motivo, rie
 - **Propuestas narrativas (estacionadas):** `docs/12`–`docs/17`.
 - **Defectos/decisiones por resolver:** GitHub Issues.
 
-**Próxima acción única: C4 — foco y navegación por teclado en setup/pase (#12). C1–C3 corregidas con CI verde, PR #14 todavía en borrador.**
+**Próxima acción única: C5 — proteger transiciones de turno durante pase/fallecimiento (#8 y #10). C1–C4 verificados con CI verde; PR #14 todavía en borrador.**
