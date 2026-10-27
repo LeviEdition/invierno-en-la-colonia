@@ -310,6 +310,16 @@ El creador **aprobó explícitamente política A**: «J1 y J2 deben confirmar su
 
 **Próximo paso único recomendado:** aprobación y cierre **administrativo** del issue #6, sin publicar ni fusionar la rama; luego elegir siguiente tarea de etapa C.
 
+### C9/#6 aceptado y cerrado por autorización expresa — 27/10/2026
+
+El creador indicó **«cerra el issue»** después de la propuesta explícita de aceptar C9 y cerrar #6 sin fusionar PR14. Se dejó [comentario de cierre con pruebas](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6#issuecomment-6455187002) y GitHub confirmó el [issue #6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6) en estado **closed/completed** (`2026-10-27T22:30:07Z`).
+
+**Alcance funcional aceptado:** C9 política A iguala la confirmación del líder inicial tras acciones válidas para J1 y J2, mantiene la elección manual humana al estilo *Dead of Winter*; C9-R1 impide que un jugador elija al sucesor del otro cuando este muere durante su turno, sin bloquear el pase. La IA continúa eligiendo automáticamente su líder cuando corresponde. [Informe38](38-c9-lider-inicial-j2.md) y [revisión crítica/corrección39](39-revision-critica-c9-r1.md). **Último CI verde antes del cierre:** [40594225022](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40594225022), **336 declaradas, 336 aprobadas, 0 fallidas y 0 TODO**. Se verificaron recorridos Chromium de sucesión y pase. **No** Android físico ni cobertura exhaustiva de muertes simultáneas de ambos líderes; el `pendingLeader` único queda como riesgo para revisión transversal.
+
+**No implica publicar/integrar:** PR [#14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14) continúa **abierto/draft** sobre `refactor/arquitectura`, código de corrección solo en `fix/estabilizacion-v9-9`; `main` permanece en `d9068f4aa8d3a10bbbf1e0a8a2527744cc6952cb`. No se abrió ni empezó otro issue.
+
+**Próximo paso único recomendado, sujeto a aprobación del creador:** analizar [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7), decisiones de IA en las encrucijadas según texto de consecuencias, y definir criterio determinista con efectos estructurados antes de modificar código. La accesibilidad táctil [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13) y auditoría general de alertas permanecen en la ruta de estabilización.
+
 ## 3. Etapas posteriores: una por vez
 
 | Etapa | Propósito | Criterio para habilitar la siguiente |
@@ -376,4 +386,4 @@ Solo cambiar la etapa activa con una decisión consciente; registrar motivo, rie
 - **Propuestas narrativas (estacionadas):** `docs/12`–`docs/17`.
 - **Defectos/decisiones por resolver:** GitHub Issues.
 
-**Próxima decisión única propuesta: aceptar y cerrar administrativamente #6 tras C9 y C9-R1 validadas (informe39). Manual de liderazgo humano preservado; PR14 sigue draft y `main` intacta. No iniciar #7 sin autorización.**
+**Próxima decisión única propuesta: autorizar el análisis y definición de política del issue #7 (elecciones de la IA en encrucijadas). #6 cerrado/completed; PR14 sigue draft y `main` intacta. No empezar otros cambios hasta aprobación.**
