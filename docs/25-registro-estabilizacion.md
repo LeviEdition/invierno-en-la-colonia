@@ -1,4 +1,4 @@
-# 25 — Registro de estabilización V9.9 (C1–C6)
+# 25 — Registro de estabilización V9.9 (C1–C7)
 
 **Fecha:** 27/10/2026. **Rama de trabajo:** `fix/estabilizacion-v9-9` (nació de `refactor/arquitectura`). **Estado:** C1–C4 con CI verde; C5 y C6 implementadas, con pruebas locales y CI remoto aprobados; C6-R1 y C5-R2 corregidas y revisadas, con CI aprobado. **No promovidos a `main`.**
 
@@ -63,6 +63,16 @@ Código y pruebas en [d4a6b3f](https://github.com/LeviEdition/invierno-en-la-col
 **Hallazgo nuevo de lectura:** una herramienta hallada por la IA puede equiparse inmediatamente en `stashLoot()`; la evaluación final debe revisar mano **y** equipo. Las herramientas palanca/linterna/reparación dan beneficios futuros diferentes. Donar incluso la última herramienta para evitar una penalización pequeña puede ser perjudicial, aunque una crisis grave justifique el aporte. La recomendación sigue siendo la política simple del [informe29](29-propuesta-prioridad-ia-herramientas.md), con desempate determinista entre equipos, siempre condicionada a autorización del creador. Alternativas documentadas: proteger equipo o estimar costo-beneficio (más complejidad).
 
 **Acciones y límites:** lectura remota de código, documentación, issue, PRs y logs; ninguna prueba nueva, navegador ni dispositivo físico en este bloque. No se alteró el HTML, tests, issues, PRs ni las ramas base; solo documentación en rama C. No fusionar ni presentar recomendaciones como política aprobada. **Siguiente tarea única:** decisión del creador para #5; regresiones/código solo en un bloque posterior si se aprueba.
+
+## C7 / Issue #5 — Aprobación y corrección de herramientas IA
+
+**Decisión del creador (27/10/2026):** política A. La IA debe completar toda crisis de herramientas que pueda, sumando los aportes humanos realizados antes, usando primero su mano y después su equipo de supervivientes vivos en orden determinista, exactamente lo necesario y sin buscar bonus. También se especificó **buscar objetos antes de evaluar si salva la crisis**. El humano ya jugó cuando la IA decide; si aún faltan dos aportes y solo tiene uno, no existe una acción humana posterior antes de colonia y la IA conserva esa herramienta.
+
+**Cambio:** [4166716](https://github.com/LeviEdition/invierno-en-la-colonia/commit/416671673c81c4aa88d91d06209a53855efb69c8) introduce `botContributeTools()` al final de `botTurn()` y excluye herramientas del bloque temprano. Diez regresiones reemplazan TODO #5. Las pruebas primero detectaron fallos esperados antes del arreglo: [CI rojo](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40571566484) (7 fallos C7). Luego [CI verde 40571819429](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40571819429): 297 declaradas, 295 aprobadas, cero fallidas y dos TODO (#4 y #6). Casos y evidencias en [informe30](30-correccion-c7-ia-herramientas.md).
+
+**Límites:** las búsquedas normales ocurren antes de decidir la donación y pueden encontrar herramientas, pero la IA aún no prioriza específicamente el botín de crisis. No se modificaron otros tipos de recursos, modo local, `main` ni configuración; no se hicieron pruebas nuevas de Chromium, Android físico, TalkBack o balance. PR #14 sigue en borrador y issue #5 abierto.
+
+**Única tarea siguiente:** revisión crítica posterior C7 antes de considerar integración.
 
 ## Origen del trabajo
 
@@ -152,7 +162,7 @@ Código y pruebas en [d4a6b3f](https://github.com/LeviEdition/invierno-en-la-col
 | **C4 completada** | [#12](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12) | Foco de inicio/pase corregido en rama; revisión de accesibilidad real adicional pendiente |
 | **C5-R2 corregida y revisada** | [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8) + [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10) | Guardia de cola R2 añadida; regresiones, navegador y CI en informe 28 |
 | **C6-R1 corregida y revisada** | [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9) | R1 resuelto: curación espera al botín; pruebas y revisión en informe 27 |
-| **En definición, sin aprobación** | [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5) | Propuesta de prioridad de herramientas en informe29; falta decisión del creador, sin código nuevo |
+| **C7 implementada; revisión pendiente** | [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5) | Política A aprobada y corregida con pruebas; ver informe30 |
 | Más adelante | [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13), [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) | Ergonomía móvil, selección estructurada de encrucijadas |
 | Requiere al creador | [#4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4), [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6) | Transferencias entre grupos y momento de elección de líder inicial |
 
@@ -160,4 +170,4 @@ Código y pruebas en [d4a6b3f](https://github.com/LeviEdition/invierno-en-la-col
 
 ## Siguiente tarea única
 
-**Resolver y registrar la decisión del creador sobre prioridad IA #5, según propuesta de informe29.** R1/R2 corregidos y revisados; política #5 propuesta, no aprobada ni implementada. Actualizar tablero y registro al cerrar cada revisión; no fusionar ni iniciar otro defecto.
+**Revisión crítica posterior de C7/#5, implementado y con CI verde, sin fusionar.** R1/R2 ya corregidos. Actualizar tablero y registro al cerrar cada revisión; no fusionar ni iniciar otro defecto.
