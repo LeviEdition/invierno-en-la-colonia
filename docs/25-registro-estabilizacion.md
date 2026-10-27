@@ -162,7 +162,7 @@ Código y pruebas en [d4a6b3f](https://github.com/LeviEdition/invierno-en-la-col
 | **C4 completada** | [#12](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12) | Foco de inicio/pase corregido en rama; revisión de accesibilidad real adicional pendiente |
 | **C5-R2 corregida y revisada** | [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8) + [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10) | Guardia de cola R2 añadida; regresiones, navegador y CI en informe 28 |
 | **C6-R1 corregida y revisada** | [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9) | R1 resuelto: curación espera al botín; pruebas y revisión en informe 27 |
-| **C7 y C7-R1 implementadas; revisión R1 pendiente** | [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5) | Política A y prioridad condicional de botín aprobadas y corregidas; informes30/32 |
+| **C7 y C7-R1 revisadas; validación en navegador pendiente** | [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5) | Política A y prioridad condicional de botín aprobadas y corregidas; informes30/32 |
 | Más adelante | [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13), [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) | Ergonomía móvil, selección estructurada de encrucijadas |
 | Requiere al creador | [#4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4), [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6) | Transferencias entre grupos y momento de elección de líder inicial |
 
@@ -188,6 +188,14 @@ Se registraron escenarios precondición → acción → esperado → resultado d
 
 **Siguiente tarea única:** revisión posterior independiente de C7-R1 y no empezar otro issue.
 
+## Revisión crítica posterior de C7-R1 — 27/10/2026
+
+[Informe33](33-revision-critica-c7-r1.md): se contrastaron explícitamente `beginSearch()`, `stashLoot()`, `gainSample()` (incluyendo el bono investigador), `botContributeTools()`, `CrisisManager.add()`, `botTurn()`/colonia y ocho pruebas C7-R1. **No se identificaron nuevos defectos del parche por inspección**; el hallazgo H1 sobre selección de herramienta salvadora está cubierto por tests y corrección. La regla sigue limitada a cartas ya reveladas; el comportamiento anterior de otros tipos de crisis no cambia.
+
+**Evidencia auditada:** [CI 40576507329](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40576507329), SHA del ejecutable auditado en rama `46564a5`, **305 declaradas, 303 aprobadas, 0 fallidas y 2 TODO**. Se verificó que las ocho regresiones están incluidas. **Sin nuevas ejecuciones de pruebas ni cambios en código o tests durante esta revisión.** Los fixtures de IA anulan esperas, encrucijadas y UI; no hay ejecución manual nueva en navegador/Android ni análisis de balance.
+
+**Decisiones administrativas:** solo documentación; no hubo fusión, cambio en `main`, cierre de #5 ni apertura de nueva etapa. Próxima tarea única: validación manual con encrucijadas reales de C7/C7-R1 en navegador, evidenciando colaboración, elección de botín, prioridad de victoria y ausencia de bloqueos antes de proponer cierre/promoción.
+
 ## Siguiente tarea única
 
-**Revisión crítica posterior de C7-R1, implementado tras aprobación y con CI verde (informe32), sin fusionar ni iniciar otros issues.** R1/R2 ya corregidos. Actualizar tablero y registro al cerrar cada revisión; no fusionar ni iniciar otro defecto.
+**Validación manual de C7/C7-R1 en navegador real, revisión posterior completada sin defectos nuevos (informe33); sin fusionar ni iniciar otros issues.** R1/R2 ya corregidos. Actualizar tablero y registro al cerrar cada revisión; no fusionar ni iniciar otro defecto.
