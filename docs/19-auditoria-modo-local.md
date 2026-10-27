@@ -8,7 +8,7 @@ Revisar el modo cooperativo de **dos personas compartiendo un dispositivo**, esp
 
 Se ejecutó el JavaScript **real de V9.9**, sin el código de arranque automático y con un DOM simulado básico. Este bloque mantuvo activas `create()`, `newRound()`, `paint()`, `show()`, `hide()`, `renderModal()`, `finishTurn()`, `showPass()`, `confirmPass()`, `crossChoose()` y el catálogo de objetos. Se reemplazaron solo notificaciones/animaciones con equivalentes neutros.
 
-**Pruebas agregadas:** `tests/modo-local-privacidad.test.mjs`, **16 casos**. [Ejecución CI inicial](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40523731831): **193 tests totales, 190 aprobados, 0 fallidos y 3 TODO** (los TODO son anteriores). La suite muestra los defectos presentes mediante pruebas de **caracterización**: no son regresiones esperadas para el comportamiento ya corregido.
+**Pruebas agregadas:** `tests/modo-local-privacidad.test.mjs`, **20 casos**. [Ejecución CI comprobada](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40524535143): **197 tests totales, 194 aprobados, 0 fallidos y 3 TODO** (los TODO son anteriores). La suite muestra los defectos presentes mediante pruebas de **caracterización**: no son regresiones esperadas para el comportamiento ya corregido.
 
 ## Matriz de comprobación
 
@@ -28,7 +28,7 @@ Se ejecutó el JavaScript **real de V9.9**, sin el código de arranque automáti
 | A2-01-12 | Pantalla de pase activa; invocar `finishTurn()` **directamente** de nuevo | **Esperado:** turno de J2 no avanza antes de confirmar. **Observado:** se puede saltar y procesar colonia | **Debilidad de contrato [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8)** |
 | A2-01-13 | Reiniciar partida después de jugar con J2 | Ambas manos vuelven a siete cartas y se restaura la selección inicial | **Verificado** |
 
-Los 13 renglones agrupan los **16 casos automatizados**; no son un conteo individual de tests.
+Los 13 renglones agrupan los **20 casos automatizados**; no son un conteo individual de tests. Los casos añadidos al cierre cubren expresamente curación, sucesión y mordedura pendientes, además de presentar la elección de sucesor de J2 tras confirmar el pase.
 
 ### Protección visual y privacidad
 
@@ -72,6 +72,6 @@ Abrir la V9.9 original en navegador y comenzar **2 jugadores locales**.
 
 ## Conclusión y continuidad
 
-A2-01 caracteriza con 16 pruebas nuevas el aislamiento de reservas y el flujo normal de pase. Las dos incidencias funcionales relevantes son una conocida (#3) y una nueva (#8). **No se realizaron correcciones.**
+A2-01 caracteriza con 20 pruebas nuevas el aislamiento de reservas y el flujo normal de pase. Las dos incidencias funcionales relevantes son una conocida (#3) y una nueva (#8). **No se realizaron correcciones.**
 
 La **etapa global A sigue abierta**. El bloque automatizado A2-01 puede cerrarse, dejando las pruebas visuales explícitamente pendientes para A5. La siguiente tarea única debe ser **A3-01 — Interfaz y modales de acciones pendientes**, sin abordar todavía narrativa ni refactorización.
