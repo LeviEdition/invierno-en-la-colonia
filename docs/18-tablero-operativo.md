@@ -9,11 +9,19 @@
 
 - **Estable:** `main`, `invierno_colonia_v9_9.html`, SHA Git blob `4ebaedad13d63c7a6762c524a52c0dd9695687b1`. El archivo es idéntico en `main` y `refactor/arquitectura` al revisar.
 - **Auditoría:** PR [#1](https://github.com/LeviEdition/invierno-en-la-colonia/pull/1) abierto y en borrador; no fusionar por ahora.
-- **Pruebas en rama de estabilización:** **250 ejecutables aprobadas, 0 fallidas y 3 `test.todo`** (253 declaradas) en [GitHub Actions](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40541776775). Chromium verificó la interfaz C4 en tres viewports, pero Android físico/TalkBack siguen pendientes.
+- **Pruebas en rama de estabilización:** C6 local: **272 ejecutables aprobadas, 0 fallidas y 3 `test.todo`** (275 declaradas). Última evidencia remota documentada, anterior a C5: **250 aprobadas y 3 TODO** en [GitHub Actions](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40541776775). Chromium verificó la interfaz C4 en tres viewports, pero Android físico/TalkBack siguen pendientes.
 - **Problemas registrados:** [#2](https://github.com/LeviEdition/invierno-en-la-colonia/issues/2), [#3](https://github.com/LeviEdition/invierno-en-la-colonia/issues/3), [#4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4), [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5), [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6), [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) y [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8), [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9), [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10) y [#11](https://github.com/LeviEdition/invierno-en-la-colonia/issues/11), [#12](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12) y [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13). El #4 requiere resolver una ambigüedad de reglas, no presumir que es un bug.
 - **Narrativa:** visión, objetivos, campañas y bocetos registrados en `docs/12`–`docs/17`. Son **propuestas y decisiones de diseño**, no código ni campañas implementadas.
 
-## 2. Etapa activa C — estabilización; C1–C4 realizados, siguiente C5
+## Entrega C5/C6 para revisión
+
+Código y pruebas registrados y subidos en [d4a6b3f](https://github.com/LeviEdition/invierno-en-la-colonia/commit/d4a6b3f45dc5c2563420980acf436a15e694775a) a `fix/estabilizacion-v9-9`. La referencia Git del [PR #14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14) coincide con ese commit al comprobar la subida. `main` sigue en `d9068f4` y conserva el blob estable `4ebaedad13d63c7a6762c524a52c0dd9695687b1`. Sin fusión, cierre automático de issues ni publicación de versión.
+
+**Validación local:** `npm test`, 275 declaradas, 272 aprobadas, 0 fallidas y 3 TODO; recorridos dirigidos de Chromium documentados en C5/C6. **CI remoto sin confirmar:** el workflow está configurado para push a `fix/**`, pero no se pudo observar su ejecución ni resultado: API GraphQL y REST responden `Forbidden`; la consulta web sin autenticación devuelve 404. No se presenta esto como una prueba fallida ni aprobada. Consultar [GitHub Actions de la rama](https://github.com/LeviEdition/invierno-en-la-colonia/actions?query=branch%3Afix%2Festabilizacion-v9-9) y verificar el SHA antes de promover.
+
+La documentación de esta entrega se registra en un commit posterior. Los estados «local/sin commit/sin subida» de las secciones de implementación describen el momento anterior a esta entrega.
+
+## 2. Etapa activa C — estabilización; C1–C6 implementados; revisión pendiente
 
 **Objetivo:** saber qué hace realmente el juego, qué falla y qué no se ha probado, antes de intervenir sus reglas o extraer módulos.
 
@@ -74,9 +82,31 @@ En `fix/estabilizacion-v9-9` fueron corregidos **[#11](https://github.com/LeviEd
 
 Se enfoca el diálogo de inicio/pase, se confina Tab/Shift+Tab, se hace inerte el tablero durante el pase y se devuelve el foco al contenido al cerrar. **Cinco regresiones nuevas**, suite 250/0/3 TODO; Chromium verificó Tab, Shift+Tab y Enter en 1365×768, 393×852 y 320×640. [Registro](25-registro-estabilizacion.md). No se afirma validación con TalkBack o Android físico.
 
-### Próxima tarea única C5 — Guardias de transición de turno (#8 y #10)
+### C5 — Guardias de transición de turno (#8 y #10): implementada, pendiente de revisión
 
-Reforzar fin de turno cuando la pantalla de pase o el diálogo de muerte están activos. Primero pruebas de regresión, después ajuste mínimo, luego CI y verificación local/IA. No mezclar con cambios narrativos ni reglas nuevas.
+**Estado confirmado al comenzar:** rama y referencia Git del PR #14 en `5b3a663`, C4 cerrada; `main` en `d9068f4`. La consulta del PR mediante API devolvió `Forbidden`: no se confirmó en vivo su estado ni sus checks.
+
+**Precondición → acción → esperado → evidencia:** pase (incluido inicio) o aviso de fallecimiento activo → llamar `finishTurn()` o el atajo del menú → no cambiar partida, ronda, selección ni diálogo → tres regresiones locales fallaron antes del arreglo. Se reemplazaron las dos caracterizaciones del defecto por expectativas correctas y se añadieron inicio y fallecimiento en IA (cuatro casos C5). Tras confirmar, una nueva orden sí avanza; no se difiere una orden bloqueada.
+
+**Corrección mínima:** añadir `passScreenActive` y `deathDirector.active` a la guardia inicial de `finishTurn()`, sin cambiar reglas ni el gestor de foco. **Validación local:** 45/45 pruebas en los dos archivos afectados; `npm test`: **252 aprobadas, 0 fallidas y 3 TODO** (255 declaradas). Chromium sobre la rama real verificó bloqueo durante fallecimiento en local/IA, Continuar y avance posterior; en local también llamadas repetidas durante pase, confirmación y llegada a ronda 2. Sin errores JS. Escenarios dirigidos, no partida completa ni Android físico.
+
+Cambios locales para revisión, sin fusionar ni modificar `main`. CI remoto de C5 no ejecutado; el resultado C4 enlazado arriba sigue siendo histórico. Detalles en [registro C5](25-registro-estabilizacion.md#c5--8-y-10-guardias-de-fin-de-turno).
+
+### C6 — Acciones durante curación pendiente (#9): implementada, pendiente de revisión
+
+**Autorización:** el usuario indica «continuemos» después de confirmar C6 como siguiente tarea. Se conservaron los cambios locales de C5; `main` y los remotos no se modificaron.
+
+**Precondición → acción → esperado → observado:** selección de paciente activa → consumir/equipar/aportar desde mano o equipo/iniciar transferencia mediante llamadas internas → conservar estado hasta curar o cancelar → 15 regresiones fallaron antes del arreglo, cinco por cada contexto (J1, J2, humano contra IA).
+
+**Solución mínima:** `playable()` exige también ausencia de `pendingHeal`. `chooseHeal()` conserva la comprobación de `controls.interactive` para poder resolver la elección sin habilitar las acciones normales. Elegir paciente y cancelar mantienen sus reglas y liberan el bloqueo.
+
+**Evidencia:** 21 casos C6 (15 de bloqueo y 6 de recuperación) reemplazan una caracterización del fallo. Suite completa `npm test`: **272 aprobadas, 0 fallidas, 0 canceladas, 0 omitidas y 3 TODO previos** (275 declaradas). Archivo de modales: 42/42 aprobadas. Chromium sobre el HTML real comprobó seis recorridos dirigidos: curar/cancelar en J1, J2 y humano contra IA, rechazo de consumo durante la elección y consumo habilitado después; sin errores JS. No valida partida completa, Android físico ni TalkBack.
+
+Tablero, registro y matriz actualizados. Al terminar la implementación, los cambios aún estaban sin commit ni subida; la entrega posterior se registra arriba. CI remoto C6 sin confirmar. No se cierra automáticamente #9 ni se fusiona. [Registro](25-registro-estabilizacion.md#c6--9-acciones-durante-curación-pendiente).
+
+### Siguiente tarea única — Revisión de C5/C6 pendientes
+
+Código y pruebas ya subidos; revisar el PR #14 y comprobar el resultado de GitHub Actions para los commits entregados. No iniciar otro defecto ni decidir reglas ambiguas dentro de este bloque.
 
 ## 3. Etapas posteriores: una por vez
 
@@ -131,7 +161,7 @@ Los detalles están en `docs/12`–`docs/17`. **No abrir nuevos frentes para amp
 
 Si surge una idea fuera de la tarea activa:
 
-> «Es una idea para la hoja de ruta, pero ahora estamos en **C5**. La registro y seguimos con la estabilización. ¿Querés cambiar explícitamente la prioridad?»
+> «Es una idea para la hoja de ruta, pero ahora estamos en **la revisión de C5/C6**. La registro y seguimos con la estabilización. ¿Querés cambiar explícitamente la prioridad?»
 
 Solo cambiar la etapa activa con una decisión consciente; registrar motivo, riesgos, estado de la tarea interrumpida y cómo retomarla. No es necesario prohibir las conversaciones creativas: **conversar no equivale a cambiar la etapa ni a comenzar a programar**.
 
@@ -144,4 +174,4 @@ Solo cambiar la etapa activa con una decisión consciente; registrar motivo, rie
 - **Propuestas narrativas (estacionadas):** `docs/12`–`docs/17`.
 - **Defectos/decisiones por resolver:** GitHub Issues.
 
-**Próxima acción única: C5 — proteger transiciones de turno durante pase/fallecimiento (#8 y #10). C1–C4 verificados con CI verde; PR #14 todavía en borrador.**
+**Próxima acción única: revisar C5/C6 en PR #14 y confirmar GitHub Actions para la entrega. Verificadas localmente, CI remoto sin confirmar. No iniciar otra corrección ni fusionar.**

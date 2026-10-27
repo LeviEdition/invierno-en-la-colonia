@@ -10,6 +10,20 @@
 
 Los **21 subsistemas** se mantienen clasificados: 01–19 con cobertura parcial (incluidos defectos abiertos en varios); **20–21 no implementados**, fuera del alcance de V9.9. En [el informe final](24-cierre-auditoria-y-prioridades.md) figuran las 12 incidencias (#2–#13), orden propuesto y excepciones. Se aceptó **continuar sin checklist físico A5-02** por autorización explícita del creador tras partidas satisfactorias, **sin declarar que la prueba móvil física ocurrió**. Siguiente tarea **C1/#11**, en rama separada.
 
+## Actualización de estabilización C5
+
+En `fix/estabilizacion-v9-9`, #8 y #10 tienen guardias de transición y regresiones correctivas en `tests/modo-local-privacidad.test.mjs` y `tests/modales-estados-pendientes.test.mjs`. El pase/inicio y el aviso de muerte bloquean `finishTurn()` sin mutar estado; después de confirmar, una nueva orden permite continuar. Suite local: **252 aprobadas, 0 fallidas, 3 TODO**. Chromium verificó bloqueo y continuación en local/IA, sin errores JS. [Evidencia y límites](25-registro-estabilizacion.md#c5--8-y-10-guardias-de-fin-de-turno).
+
+Esto actualiza los defectos #8/#10 de los subsistemas 16/18 **en la rama de estabilización**, sin borrar los hallazgos históricos de auditoría que siguen abajo. `main` conserva la versión original. Revisión y CI remoto C5 pendientes; C6 se registra en la actualización siguiente.
+
+## Actualización de estabilización C6
+
+El defecto #9 (subsistema 18) queda corregido localmente en la rama de estabilización: la curación pendiente bloquea las acciones normales mediante `playable()`, conservando elegir paciente/cancelar. **21 casos C6**, 15 de ellos fallidos antes del arreglo, cubren cinco entradas de inventario en J1, J2 y humano contra IA y la recuperación posterior. Suite local actual: **272 aprobadas, 0 fallidas y 3 TODO** (275 declaradas). Chromium verificó seis recorridos dirigidos sin errores JS. [Registro y límites](25-registro-estabilizacion.md#c6--9-acciones-durante-curación-pendiente). Revisión y CI remoto pendientes; `main` sin cambios. Próxima tarea: revisión/entrega de C5 y C6; ningún defecto adicional iniciado.
+
+## Entrega de estabilización C5/C6
+
+Código y regresiones subidos en [d4a6b3f](https://github.com/LeviEdition/invierno-en-la-colonia/commit/d4a6b3f45dc5c2563420980acf436a15e694775a); la referencia Git del PR #14 apunta a ese commit. `main` conserva el blob original. Documentación de entrega en commit posterior. Los resultados locales anteriores siguen vigentes. **Resultado de CI remoto sin confirmar** por acceso denegado a la API de GitHub; no se afirma CI verde de C5/C6. Siguiente tarea: revisión del PR y confirmación de Actions; no iniciar otro defecto ni fusionar.
+
 ## Estados de auditoría
 
 - **Parcialmente probado (P):** hay pruebas automatizadas, pero faltan escenarios importantes.
