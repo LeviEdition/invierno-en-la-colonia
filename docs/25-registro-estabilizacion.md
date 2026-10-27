@@ -162,7 +162,7 @@ Código y pruebas en [d4a6b3f](https://github.com/LeviEdition/invierno-en-la-col
 | **C4 completada** | [#12](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12) | Foco de inicio/pase corregido en rama; revisión de accesibilidad real adicional pendiente |
 | **C5-R2 corregida y revisada** | [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8) + [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10) | Guardia de cola R2 añadida; regresiones, navegador y CI en informe 28 |
 | **C6-R1 corregida y revisada** | [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9) | R1 resuelto: curación espera al botín; pruebas y revisión en informe 27 |
-| **C7 implementada; revisión pendiente** | [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5) | Política A aprobada y corregida con pruebas; ver informe30 |
+| **C7 y C7-R1 implementadas; revisión R1 pendiente** | [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5) | Política A y prioridad condicional de botín aprobadas y corregidas; informes30/32 |
 | Más adelante | [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13), [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) | Ergonomía móvil, selección estructurada de encrucijadas |
 | Requiere al creador | [#4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4), [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6) | Transferencias entre grupos y momento de elección de líder inicial |
 
@@ -176,6 +176,18 @@ Se verificó que la rama estaba en `9907cdb3`, PR #14 abierto en borrador/base `
 
 Se registraron escenarios precondición → acción → esperado → resultado derivado del código y límites en el informe31 y tablero18. **Solo documentación**, sin tocar código, tests, `main`, incidencias, PR o versiones. Revisión completada **con reserva estratégica H1**; no declarar issue #5 terminado. Próxima tarea única: decidir si la elección de botín favorece una herramienta cuando efectivamente completaría la crisis, sin sacrificar una victoria inmediata por muestras. No implementar antes de esa regla explícita.
 
+## C7-R1 — Prioridad de herramienta salvadora durante elección de botín (27/10/2026)
+
+**Decisión explícita del creador:** tras el hallazgo H1 de [revisión31](31-revision-critica-c7.md), aprobar que la IA elija una herramienta revelada cuando esta carta permita completar la crisis en la misma ronda, excepto si otra carta produce una **victoria inmediata por objetivo**. Se contabilizan aportes humanos ya efectuados y mano/equipo propio vivo, y la excepción contempla el doble aporte de la habilidad `researcher`.
+
+**Pruebas antes:** ocho regresiones nuevas [`5debdbd`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/5debdbd49289b1e464e9df7a8384b6a41f95c0fc), [CI 40575929242](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40575929242): **305 declaradas, 300 aprobadas, 3 fallidas esperadas y 2 TODO**. Los fallos fueron selección de herramienta vs muestra y turno integrado, no fallos introducidos por un parche todavía inexistente.
+
+**Corrección acotada:** [`f1e75ed`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/f1e75edc28a317a3d6745079d19e07558987a10a) ajusta el criterio de puntuación únicamente en `beginSearch()` cuando el turno corresponde a IA; `botContributeTools()`, modo local y tipos comida/medicina/combustible no cambian. **CI después:** [Actions 40576075140](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40576075140): **305 declaradas, 303 aprobadas, 0 fallidas, 2 TODO** (#4/#6).
+
+**Informe y límites:** [documento32](32-correccion-c7-r1-prioridad-botin.md); no dirige las búsquedas a una localidad particular, sino que decide entre objetos efectivamente revelados. Sin prueba manual adicional en Chromium/Android, sin estadística de balance; revisión crítica posterior pendiente. No modificar `main`, fusionar PR #14 ni cerrar #5.
+
+**Siguiente tarea única:** revisión posterior independiente de C7-R1 y no empezar otro issue.
+
 ## Siguiente tarea única
 
-**Definición y aprobación de C7-R1: prioridad de botín para herramientas que permitan completar la crisis (informe31), sin abrir otros issues ni fusionar.** R1/R2 ya corregidos. Actualizar tablero y registro al cerrar cada revisión; no fusionar ni iniciar otro defecto.
+**Revisión crítica posterior de C7-R1, implementado tras aprobación y con CI verde (informe32), sin fusionar ni iniciar otros issues.** R1/R2 ya corregidos. Actualizar tablero y registro al cerrar cada revisión; no fusionar ni iniciar otro defecto.
