@@ -251,6 +251,14 @@ El creador indicó expresamente: **«por ahora cuando se juegue contra la IA no 
 
 **Siguiente tarea única:** revisión crítica posterior C8/#4; no cierre de issue ni avance a #6 sin aprobación.
 
+## Revisión crítica posterior de C8/#4 — 27/10/2026
+
+Se revisaron **por separado** las garantías de `canReceiveTransfer`, `startTransfer`, `chooseTransfer`, `playable`, dueño del turno, objeto seleccionado y equipamientos, y se contrastaron con los **14 tests activos C8** (informe35). No apareció defecto nuevo comprobado en esta corrección; no se modificó motor ni pruebas. [CI 40586682191](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40586682191), commit auditado `52f1c71`: **318 declaradas, 317 aprobadas, 0 fallidas y 1 TODO (#6)**.
+
+Se ejecutaron **seis controles adicionales en Chromium/Playwright real** con viewport táctil emulado 393×852 y el HTML de Git blob verificado `32eb545cbdbca047ded8bc81d64b8e438e096a49`: no transferir a IA ni aunque se manipule lista; receptor con categoría duplicada; ítem cambiado mientras modal abierto; donante fallecido; protección de pantalla de pase; recepción válida de arma junto a herramienta. **Seis aprobados, cero excepciones JS**. Con los tres recorridos originales de C8: **9 escenarios acotados**, no nueve partidas completas ni aumento de casos CI. [Informe36](36-revision-critica-c8.md) registra condiciones, observado, riesgos y límites.
+
+**Reserva P3:** `playable()` no bloquea *por sí solo* todos los estados modales; se considera posible refuerzo transversal, no regresión demostrada de C8. En interfaz, un destinatario que deja de ser apto después de abrir el modal puede permanecer visible, pero se rechaza sin pérdida de objeto y se puede cancelar. Sin Android físico/lector de pantalla ni rondas aleatorias completas. **Solo documentación:** #4 sigue abierto, `main` intacta, PR14 abierto/draft. La siguiente decisión única recomendada es **aceptación/cierre administrativo de #4** con aprobación del creador, no empezar #6 automáticamente.
+
 ## Siguiente tarea única
 
-**Próxima tarea única: revisión crítica posterior C8/#4 con código, 14 regresiones y 3 recorridos Chromium aprobados (informe35). #4 abierto, PR14 borrador y `main` intacta.**
+**Próximo paso único propuesto: solicitar aceptación y cierre administrativo de #4 tras revisión C8 satisfactoria (informe36). El código sigue en PR14 draft, `main` intacta; no pasar a #6 sin autorización.**
