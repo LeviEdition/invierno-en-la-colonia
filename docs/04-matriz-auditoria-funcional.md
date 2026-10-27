@@ -82,6 +82,10 @@ Se reemplazó el `test.todo` del issue #4 por **14 regresiones ejecutables** en 
 
 **Chromium real:** tres escenarios de UI verificados, incluido pase J1→J2 y cesión J2→J1 a 393 px táctiles simulados; cero errores JS. Archivo de motor exacto `32eb545cbdbca047ded8bc81d64b8e438e096a49`, verificado contra GitHub. [Informe35](35-c8-transferencias-por-modo.md). El issue #4 **sigue abierto** a espera de revisión crítica posterior y aceptación; no está integrado en `main`. La sección histórica de incidencias de auditoría más abajo conserva el estado original, no debe confundirse con la situación actual.
 
+## Revisión crítica independiente C8/#4 — 27/10/2026
+
+[Informe36](36-revision-critica-c8.md): auditoría de `canReceiveTransfer`, `startTransfer`, `chooseTransfer`, `pendingTransfer.itemRef`, turno/pase y 14 regresiones; **no se identificaron defectos nuevos confirmados** en C8. **Seis controles adicionales Chromium** (destino IA forzado, receptor que pasa a duplicar categoría, ítem cambiado, donante muerto, pase activo, destino con categoría complementaria) aprobaron sin excepciones JS. Sumados a los 3 anteriores del informe35: **9 pruebas de navegador acotadas**; `npm test` remoto del código auditado 318 declaradas, **317 aprobadas, 0 fallidas, 1 TODO (#6)** ([CI 40586682191](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40586682191)). **Limitaciones:** no Android/TalkBack, no partida aleatoria completa; la sincronización de otros modales queda en revisión transversal P3, sin bug demostrado de #4. Solo documentación en esta revisión. **Issue #4 permanece abierto hasta su aceptación explícita**, PR14 draft, `main` intacta.
+
 ## Estados de auditoría
 
 - **Parcialmente probado (P):** hay pruebas automatizadas, pero faltan escenarios importantes.
