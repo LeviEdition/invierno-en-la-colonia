@@ -112,6 +112,10 @@ El creador autorizó cerrar [issue #6](https://github.com/LeviEdition/invierno-e
 
 **Cierre administrativo ≠ integración.** `main` mantiene SHA `d9068f4aa8d3a10bbbf1e0a8a2527744cc6952cb`, [PR14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14) sigue abierto/draft hacia `refactor/arquitectura`. Siguiente propuesta sujeta a autorización: análisis de [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7), decisión IA en encrucijadas; después #13 y auditoría de alertas. La matriz histórica más abajo conserva estados de la auditoría inicial y **no** refleja necesariamente los estados presentes.
 
+## Estado consolidado de continuidad — 27/10/2026
+
+[Informe40](40-estado-actual-y-continuidad.md), instantánea `d09021f`: suite ejecutada aquí **336/336 aprobadas, 0 fallidas/canceladas/omitidas y 0 TODO**; [CI exacto](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40595507459) verificado con logs. Se contrastaron cambios C7/C7-R1, C8, UX combustible y C9/C9-R1 con sus informes. #5/#4/#6 aceptados y cerrados; #7/#13 pendientes. No se repitió Chromium ni se amplió cobertura al resumir el estado; dos líderes muertos simultáneamente, Android/TalkBack y balance mantienen reservas. Siguiente propuesta única: analizar/definir #7 antes de código. PR14 draft y `main` intacta.
+
 ## Estados de auditoría
 
 - **Parcialmente probado (P):** hay pruebas automatizadas, pero faltan escenarios importantes.

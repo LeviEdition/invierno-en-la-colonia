@@ -11,9 +11,19 @@
 
 - **Estable:** `main`, `invierno_colonia_v9_9.html`, SHA Git blob `4ebaedad13d63c7a6762c524a52c0dd9695687b1`. El archivo es idéntico en `main` y `refactor/arquitectura` al revisar.
 - **Auditoría:** PR [#1](https://github.com/LeviEdition/invierno-en-la-colonia/pull/1) abierto y en borrador; no fusionar por ahora.
-- **Pruebas actuales de estabilización:** C7-R1/#5, **303 aprobadas, 0 fallidas y 2 TODO** (305 declaradas), [CI 40576075140](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40576075140) sobre `f1e75ed`. Los resultados C7 295/2 y C5-R2 285/3 son históricos; Android físico/TalkBack pendientes.
-- **Problemas registrados:** [#2](https://github.com/LeviEdition/invierno-en-la-colonia/issues/2), [#3](https://github.com/LeviEdition/invierno-en-la-colonia/issues/3), [#4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4), [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5), [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6), [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) y [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8), [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9), [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10) y [#11](https://github.com/LeviEdition/invierno-en-la-colonia/issues/11), [#12](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12) y [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13). El #4 requiere resolver una ambigüedad de reglas, no presumir que es un bug.
+- **Pruebas actuales de estabilización:** **336 declaradas, 336 aprobadas, 0 fallidas/canceladas/omitidas y 0 TODO**, comprobadas localmente y en [CI de `d09021f`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40595507459). [Análisis de continuidad40](40-estado-actual-y-continuidad.md). Los resultados por etapa se conservan como históricos; Android físico/TalkBack y balance mantienen sus reservas.
+- **Problemas registrados:** [#2](https://github.com/LeviEdition/invierno-en-la-colonia/issues/2), [#3](https://github.com/LeviEdition/invierno-en-la-colonia/issues/3), [#4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4), [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5), [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6), [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) y [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8), [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9), [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10) y [#11](https://github.com/LeviEdition/invierno-en-la-colonia/issues/11), [#12](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12) y [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13). **#4, #5 y #6 están aceptados y cerrados**; #7 y #13 siguen pendientes. Otras correcciones registradas conservan issues abiertos: no se cierran automáticamente por este análisis.
 - **Narrativa:** visión, objetivos, campañas y bocetos registrados en `docs/12`–`docs/17`. Son **propuestas y decisiones de diseño**, no código ni campañas implementadas.
+
+## Estado consolidado tras trabajo en otro chat — 27/10/2026
+
+**Instantánea analizada:** `d09021f`, PR14 abierto/draft hacia `refactor/arquitectura`, `main` intacta. Se sincronizó el checkout limpio por avance directo desde `e7d0a48` (78 commits nuevos), sin reescribir historial. [Informe40](40-estado-actual-y-continuidad.md) registra fuentes, decisiones, pruebas, reservas y desajustes administrativos.
+
+C7/C7-R1 (#5 herramientas y botín), C8 (#4 transferencias por modo), aviso de segundo movimiento con combustible y C9/C9-R1 (#6 líder inicial y sucesión del dueño) están implementados y documentados. GitHub confirma #5/#4/#6 cerrados con aceptación del creador. La suite actual y [CI exacto](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40595507459) pasan **336/336, sin TODO**. Las pruebas Chromium anteriores se leyeron en sus informes; no se repitieron aquí.
+
+**Resultado de este análisis:** no se detectaron incoherencias materiales entre los cambios ejecutables leídos y los informes, dentro de una revisión acotada. Se actualizaron conteos y estados obsoletos de documentación. El título/cuerpo del PR14 aún dice C1–C4 y se registra como pendiente administrativo; no se editó el PR. No se implementó ni inició #7. La reserva de muertes simultáneas de ambos líderes, otras crisis y pruebas físicas/balance mantiene los límites de informe40.
+
+**Única siguiente tarea propuesta:** autorizar análisis de #7 y acordar criterios basados en efectos estructurados antes de modificar decisiones de IA. #13 y pulido de avisos siguen después; no fusionar ni publicar por esta verificación. Las secciones que siguen conservan la evolución histórica y sus resultados por etapa.
 
 ## Entrega C5/C6 para revisión
 
@@ -29,7 +39,7 @@ Por instrucción del usuario se incorporó la obligación de actualizar el table
 
 **Resultado y límites de aquella revisión documental:** acceso y CI de la entrega confirmados; documentación sincronizada. No se realizó entonces una nueva prueba de navegador o dispositivo físico ni una revisión final de código; la revisión de código posterior figura abajo. #5 sigue siendo una propuesta de trabajo posterior que requiere acordar la prioridad de la IA; no está iniciada ni autorizada su implementación.
 
-## 2. Etapa activa C — estabilización; C6-R1 y C5-R2 corregidas y revisadas
+## 2. Etapa activa C — estabilización; C1–C9 implementadas por bloque, siguiente propuesta #7
 
 **Objetivo:** saber qué hace realmente el juego, qué falla y qué no se ha probado, antes de intervenir sus reglas o extraer módulos.
 
@@ -373,7 +383,7 @@ Los detalles están en `docs/12`–`docs/17`. **No abrir nuevos frentes para amp
 
 Si surge una idea fuera de la tarea activa:
 
-> «Es una idea para la hoja de ruta, pero ahora estamos **definiendo la regla del issue #6**. La registro y seguimos la estabilización. ¿Querés cambiar explícitamente la prioridad?»
+> «Es una idea para la hoja de ruta, pero ahora estamos **en la tarea activa indicada en este tablero**. La registro y seguimos la estabilización. ¿Querés cambiar explícitamente la prioridad?»
 
 Solo cambiar la etapa activa con una decisión consciente; registrar motivo, riesgos, estado de la tarea interrumpida y cómo retomarla. No es necesario prohibir las conversaciones creativas: **conversar no equivale a cambiar la etapa ni a comenzar a programar**.
 

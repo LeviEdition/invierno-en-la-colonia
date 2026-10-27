@@ -1,6 +1,16 @@
-# 25 — Registro de estabilización V9.9 (C1–C7)
+# 25 — Registro de estabilización V9.9 (C1–C9)
 
-**Fecha:** 27/10/2026. **Rama de trabajo:** `fix/estabilizacion-v9-9` (nació de `refactor/arquitectura`). **Estado:** C1–C4 con CI verde; C5 y C6 implementadas, con pruebas locales y CI remoto aprobados; C6-R1 y C5-R2 corregidas y revisadas, con CI aprobado. **No promovidos a `main`.**
+**Fecha:** 27/10/2026. **Rama de trabajo:** `fix/estabilizacion-v9-9` (nació de `refactor/arquitectura`). **Estado consolidado:** C1–C9 y sus revisiones correctivas implementadas por bloque; #5, #4 y #6 aceptados/cerrados. Suite local y CI sobre `d09021f`: 336/336 aprobadas, 0 fallidas y 0 TODO. **Sin integración en `main`.** Siguiente propuesta: análisis y definición de #7, no iniciada.
+
+## Análisis de continuidad tras otro chat — 27/10/2026
+
+**Acciones:** comprobar copia limpia `e7d0a48`, refs GitHub y ascendencia, descargar/avanzar por fast-forward a `d09021f`; leer informes29–39, tablero, matriz, diff y tests; consultar PR/issues/comentarios y CI; ejecutar `npm test` una vez sobre el estado nuevo. Dos lecturas independientes contrastaron código/documentación sin duplicar la suite. [Informe40](40-estado-actual-y-continuidad.md) conserva detalle y límites.
+
+**Hechos confirmados:** 78 commits nuevos; C7/C7-R1, C8, UX combustible y C9/C9-R1 presentes; #5/#4/#6 cerrados, PR14 abierto/draft sin fusión, `main=d9068f4` y blob original sin cambios. Local: **336 aprobadas, 0 fallidas/canceladas/omitidas y 0 TODO**. [CI de `d09021f`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40595507459) y sus logs coinciden. No se ejecutó navegador aquí; verificaciones dirigidas del otro chat se mantienen como evidencia documental.
+
+**Resultado y documentación:** se actualizaron cabeceras obsoletas de conteos/#4/etapa y este resumen; matriz04 enlaza informe40. El título/cuerpo del PR14 sigue desactualizado, pendiente administrativo no editado aquí. No hay nuevo defecto confirmado ni cobertura completa de la reserva de dos líderes muertos simultáneamente. La tarea #7 sigue como propuesta pendiente de análisis autorizado, no implementación.
+
+**Archivos modificados por este análisis:** solo informe40, tablero18, registro25 y matriz04; `git diff --check` y entrega en rama de estabilización, con CI del commit documental comprobado por SHA. No se cambió código del juego, pruebas, reglas, workflow, issues o configuración; ninguna fusión/publicación.
 
 ## Entrega C5/C6 para revisión
 
