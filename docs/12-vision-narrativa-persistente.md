@@ -177,10 +177,32 @@ La futura presentación isométrica mostrará cambios persistentes visibles: una
 
 **Paso 5 — Escalar cuidadosamente.** Solo después de que la pieza vertical funcione, escribir una biblia del mundo y ampliar personajes/arcos. La presentación 2D vendrá sobre un núcleo narrativo probado.
 
-## 11. Qué necesitamos acordar antes de programar
+## 11. Acuerdos de tono, público y dificultad (27/10/2026)
 
-**Tono propuesto:** realismo sombrío y humano, con tensión, pérdidas, dilemas, momentos de esperanza y vínculos que se transforman. Inspiraciones estéticas y narrativas no implican copiar argumentos ni personajes de otros juegos.
+Estas pautas **ya están definidas por la dirección creativa del proyecto**:
 
-**Preguntas creativas centrales:** ¿qué conflicto principal impulsará la campaña? ¿Qué lugar ocupa la colonia en la historia? ¿La solución siempre consiste en obtener muestras o puede haber objetivos finales distintos? ¿Qué límites de crueldad y desesperanza queremos para el relato?
+- **Referente emocional:** la fuerza de las decisiones y las relaciones de *The Walking Dead* de Telltale, **sin copiar personajes, escenas ni estructura de trama**.
+- **Público objetivo:** jugadores de **16 años o más**. Es una intención editorial, no una clasificación oficial otorgada por un organismo. El relato admite muerte, amenaza, enfermedad, traición, temor y dilemas dolorosos, pero evita gore explícito, crueldad gratuita, violencia sexual como recurso dramático y recrearse en sufrimiento gráfico.
+- **Equilibrio entre crudeza y esperanza:** un mundo peligroso donde un error puede dejar heridas difíciles de reparar, pero en el que reconstruir confianza y ayudar a otros es posible.
+- **Elecciones grises y comprensibles:** ambas rutas tienen razones honestas, riesgos previsibles y costos que se manifiestan en personas, tramas y mecánicas.
+- **Consecuencias graves, no derrotas arbitrarias:** una elección puede perder aliados, destruir recursos, complicar rutas, abrir un conflicto o matar a un personaje; **no debería condenar automáticamente una partida sin avisos suficientes y sin posibilidad de responder estratégicamente**.
+- **La habilidad del jugador importa:** anticipar riesgos, conservar recursos, negociar, investigar, construir defensas y elegir bien permite sobrevivir incluso a consecuencias narrativas muy difíciles. No toda muerte es evitable ni toda relación reparable, pero la partida debe mantener un camino razonable de supervivencia mientras existan opciones coherentes.
+- **Evitar la elección de color:** las consecuencias no pueden limitarse a una línea de diálogo distinta ni a bonificaciones numéricas; deben cambiar escenas futuras y abrir/cerrar posibilidades.
+- **No prometer invulnerabilidad:** el objetivo no es garantizar victoria en todas las circunstancias. Una cadena de malas decisiones y una estrategia insuficiente pueden provocar derrota, de forma comprensible para quien juega.
+
+### Criterios para el diseño y las pruebas
+
+1. **Pistas antes del daño:** toda consecuencia severa debe disponer de señales narrativas o sistémicas que el jugador pueda reconocer.
+2. **Crisis recuperables:** cuando una elección desencadene una crisis grave, probar al menos una respuesta estratégica viable, aunque costosa; si la derrota ya es inevitable por acumulación de errores anteriores, deberá poder explicarse.
+3. **Pérdidas que transforman, no borran:** si un personaje muere, su arco debe tener consecuencias o un cierre coherente, y el juego debería permitir continuar cuando las reglas de supervivencia lo permitan.
+4. **Distintos estilos de solución:** cuando tenga sentido, ofrecer vías de cooperación, planificación y riesgo; no hacer que una respuesta moral quede siempre recompensada frente a todas las demás.
+5. **Revisión editorial +16:** comprobar lenguaje, tratamiento del duelo, violencia sugerida y representación de la vulnerabilidad antes de incorporar cada arco.
+6. **La narrativa guía las mecánicas:** una historia difícil no se considera lograda solamente porque baja moral o hace aparecer más zombis.
+
+## 12. Qué necesitamos acordar antes de programar
+
+**Tono acordado:** drama de supervivencia crudo, con decisiones moralmente grises y repercusiones duraderas, orientado a mayores de 16 años. La tensión emocional es prioritaria, pero sin crueldad gráfica gratuita y con oportunidades reales de sobrevivir mediante buen juego. Las referencias estéticas y narrativas no implican copiar argumentos ni personajes de otras obras.
+
+**Preguntas creativas restantes:** ¿qué conflicto principal impulsará la campaña? ¿Qué lugar ocupa la colonia en la historia? ¿La solución siempre consiste en obtener muestras o puede haber objetivos finales distintos? ¿Qué arco piloto representa mejor este equilibrio entre dureza y posibilidad de reconstrucción?
 
 Este documento consagra una prioridad: **primero una historia con consecuencias reales; después multiplicar eventos y mejorar su presentación**.
