@@ -1035,6 +1035,32 @@ function colony(){
  game.zones.forEach((z,i)=>{const n=z.noise;z.noise=0;for(let j=0;j<n;j++){const d=die();message('🔊 '+places[i]+': ruido '+(j+1)+'/'+n+' → dado '+d+(d<=3?', llega un zombi.':', sin aparición.'));if(d<=3)addZombie(i);}});
  verify();
 }
+// C7/#5: la IA coopera con aportes anteriores del humano y revisa equipo tras buscar.
+// Como el humano ya jugó y colonia sigue inmediatamente, si no alcanza para completar
+// la crisis, un aporte parcial adicional solo desperdiciaría el material.
+function botContributeTools(){
+ const c=game.crisis;
+ if(game.ended||!c||c.type!=='herramienta')return;
+ const remaining=Math.max(0,c.need-c.contributions.filter(type=>type==='herramienta').length);
+ if(!remaining)return;
+ const available=game.botItems.filter(it=>kind(it)==='herramienta').length+
+  game.bots.filter(p=>!p.dead).reduce((n,p)=>n+equipmentOf(p).filter(it=>kind(it)==='herramienta').length,0);
+ if(available<remaining)return;
+ // Desempate determinista: primero mano en orden; después supervivientes vivos IA en orden.
+ for(let n=0;n<remaining;n++){
+  const i=game.botItems.findIndex(it=>kind(it)==='herramienta');
+  if(i>=0){
+   if(!CrisisManager.add(game.botItems[i],'La IA'))return;
+   game.botItems.splice(i,1);
+  }else{
+   const p=game.bots.find(p=>!p.dead&&equipmentOf(p).some(it=>kind(it)==='herramienta'));
+   if(!p)return;
+   const j=equipmentOf(p).findIndex(it=>kind(it)==='herramienta');
+   if(j<0||!CrisisManager.add(p.equipment[j],p.name))return;
+   p.equipment.splice(j,1);
+  }
+ }
+}
 async function botTurn(){
  message('🤖 Comienza el turno de la IA.');applyFrost('ai');replaceLastSurvivors();verify();if(game.ended)return;
  crossDraw('ai');crossTrigger('round',null);await pause();
@@ -1057,7 +1083,7 @@ async function botTurn(){
  }
  for(let k=game.botItems.length-1;k>=0;k--){
   const it=game.botItems[k],d=catalog.resolve(it);if(!d)continue;
-  if(d.kind===game.crisis.type&&game.crisis.contributions.length<game.crisis.need){
+  if(d.kind===game.crisis.type&&d.kind!=='herramienta'&&game.crisis.contributions.length<game.crisis.need){
    if(CrisisManager.add(it,'La IA')){game.botItems.splice(k,1);await pause();}continue;
   }
   const injured=game.bots.filter(p=>!p.dead&&(d.effect==='frost'?p.frost:p.wounds+p.frost)).sort((a,b)=>(b.wounds+b.frost)-(a.wounds+a.frost))[0];
@@ -1106,6 +1132,8 @@ async function botTurn(){
   else{const n=(p.skill==='guard'?2:1)+(itemEngine.has(p,'repairkit')?1:0);for(let j=0;j<n&&openAccess(p.loc);j++)game.zones[p.loc].b++;message('▥ IA '+p.name+' colocó barricadas con dado '+d+'.');}
   verify();await pause();
  }
+ // C7: comprobar los recursos disponibles solo después de las acciones y búsquedas.
+ botContributeTools();
 }
 // C4/#12: el inicio y el pase son diálogos modales; no deben exponer el tablero por teclado.
 function handoverDialog(){
