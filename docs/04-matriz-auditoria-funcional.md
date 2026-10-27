@@ -106,6 +106,12 @@ El creador autorizó **A**: un jugador confirma a su líder inicial con la prime
 
 **Reservas:** no todas las combinaciones de muertes simultáneas de líderes ni rondas aleatorias fueron reproducidas; hay un único estado global `pendingLeader`, por lo cual esa concurrencia queda para validación cruzada de fin de etapa. No se probó dispositivo Android físico y no es paso obligatorio aquí. **Issue #6 abierto** a espera de aceptación/cierre administrativo; PR14 borrador sin fusión a `main`. La tabla histórica posterior no refleja el estado actual de los issues.
 
+## Cierre de C9/#6 y estado de estabilización — 27/10/2026
+
+El creador autorizó cerrar [issue #6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6), **closed/completed** (`2026-10-27T22:30:07Z`) con [comentario de cierre](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6#issuecomment-6455187002). La elección humana del líder se mantiene **manual**, sin imponer mayor influencia; C9 iguala los disparadores de confirmación inicial J1/J2 y C9-R1 protege que cada jugador elija a **su propio sucesor después del pase de dispositivo**. IA sigue automatizada. [Informes38](38-c9-lider-inicial-j2.md) y [39](39-revision-critica-c9-r1.md). [CI 40594225022](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40594225022): **336 declaradas / 336 aprobadas / 0 fallidas / 0 TODO**. Cobertura Chromium acotada; muertes simultáneas de líderes quedan como riesgo por un único `pendingLeader`.
+
+**Cierre administrativo ≠ integración.** `main` mantiene SHA `d9068f4aa8d3a10bbbf1e0a8a2527744cc6952cb`, [PR14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14) sigue abierto/draft hacia `refactor/arquitectura`. Siguiente propuesta sujeta a autorización: análisis de [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7), decisión IA en encrucijadas; después #13 y auditoría de alertas. La matriz histórica más abajo conserva estados de la auditoría inicial y **no** refleja necesariamente los estados presentes.
+
 ## Estados de auditoría
 
 - **Parcialmente probado (P):** hay pruebas automatizadas, pero faltan escenarios importantes.
