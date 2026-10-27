@@ -269,6 +269,20 @@ Ante pregunta del creador sobre **acciones todavía pulsables desde la UI pero i
 
 **Estado:** solo cambio de feedback, no de reglas; los demás casos de UI no fueron auditados exhaustivamente. #4 sigue abierto, #6 único TODO, PR14 borrador y `main` intacta. **Única tarea propuesta:** auditar el resto de rechazos silenciosos que un jugador puede intentar realmente desde la UI, sin ampliar el motor sin aprobación.
 
+## C8/#4 aceptado y cerrado; C9/#6 iniciado como análisis de política — 27/10/2026
+
+**Consentimiento:** «sí, hagamos esto que dijiste, sigamos con la ruta» tras recomendación explícita de cerrar #4 y pasar al análisis de #6. Se publicó el [comentario de cierre #4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4#issuecomment-6454516746), se verificó el [issue #4 cerrado (completed)](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4) en `2026-10-27T21:51:27Z`. Política C8 funcionalmente aceptada: sin intercambio humano↔IA, sí transferencias bidireccionales J1↔J2 local, guardas en apertura y confirmación. No significa que el código esté en `main`.
+
+**C9/#6 — revisión de estado real, sin implementación:** `canPickStartingLeader()` permite elegir líder inicial durante ronda 1 si el flag del controlador (`leaderChosen` J1, `localLeaderChosen` J2) está en falso. `consume()`, `doMove()`, `playItem()` marcan solo `leaderChosen=true`, de modo que J1 queda bloqueado al actuar y J2 sigue habilitado. El modal afirma «Durante la primera ronda podés designar tu líder inicial», que no explica la restricción para J1. [Issue #6, comentario de análisis y alternativas](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6#issuecomment-6454546559).
+
+**Alternativas sujetas al creador:**
+- **A, recomendada por alcance mínimo:** primera acción que consolida liderazgo bloquea elección inicial para ambos jugadores de igual manera; ajustar flag por controlador y texto UI; definir cobertura de otros comandos especiales.
+- **B:** libertad de cambiar líder durante toda la primera ronda para ambos, incluso después de actuar; se cambia también J1.
+
+No se implementó ninguna opción, no se cambió HTML/tests, no se cerró #6 y no se inventaron pruebas. [CI previa 40589676353](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40589676353): **320 declaradas, 319 aprobadas, 0 fallidas y único TODO #6**. [PR14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14) abierto/draft con base `refactor/arquitectura`; `main` permanece en `d9068f4aa8d3a10bbbf1e0a8a2527744cc6952cb`. La auditoría general de feedback UI queda estacionada como pulido antes de cerrar estabilización.
+
+**Siguiente única decisión:** solicitar al creador elección **A/B** y solo entonces implementar C9 con tests rojo→verde, CI y revisión Chromium.
+
 ## Siguiente tarea única
 
-**Próximo bloque único propuesto: auditar y priorizar avisos faltantes en acciones realmente clicables desde la UI, después del caso combustible ya corregido; no cerrar #4 ni fusionar PR14 sin autorización.**
+**Próxima tarea única: acordar con el creador la política A o B de #6 antes de implementar C9. #4 cerrado, PR14 borrador y `main` intacta; auditoría general de avisos postergada.**
