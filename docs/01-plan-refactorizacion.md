@@ -1,6 +1,6 @@
 # Plan de refactorización — por etapas, sin apuro
 
-> **Ejecución actual:** la fuente de verdad de **etapa activa, tarea única y criterios de terminado** es [el tablero operativo](18-tablero-operativo.md). **Estamos en A — Auditoría funcional; siguiente tarea A2-01, privacidad J1/J2.** Este documento es la planificación general, no una autorización para avanzar a distintas fases en paralelo.
+> **Ejecución actual:** la fuente de verdad de **etapa activa, tarea única y criterios de terminado** es [el tablero operativo](18-tablero-operativo.md). **Estamos en A — Auditoría funcional; siguiente tarea A3-01, interfaz y modales; A2-01 automatizada completada.** Este documento es la planificación general, no una autorización para avanzar a distintas fases en paralelo.
 
 ## Objetivos
 
@@ -48,8 +48,9 @@ Antes de reorganizar acciones, escribir pruebas del comportamiento actual:
 - [x] Octavo bloque: victorias, derrotas, líderes, sucesión, reemplazos de emergencia y rescates (30 pruebas nuevas; una TODO).
 - [x] Noveno bloque: 26 encrucijadas, disparadores, requisitos, decisiones humanas/IA y defectos de texto (26 pruebas nuevas).
 - [x] Matriz de auditoría funcional en 21 áreas, con estados y prioridad.
-- [x] GitHub Actions habilitado: suite de regresión ampliada a **174 pruebas y 3 TODO**, ejecución completa sujeta al control automático de la rama.
-- [x] Defectos anteriores a la refactorización (#2, #3, #5, #6 y #7) y una definición pendiente sobre transferencias (#4); sin alterar la V9.9.
+- [x] GitHub Actions habilitado: suite de regresión ampliada a **194 pruebas aprobadas, 0 fallidas y 3 TODO**, ejecución completa sujeta al control automático de la rama.
+- [x] Defectos anteriores a la refactorización (#2, #3, #5, #6 y #7), una definición pendiente sobre transferencias (#4) y un nuevo hallazgo de pase (#8); sin alterar la V9.9.
+- [x] Auditoría automatizada A2-01 del modo local: 20 casos, evidencia y límites documentados en `docs/19-auditoria-modo-local.md`; pruebas visuales pendientes A5.
 - Inicio de partida, objetivo, personajes, localidades y mazos.
 - Consumo y requisitos de dados.
 - Movimiento, exposición, heridas y muerte.
