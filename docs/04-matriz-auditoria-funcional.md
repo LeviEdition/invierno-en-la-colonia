@@ -66,6 +66,12 @@ Tras la aprobación expresa del creador, los subsistemas **07 (búsqueda), 13 (c
 
 [Informe33](33-revision-critica-c7-r1.md): lectura crítica posterior del sistema de puntuación, efecto de muestras e investigador, estado de herramientas propio, crisis, `stashLoot` y `botTurn`. **Sin defectos nuevos detectados** en C7-R1; los ocho tests nuevos se verificaron en [CI 40576507329](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40576507329): **305 declaradas, 303 aprobadas, cero fallidas, 2 TODO**. H1 (prioridad de botín) corregido bajo política aprobada. Estado de subsistemas 07/13/15: **parcialmente probados** hasta que se validen modales, encrucijadas y navegación real en navegador. No se cambiaron ejecutables ni casos de test en esta revisión. Siguiente única tarea: aceptación manual C7/C7-R1 en navegador, no integrar a `main` todavía.
 
+## Smoke test adicional C7/C7-R1 en Chromium — 27/10/2026
+
+[Informe34](34-validacion-navegador-c7-r1.md): se verificó identidad **binaria** del HTML de rama con Git blob `7ae72fc88381e5109b5f64929f6b017a2d5d5dc6` y se ejecutaron **4 recorridos en Chromium + Playwright**: colaboración 1/2 humano con herramienta equipada IA y encrucijada; elección herramienta frente a muestra no ganadora y encrucijada de búsqueda; victoria inmediata por muestra; victoria duplicada por investigador con controles táctiles emulados a 390 × 844. No se registraron errores JS ni bloqueos en estos flujos. Se detectó y resolvió legítimamente un modal inicial humano en un recorrido; el cierre de ese modal fue condición normal para habilitar los controles.
+
+**Alcance de evidencia:** escenarios de estado preparado y temporizadores acortados; HTML inyectado en Chromium por `set_content` debido a bloqueo de `file://`; no Android físico, TalkBack, hosting ni partidas completas aleatorias. Subsistemas 07/13/15 reciben verificación de navegador **en cuatro casos**, sin certificar cobertura completa. CI previo [40577893140](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40577893140) sigue en 305/303/0/2. Siguiente tarea única: aceptación administrativa de #5; no cerrar o fusionar automáticamente.
+
 ## Estados de auditoría
 
 - **Parcialmente probado (P):** hay pruebas automatizadas, pero faltan escenarios importantes.
