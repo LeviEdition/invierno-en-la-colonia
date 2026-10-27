@@ -191,6 +191,14 @@ Revisión de solo lectura de código, contrato de búsqueda, tests y estado CI. 
 
 **Tarea única siguiente:** revisión crítica posterior del parche C7-R1; todavía no autoriza fusión/cierre del issue ni otro defecto de estabilización.
 
+### Revisión crítica posterior C7-R1 — 27/10/2026
+
+[Informe33](33-revision-critica-c7-r1.md): revisión separada de la implementación [informe32](32-correccion-c7-r1-prioridad-botin.md), contrastando regla de puntuación, `gainSample`, inventarios, búsqueda, turnos, crisis y las ocho regresiones. **Dictamen:** no se encontraron fallos nuevos en el alcance del parche. H1 del informe31 (preferir muestra no ganadora sobre herramienta que permite completar crisis) queda resuelto por el parche C7-R1 y pruebas; victoria inmediata conserva prioridad, incluyendo investigador. No se cambiaron motor ni tests, solo documentos.
+
+**Evidencia verificada:** [CI 40576507329](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40576507329) del commit auditado `46564a5`: **305 tests, 303 aprobadas, 0 fallidas y 2 TODO**. `main` intacta; PR #14 borrador; #5 aún abierto. **Limitación significativa:** la suite de IA suprime encrucijadas, esperas/modales y animaciones; no hay smoke test nuevo en navegador ni Android/TalkBack. No afirmar que la UI está aceptada.
+
+**Única tarea siguiente:** preparar y realizar validación manual acotada en **navegador real** del flujo completo C7/C7-R1, con encrucijadas activas, antes de decidir cierre/promoción de #5. Registrar escenarios y resultados; no iniciar otros issues sin cambio explícito de prioridad.
+
 ## 3. Etapas posteriores: una por vez
 
 | Etapa | Propósito | Criterio para habilitar la siguiente |
@@ -244,7 +252,7 @@ Los detalles están en `docs/12`–`docs/17`. **No abrir nuevos frentes para amp
 
 Si surge una idea fuera de la tarea activa:
 
-> «Es una idea para la hoja de ruta, pero ahora estamos en **revisión crítica posterior de C7-R1**. La registro y seguimos con la estabilización. ¿Querés cambiar explícitamente la prioridad?»
+> «Es una idea para la hoja de ruta, pero ahora estamos en **validación manual en navegador de C7/C7-R1**. La registro y seguimos con la estabilización. ¿Querés cambiar explícitamente la prioridad?»
 
 Solo cambiar la etapa activa con una decisión consciente; registrar motivo, riesgos, estado de la tarea interrumpida y cómo retomarla. No es necesario prohibir las conversaciones creativas: **conversar no equivale a cambiar la etapa ni a comenzar a programar**.
 
@@ -257,4 +265,4 @@ Solo cambiar la etapa activa con una decisión consciente; registrar motivo, rie
 - **Propuestas narrativas (estacionadas):** `docs/12`–`docs/17`.
 - **Defectos/decisiones por resolver:** GitHub Issues.
 
-**Próxima acción única: revisión crítica posterior de C7-R1, ya aprobado, corregido y con CI verde (informe32). No iniciar otros issues, no fusionar ni cerrar #5 automáticamente.**
+**Próxima acción única: validación manual de C7/C7-R1 en navegador real, con encrucijadas/modales activos (informe33). Revisión crítica completada sin defectos nuevos; no fusionar ni cerrar #5 automáticamente.**
