@@ -280,6 +280,20 @@ El creador preguntó específicamente por los **controles visibles que permiten 
 
 **Siguiente única decisión:** que el creador apruebe A o B para preparar regresiones rojo→verde de C9/#6.
 
+### C9 / issue #6 — Política A implementada y comprobada (27/10/2026)
+
+El creador **aprobó explícitamente política A**: «J1 y J2 deben confirmar su líder inicial antes de realizar las acciones que bloquean la elección». Se conservó la regla previa de J1: bloquean únicamente **gastar un dado con éxito, moverse válidamente o usar con éxito carta de inventario** durante la ronda 1. Una acción rechazada no confirma el líder; elecciones de sucesor por fallecimiento no se modifican. Los otros actos previamente no bloqueantes (habilidad gratis, equipo desde ficha, contribución a crisis) no se incluyeron porque no forman parte de la regla J1 previa. [Informe38](38-c9-lider-inicial-j2.md).
+
+**Pruebas primero:** se sustituyó el único `test.todo` #6 por **12 regresiones C9**: J1/J2 con dado, movimiento, carta, acción fallida, selección explícita, ronda 2 y texto de interfaz. [CI rojo 40591148076](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40591148076): **331 declaradas, 327 aprobadas, 4 fallidas, 0 TODO**. Fallaron tres caminos de J2 y un texto UI, confirmando defectos reales.
+
+**Corrección:** [commit `38e7ac8`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/38e7ac87832e4ca02dbf277dcc1a8acb56ce2849). Nueva función `confirmStartingLeader()` cambia solo flag del controlador (`leaderChosen` J1 / `localLeaderChosen` J2 local), reutilizada en `consume`, `doMove` y `playItem` después del éxito. Menú «Grupo y líderes» explica «antes de gastar un dado, moverte o usar una carta». [CI verde 40591238120](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40591238120): **331 declaradas / 331 aprobadas / 0 fallidas / 0 TODO**.
+
+**Chromium real:** cinco escenarios con botones de menú, acción y pase de J1→J2, incluidos dos en viewport móvil táctil simulado 393×852: J1 gasto dado, J2 gasto dado tras pase, intento J2 de movimiento inválido (elección permanece), J2 usa ración (bloquea elección), J2 elige líder antes de actuar (se confirma). **Cinco aprobados, sin errores JS**. Copia local del HTML verificada por Git blob **`b5b9f2020c5abb73fd95e0f7441db088bb746d16`**, igual al de GitHub. No partidas completas ni Android físico.
+
+**Estado:** cambio implementado, issue #6 **abierto**; pendiente revisión crítica posterior independiente y aceptación del creador. PR #14 abierto/draft hacia `refactor/arquitectura`; `main` intacta.
+
+**Siguiente único paso recomendado:** revisión crítica posterior C9/#6, sin cerrar el issue ni fusionar el PR automáticamente.
+
 ## 3. Etapas posteriores: una por vez
 
 | Etapa | Propósito | Criterio para habilitar la siguiente |
@@ -346,4 +360,4 @@ Solo cambiar la etapa activa con una decisión consciente; registrar motivo, rie
 - **Propuestas narrativas (estacionadas):** `docs/12`–`docs/17`.
 - **Defectos/decisiones por resolver:** GitHub Issues.
 
-**Próxima tarea única: acordar política A o B del issue #6 sobre elección inicial de líder de J2 (comentario 6454546559). #4 cerrado; PR14 sigue borrador, `main` intacta. La auditoría general de avisos queda estacionada.**
+**Próxima tarea única: revisión crítica posterior C9/#6, política A ya implementada y verificada (informe38). #6 continúa abierto; PR14 draft, `main` intacta. Auditoría general de avisos estacionada.**
