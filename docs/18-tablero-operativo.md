@@ -1,5 +1,18 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## Alcance vigente de la matriz F — juego propio, NO refactor de V9.9 · 28/10/2026
+
+**Decisión expresa del creador y corrección del rumbo documental:** la **matriz F (comparación con *Dead of Winter*)** registra **decisiones de diseño para la futura versión propia de *Invierno en la Colonia***. Las propuestas «Conservar»/«Cambiar»/«Pendiente» se interpretan respecto al **juego propio**, y **no son una lista de cambios ni errores a resolver en V9.9**. F-14 (cinco candidatos → elegir tres → líder manual), F-01, F-03b y demás filas de esa matriz quedan **fuera del alcance del refactor D1/D2**. Tampoco están autorizadas para su implementación por el hecho de figurar aprobadas como diseño.
+
+**Dos líneas separadas:** 1) V9.9 de referencia: C estabilizada y D refactoriza preservando el comportamiento; 2) futuro juego propio principalmente singleplayer: tras conservar una línea base, se seleccionan/revalidan e implementan, en rama separada y con pruebas, las decisiones F realmente útiles y se desarrolla el Director narrativo. F-01 u otras mecánicas estrictamente de J1/J2 pueden perder vigencia en singleplayer, no deben trasladarse automáticamente.
+
+**Nomenclatura:** «matriz F» = IDs **F-01, F-14, etc.** de comparación/diseño; «etapa F» de expansión del plan histórico = presentación, campañas y cooperativo/red. No son lo mismo.
+
+**Acta vinculante:** [61 — Alcance de la matriz F](61-alcance-matriz-f-juego-propio.md); [51 — Rumbo de producto corregido](51-rumbo-fidelidad-e-identidad.md); [01 — Plan general actualizado](01-plan-refactorizacion.md). **Las menciones históricas más abajo que sugieran incorporar cambios F a la referencia se consideran sustituidas por este acuerdo; no se reescribe el registro histórico.**
+
+**Próxima tarea de código (sin cambios):** D1.2a, PoC esbuild para arquitectura, **no autorizado/ejecutado todavía**; se prevé Codex cuando haya disponibilidad. La matriz F puede seguir trabajándose hoy solo como diseño. No cambiar HTML, reglas, pruebas o `main` ni fusionar PR por esta aclaración.
+
+
 ## D1.2 — auditoría de modularización y build, SIN CAMBIOS DE CÓDIGO · 28/10/2026
 
 **Dictamen:** [informe 60](60-d1-2-auditoria-arquitectura-build.md). Se examinó código real de `refactor/d1-catalogo`: `src/invierno.template.html` aún tiene ~156.656 caracteres (script principal ~100.386), 52 apariciones de `onclick=`, pruebas acopladas al script clásico (15 extraen el JS y 14 exigen un solo script), y `scripts/build-game.mjs` realiza una sustitución textual de la clase, **no bundling**. Se contrastaron alternativas actual/ESM directo/esbuild/Vite+singlefile con documentación oficial.
