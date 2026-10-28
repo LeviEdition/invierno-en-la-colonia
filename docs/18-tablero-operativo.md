@@ -1,5 +1,11 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## D0-P1 — auditoría PR #1 hacia main completada (SIN MERGE) · 28/10/2026
+
+**Dictamen:** [informe 55](55-d0-p1-auditoria-previa-main.md). PR1 abierto/borrador, 251 commits delante de main, 0 detrás, 125 archivos, GitHub `mergeable=true`. Suite Node 408/408 y Chromium 5/5 recorridos con 3 viewports C16 sobre refactor, pero no equivalencia física Android/TalkBack/humana. PR1 describe todavía etapa A (238 pruebas, 3 TODO): cuerpo obsoleto a corregir antes de integrar. `main` no sufrió cambios.
+
+**ÚNICA TAREA SIGUIENTE:** D0-P1-I **solo con autorización expresa**: actualizar PR1, fijar SHA exacto, integrar controladamente únicamente en `main`, comprobar CI + humo Chromium en destino y registrar resultado. No D1, F, publicación ni release por esta auditoría.
+
 ## D0-I-V — Chromium post-merge validado · 28/10/2026
 
 **Verificación real de navegador sobre rama integrada, sin cambiar motor.** Debido al bloqueo DNS del contenedor local, se utilizó Chromium real en GitHub Actions sobre `refactor/arquitectura`, commit `a6c3cf425363606ac68266a5b3c876e7d1616b2b` (mismo HTML del merge `c15373d4`; solo cambió workflow/documentación). [Ejecución Chromium 40711789374](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40711789374) `completed/success`; [evidencia ZIP](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40711789374/artifacts/12827075968), incluye JSON y capturas.
