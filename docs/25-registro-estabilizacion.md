@@ -1,5 +1,14 @@
 # 25 — Registro de estabilización V9.9 (C1–C16)
 
+## D0-I: operación de integración controlada — 28/10/2026
+
+El creador autorizó expresamente integrar PR14 **solo** en `refactor/arquitectura`, verificar y documentar; prohibió tocar `main`. Se contrastaron metadatos y patches (97 archivos); el HTML contiene +452/−182 líneas frente a base, con modificaciones en prioridades de decisiones, sucesiones, transiciones y diseño táctil; los tests cubren esos flujos. Se corrigió la descripción de PR14, sustituyendo claims históricos de issues abiertos/C pendiente por el cierre aceptado con reservas. Primer intento de merge bloqueado por GitHub 405: PR en borrador; pasó a `ready for review`, y GitHub confirmó **merged** por SHA `c15373d44f0a76affd9041be925eef48234239c3` ([PR14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14)). Comprobación posterior: PR14 closed/merged; PR1 open/draft y head actualizado a ese SHA; `main=d9068f4aa8d3a10bbbf1e0a8a2527744cc6952cb`; documento canónico A6 conserva blob `c132dd8`.
+
+**Evidencia y límites:** [workflow 40709698250](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40709698250) iniciado para el merge y todavía `in_progress` al registrar. No se declara CI del merge aprobado; tampoco se ejecutó Chromium sobre el código integrado desde este entorno. El entorno local no pudo descargar el repositorio (fallo de resolución DNS), por lo que no se corrieron `npm test` locales ni smoke real. Los 408/408 y 78 comprobaciones Chromium corresponden a la rama de origen y pruebas previas, no al merge. Android real, TalkBack, otros motores y balance humano siguen pendientes. La documentación posterior agrega commits solo a `refactor/arquitectura`, sin alterar el SHA de integración documentado.
+
+**Estado:** fusión realizada, validación post-merge incompleta. **Única tarea siguiente:** D0-I-V, consultar CI por SHA y ejecutar smoke real en ambos modos, dejar evidencia y dictamen final antes de auditar PR1 o iniciar D1/F.
+
+
 **Última actualización:** 28/10/2026, Montevideo. **Rama:** `fix/estabilizacion-v9-9`. **Estado vigente: ETAPA C CERRADA formalmente con reservas por autorización del creador.** Nueve issues restantes cerrados/completados en GitHub con comentarios individuales; cero issues abiertos; código de C1–C16 técnicamente aceptado, CI 408/408 y Chromium C16 aprobado. PR14 sigue open/draft hacia `refactor/arquitectura`, **sin fusionar**; `main` intacta y versión pública no promovida. Documentos 54 y 18 registran D0 completada y definen D0-I (integración controlada) como tarea siguiente sujeta a autorización expresa. **Los apartados inferiores son históricos** y no modifican este estado.
 
 ## D0: auditoría de integración sin merge — 28/10/2026
