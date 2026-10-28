@@ -1,5 +1,12 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## SP-02.1 — Evaluación de una tercera estadística relevante · 28/10/2026
+
+**Nueva hipótesis solicitada por el creador:** considerar una **tercera estadística** únicamente si agrega decisiones activas de peso comparable a **combate y búsqueda**, de forma coherente con el juego. No hay atributo, nombre ni reglas aprobadas. La revisión [63, sección 5B](63-hoja-de-ruta-planificacion-singleplayer.md) contrasta **movilidad, resistencia, técnica y apoyo/oficio/operaciones**, favoreciendo como hipótesis de estudio una tercera familia de operaciones de supervivencia (mantenimiento, fortificación, preparación), sin adoptarla. Se comprobaron acciones de V9.9: `barricade/clean/attract` consumen un dado cualquiera; movimiento no usa dado. No imponer nuevos umbrales sin balance.
+
+**Siguiente tarea de DISEÑO:** desarrollar **3–5 acciones concretas** candidatas de la tercera familia, su frecuencia/costo e impacto en la asignación de dados, y decidir si realmente justifica una tercera estadística. **Trabajo técnico sin cambios:** D1.2a y luego D1/D2 con Codex, sin cambio de V9.9, `main` ni permisos de merge.
+
+
 ## SP-02 — Análisis de estadísticas y pasivas sin reglas nuevas aprobadas · 28/10/2026
 
 **Revisión de diseño:** se inspeccionó el catálogo real de V9.9: ataque, búsqueda, influencia y habilidades de búsqueda, ataque, construcción, curación, movilidad, cocina y resistencia. Se documentó en [63, sección 5A](63-hoja-de-ruta-planificacion-singleplayer.md#5a-análisis-de-especialización-y-pasivas-28102026--propuestas-no-acuerdos-nuevos) la distinción entre stats, pasivas, equipo y situación, dos opciones de amplitud del sistema, riesgos de monopolio y escenarios de pruebas en papel. Se detectó que el criterio F-10 `atributo >= dado` conserva probabilidades marginales de F-15, pero vuelve más difíciles los dados altos; la comparación con `atributo + dado >= 7` queda como **alternativa NO aprobada**, sin modificar el acuerdo F-10.
