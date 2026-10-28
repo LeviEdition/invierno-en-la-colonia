@@ -1,11 +1,19 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
-**Última revisión:** 28/10/2026 (etapa C cerrada formalmente con reservas; 9 issues completados). **Proyecto:** Invierno en la Colonia. **Rama activa de ajustes:** `fix/estabilizacion-v9-9` (base de auditoría `refactor/arquitectura`).
+**Última revisión:** 28/10/2026 (D0: auditoría de integración PR14 sin merge; C cerrada). **Proyecto:** Invierno en la Colonia. **Rama activa de ajustes:** `fix/estabilizacion-v9-9` (base de auditoría `refactor/arquitectura`).
 **Documento operativo**: a diferencia de los documentos conceptuales, este archivo determina qué hacemos **ahora**, qué queda estacionado y qué evidencia habilita cambiar de fase.
 
 > **NORMA DE TRABAJO:** una etapa activa, una tarea activa. No empezar una fase posterior porque surgió una idea interesante; anotar la idea y retomar lo previsto. Cambiar prioridades exige una decisión explícita registrada aquí.
 
 > **REGISTRO OBLIGATORIO (acuerdo del usuario, 27/10/2026):** al terminar cada revisión, actualizar este tablero. Documentar acciones, decisiones, cambios, resultados, evidencia y límites en el registro pertinente, aunque no se haya modificado código. Véase [protocolo](15-protocolo-revision-critica.md#registro-obligatorio-de-cada-revisión-y-trabajo).
+
+## D0 — auditoría de integración completada (sin merge) · 28/10/2026
+
+**Autoriza el creador:** «Vamos con D0». Se inspeccionaron PR14→`refactor/arquitectura`, PR1→`main`, ramas/ancestro, 96 archivos del diff, workflow, tests, plan01 y el duplicado documental A6. **Resultado completo:** [informe54 — D0](54-d0-auditoria-integracion-sin-merge.md).
+
+**Conclusión:** PR14 está `open/draft` y GitHub reporta `mergeable=true, mergeable_state=clean`. La divergencia de 1 commit es **benigna en el contenido A6**: base `0933c70` y fix `ca1d910` eliminaron independientemente `docs/24-cierre-auditoria-a6.md`, y ambas ramas conservan `docs/24-cierre-auditoria-y-prioridades.md` con idéntico blob `c132dd8`. No requiere rebase obligado. PR14 tiene 153 commits y96 archivos respecto del ancestro (68 docs,1 HTML +452/−182 líneas,14 tests,9 scripts,3 test-support,1 workflow): integración importante pero **sin conflicto Git detectado**. Último SHA ejecutable auditado `951059e` / [CI40703513314](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40703513314) `completed/success`,408/408; Chromium histórico C16 verde. **No se ejecutó un merge de prueba ni se certificó Android físico**.
+
+**ÚNICA TAREA ACTIVA SIGUIENTE:** **D0-I solo con nueva autorización expresa:** preparar/integrar PR14 a `refactor/arquitectura`, actualizar primero descripción desactualizada de PR14 (issues ya cerrados y C aceptada), revisar código cambiado y verificar en destino CI por SHA y humo dos modos. Revisión separada PR1→`main` y promoción estable; D1/mecánicas F posteriores. **Ninguna fusión, force-push, publicación, cambios HTML/JS, inicio D1 o identidad E se ejecutó en D0.** `main` intacta.
 
 ## C1–C16: cierre formal aceptado por el creador — 28/10/2026
 
