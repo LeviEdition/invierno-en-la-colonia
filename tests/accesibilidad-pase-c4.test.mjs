@@ -68,14 +68,15 @@ test('C4 #12 | Shift+Tab desde primera opción y Tab desde última circulan dent
 
 test('C4 #12 | cerrar inicio devuelve acceso al tablero y permite empezar local',()=>{
  const t=fixture();t.setup.hidden=false;t.dispatch('DOMContentLoaded');
- t.run('startGame("local")');
+ // Aislar la salida de setup de la eventual encrucijada inicial.
+ t.run('startGame("local");game.crossPending=false;game.crossResolved=true;hide();');
  assert.equal(t.setup.hidden,true);
  assert.equal(t.background.inert,false);
  assert.ok([t.node('floatingActions'),t.node('modalClose')].includes(t.document.activeElement));
 });
 
 test('C4 #12 | el pase enfoca comenzar turno, impide foco exterior y lo restaura al confirmar',()=>{
- const t=fixture();t.run('startGame("local");showPass("ai")');
+ const t=fixture();t.run('startGame("local");game.crossPending=false;game.crossResolved=true;hide();showPass("ai")');
  assert.equal(t.pass.hidden,false);
  assert.equal(t.document.activeElement,t.pass.dialogButtons[0]);
  assert.equal(t.background.inert,true);
@@ -92,6 +93,6 @@ test('C4 #12 | el pase enfoca comenzar turno, impide foco exterior y lo restaura
 });
 
 test('C4 #12 | Tab no se secuestra una vez finalizado el pase',()=>{
- const t=fixture();t.run('startGame("local");showPass("ai");confirmPass()');
+ const t=fixture();t.run('startGame("local");game.crossPending=false;game.crossResolved=true;hide();showPass("ai");confirmPass()');
  assert.equal(t.key('Tab').prevented,false);
 });
