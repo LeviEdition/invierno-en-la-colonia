@@ -6,6 +6,14 @@
 
 **Fecha de inicio:** 27/10/2026 · **Rama:** `refactor/arquitectura` · **Base:** `invierno_colonia_v9_9.html`
 
+## Acuerdo de fidelidad F-14 y visión singleplayer — 28/10/2026
+
+**Decisión de diseño F-14 (sin implementar):** mostrar **5 supervivientes aleatorios**, dejar elegir **3** y **designar manualmente un líder**. Se conservan tres supervivientes iniciales por equipo en la adaptación actual, para no alterar automáticamente la cantidad de dados/acciones. Falta definir la interacción de ambos modos existentes y la selección automática de un grupo IA antes de codificar, sin convertir el segundo grupo en requisito del futuro singleplayer.
+
+**Orden confirmado:** alcanzar primero una **adaptación estable y suficientemente parecida en dinámica de supervivencia a `Dead of Winter`**, explicitando divergencias; después comenzar el diseño/implementación de identidad propia, con un jugador y un **Director de Juego** (no una IA obligatoria como segundo jugador), narrativa persistente y consecuencias diferidas. D refactoriza preservando reglas antes de E; no programar Director/singleplayer completo durante C. [Rumbo detallado51](51-rumbo-fidelidad-e-identidad.md).
+
+**Estado:** F-14 acordada, no desarrollada ni probada; demás propuestas de cambio en revisión según matriz del creador. C técnicamente validada en su alcance y aún pendiente de aceptación administrativa, PR14 draft y `main` intacta.
+
 ## Actualización C16/A1 — 28/10/2026
 
 **Subsistema18 (interfaz/accesibilidad):** el defecto A1/P2 de ayuda y fallecimiento previamente observado en Chromium recibió corrección de foco y aislamiento de fondo en `fix/estabilizacion-v9-9`. **408/408 Node**, seis regresiones nuevas C16, [CI40695224171](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40695224171) completed/success sobre `265dc0d`. Regresión roja previa en cuatro de seis escenarios, historial de iteraciones en [informe50](50-c16-foco-dialogos.md). **Chromium real aprobado**: [Actions40695882583](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40695882583), tres viewports y78 pasos de teclado; no fugas de foco ni errores JS/overflow, con devolución desde Ayuda, precedencia de muerte y sucesión propia. [Evidencia](evidencias/c16-chromium-verificado.json). **No equivale** a TalkBack, Android físico, otros navegadores ni certificación WCAG. La auditoría histórica C15 permanece en el apartado siguiente.
