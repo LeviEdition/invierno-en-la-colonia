@@ -189,6 +189,41 @@ Las pasivas actuales cubren combate/búsqueda, mitigación de riesgo, acciones g
 
 **Siguiente discusión concreta:** ¿queremos que el azar suceda **principalmente antes de asignar dados** (estrategia de combinarlos) o **al ejecutar la acción** (tirada por competencia y riesgo)? Una vez aclarado, definir economía de acciones independiente, fracaso y éxitos escalonados. No autorizar implementación ni cerrar el modelo todavía.
 
+## 5D. Propuesta concreta del creador: órdenes por superviviente + tiradas por atributo y exposición integrada (28/10/2026) — EN ANÁLISIS
+
+**Visión propuesta, NO aprobada como regla final:** dejar de tirar dados de acción al comenzar cada ronda. El **número de acciones de grupo** disponibles por ronda sería igual al **número de supervivientes bajo el mando del líder** (ejemplo: tres supervivientes → **tres acciones**); el líder elige qué personaje ejecuta cada orden, sin propiedad obligatoria de una orden por personaje. Las acciones importantes (movimiento, búsqueda, combate y potencialmente tareas técnicas) se resuelven mediante **tantos d6 como el valor de la estadística** pertinente. Un resultado puede producir **grados de éxito, avance con costo o consecuencias**, en vez de una mera elegibilidad por un dado inicial. Esta propuesta **reemplazaría**, si se aprueba, las hipótesis de cuatro dados/órdenes y el umbral F-10; hasta decisión expresa, no modifica V9.9 ni acuerdos de la matriz F.
+
+**Ejemplo exacto aportado por el creador:** `Mara: Movilidad 5`, viaja al hospital y tira **5d6**. Con **dos o más éxitos llega sin exposición**; con **un éxito llega y tira el dado de exposición**; con **cero éxitos llega con una herida**. Es una **ilustración de intención**, no una tabla adoptada para todos los desplazamientos. Bajo la hipótesis de éxitos en 5–6 en d6, se obtendría:
+
+| Movilidad / dados | 0 éxitos | 1 éxito | 2+ éxitos |
+| --- | ---: | ---: | ---: |
+| 1 | 66,7 % | 33,3 % | 0,0 % |
+| 2 | 44,4 % | 44,4 % | 11,1 % |
+| 3 | 29,6 % | 44,4 % | 25,9 % |
+| 4 | 19,8 % | 39,5 % | 40,7 % |
+| 5 | 13,2 % | 32,9 % | 53,9 % |
+| 6 | 8,8 % | 26,3 % | 64,9 % |
+
+**Deducciones críticas:**
+
+1. **Paradoja de gravedad:** `1 éxito` aún puede causar una mordedura letal en la tirada de exposición, mientras `0 éxitos` garantiza solo una herida; así **un resultado mejor puede terminar siendo peor**. Si buscamos consecuencias estrictamente escalonadas, definir un resultado de riesgo que no sea potencialmente peor que el fracaso, o diferenciar riesgo narrativo y gravedad final.
+2. **Movilidad baja / bloqueo práctico:** con movilidad 1 nunca alcanzaría dos éxitos y tendría 66,7 % de recibir una herida al moverse. Si desplazarse es frecuente, esto perjudica brutalmente a personajes no especializados, especialmente con heridas acumulables y muerte. Evaluar escalas, dados mínimos/bonos, dificultad por ruta, consecuencias no siempre físicas y opciones de preparación.
+3. **Tirar dos veces vs reemplazar exposición:** el ejemplo conserva la **tirada de exposición cuando hay un éxito**. Una versión de **resolución única** asignaría consecuencias directamente a la primera tirada y evitaría otra capa azarosa; ambas necesitan pruebas y aprobación explícita.
+4. **Tres acciones y movimiento:** si moverse **consume una** de las tres órdenes de grupo, ida al hospital + búsqueda + regreso gastaría todas las acciones del equipo, sin combate/defensa ese día. Si el traslado es **una acción posicional separada** (por ejemplo, cada superviviente se puede mover una vez por ronda), la prueba de Movilidad aún determina peligro, pero no compite con las tres órdenes. **Separar siempre “requiere una prueba” de “consume orden de acción”**; resolver este punto antes de balancear.
+5. **Crecimiento y muertes:** una acción por superviviente activo crea incentivo fuerte para reclutar y una posible espiral tras perder personajes (tres → dos → uno). Definir si cuenta **equipo activo, personajes vivos totales o habitantes de la colonia**; límites/capacidad, sucesión, incorporación y recuperación. No asumir que civiles/indefensos aportan acciones.
+6. **Fallos que avanzan:** llegar al hospital a pesar de un resultado bajo es un modo potente de sostener la narrativa. No convertir automáticamente todo fracaso en una herida inevitable ni otorgar recompensas completas sin coste.
+7. **Significado de atributo alto:** bajo el sistema de reservas por habilidad, `Movilidad` podría ser un tercer atributo principal tan relevante como Combate y Búsqueda, si los desplazamientos/riesgos ocurren regularmente. Reabrir la comparación con `Operaciones` como tercera estadística; **no crear automáticamente cuatro o más** hasta medir frecuencia y valor.
+8. **La mecánica de tiradas y el balance deben diseñarse juntos:** si ya no hay dados de ronda, F-10 (elegibilidad dado <= stat), F-12 (comida para +1) y F-15 (conversión de stats) necesitan **revisión explícita y calibración**, no migración silenciosa. En particular, +1 de atributo en una tirada de éxito 5–6 implica **un dado adicional**, que no es equivalente a la mejora previa.
+9. **Pasivas y equipo:** deberían distinguir resultados, riesgos y capacidades; evitar que una pasiva de inmunidad de exposición convierta automáticamente la Movilidad en irrelevante o que un solo especialista monopolice todas las acciones.
+
+**Tres modelos a contrastar antes de aprobar:**
+
+- **T1 — Movilidad consume acción de grupo:** tres órdenes para todas las acciones importantes, incluidos los movimientos. La tensión será intensa, pero puede penalizar cualquier expedición.
+- **T2 — Movilidad probada, sin consumir orden de grupo:** cada superviviente tiene un movimiento posicional limitado, sujeto a prueba; las tres órdenes del grupo pagan búsquedas, combates y otras acciones. Conserva una diferencia heredada de V9.9 entre movimiento y actividad, pero cambia su riesgo.
+- **T3 — Acciones compuestas:** mover y realizar una actividad en un mismo comando, con reglas claras para riesgo y alcance; añade complejidad y puede beneficiar demasiado a especialistas.
+
+**Entrega siguiente de SP-02:** simular **una ronda con tres supervivientes y tres órdenes** bajo T1 y T2 usando los mismos personajes, dados hipotéticos, amenazas, búsqueda y comida; comparar costo de desplazarse, diversidad de acciones, probabilidad de daño, agencia del líder, heridas acumuladas y resiliencia si uno muere. Solo después decidir si el sistema de órdenes y dados por stat reemplaza F-10 y qué atributos justifican ser centrales.
+
 ## 6. Diseño de ronda provisional para SP-03 (no aprobado)
 
 1. **Apertura:** presentación de crisis, recursos, peligros e indicios válidos según el estado.
