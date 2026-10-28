@@ -428,6 +428,7 @@ El **100 %** del híbrido surge porque Damián mata un zombi por orden sin riesg
 - [16 — Progresión narrativo-mecánica](16-progresion-narrativa-mecanica.md)
 - [17 — Mapa piloto «Encontrar la cura»](17-mapa-campana-encontrar-cura.md)
 - [18 — Tablero técnico operativo](18-tablero-operativo.md)
+- [64 — Bitácora de cierre del 28/10/2026 y continuación SP-02](64-bitacora-2026-10-28.md)
 - [49 — Comparación oficial de V9.9 con el reglamento](49-c15-auditoria-final.md)
 - [51 — Rumbo singleplayer y F-14](51-rumbo-fidelidad-e-identidad.md)
 - [61 — Matriz F exclusiva del juego propio](61-alcance-matriz-f-juego-propio.md)
