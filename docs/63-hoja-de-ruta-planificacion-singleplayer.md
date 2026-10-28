@@ -366,6 +366,18 @@ El **100 %** del híbrido surge porque Damián mata un zombi por orden sin riesg
 
 **Próxima prueba requerida:** comparar la misma defensa durante 2–3 rondas entre (A) determinista sin exposición, (B) determinista + exposición V9.9, (C) determinista + exposición contextual mitigada por cobertura/equipo y (D) combate por pool. **Medir por separado** zombis eliminados, acciones gastadas, daños, mordeduras, muertes, presión de oleadas, recursos consumidos y misión completada. Conservar preparativos/equipo constantes y definir quién cuenta como protegido. **No hay porcentajes de nuevas simulaciones en esta entrada**.
 
+## 5J. Replanteo del alcance para el primer videojuego: priorizar identidad narrativa (28/10/2026) — RECOMENDACIÓN / REFLEXIÓN, NO DECISIÓN FORMAL
+
+**Reflexión del creador:** dado que *Invierno en la Colonia* es su primer videojuego, sumar un motor alternativo de acciones, estadísticas y pruebas por dados a un Director de Juego y narrativa persistente quizá aumente excesivamente la complejidad. Considera **concentrarse en narrativa** y **conservar las mecánicas de V9.9** como base. Lo expresó de modo tentativo; **NO interpretar como una orden irrevocable de descartar las alternativas M2/híbrida** ni como autorización para programar.
+
+**Evaluación de producto:** recomendable tratar la **estabilidad mecánica como ventaja**, evitar rediseñar simultáneamente balance y narrativa, y centrar el primer hito propio en consecuencias causales diferidas, vínculos de personajes, decisiones del líder y campaña. Un sistema de dados propio es una **investigación de futuro aparcada**, no una condición para un buen primer singleplayer; se puede retomar tras validar la experiencia narrativa.
+
+**Matiz técnico necesario:** pasar de la referencia V9.9 a **un solo líder sin equipo rival** requiere **adaptaciones mínimas** en crisis, número de acciones/recursos, amenazas, objetivos, reclutamiento, victoria y dificultad. No prometer que basta solo con agregar textos o historias sin revisar el equilibrio. Mantener la economía de dados de referencia como **punto de partida**, no como obligación dogmática.
+
+**Vertical slice propuesta, no aprobada:** un objetivo/campaña breve, grupo inicial 3 de 5 y líder elegido, un par de encrucijadas con consecuencias diferidas que modifican eventos/recursos/relaciones en rondas posteriores, epílogo dependiente de decisiones. Director con **estado verificable y reglas** para las consecuencias; no depender de improvisación libre que altere la legalidad del juego. Reusar ataque/búsqueda/exposición/acciones de V9.9 salvo necesidad concreta demostrada.
+
+**Próxima decisión de alcance:** confirmar si el creador quiere **congelar explícitamente SP-02 (mecánicas nuevas) como backlog** y trasladar el foco del juego propio a SP-03/SP-05/SP-06 (ronda singleplayer, Director de Juego, narrativa persistente/campaña), mientras D1/D2 sigue por su vía técnica. Hasta la confirmación, **la nueva dirección es recomendación**, no compromiso definitivo. **No tocar código ni `main`.**
+
 ## 6. Diseño de ronda provisional para SP-03 (no aprobado)
 
 1. **Apertura:** presentación de crisis, recursos, peligros e indicios válidos según el estado.
