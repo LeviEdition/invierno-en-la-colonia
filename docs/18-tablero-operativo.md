@@ -1,5 +1,12 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## SP — Alcance del primer videojuego: priorizar narrativa sobre mecánicas nuevas · 28/10/2026
+
+**Reflexión del creador, NO decisión cerrada:** siendo su primer videojuego, integrar mecánicas híbridas/nuevas estadísticas al Director y narrativa persistente puede exceder el alcance deseado. Se plantea **reutilizar mecánicas V9.9** y concentrar identidad del juego propio en singleplayer narrativo con decisiones diferidas. **Recomendación crítica:** la exploración de motores alternativos de SP-02 puede aparcarse como backlog; no eliminar el trabajo previo ni declarar mecánicas anteriores derogadas sin confirmación. [Ver 63, sección 5J](63-hoja-de-ruta-planificacion-singleplayer.md).
+
+**Matiz:** singleplayer sin equipo rival requiere todavía adecuaciones mecánicas mínimas y validación de crisis, dados, recursos y amenazas, no solo textos. **Siguiente tarea de DISEÑO sugerida:** acordar alcance limitado del primer vertical slice narrativo (objetivo, decisiones con consecuencias diferidas, estados persistentes, epílogo y pruebas), y delimitar qué permanece idéntico de V9.9 y qué solo se adapta por necesidad. **Tarea técnica vigente separada:** D1/D2; no autorizar cambios de código o fusiones por esta reflexión.
+
+
 ## SP-02 — Exposición posterior al combate determinista · 28/10/2026
 
 **Nueva hipótesis del creador:** si una defensa preparada se resuelve **sin tirada de ataque**, el superviviente **podría tirar exposición después de cada combate**, manteniendo el peligro pese a tener resultado ofensivo previsible. **No aprobado como regla ni implementado.** La mecánica recuerda a V9.9: después de ataque ordinario se tira exposición, con excepciones por equipo/condiciones. El d6 de referencia: 1 mordedura letal, 2 congelación, 3 herida, 4–6 blanco; **dos exposiciones sin mitigación implican 30,56 % de al menos una mordedura**, si ambas se realizan. La agresividad puede ser excesiva.
