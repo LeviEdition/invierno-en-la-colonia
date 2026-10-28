@@ -1,5 +1,12 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## SP-02 — Exposición posterior al combate determinista · 28/10/2026
+
+**Nueva hipótesis del creador:** si una defensa preparada se resuelve **sin tirada de ataque**, el superviviente **podría tirar exposición después de cada combate**, manteniendo el peligro pese a tener resultado ofensivo previsible. **No aprobado como regla ni implementado.** La mecánica recuerda a V9.9: después de ataque ordinario se tira exposición, con excepciones por equipo/condiciones. El d6 de referencia: 1 mordedura letal, 2 congelación, 3 herida, 4–6 blanco; **dos exposiciones sin mitigación implican 30,56 % de al menos una mordedura**, si ambas se realizan. La agresividad puede ser excesiva.
+
+**Análisis y propuesta de prueba:** [63 — SP-02, sección 5I](63-hoja-de-ruta-planificacion-singleplayer.md). **No confundir** exposición por acción de combate con exposición por cada enemigo muerto; mantener separadas **eficacia de defensa** y **costo humano**. **Siguiente tarea conceptual:** simular 2–3 rondas con defensa determinista sin exposición, exposición V9.9, exposición mitigada por equipo/cobertura y combate por pool, midiendo bajas zombi y supervivencia por separado. **Técnica:** no alterar V9.9, `main`, F-10/F-12/F-15 ni vía D1/D2.
+
+
 ## SP-02 — Pruebas del híbrido contextual · 750.000 rondas · 28/10/2026
 
 **Ejecución:** banco de pruebas del laboratorio SP-02 ampliado a **tres modelos** (V9.9 simplificado, tiradas por atributo puras, híbrido contextual) y **25 configuraciones × 3 métodos × 10.000 = 750.000 rondas simuladas**, **13/13 pruebas funcionales** aprobadas. Informe y advertencias detalladas: [63 — SP-02, sección 5H](63-hoja-de-ruta-planificacion-singleplayer.md).
