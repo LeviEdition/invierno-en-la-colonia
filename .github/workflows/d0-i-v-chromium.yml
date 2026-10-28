@@ -1,0 +1,42 @@
+name: D0-I-V Chromium post integración
+on:
+  push:
+    branches: [refactor/arquitectura]
+    paths: ['.github/workflows/d0-i-v-chromium.yml']
+  workflow_dispatch:
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Instalar Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.57.0
+          npx playwright install --with-deps chromium
+      - name: Ejecutar pruebas browser sobre commit exacto
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/d0-http.log 2>&1 &
+          trap 'kill $!' EXIT
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:8765/invierno_colonia_v9_9.html -o /dev/null && break; sleep 1; done
+          export CHROMIUM_PATH="$(node --input-type=module -e "import {chromium} from 'playwright';console.log(chromium.executablePath())")"
+          echo "SHA probado: $GITHUB_SHA"
+          node scripts/check-c16-focus-browser.mjs
+          node scripts/check-c15-terminal-browser.mjs
+          node scripts/check-c14-browser.mjs
+      - name: Publicar evidencia incluso ante fallo
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: d0-i-v-chromium-${{ github.sha }}
+          path: |
+            /tmp/c16-focus/
+            /tmp/c15-terminal-browser/
+            /tmp/c14-browser/
+            /tmp/d0-http.log
+          if-no-files-found: warn
