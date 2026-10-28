@@ -51,7 +51,7 @@ function fixture(){
  return {run,node,document,key,dispatch,board,fab,setup,pass,backdrop,death};
 }
 
-test('C16 rojo | Ayuda aísla el tablero y enfoca un control del diálogo',()=>{
+test('C16 | Ayuda aísla el tablero y enfoca un control del diálogo',()=>{
  const t=fixture();t.fab.focus();t.run('show("help")');
  assert.equal(t.document.activeElement,t.node('modalClose'));
  assert.equal(t.board.inert,true);
@@ -59,7 +59,7 @@ test('C16 rojo | Ayuda aísla el tablero y enfoca un control del diálogo',()=>{
  assert.equal(t.backdrop.inert,false);
 });
 
-test('C16 rojo | Tab, Shift+Tab y foco programático permanecen dentro de Ayuda',()=>{
+test('C16 | Tab, Shift+Tab y foco programático permanecen dentro de Ayuda',()=>{
  const t=fixture();t.fab.focus();t.run('show("help")');
  t.node('modalClose').focus();assert.equal(t.key('Tab',true).prevented,true);
  assert.equal(t.document.activeElement,t.node('modalOption'));
@@ -68,7 +68,7 @@ test('C16 rojo | Tab, Shift+Tab y foco programático permanecen dentro de Ayuda'
  t.board.focus();assert.equal(t.document.activeElement,t.node('modalClose'));
 });
 
-test('C16 rojo | cerrar Ayuda libera el tablero y recupera el origen',()=>{
+test('C16 | cerrar Ayuda libera el tablero y recupera el origen',()=>{
  const t=fixture();t.fab.focus();t.run('show("help");hide();');
  assert.equal(t.board.inert,false);
  assert.equal(t.backdrop.inert,false);
@@ -76,7 +76,7 @@ test('C16 rojo | cerrar Ayuda libera el tablero y recupera el origen',()=>{
  assert.equal(t.key('Tab').prevented,false);
 });
 
-test('C16 rojo | fallecimiento aísla tablero, modal inferior y foco del teclado',()=>{
+test('C16 | fallecimiento aísla tablero, modal inferior y foco del teclado',()=>{
  const t=fixture();t.fab.focus();t.run('show("help");kill(game.humans[0],"foco");deathDirector.open();');
  assert.equal(t.death.hidden,false);
  assert.equal(t.document.activeElement,t.node('deathContinue'));
@@ -87,7 +87,7 @@ test('C16 rojo | fallecimiento aísla tablero, modal inferior y foco del teclado
  t.key('Escape');assert.equal(t.backdrop.classList.contains('open'),true);
 });
 
-test('C16 rojo | tras fallecimiento se enfoca la sucesión y no queda el fondo inerte',()=>{
+test('C16 | tras fallecimiento se enfoca la sucesión y no queda el fondo inerte',()=>{
  const t=fixture();t.fab.focus();t.run('kill(game.humans[0],"foco");deathDirector.open();deathDirector.continue();');
  assert.equal(t.death.hidden,true);
  assert.equal(t.backdrop.classList.contains('open'),true);
@@ -98,7 +98,7 @@ test('C16 rojo | tras fallecimiento se enfoca la sucesión y no queda el fondo i
  assert.equal(t.death.inert,false);
 });
 
-test('C16 rojo | el pase local sigue teniendo prioridad sobre Ayuda',()=>{
+test('C16 | el pase local sigue teniendo prioridad sobre Ayuda',()=>{
  const t=fixture();t.run('show("help");showPass("ai");');
  assert.equal(t.pass.hidden,false);assert.equal(t.document.activeElement,t.node('pass1'));
  assert.equal(t.backdrop.inert,true);
