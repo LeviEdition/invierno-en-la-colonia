@@ -37,6 +37,10 @@ H1 de subsistemas10/16 corregido por peticiones separadas por dueño. R1/R2 así
 
 Subsistemas02/06/07/08/10/14/15/16/17/18: matriz por riesgo,21regresiones nuevas y392/392 suite. Guardias de decisión, cancelación de esperas/terminal y continuidad de modal corregidas; revisor independiente confirma correcciones. Chromium6cadenas,0errores. [Informe47](47-c13-integracion-profunda.md). CI del checkpoint es gate para partidasC14; no estabilidad universal ni cierreC.
 
+## C14 — partidas completas, 28/10/2026
+
+Los subsistemas existentes se ejercitan con create/paint/motor reales,20semillas por modo y5partidas completas de interfaz.40/40motor,5/5UI finales,0defectos confirmados del producto; dos interrupciones inicialesUI eran driver y se conservan.394/394suite, revisión aprobada. [Informe48](48-c14-partidas-completas.md). Cobertura sigue parcial: estrategia única, objetivos4/15/1 por modo, sin balancehumano, Androidfísico/TalkBack o proofuniversal. CI exacto habilita auditoríaC15, sin declararCcerrada.
+
 ## Cierre de cobertura A6 (con limitaciones documentadas)
 
 Los **21 subsistemas** se mantienen clasificados: 01–19 con cobertura parcial (incluidos defectos abiertos en varios); **20–21 no implementados**, fuera del alcance de V9.9. En [el informe final](24-cierre-auditoria-y-prioridades.md) figuran las 12 incidencias (#2–#13), orden propuesto y excepciones. Se aceptó **continuar sin checklist físico A5-02** por autorización explícita del creador tras partidas satisfactorias, **sin declarar que la prueba móvil física ocurrió**. Al cerrar A6, la siguiente tarea era **C1/#11**, en rama separada. El estado actual de estabilización figura en las actualizaciones siguientes y en el tablero operativo.

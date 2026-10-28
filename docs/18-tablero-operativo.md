@@ -14,11 +14,11 @@ Autorización explícita del creador para C12→C15 en orden y correcciones téc
 | Etapa | Estado | Evidencia |
 | --- | --- | --- |
 | C12 | Aprobado técnicamente; f9429d1 y CI40682067180 success371/371 | [46](46-c12-sucesiones-simultaneas.md),371/371 y6casos Chromium |
-| C13 |21regresiones nuevas; revisión/Chromium aprobados tras R1; CI pendiente | [47](47-c13-integracion-profunda.md),392/392 |
-| C14 | No iniciada | Partidas completas reales, objetivo20por modo |
+| C13 | Aprobado;3c152e8/CI40684493624success392/392 | [47](47-c13-integracion-profunda.md),392/392 |
+| C14 |40partidas reales de motor y5UI completas; revisión aprobada, CI pendiente | [48](48-c14-partidas-completas.md),394/394 |
 | C15 | No iniciada | Auditoría final y fuentes de reglas |
 
-**Tarea activa única:** confirmar CI C13 y avanzar automáticamente a C14 si aprueba. La misión reemplaza la necesidad anterior de pedir autorización para H1. Main d9068f4 intacta, PR14 draft a refactor/arquitectura. Referencia sincronizada43f7c11,358/358 y CI40678862713 success.
+**Tarea activa única:** confirmar CI C14 y avanzar automáticamente a C15 si aprueba. La misión reemplaza la necesidad anterior de pedir autorización para H1. Main d9068f4 intacta, PR14 draft a refactor/arquitectura. Referencia sincronizada43f7c11,358/358 y CI40678862713 success.
 
 ## Revisión de entrega C10 para preparar siguiente trabajo — 27/10/2026 (hora Uruguay)
 

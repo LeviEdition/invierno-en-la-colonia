@@ -46,3 +46,5 @@ Cinco regresiones rojas adicionales los reproducen. Paint ahora refleja la sigui
 -No pruebas físicas/TalkBack ni balance. No se afirma cubrir toda combinación posible o que funciones internas privadas constituyan una frontera de seguridad para red.
 
 **Checkpoint:** revisión/pruebas aprobadas; crear commit y verificar su CI antes de C14. En C14 se conserva create, azar, mazos, paint y reglas reales; el nuevo modo natural del fixture evita borrar la encrucijada inicial. La estrategia del controlador de pruebas será independiente del juego y explícita.
+
+**Gate remoto:** commit3c152e8, [CI40684493624](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40684493624) completed/success392/392. C14 habilitada automáticamente.

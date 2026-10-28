@@ -1,10 +1,12 @@
 // Motor real del HTML. DOM mínimo solo para pruebas que no afirman geometría/foco real.
 import {readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
 import {createContext,runInContext} from 'node:vm';
 const html=readFileSync(new URL('../invierno_colonia_v9_9.html',import.meta.url),'utf8');
 const script=[...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)][0][1];
 const boot=/\ncreate\(\);\s*\ndocument\.getElementById\('setupScreen'\)\.hidden=false;passScreenActive=true;\s*\npaint\(\);\s*$/;
 if(!boot.test(script))throw Error('Revisar arranque del fixture');
+export const engineMetadata={htmlSha256:createHash('sha256').update(html).digest('hex'),scriptSha256:createHash('sha256').update(script).digest('hex'),rng:'LCG32: x=(1664525*x+1013904223) modulo 2^32; random=x/2^32'};
 export function fixture({mode='local',face=6,seed,render=false,natural=false}={}){
  let rng=seed===undefined?null:seed>>>0;const math=Object.create(Math);let roll=(face-.5)/6;
  math.random=()=>{if(rng===null)return roll;rng=(Math.imul(1664525,rng)+1013904223)>>>0;return rng/4294967296;};
