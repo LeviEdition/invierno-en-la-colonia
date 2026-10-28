@@ -1,5 +1,12 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## SP — Hoja de ruta de planificación singleplayer creada · 28/10/2026
+
+**Nuevo documento de DISEÑO:** [63 — Hoja de ruta de planificación singleplayer](63-hoja-de-ruta-planificacion-singleplayer.md). Organiza **SP-00 a SP-08**: rol del líder, selección F-14, economía de dados F-10/F-12/F-15, ronda, ajuste de supervivencia sin segundo grupo obligatorio, Director/memoria, campañas, interfaz/guardado y prototipo. Se distinguen **acuerdos**, **propuestas**, **pendientes** y criterios de aceptación, sin reabrir decisiones ya tomadas ni sustituir la matriz F externa.
+
+**ÚNICA SIGUIENTE TAREA DE DISEÑO:** **SP-02 — cerrar economía de acciones y dados**, empezando por reserva común y asignación entre supervivientes. Esto **no** autoriza código ni modifica el juego. **ÚNICA SIGUIENTE TAREA TÉCNICA SIN CAMBIOS:** **D1.2a** (PoC reversible de esbuild, pendiente de autorización), después D1/D2; preservar referencia antes de iniciar producto propio. `main` intacta, sin merge ni cambios de reglas por este registro.
+
+
 ## Decisión vigente — fidelidad mecánica aceptada, solo D1/D2 pendiente · 28/10/2026
 
 **ACUERDO EXPRESO DEL CREADOR:** la V9.9 estabilizada **se considera mecánicamente suficientemente fiel a la experiencia central de *Dead of Winter*** para ser nuestra referencia. **No se exige mayor fidelidad literal** ni una nueva auditoría RF para comenzar la futura versión propia. Esta es una aceptación de **alcance del producto**, no una certificación de equivalencia exacta.
