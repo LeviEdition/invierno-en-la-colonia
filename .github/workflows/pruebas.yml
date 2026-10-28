@@ -26,5 +26,8 @@ jobs:
         with:
           node-version: '22'
 
+      - name: Comprobar HTML autocontenido generado
+        run: npm run check:build
+
       - name: Ejecutar pruebas de la V9.9
         run: npm test
