@@ -39,6 +39,8 @@ Al cerrar D1/D2, decidir expresamente cómo congelar una referencia reproducible
 
 ## Hito 3 — Desarrollar *Invierno en la Colonia* con identidad propia
 
+**Planificación conceptual paralela:** [63 — Hoja de ruta del singleplayer](63-hoja-de-ruta-planificacion-singleplayer.md). Sus bloques SP registran diseño y decisiones pendientes mientras se terminan D1/D2; **no autorizan implementación** hasta preservar la referencia.
+
 Desde esa referencia preservada y en línea separada de desarrollo:
 
 - Revisar la **matriz F (F-01, F-14, etc.)**, que documenta qué conservar, modificar o descartar **en el juego propio**, nunca como correcciones obligatorias de V9.9.
