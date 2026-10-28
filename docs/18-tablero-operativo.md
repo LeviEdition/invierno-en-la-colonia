@@ -1,5 +1,20 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## Ruta de producto ratificada — TRES HITOS y auditoría RF · 28/10/2026
+
+**DECISIÓN VIGENTE DEL CREADOR:** **primero** obtener un videojuego **muy parecido a *Dead of Winter*** en experiencia, mecánicas centrales y núcleo táctico, **estable y con arquitectura escalable**; **después** preservar una referencia verificable (con SHA, build, pruebas y desviaciones aceptadas); **recién entonces** desarrollar nuestra versión propia principalmente singleplayer, con Director de Juego, narrativa persistente y adaptaciones de la matriz F.
+
+**Hito 1 aún NO acreditado como fidelidad final:** la V9.9 actual está estabilizada en el alcance C y pasa regresiones, pero **sus pruebas no demuestran fidelidad integral al juego de mesa**. Primero D1/D2 conservan el comportamiento y separan módulos; luego **RF (auditoría de fidelidad de referencia)** contrasta la experiencia y reglas centrales con evidencia del reglamento y detecta lo que realmente falta. Las correcciones de referencia RF aprobadas deben ser PRs propios **que sí cambian reglas intencionalmente**, nunca mezclados silenciosamente con D. Las diferencias importantes se corrigen o se aceptan explícitamente con justificación; no exigimos copia literal de todos los detalles.
+
+**Hito 2:** solo después de aprobar la adaptación fiel/modular, conservar una versión con SHA/etiqueta identificable, artefacto regenerable, registro de reglas y tests; **no crear tag/release/rama por esta decisión**. **Hito 3:** en una línea propia desde esa referencia, revisar la **matriz F** (F-01, F-14, etc.) y aplicar las modificaciones que aporten valor al singleplayer, junto con E; decisiones F no se incorporan a V9.9 ni se consideran automáticamente defectos.
+
+**Diferencia de registros:** **RF-xxx = comparación/correcciones de fidelidad de la referencia** (matriz todavía NO creada ni auditada); **F-xx = diseño de mecánicas de nuestro juego propio**; **etapa F = expansión del plan histórico**. No confundirlas ni declarar completas tareas no ejecutadas.
+
+**Documentación gobernante:** [62 — Ruta y criterios de los tres hitos](62-hitos-referencia-fiel-y-juego-propio.md), [51 — Rumbo de producto](51-rumbo-fidelidad-e-identidad.md), [61 — Alcance de matriz F](61-alcance-matriz-f-juego-propio.md) y [01 — Plan general](01-plan-refactorizacion.md). Las contradicciones del registro histórico más abajo quedan superadas por esta decisión, sin borrar ese historial.
+
+**Próxima tarea técnica SIN CAMBIOS:** D1.2a — PoC reversible de esbuild con Codex cuando se autorice; no cambiar motor, reglas, no adelantar RF, no fusionar a `main`. **Alcance de esta revisión: solo documentación.**
+
+
 ## Alcance vigente de la matriz F — juego propio, NO refactor de V9.9 · 28/10/2026
 
 **Decisión expresa del creador y corrección del rumbo documental:** la **matriz F (comparación con *Dead of Winter*)** registra **decisiones de diseño para la futura versión propia de *Invierno en la Colonia***. Las propuestas «Conservar»/«Cambiar»/«Pendiente» se interpretan respecto al **juego propio**, y **no son una lista de cambios ni errores a resolver en V9.9**. F-14 (cinco candidatos → elegir tres → líder manual), F-01, F-03b y demás filas de esa matriz quedan **fuera del alcance del refactor D1/D2**. Tampoco están autorizadas para su implementación por el hecho de figurar aprobadas como diseño.
