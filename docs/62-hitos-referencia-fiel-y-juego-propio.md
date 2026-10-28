@@ -1,79 +1,60 @@
-# 62 — Ruta oficial: referencia fiel y modular → referencia preservada → juego propio
+# 62 — Ruta oficial: fidelidad mecánica aceptada → D1/D2 → referencia preservada → juego propio
 
-**Decisión del creador (28/10/2026).** Este documento complementa la [dirección del producto (51)](51-rumbo-fidelidad-e-identidad.md), precisa el [alcance de la matriz F (61)](61-alcance-matriz-f-juego-propio.md) y gobierna la planificación futura junto con el [tablero operativo (18)](18-tablero-operativo.md).
+**Decisión vigente del creador (28/10/2026; actualización posterior al diseño inicial del hito RF).** Este documento complementa la [dirección de producto (51)](51-rumbo-fidelidad-e-identidad.md), el [alcance de la matriz F (61)](61-alcance-matriz-f-juego-propio.md) y el [tablero operativo (18)](18-tablero-operativo.md).
 
-## Objetivo de producto sin ambigüedad
+## Decisión: la fidelidad mecánica de la referencia ya es suficiente para nuestro objetivo
 
-**Primero queremos un videojuego MUY parecido al juego de mesa *Dead of Winter* en experiencia, reglas centrales y dinámica táctica, estable y con una arquitectura escalable. Después queremos conservarlo como referencia y usar esa base para transformarlo en *Invierno en la Colonia*, con identidad propia, principalmente singleplayer y con Director de Juego/narrativa persistente.**
+**Aceptamos la V9.9 estabilizada como una adaptación MECÁNICAMENTE SUFICIENTEMENTE FIEL a la experiencia central de *Dead of Winter* para utilizarla como referencia.** No pretendemos una copia reglamentaria exhaustiva. El objetivo pendiente del primer hito es **completar D1 y D2 para obtener una estructura modular, escalable, probada y fácil de evolucionar**. No se exige una nueva auditoría de fidelidad ni otro paquete de modificaciones mecánicas como puerta de entrada obligatoria al juego propio.
 
-- La **V9.9 actual**, aun con estabilización C y tests verdes, **no está certificada como la adaptación fiel definitiva**. Es el punto de partida comprobado.
-- La **refactorización D1/D2** tiene alcance de **preservación de comportamiento**: se separan dependencias, estado, reglas e interfaz, pero no se introducen a escondidas cambios de jugabilidad.
-- **Después de establecer una base técnica segura**, las diferencias mecánicas importantes con el juego de mesa se auditan y, si corresponde, se corrigen en tareas explícitas de fidelidad de referencia, con pruebas antes/después. El análisis comparativo puede comenzar en paralelo, pero sus cambios ejecutables deben tener alcance separado de D.
-- La **matriz F existente (F-01, F-14, etc.) NO es la lista de correcciones de fidelidad de referencia**. Registra las ideas que deseamos **conservar/cambiar para nuestro juego propio**. Una decisión de esa matriz puede resultar incompatible con el futuro singleplayer y deberá revisarse nuevamente al implementarla.
-- «Muy parecido» **no significa copia literal, equivalencia completa sin pruebas, ni reproducción de textos, personajes, ilustraciones o cartas protegidos**. Lo evaluamos según una selección explícita de reglas centrales y experiencia real; las diferencias deliberadas deben quedar justificadas.
+Esta aceptación **es una decisión de alcance del creador** sustentada en el trabajo ya realizado, **no una certificación de equivalencia exacta de todas las reglas**:
 
-## Hito 1 — Adaptación de referencia fiel, estable y modular
+- La [comparación oficial documentada en el informe 49](49-c15-auditoria-final.md#comparación-con-dead-of-winter) examinó **14 áreas mecánicas** contra el reglamento del juego base, con páginas citadas y evidencia real del código.
+- La estabilización C está integrada a `main` y se ha probado con partidas completas. Las **433/433 pruebas** posteriores de D1.1 demuestran regresión satisfactoria dentro de su cobertura, **no fidelidad idéntica**.
+- **Diferencias conocidas y aceptadas para el alcance de la referencia**, registradas en el informe 49: iniciativa/primer jugador fijo, colonia con entradas agregadas, crisis y cooperativo simplificados, objetivos y momento de victoria adaptados, y contenido propio. No se programarán automáticamente para reproducir el juego de mesa.
+- Quedan **reservas técnicas y de experiencia**: pruebas Android físico/TalkBack, navegadores alternativos, balance con jugadores humanos y equivalencia de contenido completo. Se documentan, pero no constituyen una nueva etapa RF obligatoria.
+- Si surge un **defecto funcional grave confirmado**, se evalúa como incidencia puntual con autorización, incluso durante o después de D. No se convierte una diferencia de diseño aceptada en bug de forma retroactiva.
 
-**Objetivo:** llegar a un juego digital que conserve los ciclos y decisiones esenciales del juego de mesa, además de funcionar y poder evolucionar técnicamente.
+## Hito 1 — FIDELIDAD MECÁNICA ACEPTADA; ARQUITECTURA D1/D2 EN CURSO
 
-### Trabajo de arquitectura (D1/D2, sin alterar reglas)
+**La parte de fidelidad está aceptada por decisión del creador.** Falta cerrar el trabajo de ingeniería:
 
-- Completar D1 (catálogo y decisión de build) y avanzar en D2 (estado, validaciones, acciones, turnos, presentación y automatización desacoplados), por entregas pequeñas.
-- Probar que el motor de reglas no necesita el DOM ni un segundo jugador obligatorio en sus módulos reutilizables; durante D debe conservar **el funcionamiento actual** incluso cuando sus limitaciones queden aisladas.
-- Mantener pruebas unitarias, de integración, de partidas completas, de distribución y de navegador; registrar limitaciones de Android físico, accesibilidad y balance, sin convertir CI verde en certificación de jugabilidad.
+1. **D1 — Modularización inicial:** mantener el catálogo separado, resolver mediante un PoC pequeño si conviene introducir `esbuild` y elegir un build reproducible. No replicar sustituciones textuales para cada sistema.
+2. **D2 — Motor desacoplado:** separar progresivamente estado, reglas, validaciones, acciones, turnos, UI y automatismos. Ninguna capa central de supervivencia debe depender necesariamente del DOM ni de que exista siempre un grupo de IA.
+3. **Preservación de comportamiento:** las extracciones D1/D2 NO alteran intencionalmente reglas de V9.9. Las diferencias del informe 49 se conservan mientras no haya una decisión específica y separada.
+4. **Pruebas por cambios pequeños:** tests unitarios/integración, partidas completas, navegador, empaquetado y archivo offline si se conserva ese formato, con límites y resultados por SHA. No eliminar pruebas para facilitar el refactor.
+5. **Evaluar escalabilidad de verdad:** comprobar interfaces entre motor, presentación y automatismos; poder construir después el singleplayer y Director de Juego sin reescribir todo. No basta con crear muchos archivos.
+6. **Cierre del hito:** D1/D2 integradas solo después de auditoría, CI y autorización; ninguna integración automática a `main`.
 
-### Trabajo de fidelidad de referencia (distinto de la matriz F)
+**Criterio de terminado del hito 1:** referencia mecánica aceptada (YA DECIDIDO) **+ D1/D2 terminadas, probadas y aceptadas técnicamente** (PENDIENTE). No pedir un proyecto RF nuevo antes de avanzar; la comparación del informe 49 sigue disponible para consultas concretas.
 
-**Crear una matriz específica de contraste de referencia**, con identificadores diferentes a F (por ejemplo `RF-001`), **cuando se autorice la auditoría**. No declarar aquí que ya está completa o contrastada con fuentes primarias.
+## Hito 2 — Preservar una versión identificable de referencia
 
-Para cada mecánica candidata, registrar:
-1. Fuente del reglamento de mesa consultada (edición, página/sección y alcance), sin copiar contenido expresivo extenso.
-2. Qué hace la versión digital realmente, con prueba o evidencia observable.
-3. **Estado:** equivalente funcional / desviación deliberada aceptable / discrepancia relevante por corregir / sin verificar.
-4. Impacto en la experiencia, prioridad, riesgos de balance y compatibilidad con el motor.
-5. Decisión explícita del creador: corregir para la referencia, aceptar la desviación o posponer con motivo.
-6. Tests de aceptación y resultado posterior para cada corrección aprobada.
+Al cerrar D1/D2, decidir expresamente cómo congelar una referencia reproducible con SHA, código fuente, build, pruebas y diferencias mecánicas aceptadas, antes de alterar deliberadamente las reglas.
 
-**Núcleos mínimos a contrastar (sin afirmar fidelidad previa):** preparación y elección inicial; supervivientes, acciones y dados; movimiento y exposición; búsqueda, ruido y mazos; recursos, hambre y moral; heridas, mordeduras y muertes; crisis, rondas y fase de colonia; encrucijadas; objetivos, victoria y derrota; interacción de grupos/modos que ofrezca la adaptación.
+- Mantener las pruebas históricas para reconocer regresiones.
+- Conservar documentación del funcionamiento, reservas técnicas y modo de distribución.
+- No crear ahora tag, release, rama ni PR/merge por esta decisión.
 
-**Puerta para llamar «referencia suficientemente fiel y estable»:**
-- Las mecánicas críticas de esa lista tienen comparación documentada y no hay discrepancias críticas sin resolución; desviaciones voluntarias están aceptadas con sus razones.
-- Correcciones de referencia aprobadas se implementaron en PRs delimitados, con comparación antes/después y regresiones. No modificar silenciosamente las aserciones de la línea base histórica.
-- Sin defectos críticos/P1 conocidos sin resolver y con resultados verificables de partidas completas en navegador; pruebas de experiencia/jugabilidad y equilibrio registradas o reservas explícitas según el alcance del hito.
-- El diseño modular permite introducir después singleplayer, eventos y consecuencias sin reconstruir todos los sistemas de supervivencia. Esto requiere evidencia de contratos y pruebas, no solo carpetas separadas.
-- **La aceptación formal del hito corresponde al creador.** Cumplir 433/433 tests del estado actual no demuestra por sí solo fidelidad ni autoriza certificar este hito.
+**Puerta:** referencia estable y modular, reproducible, con respaldo de pruebas y preservación autorizada por el creador. **No depende de una nueva auditoría RF.**
 
-## Hito 2 — Preservar la versión de referencia
+## Hito 3 — Desarrollar *Invierno en la Colonia* con identidad propia
 
-**Objetivo:** mantener una base verificable que NO cambie silenciosamente cuando evolucione nuestro videojuego.
+Desde esa referencia preservada y en línea separada de desarrollo:
 
-- Elegir con autorización explícita una referencia Git inmutable/identificable (por ejemplo, tag con SHA exacto y documentación de build/tests) y conservar su ejecutable, código fuente e informe de diferencias aceptadas.
-- No crear ahora tag, release, rama nueva ni fusionar en `main` por haber escrito este plan; decidir repositorio/ramas de largo plazo antes de promover versiones.
-- Guardar evidencia de cómo regenerar y ejecutar la referencia, sus reglas deliberadas, límites conocidos y resultados de prueba.
-- Mantener su línea base de pruebas independiente de la futura evolución de reglas del juego propio.
+- Revisar la **matriz F (F-01, F-14, etc.)**, que documenta qué conservar, modificar o descartar **en el juego propio**, nunca como correcciones obligatorias de V9.9.
+- Evolucionar hacia una experiencia principalmente **singleplayer** donde la persona dirige a sus supervivientes y el **Director de Juego** genera amenazas, eventos, facciones y consecuencias persistentes sin asumir un segundo grupo de IA obligatorio.
+- Validar un ciclo jugable y un arco narrativo de consecuencias diferidas pequeño antes de expandir campañas, visuales o cooperativo online.
+- Introducir reglas nuevas en entregas pequeñas, con pruebas específicas del producto propio; no reescribir la evidencia histórica de la adaptación de referencia.
 
-**Puerta:** referencia con SHA identificable, construcción reproducible, auditoría de fidelidad aceptada, pruebas y reservas documentadas, aprobada expresamente.
+## Nomenclatura y orden operativo
 
-## Hito 3 — Juego propio basado en esa referencia
+- **Informe 49** = comparación de fidelidad **ya realizada**. No relanzarla como RF-001 por defecto.
+- **Matriz F** (F-01, F-14...) = comparación y decisiones **para nuestra versión propia**.
+- **Etapa F del plan histórico** = presentación, campañas/red/cooperativo posterior; no es la matriz F.
+- **RF** fue una propuesta anterior de auditoría adicional. **Queda pospuesta y NO es requisito de la ruta vigente**. Solo se retoma por un hallazgo concreto o nueva decisión del creador.
 
-**Objetivo:** usar las piezas técnicas y el aprendizaje de la adaptación como punto de partida, no como un límite creativo.
+**Ruta oficial:** `V9.9 estabilizada + fidelidad mecánica aceptada → cerrar D1 → cerrar D2 → preservar referencia modular → desarrollar juego propio (matriz F + singleplayer/Director) → expansión`.
 
-- Abrir una línea de desarrollo separada y explícitamente autorizada desde la referencia preservada.
-- Revisar **la matriz F del juego propio**: qué conservar, cambiar, descartar o prototipar; incorporar solo las decisiones validadas frente al singleplayer y su economía de acciones.
-- Diseñar un jugador que gestiona supervivientes, con un **Director de Juego que afecta al mundo y la narrativa, no que se comporta obligatoriamente como el segundo grupo de la adaptación**.
-- Probar un pequeño arco de decisiones y consecuencias diferidas antes de ampliar campañas, visuales o cooperativo online.
-- Los cambios deliberados de reglas requieren nuevas expectativas y pruebas **en el juego propio**, sin reescribir la historia de la referencia.
+**Próxima tarea técnica propuesta:** D1.2a, experimento reversible con esbuild, pendiente de ejecución/decisión con Codex. No tocar reglas, ni `main`, ni implementar F/E por la aceptación de fidelidad.
 
-**Puerta inicial:** versión de referencia preservada + decisión de crear línea propia + primer plan de mecánicas F y vertical slice narrativo aprobado.
-
-## Orden operativo y límites
-
-`C estabilizada → D1/D2 conservador (la auditoría de fidelidad puede planificarse en paralelo) → correcciones de fidelidad de referencia por alcance independiente → aceptación de referencia fiel/estable/modular → preservación verificable → rama y desarrollo del juego propio (matriz F + E) → expansión posterior`.
-
-- El orden entre tramos internos de D2 y correcciones de fidelidad **se decidirá técnicamente** para minimizar retrabajo; en ningún caso mezclarlas sin marcar qué cambios conservan comportamiento y cuáles lo alteran intencionalmente.
-- La próxima tarea de código **sigue siendo D1.2a**, experimento reversible esbuild (cuando se autorice/disponga de Codex). No se adelantan modificaciones RF ni F, ni se crea un Director.
-- El contraste de fidelidad **RF** y la matriz de diseño propio **F** tienen objetivos y criterios de aceptación distintos; no mezclar IDs, etapas ni PRs.
-- La etapa F de la hoja de ruta original (presentación/red) **no es** la matriz F de decisiones.
-- Esta decisión **corrige documentos antiguos que llamaban «base fiel definitiva» a la V9.9 actual o proponían aplicar F-14 a la referencia**, sin borrar el registro histórico.
-
-**Estado de este documento:** decisión y plan únicamente; no se ha ejecutado ninguna auditoría RF exhaustiva, cambio de reglas, bifurcación del producto ni promoción.
+**Alcance de esta acta:** decisión de producto y documentación, no modificación de ejecutable ni certificación de equivalencia literal.
