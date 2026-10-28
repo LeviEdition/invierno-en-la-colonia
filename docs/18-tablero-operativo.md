@@ -1,5 +1,14 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## SP-02 — Alternativa de dados por atributo (dice pool) en comparación · 28/10/2026
+
+**Nueva hipótesis del creador:** el propio sistema de dados de V9.9 puede limitar el desarrollo de estadísticas. Se estudia un enfoque de *Arkham Horror* de mesa: pruebas que tiran tantos dados como atributo, cuentan éxitos y permiten resultados escalonados. **No se aprobó** reemplazar F-10, F-12 o F-15 ni introducir atributos o reglas nuevas.
+
+**Documento ampliado:** [63 — SP-02, sección 5C](63-hoja-de-ruta-planificacion-singleplayer.md). Compara **M1** dados preasignados del juego actual, **M2** acciones/órdenes del líder como recurso separado + pruebas de varios dados por atributo y **M3** híbrido. Registra probabilidades, riesgos de azar/frustración, costos de las acciones, pasivas, progreso narrativo y efecto sobre la tercera estadística.
+
+**ÚNICA SIGUIENTE TAREA DE DISEÑO:** simular/contrastar los mismos escenarios de 2–3 rondas bajo M1/M2/M3, empezando por decidir **si el azar debe revelarse antes de asignar las acciones o durante su ejecución**, sin cambiar el acuerdo de liderazgo/reparto libre. **TAREA TÉCNICA SIN CAMBIOS:** D1.2a con Codex, luego D1/D2; no cambiar V9.9 o `main`, fusionar ni crear versiones propias por esta discusión.
+
+
 ## SP-02.1 — Evaluación de una tercera estadística relevante · 28/10/2026
 
 **Nueva hipótesis solicitada por el creador:** considerar una **tercera estadística** únicamente si agrega decisiones activas de peso comparable a **combate y búsqueda**, de forma coherente con el juego. No hay atributo, nombre ni reglas aprobadas. La revisión [63, sección 5B](63-hoja-de-ruta-planificacion-singleplayer.md) contrasta **movilidad, resistencia, técnica y apoyo/oficio/operaciones**, favoreciendo como hipótesis de estudio una tercera familia de operaciones de supervivencia (mantenimiento, fortificación, preparación), sin adoptarla. Se comprobaron acciones de V9.9: `barricade/clean/attract` consumen un dado cualquiera; movimiento no usa dado. No imponer nuevos umbrales sin balance.
