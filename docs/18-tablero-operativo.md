@@ -1,5 +1,12 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## SP-02 — Análisis de estadísticas y pasivas sin reglas nuevas aprobadas · 28/10/2026
+
+**Revisión de diseño:** se inspeccionó el catálogo real de V9.9: ataque, búsqueda, influencia y habilidades de búsqueda, ataque, construcción, curación, movilidad, cocina y resistencia. Se documentó en [63, sección 5A](63-hoja-de-ruta-planificacion-singleplayer.md#5a-análisis-de-especialización-y-pasivas-28102026--propuestas-no-acuerdos-nuevos) la distinción entre stats, pasivas, equipo y situación, dos opciones de amplitud del sistema, riesgos de monopolio y escenarios de pruebas en papel. Se detectó que el criterio F-10 `atributo >= dado` conserva probabilidades marginales de F-15, pero vuelve más difíciles los dados altos; la comparación con `atributo + dado >= 7` queda como **alternativa NO aprobada**, sin modificar el acuerdo F-10.
+
+**Decisiones previas conservadas:** líder dirige reparto libre de dados según especialidad; pasivas contextualizan decisiones; no se aprobó tope por personaje ni stats adicionales. **Siguiente tarea de DISEÑO:** comparar alternativa mínima de dos stats con ampliación (movilidad/técnica) y seleccionar qué estadísticas producen diferencias jugables, revisando ejemplos y casos límite. **Tarea TÉCNICA sin cambios:** D1.2a y luego D1/D2; no cambios ejecutables ni `main`.
+
+
 ## SP-02 — Criterio táctico de reparto de dados ratificado · 28/10/2026
 
 **DECISIÓN DE DISEÑO del creador:** el jugador personifica al **líder**, que elige qué superviviente realiza cada acción y qué dado asignarle según **stats, pasivas, necesidades y contexto**; los personajes deben aportar especializaciones útiles en **movilidad, búsqueda, ataque y otros roles**. **No se exige repartir equitativamente** los dados ni asignarlos de manera fija a cada superviviente. La afirmación de que el jugador no querrá concentrar todos los dados en uno es un objetivo a **validar con balance**, no una garantía automática. **No se aprobó un tope artificial por personaje.**
