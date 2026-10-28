@@ -343,6 +343,16 @@ Ante propuesta expresa de aceptar y cerrar administrativamente C9/#6, el creador
 
 **Acciones de esta revisión:** se verificaron en GitHub el PR/branch, issues abiertos, el último GitHub Actions exitoso para la rama, documentos24/40 y el tablero18. **Solo documentación** actualizada en la rama de trabajo. No se ejecutaron nuevas pruebas locales ni navegador; no se alteraron HTML, tests, dependencias, issues, `main` ni el PR. GitHub Actions del commit de documentación se comprobará por su SHA. El registro se añade sin borrar resultados históricos.
 
+## Revisión de aceptación C10 y preparación de encargo nocturno C11 — 27/10/2026, Uruguay
+
+**Solicitud:** revisar cambios terminados por Codex en #7 y preparar siguiente prompt acotado. Se verificó [PR14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14) sobre cabeza `d342f96` abierta/draft, `main=d9068f4` intacta; contraste de diff desde `f202184`: dos commits (implementación `9e68862` y documentación `d342f96`). Código revisado: requisitos anexos a opciones, evaluación aislada, clasificación terminal, alimentación, callbacks y script de Chromium; informe43 y JSON de 16 recorridos dirigidos consultados. [Actions del SHA documental final](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40622432370) `completed/success`; **358/358 aprobados, cero fallos/omitidos/TODO** según logs. El issue #7 permanece abierto y sin cierre automático.
+
+**Resultado:** corrección técnicamente consistente con el alcance aprobado, seis decisiones de aceptación y modos locales conservados en la evidencia revisada; **ningún defecto nuevo demostrado en esta lectura acotada**. Los once casos rojos originales fueron reportados por Codex en el informe43, no reejecutados en esta consulta ni guardados como commit independiente. Esta revisión no ejecutó test local, Chromium, Android real, TalkBack ni partida natural/balance; no debe presentarse como certificación total.
+
+**Siguiente tarea única propuesta para delegar:** C11/#13 — tamaño y accesibilidad táctil de dados móviles, pruebas de geometría/layout e interacción real de Chromium en viewports 320×640, 393×852 y escritorio. Si aparece un fallo crítico nuevo en C10, reportarlo antes de modificar código. Tras C11, permitir solo inventario/diagnóstico de otros issues abiertos, sin implementar. Prohibidos cambios de reglas, `main`, fusión, cierres automáticos, narrativa y refactor general. La propuesta no constituye aprobación de cierre #7 ni de promoción de V9.9; pedir confirmación al creador para esos actos.
+
+**Acciones realizadas:** lectura de repositorio/PR/issues/logs y documentación de revisión en tablero18 y este registro, sin editar ejecutable, tests, configuración, PR o issues. Registro de seguimiento para que Codex pueda comenzar desde SHA actualizado si el usuario envía el prompt.
+
 ## Siguiente tarea única
 
 **Estado histórico al comenzar el análisis:** faltaba aprobar la política de #7. La autorización posterior y el resultado C10 se registran al final; no iniciar #13 ni D/E por esta entrega.
