@@ -1,7 +1,7 @@
-name: D0-I-V Chromium post integración
+name: Chromium D0-I-V y D0-P1-I post integración
 on:
   push:
-    branches: [refactor/arquitectura]
+    branches: [refactor/arquitectura, main]
     paths: ['.github/workflows/d0-i-v-chromium.yml']
   workflow_dispatch:
 jobs:
