@@ -6,6 +6,12 @@
 
 **Fecha de inicio:** 27/10/2026 · **Rama:** `refactor/arquitectura` · **Base:** `invierno_colonia_v9_9.html`
 
+## Actualización C16/A1 — 28/10/2026
+
+**Subsistema18 (interfaz/accesibilidad):** el defecto A1/P2 de ayuda y fallecimiento previamente observado en Chromium recibió corrección de foco y aislamiento de fondo en `fix/estabilizacion-v9-9`. **408/408 Node**, seis regresiones nuevas C16, [CI40695224171](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40695224171) completed/success sobre `265dc0d`. Regresión roja previa en cuatro de seis escenarios, historial de iteraciones en [informe50](50-c16-foco-dialogos.md). **Nueva verificación Chromium pendiente**: se añadió script específico, no se ejecutó aquí; no dar por cerrada cobertura A1 en navegador ni por validado TalkBack/Android/WCAG. La auditoría histórica C15 permanece en el apartado siguiente.
+
+**Fuera de C16:** alternancia del primer jugador y rediseño de dados/estadísticas/comida discutidos como decisiones de producto futuras, no implementados en V9.9. C sigue oficialmente abierta, PR14 draft y `main` intacta.
+
 ## Estado vigente tras C15 — 28/10/2026
 
 La [matriz actual de21 sistemas en informe49](49-c15-auditoria-final.md#matriz-actual-de-sistemas-y-cobertura) sustituye la clasificación operativa antigua de abajo, preservada como historia de main/auditoríaA6. **01–19 parcialmente probados;20–21 futuros/no implementados.** C12 resuelve H1, C13 integra decisiones, C14 agrega40 partidas y5UI; C15 corrige T1/P1 (colonia puede recuperar moral0 con bonus posterior) y T2/P2 (sucesor elegido por teclado detrás de muerte).
