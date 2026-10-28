@@ -1,5 +1,13 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## D0-P1-I — PR #1 fusionado en main y validado · 28/10/2026
+
+**Estado:** etapa de integración **cerrada** con reservas. Por autorización expresa del creador, PR1 se actualizó, pasó a ready y se fusionó únicamente en `main`, commit `96e2b6c3dd19d5f11846820e51948af245c99e71`. No se publicó release, tag ni se iniciaron D1/F. **Informe y evidencia:** [56](56-d0-p1-i-integracion-main.md).
+
+**Gates post-merge:** Node [40713073359](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40713073359) sobre SHA de fusión: 408/408, 0 fallos/skip/TODO. Chromium [40713131565](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40713131565) sobre `main` después de activar trigger (sin cambios HTML): C16 3/3 viewports, C14 5/5 partidas completas, 0 errores JS/invariantes; [artifact](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40713131565/artifacts/12825993763). Persisten pendientes Android físico, TalkBack, otros motores, balance humano y fidelidad integral.
+
+**ÚNICA TAREA SIGUIENTE:** decisión de planificación posterior a promoción; evaluar y autorizar D1 (catálogo de objetos) como cambio de arquitectura separado y conservador. No iniciar F ni identidad E automáticamente.
+
 ## D0-P1 — auditoría PR #1 hacia main completada (SIN MERGE) · 28/10/2026
 
 **Dictamen:** [informe 55](55-d0-p1-auditoria-previa-main.md). PR1 abierto/borrador, 251 commits delante de main, 0 detrás, 125 archivos, GitHub `mergeable=true`. Suite Node 408/408 y Chromium 5/5 recorridos con 3 viewports C16 sobre refactor, pero no equivalencia física Android/TalkBack/humana. PR1 describe todavía etapa A (238 pruebas, 3 TODO): cuerpo obsoleto a corregir antes de integrar. `main` no sufrió cambios.
