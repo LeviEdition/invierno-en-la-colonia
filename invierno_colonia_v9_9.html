@@ -780,19 +780,20 @@ class DeathDirector {
  record(p,reason){this.pending.push({name:p.name,reason,loc:places[p.loc],side:ownerOf(p)});if(!this.scheduled){this.scheduled=true;queueMicrotask(()=>{this.scheduled=false;this.open();});}}
  open(){if(this.active||!this.pending.length||pendingBite)return;
   this.active=true;
+  if(!deathModalOpener)deathModalOpener=document.activeElement;
   const entries=this.pending.splice(0),names=entries.map(x=>x.name);
   document.getElementById('deathHeading').textContent=names.join(' · ');
   document.getElementById('deathDetails').innerHTML=entries.map(x=>'<p><strong>'+x.name+'</strong> — '+x.reason+' en '+x.loc+' ('+(x.side==='ai'?'IA':'tu grupo')+').</p>').join('');
   document.getElementById('deathImpact').textContent='Moral de la colonia −'+entries.length;
   document.getElementById('deathBackdrop').hidden=false;
-  document.querySelector('.deathContinue').focus();
+  syncHandoverAccessibility();
  }
  continue(){if(!this.active)return;this.active=false;document.getElementById('deathBackdrop').hidden=true;
   if(this.pending.length){this.open();return;}
   this.waiters.splice(0).forEach(resolve=>resolve());paint();
  }
  wait(){return this.active||this.pending.length?new Promise(resolve=>this.waiters.push(resolve)):Promise.resolve();}
- reset(){this.pending=[];this.active=false;document.getElementById('deathBackdrop').hidden=true;this.waiters.splice(0).forEach(resolve=>resolve());}
+ reset(){this.pending=[];this.active=false;deathModalOpener=null;document.getElementById('deathBackdrop').hidden=true;this.waiters.splice(0).forEach(resolve=>resolve());}
 }
 const deathDirector=new DeathDirector();
 function kill(p,reason,env=null){
@@ -850,7 +851,7 @@ function cancelPendingDecisions(){
  pendingBite=null;pendingHeal=null;pendingLoot=null;pendingAttract=null;pendingTransfer=null;aiCrossChoice=null;
  game.crossPending=false;game.biteResolving=false;
  resetLeaderRequests();settleDecisionWaiters();
- opened='';document.getElementById('backdrop').classList.remove('open');
+ opened='';document.getElementById('backdrop').classList.remove('open');syncHandoverAccessibility();
 }
 const waitForBite=()=>pendingBite?new Promise(resolve=>biteWaiters.push(resolve)):Promise.resolve();
 function chooseBite(option){
@@ -1307,35 +1308,54 @@ async function botTurn(){
  // C7: comprobar los recursos disponibles solo después de las acciones y búsquedas.
  botContributeTools();
 }
-// C4/#12: el inicio y el pase son diálogos modales; no deben exponer el tablero por teclado.
+// C4/#12 + C16/A1: todo diálogo visible aísla teclado y tablero.
+let regularModalOpener=null,deathModalOpener=null,previousActiveDialog=null;
 function handoverDialog(){
  const pass=document.getElementById('passScreen'),setup=document.getElementById('setupScreen');
  return pass&&!pass.hidden?pass:setup&&!setup.hidden?setup:null;
 }
-function focusHandover(dialog){dialog?.querySelector?.('button:not([disabled])')?.focus?.();}
+function activeDialog(){
+ const handover=handoverDialog();if(handover)return handover;
+ const death=document.getElementById('deathBackdrop');if(death&&!death.hidden)return death;
+ const backdrop=document.getElementById('backdrop');
+ return backdrop?.classList?.contains('open')?backdrop:null;
+}
+function dialogButtons(dialog){
+ return [...(dialog?.querySelectorAll?.('button:not([disabled])')||[])].filter(el=>el.getClientRects().length);
+}
+function focusHandover(dialog){dialogButtons(dialog)[0]?.focus?.();}
 function syncHandoverAccessibility(){
- const dialog=handoverDialog();
+ const dialog=activeDialog(),previous=previousActiveDialog;
  if(document.body?.children){
   for(const child of document.body.children){
    if(child.tagName!=='SCRIPT')child.inert=!!dialog&&child!==dialog;
   }
  }
- if(dialog)focusHandover(dialog);
+ if(dialog){
+  if(!dialog.contains(document.activeElement))focusHandover(dialog);
+ }else if(previous){
+  const origin=previous.id==='backdrop'?regularModalOpener:previous.id==='deathBackdrop'?deathModalOpener:null;
+  const usable=origin&&origin.isConnected!==false&&origin.getClientRects?.().length&&!origin.closest?.('[inert]');
+  (usable?origin:document.getElementById('floatingActions'))?.focus?.();
+  if(previous.id==='backdrop')regularModalOpener=null;
+  if(previous.id==='deathBackdrop')deathModalOpener=null;
+ }
+ previousActiveDialog=dialog;
 }
 function returnFocusAfterHandover(){
- const modal=document.getElementById('backdrop');
- if(modal?.classList?.contains?.('open'))modal.querySelector?.('button')?.focus?.();
+ const dialog=activeDialog();
+ if(dialog)focusHandover(dialog);
  else document.getElementById('floatingActions')?.focus?.();
 }
 document.addEventListener('DOMContentLoaded',syncHandoverAccessibility);
 document.addEventListener('focusin',e=>{
- const dialog=handoverDialog();
+ const dialog=activeDialog();
  if(dialog&&!dialog.contains(e.target))focusHandover(dialog);
 },true);
 document.addEventListener('keydown',e=>{
  if(e.key!=='Tab')return;
- const dialog=handoverDialog();if(!dialog)return;
- const buttons=[...dialog.querySelectorAll('button:not([disabled])')].filter(el=>el.getClientRects().length);
+ const dialog=activeDialog();if(!dialog)return;
+ const buttons=dialogButtons(dialog);
  if(!buttons.length){e.preventDefault();return;}
  const first=buttons[0],last=buttons[buttons.length-1],focused=document.activeElement;
  if(!dialog.contains(focused)||(e.shiftKey&&focused===first)||(!e.shiftKey&&focused===last)){
@@ -1416,11 +1436,13 @@ async function finishTurn(){
 function show(type){
  if(type==='actions'&&!playable())return;
  type=decisionKind()||type;
- opened=type;document.getElementById('backdrop').classList.add('open');renderModal();
+ const backdrop=document.getElementById('backdrop');
+ if(!backdrop.classList.contains('open'))regularModalOpener=document.activeElement;
+ opened=type;backdrop.classList.add('open');renderModal();syncHandoverAccessibility();
 }
 function hide(){
- if(pendingBite||leaderChoiceReady()||pendingLoot||pendingHeal||pendingAttract||pendingTransfer||game&&game.crossPending)return;
- opened='';document.getElementById('backdrop').classList.remove('open');
+ if(deathWaiting()||pendingBite||leaderChoiceReady()||pendingLoot||pendingHeal||pendingAttract||pendingTransfer||game&&game.crossPending)return;
+ opened='';document.getElementById('backdrop').classList.remove('open');syncHandoverAccessibility();
 }
 function cancelAttract(){if(!canResolve('attractTarget'))return;pendingAttract=null;hide();paint();}
 function cancelHeal(){if(!canResolve('healTarget'))return;pendingHeal=null;hide();paint();}
@@ -1519,7 +1541,7 @@ function paint(){
  document.getElementById('status').innerHTML=[['Moral',game.morale,'morale'],['Comida',game.food,'comida'],['Hambre',game.hunger,'hambre'],['Ronda',game.round+'/'+game.max,'ronda'],['Residuos',game.waste,'residuos'],['Zombis',game.zones.reduce((a,z)=>a+z.z,0),'zombis'],['Indefensos',game.helpless,'indefensos'],...(game.rescueQueue.length?[['Rescates',game.rescueQueue.length,'rescates']]:[])].map(([a,b,key])=>'<button type="button" class="stat" data-stat="'+key+'" aria-label="'+a+': '+b+'. Tocá para leer cómo funciona." onmouseenter="showStatInfo(\''+key+'\',this,\'hover\')" onmouseleave="closeStatInfo(\''+key+'\')" onclick="showStatInfo(\''+key+'\',this,\'click\')"><span class="statLabel">'+a+'</span><strong>'+b+'</strong><span class="statHint">ⓘ</span></button>').join('');
  document.getElementById('banner').textContent=game.last;
  document.getElementById('selectedText').textContent=person()?'Seleccionado: '+person().name+' · Destino: '+places[target]:'';
- paintDice();if(opened)renderModal();
+ paintDice();if(opened)renderModal();syncHandoverAccessibility();
 }
 
 create();
