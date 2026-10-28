@@ -224,6 +224,43 @@ Las pasivas actuales cubren combate/búsqueda, mitigación de riesgo, acciones g
 
 **Entrega siguiente de SP-02:** simular **una ronda con tres supervivientes y tres órdenes** bajo T1 y T2 usando los mismos personajes, dados hipotéticos, amenazas, búsqueda y comida; comparar costo de desplazarse, diversidad de acciones, probabilidad de daño, agencia del líder, heridas acumuladas y resiliencia si uno muere. Solo después decidir si el sistema de órdenes y dados por stat reemplaza F-10 y qué atributos justifican ser centrales.
 
+## 5E. Evaluación de conveniencia del sistema por tiradas frente a V9.9 (28/10/2026) — JUICIO PROVISIONAL
+
+**Alcance solicitado por el creador:** comparar **si el mecanismo nuevo mejora la experiencia de juego**, dejando para después balance por situaciones, umbrales concretos, costos de movimiento y tablas de daño. No cambiar de tema hacia consecuencias particulares de exposición.
+
+### Qué experiencia produce cada diseño
+
+| Eje | V9.9 real: dados de acción revelados al comenzar | Hipótesis nueva: órdenes según supervivientes + tirada por atributo |
+| --- | --- | --- |
+| Decisión predominante | Optimizar la reserva de valores visibles según umbrales y capacidades; elegir uso de cada dado | Priorizar objetivos, elegir actor y asumir incertidumbre sobre el resultado |
+| Agencia | Buena previsibilidad de acciones legales una vez obtenido un dado válido; aún hay azar en exposición, cartas y eventos | Mayor expresión de competencias, pero menos garantía de resultado; exige control real sobre preparación, recursos y riesgos |
+| Identidad de personajes | Umbrales de combate/búsqueda, ubicación, equipo y habilidades especiales | Los atributos modulan directamente las probabilidades y grados de resultado, además de pasivas y equipo |
+| Economía/escasez | Dados iniciales limitados y dependientes de vivos: `1 + supervivientes` por equipo | Órdenes limitadas, propuestas como `supervivientes activos`; acción fallida también podría consumir orden |
+| Ritmo | Planificación de dados iniciales seguida de acciones; resolución relativamente directa | Más tiradas/feedback durante la ronda; riesgo de ralentizar y frustrar si cada intento dispara un minijuego |
+| Narrativa | Encrucijadas existentes y efectos, con azar localizado | Pruebas integradas en encuentros, resultados matizados y consecuencias; la elección moral sigue siendo del jugador |
+| Riesgo de diseño | Rompecabezas de asignación puede dominar la caracterización de supervivientes | El azar puede dominar la planificación, los personajes óptimos pueden monopolizar intentos y los fallos pueden sentirse como turnos vacíos |
+| Coste de implementación futura | Menor al conservar V9.9 | Alto: implica sustituir resolución, acciones/economía, exposición y rebalancear habilidades, progresión y campañas |
+
+**Evaluación independiente:** para el **juego propio centrado en singleplayer y Director de Juego**, la segunda opción es la **hipótesis preferente de exploración**, no una mejora demostrada ni una mecánica autorizada. Su ventaja real es que las capacidades personales y los acontecimientos pueden afectar la misma resolución, creando decisiones sobre **quién actúa y qué riesgo acepta**. No se afirma que V9.9 carezca de estrategia, agencia ni incertidumbre.
+
+### Condiciones para que la nueva opción resulte efectivamente mejor
+
+1. **La decisión pesa más que el azar:** elegir al actor, la preparación, el equipo y la prioridad debe influir significativamente; no dejar al jugador con muchas rondas de resultados nulos.
+2. **Las pruebas son significativas:** una tirada solo debe ocurrir cuando existe incertidumbre útil; no añadir animaciones/aleatoriedad a tareas triviales para hacer el sistema parecer profundo.
+3. **El fracaso no es siempre vacío:** cuando corresponda, resultados parciales, avance con costo o información obtenida; sin convertir todo fallo en daño gratuito ni entregar siempre éxito completo.
+4. **Conservar escasez y trade-offs:** la desaparición de dados de acción iniciales no debe eliminar la necesidad de priorizar; las órdenes limitadas y los recursos deben generar decisiones reales, incluso con resultados inciertos.
+5. **Pasivas y equipo realmente aportan:** diferenciación contextual y no solo «un dado más» en todos los casos; evitar especialistas obligatorios para toda partida.
+6. **Respeto de agencia narrativa:** las decisiones del líder son elecciones; las pruebas determinan ejecución y complicaciones dentro de reglas transparentes, no la moralidad decidida por el Director.
+7. **Fácil de entender en móvil:** anunciar actor, atributo, objetivo de la prueba, resultado y consecuencia en un flujo breve; evitar cadenas de tiradas que interrumpan la partida.
+
+### Cómo evaluar justamente sin mezclar cambios
+
+**Advertencia de comparación causal:** V9.9 con 3 supervivientes ofrece **4 dados de acción** (`1 + vivos`) y normalmente movimiento sin gastar dado; la propuesta nueva contempla **3 órdenes** y movimiento por prueba. Cambiar simultáneamente **cantidad de órdenes + coste del movimiento + azar de resolución** invalidaría cualquier conclusión sobre cuál *sistema de dados* mejora el juego. **En la primera comparación conceptual, mantener constante el presupuesto de acciones y el costo del movimiento** para aislar únicamente la diferencia entre «dado conocido asignado» y «tirada de atributo en el momento». Luego comparar economía de 3 vs 4 acciones y movilidad en ensayos separados.
+
+**Tres escenas para el primer experimento:** (1) escasez de comida e investigación/búsqueda, (2) defensa simultánea y atención médica, (3) decisión narrativa con una ejecución peligrosa. Usar el mismo grupo, estado, recursos y opciones. Juzgar: cantidad y calidad de decisiones previas a cada tirada, peso de pasivas/equipo, opciones tras fracaso, consistencia narrativa y cansancio de interacción. No hacen falta porcentajes ni calibración exacta para esta evaluación de conveniencia; sí deben anotarse las hipótesis.
+
+**Decisión de trabajo propuesta:** dejar M2 (órdenes limitadas + tiradas por atributo) como **candidato principal para el futuro singleplayer**, mantener M1 como referencia de comparación y no descartar M3 prematuramente. **No implica reemplazo aprobado de F-10/F-12/F-15, ninguna estadística adicional aprobada ni ejecución de código**. La próxima conversación puede evaluar el *mismo dilema* bajo ambos sistemas sin discutir aún tablas de exposición.
+
 ## 6. Diseño de ronda provisional para SP-03 (no aprobado)
 
 1. **Apertura:** presentación de crisis, recursos, peligros e indicios válidos según el estado.
