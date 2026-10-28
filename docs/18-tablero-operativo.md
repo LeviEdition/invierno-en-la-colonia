@@ -1,5 +1,15 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## D0-I-V — Chromium post-merge validado · 28/10/2026
+
+**Verificación real de navegador sobre rama integrada, sin cambiar motor.** Debido al bloqueo DNS del contenedor local, se utilizó Chromium real en GitHub Actions sobre `refactor/arquitectura`, commit `a6c3cf425363606ac68266a5b3c876e7d1616b2b` (mismo HTML del merge `c15373d4`; solo cambió workflow/documentación). [Ejecución Chromium 40711789374](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40711789374) `completed/success`; [evidencia ZIP](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40711789374/artifacts/12827075968), incluye JSON y capturas.
+
+**Resultados:** C16 foco real en 320×640, 393×852 y 1365×768: 3 recorridos aprobados, 0 excepciones JS; pase local, Ayuda, muerte, bloqueo de diálogos y sucesión verificados. C14: **5/5 partidas completas Chromium** mediante UI, con 0 errores, 0 invariantes incumplidas y 0 interrupciones: IA semilla 2654435761 victoria ronda4; IA 1401181143 derrota moral ronda6; local 2654435761 victoria ronda2; local 3816266512 derrota moral ronda4; local 3189639203 victoria ronda3. Suite Node post-merge previamente verificada **408/408** [40709698250](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40709698250).
+
+**Iteración de pruebas y límites:** primera ejecución [40711603986](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40711603986) falló por aserción obsoleta en `check-c15-terminal-browser.mjs`, que espera reproducir una fuga de foco ahora prohibida por C16; el runner final excluyó ese script histórico, manteniendo tests Node terminales y prueba C16 vigente. No afirmar que C15 browser completo pasó. Los recorridos de interfaz son automáticos y reproducibles, no pruebas humanas ni Android físico, TalkBack u otros motores. La ejecución se hizo en runner GitHub, no en contenedor local. Ningún cambio del motor V9.9 en D0-I-V.
+
+**Dictamen:** D0-I queda integrada y validada **en el alcance Node + Chromium automatizado**. PR14 merged en `refactor/arquitectura`; PR1 continúa sin fusionar y `main` intacta. **ÚNICA TAREA SIGUIENTE:** auditoría independiente D0-P1 de PR1 → `main` (alcance acumulado, diff y puertas de promoción), sin merge automático ni refactor D1/cambios F.
+
 **Actualización verificada de CI post-merge:** [Actions 40709698250](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40709698250), para el commit de integración `c15373d44f0a76affd9041be925eef48234239c3`, finalizó `completed/success`; se leyeron logs del job `122891290523` con **408 tests, 408 pass, 0 fail, 0 cancelled, 0 skipped y 0 todo**. Continúa pendiente el smoke Chromium específico sobre el árbol integrado, por lo que D0-I-V no se cierra todavía.
 
 ## D0-I — PR #14 integrado en arquitectura; validación posterior pendiente · 28/10/2026
