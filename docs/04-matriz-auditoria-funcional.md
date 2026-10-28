@@ -33,6 +33,10 @@ Se conservan el historial y sus hallazgos de main; se delimitan foco setup/pase,
 
 H1 de subsistemas10/16 corregido por peticiones separadas por dueño. R1/R2 asíncronos encontrados por revisor independiente corregidos con guardias de identidad/terminal y finally.371/371 tests,13C12; Chromium6casos reales. [Informe46](46-c12-sucesiones-simultaneas.md). No cierra etapaC ni issues; CI exacto es gate previo aC13.
 
+## C13 — integración, 28/10/2026
+
+Subsistemas02/06/07/08/10/14/15/16/17/18: matriz por riesgo,21regresiones nuevas y392/392 suite. Guardias de decisión, cancelación de esperas/terminal y continuidad de modal corregidas; revisor independiente confirma correcciones. Chromium6cadenas,0errores. [Informe47](47-c13-integracion-profunda.md). CI del checkpoint es gate para partidasC14; no estabilidad universal ni cierreC.
+
 ## Cierre de cobertura A6 (con limitaciones documentadas)
 
 Los **21 subsistemas** se mantienen clasificados: 01–19 con cobertura parcial (incluidos defectos abiertos en varios); **20–21 no implementados**, fuera del alcance de V9.9. En [el informe final](24-cierre-auditoria-y-prioridades.md) figuran las 12 incidencias (#2–#13), orden propuesto y excepciones. Se aceptó **continuar sin checklist físico A5-02** por autorización explícita del creador tras partidas satisfactorias, **sin declarar que la prueba móvil física ocurrió**. Al cerrar A6, la siguiente tarea era **C1/#11**, en rama separada. El estado actual de estabilización figura en las actualizaciones siguientes y en el tablero operativo.

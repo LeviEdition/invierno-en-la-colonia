@@ -29,3 +29,5 @@ El revisor volvió a ejecutar sus reproducciones originales (ninguna modifica ya
 - Se conservan los contratos C9/C10 y los asserts existentes. No Android físico/TalkBack ni prueba de balance.
 
 **Checkpoint:** C12 técnicamente aprobado por revisión y pruebas locales/navegador. Crear commit/push y comprobar SHA/CI; solo entonces C13. Issues no se cierran; H1 deja de estar pendiente en código, pero la aceptación y el cierre oficial de C siguen perteneciendo al creador.
+
+**Gate remoto confirmado:** commitf9429d1, [CI40682067180](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40682067180) completed/success,371/371 según logs. C13 habilitada automáticamente por el encargo.

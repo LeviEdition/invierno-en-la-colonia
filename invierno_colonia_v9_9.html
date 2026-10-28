@@ -424,7 +424,7 @@ const roster=[
 
 
 function special(){const p=person();if(!p||p.dead||!playable()||game.ended)return;if(p.skillUsed)return messageAndPaint('Ya usaste esta habilidad en la ronda.');if(p.skill==='builder'){const z=game.zones[p.loc];if(z.z+z.b>=zcap[p.loc])return messageAndPaint('No hay accesos libres.');z.b++;p.skillUsed=true;message('★ '+p.name+' construyó una barricada.');paint();}else if(p.skill==='medic'||p.skill==='nurse'){if(pendingLoot)return;const targets=alive().filter(x=>x.loc===p.loc&&(p.skill==='medic'?x.wounds:x.frost));if(!targets.length)return messageAndPaint('No hay nadie que necesite ese tratamiento aquí.');pendingHeal={actor:p.id,targets:targets.map(x=>x.id)};show('healTarget');}else return messageAndPaint('La habilidad de este personaje es automática.');}
-function chooseHeal(id){if(!pendingHeal||!pendingHeal.targets.includes(id))return;const p=all().find(x=>x.id===pendingHeal.actor),t=all().find(x=>x.id===id);if(!p||!t||p.dead||t.dead||p.skillUsed||p.loc!==t.loc||!controls.interactive)return;const key=p.skill==='medic'?'wounds':'frost';if(!t[key])return; t[key]--;p.skillUsed=true;pendingHeal=null;message('✚ '+p.name+' atendió a '+t.name+' con '+p.skillName+'.');hide();paint();}
+function chooseHeal(id){if(!pendingHeal||!pendingHeal.targets.includes(id))return;const p=all().find(x=>x.id===pendingHeal.actor),t=all().find(x=>x.id===id);if(!p||!t||p.dead||t.dead||p.skillUsed||p.loc!==t.loc||!canResolve('healTarget'))return;const key=p.skill==='medic'?'wounds':'frost';if(!t[key])return; t[key]--;p.skillUsed=true;pendingHeal=null;message('✚ '+p.name+' atendió a '+t.name+' con '+p.skillName+'.');hide();paint();}
 
 
 const random=n=>Math.floor(Math.random()*n),die=()=>random(6)+1;
@@ -442,7 +442,16 @@ class TurnController {
 }
 const controls=new TurnController();
 // La elección de paciente reserva las acciones normales hasta resolverla o cancelar.
-const playable=()=>controls.interactive&&!pendingHeal;
+function deathWaiting(){return deathDirector.active||deathDirector.pending.length>0;}
+// La misma prioridad gobierna el modal visible y los comandos de resolución.
+function decisionKind(){
+ if(pendingBite)return 'biteChoice';if(leaderChoiceReady())return 'leaderChoice';
+ if(pendingLoot)return 'lootChoice';if(pendingHeal)return 'healTarget';
+ if(pendingAttract)return 'attractTarget';if(pendingTransfer)return 'transferTarget';
+ return game?.crossPending?'crossroads':null;
+}
+const playable=()=>controls.interactive&&!deathWaiting()&&!decisionKind();
+const canResolve=type=>controls.interactive&&!deathWaiting()&&decisionKind()===type;
 const actionDice=()=>controls.dice();
 const currentHand=()=>controls.hand();
 
@@ -547,6 +556,7 @@ function leaderChoiceReady(){
  return !!game&&!game.ended&&pendingLeader&&!passScreenActive&&(game.mode!=='local'||pendingLeaderSide===controls.side);
 }
 function chooseLeader(id){
+ if(pendingBite)return;
  const succession=leaderChoiceReady(),side=succession?pendingLeaderSide:controls.side;
  const group=ownerGroup(side).filter(p=>!p.dead),p=group.find(x=>x.id===id);
  if(!p||(!succession&&!canPickStartingLeader()))return;
@@ -633,7 +643,7 @@ document.addEventListener('click',function(e){const area=document.getElementById
 
 document.addEventListener('keydown',e=>{if(e.key==='Escape')hide()});
 /* V9.5: núcleo revisado y unificado de mecánicas */
-let pendingBite=null,pendingAttract=null,pendingTransfer=null,biteCompletion=null,aiCrossChoice=null,aiCrossCompletion=null;
+let pendingBite=null,pendingAttract=null,pendingTransfer=null,biteWaiters=[],aiCrossChoice=null,aiCrossWaiters=[];
 em.superviviente='👥';
 // Mecánicas V9.5: cada actualización del estado parte de validaciones previas y avisos en el registro.
 const mix=a=>{for(let i=a.length-1;i>0;i--){const j=random(i+1);[a[i],a[j]]=[a[j],a[i]];}return a;};
@@ -749,7 +759,7 @@ function newRound(){
  paint();
 }
 function create(){
- document.getElementById('toastStack').innerHTML='';toastQueue=[];toastBusy=false;deathDirector.reset();skipAI=false;aiRunning=false;selected=0;target=0;picked=0;opened='';profileId='';pendingHeal=null;pendingLoot=null;pendingBite=null;pendingAttract=null;pendingTransfer=null;aiCrossChoice=null;aiCrossCompletion=null;resetLeaderRequests();pendingRecruitInfo=null;selectionBySide.human=0;selectionBySide.ai=0;closeStatInfo();
+ document.getElementById('toastStack').innerHTML='';toastQueue=[];toastBusy=false;deathDirector.reset();skipAI=false;aiRunning=false;selected=0;target=0;picked=0;opened='';profileId='';pendingHeal=null;pendingLoot=null;pendingBite=null;pendingAttract=null;pendingTransfer=null;aiCrossChoice=null;settleDecisionWaiters();resetLeaderRequests();pendingRecruitInfo=null;selectionBySide.human=0;selectionBySide.ai=0;closeStatInfo();
  const objective=objectives[random(objectives.length)];
  game={mode:gameMode,objective,round:1,max:objective.rounds,morale:9,food:6,hunger:0,samples:0,goal:objective.need,waste:0,
  humans:[{id:'h0',name:'Mara',loc:0,wounds:0,frost:0,dead:false},{id:'h1',name:'Leo',loc:0,wounds:0,frost:0,dead:false},{id:'h2',name:'Iris',loc:0,wounds:0,frost:0,dead:false}],
@@ -779,7 +789,7 @@ class DeathDirector {
  }
  continue(){if(!this.active)return;this.active=false;document.getElementById('deathBackdrop').hidden=true;
   if(this.pending.length){this.open();return;}
-  this.waiters.splice(0).forEach(resolve=>resolve());
+  this.waiters.splice(0).forEach(resolve=>resolve());paint();
  }
  wait(){return this.active||this.pending.length?new Promise(resolve=>this.waiters.push(resolve)):Promise.resolve();}
  reset(){this.pending=[];this.active=false;document.getElementById('deathBackdrop').hidden=true;this.waiters.splice(0).forEach(resolve=>resolve());}
@@ -813,7 +823,7 @@ function verify(env=null){
  if(result){
   g.ended=true;g.turn='end';
   ruleMessage(env,result==='morale'?'☠ Derrota: la moral llegó a cero.':result==='survivors'?'☠ Derrota: no hay supervivientes disponibles para continuar.':'🏆 ¡Victoria! Se completó el objetivo general.');
-  if(!env){pendingBite=null;resetLeaderRequests();}
+  if(!env)cancelPendingDecisions();
  }
 }
 
@@ -833,9 +843,16 @@ function biteNext(){
   if(d>=4){pendingBite.victims=[];break;}
   kill(t,'propagación de mordedura');
  }
- pendingBite=null;game.biteResolving=false;replaceLastSurvivors();reviewLeader('human');reviewLeader('ai');verify();paint();deathDirector.open();if(biteCompletion){const done=biteCompletion;biteCompletion=null;done();}
+ pendingBite=null;game.biteResolving=false;replaceLastSurvivors();reviewLeader('human');reviewLeader('ai');verify();paint();deathDirector.open();biteWaiters.splice(0).forEach(done=>done());
 }
-const waitForBite=()=>pendingBite?new Promise(resolve=>{biteCompletion=resolve;}):Promise.resolve();
+function settleDecisionWaiters(){biteWaiters.splice(0).forEach(done=>done());aiCrossWaiters.splice(0).forEach(done=>done());}
+function cancelPendingDecisions(){
+ pendingBite=null;pendingHeal=null;pendingLoot=null;pendingAttract=null;pendingTransfer=null;aiCrossChoice=null;
+ game.crossPending=false;game.biteResolving=false;
+ resetLeaderRequests();settleDecisionWaiters();
+ opened='';document.getElementById('backdrop').classList.remove('open');
+}
+const waitForBite=()=>pendingBite?new Promise(resolve=>biteWaiters.push(resolve)):Promise.resolve();
 function chooseBite(option){
  if(!pendingBite||game.ended)return;
  const p=all().find(x=>x.id===pendingBite.target);if(!p||p.dead)return;
@@ -899,12 +916,12 @@ function beginSearch(p,side){
  }
 }
 function addNoiseSearch(){
- if(!pendingLoot||game.ended||!playable())return;
+ if(!pendingLoot||game.ended||!canResolve('lootChoice'))return;
  const loc=pendingLoot.loc,z=game.zones[loc];if(z.noise>=4||!game.decks[loc].length)return;
  z.noise++;const newCard=drawItem(loc);pendingLoot.items.push(newCard);message('🔊 Ruido en '+places[loc]+': se reveló '+itemTitle(newCard)+'.');paint();
 }
 function chooseLoot(i){
- if(!pendingLoot||game.ended||!playable()||!Number.isInteger(i)||i<0||i>=pendingLoot.items.length)return;
+ if(!pendingLoot||game.ended||!canResolve('lootChoice')||!Number.isInteger(i)||i<0||i>=pendingLoot.items.length)return;
  const {items,actorId,loc}=pendingLoot,p=all().find(x=>x.id===actorId);pendingLoot=null;
  if(!p||p.dead)return;
  const chosen=items[i];game.decks[loc].push(...items.filter((_,j)=>j!==i));stashLoot(chosen,p,controls.side);
@@ -970,7 +987,7 @@ function attract(){
  pendingAttract={loc:p.loc,left:2};show('attractTarget');
 }
 function chooseAttract(src){
- if(!pendingAttract||!playable())return;
+ if(!pendingAttract||!canResolve('attractTarget'))return;
  const dst=pendingAttract.loc;
  if(!Number.isInteger(src)||src===dst||!game.zones[src].z||!openAccess(dst))return;
  game.zones[src].z--;game.zones[dst].z++;pendingAttract.left--;
@@ -1036,7 +1053,7 @@ function startTransfer(i){
 }
 function chooseTransfer(id){
  const transfer=pendingTransfer;
- if(!transfer||!transfer.targets.includes(id)||!playable())return;
+ if(!transfer||!transfer.targets.includes(id)||!canResolve('transferTarget'))return;
  const p=all().find(x=>x.id===transfer.fromId),t=all().find(x=>x.id===id);
  const it=p?.equipment?.[transfer.itemIndex];
  // Revalidar al confirmar: el turno, el mismo objeto y la elegibilidad del receptor
@@ -1137,14 +1154,14 @@ function chooseCrossOption(card,side,g=game){
  return options.reduce((best,o)=>!best||compareCrossRanks(o.rank,best.rank)>0?o:best,null)?.index??null;
 }
 function crossAction(kind,actor){crossTrigger(kind,actor);return !!game.crossPending;}
-function crossChoose(i){if(!game.crossPending||!playable()||game.crossOwner!==controls.side||!resolveCross(i))return;opened='';document.getElementById('backdrop').classList.remove('open');paint();if(pendingRecruitInfo)show('recruitSuccess');}
+function crossChoose(i){if(!game.crossPending||!canResolve('crossroads')||game.crossOwner!==controls.side||!resolveCross(i))return;opened='';document.getElementById('backdrop').classList.remove('open');paint();if(pendingRecruitInfo)show('recruitSuccess');}
 function crossAiContinue(){
- if(!game.crossPending||game.crossOwner!=='ai'||aiCrossChoice===null)return;
+ if(game.ended||passScreenActive||deathWaiting()||decisionKind()!=='crossroads'||game.crossOwner!=='ai'||aiCrossChoice===null)return;
  if(!resolveCross(aiCrossChoice))return;
  aiCrossChoice=null;opened='';document.getElementById('backdrop').classList.remove('open');paint();
- if(aiCrossCompletion){const done=aiCrossCompletion;aiCrossCompletion=null;done();}
+ aiCrossWaiters.splice(0).forEach(done=>done());
 }
-const waitForAiCross=()=>game.crossPending&&game.crossOwner==='ai'?new Promise(resolve=>{aiCrossCompletion=resolve;}):Promise.resolve();
+const waitForAiCross=()=>game.crossPending&&game.crossOwner==='ai'?new Promise(resolve=>aiCrossWaiters.push(resolve)):Promise.resolve();
 function addZombie(i,env=null){
  const g=env?env.game:game;
  const z=g.zones[i];if(openAccess(i,g)){z.z++;return;}
@@ -1208,6 +1225,7 @@ function botContributeTools(){
  }
 }
 async function botTurn(){
+ if(!game||game.ended)return;
  const turnGame=game;
  message('🤖 Comienza el turno de la IA.');applyFrost('ai');replaceLastSurvivors();verify();if(game.ended)return;
  crossDraw('ai');crossTrigger('round',null);await pause();if(game!==turnGame||game.ended)return;
@@ -1372,7 +1390,7 @@ async function finishTurn(){
     await deathDirector.wait();if(game!==turnGame)return;
     if(!game.ended){
      game.round++;
-     if(game.round>game.max){game.ended=true;game.turn='end';resetLeaderRequests();message('☠ Derrota: se agotaron las rondas.');}
+     if(game.round>game.max){game.ended=true;game.turn='end';cancelPendingDecisions();message('☠ Derrota: se agotaron las rondas.');}
      else newRound();
     }
    }finally{
@@ -1385,21 +1403,21 @@ async function finishTurn(){
  try{
   await botTurn();if(game!==turnGame||game.ended)return;
   if(!game.ended){message('⌂ Resolviendo fase de colonia.');await pause();if(game!==turnGame||game.ended)return;colony();await pause();if(game!==turnGame||game.ended)return;}
-  if(!game.ended){game.round++;if(game.round>game.max){game.ended=true;game.turn='end';resetLeaderRequests();message('☠ Derrota: se agotaron las rondas.');}else newRound();}
+  if(!game.ended){game.round++;if(game.round>game.max){game.ended=true;game.turn='end';cancelPendingDecisions();message('☠ Derrota: se agotaron las rondas.');}else newRound();}
  }finally{if(game===turnGame){aiRunning=false;skipAI=false;paint();}}
 }
 function show(type){
  if(type==='actions'&&!playable())return;
- if(pendingBite)type='biteChoice';else if(leaderChoiceReady())type='leaderChoice';else if(pendingLoot)type='lootChoice';else if(pendingHeal)type='healTarget';else if(pendingAttract)type='attractTarget';else if(pendingTransfer)type='transferTarget';else if(game&&game.crossPending)type='crossroads';
+ type=decisionKind()||type;
  opened=type;document.getElementById('backdrop').classList.add('open');renderModal();
 }
 function hide(){
  if(pendingBite||leaderChoiceReady()||pendingLoot||pendingHeal||pendingAttract||pendingTransfer||game&&game.crossPending)return;
  opened='';document.getElementById('backdrop').classList.remove('open');
 }
-function cancelAttract(){pendingAttract=null;hide();paint();}
-function cancelHeal(){pendingHeal=null;hide();paint();}
-function cancelTransfer(){pendingTransfer=null;hide();paint();}
+function cancelAttract(){if(!canResolve('attractTarget'))return;pendingAttract=null;hide();paint();}
+function cancelHeal(){if(!canResolve('healTarget'))return;pendingHeal=null;hide();paint();}
+function cancelTransfer(){if(!canResolve('transferTarget'))return;pendingTransfer=null;hide();paint();}
 function renderModal(){
  const titles={biteChoice:'☣ Propagación de mordedura',attractTarget:'Atraer zombis',transferTarget:'Transferir equipamiento',healTarget:'Elegir paciente',lootChoice:'⌕ Resultado de búsqueda',actions:'Acciones del superviviente',inventory:'Objetos y crisis',log:'Registro de la partida',crossroads:'Encrucijadas',help:'Reglas y controles',group:'Grupos y líderes',leaderChoice:'♛ Elegí un nuevo líder',recruitSuccess:'Un nuevo superviviente',goal:'Objetivo general',crisis:'Crisis actual',profile:'Ficha del superviviente'};
  document.getElementById('modalTitle').textContent=titles[opened]||'';let html='';
@@ -1479,7 +1497,8 @@ function renderSite(i){
 function paint(){
  if(!game)return;
  processRescueQueue();
- if(leaderChoiceReady()&&!pendingBite&&!game.crossPending&&!game.ended){opened='leaderChoice';document.getElementById('backdrop').classList.add('open');}
+ const decision=decisionKind();
+ if(decision&&!game.ended&&!passScreenActive&&!deathWaiting()){opened=decision;document.getElementById('backdrop').classList.add('open');}
  document.getElementById('board').innerHTML=places.map((_,i)=>renderSite(i)).join('');
  const obj=game.objective;
  document.getElementById('goalCard').innerHTML='<span class="eyebrow">⚑ OBJETIVO GENERAL</span><span class="main"><span>'+obj.name+'</span><span>'+game.samples+'/'+game.goal+'</span></span><span class="sub">'+obj.description+'</span><span class="progress"><i style="width:'+Math.min(100,game.samples/game.goal*100)+'%"></i></span>';

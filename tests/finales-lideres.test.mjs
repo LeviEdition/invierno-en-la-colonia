@@ -21,6 +21,7 @@ function fixture({ mode = 'ai', face = 4 } = {}) {
   const nodes = new Map();
   const document = {
     addEventListener() {},
+    querySelector(){return {focus(){}};},
     getElementById(id) {
       if (!nodes.has(id)) nodes.set(id, {
         hidden: true, innerHTML: '', textContent: '', dataset: {},
@@ -31,7 +32,7 @@ function fixture({ mode = 'ai', face = 4 } = {}) {
   };
   const context = createContext({ Math: math, document, queueMicrotask() {} });
   runInContext(source, context, { filename: 'invierno_colonia_v9_9.js', timeout: 2000 });
-  runInContext('paint=()=>{};toast=()=>{};show=()=>{};hide=()=>{};deathDirector.open=()=>{};', context);
+  runInContext('paint=()=>{};toast=()=>{};show=()=>{};hide=()=>{};', context);
   runInContext('gameMode=' + JSON.stringify(mode) + ';create();passScreenActive=false;game.crossPending=false;game.crossResolved=true;', context);
   return {
     run: code => runInContext(code, context, { timeout: 2000 }),
@@ -294,15 +295,15 @@ test('C9-R1: J1 no puede elegir sucesor de J2 durante su propio turno', () => {
   t.run('game.turn="ai";chooseLeader("a2");');
   assert.deepEqual(t.state('({pending:pendingLeader,leader:game.leaders.ai})'),{pending:false,leader:'a2'});
 });
-test('C9-R1: J1 puede seguir moviéndose cuando el sucesor pendiente pertenece a J2', () => {
+test('C9-R1: J1 puede seguir moviéndose cuando el sucesor pendiente pertenece a J2', async () => {
   const t=fixture({mode:'local'});
-  t.run('kill(game.bots[1],"prueba cruzada");target=1;doMove();');
+  t.run('kill(game.bots[1],"prueba cruzada");');await Promise.resolve();t.run('deathDirector.open();deathDirector.continue();target=1;doMove();');
   assert.deepEqual(t.state('({loc:game.humans[0].loc,moved:game.humans[0].moved,waiting:pendingLeader,side:pendingLeaderSide})'),
     {loc:1,moved:true,waiting:true,side:'ai'});
 });
-test('C9-R1: J1 aún puede elegir su líder inicial aunque J2 tenga un sucesor pendiente', () => {
+test('C9-R1: J1 aún puede elegir su líder inicial aunque J2 tenga un sucesor pendiente', async () => {
   const t=fixture({mode:'local'});
-  t.run('kill(game.bots[1],"prueba cruzada");chooseLeader("h2");');
+  t.run('kill(game.bots[1],"prueba cruzada");');await Promise.resolve();t.run('deathDirector.open();deathDirector.continue();chooseLeader("h2");');
   assert.deepEqual(t.state('({j1:game.leaders.human,j2:game.leaders.ai,chosenJ1:game.leaderChosen,waiting:pendingLeader,side:pendingLeaderSide})'),
     {j1:'h2',j2:null,chosenJ1:true,waiting:true,side:'ai'});
 });
