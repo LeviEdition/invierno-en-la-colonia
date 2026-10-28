@@ -15,6 +15,7 @@ Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos un
 
 - [Tablero operativo — próxima tarea](docs/18-tablero-operativo.md)
 - [Decisión vigente — fidelidad aceptada y D1/D2 pendientes](docs/62-hitos-referencia-fiel-y-juego-propio.md)
+- [Hoja de ruta del singleplayer — bloques SP-00 a SP-08, acuerdos y pendientes](docs/63-hoja-de-ruta-planificacion-singleplayer.md)
 - [Dirección de producto](docs/51-rumbo-fidelidad-e-identidad.md)
 - [Alcance de la matriz F del juego propio](docs/61-alcance-matriz-f-juego-propio.md)
 - [Plan general](docs/01-plan-refactorizacion.md)
