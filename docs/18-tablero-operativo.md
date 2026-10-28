@@ -1,5 +1,14 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## SP-02 — Informe de 480.000 simulaciones exploratorias del laboratorio · 28/10/2026
+
+**Pruebas realizadas:** 3 escenarios × 6 configuraciones × 2 métodos × 10.000 repeticiones = **360.000 rondas**, más 6 variantes de asignación de personajes × 2 métodos × 10.000 = **120.000**; **11/11 verificaciones** del motor simplificado aprobadas y ensayo anterior de 500 rondas reproducido. Detalle: [63 — sección 5F](63-hoja-de-ruta-planificacion-singleplayer.md).
+
+**Resultados ilustrativos con cuatro oportunidades, efectos básicos y movimiento gratis:** metas **V9.9 simplificado / nuevo pool**: medicamentos **81,87 % / 71,16 %**, asedio **83,17 % / 43,76 %**, laboratorio **81,87 % / 61,57 %**. **NO son tasas de victoria del V9.9 real ni evidencia causal de superioridad:** el clásico del laboratorio es aproximado, personajes y pasivas no equivalen, plan fijo, exposición distinta, los éxitos escalonados cambian simultáneamente recompensas y riesgo y la economía tres/cuatro órdenes no discrimina bien algunas metas. Ambos métodos ya muestran especialización; el nuevo tiene más acciones fallidas sin efecto básico.
+
+**DICTAMEN:** mantener órdenes limitadas + pruebas por atributo como **hipótesis preferida de exploración**, sin aprobar reemplazo de F-10/F-12/F-15. **ÚNICA SIGUIENTE TAREA DE DISEÑO:** prueba con una sola variable distinta entre métodos, después prueba manual de percepción estratégica/ritmo y casos de riesgo; evitar nuevos números de balance en tanto no se aísle la causa. **Tarea TÉCNICA:** D1.2a con Codex, luego D1/D2, sin modificar V9.9 ni `main`.
+
+
 ## SP-02 — Evaluación de conveniencia de dados por atributo vs V9.9 · 28/10/2026
 
 **Pedido del creador:** evaluar si **órdenes limitadas + tiradas por atributo** generan una experiencia mejor que los **dados de acción revelados al inicio** de V9.9, **sin debatir aún balance de situaciones, heridas o dificultad concreta**. [63 — sección 5E](63-hoja-de-ruta-planificacion-singleplayer.md) contrasta decisión predominante, agencia, atributos, narrativa, ritmo, costos de implementación, incertidumbre y pérdida de optimización de dados visibles. **Dictamen provisional de DISEÑO:** modelo nuevo es **candidato principal a explorar** por su potencial para especialización y consecuencias narrativas; **no está aprobado ni demostrado superior**. F-10/F-12/F-15 no se reemplazan todavía.
