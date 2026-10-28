@@ -1,0 +1,45 @@
+name: Verificación temporal C16 (Chromium)
+
+on:
+  push:
+    branches:
+      - fix/estabilizacion-v9-9
+    paths:
+      - '.github/workflows/c16-browser-temporal.yml'
+      - 'scripts/check-c16-focus-browser.mjs'
+      - 'invierno_colonia_v9_9.html'
+
+permissions:
+  contents: read
+
+jobs:
+  chromium-c16:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Descargar codigo
+        uses: actions/checkout@v4
+      - name: Preparar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Preparar Playwright y Chromium
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Ejecutar regresion de foco C16 en tres viewports
+        shell: bash
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/c16-http.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          sleep 1
+          export CHROMIUM_PATH="$(node -e "console.log(require('playwright').chromium.executablePath())")"
+          C16_OUTPUT_DIR=/tmp/c16-focus node scripts/check-c16-focus-browser.mjs
+      - name: Conservar evidencia
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: c16-foco-chromium
+          path: /tmp/c16-focus/resultados.json
+          if-no-files-found: warn
