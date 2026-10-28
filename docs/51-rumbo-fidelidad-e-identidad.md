@@ -6,7 +6,7 @@
 
 ## Decisión estratégica confirmada
 
-El **primer hito de producto** es alcanzar una adaptación digital **muy parecida a `Dead of Winter` en experiencia, reglas centrales y decisiones tácticas**, con estabilidad demostrada y una **arquitectura modular/escalable**, como base para aprender y evolucionar nuestro videojuego. La **V9.9 actual es el punto de partida estabilizado, NO está certificada como la referencia de fidelidad definitiva**. Refactorizamos su comportamiento mediante D1/D2; luego auditamos las diferencias importantes del reglamento frente a evidencia concreta y las corregimos, si corresponde, en tareas de **fidelidad de referencia** explícitas y separadas de D. La meta es semejanza funcional evaluable, no copia literal ni equivalencia exacta sin pruebas.
+El **primer hito de producto** es alcanzar una adaptación digital **muy parecida a `Dead of Winter` en experiencia, reglas centrales y decisiones tácticas**, con estabilidad demostrada y una **arquitectura modular/escalable**, como base para aprender y evolucionar nuestro videojuego. La **V9.9 estabilizada ya fue aceptada por el creador como mecánicamente suficientemente fiel** para esta referencia, sobre la base de la [comparación de 14 áreas con el reglamento oficial (informe 49)](49-c15-auditoria-final.md#comparación-con-dead-of-winter). La aceptación NO implica equivalencia reglamentaria exhaustiva: se reconocen simplificaciones y diferencias existentes. **Solo resta completar D1/D2 y validar la arquitectura**, para preservar una base reproducible antes de crear el juego propio. No se exige otra auditoría RF como etapa obligatoria.
 
 **Solo después de contar con esa referencia estable y suficientemente probada** se comenzará a forjar la identidad propia del juego: principalmente **singleplayer**, donde una persona toma decisiones sobre su grupo y un **Director de Juego** administra condiciones del mundo, amenazas, crisis, facciones, eventos y narrativa con consecuencias que pueden aparecer rondas más tarde. El Director **no** es un segundo jugador cooperativo ni necesita un grupo de IA obligatorio. La presencia futura de IA aliada o cooperativo online es una opción de diseño, no una obligación arquitectónica.
 
@@ -23,14 +23,13 @@ Esta orientación es consistente con la decisión histórica de preservar la rut
 
 Este acuerdo **no aplica cambios a la V9.9 de referencia**, ahora ni al finalizar D. La implementación futura en el juego propio requerirá un diseño de interacción, pruebas, balance, revisión y autorización específicos. La alternativa de `Dead of Winter` (cuatro candidatos/escoger dos) es referencia de mesa, no la elección adoptada para este producto.
 
-## Hito 1: criterios para considerar una base fiel, estable y modular
+## Hito 1: fidelidad aceptada; arquitectura escalable pendiente
 
-- Comportamientos críticos comprobables con tests de reglas, integración, partidas completas y navegadores: no solo número de tests verdes.
-- **Matriz RF de fidelidad de referencia** (a crear con autorización, distinta de la matriz F): contraste de los sistemas críticos con las reglas de mesa, clasificación de equivalencias, desviaciones aceptadas, discrepancias por corregir y pendientes. Cada corrección prioritaria exige decisión, prueba y revisión independientes.
-- Diferencias mecánicas **críticas para la experiencia** resueltas o aceptadas explícitamente con justificación; «muy parecido» no significa equivalencia exacta. **F-14 y las nuevas reglas de dados de la matriz F quedan reservadas exclusivamente para el juego propio**, no para corregir la referencia.
-- Sin defectos P1 conocidos sin resolver y con reservas P2 transparentes; accesibilidad móvil real y balance humano se declaran límites si no se prueban.
-- Integraciones y cambios de fidelidad de referencia respaldados por decisiones explícitas, control de versiones y tests. C/PR14 ya se integraron con reservas; CI verde **no basta** para certificar fidelidad ni para autorizar merge o declarar completo este hito.
-- Motor lo suficientemente modular para cambiar topología de grupos, turnos y dirección de eventos sin destruir las reglas consolidadas: **D es refactorización con preservación de comportamiento**. Las **correcciones RF** de fidelidad de referencia pueden cambiar reglas, pero solo en tareas posteriores/aisladas y autorizadas; no son Director de Juego ni cambios de la matriz F.
+- **Fidelidad mecánica: ACEPTADA PARA EL ALCANCE DE LA REFERENCIA por decisión del creador.** El [informe 49](49-c15-auditoria-final.md#comparación-con-dead-of-winter) contrastó 14 áreas con el reglamento y documentó diferencias deliberadas; no se requiere auditoría RF desde cero ni reproducción literal.
+- **Trabajo pendiente: D1/D2.** Separar catálogo, reglas, estado, turnos, interfaz y automatización sin cambiar el comportamiento actual; conservar controles y evidencia verificable en partidas completas y navegador.
+- **Condición de salida:** arquitectura modular y reproducible probada e integración técnica autorizada; preservar después una versión identificable.
+- **Reservas conocidas:** Android físico, TalkBack, otros navegadores y balance humano no están certificados. Si aparece un defecto funcional grave, se gestiona puntualmente, no como reactivación automática de RF.
+- **Matriz F reservada al juego propio:** F-14 y rediseños de dados/acciones no pertenecen a D1/D2.
 - Antes de una publicación con identidad propia, textos, cartas, arte, marca y ambientación serán originales o usados con licencias apropiadas, no copia de contenido expresivo del juego de mesa.
 
 ## Secuencia de trabajo — sin saltarse las puertas de calidad
@@ -39,9 +38,9 @@ Este acuerdo **no aplica cambios a la V9.9 de referencia**, ahora ni al finaliza
 
 **Matriz F — comparación y decisiones para la versión propia:** seguir examinando qué ideas del juego de mesa conviene conservar o cambiar **para nuestro futuro videojuego**. F-14 conserva el acuerdo de diseño indicado arriba; otras filas mantienen el grado de decisión registrado individualmente en la matriz. **«Conservar» y «Cambiar» no ordenan modificar la V9.9, no constituyen defectos de referencia y tampoco autorizan implementación en la versión propia.**
 
-**Hito 1 — Referencia fiel y modular:** completar D1/D2 conservadores y una **auditoría RF** de fidelidad, seguida de correcciones mecánicas prioritarias de referencia, aceptadas y probadas en tareas distintas. Solo entonces podremos afirmar, con reservas explicitadas, que contamos con una adaptación suficientemente parecida al juego de mesa. Las **433 pruebas del estado D1.1 no certifican esa fidelidad**. No aplicar decisiones de la matriz F.
+**Hito 1 — fidelidad suficiente ya aceptada; arquitectura pendiente:** completar **únicamente D1 y D2** para una referencia modular, escalable y reproducible, preservando las reglas existentes. Las 433 pruebas respaldan regresión, no copia exacta; la comparación reglamentaria ya está en el informe 49. No aplicar decisiones de la matriz F.
 
-**Hito 2 — Referencia preservada:** conservar esa versión con un SHA/etiqueta o equivalente autorizado, construcción reproducible, criterios de fidelidad y evidencia de tests antes de ramificar el producto. **No se crea tag ni release automáticamente**.
+**Hito 2 — Referencia preservada:** al cerrar D1/D2, conservar esa versión con un SHA/etiqueta o equivalente autorizado, construcción reproducible y evidencia de tests antes de ramificar el producto. **No se crea tag ni release automáticamente**.
 
 **Etapa D (solo referencia):** extraer módulos y desacoplar el motor de la interfaz y de la suposición rígida de dos grupos, **preservando el comportamiento actual, sin implementar filas F**. Esto facilita *después* singleplayer, cooperativo y Director de Juego; no es una orden de implementar ya esos modos.
 
@@ -51,10 +50,10 @@ Este acuerdo **no aplica cambios a la V9.9 de referencia**, ahora ni al finaliza
 
 ## Razones y riesgos
 
-La referencia conocida simplifica validar reglas y encontrar bugs. El grupo de tres elegido entre cinco ofrece agencia y rejugabilidad sin eliminar de inmediato acciones. **Riesgo principal:** dar por fiel a la V9.9 solo porque pasan sus tests, o tratar las decisiones F del juego propio como correcciones de la referencia; también introducir demasiado pronto un Director que imponga cambios no verificables. **Contramedida:** conservar baseline y refactor D sin cambiar reglas; **auditar fidelidad RF y corregir por separado** las diferencias relevantes antes de preservar la referencia; implementar decisiones F **solo en la futura línea propia** tras revisar su valor para singleplayer. No acumular diferentes propósitos en un mismo PR.
+La referencia conocida simplifica validar reglas y encontrar bugs. El grupo de tres elegido entre cinco ofrece agencia y rejugabilidad sin eliminar de inmediato acciones. **Riesgo principal:** confundir la aceptación de fidelidad suficiente con equivalencia exacta, o introducir cambios F y el futuro Director durante la refactorización. **Contramedida:** conservar el comportamiento de referencia durante D1/D2, documentar sus diferencias conocidas según el informe 49, preservar una base verificada y desarrollar cambios F **solo en la futura línea propia**. No repetir auditorías sin un hallazgo que lo justifique.
 
 ## Registro de autorización
 
-- **Aprobado como rumbo:** primero **completar una adaptación muy parecida al juego de mesa, estable y modular (D + contraste y correcciones RF)**, luego preservar esa referencia y **después, en la versión propia**, evolucionar al singleplayer con Director de Juego y considerar F-14 (cinco aleatorios → elegir tres → líder manual). El acuerdo F-14 es de **diseño propio**, no de código de referencia.
+- **Aprobado como rumbo:** la adaptación V9.9 estabilizada **ya es suficientemente fiel en lo mecánico según el creador** y el informe 49; **resta completar D1/D2**, preservar la referencia y **después, en la versión propia**, evolucionar al singleplayer con Director de Juego y considerar F-14 (cinco aleatorios → elegir tres → líder manual). El acuerdo F-14 es de **diseño propio**, no de código de referencia.
 - **No aprobado/implementado por la matriz F:** alterar selección de personajes, dados, turnos o cualquier regla de V9.9; crear ya el Director de Juego; implementar filas F en D1/D2; fusionar o publicar. Las integraciones técnicas posteriores de C/D tienen sus actas específicas y no se revierten por esta aclaración.
-- **Evidencia necesaria futura:** para Hito 1, auditoría RF basada en el reglamento, correcciones aprobadas, regresiones y pruebas de jugabilidad; para Hito 2, SHA/compilación/test reproducible; para Hito 3, pruebas específicas de los cambios F (por ejemplo F-14), pilotos de balance y escenas narrativas con consecuencias observables.
+- **Evidencia necesaria futura:** para Hito 1, cierre D1/D2 con regresiones, partidas y pruebas de módulos/arquitectura; para Hito 2, SHA/compilación/tests reproducibles; para Hito 3, pruebas de los cambios F, pilotos de balance y consecuencias narrativas observables. La auditoría RF adicional NO es una puerta obligatoria.
