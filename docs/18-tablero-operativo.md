@@ -23,6 +23,16 @@
 
 **Estado actual del encargo:** C11 implementado/documentado/aprobado en pruebas y CI, incluida R1; auditoría de pendientes completada sin programar otros issues. **H1 confirmado: se pierde la sucesión J2 al morir ambos líderes locales; pendiente de nueva autorización para corregir.** [Auditoría45](45-auditoria-pendientes-estabilizacion.md). [Informe44](44-c11-dados-tactiles.md). Las notas de fase0 y checkpoint siguientes son históricas.
 
+## Revisión de la entrega nocturna C11 y fase4 — 28/10/2026
+
+**Pedido del creador:** revisar lo que Codex implementó y auditó durante la noche, sin autorizar de momento otro cambio de juego. Se comparó la rama `2fbbc59`→`5f5514d`, inspeccionando diff CSS C11 (19 líneas), arnés `scripts/check-issue13-browser.mjs`, informes44/45, JSON de auditoría, flujo de `reviewLeader()`/`chooseLeader()`/`leaderChoiceReady()` y issues/PR. Los commits fueron `7497d70` (dados) y `5f5514d` (auditoría de solo documentación). `main=d9068f4` intacta, PR14 abierto/draft hacia `refactor/arquitectura`.
+
+**Resultado contrastado:** C11 amplía los dados de **26×25 a 44×44 px CSS**, gap8, con franja inferior y fallback de scroll para alturas≤520; solo CSS, sin modificación de JavaScript o DOM de la aplicación. Informe44 conserva rojo inicial, R1 de pantallas bajas y revalidación Chromium en seis viewports; no se reejecutó Chromium en esta revisión. Auditoría fase4:54 regresiones dirigidas y21 comprobaciones Chromium según informe45/JSON inspeccionado. **[CI final 40627292012](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40627292012): completed/success, 358/358, cero fallidas/omitidas/TODO** (logs consultados). Los arreglos de #2/#3/#8/#9/#10/#11/#12, así como #7/#13, están en la rama y siguen pendientes de aceptación/cierre administrativo. No interpretar esto como cambios integrados en `main`.
+
+**Nuevo defecto H1/P2 confirmado y contrastado en evidencia:** mueren los dos líderes locales por desbordamiento durante una misma crisis; `reviewLeader()` mantiene únicamente `pendingLeader/pendingLeaderSide`, descarta la segunda petición cuando la primera ya está pendiente y J2 queda con `leaders.ai=null` sin diálogo de sucesión tras el pase. El JSON `docs/evidencias/c-auditoria-pendientes.json` registra el mismo resultado en C11 y pre-C11; la lógica revisada explica la pérdida. No es una regresión CSS ni una prueba de que el issue #6 original volvió a abrirse. **No se implementó corrección H1**.
+
+**Límites:** esta revisión fue de código, logs y evidencia del repositorio, no ejecución propia de suite/Chromium ni Android real/TalkBack/partidas completas. No se verificó equivalencia exhaustiva con el reglamento de *Dead of Winter*. **Única siguiente tarea recomendada, aún sin iniciar:** autorización de un arreglo mínimo H1 con regresión roja de sucesiones simultáneas, ambos órdenes de muerte, selección por dueño, pase, muerte, esperas y modo IA; luego CI y Chromium. No comenzar D/E, fusionar PR14, cerrar issues ni modificar `main`.
+
 ## 1. Estado comprobado y alcance
 
 - **Estable:** `main`, `invierno_colonia_v9_9.html`, SHA Git blob `4ebaedad13d63c7a6762c524a52c0dd9695687b1`. El archivo es idéntico en `main` y `refactor/arquitectura` al revisar.
