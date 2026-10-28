@@ -2,6 +2,10 @@
 
 **28/10/2026, Montevideo.** Alcance autorizado por «Prosigamos» tras fijar el orden de trabajo y dejar la siguiente tarea operativa de C: **revisar nueve issues abiertos y preparar su aceptación**, sin interpretar la continuación como autorización para cerrarlos, fusionar el PR ni declarar `main` actualizada.
 
+## Acta posterior al dictamen: aceptación y nueve cierres ejecutados
+
+**Cambio de estado posterior, autorizado expresamente por el creador el 28/10/2026 («Vamos con eso»):** se ejecutó y verificó el **cierre `completed` de #2/#3/#7/#8/#9/#10/#11/#12/#13**, con comentario individual de pruebas y aclaración «resuelto en PR14, no integrado en main». **0 issues abiertos** al consultar GitHub. **Etapa C cerrada/aceptada técnicamente con reservas**, sin código, merge ni publicación. Los párrafos siguientes son la revisión **anterior** a esta autorización y conservan su valor histórico. Ver [acta 53](53-cierre-formal-etapa-c.md) para los vínculos a todos los comentarios individuales, estado y próximo paso D0 (análisis de integración sin merge).
+
 ## Dictamen ejecutivo
 
 **Recomendación técnica:** los nueve issues abiertos (#2, #3, #7, #8, #9, #10, #11, #12, #13) **pueden proponerse para cierre administrativo** por el comportamiento original que describen; los parches y regresiones están en `fix/estabilizacion-v9-9`, no en `main`. Se recomienda **aceptar C1–C16 en su alcance de estabilización** con reservas verificadas, pero **C permanece formalmente abierta hasta decisión expresa del creador**. No equivale a certificar fidelidad completa al juego de mesa ni a aprobar promoción a versión pública.
