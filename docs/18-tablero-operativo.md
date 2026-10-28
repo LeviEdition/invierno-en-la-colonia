@@ -1,5 +1,12 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## Cierre de jornada — bitácora 28/10/2026 y próximo SP-02 · 28/10/2026
+
+**Registro completo:** [64 — Bitácora de desarrollo del 28/10/2026](64-bitacora-2026-10-28.md). Cierre de la reflexión sobre alcance: **para el primer videojuego conviene examinar conservar las mecánicas V9.9 y priorizar narrativa persistente**. **No hay aprobación irreversible** de cancelar el motor híbrido ni autorización de iniciar código singleplayer. La investigación SP-02 queda documentada sin perderse.
+
+**REANUDACIÓN DE DISEÑO jueves 29/10/2026:** **SP-02**, no SP-05: (1) decidir si V9.9 será la referencia mecánica inicial y aparcar temporalmente híbrido; (2) revisar F-10/F-12/F-15 frente a esa decisión; (3) reserva de grupo 1 + vivos, reparto decidido por líder y tres supervivientes, **sin segundo equipo obligatorio**; (4) revisar catálogo/stats/pasivas y acciones sin dado; (5) simular 2–3 rondas sobre papel. **Vía técnica independiente sin cambios:** D1.2a reversible pendiente de autorización, luego D1/D2, sin tocar `main`.
+
+
 ## SP — Alcance del primer videojuego: priorizar narrativa sobre mecánicas nuevas · 28/10/2026
 
 **Reflexión del creador, NO decisión cerrada:** siendo su primer videojuego, integrar mecánicas híbridas/nuevas estadísticas al Director y narrativa persistente puede exceder el alcance deseado. Se plantea **reutilizar mecánicas V9.9** y concentrar identidad del juego propio en singleplayer narrativo con decisiones diferidas. **Recomendación crítica:** la exploración de motores alternativos de SP-02 puede aparcarse como backlog; no eliminar el trabajo previo ni declarar mecánicas anteriores derogadas sin confirmación. [Ver 63, sección 5J](63-hoja-de-ruta-planificacion-singleplayer.md).
