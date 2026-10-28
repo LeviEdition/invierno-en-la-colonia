@@ -1,5 +1,14 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## SP-02 — Evaluación de conveniencia de dados por atributo vs V9.9 · 28/10/2026
+
+**Pedido del creador:** evaluar si **órdenes limitadas + tiradas por atributo** generan una experiencia mejor que los **dados de acción revelados al inicio** de V9.9, **sin debatir aún balance de situaciones, heridas o dificultad concreta**. [63 — sección 5E](63-hoja-de-ruta-planificacion-singleplayer.md) contrasta decisión predominante, agencia, atributos, narrativa, ritmo, costos de implementación, incertidumbre y pérdida de optimización de dados visibles. **Dictamen provisional de DISEÑO:** modelo nuevo es **candidato principal a explorar** por su potencial para especialización y consecuencias narrativas; **no está aprobado ni demostrado superior**. F-10/F-12/F-15 no se reemplazan todavía.
+
+**Observación metodológica crítica:** V9.9 usa **1 + vivos** dados de acción y movimiento sin dado; propuesta usa **vivos** órdenes y movimiento con prueba. Para una comparación válida del **sistema de resolución**, mantener inicialmente **igual número de acciones y mismo costo de movimiento** y comparar el mismo dilema/estado con ambos modelos. Luego evaluar separadamente número de órdenes y movimiento. Evitar fallos sin ningún resultado, tiradas triviales e interrupciones que sustituyan estrategia por azar.
+
+**ÚNICA SIGUIENTE TAREA DE DISEÑO:** evaluar el mismo escenario de supervivencia y elección de personajes con ambos sistemas, observando agencia, especialización y ritmo sin calibrar resultados todavía. **TAREA TÉCNICA SIN CAMBIOS:** D1.2a con Codex, luego D1/D2; sin modificar V9.9 ni `main` o autorizar implementación del juego propio.
+
+
 ## SP-02 — Nueva propuesta: acciones según supervivientes y movilidad por dados de atributo · 28/10/2026
 
 **HIPÓTESIS EXPLÍCITA DEL CREADOR (NO APROBADA COMO REGLA FINAL):** eliminar tirada inicial de dados de acción; el líder administraría una **cantidad de acciones por ronda igual a los supervivientes activos** (tres supervivientes → tres acciones), y las acciones importantes se resolverían lanzando tantos dados como el atributo de cada personaje. Se busca integrar exposición y otros riesgos en resultados por grados. **Ejemplo:** Mara movilidad 5, tira 5d6 para llegar al hospital; 2+ éxitos = llega sin exposición, 1 = llega y tira exposición, 0 = llega con herida. El ejemplo **no** es aún una tabla aprobada.
