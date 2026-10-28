@@ -1,5 +1,13 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## D1.2 — auditoría de modularización y build, SIN CAMBIOS DE CÓDIGO · 28/10/2026
+
+**Dictamen:** [informe 60](60-d1-2-auditoria-arquitectura-build.md). Se examinó código real de `refactor/d1-catalogo`: `src/invierno.template.html` aún tiene ~156.656 caracteres (script principal ~100.386), 52 apariciones de `onclick=`, pruebas acopladas al script clásico (15 extraen el JS y 14 exigen un solo script), y `scripts/build-game.mjs` realiza una sustitución textual de la clase, **no bundling**. Se contrastaron alternativas actual/ESM directo/esbuild/Vite+singlefile con documentación oficial.
+
+**Decisión técnica propuesta:** preservar D1.1 como extracción válida, **no multiplicar ensamblados textuales**, y no asumir que más archivos resuelven el acoplamiento. Posponer PR/merge a `main` hasta definir la construcción a futuro; candidato razonable para experimento pequeño y descartable: `esbuild` con bundle IIFE e imports explícitos. **Bloqueo concreto:** funciones y estado accesibles para `onclick` y fixtures `vm` no sobreviven automáticamente al ámbito de módulo/IIFE. Un PoC deberá demostrar puente de interfaz acotado o listeners, tests 433+ y Chromium (5 partidas, 3 tamaños, archivo offline).
+
+**ÚNICA TAREA SIGUIENTE:** solicitar autorización para **D1.2a, PoC reversible de bundler**, sin cambiar reglas ni fusionar. No se modificó el ejecutable, motor, CI ni dependencias en esta auditoría; `main` sigue intacta.
+
 ## D1.1 — catálogo separado y HTML autocontenido, gates verdes · 28/10/2026
 
 **Estado:** D1.1 implementada en `refactor/d1-catalogo` y **validada, sin merge a main**. [Informe 59](59-d1-1-extraccion-catalogo.md). `src/item-catalog.mjs` aporta `ItemCatalog` independiente del DOM, game y modos; recibe `mix` mediante inyección. `src/invierno.template.html` y `scripts/build-game.mjs` generan un único `invierno_colonia_v9_9.html` autocontenido. CI ordinario comprueba build reproducible; se agregaron cinco pruebas unitarias del módulo (20 D1.0 preservadas).
