@@ -7,6 +7,14 @@
 
 > **REGISTRO OBLIGATORIO (acuerdo del usuario, 27/10/2026):** al terminar cada revisión, actualizar este tablero. Documentar acciones, decisiones, cambios, resultados, evidencia y límites en el registro pertinente, aunque no se haya modificado código. Véase [protocolo](15-protocolo-revision-critica.md#registro-obligatorio-de-cada-revisión-y-trabajo).
 
+## Dirección de producto ratificada — 28/10/2026 (diseño, no implementación)
+
+**Acuerdo explícito del creador:** primero completar una versión **estable, suficientemente fiel en experiencia y núcleo táctico a `Dead of Winter`**; después comenzar a desarrollar la identidad propia de **`Invierno en la Colonia`**. La identidad futura es **principalmente singleplayer**: un jugador administra a su grupo frente a un Director de Juego que desencadena amenazas, crisis, facciones y narrativa con consecuencias persistentes, **sin exigir un segundo grupo gestionado por IA**. La referencia de mesa orienta el diseño, no presupone equivalencia total ni permite copiar contenido expresivo. [Documento de dirección51](51-rumbo-fidelidad-e-identidad.md).
+
+**F-14 acordada para el diseño de fidelidad:** presentar **cinco supervivientes aleatorios**, elegir **tres** y **designar líder manualmente**; conservar tres personajes iniciales evita recortar de inmediato dados/acciones. El comportamiento del segundo grupo en los modos actuales se definirá antes de programarlo; esta decisión **no está implementada**. Mantener todas las propuestas F como decisiones separadas de C.
+
+**Puertas de calidad:** aceptación administrativa C1–C16 → completar decisiones y pruebas de fidelidad sobre una referencia estable, con adaptaciones deliberadas → D refactor de preservación → E Director/narrativa e identidad propia. No forzar identidad antes del hito de estabilidad. **La única tarea operativa activa sigue siendo la aceptación de C**: revisar nueve issues abiertos y cierre por decisión del creador; no merge ni D/E/F automáticos. `main` intacta, PR14 draft.
+
 ## C16 — aislamiento de foco, estado vigente 28/10/2026
 
 **Autorizado por el creador:** continuar estabilización para corregir A1/P2, sin tocar reglas ni comenzar D. **Implementación en rama**: ayuda y fallecimiento confinan Tab/Shift+Tab y foco exterior, el fondo queda inerte, se devuelve foco y se conserva prioridad de Inicio/Pase, Fallecimiento y decisiones del juego. Se añadió una guardia para Escape durante muerte, sin modificar resultados. [Informe50](50-c16-foco-dialogos.md).
