@@ -1,0 +1,341 @@
+{
+  "base": "7497d70",
+  "viewports": [
+    {
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "checks": [
+        {
+          "issue": 8,
+          "blocked": true
+        },
+        {
+          "issue": 12,
+          "setupAndPass": true,
+          "tabs": 16,
+          "programmaticEscapeBlocked": true,
+          "enterAndRestore": true
+        },
+        {
+          "issue": 3,
+          "humanDice": [],
+          "j2Dice": [
+            3
+          ],
+          "food": 5
+        },
+        {
+          "issue": 2,
+          "resources": [
+            {
+              "title": "Fiebre en el refugio",
+              "id": "medkit",
+              "before": {
+                "morale": 9,
+                "b": 0
+              },
+              "after": {
+                "morale": 10,
+                "b": 0
+              },
+              "ownCardConsumed": true
+            },
+            {
+              "title": "El generador averiado",
+              "id": "gascan",
+              "before": {
+                "morale": 10,
+                "b": 0
+              },
+              "after": {
+                "morale": 11,
+                "b": 0
+              },
+              "ownCardConsumed": true
+            },
+            {
+              "title": "La guardia nocturna",
+              "id": "crowbar",
+              "before": {
+                "morale": 11,
+                "b": 0
+              },
+              "after": {
+                "morale": 11,
+                "b": 2
+              },
+              "ownCardConsumed": true
+            }
+          ]
+        },
+        {
+          "issue": 9,
+          "blockedDuringHeal": true,
+          "afterHealUsable": true
+        },
+        {
+          "issue": 10,
+          "queuedBlocked": true,
+          "visibleBlocked": true,
+          "continueDoesNotAdvance": true
+        },
+        {
+          "issue": 11,
+          "samples": 2,
+          "goal": 2,
+          "morale": 1,
+          "round": 1,
+          "last": "🏆 ¡Victoria! Se completó el objetivo general.",
+          "colony": false
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "checks": [
+        {
+          "issue": 8,
+          "blocked": true
+        },
+        {
+          "issue": 12,
+          "setupAndPass": true,
+          "tabs": 16,
+          "programmaticEscapeBlocked": true,
+          "enterAndRestore": true
+        },
+        {
+          "issue": 3,
+          "humanDice": [],
+          "j2Dice": [
+            3
+          ],
+          "food": 5
+        },
+        {
+          "issue": 2,
+          "resources": [
+            {
+              "title": "Fiebre en el refugio",
+              "id": "medkit",
+              "before": {
+                "morale": 9,
+                "b": 0
+              },
+              "after": {
+                "morale": 10,
+                "b": 0
+              },
+              "ownCardConsumed": true
+            },
+            {
+              "title": "El generador averiado",
+              "id": "gascan",
+              "before": {
+                "morale": 10,
+                "b": 0
+              },
+              "after": {
+                "morale": 11,
+                "b": 0
+              },
+              "ownCardConsumed": true
+            },
+            {
+              "title": "La guardia nocturna",
+              "id": "crowbar",
+              "before": {
+                "morale": 11,
+                "b": 0
+              },
+              "after": {
+                "morale": 11,
+                "b": 2
+              },
+              "ownCardConsumed": true
+            }
+          ]
+        },
+        {
+          "issue": 9,
+          "blockedDuringHeal": true,
+          "afterHealUsable": true
+        },
+        {
+          "issue": 10,
+          "queuedBlocked": true,
+          "visibleBlocked": true,
+          "continueDoesNotAdvance": true
+        },
+        {
+          "issue": 11,
+          "samples": 2,
+          "goal": 2,
+          "morale": 1,
+          "round": 1,
+          "last": "🏆 ¡Victoria! Se completó el objetivo general.",
+          "colony": false
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "checks": [
+        {
+          "issue": 8,
+          "blocked": true
+        },
+        {
+          "issue": 12,
+          "setupAndPass": true,
+          "tabs": 16,
+          "programmaticEscapeBlocked": true,
+          "enterAndRestore": true
+        },
+        {
+          "issue": 3,
+          "humanDice": [],
+          "j2Dice": [
+            3
+          ],
+          "food": 5
+        },
+        {
+          "issue": 2,
+          "resources": [
+            {
+              "title": "Fiebre en el refugio",
+              "id": "medkit",
+              "before": {
+                "morale": 9,
+                "b": 0
+              },
+              "after": {
+                "morale": 10,
+                "b": 0
+              },
+              "ownCardConsumed": true
+            },
+            {
+              "title": "El generador averiado",
+              "id": "gascan",
+              "before": {
+                "morale": 10,
+                "b": 0
+              },
+              "after": {
+                "morale": 11,
+                "b": 0
+              },
+              "ownCardConsumed": true
+            },
+            {
+              "title": "La guardia nocturna",
+              "id": "crowbar",
+              "before": {
+                "morale": 11,
+                "b": 0
+              },
+              "after": {
+                "morale": 11,
+                "b": 2
+              },
+              "ownCardConsumed": true
+            }
+          ]
+        },
+        {
+          "issue": 9,
+          "blockedDuringHeal": true,
+          "afterHealUsable": true
+        },
+        {
+          "issue": 10,
+          "queuedBlocked": true,
+          "visibleBlocked": true,
+          "continueDoesNotAdvance": true
+        },
+        {
+          "issue": 11,
+          "samples": 2,
+          "goal": 2,
+          "morale": 1,
+          "round": 1,
+          "last": "🏆 ¡Victoria! Se completó el objetivo general.",
+          "colony": false
+        }
+      ]
+    }
+  ],
+  "leaders": [
+    {
+      "label": "actual",
+      "deaths": {
+        "names": "Mara · Bruno",
+        "leaders": {
+          "human": null,
+          "ai": null
+        },
+        "pendingLeader": true,
+        "pendingLeaderSide": "human",
+        "round": 1
+      },
+      "lost": {
+        "leaders": {
+          "human": "h1",
+          "ai": null
+        },
+        "pendingLeader": false,
+        "pendingLeaderSide": "human",
+        "turn": "ai",
+        "round": 2,
+        "opened": "",
+        "aiAlive": [
+          "a0",
+          "a2"
+        ],
+        "canPickStartingLeader": false,
+        "leaderChoiceReady": false
+      }
+    },
+    {
+      "label": "antes-C11",
+      "deaths": {
+        "names": "Mara · Bruno",
+        "leaders": {
+          "human": null,
+          "ai": null
+        },
+        "pendingLeader": true,
+        "pendingLeaderSide": "human",
+        "round": 1
+      },
+      "lost": {
+        "leaders": {
+          "human": "h1",
+          "ai": null
+        },
+        "pendingLeader": false,
+        "pendingLeaderSide": "human",
+        "turn": "ai",
+        "round": 2,
+        "opened": "",
+        "aiAlive": [
+          "a0",
+          "a2"
+        ],
+        "canPickStartingLeader": false,
+        "leaderChoiceReady": false
+      }
+    }
+  ],
+  "errors": []
+}

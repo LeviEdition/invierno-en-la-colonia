@@ -17,18 +17,18 @@
 
 ## Encargo nocturno autorizado — C11 y auditoría, 28/10/2026
 
-**Tarea actual única: C11/#13, accesibilidad táctil de dados flotantes.** Autorización expresa para ajuste acotado de presentación, TDD viable, Chromium real en320×640/393×852/1365×768, suite, revisión independiente, CI y entrega a la rama existente. Solo después de C11 terminado/documentado/aprobado: auditoría de lectura/pruebas/documentación de #2/#3/#8/#9/#10/#11/#12 y riesgos de integración. No implementar otros issues ni comenzar D/E; no cerrar #7/#13 u otros issues, fusionar o modificar `main`.
+**Encargo completado: C11/#13 y auditoría de pendientes.** Autorización expresa para ajuste acotado de presentación, TDD viable, Chromium real en 320×640/393×852/1365×768, suite, revisión independiente, CI y entrega a la rama existente. Solo después de C11 terminado/documentado/aprobado: auditoría de lectura/pruebas/documentación de #2/#3/#8/#9/#10/#11/#12 y riesgos de integración. No implementar otros issues ni comenzar D/E; no cerrar #7/#13 u otros issues, fusionar o modificar `main`.
 
-**Fase0 comprobada:** checkout limpio, avance directo de `d342f96` a `2fbbc59` (dos commits solo documentales); rama `fix/estabilizacion-v9-9`, PR14 abierto/draft a `refactor/arquitectura`; `main` remoto `d9068f4aa8d3a10bbbf1e0a8a2527744cc6952cb` intacta. Se leyó informe43, código/diff C10, issue13 y protocolo15. Suite de referencia358/358 aprobada, sin TODO; CI exacto de2fbbc59 [40622935501](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40622935501) success con358/358. Sin regresión grave confirmada ni bloqueo Git. C10 sigue implementado y pendiente de aceptación humana; no se cambian sus reglas.
+**Fase0 comprobada:** checkout limpio, avance directo de `d342f96` a `2fbbc59` (dos commits solo documentales); rama `fix/estabilizacion-v9-9`, PR14 abierto/draft a `refactor/arquitectura`; `main` remoto `d9068f4aa8d3a10bbbf1e0a8a2527744cc6952cb` intacta. Se leyó informe43, código/diff C10, issue13 y protocolo15. Suite de referencia 358/358 aprobada, sin TODO; CI exacto de 2fbbc59 [40622935501](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40622935501) success con 358/358. Sin regresión grave confirmada ni bloqueo Git. C10 sigue implementado y pendiente de aceptación humana; no se cambian sus reglas.
 
-**Estado actual del encargo:** C11 implementado y validado localmente, incluida R1 de pantallas bajas; pendiente CI para habilitar auditoría de lectura. [Informe44](44-c11-dados-tactiles.md). Las notas de fase0 y checkpoint siguientes son históricas.
+**Estado actual del encargo:** C11 implementado/documentado/aprobado en pruebas y CI, incluida R1; auditoría de pendientes completada sin programar otros issues. **H1 confirmado: se pierde la sucesión J2 al morir ambos líderes locales; pendiente de nueva autorización para corregir.** [Auditoría45](45-auditoria-pendientes-estabilizacion.md). [Informe44](44-c11-dados-tactiles.md). Las notas de fase0 y checkpoint siguientes son históricas.
 
 ## 1. Estado comprobado y alcance
 
 - **Estable:** `main`, `invierno_colonia_v9_9.html`, SHA Git blob `4ebaedad13d63c7a6762c524a52c0dd9695687b1`. El archivo es idéntico en `main` y `refactor/arquitectura` al revisar.
 - **Auditoría:** PR [#1](https://github.com/LeviEdition/invierno-en-la-colonia/pull/1) abierto y en borrador; no fusionar por ahora.
-- **Pruebas actuales de estabilización C10/#7:** **358 declaradas, 358 aprobadas, 0 fallidas/canceladas/omitidas y 0 TODO**, comprobadas localmente con `npm test`. Incluyen 52 pruebas de encrucijadas; Chromium aprobó 16 recorridos y la revisión independiente no encontró defectos confirmados. [Informe43](43-c10-encrucijadas-prioridades.md). CI del código **completed/success**: [GitHub Actions del código `9e68862`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40622261665), 358/358; comprobación documental final por SHA en Actions. Los resultados anteriores se conservan como históricos; Android físico/TalkBack y balance mantienen sus reservas.
-- **Problemas registrados:** [#2](https://github.com/LeviEdition/invierno-en-la-colonia/issues/2), [#3](https://github.com/LeviEdition/invierno-en-la-colonia/issues/3), [#4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4), [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5), [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6), [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) y [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8), [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9), [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10) y [#11](https://github.com/LeviEdition/invierno-en-la-colonia/issues/11), [#12](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12) y [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13). **#4, #5 y #6 están aceptados y cerrados**; #7 está implementado para revisión, todavía abierto; #13 sigue pendiente. Otras correcciones registradas conservan issues abiertos: no se cierran automáticamente por este análisis.
+- **Pruebas actuales de la rama C11:** **358/358** local y [CI exacto `7497d70`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40625219012), 0 fallidas/canceladas/omitidas/TODO. Componente **111/111**; Chromium C11 en seis viewports, 24 conjuntos de mediciones y revisión independiente aprobados tras R1. Auditoría posterior: **54/54** regresiones y **21** comprobaciones issue/viewport aprobadas; **también confirmó H1 fuera de esa cobertura: no declarar C estabilizada**. [Informe44](44-c11-dados-tactiles.md) y [auditoría45](45-auditoria-pendientes-estabilizacion.md). Android físico/TalkBack y balance mantienen reservas.
+- **Problemas registrados:** [#2](https://github.com/LeviEdition/invierno-en-la-colonia/issues/2), [#3](https://github.com/LeviEdition/invierno-en-la-colonia/issues/3), [#4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4), [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5), [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6), [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) y [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8), [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9), [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10) y [#11](https://github.com/LeviEdition/invierno-en-la-colonia/issues/11), [#12](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12) y [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13). **#4, #5 y #6 están aceptados y cerrados**; #7 está implementado para revisión, todavía abierto; #13 implementado para revisión y todavía abierto. Otras correcciones registradas conservan issues abiertos: no se cierran automáticamente por este análisis.
 - **Narrativa:** visión, objetivos, campañas y bocetos registrados en `docs/12`–`docs/17`. Son **propuestas y decisiones de diseño**, no código ni campañas implementadas.
 
 ## Estado consolidado tras trabajo en otro chat — 27/10/2026
@@ -67,7 +67,7 @@ Por instrucción del usuario se incorporó la obligación de actualizar el table
 
 **Control:** [PR14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14) continúa draft a `refactor/arquitectura` y `main` no cambia por esta anotación. La documentación de diseño previo sigue vigente como hipótesis, no como implementación.
 
-## 2. Etapa activa C — estabilización; C10/#7 en revisión
+## 2. Etapa activa C — C11 terminado, auditoría completa; H1 pendiente de nueva tarea
 
 **Objetivo:** saber qué hace realmente el juego, qué falla y qué no se ha probado, antes de intervenir sus reglas o extraer módulos.
 
@@ -480,17 +480,38 @@ Código y evidencia subidos en **`9e68862`**, exclusivamente a `fix/estabilizaci
 
 ## C11/#13 — primera revisión y corrección R1 en verificación, 28/10/2026
 
-Referencia C10 Chromium16/16 aprobada. Se reproduce26×25px y gap3px; Playwright rojo27 comprobaciones de geometría fallidas en los tres tamaños mínimos, con trazados mecánicos completos y0errores JS. Parche solo CSS:44×44/gap8 y franja inferior reservada, tablero desplazable y pool desplazable si excede dos filas. JavaScript idéntico al de2fbbc59. Componente111/111 y suite358/358 aprobados tras primer parche.
+Referencia C10 Chromium 16/16 aprobada. Se reproduce26×25 px y gap3 px; Playwright rojo27 comprobaciones de geometría fallidas en los tres tamaños mínimos, con trazados mecánicos completos y 0 errores JS. Parche solo CSS:44×44/gap8 y franja inferior reservada, tablero desplazable y pool desplazable si excede dos filas. JavaScript idéntico al de 2fbbc59. Componente111/111 y suite 358/358 aprobados tras primer parche.
 
-**Revisión independiente: R1/P2 confirmado y no ocultado por el verde inicial.** Fuera de los tres tamaños obligatorios, en852×393/640×320 y320×480 la franja podía quedar fuera de pantalla. Se reproduce antes de corregir y se añade fallback para permitir scroll de página en alturas≤520px. Se verifica en seis viewports y segunda revisión. [Informe44](44-c11-dados-tactiles.md). Se refina el arnés para respetar recortes de overflow y no confundir dados fuera del scroll con colisiones visibles.
+**Revisión independiente: R1/P2 confirmado y no ocultado por el verde inicial.** Fuera de los tres tamaños obligatorios, en 852×393/640×320 y 320×480 la franja podía quedar fuera de pantalla. Se reproduce antes de corregir y se añade fallback para permitir scroll de página en alturas≤520 px. Se verifica en seis viewports y segunda revisión. [Informe44](44-c11-dados-tactiles.md). Se refina el arnés para respetar recortes de overflow y no confundir dados fuera del scroll con colisiones visibles.
 
 **Único paso siguiente:** concluir R1 y validación de C11, documentación/push/CI. Auditoría fase4 todavía no iniciada; ningún otro issue implementado, #7 sigue pendiente de aceptación y no se cierra.
 
 
 ## C11/#13 — validación final y segunda revisión R1, 28/10/2026
 
-**Resultado:** dados44×44/gap8; franja inferior con espacio propio, tablero y pool desplazables, menús accesibles. Solo19líneas CSS; JavaScript y DOM idénticos a2fbbc59. R1 corregido mediante scroll de página en altura≤520px; no quedan defectos confirmados de C11 tras revalidación independiente.
+**Resultado:** dados44×44/gap8; franja inferior con espacio propio, tablero y pool desplazables, menús accesibles. Solo19líneas CSS; JavaScript y DOM idénticos a 2fbbc59. R1 corregido mediante scroll de página en altura≤520 px; no quedan defectos confirmados de C11 tras revalidación independiente.
 
-**Evidencia final:** componente111/111, `npm test`358/358, sin fallos/TODO. Chromium6viewports (320×640/393×852/1365×768 y852×393/640×320/320×480),24mediciones/0fallos/0erroresJS, selección de cada dado del pool16, consumo correcto, pase J1→J2, siete localidades y menú accesibles. Tres trazados antes/después idénticos; revisión independiente revalida R1 en las tres ventanas bajas. [Informe44 y evidencia](44-c11-dados-tactiles.md). C10 se repitió en navegador antes/después sin cambios de reglas. Sin Android físico/TalkBack.
+**Evidencia final:** componente 111/111, `npm test`358/358, sin fallos/TODO. Chromium 6 viewports (320×640/393×852/1365×768 y 852×393/640×320/320×480),24 mediciones/0 fallos/0 errores JS, selección de cada dado del pool 16, consumo correcto, pase J1→J2, siete localidades y menú accesibles. Tres trazados antes/después idénticos; revisión independiente revalida R1 en las tres ventanas bajas. [Informe44 y evidencia](44-c11-dados-tactiles.md). C10 se repitió en navegador antes/después sin cambios de reglas. Sin Android físico/TalkBack.
 
 **Única siguiente tarea:** publicar C11 y comprobar CI exacto; solo después habilitar auditoría fase4 de pendientes. #7/#13 siguen abiertos para revisión del creador, PR14 draft, `main` intacta. No empezar programación de otros issues ni D/E.
+
+
+## C11 aprobado; fase4 habilitada — 28/10/2026
+
+**Commit C11:** `7497d704e8888609c108ffa06d7bb52ff9d02701`; [Actions 40625219012](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40625219012) **completed/success**,358/358 y 0 fallos/TODO según logs. Documentado en 44, 25 y matriz; evidencia de seis viewports y revisión R1 preservada. #13 sigue abierto para aceptación, #7 también; no main/fusión/cierres.
+
+**Única tarea activa ahora:** auditoría de lectura, pruebas no destructivas y documentación de issues abiertos, especialmente #2/#3/#8/#9/#10/#11/#12. Sin implementar otros cambios. Clasificar correcciones pendientes de cierre, fallos vigentes y límites; proponer riesgos de integración y una siguiente tarea para revisión humana.
+
+
+## Auditoría fase4 completada — 28/10/2026
+
+**Solo lectura, pruebas no destructivas y documentación.** #2/#3/#8/#9/#10/#11/#12 ya tienen arreglo en la rama:54/54 regresiones dirigidas y 21 comprobaciones Chromium (siete issues×tres viewports) aprobadas,0 errores JS. Permanecen abiertos administrativamente; no se cerró ninguno. #7/#13 implementados y pendientes de aceptación. [Tabla y evidencia45](45-auditoria-pendientes-estabilizacion.md).
+
+**H1/P2 confirmado, fuera de C11 y sin corregir:** una crisis con dos desbordamientos mata a ambos líderes locales; se registra la sucesión J1 pero se descarta la de J2. Tras elegir J1 y pasar a J2 en ronda 2, hay dos supervivientes J2 vivos, líder null y ningún pendiente que permita elegirlo. Reproducido mediante colonia y botones reales tanto en 7497d70 como en 2fbbc59; es preexistente y no una regresión CSS. No se alteran reglas ni se reabre #6.
+
+**Conclusión:** C11 está técnicamente terminado; C no debe considerarse cerrada por tener358 tests verdes. Se separan riesgos de integración y posibles diferencias con mesa, sin cambiar mecánicas. Se detectan ambigüedades históricas de documentación y alcance de foco limitado a setup/pase; lector de pantalla, Android y partidas naturales no certificados.
+
+**Única siguiente tarea recomendada (no iniciada): corregir H1, sucesión múltiple local, mediante una nueva autorización y regresión previa.** Sin otro código durante la auditoría, sin main/fusión/cierres ni D/E. Entrega documental final con comprobación de CI por SHA antes de informar.
+
+
+**Control final documental:** conteos y trazados cotejados contra JSON, DOM/JS idénticos a 2fbbc59 y sin cambios de código durante fase4. PR14 título/cuerpo actualizado aC1–C11, permanece abierto/draft hacia refactor/arquitectura. Se publica documentación/evidencia y se confirma CI final por SHA antes de entregar. Ningún issue cerrado, creado o reabierto. Única siguiente propuesta: H1 con autorización nueva.

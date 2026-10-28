@@ -15,9 +15,18 @@
 
 ## Actualización C11/#13 — 28/10/2026
 
-**Dados y accesibilidad táctil (subsistemas02/19):** ajuste solo CSS a44×44px/gap8; franja inferior reservada para evitar colisiones con tablero. Pool con scroll y menú por encima; fallback de página en alturas≤520px tras corregir R1 creado por C11. DOM y JavaScript intactos; no cambia ninguna mecánica.
+**Dados y accesibilidad táctil (subsistemas18/19, sin cambiar lógica02):** ajuste solo CSS a 44×44 px/gap8; franja inferior reservada para evitar colisiones con tablero. Pool con scroll y menú por encima; fallback de página en alturas≤520 px tras corregir R1 creado por C11. DOM y JavaScript intactos; no cambia ninguna mecánica.
 
-[Informe44](44-c11-dados-tactiles.md): componente111/111, suite358/358,0fallos/TODO; Chromium en seis tamaños con24conjuntos de mediciones,0fallos/0erroresJS. Comparación antes/después y revisión independiente aprobadas tras R1. #13 implementado para revisión, **permanece abierto**, CI de entrega pendiente de comprobar. Android físico/TalkBack no comprobados. Auditoría posterior solo cuando CI de C11 esté aprobado; no implementar otros issues.
+[Informe44](44-c11-dados-tactiles.md): componente 111/111, suite 358/358, 0 fallos/TODO; Chromium en seis tamaños con 24 conjuntos de mediciones,0 fallos/0 errores JS. Comparación antes/después y revisión independiente aprobadas tras R1. #13 implementado para revisión, **permanece abierto**, [CI 7497d70](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40625219012) completed/success,358/358. Android físico/TalkBack no comprobados. CI de C11 aprobado; habilitada auditoría de lectura, sin implementar otros issues.
+
+
+## Auditoría de pendientes C tras C11 — 28/10/2026
+
+[Informe45](45-auditoria-pendientes-estabilizacion.md): #2/#3/#8/#9/#10/#11/#12 **corregidos en rama, abiertos para aceptación/cierre**;54/54 regresiones dirigidas y 21 comprobaciones Chromium sobre siete issues/tres viewports aprobadas. #7/#13 implementados para revisión, sin cierres. GitHub conserva nueve issues abiertos; main estable sigue original.
+
+**H1/P2 confirmado en subsistemas10/16**, con interacción de 02/06/12/18: colonia/crisis mata ambos líderes locales y el único `pendingLeader` pierde la sucesión J2. Tras elegir J1 y pasar a J2 en ronda 2, líder null con dos supervivientes vivos y sin opción de sucesión. Reproducido en 7497d70 y 2fbbc59, fuera de C11. No se programa ni se reabre #6. La clasificación actual de esas combinaciones conserva **bug vigente**, aunque las regresiones existentes pasen. C no se considera cerrada.
+
+Se conservan el historial y sus hallazgos de main; se delimitan foco setup/pase, pruebas físicas/balance pendientes y diferencias con mesa por contrastar sin modificar reglas. **Única siguiente tarea recomendada:** H1, sucesión múltiple local, con nueva autorización; no se inicia D/E.
 
 
 ## Cierre de cobertura A6 (con limitaciones documentadas)
