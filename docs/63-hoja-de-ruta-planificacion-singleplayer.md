@@ -78,6 +78,41 @@ La V9.9 dispone de **una reserva de grupo de `1 + supervivientes vivos` dados po
 
 **Entrega SP-02:** una **ficha de reglas propuestas** con estados individuales y una **simulación de 2–3 rondas sobre papel** (grupo completo, pérdida de un personaje y recursos escasos). Comparar al menos tres situaciones: búsqueda urgente, combate/defensa urgente y expedición con movilidad; registrar qué personaje recibe cada dado y por qué. Si todos los dados van repetidamente al mismo personaje, primero examinar especialización, ubicación, riesgo y diseño de acciones; **no introducir un tope automático sin evidencia**. Aceptación solo si las opciones presentan costos reales, sin personajes universalmente dominantes, callejones sin salida previsibles ni incentivos triviales.
 
+## 5A. Análisis de especialización y pasivas (28/10/2026) — PROPUESTAS, NO ACUERDOS NUEVOS
+
+**Pregunta:** ¿cómo conseguir que el jugador, como líder, encuentre motivos reales para utilizar distintos supervivientes y no concentre todos los dados en una única persona? El **reparto libre basado en stats y pasivas** ya está acordado; el equilibrio **no**.
+
+### Punto de partida comprobado en V9.9
+
+El catálogo en `src/invierno.template.html` define **ataque, búsqueda, influencia y una habilidad particular**; no tiene todavía atributos numéricos independientes de movilidad/técnica. Ejemplos concretos:
+
+- **Iris:** búsqueda favorable en la escala actual + habilidad `scout` que roba dos objetos y permite elegir uno.
+- **Damián:** ataque favorable + habilidad `fighter` que reduce el requisito de ataque.
+- **Mara:** habilidad `medic` que cura una herida en la localidad una vez por ronda, **sin dado**.
+- **Valeria:** habilidad `silent` que evita exposición en su primer movimiento de ronda.
+- **Leo:** habilidad `builder` que construye una barricada sin dado.
+- **Tomás:** `cook` reduce el consumo de comida si está en la colonia.
+
+Las pasivas actuales cubren combate/búsqueda, mitigación de riesgo, acciones gratuitas, efectos sobre recursos y ventajas por ubicación. No afirmar que el futuro sistema de stats de movilidad o técnica ya exista.
+
+### Marco de evaluación
+
+**Estadística:** elegibilidad o capacidad cuantificada en una familia de acciones. **Pasiva:** excepción o ventaja contextual (calidad del resultado, riesgo, ahorro, posición, acción adicional), con condición y frecuencia explícitas. **Equipamiento:** beneficios de objetos existentes. **Situación:** ubicación, heridas, crisis, mazos y amenazas. Deben influir conjuntamente en la decisión de asignar dados.
+
+**Alternativa A, mínima:** conservar principalmente stats de combate/búsqueda, influencia y pasivas variadas; movilidad, apoyo, sanación, cocina y construcción se diferencian al principio por reglas y habilidades contextuales. **Beneficio:** menos complejidad y más reutilización de V9.9. **Riesgo:** algunas tareas no tienen progresión numérica y ciertas pasivas quedan muy potentes.
+
+**Alternativa B, ampliada:** añadir atributos de movilidad/técnica/resistencia y nuevas acciones o comprobaciones. **Beneficio:** más perfiles y progresión. **Riesgo:** si no crean decisiones reales, son números decorativos; añaden reglas, interfaces y balance, alteran el motor y pueden solaparse con pasivas. **Recomendación del análisis, NO aprobada:** probar primero A, introducir cada atributo nuevo solo cuando tenga efecto autónomo comprobable.
+
+**Tipos posibles de pasivas:** (1) mejorar éxito/umbral; (2) mejorar calidad del resultado; (3) ahorrar recursos o dados; (4) reducir riesgos; (5) aportar ventajas posicionales/de cooperación; (6) transformar opciones de encuentros. Cada habilidad debe tener desencadenante, alcance, costo/límite y casos extremos. Pasivas que potencian una estadística ya máxima (Iris/Damián) requieren pruebas de dominancia y saturación.
+
+**F-10/F-15, observación matemática crítica:** con umbral antiguo `t`, superar un d6 exige `d >= t`; tras convertir `stat = 7-t`, el sistema acordado F-10 (`stat >= d`) **conserva la cantidad de caras favorables en un dado uniforme** pero convierte las caras **altas en difíciles**. Ejemplo: antiguo `t=2` y nuevo `stat=5` dan éxito en 5/6 caras, pero con números opuestos. Una alternativa intuitiva a comparar, **sin sustituir F-10 salvo acuerdo explícito**, es `stat + d >= 7` (alto stat y alto dado son beneficiosos, misma probabilidad básica). La economía de reserva visible y asignación libre altera estrategias aunque coincidan probabilidades marginales.
+
+**Qué evita «spam» sin topes artificiales:** distintos objetivos simultáneos, distancias/localidades, límites de movimiento y de objetivos disponibles, riesgo/exposición, salud, inventario/equipo, ventajas especializadas y habilidades limitadas por ronda. Un turno de emergencia concentrado en un personaje puede ser correcto; la señal problemática es **monopolio sistemático en escenarios variados**.
+
+**Escenarios mínimos de validación en papel:** (A) escasez de medicamentos y búsqueda, (B) defensa y barricadas ante oleada, (C) expedición con movilidad/riesgo y crisis de recursos, (D) pérdida de un superviviente / sucesión, (E) cinco candidatos donde el jugador elige una combinación sin especialista obvio. Para cada dado anotar personaje, acción, beneficio, recurso/costo, alternativas rechazadas y razón del reparto. Verificar que todos los roles aporten en situaciones diferentes y que elegir tres entre cinco no cause derrotas inevitables. No exigir participación igualitaria en cada ronda.
+
+**Decisiones aún abiertas:** número de stats activas; cómo opera movilidad sin consumir dado; nivel de pasivas (inherente, equipada, limitada); progresión y equipo; qué hace la influencia del líder sin restringir la agencia del jugador; elección entre F-10 original y alternativa solo si el creador desea reexaminarla; fórmula/cantidad de dados y límites por personaje. **No programar durante D1/D2.**
+
 ## 6. Diseño de ronda provisional para SP-03 (no aprobado)
 
 1. **Apertura:** presentación de crisis, recursos, peligros e indicios válidos según el estado.
