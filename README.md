@@ -1,19 +1,21 @@
 # Invierno en la Colonia
 
-Proyecto de videojuego de supervivencia en desarrollo gradual. Partimos de una **V9.9 de referencia** inspirada en la experiencia mecánica de *Dead of Winter*, con intención de crear después una versión propia **principalmente singleplayer**, con Director de Juego y consecuencias narrativas persistentes.
+Proyecto de videojuego de supervivencia desarrollado gradualmente, tomando como punto de partida la experiencia mecánica de *Dead of Winter*.
 
-## Dos líneas de trabajo diferentes
+## Nuestro objetivo en tres hitos
 
-- **Referencia V9.9:** estabilizar y refactorizar el código, conservar el comportamiento aprobado y validar el motor por pruebas. **D1/D2 no implementan nuevas mecánicas de la matriz F.**
-- **Juego propio futuro:** revisar y aplicar selectivamente las decisiones de la **matriz F — comparación y decisiones para el juego propio**. Incluso las filas acordadas requieren autorización, implementación y pruebas separadas. La futura línea de desarrollo conservará una referencia identificable.
+1. **Construir una adaptación muy parecida al juego de mesa, estable y modular.** La V9.9 actual está estabilizada como punto de partida, pero **todavía no está certificada como adaptación fiel definitiva**. D1/D2 separan módulos **sin cambiar reglas**; después una **auditoría RF de fidelidad de referencia** contrastará las mecánicas centrales con el reglamento, y se resolverán las diferencias relevantes con cambios y pruebas autorizados por separado.
+2. **Preservar la versión de referencia** aceptada con un SHA/versión identificable, construcción reproducible y pruebas/documentación, antes de modificarla para el juego propio.
+3. **Crear nuestro videojuego propio**, principalmente singleplayer, con Director de Juego, memoria narrativa, consecuencias persistentes y decisiones mecánicas propias.
 
-La matriz F no es una lista de defectos de V9.9 ni una orden para cambiar sus reglas. Además, los códigos **F-01, F-14, etc.** de esa matriz no son la **etapa F** del plan original (expansión visual y cooperativo).
+**No confundir dos registros:** la **futura matriz RF** es para verificar/corregir la fidelidad de nuestra **adaptación de referencia**. La **matriz F** (F-01, F-14, etc.) compara mecánicas y recoge decisiones para **nuestro juego propio**: no son bugs de V9.9 ni tareas para aplicar durante D. La **etapa F** del plan original es expansión visual/red, distinta de ambas matrices.
 
-## Documentación y estado
+## Estado y documentación
 
-- [Tablero operativo — estado vigente y próxima tarea](docs/18-tablero-operativo.md).
-- [Decisión vinculante — alcance de la matriz F](docs/61-alcance-matriz-f-juego-propio.md).
+- [Tablero operativo — tarea vigente](docs/18-tablero-operativo.md).
+- [Ruta oficial — tres hitos, criterios de fidelidad y preservación](docs/62-hitos-referencia-fiel-y-juego-propio.md).
 - [Dirección de producto](docs/51-rumbo-fidelidad-e-identidad.md).
-- [Plan general de refactorización](docs/01-plan-refactorizacion.md).
+- [Alcance de la matriz F del juego propio](docs/61-alcance-matriz-f-juego-propio.md).
+- [Plan general](docs/01-plan-refactorizacion.md).
 
-La rama `refactor/d1-catalogo` contiene trabajo de arquitectura **todavía no fusionado a `main`**; consultar el tablero antes de autorizar el siguiente paso. El análisis de una regla no implica permiso para modificar el juego.
+La rama `refactor/d1-catalogo` contiene trabajo de arquitectura aún no fusionado con `main`. La próxima tarea técnica propuesta es **D1.2a (experimento reversible de esbuild, pendiente de autorización)**. No se inicia RF, se modifican reglas ni se publica una versión por actualizar esta documentación.
