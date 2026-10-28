@@ -143,6 +143,52 @@ Las pasivas actuales cubren combate/búsqueda, mitigación de riesgo, acciones g
 
 **Siguiente microdecisión de SP-02.1:** formular un catálogo de **3–5 acciones concretas de la tercera familia**, distinguiendo acciones existentes de nuevas, su frecuencia, costo en dados, requisito y resultados, para decidir si merece una estadística independiente. Comparar entonces «Técnica» (especialización más estrecha) con «Oficio/Operaciones» (sostén de colonia) y descartarlas si ninguna supera el criterio. Esta conversación **no autorizó** implementar ni cambiar F-10/F-12/F-15.
 
+## 5C. Alternativa de sistema de dados: pruebas por atributo estilo *Arkham Horror* (28/10/2026) — EN EVALUACIÓN
+
+**Aporte del creador:** puede que la limitación para ampliar las estadísticas no sea la cantidad de atributos, sino el **mecanismo de dados** heredado de *Dead of Winter*. Referencia conceptual: tiradas por capacidad del investigador, donde un atributo 3 permite lanzar tres dados y se cuentan éxitos; distintos umbrales y resultados pueden producir éxito parcial, completo o complicaciones. **No es aprobación de un cambio de motor ni de F-10.**
+
+**Distinción crítica:**
+- **Economía de acciones:** cuántas órdenes o intentos puede realizar el líder en una ronda; en V9.9 esta cantidad está atada a la reserva de dados compartida.
+- **Resolución de acciones:** tirada nueva asociada al atributo del personaje para determinar resultado, grados de éxito y consecuencias. Un sistema `dice pool` puede separar esta resolución del recurso de acciones.
+
+**Referencia mecánica verificada (juego de mesa Arkham Horror, no el LCG):** atributo + modificadores determina cantidad de d6; habitualmente un 5 o 6 cuenta como éxito; las pruebas pueden exigir al menos un éxito y algunos efectos dependen del número total de éxitos. Ejemplos explicativos ajenos a la identidad narrativa de nuestro producto. Fuente de consulta: https://zatu.com/en-us/blogs/how-to-play/how-to-play-arkham-horror-third-edition; https://github.com/Lehi-Innovation/boardgame-rules/blob/main/rules/arkham-horror-third-edition.md.
+
+### Tres alternativas que debemos comparar en la MISMA situación jugable
+
+| Modelo | Recurso que administra el líder | Resolución | A favor | Riesgo |
+| --- | --- | --- | --- | --- |
+| **M1 — V9.9 / F-10** | Dados con valores conocidos de la ronda | Asigna un dado válido a una acción según atributo, sin nueva tirada | Planificación visible, continuidad de motor | Limita familias de atributos y variedad de efectos; los dados altos de F-10 son difíciles |
+| **M2 — Reserva de acciones + pruebas por atributo** | Un número de acciones/órdenes (cantidad y titularidad **a definir**) | Cada acción elegible tira tantos d6 como su atributo; cuentan los 5/6 | Permite especialización, dificultades variables, grados de resultado y encuentros con pruebas | Más azar y tiradas; perder una acción por fallo puede frustrar; requiere nuevo balance |
+| **M3 — Híbrido** | Retiene reserva de dados/acciones; algunas acciones o escenas hacen tiradas por atributo | Mecanismos mixtos según contexto | Migración gradual, menos cambios inmediatos | Dos reglas de dado distintas pueden confundir; oportunidades de dados duplicados/bonos apilados |
+
+**Hipótesis ilustrativa de M2, NO aprobada:** con 3 supervivientes, el líder dispone de **cuatro órdenes de acción por ronda** (referencia conceptual `1 + vivos`, no balance confirmado). Decide el actor y la orden; se descuenta una orden; el personaje con **técnica 3** tira **3d6**, y los 5/6 aportan un éxito cada uno. Movimiento y habilidades sin acción deben ser objeto de regla separada; no suponer que mover y tirar siempre son gratuitos. Los resultados `0/1/2+` pueden determinar fallo con consecuencia, logro parcial, logro amplio o bonificación dependiendo de la acción; **no todos los 0 fallos deben bloquear una campaña**.
+
+### Probabilidades para discutir balance (d6 independientes; éxito en 5–6; p = 1/3 por dado)
+
+| Atributo = dados | P(al menos 1 éxito) | P(al menos 2 éxitos) |
+| --- | ---: | ---: |
+| 2 | 55,6 % | 11,1 % |
+| 3 | 70,4 % | 25,9 % |
+| 4 | 80,2 % | 40,7 % |
+| 5 | 86,8 % | 53,9 % |
+
+**Advertencia de experiencia:** si una investigación imprescindible exige **dos** éxitos y el mejor personaje tiene atributo 3, el éxito inmediato ocurre solo ~26 % de las veces; repetir intentos consumiría muchas acciones y podría romper el ritmo. Los requisitos y grados de éxito deberán comunicarse, permitir preparación, apoyo, herramientas, rutas alternativas o progreso parcial según contexto.
+
+### Qué cambia frente a F-10, F-12, F-15 y SP-02.1
+
+- **F-10** (`atributo >= dado`): se convertiría en una regla diferente; **queda vigente hasta decisión explícita de reemplazo**, no se reinterpreta automáticamente.
+- **F-12** (comida +1 a un atributo para una acción): en el nuevo modelo pasaría a añadir **un dado a la reserva de la prueba** o a cambiar la calidad del resultado, según decisión; analizar costo y escala de hambre, no trasladar sin evaluar.
+- **F-15** (`nuevo = 7 - antiguo`): inversión de números **no produce balance equivalente** al cambiar a probabilidades de 1+ o 2+ éxitos con reservas nuevas; se necesita calibración, no una conversión automática.
+- **Tercera estadística:** el pool permite probar `combate / búsqueda / operaciones` como tres familias de pruebas, o considerar otras capacidades usadas en encuentros; **no garantiza** por sí solo que cada una sea igual de relevante. Medir frecuencia de acciones y consecuencias de cada una.
+- **Pasivas/equipo:** podrían otorgar un dado adicional, permitir repetir, convertir un resultado o modificar consecuencias; cuidado con acumular bonificaciones que anulen el riesgo.
+- **Director narrativo:** una encrucijada puede contener pruebas con resultados diferenciados, pero debe respetar la decisión del jugador y no transformar toda historia en una ruleta.
+
+### Evaluación requerida ANTES de decidir
+
+**Prueba de diseño A/B/C:** simular las **mismas 2–3 rondas**, mismo grupo, cuatro acciones ilustrativas, misma crisis y mismos eventos, usando M1, M2 y M3. Registrar: variedad de asignación de personajes, número de decisiones interesantes, frecuencia de fallos frustrantes, costo de resolver crisis, cantidad de tiradas por ronda, comprensión en móvil y capacidad de sostener historias con consecuencias diferenciadas. Evitar aprobar un sistema por intuición o por una única escena vistosa.
+
+**Siguiente discusión concreta:** ¿queremos que el azar suceda **principalmente antes de asignar dados** (estrategia de combinarlos) o **al ejecutar la acción** (tirada por competencia y riesgo)? Una vez aclarado, definir economía de acciones independiente, fracaso y éxitos escalonados. No autorizar implementación ni cerrar el modelo todavía.
+
 ## 6. Diseño de ronda provisional para SP-03 (no aprobado)
 
 1. **Apertura:** presentación de crisis, recursos, peligros e indicios válidos según el estado.
