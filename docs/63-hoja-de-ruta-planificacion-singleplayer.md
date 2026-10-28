@@ -310,6 +310,50 @@ La implementación conceptual de **órdenes limitadas + pruebas por atributo** f
 
 **Estado de acuerdos anteriores:** siguen en evaluación tres órdenes por tres supervivientes, el uso de atributos como cantidad de dados y el reemplazo de exposición. F-10/F-12/F-15 y V9.9 quedan intactos hasta aprobación expresa. Tampoco se aprobó una nueva lista de estadísticas (p. ej., técnica, movilidad, combate, búsqueda).
 
+## 5H. Experimentos del híbrido contextual: 750.000 rondas (28/10/2026)
+
+**Encargo del creador:** reproducir las pruebas del laboratorio SP-02 incorporando **acciones sin tirada**, **defensa por competencia dentro de la colonia** y **pruebas por atributo para búsqueda, movilidad y encuentros riesgosos**. Se amplió el **laboratorio aislado**, no el motor completo V9.9. **No se aprobó ninguna regla nueva.**
+
+**Ensayo efectuado:** **25 condiciones × 3 métodos × 10.000 repeticiones = 750.000 rondas**; **13/13 comprobaciones funcionales** aprobaron. Archivo de laboratorio: `simulador_sp02_hibrido.html`, con tercer panel interactivo (V9.9 simplificado / pool puro / híbrido), y runner reproducible `sp02_hibrido_tests.js`. Se conserva el motor base de la maqueta, con extensión localizada y corrección del error anterior que quitaba exposición al atacar con éxitos escalonados.
+
+**Reglas de prueba, NO oficiales:** cuatro órdenes igualadas, movimiento sin gasto de orden; búsqueda y movimiento por pool (5 o 6 = éxito); limpiar y fortificar son acciones **directas que sí gastan orden**. Un superviviente con **Combate ≥4**, que **ataca desde la colonia con al menos una barricada**, elimina un zombi sin tirada ni exposición, gastando una orden; en otros contextos ataca por pool. Se comparó además la regla más permisiva de ataque sin dados desde la colonia aun sin barricada. Estas condiciones inventadas para el test NO deben trasladarse directamente al juego.
+
+### Resultado básico: meta de la maqueta cumplida por escenario
+
+| Objetivo | V9.9 simplificado | Pool puro | Híbrido contextual |
+| --- | ---: | ---: | ---: |
+| Medicamentos | **81,87 %** | **71,16 %** | **71,16 %** |
+| Asedio | **83,17 %** | **43,76 %** | **62,33 %** |
+| Laboratorio | **81,87 %** | **61,57 %** | **71,16 %** |
+
+**Causalidad importante:** en el **asedio básico**, los ataques preceden a construir barricada. Por tanto, la mejora del híbrido (43,76 → 62,33 %) proviene de que **fortificar ya no puede fallar**, no de una defensa automática. En el laboratorio, Damián sí está en colonia con barricada y su ataque es determinista. Medicamentos no mejora porque se necesitan dos búsquedas y ambas siguen siendo inciertas.
+
+**Éxitos escalonados con exposición corregida:** medicamentos **81,87 / 84,02 / 84,02 %**, asedio **83,17 / 59,35 / 84,34 %**, laboratorio **81,87 / 72,73 / 84,02 %** (orden: clásico/pool/híbrido). **Cuidado:** mejora el efecto del pool y del híbrido frente al clásico, así que no son sistemas equivalentes aunque se corrija el sesgo de exposición.
+
+### Prueba decisiva de preparación y dominancia
+
+| Asedio (misma meta y tres supervivientes) | V9.9 simplificado | Pool puro | Híbrido contextual |
+| --- | ---: | ---: | ---: |
+| **Sin barricada, atacar primero** | 83,17 % | 43,76 % | 62,33 % |
+| **Sin barricada, fortificar primero** | 83,17 % | 43,93 % | **100 %** |
+| **Con una barricada inicial** | 83,17 % | 62,33 % | **100 %** |
+| **Fuera de la colonia** (laboratorio) | 63,78 % | 56,62 % | 56,62 % |
+
+El **100 %** del híbrido surge porque Damián mata un zombi por orden sin riesgo ni consumo/desgaste de barricada ni munición, y la maqueta no resuelve ofensivas enemigas al final. Es **señal de sobrepotencia y falta de simulación de costos**, no validación de que el híbrido balancee automáticamente la defensa. La alternativa «en la colonia siempre, sin requerir barricada» también genera **100 %** incluso atacando primero con el refugio desprotegido: resulta todavía menos consistente.
+
+**Variación de personajes con defensa preparada, en dos ataques:** Mara Combate 3: **57,32 / 40,75 / 40,75 %**, Iris Combate 2: **33,79 / 25,76 / 25,76 %**, Damián Combate 5: **83,17 / 62,33 / 100 %** (clásico/pool/híbrido). **Problema:** un umbral rígido de Combate ≥4 cambia el resultado de una forma drástica. El valor de la especialización es evidente, pero requerimos costos, condiciones y alternativas que no vuelvan obligatorio al combatiente alto.
+
+**Ritmo teórico del asedio básico:** dados individuales lanzados en promedio **5,83 / 15,88 / 10,88** y acciones anotadas sin efecto **0 / 0,99 / 0,25** (clásico/pool/híbrido). Es útil como indicador de carga mecánica, **no mide diversión ni duración real**.
+
+**Tres órdenes y movimiento:** para los objetivos actuales, tres órdenes con movimiento gratis dan las mismas tasas que cuatro (la cuarta acción no es necesaria para esos objetivos). Tres órdenes con movimiento que consume orden causan **0 % en laboratorio**, pues el plan fijo exige cuatro órdenes imprescindibles. El test **no demuestra** si tres acciones son buenas o malas.
+
+### Dictamen y siguiente control
+
+- El híbrido **sí es técnicamente viable** y puede reducir tiradas innecesarias y fallos vacíos, dando una ventaja tangible a la preparación.
+- El híbrido **no está validado como mejor sistema**: los supuestos de defensa son demasiado poderosos, el laboratorio carece de desgaste, oleadas, equipo real, pasivas y narrativa persistente, y los planes automáticos no se adaptan.
+- **No aprobar** «atacar en colonia sin tirada = enemigo eliminado sin costo». Probar **defensa determinista con costo o límite contextual** y con barricadas, recursos y amenazas que evolucionan durante **2–3 rondas**, antes de decidir.
+- Mantener el estado de SP-02 como **alternativa híbrida prioritaria para explorar**, no reglamento aprobado. La conservación V9.9 y el trabajo D1/D2 permanecen separados; F-10/F-12/F-15 no fueron revocados.
+
 ## 6. Diseño de ronda provisional para SP-03 (no aprobado)
 
 1. **Apertura:** presentación de crisis, recursos, peligros e indicios válidos según el estado.
