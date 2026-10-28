@@ -354,6 +354,18 @@ El **100 %** del híbrido surge porque Damián mata un zombi por orden sin riesg
 - **No aprobar** «atacar en colonia sin tirada = enemigo eliminado sin costo». Probar **defensa determinista con costo o límite contextual** y con barricadas, recursos y amenazas que evolucionan durante **2–3 rondas**, antes de decidir.
 - Mantener el estado de SP-02 como **alternativa híbrida prioritaria para explorar**, no reglamento aprobado. La conservación V9.9 y el trabajo D1/D2 permanecen separados; F-10/F-12/F-15 no fueron revocados.
 
+## 5I. Idea del creador: defensa determinista con exposición posterior al combate (28/10/2026) — POR VALIDAR
+
+**Aporte del creador:** si el combate en una colonia preparada puede resolverse **sin tirar para acertar/eliminar al zombi**, eso **no** implica ausencia de peligro: **después de cada combate se podría resolver exposición**, de modo que la defensa eficaz siga desgastando y poniendo en riesgo a los supervivientes. Esta es una **hipótesis explícita, no una regla aprobada ni una orden de modificar el motor**.
+
+**Base comprobada de V9.9:** `ItemEngine.attack()` elimina uno o dos zombis según arma, luego normalmente llama a `expose()`. Pistola y rifle (con sus condiciones y límites) pueden evitar una exposición por ronda; `expose()` usa d6: **1 mordedura** (muere e inicia riesgo de contagio en esa localidad), **2 congelación**, **3 herida**, **4–6 blanco**; al acumular 3 daños hay muerte. Ese riesgo es **elevado** para automatizar combates frecuentes: dos exposiciones independientes sin protección implican **30,56 %** de al menos una mordedura `1-(5/6)^2` y **75 %** de al menos un resultado adverso `1-(3/6)^2`. Esto presupone que las dos tiradas llegan a realizarse; en juego real una mordedura previa puede detener el segundo combate.
+
+**Flujo candidato del híbrido:** (1) gastar orden de combate, (2) calcular resultado determinista por competencia, equipo, defensa y amenazas, (3) aplicar bajas zombi y costos/materiales, (4) **comprobar exposición por acción de combate**, salvo protección pertinente, y (5) actualizar heridas, personajes y estado. **No confundir** una exposición *por orden/combate* con una por zombi derrotado; el último criterio puede provocar castigo desproporcionado a armas multiobjetivo.
+
+**Por qué mejora la hipótesis de pruebas anterior:** el asedio híbrido llegó a 100 % de cumplimiento **de meta de bajas y barricada**, porque no se modelaron adecuadamente daño/desgaste, oleadas ni supervivencia del grupo. Recuperar exposición puede disociar **eficiencia defensiva** de **costo humano**, manteniendo tensión y valorando protección. Sin embargo, **no asegura balance**: usar riesgo letal 1/6 tras cada combate puede generar espiral rápida de pérdidas.
+
+**Próxima prueba requerida:** comparar la misma defensa durante 2–3 rondas entre (A) determinista sin exposición, (B) determinista + exposición V9.9, (C) determinista + exposición contextual mitigada por cobertura/equipo y (D) combate por pool. **Medir por separado** zombis eliminados, acciones gastadas, daños, mordeduras, muertes, presión de oleadas, recursos consumidos y misión completada. Conservar preparativos/equipo constantes y definir quién cuenta como protegido. **No hay porcentajes de nuevas simulaciones en esta entrada**.
+
 ## 6. Diseño de ronda provisional para SP-03 (no aprobado)
 
 1. **Apertura:** presentación de crisis, recursos, peligros e indicios válidos según el estado.
