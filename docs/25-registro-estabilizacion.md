@@ -1,6 +1,6 @@
 # 25 — Registro de estabilización V9.9 (C1–C15)
 
-**Última actualización:** 28/10/2026, Montevideo. **Rama:** `fix/estabilizacion-v9-9`. **Estado vigente:** C12/H1, C13 y C14 aprobados por pruebas/revisión/CI; auditoría C15 con T1/T2 corregidos y402/402 local/independiente, revisión documental aprobada/CI de entrega pendiente. [Informe49](49-c15-auditoria-final.md) y tablero18 determinan el próximo paso: completar entrega, luego aceptación del creador. A1 foco general permanece como reserva; C no está oficialmente cerrada. #4/#5/#6 ya aceptados/cerrados; otros nueve issues siguen abiertos. Sin integración en main, cierres nuevos ni publicación estable. Las secciones siguientes son historia de cada revisión.
+**Última actualización:** 28/10/2026, Montevideo. **Rama:** `fix/estabilizacion-v9-9`. **Estado vigente:** C12/H1, C13 y C14 aprobados por pruebas/revisión/CI; auditoría C15 con T1/T2 corregidos y402/402 local/independiente, revisión documental y CI f1a43c7/40691454445 aprobados. [Informe49](49-c15-auditoria-final.md) y tablero18 determinan el próximo paso: aceptación del creador, C no cerrada oficialmente. A1 foco general permanece como reserva; C no está oficialmente cerrada. #4/#5/#6 ya aceptados/cerrados; otros nueve issues siguen abiertos. Sin integración en main, cierres nuevos ni publicación estable. Las secciones siguientes son historia de cada revisión.
 
 ## Análisis de continuidad tras otro chat — 27/10/2026
 
@@ -491,3 +491,12 @@ CI exacto d801dbb / [40688534944](https://github.com/LeviEdition/invierno-en-la-
 
 
 **Revisión final independiente C15 completada:** código, informe49, diffs04/18/25, JSON, hashes y fuente oficial contrastados;402/402 independientes, cinco UI coherentes con VM,40 configuraciones repetidas sin inflar muestra. Sin inexactitudes materiales ni otro defecto funcional confirmado. A1/P2 y decisiones de adaptación explícitas. Aprobada para presentar tras CI del SHA final, sin cierre oficial de C/D.
+
+
+## Checkpoint final de misión C12→C15 — 28/10/2026
+
+**Código C15 f1a43c738e25e5c840799c7ffa7f70418c9061fe**, [CI40691454445](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40691454445) completed/success; logs402/402,0 fallidas/canceladas/omitidas/TODO. Se actualizó título/cuerpo PR14 vía API (CLI antigua no soportaba esa edición), sin comentario/cierre/merge: abierto/draft a refactor/arquitectura. Main remoto y origin/main siguen d9068f4, blob4ebaedad13d63c7a6762c524a52c0dd9695687b1. Este checkout carece de rama local main; una consulta con ese nombre falló y se sustituyó por las referencias remotas correctas, sin modificar Git ni crear ramas.
+
+Se comprobaron JSON, hashes de motor/evidencias, enlaces locales, sintaxis de los scripts y git diff --check. Capturas320px y continuidad393px inspeccionadas. Revisión independiente final técnica/documental aprobada; informes46–49, matriz04 y tablero18 coherentes. A1 y adaptaciones requieren revisión humana; **misión técnicamente entregada con reservas, etapa C no oficialmente cerrada**. Nueve issues abiertos conservados, #4/#5/#6 ya estaban cerrados. Sin stable, main, D/E/F ni cambios de balance. El commit documental de este checkpoint también se verifica por SHA en Actions al entregar; no se reutiliza para él el CI del código.
+
+**Única siguiente tarea:** aceptación del creador usando checklist49; decidir cierre con reservas o autorizar una corrección acotada de A1. El plan D es solo propuesta, sin implementación.

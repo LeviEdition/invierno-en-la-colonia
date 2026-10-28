@@ -1,6 +1,6 @@
 # 47 — C13: integración profunda
 
-**28/10/2026, Montevideo. Basef9429d1 con CI40682067180 success371/371.** Implementación y validación local/revisión aprobadas; CI del nuevo commit es gate de C14. No se cambian reglas ni estrategia.
+**28/10/2026, Montevideo. Basef9429d1 con CI40682067180 success371/371.** Implementación, validación local/revisión y CI3c152e8/40684493624 aprobados392/392 antes de C14. No se cambian reglas ni estrategia.
 
 ## Matriz priorizada por riesgo
 

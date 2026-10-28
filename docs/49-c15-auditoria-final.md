@@ -6,7 +6,7 @@
 
 Recomiendo **presentar C para aceptación técnica con reservas explícitas**. No quedan bloqueos graves confirmados en los recorridos comprobados después de las correcciones. No recomiendo una declaración de accesibilidad completa, equivalencia total con mesa o versión estable. El creador debe revisar las reservas y decidir el cierre oficial; D no se ha iniciado.
 
-C12 conserva las dos sucesiones por dueño. C13 protege y encadena decisiones, libera esperas y evita continuaciones de partidas antiguas. C14 aporta cuarenta configuraciones completas reproducibles del motor y cinco recorridos completos de interfaz. C15 contrasta reglas oficiales, repite la cobertura relevante y encuentra/corrige dos defectos adicionales. **402/402 tests, cero fallidas/canceladas/omitidas/TODO**, incluida revisión independiente. El CI del commit de entrega es el último gate, registrado por SHA en el checkpoint al publicar.
+C12 conserva las dos sucesiones por dueño. C13 protege y encadena decisiones, libera esperas y evita continuaciones de partidas antiguas. C14 aporta cuarenta configuraciones completas reproducibles del motor y cinco recorridos completos de interfaz. C15 contrasta reglas oficiales, repite la cobertura relevante y encuentra/corrige dos defectos adicionales. **402/402 tests, cero fallidas/canceladas/omitidas/TODO**, incluida revisión independiente. El CI exacto del código f1a43c7 está aprobado: [CI40691454445](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40691454445),402/402; el checkpoint documental se verifica también por su SHA en Actions al entregar.
 
 Permanece una **reserva P2 de accesibilidad**: el foco puede salir de ayuda y fallecimiento. Inicio/pase sí lo aíslan. C15 bloquea la elección de sucesor que esa fuga permitía durante una muerte; no implementa un sistema universal de foco. No llamar a #12 una auditoría completa de todos los diálogos.
 
@@ -156,7 +156,7 @@ GitHub mantiene **nueve issues abiertos**, sin cierres automáticos. Sus descrip
 - [x] C12–C15 ejecutadas en orden; errores técnicos reproducidos y correcciones localizadas.
 - [x]402/402 local e independiente;40/40 motor y5/5 UI finales, sin pendientes/excepciones/invariantes incumplidas en la cobertura declarada.
 - [x] Comparación oficial y reservas diferenciadas; informes46–48 conservados, tablero/registro/matriz actualizados.
-- [ ] CI exacto del commit de entrega y revisión final del informe confirmados al publicar (ver checkpoint).
+- [x] CI exacto del código f1a43c7,402/402, y revisión final del informe confirmados (ver checkpoint); documentación final se comprueba por su propio SHA en Actions.
 - [ ] Creador revisa A1/accesibilidad y diferencias de adaptación; decide aceptar reservas o encargar tarea concreta.
 - [ ] Creador acepta técnicamente los issues abiertos; sus cierres siguen siendo manuales/autorizados.
 - [ ] Creador decide cierre oficial de C. No implica fusión ni publicación.
@@ -173,7 +173,7 @@ GitHub mantiene **nueve issues abiertos**, sin cierres automáticos. Sus descrip
 |C12|f9429d1|[40682067180](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40682067180), success371/371 |
 |C13|3c152e8|[40684493624](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40684493624), success392/392 |
 |C14|d801dbb|[40688534944](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40688534944), success394/394 |
-|C15|Se registrará al publicar|Gate pendiente del nuevo SHA, no atribuirle anticipadamente CI anterior |
+|C15|f1a43c7|[CI40691454445](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40691454445), success402/402 |
 
 Archivos principales: HTML, tres suites nuevas C12/C13/C15, dos tests agregados C14, soporte real/controles de prueba, scripts Chromium y evidencias, informes46–49 y04/18/25. Cambios exclusivamente en rama autorizada; `main=d9068f4aa8d3a10bbbf1e0a8a2527744cc6952cb`, blob estable `4ebaedad13d63c7a6762c524a52c0dd9695687b1`. PR14 permanece abierto/draft, sin fusión ni publicación estable.
 
@@ -181,4 +181,6 @@ Archivos principales: HTML, tres suites nuevas C12/C13/C15, dos tests agregados 
 
 **Revisión documental independiente final aprobada:** informe49, diffs04/18/25, JSON/hash/fuente/conteos contrastados; sin inexactitud material confirmada. Dictamen: apto para presentar a aceptación con A1 y decisiones de adaptación pendientes, condicionado al CI exacto.
 
-**Checkpoint provisional:** correcciones, pruebas y revisión funcional/documental aprobadas; pendiente CI de publicación. No empezar D ni declarar C cerrada.
+**Checkpoint final C15:** código f1a43c738e25e5c840799c7ffa7f70418c9061fe y CI40691454445 completed/success, logs402/402 sin fallidas/canceladas/omitidas/TODO. Revisión independiente técnica/documental aprobada. PR14 actualizado a C1–C15, abierto/draft hacia refactor/arquitectura; nueve issues abiertos y main remoto/origin/main d9068f4 con blob original intactos. No existe rama local main en este checkout; se verificó su referencia remota, sin crearla ni modificarla. La documentación de este checkpoint no cambia el motor; se comprueba su propio SHA/CI antes de entregar mediante [Actions de la rama](https://github.com/LeviEdition/invierno-en-la-colonia/actions?query=branch%3Afix%2Festabilizacion-v9-9), sin atribuirle anticipadamente el CI de código.
+
+**Misión C12–C15 completada técnicamente para revisión, con reservas.** Próximo paso único: aceptación del creador mediante checklist. C permanece oficialmente abierta; D no iniciada. A1 requiere aceptar el alcance o una tarea de corrección antes del cierre según decisión del creador.

@@ -1,6 +1,6 @@
 # 46 — C12: sucesiones simultáneas
 
-**28/10/2026, Montevideo. Base43f7c11; rama fix/estabilizacion-v9-9.** H1 corregido; revisión independiente aprobada tras corregir R1/R2. Pendiente verificar CI del commit de esta etapa antes de C13.
+**28/10/2026, Montevideo. Base43f7c11; rama fix/estabilizacion-v9-9.** H1 corregido; revisión independiente aprobada tras corregir R1/R2. CI f9429d1/40682067180 aprobado371/371 antes de C13; gate registrado al final.
 
 ## Referencia y autorización
 

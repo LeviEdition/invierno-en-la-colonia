@@ -16,11 +16,13 @@ Autorización explícita del creador para C12→C15 en orden y correcciones téc
 | C12 | Aprobado técnicamente; f9429d1 y CI40682067180 success371/371 | [46](46-c12-sucesiones-simultaneas.md),371/371 y6casos Chromium |
 | C13 | Aprobado;3c152e8/CI40684493624success392/392 | [47](47-c13-integracion-profunda.md),392/392 |
 | C14 | Aprobado; d801dbb / CI40688534944 success394/394; 40 partidas motor y5UI | [48](48-c14-partidas-completas.md),394/394 |
-| C15 | Auditoría completada; T1/T2 corregidos, 402/402; revisión documental aprobada; CI de entrega pendiente | [49](49-c15-auditoria-final.md), fuentes oficiales,40 motor/5UI repetidos |
+| C15 | Completada para aceptación con reservas; f1a43c7 / CI40691454445 success402/402; revisión aprobada | [49](49-c15-auditoria-final.md), fuentes oficiales,40 motor/5UI repetidos |
 
-**Tarea activa única:** cerrar la entrega C15 con CI del SHA exacto, revisión documental aprobada; después, revisión de aceptación por el creador. No iniciar D. CI C14 exacto confirmado success394/394. La misión reemplaza la necesidad anterior de pedir autorización para H1. Main d9068f4 intacta, PR14 draft a refactor/arquitectura. Referencia sincronizada43f7c11,358/358 y CI40678862713 success.
+**Tarea activa única:** revisión de aceptación V9.9 por el creador con checklist de informe49; decidir reservas A1/adaptaciones y cierre oficial de C. No iniciar D, fusionar ni cerrar issues automáticamente. C15 código f1a43c7 y CI40691454445 success402/402; revisión técnica/documental aprobada. La misión reemplaza la necesidad anterior de pedir autorización para H1. Main d9068f4 intacta, PR14 draft a refactor/arquitectura. Referencia sincronizada43f7c11,358/358 y CI40678862713 success.
 
 ## Resultado actual C12→C15 — 28/10/2026, Montevideo
+
+**Entrega C15:** f1a43c7 / [CI40691454445](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40691454445) success402/402; PR14 actualizado a C1–C15. El commit documental de cierre se verifica por su SHA antes de entregar.
 
 H1 resuelto C12. C13 protege prioridades/esperas/terminales. C14 ejecutó40 configuraciones y5UI. C15 encontró **T1/P1** (hambre/residuos llevan moral0 y bonus de crisis podía recuperarla) y **T2/P2** (teclado elegía sucesor detrás de muerte); corregidos mediante verify/retornos en colonia y guardia de sucesión.8 nuevas pruebas, **402/402**,0 fallos/TODO; revisión independiente técnica aprobada. Las siete pruebas antiguas que omitían confirmar muerte ahora realizan ese paso y mantienen sus expectativas.
 
