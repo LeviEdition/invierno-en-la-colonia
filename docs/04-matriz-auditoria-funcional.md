@@ -6,6 +6,13 @@
 
 **Fecha de inicio:** 27/10/2026 · **Rama:** `refactor/arquitectura` · **Base:** `invierno_colonia_v9_9.html`
 
+## Actualización C10/#7 — 28/10/2026
+
+**Subsistema14, decisiones de encrucijadas IA:** selección por consecuencias reales en copias aisladas y prioridades aprobadas (victoria/derrota, muertes, alimentación, moral crítica, muestras, recursos/defensas/peligro y orden estable). Sin dependencia de texto, títulos o etiquetas; elegibilidad mecánica compartida. Consecuencias humanas/locales y reglas vigentes preservadas en624 comparaciones antes/después. [Informe43](43-c10-encrucijadas-prioridades.md).
+
+**Validación:** 358/358 suite local (52 encrucijadas), TDD rojo→verde, 624 combinaciones de conformidad evaluación/resolución, revisión independiente sin defectos confirmados y16 recorridos Chromium en escritorio/móvil emulado. CI de entrega pendiente de comprobar. **#7 implementado, abierto para aceptación del creador**; PR14 draft, sin fusión. Reserva: política inmediata/conservadora, sin balance de partidas ni Android físico/TalkBack. El resto de esta matriz conserva el historial; no interpretar su descripción de #7 por regex como el código de la rama actual. Único siguiente paso: revisar entrega #7; no iniciar #13.
+
+
 ## Cierre de cobertura A6 (con limitaciones documentadas)
 
 Los **21 subsistemas** se mantienen clasificados: 01–19 con cobertura parcial (incluidos defectos abiertos en varios); **20–21 no implementados**, fuera del alcance de V9.9. En [el informe final](24-cierre-auditoria-y-prioridades.md) figuran las 12 incidencias (#2–#13), orden propuesto y excepciones. Se aceptó **continuar sin checklist físico A5-02** por autorización explícita del creador tras partidas satisfactorias, **sin declarar que la prueba móvil física ocurrió**. Al cerrar A6, la siguiente tarea era **C1/#11**, en rama separada. El estado actual de estabilización figura en las actualizaciones siguientes y en el tablero operativo.

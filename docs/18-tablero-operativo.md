@@ -1,6 +1,6 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
-**Última revisión:** 27/10/2026. **Proyecto:** Invierno en la Colonia. **Rama activa de ajustes:** `fix/estabilizacion-v9-9` (base de auditoría `refactor/arquitectura`).
+**Última revisión:** 28/10/2026. **Proyecto:** Invierno en la Colonia. **Rama activa de ajustes:** `fix/estabilizacion-v9-9` (base de auditoría `refactor/arquitectura`).
 **Documento operativo**: a diferencia de los documentos conceptuales, este archivo determina qué hacemos **ahora**, qué queda estacionado y qué evidencia habilita cambiar de fase.
 
 > **NORMA DE TRABAJO:** una etapa activa, una tarea activa. No empezar una fase posterior porque surgió una idea interesante; anotar la idea y retomar lo previsto. Cambiar prioridades exige una decisión explícita registrada aquí.
@@ -11,8 +11,8 @@
 
 - **Estable:** `main`, `invierno_colonia_v9_9.html`, SHA Git blob `4ebaedad13d63c7a6762c524a52c0dd9695687b1`. El archivo es idéntico en `main` y `refactor/arquitectura` al revisar.
 - **Auditoría:** PR [#1](https://github.com/LeviEdition/invierno-en-la-colonia/pull/1) abierto y en borrador; no fusionar por ahora.
-- **Pruebas actuales de estabilización:** **336 declaradas, 336 aprobadas, 0 fallidas/canceladas/omitidas y 0 TODO**, comprobadas localmente y en [CI de `d09021f`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40595507459). [Análisis de continuidad40](40-estado-actual-y-continuidad.md). Los resultados por etapa se conservan como históricos; Android físico/TalkBack y balance mantienen sus reservas.
-- **Problemas registrados:** [#2](https://github.com/LeviEdition/invierno-en-la-colonia/issues/2), [#3](https://github.com/LeviEdition/invierno-en-la-colonia/issues/3), [#4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4), [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5), [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6), [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) y [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8), [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9), [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10) y [#11](https://github.com/LeviEdition/invierno-en-la-colonia/issues/11), [#12](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12) y [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13). **#4, #5 y #6 están aceptados y cerrados**; #7 y #13 siguen pendientes. Otras correcciones registradas conservan issues abiertos: no se cierran automáticamente por este análisis.
+- **Pruebas actuales de estabilización C10/#7:** **358 declaradas, 358 aprobadas, 0 fallidas/canceladas/omitidas y 0 TODO**, comprobadas localmente con `npm test`. Incluyen 52 pruebas de encrucijadas; Chromium aprobó 16 recorridos y la revisión independiente no encontró defectos confirmados. [Informe43](43-c10-encrucijadas-prioridades.md). CI de entrega pendiente de publicar/verificar. Los resultados anteriores se conservan como históricos; Android físico/TalkBack y balance mantienen sus reservas.
+- **Problemas registrados:** [#2](https://github.com/LeviEdition/invierno-en-la-colonia/issues/2), [#3](https://github.com/LeviEdition/invierno-en-la-colonia/issues/3), [#4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4), [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5), [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6), [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) y [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8), [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9), [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10) y [#11](https://github.com/LeviEdition/invierno-en-la-colonia/issues/11), [#12](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12) y [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13). **#4, #5 y #6 están aceptados y cerrados**; #7 está implementado para revisión, todavía abierto; #13 sigue pendiente. Otras correcciones registradas conservan issues abiertos: no se cierran automáticamente por este análisis.
 - **Narrativa:** visión, objetivos, campañas y bocetos registrados en `docs/12`–`docs/17`. Son **propuestas y decisiones de diseño**, no código ni campañas implementadas.
 
 ## Estado consolidado tras trabajo en otro chat — 27/10/2026
@@ -23,7 +23,7 @@ C7/C7-R1 (#5 herramientas y botín), C8 (#4 transferencias por modo), aviso de s
 
 **Resultado de este análisis:** no se detectaron incoherencias materiales entre los cambios ejecutables leídos y los informes, dentro de una revisión acotada. Se actualizaron conteos y estados obsoletos de documentación. El título/cuerpo del PR14 aún dice C1–C4 y se registra como pendiente administrativo; no se editó el PR. No se implementó ni inició #7. La reserva de muertes simultáneas de ambos líderes, otras crisis y pruebas físicas/balance mantiene los límites de informe40.
 
-**Única siguiente tarea propuesta:** autorizar análisis de #7 y acordar criterios basados en efectos estructurados antes de modificar decisiones de IA. #13 y pulido de avisos siguen después; no fusionar ni publicar por esta verificación. Las secciones que siguen conservan la evolución histórica y sus resultados por etapa.
+**Siguiente tarea propuesta en esa instantánea histórica (sustituida por C10 al final):** autorizar análisis de #7 y acordar criterios basados en efectos estructurados antes de modificar decisiones de IA. #13 y pulido de avisos siguen después; no fusionar ni publicar por esta verificación. Las secciones que siguen conservan la evolución histórica y sus resultados por etapa.
 
 ## Entrega C5/C6 para revisión
 
@@ -51,7 +51,7 @@ Por instrucción del usuario se incorporó la obligación de actualizar el table
 
 **Control:** [PR14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14) continúa draft a `refactor/arquitectura` y `main` no cambia por esta anotación. La documentación de diseño previo sigue vigente como hipótesis, no como implementación.
 
-## 2. Etapa activa C — estabilización; C1–C9 implementadas por bloque, siguiente propuesta #7
+## 2. Etapa activa C — estabilización; C10/#7 en revisión
 
 **Objetivo:** saber qué hace realmente el juego, qué falla y qué no se ha probado, antes de intervenir sus reglas o extraer módulos.
 
@@ -342,6 +342,28 @@ El creador indicó **«cerra el issue»** después de la propuesta explícita de
 
 **Próximo paso único recomendado, sujeto a aprobación del creador:** analizar [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7), decisiones de IA en las encrucijadas según texto de consecuencias, y definir criterio determinista con efectos estructurados antes de modificar código. La accesibilidad táctil [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13) y auditoría general de alertas permanecen en la ruta de estabilización.
 
+## Análisis de arquitectura #7 — propuesta Utility AI, 27/10/2026
+
+**Pedido explícito:** analizar encrucijadas y proponer módulos, dependencias, riesgos y secuencia de pruebas; **sin modificar código ni crear commits**. [Informe41](41-propuesta-utility-ai-encrucijadas.md). Se leyeron 26 cartas/52 opciones, activación, elegibilidad, callbacks, actor/dueño y espera de IA. La selección actual todavía depende del texto; no se cambió.
+
+**Propuesta no implementada:** catálogo con IDs y consecuencias estructuradas; contexto de solo lectura; proyección sin efectos secundarios; política de utilidad por estado; selector determinista conectado al flujo actual. Preservar reglas y decisión manual local; migrar gradualmente con conformidad de efectos, sin rediseñar todo el motor. Pesos/prioridades no aprobados automáticamente.
+
+**Validación de la revisión:** 30/30 tests existentes de encrucijadas aprobados, incluidos tests de caracterización de la heurística errónea. No se añadieron pruebas ni se repitió navegador/suite completa. Solo documentación local, `git diff --check`; sin staging, commit o push. `main` y PR14 intactos.
+
+**Siguiente tarea única propuesta:** acordar contrato y ejemplos de decisión del paso1 del informe41; después, implementar por bloques con sus pruebas. No se implementó #7 ni se inició #13.
+
+## Comparación de alternativas para #7 — 27/10/2026
+
+El creador solicita evaluar críticamente Utility AI frente a otras posibilidades. [Comparación en informe41](41-propuesta-utility-ai-encrucijadas.md#2-bis-comparación-crítica-de-alternativas--27102026). **Recomendación técnica no aprobada:** comenzar con prioridades contextuales sobre efectos estructurados, conservando una interfaz que permita Utility después. Con dos opciones por carta, puede ser más explicable y comprobable; no elimina el costo de proyectar efectos ni garantiza mejor estrategia. Utility conserva valor para compensaciones graduales; planificación de varios turnos se pospone por costo/alcance.
+
+No se seleccionó algoritmo ni orden final de prioridades, no hubo nuevas pruebas ejecutadas y no se modificó código. Solo documentación local de esta comparación, sin commits por instrucción vigente. **Siguiente tarea única propuesta:** contrastar escenarios y decidir prioridades o Utility antes de implementar #7. Las reglas existentes, `main` y PR14 permanecen intactos.
+
+## Comparación concreta de políticas #7 — 27/10/2026
+
+A pedido del creador se compararon prioridades y Utility con seis escenarios de cartas actuales, usando 12 resoluciones aisladas de sus efectos reales. [Informe42](42-comparacion-politicas-encrucijadas.md): cinco acuerdos y un desacuerdo con moral baja/alimentos insuficientes; cambiar un peso Utility invierte esa elección. Son perfiles ilustrativos no aprobados, no una medida de superioridad o balance. Ambos respetan opciones legales y desenlaces terminales del juego.
+
+Solo auxiliares temporales externos y documentación local42/41/18/25; sin cambios de código del repositorio, commits ni implementación de IA. No se repitieron suite completa o navegador. **Siguiente decisión única propuesta:** acordar cómo priorizar moral frente a reservas alimentarias cuando ninguna opción cubre el déficit, y usarlo para precisar el evaluador #7. Sin aprobar algoritmo por silencio, sin fusionar.
+
 ## 3. Etapas posteriores: una por vez
 
 | Etapa | Propósito | Criterio para habilitar la siguiente |
@@ -408,4 +430,26 @@ Solo cambiar la etapa activa con una decisión consciente; registrar motivo, rie
 - **Propuestas narrativas (estacionadas):** `docs/12`–`docs/17`.
 - **Defectos/decisiones por resolver:** GitHub Issues.
 
-**Tarea única actual por continuidad autorizada: análisis acotado y definición de política del issue #7 (IA de encrucijadas sin lectura frágil del texto), sin código hasta aprobar criterio. #6 cerrado/completed; #13 y revisión transversal después; PR14 draft y `main` intacta. Narrativa/single-player aplazados hasta cumplir las compuertas C→D→E.**
+**Tarea activa única: entregar C10/#7 para revisión del creador, con prioridades contextuales aprobadas, pruebas locales y Chromium verdes y revisión independiente sin defectos confirmados. Falta verificar CI de entrega. Sin cierre del issue, fusión ni versión estable.**
+
+
+## C10/#7 — checkpoint histórico de primera revisión, 28/10/2026
+
+El creador aprobó prioridades del informe42, con R3→apagar la radio, desempate numérico determinista y autorización de commits/push exclusivamente a `fix/estabilizacion-v9-9`. Esto sustituye la restricción anterior de solo análisis. Utility completa, #13 y arquitectura narrativa quedan fuera del alcance.
+
+**Primera revisión:** las consecuencias llamaban funciones globales; copiar `game` sin adaptar sus dependencias era inseguro. Se optó por un contexto explícito opcional para compartir las reglas de zombis, muerte, reemplazo/reclutamiento, alimentación y verificación, separando sus efectos de interfaz. Los requisitos se anexan a las opciones para independizarlos también del título.
+
+**TDD comprobado:** 43 tests de encrucijadas, rojo32/43 (11 fallidos), luego verde43/43. Se ampliaron a50/50: seis aceptaciones, elegibilidad, texto independiente, aislamiento con spies de azar/UI, muertes, reemplazo, indefensos, cocinero, empate y conformidad de las52opciones en624 combinaciones. Suite inicial349/349 antes de esta última ampliación; suite final pendiente. Experimento temporal adicional compara624 resoluciones con el HTML de `6fdb774`: sin diferencias en reglas, estados mecánicos o pendientes. Segunda revisión independiente y Chromium en curso. [Informe43](43-c10-encrucijadas-prioridades.md).
+
+**Siguiente paso único:** terminar revisión independiente y pruebas de interfaz; corregir cualquier defecto confirmado antes de publicar para revisión en PR14. #7 permanece abierto, `main` intacta.
+
+
+### C10/#7 — segunda revisión y validación final local, 28/10/2026
+
+**Revisión crítica independiente solicitada por el creador:** otro agente revisó el diff sin editar ni crear commits. Ejecutó 312 evaluaciones con el acceso global a `game` prohibido mediante Proxy y spies que rechazan azar, mensajes y avisos de muerte; todas aprobadas. Comprobó además falta de reemplazos al completar muestras, diez candidatos de reclutamiento y derrota por desbordamiento. No encontró defectos confirmados. Se retiró una consulta redundante a `isLeader()` después de marcar al personaje muerto; no alteraba resultados. Dos casos adicionales quedan permanentes en la suite (falta de reemplazos frente a objetivo y acceso global prohibido).
+
+**Resultado final local:** `npm test`, 358 declaradas, 358 aprobadas, 0 fallidas/canceladas/omitidas y 0 TODO; 52 de encrucijadas. Chromium154: 16 recorridos dirigidos aprobados, 8 por viewport (1365×768 y 393×852 móvil emulado): seis casos de IA, J1 y J2 manuales con opción no permitida y pase real. Sin excepciones JavaScript. El script `scripts/check-issue7-browser.mjs` y la evidencia JSON se conservan; estados preparados, no partidas naturales ni Android físico. La repetición final tras la simplificación también aprobó los16 recorridos.
+
+**Integración documental:** antes del push se detectaron commits remotos `7b4de9b`/`f202184` del otro chat, solo documentos18/25. Se avanzó por fast-forward y se recuperó el trabajo local de un stash; los dos conflictos de documentación se resolvieron conservando las decisiones de continuidad y los informes nuevos. Sin reescritura de historial ni force-push. No hubo cambios de motor remotos que invaliden las pruebas.
+
+**Límites y recomendación:** evaluación inmediata, reclutamiento conservador y puntaje simple; futuras cartas deben respetar el contexto. Sin balance exhaustivo, Android físico/TalkBack ni validación del riesgo preexistente de líderes simultáneos. Técnicamente recomendable para aceptación de #7 si CI confirma esta entrega; el issue sigue abierto por instrucción. **Único paso siguiente: revisión del creador; no comenzar #13 ni narrativa.**

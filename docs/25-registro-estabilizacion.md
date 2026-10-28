@@ -1,6 +1,6 @@
-# 25 — Registro de estabilización V9.9 (C1–C9)
+# 25 — Registro de estabilización V9.9 (C1–C10)
 
-**Fecha:** 27/10/2026. **Rama de trabajo:** `fix/estabilizacion-v9-9` (nació de `refactor/arquitectura`). **Estado consolidado:** C1–C9 y sus revisiones correctivas implementadas por bloque; #5, #4 y #6 aceptados/cerrados. Suite local y CI sobre `d09021f`: 336/336 aprobadas, 0 fallidas y 0 TODO. **Sin integración en `main`.** Siguiente propuesta: análisis y definición de #7, no iniciada.
+**Última actualización:** 28/10/2026. **Rama de trabajo:** `fix/estabilizacion-v9-9` (nació de `refactor/arquitectura`). **Estado consolidado:** C1–C9 y revisiones implementadas; #5/#4/#6 aceptados/cerrados. C10/#7 implementado para revisión del creador: suite local 358/358, 16 recorridos Chromium aprobados y revisión independiente sin defectos confirmados. CI de entrega pendiente. **Sin integración en `main`, cierre de #7 ni publicación estable.** [Informe43](43-c10-encrucijadas-prioridades.md).
 
 ## Análisis de continuidad tras otro chat — 27/10/2026
 
@@ -345,4 +345,46 @@ Ante propuesta expresa de aceptar y cerrar administrativamente C9/#6, el creador
 
 ## Siguiente tarea única
 
-**Tarea única actual: análisis #7 y propuesta de política mínima basada en efectos (no texto), sin implementación hasta aprobarla. Se retoma la ruta original para finalizar estabilización C antes de D/E; PR14 permanece draft y `main` intacta.**
+**Estado histórico al comenzar el análisis:** faltaba aprobar la política de #7. La autorización posterior y el resultado C10 se registran al final; no iniciar #13 ni D/E por esta entrega.
+
+## Propuesta de arquitectura Utility AI #7 — 27/10/2026
+
+Por solicitud del creador se analizó el sistema actual y se preparó [informe41](41-propuesta-utility-ai-encrucijadas.md): condiciones, consecuencias, cinco piezas modulares, puntuación contextual, dependencias y siete pasos pequeños con pruebas. Se mantienen las reglas, decisiones humanas, propietarios y flujo de confirmación; se identifican riesgos de efectos globales al proyectar, divergencia descriptor/callback, azar, desbordamientos y esperas de IA. No se aprueban pesos o preferencias por el hecho de proponer arquitectura.
+
+**Evidencia:** lectura del HTML local en `6fdb774`, auxiliares, documentación y pruebas existentes. `node --test tests/encrucijadas.test.mjs`: 30 aprobadas, 0 fallidas/canceladas/omitidas, 0 TODO. No hubo nuevas pruebas ni evaluación de una Utility AI implementada. Se actualizan solo documentos41/18/25, `git diff --check`, sin staging/commits/push por instrucción expresa. Código, reglas, `main`, configuración y PR14 sin cambios.
+
+**Siguiente tarea única propuesta:** acordar contrato y escenarios de decisión (paso1), antes de implementar. No iniciar otro bloque en esta revisión ni fusionar.
+
+## Comparación crítica de alternativas a Utility AI #7 — 27/10/2026
+
+El creador solicita alternativas a su propuesta Utility. Se compararon prioridades contextuales, Utility y búsqueda de varios turnos; [informe41](41-propuesta-utility-ai-encrucijadas.md) registra ventajas/costos y diferencia entre secuenciación de comportamiento y evaluación de opciones. Se recomienda como punto de partida una política de prioridades basada en consecuencias/contexto y sustituible posteriormente; no una lista por carta ni una vuelta a interpretar textos. No es decisión del creador, preferencia estratégica aprobada ni prueba de superioridad en balance.
+
+**Acciones:** revisión de propuesta anterior y contexto de 26 cartas/dos opciones, documentación de alternativas y actualización del tablero. Sin código, nuevas pruebas, staging, commits, push, cambios de reglas o PR. La orden previa de no crear commits continúa vigente; los documentos locales de la revisión anterior se conservan. **Siguiente tarea única:** contrastar escenarios y acordar política (prioridades o Utility) antes de implementar #7.
+
+## Comparación por escenarios de prioridades y Utility #7 — 27/10/2026
+
+Solicitud del creador: comparar ambas alternativas para evaluar su resultado. [Informe42](42-comparacion-politicas-encrucijadas.md) registra seis escenarios/12 resoluciones reales aisladas mediante fixture VM, perfiles explícitos, tratamiento terminal compartido, cinco acuerdos, desacuerdo R3 y sensibilidad de peso. No se evalúa la IA actual ni se afirma que los perfiles sean óptimos. Se diferencia el orden de prioridades del desempate numérico y se conserva la falta de aprobación estratégica.
+
+**Trabajo/validación:** auxiliares en `/tmp`, sin editar ejecutables o tests del proyecto; documentación42/41/18/25, `git diff --check`, sin staging/commits/push por instrucción vigente. No se repitió suite completa ni Chromium. **Siguiente decisión única propuesta:** preferencia R3 y orden de urgencias antes de elegir/implementar la política #7. `main` y PR14 intactos.
+
+
+## C10/#7 — aprobación y primera revisión técnica, 28/10/2026
+
+Autorización explícita del creador: implementar solo #7 con prioridades contextuales del informe42, desempate determinista, pruebas TDD, revisión independiente, navegador, documentación y commits/push en la rama existente. No cerrar #7 ni fusionar PR14. Se preservan informes41/42 como históricos.
+
+Se inspeccionaron26cartas/52opciones, condiciones, zombis, muerte, reclutamiento, `verify()`, modos y protocolo15. Se confirma el riesgo de callbacks globales y se introduce contexto explícito opcional; no se intercambia `game`. Elegibilidad en predicados mecánicos anexos. Reclutamiento evalúa todas sus ramas inmediatas y usa la peor, sin consumir el azar vivo. Las reglas terminales y de alimentación se comparten con resolución real.
+
+TDD inicial `node --test tests/encrucijadas.test.mjs`:43tests,32aprobados/11fallidos antes de implementación;43/43 después. Suite inicial `npm test`:349/349. Ampliación50/50 encrucijadas:624 combinaciones de conformidad y aislamiento (52opciones×3estados×2dueños×2modos). Comparación temporal separada contra `6fdb774`:624/624 resoluciones con mismos resultados, incluidos pendientes de liderazgo/selección/muerte. Los auxiliares/logs de diagnóstico quedan en `/tmp`; no son nuevas dependencias del proyecto. Navegador y segunda revisión en curso, no se declaran aprobados todavía. Informe43 registra entrega final.
+
+
+### C10/#7 — segunda revisión y validación final local, 28/10/2026
+
+**Revisión crítica independiente solicitada por el creador:** otro agente revisó el diff sin editar ni crear commits. Ejecutó 312 evaluaciones con el acceso global a `game` prohibido mediante Proxy y spies que rechazan azar, mensajes y avisos de muerte; todas aprobadas. Comprobó además falta de reemplazos al completar muestras, diez candidatos de reclutamiento y derrota por desbordamiento. No encontró defectos confirmados. Se retiró una consulta redundante a `isLeader()` después de marcar al personaje muerto; no alteraba resultados. Dos casos adicionales quedan permanentes en la suite (falta de reemplazos frente a objetivo y acceso global prohibido).
+
+**Resultado final local:** `npm test`, 358 declaradas, 358 aprobadas, 0 fallidas/canceladas/omitidas y 0 TODO; 52 de encrucijadas. Chromium154: 16 recorridos dirigidos aprobados, 8 por viewport (1365×768 y 393×852 móvil emulado): seis casos de IA, J1 y J2 manuales con opción no permitida y pase real. Sin excepciones JavaScript. El script `scripts/check-issue7-browser.mjs` y la evidencia JSON se conservan; estados preparados, no partidas naturales ni Android físico. La repetición final tras la simplificación también aprobó los16 recorridos.
+
+**Integración documental:** antes del push se detectaron commits remotos `7b4de9b`/`f202184` del otro chat, solo documentos18/25. Se avanzó por fast-forward y se recuperó el trabajo local de un stash; los dos conflictos de documentación se resolvieron conservando las decisiones de continuidad y los informes nuevos. Sin reescritura de historial ni force-push. No hubo cambios de motor remotos que invaliden las pruebas.
+
+**Límites y recomendación:** evaluación inmediata, reclutamiento conservador y puntaje simple; futuras cartas deben respetar el contexto. Sin balance exhaustivo, Android físico/TalkBack ni validación del riesgo preexistente de líderes simultáneos. Técnicamente recomendable para aceptación de #7 si CI confirma esta entrega; el issue sigue abierto por instrucción. **Único paso siguiente: revisión del creador; no comenzar #13 ni narrativa.**
+
+**Revisión documental final independiente:** conteos de suite/aceptación/conformidad/navegador y límites consistentes en18/25/04/43, script y JSON, sin carencias bloqueantes. Se etiquetó como histórico el primer checkpoint C10 del tablero. La configuración de fetch heredada solo seguía `main`; para incorporar la rama se verificó `FETCH_HEAD` explícito, sin cambiar configuración ni solicitar credenciales. Se verificará CI por SHA antes de entregar.

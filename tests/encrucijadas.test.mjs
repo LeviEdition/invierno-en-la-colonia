@@ -114,14 +114,14 @@ test('C2 #2 | combustible estructurado habilita opción de generador',()=>{
  assert.equal(t.val('game.items.some(it=>it.kind==="combustible")'),true);
  assert.equal(t.val('crossOptionAllowed(crossroadsDeck[game.crossCard],0,"human")'),true);
 });
-test('la IA elige opción por heurística de los textos y aplica efecto',()=>{
+test('la IA evalúa consecuencias y mantiene la confirmación antes de aplicar el efecto',()=>{
  const t=fixture();t.set('Golpes en la puerta','ai');t.run('game.mode="ai";');trigger(t,'move','game.bots[0]');
  assert.equal(t.val('aiCrossChoice'),0);t.run('crossAiContinue();');
  assert.deepEqual(t.val('({helpless:game.helpless,done:game.crossResolved,pending:game.crossPending})'),{helpless:2,done:true,pending:false});
 });
-test('IA elige riesgosamente la señal de radio porque interpreta palabras y no consecuencias',()=>{
+test('IA con reservas suficientes evita el riesgo de la radio',()=>{
  const t=fixture();t.set('La radio encendida','ai');trigger(t,'search','game.bots[0]');
- assert.equal(t.val('aiCrossChoice'),0);t.run('crossAiContinue();');assert.deepEqual(t.val('({food:game.food,z:game.zones[1].z,morale:game.morale})'),{food:8,z:3,morale:9});
+ assert.equal(t.val('aiCrossChoice'),1);t.run('crossAiContinue();');assert.deepEqual(t.val('({food:game.food,z:game.zones[1].z,morale:game.morale})'),{food:6,z:1,morale:10});
 });
 test('en modo local J2 decide su propia carta y no hay resolución automática',()=>{
  const t=fixture({mode:'local'});t.set('Golpes en la puerta','ai');trigger(t,'move','game.bots[0]');
@@ -174,4 +174,152 @@ test('C2 #2 | cartas antiguas representadas por cadenas también se reconocen y 
  t.run('resolveCross(0);');
  assert.equal(t.val('game.items.length'),0);
  assert.equal(t.val('game.crossResolved'),true);
+});
+
+// C10/#7: estados de aceptación acordados en el informe42, sin excepciones por carta.
+const decisionCases=[
+ {id:'R1',title:'La radio encendida',when:'search',setup:'game.food=1;game.morale=8;game.bots[0].loc=1;',pick:0},
+ {id:'R2',title:'La radio encendida',when:'search',setup:'game.food=8;game.morale=2;game.bots[0].loc=1;',pick:1},
+ {id:'R3',title:'La radio encendida',when:'search',setup:'game.food=0;game.morale=2;game.bots[0].loc=1;',pick:1},
+ {id:'M1',title:'Un mensaje en la pared',when:'search',setup:'game.food=8;game.morale=8;game.samples=4;game.goal=5;game.bots[0].loc=1;',pick:0},
+ {id:'M2',title:'Un mensaje en la pared',when:'search',setup:'game.food=8;game.morale=1;game.samples=4;game.goal=5;game.bots[0].loc=1;game.humans[1].loc=2;game.zones[2].z=zcap[2];',pick:1},
+ {id:'S1',title:'La señal del mando',when:'round',setup:'game.food=3;game.morale=5;game.zones[0].z=zcap[0];',pick:1},
+];
+function decisionFixture(c){
+ const t=fixture();t.set(c.title,'ai');
+ t.run('game.zones.forEach(z=>{z.z=0;z.b=0;z.noise=0;});'+c.setup);
+ return t;
+}
+for(const c of decisionCases)test('C10 #7 | aceptación '+c.id,()=>{
+ const t=decisionFixture(c);trigger(t,c.when,c.when==='round'?'null':'game.bots[0]');
+ assert.equal(t.val('game.crossPending'),true);
+ assert.equal(t.val('aiCrossChoice'),c.pick);
+ // El efecto sigue pendiente hasta confirmar en la interfaz.
+ assert.equal(t.val('game.crossResolved'),false);
+ t.run('crossAiContinue();');assert.equal(t.val('game.crossResolved'),true);
+ if(c.id==='M1')assert.equal(t.val('game.ended&&game.samples===game.goal&&game.morale>0'),true);
+ if(c.id==='M2')assert.equal(t.val('!game.ended&&!game.humans[1].dead&&game.morale===1'),true);
+});
+test('C10 #7 | descripción, título y etiquetas no cambian decisiones ni elegibilidad',()=>{
+ const t=decisionFixture(decisionCases[1]);
+ t.run('const c=crossroadsDeck[game.crossCard];c.title="Otra historia";c.story="Historia reescrita";c.choices[0][0]="A";c.choices[0][1]="Un beneficio sin riesgos";c.choices[1][0]="B";c.choices[1][1]="-1 moral, +2 zombis, +1 zombi, -2 comida";');
+ trigger(t,'search','game.bots[0]');assert.equal(t.val('aiCrossChoice'),1);
+ const u=fixture();u.set('Fiebre en el refugio','ai');
+ u.run('game.botItems=[];crossroadsDeck[game.crossCard].title="Título nuevo";');
+ assert.equal(u.val('crossOptionAllowed(crossroadsDeck[game.crossCard],0,"ai")'),false);
+ trigger(u);assert.equal(u.val('aiCrossChoice'),1);
+});
+test('C10 #7 | evalúa solo opciones legales, también con recursos antiguos',()=>{
+ for(const hand of ['[]','["medicina"]','[catalog.create("medkit")]']){
+  const t=fixture();t.set('Fiebre en el refugio','ai');t.run('game.botItems='+hand+';');
+  assert.deepEqual(t.val('evaluateCrossOptions(crossroadsDeck[game.crossCard],"ai").map(x=>x.index)'),hand==='[]'?[1]:[0,1]);
+ }
+});
+test('C10 #7 | no muta estado, referencias, pendientes, interfaz ni azar al evaluar muertes y reclutas',()=>{
+ for(const title of ['Un mensaje en la pared','Una mano entre los escombros','La farmacia saqueada']){
+  const t=fixture();t.set(title,'ai');
+  t.run('game.bots[0].loc=2;game.crossActorId=game.bots[0].id;game.zones[2].z=zcap[2];game.humans[1].loc=2;game.humans[1].equipment=[catalog.create("pistol")];');
+  const before=t.val('({game,pendingLeader,pendingLeaderSide,selected,target,picked,opened,pendingHeal,pendingLoot,pendingBite,pendingAttract,pendingTransfer,aiCrossChoice,death:deathDirector,toastQueue,toastBusy,selectionBySide})');
+  t.run('const originalGame=game,originalActor=game.bots[0],originalHand=game.botItems;Math.random=()=>{throw Error("azar vivo consumido")};message=()=>{throw Error("mensaje vivo")};paint=()=>{throw Error("pintado vivo")};show=()=>{throw Error("modal vivo")};deathDirector.record=()=>{throw Error("muerte viva")};evaluateCrossOptions(crossroadsDeck[game.crossCard],"ai");');
+  assert.equal(t.val('game===originalGame&&game.bots[0]===originalActor&&game.botItems===originalHand'),true);
+  assert.deepEqual(t.val('({game,pendingLeader,pendingLeaderSide,selected,target,picked,opened,pendingHeal,pendingLoot,pendingBite,pendingAttract,pendingTransfer,aiCrossChoice,death:deathDirector,toastQueue,toastBusy,selectionBySide})'),before);
+ }
+});
+test('C10 #7 | menos muertes gana aunque la otra opción dé más comida',()=>{
+ const t=fixture();t.set('El depósito bajo llave','ai');
+ t.run('game.bots[0].loc=1;game.zones[1].z=zcap[1];game.food=0;');
+ trigger(t,'search','game.bots[0]');assert.equal(t.val('aiCrossChoice'),1);
+});
+test('C10 #7 | empates mantienen orden estable sin usar azar',()=>{
+ const t=fixture();t.set('El aviso del centinela','ai');
+ t.run('game.zones[0].z=0;game.zones[0].b=zcap[0];Math.random=()=>{throw Error("azar")};');
+ for(let i=0;i<5;i++)assert.equal(t.val('chooseCrossOption(crossroadsDeck[game.crossCard],"ai")'),0);
+});
+test('C10 #7 | alimentación usa cocinero y población posterior al efecto',()=>{
+ const t=fixture();t.set('La radio encendida','ai');
+ t.run('game.bots[0].loc=1;game.food=0;game.morale=2;game.zones[1].z=0;game.humans[0].skill="cook";');
+ trigger(t,'search','game.bots[0]');assert.equal(t.val('aiCrossChoice'),0);
+ const u=fixture();u.set('Golpes en la puerta','ai');u.run('game.food=3;game.morale=8;');
+ const options=u.val('evaluateCrossOptions(crossroadsDeck[game.crossCard],"ai")');
+ assert.equal(options[0].outcomes[0].need,4);assert.equal(options[0].outcomes[0].fed,false);
+});
+test('C10 #7 | desbordamiento consume barricada antes de matar y cuenta indefensos',()=>{
+ const t=fixture();t.set('La radio encendida','ai');
+ t.run('game.zones[1].z=zcap[1]-1;game.zones[1].b=1;');
+ const o=t.val('evaluateCrossOptions(crossroadsDeck[game.crossCard],"ai")[0].outcomes[0]');
+ assert.equal(o.deaths,0);assert.equal(o.state.zones[1].b,0);assert.equal(o.state.zones[1].z,4);
+ const u=fixture();u.set('El autobús varado','ai');
+ u.run('all().forEach(p=>p.loc=1);game.helpless=1;game.zones[0].z=zcap[0];');
+ assert.equal(u.val('evaluateCrossOptions(crossroadsDeck[game.crossCard],"ai")[0].outcomes[0].deaths'),2);
+});
+
+function mechanicalState(state){
+ const copy=JSON.parse(JSON.stringify(state));delete copy.log;delete copy.last;
+ // La evaluación omite solo el orden aleatorio de los mazos al devolver equipo.
+ for(const deck of Object.values(copy.decks))deck.sort((a,b)=>JSON.stringify(a).localeCompare(JSON.stringify(b)));
+ return copy;
+}
+for(const mode of ['ai','local'])for(const side of ['human','ai']){
+ test('C10 #7 | conformidad de las 52 opciones y aislamiento: '+mode+'/'+side,()=>{
+  const titles=fixture().val('crossroadsDeck.map(c=>c.title)');
+  for(const title of titles)for(const setup of [
+   '',
+   'game.zones.forEach((z,i)=>{z.z=zcap[i];z.b=0;});all().forEach((p,i)=>{p.loc=i%3;p.equipment=[catalog.create("pistol")];});',
+   'game.food=0;game.items=[];game.botItems=[];game.helpless=6;game.waste=12;',
+  ])for(const index of [0,1]){
+   const t=fixture({mode});t.set(title,side);
+   t.run('game.crossPending=true;game.crossActorId=ownerGroup(game.crossOwner)[0].id;'+setup);
+   const before=t.val('game');
+   const options=t.val('evaluateCrossOptions(crossroadsDeck[game.crossCard],game.crossOwner)');
+   assert.deepEqual(t.val('game'),before,'aislamiento '+title);
+   const preview=options.find(o=>o.index===index);
+   const resolved=t.run('resolveCross('+index+')');
+   assert.equal(resolved,!!preview,'elegibilidad '+title+'/'+index);
+   if(!resolved){assert.deepEqual(t.val('game'),before);continue;}
+   const real=mechanicalState(t.val('game'));
+   assert.ok(preview.outcomes.some(o=>JSON.stringify(mechanicalState(o.state))===JSON.stringify(real)),
+    'resolución real ausente de los resultados previstos: '+mode+'/'+side+'/'+title+'/'+index);
+  }
+ });
+}
+test('C10 #7 | reclutamiento explora todos los personajes disponibles, sin garantizar cocinero',()=>{
+ const t=fixture();t.set('El rescate de la plaza','ai');
+ const available=t.val('roster.filter(r=>!all().some(p=>p.name===r.name)).map(r=>r.name).sort()');
+ const option=t.val('evaluateCrossOptions(crossroadsDeck[game.crossCard],"ai")[0]');
+ assert.deepEqual(option.outcomes.map(o=>o.state.bots.at(-1).name).sort(),available);
+ assert.ok(option.outcomes.some(o=>o.state.bots.at(-1).skill==='cook'));
+ assert.ok(option.outcomes.some(o=>o.state.bots.at(-1).skill!=='cook'));
+ assert.equal(option.rank[2],Math.min(...option.outcomes.map(o=>Number(o.fed))));
+});
+test('C10 #7 | morir último superviviente cuenta la muerte aun cuando llegue un reemplazo',()=>{
+ const t=fixture();t.set('La radio encendida','ai');
+ t.run('game.bots.slice(1).forEach(p=>p.dead=true);game.bots[0].loc=1;game.crossActorId="a0";game.zones[1].z=zcap[1];game.morale=8;');
+ const option=t.val('evaluateCrossOptions(crossroadsDeck[game.crossCard],"ai")[0]');
+ assert.ok(option.outcomes.length>1);
+ assert.ok(option.outcomes.every(o=>o.deaths===1&&o.state.bots.some(p=>!p.dead)&&!o.state.botItems.length));
+ const before=t.val('game');t.run('resolveCross(0);');
+ assert.equal(t.val('game.bots[0].dead'),true);assert.equal(t.val('game.botItems.length'),0);
+ assert.notDeepEqual(t.val('game'),before);
+});
+test('C10 #7 | ninguna opción permitida devuelve null y los empates no dependen del título',()=>{
+ const t=fixture();t.set('Golpes en la puerta','ai');
+ t.run('game.food=0;game.helpless=12;');
+ assert.deepEqual(t.val('evaluateCrossOptions(crossroadsDeck[game.crossCard],"ai")'),[]);
+ assert.equal(t.val('chooseCrossOption(crossroadsDeck[game.crossCard],"ai")'),null);
+ trigger(t,'move','game.bots[0]');assert.equal(t.val('game.crossPending'),false);
+});
+
+test('C10 #7 | objetivo y falta de reemplazo simultáneos se clasifican como derrota',()=>{
+ const t=fixture();t.set('Un mensaje en la pared','ai');
+ t.run('game.samples=game.goal-1;game.morale=8;game.humans.slice(1).forEach(p=>p.dead=true);game.humans[0].loc=2;game.zones[2].z=zcap[2];game.bots[0].loc=1;game.crossActorId="a0";const reserved=roster.filter(r=>!all().some(p=>p.name===r.name)).map((r,i)=>addCharacter({id:"hreserve"+i,name:r.name,loc:0,dead:true,equipment:[]}));game.humans.push(...reserved);');
+ const o=t.val('evaluateCrossOptions(crossroadsDeck[game.crossCard],"ai")[0].outcomes[0]');
+ assert.equal(o.result,'survivors');assert.equal(o.state.samples,o.state.goal);
+ trigger(t,'search','game.bots[0]');assert.equal(t.val('aiCrossChoice'),1);
+});
+test('C10 #7 | estado explícito funciona aunque toda lectura del game global esté prohibida',()=>{
+ const titles=fixture().val('crossroadsDeck.map(c=>c.title)');
+ for(const title of titles)for(const side of ['human','ai'])for(const mode of ['ai','local']){
+  const t=fixture({mode});t.set(title,side);
+  t.run('game.crossActorId=ownerGroup(game.crossOwner)[0].id;game.zones.forEach((z,i)=>z.z=zcap[i]);game.humans[1].loc=2;const detached=JSON.parse(JSON.stringify(game));game=new Proxy({}, {get(){throw Error("lectura global")},set(){throw Error("escritura global")}});Math.random=()=>{throw Error("azar global")};message=()=>{throw Error("mensaje global")};deathDirector.record=()=>{throw Error("muerte global")};evaluateCrossOptions(crossroadsDeck.find(c=>c.title==='+JSON.stringify(title)+'),'+JSON.stringify(side)+',detached);');
+ }
 });
