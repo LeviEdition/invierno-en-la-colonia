@@ -261,6 +261,31 @@ Las pasivas actuales cubren combate/búsqueda, mitigación de riesgo, acciones g
 
 **Decisión de trabajo propuesta:** dejar M2 (órdenes limitadas + tiradas por atributo) como **candidato principal para el futuro singleplayer**, mantener M1 como referencia de comparación y no descartar M3 prematuramente. **No implica reemplazo aprobado de F-10/F-12/F-15, ninguna estadística adicional aprobada ni ejecución de código**. La próxima conversación puede evaluar el *mismo dilema* bajo ambos sistemas sin discutir aún tablas de exposición.
 
+## 5F. Resultado de simulación exploratoria del laboratorio SP-02 — 28/10/2026
+
+**Encargo:** probar diferentes escenarios y evaluar **conveniencia** del nuevo método por tiradas, sin balancear definitivamente las situaciones. **Ejecución real sobre el código del laboratorio HTML**, con Node ejecutando sus funciones originales: **10.000 rondas por combinación** de 3 escenarios × 6 configuraciones × 2 sistemas (= **360.000 rondas**) y 6 variaciones de personaje × 2 sistemas × 10.000 (= **120.000** adicionales). Total **480.000**. **11/11 controles de lógica** y reproducción exacta del ensayo previo de 500 rondas. El laboratorio es una **simplificación** de V9.9: no confundirse con un test del juego completo.
+
+### Comparación de referencia: cuatro oportunidades por sistema, movimiento sin orden y efectos básicos
+
+| Objetivo cumplido | V9.9 simplificado | Pool por atributo |
+| --- | ---: | ---: |
+| Medicamentos | **81,87 %** | **71,16 %** |
+| Asedio | **83,17 %** | **43,76 %** |
+| Laboratorio | **81,87 %** | **61,57 %** |
+
+**Causas plausibles observadas en el código:** el clásico usa dados iniciales para **habilitar acciones que entonces tienen efecto seguro**, mientras que el pool consume una orden aun con cero éxitos. En asedio el pool genera **0,99 intentos sin resultado por ronda** (promedio) y necesita éxitos consecutivos en ataques y barricada. En los casos de medicamentos/laboratorio se lanzan **~6 d6 por ronda en clásico contra ~23,6 en pool**; importa para UX, no es medida directa de espera o diversión.
+
+### Sensibilidad y sesgos identificados
+
+- **Éxitos graduales:** el pool pasa a **84,02 % medicamentos, 62,66 % asedio, 72,73 % laboratorio**; **NO** es mejora atribuible solo a recompensas: en esta configuración el prototipo **omite la exposición al combatir** para el pool mientras que el clásico la conserva, y además concede más efectos con 2+ éxitos.
+- **Tres órdenes vs cuatro:** si **mover es gratis**, las metas del plan fijo dan **los mismos porcentajes** porque la cuarta orden suele estar ligada a una barricada no exigida en la meta. Este banco es insuficiente para medir el valor de la cuarta acción. Si mover **cuesta una orden** y solo hay tres, el laboratorio tiene **0 %** de cumplimiento por imposibilidad estructural del plan (traslado + dos búsquedas + ataque = cuatro acciones necesarias): no es un resultado probabilístico.
+- **Especialización probada:** si **Iris / Mara / Damián** buscan dos veces, las metas de medicamentos son **81,87 / 73,81 / 33,79 %** en clásico y **71,16 / 60,71 / 27,43 %** en pool; en asedio, dos ataques de **Damián / Mara / Iris** dan **83,17 / 47,44 / 33,79 %** en clásico y **43,76 / 24,12 / 18,17 %** en pool. **Ambos sistemas** ya diferencian los personajes; no se demostró que el pool lo haga más.
+- **Riesgos metodológicos:** modelo «clásico» sin catálogo de cartas, pasivas completas, crisis, ubicaciones y motor real; estadísticas del pool **inventadas para la maqueta** (incluye **cuatro atributos**, cuando el juego propio aún discute una tercera); órdenes con planes fijos y sin adaptación; exposición distinta entre sistemas, hambre sin consecuencias mecánicas, sin decisiones narrativas persistentes, sin pruebas con humanos. No usar porcentajes de victoria para «aprobar» o «rechazar» el diseño.
+
+### Conclusión de revisión (NO aprobación del nuevo sistema)
+
+La implementación conceptual de **órdenes limitadas + pruebas por atributo** funciona y justifica continuar explorándola **como candidata preferente del singleplayer**, no da todavía prueba de mayor profundidad/diversión. Promete ligar competencia, riesgo y grados de resultado, pero si consume órdenes en fallos sin progreso o multiplica tiradas puede **empeorar agencia y ritmo**. Conservar la estrategia de V9.9 como referencia positiva. **Siguiente prueba recomendada:** escenario con igual presupuesto/ubicaciones/exposición/pasivas/recursos, variando **solo** la mecánica de resolución; después modificar **un factor por vez** (éxitos escalonados, tres órdenes, movilidad) y realizar playtests manuales para agencia y ritmo. **F-10/F-12/F-15, D1/D2 y código sin modificaciones**.
+
 ## 6. Diseño de ronda provisional para SP-03 (no aprobado)
 
 1. **Apertura:** presentación de crisis, recursos, peligros e indicios válidos según el estado.
