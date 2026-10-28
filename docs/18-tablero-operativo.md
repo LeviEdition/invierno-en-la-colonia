@@ -7,6 +7,18 @@
 
 > **REGISTRO OBLIGATORIO (acuerdo del usuario, 27/10/2026):** al terminar cada revisión, actualizar este tablero. Documentar acciones, decisiones, cambios, resultados, evidencia y límites en el registro pertinente, aunque no se haya modificado código. Véase [protocolo](15-protocolo-revision-critica.md#registro-obligatorio-de-cada-revisión-y-trabajo).
 
+## Revisión de aceptación externa C12–C15 — 28/10/2026
+
+**Estado:** revisión crítica de solo lectura terminada; **entrega técnicamente apta para aceptación con una reserva P2**, sin declarar C oficialmente cerrada. Base comprobada `f597bf2f1aa1484408215b5a320699b0c10a1ea4`; PR14 abierto/draft hacia `refactor/arquitectura`, `main=d9068f4aa8d3a10bbbf1e0a8a2527744cc6952cb` intacta.
+
+**Verificación independiente:** se leyeron diffs reales de C12 (`f9429d1`), C13 (`3c152e8`), C14 (`d801dbb`), C15 (`f1a43c7`), HTML final, regresiones permanentes C12/C13/C15, controlador/fixture/runner de C14, informes46–49 y evidencia de CI. Los cinco CI de etapa/entrega están **completed/success**, incluido [CI documental final 40691733491](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40691733491); suite final declarada402/402 en los informes y Actions. C14 realmente emplea motor HTML y controlador reproducible sin editar recursos para forzar victoria;40 configuraciones(20/modo) y5 recorridos UI se verificaron contra evidencias, **sin repetirlos localmente en esta revisión**. Acciones/evidencia y límites detallados en [registro25](25-registro-estabilizacion.md#revision-de-aceptacion-externa-c12c15--28102026).
+
+**Reserva pendiente A1/P2:** el foco puede escapar de ayuda/fallecimiento; C15 bloquea `chooseLeader` tras una muerte, pero no implementa un confinamiento general del foco. No confundir el cierre técnico de #12 (setup/pase) con certificación de accesibilidad de todos los diálogos. Sin Android físico, TalkBack, otros navegadores ni balance humano. Las cuarenta partidas son simuladas por controlador, no jugadores humanos. El tratamiento de una crisis como efecto atómico se conservó deliberadamente; no hubo cambio autorizado de esa regla.
+
+**Decisiones de producto separadas:** la matriz de fidelidad discutida con el creador después del inicio de la misión propone alternar primer jugador en cada ronda y rediseñar el significado de atributos/dados/comida, entre otras decisiones. **No son defectos regresivos ni forman parte de C12–C15**; no implementarlas ni contarlas como deuda técnica a reparar automáticamente antes de cerrar C.
+
+**Única siguiente tarea recomendada:** decisión del creador sobre A1: corregir confinamiento de foco en ayuda/fallecimiento mediante tarea acotada y tests de teclado, o aceptar expresamente la reserva P2. Después revisar aceptación administrativa de los nueve issues abiertos y decidir cierre de C **sin fusión, publicación ni inicio de D automático**.
+
 ## Misión autónoma C12 → C15 — estado actual
 
 Autorización explícita del creador para C12→C15 en orden y correcciones técnicas localizadas con TDD/revisión/CI. No reglas nuevas, main, fusión/cierres, versión estable ni D/E/F. Se preservan los checkpoints anteriores como históricos.
