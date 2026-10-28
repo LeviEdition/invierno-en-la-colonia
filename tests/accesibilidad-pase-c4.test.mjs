@@ -43,7 +43,8 @@ function fixture(){
  const background=node('goalCard'),backdrop=node('backdrop');
  backdrop.dialogButtons=[node('modalClose')];backdrop.dialogButtons[0].parentDialog=backdrop;
  document.body.children=[background,node('floatingActions'),backdrop,setup,pass];
- const ctx=createContext({document,Math,queueMicrotask(){}});
+ const seededMath=Object.create(Math);seededMath.random=()=>.45; // Sin variación de encrucijada inicial entre CI.
+ const ctx=createContext({document,Math:seededMath,queueMicrotask(){}});
  runInContext(source,ctx,{filename:'invierno_colonia_v9_9.js',timeout:2000});
  runInContext('toast=()=>{};toggleFab=()=>{};gameMode="local";create();game.crossPending=false;game.crossResolved=true;',ctx);
  function key(key,shiftKey=false){const evt={key,shiftKey,prevented:false,preventDefault(){this.prevented=true;}};dispatch('keydown',evt);return evt;}
