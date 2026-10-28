@@ -1,5 +1,14 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## D0-I — PR #14 integrado en arquitectura; validación posterior pendiente · 28/10/2026
+
+**Autorización expresa:** el creador aprobó revisar, actualizar y fusionar solo PR14 → `refactor/arquitectura`, verificar después y documentar; `main` excluida. Se revisaron 97 patches, incluido HTML, workflow y pruebas clave; se corrigió el cuerpo obsoleto del PR14. GitHub exigió pasarlo de borrador a listo para revisión; [PR14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14) **merged** por commit `c15373d44f0a76affd9041be925eef48234239c3`. PR1 sigue abierto y sin fusionar; `main=d9068f4aa8d3a10bbbf1e0a8a2527744cc6952cb` sin cambios. A6 canónico permanece (blob `c132dd8`).
+
+**Verificación pendiente al documentar:** [Actions 40709698250](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40709698250) estaba `in_progress` para el commit del merge; no se ha verificado su resultado ni ejecutado smoke Chromium sobre el árbol integrado. Las 408 regresiones, recorridos C14/C15 y pruebas Chromium C16 anteriores son evidencia histórica, no validación post-merge. Tampoco existen ensayos Android físico, TalkBack o balance humano certificados.
+
+**ÚNICA TAREA SIGUIENTE:** D0-I-V, verificar por SHA la ejecución CI del merge y realizar recorridos de humo reales de ambos modos (setup, dados, decisiones, muerte, sucesión y finales), registrar resultados y cerrar formalmente D0-I solo si pasan. Luego auditar PR1 separadamente antes de considerar `main`; D1, F y Director narrativo siguen fuera de alcance.
+
+
 **Última revisión:** 28/10/2026 (D0: auditoría de integración PR14 sin merge; C cerrada). **Proyecto:** Invierno en la Colonia. **Rama activa de ajustes:** `fix/estabilizacion-v9-9` (base de auditoría `refactor/arquitectura`).
 **Documento operativo**: a diferencia de los documentos conceptuales, este archivo determina qué hacemos **ahora**, qué queda estacionado y qué evidencia habilita cambiar de fase.
 
