@@ -1,6 +1,6 @@
 # Plan de refactorización — por etapas, sin apuro
 
-> **Ejecución actual:** la fuente de verdad de **etapa activa, tarea única y criterios de terminado** es [el tablero operativo](18-tablero-operativo.md). **Estamos en A — Auditoría funcional; siguiente tarea A5-02, Android físico; A5-01 Chromium real y emulación táctil ejecutada, A6 pendiente.** Este documento es la planificación general, no una autorización para avanzar a distintas fases en paralelo.
+> **Ejecución actual:** la fuente de verdad de **etapa activa, tarea única y criterios de terminado** es [el tablero operativo](18-tablero-operativo.md). Esta hoja conserva parte del historial de A/B/C; **D1 está en curso**, y el siguiente experimento propuesto es D1.2a (esbuild), sujeto a autorización. Este documento es planificación general, no autorización para empezar fases en paralelo.
 
 ## Objetivos
 
@@ -10,6 +10,16 @@
 4. Poder ejecutar pruebas automáticas reproducibles.
 5. Hacer de la **narrativa persistente el centro de la experiencia**: decisiones, personajes, memoria, consecuencias diferidas y arcos que cambian con la partida.
 6. Desarrollar después una presentación 2D que muestre esos cambios, y a largo plazo multijugador online.
+
+## Separación vinculante: referencia V9.9 y juego propio
+
+**Alcance acordado en la [decisión 61](61-alcance-matriz-f-juego-propio.md):**
+
+- **V9.9 de referencia:** conservar las mecánicas existentes durante **D1 y D2**. La adaptación cercana a *Dead of Winter* es una referencia técnica y jugable; no se promete equivalencia total de reglamento. Los defectos reales se gestionan por separado con autorización, no como cambios de matriz F.
+- **Matriz F:** compara mecánicas con el juego de mesa **para decidir cómo funcionará nuestro videojuego propio**. `F-14` (cinco candidatos → elegir tres → líder manual) y otras filas *Conservar/Cambiar* **no se implementan en la V9.9 ni durante la refactorización D**.
+- **Juego propio futuro:** al congelar una referencia verificable y alcanzar arquitectura suficientemente desacoplada, se abre una línea de desarrollo separada; se revisan y priorizan los acuerdos F según su aporte al singleplayer antes de programarlos junto con la evolución narrativa E.
+- **No confundir etiquetas:** las filas **F-01, F-14, etc.** son IDs de la *matriz F de comparación/diseño*. La **etapa F** histórica de este plan es presentación 2D, campañas/red y modalidades posteriores, no la implementación automática de esas filas.
+- **Estado de una fila F ≠ autorización de código:** conservar/cambiar/pendiente describe diseño del producto propio, no un bug de V9.9 ni un PR aprobado.
 
 ## Criterio transversal de calidad y revisión (acordado)
 
@@ -70,9 +80,9 @@ Antes de comenzar una fase nueva, cerrar la anterior con evidencia y registrar u
 1. **A — Auditoría completa:** A2/A3/A4 tienen pruebas automatizadas; faltan observaciones de Android físico (A5-02), evaluación de accesibilidad/rendimiento y cierre de cobertura (A6). Documentar problemas y límites; no corregirlos a escondidas.
 2. **B — Decisiones y prioridad de defectos:** acordar qué es error y qué es regla deseada; clasificar impacto.
 3. **C — Estabilización:** corregir solo fallos priorizados, ejecutar regresiones y comprobar que el juego funciona en navegador real.
-4. **D — Refactorización:** separar módulos conservando el comportamiento.
-5. **E — Prototipo narrativo:** implementar memoria y un arco conectado validable.
-6. **F — Ampliación de campañas y presentación:** después de demostrar que funciona el núcleo.
+4. **D — Refactorización de la referencia:** separar módulos **sin introducir decisiones de la matriz F** y conservando el comportamiento actual.
+5. **Apertura del juego propio — matriz F y E:** tras preservar la referencia estable y con arquitectura segura, seleccionar los cambios F pertinentes para el singleplayer y prototipar memoria narrativa y un arco conectado; implementar con decisiones y pruebas propias.
+6. **Etapa F de expansión (NO la matriz F):** ampliación de campañas, presentación y red después de demostrar que funciona el núcleo.
 
 Las etapas originales C/D/E/F que aparecen debajo contienen los detalles técnicos; el [tablero operativo](18-tablero-operativo.md) determina su ejecución efectiva.
 
@@ -87,9 +97,9 @@ Extraer un componente pequeño y con pocas dependencias, probablemente el catál
 
 **Criterio de aceptación:** el módulo puede probarse por separado, sin alterar la partida original.
 
-## Detalle futuro D2 — Motor desacoplado
+## Detalle futuro D2 — Motor desacoplado, todavía sobre la referencia
 
-Separar progresivamente:
+**Objetivo: preservar reglas originales aprobadas, sin aplicar cambios de la matriz F.** Separar progresivamente:
 - Estado de partida y creación inicial.
 - Comandos (`mover`, `buscar`, `atacar`, etc.) y validaciones.
 - Resolución de turnos, crisis y efectos.
@@ -131,8 +141,8 @@ No comenzar la **presentación 2D ni la red** antes de validar un prototipo narr
 
 ## Flujo de trabajo Git
 
-1. `main`: versión estable que funciona.
-2. Ramas `refactor/*` y `feature/*`: cambios aislados.
+1. `main`: versión de referencia estable que funciona; conservar una instantánea identificable antes de crear la variante propia, con autorización separada.
+2. Ramas `refactor/*` y `feature/*`: cambios aislados; **la futura versión propia tendrá línea de desarrollo separada** cuando se apruebe, sin contaminar D1/D2 con filas F.
 3. Commits pequeños y descriptivos.
 4. Pull request: explicar **qué cambió, por qué y cómo se probó**.
 5. Revisar antes de fusionar con `main`.
