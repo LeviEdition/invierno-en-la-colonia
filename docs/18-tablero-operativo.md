@@ -7,6 +7,14 @@
 
 > **REGISTRO OBLIGATORIO (acuerdo del usuario, 27/10/2026):** al terminar cada revisión, actualizar este tablero. Documentar acciones, decisiones, cambios, resultados, evidencia y límites en el registro pertinente, aunque no se haya modificado código. Véase [protocolo](15-protocolo-revision-critica.md#registro-obligatorio-de-cada-revisión-y-trabajo).
 
+## Revisión de entrega C10 para preparar siguiente trabajo — 27/10/2026 (hora Uruguay)
+
+**Lectura y comprobación de seguimiento por ChatGPT (solo revisión):** contrastados los commits `9e688624` (motor, pruebas y evidencia) y `d342f96` (documentación); se inspeccionaron `crossOptionAllowed()`, `crossTrigger()`, `evaluateCrossOptions()`, `chooseCrossOption()`, `feedingNeed()`, `gameOutcome()`, efectos de cartas y script Chromium. [GitHub Actions del SHA exacto `d342f96`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40622432370): **358/358, 0 fallidas/TODO**; [evidencia de los 16 recorridos dirigidos](evidencias/c10-issue7-chromium.json). La interfaz local J1/J2 conserva selección humana según las pruebas registradas. Se consultó PR14 (abierto/draft, no fusionado) y `main=d9068f4` inalterada.
+
+**Evaluación:** el cambio aborda el fallo reportado #7 sin depender de palabras del texto; los seis escenarios tienen resultados esperados y no se identificaron defectos nuevos en esta **inspección acotada**, que **no constituye ejecución independiente de Node/Chromium ni certificación completa**. El rojo inicial (11 casos fallidos) consta en el informe43 pero no se conserva como commit rojo separado; se usa como evidencia documentada de Codex, no como reproducción de esta revisión. Persisten reservas de partidas naturales completas, Android físico/TalkBack, balance y nuevos tipos de efectos de futuras cartas. **Issue #7 sigue abierto y requiere aceptación/cierre por decisión del creador**.
+
+**Único siguiente bloque técnico recomendado para un encargo nocturno separado:** C11 / [issue #13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13), ampliar áreas táctiles de dados en móviles con una corrección CSS/interfaz mínima, TDD y Chromium (320×640, 393×852 y escritorio); sin cambiar mecánicas ni iniciar más correcciones. Al terminar, solo auditar **en modo lectura** los issues aún abiertos y preparar una propuesta priorizada. No cerrar issues, fusionar PR14 ni alterar `main`. La entrega del prompt por el usuario a Codex constituye la autorización de ese bloque acotado; hasta entonces no está iniciada su implementación.
+
 ## 1. Estado comprobado y alcance
 
 - **Estable:** `main`, `invierno_colonia_v9_9.html`, SHA Git blob `4ebaedad13d63c7a6762c524a52c0dd9695687b1`. El archivo es idéntico en `main` y `refactor/arquitectura` al revisar.
