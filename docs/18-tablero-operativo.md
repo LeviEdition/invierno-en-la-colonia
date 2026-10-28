@@ -1,11 +1,21 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
-**Última revisión:** 28/10/2026 (misión C12→C15). **Proyecto:** Invierno en la Colonia. **Rama activa de ajustes:** `fix/estabilizacion-v9-9` (base de auditoría `refactor/arquitectura`).
+**Última revisión:** 28/10/2026 (C16/A1 — Node validado, Chromium pendiente). **Proyecto:** Invierno en la Colonia. **Rama activa de ajustes:** `fix/estabilizacion-v9-9` (base de auditoría `refactor/arquitectura`).
 **Documento operativo**: a diferencia de los documentos conceptuales, este archivo determina qué hacemos **ahora**, qué queda estacionado y qué evidencia habilita cambiar de fase.
 
 > **NORMA DE TRABAJO:** una etapa activa, una tarea activa. No empezar una fase posterior porque surgió una idea interesante; anotar la idea y retomar lo previsto. Cambiar prioridades exige una decisión explícita registrada aquí.
 
 > **REGISTRO OBLIGATORIO (acuerdo del usuario, 27/10/2026):** al terminar cada revisión, actualizar este tablero. Documentar acciones, decisiones, cambios, resultados, evidencia y límites en el registro pertinente, aunque no se haya modificado código. Véase [protocolo](15-protocolo-revision-critica.md#registro-obligatorio-de-cada-revisión-y-trabajo).
+
+## C16 — aislamiento de foco, estado vigente 28/10/2026
+
+**Autorizado por el creador:** continuar estabilización para corregir A1/P2, sin tocar reglas ni comenzar D. **Implementación en rama**: ayuda y fallecimiento confinan Tab/Shift+Tab y foco exterior, el fondo queda inerte, se devuelve foco y se conserva prioridad de Inicio/Pase, Fallecimiento y decisiones del juego. Se añadió una guardia para Escape durante muerte, sin modificar resultados. [Informe50](50-c16-foco-dialogos.md).
+
+**TDD:** cuatro de seis tests C16 rojos antes, los seis verdes después. Tres iteraciones de CI detectaron incompatibilidad con DOM mínimo de pruebas y un fixture C4 intermitente por azar; corregidas y registradas. **Última prueba de código:** `265dc0d`, [CI 40695224171](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40695224171), **408/408**, cero fallidas/omitidas/TODO. Revisión por lectura de la implementación y sus seis regresiones; no se cambió motor mecánico, balance, IA ni dados.
+
+**Reserva de validación:** se creó `scripts/check-c16-focus-browser.mjs` para tres viewports Chromium, pero **no se ejecutó con navegador real en esta intervención**. C16 está implementada y tiene CI Node verde, **sin aprobación final de UI/accesibilidad**. Android físico, TalkBack, otros motores y cumplimiento WCAG siguen sin certificar. La comparación y acuerdos F-01/F-10/F-12/F-15 están reservados a rediseño posterior, no se aplicaron en C16. PR14 sigue draft, main intacta, nueve issues aún abiertos, C oficialmente abierta.
+
+**Única tarea activa siguiente:** ejecutar y revisar el script C16 en Chromium y resolver cualquier regresión concreta; solo entonces presentar aceptación C16/cierre de C al creador. No cerrar issues, fusionar, publicar ni iniciar D sin autorización.
 
 ## Revisión de aceptación externa C12–C15 — 28/10/2026
 
