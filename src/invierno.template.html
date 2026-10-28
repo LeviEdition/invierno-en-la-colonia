@@ -1,0 +1,1510 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Invierno en la Colonia · V9.9</title>
+<style>
+:root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#e9e7df;background:#111a1d}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% 0,#2b393a,#121b1d 68%);min-height:100dvh}button,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.4;cursor:default}header{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 12px;background:#101a1e;border-bottom:2px solid #9b825c;position:sticky;top:0;z-index:3}.brand{font-family:Georgia,serif;font-size:clamp(17px,2.2vw,25px);font-weight:bold;letter-spacing:.06em;color:#efe2ca}.brand small{display:block;font:10px system-ui;letter-spacing:.22em;color:#aab5b4}.tools{display:flex;gap:6px;flex-wrap:wrap}.btn{background:#34474a;color:#f2f1e8;border:1px solid #70827e;padding:9px 12px;border-radius:3px;font-weight:700;font-size:12px}.btn.gold{background:#987443;border-color:#d4b67c;color:#fff}.btn.red{background:#693b39;border-color:#ad6c65}.btn:hover:not(:disabled){filter:brightness(1.12)}.status{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:3px;background:#1b292b;padding:5px 7px}.stat{border:1px solid #455454;background:#263536;text-align:center;padding:5px 2px;min-width:0}.stat label{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.04em;color:#b5c0ba}.stat strong{display:block;font:700 18px Georgia,serif;color:#f5e7ca}.notice{display:flex;gap:8px;align-items:center;justify-content:space-between;background:#403b2f;border-top:1px solid #746c55;border-bottom:1px solid #746c55;padding:6px 12px;font-size:12px}.notice b{color:#f2d4a3}.board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(3,minmax(160px,1fr));gap:7px;padding:8px;height:calc(100dvh - 160px);min-height:565px;max-height:900px}.site{min-width:0;min-height:0;display:flex;flex-direction:column;background:linear-gradient(150deg,#d6d0bb,#bcbba8);border:3px solid #4c6667;box-shadow:inset 0 0 0 2px #e6e0cd,0 2px 8px #0008;color:#1d2b2b;overflow:hidden;position:relative}.site.colony{grid-column:2;grid-row:2;border-color:#a98751;background:linear-gradient(150deg,#ded3b6,#b9b39b)}.site.selected{outline:3px solid #e6b15d;outline-offset:-5px}.sitehead{background:#263c40;color:#f6eee0;padding:5px 7px;display:flex;justify-content:space-between;align-items:center;gap:4px;font:700 12px Georgia,serif;text-transform:uppercase;letter-spacing:.04em;cursor:pointer}.colony .sitehead{background:#635036}.sitehead small{font:10px system-ui;color:#c5cbc6;white-space:nowrap}.sitebody{padding:5px 6px;display:flex;flex-direction:column;gap:4px;overflow:auto;min-height:0;flex:1}.sectionname{font-size:9px;letter-spacing:.12em;font-weight:900;color:#53605c;text-transform:uppercase}.survivorSlots,.zombieSlots{display:grid;gap:3px;align-content:start}.survivorSlots{grid-template-columns:repeat(3,minmax(0,1fr))}.zombieSlots{grid-template-columns:repeat(6,minmax(0,1fr))}.slot{border:1px dashed #8d9a90;background:#e7e7da66;min-height:39px;min-width:0;display:flex;align-items:center;justify-content:center;color:#8a978e;font-size:15px}.zombieSlots .slot{min-height:24px}.surv{width:100%;height:100%;min-height:39px;border:2px solid #39727b;background:#f4f0e2;color:#1d3334;display:flex;flex-direction:column;justify-content:center;padding:2px 3px;text-align:left;overflow:hidden}.surv.ai{border-color:#8e5d54;background:#e9d7cd}.surv.active{outline:2px solid #c78a2b;outline-offset:-2px;background:#fff1ca}.surv b{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.surv small{font-size:9px;white-space:nowrap}.zombie{width:100%;height:100%;min-height:24px;border:1px solid #3b4841;background:#56665a;color:#f4f0dc;font:bold 16px Georgia,serif;display:grid;place-items:center}.zombie.empty{background:#d3d8cd;border:1px dashed #8b978d;color:#a4ada2}.barricade{color:#5e4630;font-size:10px;font-weight:800}.sitefoot{margin-top:auto;padding-top:3px;border-top:1px solid #a5a898;display:flex;align-items:center;justify-content:space-between;font-size:10px;color:#48554e}.sitefoot button{border:1px solid #7e8c80;background:#e6e5d7;color:#31433e;padding:3px 7px;font-size:10px;font-weight:800}.modalBackdrop{display:none;position:fixed;inset:0;background:#071011dd;z-index:10;align-items:center;justify-content:center;padding:10px}.modalBackdrop.open{display:flex}.modal{width:min(680px,100%);max-height:94dvh;overflow:auto;border:3px solid #b49665;background:#e6dfcd;color:#26312f;box-shadow:0 20px 70px #000c}.modalHeader{display:flex;justify-content:space-between;align-items:center;background:#263b3d;color:#fff;padding:10px 13px;position:sticky;top:0;z-index:1}.modalHeader h2{margin:0;font:700 19px Georgia,serif}.modalContent{padding:13px}.modalContent h3{margin:8px 0 5px;font:700 15px Georgia,serif;border-bottom:1px solid #a7a18f;padding-bottom:4px}.modalContent p{font-size:13px;line-height:1.5}.row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}.control{width:100%;background:#faf6eb;border:1px solid #938e80;padding:9px;color:#273534;border-radius:2px}.action{background:#354f50;color:#fff;border:1px solid #223839;padding:10px 8px;font-size:12px;font-weight:700;border-radius:2px}.action.secondary{background:#ede8db;color:#30423f;border-color:#8d9b91}.action.danger{background:#773f3c}.dice{display:flex;flex-wrap:wrap;gap:6px}.die{background:#fff9e9;color:#2c3c3b;border:2px solid #647b76;border-radius:4px;min-width:49px;height:43px;font-weight:900;font-size:20px}.die.picked{background:#d2a456;color:#171c1c;border-color:#634622}.pill{background:#d4d3c5;border:1px solid #a2a293;padding:5px 7px;font-size:12px;display:inline-block;margin:2px}.message{background:#e4d3ac;padding:8px;font-size:12px;border-left:4px solid #a77b34}.logentry{border-bottom:1px solid #b6b1a3;padding:7px 2px;font-size:12px}.tiny{font-size:11px;color:#596660}.toastStack{position:fixed;top:62px;right:12px;z-index:30;display:flex;flex-direction:column;gap:6px;max-width:min(390px,85vw);pointer-events:none}.toast{background:#f1e4c6;color:#203435;border:2px solid #b18a50;box-shadow:0 4px 18px #0009;padding:10px 13px;font-size:13px;font-weight:700;line-height:1.4}.toast.bad{border-color:#b45e55;background:#f4d8d1}.toast.good{border-color:#618b70;background:#e0eddb}.footer{font-size:10px;color:#a7b2b0;text-align:center;padding:5px}@media(orientation:portrait) and (max-width:750px){.board{width:1100px;height:670px;max-height:none;min-height:0}.boardwrap{overflow:auto}.status{min-width:650px}.statuswrap{overflow:auto}.notice{min-width:650px}.noticewrap{overflow:auto}}@media(max-width:900px) and (orientation:landscape){header{padding:4px 8px}.brand{font-size:16px}.brand small{font-size:8px}.btn{padding:6px 8px}.status{padding:2px 4px}.stat{padding:2px}.stat strong{font-size:14px}.notice{padding:3px 7px}.board{height:calc(100dvh - 115px);min-height:380px;gap:4px;padding:4px}.sitebody{padding:3px}.slot{min-height:29px}.surv{min-height:29px}.zombieSlots .slot,.zombie{min-height:20px}.sitehead{padding:3px 5px}.sitefoot{font-size:9px}}@media(min-width:1200px){.board{max-width:1600px;margin:auto}.sitebody{padding:8px}.slot,.surv{min-height:46px}.zombieSlots .slot,.zombie{min-height:28px}}
+
+/* V6: tablero compacto, sin desplazamiento interno en horizontal */
+html,body{height:100%;overflow:hidden}body{display:flex;flex-direction:column;background:#10191b}.brand{font-size:clamp(14px,1.6vw,21px)}header{position:relative;flex:0 0 auto;padding:5px 9px}.btn{padding:6px 9px;font-size:11px;border-radius:5px}.tools{flex-wrap:nowrap}.missionStrip{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1.2fr) auto;gap:6px;padding:5px 7px;background:#162426;flex:0 0 auto}.mission{text-align:left;min-width:0;border-radius:6px;padding:5px 10px;color:#f4ebdb;display:flex;flex-direction:column;gap:2px;cursor:pointer}.mission.goal{background:linear-gradient(110deg,#5b4a31,#342d24);border:2px solid #d5af70}.mission.crisis{background:linear-gradient(110deg,#643b37,#3b2a2b);border:2px solid #be7770}.mission .eyebrow{font-size:9px;letter-spacing:.16em;font-weight:900;color:#e5c78c}.mission.crisis .eyebrow{color:#f4b0a4}.mission .main{display:flex;justify-content:space-between;gap:6px;align-items:center;font:700 clamp(12px,1.3vw,17px) Georgia,serif}.mission .sub{font-size:10px;opacity:.9;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.progress{height:4px;background:#0d1215a8;border-radius:6px;overflow:hidden}.progress>i{display:block;height:100%;background:#e5c78c}.crisis .progress>i{background:#f1a89d}.turnpanel{display:flex;align-items:center;justify-content:center;gap:5px;flex-direction:column;min-width:95px;font-size:10px;letter-spacing:.08em;font-weight:900;color:#e9e1d0}.statuswrap,.noticewrap{flex:0 0 auto}.status{grid-template-columns:repeat(8,minmax(0,1fr));padding:2px 7px;gap:4px}.stat{display:flex;justify-content:center;align-items:center;gap:5px;padding:2px 4px;border-radius:4px}.stat label{font-size:9px}.stat strong{font:700 14px Georgia,serif}.notice{padding:3px 9px;min-height:22px;font-size:10px}.boardwrap{flex:1;min-height:0;overflow:hidden;padding:4px 7px 7px}.board{height:100%;min-height:0;max-height:none;padding:0;gap:6px;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr))}.site{border-radius:7px;border:2px solid #607474;box-shadow:0 3px 9px #0009,inset 0 0 0 1px #fff5;background:#d9d6c7}.site.colony{border:3px solid #e0b66c;background:#e7dac0;box-shadow:0 0 0 2px #735b37,0 4px 13px #0009}.sitehead{padding:4px 7px;font-size:clamp(10px,1.15vw,14px);flex:0 0 auto}.sitebody{padding:3px 5px;gap:2px;overflow:hidden}.sectionname{font-size:8px;letter-spacing:.06em}.survivorSlots{grid-template-columns:repeat(6,minmax(0,1fr));gap:2px}.zombieSlots{grid-template-columns:repeat(12,minmax(0,1fr));gap:2px}.slot{min-height:0;height:clamp(16px,3.9vh,31px);border-radius:3px;font-size:9px}.zombieSlots .slot{min-height:0;height:clamp(12px,2.8vh,21px)}.surv{min-height:0;height:100%;padding:1px 2px;border-width:1px;border-radius:3px;text-align:center}.surv b{font-size:clamp(7px,.85vw,10px)}.surv small{font-size:clamp(7px,.78vw,9px)}.surv small:last-child{display:none}.zombie,.zombie.empty{min-height:0;height:100%;font-size:clamp(9px,1.2vw,15px);border-radius:3px}.sitefoot{font-size:9px;padding-top:1px}.sitefoot button{padding:2px 5px;font-size:9px}.footer{display:none}.toastStack{top:auto;bottom:12px;right:12px;max-width:min(340px,45vw)}.toast{padding:8px 10px;font-size:12px;border-radius:5px}.aiBusy{outline:2px solid #d3aa63}.modalBackdrop{z-index:20}.modal{max-height:95dvh}
+@media(max-width:900px) and (orientation:landscape){.brand{font-size:13px}.brand small{font-size:7px}.btn{padding:4px 6px;font-size:10px}.missionStrip{padding:3px 5px;gap:4px}.mission{padding:3px 7px;gap:1px}.mission .eyebrow{font-size:8px}.mission .main{font-size:12px}.mission .sub{font-size:9px}.turnpanel{min-width:75px;font-size:9px}.status{padding:2px 4px}.stat{padding:1px 2px}.stat label{font-size:8px}.stat strong{font-size:12px}.notice{padding:2px 5px}.boardwrap{padding:3px 5px 5px}.board{gap:4px;height:100%;min-height:0}.sitehead{font-size:10px;padding:2px 5px}.sitebody{padding:2px 4px;gap:1px}.sectionname{font-size:7px}.slot{height:clamp(13px,3.6vh,24px)}.zombieSlots .slot{height:clamp(10px,2.5vh,17px)}.surv b{font-size:8px}.surv small{font-size:7px}.sitefoot{font-size:8px}.sitefoot button{padding:1px 3px;font-size:8px}}
+@media(orientation:portrait){html,body{height:100%;overflow:auto}body{min-width:0}.missionStrip{grid-template-columns:1fr 1fr}.turnpanel{grid-column:1/-1;flex-direction:row;padding:2px}.statuswrap{overflow-x:auto}.status{min-width:650px}.noticewrap{overflow-x:auto}.notice{min-width:650px}.boardwrap{overflow:auto;min-height:560px}.board{min-width:850px;min-height:550px}.slot{height:27px}.zombieSlots .slot{height:18px}}
+@media(max-height:420px) and (orientation:landscape){.brand small{display:none}.mission .sub{display:none}.missionStrip{padding:2px 5px}.mission{padding:2px 6px}.mission .main{font-size:11px}.stat strong{font-size:11px}.sectionname{font-size:7px}.sitefoot{border:0}.sitefoot button{display:none}.slot{height:clamp(11px,3.2vh,16px)}.zombieSlots .slot{height:clamp(9px,2.3vh,12px)}}
+
+/* V7: 6 localidades compactas y colonia inferior, sin huecos */
+.board{grid-template-rows:minmax(0,1fr) minmax(0,1fr) minmax(0,1.22fr);gap:4px}.site.colony{grid-column:1/4;grid-row:3}.sitebody{justify-content:space-evenly}.survivorSlots{grid-template-columns:repeat(4,minmax(0,1fr))}.zombieSlots{grid-template-columns:repeat(4,minmax(0,1fr))}.colony .survivorSlots,.colony .zombieSlots{grid-template-columns:repeat(12,minmax(0,1fr))}.site .slot{height:clamp(16px,3.8vh,30px)}.site .zombieSlots .slot{height:clamp(15px,3.6vh,28px)}.surv{position:relative;padding:1px}.surv b{font-size:clamp(8px,1vw,12px)}.surv small{font-size:clamp(7px,.85vw,10px)}.surv .injury{position:absolute;right:0;top:0;font-size:9px;background:#a83d38;color:white;padding:0 2px;border-radius:2px}.access{font-weight:900;font-size:clamp(12px,1.6vw,20px);border-style:solid}.access.z{background:#647467;color:#fff6e9;border-color:#43584a}.access.b{background:#bd9560;color:#3d2d1b;border-color:#866337}.access.e{background:#e6e4d8;color:#a6aea4;border-style:dashed}.status{grid-template-columns:repeat(5,minmax(0,1fr))}.profileStat{padding:12px;background:#d3d1c4;border:1px solid #aaa18d;display:flex;justify-content:space-between;gap:8px}.profileStat b{font-size:19px}.equiprow{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:7px;border-bottom:1px solid #b6ae9f}.site.colony .surv{min-height:20px}.site.colony .slot{height:clamp(20px,4.3vh,34px)}
+@media(max-height:420px) and (orientation:landscape){.site .slot{height:clamp(14px,3.6vh,19px)}.site .zombieSlots .slot{height:clamp(12px,3vh,17px)}.site.colony .slot{height:clamp(17px,4vh,22px)}.sitebody{gap:1px}.sectionname{font-size:7px}}
+
+/* V8: botón flotante y estadísticas de ficha siempre visibles */
+.floatingActions{position:fixed;right:12px;bottom:12px;z-index:8;width:46px;height:46px;border-radius:50%;border:2px solid #e0c08a;background:#a67b40;color:#fff8e8;font-size:23px;font-weight:bold;box-shadow:0 3px 13px #000b;display:grid;place-items:center;cursor:pointer;touch-action:manipulation}
+.floatingActions:disabled{opacity:.45}
+.surv{position:relative;min-height:0!important;height:100%;padding:2px 3px;justify-content:center;gap:1px}
+.surv b{font-size:clamp(9px,1.25vw,12px);line-height:1.05}
+.surv small{font-size:clamp(8px,1.15vw,11px);line-height:1.05;white-space:nowrap}
+.surv .injury{position:absolute;right:1px;top:0;background:#8c3935;color:#fff6ed;border-radius:3px;padding:0 2px;font-size:9px;font-weight:800}
+.surv.has-status b{padding-right:26px}
+@media(max-height:420px) and (orientation:landscape){.surv b{font-size:9px}.surv small{font-size:8px}.surv .injury{font-size:8px}.floatingActions{width:43px;height:43px;right:8px;bottom:8px}}
+
+/* V9 · móvil vertical: desplazamiento únicamente vertical */
+html,body{height:auto!important;min-height:100%;overflow-x:hidden!important;overflow-y:auto!important;width:100%;max-width:100%}
+body{display:block!important}.boardwrap{overflow:visible!important;padding:8px!important;min-height:0!important}.board{width:100%!important;max-width:680px!important;height:auto!important;min-height:0!important;max-height:none!important;margin:0 auto!important;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:none!important;gap:9px!important;padding:0!important}
+.board>.site{grid-column:auto!important;grid-row:auto!important;min-height:0!important;height:auto!important;overflow:hidden!important}.board>.site.colony{grid-column:1/-1!important;grid-row:1!important;order:-1!important}.sitebody{overflow:visible!important;min-height:0!important;gap:5px!important;padding:7px!important}.sitehead{font-size:12px!important;padding:7px!important}.sitehead small{font-size:9px!important}.survivorSlots{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:4px!important}.colony .survivorSlots{grid-template-columns:repeat(3,minmax(0,1fr))!important}.slot{min-height:57px!important;overflow:hidden!important}.surv{min-height:57px!important;padding:4px!important;gap:2px!important}.surv b{font-size:11px!important}.surv small,.surv .injury{font-size:10px!important;white-space:normal!important;line-height:1.2!important}.surv .skilltag{font-size:9px;color:#53614d;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.zombieSlots{grid-template-columns:repeat(4,minmax(0,1fr))!important}.colony .zombieSlots{grid-template-columns:repeat(6,minmax(0,1fr))!important}.zombieSlots .slot{min-height:24px!important;height:24px!important}.missionStrip{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:5px!important;padding:6px!important}.mission{min-height:80px;padding:7px!important}.mission .main{display:block!important;font-size:13px!important;line-height:1.2}.mission .main span{display:block}.mission .sub{white-space:normal!important;font-size:10px!important}.turnpanel{grid-column:1/-1!important;flex-direction:row!important;justify-content:space-between!important;min-height:24px!important}.statuswrap,.noticewrap{overflow:visible!important}.status{min-width:0!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;padding:4px!important;gap:3px!important}.stat{min-width:0!important;display:block!important;padding:4px 1px!important}.stat label{font-size:8px!important;letter-spacing:0!important}.stat strong{font-size:15px!important}.notice{min-width:0!important;display:block!important;white-space:normal!important;padding:5px 8px!important}.notice #selectedText{display:block;color:#e4cf9f}header{position:relative!important;display:block!important;padding:8px!important}.brand{font-size:18px!important}.brand small{font-size:9px!important}.tools{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px!important;margin-top:6px}.tools .btn{padding:8px 2px!important;font-size:10px!important;white-space:nowrap}.footer{padding:12px 48px 18px!important}.floatingActions{position:fixed!important;bottom:calc(15px + env(safe-area-inset-bottom))!important;right:15px!important;z-index:6!important;width:48px!important;height:48px!important}.toastStack{top:8px!important;right:8px!important;max-width:85vw!important}.modalBackdrop{padding:7px!important}.modal{width:100%!important;max-height:94dvh!important}.modalContent{padding:10px!important}.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}.profileStat{min-width:0}
+@media(min-width:720px){.board{max-width:780px!important}.board>.site:not(.colony) .survivorSlots{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+/* V9.1: menú de navegación fijo, siempre accesible y sin barra horizontal */
+header{display:flex!important;align-items:center!important;justify-content:center!important;text-align:center!important;padding:8px 56px 8px 8px!important}.tools{display:none!important}
+.fabArea{position:fixed;right:15px;bottom:calc(15px + env(safe-area-inset-bottom));z-index:9;display:flex;flex-direction:column;align-items:flex-end;gap:8px;max-width:calc(100vw - 30px)}
+.fabArea .floatingActions{position:relative!important;right:auto!important;bottom:auto!important;z-index:1!important;width:52px!important;height:52px!important;font-size:24px!important}
+.fabMenu{display:flex;flex-direction:column;gap:7px;padding:8px;border-radius:12px;background:#18272af2;border:1px solid #b99a66;box-shadow:0 7px 25px #000a;max-width:calc(100vw - 30px);max-height:calc(100dvh - 90px);overflow-y:auto}
+.fabMenu[hidden]{display:none!important}
+.fabMenu button{display:flex;align-items:center;gap:12px;text-align:left;min-width:180px;min-height:43px;padding:9px 13px;border:1px solid #6f827c;border-radius:7px;background:#354b4c;color:#fff4df;font-size:15px;font-weight:700}
+.fabMenu button.endTurn{background:#967041;border-color:#d3b47b}
+.fabMenu button:disabled{opacity:.4}
+
+.crossStory{background:#f1e6cf;border:1px solid #a17c4b;border-radius:9px;padding:13px;color:#342d25;line-height:1.55}
+.crossStory h3{margin:0 0 8px;color:#6b402b}.crossStory p{margin:8px 0}.crossChoice{display:block;width:100%;text-align:left;margin-top:10px;padding:12px;border-radius:8px;border:1px solid #96794f;background:#3a514f;color:#fff4df;font-weight:650;line-height:1.35}.crossChoice small{display:block;font-weight:400;margin-top:5px;opacity:.9}
+
+/* V9.5: panel de dados minimalista y tablero vertical sin scroll lateral */
+html,body{overflow-x:clip!important;max-width:100%;overscroll-behavior-x:none}
+.floatingDice{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;padding:5px;width:96px;max-width:96px;background:#1e3033ee;border:1px solid #9a8058;border-radius:9px;box-shadow:0 4px 12px #0008;align-self:flex-end}
+.floatingDice:empty{display:none}.floatingDie{height:25px;min-width:0;padding:0;border:1px solid #6f847d;border-radius:4px;background:#f5e8cb;color:#293634;font:bold 14px system-ui;line-height:1}.floatingDie.selected{background:#dbb365;border-color:#f5d88a;outline:1px solid #fff}.floatingDie:disabled{opacity:.6}
+.fabArea{z-index:12;gap:7px}.board,.boardwrap,.missionStrip,.mission,.site,.sitebody{min-width:0!important;max-width:100%}.crossChoice:disabled{opacity:.37}.actionsNote{font-size:11px;color:#54615a}.chip{display:inline-block;border:1px solid #b1a48a;border-radius:4px;padding:3px 6px;margin:2px;font-size:11px}.action:disabled{opacity:.4}.helplessToken{font-size:10px;font-weight:700;background:#d2ccb4;padding:8px 2px;text-align:center;width:100%;color:#463e2e}
+
+/* V9.6: animaciones pequeñas, accesibles y de bajo costo (solo transform/opacidad) */
+@keyframes v96ModalIn {from{opacity:0;transform:translateY(11px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes v96BackdropIn {from{opacity:0}to{opacity:1}}
+@keyframes v96MenuIn {from{opacity:0;transform:translateY(9px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes v96ToastIn {from{opacity:0;transform:translateX(9px)}to{opacity:1;transform:translateX(0)}}
+.modalBackdrop.open{animation:v96BackdropIn .15s ease-out both}
+.modalBackdrop.open .modal{transform-origin:50% 30%;animation:v96ModalIn .21s cubic-bezier(.2,.8,.2,1) both}
+.fabMenu:not([hidden]){transform-origin:100% 100%;animation:v96MenuIn .18s cubic-bezier(.2,.8,.2,1) both}
+.toast{animation:v96ToastIn .2s ease-out both}
+.action,.btn,.fabMenu button,.floatingActions,.crossChoice,.floatingDie,.die,.surv,.mission,.sitefoot button{transition:transform .13s ease-out,filter .13s ease-out,background-color .13s ease-out}
+.action:active:not(:disabled),.btn:active:not(:disabled),.fabMenu button:active:not(:disabled),.floatingActions:active,.crossChoice:active:not(:disabled),.floatingDie:active,.die:active,.surv:active{transform:scale(.97)}
+@media(hover:hover){.action:hover:not(:disabled),.fabMenu button:hover:not(:disabled),.crossChoice:hover:not(:disabled){filter:brightness(1.09);transform:translateY(-1px)}}
+@media(prefers-reduced-motion:reduce){.modalBackdrop.open,.modalBackdrop.open .modal,.fabMenu:not([hidden]),.toast{animation:none!important}.action,.btn,.fabMenu button,.floatingActions,.crossChoice,.floatingDie,.die,.surv,.mission,.sitefoot button{transition:none!important}}
+/* Tarjeta del personaje en la parte superior izquierda de Acciones. */
+.actorCard{display:flex;align-items:flex-start;gap:10px;background:#2a4243;color:#fff1d8;padding:10px;border-left:4px solid #c5a36b;border-radius:7px;margin-bottom:10px}
+.actorPortrait{width:43px;height:43px;border-radius:6px;background:#ceb78a;color:#394437;display:grid;place-items:center;font-size:25px;flex:none}
+.actorMeta{min-width:0;flex:1}.actorMeta strong{display:block;font-size:15px}.actorMeta span{display:block;font-size:11px;line-height:1.45}.actorSkill{font-size:11px;opacity:.9;margin-top:3px}.actorEquipment{font-size:11px;opacity:.85}
+/* Ruido: ícono vectorial oscuro para garantizar contraste en las localidades. */
+.noiseIndicator{display:inline-flex;align-items:center;gap:3px;padding:1px 4px;border-radius:4px;background:#eee0bc;color:#1b2d2d;font-weight:900;white-space:nowrap;border:1px solid #7f815f}
+.noiseIndicator svg{display:block;flex:none;width:13px;height:13px;fill:currentColor;stroke:currentColor}
+
+/* V9.9 · primera revisión estética: refugio en invierno, contraste y jerarquía visual */
+:root{--ice:#a9c7c5;--ink:#17292e;--ink2:#223940;--paper:#eee6d4;--paper2:#d7c7a8;--gold:#d9ae6d;--rust:#964e43;--snow:#eff9f6}
+body{background:radial-gradient(ellipse at 50% -150px,#30484d 0%,#15262b 52%,#0c181d 100%)!important;color:#f1eee2}
+header{background:linear-gradient(110deg,#111e23,#20353a 58%,#17282e)!important;border-bottom:1px solid #92774f!important;box-shadow:0 3px 18px #081418aa;padding:13px 12px 11px!important}
+.brand{font-family:Georgia,serif!important;font-size:clamp(18px,4.6vw,27px)!important;letter-spacing:.075em!important;text-shadow:0 2px 9px #0007;color:#f3e1be!important}
+.brand small{letter-spacing:.22em;color:#bacfca!important;margin-top:3px}
+.missionStrip{background:#182a30!important;border-bottom:1px solid #60736b;padding:10px 8px 7px!important;gap:7px!important}
+.mission{border-radius:11px!important;box-shadow:inset 0 1px 0 #fffc,0 4px 10px #07151988;min-height:87px!important;padding:10px 10px!important;gap:4px!important}
+.mission.goal{background:linear-gradient(145deg,#594b34,#332b24)!important;border:1.5px solid #d6ad64!important}
+.mission.crisis{background:linear-gradient(145deg,#643b37,#312527)!important;border:1.5px solid #c18576!important}
+.mission .eyebrow{font-size:9px!important;letter-spacing:.13em!important}.mission .main{font-size:clamp(14px,3.5vw,17px)!important;letter-spacing:.015em}
+.mission .sub{color:#f5ede0;opacity:.87}.progress{height:5px;margin-top:3px}
+.turnpanel{color:#dce8df!important;letter-spacing:.06em!important;font-size:11px!important;justify-content:center!important;gap:8px!important;min-height:29px!important}
+.leadersSummary{font-size:10px;letter-spacing:0;color:#e7c98d;border:1px solid #6c6f5a;padding:4px 8px;border-radius:20px;background:#25373b}
+.statuswrap{background:#13232a}.status{background:transparent!important;gap:5px!important;padding:6px 8px!important}
+.stat{appearance:none;border:1px solid #4c6769!important;border-radius:9px!important;background:linear-gradient(155deg,#30484a,#21383d)!important;color:#e8e5d7!important;position:relative;min-height:48px;padding:5px 3px 7px!important;cursor:help;text-align:center;box-shadow:inset 0 1px #ffffff19}
+.stat:focus-visible{outline:2px solid var(--gold);outline-offset:1px}.stat:hover{border-color:#d2af70!important;background:#3e5655!important}
+.statLabel{display:block;color:#d1e2db;font-size:9px!important;text-transform:uppercase;letter-spacing:.015em;white-space:nowrap}
+.stat strong{color:#fff0c8!important;font:700 19px Georgia,serif!important;line-height:1.25}.statHint{color:#b7ccc5;font-size:9px;position:absolute;right:4px;top:1px}
+.statInfo{position:fixed;z-index:19;padding:11px 13px;background:#f0e6d0;color:#213639;border:2px solid #c09b5f;box-shadow:0 9px 26px #0009;border-radius:10px;font-size:12px;line-height:1.5;max-height:35dvh;overflow-y:auto}
+.statInfo[hidden]{display:none!important}.statInfo b{display:block;font:700 15px Georgia,serif;color:#4f3e2b;margin-bottom:3px}.statInfo span{display:block}
+.notice{background:#263a3a!important;border-color:#526461!important;color:#f0eee1;line-height:1.45!important;padding:8px 10px!important}
+.notice #selectedText{margin-top:2px;font-size:11px!important;color:#efd39b!important}
+.boardwrap{padding:11px 9px 8px!important;background:linear-gradient(#ffffff04 1px,transparent 1px) 0 0/100% 34px}
+.board{gap:11px!important}
+.site{border:1.5px solid #718580!important;border-radius:12px!important;background:linear-gradient(145deg,#f4eddd,#dad9ca)!important;box-shadow:0 7px 19px #07121799,inset 0 0 0 2px #ffffffb8!important}
+.site.colony{border:2px solid #caa76b!important;background:linear-gradient(150deg,#f4ead1,#dcd3bb)!important;box-shadow:0 1px 0 #fff8 inset,0 8px 23px #0008!important}
+.site.selected{outline:2px solid #e0ac5d!important;outline-offset:-4px}
+.sitehead{background:linear-gradient(90deg,#284247,#1a3035)!important;padding:9px 9px!important;font:700 12px Georgia,serif!important;letter-spacing:.055em;border-bottom:1px solid #8aa3a1}
+.colony .sitehead{background:linear-gradient(90deg,#746044,#473a2d)!important}
+.sitehead small{color:#f4e6c6!important;font-size:10px!important;font-weight:600}
+.sitebody{padding:8px!important;gap:6px!important;justify-content:flex-start!important}
+.sectionname{font-size:9px!important;color:#48625f!important;letter-spacing:.095em!important}
+.survivorSlots{gap:5px!important}.colony .survivorSlots{gap:6px!important}
+.site .slot{height:auto!important;min-height:83px!important;border-radius:6px!important;background:#f9f8ee99;border:1px dashed #9ca6a0}
+.site .zombieSlots .slot{height:26px!important;min-height:26px!important;border-radius:5px!important}
+.surv{min-height:83px!important;align-items:stretch;justify-content:flex-start!important;text-align:left!important;position:relative;padding:6px 5px!important;gap:3px!important;background:linear-gradient(150deg,#fff9e8,#e9f0e9)!important;border:1.5px solid #427a7d!important;border-radius:6px!important;box-shadow:0 2px 6px #354a4526}
+.surv.ai{background:linear-gradient(150deg,#fff4e8,#efd8c9)!important;border-color:#a56657!important}.surv.active{background:#fff2c9!important;border-color:#ad762e!important;box-shadow:0 0 0 2px #e4b35c!important;outline:none!important}
+.survtop{display:flex;align-items:center;min-width:0;gap:3px}.survtop b{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:clamp(10px,2.7vw,12px)!important;color:#253e3e;min-width:0}
+.surv .infMini{flex:none;display:inline-block;background:#cedcd3;color:#284a45;font-size:9px;font-weight:800;border-radius:4px;padding:1px 3px;border:1px solid #9dbab0}
+.surv.ai .infMini{background:#e6c9b7;border-color:#cda695}.leaderMark{font-size:14px;color:#a06c28;line-height:1;font-weight:900;flex:none}
+.surv small{font-size:10px!important;line-height:1.24!important;font-weight:750;color:#2a4c4c;white-space:nowrap!important}
+.survCondition{font-size:10px;font-weight:800;color:#894a44;white-space:normal!important;line-height:1.3}
+.gearIcons{letter-spacing:1px;color:#2b4447;font-size:13px}
+.surv .skilltag{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:9px!important;color:#587067}
+.zombieSlots .access.z{background:#4c6759;color:#f8f3dd;border:1px solid #354b3d}.zombieSlots .access.b{background:#c4a16b;color:#352918;border:1px solid #957445}
+.zombieSlots .access.e{background:#e2e7da;color:#9ca99b}
+.fabArea{right:14px!important;bottom:calc(14px + env(safe-area-inset-bottom))!important}
+.fabArea .floatingActions{border:2px solid #f3cf94!important;background:linear-gradient(155deg,#bb8c4c,#77532c)!important;box-shadow:0 6px 20px #000c,0 0 0 2px #2c3b3c!important}
+.fabMenu{border:1px solid #d0a86b!important;background:#1b2d31f5!important;border-radius:15px!important;box-shadow:0 10px 33px #000b!important}
+.fabMenu button{background:linear-gradient(110deg,#385557,#2b4449)!important;border-radius:9px!important;font-size:14px!important;min-height:43px}
+.fabMenu button.endTurn{background:linear-gradient(105deg,#a87b40,#72502d)!important}
+.floatingDice{background:#22393eeb!important;border:1px solid #d2b17d!important;border-radius:10px!important;box-shadow:0 5px 15px #0009!important}
+.modalBackdrop{backdrop-filter:blur(3px)}.modal{border:2px solid #c8a16a!important;border-radius:14px!important;background:#efe9d9!important;box-shadow:0 20px 65px #000d!important}
+.modalHeader{background:linear-gradient(110deg,#29464a,#172b32)!important;padding:13px 14px!important}.modalHeader h2{font:700 19px Georgia,serif!important;letter-spacing:.02em}
+.modalContent{padding:14px!important}.modalContent h3{font-size:16px!important;color:#394c47;border-color:#baaa8c!important}
+.action,.btn{border-radius:8px!important}.action{background:#345658!important;border:1px solid #234346!important;padding:11px 9px!important}
+.action.secondary{background:#e1dccd!important;color:#29413f!important;border:1px solid #9da599!important}.action.danger{background:#884641!important;color:#fff!important}
+.message{border-radius:4px;border-left:4px solid #ac824b;background:#e9dcc0}
+.actorCard{border-radius:10px!important;background:linear-gradient(125deg,#324c4f,#233639)!important;padding:13px!important}
+.groupPanel{padding:7px;border:1px solid #bfac8e;border-radius:10px;margin:11px 0;background:#fbf6e9}
+.groupMember{display:flex;gap:10px;align-items:center;justify-content:space-between;border-bottom:1px solid #d3c6ae;padding:8px 5px}.groupMember:last-child{border-bottom:none}
+.groupMember b{display:block;color:#29443c}.groupMember small{display:block;color:#566763;font-size:11px;margin-top:3px}.groupMember .action{font-size:11px;padding:8px!important}
+.leaderOption{display:flex;flex-direction:column;gap:5px;width:100%;text-align:left;background:#f9f4e7;color:#243a39;border:1px solid #af9972;border-radius:10px;margin:8px 0;padding:13px;cursor:pointer}.leaderOption b{font:700 17px Georgia,serif;color:#775328}.leaderOption span{font-size:12px}.leaderOption small{font-size:11px;color:#547166}
+.recruitStory{text-align:center;padding:14px 8px}.recruitSeal{display:grid;place-items:center;margin:0 auto 10px;width:60px;height:60px;border-radius:50%;background:#d9c193;border:2px solid #a9874a;color:#674a27;font-size:32px}
+.recruitStory h3{font:700 22px Georgia,serif!important;border:0!important;color:#4b3a29}.recruitStory p{font-size:13px;line-height:1.55}
+@media(max-width:350px){.status{gap:3px!important;padding:4px!important}.statLabel{font-size:8px!important}.sitehead{font-size:10px!important}.survtop b{font-size:10px!important}.sitebody{padding:5px!important}.colony .survivorSlots{gap:3px!important}.surv{padding:5px 3px!important}.surv .infMini{font-size:8px}.leadersSummary{font-size:9px}.modalContent{padding:9px!important}}
+@media(hover:hover){.surv:hover{filter:brightness(1.035);transform:translateY(-1px)}.mission:hover{transform:translateY(-1px)}}
+@media(prefers-reduced-motion:reduce){.stat,.surv{transition:none!important}}
+
+.equipDesc{display:block;font-size:11px;color:#54686c;line-height:1.3;margin:3px 0 6px}.equiprow{flex-wrap:wrap;gap:5px 9px}
+/* V9.9: lenguaje visual invernal cinematográfico, sin imágenes externas. */
+:root{color-scheme:dark;--ice:#c9d9de;--ember:#d8a567;--blood:#ba6f6b;--char:#101b24}
+body{background:radial-gradient(ellipse at 18% -10%,#364958 0%,transparent 45%),linear-gradient(170deg,#172732 0%,#111b22 48%,#0a1118 100%);color:#dae4e3}
+header{background:linear-gradient(110deg,#101820,#23323c 65%,#101820);border-bottom:1px solid #9a7552;box-shadow:0 3px 15px #0009}
+.brand{color:#e9e5dc;text-shadow:0 1px 2px #000}
+.brand small{color:#a1b8be}
+.missionStrip{background:#131e28}
+.mission.goal{background:linear-gradient(125deg,#384556,#192530);border-color:#a98c6b;box-shadow:inset 0 0 18px #b7dce110}
+.mission.crisis{background:linear-gradient(125deg,#563036,#221c27);border-color:#a96a63}
+.mission .eyebrow{color:#e5c9a9}.mission.crisis .eyebrow{color:#e9a7a0}
+.stat{background:linear-gradient(160deg,#273840,#15242e);border-color:#425966;color:#d8e4e5}
+.stat strong{color:#f5e6cc}
+.notice{background:#22313a;border-color:#586a72;color:#d6e1dd}
+.site{background:linear-gradient(150deg,#98a9b0,#667e89);border-color:#596c75;box-shadow:0 8px 20px #02080dbb,inset 0 0 0 1px #c6d2d3}
+.site.colony{background:linear-gradient(145deg,#bcbeb6,#839494);border-color:#c8a271;box-shadow:0 3px 25px #000e,inset 0 0 0 1px #ecdebe}
+.sitehead{background:linear-gradient(95deg,#243a47,#14232c);color:#e8e5dd;border-bottom:1px solid #73909a}
+.colony .sitehead{background:linear-gradient(90deg,#654d36,#302b2a);border-bottom-color:#c1a078}
+.site.selected{outline-color:#e0af6b}
+.sitebody{background:linear-gradient(170deg,#d7dcda77,transparent 70%)}
+.slot{background:#c7d5d077;border-color:#607982;color:#667e82}
+.surv{background:linear-gradient(145deg,#f0ece0,#cbd8d8);border-color:#567d8d;box-shadow:0 1px 4px #18283055}
+.surv.ai{background:linear-gradient(150deg,#eddfd8,#d8c0b8);border-color:#9b6861}
+.surv.active{background:#fff1d1;box-shadow:inset 0 0 6px #e1ae5199}
+.zombieSlots .access.z{background:#485b58;color:#f8ddc8}
+.zombieSlots .access.b{background:#947654;color:#fff2db}
+.modalBackdrop{background:#050b11ee;backdrop-filter:blur(3px)}
+.modal{background:linear-gradient(150deg,#ddd8c9,#b7c3c1);border-color:#a78b6d;color:#192a2d;box-shadow:0 22px 80px #000f}
+.modalHeader{background:linear-gradient(90deg,#1b2b37,#394a51)}
+.action{background:#2c4c5b;border-color:#28414a;border-radius:5px}
+.action.secondary{background:#e5e5de;color:#213c44}
+.action:hover:not(:disabled),.floatingActions:hover{filter:brightness(1.13)}
+.lootLegend{display:flex;align-items:center;justify-content:space-around;gap:2px;min-height:25px;padding:2px 3px;background:linear-gradient(90deg,#111f29,#243643);border-bottom:1px solid #587180;overflow:hidden;white-space:nowrap;color:#e2e4df}
+.lootLegend span{font-size:clamp(12px,3.5vw,17px);filter:drop-shadow(0 1px 2px #000b);min-width:0}
+.itemCard{display:flex;align-items:center;gap:10px;padding:10px 8px;margin:7px 0;border:1px solid #91a3a3;background:linear-gradient(110deg,#f0ede2,#c6d1cf);border-radius:6px;box-shadow:0 3px 9px #0a202322;color:#1b3339}
+.itemIcon{font-size:26px;min-width:28px;text-align:center}
+.itemDetail{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+.itemDetail b{font:700 14px Georgia,serif}
+.itemDetail small{font-size:12px;color:#34484c;line-height:1.35}
+.itemDetail span{font-size:10px;color:#577078}
+.itemControls{display:flex;flex-direction:column;gap:4px}
+.itemControls .action{padding:6px 9px;min-width:65px}
+.deathBackdrop[hidden]{display:none!important}
+.deathBackdrop{position:fixed;inset:0;z-index:80;display:grid;place-items:center;background:radial-gradient(circle at 50% 38%,#581f2b80,#020407ed 75%);backdrop-filter:grayscale(.9) blur(5px);padding:15px;animation:deathFade .45s ease-out}
+.deathScene{width:min(420px,100%);max-height:90dvh;overflow-y:auto;padding:25px 19px 18px;text-align:center;border:1px solid #ad746f;background:linear-gradient(160deg,#222c34,#0f141c 85%);box-shadow:0 15px 70px #000f,0 0 25px #a73c4050;animation:deathRise .52s cubic-bezier(.2,.65,.2,1)}
+.deathSign{font:72px Georgia,serif;color:#a45c5a;text-shadow:0 0 25px #ce5a5b70;animation:deathPulse 2.1s ease-in-out infinite}
+.deathEyebrow{color:#cfa6a4;letter-spacing:.19em;font-size:11px;font-weight:800}
+.deathScene h2{font:700 25px Georgia,serif;color:#f7eee5;margin:12px 0}
+#deathDetails p{line-height:1.5;font-size:13px;color:#d8c3c0}
+.deathImpact{padding:11px;margin:15px 0;background:#502c35;color:#f3c0bb;border:1px solid #995457;font-weight:800}
+.deathContinue{background:#785658;color:#fff4ec;border:1px solid #b8827e;border-radius:5px;padding:11px 30px;font-weight:800}
+@keyframes deathFade{from{opacity:0}to{opacity:1}}
+@keyframes deathRise{from{transform:translateY(18px) scale(.96);opacity:.2}to{transform:translateY(0) scale(1);opacity:1}}
+@keyframes deathPulse{50%{opacity:.55;transform:scale(.97)}}
+@media(max-width:390px){.itemCard{padding:7px 6px;gap:7px}.itemDetail b{font-size:12px}.itemDetail small{font-size:11px}.itemControls .action{font-size:11px;min-width:56px}}
+@media(prefers-reduced-motion:reduce){.deathBackdrop,.deathScene,.deathSign{animation:none!important}}
+
+/* V9.9 — MATERIAL INDUSTRIAL: concrete, distressed paint, oxidised sheet metal.
+   Native gradients keep the HTML independent of image assets and network. */
+:root{color:#e7e4d9;background:#141818;font-family:'Arial Narrow',system-ui,-apple-system,Segoe UI,sans-serif}
+html,body{background:#141818;color:#e7e4d9}
+body{background:
+ repeating-linear-gradient(0deg,#0000 0 43px,#090f0f35 44px 45px),
+ repeating-linear-gradient(90deg,#0000 0 67px,#c0c7b706 68px 69px),
+ radial-gradient(ellipse at 15% 0%,#424742 0%,#1b2222 42%,#111617 90%);
+ background-attachment:fixed}
+header{background:linear-gradient(90deg,#2c3434,#12191c 65%,#383f3b);border-bottom:3px solid #b45b3c;box-shadow:inset 0 1px #687273,0 5px 13px #02040399;padding:8px 10px}
+.brand{font-family:Impact,'Arial Narrow',sans-serif;letter-spacing:.065em;font-size:clamp(18px,4.4vw,29px);color:#f3ebd9;text-shadow:1px 2px #070b0c,0 0 2px #aaa}
+.brand small{font-family:ui-monospace,Consolas,monospace;letter-spacing:.16em;color:#d29a71;font-size:9px}
+.missionStrip{background:linear-gradient(#313635,#161b1c);border-bottom:2px solid #59605c}
+.mission{border-color:#626963!important;background:linear-gradient(135deg,#333a3a,#191f21)!important;box-shadow:inset 1px 1px #69716c77,inset -2px -2px #070c0bd0,0 3px 8px #0008;border-radius:1px!important}
+.mission.goal{border-left:4px solid #b29865!important}.mission.crisis{border-left:4px solid #a74637!important}
+.mission .eyebrow,.sectionname,.industrialTag{font-family:ui-monospace,Consolas,monospace!important;letter-spacing:.12em;font-weight:900}
+.mission .main,.mission .sub{color:#f0ebdf!important}.mission.crisis .eyebrow{color:#eea58b!important}
+.mission .progress{background:#101616;border:1px solid #53574e}.mission .progress i{background:repeating-linear-gradient(105deg,#b19a68 0 8px,#76674d 8px 12px)}
+.turnpanel{background:linear-gradient(145deg,#28302f,#171c1e)!important;color:#e2e6df!important;border:1px solid #585e59}
+.statuswrap{background:#101617;border-bottom:2px solid #45504a}.status{background:#1b2021}.stat{background:linear-gradient(140deg,#404743,#252d2d);border-color:#666c60;border-bottom:2px solid #98724e;color:#e8e8df;border-radius:1px}
+.stat .statLabel,.stat label{color:#d0d1c1!important;font-size:9px}.stat strong{color:#f7e9c4!important;font-family:Impact,system-ui,sans-serif;text-shadow:0 1px #080c0a}
+.noticewrap,.notice{background:#252d2d!important;color:#e0e0d7!important;border-color:#586260!important}
+.boardwrap{background:transparent!important}
+.board{gap:9px!important;padding:10px 7px 105px!important}
+.site,.site.colony{background:
+ repeating-linear-gradient(0deg,#ffffff04 0 3px,#00000004 3px 9px),
+ linear-gradient(140deg,#383e3d,#262c2d 60%,#303535)!important;
+ color:#e3e6df!important;border:2px solid #606762!important;border-left:4px solid #515d55!important;
+ box-shadow:inset 0 0 0 1px #111816,0 5px 16px #000b,0 0 0 1px #0a0f0e!important;border-radius:2px!important}
+.site.colony{border-left-color:#bd8e58!important;border-top-color:#9b7852!important}
+.sitehead,.colony .sitehead{background:linear-gradient(90deg,#373b38,#222828 60%,#151b1c)!important;
+ color:#f2eee1!important;font-family:Impact,'Arial Narrow',system-ui,sans-serif!important;
+ letter-spacing:.09em;border-bottom:2px solid #a15d46!important;text-shadow:1px 2px 2px #000!important;padding:9px 10px!important}
+.sitehead:before{content:'▪';color:#b6a184;margin-right:5px;font-size:9px}
+.colony .sitehead{border-bottom-color:#c5a269!important}
+.sitehead small{color:#c9d2c9!important;font-family:ui-monospace,monospace}
+.sitebody{background:linear-gradient(90deg,#10171628,#56625c10,#080d0d33)!important;padding:7px!important}
+.sectionname{color:#bec8b9!important;font-size:9px!important}
+.lootLegend{background:repeating-linear-gradient(135deg,#343c3b 0 12px,#2b3433 12px 24px)!important;
+ border-top:1px solid #727a72;border-bottom:1px solid #151b1c!important;min-height:32px}
+.lootLegend span{filter:grayscale(.18) drop-shadow(0 2px 2px #000)}
+.slot{background:#161f1f80!important;border:1px dashed #55635d!important;color:#75827a!important}
+.surv{background:linear-gradient(145deg,#596460,#354544)!important;color:#fff7e8!important;
+ border:1px solid #7b9e9e!important;border-left:3px solid #9da89e!important;box-shadow:inset 0 1px #bec9bd44,0 2px 6px #030505a0!important;border-radius:1px!important}
+.surv.ai{background:linear-gradient(145deg,#66544b,#433630)!important;border-color:#b07c69!important;border-left-color:#bb7963!important}
+.surv.active{background:linear-gradient(135deg,#786942,#4b4836)!important;outline:2px solid #eed19a!important}
+.surv b,.surv small,.surv .survCondition,.surv .infMini,.surv .skilltag{color:#f3eee2!important}
+.leaderMark{color:#f1c571!important}.surv .skilltag{opacity:.84}
+.zombieSlots .access.z,.zombie{background:radial-gradient(#864842,#342e2d)!important;color:#ffd8b8!important;border:1px solid #a26b56!important;text-shadow:0 0 5px #ff9e64}
+.zombieSlots .access.b{background:repeating-linear-gradient(130deg,#a5865b 0 7px,#4b4031 7px 13px)!important;color:#ffedbc!important}
+.modalBackdrop{background:#020707e9!important;backdrop-filter:blur(2px)}
+.modal{background:repeating-linear-gradient(0deg,#ffffff04 0 2px,#00000004 2px 5px),linear-gradient(150deg,#3a4140,#272d2e)!important;
+ border:2px solid #78827c!important;border-left:5px solid #a96646!important;color:#eee8db!important;box-shadow:0 22px 85px #000f!important;border-radius:1px!important}
+.modalHeader{background:linear-gradient(90deg,#4a3c32,#242b2c 52%,#192122)!important;border-bottom:3px solid #a35d44!important}
+.modalHeader h2,.modalContent h3{font-family:Impact,'Arial Narrow',system-ui,sans-serif!important;color:#f8efdf!important;letter-spacing:.045em}
+.modalContent p,.modalContent small,.modalContent .tiny{color:#d9dbd1!important}
+.modalContent h3{border-bottom:1px solid #666e65}
+.btn,.action,.floatingActions,.deathContinue{border-radius:2px!important;text-transform:none;background:linear-gradient(145deg,#59635d,#2e3b3c)!important;
+ border:1px solid #899187!important;border-bottom:3px solid #1a2424!important;color:#f8efe0!important;
+ text-shadow:0 1px 1px #000;box-shadow:inset 0 1px #c2cbb326,1px 3px 5px #0007}
+.action.secondary{background:linear-gradient(#565b53,#363e3a)!important;color:#f4efe1!important}
+.action.danger,.btn.red{background:linear-gradient(#85473c,#4b2a29)!important;border-color:#c27b61!important}
+.btn.gold{background:linear-gradient(#a4804d,#655033)!important;border-color:#cfab77!important}
+.btn:hover:not(:disabled),.action:hover:not(:disabled){filter:brightness(1.18)}
+.btn:active:not(:disabled),.action:active:not(:disabled){transform:translateY(1px)}
+.control{background:#202a2b;color:#f3e8d5;border-color:#757f78}
+.message{background:#594e3c!important;color:#fff0d2!important;border-left-color:#d49a61!important}
+.itemCard,.equiprow,.groupPanel,.leaderOption,.actorCard,.crossChoice,.crossStory,.recruitStory,.logentry{background:#303939!important;border-color:#64716a!important;color:#ece8dc!important;border-radius:1px!important}
+.itemDetail b,.itemDetail small,.itemDetail span,.itemCard b,.equiprow b,.equipDesc{color:#f0ecde!important}
+.itemIcon{filter:drop-shadow(1px 2px #0a0a09)}
+.profileStat,.pill,.die{background:#424a46!important;border-color:#7d857d!important;color:#f0eedf!important}
+.die.picked,.floatingDie.selected{background:#a18252!important;color:#100e0a!important}
+.floatingActions{background:linear-gradient(130deg,#a15c43,#602e28)!important;border:2px solid #c58b66!important;color:#fff5e4!important}
+.fabMenu{background:#192324f0!important;border:1px solid #707971!important}
+.fabMenu button{color:#f2eadb!important;background:#37403d!important;border-color:#6b726b!important}
+.floatingDice{background:#1f2929dd!important;border-color:#7f8070!important}
+.floatingDie{color:#121b1a!important;background:#dfd4b8!important}
+.statInfo{background:#2b3231!important;border:2px solid #a17b51!important;color:#f4e9d3!important}
+.statInfo b,.statInfo span{color:#f4e9d3!important}
+.noiseIndicator{background:#b7b3a0!important;color:#171c1a!important;border:1px solid #313c37!important}
+.noiseIndicator svg{fill:#101a19!important}
+.deathScene{border:2px solid #ac6653!important;background:linear-gradient(130deg,#2e3535,#151d1e)!important}
+.equipEntry{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:10px 8px!important;border-left:3px solid #a87d4b!important}
+.equipEntryTitle{display:flex;align-items:center;gap:7px;flex:1;min-width:120px}
+.equipInfoButton{background:#283637;border:1px solid #89988c;color:#e6c88a;border-radius:2px;min-width:32px;min-height:32px;cursor:pointer}
+.equipHint{display:none;order:3;width:100%;background:#161f20;color:#f2e3c8;font-size:12px;line-height:1.45;border-left:3px solid #be9661;padding:10px;white-space:normal}
+.equipEntry:hover .equipHint,.equipEntry:focus-within .equipHint,.equipEntry.infoOpen .equipHint{display:block}
+.handoverBackdrop[hidden]{display:none!important}
+.handoverBackdrop{position:fixed;inset:0;z-index:200;background:radial-gradient(ellipse at 50% 10%,#3d4140,#080c0e 70%);display:grid;place-items:center;padding:16px;overflow-y:auto}
+.handoverPanel{position:relative;width:min(460px,100%);border:2px solid #747b70;background:repeating-linear-gradient(0deg,#ffffff07 0 2px,#0000 2px 7px),linear-gradient(145deg,#3b4140,#191f20);padding:26px 22px 22px;box-shadow:0 24px 90px #000f;color:#f4e9d6;text-align:center}
+.hazardBand{height:10px;position:absolute;left:0;top:0;right:0;background:repeating-linear-gradient(120deg,#c29148 0 14px,#292b25 14px 28px);border-bottom:2px solid #514534}
+.industrialTag{color:#c8a476;font-size:10px;margin:10px 0 16px}
+.setupSkull{font-size:62px;line-height:1;color:#b9634d;text-shadow:0 0 23px #763a3260;margin:8px 0}
+.handoverPanel h2{font:800 clamp(22px,5.5vw,34px) Impact,'Arial Narrow',sans-serif;letter-spacing:.04em;color:#f1e8d7;margin:12px 0}
+.handoverPanel p{font-size:14px;line-height:1.5;color:#bbc4bc;margin:15px 0 24px}
+.setupChoice{display:block;width:100%;text-align:left;background:linear-gradient(#4c5450,#2d3939);border:1px solid #7d897e;border-left:4px solid #ba7851;color:#fff3e1;padding:15px 14px;margin:10px 0;cursor:pointer}
+.setupChoice strong{display:block;font:800 17px Impact,system-ui;letter-spacing:.07em}
+.setupChoice small{display:block;margin-top:6px;font-size:12px;color:#c6d0c3}
+.setupChoice:hover,.setupChoice:focus-visible{outline:2px solid #c49b69;filter:brightness(1.16)}
+.setupNote{color:#9daaa0;font-size:11px}
+@media(max-width:390px){.board{gap:7px!important;padding:7px 5px 90px!important}.sitehead{padding:8px!important}.surv{padding:4px!important}.handoverPanel{padding:24px 13px 16px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+
+/* C11/#13: dados táctiles y franja inferior reservada, sin tapar el tablero.
+   El menú conserva su despliegue sobre el tablero; nunca ocupa el área de dados. */
+html,body{height:100dvh!important;min-height:0!important;overflow-y:hidden!important}
+body{display:flex!important;flex-direction:column}
+header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
+.boardwrap{flex:1;min-height:0!important;overflow-y:auto!important;overflow-x:hidden!important;overscroll-behavior-y:contain}
+.board{padding-bottom:10px!important}
+.fabArea{position:relative;right:auto!important;bottom:auto!important;flex:0 0 auto;flex-direction:row;align-items:flex-end;justify-content:flex-end;width:100%;max-width:100%;gap:8px;padding:8px 14px calc(8px + env(safe-area-inset-bottom));background:#182020;border-top:1px solid #707971}
+.floatingDice{flex:none;grid-template-columns:repeat(4,44px);gap:8px;width:220px;max-width:220px;max-height:108px;overflow-y:auto;scrollbar-width:thin;scrollbar-gutter:stable}
+.floatingDie{width:44px;min-width:44px;height:44px;min-height:44px;font-size:18px;touch-action:manipulation}
+.floatingDie:active{transform:none}
+.fabMenu{position:absolute;right:14px;bottom:calc(100% + 8px);max-height:calc(100dvh - 160px)}
+.fabMenu button{flex-shrink:0}
+/* En pantallas bajas, permitir recuperar todos los controles desplazando la página. */
+@media(max-height:520px){
+ html,body{height:auto!important;min-height:100dvh!important;overflow-y:auto!important}
+ .boardwrap{flex:none;height:50dvh}
+}
+
+</style></head><body>
+<header><div class="brand">INVIERNO EN LA COLONIA<small>SUPERVIVENCIA COOPERATIVA · V9.9</small></div></header>
+<div class="missionStrip"><button class="mission goal" onclick="show('goal')" id="goalCard"></button><button class="mission crisis" onclick="show('crisis')" id="crisisCard"></button><div class="turnpanel" id="turnpanel"><div id="turnLabel">TU TURNO</div><div class="leadersSummary" id="leadersSummary"></div><button class="btn" id="skipAI" onclick="skipAI=true" style="display:none">Saltar IA »</button></div></div><div class="statuswrap"><div class="status" id="status"></div></div><div class="statInfo" id="statInfo" role="tooltip" hidden></div><div class="noticewrap"><div class="notice"><span id="banner"></span><span id="selectedText"></span></div></div>
+<div class="boardwrap"><main class="board" id="board"></main></div><div class="footer">Prototipo inspirado en juegos de supervivencia invernal · Juego local sin conexión</div>
+<div id="fabArea" class="fabArea"><div id="floatingDice" class="floatingDice" aria-label="Dados de acción disponibles"></div><div id="fabMenu" class="fabMenu" aria-label="Menú del juego" hidden>
+<button onclick="menuGo('actions')">⚔ <span>Acciones</span></button>
+<button onclick="menuGo('inventory')">▣ <span>Objetos</span></button>
+<button onclick="menuGo('group')">♛ <span>Grupo y líderes</span></button>
+<button onclick="menuGo('crossroads')">✧ <span>Encrucijadas</span></button>
+<button onclick="menuGo('log')">☷ <span>Registro</span></button>
+<button onclick="menuGo('help')">? <span>Reglas</span></button>
+<button id="fabEndTurn" class="endTurn" onclick="menuEndTurn()">✓ <span>Terminar turno</span></button>
+</div><button id="floatingActions" class="floatingActions" onclick="toggleFab()" title="Abrir menú" aria-label="Abrir menú" aria-expanded="false" aria-controls="fabMenu">☰</button></div><div id="deathBackdrop" class="deathBackdrop" hidden role="dialog" aria-modal="true" aria-labelledby="deathHeading"><div class="deathScene"><div class="deathSign">☠</div><div class="deathEyebrow">UNA PÉRDIDA EN LA COLONIA</div><h2 id="deathHeading"></h2><div id="deathDetails"></div><div id="deathImpact" class="deathImpact"></div><button class="deathContinue" onclick="deathDirector.continue()">Continuar</button></div></div>
+<div id="setupScreen" class="handoverBackdrop" role="dialog" aria-modal="true" aria-labelledby="setupTitle" hidden>
+ <section class="handoverPanel"><div class="hazardBand" aria-hidden="true"></div><div class="industrialTag">PROTOCOLO DE REFUGIO · ACCESO 09</div>
+ <div class="setupSkull" aria-hidden="true">☣</div>
+ <h2 id="setupTitle">INVIERNO EN LA COLONIA</h2>
+ <p>Elegí quién controla el segundo grupo. Los dos modos son cooperativos y funcionan sin conexión.</p>
+ <button class="setupChoice" onclick="startGame('ai')"><strong>▣ 1 JUGADOR + IA</strong><small>La IA juega como tu compañera de supervivencia.</small></button>
+ <button class="setupChoice" onclick="startGame('local')"><strong>⚑ 2 JUGADORES LOCALES</strong><small>Dos personas, un solo dispositivo, por turnos.</small></button>
+ <span class="setupNote">Las partidas nuevas reinician el tablero y los mazos.</span>
+ </section>
+</div>
+<div id="passScreen" class="handoverBackdrop" role="dialog" aria-modal="true" aria-labelledby="passTitle" hidden>
+ <section class="handoverPanel"><div class="hazardBand" aria-hidden="true"></div><div class="industrialTag">CAMBIO DE GUARDIA · PANTALLA PRIVADA</div>
+ <div class="setupSkull" aria-hidden="true">✋</div><h2 id="passTitle">Turno del jugador 2</h2>
+ <p id="passDescription">Pasale el dispositivo al siguiente jugador.</p>
+ <button class="setupChoice action" onclick="confirmPass()"><strong>COMENZAR TURNO</strong><small>Mostrar mis personajes, dados y objetos</small></button>
+ </section>
+</div>
+<div id="toastStack" class="toastStack" role="status" aria-live="polite"></div><div id="backdrop" class="modalBackdrop" onclick="if(event.target===this)hide()"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modalHeader"><h2 id="modalTitle"></h2><button class="btn" onclick="hide()">✕ Cerrar</button></div><div class="modalContent" id="modalContent"></div></div></div>
+<script>
+'use strict';
+const places=['Colonia','Supermercado','Hospital','Comisaría','Gasolinera','Escuela','Biblioteca'];
+const icons=['⌂','▣','✚','✦','⚙','▤','▥'];
+/* __D1_ITEM_CATALOG__ */
+const em={comida:'🥫',medicina:'✚',arma:'🔫',herramienta:'⛏️',combustible:'⛽',muestra:'◈',educacion:'📖',superviviente:'👤'};
+
+const capacity=[12,4,4,4,4,4,4],zcap=[12,4,4,4,4,4,4];
+const objectives=[{name:'Encontrar la cura',description:'Reunir 7 muestras de investigación para salvar a la colonia.',need:7,rounds:8},{name:'Operación antídoto',description:'Reunir 5 muestras antes de que se agoten las 6 rondas.',need:5,rounds:6},{name:'Última esperanza',description:'Recuperar 9 muestras antes de que termine la ronda 10.',need:9,rounds:10}];
+
+const roster=[
+{name:'Mara',job:'Médica',attack:4,search:3,influence:76,skill:'medic',skillName:'Primeros auxilios',skillDesc:'Una vez por ronda cura 1 herida de un superviviente en su localidad, sin dado.'},
+{name:'Leo',job:'Mecánico',attack:3,search:4,influence:58,skill:'builder',skillName:'Manos hábiles',skillDesc:'Una vez por ronda construye una barricada sin usar dado.'},
+{name:'Iris',job:'Exploradora',attack:5,search:2,influence:67,skill:'scout',skillName:'Ojo experto',skillDesc:'Al buscar, roba dos objetos y elige uno.'},
+{name:'Ada',job:'Enfermera',attack:4,search:3,influence:73,skill:'nurse',skillName:'Contra el frío',skillDesc:'Una vez por ronda elimina una congelación de un superviviente en su localidad.'},
+{name:'Bruno',job:'Policía',attack:2,search:4,influence:80,skill:'fighter',skillName:'Puntería',skillDesc:'Necesita un punto menos en el dado para atacar.'},
+{name:'Sol',job:'Superviviente',attack:4,search:2,influence:45,skill:'resilient',skillName:'Resistencia',skillDesc:'Una vez por ronda puede evitar un resultado adverso de exposición.'},
+{name:'Tomás',job:'Cocinero',attack:5,search:3,influence:36,skill:'cook',skillName:'Raciones',skillDesc:'Si está en la colonia durante la fase de comida, reduce el consumo en una unidad.'},
+{name:'Elena',job:'Investigadora',attack:5,search:2,influence:89,skill:'researcher',skillName:'Análisis',skillDesc:'La primera muestra que obtiene durante la partida cuenta doble.'},
+{name:'Raúl',job:'Bombero',attack:2,search:5,influence:66,skill:'guard',skillName:'Defensa firme',skillDesc:'Al construir barricadas con un dado coloca dos, si hay accesos.'},
+{name:'Clara',job:'Bibliotecaria',attack:5,search:2,influence:55,skill:'librarian',skillName:'Catálogo',skillDesc:'En la biblioteca, búsqueda requiere un punto menos.'},
+{name:'Nico',job:'Paramédico',attack:4,search:3,influence:61,skill:'paramedic',skillName:'Tratamiento',skillDesc:'Al usar medicina, cura hasta dos daños del personaje seleccionado.'},
+{name:'Valeria',job:'Vigilante',attack:2,search:4,influence:74,skill:'silent',skillName:'Paso sigiloso',skillDesc:'Su primer movimiento de cada ronda no requiere exposición.'},
+{name:'Hugo',job:'Carpintero',attack:3,search:4,influence:52,skill:'builder',skillName:'Refuerzo rápido',skillDesc:'Una vez por ronda construye una barricada sin usar dado.'},
+{name:'Luz',job:'Bióloga',attack:5,search:2,influence:85,skill:'researcher',skillName:'Análisis',skillDesc:'La primera muestra que obtiene durante la partida cuenta doble.'},
+{name:'Damián',job:'Soldado',attack:2,search:5,influence:82,skill:'fighter',skillName:'Entrenamiento',skillDesc:'Necesita un punto menos en el dado para atacar.'},
+{name:'Celia',job:'Veterinaria',attack:4,search:3,influence:70,skill:'medic',skillName:'Cuidados',skillDesc:'Una vez por ronda cura 1 herida de un superviviente en su localidad, sin dado.'}
+];
+
+
+
+
+
+
+
+
+function special(){const p=person();if(!p||p.dead||!playable()||game.ended)return;if(p.skillUsed)return messageAndPaint('Ya usaste esta habilidad en la ronda.');if(p.skill==='builder'){const z=game.zones[p.loc];if(z.z+z.b>=zcap[p.loc])return messageAndPaint('No hay accesos libres.');z.b++;p.skillUsed=true;message('★ '+p.name+' construyó una barricada.');paint();}else if(p.skill==='medic'||p.skill==='nurse'){if(pendingLoot)return;const targets=alive().filter(x=>x.loc===p.loc&&(p.skill==='medic'?x.wounds:x.frost));if(!targets.length)return messageAndPaint('No hay nadie que necesite ese tratamiento aquí.');pendingHeal={actor:p.id,targets:targets.map(x=>x.id)};show('healTarget');}else return messageAndPaint('La habilidad de este personaje es automática.');}
+function chooseHeal(id){if(!pendingHeal||!pendingHeal.targets.includes(id))return;const p=all().find(x=>x.id===pendingHeal.actor),t=all().find(x=>x.id===id);if(!p||!t||p.dead||t.dead||p.skillUsed||p.loc!==t.loc||!canResolve('healTarget'))return;const key=p.skill==='medic'?'wounds':'frost';if(!t[key])return; t[key]--;p.skillUsed=true;pendingHeal=null;message('✚ '+p.name+' atendió a '+t.name+' con '+p.skillName+'.');hide();paint();}
+
+
+const random=n=>Math.floor(Math.random()*n),die=()=>random(6)+1;
+let game,selected=0,target=0,picked=0,opened='',profileId='',skipAI=false,aiRunning=false,toastQueue=[],toastBusy=false,pendingHeal=null,pendingLoot=null;
+let gameMode='ai',passScreenActive=false;
+const selectionBySide={human:0,ai:0};
+class TurnController {
+ get side(){return game?.turn==='ai'?'ai':'human';}
+ get local(){return game?.mode==='local';}
+ get interactive(){return !!game&&!game.ended&&!passScreenActive&&!aiRunning&&(game.turn==='human'||(this.local&&game.turn==='ai'));}
+ group(side=this.side){return side==='ai'?game.bots:game.humans;}
+ hand(side=this.side){return side==='ai'?game.botItems:game.items;}
+ dice(side=this.side){return side==='ai'?game.botDice:game.dice;}
+ display(side=this.side){return side==='human'?'Jugador 1':(this.local?'Jugador 2':'IA');}
+}
+const controls=new TurnController();
+// La elección de paciente reserva las acciones normales hasta resolverla o cancelar.
+function deathWaiting(){return deathDirector.active||deathDirector.pending.length>0;}
+// La misma prioridad gobierna el modal visible y los comandos de resolución.
+function decisionKind(){
+ if(pendingBite)return 'biteChoice';if(leaderChoiceReady())return 'leaderChoice';
+ if(pendingLoot)return 'lootChoice';if(pendingHeal)return 'healTarget';
+ if(pendingAttract)return 'attractTarget';if(pendingTransfer)return 'transferTarget';
+ return game?.crossPending?'crossroads':null;
+}
+const playable=()=>controls.interactive&&!deathWaiting()&&!decisionKind();
+const canResolve=type=>controls.interactive&&!deathWaiting()&&decisionKind()===type;
+const actionDice=()=>controls.dice();
+const currentHand=()=>controls.hand();
+
+const all=(g=game)=>[...g.humans,...g.bots],alive=(g=game)=>all(g).filter(p=>!p.dead),person=()=>controls.group()[selected];
+function toast(t){toastQueue.push(t);drainToasts();}
+async function drainToasts(){if(toastBusy)return;toastBusy=true;const stack=document.getElementById('toastStack');while(toastQueue.length){const t=toastQueue.shift();if(!stack)break;stack.innerHTML='';const item=document.createElement('div');item.className='toast '+(/[☠⚠]|fallid|mordedura|herida|congelación/i.test(t)?'bad':/[✓🏆]|superad|encontró|eliminó|movió/i.test(t)?'good':'');item.textContent=t;stack.appendChild(item);await new Promise(r=>setTimeout(r,aiRunning&&!skipAI?1550:2300));item.remove();}toastBusy=false;}
+const pause=async()=>{
+ const pausedGame=game;paint();
+ await waitForAiCross();if(game!==pausedGame||game.ended)return;
+ await waitForLeader();if(game!==pausedGame||game.ended)return;
+ await deathDirector.wait();if(game!==pausedGame||game.ended)return;
+ if(!skipAI)await new Promise(r=>setTimeout(r,1750));
+};
+function message(t){game.log.unshift('R'+game.round+' · '+t);game.log=game.log.slice(0,120);game.last=t;toast(t);}
+// Historias originales inspiradas en el sistema de encrucijadas: una carta oculta por ronda,
+// activada por la primera acción pertinente; las decisiones alteran recursos y supervivientes.
+const crossroadsDeck=[
+{title:'Golpes en la puerta',when:'move',story:'Una familia exhausta sigue a tu grupo hasta el portón. Piden refugio, pero las reservas ya escasean.',choices:[['Darles refugio','Llegan 2 indefensos; +1 moral.',g=>{g.helpless+=2;g.morale++;},g=>colonyRoom(g,2)],['Compartir provisiones y despedirlos','-2 comida; +1 moral.',g=>{g.food=Math.max(0,g.food-2);g.morale++;},g=>g.food>=2]]},
+{title:'La radio encendida',when:'search',story:'Entre interferencias, una voz ofrece coordenadas de un depósito de suministros. También podrían ser saqueadores.',choices:[['Confiar en la señal','+2 comida, pero llegan 2 zombis al exterior.',(g,env)=>{g.food+=2;addZombie(1,env);addZombie(1,env);}],['Apagar la radio','+1 moral: la colonia evita el riesgo.',g=>{g.morale++;}]]},
+{title:'Una mano entre los escombros',when:'search',story:'Encontrás a una persona atrapada. Rescatarla demora y puede atraer a los muertos.',choices:[['Intentar el rescate','Reclutás un superviviente, si hay espacio; +1 zombi.',(g,env)=>{recruit(g.crossOwner,false,env);addZombie(2,env);}],['Buscar provisiones primero','+2 comida, -1 moral.',g=>{g.food+=2;g.morale=Math.max(0,g.morale-1);}]]},
+{title:'El último cargador',when:'attack',story:'Una persona te pide munición para defender a su hermano. Es lo último que le queda a la colonia.',choices:[['Entregar las municiones','-1 comida, -1 zombi en la colonia.',g=>{g.food=Math.max(0,g.food-1);g.zones[0].z=Math.max(0,g.zones[0].z-1);}],['Reservarlas para el grupo','+1 barricada en la colonia, si hay lugar.',g=>{if(g.zones[0].z+g.zones[0].b<zcap[0])g.zones[0].b++;}]]},
+{title:'Fiebre en el refugio',when:'round',story:'Un niño del refugio tiembla de fiebre. La medicina es escasa y otros también la necesitan.',choices:[['Usar el botiquín','Consumís 1 medicina, si hay; +1 moral.',g=>{let i=crossHandIndex(g,'medicina');if(i>=0){ownerHand(g).splice(i,1);g.morale++;}else g.morale=Math.max(0,g.morale-1);},(g,side)=>ownerGroupHand(g,side).some(it=>kind(it)==='medicina')],['Aislar al enfermo','Sin costo de objetos; -1 moral.',g=>{g.morale=Math.max(0,g.morale-1);}]]},
+{title:'Huellas sobre la nieve',when:'move',story:'Unas pisadas recientes se alejan del camino. Podrían conducir a un refugio seguro.',choices:[['Seguir las huellas','+1 herramienta y +1 zombi en la localidad.',(g,env)=>{ownerHand(g).push('herramienta');addZombie(crossActor(g).loc,env);}],['Regresar sin investigar','+1 barricada en la colonia, si hay lugar.',g=>{if(g.zones[0].z+g.zones[0].b<zcap[0])g.zones[0].b++;}]]},
+{title:'El generador averiado',when:'round',story:'La calefacción de la colonia se apaga en plena noche. Solo queda combustible para una emergencia.',choices:[['Encender el generador','Consumís 1 combustible, si hay; +1 moral.',g=>{let i=crossHandIndex(g,'combustible');if(i>=0){ownerHand(g).splice(i,1);g.morale++;}else g.waste+=2;},(g,side)=>ownerGroupHand(g,side).some(it=>kind(it)==='combustible')],['Ahorrar combustible','+2 residuos por improvisar braseros.',g=>{g.waste+=2;}]]},
+{title:'Un mensaje en la pared',when:'search',story:'Un mapa dibujado a mano señala un laboratorio abandonado. La ruta está infestada.',choices:[['Investigar el laboratorio','+1 muestra y +2 zombis en el hospital.',(g,env)=>{g.samples++;addZombie(2,env);addZombie(2,env);}],['Evitar la zona','+1 comida.',g=>{g.food++;}]]},
+{title:'El perro del estacionamiento',when:'move',story:'Un perro hambriento se acerca al grupo. Sus ladridos podrían alertar a los zombis.',choices:[['Alimentarlo','-1 comida, +1 moral.',g=>{g.food=Math.max(0,g.food-1);g.morale++;},g=>g.food>=1],['Alejarlo','+1 zombi en la ubicación del superviviente.',(g,env)=>{addZombie(crossActor(g).loc,env);}]]},
+{title:'Una discusión por las raciones',when:'round',story:'Dos habitantes discuten por el reparto. La tensión amenaza con dividir al refugio.',choices:[['Repartir comida extra','-2 comida, +2 moral.',g=>{g.food=Math.max(0,g.food-2);g.morale+=2;},g=>g.food>=2],['Mantener las raciones','-1 moral.',g=>{g.morale=Math.max(0,g.morale-1);}]]},
+{title:'El autobús varado',when:'move',story:'Hay personas atrapadas en un autobús. Sacarlas implica hacer ruido y gastar tiempo.',choices:[['Evacuarlas','+3 indefensos, +1 moral, +2 zombis en la colonia.',(g,env)=>{g.helpless+=3;g.morale++;addZombie(0,env);addZombie(0,env);},g=>colonyRoom(g,3)],['No intervenir','-1 moral.',g=>{g.morale=Math.max(0,g.morale-1);}]]},
+{title:'La guardia nocturna',when:'round',story:'Un centinela descubre una abertura en el perímetro. Repararla implica gastar herramientas o arriesgar la seguridad.',choices:[['Reparar el muro','Consumís una herramienta; añadís dos barricadas si hay accesos.',(g,env)=>{const k=crossHandIndex(g,'herramienta');if(k>=0){ownerHand(g).splice(k,1);for(let i=0;i<2;i++)if(g.zones[0].z+g.zones[0].b<zcap[0])g.zones[0].b++;}else{g.morale=Math.max(0,g.morale-1);ruleMessage(env,'Sin herramientas: -1 moral.');}},(g,side)=>ownerGroupHand(g,side).some(it=>kind(it)==='herramienta')],['Mantener una guardia improvisada','Un zombi menos en la colonia, pero +1 residuo.',g=>{g.zones[0].z=Math.max(0,g.zones[0].z-1);g.waste++;}]]},
+{title:'La farmacia saqueada',when:'search',story:'Encontrás un armario con medicinas y una nota que advierte que otros refugiados volverán por ellas.',choices:[['Llevar los medicamentos','Obtenés dos medicinas; +1 zombi en tu localidad.',(g,env)=>{ownerHand(g).push('medicina','medicina');addZombie(crossActor(g).loc,env);} ],['Dejar parte para otros','Obtenés una medicina; +1 moral.',g=>{ownerHand(g).push('medicina');g.morale++;}]]},
+{title:'El último puente',when:'move',story:'Un puente de tablones cruje bajo los pasos de un grupo de civiles que intenta llegar al refugio.',choices:[['Ayudar a cruzar','Llegan dos indefensos y +1 moral.',g=>{g.helpless+=2;g.morale++;},g=>colonyRoom(g,2)],['Cerrar el paso','Añadís una barricada en la colonia si hay lugar.',g=>{if(g.zones[0].z+g.zones[0].b<zcap[0])g.zones[0].b++;}]]},
+{title:'Disparos a lo lejos',when:'attack',story:'Una patrulla desconocida dispara contra los muertos. Sus miembros piden suministros a cambio de cubrir la retirada.',choices:[['Compartir una ración','Gastás una comida y eliminás hasta dos zombis de tu localidad.',(g,env)=>{if(g.food>0){g.food--;g.zones[crossActor(g).loc].z=Math.max(0,g.zones[crossActor(g).loc].z-2);}else ruleMessage(env,'No había comida para negociar.');},g=>g.food>=1],['Rechazar el trato','La tensión atrae un zombi a tu localidad.',(g,env)=>{addZombie(crossActor(g).loc,env);}]]},
+{title:'El depósito bajo llave',when:'search',story:'Una puerta de acero oculta suministros. Forzarla dejaría un acceso desprotegido.',choices:[['Forzar la puerta','+3 comida, +1 zombi en la localidad.',(g,env)=>{g.food+=3;addZombie(crossActor(g).loc,env);}],['Asegurar el edificio','+1 barricada donde estás, si hay espacio.',g=>{const z=g.zones[crossActor(g).loc];if(z.z+z.b<zcap[crossActor(g).loc])z.b++;}]]}
+,{title:'La señal del mando',when:'round',require:(p,g)=>!!p&&p.loc===0&&p.influence>=55,story:'El líder reúne a los habitantes bajo una lona improvisada. Su autoridad puede unirlos, pero todos esperan una respuesta.',choices:[['Organizar una guardia','Colocá una barricada en la colonia y ganá una moral si hay un acceso libre.',g=>{if(openAccess(0,g)){g.zones[0].b++;g.morale++;}}],['Racionar las provisiones','Obtené dos comidas para afrontar el frío.',g=>{g.food+=2;}]]}
+,{title:'El aviso del centinela',when:'attack',require:(p)=>!!p&&p.influence>=65,story:'Un superviviente respetado ve una emboscada desde el segundo piso. Su aviso llega justo a tiempo.',choices:[['Reagrupar a los defensores','Retirá un zombi de esta localidad si lo hay.',g=>{const z=g.zones[crossActor(g).loc];z.z=Math.max(0,z.z-1);}],['Asegurar la salida','Añadí una barricada aquí si hay lugar.',g=>{const l=crossActor(g).loc;if(openAccess(l,g))g.zones[l].b++;}]]}
+,{title:'Una petición al líder',when:'move',require:(p)=>!!p&&isLeader(p),story:'En el trayecto, dos refugiados reconocen al líder del grupo y le piden que decida si regresar con ellos a la colonia.',choices:[['Escoltarlos','Se incorporan dos indefensos si hay lugar. +1 moral.',g=>{g.helpless+=2;g.morale++;},g=>colonyRoom(g,2)],['Indicar una ruta segura','Recibís una comida y una medicina.',g=>{ownerHand(g).push('comida','medicina');}]]}
+,{title:'El rescate de la plaza',when:'search',require:(p)=>!!p&&p.influence>=60,story:'Un grupo de vecinos pide ayuda. Te reconocen como alguien capaz de mantenerlos unidos y quieren seguirte.',choices:[['Llevar a uno hasta la colonia','Reclutás un superviviente si hay sitio.',(g,env)=>{recruit(g.crossOwner,false,env);},g=>accessible(0,g)&&roster.some(r=>!all(g).some(p=>p.name===r.name))],['Organizar una caravana de suministros','Incorporá dos comidas a la reserva.',g=>{g.food+=2;}]]}
+,{title:'Un juramento bajo la nieve',when:'round',require:(p,g)=>!!p&&p.loc===0&&g.morale<=6,story:'La moral está bajando y los refugiados miran al líder buscando una razón para seguir luchando.',choices:[['Hablar ante la colonia','Recuperá una moral.',g=>{g.morale++;}],['Preparar defensas','Agregá dos barricadas, si hay lugar.',g=>{for(let i=0;i<2&&openAccess(0,g);i++)g.zones[0].b++;}]]}
+,{title:'La ruta de los veteranos',when:'search',require:(p)=>!!p&&!isLeader(p)&&p.influence<=55,story:'Un explorador poco conocido descubre un camino discreto hacia un viejo depósito. Nadie le cree todavía.',choices:[['Confiar en su hallazgo','Obtené un combustible, pero acumulá un ruido en esta localidad.',g=>{ownerHand(g).push('combustible');g.zones[crossActor(g).loc].noise=Math.min(4,g.zones[crossActor(g).loc].noise+1);} ],['Evitar riesgos','Ganás una herramienta.',g=>{ownerHand(g).push('herramienta');}]]}
+
+,{title:'Un almacén bajo el hielo',when:'search',require:(p,g)=>!!p&&p.loc===4,story:'Un bidón todavía tibio aparece junto a una moto cubierta por la nieve. Alguien acaba de irse.',choices:[['Recoger el combustible','Tu grupo obtiene un bidón de combustible, pero atraés un zombi.',(g,env)=>{ownerHand(g).push(catalog.create('gascan'));addZombie(4,env);}],['Buscar señales de vida','Encontrás notas de laboratorio.',g=>{ownerHand(g).push(catalog.create('notes'));}]]}
+,{title:'La caja de municiones',when:'attack',require:(p)=>!!p&&p.loc===3,story:'Un depósito olvidado abre nuevas opciones para defenderse. Una escopeta espera entre los escombros.',choices:[['Tomar el arma','Obtenés una escopeta y 1 ruido en la comisaría.',g=>{ownerHand(g).push(catalog.create('shotgun'));g.zones[3].noise=Math.min(4,g.zones[3].noise+1);}],['Cerrar la armería','Construís una barricada si queda espacio.',g=>{if(openAccess(3,g))g.zones[3].b++;}]]}
+,{title:'Páginas de otro mundo',when:'search',require:(p)=>!!p&&p.loc===6,story:'En una biblioteca abandonada hay instrucciones para fabricar defensas, pero el papel sirve también para calentar el refugio.',choices:[['Guardar el manual','Obtenés un manual de fortificación.',g=>{ownerHand(g).push(catalog.create('manual'));}],['Usar el papel como abrigo','Quitás 2 residuos de la colonia.',g=>{g.waste=Math.max(0,g.waste-2);}]]}
+,{title:'El último botiquín',when:'search',require:(p)=>!!p&&p.loc===2,story:'Hay un botiquín intacto en un armario, y una familia enferma en la sala contigua.',choices:[['Conservar el botiquín','Obtenés un botiquín completo.',g=>{ownerHand(g).push(catalog.create('medkit'));}],['Atender a la familia','La moral aumenta 1, pero se incorporan 2 indefensos.',g=>{g.morale++;g.helpless+=2;}]]}
+
+];
+
+
+
+
+
+
+
+
+
+function select(i){const group=controls.group();if(!playable()||!group[i]||group[i].dead)return;if(selected===i){profileId=group[i].id;show('profile');return;}selected=i;selectionBySide[controls.side]=i;target=person().loc;paint();}
+function profile(id){profileId=id;show('profile');}
+function equipmentOf(p){return p.equipment||[];}
+
+
+function destination(i){target=i;paint();}
+
+
+
+
+
+
+
+
+
+
+function messageAndPaint(t){message('⚠ '+t);paint();}
+
+
+
+
+function equipIcons(p){const eq=equipmentOf(p).map(kind);return (eq.includes('arma')?'🔫':'')+(eq.includes('herramienta')?'⛏️':'');}
+function ownerGroup(side,g=game){return side==='ai'?g.bots:g.humans;}
+function groupLeader(side,g=game){if(!g)return null;return ownerGroup(side,g).find(p=>!p.dead&&p.id===g.leaders?.[side])||null;}
+function isLeader(p){return !!p&&!p.dead&&game.leaders?.[ownerOf(p)]===p.id;}
+let pendingLeader=false,pendingLeaderSide='human',pendingLeaderSides=[],leaderWaiters=[],pendingRecruitInfo=null;
+// C12: una petición por dueño; los dos campos anteriores son la vista del pedido actual.
+function syncLeaderRequests(){
+ pendingLeader=pendingLeaderSides.length>0;
+ pendingLeaderSide=game?.mode==='local'&&pendingLeaderSides.includes(controls.side)?controls.side:pendingLeaderSides[0]||'human';
+}
+function requestLeader(side){
+ if(pendingLeaderSides.includes(side))return;
+ pendingLeaderSides.push(side);syncLeaderRequests();
+ message('♛ El líder del '+controls.display(side)+' murió: elegí a su sucesor.');
+}
+function clearLeaderRequest(side){
+ pendingLeaderSides=pendingLeaderSides.filter(s=>s!==side);syncLeaderRequests();
+ if(!pendingLeader)leaderWaiters.splice(0).forEach(done=>done());
+}
+function resetLeaderRequests(){
+ pendingLeaderSides=[];syncLeaderRequests();leaderWaiters.splice(0).forEach(done=>done());
+}
+// C9-R1: si muere el líder de otro jugador, decidir sucesor en el turno de su dueño.
+function leaderChoiceReady(){
+ syncLeaderRequests();
+ return !!game&&!game.ended&&pendingLeader&&!passScreenActive&&(game.mode!=='local'||pendingLeaderSide===controls.side);
+}
+function chooseLeader(id){
+ if(pendingBite||deathWaiting())return;
+ const succession=leaderChoiceReady(),side=succession?pendingLeaderSide:controls.side;
+ const group=ownerGroup(side).filter(p=>!p.dead),p=group.find(x=>x.id===id);
+ if(!p||(!succession&&!canPickStartingLeader()))return;
+ game.leaders[side]=p.id;
+ if(side==='human')game.leaderChosen=true;
+ else game.localLeaderChosen=true;
+ if(succession)clearLeaderRequest(side);
+ message('♛ '+p.name+' asume el liderazgo del '+controls.display(side)+' (influencia '+p.influence+').');
+ opened='';document.getElementById('backdrop').classList.remove('open');
+ paint();
+}
+function reviewLeader(side,env=null){
+ const g=env?env.game:game;
+ const group=ownerGroup(side,g).filter(p=>!p.dead);
+ if(!group.length||groupLeader(side,g)){if(!env&&groupLeader(side,g))clearLeaderRequest(side);return;}
+ if(env&&(side==='human'||g.mode==='local')&&group.length>1)return;
+ if((side==='ai'&&g.mode!=='local')||group.length===1){
+  const next=group.slice().sort((a,b)=>b.influence-a.influence)[0];g.leaders[side]=next.id;
+  if(!env)clearLeaderRequest(side);
+  if(side==='human')g.leaderChosen=true;else if(g.mode==='local')g.localLeaderChosen=true;
+  ruleMessage(env,'♛ '+next.name+' es el nuevo líder de '+(side==='ai'?'la IA':'tu grupo')+' (influencia '+next.influence+').');
+ }else if(!env)requestLeader(side);
+}
+function waitForLeader(){return pendingLeader?new Promise(resolve=>leaderWaiters.push(resolve)):Promise.resolve();}
+function dismissRecruit(){pendingRecruitInfo=null;opened='';document.getElementById('backdrop').classList.remove('open');paint();}
+function processRescueQueue(){
+ if(!game?.rescueQueue?.length||!accessible(0)||game.ended)return;
+ const entry=game.rescueQueue.shift();
+ if(recruit(entry.side)){const p=ownerGroup(entry.side).at(-1);if(entry.side==='human'||game.mode==='local')pendingRecruitInfo={side:entry.side,name:p.name,job:p.job,skill:p.skillDesc,queued:false};message('🏠 Se abrió una plaza: llegó un superviviente que esperaba refugio.');}
+ else game.rescueQueue.unshift(entry);
+}
+function showStatInfo(key,el,eventType){
+ const tooltip=document.getElementById('statInfo'),data=statDetails[key];if(!tooltip||!data)return;
+ if(eventType==='hover'&&!window.matchMedia('(hover:hover)').matches)return;
+ const same=!tooltip.hidden&&tooltip.dataset.key===key;
+ if(eventType==='click'&&same){tooltip.hidden=true;return;}
+ tooltip.dataset.key=key;
+ tooltip.innerHTML='<b>'+data.title+'</b><span>'+data.description+'</span>';
+ tooltip.hidden=false;
+ const rect=el.getBoundingClientRect();
+ const width=Math.min(290,window.innerWidth-24);
+ tooltip.style.width=width+'px';
+ tooltip.style.left=Math.max(12,Math.min(rect.left,window.innerWidth-width-12))+'px';
+ const below=rect.bottom+8;
+ tooltip.style.top=(below+114>window.innerHeight?Math.max(8,rect.top-126):below)+'px';
+}
+function closeStatInfo(key){const e=document.getElementById('statInfo');if(e&&!e.hidden&&(!key||e.dataset.key===key))e.hidden=true;}
+const statDetails={
+ morale:{title:'Moral de la colonia',description:'Representa la esperanza del grupo. Disminuye por muertes, hambre y crisis fallidas. Si llega a cero, termina la partida.'},
+ comida:{title:'Reserva de comida',description:'Cada ronda se necesita una comida por cada dos habitantes de la colonia, redondeando hacia arriba. También podés gastar comida para mejorar un dado.'},
+ hambre:{title:'Hambre acumulada',description:'Si no alcanzan las raciones, se añade una ficha de hambre y se pierde tanta moral como hambre acumulada. No desaparece automáticamente.'},
+ ronda:{title:'Rondas restantes',description:'Muestra la ronda actual y el límite del objetivo. Si se agotan las rondas sin cumplir la misión, perdés.'},
+ residuos:{title:'Montón de residuos',description:'Las cartas consumidas pueden convertirse en residuos. Por cada diez residuos, la colonia pierde una moral durante cada fase de colonia. Limpiar retira hasta tres.'},
+ zombis:{title:'Zombis en el tablero',description:'Suma los zombis de la colonia y todas las localidades. Aparecen en la fase de colonia, con ruido y por algunas encrucijadas.'},
+ indefensos:{title:'Supervivientes indefensos',description:'Viven en la colonia, consumen comida y atraen zombis. No pueden realizar acciones ni utilizar dados.'},
+ rescates:{title:'Rescates pendientes',description:'Personas encontradas mientras la colonia estaba llena. Llegarán automáticamente cuando quede una plaza disponible.'}
+};
+document.addEventListener('pointerdown',e=>{const t=document.getElementById('statInfo');if(t&&!t.hidden&&!e.target.closest('.stat')&&!t.contains(e.target))t.hidden=true;});
+function statusText(p){return p.dead?'Fallecido':(p.wounds?'♥'+p.wounds+' ':'')+(p.frost?'❄'+p.frost+' ':'')+(!p.wounds&&!p.frost?'Sano':'')+(p.moved?' · movido':'');}
+function token(p){
+ const mine=ownerOf(p)===controls.side,idx=mine?controls.group().indexOf(p):-1,eq=equipIcons(p);
+ const head=(isLeader(p)?'<span class="leaderMark" title="Líder de grupo">♛</span>':'');
+ return '<button class="surv '+(ownerOf(p)==='ai'?'ai ':'')+(mine&&idx===selected?'active ':'')+'" onclick="event.stopPropagation();'+(mine&&playable()?'select('+idx+')':'profile(\''+p.id+'\')')+'" title="'+p.name+' · influencia '+p.influence+' · '+statusText(p)+'">'+
+ '<span class="survtop">'+head+'<b>'+p.name+'</b><span class="infMini">◆'+p.influence+'</span></span>'+ 
+ '<small>⚔ '+effectiveAttack(p)+'+ · ⌕ '+effectiveSearch(p)+'+</small>'+ 
+ '<span class="survCondition">♥ '+p.wounds+' · ❄ '+p.frost+(eq?' · <span class="gearIcons" title="Equipamiento">'+eq+'</span>':'')+'</span>'+ 
+ '<span class="skilltag">★ '+(p.skillName||'')+'</span></button>';
+}
+
+
+
+// C9/#6: la primera acción válida confirma al líder del jugador que actúa.
+function confirmStartingLeader(){
+ if(controls.side==='human')game.leaderChosen=true;
+ else if(game.mode==='local')game.localLeaderChosen=true;
+}
+function canPickStartingLeader(){return !!game&&playable()&&game.round===1&&!(controls.side==='human'?game.leaderChosen:game.localLeaderChosen);}
+function toggleFab(force){const menu=document.getElementById('fabMenu'),btn=document.getElementById('floatingActions');const open=typeof force==='boolean'?force:menu.hidden;menu.hidden=!open;btn.textContent=open?'✕':'☰';btn.setAttribute('aria-expanded',String(open));btn.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');}
+function menuGo(type){toggleFab(false);closeStatInfo();show(type);}
+function menuEndTurn(){toggleFab(false);finishTurn();}
+document.addEventListener('click',function(e){const area=document.getElementById('fabArea');if(area&&!area.contains(e.target))toggleFab(false);});
+
+
+
+document.addEventListener('keydown',e=>{if(e.key==='Escape')hide()});
+/* V9.5: núcleo revisado y unificado de mecánicas */
+let pendingBite=null,pendingAttract=null,pendingTransfer=null,biteWaiters=[],aiCrossChoice=null,aiCrossWaiters=[];
+em.superviviente='👥';
+// Mecánicas V9.5: cada actualización del estado parte de validaciones previas y avisos en el registro.
+const mix=a=>{for(let i=a.length-1;i>0;i--){const j=random(i+1);[a[i],a[j]]=[a[j],a[i]];}return a;};
+const kind=x=>catalog.resolve(x)?.kind||'';
+const ownerHand=g=>g.crossOwner==='ai'?g.botItems:g.items;
+const crossActor=(g=game)=>all(g).find(p=>p.id===g.crossActorId)||groupLeader(g.crossOwner,g)||alive(g)[0]||{loc:0};
+const ownerOf=p=>p.id[0]==='a'?'ai':'human';
+const accessible=(loc,g=game)=>alive(g).filter(p=>p.loc===loc).length+(loc===0?g.helpless:0)<capacity[loc];
+const openAccess=(i,g=game)=>g.zones[i].z+g.zones[i].b<zcap[i];
+const hasAnyAccess=()=>game.zones.some((z,i)=>openAccess(i));
+const addWaste=(n=1)=>{game.waste+=n;};
+const itemTitle=it=>catalog.label(it);
+function addCharacter(p){const r=roster.find(x=>x.name===p.name);if(r)Object.assign(p,{job:r.job,skill:r.skill,skillName:r.skillName,skillDesc:r.skillDesc,attack:r.attack,search:r.search,influence:r.influence});p.skillUsed=false;p.bonusUsed=false;p.equipment=p.equipment||[];p.moved=!!p.moved;return p;}
+function recruit(side,emergency=false,env=null){
+ const g=env?env.game:game;
+ const available=roster.filter(r=>!all(g).some(p=>p.name===r.name));
+ if(!available.length){ruleMessage(env,'⚠ El mazo de supervivientes está agotado.');return false;}
+ let loc=0;if(!accessible(0,g)){if(!emergency){ruleMessage(env,'⚠ La colonia está llena: no se puede reclutar.');return false;}loc=places.findIndex((_,i)=>accessible(i,g));}
+ if(loc<0){ruleMessage(env,'⚠ Ninguna localidad tiene espacio para recibir al superviviente.');return false;}
+ const r=available[env?env.random(available.length):random(available.length)],group=side==='ai'?g.bots:g.humans;
+ const p=addCharacter({id:(side==='ai'?'a':'h')+g.nextId++,name:r.name,loc,wounds:0,frost:0,dead:false,moved:false});group.push(p);
+ ruleMessage(env,'👥 '+(side==='ai'?'La IA incorporó':'Incorporaste a')+' '+p.name+' ('+p.job+')'+(emergency?' como reemplazo.':'.'));
+ if(!groupLeader(side,g))reviewLeader(side,env);
+ if(!env&&side===controls.side&&(selected>=controls.group().length||!person()||person().dead)){selected=controls.group().indexOf(p);selectionBySide[side]=selected;target=p.loc;}
+ return true;
+}
+function replaceLastSurvivors(env=null){
+ const g=env?env.game:game;
+ if(!g||g.ended||g.biteResolving||g.morale<=0)return;
+ for(const [side,group] of [['human',g.humans],['ai',g.bots]]){
+  if(group.some(p=>!p.dead))continue;
+  const hand=side==='human'?g.items:g.botItems;
+  const discarded=hand.length;hand.splice(0,hand.length); // La mano se descarta, no se añade a basura.
+  ruleMessage(env,'⚠ '+(side==='human'?'Perdiste':'La IA perdió')+' su último superviviente. Se descartaron '+discarded+' cartas de su mano.');
+  if(!recruit(side,true,env))g.noReplacement=true;
+ }
+}
+function effectiveAttack(p){return Math.max(1,p.attack-(p.skill==='fighter'?1:0)-(itemEngine.has(p,'rifle')||itemEngine.has(p,'hatchet')?1:0));}
+function effectiveSearch(p){return Math.max(1,p.search-(p.skill==='librarian'&&p.loc===6?1:0)-(itemEngine.has(p,'crowbar')?1:0));}
+
+/* Objetos: efectos y restricciones concentrados en una clase, compartida por jugador e IA. */
+class ItemEngine {
+ has(p,id){return !!p&&equipmentOf(p).some(it=>catalog.resolve(it)?.id===id);}
+ equipped(p,id){return equipmentOf(p).find(it=>catalog.resolve(it)?.id===id);}
+ useFlashlight(p){const it=this.equipped(p,'flashlight');if(!it||it.usedRound)return false;it.usedRound=1;return true;}
+ equip(p,it){const d=catalog.resolve(it);if(!p||p.dead||!d||d.effect!=='equip')return false;if(equipmentOf(p).some(x=>kind(x)===d.kind)){message('⚠ '+p.name+' ya lleva un objeto de '+d.kind+'. Transferilo antes de equipar otro.');return false;}p.equipment.push(it);message('🎒 '+p.name+' equipó '+d.name+': '+d.desc);return true;}
+ attack(p,side){
+  const z=game.zones[p.loc];if(!z.z)return false;
+  const shotgun=this.has(p,'shotgun'),count=Math.min(z.z,shotgun?2:1);z.z-=count;
+  message('⚔ '+p.name+' eliminó '+count+' zombi'+(count>1?'s':'')+' en '+places[p.loc]+(shotgun?' con escopeta':'')+'.');
+  let safe=false;
+  for(const id of ['pistol','rifle']){const it=this.equipped(p,id);if(it&&!it.usedRound&&(id==='pistol'||p.loc!==0)){it.usedRound=1;safe=true;message('🔫 '+catalog.resolve(it).name+': ataque sin exposición.');break;}}
+  if(!safe)expose(p,'ataque '+(side==='ai'?'IA':''));
+  const axe=this.equipped(p,'hatchet');if(axe&&!axe.usedRound&&p.loc===0&&openAccess(0)&&!p.dead){axe.usedRound=1;z.b++;message('🪓 '+p.name+' reforzó una barricada después del combate.');}
+  return true;
+ }
+ moveWithFuel(p,dest,side,i){
+  const hand=side==='ai'?game.botItems:game.items;
+  if(!p||p.dead)return false;
+  // UX: combustible no permite un segundo movimiento; informar igual que «Mover».
+  if(p.moved){
+   if(controls.interactive&&side===controls.side)message('⚠ El superviviente ya se movió durante este turno.');
+   return false;
+  }
+  if(!accessible(dest)||dest===p.loc||!hand[i]||kind(hand[i])!=='combustible')return false;
+  const old=p.loc;p.loc=dest;p.moved=true;hand.splice(i,1);addWaste();
+  message('⛽ '+p.name+' se movió de '+places[old]+' a '+places[dest]+' sin exposición.');
+  if(controls.interactive&&side===controls.side)crossAction('move',p);return true;
+ }
+ use(i,p,side='human'){
+  const hand=side==='ai'?game.botItems:game.items,it=hand[i],d=catalog.resolve(it);if(!d)return false;
+  if(d.effect==='equip'){if(!this.equip(p,it))return false;hand.splice(i,1);return true;}
+  if(d.effect==='move')return this.moveWithFuel(p,target,side,i);
+  if(d.effect==='heal'||d.effect==='frost'){
+   if(!p||p.dead||!p.wounds&&!p.frost){message('⚠ Seleccioná a un superviviente que necesite tratamiento.');return false;}
+   if(d.effect==='frost'&&!p.frost){message('⚠ Este tratamiento solo elimina congelaciones.');return false;}
+   const qty=d.amount+(p.skill==='paramedic'?1:0);let healed=0;
+   for(let j=0;j<qty;j++){if(d.effect==='frost'&&p.frost){p.frost--;healed++;}else if(d.effect==='heal'){if(p.wounds){p.wounds--;healed++;}else if(p.frost){p.frost--;healed++;}}}
+   if(!healed)return false;message('✚ '+p.name+' recibió '+d.name+' y curó '+healed+' daño(s).');
+  }else if(d.effect==='food'){game.food+=d.amount;message('🥫 '+d.name+': +'+d.amount+' comida(s) a la reserva.');}
+  else if(d.effect==='sample'){const finder=all().find(x=>x.id===it.finderId);gainSample(finder||p);message('◈ Muestra entregada al objetivo.');}
+  else if(d.effect==='manual'){
+   if(!p||p.dead){message('⚠ Seleccioná un superviviente vivo.');return false;}
+   const removed=Math.min(game.waste,2);game.waste-=removed;
+   const added=openAccess(p.loc)?1:0;if(added)game.zones[p.loc].b++;
+   if(!removed&&!added){message('⚠ No hay residuos ni accesos libres para aprovechar el manual.');return false;}
+   message('📖 Manual: -'+removed+' residuos, +'+added+' barricada(s) en '+places[p.loc]+'.');
+  }else if(d.effect==='research'){
+   if(!p||p.dead){message('⚠ Seleccioná un superviviente vivo.');return false;}
+   gainSample(p);message('📖 Notas de laboratorio utilizadas por '+p.name+'.');
+  }else if(d.effect==='rescue'){if(!recruit(side)){return false;}}
+  else return false;
+  hand.splice(i,1);
+  if(!['sample','rescue'].includes(d.effect))addWaste();
+  return true;
+ }
+}
+const itemEngine=new ItemEngine();
+
+function newRound(){
+ if(game.ended)return;
+ game.turn='human';selected=selectionBySide.human;game.crossPending=false;game.crossResolved=false;game.noReplacement=false;
+ reviewLeader('human');reviewLeader('ai');
+ all().forEach(p=>{p.moved=false;p.skillUsed=false;for(const eq of equipmentOf(p))if(eq&&typeof eq==='object')eq.usedRound=0;});
+ const types=['comida','medicina','herramienta','combustible'];const crisisType=types[random(types.length)];
+ game.crisis={type:crisisType,need:2,given:0,contributions:[],fail:['moral','zombie','food','wound'][random(4)]};
+ game.dice=Array.from({length:1+game.humans.filter(p=>!p.dead).length},die);
+ game.botDice=Array.from({length:1+game.bots.filter(p=>!p.dead).length},die);
+ picked=0;game.crossAttempts=0;crossDraw('human');
+ message('⚠ Crisis: aportar 2 '+crisisType+'.');
+ applyFrost('human');replaceLastSurvivors();verify();
+ if(!game.ended)crossTrigger('round',null);
+ paint();
+}
+function create(){
+ document.getElementById('toastStack').innerHTML='';toastQueue=[];toastBusy=false;deathDirector.reset();skipAI=false;aiRunning=false;selected=0;target=0;picked=0;opened='';profileId='';pendingHeal=null;pendingLoot=null;pendingBite=null;pendingAttract=null;pendingTransfer=null;aiCrossChoice=null;settleDecisionWaiters();resetLeaderRequests();pendingRecruitInfo=null;selectionBySide.human=0;selectionBySide.ai=0;closeStatInfo();
+ const objective=objectives[random(objectives.length)];
+ game={mode:gameMode,objective,round:1,max:objective.rounds,morale:9,food:6,hunger:0,samples:0,goal:objective.need,waste:0,
+ humans:[{id:'h0',name:'Mara',loc:0,wounds:0,frost:0,dead:false},{id:'h1',name:'Leo',loc:0,wounds:0,frost:0,dead:false},{id:'h2',name:'Iris',loc:0,wounds:0,frost:0,dead:false}],
+ bots:[{id:'a0',name:'Ada',loc:0,wounds:0,frost:0,dead:false},{id:'a1',name:'Bruno',loc:0,wounds:0,frost:0,dead:false},{id:'a2',name:'Sol',loc:0,wounds:0,frost:0,dead:false}],
+ zones:places.map((name,i)=>({name,z:i===0?3:1,b:0,noise:0,accessIndex:0})),items:['ration','bandage','crowbar','pistol','canned','gascan','ration'].map(id=>catalog.create(id)),botItems:['ration','bandage','gascan','ration','pistol','repairkit','ration'].map(id=>catalog.create(id)),helpless:0,
+ leaders:{human:'h0',ai:'a1'},leaderChosen:false,localLeaderChosen:gameMode!=='local',rescueQueue:[],crossRemaining:[],crossCard:0,crossResolved:false,crossPending:false,crossOwner:'human',crossActorId:null,crossAttempts:0,
+ dice:[],crisis:null,ended:false,noReplacement:false,biteResolving:false,log:[],last:'',turn:'human',nextId:6,decks:{}};
+ all().forEach(addCharacter);
+ for(let loc=1;loc<places.length;loc++)game.decks[loc]=catalog.deck(loc);
+ message('Objetivo: '+objective.name+' · '+objective.description);newRound();
+}
+function applyFrost(side){
+ const group=side==='human'?game.humans:game.bots;
+ for(const p of [...group])if(!p.dead&&p.frost>0){p.wounds++;message('❄ '+p.name+' recibe una herida por congelación (inicio de turno).');if(p.wounds+p.frost>=3)kill(p,'heridas por congelación');}
+}
+class DeathDirector {
+ constructor(){this.pending=[];this.active=false;this.waiters=[];this.scheduled=false;}
+ record(p,reason){this.pending.push({name:p.name,reason,loc:places[p.loc],side:ownerOf(p)});if(!this.scheduled){this.scheduled=true;queueMicrotask(()=>{this.scheduled=false;this.open();});}}
+ open(){if(this.active||!this.pending.length||pendingBite)return;
+  this.active=true;
+  if(!deathModalOpener)deathModalOpener=document.activeElement;
+  const entries=this.pending.splice(0),names=entries.map(x=>x.name);
+  document.getElementById('deathHeading').textContent=names.join(' · ');
+  document.getElementById('deathDetails').innerHTML=entries.map(x=>'<p><strong>'+x.name+'</strong> — '+x.reason+' en '+x.loc+' ('+(x.side==='ai'?'IA':'tu grupo')+').</p>').join('');
+  document.getElementById('deathImpact').textContent='Moral de la colonia −'+entries.length;
+  document.getElementById('deathBackdrop').hidden=false;
+  syncHandoverAccessibility();
+ }
+ continue(){if(!this.active)return;this.active=false;document.getElementById('deathBackdrop').hidden=true;
+  if(this.pending.length){this.open();return;}
+  this.waiters.splice(0).forEach(resolve=>resolve());paint();deathModalOpener=null;
+ }
+ wait(){return this.active||this.pending.length?new Promise(resolve=>this.waiters.push(resolve)):Promise.resolve();}
+ reset(){this.pending=[];this.active=false;deathModalOpener=null;document.getElementById('deathBackdrop').hidden=true;this.waiters.splice(0).forEach(resolve=>resolve());}
+}
+const deathDirector=new DeathDirector();
+function kill(p,reason,env=null){
+ const g=env?env.game:game;
+ if(!p||p.dead)return;
+ p.dead=true;if(env)env.deaths++;g.morale=Math.max(0,g.morale-1);
+ if(!env&&ownerOf(p)===controls.side&&person()===p){const next=controls.group().findIndex(x=>!x.dead);if(next>=0){selected=next;selectionBySide[controls.side]=next;target=controls.group()[next].loc;}}
+ const equipment=[...equipmentOf(p)];p.equipment=[];
+ if(equipment.length){if(p.loc===0){(ownerOf(p)==='human'?g.items:g.botItems).push(...equipment);ruleMessage(env,'🎒 Los objetos de '+p.name+' regresan a la mano.');}
+ else {const deck=[...(g.decks[p.loc]||[]),...equipment];g.decks[p.loc]=env?deck:mix(deck);ruleMessage(env,'🎒 El equipamiento de '+p.name+' se mezcló con el mazo de '+places[p.loc]+'.');}}
+ ruleMessage(env,'☠ '+p.name+' murió por '+reason+'. Moral -1.');if(!env)deathDirector.record(p,reason);
+ if(g.leaders[ownerOf(p)]===p.id)g.leaders[ownerOf(p)]=null;
+ replaceLastSurvivors(env);reviewLeader(ownerOf(p),env);
+}
+// La clasificación terminal tiene una sola fuente, compartida con la evaluación.
+function gameOutcome(g){
+ if(g.morale<=0)return 'morale';
+ if(g.noReplacement||(!g.humans.some(p=>!p.dead)||!g.bots.some(p=>!p.dead))&&!g.biteResolving)return 'survivors';
+ if(g.samples>=g.goal)return 'victory';
+ return null;
+}
+function ruleMessage(env,text){if(!env)message(text);}
+function verify(env=null){
+ const g=env?env.game:game;
+ if(g.ended)return;
+ replaceLastSurvivors(env);
+ const result=gameOutcome(g);
+ if(result){
+  g.ended=true;g.turn='end';
+  ruleMessage(env,result==='morale'?'☠ Derrota: la moral llegó a cero.':result==='survivors'?'☠ Derrota: no hay supervivientes disponibles para continuar.':'🏆 ¡Victoria! Se completó el objetivo general.');
+  if(!env)cancelPendingDecisions();
+ }
+}
+
+function biteNext(){
+ if(!pendingBite)return;
+ while(pendingBite.victims.length){
+  const id=pendingBite.victims.shift(),t=all().find(p=>p.id===id);
+  if(!t||t.dead)continue;
+  pendingBite.target=id;
+  if(game.mode==='local'||ownerOf(t)==='human'){message('☣ La mordedura amenaza a '+t.name+'. Elegí sacrificarlo o arriesgar la tirada.');show('biteChoice');return;}
+  // La última víctima jamás se sacrifica: tiene probabilidad de salvarse sin poner a nadie más en riesgo.
+  const remaining=pendingBite.victims.map(id=>all().find(x=>x.id===id)).filter(Boolean);
+  const highValueNext=remaining.some(x=>x.influence>=t.influence+5);
+  const risk=remaining.length===0||!highValueNext;
+  if(!risk){kill(t,'sacrificio estratégico para detener la mordedura');message('🤖 La IA sacrificó a '+t.name+' para proteger a otro superviviente de alta influencia.');break;}
+  const d=die();message('🤖 ☣ '+t.name+' arriesga la exposición: '+d+(d>=4?' · ¡sobrevivió!':' · murió; el contagio continúa.'));
+  if(d>=4){pendingBite.victims=[];break;}
+  kill(t,'propagación de mordedura');
+ }
+ pendingBite=null;game.biteResolving=false;replaceLastSurvivors();reviewLeader('human');reviewLeader('ai');verify();paint();deathDirector.open();biteWaiters.splice(0).forEach(done=>done());
+}
+function settleDecisionWaiters(){biteWaiters.splice(0).forEach(done=>done());aiCrossWaiters.splice(0).forEach(done=>done());}
+function cancelPendingDecisions(){
+ pendingBite=null;pendingHeal=null;pendingLoot=null;pendingAttract=null;pendingTransfer=null;aiCrossChoice=null;
+ game.crossPending=false;game.biteResolving=false;
+ resetLeaderRequests();settleDecisionWaiters();
+ opened='';document.getElementById('backdrop').classList.remove('open');syncHandoverAccessibility();
+}
+const waitForBite=()=>pendingBite?new Promise(resolve=>biteWaiters.push(resolve)):Promise.resolve();
+function chooseBite(option){
+ if(!pendingBite||game.ended)return;
+ const p=all().find(x=>x.id===pendingBite.target);if(!p||p.dead)return;
+ if(option==='sacrifice'){kill(p,'sacrificio para detener la mordedura');pendingBite.victims=[];}
+ else if(option==='risk'){
+  const d=die();message('☣ '+p.name+' se arriesga: dado '+d+(d>=4?' — blanco, se salva.':' — la infección avanza.'));
+  if(d<4)kill(p,'propagación de mordedura');else pendingBite.victims=[];
+ }
+ else return;
+ opened='';document.getElementById('backdrop').classList.remove('open');biteNext();
+}
+function expose(p,reason){
+ if(!p||p.dead)return;
+ const d=die();message('🎲 Exposición de '+p.name+' ('+reason+'): '+(d===1?'MORDEDURA':d===2?'CONGELACIÓN':d===3?'HERIDA':'BLANCO')+'.');
+ if(d<4&&p.skill==='resilient'&&!p.skillUsed){p.skillUsed=true;message('★ '+p.name+' evitó la exposición gracias a su habilidad.');return;}
+ if(d===1){
+  const coLocated=alive().filter(x=>x.id!==p.id&&x.loc===p.loc).sort((a,b)=>a.influence-b.influence).map(x=>x.id);
+  game.biteResolving=true;pendingBite={victims:coLocated,target:null};kill(p,'mordedura');biteNext();
+ }else if(d===2||d===3){if(d===2)p.frost++;else p.wounds++;message((d===2?'❄ Congelación de ':'♥ Herida de ')+p.name+'.');if(p.frost+p.wounds>=3)kill(p,'tres daños acumulados');}
+}
+function drawItem(loc){return game.decks[loc]&&game.decks[loc].length?game.decks[loc].shift():null;}
+function stashLoot(it,p,side){
+ if(kind(it)==='superviviente'){
+  if(accessible(0)&&recruit(side)){
+   const recruited=ownerGroup(side).at(-1);
+   if(side==='human'||game.mode==='local')pendingRecruitInfo={side,name:recruited.name,job:recruited.job,skill:recruited.skillDesc,queued:false};
+   message('🏠 '+recruited.name+' llegó directamente a la colonia tras el rescate.');
+  }else{
+   game.rescueQueue.push({side,origin:p.loc});
+   if(side==='human'||game.mode==='local')pendingRecruitInfo={side,name:'Rescate pendiente',job:'Colonia completa',skill:'Esta persona llegará cuando quede un espacio libre en la colonia.',queued:true};
+   message('👥 La colonia está llena. Un superviviente espera una plaza (rescate pendiente).');
+  }
+  return;
+ }
+ if(side==='human'||game.mode==='local'){
+  controls.hand(side).push(kind(it)==='muestra'?{...catalog.create('sample'),finderId:p.id}:it);
+ }else if(kind(it)==='muestra'){gainSample(p);}else if(['arma','herramienta'].includes(kind(it))){
+  if(!equipmentOf(p).some(eq=>kind(eq)===kind(it))){p.equipment.push(it);message('🤖 '+p.name+' equipó '+itemTitle(it)+'.');}else game.botItems.push(it);
+ }else game.botItems.push(it);
+}
+function beginSearch(p,side){
+ const first=drawItem(p.loc);if(!first){message('⌕ El mazo de '+places[p.loc]+' se agotó.');return;}
+ const cards=[first]; if(p.skill==='scout'){const next=drawItem(p.loc);if(next)cards.push(next);}if(itemEngine.useFlashlight(p)){const extra=drawItem(p.loc);if(extra){cards.push(extra);message('🔦 '+p.name+' reveló otra carta sin generar ruido.');}}
+ if(side==='human'||game.mode==='local'){
+  pendingLoot={items:cards,actorId:p.id,loc:p.loc};message('⌕ '+p.name+' encontró '+cards.map(itemTitle).join(' y ')+'.');show('lootChoice');
+ }else{
+  // C7-R1: priorizar una herramienta revelada solo cuando ella completa
+  // la crisis con los recursos que ya posee la IA y aportó el humano.
+  // Una muestra que completa la victoria inmediata conserva prioridad superior.
+  const needed=game.crisis?.type==='herramienta'
+   ?game.crisis.need-game.crisis.contributions.filter(type=>type==='herramienta').length:0;
+  const held=game.botItems.filter(it=>kind(it)==='herramienta').length+
+   game.bots.filter(bot=>!bot.dead).reduce((n,bot)=>n+equipmentOf(bot).filter(it=>kind(it)==='herramienta').length,0);
+  const toolCompletes=needed>0&&held+1===needed;
+  const sampleWins=it=>kind(it)==='muestra'&&game.samples+
+   (p.skill==='researcher'&&!p.bonusUsed?2:1)>=game.goal;
+  const score=it=>sampleWins(it)?12:kind(it)==='herramienta'&&toolCompletes?11:
+   ({muestra:10,superviviente:accessible(0)?9:0,comida:game.food<4?8:4,medicina:4,arma:3,herramienta:3,combustible:2,educacion:5}[kind(it)]||0);
+  const chosen=cards.slice().sort((a,b)=>score(b)-score(a))[0];game.decks[p.loc].push(...cards.filter(x=>x!==chosen));
+  stashLoot(chosen,p,side);message('⌕ IA '+p.name+' encontró '+itemTitle(chosen)+'.');
+ }
+}
+function addNoiseSearch(){
+ if(!pendingLoot||game.ended||!canResolve('lootChoice'))return;
+ const loc=pendingLoot.loc,z=game.zones[loc];if(z.noise>=4||!game.decks[loc].length)return;
+ z.noise++;const newCard=drawItem(loc);pendingLoot.items.push(newCard);message('🔊 Ruido en '+places[loc]+': se reveló '+itemTitle(newCard)+'.');paint();
+}
+function chooseLoot(i){
+ if(!pendingLoot||game.ended||!canResolve('lootChoice')||!Number.isInteger(i)||i<0||i>=pendingLoot.items.length)return;
+ const {items,actorId,loc}=pendingLoot,p=all().find(x=>x.id===actorId);pendingLoot=null;
+ if(!p||p.dead)return;
+ const chosen=items[i];game.decks[loc].push(...items.filter((_,j)=>j!==i));stashLoot(chosen,p,controls.side);
+ message('⌕ '+p.name+' eligió '+itemTitle(chosen)+'; las demás cartas regresaron al fondo del mazo.');
+ opened='';document.getElementById('backdrop').classList.remove('open');crossAction('search',p);verify();paint();if(pendingRecruitInfo&&!game.crossPending)show('recruitSuccess');
+}
+function consume(min){
+ if(game.ended||!playable()||pendingLoot||pendingBite||leaderChoiceReady()||game.crossPending)return null;
+ if(!actionDice().length)return messageAndPaint('No quedan dados de acción.'),null;
+ const dice=actionDice(),i=Math.max(0,Math.min(picked,dice.length-1)),value=dice[i];
+ if(value<min)return messageAndPaint('Necesitás un dado de '+min+' o más (seleccionado: '+value+').'),null;
+ dice.splice(i,1);picked=Math.min(i,dice.length-1);confirmStartingLeader();message('🎲 Dado utilizado: '+value+' (mínimo '+min+').');return value;
+}
+function boostDie(){
+ if(game.ended||!playable()||!actionDice().length||game.food<1)return messageAndPaint('Necesitás comida de la reserva y un dado disponible.');
+ const i=Math.max(0,Math.min(picked,actionDice().length-1));if(actionDice()[i]>=6)return messageAndPaint('El dado ya tiene valor 6.');
+ game.food--;actionDice()[i]++;message('🥫 Gastaste una comida para mejorar el dado a '+actionDice()[i]+'.');paint();
+}
+function pickFloatingDie(i){if(!playable()||game.ended)return;picked=i;paint();}
+function search(noise=false){
+ if(!playable()||game.ended||pendingLoot||pendingBite||leaderChoiceReady())return;
+ const p=person();if(!p||p.dead||p.loc===0)return messageAndPaint('Elegí un superviviente vivo que esté fuera de la colonia.');
+ if(!game.decks[p.loc].length)return messageAndPaint('No quedan cartas en esta localidad.');
+ if(consume(effectiveSearch(p))===null)return;
+ beginSearch(p,controls.side);paint();
+}
+function attack(){
+ if(!playable()||game.ended||pendingBite||leaderChoiceReady())return;
+ const p=person();if(!p||p.dead||!game.zones[p.loc].z)return messageAndPaint('No hay zombis que atacar con este superviviente.');
+ if(consume(effectiveAttack(p))===null)return;
+ itemEngine.attack(p,controls.side);
+ if(!pendingBite)crossAction('attack',p);verify();paint();
+}
+function doMove(){
+ if(!playable()||game.ended||pendingBite||leaderChoiceReady())return;
+ const p=person();if(!p||p.dead)return;
+ if(p.moved)return messageAndPaint('El superviviente ya se movió durante este turno.');
+ if(p.loc===target)return messageAndPaint('Elegí otro destino.');
+ if(!accessible(target))return messageAndPaint('No hay espacios disponibles en el destino.');
+ confirmStartingLeader();p.loc=target;p.moved=true;message('→ '+p.name+' se movió a '+places[target]+'.');
+ if(p.skill==='silent'&&!p.skillUsed){p.skillUsed=true;message('★ '+p.name+' evitó la exposición.');}else expose(p,'movimiento');
+ if(!pendingBite)crossAction('move',p);verify();paint();
+}
+function barricade(){
+ if(!playable()||game.ended)return;
+ const p=person();if(!p||p.dead||!openAccess(p.loc))return messageAndPaint('No hay acceso libre para colocar una barricada.');
+ if(consume(1)===null)return;
+ let n=0;const max=(p.skill==='guard'?2:1)+(itemEngine.has(p,'repairkit')?1:0);for(let i=0;i<max&&openAccess(p.loc);i++){game.zones[p.loc].b++;n++;}
+ message('▥ '+p.name+' construyó '+n+' barricada(s).');crossAction('barricade',p);paint();
+}
+function clean(){
+ if(!playable()||game.ended)return;
+ const p=person();if(!p||p.dead||p.loc!==0||!game.waste)return messageAndPaint('Se necesita un superviviente en la colonia y residuos para limpiar.');
+ if(consume(1)===null)return;
+ const n=Math.min(3,game.waste);game.waste-=n;message('♻ '+p.name+' retiró '+n+' cartas del montón de residuos.');paint();
+}
+function attract(){
+ if(!playable()||game.ended)return;
+ const p=person();if(!p||p.dead||!openAccess(p.loc))return messageAndPaint('La localidad necesita accesos libres.');
+ const sources=places.map((_,i)=>i).filter(i=>i!==p.loc&&game.zones[i].z>0);
+ if(!sources.length)return messageAndPaint('No hay zombis en otras localidades para atraer.');
+ if(consume(1)===null)return;
+ pendingAttract={loc:p.loc,left:2};show('attractTarget');
+}
+function chooseAttract(src){
+ if(!pendingAttract||!canResolve('attractTarget'))return;
+ const dst=pendingAttract.loc;
+ if(!Number.isInteger(src)||src===dst||!game.zones[src].z||!openAccess(dst))return;
+ game.zones[src].z--;game.zones[dst].z++;pendingAttract.left--;
+ message('🔊 Atraíste 1 zombi de '+places[src]+' a '+places[dst]+'.');
+ if(!pendingAttract.left||!openAccess(dst)||!game.zones.some((z,i)=>i!==dst&&z.z)){pendingAttract=null;hide();}
+ paint();
+}
+class CrisisManager {
+ static canContribute(item){return !!item&&kind(item)===game.crisis.type&&game.crisis.contributions.length<game.crisis.need+2;}
+ static add(item,source){
+  if(!this.canContribute(item)){message('⚠ Solo se aceptan objetos del tipo '+game.crisis.type+'; máximo '+(game.crisis.need+2)+' cartas.');return false;}
+  game.crisis.contributions.push(kind(item));game.crisis.given=game.crisis.contributions.length;
+  message('📦 '+source+' aportó '+itemTitle(item)+' a la crisis ('+game.crisis.given+'/'+game.crisis.need+').');return true;
+ }
+ static fromHand(index){
+  const current=currentHand(),it=current[index];if(!this.add(it,controls.display()))return false;
+  current.splice(index,1);paint();return true;
+ }
+ static fromEquipment(id,index){
+  const p=all().find(x=>x.id===id);
+  if(!p||p.dead||ownerOf(p)!==controls.side||p.equipment[index]===undefined)return false;
+  if(!this.add(p.equipment[index],p.name))return false;
+  p.equipment.splice(index,1);paint();return true;
+ }
+}
+function contribute(i){
+ if(game.ended||!playable()||game.crossPending||pendingBite||pendingLoot||deathDirector.active)return;
+ CrisisManager.fromHand(i);
+}
+function contributeEquipment(id,i){
+ if(game.ended||!playable()||game.crossPending||pendingBite||pendingLoot||deathDirector.active)return;
+ CrisisManager.fromEquipment(id,i);
+}
+function playItem(i){
+ if(game.ended||!playable()||game.crossPending||pendingBite||pendingLoot||leaderChoiceReady()||deathDirector.active)return;
+ if(itemEngine.use(i,person(),controls.side)){confirmStartingLeader();verify();paint();}
+ else paint();
+}
+function toggleEquipDescription(button){
+ const row=button.closest('.equipEntry');if(!row)return;
+ const expanded=row.classList.toggle('infoOpen');
+ button.setAttribute('aria-expanded',String(expanded));
+}
+function equipItem(i){
+ const p=all().find(x=>x.id===profileId);if(!p||p.dead||ownerOf(p)!==controls.side||!playable())return;
+ if(itemEngine.use(i,p,controls.side))paint();else paint();
+}
+
+function unequipItem(i){messageAndPaint('Los objetos equipados solo pueden transferirse a otro superviviente de la misma localidad.');}
+// C8/#4: entre grupos solo se intercambia equipamiento en modo local J1 + J2.
+function canReceiveTransfer(from,to,it){
+ return !!from&&!!to&&!!it&&!to.dead&&from.id!==to.id&&from.loc===to.loc
+  &&(game.mode==='local'||ownerOf(from)===ownerOf(to))
+  &&!equipmentOf(to).some(eq=>kind(eq)===kind(it));
+}
+function startTransfer(i){
+ const p=all().find(x=>x.id===profileId);if(!p||p.dead||ownerOf(p)!==controls.side||!playable()||!p.equipment[i])return;
+ const it=p.equipment[i],targets=alive().filter(x=>canReceiveTransfer(p,x,it));
+ if(!targets.length)return messageAndPaint(game.mode==='local'
+  ?'No hay supervivientes disponibles en esta localidad que puedan recibir el objeto.'
+  :'No hay un superviviente de tu grupo en esta localidad que pueda recibir el objeto.');
+ pendingTransfer={fromId:p.id,itemIndex:i,itemRef:it,targets:targets.map(x=>x.id)};show('transferTarget');
+}
+function chooseTransfer(id){
+ const transfer=pendingTransfer;
+ if(!transfer||!transfer.targets.includes(id)||!canResolve('transferTarget'))return;
+ const p=all().find(x=>x.id===transfer.fromId),t=all().find(x=>x.id===id);
+ const it=p?.equipment?.[transfer.itemIndex];
+ // Revalidar al confirmar: el turno, el mismo objeto y la elegibilidad del receptor
+ // pueden cambiar mientras el diálogo está abierto o por invocación directa.
+ if(!p||p.dead||ownerOf(p)!==controls.side||it!==transfer.itemRef||!canReceiveTransfer(p,t,it))return;
+ p.equipment.splice(transfer.itemIndex,1);
+ t.equipment.push(it);pendingTransfer=null;message('🎒 '+p.name+' entregó '+itemTitle(it)+' a '+t.name+'.');hide();paint();
+}
+function gainSample(p){const bonus=p&&p.skill==='researcher'&&!p.bonusUsed?2:1;game.samples+=bonus;if(bonus===2){p.bonusUsed=true;message('◈ '+p.name+' duplicó la muestra mediante investigación.');}}
+function crossDraw(side='human'){
+ if(!game.crossRemaining.length)game.crossRemaining=mix(crossroadsDeck.map((_,i)=>i));
+ game.crossCard=game.crossRemaining.pop();game.crossOwner=side;game.crossActorId=null;game.crossResolved=false;game.crossPending=false;
+}
+// C2/#2: las manos contienen cartas estructuradas y algunas recompensas antiguas son cadenas.
+// kind() admite ambas representaciones; buscar su índice permite consumir una sola copia.
+function crossHandIndex(g,resource){return ownerHand(g).findIndex(it=>kind(it)===resource);}
+// Requisitos mecánicos anexos a cada opción: la redacción puede cambiar libremente.
+function ownerGroupHand(g,side){return side==='ai'?g.botItems:g.items;}
+function colonyRoom(g,n){return alive(g).filter(p=>p.loc===0).length+g.helpless+n<=capacity[0];}
+function crossOptionAllowed(card,i,side,g=game){
+ const choice=card.choices[i];return !!choice&&(!choice[3]||choice[3](g,side));
+}
+
+function resolveCross(i){
+ const card=crossroadsDeck[game.crossCard],choice=card.choices[i];
+ if(!choice||!crossOptionAllowed(card,i,game.crossOwner))return false;
+ game.crossPending=false;game.crossResolved=true;
+ choice[2](game);message('✧ '+card.title+': '+choice[0]+'. '+choice[1]);verify();return true;
+}
+function crossTrigger(kind,actor){
+ if(!game||game.ended||game.crossResolved||game.crossPending||game.biteResolving)return;
+ const card=crossroadsDeck[game.crossCard];if(!card||game.crossOwner!==game.turn||card.when!==kind)return;
+ if(card.require&&!card.require(actor||groupLeader(game.crossOwner),game))return;
+ if(actor)game.crossActorId=actor.id;
+ const possible=card.choices.map((_,i)=>i).filter(i=>crossOptionAllowed(card,i,game.crossOwner));if(!possible.length)return;
+ game.crossPending=true;message('✧ ENCRUCIJADA: '+card.title+'.');
+ if(game.turn==='ai'&&game.mode!=='local'){
+  // Mostrar siempre la historia y la decisión de la IA antes de continuar el turno.
+  aiCrossChoice=chooseCrossOption(card,game.crossOwner);
+ }
+ show('crossroads');
+}
+// C10/#7: evaluación síncrona aislada. Nunca se intercambia el estado global.
+function feedingNeed(g){
+ const home=alive(g).filter(p=>p.loc===0);
+ return Math.max(0,Math.ceil((home.length+g.helpless)/2)-(home.some(p=>p.skill==='cook')?1:0));
+}
+function crossResourceValue(g){
+ // Comida guardada cuenta por cantidad; el resto de objetos, por unidad.
+ return [...g.items,...g.botItems,...alive(g).flatMap(equipmentOf)].reduce((n,it)=>{
+  const d=catalog.resolve(it);return n+(d?.effect==='food'?d.amount:1);
+ },0);
+}
+function crossRank(before,after,deaths){
+ const sum=(g,key)=>g.zones.reduce((n,z)=>n+z[key],0);
+ const result=gameOutcome(after);
+ const tie=.5*(after.food-before.food)+after.morale-before.morale+
+  .5*(sum(after,'b')-sum(before,'b'))-(sum(after,'z')-sum(before,'z'))+
+  .5*(crossResourceValue(after)-crossResourceValue(before))-
+  .5*(sum(after,'noise')-sum(before,'noise'))-.1*(after.waste-before.waste);
+ return [result==='victory'?2:result?0:1,-deaths,after.food>=feedingNeed(after)?1:0,
+  before.morale<=3?after.morale-before.morale:0,after.samples-before.samples,tie];
+}
+function compareCrossRanks(a,b){
+ for(let i=0;i<a.length;i++)if(a[i]!==b[i])return a[i]-b[i];
+ return 0;
+}
+function evaluateCrossOptions(card,side,g=game){
+ return card.choices.flatMap((choice,index)=>{
+  if(!crossOptionAllowed(card,index,side,g))return [];
+  const outcomes=[],paths=[[]];
+  // Reclutar es aleatorio: recorrer sus resultados posibles sin usar Math.random.
+  // La carta se valora por el peor resultado inmediato, sin prometer un cocinero.
+  while(paths.length){
+   const path=paths.pop(),state=JSON.parse(JSON.stringify(g));let cursor=0;
+   const branch={};
+   const env={game:state,deaths:0,random(n){
+    if(n===1)return 0;
+    if(cursor===path.length){branch.count=n;throw branch;}
+    return path[cursor++];
+   }};
+   try{
+    state.crossPending=false;state.crossResolved=true;
+    choice[2](state,env);verify(env);
+    outcomes.push({state,deaths:env.deaths,result:gameOutcome(state),need:feedingNeed(state),fed:state.food>=feedingNeed(state),rank:crossRank(g,state,env.deaths)});
+   }catch(error){
+    if(error!==branch)throw error;
+    for(let i=branch.count-1;i>=0;i--)paths.push([...path,i]);
+   }
+  }
+  const rank=outcomes.reduce((worst,o)=>compareCrossRanks(o.rank,worst)<0?o.rank:worst,outcomes[0].rank);
+  return [{index,rank,outcomes}];
+ });
+}
+function chooseCrossOption(card,side,g=game){
+ const options=evaluateCrossOptions(card,side,g);
+ // Solo reemplazar al mejor con una mejora estricta conserva el orden del catálogo.
+ return options.reduce((best,o)=>!best||compareCrossRanks(o.rank,best.rank)>0?o:best,null)?.index??null;
+}
+function crossAction(kind,actor){crossTrigger(kind,actor);return !!game.crossPending;}
+function crossChoose(i){if(!game.crossPending||!canResolve('crossroads')||game.crossOwner!==controls.side||!resolveCross(i))return;opened='';document.getElementById('backdrop').classList.remove('open');paint();if(pendingRecruitInfo)show('recruitSuccess');}
+function crossAiContinue(){
+ if(game.ended||passScreenActive||deathWaiting()||decisionKind()!=='crossroads'||game.crossOwner!=='ai'||aiCrossChoice===null)return;
+ if(!resolveCross(aiCrossChoice))return;
+ aiCrossChoice=null;opened='';document.getElementById('backdrop').classList.remove('open');paint();
+ aiCrossWaiters.splice(0).forEach(done=>done());
+}
+const waitForAiCross=()=>game.crossPending&&game.crossOwner==='ai'?new Promise(resolve=>aiCrossWaiters.push(resolve)):Promise.resolve();
+function addZombie(i,env=null){
+ const g=env?env.game:game;
+ const z=g.zones[i];if(openAccess(i,g)){z.z++;return;}
+ if(z.b>0){z.b--;ruleMessage(env,'▥ Una barricada bloqueó un zombi en '+places[i]+'.');return;}
+ const victims=alive(g).filter(p=>p.loc===i).sort((a,b)=>a.influence-b.influence);
+ if(victims.length){kill(victims[0],'desbordamiento en '+places[i],env);}
+ else if(i===0&&g.helpless>0){g.helpless--;if(env)env.deaths++;g.morale=Math.max(0,g.morale-1);ruleMessage(env,'☠ Murió un superviviente indefenso durante el desbordamiento.');}
+ else ruleMessage(env,'☠ '+places[i]+' sufrió un desbordamiento sin habitantes; no se pierde moral.');
+}
+function resolveCrisis(){
+ const c=game.crisis;const points=c.contributions.filter(it=>it===c.type).length;
+ if(points>=c.need){message('✓ Crisis superada: '+points+' aportes válidos de '+c.need+'.');if(points>=c.need+2){game.morale++;message('✓ Aporte excepcional: +1 moral.');}}
+ else{
+  message('⚠ Crisis fallida ('+points+'/'+c.need+').');
+  if(c.fail==='food'){game.food=Math.max(0,game.food-2);message('🥫 La crisis consumió hasta 2 comidas.');}
+  else if(c.fail==='zombie'){addZombie(0);addZombie(0);message('☠ La crisis atrajo dos zombis a la colonia.');}
+  else if(c.fail==='wound'){const t=alive().filter(p=>p.loc===0).sort((a,b)=>a.influence-b.influence)[0];if(t){t.wounds++;message('♥ '+t.name+' sufrió una herida durante la crisis.');if(t.wounds+t.frost>=3)kill(t,'heridas de la crisis');}else{game.morale=Math.max(0,game.morale-1);}}
+  else{game.morale=Math.max(0,game.morale-1);message('⚠ Crisis: -1 moral.');}
+ }
+ c.contributions=[];c.given=0;
+}
+function colony(){
+ if(game.ended)return;
+ message('⌂ Fase de colonia: alimentación → residuos → crisis → zombis.');
+ const need=feedingNeed(game);
+ if(game.food>=need){game.food-=need;message('🥫 Alimentación: '+need+' comida(s), quedan '+game.food+'.');}
+ else{game.hunger++;game.morale=Math.max(0,game.morale-game.hunger);message('⚠ HAMBRE acumulada: '+game.hunger+' ficha(s), -'+game.hunger+' moral. La comida existente permanece.');}
+ verify();if(game.ended)return;
+ if(game.waste>=10){const loss=Math.floor(game.waste/10);game.morale=Math.max(0,game.morale-loss);message('♻ Basura: '+game.waste+' cartas, -'+loss+' moral.');}
+ verify();if(game.ended)return;
+ resolveCrisis();
+ verify();if(game.ended)return;
+ const inhabitants=alive().filter(p=>p.loc===0).length+game.helpless;
+ for(let i=0;i<places.length;i++){
+  const arriving=i===0?Math.ceil(inhabitants/2):alive().filter(p=>p.loc===i).length;
+  for(let j=0;j<arriving;j++){addZombie(i);verify();if(game.ended)return;}
+ }
+ for(const [i,z] of game.zones.entries()){
+  const n=z.noise;z.noise=0;
+  for(let j=0;j<n;j++){const d=die();message('🔊 '+places[i]+': ruido '+(j+1)+'/'+n+' → dado '+d+(d<=3?', llega un zombi.':', sin aparición.'));if(d<=3)addZombie(i);verify();if(game.ended)return;}
+ }
+ verify();
+}
+// C7/#5: la IA coopera con aportes anteriores del humano y revisa equipo tras buscar.
+// Como el humano ya jugó y colonia sigue inmediatamente, si no alcanza para completar
+// la crisis, un aporte parcial adicional solo desperdiciaría el material.
+function botContributeTools(){
+ const c=game.crisis;
+ if(game.ended||!c||c.type!=='herramienta')return;
+ const remaining=Math.max(0,c.need-c.contributions.filter(type=>type==='herramienta').length);
+ if(!remaining)return;
+ const available=game.botItems.filter(it=>kind(it)==='herramienta').length+
+  game.bots.filter(p=>!p.dead).reduce((n,p)=>n+equipmentOf(p).filter(it=>kind(it)==='herramienta').length,0);
+ if(available<remaining)return;
+ // Desempate determinista: primero mano en orden; después supervivientes vivos IA en orden.
+ for(let n=0;n<remaining;n++){
+  const i=game.botItems.findIndex(it=>kind(it)==='herramienta');
+  if(i>=0){
+   if(!CrisisManager.add(game.botItems[i],'La IA'))return;
+   game.botItems.splice(i,1);
+  }else{
+   const p=game.bots.find(p=>!p.dead&&equipmentOf(p).some(it=>kind(it)==='herramienta'));
+   if(!p)return;
+   const j=equipmentOf(p).findIndex(it=>kind(it)==='herramienta');
+   if(j<0||!CrisisManager.add(p.equipment[j],p.name))return;
+   p.equipment.splice(j,1);
+  }
+ }
+}
+async function botTurn(){
+ if(!game||game.ended)return;
+ const turnGame=game;
+ message('🤖 Comienza el turno de la IA.');applyFrost('ai');replaceLastSurvivors();verify();if(game.ended)return;
+ crossDraw('ai');crossTrigger('round',null);await pause();if(game!==turnGame||game.ended)return;
+ const bots=game.bots.filter(p=>!p.dead);
+ const dice=game.botDice; // Reserva única real: nunca copiar para evitar estados divergentes.
+ // Los dados son un fondo común: no pertenecen a un personaje concreto.
+ for(const p of bots){
+  if(p.dead||game.ended)continue;
+  if(['medic','nurse'].includes(p.skill)&&!p.skillUsed){const t=alive().filter(x=>x.loc===p.loc&&(p.skill==='medic'?x.wounds:x.frost)).sort((a,b)=>b.wounds-a.wounds)[0];if(t){if(p.skill==='medic')t.wounds--;else t.frost--;p.skillUsed=true;message('★ '+p.name+' atendió a '+t.name+'.');await pause();if(game!==turnGame||game.ended)return;}}
+  if(p.skill==='builder'&&!p.skillUsed&&openAccess(p.loc)){game.zones[p.loc].b++;p.skillUsed=true;message('★ '+p.name+' construyó una barricada sin dado.');await pause();if(game!==turnGame||game.ended)return;}
+ }
+ // IA: utiliza el mismo motor de objetos que el humano; equipamiento y consumibles requieren condiciones reales.
+ for(const p of bots.filter(p=>!p.dead)){
+  for(let k=game.botItems.length-1;k>=0;k--){
+   const d=catalog.resolve(game.botItems[k]);
+   if(d?.effect==='equip'&&!p.equipment.some(it=>kind(it)===d.kind)){
+    if(itemEngine.use(k,p,'ai'))await pause();if(game!==turnGame||game.ended)return;
+   }
+  }
+ }
+ for(let k=game.botItems.length-1;k>=0;k--){
+  const it=game.botItems[k],d=catalog.resolve(it);if(!d)continue;
+  if(d.kind===game.crisis.type&&d.kind!=='herramienta'&&game.crisis.contributions.length<game.crisis.need){
+   if(CrisisManager.add(it,'La IA')){game.botItems.splice(k,1);await pause();if(game!==turnGame||game.ended)return;}continue;
+  }
+  const injured=game.bots.filter(p=>!p.dead&&(d.effect==='frost'?p.frost:p.wounds+p.frost)).sort((a,b)=>(b.wounds+b.frost)-(a.wounds+a.frost))[0];
+  if((d.effect==='heal'||d.effect==='frost')&&injured){if(itemEngine.use(k,injured,'ai'))await pause();if(game!==turnGame||game.ended)return;}
+  else if(d.effect==='food'&&game.food<Math.ceil((alive().filter(p=>p.loc===0).length+game.helpless)/2)+1){if(itemEngine.use(k,bots.find(p=>!p.dead),'ai'))await pause();if(game!==turnGame||game.ended)return;}
+  else if(d.effect==='research'){
+   if(itemEngine.use(k,bots.find(p=>!p.dead),'ai')){
+    // C1/#11: una muestra completada por la IA debe ganar antes de procesar la colonia.
+    verify();
+    if(game.ended)return;
+    await pause();if(game!==turnGame||game.ended)return;
+   }
+  }
+  else if(d.effect==='manual'&&game.waste>=2){if(itemEngine.use(k,bots.find(p=>!p.dead),'ai'))await pause();if(game!==turnGame||game.ended)return;}
+ }
+
+ // Distribución de desplazamientos (una vez por personaje): según necesidades.
+ for(const p of bots){
+  if(p.dead||p.moved||game.ended)continue;
+  const dest=p.search<=3?([2,6,1].find(i=>accessible(i)&&game.decks[i].length)||p.loc):([1,3,4,5].find(i=>accessible(i)&&game.decks[i].length)||p.loc);
+  if(dest!==p.loc){
+   const fuelIdx=game.botItems.findIndex(it=>kind(it)==='combustible');
+   const fueled=fuelIdx>=0&&itemEngine.moveWithFuel(p,dest,'ai',fuelIdx);
+   if(!fueled){p.loc=dest;p.moved=true;message('🤖 '+p.name+' se movió a '+places[dest]+'.');}
+   await pause();if(game!==turnGame||game.ended)return;if(!fueled){if(p.skill==='silent'&&!p.skillUsed){p.skillUsed=true;}else expose(p,'movimiento IA');}
+   if(pendingBite)await waitForBite();if(game!==turnGame||game.ended)return;await pause();if(game!==turnGame||game.ended)return;if(p.dead){verify();continue;}if(!pendingBite)crossAction('move',p);
+  }
+ }
+ let turns=0;
+ while(dice.length&&turns++<40&&!game.ended){
+  const candidates=game.bots.filter(p=>!p.dead);if(!candidates.length)break;
+  let action=null;
+  for(const p of candidates){
+   const z=game.zones[p.loc];
+   const di=dice.findIndex(d=>d>=effectiveSearch(p));
+   if(p.loc!==0&&game.decks[p.loc].length&&di>=0){action={p,di,type:'search'};break;}
+  }
+  if(!action)for(const p of candidates){const di=dice.findIndex(d=>d>=effectiveAttack(p));if(di>=0&&game.zones[p.loc].z>0){action={p,di,type:'attack'};break;}}
+  if(!action){const p=candidates.find(p=>openAccess(p.loc));if(p)action={p,di:0,type:'barricade'};}
+  if(!action){const p=candidates.find(p=>p.loc===0&&game.waste);if(p)action={p,di:0,type:'clean'};}
+  if(!action)break;
+  const {p,di,type}=action,d=dice.splice(di,1)[0];
+  if(type==='search'){beginSearch(p,'ai');message('🎲 IA '+p.name+' usó dado '+d+' para buscar.');crossAction('search',p);}
+  else if(type==='attack'){message('🎲 IA '+p.name+' gastó dado '+d+' al combatir.');itemEngine.attack(p,'ai');if(pendingBite)await waitForBite();if(game!==turnGame||game.ended)return;if(!pendingBite)crossAction('attack',p);}
+  else if(type==='clean'){const n=Math.min(3,game.waste);game.waste-=n;message('♻ IA limpió '+n+' residuos con dado '+d+'.');}
+  else{const n=(p.skill==='guard'?2:1)+(itemEngine.has(p,'repairkit')?1:0);for(let j=0;j<n&&openAccess(p.loc);j++)game.zones[p.loc].b++;message('▥ IA '+p.name+' colocó barricadas con dado '+d+'.');}
+  verify();await pause();if(game!==turnGame||game.ended)return;
+ }
+ // C7: comprobar los recursos disponibles solo después de las acciones y búsquedas.
+ botContributeTools();
+}
+// C4/#12 + C16/A1: todo diálogo visible aísla teclado y tablero.
+let regularModalOpener=null,deathModalOpener=null,previousActiveDialog=null;
+function handoverDialog(){
+ const pass=document.getElementById('passScreen'),setup=document.getElementById('setupScreen');
+ return pass&&!pass.hidden?pass:setup&&!setup.hidden?setup:null;
+}
+function activeDialog(){
+ const handover=handoverDialog();if(handover)return handover;
+ const death=document.getElementById('deathBackdrop');if(death&&!death.hidden)return death;
+ const backdrop=document.getElementById('backdrop');
+ return backdrop?.classList?.contains?.('open')?backdrop:null;
+}
+function dialogButtons(dialog){
+ return [...(dialog?.querySelectorAll?.('button:not([disabled])')||[])].filter(el=>el.getClientRects().length);
+}
+function focusHandover(dialog){dialogButtons(dialog)[0]?.focus?.();}
+function syncHandoverAccessibility(){
+ const dialog=activeDialog(),previous=previousActiveDialog;
+ if(document.body?.children){
+  for(const child of document.body.children){
+   if(child.tagName!=='SCRIPT')child.inert=!!dialog&&child!==dialog;
+  }
+ }
+ if(dialog){
+  if(!dialog.contains?.(document.activeElement))focusHandover(dialog);
+ }else if(previous){
+  const origin=previous.id==='backdrop'?regularModalOpener:previous.id==='deathBackdrop'?deathModalOpener:null;
+  const usable=origin&&origin.isConnected!==false&&origin.getClientRects?.().length&&!origin.closest?.('[inert]');
+  (usable?origin:document.getElementById('floatingActions'))?.focus?.();
+  if(previous.id==='backdrop')regularModalOpener=null;
+  if(previous.id==='deathBackdrop')deathModalOpener=null;
+ }
+ previousActiveDialog=dialog;
+}
+function returnFocusAfterHandover(){
+ const dialog=activeDialog();
+ if(dialog)focusHandover(dialog);
+ else document.getElementById('floatingActions')?.focus?.();
+}
+document.addEventListener('DOMContentLoaded',syncHandoverAccessibility);
+document.addEventListener('focusin',e=>{
+ const dialog=activeDialog();
+ if(dialog&&!dialog.contains?.(e.target))focusHandover(dialog);
+},true);
+document.addEventListener('keydown',e=>{
+ if(e.key!=='Tab')return;
+ const dialog=activeDialog();if(!dialog)return;
+ const buttons=dialogButtons(dialog);
+ if(!buttons.length){e.preventDefault();return;}
+ const first=buttons[0],last=buttons[buttons.length-1],focused=document.activeElement;
+ if(!dialog.contains?.(focused)||(e.shiftKey&&focused===first)||(!e.shiftKey&&focused===last)){
+  e.preventDefault();(e.shiftKey?last:first).focus();
+ }
+},true);
+function showSetup(){
+ if(aiRunning)return;
+ hide();document.getElementById('setupScreen').hidden=false;passScreenActive=true;
+ toggleFab(false);syncHandoverAccessibility();
+}
+function startGame(mode){
+ if(mode!=='ai'&&mode!=='local')return;
+ gameMode=mode;
+ document.getElementById('setupScreen').hidden=true;
+ document.getElementById('passScreen').hidden=true;
+ passScreenActive=false;
+ create();paint();syncHandoverAccessibility();returnFocusAfterHandover();
+}
+function showPass(side){
+ if(game.mode!=='local'||game.ended)return;
+ const el=document.getElementById('passScreen');
+ document.getElementById('passTitle').textContent='Turno del '+controls.display(side);
+ document.getElementById('passDescription').textContent='Pasale el dispositivo al '+controls.display(side).toLowerCase()+'. Tocá «Comenzar turno» cuando esté listo.';
+ el.hidden=false;passScreenActive=true;
+ toggleFab(false);syncHandoverAccessibility();
+}
+function confirmPass(){
+ document.getElementById('passScreen').hidden=true;
+ passScreenActive=false;
+ syncHandoverAccessibility();paint();
+ if(game.crossPending)show('crossroads');
+ else if(leaderChoiceReady())show('leaderChoice');
+ returnFocusAfterHandover();
+}
+async function finishTurn(){
+ const turnGame=game;
+ // El turno no puede avanzar hasta confirmar el pase o los fallecimientos, incluso en cola.
+ if(game.ended||aiRunning||passScreenActive||deathDirector.active||deathDirector.pending.length)return;
+ if(leaderChoiceReady()){show('leaderChoice');return;}
+ if(pendingHeal||pendingLoot||pendingBite||pendingAttract||pendingTransfer){show(pendingHeal?'healTarget':pendingLoot?'lootChoice':pendingBite?'biteChoice':pendingAttract?'attractTarget':'transferTarget');return;}
+ if(game.crossPending){show('crossroads');return;}
+ hide();
+ if(game.mode==='local'){
+  if(game.turn==='human'){
+   selectionBySide.human=selected;
+   game.turn='ai';selected=selectionBySide.ai;picked=0;
+   target=person()?.loc??0;
+   applyFrost('ai');replaceLastSurvivors();verify();
+   if(!game.ended){crossDraw('ai');crossTrigger('round',null);showPass('ai');}
+   paint();return;
+  }
+  if(game.turn==='ai'){
+   selectionBySide.ai=selected;
+   aiRunning=true;
+   try{
+    message('⌂ Ambos jugadores terminaron. Resolviendo fase de colonia.');
+    colony();
+    await deathDirector.wait();if(game!==turnGame)return;
+    if(!game.ended){
+     game.round++;
+     if(game.round>game.max){game.ended=true;game.turn='end';cancelPendingDecisions();message('☠ Derrota: se agotaron las rondas.');}
+     else newRound();
+    }
+   }finally{
+    if(game===turnGame){aiRunning=false;if(!game.ended)showPass('human');paint();}
+   }
+   return;
+  }
+ }
+ aiRunning=true;skipAI=false;game.turn='ai';paint();
+ try{
+  await botTurn();if(game!==turnGame||game.ended)return;
+  if(!game.ended){message('⌂ Resolviendo fase de colonia.');await pause();if(game!==turnGame||game.ended)return;colony();await pause();if(game!==turnGame||game.ended)return;}
+  if(!game.ended){game.round++;if(game.round>game.max){game.ended=true;game.turn='end';cancelPendingDecisions();message('☠ Derrota: se agotaron las rondas.');}else newRound();}
+ }finally{if(game===turnGame){aiRunning=false;skipAI=false;paint();}}
+}
+function show(type){
+ if(type==='actions'&&!playable())return;
+ type=decisionKind()||type;
+ const backdrop=document.getElementById('backdrop');
+ if(!backdrop.classList.contains?.('open'))regularModalOpener=document.activeElement;
+ opened=type;backdrop.classList.add('open');renderModal();syncHandoverAccessibility();
+}
+function hide(){
+ if(deathWaiting()||pendingBite||leaderChoiceReady()||pendingLoot||pendingHeal||pendingAttract||pendingTransfer||game&&game.crossPending)return;
+ opened='';document.getElementById('backdrop').classList.remove('open');syncHandoverAccessibility();
+}
+function cancelAttract(){if(!canResolve('attractTarget'))return;pendingAttract=null;hide();paint();}
+function cancelHeal(){if(!canResolve('healTarget'))return;pendingHeal=null;hide();paint();}
+function cancelTransfer(){if(!canResolve('transferTarget'))return;pendingTransfer=null;hide();paint();}
+function renderModal(){
+ const titles={biteChoice:'☣ Propagación de mordedura',attractTarget:'Atraer zombis',transferTarget:'Transferir equipamiento',healTarget:'Elegir paciente',lootChoice:'⌕ Resultado de búsqueda',actions:'Acciones del superviviente',inventory:'Objetos y crisis',log:'Registro de la partida',crossroads:'Encrucijadas',help:'Reglas y controles',group:'Grupos y líderes',leaderChoice:'♛ Elegí un nuevo líder',recruitSuccess:'Un nuevo superviviente',goal:'Objetivo general',crisis:'Crisis actual',profile:'Ficha del superviviente'};
+ document.getElementById('modalTitle').textContent=titles[opened]||'';let html='';
+ if(opened==='leaderChoice'){
+  html='<p>Elegí el líder del '+controls.display(pendingLeaderSide)+'. Si acaba de morir, designá su sucesor.</p>'+ownerGroup(pendingLeaderSide).filter(p=>!p.dead).map(p=>'<button class="leaderOption" onclick="chooseLeader(\''+p.id+'\')"><b>♛ '+p.name+'</b><span>'+p.job+' · Influencia '+p.influence+' · ⚔ '+effectiveAttack(p)+'+ · ⌕ '+effectiveSearch(p)+'+</span><small>★ '+p.skillName+'</small></button>').join('');
+ }else if(opened==='recruitSuccess'){
+  const info=pendingRecruitInfo;
+  html=info?'<div class="recruitStory"><div class="recruitSeal">'+(info.queued?'⌛':'♛')+'</div><h3>'+info.name+'</h3><p>'+(!info.queued?'Rescataste a <b>'+info.name+'</b> ('+info.job+'). Se incorporó directamente a tu grupo en la colonia.':'La colonia está llena y el superviviente espera una plaza disponible.')+'</p><p class="tiny">'+info.skill+'</p><button class="action" style="width:100%" onclick="dismissRecruit()">Continuar</button></div>':'';
+ }else if(opened==='group'){
+  const row=(side)=>'<div class="groupPanel"><h3>'+(side===controls.side?'Tu grupo':game.mode==='local'?controls.display(side):'Grupo de la IA')+'</h3>'+ownerGroup(side).filter(p=>!p.dead).map(p=>'<div class="groupMember"><div><b>'+(isLeader(p)?'♛ ':'')+p.name+'</b><small>'+p.job+' · Influencia '+p.influence+' · '+places[p.loc]+'</small></div>'+(side===controls.side&&canPickStartingLeader()&&!isLeader(p)?'<button class="action secondary" onclick="chooseLeader(\''+p.id+'\')">Elegir líder</button>':'')+'</div>').join('')+'</div>';
+  html='<p>La influencia decide el orden de propagación de mordeduras y las víctimas de desbordamientos: se expone primero la menor. Cada grupo tiene un líder; si muere, debe reemplazarse.</p>'+row('human')+row('ai')+(canPickStartingLeader()?'<p class="message">Durante la primera ronda podés elegir tu líder inicial antes de gastar un dado, moverte o usar una carta.</p>':'')+(game.rescueQueue.length?'<p class="message">Rescates pendientes: '+game.rescueQueue.length+'. Llegarán cuando haya lugar en la colonia.</p>':'');
+ }else if(opened==='biteChoice'){
+  const p=pendingBite&&all().find(x=>x.id===pendingBite.target);
+  html=p?'<div class="message">Una mordedura se propagó hasta <b>'+p.name+'</b> (influencia '+p.influence+').</div><p><b>Sacrificar:</b> el personaje muere y la propagación termina.</p><p><b>Arriesgar:</b> tirás el dado de exposición. Blanco (4–6) lo salva. Cualquier otro resultado lo mata y la mordedura puede extenderse a otra persona.</p><div class="grid2"><button class="action danger" onclick="chooseBite(\'sacrifice\')">Detener el contagio</button><button class="action" onclick="chooseBite(\'risk\')">Arriesgar tirada</button></div>':'<p>La propagación terminó.</p>';
+ }else if(opened==='attractTarget'){
+  const t=pendingAttract;
+  html=t?'<p>Quedan '+t.left+' zombis por atraer a <b>'+places[t.loc]+'</b>. Elegí de qué lugar trasladarlos. La acción ya gastó un dado.</p>'+places.map((n,i)=>i!==t.loc&&game.zones[i].z?'<button class="action secondary" style="display:block;width:100%;margin:5px 0" onclick="chooseAttract('+i+')">'+n+' · '+game.zones[i].z+' zombis</button>':'').join('')+'<button class="action secondary" onclick="cancelAttract()">Terminar la atracción</button>':'';
+ }else if(opened==='transferTarget'){
+  const t=pendingTransfer;
+  html=t?'<p>Elegí un superviviente de la misma localidad.</p>'+t.targets.map(id=>{const p=all().find(x=>x.id===id);return p?'<button class="action" style="display:block;width:100%;margin:7px 0" onclick="chooseTransfer(\''+id+'\')">'+p.name+' · '+p.job+'</button>':'';}).join('')+'<button class="action secondary" onclick="cancelTransfer()">Cancelar</button>':'';
+ }else if(opened==='healTarget'){
+  const a=pendingHeal&&all().find(x=>x.id===pendingHeal.actor);
+  html=a?'<p>Elegí a quién atender con '+a.skillName+'. Solo supervivientes en la localidad de '+a.name+'.</p>'+pendingHeal.targets.map(id=>{const p=all().find(x=>x.id===id);return p?'<button class="action" style="display:block;width:100%;margin:7px 0" onclick="chooseHeal(\''+id+'\')">'+p.name+' · ♥'+p.wounds+' ❄'+p.frost+'</button>':'';}).join('')+'<button class="action secondary" onclick="cancelHeal()">Cancelar sin usar habilidad</button>':'<p>No hay pacientes disponibles.</p>';
+ }else if(opened==='lootChoice'){
+  const t=pendingLoot,z=t&&game.zones[t.loc];
+  html=t?'<p>Elegí <b>una</b> carta para conservar. Las demás regresarán al fondo del mazo. Podés hacer ruido para revelar otra carta.</p>'+t.items.map((it,i)=>'<button class="action" style="display:block;width:100%;margin:7px 0" onclick="chooseLoot('+i+')">Conservar '+itemTitle(it)+'</button>').join('')+'<button class="action secondary" style="width:100%;margin-top:10px" onclick="addNoiseSearch()" '+(z.noise>=4||!game.decks[t.loc].length?'disabled':'')+'>🔊 Hacer ruido y revelar otra (+1 ruido)</button><p class="tiny">Ruido en la localidad: '+z.noise+'/4. En la fase de colonia cada ruido genera un zombi si el dado sale de 1 a 3.</p>':'';
+ }else if(opened==='crossroads'){
+  const c=crossroadsDeck[game.crossCard];
+  html=game.crossPending?'<div class="crossStory"><h3>✧ '+c.title+'</h3><p>'+c.story+'</p>'+(game.crossOwner==='ai'&&game.mode!=='local'?'<div class="message">🤖 Turno de la IA · Decisión: <b>'+c.choices[aiCrossChoice??0][0]+'</b></div>'+c.choices.map((ch,i)=>'<div class="crossChoice '+(i===aiCrossChoice?'aiSelected':'')+'" style="opacity:'+(i===aiCrossChoice?'1':'.6')+';pointer-events:none">'+(i+1)+'. '+ch[0]+'<small>'+ch[1]+'</small></div>').join('')+'<button class="action" style="width:100%;margin-top:12px" onclick="crossAiContinue()">Continuar turno de la IA</button>':c.choices.map((ch,i)=>'<button class="crossChoice" '+(!crossOptionAllowed(c,i,game.crossOwner)?'disabled title="No se cumplen los requisitos"':'')+' onclick="crossChoose('+i+')">'+(i+1)+'. '+ch[0]+'<small>'+ch[1]+(!crossOptionAllowed(c,i,game.crossOwner)?' · No disponible':'')+'</small></button>').join(''))+'</div>':'<div class="crossStory"><h3>✧ Encrucijadas</h3><p>Cada jugador recibe una carta oculta al empezar su turno. Solo se revela si se cumple el desencadenante. Si no ocurre, no se juega ninguna historia.</p><p>'+ (game.crossResolved?'La carta de este turno ya se resolvió.':'La carta actual sigue oculta.')+'</p><p>Historias originales: '+crossroadsDeck.length+'.</p></div>';
+ }else if(opened==='profile'){
+  const p=all().find(x=>x.id===profileId);
+  if(!p)html='<p>No se encontró el personaje.</p>';
+  else{
+   const own=ownerOf(p)===controls.side;
+   html='<h3>'+(isLeader(p)?'♛ Líder · ':'')+p.name+' · '+p.job+'</h3><div class="message">'+places[p.loc]+' · '+(p.dead?'Fallecido':statusText(p))+(isLeader(p)?' · ♛ Líder del grupo':'')+'</div><div class="grid2"><div class="profileStat">⚔ Ataque <b>'+effectiveAttack(p)+'+</b></div><div class="profileStat">⌕ Búsqueda <b>'+effectiveSearch(p)+'+</b></div><div class="profileStat">♥ Heridas <b>'+p.wounds+'</b></div><div class="profileStat">❄ Congelación <b>'+p.frost+'</b></div><div class="profileStat">◈ Influencia <b>'+p.influence+'</b></div></div><p><b>Movimiento:</b> '+(p.moved?'utilizado':'disponible')+'</p><h3>Equipo</h3>'+
+   (equipmentOf(p).length?equipmentOf(p).map((it,i)=>'<div class="equiprow"><b>'+itemTitle(it)+'</b><span class="equipDesc">'+(catalog.resolve(it)?.desc||'')+'</span>'+(own&&!p.dead?'<button class="action secondary" onclick="startTransfer('+i+')">Transferir</button>'+(kind(it)===game.crisis.type&&game.crisis.given<game.crisis.need+2?'<button class="action" onclick="contributeEquipment(\''+p.id+'\','+i+')">Aportar a crisis</button>':''):'')+'</div>').join(''):'<p>No tiene objetos equipados.</p>')+
+   (own&&!p.dead?'<h3>Equipar desde la mochila</h3>'+(currentHand().some(it=>['arma','herramienta'].includes(kind(it)))?currentHand().map((it,i)=>['arma','herramienta'].includes(kind(it))?'<div class="equiprow equipEntry"><div class="equipEntryTitle"><strong>'+itemTitle(it)+'</strong><button type="button" class="equipInfoButton" aria-label="Ver efecto de '+catalog.resolve(it).name+'" aria-expanded="false" onclick="toggleEquipDescription(this)">ⓘ</button></div><div class="equipHint" role="note">'+catalog.resolve(it).desc+'</div><button class="action" onclick="equipItem('+i+')">Equipar</button></div>':'').join(''):'<p>No hay equipamiento disponible.</p>'):'')+
+   '<h3>★ '+p.skillName+'</h3><p>'+p.skillDesc+'</p><p class="tiny">'+(p.skillUsed?'Habilidad ya utilizada este turno/ronda.':'Habilidad disponible, si corresponde.')+'</p>';
+  }
+ }else if(opened==='goal'){
+  html='<h3>'+game.objective.name+'</h3><p>'+game.objective.description+'</p><div class="message">Muestras: '+game.samples+'/'+game.goal+' · Ronda '+game.round+'/'+game.max+'.</div><p>Encontrá muestras con tus supervivientes. La habilidad de investigación solo beneficia al personaje que encontró la muestra.</p>';
+ }else if(opened==='crisis'){
+  html='<h3>Crisis de la ronda '+game.round+'</h3><p>Requiere <b>'+game.crisis.need+' cartas de '+game.crisis.type+'</b>.</p><div class="message">Aportes válidos: '+game.crisis.given+'/'+game.crisis.need+'. Solo se aceptan cartas del tipo requerido; dos aportes extra otorgan una moral.</div><p>La crisis se resuelve al finalizar la ronda. Si fracasa: '+({moral:'-1 moral',food:'pérdida de comida',wound:'herida en la colonia',zombie:'dos zombis adicionales'}[game.crisis.fail]||'penalización')+'.</p>';
+ }else if(opened==='actions'){
+  const p=person();
+  if(!p||p.dead)html='<p>Seleccioná un superviviente propio vivo.</p>';
+  else html='<div class="actorCard"><div class="actorPortrait" aria-hidden="true">👤</div><div class="actorMeta"><strong>'+(isLeader(p)?'♛ ':'')+p.name+' · '+p.job+'</strong><span>📍 '+places[p.loc]+' · Destino: '+places[target]+'</span><span>⚔ '+effectiveAttack(p)+'+ · ⌕ '+effectiveSearch(p)+'+ · ◆ Influencia '+p.influence+' · ♥ '+p.wounds+' · ❄ '+p.frost+'</span><div class="actorSkill">★ '+p.skillName+' — '+p.skillDesc+'</div><div class="actorEquipment">'+(equipmentOf(p).length?equipIcons(p)+' '+equipmentOf(p).map(itemTitle).join(', '):'Sin equipamiento')+'</div></div></div><h3>Elegí un dado</h3><div class="dice">'+(actionDice().map((d,i)=>'<button class="die '+(picked===i?'picked':'')+'" onclick="picked='+i+';renderModal();paintDice()">'+d+'</button>').join('')||'<span class="tiny">No quedan dados.</span>')+'</div><button class="action secondary" onclick="boostDie()" '+(game.food<1||!actionDice().length?'disabled':'')+'>🥫 +1 al dado seleccionado (cuesta 1 comida)</button><h3>★ Habilidad especial</h3><p class="tiny">'+p.skillDesc+'</p><button class="action secondary" onclick="special()">Usar habilidad activa</button><h3>Movimiento</h3><div class="grid2"><select class="control" id="dest" onchange="destination(Number(this.value))">'+places.map((n,i)=>'<option value="'+i+'" '+(target===i?'selected':'')+'>'+n+'</option>').join('')+'</select><button class="action" onclick="doMove()">→ Mover (sin dado)</button></div><h3>Acciones con dado</h3><div class="grid2"><button class="action" onclick="search()">⌕ Buscar</button><button class="action" onclick="attack()">⚔ Atacar zombi</button><button class="action secondary" onclick="barricade()">▥ Barricada</button><button class="action secondary" onclick="clean()">♻ Limpiar 3 residuos</button><button class="action secondary" onclick="attract()">☠ Atraer hasta 2 zombis</button></div><p class="actionsNote">Buscar abre una elección: quedarte con una carta o hacer ruido para revelar más. Movimiento y ataque requieren exposición.</p>';
+ }else if(opened==='inventory'){
+  html='<div class="message">Crisis: '+game.crisis.need+' × '+game.crisis.type+' · '+game.crisis.given+'/'+game.crisis.need+' aportes. Podés aportar dos cartas extra para ganar +1 moral.</div><h3>Cartas de tu mano</h3>'+ 
+   (currentHand().length?currentHand().map((it,i)=>{const d=catalog.resolve(it);if(!d)return '';
+    const canCrisis=d.kind===game.crisis.type&&game.crisis.given<game.crisis.need+2;
+    return '<div class="itemCard"><div class="itemIcon">'+d.icon+'</div><div class="itemDetail"><b>'+d.name+'</b><small>'+d.desc+'</small><span>Tipo: '+d.kind+(d.effect==='equip'?' · Equipable':' · Consumible')+'</span></div><div class="itemControls"><button class="action secondary" onclick="playItem('+i+')" '+(aiRunning||game.ended?'disabled':'')+'>'+(d.effect==='equip'?'Equipar':'Usar')+'</button>'+(canCrisis?'<button class="action" onclick="contribute('+i+')" '+(aiRunning||game.ended?'disabled':'')+'>Aportar</button>':'')+'</div></div>';
+   }).join(''):'<p>No hay cartas en tu mano.</p>')+
+   '<p class="tiny">Los objetos actúan sobre el personaje seleccionado. Las cartas equipadas conservan sus efectos particulares y pueden entregarse a crisis cuando coincida el tipo. Las cartas consumidas generan residuos, salvo eventos y muestras.</p>';
+
+ }else if(opened==='log')html=game.log.map(x=>'<div class="logentry">'+x+'</div>').join('');
+ else if(opened==='help'){
+  html='<h3>Invierno en la Colonia · V9.9</h3><p>Cooperativo: vos y la IA defendemos la colonia. Sin traidores, exilios ni objetivos secretos. El objetivo general se decide al comenzar.</p><h3>Turnos y dados</h3><p>Al iniciar cada ronda recibís 1 dado más 1 por cada superviviente vivo. Tus dados disponibles permanecen visibles encima del botón ☰. Tocá uno para usarlo en una acción. Podés gastar una comida de la reserva para aumentar un dado en +1, hasta 6.</p><h3>Acciones</h3><p>Buscar y atacar requieren superar el valor del personaje; construir una barricada, limpiar tres cartas de residuos o atraer hasta dos zombis usan cualquier dado. Moverse no gasta dado, pero solo se puede hacer una vez por personaje y turno.</p><h3>Búsqueda</h3><p>Buscás en los mazos de cada localidad. Después de revelar una carta podés hacer ruido, hasta cuatro veces, para revelar otra. Conservás solo una y las demás regresan al fondo. Las cartas de superviviente elegidas se incorporan inmediatamente a la colonia y al grupo que las encontró. Si está llena, el rescate queda pendiente hasta que haya espacio.</p><h3>Exposición y mordeduras</h3><p>Al matar un zombi o moverte, se tira un dado: 1 mordedura, 2 congelación, 3 herida y 4–6 blanco. La mordedura se contagia al personaje con menor influencia presente; podés sacrificarlo para frenar el contagio o arriesgar otra tirada. Tener congelación agrega una herida al inicio del turno del controlador.</p><h3>Influencia y liderazgo</h3><p>Los personajes tienen un valor de influencia (◆) y un líder (♛) por grupo. En una mordedura propagada o un desbordamiento, se elige primero al superviviente de menor influencia. Si muere tu líder, elegís uno nuevo. Consultá el apartado Grupo y líderes del menú.</p><h3>Estadísticas</h3><p>Pasá el mouse o tocá moral, comida, hambre, ronda, residuos, zombis o indefensos para leer sus consecuencias.</p><h3>Colonia</h3><p>Por cada dos habitantes en colonia (incluyendo indefensos) necesitás una comida. Si no alcanza, la comida permanece, aumenta el hambre y se pierde tanta moral como fichas acumuladas. Por cada diez cartas de residuos perdés una moral. Se resuelve la crisis y llegan zombis: uno por cada dos habitantes en colonia, uno por superviviente exterior; cada ruido provoca un zombi solamente con 1–3.</p><h3>Objetos y supervivientes</h3><p>Las cartas jugadas generan residuos salvo los eventos o muestras. Cada objeto tiene un efecto propio (pistola, escopeta, palanca, linterna, manual, botiquín, etc.). Los objetos equipados se transfieren a otros supervivientes en la misma localidad. Cuando un personaje muere, su equipo vuelve a la mano si está en colonia o al mazo de su localidad si está afuera. Si perdés al último superviviente, descartás la mano y robás otro, si quedan personajes y espacio.</p><h3>Encrucijadas</h3><p>Se prepara una carta por cada turno, también el de la IA. Solo se activa si se cumple su condición. El mazo contiene 26 relatos propios, con condiciones de activación; las cartas y personajes son adaptaciones originales; no contienen el texto completo oficial. Hay historias que requieren líderes o determinados valores de influencia.</p><button class="action danger" onclick="if(confirm(\'¿Comenzar una partida nueva?\')){hide();showSetup()}">Nueva partida</button>';
+ }
+ document.getElementById('modalContent').innerHTML=html;
+}
+function paintDice(){
+ const el=document.getElementById('floatingDice');if(!el)return;
+ if(!playable()){el.innerHTML='';return;}
+ el.innerHTML=actionDice().map((d,i)=>'<button class="floatingDie '+(picked===i?'selected':'')+'" onclick="pickFloatingDie('+i+')" aria-label="Seleccionar dado de valor '+d+'">'+d+'</button>').join('');
+}
+function renderSite(i){
+ const z=game.zones[i],people=alive().filter(p=>p.loc===i),cap=capacity[i],col=i===0;
+ let peopleHtml='';for(let k=0;k<cap;k++){
+  const occupant=people[k]?token(people[k]):col&&k<people.length+game.helpless?'<div class="helplessToken">👤 Indefenso</div>':'·';
+  peopleHtml+='<div class="slot">'+occupant+'</div>';
+ }
+ let accesses='';for(let k=0;k<zcap[i];k++){const state=k<z.z?'z':k<z.z+z.b?'b':'e';accesses+='<div class="slot access '+state+'">'+(state==='z'?'☠':state==='b'?'▥':'·')+'</div>';}
+ const occupied=people.length+(col?game.helpless:0);
+ return '<section class="site '+(col?'colony ':'')+(target===i?'selected':'')+'"><div class="sitehead" onclick="destination('+i+')"><span>'+icons[i]+' '+z.name+'</span><small>'+occupied+'/'+cap+' plazas</small></div>'+(col?'':'<div class="lootLegend" aria-label="Objetos ordenados del más frecuente al menos frecuente" title="Objetos más comunes a la izquierda">'+catalog.legend(i).map(([kind,total])=>'<span title="'+kind+'">'+em[kind]+'</span>').join('')+'</div>')+'<div class="sitebody"><div class="sectionname">Supervivientes · '+(cap-occupied)+' libres</div><div class="survivorSlots">'+peopleHtml+'</div><div class="sectionname">Accesos · '+z.z+' zombis · '+z.b+' barricadas'+(z.noise?' · <span class="noiseIndicator" title="Ruido acumulado" aria-label="Ruido '+z.noise+'"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l6 5V4L7 9H3zm12.5-1.9a6 6 0 0 1 0 9.8v-2.6a3.7 3.7 0 0 0 0-4.6V7.1zm2.6-3a10 10 0 0 1 0 15.8v-2.4a7.7 7.7 0 0 0 0-11V4.1z"/></svg>'+z.noise+'</span>':'')+'</div><div class="zombieSlots">'+accesses+'</div></div></section>';
+}
+function paint(){
+ if(!game)return;
+ processRescueQueue();
+ const decision=decisionKind();
+ if(decision&&!game.ended&&!passScreenActive&&!deathWaiting()){opened=decision;document.getElementById('backdrop').classList.add('open');}
+ document.getElementById('board').innerHTML=places.map((_,i)=>renderSite(i)).join('');
+ const obj=game.objective;
+ document.getElementById('goalCard').innerHTML='<span class="eyebrow">⚑ OBJETIVO GENERAL</span><span class="main"><span>'+obj.name+'</span><span>'+game.samples+'/'+game.goal+'</span></span><span class="sub">'+obj.description+'</span><span class="progress"><i style="width:'+Math.min(100,game.samples/game.goal*100)+'%"></i></span>';
+ document.getElementById('crisisCard').innerHTML='<span class="eyebrow">⚠ CRISIS · RONDA '+game.round+'</span><span class="main"><span>'+game.crisis.type+'</span><span>'+game.crisis.given+'/'+game.crisis.need+'</span></span><span class="sub">Aportá únicamente el objeto requerido</span><span class="progress"><i style="width:'+Math.min(100,game.crisis.given/game.crisis.need*100)+'%"></i></span>';
+ document.getElementById('turnLabel').textContent=game.ended?'FIN DE PARTIDA':aiRunning?'⌂ FASE DE COLONIA':game.mode==='local'?'● '+controls.display().toUpperCase():game.turn==='ai'?'🤖 TURNO IA':'● TU TURNO';
+ const humanLeader=groupLeader('human'),aiLeader=groupLeader('ai');
+ document.getElementById('leadersSummary').textContent='♛ J1: '+(humanLeader?.name||'Por elegir')+' · '+(game.mode==='local'?'J2':'IA')+': '+(aiLeader?.name||'Sin líder');
+ document.getElementById('skipAI').style.display=aiRunning?'block':'none';
+ document.getElementById('fabEndTurn').disabled=!playable();
+ const fabAction=document.querySelector('#fabMenu button');if(fabAction)fabAction.disabled=!playable();
+ document.getElementById('status').innerHTML=[['Moral',game.morale,'morale'],['Comida',game.food,'comida'],['Hambre',game.hunger,'hambre'],['Ronda',game.round+'/'+game.max,'ronda'],['Residuos',game.waste,'residuos'],['Zombis',game.zones.reduce((a,z)=>a+z.z,0),'zombis'],['Indefensos',game.helpless,'indefensos'],...(game.rescueQueue.length?[['Rescates',game.rescueQueue.length,'rescates']]:[])].map(([a,b,key])=>'<button type="button" class="stat" data-stat="'+key+'" aria-label="'+a+': '+b+'. Tocá para leer cómo funciona." onmouseenter="showStatInfo(\''+key+'\',this,\'hover\')" onmouseleave="closeStatInfo(\''+key+'\')" onclick="showStatInfo(\''+key+'\',this,\'click\')"><span class="statLabel">'+a+'</span><strong>'+b+'</strong><span class="statHint">ⓘ</span></button>').join('');
+ document.getElementById('banner').textContent=game.last;
+ document.getElementById('selectedText').textContent=person()?'Seleccionado: '+person().name+' · Destino: '+places[target]:'';
+ paintDice();if(opened)renderModal();syncHandoverAccessibility();
+}
+
+create();
+document.getElementById('setupScreen').hidden=false;passScreenActive=true;
+paint();
+</script></body></html>
