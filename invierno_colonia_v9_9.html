@@ -790,7 +790,7 @@ class DeathDirector {
  }
  continue(){if(!this.active)return;this.active=false;document.getElementById('deathBackdrop').hidden=true;
   if(this.pending.length){this.open();return;}
-  this.waiters.splice(0).forEach(resolve=>resolve());paint();
+  this.waiters.splice(0).forEach(resolve=>resolve());paint();deathModalOpener=null;
  }
  wait(){return this.active||this.pending.length?new Promise(resolve=>this.waiters.push(resolve)):Promise.resolve();}
  reset(){this.pending=[];this.active=false;deathModalOpener=null;document.getElementById('deathBackdrop').hidden=true;this.waiters.splice(0).forEach(resolve=>resolve());}
@@ -1318,7 +1318,7 @@ function activeDialog(){
  const handover=handoverDialog();if(handover)return handover;
  const death=document.getElementById('deathBackdrop');if(death&&!death.hidden)return death;
  const backdrop=document.getElementById('backdrop');
- return backdrop?.classList?.contains('open')?backdrop:null;
+ return backdrop?.classList?.contains?.('open')?backdrop:null;
 }
 function dialogButtons(dialog){
  return [...(dialog?.querySelectorAll?.('button:not([disabled])')||[])].filter(el=>el.getClientRects().length);
@@ -1437,7 +1437,7 @@ function show(type){
  if(type==='actions'&&!playable())return;
  type=decisionKind()||type;
  const backdrop=document.getElementById('backdrop');
- if(!backdrop.classList.contains('open'))regularModalOpener=document.activeElement;
+ if(!backdrop.classList.contains?.('open'))regularModalOpener=document.activeElement;
  opened=type;backdrop.classList.add('open');renderModal();syncHandoverAccessibility();
 }
 function hide(){
