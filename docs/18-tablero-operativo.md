@@ -1,5 +1,14 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## SP-02 — Nueva propuesta: acciones según supervivientes y movilidad por dados de atributo · 28/10/2026
+
+**HIPÓTESIS EXPLÍCITA DEL CREADOR (NO APROBADA COMO REGLA FINAL):** eliminar tirada inicial de dados de acción; el líder administraría una **cantidad de acciones por ronda igual a los supervivientes activos** (tres supervivientes → tres acciones), y las acciones importantes se resolverían lanzando tantos dados como el atributo de cada personaje. Se busca integrar exposición y otros riesgos en resultados por grados. **Ejemplo:** Mara movilidad 5, tira 5d6 para llegar al hospital; 2+ éxitos = llega sin exposición, 1 = llega y tira exposición, 0 = llega con herida. El ejemplo **no** es aún una tabla aprobada.
+
+**Revisión crítica y evidencia:** [63 — SP-02, sección 5D](63-hoja-de-ruta-planificacion-singleplayer.md) contiene probabilidades, el riesgo de que 1 éxito con mordedura resulte peor que 0 éxitos con herida, el peligro de movilidad baja, el costo de la expedición si trasladarse consume una de tres acciones, y la espiral por bajas. Compara **T1** movilidad cuesta acción, **T2** movilidad es prueba posicional pero no gasta acción, **T3** acción compuesta. Dejar F-10/F-12/F-15 **sin modificar** hasta una eventual revisión y aprobación explícitas.
+
+**ÚNICA SIGUIENTE TAREA DE DISEÑO:** comparar una ronda T1 vs T2 con tres supervivientes y tres acciones, estableciendo si desplazarse paga acción y cómo resolver consecuencias sin doble tirada ni daño arbitrario. **TAREA TÉCNICA SIN CAMBIOS:** D1.2a con Codex, luego D1/D2, sin cambios en V9.9 ni `main`, sin merge/release ni producto propio iniciado.
+
+
 ## SP-02 — Alternativa de dados por atributo (dice pool) en comparación · 28/10/2026
 
 **Nueva hipótesis del creador:** el propio sistema de dados de V9.9 puede limitar el desarrollo de estadísticas. Se estudia un enfoque de *Arkham Horror* de mesa: pruebas que tiran tantos dados como atributo, cuentan éxitos y permiten resultados escalonados. **No se aprobó** reemplazar F-10, F-12 o F-15 ni introducir atributos o reglas nuevas.
