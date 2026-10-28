@@ -1,0 +1,108 @@
+{
+  "checks": 6,
+  "errors": [],
+  "records": [
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "order": "human-ai",
+      "deathText": "Mara · Bruno",
+      "state": {
+        "leaders": {
+          "human": "h1",
+          "ai": "a0"
+        },
+        "pending": [],
+        "turn": "ai",
+        "round": 2
+      }
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "order": "ai-human",
+      "deathText": "Sol · Mara",
+      "state": {
+        "leaders": {
+          "human": "h1",
+          "ai": "a0"
+        },
+        "pending": [],
+        "turn": "ai",
+        "round": 2
+      }
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "order": "ai-auto",
+      "deathText": "Mara · Bruno",
+      "state": {
+        "leaders": {
+          "human": "h1",
+          "ai": "a0"
+        },
+        "pending": [],
+        "turn": "human",
+        "round": 1
+      }
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "order": "human-ai",
+      "deathText": "Mara · Bruno",
+      "state": {
+        "leaders": {
+          "human": "h1",
+          "ai": "a0"
+        },
+        "pending": [],
+        "turn": "ai",
+        "round": 2
+      }
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "order": "ai-human",
+      "deathText": "Sol · Mara",
+      "state": {
+        "leaders": {
+          "human": "h1",
+          "ai": "a0"
+        },
+        "pending": [],
+        "turn": "ai",
+        "round": 2
+      }
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "order": "ai-auto",
+      "deathText": "Mara · Bruno",
+      "state": {
+        "leaders": {
+          "human": "h1",
+          "ai": "a0"
+        },
+        "pending": [],
+        "turn": "human",
+        "round": 1
+      }
+    }
+  ]
+}

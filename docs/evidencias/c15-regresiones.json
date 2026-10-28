@@ -1,0 +1,120 @@
+{
+  "baselineCommit": "d801dbb2535ca496026b87cf350f33ed438471ee",
+  "baselineHtmlSha256": "f5ad3b66bf483bef620e222d4d471e21b5b150e27211bfcbd18470678e0ffd78",
+  "finalHtmlSha256": "4181e974c276de36d08bb0bbc99b0a877bec49317d5777734905eb83ca09bff7",
+  "initialColonyTDD": {
+    "tests": 6,
+    "pass": 0,
+    "fail": 6,
+    "beforeImplementation": true
+  },
+  "baselineAllEight": {
+    "tests": 8,
+    "pass": 0,
+    "fail": 8,
+    "method": "copy final test and fixture beside git show d801dbb HTML in temporary directory, no checkout reset"
+  },
+  "greenComponent": {
+    "tests": 8,
+    "pass": 8,
+    "fail": 0
+  },
+  "initialFullSuiteAfterGuard": {
+    "tests": 402,
+    "pass": 395,
+    "fail": 7,
+    "reason": "old fixtures omitted acknowledgement of death before choosing successor; corrected preparation only, original assertions preserved"
+  },
+  "finalFullSuite": {
+    "command": "npm test",
+    "tests": 402,
+    "pass": 402,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "independentReview": {
+    "tests": 402,
+    "pass": 402,
+    "fail": 0,
+    "functionalKeyboardReproduction": "Tab Enter behind death no longer changes leader; focus leak remains"
+  },
+  "browserVmComparison": [
+    {
+      "mode": "ai",
+      "seed": 2654435761,
+      "keys": [
+        "round",
+        "result",
+        "food",
+        "morale",
+        "samples",
+        "goal",
+        "ended"
+      ],
+      "equal": true
+    },
+    {
+      "mode": "ai",
+      "seed": 1401181143,
+      "keys": [
+        "round",
+        "result",
+        "food",
+        "morale",
+        "samples",
+        "goal",
+        "ended"
+      ],
+      "equal": true
+    },
+    {
+      "mode": "local",
+      "seed": 2654435761,
+      "keys": [
+        "round",
+        "result",
+        "food",
+        "morale",
+        "samples",
+        "goal",
+        "ended"
+      ],
+      "equal": true
+    },
+    {
+      "mode": "local",
+      "seed": 3816266512,
+      "keys": [
+        "round",
+        "result",
+        "food",
+        "morale",
+        "samples",
+        "goal",
+        "ended"
+      ],
+      "equal": true
+    },
+    {
+      "mode": "local",
+      "seed": 3189639203,
+      "keys": [
+        "round",
+        "result",
+        "food",
+        "morale",
+        "samples",
+        "goal",
+        "ended"
+      ],
+      "equal": true
+    }
+  ],
+  "accessibilityHarnessCorrections": [
+    "check inert ancestor, not own inert property of nested button",
+    "exclude legitimate log/last warning from mechanical state snapshot"
+  ],
+  "remainingDefect": "P2 focus can leave help/death dialogs; setup/pass trap verified; no WCAG/Android/TalkBack claim"
+}

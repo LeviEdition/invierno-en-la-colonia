@@ -1,0 +1,30 @@
+name: Pruebas de regresión
+
+on:
+  push:
+    branches:
+      - main
+      - 'refactor/**'
+      - 'fix/**'
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v4
+
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Ejecutar pruebas de la V9.9
+        run: npm test

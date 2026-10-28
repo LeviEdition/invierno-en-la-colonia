@@ -1,0 +1,10 @@
+{
+  "name": "invierno-en-la-colonia",
+  "version": "0.9.9",
+  "private": true,
+  "description": "Juego cooperativo de supervivencia y proyecto de aprendizaje",
+  "scripts": {
+    "test": "node --test",
+    "check": "node --test"
+  }
+}
