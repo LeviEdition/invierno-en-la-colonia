@@ -333,6 +333,16 @@ Ante propuesta expresa de aceptar y cerrar administrativamente C9/#6, el creador
 
 **Siguiente tarea única propuesta (pendiente de aprobación):** estudiar [issue #7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) sobre elección de encrucijadas de IA y definir su política según efectos en lugar de palabras. Luego continuar #13 y pulido de alertas según prioridad de estabilización, sin iniciar varios issues a la vez.
 
+## Confirmación de continuidad de ruta y alcance C — 27/10/2026
+
+**Pedido del creador:** «finalicemos la auditoría, para asegurarnos que esta primera app funcione lo más parecido al juego de mesa y a partir de ahí vemos esta nueva identidad»; después aclara **«Sigamos avanzado con la ruta que ya teníamos»**. Se revisó estado existente en rama `fix/estabilizacion-v9-9`: A6 ya **cerrada con reservas** ([informe24](24-cierre-auditoria-y-prioridades.md)), etapa C **en desarrollo**, C1–C9 implementadas con regresiones; [PR14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14) en borrador sobre `refactor/arquitectura`; `main` estable no modificado. Issues #7 y #13 abiertos; varios otros abiertos conservan arreglos ya registrados y requieren verificación administrativa posterior.
+
+**Decisión de proceso:** retomar **A→B→C→D→E→F** sin iniciar reorientación de modos ni narrativa avanzada. La idea de un modo single-player con un líder que ordena acciones a varios supervivientes, y humanos en cooperativo, se estaciona como **propuesta para el diseño futuro**, no regla implementada. V9.9 busca una adaptación fiel en su núcleo táctico; **no se declara equivalencia demostrada con *Dead of Winter*** hasta comparar deliberadamente reglas críticas y excepciones de la adaptación.
+
+**Tarea C siguiente, única y acotada:** [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7), reemplazar en decisiones de encrucijadas de IA la coincidencia de palabras por un criterio basado en efectos verificables, **sin construir ahora una super IA** ni agregar Utility compleja, memoria o perfiles como requisito. Se debe definir y aprobar el comportamiento antes de cambiar código; luego probar rojo→verde, CI, Chromium y revisión posterior. Los experimentos de comparación de prioridades/Utility compartidos por Codex son **evidencia de diseño**, no política aprobada ni pruebas del ejecutable. A continuación #13, revisión de estados pendientes, avisos, validación transversal y decisión separada para promover a estable.
+
+**Acciones de esta revisión:** se verificaron en GitHub el PR/branch, issues abiertos, el último GitHub Actions exitoso para la rama, documentos24/40 y el tablero18. **Solo documentación** actualizada en la rama de trabajo. No se ejecutaron nuevas pruebas locales ni navegador; no se alteraron HTML, tests, dependencias, issues, `main` ni el PR. GitHub Actions del commit de documentación se comprobará por su SHA. El registro se añade sin borrar resultados históricos.
+
 ## Siguiente tarea única
 
-**Próximo paso único propuesto: pedir autorización para analizar las encrucijadas de IA del issue #7, sin implementar todavía. Issue #6 cerrado/completed; PR14 draft y `main` intacta.**
+**Tarea única actual: análisis #7 y propuesta de política mínima basada en efectos (no texto), sin implementación hasta aprobarla. Se retoma la ruta original para finalizar estabilización C antes de D/E; PR14 permanece draft y `main` intacta.**
