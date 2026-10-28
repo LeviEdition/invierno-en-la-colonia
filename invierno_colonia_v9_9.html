@@ -351,9 +351,11 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
 'use strict';
 const places=['Colonia','Supermercado','Hospital','Comisaría','Gasolinera','Escuela','Biblioteca'];
 const icons=['⌂','▣','✚','✦','⚙','▤','▥'];
-/* V9.9 — Definiciones de cartas, fuente única de reglas de objetos. */
+// D1.1 — Fuente independiente. Datos heredados de V9.9, sin cambios de reglas.
+// El mezclador se inyecta; el catálogo no conoce Math.random, game ni el DOM.
 class ItemCatalog {
- constructor(){
+ constructor(shuffle){
+  this.shuffle=shuffle;
   this.definitions=Object.freeze({
    ration:{name:'Ración de comida',kind:'comida',icon:'🥫',desc:'Agrega 1 comida a la reserva.',effect:'food',amount:1},
    canned:{name:'Caja de conservas',kind:'comida',icon:'🥫',desc:'Agrega 2 comidas a la reserva.',effect:'food',amount:2},
@@ -387,11 +389,11 @@ class ItemCatalog {
  }
  resolve(it){const id=typeof it==='string'?(this.definitions[it]?it:this.defaults[it]):(it?.cardId||this.defaults[it?.kind]);return this.definitions[id]?{id,...this.definitions[id]}:null;}
  create(id,meta={}){const def=this.resolve(id);if(!def)throw Error('Carta desconocida '+id);return {kind:def.kind,cardId:def.id,...meta};}
- deck(loc){const cards=[];for(const [id,n] of Object.entries(this.distribution[loc]))for(let j=0;j<n;j++)cards.push(this.create(id));return mix(cards);}
+ deck(loc){const cards=[];for(const [id,n] of Object.entries(this.distribution[loc]))for(let j=0;j<n;j++)cards.push(this.create(id));if(typeof this.shuffle!=='function')throw new TypeError('Mezclador requerido para crear el mazo');return this.shuffle(cards);}
  legend(loc){const totals=new Map();for(const [id,n] of Object.entries(this.distribution[loc])){const k=this.definitions[id].kind;totals.set(k,(totals.get(k)||0)+n);}return [...totals].sort((a,b)=>b[1]-a[1]);}
  label(it){const d=this.resolve(it);return d?d.icon+' '+d.name:'Objeto desconocido';}
 }
-const catalog=new ItemCatalog();
+const catalog=new ItemCatalog(cards=>mix(cards));
 const em={comida:'🥫',medicina:'✚',arma:'🔫',herramienta:'⛏️',combustible:'⛽',muestra:'◈',educacion:'📖',superviviente:'👤'};
 
 const capacity=[12,4,4,4,4,4,4],zcap=[12,4,4,4,4,4,4];
