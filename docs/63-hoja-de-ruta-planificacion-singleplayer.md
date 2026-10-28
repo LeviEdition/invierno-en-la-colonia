@@ -113,6 +113,36 @@ Las pasivas actuales cubren combate/búsqueda, mitigación de riesgo, acciones g
 
 **Decisiones aún abiertas:** número de stats activas; cómo opera movilidad sin consumir dado; nivel de pasivas (inherente, equipada, limitada); progresión y equipo; qué hace la influencia del líder sin restringir la agencia del jugador; elección entre F-10 original y alternativa solo si el creador desea reexaminarla; fórmula/cantidad de dados y límites por personaje. **No programar durante D1/D2.**
 
+## 5B. Tercera estadística con peso equivalente — hipótesis de diseño (28/10/2026)
+
+**Planteamiento del creador:** explorar **exactamente una tercera estadística**, porque ampliaría las posibilidades tácticas, **solo si resulta consistente con la supervivencia y comparable en importancia a ataque y búsqueda**. **NO se aprobó aún un nombre, una acción nueva, ni el cambio del catálogo.** No interpretar el interés como decisión cerrada.
+
+**Criterio fundamental:** una estadística debe abrir una **familia de decisiones activas frecuentes y relevantes** donde compita por los mismos dados de acción. Un atributo que solamente reduce daño, modifica movimiento gratuito o sirve para una escena ocasional puede resultar importante temáticamente, pero no necesariamente está a la altura táctica de ataque/búsqueda.
+
+### Comparación crítica de candidatas
+
+| Candidata | Justificación | Obstáculo de diseño |
+| --- | --- | --- |
+| **Movilidad** | Rutas, riesgos y traslados; importancia temática constante | Moverse actualmente no gasta dado, máximo una vez por turno; para que compita en la economía de dados habría que rediseñar movimientos y evitar un impuesto por desplazarse. |
+| **Resistencia** | Exposición, heridas, frío y cansancio | Tiende a funcionar como defensa pasiva o chequeo de daño; no ofrece por sí sola un uso recurrente de dados que el jugador elija. |
+| **Técnica** | Barricadas, reparaciones, herramientas y tareas de campo | Si se aplica solo a dos acciones poco frecuentes puede resultar secundaria; no convertir curación, gestión de personas y exploración en actividades «técnicas» arbitrariamente. |
+| **Apoyo / Oficio / Operaciones (nombres de trabajo)** | Tercera función económica: sostener/preparar la colonia, resolver problemas materiales y transformar recursos en capacidad futura | Riesgo de atributo comodín demasiado amplio; exige delimitar acciones y profesiones coherentemente. |
+
+**Hipótesis preferida para estudiar, no para adoptar automáticamente:** tres pilares **combate (afrontar amenazas), búsqueda (obtener recursos) y operaciones/oficio (fortificar, mantener, reparar, preparar)**. Los nombres son provisionales; buscar una denominación diegética consistente antes de implementar.
+
+**Hechos V9.9 relevantes:** `search()` y `attack()` consumen dados con umbral basado en atributo; `barricade()`, `clean()` y `attract()` gastan **cualquier dado** (`consume(1)`), sin umbral propio; movimiento es gratis en dados con límite/riesgo; curación de Mara puede ser gratis una vez por ronda; crisis recibe objetos sin exigir una tercera estadística. **Introducir un nuevo umbral obligatorio para estas tareas cambia las reglas y puede aumentar injustamente la dificultad:** no hacerlo en D1/D2 y, si se propone para el juego propio, prever acceso básico aun sin especialistas.
+
+### Prueba conceptual antes de aprobación
+
+- **Tres usos realmente diferentes y recurrentes:** (i) fortificar/barricadas (acción existente); (ii) mantenimiento del refugio/limpieza y mitigación de consecuencias (acción existente con efecto a reconsiderar); (iii) manipular o reparar infraestructura, dispositivos y obstáculos de una misión (funcionalidad **futura**, NO existente como familia general). Una habilidad médica específica no se convierte automáticamente en prueba genérica de «técnica».
+- **Nivel básico accesible:** evaluar permitir una acción de mantenimiento básica con cualquier dado, mientras la estadística determina variantes avanzadas, eficiencia o condiciones especiales. Es solo alternativa para evitar cierres injustos y debe evaluarse con F-10 y pasivas existentes.
+- **Costo de oportunidad real:** en una ronda con cuatro dados, evaluar decisiones `dos búsquedas + un ataque + una operación` frente a `una búsqueda + dos ataques + una operación` u otras distribuciones. Ninguna familia debería ser obligación fija de «un dado por ronda».
+- **Profundidad entre personajes:** los tres personajes seleccionados entre cinco pueden cubrir necesidades de manera distinta; personajes sin especialización en operaciones aún deben tener caminos viables para mantener la colonia.
+- **Antisolapamiento:** distinguir tercer atributo de las pasivas de constructor, médico, cocinero, explorador y equipo; evitar que sea una «estadística para todo» y que transforme en inútiles las habilidades existentes.
+- **Paridad de importancia, no de uso idéntico:** una familia pasa la prueba si hay decisiones significativas de invertir dados en ella en distintos tipos de ronda, con consecuencias visibles y alternativas. Medir mediante partidas de papel con distintos grupos/amenazas; no inferir paridad solo de que tenga tres acciones nominales.
+
+**Siguiente microdecisión de SP-02.1:** formular un catálogo de **3–5 acciones concretas de la tercera familia**, distinguiendo acciones existentes de nuevas, su frecuencia, costo en dados, requisito y resultados, para decidir si merece una estadística independiente. Comparar entonces «Técnica» (especialización más estrecha) con «Oficio/Operaciones» (sostén de colonia) y descartarlas si ninguna supera el criterio. Esta conversación **no autorizó** implementar ni cambiar F-10/F-12/F-15.
+
 ## 6. Diseño de ronda provisional para SP-03 (no aprobado)
 
 1. **Apertura:** presentación de crisis, recursos, peligros e indicios válidos según el estado.
