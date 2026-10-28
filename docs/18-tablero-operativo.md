@@ -1,5 +1,16 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## SP-02 — Pruebas del híbrido contextual · 750.000 rondas · 28/10/2026
+
+**Ejecución:** banco de pruebas del laboratorio SP-02 ampliado a **tres modelos** (V9.9 simplificado, tiradas por atributo puras, híbrido contextual) y **25 configuraciones × 3 métodos × 10.000 = 750.000 rondas simuladas**, **13/13 pruebas funcionales** aprobadas. Informe y advertencias detalladas: [63 — SP-02, sección 5H](63-hoja-de-ruta-planificacion-singleplayer.md).
+
+**Reglas HÍBRIDAS SOLO DE PRUEBA:** búsqueda y movilidad por dado/atributo; mantenimiento directo con costo de orden; defensa sin tirada y sin exposición únicamente si el combatiente tiene stat ≥4 y la colonia posee al menos una barricada. Otras situaciones siguen usando dados. **No se aprobó el umbral, la inmunidad, la cantidad de acciones ni el cambio de sistema**.
+
+**Metas comparadas, condiciones básicas de cuatro órdenes:** medicamentos **81,87 % / 71,16 % / 71,16 %**, asedio **83,17 % / 43,76 % / 62,33 %**, laboratorio **81,87 % / 61,57 % / 71,16 %** (V9 simplificado/pool/híbrido). Con éxitos escalonados y corrección de exposición: asedio **83,17 % / 59,35 % / 84,34 %**. **Crítico:** con «fortificar primero» y Damián, el híbrido llega a **100 %** en el asedio de la maqueta: la defensa determinista no tiene desgaste ni costos reales y trivializa el objetivo. Combatir en colonia sin exigir barricada también produce 100 % y es aún menos recomendable.
+
+**ÚNICA SIGUIENTE TAREA DE DISEÑO:** probar una defensa determinista condicionada por preparación **y costos reales (desgaste, municiones, capacidad, presión zombi)** en **2–3 rondas**, sin volver a introducir tiradas para toda tarea; comparar además grupos sin un gran combatiente y el efecto de tres órdenes. Este análisis debe mantenerse separado de D1/D2 y de las decisiones F-10/F-12/F-15 no sustituidas. **No alterar V9.9 ni `main`.**
+
+
 ## SP-02 — Exploración de resolución híbrida contextual · 28/10/2026
 
 **Hipótesis del creador, NO regla aprobada:** unificar la **economía de órdenes limitadas** y permitir **diversas formas de resolución**, sin tirar dados en todas las acciones. Usar reservas por atributo en acciones inciertas (búsqueda, movilidad, encuentros) y resolver **acciones rutinarias directamente** o **combates de defensa preparada por estadísticas/equipo sin tirada**. Ejemplo: atacar desde la colonia sin tirar, para evitar pérdidas recurrentes de órdenes en el prototipo de asedio. **Advertencia:** la inferioridad estadística anterior del pool en asedio surgió de modelos no equivalentes, no demuestra que «combate con dados» sea un problema real.
