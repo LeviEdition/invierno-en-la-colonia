@@ -1,6 +1,6 @@
 # 43 — C10 / issue #7: prioridades contextuales en encrucijadas
 
-**Fecha:** 28/10/2026. **Base:** `6fdb774`. **Rama:** `fix/estabilizacion-v9-9`. **Estado:** código, pruebas locales, Chromium y revisión independiente completos; pendiente CI y aceptación del creador.
+**Fecha:** 28/10/2026. **Base:** `6fdb774`. **Rama:** `fix/estabilizacion-v9-9`. **Estado:** implementado y verificado localmente/CI/Chromium, revisión independiente sin defectos confirmados; pendiente aceptación del creador.
 
 ## Decisión autorizada y alcance
 
@@ -60,6 +60,9 @@ Observación menor: se eliminó `isLeader(p)` redundante en muerte (el personaje
 
 Al preparar publicación se incorporaron por fast-forward los commits documentales remotos `7b4de9b`/`f202184`, conservando las decisiones de continuidad y estos informes. Se resolvieron conflictos de docs18/25, sin modificar el motor remoto ni reescribir commits. La base de código de las pruebas sigue siendo la misma que `6fdb774`.
 
-CI de entrega y SHA: se completarán tras publicar a la rama autorizada. [PR14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14) permanece abierto/borrador hacia `refactor/arquitectura`. `main` remoto conserva `d9068f4aa8d3a10bbbf1e0a8a2527744cc6952cb`; no se cierra [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7). No se trabajó #13 ni narrativa.
+**Commit de implementación:** [`9e688624714ae96791dfc9571da14fa168522362`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/9e688624714ae96791dfc9571da14fa168522362). **CI del código: completed/success**, [GitHub Actions del código `9e68862`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40622261665); logs confirman **358 tests, 358 aprobados y 0 fallidos/cancelados/omitidos/TODO**. La actualización documental posterior registra esta evidencia y se comprueba también por su SHA antes de la entrega; [ejecuciones de la rama](https://github.com/LeviEdition/invierno-en-la-colonia/actions?query=branch%3Afix%2Festabilizacion-v9-9). [PR14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14) permanece abierto/borrador hacia `refactor/arquitectura`. `main` remoto conserva `d9068f4aa8d3a10bbbf1e0a8a2527744cc6952cb`; no se cierra [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7). No se trabajó #13 ni narrativa.
 
-**Recomendación:** listo técnicamente para aceptación del creador si CI confirma la entrega, con los límites indicados. Después de su revisión puede cerrarse administrativamente #7 mediante autorización separada; esta entrega no lo cierra ni promueve V9.9 a estable.
+**Recomendación:** listo técnicamente para aceptación del creador: suite, CI, Chromium y revisión independiente aprobados dentro del alcance indicado. Después de su revisión puede cerrarse administrativamente #7 mediante autorización separada; esta entrega no lo cierra ni promueve V9.9 a estable.
+
+
+**PR actualizado:** título y descripción ahora reflejan C1–C10 y la entrega #7, con pruebas, vínculos y reservas. Se utilizó la API REST de GitHub porque `gh pr edit` de la CLI instalada falla al consultar Projects classic retirados; la actualización REST confirmó abierto/draft, base y rama correctas. Sin mensajes de cierre ni fusión. No se añadió ninguna dependencia de ejecución, paquete, workflow o configuración cloud.
