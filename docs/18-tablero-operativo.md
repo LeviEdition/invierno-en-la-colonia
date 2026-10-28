@@ -1,6 +1,6 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
-**Última revisión:** 28/10/2026. **Proyecto:** Invierno en la Colonia. **Rama activa de ajustes:** `fix/estabilizacion-v9-9` (base de auditoría `refactor/arquitectura`).
+**Última revisión:** 28/10/2026 (encargo C11 y auditoría). **Proyecto:** Invierno en la Colonia. **Rama activa de ajustes:** `fix/estabilizacion-v9-9` (base de auditoría `refactor/arquitectura`).
 **Documento operativo**: a diferencia de los documentos conceptuales, este archivo determina qué hacemos **ahora**, qué queda estacionado y qué evidencia habilita cambiar de fase.
 
 > **NORMA DE TRABAJO:** una etapa activa, una tarea activa. No empezar una fase posterior porque surgió una idea interesante; anotar la idea y retomar lo previsto. Cambiar prioridades exige una decisión explícita registrada aquí.
@@ -14,6 +14,14 @@
 **Evaluación:** el cambio aborda el fallo reportado #7 sin depender de palabras del texto; los seis escenarios tienen resultados esperados y no se identificaron defectos nuevos en esta **inspección acotada**, que **no constituye ejecución independiente de Node/Chromium ni certificación completa**. El rojo inicial (11 casos fallidos) consta en el informe43 pero no se conserva como commit rojo separado; se usa como evidencia documentada de Codex, no como reproducción de esta revisión. Persisten reservas de partidas naturales completas, Android físico/TalkBack, balance y nuevos tipos de efectos de futuras cartas. **Issue #7 sigue abierto y requiere aceptación/cierre por decisión del creador**.
 
 **Único siguiente bloque técnico recomendado para un encargo nocturno separado:** C11 / [issue #13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13), ampliar áreas táctiles de dados en móviles con una corrección CSS/interfaz mínima, TDD y Chromium (320×640, 393×852 y escritorio); sin cambiar mecánicas ni iniciar más correcciones. Al terminar, solo auditar **en modo lectura** los issues aún abiertos y preparar una propuesta priorizada. No cerrar issues, fusionar PR14 ni alterar `main`. La entrega del prompt por el usuario a Codex constituye la autorización de ese bloque acotado; hasta entonces no está iniciada su implementación.
+
+## Encargo nocturno autorizado — C11 y auditoría, 28/10/2026
+
+**Tarea actual única: C11/#13, accesibilidad táctil de dados flotantes.** Autorización expresa para ajuste acotado de presentación, TDD viable, Chromium real en320×640/393×852/1365×768, suite, revisión independiente, CI y entrega a la rama existente. Solo después de C11 terminado/documentado/aprobado: auditoría de lectura/pruebas/documentación de #2/#3/#8/#9/#10/#11/#12 y riesgos de integración. No implementar otros issues ni comenzar D/E; no cerrar #7/#13 u otros issues, fusionar o modificar `main`.
+
+**Fase0 comprobada:** checkout limpio, avance directo de `d342f96` a `2fbbc59` (dos commits solo documentales); rama `fix/estabilizacion-v9-9`, PR14 abierto/draft a `refactor/arquitectura`; `main` remoto `d9068f4aa8d3a10bbbf1e0a8a2527744cc6952cb` intacta. Se leyó informe43, código/diff C10, issue13 y protocolo15. Suite de referencia358/358 aprobada, sin TODO; CI exacto de2fbbc59 [40622935501](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40622935501) success con358/358. Sin regresión grave confirmada ni bloqueo Git. C10 sigue implementado y pendiente de aceptación humana; no se cambian sus reglas.
+
+**Estado actual del encargo:** C11 implementado y validado localmente, incluida R1 de pantallas bajas; pendiente CI para habilitar auditoría de lectura. [Informe44](44-c11-dados-tactiles.md). Las notas de fase0 y checkpoint siguientes son históricas.
 
 ## 1. Estado comprobado y alcance
 
@@ -468,3 +476,21 @@ El creador aprobó prioridades del informe42, con R3→apagar la radio, desempat
 Código y evidencia subidos en **`9e68862`**, exclusivamente a `fix/estabilizacion-v9-9`. [CI 40622261665](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40622261665) **completed/success**, logs 358/358 y sin TODO. PR14 actualizado en título/cuerpo para C1–C10; sigue **abierto/draft hacia `refactor/arquitectura`**. La actualización documental de esta evidencia se verificará también por SHA en Actions, sin cambiar ejecutable.
 
 **Recomendación final de la revisión:** #7 es técnicamente apto para aceptación, con evaluación inmediata/conservadora y límites de balance/dispositivo documentados. **Única tarea siguiente: revisión y aceptación del creador antes de cierre administrativo. #7 sigue abierto; no iniciar #13, fusionar o publicar. `main` remoto permanece `d9068f4`.**
+
+
+## C11/#13 — primera revisión y corrección R1 en verificación, 28/10/2026
+
+Referencia C10 Chromium16/16 aprobada. Se reproduce26×25px y gap3px; Playwright rojo27 comprobaciones de geometría fallidas en los tres tamaños mínimos, con trazados mecánicos completos y0errores JS. Parche solo CSS:44×44/gap8 y franja inferior reservada, tablero desplazable y pool desplazable si excede dos filas. JavaScript idéntico al de2fbbc59. Componente111/111 y suite358/358 aprobados tras primer parche.
+
+**Revisión independiente: R1/P2 confirmado y no ocultado por el verde inicial.** Fuera de los tres tamaños obligatorios, en852×393/640×320 y320×480 la franja podía quedar fuera de pantalla. Se reproduce antes de corregir y se añade fallback para permitir scroll de página en alturas≤520px. Se verifica en seis viewports y segunda revisión. [Informe44](44-c11-dados-tactiles.md). Se refina el arnés para respetar recortes de overflow y no confundir dados fuera del scroll con colisiones visibles.
+
+**Único paso siguiente:** concluir R1 y validación de C11, documentación/push/CI. Auditoría fase4 todavía no iniciada; ningún otro issue implementado, #7 sigue pendiente de aceptación y no se cierra.
+
+
+## C11/#13 — validación final y segunda revisión R1, 28/10/2026
+
+**Resultado:** dados44×44/gap8; franja inferior con espacio propio, tablero y pool desplazables, menús accesibles. Solo19líneas CSS; JavaScript y DOM idénticos a2fbbc59. R1 corregido mediante scroll de página en altura≤520px; no quedan defectos confirmados de C11 tras revalidación independiente.
+
+**Evidencia final:** componente111/111, `npm test`358/358, sin fallos/TODO. Chromium6viewports (320×640/393×852/1365×768 y852×393/640×320/320×480),24mediciones/0fallos/0erroresJS, selección de cada dado del pool16, consumo correcto, pase J1→J2, siete localidades y menú accesibles. Tres trazados antes/después idénticos; revisión independiente revalida R1 en las tres ventanas bajas. [Informe44 y evidencia](44-c11-dados-tactiles.md). C10 se repitió en navegador antes/después sin cambios de reglas. Sin Android físico/TalkBack.
+
+**Única siguiente tarea:** publicar C11 y comprobar CI exacto; solo después habilitar auditoría fase4 de pendientes. #7/#13 siguen abiertos para revisión del creador, PR14 draft, `main` intacta. No empezar programación de otros issues ni D/E.

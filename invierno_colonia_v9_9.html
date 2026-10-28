@@ -297,6 +297,25 @@ header{background:linear-gradient(90deg,#2c3434,#12191c 65%,#383f3b);border-bott
 @media(max-width:390px){.board{gap:7px!important;padding:7px 5px 90px!important}.sitehead{padding:8px!important}.surv{padding:4px!important}.handoverPanel{padding:24px 13px 16px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
 
+/* C11/#13: dados táctiles y franja inferior reservada, sin tapar el tablero.
+   El menú conserva su despliegue sobre el tablero; nunca ocupa el área de dados. */
+html,body{height:100dvh!important;min-height:0!important;overflow-y:hidden!important}
+body{display:flex!important;flex-direction:column}
+header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
+.boardwrap{flex:1;min-height:0!important;overflow-y:auto!important;overflow-x:hidden!important;overscroll-behavior-y:contain}
+.board{padding-bottom:10px!important}
+.fabArea{position:relative;right:auto!important;bottom:auto!important;flex:0 0 auto;flex-direction:row;align-items:flex-end;justify-content:flex-end;width:100%;max-width:100%;gap:8px;padding:8px 14px calc(8px + env(safe-area-inset-bottom));background:#182020;border-top:1px solid #707971}
+.floatingDice{flex:none;grid-template-columns:repeat(4,44px);gap:8px;width:220px;max-width:220px;max-height:108px;overflow-y:auto;scrollbar-width:thin;scrollbar-gutter:stable}
+.floatingDie{width:44px;min-width:44px;height:44px;min-height:44px;font-size:18px;touch-action:manipulation}
+.floatingDie:active{transform:none}
+.fabMenu{position:absolute;right:14px;bottom:calc(100% + 8px);max-height:calc(100dvh - 160px)}
+.fabMenu button{flex-shrink:0}
+/* En pantallas bajas, permitir recuperar todos los controles desplazando la página. */
+@media(max-height:520px){
+ html,body{height:auto!important;min-height:100dvh!important;overflow-y:auto!important}
+ .boardwrap{flex:none;height:50dvh}
+}
+
 </style></head><body>
 <header><div class="brand">INVIERNO EN LA COLONIA<small>SUPERVIVENCIA COOPERATIVA · V9.9</small></div></header>
 <div class="missionStrip"><button class="mission goal" onclick="show('goal')" id="goalCard"></button><button class="mission crisis" onclick="show('crisis')" id="crisisCard"></button><div class="turnpanel" id="turnpanel"><div id="turnLabel">TU TURNO</div><div class="leadersSummary" id="leadersSummary"></div><button class="btn" id="skipAI" onclick="skipAI=true" style="display:none">Saltar IA »</button></div></div><div class="statuswrap"><div class="status" id="status"></div></div><div class="statInfo" id="statInfo" role="tooltip" hidden></div><div class="noticewrap"><div class="notice"><span id="banner"></span><span id="selectedText"></span></div></div>

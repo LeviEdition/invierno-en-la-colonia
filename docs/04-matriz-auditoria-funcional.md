@@ -13,6 +13,13 @@
 **Validación:** 358/358 suite local (52 encrucijadas), TDD rojo→verde, 624 combinaciones de conformidad evaluación/resolución, revisión independiente sin defectos confirmados y16 recorridos Chromium en escritorio/móvil emulado. CI del código `9e68862` **completed/success**, 358/358: [GitHub Actions del código `9e68862`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40622261665). El commit final documental se comprueba también por SHA antes de entregar. **#7 implementado, abierto para aceptación del creador**; PR14 draft, sin fusión. Reserva: política inmediata/conservadora, sin balance de partidas ni Android físico/TalkBack. El resto de esta matriz conserva el historial; no interpretar su descripción de #7 por regex como el código de la rama actual. Único siguiente paso: revisar entrega #7; no iniciar #13.
 
 
+## Actualización C11/#13 — 28/10/2026
+
+**Dados y accesibilidad táctil (subsistemas02/19):** ajuste solo CSS a44×44px/gap8; franja inferior reservada para evitar colisiones con tablero. Pool con scroll y menú por encima; fallback de página en alturas≤520px tras corregir R1 creado por C11. DOM y JavaScript intactos; no cambia ninguna mecánica.
+
+[Informe44](44-c11-dados-tactiles.md): componente111/111, suite358/358,0fallos/TODO; Chromium en seis tamaños con24conjuntos de mediciones,0fallos/0erroresJS. Comparación antes/después y revisión independiente aprobadas tras R1. #13 implementado para revisión, **permanece abierto**, CI de entrega pendiente de comprobar. Android físico/TalkBack no comprobados. Auditoría posterior solo cuando CI de C11 esté aprobado; no implementar otros issues.
+
+
 ## Cierre de cobertura A6 (con limitaciones documentadas)
 
 Los **21 subsistemas** se mantienen clasificados: 01–19 con cobertura parcial (incluidos defectos abiertos en varios); **20–21 no implementados**, fuera del alcance de V9.9. En [el informe final](24-cierre-auditoria-y-prioridades.md) figuran las 12 incidencias (#2–#13), orden propuesto y excepciones. Se aceptó **continuar sin checklist físico A5-02** por autorización explícita del creador tras partidas satisfactorias, **sin declarar que la prueba móvil física ocurrió**. Al cerrar A6, la siguiente tarea era **C1/#11**, en rama separada. El estado actual de estabilización figura en las actualizaciones siguientes y en el tablero operativo.

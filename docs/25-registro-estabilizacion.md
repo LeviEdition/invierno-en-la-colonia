@@ -1,4 +1,4 @@
-# 25 — Registro de estabilización V9.9 (C1–C10)
+# 25 — Registro de estabilización V9.9 (C1–C11)
 
 **Última actualización:** 28/10/2026. **Rama de trabajo:** `fix/estabilizacion-v9-9` (nació de `refactor/arquitectura`). **Estado consolidado:** C1–C9 y revisiones implementadas; #5/#4/#6 aceptados/cerrados. C10/#7 implementado para revisión del creador: suite local 358/358, 16 recorridos Chromium aprobados y revisión independiente sin defectos confirmados. CI del código `9e68862` aprobada (358/358); comprobación documental final por SHA antes de entregar. **Sin integración en `main`, cierre de #7 ni publicación estable.** [Informe43](43-c10-encrucijadas-prioridades.md).
 
@@ -407,3 +407,26 @@ TDD inicial `node --test tests/encrucijadas.test.mjs`:43 tests,32aprobados/11fal
 PR14 título/cuerpo actualizados para C1–C10 con foco en #7 y pruebas/límites, conservando borrador y base `refactor/arquitectura`. La CLI `gh pr edit` devolvió error de Projects classic retirados; se completó la misma actualización autorizada por REST, sin alterar permisos, tokens o configuración. Se verificó `main` remoto en `d9068f4`; no hay rama local `main` que modificar en este checkout. Issue7 continúa abierto. Los informes41/42 locales del análisis anterior se conservaron y publicaron como históricos junto a43 y evidencia JSON/script.
 
 **Recomendación:** listo para aceptación del creador; cerrar #7 solo después de su revisión/autorización. Sin nuevas tareas, perfiles, narrativa, fusión ni versión estable. La reserva sobre dos líderes y pruebas físicas/balance no cambia.
+
+
+## Encargo nocturno C11 y auditoría — fase0, 28/10/2026
+
+El creador autoriza completar C11/#13 y sus regresiones, publicar exclusivamente en `fix/estabilizacion-v9-9`, y después auditar pendientes sin programarlos. No cerrar issues, tocar `main`, fusionar ni avanzar a D/E. Se verificó checkout limpio y remoto; fast-forward `d342f96`→`2fbbc59` sin pérdidas, stash ni reescrituras (solo18/25 remotos). Se usó FETCH_HEAD explícito porque el refspec heredado solo sigue main. PR14 confirmado abierto/draft hacia refactor/arquitectura; main remoto conserva d9068f4.
+
+Se revisaron protocolo15, informe43, diff/código C10, issue13, CSS del panel y flujo de selección/consumo. `npm test` de referencia:358/358 aprobadas,0fallidas/canceladas/omitidas/TODO. CI2fbbc59 [40622935501](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40622935501) success y logs358/358. No regresión grave ni Git inconsistente: habilitado iniciar C11. Se preparan mediciones reales y repetición dirigida de C10 en Chromium, todavía sin modificar código del juego. Los informes previos se conservan como históricos.
+
+
+## C11/#13 — rojo→verde inicial y revisión R1, 28/10/2026
+
+Se repitieron16recorridos C10/0errores sin cambios de reglas. Probe y arnés reproducen26×25px/gap3 y colisiones reales previas. Referencia roja definitiva:27 comprobaciones geométricas fallidas, tres viewports completos y0excepciones; se corrigieron previamente dos errores del propio arnés de preparación/espera de toque. Se agregan14líneas CSS iniciales para44×44/gap8, franja reservada y pool de hasta dos filas con scroll; se conserva JavaScript y DOM. Componente111/111 y suite358/358 aprobados.
+
+Revisión independiente confirma R1/P2 nuevo en alturas bajas: franja fuera del viewport por bodyoverflowhidden y cabecera/franja rígidas. Prueba roja adicional reproduce en852×393 luego de los tres mínimos verdes. Se añade fallback solo para altura≤520, con desplazamiento de página y tablero50dvh, y se amplía a852×393/640×320/320×480. Los falsos positivos de cinco colisiones del primer verde se resuelven corrigiendo el arnés para intersectar ancestros con overflow; no se ignoran colisiones reales. Informe44 creado con evidencia y estado en verificación. No se inicia auditoría de pendientes hasta C11 aprobado, ni se implementan otros issues.
+
+
+## C11/#13 — final local aprobado, 28/10/2026
+
+R1 fue corregido y sometido a segunda revisión independiente:852×393/640×320/320×480,16dados, rueda/tap reales, siete entradas de menú y Acciones con dado correcto,0errores. Se preservó evidencia roja adicional y JSON independiente. No quedan defectos confirmados de C11. El cambio final comprende19líneas CSS, sin alterar DOM ni JavaScript; SHA256 de script8ec55e4a29e90c6542f57ab5076f854664ac50248b7404582d7929d445a09f7e igual a2fbbc59.
+
+Validación final:111/111 componente y358/358 suite,0fallos/canceladas/omitidas/TODO. Chromium seis tamaños/24mediciones,0fallos/0errores, pool4/16, menús, selección, consumo, ocultamiento no interactivo, pase y siete localidades. Trazados antes/después idénticos en los tres tamaños originales; C10 Chromium16/16 antes y después. El arnés respeta recortes de overflow y hittest de cada botón, no toma null como hit. Se conservaron scripts, JSON rojo/verde/R1 y capturas en informe44/evidencias.
+
+Incidencia de infraestructura: el servidor HTTP heredado8765 devolvió respuesta vacía al perder su transporte; se reinició solo el servidor de prueba con logs en/tmp y se repitió el script. Revisor utilizó8876 independiente. El script ahora obtiene HTML antes de abrir Chromium, evitando un navegador huérfano si falla HTTP. No se afectó configuración cloud, credenciales o aplicación. `git diff --check` aprobado. CI exacto pendiente de push; la auditoría de otros issues aún no empieza hasta su aprobación. No hay cierres, main sin cambios, PR14 draft.
