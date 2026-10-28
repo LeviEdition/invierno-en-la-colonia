@@ -7,6 +7,19 @@
 
 > **REGISTRO OBLIGATORIO (acuerdo del usuario, 27/10/2026):** al terminar cada revisión, actualizar este tablero. Documentar acciones, decisiones, cambios, resultados, evidencia y límites en el registro pertinente, aunque no se haya modificado código. Véase [protocolo](15-protocolo-revision-critica.md#registro-obligatorio-de-cada-revisión-y-trabajo).
 
+## Misión autónoma C12 → C15 — estado actual
+
+Autorización explícita del creador para C12→C15 en orden y correcciones técnicas localizadas con TDD/revisión/CI. No reglas nuevas, main, fusión/cierres, versión estable ni D/E/F. Se preservan los checkpoints anteriores como históricos.
+
+| Etapa | Estado | Evidencia |
+| --- | --- | --- |
+| C12 | H1 corregido; R1/R2 asíncronos detectados y corregidos; revisión y pruebas aprobadas, CI pendiente | [46](46-c12-sucesiones-simultaneas.md),371/371 y6casos Chromium |
+| C13 | Pendiente de gate C12 | Integración por riesgo |
+| C14 | No iniciada | Partidas completas reales, objetivo20por modo |
+| C15 | No iniciada | Auditoría final y fuentes de reglas |
+
+**Tarea activa única:** finalizar CI C12 y continuar automáticamente a C13 si aprueba. La misión reemplaza la necesidad anterior de pedir autorización para H1. Main d9068f4 intacta, PR14 draft a refactor/arquitectura. Referencia sincronizada43f7c11,358/358 y CI40678862713 success.
+
 ## Revisión de entrega C10 para preparar siguiente trabajo — 27/10/2026 (hora Uruguay)
 
 **Lectura y comprobación de seguimiento por ChatGPT (solo revisión):** contrastados los commits `9e688624` (motor, pruebas y evidencia) y `d342f96` (documentación); se inspeccionaron `crossOptionAllowed()`, `crossTrigger()`, `evaluateCrossOptions()`, `chooseCrossOption()`, `feedingNeed()`, `gameOutcome()`, efectos de cartas y script Chromium. [GitHub Actions del SHA exacto `d342f96`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40622432370): **358/358, 0 fallidas/TODO**; [evidencia de los 16 recorridos dirigidos](evidencias/c10-issue7-chromium.json). La interfaz local J1/J2 conserva selección humana según las pruebas registradas. Se consultó PR14 (abierto/draft, no fusionado) y `main=d9068f4` inalterada.

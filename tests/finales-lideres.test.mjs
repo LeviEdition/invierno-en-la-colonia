@@ -194,7 +194,7 @@ test('rescate en espera se incorpora al liberar una plaza en la colonia', () => 
 });
 
 test('las derrotas desactivan las decisiones de líder pendientes', () => {
-  const t=fixture();t.run('pendingLeader=true;game.morale=0;verify();');
+  const t=fixture();t.run('requestLeader("human");game.morale=0;verify();');
   assert.deepEqual(t.state('({ended:game.ended,pendingLeader})'),{ended:true,pendingLeader:false});
 });
 

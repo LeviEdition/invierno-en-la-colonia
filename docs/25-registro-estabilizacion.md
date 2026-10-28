@@ -457,3 +457,8 @@ Se clasifican siete issues como corregidos en rama/pendientes de aceptación-cie
 
 
 **Revisión documental final del encargo:** se contrastaron datos de evidencia con los informes: rojo27/verde0, seis viewports/24 mediciones de 44×44/gap8, trazados idénticos en los tres originales,21 comprobaciones de issues y H1 en ambas versiones, tres revalidaciones independientes deR1. Comparación completa fuera de `<style>` confirma DOM/JavaScript intactos; diff desde7497d70 confirma que la fase4no modificó juego, scripts, tests, package o workflow. Se conservan capturas y JSON. La última actualización documental se sube por push normal a la rama autorizada y se verificará por SHA en Actions; sin repetir tests locales por documentos únicamente.
+
+
+## Misión C12→C15 — checkpoint C12, 28/10/2026 Montevideo
+
+Autorización completa leída del archivo adjunto: avanzar C12→C15 solo con gates aprobados; sin main/fusión/cierres/reglas nuevas/D/E. Sincronización limpia5f5514d→43f7c11, PR y main verificados; npm358/358, CI43f7c11 success. C12 registra sucesiones por dueño, conserva manual/automática y libera todas las esperas. TDD10casos:8rojos iniciales; revisión independiente detectóR1/P1 cruce de partida tras reinicio yR2/P2 acciones tras terminal. Tres regresiones adicionales y guardias de identidad/terminal/finally los corrigen; mordedura usa resolución real. Revisión revalidada, suite371/371 y Chromium6/6,0errores. Informe46 y evidencia/script; fixtures antiguos migran solicitud de sucesión sin alterarasserts. CI exacto pendiente de commit/push; no comenzarC13hasta aprobación. El informe45 permanece como histórico del defecto.

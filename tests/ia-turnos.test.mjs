@@ -12,7 +12,7 @@ const scripts = [...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)];
 assert.equal(scripts.length, 1);
 const bootstrap = /\ncreate\(\);\s*\ndocument\.getElementById\('setupScreen'\)\.hidden=false;passScreenActive=true;\s*\npaint\(\);\s*$/;
 assert.match(scripts[0][1], bootstrap);
-const oldPause = /const pause=async\(\)=>\{paint\(\);await waitForAiCross\(\);await waitForLeader\(\);await deathDirector\.wait\(\);if\(!skipAI\)await new Promise\(r=>setTimeout\(r,1750\)\);\};/;
+const oldPause = /const pause=async\(\)=>\{[\s\S]*?\n\};/;
 assert.match(scripts[0][1], oldPause, 'Si cambió la coordinación de animaciones, actualizar el adaptador de pruebas');
 const source = scripts[0][1].replace(bootstrap, '').replace(oldPause, 'const pause=async()=>{};');
 

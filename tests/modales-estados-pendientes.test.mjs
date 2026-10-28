@@ -169,11 +169,11 @@ test('A3-01 | encrucijada deshabilitada no modifica el estado',()=>{
 
 test('A3-01 | prioridades del modal respetan mordedura, liderazgo, búsqueda y curación',()=>{
  const t=fixture();
- t.run('pendingBite={target:"h1",victims:[]};pendingLeader=true;pendingLoot={actorId:"h0",loc:1,items:[]};pendingHeal={actor:"h0",targets:["h1"]};show("help");');
+ t.run('pendingBite={target:"h1",victims:[]};requestLeader("human");pendingLoot={actorId:"h0",loc:1,items:[]};pendingHeal={actor:"h0",targets:["h1"]};show("help");');
  assert.equal(t.state('opened'),'biteChoice');
  t.run('pendingBite=null;show("help");');
  assert.equal(t.state('opened'),'leaderChoice');
- t.run('pendingLeader=false;show("help");');
+ t.run('resetLeaderRequests();show("help");');
  assert.equal(t.state('opened'),'lootChoice');
  t.run('pendingLoot=null;show("help");');
  assert.equal(t.state('opened'),'healTarget');
@@ -192,7 +192,7 @@ test('A3-01 | mordedura pendiente no permite cerrar ni pasar turno',async()=>{
 
 test('A3-01 | elegir sucesor resuelve el modal, una segunda elección no altera líder',()=>{
  const t=fixture();
- t.run('game.humans[0].dead=true;game.leaders.human=null;pendingLeader=true;pendingLeaderSide="human";show("leaderChoice");chooseLeader("h2");chooseLeader("h1");');
+ t.run('game.humans[0].dead=true;game.leaders.human=null;requestLeader("human");show("leaderChoice");chooseLeader("h2");chooseLeader("h1");');
  assert.deepEqual(t.state('({leader:game.leaders.human,pending:pendingLeader})'),{leader:'h2',pending:false});
 });
 

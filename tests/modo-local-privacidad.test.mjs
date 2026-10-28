@@ -248,7 +248,7 @@ test('A2-01 | una curación pendiente impide terminar J1',async()=>{
 
 test('A2-01 | sucesión pendiente impide cerrar el turno',async()=>{
  const t=fixture();
- t.run('pendingLeader=true;pendingLeaderSide="human";');
+ t.run('requestLeader("human");');
  await t.run('finishTurn()');
  assert.equal(t.state('game.turn'),'human');
  assert.equal(t.state('opened'),'leaderChoice');
@@ -266,7 +266,7 @@ test('A2-01 | una mordedura pendiente impide cerrar el turno',async()=>{
 
 test('A2-01 | confirmar pase de J2 reabre correctamente selección de líder pendiente',()=>{
  const t=fixture();
- t.run('game.turn="ai";passScreenActive=true;showPass("ai");pendingLeader=true;pendingLeaderSide="ai";');
+ t.run('game.turn="ai";passScreenActive=true;showPass("ai");requestLeader("ai");');
  t.run('confirmPass();');
  assert.equal(t.state('opened'),'leaderChoice');
  assert.match(t.node('modalContent').innerHTML,/Elegí el líder del Jugador 2/);

@@ -29,6 +29,10 @@
 Se conservan el historial y sus hallazgos de main; se delimitan foco setup/pase, pruebas físicas/balance pendientes y diferencias con mesa por contrastar sin modificar reglas. **Única siguiente tarea recomendada:** H1, sucesión múltiple local, con nueva autorización; no se inicia D/E.
 
 
+## C12 — actualización de sucesiones, 28/10/2026
+
+H1 de subsistemas10/16 corregido por peticiones separadas por dueño. R1/R2 asíncronos encontrados por revisor independiente corregidos con guardias de identidad/terminal y finally.371/371 tests,13C12; Chromium6casos reales. [Informe46](46-c12-sucesiones-simultaneas.md). No cierra etapaC ni issues; CI exacto es gate previo aC13.
+
 ## Cierre de cobertura A6 (con limitaciones documentadas)
 
 Los **21 subsistemas** se mantienen clasificados: 01–19 con cobertura parcial (incluidos defectos abiertos en varios); **20–21 no implementados**, fuera del alcance de V9.9. En [el informe final](24-cierre-auditoria-y-prioridades.md) figuran las 12 incidencias (#2–#13), orden propuesto y excepciones. Se aceptó **continuar sin checklist físico A5-02** por autorización explícita del creador tras partidas satisfactorias, **sin declarar que la prueba móvil física ocurrió**. Al cerrar A6, la siguiente tarea era **C1/#11**, en rama separada. El estado actual de estabilización figura en las actualizaciones siguientes y en el tablero operativo.

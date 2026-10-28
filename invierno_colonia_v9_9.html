@@ -449,7 +449,13 @@ const currentHand=()=>controls.hand();
 const all=(g=game)=>[...g.humans,...g.bots],alive=(g=game)=>all(g).filter(p=>!p.dead),person=()=>controls.group()[selected];
 function toast(t){toastQueue.push(t);drainToasts();}
 async function drainToasts(){if(toastBusy)return;toastBusy=true;const stack=document.getElementById('toastStack');while(toastQueue.length){const t=toastQueue.shift();if(!stack)break;stack.innerHTML='';const item=document.createElement('div');item.className='toast '+(/[☠⚠]|fallid|mordedura|herida|congelación/i.test(t)?'bad':/[✓🏆]|superad|encontró|eliminó|movió/i.test(t)?'good':'');item.textContent=t;stack.appendChild(item);await new Promise(r=>setTimeout(r,aiRunning&&!skipAI?1550:2300));item.remove();}toastBusy=false;}
-const pause=async()=>{paint();await waitForAiCross();await waitForLeader();await deathDirector.wait();if(!skipAI)await new Promise(r=>setTimeout(r,1750));};
+const pause=async()=>{
+ const pausedGame=game;paint();
+ await waitForAiCross();if(game!==pausedGame||game.ended)return;
+ await waitForLeader();if(game!==pausedGame||game.ended)return;
+ await deathDirector.wait();if(game!==pausedGame||game.ended)return;
+ if(!skipAI)await new Promise(r=>setTimeout(r,1750));
+};
 function message(t){game.log.unshift('R'+game.round+' · '+t);game.log=game.log.slice(0,120);game.last=t;toast(t);}
 // Historias originales inspiradas en el sistema de encrucijadas: una carta oculta por ronda,
 // activada por la primera acción pertinente; las decisiones alteran recursos y supervivientes.
@@ -517,10 +523,28 @@ function equipIcons(p){const eq=equipmentOf(p).map(kind);return (eq.includes('ar
 function ownerGroup(side,g=game){return side==='ai'?g.bots:g.humans;}
 function groupLeader(side,g=game){if(!g)return null;return ownerGroup(side,g).find(p=>!p.dead&&p.id===g.leaders?.[side])||null;}
 function isLeader(p){return !!p&&!p.dead&&game.leaders?.[ownerOf(p)]===p.id;}
-let pendingLeader=false,pendingLeaderSide='human',leaderCompletion=null,pendingRecruitInfo=null;
+let pendingLeader=false,pendingLeaderSide='human',pendingLeaderSides=[],leaderWaiters=[],pendingRecruitInfo=null;
+// C12: una petición por dueño; los dos campos anteriores son la vista del pedido actual.
+function syncLeaderRequests(){
+ pendingLeader=pendingLeaderSides.length>0;
+ pendingLeaderSide=game?.mode==='local'&&pendingLeaderSides.includes(controls.side)?controls.side:pendingLeaderSides[0]||'human';
+}
+function requestLeader(side){
+ if(pendingLeaderSides.includes(side))return;
+ pendingLeaderSides.push(side);syncLeaderRequests();
+ message('♛ El líder del '+controls.display(side)+' murió: elegí a su sucesor.');
+}
+function clearLeaderRequest(side){
+ pendingLeaderSides=pendingLeaderSides.filter(s=>s!==side);syncLeaderRequests();
+ if(!pendingLeader)leaderWaiters.splice(0).forEach(done=>done());
+}
+function resetLeaderRequests(){
+ pendingLeaderSides=[];syncLeaderRequests();leaderWaiters.splice(0).forEach(done=>done());
+}
 // C9-R1: si muere el líder de otro jugador, decidir sucesor en el turno de su dueño.
 function leaderChoiceReady(){
- return pendingLeader&&!passScreenActive&&(game.mode!=='local'||pendingLeaderSide===controls.side);
+ syncLeaderRequests();
+ return !!game&&!game.ended&&pendingLeader&&!passScreenActive&&(game.mode!=='local'||pendingLeaderSide===controls.side);
 }
 function chooseLeader(id){
  const succession=leaderChoiceReady(),side=succession?pendingLeaderSide:controls.side;
@@ -529,25 +553,24 @@ function chooseLeader(id){
  game.leaders[side]=p.id;
  if(side==='human')game.leaderChosen=true;
  else game.localLeaderChosen=true;
- if(succession)pendingLeader=false;
+ if(succession)clearLeaderRequest(side);
  message('♛ '+p.name+' asume el liderazgo del '+controls.display(side)+' (influencia '+p.influence+').');
  opened='';document.getElementById('backdrop').classList.remove('open');
- if(succession&&leaderCompletion){const done=leaderCompletion;leaderCompletion=null;done();}paint();
+ paint();
 }
 function reviewLeader(side,env=null){
  const g=env?env.game:game;
  const group=ownerGroup(side,g).filter(p=>!p.dead);
- if(!group.length||groupLeader(side,g))return;
+ if(!group.length||groupLeader(side,g)){if(!env&&groupLeader(side,g))clearLeaderRequest(side);return;}
  if(env&&(side==='human'||g.mode==='local')&&group.length>1)return;
- if(!env&&(side==='human'||g.mode==='local')&&pendingLeader&&group.length>1)return;
- if(!env&&(side==='human'||g.mode==='local')&&pendingLeader&&group.length===1)pendingLeader=false;
  if((side==='ai'&&g.mode!=='local')||group.length===1){
   const next=group.slice().sort((a,b)=>b.influence-a.influence)[0];g.leaders[side]=next.id;
+  if(!env)clearLeaderRequest(side);
   if(side==='human')g.leaderChosen=true;else if(g.mode==='local')g.localLeaderChosen=true;
   ruleMessage(env,'♛ '+next.name+' es el nuevo líder de '+(side==='ai'?'la IA':'tu grupo')+' (influencia '+next.influence+').');
- }else if(!env){pendingLeader=true;pendingLeaderSide=side;message('♛ El líder del '+controls.display(side)+' murió: elegí a su sucesor.');}
+ }else if(!env)requestLeader(side);
 }
-function waitForLeader(){return pendingLeader?new Promise(resolve=>{leaderCompletion=resolve;}):Promise.resolve();}
+function waitForLeader(){return pendingLeader?new Promise(resolve=>leaderWaiters.push(resolve)):Promise.resolve();}
 function dismissRecruit(){pendingRecruitInfo=null;opened='';document.getElementById('backdrop').classList.remove('open');paint();}
 function processRescueQueue(){
  if(!game?.rescueQueue?.length||!accessible(0)||game.ended)return;
@@ -726,7 +749,7 @@ function newRound(){
  paint();
 }
 function create(){
- document.getElementById('toastStack').innerHTML='';toastQueue=[];toastBusy=false;deathDirector.reset();skipAI=false;aiRunning=false;selected=0;target=0;picked=0;opened='';profileId='';pendingHeal=null;pendingLoot=null;pendingBite=null;pendingAttract=null;pendingTransfer=null;aiCrossChoice=null;aiCrossCompletion=null;pendingLeader=false;leaderCompletion=null;pendingRecruitInfo=null;pendingLeaderSide='human';selectionBySide.human=0;selectionBySide.ai=0;closeStatInfo();
+ document.getElementById('toastStack').innerHTML='';toastQueue=[];toastBusy=false;deathDirector.reset();skipAI=false;aiRunning=false;selected=0;target=0;picked=0;opened='';profileId='';pendingHeal=null;pendingLoot=null;pendingBite=null;pendingAttract=null;pendingTransfer=null;aiCrossChoice=null;aiCrossCompletion=null;resetLeaderRequests();pendingRecruitInfo=null;selectionBySide.human=0;selectionBySide.ai=0;closeStatInfo();
  const objective=objectives[random(objectives.length)];
  game={mode:gameMode,objective,round:1,max:objective.rounds,morale:9,food:6,hunger:0,samples:0,goal:objective.need,waste:0,
  humans:[{id:'h0',name:'Mara',loc:0,wounds:0,frost:0,dead:false},{id:'h1',name:'Leo',loc:0,wounds:0,frost:0,dead:false},{id:'h2',name:'Iris',loc:0,wounds:0,frost:0,dead:false}],
@@ -790,7 +813,7 @@ function verify(env=null){
  if(result){
   g.ended=true;g.turn='end';
   ruleMessage(env,result==='morale'?'☠ Derrota: la moral llegó a cero.':result==='survivors'?'☠ Derrota: no hay supervivientes disponibles para continuar.':'🏆 ¡Victoria! Se completó el objetivo general.');
-  if(!env){pendingBite=null;pendingLeader=false;}
+  if(!env){pendingBite=null;resetLeaderRequests();}
  }
 }
 
@@ -1185,42 +1208,43 @@ function botContributeTools(){
  }
 }
 async function botTurn(){
+ const turnGame=game;
  message('🤖 Comienza el turno de la IA.');applyFrost('ai');replaceLastSurvivors();verify();if(game.ended)return;
- crossDraw('ai');crossTrigger('round',null);await pause();
+ crossDraw('ai');crossTrigger('round',null);await pause();if(game!==turnGame||game.ended)return;
  const bots=game.bots.filter(p=>!p.dead);
  const dice=game.botDice; // Reserva única real: nunca copiar para evitar estados divergentes.
  // Los dados son un fondo común: no pertenecen a un personaje concreto.
  for(const p of bots){
   if(p.dead||game.ended)continue;
-  if(['medic','nurse'].includes(p.skill)&&!p.skillUsed){const t=alive().filter(x=>x.loc===p.loc&&(p.skill==='medic'?x.wounds:x.frost)).sort((a,b)=>b.wounds-a.wounds)[0];if(t){if(p.skill==='medic')t.wounds--;else t.frost--;p.skillUsed=true;message('★ '+p.name+' atendió a '+t.name+'.');await pause();}}
-  if(p.skill==='builder'&&!p.skillUsed&&openAccess(p.loc)){game.zones[p.loc].b++;p.skillUsed=true;message('★ '+p.name+' construyó una barricada sin dado.');await pause();}
+  if(['medic','nurse'].includes(p.skill)&&!p.skillUsed){const t=alive().filter(x=>x.loc===p.loc&&(p.skill==='medic'?x.wounds:x.frost)).sort((a,b)=>b.wounds-a.wounds)[0];if(t){if(p.skill==='medic')t.wounds--;else t.frost--;p.skillUsed=true;message('★ '+p.name+' atendió a '+t.name+'.');await pause();if(game!==turnGame||game.ended)return;}}
+  if(p.skill==='builder'&&!p.skillUsed&&openAccess(p.loc)){game.zones[p.loc].b++;p.skillUsed=true;message('★ '+p.name+' construyó una barricada sin dado.');await pause();if(game!==turnGame||game.ended)return;}
  }
  // IA: utiliza el mismo motor de objetos que el humano; equipamiento y consumibles requieren condiciones reales.
  for(const p of bots.filter(p=>!p.dead)){
   for(let k=game.botItems.length-1;k>=0;k--){
    const d=catalog.resolve(game.botItems[k]);
    if(d?.effect==='equip'&&!p.equipment.some(it=>kind(it)===d.kind)){
-    if(itemEngine.use(k,p,'ai'))await pause();
+    if(itemEngine.use(k,p,'ai'))await pause();if(game!==turnGame||game.ended)return;
    }
   }
  }
  for(let k=game.botItems.length-1;k>=0;k--){
   const it=game.botItems[k],d=catalog.resolve(it);if(!d)continue;
   if(d.kind===game.crisis.type&&d.kind!=='herramienta'&&game.crisis.contributions.length<game.crisis.need){
-   if(CrisisManager.add(it,'La IA')){game.botItems.splice(k,1);await pause();}continue;
+   if(CrisisManager.add(it,'La IA')){game.botItems.splice(k,1);await pause();if(game!==turnGame||game.ended)return;}continue;
   }
   const injured=game.bots.filter(p=>!p.dead&&(d.effect==='frost'?p.frost:p.wounds+p.frost)).sort((a,b)=>(b.wounds+b.frost)-(a.wounds+a.frost))[0];
-  if((d.effect==='heal'||d.effect==='frost')&&injured){if(itemEngine.use(k,injured,'ai'))await pause();}
-  else if(d.effect==='food'&&game.food<Math.ceil((alive().filter(p=>p.loc===0).length+game.helpless)/2)+1){if(itemEngine.use(k,bots.find(p=>!p.dead),'ai'))await pause();}
+  if((d.effect==='heal'||d.effect==='frost')&&injured){if(itemEngine.use(k,injured,'ai'))await pause();if(game!==turnGame||game.ended)return;}
+  else if(d.effect==='food'&&game.food<Math.ceil((alive().filter(p=>p.loc===0).length+game.helpless)/2)+1){if(itemEngine.use(k,bots.find(p=>!p.dead),'ai'))await pause();if(game!==turnGame||game.ended)return;}
   else if(d.effect==='research'){
    if(itemEngine.use(k,bots.find(p=>!p.dead),'ai')){
     // C1/#11: una muestra completada por la IA debe ganar antes de procesar la colonia.
     verify();
     if(game.ended)return;
-    await pause();
+    await pause();if(game!==turnGame||game.ended)return;
    }
   }
-  else if(d.effect==='manual'&&game.waste>=2){if(itemEngine.use(k,bots.find(p=>!p.dead),'ai'))await pause();}
+  else if(d.effect==='manual'&&game.waste>=2){if(itemEngine.use(k,bots.find(p=>!p.dead),'ai'))await pause();if(game!==turnGame||game.ended)return;}
  }
 
  // Distribución de desplazamientos (una vez por personaje): según necesidades.
@@ -1231,8 +1255,8 @@ async function botTurn(){
    const fuelIdx=game.botItems.findIndex(it=>kind(it)==='combustible');
    const fueled=fuelIdx>=0&&itemEngine.moveWithFuel(p,dest,'ai',fuelIdx);
    if(!fueled){p.loc=dest;p.moved=true;message('🤖 '+p.name+' se movió a '+places[dest]+'.');}
-   await pause();if(!fueled){if(p.skill==='silent'&&!p.skillUsed){p.skillUsed=true;}else expose(p,'movimiento IA');}
-   if(pendingBite)await waitForBite();await pause();if(p.dead){verify();continue;}if(!pendingBite)crossAction('move',p);
+   await pause();if(game!==turnGame||game.ended)return;if(!fueled){if(p.skill==='silent'&&!p.skillUsed){p.skillUsed=true;}else expose(p,'movimiento IA');}
+   if(pendingBite)await waitForBite();if(game!==turnGame||game.ended)return;await pause();if(game!==turnGame||game.ended)return;if(p.dead){verify();continue;}if(!pendingBite)crossAction('move',p);
   }
  }
  let turns=0;
@@ -1250,10 +1274,10 @@ async function botTurn(){
   if(!action)break;
   const {p,di,type}=action,d=dice.splice(di,1)[0];
   if(type==='search'){beginSearch(p,'ai');message('🎲 IA '+p.name+' usó dado '+d+' para buscar.');crossAction('search',p);}
-  else if(type==='attack'){message('🎲 IA '+p.name+' gastó dado '+d+' al combatir.');itemEngine.attack(p,'ai');if(pendingBite)await waitForBite();if(!pendingBite)crossAction('attack',p);}
+  else if(type==='attack'){message('🎲 IA '+p.name+' gastó dado '+d+' al combatir.');itemEngine.attack(p,'ai');if(pendingBite)await waitForBite();if(game!==turnGame||game.ended)return;if(!pendingBite)crossAction('attack',p);}
   else if(type==='clean'){const n=Math.min(3,game.waste);game.waste-=n;message('♻ IA limpió '+n+' residuos con dado '+d+'.');}
   else{const n=(p.skill==='guard'?2:1)+(itemEngine.has(p,'repairkit')?1:0);for(let j=0;j<n&&openAccess(p.loc);j++)game.zones[p.loc].b++;message('▥ IA '+p.name+' colocó barricadas con dado '+d+'.');}
-  verify();await pause();
+  verify();await pause();if(game!==turnGame||game.ended)return;
  }
  // C7: comprobar los recursos disponibles solo después de las acciones y búsquedas.
  botContributeTools();
@@ -1323,6 +1347,7 @@ function confirmPass(){
  returnFocusAfterHandover();
 }
 async function finishTurn(){
+ const turnGame=game;
  // El turno no puede avanzar hasta confirmar el pase o los fallecimientos, incluso en cola.
  if(game.ended||aiRunning||passScreenActive||deathDirector.active||deathDirector.pending.length)return;
  if(leaderChoiceReady()){show('leaderChoice');return;}
@@ -1344,26 +1369,24 @@ async function finishTurn(){
    try{
     message('⌂ Ambos jugadores terminaron. Resolviendo fase de colonia.');
     colony();
-    await deathDirector.wait();
+    await deathDirector.wait();if(game!==turnGame)return;
     if(!game.ended){
      game.round++;
-     if(game.round>game.max){game.ended=true;game.turn='end';message('☠ Derrota: se agotaron las rondas.');}
+     if(game.round>game.max){game.ended=true;game.turn='end';resetLeaderRequests();message('☠ Derrota: se agotaron las rondas.');}
      else newRound();
     }
    }finally{
-    aiRunning=false;
-    if(!game.ended)showPass('human');
-    paint();
+    if(game===turnGame){aiRunning=false;if(!game.ended)showPass('human');paint();}
    }
    return;
   }
  }
  aiRunning=true;skipAI=false;game.turn='ai';paint();
  try{
-  await botTurn();
-  if(!game.ended){message('⌂ Resolviendo fase de colonia.');await pause();colony();await pause();}
-  if(!game.ended){game.round++;if(game.round>game.max){game.ended=true;game.turn='end';message('☠ Derrota: se agotaron las rondas.');}else newRound();}
- }finally{aiRunning=false;skipAI=false;paint();}
+  await botTurn();if(game!==turnGame||game.ended)return;
+  if(!game.ended){message('⌂ Resolviendo fase de colonia.');await pause();if(game!==turnGame||game.ended)return;colony();await pause();if(game!==turnGame||game.ended)return;}
+  if(!game.ended){game.round++;if(game.round>game.max){game.ended=true;game.turn='end';resetLeaderRequests();message('☠ Derrota: se agotaron las rondas.');}else newRound();}
+ }finally{if(game===turnGame){aiRunning=false;skipAI=false;paint();}}
 }
 function show(type){
  if(type==='actions'&&!playable())return;
