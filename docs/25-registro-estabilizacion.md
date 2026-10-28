@@ -1,5 +1,7 @@
 # 25 — Registro de estabilización V9.9 (C1–C16)
 
+**Actualización verificada de CI post-merge:** [Actions 40709698250](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40709698250), para el commit de integración `c15373d44f0a76affd9041be925eef48234239c3`, finalizó `completed/success`; se leyeron logs del job `122891290523` con **408 tests, 408 pass, 0 fail, 0 cancelled, 0 skipped y 0 todo**. Continúa pendiente el smoke Chromium específico sobre el árbol integrado, por lo que D0-I-V no se cierra todavía.
+
 ## D0-I: operación de integración controlada — 28/10/2026
 
 El creador autorizó expresamente integrar PR14 **solo** en `refactor/arquitectura`, verificar y documentar; prohibió tocar `main`. Se contrastaron metadatos y patches (97 archivos); el HTML contiene +452/−182 líneas frente a base, con modificaciones en prioridades de decisiones, sucesiones, transiciones y diseño táctil; los tests cubren esos flujos. Se corrigió la descripción de PR14, sustituyendo claims históricos de issues abiertos/C pendiente por el cierre aceptado con reservas. Primer intento de merge bloqueado por GitHub 405: PR en borrador; pasó a `ready for review`, y GitHub confirmó **merged** por SHA `c15373d44f0a76affd9041be925eef48234239c3` ([PR14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14)). Comprobación posterior: PR14 closed/merged; PR1 open/draft y head actualizado a ese SHA; `main=d9068f4aa8d3a10bbbf1e0a8a2527744cc6952cb`; documento canónico A6 conserva blob `c132dd8`.
