@@ -1,6 +1,18 @@
-# 25 — Registro de estabilización V9.9 (C1–C15)
+# 25 — Registro de estabilización V9.9 (C1–C16)
 
 **Última actualización:** 28/10/2026, Montevideo. **Rama:** `fix/estabilizacion-v9-9`. **Estado vigente:** C12/H1, C13 y C14 aprobados por pruebas/revisión/CI; auditoría C15 con T1/T2 corregidos y402/402 local/independiente, revisión documental y CI f1a43c7/40691454445 aprobados. [Informe49](49-c15-auditoria-final.md) y tablero18 determinan el próximo paso: aceptación del creador, C no cerrada oficialmente. A1 foco general permanece como reserva; C no está oficialmente cerrada. #4/#5/#6 ya aceptados/cerrados; otros nueve issues siguen abiertos. Sin integración en main, cierres nuevos ni publicación estable. Las secciones siguientes son historia de cada revisión.
+
+## Implementación C16/A1 — 28/10/2026
+
+**Autorización:** el creador solicitó continuar la estabilización tras la revisión externa C12–C15. Se eligió exclusivamente A1/P2: fuga de foco en Ayuda/Fallecimiento confirmada previamente por C15. **Referencia inicial:** `f1c1fc4`, CI40692769126 success; PR14 abierto/draft hacia `refactor/arquitectura`; `main=d9068f4` intacta.
+
+**Acciones técnicas:** se leyeron HTML, tests C4 y C15, evidencia `c15-foco.json`, CI, protocolo15 y reportes46–49. Se crearon seis regresiones en `tests/foco-modales-c16.test.mjs` (Ayuda aislada, Tab/Shift+Tab, cierre y retorno, fallecimiento y modal inferior, muerte→sucesión, Pase prioritario). Se generalizó `syncHandoverAccessibility()` a los diálogos activos con `activeDialog()` e `inert` de hermanos; se sincroniza en apertura/cierre/paint, se restaura foco, Escape no cierra fondo durante una muerte. Los pequeños cambios de compatibilidad con fixtures no alteran efectos de juego. Se hizo determinista el fixture C4 para que la encrucijada aleatoria no altere la expectativa de enfoque. Se creó `scripts/check-c16-focus-browser.mjs` para tres viewports, **sin ejecutarlo aquí**.
+
+**Proceso TDD / red-green:** commit rojo `b955317`, CI40693804541 con4 pruebas C16 fallidas de6; primer parche `ee193d2` volvió verdes las seis C16 pero causó83 fallos de DOM simulado (CI40694191605). Guardias de compatibilidad `98e5f0c` redujeron fallos, `e23896a` y fixture dirigido C4 `7a15f9f` dieron [CI40694649844](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40694649844) success408/408. Renombrar seis títulos de test (`dd5663d`) descubrió una intermitencia C4 por azar (407/408, CI40695036857); fixture C4 semilla fija en `265dc0d` eliminó ese factor. **CI final de código [40695224171](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40695224171) completed/success,408/408,0 fallidas/canceladas/omitidas/TODO**, logs leídos directamente. No se ocultaron fallos con skip ni se alteraron aserciones de reglas.
+
+**Límites:** revisión de código y CI Node; **sin nueva ejecución de Chromium real**. Script Playwright preparado y versionado, requiere ejecución en un entorno con navegador y revisión de resultados; no se presume aprobado. Android físico, TalkBack/WCAG, rendimiento y balance humano siguen fuera de la cobertura. No se modificaron objetivos, dados, iniciativa, IA, mecánicas, estado administrativo de issues o `main`. Distintas decisiones de fidelidad F discutidas con el creador quedan separadas de estabilización.
+
+**Resultado:** C16 **implementado/Node validado**, aceptación técnica final **condicionada a Chromium**. Informe [50](50-c16-foco-dialogos.md); tablero18 y matriz04 actualizados. **Único paso siguiente:** validación de navegador C16, luego aceptación de C por el creador sin fusión/cierres automáticos.
 
 ## Revisión de aceptación externa C12–C15 — 28/10/2026
 
