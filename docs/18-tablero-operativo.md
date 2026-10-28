@@ -1,5 +1,14 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## SP-02 — Exploración de resolución híbrida contextual · 28/10/2026
+
+**Hipótesis del creador, NO regla aprobada:** unificar la **economía de órdenes limitadas** y permitir **diversas formas de resolución**, sin tirar dados en todas las acciones. Usar reservas por atributo en acciones inciertas (búsqueda, movilidad, encuentros) y resolver **acciones rutinarias directamente** o **combates de defensa preparada por estadísticas/equipo sin tirada**. Ejemplo: atacar desde la colonia sin tirar, para evitar pérdidas recurrentes de órdenes en el prototipo de asedio. **Advertencia:** la inferioridad estadística anterior del pool en asedio surgió de modelos no equivalentes, no demuestra que «combate con dados» sea un problema real.
+
+**Criterio de examen:** elegir resolución por las **condiciones del mundo**, no por parche de porcentajes; colonia con defensas establecidas puede justificar defensa previsible, pero cuando está invadida o colapsan defensas puede volver la incertidumbre. Un ataque sin tirada **sigue pudiendo consumir orden y recursos**, la estadística de combate debe tener efecto y el refugio no debe ser una zona de eliminaciones ilimitadas sin riesgo. Diferenciar **acción directa**, **resolución determinista por capacidades** y **prueba por atributo**.
+
+**Documento:** [63 — SP-02, sección 5G](63-hoja-de-ruta-planificacion-singleplayer.md). **Siguiente tarea conceptual:** comparar la misma defensa con pool puro vs híbrido contextual, manteniendo constante estado/acciones y contrastando refugio preparado, amenazado e invadido; comprobar consistencia, tensión, protagonismo de stats y número de tiradas. **Implementación prohibida en esta etapa:** no alterar F-10/F-12/F-15, V9.9 ni `main`; D1/D2 por su vía separada.
+
+
 ## SP-02 — Informe de 480.000 simulaciones exploratorias del laboratorio · 28/10/2026
 
 **Pruebas realizadas:** 3 escenarios × 6 configuraciones × 2 métodos × 10.000 repeticiones = **360.000 rondas**, más 6 variantes de asignación de personajes × 2 métodos × 10.000 = **120.000**; **11/11 verificaciones** del motor simplificado aprobadas y ensayo anterior de 500 rondas reproducido. Detalle: [63 — sección 5F](63-hoja-de-ruta-planificacion-singleplayer.md).
