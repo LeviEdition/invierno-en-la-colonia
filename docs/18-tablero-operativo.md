@@ -1,5 +1,13 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## D1.0 — caracterización de catálogo completada (sin extracción) · 28/10/2026
+
+**Autorización:** crear rama de implementación desde `main`, añadir pruebas con RNG determinista, validar y documentar; no modificar reglas, `ItemCatalog` ni `main`. Rama `refactor/d1-catalogo` desde `main` `0b75d01aba013cd029d9d0dd0bdbd20791be15fc`. Código de pruebas `6ccada45413dad93d1bcfe1330f95a3470b4f7c8`.
+
+**Resultado auditado:** [informe 58](58-d1-0-linea-base-catalogo.md). Archivo nuevo `tests/catalogo-caracterizacion-d1.test.mjs` únicamente: +20 tests para 17 cartas, 8 categorías, 6×20 cartas, resoluciones y metadatos, leyendas y RNG Fisher–Yates (4 semillas directas; 3 semillas para ambas modalidades). [CI 40719277668](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40719277668): **428/428**, 0 fallos/skip/TODO. El ejecutable HTML conserva blob `d192afb43ab216d0b63ed49fd24f1d830d03f4e7`, idéntico a `main`; sin PR, merge ni publicaciones. No se volvieron a ejecutar Chromium ni pruebas físicas: motor sin cambios.
+
+**ÚNICA TAREA SIGUIENTE:** autorización específica para **D1.1**: extraer `ItemCatalog` como fuente independiente y construir el HTML autocontenido de forma determinista, preservando RNG y todos los comportamientos. No extraer `ItemEngine`, no F/E/D2, no fusionar a `main` sin auditoría posterior.
+
 ## D0-P1-I — PR #1 fusionado en main y validado · 28/10/2026
 
 **Estado:** etapa de integración **cerrada** con reservas. Por autorización expresa del creador, PR1 se actualizó, pasó a ready y se fusionó únicamente en `main`, commit `96e2b6c3dd19d5f11846820e51948af245c99e71`. No se publicó release, tag ni se iniciaron D1/F. **Informe y evidencia:** [56](56-d0-p1-i-integracion-main.md).
