@@ -39,6 +39,18 @@ Por instrucción del usuario se incorporó la obligación de actualizar el table
 
 **Resultado y límites de aquella revisión documental:** acceso y CI de la entrega confirmados; documentación sincronizada. No se realizó entonces una nueva prueba de navegador o dispositivo físico ni una revisión final de código; la revisión de código posterior figura abajo. #5 sigue siendo una propuesta de trabajo posterior que requiere acordar la prioridad de la IA; no está iniciada ni autorizada su implementación.
 
+## Continuidad confirmada: preservar la ruta A→B→C→D→E→F — 27/10/2026
+
+**Decisión explícita del creador:** tras explorar un posible modo individual con un líder humano y un grupo de supervivientes, el creador indicó **«Sigamos avanzado con la ruta que ya teníamos»**, vinculándolo con **«finalicemos la auditoría, para asegurarnos que esta primera app funcione lo más parecido al juego de mesa y a partir de ahí vemos esta nueva identidad»**.
+
+**Interpretación de alcance:** no iniciar ahora rediseño single-player, órdenes por líder, mundo narrativo dinámico, arquitectura nueva ni una Utility AI extensa. Son **ideas estacionadas para E/F**, no reglas aprobadas ni funcionalidades V9.9. **La fase A6 de auditoría ya había cerrado con reservas** (informe24); esta decisión significa **terminar la fase C de estabilización** y su revisión transversal antes de avanzar a **D (refactor sin alterar reglas)** y **E (prototipo narrativo)**, no rehacer toda la A desde cero.
+
+**Objetivo de fidelidad:** conservar la dinámica táctica y cooperativa inspirada en *Dead of Winter*, contrastar expresamente las mecánicas relevantes con las reglas de mesa cuando corresponda, y registrar toda desviación voluntaria propia de la adaptación. **No** afirmar equivalencia total con el juego de mesa solo por tener CI verde o por una impresión de juego. Antes de promover V9.9, separar: defectos verificables, adaptaciones acordadas, diferencias de diseño pendientes, y límites de prueba reales (partidas completas, móvil físico, accesibilidad y balance).
+
+**Una sola tarea activa siguiente:** abordar **#7**, todavía abierto, con el alcance mínimo de estabilización: que la IA de encrucijadas deje de depender de fragmentos literales de texto. El informe experimental de Codex sobre prioridades/Utility en seis escenarios es **exploratorio**, no política aprobada ni código integrado. Elegir la regla mínima luego de definir condiciones verificables; después regresiones **rojo→verde**, Chromium y revisión crítica. **No introducir perfiles, personajes autónomos, memoria, planificación ni motor de Utility completo durante C** sin nueva autorización. Luego #13 (dados táctiles), verificación de issues que aún aparecen abiertos aunque parte de sus parches están hechos, pulido de alertas y revisión transversal previa a propuesta de promoción.
+
+**Control:** [PR14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14) continúa draft a `refactor/arquitectura` y `main` no cambia por esta anotación. La documentación de diseño previo sigue vigente como hipótesis, no como implementación.
+
 ## 2. Etapa activa C — estabilización; C1–C9 implementadas por bloque, siguiente propuesta #7
 
 **Objetivo:** saber qué hace realmente el juego, qué falla y qué no se ha probado, antes de intervenir sus reglas o extraer módulos.
@@ -396,4 +408,4 @@ Solo cambiar la etapa activa con una decisión consciente; registrar motivo, rie
 - **Propuestas narrativas (estacionadas):** `docs/12`–`docs/17`.
 - **Defectos/decisiones por resolver:** GitHub Issues.
 
-**Próxima decisión única propuesta: autorizar el análisis y definición de política del issue #7 (elecciones de la IA en encrucijadas). #6 cerrado/completed; PR14 sigue draft y `main` intacta. No empezar otros cambios hasta aprobación.**
+**Tarea única actual por continuidad autorizada: análisis acotado y definición de política del issue #7 (IA de encrucijadas sin lectura frágil del texto), sin código hasta aprobar criterio. #6 cerrado/completed; #13 y revisión transversal después; PR14 draft y `main` intacta. Narrativa/single-player aplazados hasta cumplir las compuertas C→D→E.**
