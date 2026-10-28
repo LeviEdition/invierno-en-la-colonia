@@ -6,6 +6,12 @@
 
 **Fecha de inicio:** 27/10/2026 · **Rama:** `refactor/arquitectura` · **Base:** `invierno_colonia_v9_9.html`
 
+## Cierre formal etapa C (C1–C16) — 28/10/2026
+
+**La estabilización C está técnicamente aceptada y administrativamente cerrada con reservas por autorización del creador.** Los nueve issues #2/#3/#7/#8/#9/#10/#11/#12/#13 tienen comentario de corrección y `closed/completed` confirmado en GitHub; **0 issues abiertos**. [Acta 53](53-cierre-formal-etapa-c.md), [tablero 18](18-tablero-operativo.md).
+
+**Validación conservada:** suite 408/408; 40 partidas simuladas de motor y 5 recorridos UI, Chromium C16 con78 pasos de teclado en tres viewports. **No demostrado**: compatibilidad Android físico/TalkBack, balance humano, equivalencia reglamentaria total. **No publicado ni integrado:** PR14 open/draft hacia `refactor/arquitectura`, `main` intacta; revisar divergencia documental antes del merge. **Próximo paso único D0:** revisión de integración sin fusionar. La matriz F (incluida selección F-14, cinco candidatos → tres elegidos) se desarrolla por separado y después de la referencia estable; no cambia V9.9 por el cierre C.
+
 ## Acuerdo de fidelidad F-14 y visión singleplayer — 28/10/2026
 
 **Decisión de diseño F-14 (sin implementar):** mostrar **5 supervivientes aleatorios**, dejar elegir **3** y **designar manualmente un líder**. Se conservan tres supervivientes iniciales por equipo en la adaptación actual, para no alterar automáticamente la cantidad de dados/acciones. Falta definir la interacción de ambos modos existentes y la selección automática de un grupo IA antes de codificar, sin convertir el segundo grupo en requisito del futuro singleplayer.
