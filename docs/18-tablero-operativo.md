@@ -1,19 +1,20 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
-## Ruta de producto ratificada — TRES HITOS y auditoría RF · 28/10/2026
+## Decisión vigente — fidelidad mecánica aceptada, solo D1/D2 pendiente · 28/10/2026
 
-**DECISIÓN VIGENTE DEL CREADOR:** **primero** obtener un videojuego **muy parecido a *Dead of Winter*** en experiencia, mecánicas centrales y núcleo táctico, **estable y con arquitectura escalable**; **después** preservar una referencia verificable (con SHA, build, pruebas y desviaciones aceptadas); **recién entonces** desarrollar nuestra versión propia principalmente singleplayer, con Director de Juego, narrativa persistente y adaptaciones de la matriz F.
+**ACUERDO EXPRESO DEL CREADOR:** la V9.9 estabilizada **se considera mecánicamente suficientemente fiel a la experiencia central de *Dead of Winter*** para ser nuestra referencia. **No se exige mayor fidelidad literal** ni una nueva auditoría RF para comenzar la futura versión propia. Esta es una aceptación de **alcance del producto**, no una certificación de equivalencia exacta.
 
-**Hito 1 aún NO acreditado como fidelidad final:** la V9.9 actual está estabilizada en el alcance C y pasa regresiones, pero **sus pruebas no demuestran fidelidad integral al juego de mesa**. Primero D1/D2 conservan el comportamiento y separan módulos; luego **RF (auditoría de fidelidad de referencia)** contrasta la experiencia y reglas centrales con evidencia del reglamento y detecta lo que realmente falta. Las correcciones de referencia RF aprobadas deben ser PRs propios **que sí cambian reglas intencionalmente**, nunca mezclados silenciosamente con D. Las diferencias importantes se corrigen o se aceptan explícitamente con justificación; no exigimos copia literal de todos los detalles.
+**Evidencia ya disponible, no repetir:** [informe 49](49-c15-auditoria-final.md#comparación-con-dead-of-winter) comparó **14 áreas mecánicas** con el reglamento oficial y registró coincidencias y desviaciones (iniciativa fija, entradas de colonia agregadas, crisis/cooperativo simplificados y objetivos propios, entre otras). C fue estabilizada e integrada en `main`. Las 433 pruebas posteriores de D1.1 verificaron regresiones según su cobertura, no identidad de reglamento; Android físico, TalkBack, otros navegadores y balance humano permanecen reservas.
 
-**Hito 2:** solo después de aprobar la adaptación fiel/modular, conservar una versión con SHA/etiqueta identificable, artefacto regenerable, registro de reglas y tests; **no crear tag/release/rama por esta decisión**. **Hito 3:** en una línea propia desde esa referencia, revisar la **matriz F** (F-01, F-14, etc.) y aplicar las modificaciones que aporten valor al singleplayer, junto con E; decisiones F no se incorporan a V9.9 ni se consideran automáticamente defectos.
+**ÚNICO TRABAJO NECESARIO PARA TERMINAR LA BASE ANTES DEL JUEGO PROPIO:** **D1 → D2**, refactor de preservación para disponer de módulos de reglas, estado, turnos, automatización e interfaz con límites claros, build reproducible y pruebas. **No cambiar reglas en D.** Si se confirma un defecto funcional grave, se gestiona como incidencia puntual con autorización, sin reabrir toda la fidelidad.
 
-**Diferencia de registros:** **RF-xxx = comparación/correcciones de fidelidad de la referencia** (matriz todavía NO creada ni auditada); **F-xx = diseño de mecánicas de nuestro juego propio**; **etapa F = expansión del plan histórico**. No confundirlas ni declarar completas tareas no ejecutadas.
+**Puertas posteriores:** una vez D1/D2 estén probadas y aceptadas, **preservar una referencia verificable** (SHA + build + tests, con autorización). Solo después iniciar **el juego propio** en rama/línea separada, aplicando selectivamente la **matriz F** y creando singleplayer/Director narrativo. Las propuestas F-01/F-14/etc. NO se aplican a esta V9.9.
 
-**Documentación gobernante:** [62 — Ruta y criterios de los tres hitos](62-hitos-referencia-fiel-y-juego-propio.md), [51 — Rumbo de producto](51-rumbo-fidelidad-e-identidad.md), [61 — Alcance de matriz F](61-alcance-matriz-f-juego-propio.md) y [01 — Plan general](01-plan-refactorizacion.md). Las contradicciones del registro histórico más abajo quedan superadas por esta decisión, sin borrar ese historial.
+**Nomenclatura:** comparación oficial histórica = **informe 49**; `RF` fue una matriz adicional propuesta, **ya no obligatoria**; `F-xx` = matriz de diseño del juego propio; etapa F histórica = expansión visual/red. No confundir.
 
-**Próxima tarea técnica SIN CAMBIOS:** D1.2a — PoC reversible de esbuild con Codex cuando se autorice; no cambiar motor, reglas, no adelantar RF, no fusionar a `main`. **Alcance de esta revisión: solo documentación.**
+**Fuente operativa:** [62 — Ruta ratificada](62-hitos-referencia-fiel-y-juego-propio.md), [51 — Rumbo](51-rumbo-fidelidad-e-identidad.md), [61 — Alcance F](61-alcance-matriz-f-juego-propio.md), [01 — Plan](01-plan-refactorizacion.md). Las entradas históricas que planteen otra auditoría RF obligatoria están reemplazadas por este acuerdo; se preservan para trazabilidad.
 
+**Próximo paso técnico SIN CAMBIOS:** **D1.2a** — PoC reversible esbuild con Codex (todavía no ejecutado ni adoptado). Sin modificar motor, reglas, `main`, ni realizar merge/release por esta actualización.
 
 ## Alcance vigente de la matriz F — juego propio, NO refactor de V9.9 · 28/10/2026
 
