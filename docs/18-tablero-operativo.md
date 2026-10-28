@@ -1,5 +1,12 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## SP-02 — Criterio táctico de reparto de dados ratificado · 28/10/2026
+
+**DECISIÓN DE DISEÑO del creador:** el jugador personifica al **líder**, que elige qué superviviente realiza cada acción y qué dado asignarle según **stats, pasivas, necesidades y contexto**; los personajes deben aportar especializaciones útiles en **movilidad, búsqueda, ataque y otros roles**. **No se exige repartir equitativamente** los dados ni asignarlos de manera fija a cada superviviente. La afirmación de que el jugador no querrá concentrar todos los dados en uno es un objetivo a **validar con balance**, no una garantía automática. **No se aprobó un tope artificial por personaje.**
+
+**Registro actualizado:** [63 — Hoja de ruta del singleplayer, SP-02](63-hoja-de-ruta-planificacion-singleplayer.md#5-próximo-trabajo-de-diseño-sp-02--decisiones-por-resolver). **Siguiente tarea de DISEÑO:** comparar roles/atributos/pasivas y casos de asignación dominante; después cerrar cantidad de dados y condiciones por acción con ejemplos y balance. **Siguiente tarea TÉCNICA sin cambios:** D1.2a con Codex, luego D1/D2; no iniciar implementación SP ni alterar V9.9, tests o `main`.
+
+
 ## SP — Hoja de ruta de planificación singleplayer creada · 28/10/2026
 
 **Nuevo documento de DISEÑO:** [63 — Hoja de ruta de planificación singleplayer](63-hoja-de-ruta-planificacion-singleplayer.md). Organiza **SP-00 a SP-08**: rol del líder, selección F-14, economía de dados F-10/F-12/F-15, ronda, ajuste de supervivencia sin segundo grupo obligatorio, Director/memoria, campañas, interfaz/guardado y prototipo. Se distinguen **acuerdos**, **propuestas**, **pendientes** y criterios de aceptación, sin reabrir decisiones ya tomadas ni sustituir la matriz F externa.
