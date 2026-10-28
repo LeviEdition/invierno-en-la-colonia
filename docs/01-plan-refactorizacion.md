@@ -13,14 +13,14 @@
 
 ## Ruta de tres hitos: adaptación fiel y modular → preservación → juego propio
 
-**Decisiones vigentes:** [61 — matriz F solo para el juego propio](61-alcance-matriz-f-juego-propio.md) y [62 — ruta y criterios de fidelidad RF](62-hitos-referencia-fiel-y-juego-propio.md). La **V9.9 actual NO es necesariamente la versión fiel definitiva**; es nuestro punto de partida estabilizado:
+**Decisiones vigentes:** [61 — matriz F solo para el juego propio](61-alcance-matriz-f-juego-propio.md) y [62 — fidelidad mecánica aceptada y D1/D2 como trabajo pendiente](62-hitos-referencia-fiel-y-juego-propio.md). La V9.9 estabilizada está **aceptada como suficientemente fiel en las mecánicas para ser nuestra referencia**, con las diferencias ya documentadas en el [informe 49](49-c15-auditoria-final.md#comparación-con-dead-of-winter). La ruta pendiente es:
 
-- **Hito 1 — adaptación fiel, estable y modular:** conservar las mecánicas actuales en **D1/D2**, mientras construimos una arquitectura escalable. **Después comparar** las reglas centrales con *Dead of Winter* en una auditoría específica de fidelidad **RF** y corregir las discrepancias importantes mediante tareas independientes autorizadas. La auditoría RF puede prepararse en paralelo, **pero los cambios de reglas NO se camuflan dentro de D**. La fidelidad final exige evidencia, no solamente tests verdes.
+- **Hito 1 — aceptación mecánica ya resuelta, arquitectura por completar:** la fidelidad funcional se acepta para el alcance de esta adaptación (no significa equivalencia idéntica de todo el reglamento). **Solo faltan D1 y D2** para tener módulos desacoplados y escalables; preservar reglas actuales y verificar que la refactorización no introduzca regresiones. **No realizar otra RF desde cero ni exigir nuevos cambios de fidelidad** para iniciar el juego propio.
 - **Matriz F:** compara mecánicas con el juego de mesa **para decidir cómo funcionará nuestro videojuego propio**. `F-14` (cinco candidatos → elegir tres → líder manual) y otras filas *Conservar/Cambiar* **no se implementan en la V9.9 ni durante la refactorización D**.
 - **Hito 2 — referencia preservada:** después de aceptar la adaptación suficientemente fiel y modular, guardar una instantánea identificable con su código, ejecutable, criterios de fidelidad, resultados de prueba y desviaciones aprobadas; requiere autorización, no se crea ahora.
 - **Hito 3 — juego propio futuro:** desde esa referencia preservada, abrir línea de desarrollo separada; revalidar decisiones F según su aporte al singleplayer e incorporar gradualmente cambios propios y narrativa E.
 - **No confundir etiquetas:** las filas **F-01, F-14, etc.** son IDs de la *matriz F de comparación/diseño*. La **etapa F** histórica de este plan es presentación 2D, campañas/red y modalidades posteriores, no la implementación automática de esas filas.
-- **Matriz RF ≠ matriz F:** RF registrará similitud/discrepancias frente al reglamento **de la referencia**; F registra conservar/cambiar/pendiente **para nuestro juego propio**. Ninguna tabla autoriza por sí sola cambios de código.
+- **Informe 49 ≠ matriz F:** el informe 49 **ya contrastó la referencia** con el reglamento, y sus diferencias conocidas están aceptadas para este alcance; F registra conservar/cambiar/pendiente **para nuestro juego propio**. Una eventual auditoría RF complementaria solo se abre por hallazgo o nueva autorización, no como fase obligatoria.
 
 ## Criterio transversal de calidad y revisión (acordado)
 
@@ -81,11 +81,10 @@ Antes de comenzar una fase nueva, cerrar la anterior con evidencia y registrar u
 1. **A — Auditoría completa:** A2/A3/A4 tienen pruebas automatizadas; faltan observaciones de Android físico (A5-02), evaluación de accesibilidad/rendimiento y cierre de cobertura (A6). Documentar problemas y límites; no corregirlos a escondidas.
 2. **B — Decisiones y prioridad de defectos:** acordar qué es error y qué es regla deseada; clasificar impacto.
 3. **C — Estabilización:** corregir solo fallos priorizados, ejecutar regresiones y comprobar que el juego funciona en navegador real.
-4. **D — Refactorización conservadora:** separar módulos **sin cambiar reglas**, sin introducir decisiones de la matriz F.
-5. **RF — Fidelidad de la adaptación de referencia:** contrastar reglas centrales del juego de mesa con el ejecutable; documentar cada discrepancia, corregir por alcance separado las relevantes y aceptar expresamente las excepciones. Puede auditarse en paralelo con D, pero no mezclarse en sus commits/PRs.
-6. **Preservar la referencia:** cuando sea estable, modular y suficientemente fiel con pruebas y reservas, identificarla con SHA/versión aprobada, y conservar sus evidencias.
-7. **Juego propio — matriz F y E:** desde esa referencia, seleccionar los cambios F valiosos para singleplayer y prototipar memoria narrativa y un arco conectado, en línea de desarrollo separada.
-8. **Etapa F de expansión (NO la matriz F):** ampliación de campañas, presentación y red después de demostrar que funciona el núcleo.
+4. **D1/D2 — Refactorización conservadora:** completar separación de módulos **sin cambiar reglas** y sin introducir decisiones de la matriz F; validar arquitectura, tests, navegador y partidas completas.
+5. **Preservar la referencia:** una vez completadas D1/D2, guardar su SHA/versión, build y evidencias con autorización. **La fidelidad mecánica actual ya está aceptada** y el informe 49 documenta diferencias; no hay etapa RF obligatoria.
+6. **Juego propio — matriz F y E:** desde esa referencia, seleccionar los cambios F valiosos para singleplayer y prototipar memoria narrativa y un arco conectado, en línea de desarrollo separada.
+7. **Etapa F de expansión (NO la matriz F):** ampliación de campañas, presentación y red después de demostrar que funciona el núcleo.
 
 Las etapas originales C/D/E/F que aparecen debajo contienen los detalles técnicos; el [tablero operativo](18-tablero-operativo.md) determina su ejecución efectiva.
 
@@ -98,11 +97,11 @@ Extraer un componente pequeño y con pocas dependencias, probablemente el catál
 - Crear pruebas unitarias.
 - Confirmar que la interfaz sigue funcionando.
 
-**Criterio de aceptación:** el módulo puede probarse por separado, sin alterar la partida original. **La refactorización no acredita fidelidad al juego de mesa; ese control pertenece a RF.**
+**Criterio de aceptación:** el módulo puede probarse por separado, sin alterar la partida original. **La refactorización no debe alterar la fidelidad mecánica aceptada por el creador y contrastada en el informe 49.**
 
 ## Detalle futuro D2 — Motor desacoplado, todavía sobre la referencia
 
-**Objetivo: preservar el comportamiento actual aprobado de V9.9, sin aplicar cambios de la matriz F ni correcciones RF ocultas dentro de D.** Separar progresivamente:
+**Objetivo: preservar el comportamiento actual aprobado de V9.9, sin aplicar cambios de la matriz F ni alteraciones de reglas ocultas dentro de D.** Separar progresivamente:
 - Estado de partida y creación inicial.
 - Comandos (`mover`, `buscar`, `atacar`, etc.) y validaciones.
 - Resolución de turnos, crisis y efectos.
