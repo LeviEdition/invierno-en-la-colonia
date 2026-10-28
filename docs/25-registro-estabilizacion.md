@@ -2,6 +2,14 @@
 
 **Última actualización:** 28/10/2026, Montevideo. **Rama:** `fix/estabilizacion-v9-9`. **Estado vigente:** C12/H1, C13 y C14 aprobados por pruebas/revisión/CI; auditoría C15 con T1/T2 corregidos y402/402 local/independiente, revisión documental y CI f1a43c7/40691454445 aprobados. [Informe49](49-c15-auditoria-final.md) y tablero18 determinan el próximo paso: aceptación del creador, C no cerrada oficialmente. A1 foco general fue corregido en C16 y validado en Node/Chromium; Android físico/TalkBack siguen sin verificar; C no está oficialmente cerrada. #4/#5/#6 ya aceptados/cerrados; otros nueve issues siguen abiertos. Sin integración en main, cierres nuevos ni publicación estable. Las secciones siguientes son historia de cada revisión.
 
+## Acuerdo de producto posterior a C16 — 28/10/2026
+
+**Pedido del creador:** confirmar la selección F-14 de cinco candidatos aleatorios para elegir tres, pensada para un futuro juego principalmente singleplayer; precisar que en ese futuro no debe existir obligatoriamente un grupo de IA compañera, pues el **Director de Juego** se ocupa de activar mecanismos y narrativa; y establecer que **antes de forjar identidad propia** se desea terminar una adaptación **muy parecida en funcionamiento y estable** con respecto a `Dead of Winter`.
+
+**Resultado de esta intervención:** se formalizó el [documento51](51-rumbo-fidelidad-e-identidad.md), se actualizó tablero18 y matriz04 con F-14 acordada y la separación baseline estable ↔ identidad narrativa. Distinguimos objetivos estratégicos aprobados de funcionalidades no programadas. El acuerdo **no autoriza** implementar ya selección F-14, eliminar IA, reescribir modos, modificar reglas de V9.9, cerrar los nueve issues, fusionar PR14, tocar `main` o iniciar D/E/F.
+
+**Validaciones/alcance:** revisión del tablero y registro vigente en GitHub; solo documentación y fidelidad a las decisiones conversadas, no cambio ejecutable ni ejecución propia de tests/Chromium. El CI documental se comprobará por SHA después de la entrega. **Tarea única siguiente:** aceptación formal de C1–C16 e issues pendientes, después acordar la ejecución de los cambios de fidelidad y el hito de versión estable de referencia.
+
 ## Implementación C16/A1 — 28/10/2026
 
 **Autorización:** el creador solicitó continuar la estabilización tras la revisión externa C12–C15. Se eligió exclusivamente A1/P2: fuga de foco en Ayuda/Fallecimiento confirmada previamente por C15. **Referencia inicial:** `f1c1fc4`, CI40692769126 success; PR14 abierto/draft hacia `refactor/arquitectura`; `main=d9068f4` intacta.
