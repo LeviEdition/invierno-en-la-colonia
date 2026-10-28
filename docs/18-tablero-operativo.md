@@ -1,5 +1,7 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+**Actualización verificada de CI post-merge:** [Actions 40709698250](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40709698250), para el commit de integración `c15373d44f0a76affd9041be925eef48234239c3`, finalizó `completed/success`; se leyeron logs del job `122891290523` con **408 tests, 408 pass, 0 fail, 0 cancelled, 0 skipped y 0 todo**. Continúa pendiente el smoke Chromium específico sobre el árbol integrado, por lo que D0-I-V no se cierra todavía.
+
 ## D0-I — PR #14 integrado en arquitectura; validación posterior pendiente · 28/10/2026
 
 **Autorización expresa:** el creador aprobó revisar, actualizar y fusionar solo PR14 → `refactor/arquitectura`, verificar después y documentar; `main` excluida. Se revisaron 97 patches, incluido HTML, workflow y pruebas clave; se corrigió el cuerpo obsoleto del PR14. GitHub exigió pasarlo de borrador a listo para revisión; [PR14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14) **merged** por commit `c15373d44f0a76affd9041be925eef48234239c3`. PR1 sigue abierto y sin fusionar; `main=d9068f4aa8d3a10bbbf1e0a8a2527744cc6952cb` sin cambios. A6 canónico permanece (blob `c132dd8`).
