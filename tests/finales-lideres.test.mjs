@@ -21,6 +21,7 @@ function fixture({ mode = 'ai', face = 4 } = {}) {
   const nodes = new Map();
   const document = {
     addEventListener() {},
+    querySelector(){return {focus(){}};},
     getElementById(id) {
       if (!nodes.has(id)) nodes.set(id, {
         hidden: true, innerHTML: '', textContent: '', dataset: {},
@@ -31,7 +32,7 @@ function fixture({ mode = 'ai', face = 4 } = {}) {
   };
   const context = createContext({ Math: math, document, queueMicrotask() {} });
   runInContext(source, context, { filename: 'invierno_colonia_v9_9.js', timeout: 2000 });
-  runInContext('paint=()=>{};toast=()=>{};show=()=>{};hide=()=>{};deathDirector.open=()=>{};', context);
+  runInContext('paint=()=>{};toast=()=>{};show=()=>{};hide=()=>{};', context);
   runInContext('gameMode=' + JSON.stringify(mode) + ';create();passScreenActive=false;game.crossPending=false;game.crossResolved=true;', context);
   return {
     run: code => runInContext(code, context, { timeout: 2000 }),
@@ -129,7 +130,7 @@ test('al morir el líder humano con dos miembros vivos queda selección de suces
 });
 
 test('el jugador humano elige un sucesor válido después de una muerte', () => {
-  const t=fixture();t.run('kill(game.humans[0],"prueba");chooseLeader("h2");');
+  const t=fixture();t.run('kill(game.humans[0],"prueba");deathDirector.open();deathDirector.continue();chooseLeader("h2");');
   assert.deepEqual(t.state('({leader:game.leaders.human,pending:pendingLeader,chosen:game.leaderChosen})'),{leader:'h2',pending:false,chosen:true});
 });
 
@@ -149,7 +150,7 @@ test('en modo local el jugador 2 debe elegir al sucesor de su líder', () => {
 });
 
 test('en modo local el jugador 2 puede confirmar al sucesor', () => {
-  const t=fixture({mode:'local'});t.run('game.turn="ai";kill(game.bots[1],"prueba");chooseLeader("a2");');
+  const t=fixture({mode:'local'});t.run('game.turn="ai";kill(game.bots[1],"prueba");deathDirector.open();deathDirector.continue();chooseLeader("a2");');
   assert.deepEqual(t.state('({leader:game.leaders.ai,pending:pendingLeader,chosen:game.localLeaderChosen})'),{leader:'a2',pending:false,chosen:true});
 });
 
@@ -194,7 +195,7 @@ test('rescate en espera se incorpora al liberar una plaza en la colonia', () => 
 });
 
 test('las derrotas desactivan las decisiones de líder pendientes', () => {
-  const t=fixture();t.run('pendingLeader=true;game.morale=0;verify();');
+  const t=fixture();t.run('requestLeader("human");game.morale=0;verify();');
   assert.deepEqual(t.state('({ended:game.ended,pendingLeader})'),{ended:true,pendingLeader:false});
 });
 
@@ -203,5 +204,121 @@ test('matar dos veces al mismo personaje no resta moral dos veces', () => {
   assert.equal(t.state('game.morale'),8);
 });
 
-// Comportamiento inconsistente, pendiente de definir: no lo fijamos como regla válida.
-test.todo('modo local: fijar el liderazgo inicial de J2 al actuar igual que J1 (issue #6)');
+// C9/#6 — Política A aprobada: J1 y J2 pueden elegir líder inicial solo antes
+// de gastar un dado, moverse o usar exitosamente una carta en ronda 1.
+test('C9 J2: gastar un dado en ataque bloquea la elección inicial solo de J2', () => {
+  const t=fixture({mode:'local'});
+  t.run('game.turn="ai";selected=0;game.botDice=[6];attack();');
+  assert.deepEqual(t.state('({flagJ1:game.leaderChosen,flagJ2:game.localLeaderChosen,can:canPickStartingLeader(),dice:game.botDice.length})'),
+    {flagJ1:false,flagJ2:true,can:false,dice:0});
+  t.run('chooseLeader("a0");');
+  assert.equal(t.state('game.leaders.ai'),'a1');
+});
+test('C9 J1: gastar un dado conserva el bloqueo que ya tenía J1', () => {
+  const t=fixture({mode:'local'});
+  t.run('game.dice=[6];attack();');
+  assert.deepEqual(t.state('({flagJ1:game.leaderChosen,flagJ2:game.localLeaderChosen,can:canPickStartingLeader()})'),
+    {flagJ1:true,flagJ2:false,can:false});
+  t.run('game.turn="ai";');
+  assert.equal(t.state('canPickStartingLeader()'),true);
+});
+test('C9 J2: movimiento válido bloquea su líder, no el de J1', () => {
+  const t=fixture({mode:'local'});
+  t.run('game.turn="ai";selected=0;target=1;doMove();');
+  assert.deepEqual(t.state('({loc:game.bots[0].loc,flagJ1:game.leaderChosen,flagJ2:game.localLeaderChosen,can:canPickStartingLeader()})'),
+    {loc:1,flagJ1:false,flagJ2:true,can:false});
+});
+test('C9 J1: movimiento válido mantiene el mismo comportamiento inicial', () => {
+  const t=fixture({mode:'local'});
+  t.run('target=1;doMove();');
+  assert.deepEqual(t.state('({flagJ1:game.leaderChosen,flagJ2:game.localLeaderChosen,can:canPickStartingLeader()})'),
+    {flagJ1:true,flagJ2:false,can:false});
+});
+test('C9 J2: jugar carta válida confirma solo su líder inicial', () => {
+  const t=fixture({mode:'local'});
+  t.run('game.turn="ai";selected=0;game.botItems=[catalog.create("ration")];playItem(0);');
+  assert.deepEqual(t.state('({hand:game.botItems.length,flagJ1:game.leaderChosen,flagJ2:game.localLeaderChosen,can:canPickStartingLeader()})'),
+    {hand:0,flagJ1:false,flagJ2:true,can:false});
+});
+test('C9 J1: usar carta válida sigue cerrando su propia elección', () => {
+  const t=fixture({mode:'local'});
+  t.run('game.items=[catalog.create("ration")];playItem(0);');
+  assert.deepEqual(t.state('({flagJ1:game.leaderChosen,flagJ2:game.localLeaderChosen,can:canPickStartingLeader()})'),
+    {flagJ1:true,flagJ2:false,can:false});
+});
+test('C9: fallos por dado insuficiente no confirman el líder inicial J2', () => {
+  const t=fixture({mode:'local'});
+  t.run('game.turn="ai";game.botDice=[1];attack();');
+  assert.deepEqual(t.state('({dice:game.botDice,flagJ1:game.leaderChosen,flagJ2:game.localLeaderChosen,can:canPickStartingLeader()})'),
+    {dice:[1],flagJ1:false,flagJ2:false,can:true});
+});
+test('C9: movimiento inválido no confirma líder J2', () => {
+  const t=fixture({mode:'local'});
+  t.run('game.turn="ai";target=0;doMove();');
+  assert.deepEqual(t.state('({flagJ1:game.leaderChosen,flagJ2:game.localLeaderChosen,can:canPickStartingLeader()})'),
+    {flagJ1:false,flagJ2:false,can:true});
+});
+test('C9: carta rechazada (combustible con movimiento agotado) no confirma líder J2', () => {
+  const t=fixture({mode:'local'});
+  t.run('game.turn="ai";game.bots[0].moved=true;game.botItems=[catalog.create("gascan")];target=1;playItem(0);');
+  assert.deepEqual(t.state('({hand:game.botItems.length,flagJ1:game.leaderChosen,flagJ2:game.localLeaderChosen,can:canPickStartingLeader()})'),
+    {hand:1,flagJ1:false,flagJ2:false,can:true});
+});
+test('C9: elegir líder J2 antes de actuar lo mantiene y no permite volver a elegir', () => {
+  const t=fixture({mode:'local'});
+  t.run('game.turn="ai";chooseLeader("a0");game.botDice=[6];attack();chooseLeader("a2");');
+  assert.deepEqual(t.state('({leader:game.leaders.ai,flagJ2:game.localLeaderChosen,can:canPickStartingLeader()})'),
+    {leader:'a0',flagJ2:true,can:false});
+});
+test('C9: no se reabre elección de líder de J2 al iniciar ronda 2', () => {
+  const t=fixture({mode:'local'});
+  t.run('game.turn="ai";game.botDice=[6];attack();game.round=2;game.turn="ai";');
+  assert.equal(t.state('canPickStartingLeader()'),false);
+});
+test('C9 interfaz: grupo informa a J1 y J2 que deben elegir líder antes de actuar', () => {
+  const t=fixture({mode:'local'});
+  t.run('opened="group";renderModal();');
+  const j1=t.state('document.getElementById("modalContent").innerHTML');
+  assert.match(j1,/antes de gastar un dado, moverte o usar una carta/i);
+  t.run('game.turn="ai";renderModal();');
+  const j2=t.state('document.getElementById("modalContent").innerHTML');
+  assert.match(j2,/antes de gastar un dado, moverte o usar una carta/i);
+});
+
+test('C9-R1: J1 no puede elegir sucesor de J2 durante su propio turno', () => {
+  const t=fixture({mode:'local'});
+  t.run('kill(game.bots[1],"prueba cruzada");deathDirector.open();deathDirector.continue();');
+  assert.deepEqual(t.state('({side:pendingLeaderSide,pending:pendingLeader,turn:game.turn,leader:game.leaders.ai})'),
+    {side:'ai',pending:true,turn:'human',leader:null});
+  t.run('chooseLeader("a2");');
+  assert.deepEqual(t.state('({pending:pendingLeader,leader:game.leaders.ai})'),{pending:true,leader:null});
+  t.run('game.turn="ai";chooseLeader("a2");');
+  assert.deepEqual(t.state('({pending:pendingLeader,leader:game.leaders.ai})'),{pending:false,leader:'a2'});
+});
+test('C9-R1: J1 puede seguir moviéndose cuando el sucesor pendiente pertenece a J2', async () => {
+  const t=fixture({mode:'local'});
+  t.run('kill(game.bots[1],"prueba cruzada");');await Promise.resolve();t.run('deathDirector.open();deathDirector.continue();target=1;doMove();');
+  assert.deepEqual(t.state('({loc:game.humans[0].loc,moved:game.humans[0].moved,waiting:pendingLeader,side:pendingLeaderSide})'),
+    {loc:1,moved:true,waiting:true,side:'ai'});
+});
+test('C9-R1: J1 aún puede elegir su líder inicial aunque J2 tenga un sucesor pendiente', async () => {
+  const t=fixture({mode:'local'});
+  t.run('kill(game.bots[1],"prueba cruzada");');await Promise.resolve();t.run('deathDirector.open();deathDirector.continue();chooseLeader("h2");');
+  assert.deepEqual(t.state('({j1:game.leaders.human,j2:game.leaders.ai,chosenJ1:game.leaderChosen,waiting:pendingLeader,side:pendingLeaderSide})'),
+    {j1:'h2',j2:null,chosenJ1:true,waiting:true,side:'ai'});
+});
+test('C9-R1: J2 no puede elegir sucesor de J1 antes de devolverle el turno', () => {
+  const t=fixture({mode:'local'});
+  t.run('game.turn="ai";kill(game.humans[0],"prueba cruzada");deathDirector.open();deathDirector.continue();chooseLeader("h2");');
+  assert.deepEqual(t.state('({j1:game.leaders.human,waiting:pendingLeader,side:pendingLeaderSide})'),
+    {j1:null,waiting:true,side:'human'});
+  t.run('game.turn="human";chooseLeader("h2");');
+  assert.deepEqual(t.state('({j1:game.leaders.human,waiting:pendingLeader})'),{j1:'h2',waiting:false});
+});
+test('C9-R1: interfaz de J1 no debe mostrar modal de sucesión pendiente de J2', () => {
+  const t=fixture({mode:'local'});
+  t.run('kill(game.bots[1],"prueba cruzada");');
+  assert.equal(t.state('leaderChoiceReady()'),false);
+  t.run('game.turn="ai";');
+  assert.equal(t.state('leaderChoiceReady()'),true);
+});

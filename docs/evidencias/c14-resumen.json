@@ -1,0 +1,115 @@
+{
+  "strategy": "cooperativa-v1: muestras/notas, crisis exacta, tratamiento, defensor, exploración, defensa/búsqueda",
+  "modes": {
+    "ai": {
+      "attempts": 20,
+      "completed": 20,
+      "wins": 15,
+      "losses": 5,
+      "interruptions": 0,
+      "rounds": [
+        4,
+        4,
+        4,
+        6,
+        3,
+        2,
+        6,
+        4,
+        6,
+        2,
+        3,
+        4,
+        3,
+        2,
+        2,
+        4,
+        2,
+        3,
+        3,
+        5
+      ],
+      "roundStats": {
+        "min": 2,
+        "max": 6,
+        "mean": 3.6
+      },
+      "outcomes": {
+        "victory": 15,
+        "morale": 5,
+        "survivors": 0,
+        "time": 0
+      },
+      "characterDeaths": 73,
+      "helplessDeaths": 3,
+      "recruits": 39,
+      "replacements": 11,
+      "leaderChanges": 32,
+      "crises": 56,
+      "crisesSucceeded": 39,
+      "crossroads": 71,
+      "objectives": {
+        "Encontrar la cura": 4,
+        "Operación antídoto": 15,
+        "Última esperanza": 1
+      },
+      "exceptions": [],
+      "invariants": []
+    },
+    "local": {
+      "attempts": 20,
+      "completed": 20,
+      "wins": 17,
+      "losses": 3,
+      "interruptions": 0,
+      "rounds": [
+        2,
+        3,
+        8,
+        3,
+        2,
+        1,
+        3,
+        2,
+        4,
+        3,
+        2,
+        4,
+        2,
+        1,
+        1,
+        4,
+        2,
+        2,
+        3,
+        9
+      ],
+      "roundStats": {
+        "min": 1,
+        "max": 9,
+        "mean": 3.05
+      },
+      "outcomes": {
+        "victory": 17,
+        "morale": 2,
+        "survivors": 0,
+        "time": 1
+      },
+      "characterDeaths": 38,
+      "helplessDeaths": 4,
+      "recruits": 27,
+      "replacements": 7,
+      "leaderChanges": 18,
+      "crises": 44,
+      "crisesSucceeded": 25,
+      "crossroads": 63,
+      "objectives": {
+        "Encontrar la cura": 4,
+        "Operación antídoto": 15,
+        "Última esperanza": 1
+      },
+      "exceptions": [],
+      "invariants": []
+    }
+  }
+}

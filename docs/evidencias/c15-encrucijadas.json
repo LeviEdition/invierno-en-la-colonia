@@ -1,0 +1,254 @@
+{
+  "checks": 16,
+  "errors": [],
+  "results": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "id": "R1",
+      "label": "Confiar en la señal",
+      "state": {
+        "food": 3,
+        "morale": 8,
+        "samples": 0,
+        "ended": false,
+        "dead": false,
+        "pending": false,
+        "resolved": true,
+        "continued": true
+      }
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "id": "R2",
+      "label": "Apagar la radio",
+      "state": {
+        "food": 8,
+        "morale": 3,
+        "samples": 0,
+        "ended": false,
+        "dead": false,
+        "pending": false,
+        "resolved": true,
+        "continued": true
+      }
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "id": "R3",
+      "label": "Apagar la radio",
+      "state": {
+        "food": 0,
+        "morale": 3,
+        "samples": 0,
+        "ended": false,
+        "dead": false,
+        "pending": false,
+        "resolved": true,
+        "continued": true
+      }
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "id": "M1",
+      "label": "Investigar el laboratorio",
+      "state": {
+        "food": 8,
+        "morale": 8,
+        "samples": 5,
+        "ended": true,
+        "dead": false,
+        "pending": false,
+        "resolved": true,
+        "continued": true
+      }
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "id": "M2",
+      "label": "Evitar la zona",
+      "state": {
+        "food": 9,
+        "morale": 1,
+        "samples": 4,
+        "ended": false,
+        "dead": false,
+        "pending": false,
+        "resolved": true,
+        "continued": true
+      }
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "id": "S1",
+      "label": "Racionar las provisiones",
+      "state": {
+        "food": 5,
+        "morale": 5,
+        "samples": 0,
+        "ended": false,
+        "dead": false,
+        "pending": false,
+        "resolved": true,
+        "continued": true
+      }
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "id": "local-human",
+      "manual": true
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "id": "local-ai",
+      "manual": true
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "id": "R1",
+      "label": "Confiar en la señal",
+      "state": {
+        "food": 3,
+        "morale": 8,
+        "samples": 0,
+        "ended": false,
+        "dead": false,
+        "pending": false,
+        "resolved": true,
+        "continued": true
+      }
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "id": "R2",
+      "label": "Apagar la radio",
+      "state": {
+        "food": 8,
+        "morale": 3,
+        "samples": 0,
+        "ended": false,
+        "dead": false,
+        "pending": false,
+        "resolved": true,
+        "continued": true
+      }
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "id": "R3",
+      "label": "Apagar la radio",
+      "state": {
+        "food": 0,
+        "morale": 3,
+        "samples": 0,
+        "ended": false,
+        "dead": false,
+        "pending": false,
+        "resolved": true,
+        "continued": true
+      }
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "id": "M1",
+      "label": "Investigar el laboratorio",
+      "state": {
+        "food": 8,
+        "morale": 8,
+        "samples": 5,
+        "ended": true,
+        "dead": false,
+        "pending": false,
+        "resolved": true,
+        "continued": true
+      }
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "id": "M2",
+      "label": "Evitar la zona",
+      "state": {
+        "food": 9,
+        "morale": 1,
+        "samples": 4,
+        "ended": false,
+        "dead": false,
+        "pending": false,
+        "resolved": true,
+        "continued": true
+      }
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "id": "S1",
+      "label": "Racionar las provisiones",
+      "state": {
+        "food": 5,
+        "morale": 5,
+        "samples": 0,
+        "ended": false,
+        "dead": false,
+        "pending": false,
+        "resolved": true,
+        "continued": true
+      }
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "id": "local-human",
+      "manual": true
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "id": "local-ai",
+      "manual": true
+    }
+  ]
+}

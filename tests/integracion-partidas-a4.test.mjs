@@ -161,14 +161,14 @@ test('A4 | IA puede ganar por notas si la colonia resiste hasta verificar',async
  assert.equal(t.val('game.samples'),2);assert.equal(t.val('game.ended'),true);
  assert.match(t.val('game.last'),/Victoria/);
 });
-test('A4 | bug de prioridad: IA reúne todas las muestras, pero pierde por moral al procesar colonia',async()=>{
+test('C1 #11 | IA gana al completar muestras antes de hambre y fase de colonia',async()=>{
  const t=fixture('ai');quiet(t);
  t.run('game.goal=2;game.food=0;game.morale=1;game.botItems=[catalog.create("notes"),catalog.create("notes")];game.botDice=[];game.bots.forEach(p=>p.moved=true);game.zones.forEach(z=>z.z=0);game.crisis={type:"comida",need:2,given:2,contributions:["comida","comida"],fail:"moral"};');
  await t.run('finishTurn()');
- assert.equal(t.val('game.samples'),2);
- assert.equal(t.val('game.ended'),true);
- assert.equal(t.val('game.morale'),0);
- assert.match(t.val('game.last'),/Derrota/);
+ assert.deepEqual(t.val('({samples:game.samples,ended:game.ended,morale:game.morale,round:game.round,turn:game.turn})'),
+  {samples:2,ended:true,morale:1,round:1,turn:'end'});
+ assert.equal(t.val('game.log.some(x=>x.includes("Resolviendo fase de colonia"))'),false);
+ assert.match(t.val('game.last'),/Victoria/);
 });
 test('A4 | victoria de J2 evita fase de colonia posterior',async()=>{
  const t=fixture();stable(t);
@@ -218,4 +218,13 @@ test('A4 | campaña IA también puede completar el máximo original sin victoria
  assert.equal(t.val('game.ended'),true);
  assert.match(t.val('game.last'),/agotaron las rondas/);
  assert.equal(t.val('game.log.filter(x=>x.includes("Fase de colonia:")).length'),10);
+});
+
+test('C1 #11 | IA no sigue consumiendo otras notas tras ganar',async()=>{
+ const t=fixture('ai');stable(t);
+ t.run('game.goal=1;game.botItems=[catalog.create("notes"),catalog.create("notes")];game.botDice=[];game.bots.forEach(p=>p.moved=true);');
+ await t.run('finishTurn()');
+ assert.deepEqual(t.val('({samples:game.samples,ended:game.ended,round:game.round,items:game.botItems.length})'),
+  {samples:1,ended:true,round:1,items:1});
+ assert.match(t.val('game.last'),/Victoria/);
 });

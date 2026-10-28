@@ -1,0 +1,176 @@
+{
+  "chromium": "154.0.8037.57",
+  "htmlSha256": "4181e974c276de36d08bb0bbc99b0a877bec49317d5777734905eb83ca09bff7",
+  "category": "estados preparados, acciones reales de interfaz",
+  "records": [
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "kind": "hambre",
+      "state": {
+        "morale": 0,
+        "food": 0,
+        "hunger": 1,
+        "given": 4,
+        "round": 1,
+        "ended": true,
+        "zombies": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pass": false
+      }
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "kind": "residuos",
+      "state": {
+        "morale": 0,
+        "food": 27,
+        "hunger": 0,
+        "given": 4,
+        "round": 1,
+        "ended": true,
+        "zombies": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pass": false
+      }
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "kind": "teclado-fallecimiento-sucesión",
+      "before": {
+        "leader": null,
+        "death": true,
+        "queue": [
+          "human"
+        ]
+      },
+      "during": {
+        "leader": null,
+        "death": true,
+        "queue": [
+          "human"
+        ]
+      },
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "onclick": "hide()",
+          "leader": false
+        },
+        {
+          "tag": "BUTTON",
+          "onclick": "chooseLeader('h1')",
+          "leader": true
+        }
+      ],
+      "continued": true
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "kind": "hambre",
+      "state": {
+        "morale": 0,
+        "food": 0,
+        "hunger": 1,
+        "given": 4,
+        "round": 1,
+        "ended": true,
+        "zombies": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pass": false
+      }
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "kind": "residuos",
+      "state": {
+        "morale": 0,
+        "food": 27,
+        "hunger": 0,
+        "given": 4,
+        "round": 1,
+        "ended": true,
+        "zombies": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pass": false
+      }
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "kind": "teclado-fallecimiento-sucesión",
+      "before": {
+        "leader": null,
+        "death": true,
+        "queue": [
+          "human"
+        ]
+      },
+      "during": {
+        "leader": null,
+        "death": true,
+        "queue": [
+          "human"
+        ]
+      },
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "onclick": "hide()",
+          "leader": false
+        },
+        {
+          "tag": "BUTTON",
+          "onclick": "chooseLeader('h1')",
+          "leader": true
+        }
+      ],
+      "continued": true
+    }
+  ],
+  "errors": []
+}

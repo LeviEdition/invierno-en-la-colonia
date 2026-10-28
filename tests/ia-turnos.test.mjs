@@ -12,7 +12,7 @@ const scripts = [...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)];
 assert.equal(scripts.length, 1);
 const bootstrap = /\ncreate\(\);\s*\ndocument\.getElementById\('setupScreen'\)\.hidden=false;passScreenActive=true;\s*\npaint\(\);\s*$/;
 assert.match(scripts[0][1], bootstrap);
-const oldPause = /const pause=async\(\)=>\{paint\(\);await waitForAiCross\(\);await waitForLeader\(\);await deathDirector\.wait\(\);if\(!skipAI\)await new Promise\(r=>setTimeout\(r,1750\)\);\};/;
+const oldPause = /const pause=async\(\)=>\{[\s\S]*?\n\};/;
 assert.match(scripts[0][1], oldPause, 'Si cambió la coordinación de animaciones, actualizar el adaptador de pruebas');
 const source = scripts[0][1].replace(bootstrap, '').replace(oldPause, 'const pause=async()=>{};');
 
@@ -147,5 +147,111 @@ test('IA: derrota por tiempo tras la última ronda',async()=>{
  const t=fixture();t.exec('game.turn="human";game.max=1;game.botItems=[];game.botDice=[];game.food=20;');await t.finish();
  assert.deepEqual(t.val('({round:game.round,turn:game.turn,ended:game.ended})'),{round:2,turn:'end',ended:true});
 });
-// Estrategia pendiente: hay cartas de herramientas en equipo que la IA no ofrece a la crisis.
-test.todo('IA considera contribuir herramientas equipadas cuando la crisis las requiere (issue #5)');
+// C7/#5: prioridad cooperativa al cerrar las acciones IA (antes de colonia).
+// Los aportes humanos anteriores ya cuentan; el humano no puede aportar después de la IA.
+test('C7: IA completa 1/2 aportado por humano usando equipo propio',async()=>{
+ const t=fixture();stay(t);
+ t.exec('game.crisis={type:"herramienta",need:2,given:1,contributions:["herramienta"],fail:"moral"};game.botItems=[];game.botDice=[];game.bots[0].equipment=[catalog.create("crowbar")];');
+ await t.ai();
+ assert.deepEqual(t.val('({given:game.crisis.given,contributions:game.crisis.contributions,eq:game.bots[0].equipment.length})'),{given:2,contributions:['herramienta','herramienta'],eq:0});
+});
+test('C7: mano antes de equipo, sin gastar herramientas equipadas si la mano completa',async()=>{
+ const t=fixture();stay(t);
+ t.exec('game.crisis={type:"herramienta",need:2,given:0,contributions:[],fail:"moral"};game.botItems=["crowbar","flashlight","repairkit"].map(id=>catalog.create(id));game.bots.forEach(p=>p.equipment=[catalog.create("crowbar")]);game.botDice=[];');
+ await t.ai();
+ assert.deepEqual(t.val('({given:game.crisis.given,hand:game.botItems.map(x=>x.cardId),eq:game.bots.map(p=>p.equipment.map(x=>x.cardId))})'),{given:2,hand:['repairkit'],eq:[['crowbar'],['crowbar'],['crowbar']]});
+});
+test('C7: mano y equipo se combinan y aportan exactamente lo necesario',async()=>{
+ const t=fixture();stay(t);
+ t.exec('game.crisis={type:"herramienta",need:2,given:0,contributions:[],fail:"moral"};game.botItems=[catalog.create("flashlight")];game.bots[0].equipment=[catalog.create("crowbar")];game.bots[1].equipment=[catalog.create("repairkit")];game.bots[2].equipment=[catalog.create("flashlight")];game.botDice=[];');
+ await t.ai();
+ assert.deepEqual(t.val('({given:game.crisis.given,hand:game.botItems.length,eq:game.bots.map(p=>p.equipment.map(x=>x.cardId))})'),{given:2,hand:0,eq:[[],['repairkit'],['flashlight']]});
+});
+test('C7: si la IA no puede completar 0/2 conserva la única herramienta',async()=>{
+ const t=fixture();stay(t);
+ t.exec('game.crisis={type:"herramienta",need:2,given:0,contributions:[],fail:"moral"};game.botItems=[catalog.create("repairkit")];game.botDice=[];');
+ await t.ai();
+ assert.deepEqual(t.val('({given:game.crisis.given,hand:game.botItems.length,eq:game.bots.map(p=>p.equipment.map(x=>x.cardId))})'),{given:0,hand:0,eq:[['repairkit'],[],[]]});
+});
+test('C7: crisis completa no recibe aportes extra ni bonus de moral',async()=>{
+ const t=fixture();stay(t);
+ t.exec('game.crisis={type:"herramienta",need:2,given:2,contributions:["herramienta","herramienta"],fail:"moral"};game.botItems=[catalog.create("crowbar")];game.bots[0].equipment=[catalog.create("repairkit")];game.botDice=[];');
+ await t.ai();
+ assert.deepEqual(t.val('({given:game.crisis.given,hand:game.botItems.length,eq:game.bots.map(p=>p.equipment.map(x=>x.cardId))})'),{given:2,hand:0,eq:[['repairkit'],['crowbar'],[]]});
+});
+test('C7: herramienta hallada y equipada en búsqueda se considera antes de colonia',async()=>{
+ const t=fixture();stay(t);
+ t.exec('game.crisis={type:"herramienta",need:2,given:0,contributions:[],fail:"moral"};game.botItems=[];game.botDice=[6];game.bots[0].loc=2;game.bots[1].equipment=[catalog.create("repairkit")];game.decks[2]=[catalog.create("crowbar")];');
+ await t.ai();
+ assert.deepEqual(t.val('({given:game.crisis.given,eq:game.bots.map(p=>p.equipment.map(x=>x.cardId)),dice:game.botDice})'),{given:2,eq:[[],[],[]],dice:[]});
+});
+test('C7: orden estable de sacrificio por orden de supervivientes de IA',async()=>{
+ const t=fixture();stay(t);
+ t.exec('game.crisis={type:"herramienta",need:2,given:0,contributions:[],fail:"moral"};game.botItems=[];game.botDice=[];game.bots[0].equipment=[catalog.create("crowbar")];game.bots[1].equipment=[catalog.create("repairkit")];game.bots[2].equipment=[catalog.create("flashlight")];');
+ await t.ai();
+ assert.deepEqual(t.val('({given:game.crisis.given,eq:game.bots.map(p=>p.equipment.map(x=>x.cardId))})'),{given:2,eq:[[],[],['flashlight']]});
+});
+test('C7: nunca usa equipo ni mano humana; excluye equipo de supervivientes IA muertos',async()=>{
+ const t=fixture();stay(t);
+ t.exec('game.crisis={type:"herramienta",need:2,given:0,contributions:[],fail:"moral"};game.botItems=[];game.botDice=[];game.items=[catalog.create("repairkit")];game.humans[0].equipment=[catalog.create("crowbar")];game.bots[0].equipment=[catalog.create("flashlight")];game.bots[1].dead=true;game.bots[1].equipment=[catalog.create("repairkit")];');
+ await t.ai();
+ assert.deepEqual(t.val('({given:game.crisis.given,humanHand:game.items.map(x=>x.cardId),humanEq:game.humans[0].equipment.map(x=>x.cardId),botEq:game.bots.map(p=>p.equipment.map(x=>x.cardId))})'),{given:0,humanHand:['repairkit'],humanEq:['crowbar'],botEq:[['flashlight'],['repairkit'],[]]});
+});
+test('C7: con victoria previa la IA no dona herramientas al pasar a fin de partida',async()=>{
+ const t=fixture();stay(t);
+ t.exec('game.crisis={type:"herramienta",need:2,given:0,contributions:[],fail:"moral"};game.samples=game.goal-1;game.botItems=[catalog.create("notes")];game.bots[0].equipment=[catalog.create("crowbar")];game.bots[1].equipment=[catalog.create("repairkit")];game.botDice=[];');
+ await t.ai();
+ assert.deepEqual(t.val('({ended:game.ended,given:game.crisis.given,eq:game.bots.map(p=>p.equipment.map(x=>x.cardId))})'),{ended:true,given:0,eq:[['crowbar'],['repairkit'],[]]});
+});
+test('C7: contribuciones de IA se procesan antes de colonia y evitan penalización',async()=>{
+ const t=fixture();stay(t);
+ t.exec('game.turn="human";game.crisis={type:"herramienta",need:2,given:1,contributions:["herramienta"],fail:"moral"};game.botItems=[];game.bots[0].equipment=[catalog.create("crowbar")];game.botDice=[];game.food=20;');
+ await t.finish();
+ assert.deepEqual(t.val('({round:game.round,morale:game.morale,eq:game.bots[0].equipment.length})'),{round:2,morale:9,eq:0});
+});
+
+
+// C7-R1: revisión posterior #5. Una herramienta revelada solo cambia la elección
+// cuando permite completar la crisis con recursos ya disponibles. Una muestra que
+// da victoria inmediata prevalece, incluso con el bono de investigador.
+test('C7-R1: prioriza herramienta revelada si completa crisis desde equipo',()=>{
+ const t=fixture();
+ t.exec('game.crisis={type:"herramienta",need:2,given:0,contributions:[],fail:"moral"};game.botItems=[];game.bots[0].loc=2;game.bots[0].equipment=[catalog.create("flashlight")];game.decks[2]=["sample","crowbar"].map(x=>catalog.create(x));beginSearch(game.bots[0],"ai");botContributeTools();');
+ assert.deepEqual(t.val('({given:game.crisis.given,samples:game.samples,hand:game.botItems.map(x=>x.cardId),eq:game.bots[0].equipment.map(x=>x.cardId),deck:game.decks[2].map(x=>x.cardId)})'),{given:2,samples:0,hand:[],eq:[],deck:['sample']});
+});
+test('C7-R1: muestra que gana inmediatamente prevalece sobre herramienta salvadora',()=>{
+ const t=fixture();
+ t.exec('game.crisis={type:"herramienta",need:2,given:0,contributions:[],fail:"moral"};game.samples=game.goal-1;game.botItems=[];game.bots[0].loc=2;game.bots[0].equipment=[catalog.create("flashlight")];game.decks[2]=["sample","crowbar"].map(x=>catalog.create(x));beginSearch(game.bots[0],"ai");verify();botContributeTools();');
+ assert.deepEqual(t.val('({ended:game.ended,samples:game.samples,goal:game.goal,given:game.crisis.given,eq:game.bots[0].equipment.map(x=>x.cardId),deck:game.decks[2].map(x=>x.cardId)})'),t.val('({ended:true,samples:game.goal,goal:game.goal,given:0,eq:["flashlight"],deck:["crowbar"]})'));
+});
+test('C7-R1: respeta victoria por muestra duplicada de investigador',()=>{
+ const t=fixture();
+ t.exec('game.crisis={type:"herramienta",need:2,given:0,contributions:[],fail:"moral"};game.samples=game.goal-2;game.botItems=[];game.bots[0].loc=2;game.bots[0].skill="researcher";game.bots[0].bonusUsed=false;game.bots[0].equipment=[catalog.create("flashlight")];game.decks[2]=["sample","crowbar"].map(x=>catalog.create(x));beginSearch(game.bots[0],"ai");verify();botContributeTools();');
+ assert.deepEqual(t.val('({ended:game.ended,samples:game.samples===game.goal,bonus:game.bots[0].bonusUsed,given:game.crisis.given,deck:game.decks[2].map(x=>x.cardId)})'),{ended:true,samples:true,bonus:true,given:0,deck:['crowbar']});
+});
+test('C7-R1: no desvía botín a herramienta si igualmente falta otra',()=>{
+ const t=fixture();
+ t.exec('game.crisis={type:"herramienta",need:3,given:0,contributions:[],fail:"moral"};game.botItems=[];game.bots[0].loc=2;game.bots[0].equipment=[catalog.create("flashlight")];game.decks[2]=["sample","crowbar"].map(x=>catalog.create(x));beginSearch(game.bots[0],"ai");botContributeTools();');
+ assert.deepEqual(t.val('({samples:game.samples,given:game.crisis.given,eq:game.bots[0].equipment.map(x=>x.cardId),deck:game.decks[2].map(x=>x.cardId)})'),{samples:1,given:0,eq:['flashlight'],deck:['crowbar']});
+});
+test('C7-R1: aporte parcial humano 1/2 hace priorizar herramienta revelada',()=>{
+ const t=fixture();
+ t.exec('game.crisis={type:"herramienta",need:2,given:1,contributions:["herramienta"],fail:"moral"};game.botItems=[];game.bots[0].loc=2;game.bots[0].skill="scout";game.decks[2]=["sample","crowbar"].map(x=>catalog.create(x));beginSearch(game.bots[0],"ai");botContributeTools();');
+ assert.deepEqual(t.val('({samples:game.samples,given:game.crisis.given,eq:game.bots[0].equipment.map(x=>x.cardId),deck:game.decks[2].map(x=>x.cardId)})'),{samples:0,given:2,eq:[],deck:['sample']});
+});
+test('C7-R1: sin faltante estratégico conserva preferencia por muestra',()=>{
+ const t=fixture();
+ t.exec('game.crisis={type:"herramienta",need:2,given:0,contributions:[],fail:"moral"};game.botItems=[catalog.create("crowbar")];game.bots[0].loc=2;game.bots[0].equipment=[catalog.create("flashlight")];game.decks[2]=["sample","repairkit"].map(x=>catalog.create(x));beginSearch(game.bots[0],"ai");botContributeTools();');
+ assert.deepEqual(t.val('({samples:game.samples,given:game.crisis.given,deck:game.decks[2].map(x=>x.cardId)})'),{samples:1,given:2,deck:['repairkit']});
+});
+test('C7-R1: otras crisis conservan puntuación de botín anterior',()=>{
+ const t=fixture();
+ t.exec('game.crisis={type:"comida",need:2,given:0,contributions:[],fail:"moral"};game.botItems=[];game.bots[0].loc=2;game.bots[0].equipment=[catalog.create("flashlight")];game.decks[2]=["sample","crowbar"].map(x=>catalog.create(x));beginSearch(game.bots[0],"ai");botContributeTools();');
+ assert.deepEqual(t.val('({samples:game.samples,given:game.crisis.given,deck:game.decks[2].map(x=>x.cardId)})'),{samples:1,given:0,deck:['crowbar']});
+});
+test('C7-R1: integración IA busca, selecciona herramienta y salva la crisis antes de colonia',async()=>{
+ const t=fixture();stay(t);
+ t.exec('game.crisis={type:"herramienta",need:2,given:0,contributions:[],fail:"moral"};game.botItems=[];game.bots[0].loc=2;game.bots[0].equipment=[catalog.create("flashlight")];game.decks[2]=["sample","crowbar"].map(x=>catalog.create(x));game.botDice=[6];');
+ await t.ai();
+ assert.deepEqual(t.val('({samples:game.samples,given:game.crisis.given,dice:game.botDice,deck:game.decks[2].map(x=>x.cardId),eq:game.bots[0].equipment.map(x=>x.cardId)})'),{samples:0,given:2,dice:[],deck:['sample'],eq:[]});
+});

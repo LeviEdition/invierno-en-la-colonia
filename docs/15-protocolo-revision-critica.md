@@ -33,6 +33,16 @@ No es obligatorio convertir cada respuesta conversacional en ocho apartados. Est
 - Ante una decisión de reglas no resuelta, explicar opciones y consultar antes de cambiar `main`, el motor o el comportamiento jugable.
 - Evitar complacencia con nuevas ideas del propio asistente: aplicarles el mismo rigor que a las del usuario.
 
+## Registro obligatorio de cada revisión y trabajo
+
+**Acuerdo explícito del usuario, 27/10/2026:** «Siempre que termines una revisión, actualiza el tablero; todo lo que hagas debe quedar en la documentación».
+
+- Actualizar `docs/18-tablero-operativo.md` al terminar cada revisión, incluso si no requiere cambios de código. Registrar estado comprobado, resultado, pendientes y una única siguiente tarea.
+- Documentar las acciones realizadas, decisiones, cambios y motivos en el registro correspondiente; para la estabilización, `docs/25-registro-estabilizacion.md`. Incluir fecha, alcance, archivos o componentes afectados, evidencia, validaciones aprobadas/fallidas/no ejecutadas y límites. Registrar también diagnósticos, bloqueos y su resolución, sin copiar secretos.
+- Separar hechos comprobados, propuestas y decisiones autorizadas. Una consulta de CI aprobada no equivale a aprobación del PR, integración en `main` ni autorización de la tarea siguiente.
+- Mantener consistente el estado actual entre tablero, registro y matriz cuando esta resulte afectada. Conservar los resultados anteriores como históricos, identificados por su commit o etapa.
+- Antes de informar el cierre, comprobar que lo realizado quedó registrado. Si un impedimento bloquea guardar la documentación, indicarlo expresamente y dejar la actualización como pendiente; no presentar el registro como completo.
+
 ## Ejemplo de aplicación al boceto «Encontrar la cura»
 
 Estos son **riesgos de diseño a revisar**, no defectos confirmados ni cambios autorizados:

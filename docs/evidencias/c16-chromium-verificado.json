@@ -1,0 +1,49 @@
+{
+  "evidenceType": "resumen verificado del artifact original de GitHub Actions; no sustituye resultados.json completo",
+  "workflowRun": 40695882583,
+  "artifactId": 12819432057,
+  "workflowUrl": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40695882583",
+  "artifactUrl": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40695882583/artifacts/12819432057",
+  "commit": "5228b3bd5905adf5aa52259abe2de199e60ad916",
+  "htmlSha256": "6be70cbfdeba246b5c8ba5810acf288b05255741a65a3f60f82c40f770c795cf",
+  "chromium": "156.0.8078.4",
+  "viewports": [
+    {
+      "width": 320,
+      "height": 640
+    },
+    {
+      "width": 393,
+      "height": 852
+    },
+    {
+      "width": 1365,
+      "height": 768
+    }
+  ],
+  "keyboardStepsPerViewport": {
+    "setup": 5,
+    "help": 9,
+    "death": 7,
+    "pass": 5
+  },
+  "keyboardChecksTotal": 78,
+  "results": {
+    "allKeyboardFocusChecksInside": true,
+    "helpBackgroundInert": true,
+    "helpReturnsToMenuButton": true,
+    "deathBlocksLowerModal": true,
+    "escapeDoesNotDismissDeath": true,
+    "deathOpensOwnedSuccession": true,
+    "returnFromSuccessionReleasesBackground": true,
+    "passFocusTrapped": true,
+    "horizontalOverflow": false,
+    "pageErrors": []
+  },
+  "browserRunStatus": "completed/success",
+  "limitations": [
+    "emulación Chromium, no Android físico",
+    "sin TalkBack ni certificación WCAG",
+    "escenarios de UI preparados, no nuevas partidas humanas"
+  ]
+}
