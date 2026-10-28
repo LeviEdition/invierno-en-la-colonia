@@ -1,5 +1,13 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## D1.1 — catálogo separado y HTML autocontenido, gates verdes · 28/10/2026
+
+**Estado:** D1.1 implementada en `refactor/d1-catalogo` y **validada, sin merge a main**. [Informe 59](59-d1-1-extraccion-catalogo.md). `src/item-catalog.mjs` aporta `ItemCatalog` independiente del DOM, game y modos; recibe `mix` mediante inyección. `src/invierno.template.html` y `scripts/build-game.mjs` generan un único `invierno_colonia_v9_9.html` autocontenido. CI ordinario comprueba build reproducible; se agregaron cinco pruebas unitarias del módulo (20 D1.0 preservadas).
+
+**Gates de SHA `5cc07f50ceb8d3683fed583438a1978470a08b42`:** [Node 40720568281](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40720568281) **433/433**, cero fallos/omitidas/TODO; [Chromium 40720568450](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40720568450) **5/5 partidas C14**, **3/3 tamaños C16**, **2/2 aperturas file://** local/IA, cero errores JS e invariantes, [artefacto](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40720568450/artifacts/12829559449). El HTML de distribución sigue con script único. No se modificaron reglas, `ItemEngine`, IA ni Director narrativo.
+
+**ÚNICA TAREA SIGUIENTE:** auditoría independiente D1.2–D1.4 y preparación de puerta de integración. **No** merge a `main`, D2, F/E ni release sin autorización nueva. Reservas: Android físico, TalkBack, navegadores alternativos y balance humano.
+
 ## D1.0 — caracterización de catálogo completada (sin extracción) · 28/10/2026
 
 **Autorización:** crear rama de implementación desde `main`, añadir pruebas con RNG determinista, validar y documentar; no modificar reglas, `ItemCatalog` ni `main`. Rama `refactor/d1-catalogo` desde `main` `0b75d01aba013cd029d9d0dd0bdbd20791be15fc`. Código de pruebas `6ccada45413dad93d1bcfe1330f95a3470b4f7c8`.
