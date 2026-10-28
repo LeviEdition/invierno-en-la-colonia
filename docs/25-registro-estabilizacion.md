@@ -353,6 +353,14 @@ Ante propuesta expresa de aceptar y cerrar administrativamente C9/#6, el creador
 
 **Acciones realizadas:** lectura de repositorio/PR/issues/logs y documentación de revisión en tablero18 y este registro, sin editar ejecutable, tests, configuración, PR o issues. Registro de seguimiento para que Codex pueda comenzar desde SHA actualizado si el usuario envía el prompt.
 
+## Revisión matutina de C11 y auditoría fase4 — 28/10/2026
+
+**Acción:** a pedido del creador se revisaron los dos commits nocturnos desde `2fbbc59`: [`7497d70`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/7497d704e8888609c108ffa06d7bb52ff9d02701) de C11 CSS/arnés/evidencia y [`5f5514d`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/5f5514d76ca35964679464f744f489aa7973ee83) de auditoría documental. Se inspeccionaron diffs reales, código de liderazgo, informes44/45 y su JSON de reproducción, PR14 e issues. No se ejecutaron pruebas locales ni Chromium nuevos en esta revisión; se verificó [CI exacto del SHA nocturno](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40627292012) `completed/success`, logs **358/358, 0 fail/skipped/TODO**. No se declaró equivalencia completa con juego de mesa ni validación Android físico.
+
+**Hallazgos validados por inspección:** C11 cambia solo19 líneas CSS del juego, aumenta dados a44×44 gap8, reserva franja y contempla alturas bajas; regresión R1 encontrada y corregida por Codex, con evidencia de seis viewports. La auditoría reporta54 regresiones y21 recorridos Chromium sobre siete issues históricos, clasificados como corregidos en rama pero abiertos administrativamente. H1/P2 está confirmado por JSON reproducido en `2fbbc59` y `7497d70`: dos muertes de líderes locales durante una crisis pierden el segundo pendiente por el único `pendingLeader`; el código revisado concuerda. Ningún parche H1 ni prueba permanente de regresión todavía. Los issues #7 y #13 tampoco se cerraron. PR14 draft, `main` intacta.
+
+**Resultado y límite:** revisión favorable de C11 en su alcance; H1 impide recomendar cierre completo de etapa C. **Única siguiente tarea propuesta:** corrección específica H1 mediante prueba rojo→verde, validación de ambos dueños/órdenes de muertes, navegador/CI y nueva revisión. Requiere autorización separada. Ninguna modificación de HTML, tests, configuración, reglas, issues ni PR durante este análisis; se actualizan solo tablero18 y registro25 por el protocolo de documentación.
+
 ## Siguiente tarea única
 
 **Estado histórico al comenzar el análisis:** faltaba aprobar la política de #7. La autorización posterior y el resultado C10 se registran al final; no iniciar #13 ni D/E por esta entrega.
