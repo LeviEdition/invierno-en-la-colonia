@@ -1,0 +1,70 @@
+{
+  "checks": 6,
+  "errors": [],
+  "records": [
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "chain": "transferencia→búsqueda→ruido→botín→encrucijada→muerte→derrota",
+      "terminal": {
+        "outcome": "morale",
+        "ended": true,
+        "samples": 5,
+        "goal": 5,
+        "leaderRequests": [],
+        "cross": false,
+        "loot": null
+      }
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "chain": "movimiento→muerte→sucesión→encrucijada-visible",
+      "continued": true
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "chain": "espera-encrucijada→reinicio",
+      "isolated": true
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "chain": "transferencia→búsqueda→ruido→botín→encrucijada→muerte→derrota",
+      "terminal": {
+        "outcome": "morale",
+        "ended": true,
+        "samples": 5,
+        "goal": 5,
+        "leaderRequests": [],
+        "cross": false,
+        "loot": null
+      }
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "chain": "movimiento→muerte→sucesión→encrucijada-visible",
+      "continued": true
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "chain": "espera-encrucijada→reinicio",
+      "isolated": true
+    }
+  ]
+}

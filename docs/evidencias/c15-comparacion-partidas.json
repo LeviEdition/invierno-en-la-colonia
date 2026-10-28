@@ -1,0 +1,46 @@
+{
+  "baseline": "d801dbb",
+  "currentHtmlSha256": "4181e974c276de36d08bb0bbc99b0a877bec49317d5777734905eb83ca09bff7",
+  "uniqueConfigurations": 40,
+  "sameResultAndRounds": 40,
+  "changedCases": [
+    {
+      "mode": "ai",
+      "seed": 3816266512,
+      "final": {},
+      "events": {
+        "deaths": {
+          "before": 6,
+          "after": 5
+        }
+      }
+    },
+    {
+      "mode": "local",
+      "seed": 3816266512,
+      "final": {},
+      "events": {
+        "crises": {
+          "before": 4,
+          "after": 3
+        },
+        "helplessDeaths": {
+          "before": 4,
+          "after": 2
+        }
+      }
+    },
+    {
+      "mode": "local",
+      "seed": 1549107668,
+      "final": {},
+      "events": {
+        "crises": {
+          "before": 9,
+          "after": 8
+        }
+      }
+    }
+  ],
+  "comparisonScope": "Final state and event counts, not equality of full traces; source metadata differs on all reruns"
+}

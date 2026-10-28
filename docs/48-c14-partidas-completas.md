@@ -1,6 +1,6 @@
 # 48 — C14: partidas completas reproducibles
 
-**28/10/2026, Montevideo. Motor base3c152e8, gateC13 [CI40684493624](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40684493624) success392/392.** C14 no modifica el juego: agrega controladores, observadores, pruebas y evidencia. Revisión independiente aprobada; verificar CI del commit antes de C15.
+**28/10/2026, Montevideo. Motor base3c152e8, gateC13 [CI40684493624](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40684493624) success392/392.** C14 no modifica el juego: agrega controladores, observadores, pruebas y evidencia. Revisión independiente y [CI exacto d801dbb](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40688534944) aprobados, 394/394.
 
 ## Qué se ejecutó
 
@@ -68,4 +68,4 @@ Revisión independiente:40registros, reproducibilidad, metadatos/finales y cinco
 
 Dos tests agregados permanentes ejecutan20partidas por modo, sin inflar el contador a40tests. Suite final394/394. [Controlador](../test-support/autoplay-controller.mjs), [runner](../test-support/run-game.mjs), [tests](../tests/partidas-completas-c14.test.mjs). Reproducir lote: `node scripts/run-c14-games.mjs` (C14_COUNT/C14_OUTPUT_DIR opcionales). UI: `PLAYWRIGHT_MODULE=/ruta/playwright-core/index.mjs node scripts/check-c14-browser.mjs`, servidor local como C11; cinco casos por defecto. No agrega dependencias del producto.
 
-**Checkpoint:** completado técnicamente en resultados locales/UI/revisión. Publicar y comprobar CI exacto antes de iniciar C15. No se recomienda balance ni cierre oficial de C aquí; C15 clasificará reservas y reglas mediante fuentes verificables, sin modificar mecánicas.
+**Checkpoint:** completado técnicamente en resultados locales/UI/revisión y CI exacto d801dbb success394/394. Gate aprobado: se inicia C15 por autorización de la misión. No se recomienda balance ni cierre oficial de C aquí; C15 clasificará reservas y reglas mediante fuentes verificables, sin modificar mecánicas.

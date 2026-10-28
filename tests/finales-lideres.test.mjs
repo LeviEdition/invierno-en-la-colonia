@@ -130,7 +130,7 @@ test('al morir el líder humano con dos miembros vivos queda selección de suces
 });
 
 test('el jugador humano elige un sucesor válido después de una muerte', () => {
-  const t=fixture();t.run('kill(game.humans[0],"prueba");chooseLeader("h2");');
+  const t=fixture();t.run('kill(game.humans[0],"prueba");deathDirector.open();deathDirector.continue();chooseLeader("h2");');
   assert.deepEqual(t.state('({leader:game.leaders.human,pending:pendingLeader,chosen:game.leaderChosen})'),{leader:'h2',pending:false,chosen:true});
 });
 
@@ -150,7 +150,7 @@ test('en modo local el jugador 2 debe elegir al sucesor de su líder', () => {
 });
 
 test('en modo local el jugador 2 puede confirmar al sucesor', () => {
-  const t=fixture({mode:'local'});t.run('game.turn="ai";kill(game.bots[1],"prueba");chooseLeader("a2");');
+  const t=fixture({mode:'local'});t.run('game.turn="ai";kill(game.bots[1],"prueba");deathDirector.open();deathDirector.continue();chooseLeader("a2");');
   assert.deepEqual(t.state('({leader:game.leaders.ai,pending:pendingLeader,chosen:game.localLeaderChosen})'),{leader:'a2',pending:false,chosen:true});
 });
 
@@ -287,7 +287,7 @@ test('C9 interfaz: grupo informa a J1 y J2 que deben elegir líder antes de actu
 
 test('C9-R1: J1 no puede elegir sucesor de J2 durante su propio turno', () => {
   const t=fixture({mode:'local'});
-  t.run('kill(game.bots[1],"prueba cruzada");');
+  t.run('kill(game.bots[1],"prueba cruzada");deathDirector.open();deathDirector.continue();');
   assert.deepEqual(t.state('({side:pendingLeaderSide,pending:pendingLeader,turn:game.turn,leader:game.leaders.ai})'),
     {side:'ai',pending:true,turn:'human',leader:null});
   t.run('chooseLeader("a2");');
@@ -309,7 +309,7 @@ test('C9-R1: J1 aún puede elegir su líder inicial aunque J2 tenga un sucesor p
 });
 test('C9-R1: J2 no puede elegir sucesor de J1 antes de devolverle el turno', () => {
   const t=fixture({mode:'local'});
-  t.run('game.turn="ai";kill(game.humans[0],"prueba cruzada");chooseLeader("h2");');
+  t.run('game.turn="ai";kill(game.humans[0],"prueba cruzada");deathDirector.open();deathDirector.continue();chooseLeader("h2");');
   assert.deepEqual(t.state('({j1:game.leaders.human,waiting:pendingLeader,side:pendingLeaderSide})'),
     {j1:null,waiting:true,side:'human'});
   t.run('game.turn="human";chooseLeader("h2");');

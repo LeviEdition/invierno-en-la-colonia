@@ -556,7 +556,7 @@ function leaderChoiceReady(){
  return !!game&&!game.ended&&pendingLeader&&!passScreenActive&&(game.mode!=='local'||pendingLeaderSide===controls.side);
 }
 function chooseLeader(id){
- if(pendingBite)return;
+ if(pendingBite||deathWaiting())return;
  const succession=leaderChoiceReady(),side=succession?pendingLeaderSide:controls.side;
  const group=ownerGroup(side).filter(p=>!p.dead),p=group.find(x=>x.id===id);
  if(!p||(!succession&&!canPickStartingLeader()))return;
@@ -1184,18 +1184,25 @@ function resolveCrisis(){
  c.contributions=[];c.given=0;
 }
 function colony(){
+ if(game.ended)return;
  message('⌂ Fase de colonia: alimentación → residuos → crisis → zombis.');
  const need=feedingNeed(game);
  if(game.food>=need){game.food-=need;message('🥫 Alimentación: '+need+' comida(s), quedan '+game.food+'.');}
  else{game.hunger++;game.morale=Math.max(0,game.morale-game.hunger);message('⚠ HAMBRE acumulada: '+game.hunger+' ficha(s), -'+game.hunger+' moral. La comida existente permanece.');}
+ verify();if(game.ended)return;
  if(game.waste>=10){const loss=Math.floor(game.waste/10);game.morale=Math.max(0,game.morale-loss);message('♻ Basura: '+game.waste+' cartas, -'+loss+' moral.');}
+ verify();if(game.ended)return;
  resolveCrisis();
+ verify();if(game.ended)return;
  const inhabitants=alive().filter(p=>p.loc===0).length+game.helpless;
  for(let i=0;i<places.length;i++){
   const arriving=i===0?Math.ceil(inhabitants/2):alive().filter(p=>p.loc===i).length;
-  for(let j=0;j<arriving;j++)addZombie(i);
+  for(let j=0;j<arriving;j++){addZombie(i);verify();if(game.ended)return;}
  }
- game.zones.forEach((z,i)=>{const n=z.noise;z.noise=0;for(let j=0;j<n;j++){const d=die();message('🔊 '+places[i]+': ruido '+(j+1)+'/'+n+' → dado '+d+(d<=3?', llega un zombi.':', sin aparición.'));if(d<=3)addZombie(i);}});
+ for(const [i,z] of game.zones.entries()){
+  const n=z.noise;z.noise=0;
+  for(let j=0;j<n;j++){const d=die();message('🔊 '+places[i]+': ruido '+(j+1)+'/'+n+' → dado '+d+(d<=3?', llega un zombi.':', sin aparición.'));if(d<=3)addZombie(i);verify();if(game.ended)return;}
+ }
  verify();
 }
 // C7/#5: la IA coopera con aportes anteriores del humano y revisa equipo tras buscar.

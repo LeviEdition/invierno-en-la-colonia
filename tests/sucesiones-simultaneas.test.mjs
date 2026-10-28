@@ -27,17 +27,17 @@ test('C12 | crisis real mata ambos líderes, sobrevive el pendiente J2 hasta ron
  t.run('chooseLeader("a0");');assert.equal(t.state('game.leaders.ai'),'a0');
 });
 test('C12 | muerte posterior y revisión duplicada no duplican ni descartan solicitudes',()=>{
- const t=fixture();prepare(t);t.run('kill(game.bots[1],"primero");reviewLeader("ai");kill(game.humans[0],"después");reviewLeader("human");chooseLeader("h1");');
+ const t=fixture();prepare(t);t.run('kill(game.bots[1],"primero");reviewLeader("ai");kill(game.humans[0],"después");reviewLeader("human");deathDirector.open();deathDirector.continue();chooseLeader("h1");');
  assert.equal(t.state('pendingLeader'),true);t.run('game.turn="ai";chooseLeader("a2");chooseLeader("a0");');
  assert.equal(t.state('game.leaders.ai'),'a2');assert.equal(t.state('pendingLeader'),false);
 });
 test('C12 | un único candidato de J2 no cancela la sucesión pendiente J1',()=>{
  const t=fixture();prepare(t);t.run('kill(game.humans[0],"líder J1");kill(game.bots[2],"segundo J2");kill(game.bots[1],"líder J2");');
- assert.equal(t.state('game.leaders.ai'),'a0');assert.equal(t.state('pendingLeader'),true);t.run('chooseLeader("h2");');assert.equal(t.state('game.leaders.human'),'h2');
+ assert.equal(t.state('game.leaders.ai'),'a0');assert.equal(t.state('pendingLeader'),true);t.run('deathDirector.open();deathDirector.continue();chooseLeader("h2");');assert.equal(t.state('game.leaders.human'),'h2');
 });
 test('C12 | IA automática y último superviviente con reemplazo no borran la solicitud humana',()=>{
  const t=fixture({mode:'ai'});prepare(t);t.run('kill(game.humans[0],"J1");kill(game.bots[1],"IA");kill(game.bots[2],"IA");kill(game.bots[0],"IA");');
- assert.equal(t.state('!!groupLeader("ai")'),true);assert.equal(t.state('pendingLeader'),true);t.run('chooseLeader("h2");');assert.equal(t.state('pendingLeader'),false);
+ assert.equal(t.state('!!groupLeader("ai")'),true);assert.equal(t.state('pendingLeader'),true);t.run('deathDirector.open();deathDirector.continue();chooseLeader("h2");');assert.equal(t.state('pendingLeader'),false);
 });
 test('C12 | mordedura pendiente no consume sucesiones y se resuelven después',()=>{
  const t=fixture();prepare(t);t.run('game.biteResolving=true;pendingBite={target:"h1",victims:[]};kill(game.humans[0],"J1");kill(game.bots[1],"J2");show("help");');

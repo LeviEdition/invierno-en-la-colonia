@@ -1,0 +1,491 @@
+{
+  "chromium": "154.0.8037.57",
+  "htmlSha256": "4181e974c276de36d08bb0bbc99b0a877bec49317d5777734905eb83ca09bff7",
+  "scope": "setup/pase: contrato; ayuda/fallecimiento: observación de límite, no aprobación accesible",
+  "records": [
+    {
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "setup": [
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        }
+      ],
+      "pass": [
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        }
+      ],
+      "passProtection": {
+        "focusInside": true,
+        "gameUnchanged": true,
+        "backgroundInert": true
+      },
+      "afterPass": {
+        "inert": false,
+        "focus": "floatingActions"
+      },
+      "help": {
+        "focusOutside": true,
+        "active": "floatingActions",
+        "backgroundInert": false
+      },
+      "death": {
+        "focusOutside": true,
+        "active": "",
+        "backgroundInert": false
+      },
+      "deathGuard": true,
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "setup": [
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        }
+      ],
+      "pass": [
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        }
+      ],
+      "passProtection": {
+        "focusInside": true,
+        "gameUnchanged": true,
+        "backgroundInert": true
+      },
+      "afterPass": {
+        "inert": false,
+        "focus": "floatingActions"
+      },
+      "help": {
+        "focusOutside": true,
+        "active": "floatingActions",
+        "backgroundInert": false
+      },
+      "death": {
+        "focusOutside": true,
+        "active": "",
+        "backgroundInert": false
+      },
+      "deathGuard": true,
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "setup": [
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        }
+      ],
+      "pass": [
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        },
+        {
+          "inside": true,
+          "tag": "BUTTON",
+          "id": ""
+        }
+      ],
+      "passProtection": {
+        "focusInside": true,
+        "gameUnchanged": true,
+        "backgroundInert": true
+      },
+      "afterPass": {
+        "inert": false,
+        "focus": "floatingActions"
+      },
+      "help": {
+        "focusOutside": true,
+        "active": "floatingActions",
+        "backgroundInert": false
+      },
+      "death": {
+        "focusOutside": true,
+        "active": "",
+        "backgroundInert": false
+      },
+      "deathGuard": true,
+      "pageOverflow": false
+    }
+  ],
+  "errors": []
+}

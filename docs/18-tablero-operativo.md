@@ -1,6 +1,6 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
-**Última revisión:** 28/10/2026 (encargo C11 y auditoría). **Proyecto:** Invierno en la Colonia. **Rama activa de ajustes:** `fix/estabilizacion-v9-9` (base de auditoría `refactor/arquitectura`).
+**Última revisión:** 28/10/2026 (misión C12→C15). **Proyecto:** Invierno en la Colonia. **Rama activa de ajustes:** `fix/estabilizacion-v9-9` (base de auditoría `refactor/arquitectura`).
 **Documento operativo**: a diferencia de los documentos conceptuales, este archivo determina qué hacemos **ahora**, qué queda estacionado y qué evidencia habilita cambiar de fase.
 
 > **NORMA DE TRABAJO:** una etapa activa, una tarea activa. No empezar una fase posterior porque surgió una idea interesante; anotar la idea y retomar lo previsto. Cambiar prioridades exige una decisión explícita registrada aquí.
@@ -15,10 +15,20 @@ Autorización explícita del creador para C12→C15 en orden y correcciones téc
 | --- | --- | --- |
 | C12 | Aprobado técnicamente; f9429d1 y CI40682067180 success371/371 | [46](46-c12-sucesiones-simultaneas.md),371/371 y6casos Chromium |
 | C13 | Aprobado;3c152e8/CI40684493624success392/392 | [47](47-c13-integracion-profunda.md),392/392 |
-| C14 |40partidas reales de motor y5UI completas; revisión aprobada, CI pendiente | [48](48-c14-partidas-completas.md),394/394 |
-| C15 | No iniciada | Auditoría final y fuentes de reglas |
+| C14 | Aprobado; d801dbb / CI40688534944 success394/394; 40 partidas motor y5UI | [48](48-c14-partidas-completas.md),394/394 |
+| C15 | Auditoría completada; T1/T2 corregidos, 402/402; revisión documental aprobada; CI de entrega pendiente | [49](49-c15-auditoria-final.md), fuentes oficiales,40 motor/5UI repetidos |
 
-**Tarea activa única:** confirmar CI C14 y avanzar automáticamente a C15 si aprueba. La misión reemplaza la necesidad anterior de pedir autorización para H1. Main d9068f4 intacta, PR14 draft a refactor/arquitectura. Referencia sincronizada43f7c11,358/358 y CI40678862713 success.
+**Tarea activa única:** cerrar la entrega C15 con CI del SHA exacto, revisión documental aprobada; después, revisión de aceptación por el creador. No iniciar D. CI C14 exacto confirmado success394/394. La misión reemplaza la necesidad anterior de pedir autorización para H1. Main d9068f4 intacta, PR14 draft a refactor/arquitectura. Referencia sincronizada43f7c11,358/358 y CI40678862713 success.
+
+## Resultado actual C12→C15 — 28/10/2026, Montevideo
+
+H1 resuelto C12. C13 protege prioridades/esperas/terminales. C14 ejecutó40 configuraciones y5UI. C15 encontró **T1/P1** (hambre/residuos llevan moral0 y bonus de crisis podía recuperarla) y **T2/P2** (teclado elegía sucesor detrás de muerte); corregidos mediante verify/retornos en colonia y guardia de sucesión.8 nuevas pruebas, **402/402**,0 fallos/TODO; revisión independiente técnica aprobada. Las siete pruebas antiguas que omitían confirmar muerte ahora realizan ese paso y mantienen sus expectativas.
+
+Repetición final40/40 motor y5/5UI, mismos resultados/rondas, no trazas idénticas; C15 detiene eventos posteriores a derrota. Chromium: dados6viewports/24mediciones, encrucijadas16, sucesiones6, cadenas6, foco3 y terminal/teclado6. **A1/P2 queda pendiente: foco sale de ayuda/fallecimiento**, aunque las guardias funcionales comprobadas bloquean jugar/elegir líder durante muerte. Inicio/pase conservan foco. Sin Android físico/TalkBack/WCAG/balance humano.
+
+[Informe49](49-c15-auditoria-final.md) contiene matriz actual21 sistemas, fuente oficial y comparación de reglas, checklist y propuesta para D sin implementarla. **Recomendación:** presentar C para aceptación con reservas, no cerrarla oficialmente. Aceptar o encargar corrección de A1 y confirmar adaptaciones corresponde al creador. Nueve issues abiertos (#2/#3/#7/#8/#9/#10/#11/#12/#13) tienen correcciones en rama pendientes de aceptación en su alcance; no cierres/merge/main/versión estable.
+
+**Lectura del historial:** los apartados C1–C11 y sus frases «estado actual», «H1 pendiente» y «siguiente tarea» describen sus fechas/commits; el estado vigente es este bloque y el checkpoint C15. No borrar las evidencias anteriores ni interpretar sus358 tests como el total actual.
 
 ## Revisión de entrega C10 para preparar siguiente trabajo — 27/10/2026 (hora Uruguay)
 
@@ -90,7 +100,7 @@ Por instrucción del usuario se incorporó la obligación de actualizar el table
 
 **Control:** [PR14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14) continúa draft a `refactor/arquitectura` y `main` no cambia por esta anotación. La documentación de diseño previo sigue vigente como hipótesis, no como implementación.
 
-## 2. Etapa activa C — C11 terminado, auditoría completa; H1 pendiente de nueva tarea
+## 2. Etapa activa C — misión C12→C15; aceptación del creador pendiente
 
 **Objetivo:** saber qué hace realmente el juego, qué falla y qué no se ha probado, antes de intervenir sus reglas o extraer módulos.
 

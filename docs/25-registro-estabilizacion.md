@@ -1,6 +1,6 @@
-# 25 — Registro de estabilización V9.9 (C1–C11)
+# 25 — Registro de estabilización V9.9 (C1–C15)
 
-**Última actualización:** 28/10/2026. **Rama:** `fix/estabilizacion-v9-9`. **Estado actual:** C1–C11 implementados; #4/#5/#6 aceptados/cerrados, #7/#13 pendientes de aceptación. C11 código7497d70 yCI40625219012 success358/358; Chromium seis viewports aprobado tras corregir R1. Auditoría solo lectura completada: siete issues originales corregidos en rama, pero **H1 de sucesión múltiple confirmado y no corregido**. No declarar C cerrada. [Informe44](44-c11-dados-tactiles.md), [auditoría45](45-auditoria-pendientes-estabilizacion.md). Sin integración en main, cierres nuevos ni publicación estable.
+**Última actualización:** 28/10/2026, Montevideo. **Rama:** `fix/estabilizacion-v9-9`. **Estado vigente:** C12/H1, C13 y C14 aprobados por pruebas/revisión/CI; auditoría C15 con T1/T2 corregidos y402/402 local/independiente, revisión documental aprobada/CI de entrega pendiente. [Informe49](49-c15-auditoria-final.md) y tablero18 determinan el próximo paso: completar entrega, luego aceptación del creador. A1 foco general permanece como reserva; C no está oficialmente cerrada. #4/#5/#6 ya aceptados/cerrados; otros nueve issues siguen abiertos. Sin integración en main, cierres nuevos ni publicación estable. Las secciones siguientes son historia de cada revisión.
 
 ## Análisis de continuidad tras otro chat — 27/10/2026
 
@@ -470,3 +470,24 @@ GateC12 confirmado f9429d1/CI40682067180 success371/371. Matriz de integración 
 ## Checkpoint C14 — 28/10/2026 Montevideo
 
 GateC13 3c152e8/CI40684493624 success392. No cambios al motor: controlador explícito sobre create/paint/azar/acciones reales.40configuraciones únicas(20/modo),AI15V/5Dmorales,local17V/2Dmorales/1tiempo,0interrupciones/excepciones/violaciones finales.394/394suite con dos tests agregados20partidas cadauno.5partidas completas con botones en Chromium(2IA/3local),0errores y finales coincidentes conVM. Primer intentoUI2AIinterrumpidospor race deldriverSaltarIA,2localcompletos; corregido sinforzarinteracciones, preservadoevidencia. Avisorecluta despuésvictoria eraomisión delcontrolador; ahoraconfirmaUIlegítima, mismoassertdequiescencia, sinmodificarmotor. Revisorindependiente aprobó fidelidad/replay/invariantes/metadatos y394/394. Informe48/script/JSONL40/resumen/5UI/capturas guardados. No balance ni Androidfísico. CI exacto siguiente gateparaC15.
+
+
+## Gate C14 → C15 — 28/10/2026, Montevideo
+
+CI exacto d801dbb / [40688534944](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40688534944) completed/success, 394/394. C14 aprobado en su alcance; se inicia C15 por autorización explícita. Auditoría funcional, fuentes oficiales de mesa y riesgo final, sin modificar reglas ni iniciar D. Se reejecutan recorridos relevantes sobre el HTML actual; resultados y reservas en informe49 al completar.
+
+
+## C15 — auditoría final y dos correcciones técnicas, 28/10/2026
+
+**Acciones:** revisión funcional/matriz21 sistemas, lectura de reglamento oficial base inglés Plaid Hat Games (PDF20p, SHA256 en informe49), GitHub/refs/CI; repetición Chromium y lotes de motor/interfaz. No se sustituyen reglas por las de mesa: se documentan coincidencias, adaptaciones aprobadas/existentes y decisiones futuras.
+
+**T1/P1:** comida0/moral1/crisis4de2 llegaba a0 por hambre y volvía a1 por bonus. Seis pruebas rojas previas; verificación terminal entre pasos/oleadas/ruido de colonia y guardia de entrada, sin tocar efectos atómicos de crisis/cartas ni kill/addZombie. **T2/P2 de revisión independiente:** Tab/Enter permitía elegir sucesor detrás de fallecimiento. Guardia deathWaiting en chooseLeader y dos regresiones de cola/visible. Ocho rojas contra d801dbb, ocho verdes final. Primera suite395/402 por siete preparaciones antiguas sin confirmar muerte; ajustadas a confirmar legítimamente, asserts intactos. Suite final **402/402**,0 fallidas/canceladas/omitidas/TODO, también independiente.
+
+**Navegador final:**6 viewports dados/24 mediciones,16 encrucijadas,6 sucesiones,6 cadenas,3 foco y6 terminal/teclado;0 errores JS. Inicio/pase aíslan foco; **A1/P2 confirmado en ayuda/fallecimiento** sigue pendiente, no se declara WCAG. Dos errores del nuevo arnés (inert del botón en lugar de ancestro y aviso log/last considerado recurso) corregidos/documentados, sin atribuirlos al juego.
+
+**Lote final:** mismas40 configuraciones/20 por modo y5UI repetidas;40/40 y5/5 completas,0 excepciones/invariantes. IA15 victorias/5 moral;local17/2moral/1tiempo. Mismo resultado/rondas pero eventos distintos: IA73→72 muertes, local44→42 crisis y4→2 indefensos por detener pasos posteriores a derrota. No contar80 configuraciones distintas ni usar porcentaje como balance humano. Informes/evidencias C14 originales conservados.
+
+**Archivos y decisión:** HTML localizado, tests C15/preparación de liderazgo, scripts de foco/terminal, evidencias C15, informe49 y04/18/25/48. Revisión técnica independiente aprobada; revisión documental y CI de publicación son gate final. Recomendación con reservas para aceptación del creador, sin cierre oficial de C, issues/merge/main ni D. Fuente y checklist explican decisiones humanas pendientes. Pruebas físicas/TalkBack/otros navegadores/rendimiento/humanos no ejecutadas.
+
+
+**Revisión final independiente C15 completada:** código, informe49, diffs04/18/25, JSON, hashes y fuente oficial contrastados;402/402 independientes, cinco UI coherentes con VM,40 configuraciones repetidas sin inflar muestra. Sin inexactitudes materiales ni otro defecto funcional confirmado. A1/P2 y decisiones de adaptación explícitas. Aprobada para presentar tras CI del SHA final, sin cierre oficial de C/D.

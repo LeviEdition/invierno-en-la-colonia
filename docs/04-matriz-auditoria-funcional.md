@@ -6,6 +6,14 @@
 
 **Fecha de inicio:** 27/10/2026 · **Rama:** `refactor/arquitectura` · **Base:** `invierno_colonia_v9_9.html`
 
+## Estado vigente tras C15 — 28/10/2026
+
+La [matriz actual de21 sistemas en informe49](49-c15-auditoria-final.md#matriz-actual-de-sistemas-y-cobertura) sustituye la clasificación operativa antigua de abajo, preservada como historia de main/auditoríaA6. **01–19 parcialmente probados;20–21 futuros/no implementados.** C12 resuelve H1, C13 integra decisiones, C14 agrega40 partidas y5UI; C15 corrige T1/P1 (colonia puede recuperar moral0 con bonus posterior) y T2/P2 (sucesor elegido por teclado detrás de muerte).
+
+**402/402 tests local/independiente**,8 nuevos C15,0 fallos/TODO. Chromium final: dados6viewports/24mediciones, encrucijadas16, sucesiones6, cadenas6, foco3 y terminal/teclado6; lote repetido40/40 motor y5/5UI sin excepciones/invariantes, mismo resultado/ronda, no mismos eventos. [Evidencia y fuente oficial](49-c15-auditoria-final.md). Revisión documental independiente aprobada; falta gate de CI de entrega, que se registra al publicar.
+
+**Reserva vigente A1/P2 en18:** foco de ayuda/fallecimiento no aislado; setup/pase sí (#12 acotado). Guardias funcionales corregidas no equivalen a accesibilidad completa. Sin Android físico/TalkBack/balance humano/otros navegadores. Diferencias con mesa clasificadas, no corregidas automáticamente. C se presenta para aceptación con reservas, **no cerrada oficialmente**, main intacta/PR14 draft/nueve issues abiertos. No iniciar D.
+
 ## Actualización C10/#7 — 28/10/2026
 
 **Subsistema14, decisiones de encrucijadas IA:** selección por consecuencias reales en copias aisladas y prioridades aprobadas (victoria/derrota, muertes, alimentación, moral crítica, muestras, recursos/defensas/peligro y orden estable). Sin dependencia de texto, títulos o etiquetas; elegibilidad mecánica compartida. Consecuencias humanas/locales y reglas vigentes preservadas en624 comparaciones antes/después. [Informe43](43-c10-encrucijadas-prioridades.md).
@@ -160,7 +168,7 @@ El creador autorizó cerrar [issue #6](https://github.com/LeviEdition/invierno-e
 
 Ningún subsistema debería declararse **completo** solo por pasar una prueba unitaria. La validación final incluye reglas, integraciones entre turnos y pruebas manuales en navegador y celular.
 
-## Inventario de funcionalidades
+## Inventario histórico de funcionalidades (auditoría A6, no estado actual C15)
 
 | Nº | Subsistema | Casos que revisaremos | Estado inicial |
 | --- | --- | --- | --- |
