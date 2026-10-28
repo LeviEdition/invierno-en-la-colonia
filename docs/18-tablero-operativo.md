@@ -1,13 +1,23 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
-**Última revisión:** 28/10/2026 (aceptación administrativa de C, nueve issues revisados). **Proyecto:** Invierno en la Colonia. **Rama activa de ajustes:** `fix/estabilizacion-v9-9` (base de auditoría `refactor/arquitectura`).
+**Última revisión:** 28/10/2026 (etapa C cerrada formalmente con reservas; 9 issues completados). **Proyecto:** Invierno en la Colonia. **Rama activa de ajustes:** `fix/estabilizacion-v9-9` (base de auditoría `refactor/arquitectura`).
 **Documento operativo**: a diferencia de los documentos conceptuales, este archivo determina qué hacemos **ahora**, qué queda estacionado y qué evidencia habilita cambiar de fase.
 
 > **NORMA DE TRABAJO:** una etapa activa, una tarea activa. No empezar una fase posterior porque surgió una idea interesante; anotar la idea y retomar lo previsto. Cambiar prioridades exige una decisión explícita registrada aquí.
 
 > **REGISTRO OBLIGATORIO (acuerdo del usuario, 27/10/2026):** al terminar cada revisión, actualizar este tablero. Documentar acciones, decisiones, cambios, resultados, evidencia y límites en el registro pertinente, aunque no se haya modificado código. Véase [protocolo](15-protocolo-revision-critica.md#registro-obligatorio-de-cada-revisión-y-trabajo).
 
-## Cierre administrativo de C — revisión de nueve issues, 28/10/2026
+## C1–C16: cierre formal aceptado por el creador — 28/10/2026
+
+**Estado vigente y autorización:** el creador aprobó expresamente cerrar los nueve issues pendientes como **resueltos en la rama del PR14, aún no integrados**, y aceptar técnicamente C1–C16 con reservas («Vamos con eso»). El cierre fue ejecutado y contrastado en GitHub: issues **#2, #3, #7, #8, #9, #10, #11, #12, #13 = closed/completed**, cada uno con comentario de trazabilidad y `closed_at`; **0 issues abiertos** en el repositorio. #4/#5/#6 ya habían sido cerrados. **Etapa C CERRADA administrativamente / ACEPTADA técnicamente EN SU ALCANCE**. [Acta 53](53-cierre-formal-etapa-c.md), [dictamen previo 52](52-aceptacion-administrativa-etapa-c.md).
+
+**Evidencia técnica preservada:** 408/408 regresiones del ejecutable, [CI40701666201](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40701666201) completed/success antes del cierre;40 partidas completas de motor y5UI en C14/C15; Chromium C16 [CI40695882583](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40695882583) success, 3 viewports/78 pasos. **Reservas**: sin Android físico, TalkBack, otros navegadores, playtesting de balance humano ni equivalencia completa con Dead of Winter. Un CI verde no convierte estas reservas en resultados probados.
+
+**No integrado ni publicado:** PR14 sigue **open/draft** a `refactor/arquitectura`; `main=d9068f4aa8d3a10bbbf1e0a8a2527744cc6952cb` intacta, ningún merge, tag o release. La comparación previa mostraba 1 commit documental de base (`0933c70`) ausente en la rama y un PR grande; requiere revisión separada.
+
+**ÚNICA TAREA ACTIVA SIGUIENTE (D0, solo análisis):** evaluar la integración PR14 sin fusionar (revisar divergencia de ramas, documento A6, diff y riesgos), y presentar propuesta al creador. **No comenzar refactor D ejecutable, cambios F ni Director/identidad E** sin autorización. El hito de **fidelidad funcional y estabilidad de versión de referencia antes de identidad propia** sigue definido en [51](51-rumbo-fidelidad-e-identidad.md).
+
+## [Histórico previo] Cierre administrativo de C — revisión de nueve issues, 28/10/2026
 
 **Dictamen de solo lectura, documentado en [informe52](52-aceptacion-administrativa-etapa-c.md):** los nueve issues abiertos [#2](https://github.com/LeviEdition/invierno-en-la-colonia/issues/2), #3, #7, #8, #9, #10, #11, #12 y #13 tienen soluciones específicas y regresiones en `fix/estabilizacion-v9-9`. C1–C16 puede **proponerse para aceptación técnica con reservas**, y los nueve issues **para cierre administrativo individual** como «resueltos en PR14, sin integrar aún». No se confunde issue abierto con defecto vigente ni código en rama con software publicado.
 
