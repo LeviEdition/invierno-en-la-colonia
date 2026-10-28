@@ -286,6 +286,30 @@ Las pasivas actuales cubren combate/búsqueda, mitigación de riesgo, acciones g
 
 La implementación conceptual de **órdenes limitadas + pruebas por atributo** funciona y justifica continuar explorándola **como candidata preferente del singleplayer**, no da todavía prueba de mayor profundidad/diversión. Promete ligar competencia, riesgo y grados de resultado, pero si consume órdenes en fallos sin progreso o multiplica tiradas puede **empeorar agencia y ritmo**. Conservar la estrategia de V9.9 como referencia positiva. **Siguiente prueba recomendada:** escenario con igual presupuesto/ubicaciones/exposición/pasivas/recursos, variando **solo** la mecánica de resolución; después modificar **un factor por vez** (éxitos escalonados, tres órdenes, movilidad) y realizar playtests manuales para agencia y ritmo. **F-10/F-12/F-15, D1/D2 y código sin modificaciones**.
 
+## 5G. Resolución híbrida por tipo de acción y situación — alternativa del creador (28/10/2026, NO APROBADA)
+
+**Propuesta del creador tras revisar el laboratorio SP-02:** valorar un motor de **acciones limitadas** que **no obliga a tirar dados siempre**. Las acciones inciertas o narrativamente riesgosas (búsqueda, movilidad, encuentros, quizá combate fuera de posiciones seguras) utilizan **reservas de dados por atributo**, permitiendo introducir más atributos que importan a la trama. Otras acciones se resuelven automáticamente o en función **determinista de los atributos/equipo y el contexto**. Ejemplo explícito propuesto: **atacar/defender en la colonia sin tirada**, usando estadísticas del PJ. Motivo: disminuir fallos vacíos y no repetir la desventaja de asedio del primer prototipo. **Se acepta como hipótesis a explorar, no como regla cerrada ni autorización de implementación.**
+
+### Taxonomía candidata de resolución
+
+1. **Directa:** ejecución sin azar cuando la capacidad y condiciones están claras (p. ej., limpiar o usar una medicina en un objetivo accesible); **no equivale a acción gratuita** ni a efecto ilimitado. Definir costo de orden/recurso por acción independientemente de si hay tirada.
+2. **Determinista por capacidades:** umbral o resultado calculable con atributo, equipo, defensas, objetivo y estado del mundo; ejemplo: **defender una entrada preparada de la colonia**, cuyo resultado puede conocerse de antemano; consume recursos u orden, y las amenazas se mantienen por presión, cantidad, desgaste, municiones, brechas y consecuencias del turno.
+3. **Prueba por atributo:** lanzar dados proporcionales al atributo si hay incertidumbre material y consecuencias relevantes (p. ej., buscar, cruzar un lugar peligroso, escapar o enfrentarse fuera de cobertura). Los éxitos crean resultados y costos diferenciados; **no convertir todo fallo en turno vacío**.
+
+**Regla central a validar:** el tipo de resolución se decide por **la ficción y condiciones objetivas de la situación** (control del lugar, preparación, intensidad de amenaza, objetivo), **no arbitrariamente para que un resultado estadístico parezca mejor**. Caso importante: **una colonia defendida/preparada puede permitir resolución determinista; una colonia invadida o con defensas rotas puede exigir prueba**. Evitar el exploit de «dejar entrar zombis para matarlos siempre sin riesgo». En caso de ataque sin tirada, la estadística de combate debe tener una función explícita (eficacia, capacidad, tácticas habilitadas), no quedar decorativa.
+
+**Hallazgo del primer laboratorio:** la diferencia en asedio (modelo V9 simplificado ~83,17 % vs pool básico ~43,76 %) se obtiene en simuladores **no equivalentes** y con planes fijos; **no prueba por sí sola que el combate por tirada sea defectuoso**. Ponerlo determinista podría mejorar flujo, pero también elimina tensión, penalizaciones o valor de especialistas si se hace indiscriminadamente. Diseñar/hacer pruebas sin que el balance dicte cada nueva excepción.
+
+### Comparación futura concreta — sin cerrar balance ahora
+
+- **H1: pool total**, todas las acciones inciertas incluidas peleas en colonia gastan orden y tiran stat.
+- **H2: híbrido contextual**, defender desde posiciones preparadas resuelve por stats/equipo sin tirar, búsqueda y movilidad expuesta con pool, y labores rutinarias automáticamente.
+- **H3: resolución directa amplia**, menos tiradas incluso para combates externos cuando la ventaja es clara; la incertidumbre solo entra con riesgo material.
+
+**Prueba:** mantener exactamente la **misma cantidad de acciones, amenazas, estadísticas, equipo, ubicaciones y objetivos**; medir decisiones del líder, resultados y sensación de agencia y tensión; anotar número de tiradas por ronda, fallos sin progreso, facilidad de explicación de reglas y presión efectiva de zombis. Añadir luego escenarios con colonia preparada, defensas parcialmente comprometidas y colonia invadida para comprobar coherencia. No concluir que más deterministicidad es siempre mejor.
+
+**Estado de acuerdos anteriores:** siguen en evaluación tres órdenes por tres supervivientes, el uso de atributos como cantidad de dados y el reemplazo de exposición. F-10/F-12/F-15 y V9.9 quedan intactos hasta aprobación expresa. Tampoco se aprobó una nueva lista de estadísticas (p. ej., técnica, movilidad, combate, búsqueda).
+
 ## 6. Diseño de ronda provisional para SP-03 (no aprobado)
 
 1. **Apertura:** presentación de crisis, recursos, peligros e indicios válidos según el estado.
