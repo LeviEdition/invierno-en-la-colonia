@@ -10,7 +10,7 @@ export function assembleHtml(template,catalogSource){
   if(template.split(marker).length!==2)throw Error('Debe existir exactamente un marcador de catálogo');
   const signature='export class ItemCatalog {';
   if(catalogSource.split(signature).length!==2)throw Error('Exportación de ItemCatalog inesperada');
-  const embedded=catalogSource.replace(signature,'class ItemCatalog {').trimEnd()+'\\nconst catalog=new ItemCatalog(cards=>mix(cards));';
+  const embedded=catalogSource.replace(signature,'class ItemCatalog {').trimEnd()+String.fromCharCode(10)+'const catalog=new ItemCatalog(cards=>mix(cards));';
   const html=template.replace(marker,embedded);
   if((html.match(/<script(?:\\s[^>]*)?>/g)||[]).length!==1)throw Error('El artefacto debe contener un solo script embebido');
   if(/<script\\s+[^>]*src=/.test(html))throw Error('HTML no autocontenido');
