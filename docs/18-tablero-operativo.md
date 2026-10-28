@@ -1,5 +1,13 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## D1 — auditoría previa de catálogo (sin implementación) · 28/10/2026
+
+**Alcance autorizado:** solo analizar y planificar. Se auditó el ejecutable de `main`, contrato `ItemCatalog` de 17 cartas/6 mazos de 20, dependencia del mezclador `mix`, `ItemEngine`, cargadores de pruebas y packaging de HTML único. [Informe 57: diagnóstico, alternativas, propuesta y pruebas](57-d1-auditoria-previa-catalogo.md). Se documenta en `docs/d1-auditoria-previa` (rama solo documental); **`main` permanece sin cambios**, no se creó PR ni se modificó código.
+
+**Hallazgo principal:** 14 pruebas exigen único script embebido, 15 extraen JS del HTML; usar un script externo o ESM directamente modifica despliegue/fixtures. Se propone archivo fuente autónomo del catálogo y una generación determinista que mantenga el HTML de distribución autocontenido, inyectando `mix` al crear mazos. Requiere snapshots de RNG, 408+ pruebas, C14 5/5, C16 tres viewports y prueba offline. `ItemEngine`, D2, F y E excluidos.
+
+**ÚNICA TAREA SIGUIENTE:** aprobación del diseño/contrato y **D1.0** de caracterización, solo mediante autorización posterior. No comenzar implementación por esta auditoría.
+
 ## D0-P1-I — PR #1 fusionado en main y validado · 28/10/2026
 
 **Estado:** etapa de integración **cerrada** con reservas. Por autorización expresa del creador, PR1 se actualizó, pasó a ready y se fusionó únicamente en `main`, commit `96e2b6c3dd19d5f11846820e51948af245c99e71`. No se publicó release, tag ni se iniciaron D1/F. **Informe y evidencia:** [56](56-d0-p1-i-integracion-main.md).
