@@ -1,7 +1,9 @@
 name: D1 y D2 — arquitectura y regresiones
 on:
   push:
-    branches: [refactor/d1-d2-arquitectura]
+    branches: [main, refactor/d1-d2-arquitectura]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
@@ -21,11 +23,15 @@ jobs:
       - run: npm test
       - name: Oráculo57872ee y40 partidas por variante, sin omitir campos de comportamiento
         run: npm run test:poc
+      - name: Comparación directa contra main de referencia
+        run: REFERENCE_COMMIT=0b75d01aba013cd029d9d0dd0bdbd20791be15fc D12A_OUTPUT_DIR=/tmp/d1d2-main-regressions npm run test:poc
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: d1d2-engine-${{ github.sha }}
-          path: /tmp/d1d2-regressions/
+          path: |
+            /tmp/d1d2-regressions/
+            /tmp/d1d2-main-regressions/
   browser:
     runs-on: ubuntu-latest
     timeout-minutes: 25
@@ -55,6 +61,10 @@ jobs:
           D12B_OUTPUT_DIR=/tmp/d1d2-browser/handover node scripts/check-d12b-handover-browser.mjs
           C16_OUTPUT_DIR=/tmp/d1d2-browser/focus node scripts/check-c16-focus-browser.mjs
           C11_OUTPUT_DIR=/tmp/d1d2-browser/dice node scripts/check-issue13-browser.mjs
+          node scripts/check-c12-browser.mjs > /tmp/d1d2-browser/c12.json
+          node scripts/check-c13-browser.mjs > /tmp/d1d2-browser/c13.json
+          node scripts/check-issue7-browser.mjs > /tmp/d1d2-browser/issue7.json
+          C15_OUTPUT_DIR=/tmp/d1d2-browser/terminal node scripts/check-c15-terminal-browser.mjs
           C14_BROWSER_OUTPUT=/tmp/d1d2-browser/games node scripts/check-c14-browser.mjs
           REPLAY_SOURCE=/tmp/d1d2-browser/games/partidas.json REPLAY_OUTPUT=/tmp/d1d2-browser/production node scripts/check-production-replays.mjs
       - uses: actions/upload-artifact@v4

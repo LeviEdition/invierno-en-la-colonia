@@ -2,7 +2,7 @@
 import {mkdtemp,readFile,writeFile,mkdir,symlink,unlink,rm} from 'node:fs/promises';
 import {tmpdir} from 'node:os';import {join} from 'node:path';import {fileURLToPath} from 'node:url';
 import {spawn} from 'node:child_process';import {createHash} from 'node:crypto';
-const root=fileURLToPath(new URL('../',import.meta.url)),reference='57872ee279e924460a126aecbcd0ee7141b5e078';
+const root=fileURLToPath(new URL('../',import.meta.url)),reference=process.env.REFERENCE_COMMIT||'57872ee279e924460a126aecbcd0ee7141b5e078';
 const out=process.env.D12A_OUTPUT_DIR||'/tmp/d1d2-regressions';await mkdir(out,{recursive:true});
 const temporary=await mkdtemp(join(tmpdir(),'invierno-oracle-')),checkout=join(temporary,'reference');
 async function run(command,args,cwd=root,env=process.env){

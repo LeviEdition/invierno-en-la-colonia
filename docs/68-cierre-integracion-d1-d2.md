@@ -35,3 +35,9 @@ Dirigidas B1/B2:3/3 verdes. Suite465/465,0 fallos/omisiones/cancelaciones; check
 **Bloqueante de ciclo de vida confirmado:** el segundo createApplication sobre el mismo documento lanza «ya están conectados» pero deja6 listeners visuales:16 en vez de10. También una inicialización que falla después de conectar deja los10 listeners yel registro marcado, impidiendo reconexión limpia. Dos pruebas rojas reproducen ambos defectos.
 
 La corrección limpia únicamente recursos instalados por el intento fallido (sus listeners y, si llegó a instalarlo, su registro de comandos); no desconecta la aplicación anterior. Tests de ciclo3/3 verdes, suite467/467 ybuild reproducible. Sin cambio de reglas ni de flujo exitoso. B1/B2/B3 cerrados en implementación; faltan validaciones finales ydictamen.
+
+## Preparación de CI para integrar (sin integrar)
+
+Se amplía el workflow completo a futuros PR hacia main ypush de main, para conservar estas compuertas después de una integración autorizada. Los workflows históricos D0/D1 que ahora invocan scripts de escenarios reciben la construcción explícita del HTML QA yla instalación reproducible; no se modifica el juego. La comparación permite elegir REFERENCE_COMMIT, manteniendo57872ee por defecto, yse añade comparación directa contra main0b75d01. C12/C13/issue7/terminal existentes se incorporan al recorrido actual, además de C16/C11/partidas/offline. No se abre PR para activar esta preparación.
+
+Resultado local directo contra main:40/40 registros iguales, excluyendo solo metadatos source; suite histórica main408/408 yactual467/467. La comparación histórica anterior57872ee también dio40/40 (451/451 referencia). Esto refuerza que las extracciones preservan estrategia, mensajes, muertes, rondas yRNG; no afirma equivalencia universal para todas las semillas.

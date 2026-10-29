@@ -601,3 +601,5 @@ Encargo focalizado desdeee73d29, main0b75d01 verificada. Informe68: dos bloqueos
 **Auditoría D1/D2 B2:** se retiran callbacks del catálogo de la vista yse entrega proyección de textos/elegibilidad por reglas. Dos pruebas rojas→verdes,465/465 ybuild reproducible. Falta validación final ypreparación de PR; no se abrió PR.
 
 **Auditoría B3:** dos regresiones de montaje fallido, listeners residuales16/10 ybloqueo de reconexión. Cleanup de recursos propios en catch, pruebas rojas→verdes;467/467 ybuild reproducible. Informe68 actualizado; ninguna aplicación viva se desconecta por un intento duplicado fallido.
+
+**Preparación CI D1/D2:** se conserva gate completo para futuros PR/main sin abrir/fusionar nada; workflows históricos construyen QA explícitamente. Comparación directa contra main0b75d01:408/408 y40/40 iguales, actual467/467. Se añaden recorridos existentes C12/C13/issue7/terminal al CI; no nuevas reglas ni arquitectura singleplayer.
