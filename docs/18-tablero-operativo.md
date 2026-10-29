@@ -1,5 +1,14 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## SP-03 — Propuesta de Encuentros con historias reutilizables por personaje · 29/10/2026
+
+**PROPUESTA DEL CREADOR, en evaluación crítica:** no escribir un arco exclusivo por cada superviviente; diseñar **plantillas de historias secundarias** que puedan asignarse dinámicamente a un superviviente **elegible** de los que controla el jugador. Ejemplo «familiar desaparecido en una localidad»: Mara, Iris o Damián podrían protagonizar la misma estructura narrativa **siempre que su biografía y hechos previos sean compatibles**. Un arco ya comenzado queda **vinculado a su personaje y sus NPCs concretos**; no reasignarlo sin justificación tras una muerte. La agencia del líder decide qué recursos/acciones dedicar. La personalización de tono, motivación y consecuencias debe impedir que todos parezcan nombres intercambiables.
+
+**REVISIÓN CRÍTICA:** la reutilización ahorra escritura pero puede generar contradicciones familiares, repetición de historias, personajes indistintos y bloqueos por muerte. Antes de aprobar, prototipar **una plantilla** y contrastar sus escenas con varios protagonistas, pérdida de actor, decisiones rechazadas, relaciones y consecuencias mecánicas. **No se han aprobado** asignación aleatoria, biografías nuevas, tasa de encuentros, esquema técnico, rasgos ni reglas de persistencia concretas. [Ver 63 §6.2C](63-hoja-de-ruta-planificacion-singleplayer.md).
+
+**SIGUIENTE TAREA DE DISEÑO:** confirmar o refinar la filosofía de Encuentros compartidos **con protagonista persistente y elegibilidad**; luego detallar disparadores/ritmo y prioridad de los tres sistemas narrativos. **V9.9/main/D1/D2 sin modificación por este registro.**
+
+
 ## SP-03 — Tres clases narrativas + regla de prioridad temporal · 29/10/2026
 
 **ACUERDO DEL CREADOR (diseño conceptual):** organizar la narrativa en **Encrucijadas** (dilemas menores de convivencia y recursos; dar vida al mundo), **Encuentros** (desarrollo y carácter de supervivientes, relaciones y conflictos, con posibles efectos persistentes) e **Historia principal** (acontecimientos reactivos vinculados a la campaña/objetivo y sus requisitos de victoria). **Clasificar por función narrativa y no por gravedad exacta**. La presencia de personajes de la secta en un evento del hospital pertenece a la **Historia principal** aunque el jugador todavía no conozca su identidad; no forzar acontecimientos importantes cada ronda. Ver [63 §6.2B](63-hoja-de-ruta-planificacion-singleplayer.md).
