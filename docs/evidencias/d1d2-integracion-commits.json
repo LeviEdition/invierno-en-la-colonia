@@ -1,0 +1,429 @@
+{
+  "base": "0b75d01aba013cd029d9d0dd0bdbd20791be15fc",
+  "technicalHead": "6277e62dbd8b917bac7d4c290b14096499d6b0f7",
+  "commits": [
+    {
+      "sha": "6ccada45413dad93d1bcfe1330f95a3470b4f7c8",
+      "subject": "test(D1.0): caracterizar definiciones, mazos y RNG sin modificar motor"
+    },
+    {
+      "sha": "16276f1abe06d291b6b6751b9751236126532427",
+      "subject": "docs(D1.0): resultados de caracterización y auditoría con 428 pruebas"
+    },
+    {
+      "sha": "6fcb19bf95ed64a96eca728ebe6a177958efe275",
+      "subject": "docs(D1.0): cerrar etapa en tablero de trabajo"
+    },
+    {
+      "sha": "deb7ea7575d3b64cd714d8b225e2dc23ffbabb3a",
+      "subject": "refactor(D1.1): separar fuente del catálogo y ensamblado HTML - src/item-catalog.mjs"
+    },
+    {
+      "sha": "7088c7913680bf170ae9b0e46b0d12fc615a3bbf",
+      "subject": "refactor(D1.1): separar fuente del catálogo y ensamblado HTML - src/invierno.template.html"
+    },
+    {
+      "sha": "535e9722b284a611266c0d519dc2eb1cb9ba9f78",
+      "subject": "refactor(D1.1): separar fuente del catálogo y ensamblado HTML - scripts/build-game.mjs"
+    },
+    {
+      "sha": "8040617a490818d0a24da7576cf7808d56cb2327",
+      "subject": "build(D1.1): generar HTML único desde catálogo separado"
+    },
+    {
+      "sha": "bfcef4721c9dc8449553a54fcbf54c2e3747288c",
+      "subject": "fix(D1.1): newline real en el ensamblador del catálogo"
+    },
+    {
+      "sha": "16040df6af0c4534fece779229f721162844d66e",
+      "subject": "fix(D1.1): reconocer exactamente un script embebido"
+    },
+    {
+      "sha": "7785a59eaba74abdaf70655e3a995ed63137132c",
+      "subject": "test(D1.1): pruebas unitarias del catálogo importado sin DOM"
+    },
+    {
+      "sha": "5d8460cea58188ae8fef3ea0d5a8b85f983f024e",
+      "subject": "build(D1.1): agregar generación y verificación determinista"
+    },
+    {
+      "sha": "3f22ec7037e8cd634eb2f58dcae19e1e163df381",
+      "subject": "ci(D1.1): exigir build reproducible antes de regresiones"
+    },
+    {
+      "sha": "da9d20616c1a9840c8bcfc634601d5c397344c10",
+      "subject": "test(D1.1): smoke Chromium de HTML file:// en modos local e IA"
+    },
+    {
+      "sha": "5cc07f50ceb8d3683fed583438a1978470a08b42",
+      "subject": "ci(D1.1): validar Chromium, HTML offline y cinco partidas"
+    },
+    {
+      "sha": "99e2d21cab5812cca46fb40c141482a7dbf015aa",
+      "subject": "docs(D1.1): documentar extracción de catálogo y gates Node Chromium"
+    },
+    {
+      "sha": "0876e65b68f873164345ee4e9c98bb26a6cb0708",
+      "subject": "docs(D1.1): registrar validación y siguiente gate"
+    },
+    {
+      "sha": "0442fb294b2459e49e472e82aea80c308c8f1370",
+      "subject": "docs(D1.2): auditar arquitectura modular y evaluar esbuild frente a Vite sin tocar motor"
+    },
+    {
+      "sha": "e450bc1f4e856485afe81df7c19800c8b1093cf3",
+      "subject": "docs(D1.2): cerrar auditoría de arquitectura y próxima puerta de decisión"
+    },
+    {
+      "sha": "3624cb3458e6fb3c3cbf88db84d3ab376ad7c2fe",
+      "subject": "docs(producto): dejar vinculante que matriz F pertenece a versión propia, no V9.9"
+    },
+    {
+      "sha": "a55b896f7582425cbc1d8b33675581303b8f4219",
+      "subject": "docs: aclarar en rumbo51 que matriz F modifica solo juego propio"
+    },
+    {
+      "sha": "858355344a5cade9a65f0a75a2333b13799c042d",
+      "subject": "docs: separar refactor D de decisiones matriz F en plan general"
+    },
+    {
+      "sha": "d2ba877432cff24cb8374bd1135491ed39eac9e6",
+      "subject": "docs: corregir tablero para que matriz F aplique a juego propio"
+    },
+    {
+      "sha": "eca4b17c29434c78bbca683ea8044532c4edbd14",
+      "subject": "docs: README distingue referencia de juego propio y alcance de matriz F"
+    },
+    {
+      "sha": "a80020bf5c2b5eaea16c3aabfc4d700823aa6a92",
+      "subject": "docs(roadmap): fijar tres hitos y auditoría RF separada de matriz F"
+    },
+    {
+      "sha": "a92cfe37831b7179e0a3e0bcb199bff483be36a4",
+      "subject": "docs(roadmap): establecer referencia fiel y modular como primer hito obligatorio"
+    },
+    {
+      "sha": "e3ca94f87c32e8148b77c140b6c00e291a1a15f2",
+      "subject": "docs: distinguir auditoría RF de matriz F y condicionar referencia final a fidelidad comprobada"
+    },
+    {
+      "sha": "b94fadb75b4f8a73bd7360723fad6e031e8631aa",
+      "subject": "docs(plan): insertar puerta RF y preservación antes del juego propio"
+    },
+    {
+      "sha": "b48dbf0935c40f952cc9a75283b835840e9ab84b",
+      "subject": "docs(tablero): ratificar referencia fiel modular y separar auditoría RF de matriz F"
+    },
+    {
+      "sha": "5c5057db4df32e6bec1d69d68cd89a79a8f99ead",
+      "subject": "docs(README): explicar tres hitos y separar auditoría RF de matriz F"
+    },
+    {
+      "sha": "b6a2229209c8d35c3ce9191f5df9c82a765afea0",
+      "subject": "docs: aceptar fidelidad mecánica actual y dejar solo D1/D2 como puerta técnica"
+    },
+    {
+      "sha": "b1c992805f21aa7d90b1c4337e671c88f9a691e8",
+      "subject": "docs: registrar aceptación de fidelidad V9.9 y priorizar únicamente D1/D2"
+    },
+    {
+      "sha": "4c3a37f263f7d5be72c91d28074653925a1b877f",
+      "subject": "docs: retirar puerta RF obligatoria y mantener matriz F para juego propio"
+    },
+    {
+      "sha": "9ae8b1b5b7db16d0663ba42e30c92add7bc501ac",
+      "subject": "docs(plan): fidelidad aceptada; quitar RF como fase previa a producto propio"
+    },
+    {
+      "sha": "b957133f988f97bfdd28f9bb4da39fa5de993fd9",
+      "subject": "docs(tablero): fidelidad mecánica aceptada y D1/D2 como única puerta técnica"
+    },
+    {
+      "sha": "ce608e450d2c4ee383770486b8de94d69224a496",
+      "subject": "docs(README): reconocer fidelidad aceptada y ruta D1 D2 hacia juego propio"
+    },
+    {
+      "sha": "065c1e388aa10bfed872bcac0b391589808d397d",
+      "subject": "docs(singleplayer): crear hoja de ruta SP con decisiones, dependencias y validación"
+    },
+    {
+      "sha": "7097f774e914fd951987b094c5b55dddd4e63102",
+      "subject": "docs(tablero): registrar hoja de ruta SP y próxima decisión de dados"
+    },
+    {
+      "sha": "02821207a8ed1b9a708a6ed2d21667c8f3e4be02",
+      "subject": "docs(README): enlazar planificación del modo singleplayer"
+    },
+    {
+      "sha": "a5ba2b93077a57c7c61db06c2fc1eff3e04dd97c",
+      "subject": "docs(ruta): conectar hito de juego propio con hoja de ruta SP"
+    },
+    {
+      "sha": "6b8db6b2b436b5f4aea9c18a94201c81b72f9ec1",
+      "subject": "docs(SP-02): acordar asignación de dados por líder y roles especializados"
+    },
+    {
+      "sha": "dd1dfcf4e9939219e42a1ccfe2ae2686a6b37aa8",
+      "subject": "docs(tablero): registrar acuerdo SP-02 sobre decisiones del líder y especializaciones"
+    },
+    {
+      "sha": "cfa40254c56072e820eadee9b7c329b315cbce26",
+      "subject": "docs(SP-02): analizar stats, pasivas, dominancia y alternativas de dados sin aprobar reglas"
+    },
+    {
+      "sha": "9f989b758d2c1002d8a922ea6c8b41f0b3133552",
+      "subject": "docs(tablero): registrar análisis crítico SP-02 de atributos y pasivas"
+    },
+    {
+      "sha": "1ed17b6cace36eac4f83a0b3b892a93eccaf44b8",
+      "subject": "docs(SP-02): registrar exploración de tercera estadística de peso equivalente"
+    },
+    {
+      "sha": "ddd4b6e9b03a8b28a1ce730b6bde898dfe723806",
+      "subject": "docs(tablero): registrar tercera estadística como hipótesis SP-02.1"
+    },
+    {
+      "sha": "1dcab6828d87a6d193d8315c4db69c9696dbfd23",
+      "subject": "docs(SP-02): comparar dados de acción con pruebas por atributo y grados de éxito"
+    },
+    {
+      "sha": "094d4a0091600e3d4fced767343c0334f004a8c3",
+      "subject": "docs(tablero): registrar alternativa de dice pool y siguiente análisis SP-02"
+    },
+    {
+      "sha": "0b091ca18d7ceb11e043d73ed306f5c99b47f0db",
+      "subject": "docs(SP-02): registrar propuesta de 3 órdenes y movilidad por pool con exposición integrada"
+    },
+    {
+      "sha": "739996bcd78b91f45191fb75e7bddd40bec7968d",
+      "subject": "docs(tablero): registrar hipótesis de órdenes por supervivientes y movilidad por atributo"
+    },
+    {
+      "sha": "883d7b26db24233a68d562dac85a3cea4a88c153",
+      "subject": "docs(SP-02): evaluar conveniencia de tiradas por atributo frente a V9.9 sin balance"
+    },
+    {
+      "sha": "0caec2bdd54c578d31d242fd50d28479ec8d4dbd",
+      "subject": "docs(tablero): registrar evaluación conceptual de dice pools frente a V9.9"
+    },
+    {
+      "sha": "8df0a0e531a4bafdc33cb098b9090d221a686039",
+      "subject": "docs(SP-02): registrar 480k simulaciones, sesgos y evaluación sin aprobar cambios"
+    },
+    {
+      "sha": "de72255f9d1371413189ef07599a8ddc93053154",
+      "subject": "docs(tablero): registrar resultados y límites del banco SP-02 de 480k rondas"
+    },
+    {
+      "sha": "ed22f67c657c40c18b929bd53ec2e57875f1b7dc",
+      "subject": "docs(SP-02): estudiar resolución híbrida contextual sin cerrar reglas"
+    },
+    {
+      "sha": "c1580065cc4c88e85dccb16f1c213e9219726ca3",
+      "subject": "docs(tablero): registrar propuesta híbrida con defensa determinista contextual"
+    },
+    {
+      "sha": "9c8a21eeb4b708ea49d9f282deee0e6fd08a0d56",
+      "subject": "docs(SP-02): documentar 750k simulaciones del motor híbrido y riesgo de asedio trivial"
+    },
+    {
+      "sha": "961c0da90288cf16898ea8e9606d86bc558209ba",
+      "subject": "docs(tablero): registrar hallazgos del banco híbrido de 750k rondas"
+    },
+    {
+      "sha": "9098f722c09a7142cdb06b6adb46af75e8251d21",
+      "subject": "docs(SP-02): registrar hipótesis de exposición tras defensa determinista"
+    },
+    {
+      "sha": "f9f7134e37743fa2b0682059e566b797b10710c8",
+      "subject": "docs(tablero): registrar exposición por ataque en híbrido para próxima prueba"
+    },
+    {
+      "sha": "caee280a4b6d14f1be96241840ee61bc1639e859",
+      "subject": "docs(singleplayer): registrar replanteo de alcance hacia narrativa sin cerrar decisión"
+    },
+    {
+      "sha": "691f21464369fc2c68345cf2d24804d2dfa093cf",
+      "subject": "docs(tablero): dejar replanteo de alcance como pendiente, foco narrativo sugerido"
+    },
+    {
+      "sha": "b83235f47db0f78b7780f1642664a5a1d5a877b5",
+      "subject": "docs(bitacora): cierre de jornada 2026-10-28 y punto de reanudación SP-02"
+    },
+    {
+      "sha": "388a878ee4e32e3821c3f97af365c972196f3ea8",
+      "subject": "docs(tablero): cerrar jornada y fijar SP-02 como reanudación mañana"
+    },
+    {
+      "sha": "0c8b6e45b1c7640abfd5b63368350564df102b62",
+      "subject": "docs(singleplayer): enlazar bitácora y continuidad SP-02"
+    },
+    {
+      "sha": "ba9a4238d22ad968edbe74d0445949f9a631ec70",
+      "subject": "docs(bitacora): incorporar plan y prompt Codex D1.2a para 29-10"
+    },
+    {
+      "sha": "181903cac73f629ad68d0f8ee84000d84d571086",
+      "subject": "build(D1.2a): ensayar catálogo ESM e IIFE en HTML experimental"
+    },
+    {
+      "sha": "918e24183a441c127ce23c75ea36d97f7f90f347",
+      "subject": "docs(D1.2a): registrar CI, límite de fixtures y punto de control"
+    },
+    {
+      "sha": "8b738df4bb9490726cceabd3b40c9a8a00327c40",
+      "subject": "refactor(D1.2b): compartir cargador y aislar comandos de inicio y pase"
+    },
+    {
+      "sha": "57872ee279e924460a126aecbcd0ee7141b5e078",
+      "subject": "docs(D1.2b): confirmar CI y entregar contrato acotado para revisión"
+    },
+    {
+      "sha": "151be085943a0906d67f2a8c1e0eefb77a230f66",
+      "subject": "refactor(D2): extraer motor sin DOM y conservar regresiones históricas"
+    },
+    {
+      "sha": "34a6274e2fd8221e67601978c87543df0cbec9e0",
+      "subject": "refactor(D1-D2): adoptar módulos privados, comandos UI y agente por capacidades"
+    },
+    {
+      "sha": "b7f2a80770a205ff63431fa64e5155d529918cf6",
+      "subject": "docs(D1-D2): registrar CI exacto, evidencias y entrega para revisión"
+    },
+    {
+      "sha": "ee73d29b3285a186b805f5def4c07dd28d4a3ef9",
+      "subject": "chore(D1-D2): normalizar espacios del renderer extraído sin cambiar artefacto"
+    },
+    {
+      "sha": "837e5cea3451b5f3a8c99e2dc1883f47840dfbb1",
+      "subject": "fix(D2): impedir referencias mutables por prototipos de controles"
+    },
+    {
+      "sha": "5757a3c015956a5ab26ca056b0adab877fa5b7e8",
+      "subject": "fix(D2): mantener consecuencias de encrucijadas fuera de la vista"
+    },
+    {
+      "sha": "ee4b08eaeb79720ede2d8ff5f065feccc9555fe0",
+      "subject": "fix(D2): liberar listeners propios si falla el montaje de la aplicación"
+    },
+    {
+      "sha": "352c0940dfe7df030a5598d1f506d0cc62a953f9",
+      "subject": "ci(D1-D2): preparar gates de integración y comparación directa con main"
+    },
+    {
+      "sha": "6277e62dbd8b917bac7d4c290b14096499d6b0f7",
+      "subject": "test(D1-D2): validar finales con el aislamiento de foco vigente desde C16"
+    }
+  ],
+  "files": [
+    ".github/workflows/d0-i-v-chromium.yml",
+    ".github/workflows/d1-catalogo-chromium.yml",
+    ".github/workflows/d12a-esbuild-poc.yml",
+    ".github/workflows/pruebas.yml",
+    "README.md",
+    "docs/01-plan-refactorizacion.md",
+    "docs/18-tablero-operativo.md",
+    "docs/25-registro-estabilizacion.md",
+    "docs/51-rumbo-fidelidad-e-identidad.md",
+    "docs/58-d1-0-linea-base-catalogo.md",
+    "docs/59-d1-1-extraccion-catalogo.md",
+    "docs/60-d1-2-auditoria-arquitectura-build.md",
+    "docs/61-alcance-matriz-f-juego-propio.md",
+    "docs/62-hitos-referencia-fiel-y-juego-propio.md",
+    "docs/63-hoja-de-ruta-planificacion-singleplayer.md",
+    "docs/64-bitacora-2026-10-28.md",
+    "docs/65-d1-2a-experimento-esbuild.md",
+    "docs/66-d1-2b-contratos-inicio-y-pruebas.md",
+    "docs/67-d1-d2-arquitectura.md",
+    "docs/68-cierre-integracion-d1-d2.md",
+    "docs/evidencias/d12a-browser-poc.json",
+    "docs/evidencias/d12a-browser-reference.json",
+    "docs/evidencias/d12a-build.json",
+    "docs/evidencias/d12a-ci-offline-poc.json",
+    "docs/evidencias/d12a-ci-offline-reference.json",
+    "docs/evidencias/d12a-ci.json",
+    "docs/evidencias/d12a-engine-comparison.json",
+    "docs/evidencias/d12a-focus-poc.json",
+    "docs/evidencias/d12a-focus-reference.json",
+    "docs/evidencias/d12a-local.json",
+    "docs/evidencias/d12a-poc-desktop.png",
+    "docs/evidencias/d12a-poc-mobile.png",
+    "docs/evidencias/d12a-poc-suite.json",
+    "docs/evidencias/d12b-browser.json",
+    "docs/evidencias/d12b-ci.json",
+    "docs/evidencias/d12b-engine-comparison.json",
+    "docs/evidencias/d12b-focus.json",
+    "docs/evidencias/d12b-handover.json",
+    "docs/evidencias/d12b-local.json",
+    "docs/evidencias/d12b-suite.json",
+    "docs/evidencias/d1d2-ci.json",
+    "docs/evidencias/d1d2-local.json",
+    "invierno_colonia_v9_9.html",
+    "package-lock.json",
+    "package.json",
+    "scripts/build-browser-scenario.mjs",
+    "scripts/build-esbuild-poc.mjs",
+    "scripts/build-game.mjs",
+    "scripts/build-test-runtime.mjs",
+    "scripts/check-c12-browser.mjs",
+    "scripts/check-c13-browser.mjs",
+    "scripts/check-c14-browser.mjs",
+    "scripts/check-c15-accessibility.mjs",
+    "scripts/check-c15-terminal-browser.mjs",
+    "scripts/check-c16-focus-browser.mjs",
+    "scripts/check-d1-offline-browser.mjs",
+    "scripts/check-d12b-handover-browser.mjs",
+    "scripts/check-esbuild-poc-regressions.mjs",
+    "scripts/check-integration-terminal-browser.mjs",
+    "scripts/check-issue13-browser.mjs",
+    "scripts/check-issue7-browser.mjs",
+    "scripts/check-production-replays.mjs",
+    "src/agents/reference-agent.mjs",
+    "src/application/create-application.mjs",
+    "src/application/death-director.mjs",
+    "src/application/read-only-context.mjs",
+    "src/application/reference-contracts.mjs",
+    "src/application/reference-engine.mjs",
+    "src/application/reference-turns.mjs",
+    "src/domain/reference-crisis.mjs",
+    "src/domain/reference-data.mjs",
+    "src/domain/reference-items.mjs",
+    "src/domain/reference-rules.mjs",
+    "src/domain/reference-state.mjs",
+    "src/invierno.template.html",
+    "src/item-catalog.mjs",
+    "src/main.mjs",
+    "src/presentation/commands.mjs",
+    "src/presentation/reference-view.mjs",
+    "test-support/browser-game-page.mjs",
+    "test-support/browser-scenario-entry.mjs",
+    "test-support/game-fixture.mjs",
+    "test-support/game-runtime-contract.mjs",
+    "test-support/game-source.mjs",
+    "test-support/reference-test-entry.mjs",
+    "tests/accesibilidad-pase-c4.test.mjs",
+    "tests/application-lifecycle-d2.test.mjs",
+    "tests/build-esbuild-poc.test.mjs",
+    "tests/busqueda-objetos.test.mjs",
+    "tests/catalogo-caracterizacion-d1.test.mjs",
+    "tests/colonia-turnos.test.mjs",
+    "tests/combate-equipamiento.test.mjs",
+    "tests/encrucijadas.test.mjs",
+    "tests/engine-boundaries-d2.test.mjs",
+    "tests/estado-inicial.test.mjs",
+    "tests/finales-lideres.test.mjs",
+    "tests/foco-modales-c16.test.mjs",
+    "tests/game-source-contract-d12b.test.mjs",
+    "tests/ia-turnos.test.mjs",
+    "tests/integracion-partidas-a4.test.mjs",
+    "tests/integration-boundaries-d2.test.mjs",
+    "tests/item-catalog-modulo-d1.test.mjs",
+    "tests/modales-estados-pendientes.test.mjs",
+    "tests/modo-local-privacidad.test.mjs",
+    "tests/movimiento-exposicion.test.mjs",
+    "tests/renderer-boundary-d2.test.mjs",
+    "tests/rondas-mordeduras.test.mjs",
+    "tests/smoke-baseline.test.mjs"
+  ],
+  "scope": "Lista exacta del contenido técnico propuesto. El commit de informe/PR propuesto posterior añade únicamente documentación; la rama de entrega se verifica nuevamente en Actions."
+}

@@ -1,10 +1,11 @@
+import {scenarioPage} from '../test-support/browser-game-page.mjs';
 // Auditoría de foco real. No cambia reglas; escenarios de pase/muerte preparados.
 // Servir el repositorio en 8765 y definir PLAYWRIGHT_MODULE si es externo.
 import assert from 'node:assert/strict';
 import {mkdir,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
-const url=process.env.GAME_URL||'http://127.0.0.1:8765/invierno_colonia_v9_9.html';
+const url=process.env.GAME_URL||'http://127.0.0.1:8765/dist/invierno-test.html';
 const output=process.env.C15_OUTPUT_DIR||'/tmp/c15-focus';
 await mkdir(output,{recursive:true});
 const html=await (await fetch(url)).text();
@@ -14,7 +15,7 @@ try{
  for(const viewport of [{width:320,height:640},{width:393,height:852},{width:1365,height:768}]){
   const context=await browser.newContext({viewport,isMobile:viewport.width<500,hasTouch:viewport.width<500});
   await context.addInitScript(()=>Math.random=()=>.45);
-  const page=await context.newPage();page.on('pageerror',e=>result.errors.push(e.message));
+  const page=scenarioPage(await context.newPage());page.on('pageerror',e=>result.errors.push(e.message));
   await page.goto(url);
   async function cycle(id){
    const observations=[];

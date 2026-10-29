@@ -1,0 +1,77 @@
+name: D1 y D2 — arquitectura y regresiones
+on:
+  push:
+    branches: [main, refactor/d1-d2-arquitectura]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  engine:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - run: npm run check:build
+      - run: npm test
+      - name: Oráculo57872ee y40 partidas por variante, sin omitir campos de comportamiento
+        run: npm run test:poc
+      - name: Comparación directa contra main de referencia
+        run: REFERENCE_COMMIT=0b75d01aba013cd029d9d0dd0bdbd20791be15fc D12A_OUTPUT_DIR=/tmp/d1d2-main-regressions npm run test:poc
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: d1d2-engine-${{ github.sha }}
+          path: |
+            /tmp/d1d2-regressions/
+            /tmp/d1d2-main-regressions/
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - run: npm run check:build
+      - name: Instalar herramienta externa al producto
+        run: |
+          npm install --no-save --package-lock=false playwright@1.57.0
+          npx playwright install --with-deps chromium
+      - run: node scripts/build-browser-scenario.mjs
+      - name: Chromium — producto, escenarios, offline y reproducción de cinco partidas
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/d1d2-http.log 2>&1 &
+          trap 'kill $!' EXIT
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:8765/invierno_colonia_v9_9.html -o /dev/null && break; sleep 1; done
+          export CHROMIUM_PATH="$(node --input-type=module -e "import {chromium} from 'playwright';console.log(chromium.executablePath())")"
+          mkdir -p /tmp/d1d2-browser
+          node scripts/check-d1-offline-browser.mjs > /tmp/d1d2-browser/offline-product.json
+          GAME_FILE_URL="file://$GITHUB_WORKSPACE/dist/invierno-test.html" node scripts/check-d1-offline-browser.mjs > /tmp/d1d2-browser/offline-qa.json
+          D12B_OUTPUT_DIR=/tmp/d1d2-browser/handover node scripts/check-d12b-handover-browser.mjs
+          C16_OUTPUT_DIR=/tmp/d1d2-browser/focus node scripts/check-c16-focus-browser.mjs
+          C11_OUTPUT_DIR=/tmp/d1d2-browser/dice node scripts/check-issue13-browser.mjs
+          node scripts/check-c12-browser.mjs > /tmp/d1d2-browser/c12.json
+          node scripts/check-c13-browser.mjs > /tmp/d1d2-browser/c13.json
+          node scripts/check-issue7-browser.mjs > /tmp/d1d2-browser/issue7.json
+          C15_OUTPUT_DIR=/tmp/d1d2-browser/terminal node scripts/check-integration-terminal-browser.mjs
+          C14_BROWSER_OUTPUT=/tmp/d1d2-browser/games node scripts/check-c14-browser.mjs
+          REPLAY_SOURCE=/tmp/d1d2-browser/games/partidas.json REPLAY_OUTPUT=/tmp/d1d2-browser/production node scripts/check-production-replays.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: d1d2-browser-${{ github.sha }}
+          path: |
+            /tmp/d1d2-browser/
+            /tmp/d1d2-http.log
+            dist/qa-modules.json

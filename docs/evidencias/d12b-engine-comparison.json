@@ -1,0 +1,370 @@
+{
+  "excludedFields": [
+    "source (hashes de HTML/script)"
+  ],
+  "comparison": [
+    {
+      "mode": "ai",
+      "seed": 2654435761,
+      "result": "victory",
+      "rounds": 4,
+      "beforeDigest": "7bc0d21faa213bbf404862bfe7874197b771ae14a7d464e48610dce81d684570",
+      "afterDigest": "7bc0d21faa213bbf404862bfe7874197b771ae14a7d464e48610dce81d684570",
+      "equal": true
+    },
+    {
+      "mode": "ai",
+      "seed": 1013904226,
+      "result": "victory",
+      "rounds": 4,
+      "beforeDigest": "86a7abc321839fd8acb135eef416565c2e6ee23f063fafce34eb4aa6972957bd",
+      "afterDigest": "86a7abc321839fd8acb135eef416565c2e6ee23f063fafce34eb4aa6972957bd",
+      "equal": true
+    },
+    {
+      "mode": "ai",
+      "seed": 3668339987,
+      "result": "victory",
+      "rounds": 4,
+      "beforeDigest": "07432f278e7a8b8e44fad82ae718ce5c047ae7a7be7ba316f08cc48d428c21ea",
+      "afterDigest": "07432f278e7a8b8e44fad82ae718ce5c047ae7a7be7ba316f08cc48d428c21ea",
+      "equal": true
+    },
+    {
+      "mode": "ai",
+      "seed": 2027808452,
+      "result": "victory",
+      "rounds": 6,
+      "beforeDigest": "e17a24076aaf963845b507427f9b6b5227214d34ef0d2950ec920889a1ebcd76",
+      "afterDigest": "e17a24076aaf963845b507427f9b6b5227214d34ef0d2950ec920889a1ebcd76",
+      "equal": true
+    },
+    {
+      "mode": "ai",
+      "seed": 387276917,
+      "result": "victory",
+      "rounds": 3,
+      "beforeDigest": "923253bf86f1f9d0c175a348bc23984a5e25698f1c00292ec6dbe6521b40ed13",
+      "afterDigest": "923253bf86f1f9d0c175a348bc23984a5e25698f1c00292ec6dbe6521b40ed13",
+      "equal": true
+    },
+    {
+      "mode": "ai",
+      "seed": 3041712678,
+      "result": "victory",
+      "rounds": 2,
+      "beforeDigest": "faa6dacbec143761a9180c510ef17a3816855c44b993359e152ead8c01a5a59a",
+      "afterDigest": "faa6dacbec143761a9180c510ef17a3816855c44b993359e152ead8c01a5a59a",
+      "equal": true
+    },
+    {
+      "mode": "ai",
+      "seed": 1401181143,
+      "result": "morale",
+      "rounds": 6,
+      "beforeDigest": "ae4bbd29648ab4511ee459d4b958e9dbe4c491ae004be03a0982cbb751cc5f92",
+      "afterDigest": "ae4bbd29648ab4511ee459d4b958e9dbe4c491ae004be03a0982cbb751cc5f92",
+      "equal": true
+    },
+    {
+      "mode": "ai",
+      "seed": 4055616904,
+      "result": "victory",
+      "rounds": 4,
+      "beforeDigest": "92cb53626e3515164a04e666728cd06317610a472d391390ba3ef90ab7e860ec",
+      "afterDigest": "92cb53626e3515164a04e666728cd06317610a472d391390ba3ef90ab7e860ec",
+      "equal": true
+    },
+    {
+      "mode": "ai",
+      "seed": 2415085369,
+      "result": "morale",
+      "rounds": 6,
+      "beforeDigest": "ea36d6c2c43adc6b96ec48cbe67c02b3d83738e95ea926799625b0fd67637b56",
+      "afterDigest": "ea36d6c2c43adc6b96ec48cbe67c02b3d83738e95ea926799625b0fd67637b56",
+      "equal": true
+    },
+    {
+      "mode": "ai",
+      "seed": 774553834,
+      "result": "victory",
+      "rounds": 2,
+      "beforeDigest": "c91c8c87d01ef8b190c2e195824bcedb59454c77df736dab8a23217f983b110a",
+      "afterDigest": "c91c8c87d01ef8b190c2e195824bcedb59454c77df736dab8a23217f983b110a",
+      "equal": true
+    },
+    {
+      "mode": "ai",
+      "seed": 3428989595,
+      "result": "victory",
+      "rounds": 3,
+      "beforeDigest": "63e527bf565fb0ed5e9e07c54c04c9e1399eca7a2472555cd41aa1092117efcb",
+      "afterDigest": "63e527bf565fb0ed5e9e07c54c04c9e1399eca7a2472555cd41aa1092117efcb",
+      "equal": true
+    },
+    {
+      "mode": "ai",
+      "seed": 1788458060,
+      "result": "morale",
+      "rounds": 4,
+      "beforeDigest": "4376cf17669e4dfb8a634d3dfe35bc99a1a62f47e474cc52c68c1f130bcb6436",
+      "afterDigest": "4376cf17669e4dfb8a634d3dfe35bc99a1a62f47e474cc52c68c1f130bcb6436",
+      "equal": true
+    },
+    {
+      "mode": "ai",
+      "seed": 147926525,
+      "result": "victory",
+      "rounds": 3,
+      "beforeDigest": "4c64525e2fb555d6a7f83b2ef6a2ddbf049306888be842005788e752985f174c",
+      "afterDigest": "4c64525e2fb555d6a7f83b2ef6a2ddbf049306888be842005788e752985f174c",
+      "equal": true
+    },
+    {
+      "mode": "ai",
+      "seed": 2802362286,
+      "result": "victory",
+      "rounds": 2,
+      "beforeDigest": "b454a59f353bb563208cc81d13416babefb3a9965ab6fbcc220a9d1fb1ad71b9",
+      "afterDigest": "b454a59f353bb563208cc81d13416babefb3a9965ab6fbcc220a9d1fb1ad71b9",
+      "equal": true
+    },
+    {
+      "mode": "ai",
+      "seed": 1161830751,
+      "result": "victory",
+      "rounds": 2,
+      "beforeDigest": "3ea698014533b67d11613a9a011ef7c96f9008a2fe833ae2ee4239dde891f0dc",
+      "afterDigest": "3ea698014533b67d11613a9a011ef7c96f9008a2fe833ae2ee4239dde891f0dc",
+      "equal": true
+    },
+    {
+      "mode": "ai",
+      "seed": 3816266512,
+      "result": "morale",
+      "rounds": 4,
+      "beforeDigest": "3c7488223e3304f44ee9b24ea39792f9f929f15ae28863b392c5ea8349b9e9d1",
+      "afterDigest": "3c7488223e3304f44ee9b24ea39792f9f929f15ae28863b392c5ea8349b9e9d1",
+      "equal": true
+    },
+    {
+      "mode": "ai",
+      "seed": 2175734977,
+      "result": "victory",
+      "rounds": 2,
+      "beforeDigest": "d86bfd0beccf57521bc1ef7afa5104a538e0ece076e045daae38d63471c1b6c5",
+      "afterDigest": "d86bfd0beccf57521bc1ef7afa5104a538e0ece076e045daae38d63471c1b6c5",
+      "equal": true
+    },
+    {
+      "mode": "ai",
+      "seed": 535203442,
+      "result": "victory",
+      "rounds": 3,
+      "beforeDigest": "9c766969c4270ed5784fe652c25e7f71035637a62166a3ac7819335c8308b7c4",
+      "afterDigest": "9c766969c4270ed5784fe652c25e7f71035637a62166a3ac7819335c8308b7c4",
+      "equal": true
+    },
+    {
+      "mode": "ai",
+      "seed": 3189639203,
+      "result": "victory",
+      "rounds": 3,
+      "beforeDigest": "7e991839c5438537703ff2cc17309661d1006897350944a370eab4b1075a21c8",
+      "afterDigest": "7e991839c5438537703ff2cc17309661d1006897350944a370eab4b1075a21c8",
+      "equal": true
+    },
+    {
+      "mode": "ai",
+      "seed": 1549107668,
+      "result": "morale",
+      "rounds": 5,
+      "beforeDigest": "f5e6d4e09a684c5e2913f2312129a90830424f8ca6ede5a54aca01f02bcf2f6c",
+      "afterDigest": "f5e6d4e09a684c5e2913f2312129a90830424f8ca6ede5a54aca01f02bcf2f6c",
+      "equal": true
+    },
+    {
+      "mode": "local",
+      "seed": 2654435761,
+      "result": "victory",
+      "rounds": 2,
+      "beforeDigest": "17a35f9cc3d574eb43a9f944b28c834079fb360156123f2710e4dee6dfe99d87",
+      "afterDigest": "17a35f9cc3d574eb43a9f944b28c834079fb360156123f2710e4dee6dfe99d87",
+      "equal": true
+    },
+    {
+      "mode": "local",
+      "seed": 1013904226,
+      "result": "victory",
+      "rounds": 3,
+      "beforeDigest": "a2973a92e8e65df7c9be6e5e61af671e4436ce1d61122345a2472e8a8ef9db2e",
+      "afterDigest": "a2973a92e8e65df7c9be6e5e61af671e4436ce1d61122345a2472e8a8ef9db2e",
+      "equal": true
+    },
+    {
+      "mode": "local",
+      "seed": 3668339987,
+      "result": "time",
+      "rounds": 8,
+      "beforeDigest": "5a78a2f117b232c5d065df34b1405de2e8c24ea30a5e86f69c1a45453446ee54",
+      "afterDigest": "5a78a2f117b232c5d065df34b1405de2e8c24ea30a5e86f69c1a45453446ee54",
+      "equal": true
+    },
+    {
+      "mode": "local",
+      "seed": 2027808452,
+      "result": "victory",
+      "rounds": 3,
+      "beforeDigest": "6f85475d2b12eef354c4f80d16bab647369cb27348f86f542478704b0eba4249",
+      "afterDigest": "6f85475d2b12eef354c4f80d16bab647369cb27348f86f542478704b0eba4249",
+      "equal": true
+    },
+    {
+      "mode": "local",
+      "seed": 387276917,
+      "result": "victory",
+      "rounds": 2,
+      "beforeDigest": "28c4f79d33ec74c2072e2d84c90e0960659617ea393e6d9436b49e0a7aeeeb13",
+      "afterDigest": "28c4f79d33ec74c2072e2d84c90e0960659617ea393e6d9436b49e0a7aeeeb13",
+      "equal": true
+    },
+    {
+      "mode": "local",
+      "seed": 3041712678,
+      "result": "victory",
+      "rounds": 1,
+      "beforeDigest": "2b3158707b68946bf020a9a3c94640cb46c321a73a214938d39696112879be4e",
+      "afterDigest": "2b3158707b68946bf020a9a3c94640cb46c321a73a214938d39696112879be4e",
+      "equal": true
+    },
+    {
+      "mode": "local",
+      "seed": 1401181143,
+      "result": "victory",
+      "rounds": 3,
+      "beforeDigest": "67893dd0644efb88d05450ae77bab6709131c31bdd60bb3411f396e4834a830c",
+      "afterDigest": "67893dd0644efb88d05450ae77bab6709131c31bdd60bb3411f396e4834a830c",
+      "equal": true
+    },
+    {
+      "mode": "local",
+      "seed": 4055616904,
+      "result": "victory",
+      "rounds": 2,
+      "beforeDigest": "1fb493b840a9ce347b648fea3d1a93007d3ed8091f2ae1c9c99dfff280f6fb6d",
+      "afterDigest": "1fb493b840a9ce347b648fea3d1a93007d3ed8091f2ae1c9c99dfff280f6fb6d",
+      "equal": true
+    },
+    {
+      "mode": "local",
+      "seed": 2415085369,
+      "result": "victory",
+      "rounds": 4,
+      "beforeDigest": "580d7b088d4a6f640d044d1fa7bc09a2c2de24178dbf72ae7112631525711b85",
+      "afterDigest": "580d7b088d4a6f640d044d1fa7bc09a2c2de24178dbf72ae7112631525711b85",
+      "equal": true
+    },
+    {
+      "mode": "local",
+      "seed": 774553834,
+      "result": "victory",
+      "rounds": 3,
+      "beforeDigest": "5e831d305334cd98583f1c393d8740b367a7a8cf0bbc5a8300938052575dcb22",
+      "afterDigest": "5e831d305334cd98583f1c393d8740b367a7a8cf0bbc5a8300938052575dcb22",
+      "equal": true
+    },
+    {
+      "mode": "local",
+      "seed": 3428989595,
+      "result": "victory",
+      "rounds": 2,
+      "beforeDigest": "d153402a3119b47c90f049099352bd112b0fb44ad7a68f51d5ebe05f1dc3691a",
+      "afterDigest": "d153402a3119b47c90f049099352bd112b0fb44ad7a68f51d5ebe05f1dc3691a",
+      "equal": true
+    },
+    {
+      "mode": "local",
+      "seed": 1788458060,
+      "result": "victory",
+      "rounds": 4,
+      "beforeDigest": "9d814fab9f64262115f66a4d4efe9a0737cc6b54190c4954f53bc161f43ba910",
+      "afterDigest": "9d814fab9f64262115f66a4d4efe9a0737cc6b54190c4954f53bc161f43ba910",
+      "equal": true
+    },
+    {
+      "mode": "local",
+      "seed": 147926525,
+      "result": "victory",
+      "rounds": 2,
+      "beforeDigest": "534d352493fb8e5f87c467a4e49038c79eb2cab522795e5dcc1faf049cc294e5",
+      "afterDigest": "534d352493fb8e5f87c467a4e49038c79eb2cab522795e5dcc1faf049cc294e5",
+      "equal": true
+    },
+    {
+      "mode": "local",
+      "seed": 2802362286,
+      "result": "victory",
+      "rounds": 1,
+      "beforeDigest": "82c5e549c06e585a48032c4ab615a1162ca2885cbc405c322fd224625c757bb7",
+      "afterDigest": "82c5e549c06e585a48032c4ab615a1162ca2885cbc405c322fd224625c757bb7",
+      "equal": true
+    },
+    {
+      "mode": "local",
+      "seed": 1161830751,
+      "result": "victory",
+      "rounds": 1,
+      "beforeDigest": "4f2bf0f3923f70d4e348488173a245ae2238f8d159693aecdaeb259137969ca2",
+      "afterDigest": "4f2bf0f3923f70d4e348488173a245ae2238f8d159693aecdaeb259137969ca2",
+      "equal": true
+    },
+    {
+      "mode": "local",
+      "seed": 3816266512,
+      "result": "morale",
+      "rounds": 4,
+      "beforeDigest": "c9a8877b1e829d3a68700c423956d475b47306adf54c40d362241eddf4942149",
+      "afterDigest": "c9a8877b1e829d3a68700c423956d475b47306adf54c40d362241eddf4942149",
+      "equal": true
+    },
+    {
+      "mode": "local",
+      "seed": 2175734977,
+      "result": "victory",
+      "rounds": 2,
+      "beforeDigest": "5871dd9a5a0b0f275ef49564e55f7032f12ce5b4b1c2f79f1041f584a4307d6f",
+      "afterDigest": "5871dd9a5a0b0f275ef49564e55f7032f12ce5b4b1c2f79f1041f584a4307d6f",
+      "equal": true
+    },
+    {
+      "mode": "local",
+      "seed": 535203442,
+      "result": "victory",
+      "rounds": 2,
+      "beforeDigest": "82c1de68f2233f5a592c4c4f457b645013ccf9e634b33e30930ec00752d87b47",
+      "afterDigest": "82c1de68f2233f5a592c4c4f457b645013ccf9e634b33e30930ec00752d87b47",
+      "equal": true
+    },
+    {
+      "mode": "local",
+      "seed": 3189639203,
+      "result": "victory",
+      "rounds": 3,
+      "beforeDigest": "a586bdfc65ab00be2c6901a5d5fbf99883b1264e16b6bd564881ae244b5588a0",
+      "afterDigest": "a586bdfc65ab00be2c6901a5d5fbf99883b1264e16b6bd564881ae244b5588a0",
+      "equal": true
+    },
+    {
+      "mode": "local",
+      "seed": 1549107668,
+      "result": "morale",
+      "rounds": 9,
+      "beforeDigest": "5f5b226606f7d02a6294f9d8c91fa2a6f5b8acc7952abf688e1458b61576d73e",
+      "afterDigest": "5f5b226606f7d02a6294f9d8c91fa2a6f5b8acc7952abf688e1458b61576d73e",
+      "equal": true
+    }
+  ],
+  "referenceHtmlSha256": "726a929502debe38d5a2c81c0ad12838b2424e4ac1ad19b27a44131f88831014",
+  "candidateHtmlSha256": "bbf71aae0198d3c5bc72f73e3e2219c8f603f63a04b895880fea67de93c87fc5",
+  "sameDigestsAsD12a": true
+}

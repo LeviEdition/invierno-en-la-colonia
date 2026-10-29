@@ -1,10 +1,11 @@
+import {scenarioPage} from '../test-support/browser-game-page.mjs';
 // Comprobación dirigida opcional; requiere Playwright y Chromium externos a npm test.
 // Servir el repositorio: python -m http.server 8765 --bind 127.0.0.1
 // PLAYWRIGHT_MODULE=/ruta/a/playwright-core/index.mjs node scripts/check-issue7-browser.mjs
 import assert from 'node:assert/strict';
 const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',headless:true,args:['--no-sandbox']});
-const url=process.env.ISSUE7_URL||'http://127.0.0.1:8765/invierno_colonia_v9_9.html';
+const url=process.env.ISSUE7_URL||'http://127.0.0.1:8765/dist/invierno-test.html';
 const cases=[
  {id:'R1',title:'La radio encendida',when:'search',food:1,morale:8,pick:0},
  {id:'R2',title:'La radio encendida',when:'search',food:8,morale:2,pick:1},
@@ -17,7 +18,7 @@ const results=[],errors=[];
 try{
  for(const viewport of [{width:1365,height:768},{width:393,height:852}]){
   const context=await browser.newContext({viewport,isMobile:viewport.width<500,hasTouch:viewport.width<500});
-  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
+  const page=scenarioPage(await context.newPage());page.on('pageerror',e=>errors.push(e.message));
   async function start(mode='ai'){
    await page.goto(url);
    await page.locator('[onclick="startGame(\''+mode+'\')"]').click();

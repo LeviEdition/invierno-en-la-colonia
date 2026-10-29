@@ -583,3 +583,33 @@ CI exacto d801dbb / [40688534944](https://github.com/LeviEdition/invierno-en-la-
 Se comprobaron JSON, hashes de motor/evidencias, enlaces locales, sintaxis de los scripts y git diff --check. Capturas320px y continuidad393px inspeccionadas. Revisión independiente final técnica/documental aprobada; informes46–49, matriz04 y tablero18 coherentes. A1 y adaptaciones requieren revisión humana; **misión técnicamente entregada con reservas, etapa C no oficialmente cerrada**. Nueve issues abiertos conservados, #4/#5/#6 ya estaban cerrados. Sin stable, main, D/E/F ni cambios de balance. El commit documental de este checkpoint también se verifica por SHA en Actions al entregar; no se reutiliza para él el CI del código.
 
 **Única siguiente tarea:** aceptación del creador usando checklist49; decidir cierre con reservas o autorizar una corrección acotada de A1. El plan D es solo propuesta, sin implementación.
+
+## 29/10/2026 — continuidad técnica D1/D2 (no nuevas reglas de estabilización)
+
+Autorización ampliada del creador para completar D1 y D2. [Informe67](67-d1-d2-arquitectura.md), rama `refactor/d1-d2-arquitectura` desde57872ee. main0b75d01 intacta; PR14 ya fusionado históricamente, no por esta tarea. Referencia451/451, primer motor modular454/454 y40 comparaciones estrictas iguales. En curso: contratos de eventos/build, capacidades IA y compuertas completas. No comienza SP-02/Director/juego propio.
+
+**Continuación D1/D2, bloque de adopción:** build único esbuild/IIFE,55 atributos de eventos migrados, estado no publicado y agente mediante comandos.462/462 locales;40 registros iguales contra57872ee;5partidas QA y5 reproducciones sobre producto,3C16,6inicio/pase,6tamaños táctiles. Revisión propia detectó y corrigió receptor de queueMicrotask, fugas de vistas por descriptores y consulta de catálogo congelado, con pruebas de regresión. CI exacto y file:// en Actions pendientes al crear el commit; informe67 conserva límites y rollback. Sin otras reglas/features.
+
+**Entrega técnica D1/D2:**34a6274 subido; Actions40877102864 y40877102629 success. Artifacts descargados,462/462 candidato,451/451 histórico,40/40 iguales,5QA+5producto,3C16/3viewports producto/6contratos/6tamaños táctiles,4file offline. Hashes de producto/QA y15módulos cotejados. [Informe67](67-d1-d2-arquitectura.md) y[evidencia](evidencias/d1d2-ci.json) contienen límites, fallos corregidos, commits y rollback. Recomendación única: revisión humana antes de integración/preservación. No reglas/features ni cambios de main.
+
+**Revisión final del diff completo:** se normalizaron cuatro espacios finales heredados del renderer extraído. check:build confirmó HTML/JS idéntico byte a byte; evidencia34a6274 conservada con aclaración de hash fuente. No se alteraron reglas ni aserciones; CI se verifica nuevamente en el SHA de entrega.
+
+## 29/10/2026 — auditoría de integración D1/D2, sin nuevas mecánicas
+
+Encargo focalizado desdeee73d29, main0b75d01 verificada. Informe68: dos bloqueos reproducibles en capacidades de vista (prototipo de controles y callbacks de cartas). B1 corregido con fachada de consultas, prueba roja→verde,463/463; B2 ycompuertas finales pendientes. No PR abierto/fusionado, no referencia oficial ni singleplayer.
+
+**Auditoría D1/D2 B2:** se retiran callbacks del catálogo de la vista yse entrega proyección de textos/elegibilidad por reglas. Dos pruebas rojas→verdes,465/465 ybuild reproducible. Falta validación final ypreparación de PR; no se abrió PR.
+
+**Auditoría B3:** dos regresiones de montaje fallido, listeners residuales16/10 ybloqueo de reconexión. Cleanup de recursos propios en catch, pruebas rojas→verdes;467/467 ybuild reproducible. Informe68 actualizado; ninguna aplicación viva se desconecta por un intento duplicado fallido.
+
+**Preparación CI D1/D2:** se conserva gate completo para futuros PR/main sin abrir/fusionar nada; workflows históricos construyen QA explícitamente. Comparación directa contra main0b75d01:408/408 y40/40 iguales, actual467/467. Se añaden recorridos existentes C12/C13/issue7/terminal al CI; no nuevas reglas ni arquitectura singleplayer.
+
+**Validación ampliada:** Actions40883942064 rojo por invocar recorrido C15 que esperaba fuga de foco ya corregida por C16; engine/regresiones verdes. Se preserva script histórico yse incorpora recorrido terminal vigente con finales equivalentes, foco aislado ycomando directo bloqueado durante muerte:6/6 local. No se modifica ninguna regla para obtener verde; pendiente CI del ajuste.
+
+**Cierre de auditoría:**6277e62, CI40884309357 y40884309718 success;467/467,40/40 histórico y40/40 main,5QA+5producto ytodos los recorridos vigentes/offline. Artifacts descargados y15hashes/HTML cotejados. Informes68/69 yevidencia registran3 bloqueos corregidos, reservas yPR preparado sin abrir. Se recomienda integrar conservando historia del oráculo57872ee; squash/rebase sin preservarlo no aprobado técnicamente. main0b75d01 intacta; detención para revisión humana.
+
+## 29/10/2026 — reconciliación documental y apertura autorizada de PR D1/D2
+
+Nuevo encargo desde8e3e7d3: integrar únicamente novedades documentales de refactor/d1-catalogo@833eae7 (14 commits,18/63), con base comúnba9a423. Patch selectivo ybloques de diseño preservan registros técnicos. Acuerdos ypropuestas diferenciados; cronología sin cancelación retroactiva prevalece sobre formulaciones tempranas. Informes67/68 históricos conservados,69 actualizado einforme70 registra alcance/procedencia. No se modifica código ni mecánicas. Validación ycreación de PR pendientes de compuertas; merge no autorizado.
+
+**Reconciliación/PR:**7d6a68a aprobado local yCI40896698599/40896698392 (467,40+40,5QA+5producto,4file); artifacts cotejados. Se abrió PR15 hacia main con árbol limpio ybase0b75d01; GitHub sin conflictos, sin auto-merge. Cierre documental registra URL, propuestas/acuerdos yresultados; se comprueban checks del head final antes de entregar. main intacta, fuente833eae7 intacta; no fusión ni implementación singleplayer.

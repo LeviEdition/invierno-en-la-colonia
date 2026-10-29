@@ -1,6 +1,6 @@
 # Plan de refactorización — por etapas, sin apuro
 
-> **Ejecución actual:** la fuente de verdad de **etapa activa, tarea única y criterios de terminado** es [el tablero operativo](18-tablero-operativo.md). **Estamos en A — Auditoría funcional; siguiente tarea A5-02, Android físico; A5-01 Chromium real y emulación táctil ejecutada, A6 pendiente.** Este documento es la planificación general, no una autorización para avanzar a distintas fases en paralelo.
+> **Ejecución actual:** la fuente de verdad de **etapa activa, tarea única y criterios de terminado** es [el tablero operativo](18-tablero-operativo.md). Esta hoja conserva parte del historial de A/B/C; **D1 está en curso**, y el siguiente experimento propuesto es D1.2a (esbuild), sujeto a autorización. Este documento es planificación general, no autorización para empezar fases en paralelo.
 
 ## Objetivos
 
@@ -10,6 +10,17 @@
 4. Poder ejecutar pruebas automáticas reproducibles.
 5. Hacer de la **narrativa persistente el centro de la experiencia**: decisiones, personajes, memoria, consecuencias diferidas y arcos que cambian con la partida.
 6. Desarrollar después una presentación 2D que muestre esos cambios, y a largo plazo multijugador online.
+
+## Ruta de tres hitos: adaptación fiel y modular → preservación → juego propio
+
+**Decisiones vigentes:** [61 — matriz F solo para el juego propio](61-alcance-matriz-f-juego-propio.md) y [62 — fidelidad mecánica aceptada y D1/D2 como trabajo pendiente](62-hitos-referencia-fiel-y-juego-propio.md). La V9.9 estabilizada está **aceptada como suficientemente fiel en las mecánicas para ser nuestra referencia**, con las diferencias ya documentadas en el [informe 49](49-c15-auditoria-final.md#comparación-con-dead-of-winter). La ruta pendiente es:
+
+- **Hito 1 — aceptación mecánica ya resuelta, arquitectura por completar:** la fidelidad funcional se acepta para el alcance de esta adaptación (no significa equivalencia idéntica de todo el reglamento). **Solo faltan D1 y D2** para tener módulos desacoplados y escalables; preservar reglas actuales y verificar que la refactorización no introduzca regresiones. **No realizar otra RF desde cero ni exigir nuevos cambios de fidelidad** para iniciar el juego propio.
+- **Matriz F:** compara mecánicas con el juego de mesa **para decidir cómo funcionará nuestro videojuego propio**. `F-14` (cinco candidatos → elegir tres → líder manual) y otras filas *Conservar/Cambiar* **no se implementan en la V9.9 ni durante la refactorización D**.
+- **Hito 2 — referencia preservada:** después de aceptar la adaptación suficientemente fiel y modular, guardar una instantánea identificable con su código, ejecutable, criterios de fidelidad, resultados de prueba y desviaciones aprobadas; requiere autorización, no se crea ahora.
+- **Hito 3 — juego propio futuro:** desde esa referencia preservada, abrir línea de desarrollo separada; revalidar decisiones F según su aporte al singleplayer e incorporar gradualmente cambios propios y narrativa E.
+- **No confundir etiquetas:** las filas **F-01, F-14, etc.** son IDs de la *matriz F de comparación/diseño*. La **etapa F** histórica de este plan es presentación 2D, campañas/red y modalidades posteriores, no la implementación automática de esas filas.
+- **Informe 49 ≠ matriz F:** el informe 49 **ya contrastó la referencia** con el reglamento, y sus diferencias conocidas están aceptadas para este alcance; F registra conservar/cambiar/pendiente **para nuestro juego propio**. Una eventual auditoría RF complementaria solo se abre por hallazgo o nueva autorización, no como fase obligatoria.
 
 ## Criterio transversal de calidad y revisión (acordado)
 
@@ -70,9 +81,10 @@ Antes de comenzar una fase nueva, cerrar la anterior con evidencia y registrar u
 1. **A — Auditoría completa:** A2/A3/A4 tienen pruebas automatizadas; faltan observaciones de Android físico (A5-02), evaluación de accesibilidad/rendimiento y cierre de cobertura (A6). Documentar problemas y límites; no corregirlos a escondidas.
 2. **B — Decisiones y prioridad de defectos:** acordar qué es error y qué es regla deseada; clasificar impacto.
 3. **C — Estabilización:** corregir solo fallos priorizados, ejecutar regresiones y comprobar que el juego funciona en navegador real.
-4. **D — Refactorización:** separar módulos conservando el comportamiento.
-5. **E — Prototipo narrativo:** implementar memoria y un arco conectado validable.
-6. **F — Ampliación de campañas y presentación:** después de demostrar que funciona el núcleo.
+4. **D1/D2 — Refactorización conservadora:** completar separación de módulos **sin cambiar reglas** y sin introducir decisiones de la matriz F; validar arquitectura, tests, navegador y partidas completas.
+5. **Preservar la referencia:** una vez completadas D1/D2, guardar su SHA/versión, build y evidencias con autorización. **La fidelidad mecánica actual ya está aceptada** y el informe 49 documenta diferencias; no hay etapa RF obligatoria.
+6. **Juego propio — matriz F y E:** desde esa referencia, seleccionar los cambios F valiosos para singleplayer y prototipar memoria narrativa y un arco conectado, en línea de desarrollo separada.
+7. **Etapa F de expansión (NO la matriz F):** ampliación de campañas, presentación y red después de demostrar que funciona el núcleo.
 
 Las etapas originales C/D/E/F que aparecen debajo contienen los detalles técnicos; el [tablero operativo](18-tablero-operativo.md) determina su ejecución efectiva.
 
@@ -85,11 +97,11 @@ Extraer un componente pequeño y con pocas dependencias, probablemente el catál
 - Crear pruebas unitarias.
 - Confirmar que la interfaz sigue funcionando.
 
-**Criterio de aceptación:** el módulo puede probarse por separado, sin alterar la partida original.
+**Criterio de aceptación:** el módulo puede probarse por separado, sin alterar la partida original. **La refactorización no debe alterar la fidelidad mecánica aceptada por el creador y contrastada en el informe 49.**
 
-## Detalle futuro D2 — Motor desacoplado
+## Detalle futuro D2 — Motor desacoplado, todavía sobre la referencia
 
-Separar progresivamente:
+**Objetivo: preservar el comportamiento actual aprobado de V9.9, sin aplicar cambios de la matriz F ni alteraciones de reglas ocultas dentro de D.** Separar progresivamente:
 - Estado de partida y creación inicial.
 - Comandos (`mover`, `buscar`, `atacar`, etc.) y validaciones.
 - Resolución de turnos, crisis y efectos.
@@ -115,7 +127,7 @@ Principio: **dibujar no modifica el estado del juego**.
 
 **Principio actualizado:** la narrativa **no es opcional para ganar la campaña**. Atravesar la trama principal y obtener recursos mecánicos son requisitos interrelacionados desde la carta inicial, aunque las rutas y los epílogos cambien. Algunas campañas serán más cortas y mecánicas, otras más largas y narrativas. Las historias secundarias independientes no deben bloquear la victoria.
 
-**Prioridad creativa no equivale a etapa activa:** la narrativa ya orienta nuestras decisiones arquitectónicas y sus propuestas quedaron documentadas. **El diseño pendiente y la implementación narrativa están estacionados hasta completar la auditoría, definir defectos, estabilizar y alcanzar una interfaz de motor suficientemente segura.** No comenzar un arco nuevo por entusiasmo mientras sigamos en A. Cualquier excepción requiere cambiar el tablero operativo de manera explícita.
+**Prioridad creativa no equivale a etapa activa:** la narrativa orienta nuestras decisiones arquitectónicas, pero su implementación pertenece al **Hito 3**. A fecha de esta actualización, D1 está en curso; no comenzar un arco nuevo ni introducir cambios F mientras refactorizamos la referencia. Consultar el tablero operativo para la siguiente tarea autorizada.
 
 ## Detalle futuro E — Motor de historia y persistencia
 
@@ -131,8 +143,8 @@ No comenzar la **presentación 2D ni la red** antes de validar un prototipo narr
 
 ## Flujo de trabajo Git
 
-1. `main`: versión estable que funciona.
-2. Ramas `refactor/*` y `feature/*`: cambios aislados.
+1. `main`: línea técnica de referencia existente, **no todavía un hito de fidelidad final certificado**. Tras completar RF y pruebas, decidir con autorización cómo preservar un SHA/versión fiel antes de crear la variante propia.
+2. Ramas `refactor/*` y `feature/*`: cambios aislados; **la futura versión propia tendrá línea de desarrollo separada** cuando se apruebe, sin contaminar D1/D2 con filas F.
 3. Commits pequeños y descriptivos.
 4. Pull request: explicar **qué cambió, por qué y cómo se probó**.
 5. Revisar antes de fusionar con `main`.

@@ -1,0 +1,25 @@
+{
+  "fileUrl": "file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/dist/invierno-esbuild-poc.html",
+  "htmlSha256": "614295431619ffb6be7612ea04aaeaf7574bd57accd3663355e0f5d285fd5245",
+  "chromium": "143.0.7499.4",
+  "results": [
+    {
+      "mode": "local",
+      "ok": true,
+      "errors": [],
+      "requests": [
+        "file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/dist/invierno-esbuild-poc.html"
+      ],
+      "networkOffline": true
+    },
+    {
+      "mode": "ai",
+      "ok": true,
+      "errors": [],
+      "requests": [
+        "file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/dist/invierno-esbuild-poc.html"
+      ],
+      "networkOffline": true
+    }
+  ]
+}

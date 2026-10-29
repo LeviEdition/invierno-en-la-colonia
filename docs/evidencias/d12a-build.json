@@ -1,0 +1,245 @@
+{
+  "versions": {
+    "node": "v24.19.0",
+    "esbuild": "0.28.2"
+  },
+  "sizesBytes": {
+    "template": 157556,
+    "reference": 162499,
+    "candidate": 164177
+  },
+  "timing": {
+    "unit": "ms, cinco ensamblados en un proceso, sin lectura/escritura de archivos en tramo textual; no benchmark de juego",
+    "samples": {
+      "textual": [
+        0.016044000000000835,
+        0.017006000000002075,
+        0.01069599999999582,
+        0.009743999999997754,
+        0.00974499999999523
+      ],
+      "esbuild": [
+        12.509293999999997,
+        6.755165999999996,
+        3.136543000000003,
+        4.09475599999999,
+        3.3162209999999988
+      ]
+    }
+  },
+  "handlerSourceOccurrences": 53,
+  "handlers": [
+    {
+      "event": "click",
+      "expression": "show('goal')"
+    },
+    {
+      "event": "click",
+      "expression": "show('crisis')"
+    },
+    {
+      "event": "click",
+      "expression": "skipAI=true"
+    },
+    {
+      "event": "click",
+      "expression": "menuGo('actions')"
+    },
+    {
+      "event": "click",
+      "expression": "menuGo('inventory')"
+    },
+    {
+      "event": "click",
+      "expression": "menuGo('group')"
+    },
+    {
+      "event": "click",
+      "expression": "menuGo('crossroads')"
+    },
+    {
+      "event": "click",
+      "expression": "menuGo('log')"
+    },
+    {
+      "event": "click",
+      "expression": "menuGo('help')"
+    },
+    {
+      "event": "click",
+      "expression": "menuEndTurn()"
+    },
+    {
+      "event": "click",
+      "expression": "toggleFab()"
+    },
+    {
+      "event": "click",
+      "expression": "deathDirector.continue()"
+    },
+    {
+      "event": "click",
+      "expression": "startGame('ai')"
+    },
+    {
+      "event": "click",
+      "expression": "startGame('local')"
+    },
+    {
+      "event": "click",
+      "expression": "confirmPass()"
+    },
+    {
+      "event": "click",
+      "expression": "if(event.target===this)hide()"
+    },
+    {
+      "event": "click",
+      "expression": "hide()"
+    },
+    {
+      "event": "click",
+      "expression": "event.stopPropagation();'+(mine&&playable()?'select('+idx+')':'profile(\\''+p.id+'\\')')+'"
+    },
+    {
+      "event": "click",
+      "expression": "chooseLeader(\\''+p.id+'\\')"
+    },
+    {
+      "event": "click",
+      "expression": "dismissRecruit()"
+    },
+    {
+      "event": "click",
+      "expression": "chooseLeader(\\''+p.id+'\\')"
+    },
+    {
+      "event": "click",
+      "expression": "chooseBite(\\'sacrifice\\')"
+    },
+    {
+      "event": "click",
+      "expression": "chooseBite(\\'risk\\')"
+    },
+    {
+      "event": "click",
+      "expression": "chooseAttract('+i+')"
+    },
+    {
+      "event": "click",
+      "expression": "cancelAttract()"
+    },
+    {
+      "event": "click",
+      "expression": "chooseTransfer(\\''+id+'\\')"
+    },
+    {
+      "event": "click",
+      "expression": "cancelTransfer()"
+    },
+    {
+      "event": "click",
+      "expression": "chooseHeal(\\''+id+'\\')"
+    },
+    {
+      "event": "click",
+      "expression": "cancelHeal()"
+    },
+    {
+      "event": "click",
+      "expression": "chooseLoot('+i+')"
+    },
+    {
+      "event": "click",
+      "expression": "addNoiseSearch()"
+    },
+    {
+      "event": "click",
+      "expression": "crossAiContinue()"
+    },
+    {
+      "event": "click",
+      "expression": "crossChoose('+i+')"
+    },
+    {
+      "event": "click",
+      "expression": "startTransfer('+i+')"
+    },
+    {
+      "event": "click",
+      "expression": "contributeEquipment(\\''+p.id+'\\','+i+')"
+    },
+    {
+      "event": "click",
+      "expression": "toggleEquipDescription(this)"
+    },
+    {
+      "event": "click",
+      "expression": "equipItem('+i+')"
+    },
+    {
+      "event": "click",
+      "expression": "picked='+i+';renderModal();paintDice()"
+    },
+    {
+      "event": "click",
+      "expression": "boostDie()"
+    },
+    {
+      "event": "click",
+      "expression": "special()"
+    },
+    {
+      "event": "change",
+      "expression": "destination(Number(this.value))"
+    },
+    {
+      "event": "click",
+      "expression": "doMove()"
+    },
+    {
+      "event": "click",
+      "expression": "search()"
+    },
+    {
+      "event": "click",
+      "expression": "attack()"
+    },
+    {
+      "event": "click",
+      "expression": "barricade()"
+    },
+    {
+      "event": "click",
+      "expression": "clean()"
+    },
+    {
+      "event": "click",
+      "expression": "attract()"
+    },
+    {
+      "event": "click",
+      "expression": "playItem('+i+')"
+    },
+    {
+      "event": "click",
+      "expression": "contribute('+i+')"
+    },
+    {
+      "event": "click",
+      "expression": "if(confirm(\\'¿Comenzar una partida nueva?\\')){hide();showSetup()}"
+    },
+    {
+      "event": "click",
+      "expression": "pickFloatingDie('+i+')"
+    },
+    {
+      "event": "click",
+      "expression": "destination('+i+')"
+    },
+    {
+      "event": "click",
+      "expression": "showStatInfo(\\''+key+'\\',this,\\'click\\')"
+    }
+  ]
+}

@@ -1,5 +1,272 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## PR15 D1/D2 abierto — documentación reconciliada, pendiente de revisión final ·29/10/2026
+
+**Encargo cumplido hasta apertura:** [PR15](https://github.com/LeviEdition/invierno-en-la-colonia/pull/15), rama `refactor/d1-d2-arquitectura` → main, regular/no draft. **No fusionado ni auto-merge.** Preapertura7d6a68a con árbol limpio,467/467, build reproducible y[CI40896698599](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40896698599)/[40896698392](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40896698392) success.40/40 contra cada referencia,5QA+5producto y4file offline; artifacts cotejados. GitHub sin conflictos; los checks del último head se verifican antes de entregar yse enlazan en el PR.
+
+**Documentación:** novedades de diseño833eae7 incorporadas por hunks/bloques de18/63; no merge de la rama D1. Base8e3e7d3 y código6277e62 intactos. Acuerdos (base V9.9, tres clases, campaña reactiva, cronología máximo una encrucijada) separados de propuestas (ciclo completo, Encuentros reutilizables y contingencias por muerte). Informes67/68 conservados;69 registra PR actual y[70](70-reconciliacion-documental-y-pr-d1-d2.md) detalla procedencia yvalidación.
+
+**Estado protegido:** main remoto0b75d01 yD1 fuente833eae7 sin modificar. Nada de código singleplayer, reglas/IA/narrativa jugable, tags/releases o refactor extra. Estrategia propuesta de integración conserva ascendencia y57872ee mediante merge convencional, sujeto a aprobación futura.
+
+**Tarea activa única:** revisión final independiente del creador/ChatGPT ydecisión sobre aprobación/merge del PR. **No fusionar automáticamente ni iniciar juego propio.** Las secciones siguientes son registros históricos de preparación y diseño.
+
+
+## Cierre técnico D1/D2 — auditoría aprobada, integración pendiente de autorización ·29/10/2026
+
+Encargo focalizado desdeee73d29, main remoto0b75d01 sin cambios. **Dictamen:** referencia suficientemente modular/estable tras corregir3 bloqueos: controles por prototipo837e5ce, callbacks en vista5757a3c ylisteners de montaje fallidoee4b08e. No ampliar arquitectura singleplayer. [Informe68](68-cierre-integracion-d1-d2.md), [PR propuesto69](69-pr-propuesto-d1-d2.md) y[evidencia](evidencias/d1d2-cierre-integracion-ci.json).
+
+**Código auditado6277e62:**467/467 local yCI, sin omisiones;40/40 iguales contra57872ee y40/40 directamente contra main0b75d01 (451/451 y408/408 históricos). Chromium5QA+5producto,3viewports/3C16/6inicio-pase/6táctiles/6C12/6C13/16issue7/6terminal,4file offlineCI. ArtifactHTML y15módulos cotejados. [CI40884309357](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40884309357) y[40884309718](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40884309718) success. Se conserva el rojo352c094 por recorrido C15 histórico ya superado, corregido en selección de contrato vigente sin borrar la prueba anterior.
+
+**Integración propuesta:** merge convencional que conserve57872ee alcanzable para el oráculo; no squash/rebase sin resolver esa condición. Hay108archivos/78commits de contenido técnico frente a main, con informes/evidencias yplanificación histórica. [Inventario](evidencias/d1d2-integracion-commits.json); cierre posterior solo documental. No se abrió/fusionó PR, no tags/releases ni cambios de main. Reservas aceptadas: contexto de compatibilidad, schema dos grupos, VM de fixtures yvalidación física/otros navegadores pendiente.
+
+**Tarea activa única:** revisión del creador/ChatGPT de informe/diff ydescripción de PR. Esperar autorización antes de abrir o fusionar, preservar versión oficial o iniciar juego propio. Las secciones siguientes son historia de etapas anteriores.
+
+
+## D1/D2 — implementación técnica verificada, pendiente de revisión humana · 29/10/2026
+
+**Autorización vigente:** «Avanza todo incluso d2, manteniendo las reglas de alcance y de autorización». Rama `refactor/d1-d2-arquitectura`, desde57872ee. Commits151be08 y34a6274; documentación posterior conserva código. main remoto0b75d01 yD1ba9a423 intactas; PR14 ya fusionado históricamente. No nuevas fusiones, cierres de issues, tags/releases, singleplayer, SP-02 o narrativa.
+
+**Resultado:** un build esbuild reproducible con módulos privados;55 eventos migrados sin globals; estado/reglas/objetos/crisis/turnos separados, motor sin DOM, vista protegida y agente opcional mediante comandos.462/462 local yCI,0 omisiones;451/451 en checkout histórico;40/40 registros completos idénticos, conservado orden RNG/acciones/mensajes. Chromium5/5 QA y5/5 producto,3 viewports de producto,3C16,6contratos inicio/pase,6tamaños táctiles y4/4 aperturas file offline en CI. Localfile bloqueado por política, emulación no equivale a Android físico.
+
+**CI exacto34a6274:** [regresión40877102864](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40877102864) y[arquitectura40877102629](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40877102629) success; artifacts descargados/cotejados, hashes HTML y15módulos iguales. [Informe67](67-d1-d2-arquitectura.md), [evidencia](evidencias/d1d2-ci.json). Revisión crítica propia detectó/corrigió receptor queueMicrotask, descriptores de vistas y catálogo congelado, con regresiones. Reservas: contexto de compatibilidad amplio, schema/reglas V9.9 de dos grupos, VM en fixtures históricos y pruebas físicas/otros navegadores pendientes.
+
+**Tarea activa única:** revisar informe/diff y aceptar o pedir ajustes de D1/D2. No iniciar hito2, SP/juego propio ni integración automáticamente. Las secciones siguientes conservan checkpoints históricos superados por la autorización nueva.
+
+
+## D1.2b — primer contrato UI/cargador listo para revisión · 29/10/2026
+
+**Autorización de continuidad del creador:** tras discutir el método y el siguiente paso, «Bueno prodigamos». Se anunció y acotó D1.2b a cargador compartido, contrato de pruebas y piloto de inicio/pase. No aprobación de build principal, reglas, SP-02 o D2. Rama nueva `refactor/experiment-d1-2b-contracts`, desde918e241; main0b75d01 yD1ba9a423 intactas.
+
+**Resultado local:** referencia yPoC451/451,12 pruebas nuevas sin eliminar las439; smoke semántico con seis defectos deliberados detectados.40 configuraciones idénticas a referencia y evidencia A,5UI completas,3 viewports C16 y6 pruebas de comandos capturados. Los tres botones dejan de resolver el comando por su nombre global; resto de controles todavía conserva globals. Fuente/plantilla/HTML/build principal intactos. File de la nueva salida aprobado en CI:4/4 aperturas con red desactivada.
+
+[Informe66](66-d1-2b-contratos-inicio-y-pruebas.md), con límites y rollback. Código8b738df, CI40865297188/40865297184 ambos success451/451; artifacts cotejados,40motor/5UI/3viewports/6contratos/4file. Checkpoint documental se verifica por su SHA antes de entregar. **Tarea activa única:** revisión del bloque por el creador/ChatGPT para delimitar otra ampliación. No ampliar controles, cambiar build por defecto ni iniciar D2 automáticamente. El informe65 y las cifras438/439 siguientes son historia de D1.2a, conservada como evidencia.
+
+
+## D1.2a — experimento terminado, pendiente de revisión · 29/10/2026
+
+**Encargo vigente del creador:** PoC pequeño/reversible de esbuild, derivado de `refactor/d1-catalogo=ba9a423`, sin cambios de reglas ni otra auditoría de fidelidad. `main=0b75d01` coincide con referencia. Checkout previo limpio en rama C antigua; se creó `refactor/experiment-d1-2a-esbuild`. Los estados anteriores «pendiente de autorización» son históricos; SP-02 sigue siendo diseño separado, no implementación.
+
+**Resultado local y revisión del experimento:** referencia433/433 inicial y439/439 con6 tests nuevos; candidato438/439, una aserción literal `class ItemCatalog` incompatible con salida del bundler. **No eliminada ni debilitada; adopción no aprobada.**40/40 configuraciones reales comparadas idénticas salvo hashes de fuente,5/5 partidas UI antes/después y3/3 viewports por variante. File local bloqueado por política de Chromium en ambas versiones; **CI4/4 aperturas aprobadas**, red desactivada. Lockfile nuevo permite npm ci. Motor/plantilla/catálogo/HTML/build de referencia intactos.
+
+[Informe65](65-d1-2a-experimento-esbuild.md) contiene diff lógico, evidencia, riesgos, comparación y rollback. Recomendación **ajustar**, no adoptar. Implementación181903c: CI40859658496 referencia success439/439; CI40859658678 experimento failure por el único fallo de formato, browser success5UI/3viewports/4file. Artifacts cotejados con local; no declarar CI global verde. Checkpoint/prueba diagnóstica final se verifican por su SHA al entregar. **Tarea activa única:** revisión del informe/diff por el creador/ChatGPT; Codex se detiene. Prohibido avanzar D1.2b/c/d o D2 automáticamente.
+
+
+## Reconciliación de los registros de diseño SP-03
+
+Los bloques siguientes provienen de `refactor/d1-catalogo@833eae7`, escritos en orden cronológico inverso. Se conservan sus preguntas y propuestas como historia. **Prevalece la precisión cronológica de tres categorías**, posterior a la propuesta de retener candidatas hasta el cierre: no hay cancelación retroactiva. La sección63 «Estado reconciliado» distingue acuerdos de propuestas. Las menciones a D1/D2 «en curso» describen el momento de redacción; el cierre técnico y la tarea vigente están arriba.
+
+## SP-03 — Contingencia de muerte en historias secundarias reutilizables · 29/10/2026
+
+**CUESTIÓN ABIERTA PLANTEADA POR EL CREADOR:** la protagonista de un Encuentro/plantilla narrativa (p. ej., «Mara busca a su hermano») **puede morir una ronda después de iniciado**. El Director debe conservar la historia real sin inmortalidad, sin escenas con difuntos ni transferencia arbitraria de parentesco o motivaciones. [Evaluación y propuestas en 63 §6.2D](63-hoja-de-ruta-planificacion-singleplayer.md).
+
+**PROPUESTA CRÍTICA, NO APROBADA:** en caso de muerte, reevaluar si el arco se **cierra inconcluso**, **continúa opcionalmente con otro personaje que conocía la pista**, **se transforma** por consecuencias de NPCs/hechos persistentes, o **queda en pausa** hasta condiciones coherentes. Distinguir información que conoce el jugador de información que el líder y otros supervivientes realmente conocen. Mantener historia, familia, testigos, decisiones y agenda; no borrar ni reasignar silenciosamente los vínculos. Para evitar explosión de escritura: cada historia reutilizable requiere como mínimo un **cierre coherente tras muerte**, y solo algunas necesitan continuación; la campaña principal mantiene alternativas para evitar softlocks.
+
+**ÚNICA SIGUIENTE DECISIÓN DE DISEÑO:** confirmar o ajustar el criterio de mortalidad/continuidad de Encuentros (cierre posible; continuación solo sustentada por hechos y conocimiento) y después concretar un arco piloto con dos o tres escenas y muerte en distintos momentos. **Sin código, sin cambios mecánicos de V9.9 ni interferencias con D1/D2 o main.**
+
+
+## SP-03 — Propuesta de Encuentros con historias reutilizables por personaje · 29/10/2026
+
+**PROPUESTA DEL CREADOR, en evaluación crítica:** no escribir un arco exclusivo por cada superviviente; diseñar **plantillas de historias secundarias** que puedan asignarse dinámicamente a un superviviente **elegible** de los que controla el jugador. Ejemplo «familiar desaparecido en una localidad»: Mara, Iris o Damián podrían protagonizar la misma estructura narrativa **siempre que su biografía y hechos previos sean compatibles**. Un arco ya comenzado queda **vinculado a su personaje y sus NPCs concretos**; no reasignarlo sin justificación tras una muerte. La agencia del líder decide qué recursos/acciones dedicar. La personalización de tono, motivación y consecuencias debe impedir que todos parezcan nombres intercambiables.
+
+**REVISIÓN CRÍTICA:** la reutilización ahorra escritura pero puede generar contradicciones familiares, repetición de historias, personajes indistintos y bloqueos por muerte. Antes de aprobar, prototipar **una plantilla** y contrastar sus escenas con varios protagonistas, pérdida de actor, decisiones rechazadas, relaciones y consecuencias mecánicas. **No se han aprobado** asignación aleatoria, biografías nuevas, tasa de encuentros, esquema técnico, rasgos ni reglas de persistencia concretas. [Ver 63 §6.2C](63-hoja-de-ruta-planificacion-singleplayer.md).
+
+**SIGUIENTE TAREA DE DISEÑO:** confirmar o refinar la filosofía de Encuentros compartidos **con protagonista persistente y elegibilidad**; luego detallar disparadores/ritmo y prioridad de los tres sistemas narrativos. **V9.9/main/D1/D2 sin modificación por este registro.**
+
+
+## SP-03 — Tres clases narrativas + regla de prioridad temporal · 29/10/2026
+
+**ACUERDO DEL CREADOR (diseño conceptual):** organizar la narrativa en **Encrucijadas** (dilemas menores de convivencia y recursos; dar vida al mundo), **Encuentros** (desarrollo y carácter de supervivientes, relaciones y conflictos, con posibles efectos persistentes) e **Historia principal** (acontecimientos reactivos vinculados a la campaña/objetivo y sus requisitos de victoria). **Clasificar por función narrativa y no por gravedad exacta**. La presencia de personajes de la secta en un evento del hospital pertenece a la **Historia principal** aunque el jugador todavía no conozca su identidad; no forzar acontecimientos importantes cada ronda. Ver [63 §6.2B](63-hoja-de-ruta-planificacion-singleplayer.md).
+
+**PRECISIÓN CRONOLÓGICA, prevalece sobre anteriores ideas de aplazar encrucijadas:** encrucijadas condicionadas, **máximo una por ronda**; **si ocurre una antes que un evento importante de historia principal, pueden suceder ambos en esa jornada**; **si ya ocurrió un evento principal, no activar una encrucijada nueva ese mismo día**. No cancelar ni revertir una decisión ya realizada. Encrucijada y evento principal no son cuotas obligatorias; los encuentros tienen frecuencia y reglas propias **pendientes de acuerdo**.
+
+**OBSERVACIONES CRÍTICAS EN ANÁLISIS:** distinguir función editorial de impacto, duración, prioridad y obligatoriedad; no crear encuentros que sean solo encrucijadas largas con `moral +1`; campaña puede avanzar por complicaciones sin aumentar contador de muestras; algunas escenas pueden informar sin exigir decisión. **ÚNICA SIGUIENTE TAREA DE DISEÑO:** definir disparadores y prioridades de **Encuentros** cuando coinciden con Encrucijadas o Historia principal, luego simular distintas cronologías de una ronda. No se autoriza código; D1/D2 y main no cambian por esta documentación.
+
+
+## SP-03 — Campaña activada por acciones + encrucijadas cotidianas · 29/10/2026
+
+**ACLARACIÓN EXPRESA DEL CREADOR, ACUERDO CONCEPTUAL:** la partida inicia con una campaña/objetivo; el Director no debe forzar un gran evento narrativo cada ronda. **Los eventos de la campaña reaccionan a decisiones, lugares y hechos verificados**, y las pistas pueden sugerir destinos sin obligar al jugador. Ejemplo ilustrativo: en «Encontrar la cura», el rumor de desconocidos en hospital anticipa un **primer contacto al llegar allí por primera vez** con personas que pertenecen a la secta rival sin que el jugador lo sepa todavía; la decisión registrada condiciona escenas futuras. No convertir el ejemplo en guion canónico ni bloquear la victoria por no visitar el hospital: diseñar alternativas/contingencias.
+
+**SEGUNDO FLUJO — DECISIÓN ACORDADA 29/10/2026:** conservar encrucijadas de V9.9 (nombre por revisar) como decisiones cotidianas breves, **flexibles y condicionadas**. **Máximo una por ronda, solo si se cumple una condición**; **si esa ronda se activó un evento importante de campaña, desactivar la encrucijada cotidiana de esa jornada**. No existe obligación de generar contenido narrativo cada ronda. Un evento menor puede tener consecuencias acumulativas o abrir secundarias sin forzar la trama principal. Véase [63 §6.2A](63-hoja-de-ruta-planificacion-singleplayer.md).
+
+**ÚNICA SIGUIENTE MICRODECISIÓN DE DISEÑO:** definir **cuándo comprobar y presentar las encrucijadas candidatas** para que un evento importante que se dispara más tarde en la misma ronda también suprima la cotidiana, y si se reevalúa en rondas posteriores una condición que siguió vigente. **Propuesta no aprobada:** reunir candidatas condicionadas durante las acciones y resolver si se muestra una al cierre de la fase, después de conocer si hubo escena principal. Falta delimitar qué cuenta como «evento importante». No se programó nada; D1/D2, referencia V9.9 y main sin cambios por esta decisión.
+
+
+## SP-03 — Borrador de ciclo de ronda singleplayer · 29/10/2026
+
+**Diseño EN DISCUSIÓN, no aprobado:** estructura lógica A apertura de crisis/estado → B acciones libres del líder y reserva de dados del grupo (V9.9 de base) → C encuentros del Director **intercalados por disparadores válidos** → D única resolución de colonia → E resumen y persistencia de hechos/agenda. El Director no es J2 y no debe existir pase obligatorio a un segundo equipo ni duplicar la resolución. [Ficha SP-03 sección 6](63-hoja-de-ruta-planificacion-singleplayer.md).
+
+**Microdecisión siguiente de DISEÑO:** cómo sincronizar historia y estrategia: R1 escenas solo apertura/cierre, R2 escenas inmediatas ante todo disparador, o R3 **modelo híbrido contextual recomendado para valorar**, con encuentros urgentes cuando suceden y otras consecuencias diferibles agendadas; evitar escenas forzadas en todas las rondas. Aún no se autorizó ningún modelo.
+
+**Riesgos y pruebas pendientes:** muerte del actor/líder durante la ronda, qué ocurre con dados restantes, prioridad de decisiones y terminales, escenas invalidadas por muerte, uso de un solo equipo, alimentación/crisis/zombis, ritmo móvil, relato diferido sin aleatoriedad obligatoria. SP-04 será responsable del balance y acceso a reclutamiento, no se decide aquí. **Sin cambios de implementación, branch de producto, motor V9.9 o main; D1/D2 continúan por separado.**
+
+
+## SP — Decisión de alcance y balance singleplayer · 29/10/2026
+
+**APROBADO EN DISEÑO por el creador:** primer juego propio singleplayer con **mecánicas/dados esencialmente basados en V9.9**; la investigación alternativa de pool/híbrido y estadísticas nuevas se **aplaza**, no se implementa ni se elimina de la documentación. Enfoque creativo: líder encarnado, Director de Juego, tramas y consecuencias persistentes. **No se aprueba todavía un balance final ni se modifican F-10/F-12/F-15 automáticamente**; revisar posteriormente su pertinencia en la matriz F.
+
+**Advertencia explícita del creador:** al arrancar con tres supervivientes, morir uno resulta especialmente grave y quizá requiera **mayor acceso a nuevos supervivientes**. La fórmula V9.9 de **1 + supervivientes vivos** pasaría de **cuatro a tres dados** tras la primera baja, además de perder habilidades y cobertura espacial. Deben evaluarse espiral de derrota, encuentros/reclutamientos accesibles pero con costos y consecuencias, grupos de uno o dos, lesiones, sucesión, alimentación, crisis, zombis, exposición, objetivos y el posible desequilibrio opuesto por reclutar en exceso. **Ninguna tasa de reclutamiento ni regla compensatoria está aprobada**.
+
+**Próximo paso único de DISEÑO:** **SP-03**, describir ronda de líder singleplayer con V9.9 como base; coordinar con **SP-04** escenarios de muerte/reclutamiento y balance de uno a tres supervivientes. Documento de decisiones: [63, sección 5K](63-hoja-de-ruta-planificacion-singleplayer.md). **Trabajo técnico D1/D2 separado**: no alterar reglas, motor, main, pruebas o ramas de producto por este registro; Codex continúa su cierre bajo sus autorizaciones vigentes.
+
+
+## Cierre de jornada — bitácora 28/10/2026 y próximo SP-02 · 28/10/2026
+
+**Registro completo:** [64 — Bitácora de desarrollo del 28/10/2026](64-bitacora-2026-10-28.md). Cierre de la reflexión sobre alcance: **para el primer videojuego conviene examinar conservar las mecánicas V9.9 y priorizar narrativa persistente**. **No hay aprobación irreversible** de cancelar el motor híbrido ni autorización de iniciar código singleplayer. La investigación SP-02 queda documentada sin perderse.
+
+**REANUDACIÓN DE DISEÑO jueves 29/10/2026:** **SP-02**, no SP-05: (1) decidir si V9.9 será la referencia mecánica inicial y aparcar temporalmente híbrido; (2) revisar F-10/F-12/F-15 frente a esa decisión; (3) reserva de grupo 1 + vivos, reparto decidido por líder y tres supervivientes, **sin segundo equipo obligatorio**; (4) revisar catálogo/stats/pasivas y acciones sin dado; (5) simular 2–3 rondas sobre papel. **Vía técnica independiente sin cambios:** D1.2a reversible pendiente de autorización, luego D1/D2, sin tocar `main`.
+
+
+## SP — Alcance del primer videojuego: priorizar narrativa sobre mecánicas nuevas · 28/10/2026
+
+**Reflexión del creador, NO decisión cerrada:** siendo su primer videojuego, integrar mecánicas híbridas/nuevas estadísticas al Director y narrativa persistente puede exceder el alcance deseado. Se plantea **reutilizar mecánicas V9.9** y concentrar identidad del juego propio en singleplayer narrativo con decisiones diferidas. **Recomendación crítica:** la exploración de motores alternativos de SP-02 puede aparcarse como backlog; no eliminar el trabajo previo ni declarar mecánicas anteriores derogadas sin confirmación. [Ver 63, sección 5J](63-hoja-de-ruta-planificacion-singleplayer.md).
+
+**Matiz:** singleplayer sin equipo rival requiere todavía adecuaciones mecánicas mínimas y validación de crisis, dados, recursos y amenazas, no solo textos. **Siguiente tarea de DISEÑO sugerida:** acordar alcance limitado del primer vertical slice narrativo (objetivo, decisiones con consecuencias diferidas, estados persistentes, epílogo y pruebas), y delimitar qué permanece idéntico de V9.9 y qué solo se adapta por necesidad. **Tarea técnica vigente separada:** D1/D2; no autorizar cambios de código o fusiones por esta reflexión.
+
+
+## SP-02 — Exposición posterior al combate determinista · 28/10/2026
+
+**Nueva hipótesis del creador:** si una defensa preparada se resuelve **sin tirada de ataque**, el superviviente **podría tirar exposición después de cada combate**, manteniendo el peligro pese a tener resultado ofensivo previsible. **No aprobado como regla ni implementado.** La mecánica recuerda a V9.9: después de ataque ordinario se tira exposición, con excepciones por equipo/condiciones. El d6 de referencia: 1 mordedura letal, 2 congelación, 3 herida, 4–6 blanco; **dos exposiciones sin mitigación implican 30,56 % de al menos una mordedura**, si ambas se realizan. La agresividad puede ser excesiva.
+
+**Análisis y propuesta de prueba:** [63 — SP-02, sección 5I](63-hoja-de-ruta-planificacion-singleplayer.md). **No confundir** exposición por acción de combate con exposición por cada enemigo muerto; mantener separadas **eficacia de defensa** y **costo humano**. **Siguiente tarea conceptual:** simular 2–3 rondas con defensa determinista sin exposición, exposición V9.9, exposición mitigada por equipo/cobertura y combate por pool, midiendo bajas zombi y supervivencia por separado. **Técnica:** no alterar V9.9, `main`, F-10/F-12/F-15 ni vía D1/D2.
+
+
+## SP-02 — Pruebas del híbrido contextual · 750.000 rondas · 28/10/2026
+
+**Ejecución:** banco de pruebas del laboratorio SP-02 ampliado a **tres modelos** (V9.9 simplificado, tiradas por atributo puras, híbrido contextual) y **25 configuraciones × 3 métodos × 10.000 = 750.000 rondas simuladas**, **13/13 pruebas funcionales** aprobadas. Informe y advertencias detalladas: [63 — SP-02, sección 5H](63-hoja-de-ruta-planificacion-singleplayer.md).
+
+**Reglas HÍBRIDAS SOLO DE PRUEBA:** búsqueda y movilidad por dado/atributo; mantenimiento directo con costo de orden; defensa sin tirada y sin exposición únicamente si el combatiente tiene stat ≥4 y la colonia posee al menos una barricada. Otras situaciones siguen usando dados. **No se aprobó el umbral, la inmunidad, la cantidad de acciones ni el cambio de sistema**.
+
+**Metas comparadas, condiciones básicas de cuatro órdenes:** medicamentos **81,87 % / 71,16 % / 71,16 %**, asedio **83,17 % / 43,76 % / 62,33 %**, laboratorio **81,87 % / 61,57 % / 71,16 %** (V9 simplificado/pool/híbrido). Con éxitos escalonados y corrección de exposición: asedio **83,17 % / 59,35 % / 84,34 %**. **Crítico:** con «fortificar primero» y Damián, el híbrido llega a **100 %** en el asedio de la maqueta: la defensa determinista no tiene desgaste ni costos reales y trivializa el objetivo. Combatir en colonia sin exigir barricada también produce 100 % y es aún menos recomendable.
+
+**ÚNICA SIGUIENTE TAREA DE DISEÑO:** probar una defensa determinista condicionada por preparación **y costos reales (desgaste, municiones, capacidad, presión zombi)** en **2–3 rondas**, sin volver a introducir tiradas para toda tarea; comparar además grupos sin un gran combatiente y el efecto de tres órdenes. Este análisis debe mantenerse separado de D1/D2 y de las decisiones F-10/F-12/F-15 no sustituidas. **No alterar V9.9 ni `main`.**
+
+
+## SP-02 — Exploración de resolución híbrida contextual · 28/10/2026
+
+**Hipótesis del creador, NO regla aprobada:** unificar la **economía de órdenes limitadas** y permitir **diversas formas de resolución**, sin tirar dados en todas las acciones. Usar reservas por atributo en acciones inciertas (búsqueda, movilidad, encuentros) y resolver **acciones rutinarias directamente** o **combates de defensa preparada por estadísticas/equipo sin tirada**. Ejemplo: atacar desde la colonia sin tirar, para evitar pérdidas recurrentes de órdenes en el prototipo de asedio. **Advertencia:** la inferioridad estadística anterior del pool en asedio surgió de modelos no equivalentes, no demuestra que «combate con dados» sea un problema real.
+
+**Criterio de examen:** elegir resolución por las **condiciones del mundo**, no por parche de porcentajes; colonia con defensas establecidas puede justificar defensa previsible, pero cuando está invadida o colapsan defensas puede volver la incertidumbre. Un ataque sin tirada **sigue pudiendo consumir orden y recursos**, la estadística de combate debe tener efecto y el refugio no debe ser una zona de eliminaciones ilimitadas sin riesgo. Diferenciar **acción directa**, **resolución determinista por capacidades** y **prueba por atributo**.
+
+**Documento:** [63 — SP-02, sección 5G](63-hoja-de-ruta-planificacion-singleplayer.md). **Siguiente tarea conceptual:** comparar la misma defensa con pool puro vs híbrido contextual, manteniendo constante estado/acciones y contrastando refugio preparado, amenazado e invadido; comprobar consistencia, tensión, protagonismo de stats y número de tiradas. **Implementación prohibida en esta etapa:** no alterar F-10/F-12/F-15, V9.9 ni `main`; D1/D2 por su vía separada.
+
+
+## SP-02 — Informe de 480.000 simulaciones exploratorias del laboratorio · 28/10/2026
+
+**Pruebas realizadas:** 3 escenarios × 6 configuraciones × 2 métodos × 10.000 repeticiones = **360.000 rondas**, más 6 variantes de asignación de personajes × 2 métodos × 10.000 = **120.000**; **11/11 verificaciones** del motor simplificado aprobadas y ensayo anterior de 500 rondas reproducido. Detalle: [63 — sección 5F](63-hoja-de-ruta-planificacion-singleplayer.md).
+
+**Resultados ilustrativos con cuatro oportunidades, efectos básicos y movimiento gratis:** metas **V9.9 simplificado / nuevo pool**: medicamentos **81,87 % / 71,16 %**, asedio **83,17 % / 43,76 %**, laboratorio **81,87 % / 61,57 %**. **NO son tasas de victoria del V9.9 real ni evidencia causal de superioridad:** el clásico del laboratorio es aproximado, personajes y pasivas no equivalen, plan fijo, exposición distinta, los éxitos escalonados cambian simultáneamente recompensas y riesgo y la economía tres/cuatro órdenes no discrimina bien algunas metas. Ambos métodos ya muestran especialización; el nuevo tiene más acciones fallidas sin efecto básico.
+
+**DICTAMEN:** mantener órdenes limitadas + pruebas por atributo como **hipótesis preferida de exploración**, sin aprobar reemplazo de F-10/F-12/F-15. **ÚNICA SIGUIENTE TAREA DE DISEÑO:** prueba con una sola variable distinta entre métodos, después prueba manual de percepción estratégica/ritmo y casos de riesgo; evitar nuevos números de balance en tanto no se aísle la causa. **Tarea TÉCNICA:** D1.2a con Codex, luego D1/D2, sin modificar V9.9 ni `main`.
+
+
+## SP-02 — Evaluación de conveniencia de dados por atributo vs V9.9 · 28/10/2026
+
+**Pedido del creador:** evaluar si **órdenes limitadas + tiradas por atributo** generan una experiencia mejor que los **dados de acción revelados al inicio** de V9.9, **sin debatir aún balance de situaciones, heridas o dificultad concreta**. [63 — sección 5E](63-hoja-de-ruta-planificacion-singleplayer.md) contrasta decisión predominante, agencia, atributos, narrativa, ritmo, costos de implementación, incertidumbre y pérdida de optimización de dados visibles. **Dictamen provisional de DISEÑO:** modelo nuevo es **candidato principal a explorar** por su potencial para especialización y consecuencias narrativas; **no está aprobado ni demostrado superior**. F-10/F-12/F-15 no se reemplazan todavía.
+
+**Observación metodológica crítica:** V9.9 usa **1 + vivos** dados de acción y movimiento sin dado; propuesta usa **vivos** órdenes y movimiento con prueba. Para una comparación válida del **sistema de resolución**, mantener inicialmente **igual número de acciones y mismo costo de movimiento** y comparar el mismo dilema/estado con ambos modelos. Luego evaluar separadamente número de órdenes y movimiento. Evitar fallos sin ningún resultado, tiradas triviales e interrupciones que sustituyan estrategia por azar.
+
+**ÚNICA SIGUIENTE TAREA DE DISEÑO:** evaluar el mismo escenario de supervivencia y elección de personajes con ambos sistemas, observando agencia, especialización y ritmo sin calibrar resultados todavía. **TAREA TÉCNICA SIN CAMBIOS:** D1.2a con Codex, luego D1/D2; sin modificar V9.9 ni `main` o autorizar implementación del juego propio.
+
+
+## SP-02 — Nueva propuesta: acciones según supervivientes y movilidad por dados de atributo · 28/10/2026
+
+**HIPÓTESIS EXPLÍCITA DEL CREADOR (NO APROBADA COMO REGLA FINAL):** eliminar tirada inicial de dados de acción; el líder administraría una **cantidad de acciones por ronda igual a los supervivientes activos** (tres supervivientes → tres acciones), y las acciones importantes se resolverían lanzando tantos dados como el atributo de cada personaje. Se busca integrar exposición y otros riesgos en resultados por grados. **Ejemplo:** Mara movilidad 5, tira 5d6 para llegar al hospital; 2+ éxitos = llega sin exposición, 1 = llega y tira exposición, 0 = llega con herida. El ejemplo **no** es aún una tabla aprobada.
+
+**Revisión crítica y evidencia:** [63 — SP-02, sección 5D](63-hoja-de-ruta-planificacion-singleplayer.md) contiene probabilidades, el riesgo de que 1 éxito con mordedura resulte peor que 0 éxitos con herida, el peligro de movilidad baja, el costo de la expedición si trasladarse consume una de tres acciones, y la espiral por bajas. Compara **T1** movilidad cuesta acción, **T2** movilidad es prueba posicional pero no gasta acción, **T3** acción compuesta. Dejar F-10/F-12/F-15 **sin modificar** hasta una eventual revisión y aprobación explícitas.
+
+**ÚNICA SIGUIENTE TAREA DE DISEÑO:** comparar una ronda T1 vs T2 con tres supervivientes y tres acciones, estableciendo si desplazarse paga acción y cómo resolver consecuencias sin doble tirada ni daño arbitrario. **TAREA TÉCNICA SIN CAMBIOS:** D1.2a con Codex, luego D1/D2, sin cambios en V9.9 ni `main`, sin merge/release ni producto propio iniciado.
+
+
+## SP-02 — Alternativa de dados por atributo (dice pool) en comparación · 28/10/2026
+
+**Nueva hipótesis del creador:** el propio sistema de dados de V9.9 puede limitar el desarrollo de estadísticas. Se estudia un enfoque de *Arkham Horror* de mesa: pruebas que tiran tantos dados como atributo, cuentan éxitos y permiten resultados escalonados. **No se aprobó** reemplazar F-10, F-12 o F-15 ni introducir atributos o reglas nuevas.
+
+**Documento ampliado:** [63 — SP-02, sección 5C](63-hoja-de-ruta-planificacion-singleplayer.md). Compara **M1** dados preasignados del juego actual, **M2** acciones/órdenes del líder como recurso separado + pruebas de varios dados por atributo y **M3** híbrido. Registra probabilidades, riesgos de azar/frustración, costos de las acciones, pasivas, progreso narrativo y efecto sobre la tercera estadística.
+
+**ÚNICA SIGUIENTE TAREA DE DISEÑO:** simular/contrastar los mismos escenarios de 2–3 rondas bajo M1/M2/M3, empezando por decidir **si el azar debe revelarse antes de asignar las acciones o durante su ejecución**, sin cambiar el acuerdo de liderazgo/reparto libre. **TAREA TÉCNICA SIN CAMBIOS:** D1.2a con Codex, luego D1/D2; no cambiar V9.9 o `main`, fusionar ni crear versiones propias por esta discusión.
+
+
+## SP-02.1 — Evaluación de una tercera estadística relevante · 28/10/2026
+
+**Nueva hipótesis solicitada por el creador:** considerar una **tercera estadística** únicamente si agrega decisiones activas de peso comparable a **combate y búsqueda**, de forma coherente con el juego. No hay atributo, nombre ni reglas aprobadas. La revisión [63, sección 5B](63-hoja-de-ruta-planificacion-singleplayer.md) contrasta **movilidad, resistencia, técnica y apoyo/oficio/operaciones**, favoreciendo como hipótesis de estudio una tercera familia de operaciones de supervivencia (mantenimiento, fortificación, preparación), sin adoptarla. Se comprobaron acciones de V9.9: `barricade/clean/attract` consumen un dado cualquiera; movimiento no usa dado. No imponer nuevos umbrales sin balance.
+
+**Siguiente tarea de DISEÑO:** desarrollar **3–5 acciones concretas** candidatas de la tercera familia, su frecuencia/costo e impacto en la asignación de dados, y decidir si realmente justifica una tercera estadística. **Trabajo técnico sin cambios:** D1.2a y luego D1/D2 con Codex, sin cambio de V9.9, `main` ni permisos de merge.
+
+
+## SP-02 — Análisis de estadísticas y pasivas sin reglas nuevas aprobadas · 28/10/2026
+
+**Revisión de diseño:** se inspeccionó el catálogo real de V9.9: ataque, búsqueda, influencia y habilidades de búsqueda, ataque, construcción, curación, movilidad, cocina y resistencia. Se documentó en [63, sección 5A](63-hoja-de-ruta-planificacion-singleplayer.md#5a-análisis-de-especialización-y-pasivas-28102026--propuestas-no-acuerdos-nuevos) la distinción entre stats, pasivas, equipo y situación, dos opciones de amplitud del sistema, riesgos de monopolio y escenarios de pruebas en papel. Se detectó que el criterio F-10 `atributo >= dado` conserva probabilidades marginales de F-15, pero vuelve más difíciles los dados altos; la comparación con `atributo + dado >= 7` queda como **alternativa NO aprobada**, sin modificar el acuerdo F-10.
+
+**Decisiones previas conservadas:** líder dirige reparto libre de dados según especialidad; pasivas contextualizan decisiones; no se aprobó tope por personaje ni stats adicionales. **Siguiente tarea de DISEÑO:** comparar alternativa mínima de dos stats con ampliación (movilidad/técnica) y seleccionar qué estadísticas producen diferencias jugables, revisando ejemplos y casos límite. **Tarea TÉCNICA sin cambios:** D1.2a y luego D1/D2; no cambios ejecutables ni `main`.
+
+
+## SP-02 — Criterio táctico de reparto de dados ratificado · 28/10/2026
+
+**DECISIÓN DE DISEÑO del creador:** el jugador personifica al **líder**, que elige qué superviviente realiza cada acción y qué dado asignarle según **stats, pasivas, necesidades y contexto**; los personajes deben aportar especializaciones útiles en **movilidad, búsqueda, ataque y otros roles**. **No se exige repartir equitativamente** los dados ni asignarlos de manera fija a cada superviviente. La afirmación de que el jugador no querrá concentrar todos los dados en uno es un objetivo a **validar con balance**, no una garantía automática. **No se aprobó un tope artificial por personaje.**
+
+**Registro actualizado:** [63 — Hoja de ruta del singleplayer, SP-02](63-hoja-de-ruta-planificacion-singleplayer.md#5-próximo-trabajo-de-diseño-sp-02--decisiones-por-resolver). **Siguiente tarea de DISEÑO:** comparar roles/atributos/pasivas y casos de asignación dominante; después cerrar cantidad de dados y condiciones por acción con ejemplos y balance. **Siguiente tarea TÉCNICA sin cambios:** D1.2a con Codex, luego D1/D2; no iniciar implementación SP ni alterar V9.9, tests o `main`.
+
+
+## SP — Hoja de ruta de planificación singleplayer creada · 28/10/2026
+
+**Nuevo documento de DISEÑO:** [63 — Hoja de ruta de planificación singleplayer](63-hoja-de-ruta-planificacion-singleplayer.md). Organiza **SP-00 a SP-08**: rol del líder, selección F-14, economía de dados F-10/F-12/F-15, ronda, ajuste de supervivencia sin segundo grupo obligatorio, Director/memoria, campañas, interfaz/guardado y prototipo. Se distinguen **acuerdos**, **propuestas**, **pendientes** y criterios de aceptación, sin reabrir decisiones ya tomadas ni sustituir la matriz F externa.
+
+**ÚNICA SIGUIENTE TAREA DE DISEÑO:** **SP-02 — cerrar economía de acciones y dados**, empezando por reserva común y asignación entre supervivientes. Esto **no** autoriza código ni modifica el juego. **ÚNICA SIGUIENTE TAREA TÉCNICA SIN CAMBIOS:** **D1.2a** (PoC reversible de esbuild, pendiente de autorización), después D1/D2; preservar referencia antes de iniciar producto propio. `main` intacta, sin merge ni cambios de reglas por este registro.
+
+
+## Decisión vigente — fidelidad mecánica aceptada, solo D1/D2 pendiente · 28/10/2026
+
+**ACUERDO EXPRESO DEL CREADOR:** la V9.9 estabilizada **se considera mecánicamente suficientemente fiel a la experiencia central de *Dead of Winter*** para ser nuestra referencia. **No se exige mayor fidelidad literal** ni una nueva auditoría RF para comenzar la futura versión propia. Esta es una aceptación de **alcance del producto**, no una certificación de equivalencia exacta.
+
+**Evidencia ya disponible, no repetir:** [informe 49](49-c15-auditoria-final.md#comparación-con-dead-of-winter) comparó **14 áreas mecánicas** con el reglamento oficial y registró coincidencias y desviaciones (iniciativa fija, entradas de colonia agregadas, crisis/cooperativo simplificados y objetivos propios, entre otras). C fue estabilizada e integrada en `main`. Las 433 pruebas posteriores de D1.1 verificaron regresiones según su cobertura, no identidad de reglamento; Android físico, TalkBack, otros navegadores y balance humano permanecen reservas.
+
+**ÚNICO TRABAJO NECESARIO PARA TERMINAR LA BASE ANTES DEL JUEGO PROPIO:** **D1 → D2**, refactor de preservación para disponer de módulos de reglas, estado, turnos, automatización e interfaz con límites claros, build reproducible y pruebas. **No cambiar reglas en D.** Si se confirma un defecto funcional grave, se gestiona como incidencia puntual con autorización, sin reabrir toda la fidelidad.
+
+**Puertas posteriores:** una vez D1/D2 estén probadas y aceptadas, **preservar una referencia verificable** (SHA + build + tests, con autorización). Solo después iniciar **el juego propio** en rama/línea separada, aplicando selectivamente la **matriz F** y creando singleplayer/Director narrativo. Las propuestas F-01/F-14/etc. NO se aplican a esta V9.9.
+
+**Nomenclatura:** comparación oficial histórica = **informe 49**; `RF` fue una matriz adicional propuesta, **ya no obligatoria**; `F-xx` = matriz de diseño del juego propio; etapa F histórica = expansión visual/red. No confundir.
+
+**Fuente operativa:** [62 — Ruta ratificada](62-hitos-referencia-fiel-y-juego-propio.md), [51 — Rumbo](51-rumbo-fidelidad-e-identidad.md), [61 — Alcance F](61-alcance-matriz-f-juego-propio.md), [01 — Plan](01-plan-refactorizacion.md). Las entradas históricas que planteen otra auditoría RF obligatoria están reemplazadas por este acuerdo; se preservan para trazabilidad.
+
+**Próximo paso técnico SIN CAMBIOS:** **D1.2a** — PoC reversible esbuild con Codex (todavía no ejecutado ni adoptado). Sin modificar motor, reglas, `main`, ni realizar merge/release por esta actualización.
+
+## Alcance vigente de la matriz F — juego propio, NO refactor de V9.9 · 28/10/2026
+
+**Decisión expresa del creador y corrección del rumbo documental:** la **matriz F (comparación con *Dead of Winter*)** registra **decisiones de diseño para la futura versión propia de *Invierno en la Colonia***. Las propuestas «Conservar»/«Cambiar»/«Pendiente» se interpretan respecto al **juego propio**, y **no son una lista de cambios ni errores a resolver en V9.9**. F-14 (cinco candidatos → elegir tres → líder manual), F-01, F-03b y demás filas de esa matriz quedan **fuera del alcance del refactor D1/D2**. Tampoco están autorizadas para su implementación por el hecho de figurar aprobadas como diseño.
+
+**Dos líneas separadas:** 1) V9.9 de referencia: C estabilizada y D refactoriza preservando el comportamiento; 2) futuro juego propio principalmente singleplayer: tras conservar una línea base, se seleccionan/revalidan e implementan, en rama separada y con pruebas, las decisiones F realmente útiles y se desarrolla el Director narrativo. F-01 u otras mecánicas estrictamente de J1/J2 pueden perder vigencia en singleplayer, no deben trasladarse automáticamente.
+
+**Nomenclatura:** «matriz F» = IDs **F-01, F-14, etc.** de comparación/diseño; «etapa F» de expansión del plan histórico = presentación, campañas y cooperativo/red. No son lo mismo.
+
+**Acta vinculante:** [61 — Alcance de la matriz F](61-alcance-matriz-f-juego-propio.md); [51 — Rumbo de producto corregido](51-rumbo-fidelidad-e-identidad.md); [01 — Plan general actualizado](01-plan-refactorizacion.md). **Las menciones históricas más abajo que sugieran incorporar cambios F a la referencia se consideran sustituidas por este acuerdo; no se reescribe el registro histórico.**
+
+**Próxima tarea de código (sin cambios):** D1.2a, PoC esbuild para arquitectura, **no autorizado/ejecutado todavía**; se prevé Codex cuando haya disponibilidad. La matriz F puede seguir trabajándose hoy solo como diseño. No cambiar HTML, reglas, pruebas o `main` ni fusionar PR por esta aclaración.
+
+
+## D1.2 — auditoría de modularización y build, SIN CAMBIOS DE CÓDIGO · 28/10/2026
+
+**Dictamen:** [informe 60](60-d1-2-auditoria-arquitectura-build.md). Se examinó código real de `refactor/d1-catalogo`: `src/invierno.template.html` aún tiene ~156.656 caracteres (script principal ~100.386), 52 apariciones de `onclick=`, pruebas acopladas al script clásico (15 extraen el JS y 14 exigen un solo script), y `scripts/build-game.mjs` realiza una sustitución textual de la clase, **no bundling**. Se contrastaron alternativas actual/ESM directo/esbuild/Vite+singlefile con documentación oficial.
+
+**Decisión técnica propuesta:** preservar D1.1 como extracción válida, **no multiplicar ensamblados textuales**, y no asumir que más archivos resuelven el acoplamiento. Posponer PR/merge a `main` hasta definir la construcción a futuro; candidato razonable para experimento pequeño y descartable: `esbuild` con bundle IIFE e imports explícitos. **Bloqueo concreto:** funciones y estado accesibles para `onclick` y fixtures `vm` no sobreviven automáticamente al ámbito de módulo/IIFE. Un PoC deberá demostrar puente de interfaz acotado o listeners, tests 433+ y Chromium (5 partidas, 3 tamaños, archivo offline).
+
+**ÚNICA TAREA SIGUIENTE:** solicitar autorización para **D1.2a, PoC reversible de bundler**, sin cambiar reglas ni fusionar. No se modificó el ejecutable, motor, CI ni dependencias en esta auditoría; `main` sigue intacta.
+
+## D1.1 — catálogo separado y HTML autocontenido, gates verdes · 28/10/2026
+
+**Estado:** D1.1 implementada en `refactor/d1-catalogo` y **validada, sin merge a main**. [Informe 59](59-d1-1-extraccion-catalogo.md). `src/item-catalog.mjs` aporta `ItemCatalog` independiente del DOM, game y modos; recibe `mix` mediante inyección. `src/invierno.template.html` y `scripts/build-game.mjs` generan un único `invierno_colonia_v9_9.html` autocontenido. CI ordinario comprueba build reproducible; se agregaron cinco pruebas unitarias del módulo (20 D1.0 preservadas).
+
+**Gates de SHA `5cc07f50ceb8d3683fed583438a1978470a08b42`:** [Node 40720568281](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40720568281) **433/433**, cero fallos/omitidas/TODO; [Chromium 40720568450](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40720568450) **5/5 partidas C14**, **3/3 tamaños C16**, **2/2 aperturas file://** local/IA, cero errores JS e invariantes, [artefacto](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40720568450/artifacts/12829559449). El HTML de distribución sigue con script único. No se modificaron reglas, `ItemEngine`, IA ni Director narrativo.
+
+**ÚNICA TAREA SIGUIENTE:** auditoría independiente D1.2–D1.4 y preparación de puerta de integración. **No** merge a `main`, D2, F/E ni release sin autorización nueva. Reservas: Android físico, TalkBack, navegadores alternativos y balance humano.
+
+## D1.0 — caracterización de catálogo completada (sin extracción) · 28/10/2026
+
+**Autorización:** crear rama de implementación desde `main`, añadir pruebas con RNG determinista, validar y documentar; no modificar reglas, `ItemCatalog` ni `main`. Rama `refactor/d1-catalogo` desde `main` `0b75d01aba013cd029d9d0dd0bdbd20791be15fc`. Código de pruebas `6ccada45413dad93d1bcfe1330f95a3470b4f7c8`.
+
+**Resultado auditado:** [informe 58](58-d1-0-linea-base-catalogo.md). Archivo nuevo `tests/catalogo-caracterizacion-d1.test.mjs` únicamente: +20 tests para 17 cartas, 8 categorías, 6×20 cartas, resoluciones y metadatos, leyendas y RNG Fisher–Yates (4 semillas directas; 3 semillas para ambas modalidades). [CI 40719277668](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40719277668): **428/428**, 0 fallos/skip/TODO. El ejecutable HTML conserva blob `d192afb43ab216d0b63ed49fd24f1d830d03f4e7`, idéntico a `main`; sin PR, merge ni publicaciones. No se volvieron a ejecutar Chromium ni pruebas físicas: motor sin cambios.
+
+**ÚNICA TAREA SIGUIENTE:** autorización específica para **D1.1**: extraer `ItemCatalog` como fuente independiente y construir el HTML autocontenido de forma determinista, preservando RNG y todos los comportamientos. No extraer `ItemEngine`, no F/E/D2, no fusionar a `main` sin auditoría posterior.
+
 ## D0-P1-I — PR #1 fusionado en main y validado · 28/10/2026
 
 **Estado:** etapa de integración **cerrada** con reservas. Por autorización expresa del creador, PR1 se actualizó, pasó a ready y se fusionó únicamente en `main`, commit `96e2b6c3dd19d5f11846820e51948af245c99e71`. No se publicó release, tag ni se iniciaron D1/F. **Informe y evidencia:** [56](56-d0-p1-i-integracion-main.md).

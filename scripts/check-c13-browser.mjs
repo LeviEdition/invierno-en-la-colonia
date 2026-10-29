@@ -1,11 +1,12 @@
+import {scenarioPage} from '../test-support/browser-game-page.mjs';
 import assert from 'node:assert/strict';
 const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',headless:true,args:['--no-sandbox']});
-const url=process.env.GAME_URL||'http://127.0.0.1:8765/invierno_colonia_v9_9.html';const records=[],errors=[];
+const url=process.env.GAME_URL||'http://127.0.0.1:8765/dist/invierno-test.html';const records=[],errors=[];
 try{
  for(const viewport of [{width:393,height:852},{width:1365,height:768}]){
   const ctx=await browser.newContext({viewport,isMobile:viewport.width<500,hasTouch:viewport.width<500,reducedMotion:'reduce'});await ctx.addInitScript(()=>Math.random=()=>.45);
-  const page=await ctx.newPage();page.on('pageerror',e=>errors.push(e.message));await page.goto(url);await page.locator('[onclick="startGame(\'local\')"]').click();
+  const page=scenarioPage(await ctx.newPage());page.on('pageerror',e=>errors.push(e.message));await page.goto(url);await page.locator('[onclick="startGame(\'local\')"]').click();
   await page.evaluate(()=>{game.crossPending=false;game.crossResolved=true;hide();game.items=[catalog.create('ration')];game.humans[0].equipment=[catalog.create('pistol')];profile('h0');});
   await page.locator('#modalContent [onclick="startTransfer(0)"]').click();
   assert.equal(await page.evaluate(()=>{const before=JSON.stringify({food:game.food,dice:game.dice,hand:game.items});playItem(0);boostDie();return before===JSON.stringify({food:game.food,dice:game.dice,hand:game.items});}),true);

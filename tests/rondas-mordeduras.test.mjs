@@ -1,3 +1,4 @@
+import {readTestProgram} from '../test-support/game-source.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -6,12 +7,7 @@ import { dirname, join } from 'node:path';
 import { createContext, runInContext } from 'node:vm';
 
 // Pruebas de caracterización: sin cambiar el juego; se neutraliza solo la presentación.
-const html = readFileSync(join(dirname(fileURLToPath(import.meta.url)), '..', 'invierno_colonia_v9_9.html'), 'utf8');
-const scripts = [...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)];
-assert.equal(scripts.length, 1);
-const start = /\ncreate\(\);\s*\ndocument\.getElementById\('setupScreen'\)\.hidden=false;passScreenActive=true;\s*\npaint\(\);\s*$/;
-assert.match(scripts[0][1], start);
-const program = scripts[0][1].replace(start, '');
+const program=readTestProgram().runtimeSource;
 
 function fixture({ mode = 'ai' } = {}) {
   const random = { value: 0.6 };

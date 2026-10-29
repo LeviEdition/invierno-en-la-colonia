@@ -1,0 +1,407 @@
+{
+  "htmlSha256": "bbf71aae0198d3c5bc72f73e3e2219c8f603f63a04b895880fea67de93c87fc5",
+  "chromium": "154.0.8037.57",
+  "scope": "C16: ayuda, muerte, sucesión, pase, teclado, foco de retorno; sin lector de pantalla físico",
+  "records": [
+    {
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "setup": [
+        {
+          "key": "Shift+Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        }
+      ],
+      "help": [
+        {
+          "key": "Shift+Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        }
+      ],
+      "helpProtection": {
+        "inside": true,
+        "overlay": true
+      },
+      "helpFocusReturned": "floatingActions",
+      "death": [
+        {
+          "key": "Shift+Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        }
+      ],
+      "deathBackground": {
+        "inside": true,
+        "lowerModalInert": true
+      },
+      "succession": {
+        "leader": "h1",
+        "deathHidden": true,
+        "backdropOpen": false
+      },
+      "pass": [
+        {
+          "key": "Shift+Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "setup": [
+        {
+          "key": "Shift+Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        }
+      ],
+      "help": [
+        {
+          "key": "Shift+Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        }
+      ],
+      "helpProtection": {
+        "inside": true,
+        "overlay": true
+      },
+      "helpFocusReturned": "floatingActions",
+      "death": [
+        {
+          "key": "Shift+Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        }
+      ],
+      "deathBackground": {
+        "inside": true,
+        "lowerModalInert": true
+      },
+      "succession": {
+        "leader": "h1",
+        "deathHidden": true,
+        "backdropOpen": false
+      },
+      "pass": [
+        {
+          "key": "Shift+Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "setup": [
+        {
+          "key": "Shift+Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        }
+      ],
+      "help": [
+        {
+          "key": "Shift+Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        }
+      ],
+      "helpProtection": {
+        "inside": true,
+        "overlay": true
+      },
+      "helpFocusReturned": "floatingActions",
+      "death": [
+        {
+          "key": "Shift+Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        }
+      ],
+      "deathBackground": {
+        "inside": true,
+        "lowerModalInert": true
+      },
+      "succession": {
+        "leader": "h1",
+        "deathHidden": true,
+        "backdropOpen": false
+      },
+      "pass": [
+        {
+          "key": "Shift+Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        },
+        {
+          "key": "Tab",
+          "inside": true
+        }
+      ],
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

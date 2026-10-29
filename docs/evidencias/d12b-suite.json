@@ -1,0 +1,18 @@
+{
+  "artifact": "dist/invierno-esbuild-poc.html",
+  "htmlSha256": "bbf71aae0198d3c5bc72f73e3e2219c8f603f63a04b895880fea67de93c87fc5",
+  "sameTestsAndAssertions": true,
+  "exitCode": 0,
+  "tests": 451,
+  "pass": 451,
+  "fail": 0,
+  "cancelled": 0,
+  "skipped": 0,
+  "todo": 0,
+  "failedTests": [],
+  "engineGames": {
+    "configurations": 40,
+    "equalBehavior": 40,
+    "meaning": "mismos estados finales, acciones, eventos, mensajes e invariantes; solo se excluyen hashes de fuente"
+  }
+}

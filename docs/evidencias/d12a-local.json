@@ -1,0 +1,155 @@
+{
+  "date": "2026-10-29",
+  "baselineCommit": "ba9a4238d22ad968edbe74d0445949f9a631ec70",
+  "mainRemote": "0b75d01aba013cd029d9d0dd0bdbd20791be15fc",
+  "branch": "refactor/experiment-d1-2a-esbuild",
+  "baselineHtmlSha256": "726a929502debe38d5a2c81c0ad12838b2424e4ac1ad19b27a44131f88831014",
+  "pocHtmlSha256": "614295431619ffb6be7612ea04aaeaf7574bd57accd3663355e0f5d285fd5245",
+  "baselineTests": {
+    "tests": 433,
+    "pass": 433,
+    "fail": 0
+  },
+  "referenceWithPocTests": {
+    "tests": 439,
+    "pass": 439,
+    "fail": 0
+  },
+  "pocTests": {
+    "tests": 439,
+    "pass": 438,
+    "fail": 1,
+    "failedTest": "la base conserva las cinco clases principales y los puntos de entrada",
+    "reason": "source assertion expects class ItemCatalog; esbuild emits var ItemCatalog = class"
+  },
+  "baselineNpmCi": {
+    "status": "failed",
+    "reason": "No package-lock.json in original branch"
+  },
+  "npmCiWithLock": {
+    "status": "passed",
+    "esbuild": "0.28.2",
+    "installedPackagesLocal": 2,
+    "cacheOverride": "/tmp/d12a-npm-cache because default home cache unavailable"
+  },
+  "localFileProtocol": {
+    "reference": "blocked",
+    "candidate": "blocked",
+    "error": "net::ERR_BLOCKED_BY_ADMINISTRATOR",
+    "status": "not validated locally; CI pending",
+    "noPolicyBypass": true
+  },
+  "browserFinalComparison": [
+    {
+      "mode": "ai",
+      "seed": 2654435761,
+      "final": {
+        "round": 4,
+        "result": "victory",
+        "food": 0,
+        "morale": 9,
+        "samples": 7,
+        "goal": 7,
+        "ended": true,
+        "pending": {
+          "bite": false,
+          "loot": false,
+          "cross": false,
+          "leaders": [],
+          "death": false
+        },
+        "opened": ""
+      },
+      "equal": true
+    },
+    {
+      "mode": "ai",
+      "seed": 1401181143,
+      "final": {
+        "round": 6,
+        "result": "morale",
+        "food": 2,
+        "morale": 0,
+        "samples": 3,
+        "goal": 5,
+        "ended": true,
+        "pending": {
+          "bite": false,
+          "loot": false,
+          "cross": false,
+          "leaders": [],
+          "death": false
+        },
+        "opened": ""
+      },
+      "equal": true
+    },
+    {
+      "mode": "local",
+      "seed": 2654435761,
+      "final": {
+        "round": 2,
+        "result": "victory",
+        "food": 3,
+        "morale": 10,
+        "samples": 7,
+        "goal": 7,
+        "ended": true,
+        "pending": {
+          "bite": false,
+          "loot": false,
+          "cross": false,
+          "leaders": [],
+          "death": false
+        },
+        "opened": ""
+      },
+      "equal": true
+    },
+    {
+      "mode": "local",
+      "seed": 3816266512,
+      "final": {
+        "round": 4,
+        "result": "morale",
+        "food": 1,
+        "morale": 0,
+        "samples": 3,
+        "goal": 5,
+        "ended": true,
+        "pending": {
+          "bite": false,
+          "loot": false,
+          "cross": false,
+          "leaders": [],
+          "death": false
+        },
+        "opened": ""
+      },
+      "equal": true
+    },
+    {
+      "mode": "local",
+      "seed": 3189639203,
+      "final": {
+        "round": 3,
+        "result": "victory",
+        "food": 8,
+        "morale": 8,
+        "samples": 5,
+        "goal": 5,
+        "ended": true,
+        "pending": {
+          "bite": false,
+          "loot": false,
+          "cross": false,
+          "leaders": [],
+          "death": false
+        },
+        "opened": ""
+      },
+      "equal": true
+    }
+  ],
+  "scope": "Same five unique UI cases repeated before/after; 40 unique engine configurations repeated before/after, not 80 distinct. Emulated mobile; no Android physical."
+}

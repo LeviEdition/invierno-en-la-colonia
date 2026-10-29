@@ -1,0 +1,156 @@
+{
+  "sourceBranch": "refactor/d1-catalogo",
+  "sourceSha": "833eae745479509ec8121707e9df452c1a5e85bc",
+  "commonBase": "ba9a4238d22ad968edbe74d0445949f9a631ec70",
+  "technicalBase": "8e3e7d3fd310e731dea3c471180523fb62a3e884",
+  "sourceCommits": [
+    {
+      "sha": "9db4e0539f7b889bdaa95469fc6c0613fa5c2707",
+      "subject": "docs(singleplayer): fijar base V9.9 y riesgos de balance, pérdidas y reclutamiento"
+    },
+    {
+      "sha": "e7ffbc67e17789e35befd617e334576ba36fee7c",
+      "subject": "docs(tablero): registrar base V9.9 y balance singleplayer pendiente"
+    },
+    {
+      "sha": "9542a0631dcc2baaed7b06d06e0eb33b3728062b",
+      "subject": "docs(SP-03): proponer ciclo de ronda singleplayer y eventos contextuales"
+    },
+    {
+      "sha": "cd2b4bce77acd8edbb6fca6a67db5e327a67368d",
+      "subject": "docs(tablero): registrar propuesta SP-03 y microdecisión de ritmo narrativo"
+    },
+    {
+      "sha": "597427b4b6e4a80901de9b5e2c95beacf16e8b57",
+      "subject": "docs(SP-03): distinguir hitos reactivos de campaña y encrucijadas cotidianas"
+    },
+    {
+      "sha": "bc6762acf7edfe89bfdcf5e71eed898ffddc472a",
+      "subject": "docs(tablero): registrar disparadores de campaña y encrucijadas por ronda"
+    },
+    {
+      "sha": "2dadff70fed0f96afe8e89035f4dc385964bfad8",
+      "subject": "docs(SP-03): aprobar encrucijadas flexibles condicionadas y suprimirlas con eventos principales"
+    },
+    {
+      "sha": "dea4abfadc41b605f7510fde2419d6ba0c676820",
+      "subject": "docs(tablero): registrar frecuencia flexible acordada de encrucijadas en SP-03"
+    },
+    {
+      "sha": "e32adff36368ea776c5f58fa62d98dd8c041399f",
+      "subject": "docs(SP-03): definir tres clases narrativas y prioridad cronológica sin retroactividad"
+    },
+    {
+      "sha": "90b64ef547c6411bd13b10b58306020c89a39942",
+      "subject": "docs(tablero): acordar clases narrativas y cronología de encrucijadas"
+    },
+    {
+      "sha": "f4e5bb6ebb08871caf348e02d66795222317bf8f",
+      "subject": "docs(SP-03): evaluar encuentros personales como historias reutilizables con protagonista vinculante"
+    },
+    {
+      "sha": "6f3aa2cfd2c1486cfb2557a7561896934ee893b4",
+      "subject": "docs(tablero): registrar propuesta de encuentros reutilizables con identidad de protagonista"
+    },
+    {
+      "sha": "8960242c0b6f8c86e25fa95e7c1075cf01ab091d",
+      "subject": "docs(SP-03): diseñar contingencias de muerte para arcos secundarios reutilizables"
+    },
+    {
+      "sha": "833eae745479509ec8121707e9df452c1a5e85bc",
+      "subject": "docs(tablero): registrar contingencia de muerte para encuentros persistentes"
+    }
+  ],
+  "sourceFilesChanged": [
+    "docs/18-tablero-operativo.md",
+    "docs/63-hoja-de-ruta-planificacion-singleplayer.md"
+  ],
+  "method": "patch selectivo de63 ybloques añadidos de18, sin merge ni reemplazo íntegro de archivos",
+  "preservedSections": {
+    "5K": {
+      "sourceAndReconciledEqual": true,
+      "sha256": "3805dcaf7340be93ca30d70315ee069536c2777612c61473c74845f7dc0dd95e"
+    },
+    "6.1": {
+      "sourceAndReconciledEqual": true,
+      "sha256": "e92999e5352fa7dc1df0fc315f1a75a08a1b5f4632a12a62b20fc7f401ee7bd8"
+    },
+    "6.2C": {
+      "sourceAndReconciledEqual": true,
+      "sha256": "553b54082d356fefd58ef039234bf2f3ed7f3ca466fb3c2e48993e13f3d4e5ab"
+    },
+    "6.2D": {
+      "sourceAndReconciledEqual": true,
+      "sha256": "ba9d7b0a9ab477c4ef2b5fe8f0f6fb96fcfbb800595cbb3acdb41a19e4ef735b"
+    }
+  },
+  "boardAddedBlock": {
+    "preservedExactly": true,
+    "lines": 54,
+    "sha256": "a9152e996a03e7005c334adc1b6c5072752f85212e7bd37d92ae0ff4a0c72a21"
+  },
+  "clarifications": [
+    "cronología de6.2B prevalece sobre supresión sin orden temporal",
+    "decisión5K actualiza hipótesis5J sin eliminar historia",
+    "ciclo/Encuentros/contingencias siguen como propuestas",
+    "estado técnico actualizado a cierreD1/D2 yapertura autorizada"
+  ],
+  "localTests": {
+    "tests": 467,
+    "pass": 467,
+    "fail": 0,
+    "skipped": 0,
+    "cancelled": 0
+  },
+  "npmCi": "exit0",
+  "checkBuild": "exit0",
+  "executableChangesVsTechnicalBase": false,
+  "productionSha256": "43b8883ad4821e4b50c40791615c5ef6c0b3030476409b4e1c6da4dbd872d692",
+  "ci": {
+    "preOpeningSha": "7d6a68a21a802d0938e67dd8a1d863484fc07530",
+    "runs": [
+      {
+        "id": 40896698599,
+        "event": "push",
+        "conclusion": "success"
+      },
+      {
+        "id": 40896698392,
+        "event": "push",
+        "conclusion": "success",
+        "jobs": [
+          "engine",
+          "browser"
+        ]
+      }
+    ],
+    "artifactsDownloadedAndVerified": true,
+    "tests": 467,
+    "comparisonHistorical": {
+      "reference": "57872ee279e924460a126aecbcd0ee7141b5e078",
+      "equal": 40
+    },
+    "comparisonMain": {
+      "reference": "0b75d01aba013cd029d9d0dd0bdbd20791be15fc",
+      "equal": 40
+    },
+    "qaGames": 5,
+    "productionReplays": 5,
+    "offlineOpenings": 4,
+    "sharedModuleHashesVerified": 15
+  },
+  "pr": {
+    "number": 15,
+    "url": "https://github.com/LeviEdition/invierno-en-la-colonia/pull/15",
+    "stateAtOpening": "OPEN",
+    "draft": false,
+    "base": "main",
+    "baseSha": "0b75d01aba013cd029d9d0dd0bdbd20791be15fc",
+    "headAtOpening": "7d6a68a21a802d0938e67dd8a1d863484fc07530",
+    "mergeableAtOpening": true,
+    "merged": false,
+    "autoMerge": false,
+    "reviewRequiredByCreator": true,
+    "checksOnDelivery": "consultar PR; commit posterior solo documental verificado antes de entregar"
+  }
+}

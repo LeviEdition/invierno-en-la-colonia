@@ -1,0 +1,47 @@
+{
+  "base": "918e24183a441c127ce23c75ea36d97f7f90f347",
+  "branch": "refactor/experiment-d1-2b-contracts",
+  "date": "2026-10-29",
+  "referenceHtmlSha256": "726a929502debe38d5a2c81c0ad12838b2424e4ac1ad19b27a44131f88831014",
+  "candidateHtmlSha256": "bbf71aae0198d3c5bc72f73e3e2219c8f603f63a04b895880fea67de93c87fc5",
+  "originalTests": 439,
+  "newTests": 12,
+  "referenceTests": {
+    "tests": 451,
+    "pass": 451,
+    "fail": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "candidateTests": {
+    "tests": 451,
+    "pass": 451,
+    "fail": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "mutationCases": [
+    "catalog resolves wrong ID",
+    "TurnController missing",
+    "ItemEngine.attack missing",
+    "DeathDirector interface missing",
+    "crisis accepts wrong card",
+    "paint entry missing"
+  ],
+  "browserRed": {
+    "sourceHash": "614295431619ffb6be7612ea04aaeaf7574bd57accd3663355e0f5d285fd5245",
+    "completed": 0,
+    "errors": [
+      "Se usó el handler global legado"
+    ],
+    "assertion": "local start remained hidden=false, modeai, creates0, fallback1 after global handlers deliberately replaced"
+  },
+  "browserGreen": {
+    "cases": 6,
+    "errors": [],
+    "createsPerStart": 1,
+    "globalFallbacks": 0
+  },
+  "localOffline": "Not rerun locally: same managed Chromium policy blocks file:// in both versions. Must verify new SHA in GitHub Actions.",
+  "scope": "First D1.2b block: source loader/shared fixture + semantic smoke + three handover buttons; no other UI migration, default build adoption or D2."
+}

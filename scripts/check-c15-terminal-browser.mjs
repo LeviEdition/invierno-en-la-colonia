@@ -1,9 +1,10 @@
+import {scenarioPage} from '../test-support/browser-game-page.mjs';
 // Regresiones C15 en Chromium real, desde estados preparados y con botones/teclado.
 import assert from 'node:assert/strict';
 import {mkdir,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
-const url=process.env.GAME_URL||'http://127.0.0.1:8765/invierno_colonia_v9_9.html';
+const url=process.env.GAME_URL||'http://127.0.0.1:8765/dist/invierno-test.html';
 const output=process.env.C15_OUTPUT_DIR||'/tmp/c15-terminal-browser';await mkdir(output,{recursive:true});
 const html=await (await fetch(url)).text();
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',headless:true,args:['--no-sandbox']});
@@ -12,7 +13,7 @@ try{
  for(const viewport of [{width:393,height:852},{width:1365,height:768}]){
   const context=await browser.newContext({viewport,isMobile:viewport.width<500,hasTouch:viewport.width<500});
   await context.addInitScript(()=>Math.random=()=>.45);
-  const page=await context.newPage();page.on('pageerror',e=>result.errors.push(e.message));
+  const page=scenarioPage(await context.newPage());page.on('pageerror',e=>result.errors.push(e.message));
   for(const kind of ['hambre','residuos']){
    await page.goto(url);await page.locator('[onclick="startGame(\'local\')"]').click();
    await page.evaluate(kind=>{

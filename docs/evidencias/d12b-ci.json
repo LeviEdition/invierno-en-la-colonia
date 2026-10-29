@@ -1,0 +1,209 @@
+{
+  "sha": "8b738df4bb9490726cceabd3b40c9a8a00327c40",
+  "referenceRun": {
+    "id": 40865297188,
+    "conclusion": "success",
+    "tests": 451,
+    "pass": 451,
+    "fail": 0
+  },
+  "experimentRun": {
+    "id": 40865297184,
+    "conclusion": "success",
+    "candidateRegressions": "success",
+    "browser": "success"
+  },
+  "summary": {
+    "artifact": "dist/invierno-esbuild-poc.html",
+    "htmlSha256": "bbf71aae0198d3c5bc72f73e3e2219c8f603f63a04b895880fea67de93c87fc5",
+    "sameTestsAndAssertions": true,
+    "exitCode": 0,
+    "tests": 451,
+    "pass": 451,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0,
+    "failedTests": [],
+    "engineGames": {
+      "configurations": 40,
+      "equalBehavior": 40,
+      "meaning": "mismos estados finales, acciones, eventos, mensajes e invariantes; solo se excluyen hashes de fuente"
+    }
+  },
+  "handover": {
+    "htmlSha256": "bbf71aae0198d3c5bc72f73e3e2219c8f603f63a04b895880fea67de93c87fc5",
+    "chromium": "143.0.7499.4",
+    "scope": "inicio/pase, inyección de fallo en globals; estado preparado para pasar turno",
+    "records": [
+      {
+        "viewport": {
+          "width": 320,
+          "height": 640
+        },
+        "mode": "local",
+        "started": {
+          "mode": "local",
+          "setupHidden": true,
+          "creates": 1,
+          "fallbacks": 0,
+          "exportedGame": false,
+          "exportedNamespace": false
+        },
+        "passed": {
+          "turn": "ai",
+          "pass": false,
+          "creates": 1,
+          "fallbacks": 0
+        }
+      },
+      {
+        "viewport": {
+          "width": 320,
+          "height": 640
+        },
+        "mode": "ai",
+        "started": {
+          "mode": "ai",
+          "setupHidden": true,
+          "creates": 1,
+          "fallbacks": 0,
+          "exportedGame": false,
+          "exportedNamespace": false
+        }
+      },
+      {
+        "viewport": {
+          "width": 393,
+          "height": 852
+        },
+        "mode": "local",
+        "started": {
+          "mode": "local",
+          "setupHidden": true,
+          "creates": 1,
+          "fallbacks": 0,
+          "exportedGame": false,
+          "exportedNamespace": false
+        },
+        "passed": {
+          "turn": "ai",
+          "pass": false,
+          "creates": 1,
+          "fallbacks": 0
+        }
+      },
+      {
+        "viewport": {
+          "width": 393,
+          "height": 852
+        },
+        "mode": "ai",
+        "started": {
+          "mode": "ai",
+          "setupHidden": true,
+          "creates": 1,
+          "fallbacks": 0,
+          "exportedGame": false,
+          "exportedNamespace": false
+        }
+      },
+      {
+        "viewport": {
+          "width": 1365,
+          "height": 768
+        },
+        "mode": "local",
+        "started": {
+          "mode": "local",
+          "setupHidden": true,
+          "creates": 1,
+          "fallbacks": 0,
+          "exportedGame": false,
+          "exportedNamespace": false
+        },
+        "passed": {
+          "turn": "ai",
+          "pass": false,
+          "creates": 1,
+          "fallbacks": 0
+        }
+      },
+      {
+        "viewport": {
+          "width": 1365,
+          "height": 768
+        },
+        "mode": "ai",
+        "started": {
+          "mode": "ai",
+          "setupHidden": true,
+          "creates": 1,
+          "fallbacks": 0,
+          "exportedGame": false,
+          "exportedNamespace": false
+        }
+      }
+    ],
+    "errors": []
+  },
+  "offline": {
+    "offline-reference.json": {
+      "fileUrl": "file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/invierno_colonia_v9_9.html",
+      "htmlSha256": "726a929502debe38d5a2c81c0ad12838b2424e4ac1ad19b27a44131f88831014",
+      "chromium": "143.0.7499.4",
+      "results": [
+        {
+          "mode": "local",
+          "ok": true,
+          "errors": [],
+          "requests": [
+            "file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/invierno_colonia_v9_9.html"
+          ],
+          "networkOffline": true
+        },
+        {
+          "mode": "ai",
+          "ok": true,
+          "errors": [],
+          "requests": [
+            "file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/invierno_colonia_v9_9.html"
+          ],
+          "networkOffline": true
+        }
+      ]
+    },
+    "offline-poc.json": {
+      "fileUrl": "file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/dist/invierno-esbuild-poc.html",
+      "htmlSha256": "bbf71aae0198d3c5bc72f73e3e2219c8f603f63a04b895880fea67de93c87fc5",
+      "chromium": "143.0.7499.4",
+      "results": [
+        {
+          "mode": "local",
+          "ok": true,
+          "errors": [],
+          "requests": [
+            "file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/dist/invierno-esbuild-poc.html"
+          ],
+          "networkOffline": true
+        },
+        {
+          "mode": "ai",
+          "ok": true,
+          "errors": [],
+          "requests": [
+            "file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/dist/invierno-esbuild-poc.html"
+          ],
+          "networkOffline": true
+        }
+      ]
+    }
+  },
+  "browserCases": 5,
+  "browserErrors": [],
+  "browserInvariants": [],
+  "browserHarnessRetries": 0,
+  "sameBrowserFinalsAsLocal": true,
+  "focusCases": 3,
+  "sameHtmlHashAsLocal": true
+}

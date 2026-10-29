@@ -1,3 +1,4 @@
+import {readTestProgram} from '../test-support/game-source.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -5,16 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { createContext, runInContext } from 'node:vm';
 
-const ruta = join(dirname(fileURLToPath(import.meta.url)), '..', 'invierno_colonia_v9_9.html');
-const html = readFileSync(ruta, 'utf8');
-const scripts = [...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)];
-assert.equal(scripts.length, 1, 'La prueba necesita un único script principal');
-
-// Sólo evitamos la inicialización automática de la interfaz al cargar el archivo.
-// Las funciones originales create(), newRound() y las reglas NO se reescriben.
-const arranque = /\ncreate\(\);\s*\ndocument\.getElementById\('setupScreen'\)\.hidden=false;passScreenActive=true;\s*\npaint\(\);\s*$/;
-assert.match(scripts[0][1], arranque, 'Cambió el arranque: revisar el adaptador de pruebas');
-const codigo = scripts[0][1].replace(arranque, '');
+const codigo=readTestProgram().runtimeSource;
 
 function partida({ azar = 0.25, modo = 'ai' } = {}) {
   const math = Object.create(Math);

@@ -1,0 +1,25 @@
+{
+  "fileUrl": "file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/invierno_colonia_v9_9.html",
+  "htmlSha256": "726a929502debe38d5a2c81c0ad12838b2424e4ac1ad19b27a44131f88831014",
+  "chromium": "143.0.7499.4",
+  "results": [
+    {
+      "mode": "local",
+      "ok": true,
+      "errors": [],
+      "requests": [
+        "file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/invierno_colonia_v9_9.html"
+      ],
+      "networkOffline": true
+    },
+    {
+      "mode": "ai",
+      "ok": true,
+      "errors": [],
+      "requests": [
+        "file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/invierno_colonia_v9_9.html"
+      ],
+      "networkOffline": true
+    }
+  ]
+}
