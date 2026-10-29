@@ -1,6 +1,6 @@
 # Plan de refactorización — por etapas, sin apuro
 
-> **Ejecución actual:** la fuente de verdad de **etapa activa, tarea única y criterios de terminado** es [el tablero operativo](18-tablero-operativo.md). Esta hoja conserva parte del historial de A/B/C; **D1/D2 están integradas yvalidadas en main** mediante PR15/merge6b8bfca. El siguiente hito es preservar formalmente la referencia; todavía no se autorizaron tags/releases ni juego propio. [Cierre71](71-integracion-main-y-cierre-d1-d2.md). Este documento es planificación general, no autorización para empezar fases en paralelo.
+> **Ejecución actual:** la fuente de verdad de **etapa activa, tarea única y criterios de terminado** es [el tablero operativo](18-tablero-operativo.md). Esta hoja conserva parte del historial de A/B/C; **D1/D2 están integradas yvalidadas en main** mediante PR15/merge6b8bfca. La preservación formal está autorizada: tag anotado publicado y release en preparación, con validación de adjuntos pendiente según [informe72](72-preservacion-referencia-modular.md). No se autoriza implementar el juego propio. [Cierre71](71-integracion-main-y-cierre-d1-d2.md). Este documento es planificación general, no autorización para empezar fases en paralelo.
 
 ## Objetivos
 
@@ -13,11 +13,11 @@
 
 ## Ruta de tres hitos: adaptación fiel y modular → preservación → juego propio
 
-**Decisiones vigentes:** [61 — matriz F solo para el juego propio](61-alcance-matriz-f-juego-propio.md) y [62 — D1/D2 integradas ypreservación pendiente](62-hitos-referencia-fiel-y-juego-propio.md). La V9.9 estabilizada está **aceptada como suficientemente fiel en las mecánicas para ser nuestra referencia**, con las diferencias ya documentadas en el [informe 49](49-c15-auditoria-final.md#comparación-con-dead-of-winter). La ruta vigente es:
+**Decisiones vigentes:** [61 — matriz F solo para el juego propio](61-alcance-matriz-f-juego-propio.md) y [62 — D1/D2 integradas ypreservación en curso](62-hitos-referencia-fiel-y-juego-propio.md). La V9.9 estabilizada está **aceptada como suficientemente fiel en las mecánicas para ser nuestra referencia**, con las diferencias ya documentadas en el [informe 49](49-c15-auditoria-final.md#comparación-con-dead-of-winter). La ruta vigente es:
 
 - **Hito 1 — completado e integrado:** la fidelidad funcional se acepta para el alcance de esta adaptación (no significa equivalencia idéntica de todo el reglamento). **D1 yD2 completadas**, integradas con aprobación del creador y467/467 más regresión de partidas/navegador sobre main; se preservan las reglas actuales. **No realizar otra RF desde cero ni exigir nuevos cambios de fidelidad** para iniciar el juego propio.
 - **Matriz F:** compara mecánicas con el juego de mesa **para decidir cómo funcionará nuestro videojuego propio**. `F-14` (cinco candidatos → elegir tres → líder manual) y otras filas *Conservar/Cambiar* **no se implementan en la V9.9 ni durante la refactorización D**.
-- **Hito 2 — referencia preservada:** después de aceptar la adaptación suficientemente fiel y modular, guardar una instantánea identificable con su código, ejecutable, criterios de fidelidad, resultados de prueba y desviaciones aprobadas; requiere autorización, no se crea ahora.
+- **Hito 2 — referencia preservada:** después de aceptar la adaptación suficientemente fiel y modular, guardar una instantánea identificable con su código, ejecutable, criterios de fidelidad, resultados de prueba y desviaciones aprobadas; autorizada el29/10/2026, en curso según72; no se declara completada antes de verificar la publicación.
 - **Hito 3 — juego propio futuro:** desde esa referencia preservada, abrir línea de desarrollo separada; revalidar decisiones F según su aporte al singleplayer e incorporar gradualmente cambios propios y narrativa E.
 - **No confundir etiquetas:** las filas **F-01, F-14, etc.** son IDs de la *matriz F de comparación/diseño*. La **etapa F** histórica de este plan es presentación 2D, campañas/red y modalidades posteriores, no la implementación automática de esas filas.
 - **Informe 49 ≠ matriz F:** el informe 49 **ya contrastó la referencia** con el reglamento, y sus diferencias conocidas están aceptadas para este alcance; F registra conservar/cambiar/pendiente **para nuestro juego propio**. Una eventual auditoría RF complementaria solo se abre por hallazgo o nueva autorización, no como fase obligatoria.

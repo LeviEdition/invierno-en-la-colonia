@@ -1,5 +1,10 @@
 # 25 — Registro de estabilización V9.9 (C1–C16)
 
+## Preservación formal V9.9 — 29/10/2026
+
+Main62e4e851 confirmado limpio ysin avances. Tag anotado `v0.9.9-referencia-modular` publicado sobre ese SHA, oráculo57872ee conservado. Reconstrucción limpia yrecuperación desde tag: npm ci/build/check y467/467; HTML SHA-256 `43b8883ad4821e4b50c40791615c5ef6c0b3030476409b4e1c6da4dbd872d692`. CI exacto62 reutilizado para navegador/offline ycomparaciones; no nuevas pruebas físicas. Release428084796 en borrador, adjuntos rechazados con401 local yfuera del sandbox. Se agrega workflow manual exclusivo de preservación con comprobaciones de commit/tag/hash/CI/descargas, sin modificar juego ni SP-03. [Informe72](72-preservacion-referencia-modular.md) registra pruebas yestado; preservación pendiente hasta completar publicación. Los apartados inferiores son históricos.
+
+
 ## D0-I-V — Chromium post-merge validado · 28/10/2026
 
 **Verificación real de navegador sobre rama integrada, sin cambiar motor.** Debido al bloqueo DNS del contenedor local, se utilizó Chromium real en GitHub Actions sobre `refactor/arquitectura`, commit `a6c3cf425363606ac68266a5b3c876e7d1616b2b` (mismo HTML del merge `c15373d4`; solo cambió workflow/documentación). [Ejecución Chromium 40711789374](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40711789374) `completed/success`; [evidencia ZIP](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40711789374/artifacts/12827075968), incluye JSON y capturas.

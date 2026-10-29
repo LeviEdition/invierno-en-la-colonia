@@ -1,0 +1,12 @@
+{
+  "format_version": 1,
+  "tag": "v0.9.9-referencia-modular",
+  "commit": "62e4e85150b2416ccf07d671c186b5c421993b0b",
+  "files": [
+    {
+      "file": "invierno_colonia_v9_9.html",
+      "sha256": "43b8883ad4821e4b50c40791615c5ef6c0b3030476409b4e1c6da4dbd872d692",
+      "bytes": 225283
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+name: Preservar referencia modular V9.9
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: preserve-v099-reference
+  cancel-in-progress: false
+jobs:
+  preserve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 62e4e85150b2416ccf07d671c186b5c421993b0b
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Reconstruir el commit preservado, sin cambiar fuentes
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = 62e4e85150b2416ccf07d671c186b5c421993b0b
+          test "$(git cat-file -t v0.9.9-referencia-modular)" = tag
+          test "$(git rev-parse 'v0.9.9-referencia-modular^{commit}')" = 62e4e85150b2416ccf07d671c186b5c421993b0b
+          git merge-base --is-ancestor 57872ee279e924460a126aecbcd0ee7141b5e078 HEAD
+          npm ci
+          npm run check:build
+          npm test
+          npm run build
+          npm run check:build
+          git diff --exit-code
+          test -z "$(git status --porcelain)"
+      - name: Verificar adjuntos antes y después de publicar el borrador existente
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: python
+        run: |
+          import hashlib, json, os, re, subprocess
+          from pathlib import Path
+
+          repo = 'LeviEdition/invierno-en-la-colonia'
+          tag = 'v0.9.9-referencia-modular'
+          commit = '62e4e85150b2416ccf07d671c186b5c421993b0b'
+          tag_object = '0fdb214612486f4cc46c1acb444390de963d05e8'
+          expected_hash = '43b8883ad4821e4b50c40791615c5ef6c0b3030476409b4e1c6da4dbd872d692'
+          release_id = 428084796
+          root = Path(os.environ['RUNNER_TEMP']) / 'v099-preservation'
+          payload = root / 'payload'
+          payload.mkdir(parents=True)
+
+          def gh(*args):
+              return subprocess.check_output(['gh', *args], text=True)
+
+          def api(path):
+              return json.loads(gh('api', 'repos/' + repo + '/' + path))
+
+          # Esta tarea no crea ni mueve tags; solo acepta la referencia ya publicada.
+          ref = api('git/ref/tags/' + tag)
+          assert ref['object']['type'] == 'tag' and ref['object']['sha'] == tag_object
+          annotation = api('git/tags/' + tag_object)
+          assert annotation['object']['type'] == 'commit' and annotation['object']['sha'] == commit
+          for run in [40903853712, 40903853822]:
+              result = api('actions/runs/' + str(run))
+              assert result['head_sha'] == commit and result['conclusion'] == 'success'
+
+          html = Path('invierno_colonia_v9_9.html').read_bytes()
+          assert hashlib.sha256(html).hexdigest() == expected_hash
+          assert not re.search(rb'testBindings|__test|\bwith\s*\(|\beval\(', html)
+          filename = 'invierno_colonia_v9_9.html'
+          manifest_name = 'manifest-v0.9.9-referencia-modular.json'
+          manifest = {'format_version': 1, 'tag': tag, 'commit': commit,
+                      'files': [{'file': filename, 'sha256': expected_hash, 'bytes': len(html)}]}
+          (payload / filename).write_bytes(html)
+          (payload / manifest_name).write_text(json.dumps(manifest, indent=2) + '\n')
+          expected_names = {filename, manifest_name}
+
+          release = api('releases/' + str(release_id))
+          assert release['tag_name'] == tag
+          assert release['target_commitish'] == commit
+          assert release['name'] == 'V9.9 — Referencia estable y modular'
+          existing = {asset['name'] for asset in release['assets']}
+          assert existing <= expected_names, 'Hay adjuntos inesperados; requiere revisión humana'
+
+          # Nunca reemplazar adjuntos publicados. Si ya existen, comprobar sus bytes primero.
+          if existing:
+              previous = root / 'existing'
+              previous.mkdir()
+              gh('release', 'download', tag, '--repo', repo, '--dir', str(previous))
+              for name in existing:
+                  assert (previous / name).read_bytes() == (payload / name).read_bytes(), name
+          for name in sorted(expected_names - existing):
+              gh('release', 'upload', tag, str(payload / name), '--repo', repo)
+
+          def verify_download(directory):
+              directory.mkdir()
+              gh('release', 'download', tag, '--repo', repo, '--dir', str(directory))
+              assert {p.name for p in directory.iterdir()} == expected_names
+              for name in expected_names:
+                  assert (directory / name).read_bytes() == (payload / name).read_bytes(), name
+              actual = hashlib.sha256((directory / filename).read_bytes()).hexdigest()
+              assert actual == expected_hash
+              return actual
+
+          verify_download(root / 'before-publication')
+          if release['draft']:
+              publication = root / 'publish.json'
+              publication.write_text(json.dumps({'draft': False}))
+              gh('api', '--method', 'PATCH', 'repos/' + repo + '/releases/' + str(release_id),
+                 '--input', str(publication))
+          downloaded_hash = verify_download(root / 'after-publication')
+          published = api('releases/' + str(release_id))
+          assert not published['draft'] and published['published_at']
+          assert {a['name'] for a in published['assets']} == expected_names
+          assert api('git/ref/tags/' + tag)['object']['sha'] == tag_object
+          evidence = {'preserved_commit': commit, 'tag': tag, 'tag_object': tag_object,
+                      'release_id': release_id, 'release_url': published['html_url'],
+                      'published_at': published['published_at'],
+                      'workflow_sha': os.environ['GITHUB_SHA'], 'run_id': os.environ['GITHUB_RUN_ID'],
+                      'downloaded_html_sha256': downloaded_hash, 'manifest': manifest,
+                      'verified_before_and_after_publication': True,
+                      'assets': [{'name': a['name'], 'size': a['size'], 'url': a['browser_download_url']}
+                                 for a in published['assets']]}
+          (root / 'release-result.json').write_text(json.dumps(evidence, indent=2) + '\n')
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as summary:
+              summary.write('Referencia publicada y descargada: ' + published['html_url'] + '\n\n')
+              summary.write('Commit preservado: `' + commit + '`\n\nSHA-256: `' + downloaded_hash + '`\n')
+          print(json.dumps(evidence, indent=2))
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v099-reference-publication-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/v099-preservation/release-result.json
+            ${{ runner.temp }}/v099-preservation/payload/

@@ -27,13 +27,13 @@ Esta aceptación **es una decisión de alcance del creador** sustentada en el tr
 
 **Criterio de terminado del hito 1:** referencia mecánica aceptada (YA DECIDIDO) **+ D1/D2 terminadas, probadas, aceptadas eintegradas** (COMPLETADO, PR15/6b8bfca). No pedir un proyecto RF nuevo antes de avanzar; la comparación del informe 49 sigue disponible para consultas concretas.
 
-## Hito 2 — Preservar una versión identificable de referencia
+## Hito 2 — Preservación autorizada, en curso
 
 Al cerrar D1/D2, decidir expresamente cómo congelar una referencia reproducible con SHA, código fuente, build, pruebas y diferencias mecánicas aceptadas, antes de alterar deliberadamente las reglas.
 
 - Mantener las pruebas históricas para reconocer regresiones.
 - Conservar documentación del funcionamiento, reservas técnicas y modo de distribución.
-- No crear ahora tag, release, rama ni PR/merge por esta decisión.
+- Publicación autorizada el29/10/2026: tag anotado sobre62e4e851, release con HTML ymanifiesto. [Informe72](72-preservacion-referencia-modular.md). No crear rama del juego propio ni alterar referencias publicadas.
 
 **Puerta:** referencia estable y modular, reproducible, con respaldo de pruebas y preservación autorizada por el creador. **No depende de una nueva auditoría RF.**
 
@@ -57,7 +57,7 @@ Desde esa referencia preservada y en línea separada de desarrollo:
 
 **Ruta oficial:** `V9.9 estabilizada + fidelidad mecánica aceptada → cerrar D1 → cerrar D2 → preservar referencia modular → desarrollar juego propio (matriz F + singleplayer/Director) → expansión`.
 
-**Próxima tarea técnica propuesta:** D1.2a, experimento reversible con esbuild, pendiente de ejecución/decisión con Codex. No tocar reglas, ni `main`, ni implementar F/E por la aceptación de fidelidad.
+**Próxima tarea vigente:** completar publicación y verificación de la referencia autorizada. Después, diseño SP-03 (ciclo de ronda) y SP-04 (balance de un solo grupo), sin implementación autorizada. Los seguimientos fechados inferiores conservan decisiones históricas superadas.
 
 **Alcance de esta acta:** decisión de producto y documentación, no modificación de ejecutable ni certificación de equivalencia literal.
 

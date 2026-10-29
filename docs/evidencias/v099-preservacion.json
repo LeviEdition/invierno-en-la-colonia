@@ -1,0 +1,236 @@
+{
+  "status": "publication_pending",
+  "preserved_commit": "62e4e85150b2416ccf07d671c186b5c421993b0b",
+  "main_at_start": "62e4e85150b2416ccf07d671c186b5c421993b0b",
+  "subsequent_commits_at_start": [],
+  "existing_tags_and_releases_at_start": [],
+  "tag": {
+    "node_id": "TA_kwDOVYh5SNoAKDBmZGIyMTQ2MTI0ODZmNGNjNDZjMWFjYjQ0NDM5MGRlOTYzZDA1ZTg",
+    "sha": "0fdb214612486f4cc46c1acb444390de963d05e8",
+    "url": "https://api.github.com/repos/LeviEdition/invierno-en-la-colonia/git/tags/0fdb214612486f4cc46c1acb444390de963d05e8",
+    "tagger": {
+      "name": "Xime",
+      "email": "ximena.tabeira23@gmail.com",
+      "date": "2026-10-29T15:58:49Z"
+    },
+    "object": {
+      "sha": "62e4e85150b2416ccf07d671c186b5c421993b0b",
+      "type": "commit",
+      "url": "https://api.github.com/repos/LeviEdition/invierno-en-la-colonia/git/commits/62e4e85150b2416ccf07d671c186b5c421993b0b"
+    },
+    "tag": "v0.9.9-referencia-modular",
+    "message": "V9.9 — Referencia estable y modular\n\nCommit preservado: 62e4e85150b2416ccf07d671c186b5c421993b0b\nOráculo ancestro: 57872ee279e924460a126aecbcd0ee7141b5e078\nHTML de producto SHA-256: 43b8883ad4821e4b50c40791615c5ef6c0b3030476409b4e1c6da4dbd872d692\n467/467 pruebas; CI exacto 40903853712 y 40903853822 aprobado.\nReferencia técnica del proyecto, con reservas documentadas; sin nuevas mecánicas.\n",
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "oracle_ancestor": "57872ee279e924460a126aecbcd0ee7141b5e078",
+  "manifest": {
+    "format_version": 1,
+    "tag": "v0.9.9-referencia-modular",
+    "commit": "62e4e85150b2416ccf07d671c186b5c421993b0b",
+    "files": [
+      {
+        "file": "invierno_colonia_v9_9.html",
+        "sha256": "43b8883ad4821e4b50c40791615c5ef6c0b3030476409b4e1c6da4dbd872d692",
+        "bytes": 225283
+      }
+    ]
+  },
+  "fresh_local": {
+    "node": "24.19.0",
+    "npm": "11.9.0",
+    "clean_checkout": true,
+    "npm_ci": true,
+    "check_build_before": true,
+    "npm_test": {
+      "pass": 467,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0
+    },
+    "build": true,
+    "check_build_after": true,
+    "tracked_tree_unchanged": true,
+    "no_qa_hooks_in_product": true,
+    "separate_recovery_from_published_tag": {
+      "npm_ci": true,
+      "build": true,
+      "check_build": true,
+      "bytes_equal": true
+    }
+  },
+  "reused_ci": [
+    {
+      "conclusion": "success",
+      "headSha": "62e4e85150b2416ccf07d671c186b5c421993b0b",
+      "status": "completed",
+      "url": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40903853712"
+    },
+    {
+      "conclusion": "success",
+      "headSha": "62e4e85150b2416ccf07d671c186b5c421993b0b",
+      "status": "completed",
+      "url": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40903853822"
+    }
+  ],
+  "comparisons": [
+    {
+      "reference": "0b75d01aba013cd029d9d0dd0bdbd20791be15fc",
+      "variants": [
+        {
+          "name": "reference",
+          "tests": {
+            "exitCode": 0,
+            "tests": 408,
+            "pass": 408,
+            "fail": 0,
+            "skipped": 0,
+            "cancelled": 0
+          },
+          "gameExit": 0
+        },
+        {
+          "name": "candidate",
+          "tests": {
+            "exitCode": 0,
+            "tests": 467,
+            "pass": 467,
+            "fail": 0,
+            "skipped": 0,
+            "cancelled": 0
+          },
+          "gameExit": 0
+        }
+      ],
+      "equal": 40,
+      "total": 40,
+      "excluded_fields": [
+        "source (hashes de HTML/script/adaptador)"
+      ]
+    },
+    {
+      "reference": "57872ee279e924460a126aecbcd0ee7141b5e078",
+      "variants": [
+        {
+          "name": "reference",
+          "tests": {
+            "exitCode": 0,
+            "tests": 451,
+            "pass": 451,
+            "fail": 0,
+            "skipped": 0,
+            "cancelled": 0
+          },
+          "gameExit": 0
+        },
+        {
+          "name": "candidate",
+          "tests": {
+            "exitCode": 0,
+            "tests": 467,
+            "pass": 467,
+            "fail": 0,
+            "skipped": 0,
+            "cancelled": 0
+          },
+          "gameExit": 0
+        }
+      ],
+      "equal": 40,
+      "total": 40,
+      "excluded_fields": [
+        "source (hashes de HTML/script/adaptador)"
+      ]
+    }
+  ],
+  "offline_ci": [
+    {
+      "fileUrl": "file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/invierno_colonia_v9_9.html",
+      "htmlSha256": "43b8883ad4821e4b50c40791615c5ef6c0b3030476409b4e1c6da4dbd872d692",
+      "chromium": "143.0.7499.4",
+      "results": [
+        {
+          "mode": "local",
+          "ok": true,
+          "errors": [],
+          "requests": [
+            "file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/invierno_colonia_v9_9.html"
+          ],
+          "networkOffline": true,
+          "variant": "producto: interfaz y globals"
+        },
+        {
+          "mode": "ai",
+          "ok": true,
+          "errors": [],
+          "requests": [
+            "file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/invierno_colonia_v9_9.html"
+          ],
+          "networkOffline": true,
+          "variant": "producto: interfaz y globals"
+        }
+      ]
+    },
+    {
+      "fileUrl": "file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/dist/invierno-test.html",
+      "htmlSha256": "b77d4fdcaa138ec0134f258180859ea6e96f0f4e31cc2ec463cce4903b1300b1",
+      "chromium": "143.0.7499.4",
+      "results": [
+        {
+          "mode": "local",
+          "ok": true,
+          "errors": [],
+          "requests": [
+            "file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/dist/invierno-test.html"
+          ],
+          "networkOffline": true,
+          "variant": "QA: incluye aserciones internas históricas"
+        },
+        {
+          "mode": "ai",
+          "ok": true,
+          "errors": [],
+          "requests": [
+            "file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/dist/invierno-test.html"
+          ],
+          "networkOffline": true,
+          "variant": "QA: incluye aserciones internas históricas"
+        }
+      ]
+    }
+  ],
+  "sp03_blob_unchanged": "c9f931dc1df295bdbebd8f509bd1c9645f58c4d7",
+  "release": {
+    "id": 428084796,
+    "draft": true,
+    "published_at": null,
+    "assets": [],
+    "intended_url": "https://github.com/LeviEdition/invierno-en-la-colonia/releases/tag/v0.9.9-referencia-modular"
+  },
+  "local_upload_failure": {
+    "host": "uploads.github.com",
+    "status": 401,
+    "message": "Bad credentials",
+    "retried_upload": true,
+    "retried_outside_sandbox": true,
+    "api_and_git_push_work": true
+  },
+  "pending": [
+    "runner publication",
+    "published asset download and hash verification",
+    "final documentation CI"
+  ],
+  "limitations": [
+    "finite regression sample",
+    "no physical Android or TalkBack",
+    "no alternative browser engines or human balance validation",
+    "local managed Chromium blocks file://; exact-SHA CI used",
+    "V9.9 two-group schema and compatibility context; VM in historical fixtures",
+    "not full Dead of Winter rules equivalence"
+  ]
+}

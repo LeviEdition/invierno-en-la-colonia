@@ -1,5 +1,16 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## Preservación formal V9.9 — tag publicado; release pendiente · 29/10/2026
+
+**Autorización:** publicar tag anotado, release y HTML offline con manifiesto, verificar descargas y documentar. Remoto limpio en `62e4e85150b2416ccf07d671c186b5c421993b0b`, sin avances desde el cierre71 ni tags/releases previos. Ese SHA se preserva; los commits posteriores de publicación/documentación no cambian su referencia.
+
+**Verificado:** `v0.9.9-referencia-modular` anotado y publicado, objeto `0fdb214612486f4cc46c1acb444390de963d05e8`, destino62e4e85, oráculo57872ee ancestro. Checkout limpio: npm ci, check:build,467/467, build y check:build; recuperación independiente desde el tag reconstruye el mismo HTML. Producto225283 bytes, SHA-256 `43b8883ad4821e4b50c40791615c5ef6c0b3030476409b4e1c6da4dbd872d692`, sin QA. CI exacto62 reutilizado:40903853712/40903853822 success,40+40 equivalencias,5QA+5reproducciones producto,3 tamaños y4 aperturas offline.
+
+**Incidencia de publicación:** borrador release428084796 creado, pero `gh release create`/`upload` recibieron HTTP401 al subir a uploads.github.com, incluso fuera del sandbox; API y push funcionan. No se publicó una release vacía ni se descartó el tag. Se prepara workflow manual limitado al SHA/tag/release exactos para reconstruir, subir solo adjuntos faltantes y verificar bytes antes/después de publicar con credencial del runner. [Informe72](72-preservacion-referencia-modular.md) y[evidencia](evidencias/v099-preservacion.json).
+
+**Única tarea activa:** ejecutar/verificar esa publicación. Hito1 sigue cerrado; preservación todavía no cerrada. SP-03/63 intacto; no código del juego ni reglas cambiados. Después: diseño SP-03 (ciclo de ronda), luego SP-04 (balance de un solo grupo), sin autorización de implementación. Los estados inferiores son historia.
+
+
 ## D1/D2 integradas en main y validadas — hito 1 cerrado ·29/10/2026
 
 **Autorización del creador:** integrar PR15 tras revisión independiente, conservando historia. Se verificaron otra vez head7f3ac7c, main0b75d01, ausencia de conflictos yseis checks aprobados. **Merge convencional6b8bfcadfeb99d16a10b6f4576f3b061584ee1f9**, padres exactos0b75d01 y7f3ac7c; árbol idéntico al aprobado. Oráculo57872ee confirmado como ancestro de main. No squash/rebase.
