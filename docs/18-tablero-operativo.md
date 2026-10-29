@@ -1,5 +1,14 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## SP-03 — Borrador de ciclo de ronda singleplayer · 29/10/2026
+
+**Diseño EN DISCUSIÓN, no aprobado:** estructura lógica A apertura de crisis/estado → B acciones libres del líder y reserva de dados del grupo (V9.9 de base) → C encuentros del Director **intercalados por disparadores válidos** → D única resolución de colonia → E resumen y persistencia de hechos/agenda. El Director no es J2 y no debe existir pase obligatorio a un segundo equipo ni duplicar la resolución. [Ficha SP-03 sección 6](63-hoja-de-ruta-planificacion-singleplayer.md).
+
+**Microdecisión siguiente de DISEÑO:** cómo sincronizar historia y estrategia: R1 escenas solo apertura/cierre, R2 escenas inmediatas ante todo disparador, o R3 **modelo híbrido contextual recomendado para valorar**, con encuentros urgentes cuando suceden y otras consecuencias diferibles agendadas; evitar escenas forzadas en todas las rondas. Aún no se autorizó ningún modelo.
+
+**Riesgos y pruebas pendientes:** muerte del actor/líder durante la ronda, qué ocurre con dados restantes, prioridad de decisiones y terminales, escenas invalidadas por muerte, uso de un solo equipo, alimentación/crisis/zombis, ritmo móvil, relato diferido sin aleatoriedad obligatoria. SP-04 será responsable del balance y acceso a reclutamiento, no se decide aquí. **Sin cambios de implementación, branch de producto, motor V9.9 o main; D1/D2 continúan por separado.**
+
+
 ## SP — Decisión de alcance y balance singleplayer · 29/10/2026
 
 **APROBADO EN DISEÑO por el creador:** primer juego propio singleplayer con **mecánicas/dados esencialmente basados en V9.9**; la investigación alternativa de pool/híbrido y estadísticas nuevas se **aplaza**, no se implementa ni se elimina de la documentación. Enfoque creativo: líder encarnado, Director de Juego, tramas y consecuencias persistentes. **No se aprueba todavía un balance final ni se modifican F-10/F-12/F-15 automáticamente**; revisar posteriormente su pertinencia en la matriz F.
