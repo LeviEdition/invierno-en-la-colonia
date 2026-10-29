@@ -1,6 +1,6 @@
 # 73 — Prueba visual aislada 2.5D: hospital
 
-**29/10/2026, Montevideo. Prototipo implementado y validado localmente; entregado para revisión en PR16, sin fusión.** La escena no se conecta con reglas, estado, IA, guardados ni narrativa del juego. Los registros de bloqueos anteriores se conservan al final como historia superada.
+**29/10/2026, Montevideo. Prototipo implementado y validado localmente y en CI; entregado para revisión en PR16, sin fusión.** La escena no se conecta con reglas, estado, IA, guardados ni narrativa del juego. Los registros de bloqueos anteriores se conservan al final como historia superada.
 
 ## Estado y alcance
 
@@ -81,6 +81,18 @@ node scripts/check-hospital-prototype-browser.mjs
 ```
 
 Playwright es herramienta de pruebas externa al producto, igual que en el CI existente; no se agrega al package.json ni al lockfile. El script guarda JSON y capturas en `/tmp/hospital-browser` (o `HOSPITAL_OUTPUT_DIR`). En este entorno se reutilizó el Playwright instalado, mediante PLAYWRIGHT_MODULE. CI usa Playwright1.57 y su Chromium propio; se consultan los checks por el SHA exacto final del PR antes de entregar, sin insertar aquí el SHA del propio documento.
+
+### CI del código entregado
+
+Commit de implementación **`c9452c7af55959a5373510dc6e9c7c87e308eeb9`**: los cuatro checks terminaron success. [Evidencia resumida y versionada](evidencias/hospital-ci.json).
+
+- [Regresión40962825768](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40962825768): instalación, build y suite completa aprobados.
+- [Arquitectura/V9.9,40962825739](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40962825739): engine y browser aprobados, incluyendo comparación con referencias y escenarios/offline del juego preservado.
+- [Hospital visual40962825850](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40962825850): checkout explícito del head de implementación,10 pruebas de componente y gate visual aprobados. Artifact `hospital-visual-c9452c7af55959a5373510dc6e9c7c87e308eeb9` descargado e inspeccionado.
+
+ChromiumCI143.0.7499.4 confirmó delante100%, detrás0% reconocible, esquina56–57%, ocultos y todos los controles en los tres viewports, con0 excepciones en los recorridos normales. Arrastre de capas: acuerdo de píxeles99.81–100%; pinza y desplazamiento de un dedo emulados aprobados. Esta ejecución es nueva y distinta de las pruebas locales. No sustituye teléfono real ni otros motores.
+
+El commit posterior de cierre solo registra estos resultados y conserva el código y los PNG de c9452c7; sus propios checks se consultan por SHA antes de entregar, evitando referenciar el SHA del propio documento.
 
 ### Capturas para revisión
 
