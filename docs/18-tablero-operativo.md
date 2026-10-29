@@ -1,5 +1,16 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## Prueba visual aislada 2.5D — preparación bloqueada por PNG · 29/10/2026
+
+**Encargo autorizado:** un sector del hospital con suelo nevado y zombi independientes, Canvas2D, cámara fija con arrastre/zoom, tres posiciones de oclusión, Mostrar ocultos y selección; sin conectar reglas ni sustituir la interfaz existente. Rama `prototype/hospital-2-5d` creada desde main remoto actualizado `826199d96645b95869509995772c914290d63ac7`, limpio y sin avances. No se encontró AGENTS.md aplicable; README, tablero, protocolo15 e informe72 revisados.
+
+**Bloqueo real:** no están disponibles los tres PNG originales: hospital transparente, suelo nevado opaco y zombi transparente. Los adjuntos accesibles solo contienen textos anteriores; las capturas históricas del repositorio no son sustitutos. No se generó arte ni se simuló alfa eliminando colores. Sin esos archivos quedan pendientes escala, anclaje por pies, oclusión, implementación y capturas.
+
+**Verificado ahora:** `npm run check:build` aprobado; HTML de referencia conserva hash43b8883a… y tag anotado v0.9.9-referencia-modular sigue sobre62e4e851. Sin cambios de main, juego o SP-03. Esta preparación solo modifica documentación; no se ejecutaron suite completa ni navegador nuevos, ni se declara listo el prototipo. [Informe73](73-prototipo-visual-hospital-2-5d.md) registra alcance, estado y comprobaciones.
+
+**Única siguiente tarea de la prueba:** recibir los tres PNG originales e inspeccionar dimensiones y alfa para implementar y validar. El diseño SP-03/SP-04 sigue siendo trabajo posterior separado; este experimento visual no autoriza mecánicas ni desarrollo singleplayer. Los estados inferiores son históricos.
+
+
 ## Referencia V9.9 estable y modular preservada — hito2 cerrado · 29/10/2026
 
 **Autorización completada:** tag anotado y [release pública «V9.9 — Referencia estable y modular»](https://github.com/LeviEdition/invierno-en-la-colonia/releases/tag/v0.9.9-referencia-modular). Remoto inicial62e4e851, sin avances ni tags/releases previos. **Commit preservado: `62e4e85150b2416ccf07d671c186b5c421993b0b`**. Tag `v0.9.9-referencia-modular`, objeto `0fdb214612486f4cc46c1acb444390de963d05e8`, destino confirmado mediante Git y API; oráculo57872ee conservado. Los commits posteriores de automatización/documentación no forman parte del tag.
