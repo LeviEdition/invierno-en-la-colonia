@@ -64,3 +64,7 @@ Desde esa referencia preservada y en línea separada de desarrollo:
 ## Seguimiento técnico29/10/2026 — D1/D2 implementadas en rama de revisión
 
 El creador amplió autorización a D1/D2. [Informe67](67-d1-d2-arquitectura.md):151be08/34a6274,462/462 yCI exacto aprobados,40comparaciones históricas iguales ycompuertas de navegador/offline. La implementación técnica está entregada; aceptación humana e integración del hito1 pendientes. Esta evidencia no autoriza crear la referencia oficial del hito2 ni comenzar singleplayer/narrativa. Se mantienen las reservas yseparación de producto anteriores.
+
+## Cierre técnico focalizado29/10/2026
+
+El creador decidió no ampliar arquitectura para singleplayer en esta etapa. Auditoría[68](68-cierre-integracion-d1-d2.md):3 defectos de frontera/ciclo corregidos,467/467 ycompuertas completasCI aprobadas sobre6277e62;40registros iguales a cada referencia, incluido main. Integración técnicamente recomendada conservando historia del oráculo;[PR69 preparado](69-pr-propuesto-d1-d2.md), **no abierto/fusionado**. Hito1 técnicamente listo para revisión; aceptación/apertura/merge pendientes. No se inició hito2 ni juego propio; reservas mantenibles se resolverán al implementar funcionalidades concretas.

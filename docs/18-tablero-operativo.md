@@ -1,8 +1,14 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
-## Auditoría final de integración D1/D2 en curso ·29/10/2026
+## Cierre técnico D1/D2 — auditoría aprobada, integración pendiente de autorización ·29/10/2026
 
-Encargo nuevo: cierre focalizado, preparar informe y descripción de PR hacia main **sin abrirlo/fusionarlo**. No arquitectura singleplayer adicional. Base limpiaee73d29, main remoto0b75d01 confirmado. [Informe68](68-cierre-integracion-d1-d2.md) registra dos bloqueos reproducibles: fuga de grupo mediante prototipo de controles y callbacks de encrucijadas accesibles a la vista. Corregidos con TDD: B1 en837e5ce yB2 en el commit siguiente;Además se confirmó/corrigió B3: listeners residuales tras montaje fallido.467/467 locales. Se conservan efectos y estrategia; faltan compuertas integrales yCI exacto. **Tarea activa única:** cerrar esos bloqueos y ejecutar compuertas antes de dictamen. Las validaciones del informe67 siguen como historia del SHA anterior, no aprobación de esta auditoría.
+Encargo focalizado desdeee73d29, main remoto0b75d01 sin cambios. **Dictamen:** referencia suficientemente modular/estable tras corregir3 bloqueos: controles por prototipo837e5ce, callbacks en vista5757a3c ylisteners de montaje fallidoee4b08e. No ampliar arquitectura singleplayer. [Informe68](68-cierre-integracion-d1-d2.md), [PR propuesto69](69-pr-propuesto-d1-d2.md) y[evidencia](evidencias/d1d2-cierre-integracion-ci.json).
+
+**Código auditado6277e62:**467/467 local yCI, sin omisiones;40/40 iguales contra57872ee y40/40 directamente contra main0b75d01 (451/451 y408/408 históricos). Chromium5QA+5producto,3viewports/3C16/6inicio-pase/6táctiles/6C12/6C13/16issue7/6terminal,4file offlineCI. ArtifactHTML y15módulos cotejados. [CI40884309357](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40884309357) y[40884309718](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40884309718) success. Se conserva el rojo352c094 por recorrido C15 histórico ya superado, corregido en selección de contrato vigente sin borrar la prueba anterior.
+
+**Integración propuesta:** merge convencional que conserve57872ee alcanzable para el oráculo; no squash/rebase sin resolver esa condición. Hay108archivos/78commits de contenido técnico frente a main, con informes/evidencias yplanificación histórica. [Inventario](evidencias/d1d2-integracion-commits.json); cierre posterior solo documental. No se abrió/fusionó PR, no tags/releases ni cambios de main. Reservas aceptadas: contexto de compatibilidad, schema dos grupos, VM de fixtures yvalidación física/otros navegadores pendiente.
+
+**Tarea activa única:** revisión del creador/ChatGPT de informe/diff ydescripción de PR. Esperar autorización antes de abrir o fusionar, preservar versión oficial o iniciar juego propio. Las secciones siguientes son historia de etapas anteriores.
 
 
 ## D1/D2 — implementación técnica verificada, pendiente de revisión humana · 29/10/2026
