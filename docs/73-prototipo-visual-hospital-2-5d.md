@@ -1,6 +1,20 @@
 # 73 — Prueba visual aislada 2.5D: hospital
 
-**29/10/2026, Montevideo. Estado: preparación; implementación bloqueada por los tres PNG no disponibles.** El creador autoriza un prototipo visual independiente y un PR en borrador, sin integración en main ni conexión con las reglas del juego.
+**29/10/2026, Montevideo. Estado: cámara matemática implementada y probada; escena bloqueada por los tres PNG no accesibles.** El creador autoriza un prototipo visual independiente y un PR en borrador, sin integración en main ni conexión con las reglas del juego.
+
+## Continuación: ruta indicada por el creador
+
+El creador indicó `assets/prototipo-hospital`. Se volvió a consultar Git remoto y GitHub: main sigue en826199d y la rama de esta prueba en19b5508 antes de este avance; la carpeta no existe en ninguno de los dos árboles. Las consultas de Contents para esa ruta en main y en `prototype/hospital-2-5d` devolvieron404; tampoco existe localmente ni en los adjuntos accesibles. Se solicitó la rama/commit o el enlace de GitHub para localizarla. No se interpreta esa ausencia como permiso para sustituir imágenes.
+
+Se avanzó únicamente en la parte independiente del arte:
+
+- `prototypes/hospital/camera.mjs`: transformación común de mundo a pantalla, inversa, arrastre por píxeles, zoom que mantiene el punto bajo el cursor incluso en los límites, pinza que sigue el centro del gesto y cálculo del encuadre inicial/restablecido. Módulo sin DOM ni conexión con el motor V9.9.
+- `tests/hospital-camera.test.mjs`: siete pruebas geométricas. Se escribieron primero; la ejecución roja falló por ausencia del módulo y la verde pasó7/7 después de implementarlo. No se presenta ese rojo como reproducción de un fallo previo del juego.
+- `npm test`: **474/474**, cero fallos, omisiones o cancelaciones; conserva las467 anteriores. `npm run check:build`: aprobado. HTML de referencia y SP-03 intactos.
+
+Estos resultados verifican el cálculo de cámara, **no controles reales de rueda/pinza, renderizado, selección, oclusión ni interfaz móvil**, que siguen pendientes. No se implementó todavía una entrada HTML ni se añadieron recursos ficticios. El PR16 continúa en borrador, sin fusión; la siguiente tarea es localizar los PNG originales en la rama o commit correcto para implementar el resto del prototipo autorizado.
+
+## Preparación inicial (histórica)
 
 ## Estado comprobado
 

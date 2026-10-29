@@ -1,5 +1,14 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## Prueba hospital 2.5D — cámara probada; pendiente localizar recursos · 29/10/2026
+
+**Continuación del encargo:** el creador indicó `assets/prototipo-hospital`; se comprobaron ruta local, main remoto826199d y rama remota19b5508. La carpeta no aparece en esos árboles y GitHub Contents devuelve404 para ambas ramas. Se solicitó rama/commit o enlace de la carpeta. No se sustituyeron imágenes ni se modificó alfa.
+
+**Avance independiente del arte:** módulo de cámara en `prototypes/hospital/camera.mjs`, sin DOM ni motor; pruebas geométricas de transformación/inversa, arrastre, zoom anclado, pinza, límites y encuadre. Rojo por módulo inexistente, verde7/7. Suite completa **474/474**,0 fallos/omisiones/cancelaciones; `check:build` aprobado. Referencia HTML43b8883a…, tag y main intactos, SP-03 sin cambios. No hay nueva entrada HTML, capturas ni validación visual todavía.
+
+[PR16](https://github.com/LeviEdition/invierno-en-la-colonia/pull/16) en borrador, rama `prototype/hospital-2-5d`; [informe73](73-prototipo-visual-hospital-2-5d.md) actualizado. El CI del avance se consulta por su SHA, sin confundirlo con una prueba de la escena. **Única siguiente tarea:** localizar los tres PNG reales para completar renderizado, controles e inspección visual. El siguiente bloque y los inferiores conservan estados históricos.
+
+
 ## Prueba visual aislada 2.5D — preparación bloqueada por PNG · 29/10/2026
 
 **Encargo autorizado:** un sector del hospital con suelo nevado y zombi independientes, Canvas2D, cámara fija con arrastre/zoom, tres posiciones de oclusión, Mostrar ocultos y selección; sin conectar reglas ni sustituir la interfaz existente. Rama `prototype/hospital-2-5d` creada desde main remoto actualizado `826199d96645b95869509995772c914290d63ac7`, limpio y sin avances. No se encontró AGENTS.md aplicable; README, tablero, protocolo15 e informe72 revisados.
