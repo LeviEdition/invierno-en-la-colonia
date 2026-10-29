@@ -478,6 +478,27 @@ Simular **2–3 rondas continuadas**, con estados de partida idénticos al comen
 
 **Pendiente único próximo SP-03:** precisar el papel de **Encuentros** y las condiciones de prioridad si coinciden con Encrucijadas e Historia principal; después modelar una ronda completa con eventos en órdenes diferentes, casos sin historia, y casos de muerte antes de desencadenante.
 
+### 6.2C. Propuesta del creador: historias secundarias reutilizables asignadas a supervivientes (29/10/2026 — PROPUESTA, NO REGLA APROBADA)
+
+**Idea del creador:** evitar el costo de escribir una historia personal exclusiva para cada PJ. Preparar **plantillas de historias secundarias/Encuentros** que pueda protagonizar **cualquiera de los supervivientes elegibles** que controla el jugador en esa partida. Ejemplo: «Un familiar desaparecido». El Director puede vincular la historia a un personaje disponible y convertirla en un arco suyo durante esa partida, con decisiones y efectos posteriores. El relato no debe requerir que el elenco incluya un superviviente concreto. **Esto es una propuesta para evaluar, no aprobación de diseño ni permiso para implementar.**
+
+**Evaluación crítica:** favorece alcance abordable, variabilidad entre campañas y reutilización de contenido. Pero si los personajes solo sustituyen su nombre en una frase, serán intercambiables y las historias carecerán de identidad; si el Director inventa familiares o pasados contradictorios, la continuidad se rompe; y si reasigna el arco al morir su protagonista, las muertes pierden consecuencias dramáticas.
+
+**Diseño recomendado para estudiar:**
+1. **Plantilla vs instancia:** mantener separado un *arco genérico* (guion/episodios, requisitos, elecciones, disparadores y variaciones posibles) de su *instancia específica en esa partida*. Una vez asignado, grabar `arcId`, `ownerCharacterId`, `relatedNpcId` y estado/historial para que no cambie silenciosamente de dueño. Son campos orientativos, NO esquema aprobado.
+2. **Elegibilidad y coherencia:** preferir historias compatibles con atributos narrativos, biografías, vínculos, estado vital, localización y hechos anteriores. El ejemplo de un familiar exige un vínculo coherente; puede usar un pariente no definido previamente solo si la biografía permite introducirlo sin contradicción. Nunca escribir que el personaje es huérfano sin familiares y luego inventar un hermano vivo sin explicación.
+3. **Personalización liviana, no arcos completos duplicados:** tono de respuesta y alguna variante de condición, motivación, diálogo, ventaja o conflicto según carácter, habilidad, experiencia y relaciones. **No asumir un sistema complejo de personalidad todavía**: probar primero dos o tres variantes artesanales.
+4. **Agencia del líder:** el superviviente presenta una necesidad o deseo, pero **el jugador decide** si investigar, dedicar acciones/recursos, posponer o rechazar. Cada elección debe afectar la continuidad; la insistencia del PJ no debe quitar control arbitrariamente al jugador.
+5. **Muerte y continuidad:** si el protagonista muere, no reasignar la misma biografía a un personaje nuevo. La historia puede cerrar, dejar una consecuencia o continuar desde una persona distinta **solo si el guion prevé esa transmisión y respeta los hechos**. Si muere el familiar o se vuelve inaccesible el lugar, ofrecer cierres o alternativas según el caso.
+6. **Distribución justa y no repetición abusiva:** el Director comprueba elegibilidad cuando hay disparadores válidos y evita repetición del mismo arco dentro de la campaña salvo intención explícita. Vigilar que solo el líder o el personaje más usado reciba todas las historias y que una trama no se duplique con nuevo protagonista.
+7. **Vínculo con supervivencia:** decisiones personales deben producir dilemas reales de acciones, recursos, riesgos o relaciones, no solo un diálogo decorativo. El protagonista puede pedir ayuda, pero el rescate no debe generar automáticamente un superviviente adicional sin costos y límites validados en SP-04.
+
+**Ejemplo de arco compartido, no canon:** `persona_desaparecida`. Disparador: información creíble disponible y un superviviente elegible. Instancia de esta partida: `protagonista = Mara`, `familiar = hermano de Mara`, `localidad = farmacia`. El jugador decide ayudar, posponer o rechazar. Una decisión podría abrir expedición, conflicto interno o nueva información. **No** generar todas esas ramas automáticamente; son alternativas narrativas que requieren escritura, condiciones y reglas verificables.
+
+**Prototipo conceptual sugerido:** escribir **una** plantilla con 2–3 escenas, comprobarla primero con **tres personajes diferentes** y variar protagonista; inspeccionar inconsistencias, naturalidad del diálogo, identidad, muerte/sucesión y la influencia real de las decisiones en acciones/recursos. Después revisar si suficientes historias pueden ser compartidas o si algunos protagonistas requieren elementos exclusivos. No fijar proporciones ni construir un generador ilimitado de diálogos.
+
+**Pendiente de aprobación:** confirmar si la filosofía base de **Encuentros con guiones reutilizables, instanciados por personaje** se adopta para el primer singleplayer. Luego decidir criterios de elegibilidad, relación de estas historias con campañas e hitos, frecuencia/prioridad y niveles de personalización. No altera V9.9, D1/D2, matriz F ni código.
+
 ### 6.3. Recorrido sobre papel ilustrativo (NO simulación de balance)
 
 - Grupo elegido: Iris, Damián y Mara; **4 dados de referencia**, no balance definitivo.
