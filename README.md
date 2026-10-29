@@ -5,7 +5,7 @@ Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos un
 ## Rumbo acordado
 
 1. **Fidelidad mecánica de la V9.9: ACEPTADA para nuestro objetivo.** La estabilización C está integrada y la [comparación de 14 áreas con el reglamento oficial](docs/49-c15-auditoria-final.md#comparación-con-dead-of-winter) documenta semejanzas y diferencias. El creador acepta esta fidelidad **suficiente**, sin exigir copia literal, reauditoría RF desde cero ni reproducir todas las reglas oficiales. Las reservas sobre Android físico, accesibilidad y balance siguen documentadas.
-2. **Trabajo pendiente: completar D1 y D2.** Separar reglas, estado, acciones, turnos, IA/interfaz; conservar el comportamiento y demostrar que el motor es modular, escalable y comprobable. **No modificar reglas ni introducir mecánicas nuevas** durante este refactor.
+2. **D1 y D2: implementación técnica en rama para revisión.** Estado, reglas, acciones, turnos, IA/interfaz separados; conservar el comportamiento y demostrar que el motor es modular, escalable y comprobable. **No modificar reglas ni introducir mecánicas nuevas** durante este refactor.
 3. **Preservar la referencia resultante.** Una vez aceptada la arquitectura, conservar una versión identificable y reproducible (SHA, build y pruebas) con autorización.
 4. **Comenzar nuestro juego propio.** En otra línea de desarrollo, revisar la **matriz F** (F-01, F-14, etc.) e implementar cambios propios, singleplayer, Director y narrativa persistente por etapas.
 

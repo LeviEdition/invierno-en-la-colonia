@@ -1,10 +1,14 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
-## D1 → D2 — continuidad técnica autorizada · 29/10/2026
+## D1/D2 — implementación técnica verificada, pendiente de revisión humana · 29/10/2026
 
-Encargo vigente: «Avanza todo incluso d2, manteniendo las reglas de alcance y de autorización». Rama `refactor/d1-d2-arquitectura` desde57872ee; main0b75d01 yD1ba9a423 intactas. Referencia451/451 ycheck:build aprobados. [Informe67](67-d1-d2-arquitectura.md) registra alcance, compuertas y resultados. Continúan prohibidos cambios de mecánicas/SP, fusiones yreleases. Los checkpoints siguientes son históricos y no bloquean esta autorización nueva. **Tarea activa:** cerrar compuertas y revisión D1/D2 en esta rama, sin empezar el juego propio.
+**Autorización vigente:** «Avanza todo incluso d2, manteniendo las reglas de alcance y de autorización». Rama `refactor/d1-d2-arquitectura`, desde57872ee. Commits151be08 y34a6274; documentación posterior conserva código. main remoto0b75d01 yD1ba9a423 intactas; PR14 ya fusionado históricamente. No nuevas fusiones, cierres de issues, tags/releases, singleplayer, SP-02 o narrativa.
 
-Motor sin DOM, estado/reglas/turnos/objetos/crisis separados; vista protegida y agente opcional por comandos. Un solo build esbuild/IIFE autocontenido y eventos sin globals. Primer bloque151be08; segundo en validación.40/40 registros estrictos iguales a57872ee; suite ampliada sin omisiones. Chromium:5 partidas QA y5 reproducciones de producto,3C16,6contratos,6viewports táctiles; compuertas finales yCI exacto en curso. File local bloqueado por política; no declarado aprobado. Revisión crítica y límites en informe67; aceptación e integración humanas pendientes.
+**Resultado:** un build esbuild reproducible con módulos privados;55 eventos migrados sin globals; estado/reglas/objetos/crisis/turnos separados, motor sin DOM, vista protegida y agente opcional mediante comandos.462/462 local yCI,0 omisiones;451/451 en checkout histórico;40/40 registros completos idénticos, conservado orden RNG/acciones/mensajes. Chromium5/5 QA y5/5 producto,3 viewports de producto,3C16,6contratos inicio/pase,6tamaños táctiles y4/4 aperturas file offline en CI. Localfile bloqueado por política, emulación no equivale a Android físico.
+
+**CI exacto34a6274:** [regresión40877102864](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40877102864) y[arquitectura40877102629](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40877102629) success; artifacts descargados/cotejados, hashes HTML y15módulos iguales. [Informe67](67-d1-d2-arquitectura.md), [evidencia](evidencias/d1d2-ci.json). Revisión crítica propia detectó/corrigió receptor queueMicrotask, descriptores de vistas y catálogo congelado, con regresiones. Reservas: contexto de compatibilidad amplio, schema/reglas V9.9 de dos grupos, VM en fixtures históricos y pruebas físicas/otros navegadores pendientes.
+
+**Tarea activa única:** revisar informe/diff y aceptar o pedir ajustes de D1/D2. No iniciar hito2, SP/juego propio ni integración automáticamente. Las secciones siguientes conservan checkpoints históricos superados por la autorización nueva.
 
 
 ## D1.2b — primer contrato UI/cargador listo para revisión · 29/10/2026

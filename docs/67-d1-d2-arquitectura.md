@@ -67,3 +67,43 @@ La revisión crítica encontró que una protección Proxy ingenua dejaba escapar
 **Suite local al entregar el bloque:**462/462, cero fallos/cancelaciones/omisiones; `check:build` byte a byte y `git diff --check` aprobados. Los11 tests adicionales a451 cubren fronteras motor/vista/agente, planificador, pureza de draw, eventos y ciclo de vida. TDD rojo→verde explícito en fallos de frontera y queueMicrotask; extracciones mecánicas comprobadas contra caracterización existente, sin afirmar que todo el refactor nació con pruebas rojas.
 
 La evidencia local del navegador corresponde a iteraciones registradas; las compuertas se repiten en CI para el SHA exacto final. Aún no se declara Actions aprobado.
+
+## Entrega y compuertas comprobadas
+
+Commits de implementación: `151be08` (motor sin DOM y adaptadores conservando distribución anterior), `34a6274e2fd8221e67601978c87543df0cbec9e0` (adopción de módulos privados, eventos, capacidades y compuertas). Rama subida exclusivamente a `refactor/d1-d2-arquitectura`. El commit documental posterior no cambia el código ni el HTML.
+
+| Comprobación sobre34a6274 | Resultado |
+| --- | --- |
+| npm ci, check:build, npm test local y Node22 Actions |462/462,0 fallos/omisiones/cancelaciones |
+| Checkout histórico57872ee, suite original |451/451 |
+|40 partidas completas contra oráculo |40 idénticas: estados, mensajes, eventos, acciones y trace.step; solo source excluido |
+| Caracterización D1.0 | conservada dentro de la suite:17 cartas,6×20 mazos, semillas y orden RNG |
+| Chromium QA:5 partidas completas |5/5,0 errores/invariantes |
+| Chromium producto: reproducir sus entradas sin acceso al motor |5/5, mismo resultado visible,0 errores |
+| Producto320×640,393×852,1365×768 |3/3, dados≥44×44, selección táctil, menú/ayuda y sin overflow horizontal |
+| C16 teclado/foco/muerte/sucesión/pase |3/3 tamaños |
+| Inicio/pase con globals rotos |6/6 |
+| C11 geometría táctil/solapamientos/estados/controles |6/6 tamaños,0 errores/fallos |
+| file:// producto yQA, local/IA, red desactivada |4/4 en Actions; local bloqueado por política |
+
+[Actions de regresión40877102864](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40877102864) **success**; [Actions arquitectura40877102629](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40877102629) **success**, ambos jobs. Artifacts descargados y cotejados: HTML de producto SHA256`e871484df909029973ce23046524eaa393ffd7a68e7e7eeb9aa6f2f42a0b5950`, idéntico local/CI/offline/producción. QA`102811bb48ddcb0ca7fc3d2a571351d0a542044283f8351bae86d99b5f1ec4dc`,15 hashes de módulos compartidos comprobados contra fuentes locales. Chromium local154.0.8037.57 yCI143.0.7499.4. [Evidencia estructurada](evidencias/d1d2-ci.json) incluye resultados, semillas, geometría, hashes y digests. Capturas completas en artifacts de Actions.
+
+Los cinco casos: IA2654435761 victoria R4; IA1401181143 derrota por moral R6; local2654435761 victoria R2; local3816266512 derrota por moral R4; local3189639203 victoria R3. Coinciden con resultados anteriores; ninguna excepción se codifica por semilla.
+
+### Mapa para aprender y revisar
+
+```mermaid
+flowchart LR
+  UI[Vista y controles] -->|comandos| E[Motor de referencia]
+  E -->|efectos visuales| UI
+  AI[Agente opcional] -->|comandos y consultas protegidas| E
+  E --> S[Estado por instancia]
+  E --> R[Reglas y objetos]
+  E --> T[Transiciones de turno]
+```
+
+Separar no significa cambiar las reglas: el motor decide y guarda cambios; la vista dibuja y envía intenciones; el agente pide acciones. El bundler reúne esos archivos para seguir distribuyendo un solo HTML. Los puertos permiten probar esas piezas sin navegador y sustituir sus conexiones sin reescribir sus reglas.
+
+**Dictamen:** D1 y separación técnica D2 de la referencia implementadas y verificadas en esta rama, listas para revisión. No equivalen a aceptación humana, integración, certificación universal ni motor singleplayer terminado. Quedan como reservas: contexto interno de compatibilidad amplio, schema V9.9 de dos grupos, VM en pruebas históricas, otros navegadores y Android físico/TalkBack. No se hará otra auditoría general de fidelidad por estas reservas.
+
+**Estado protegido:** main remoto`0b75d01`, D1 original`ba9a423` sin cambios; árbol limpio después de commits; PR14 ya fusionado antes de este encargo. No se abrió/fusionó PR, no se cerraron issues, no se creó release/tag ni versión oficial. **Única siguiente tarea recomendada:** revisión humana del informe y [diff de esta entrega](https://github.com/LeviEdition/invierno-en-la-colonia/compare/57872ee279e924460a126aecbcd0ee7141b5e078...refactor/d1-d2-arquitectura), para aceptar o pedir ajustes de D1/D2 antes de autorizar integración o preservación del hito2.

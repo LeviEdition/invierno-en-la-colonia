@@ -60,3 +60,7 @@ Desde esa referencia preservada y en línea separada de desarrollo:
 **Próxima tarea técnica propuesta:** D1.2a, experimento reversible con esbuild, pendiente de ejecución/decisión con Codex. No tocar reglas, ni `main`, ni implementar F/E por la aceptación de fidelidad.
 
 **Alcance de esta acta:** decisión de producto y documentación, no modificación de ejecutable ni certificación de equivalencia literal.
+
+## Seguimiento técnico29/10/2026 — D1/D2 implementadas en rama de revisión
+
+El creador amplió autorización a D1/D2. [Informe67](67-d1-d2-arquitectura.md):151be08/34a6274,462/462 yCI exacto aprobados,40comparaciones históricas iguales ycompuertas de navegador/offline. La implementación técnica está entregada; aceptación humana e integración del hito1 pendientes. Esta evidencia no autoriza crear la referencia oficial del hito2 ni comenzar singleplayer/narrativa. Se mantienen las reservas yseparación de producto anteriores.
