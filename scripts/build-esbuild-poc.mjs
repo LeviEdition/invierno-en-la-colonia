@@ -16,6 +16,7 @@ export async function buildPoc({template,entryPoint='src/catalog-poc-entry.mjs',
  // Puente limitado al catálogo: el namespace del bundle no se publica en window.
  // Los handlers y el resto del script clásico permanecen en su ámbito anterior.
  const embedded='const catalog = (() => {\n'+bundle.outputFiles[0].text+
+  '\nif(typeof document!=="undefined")CatalogModule.bindHandoverControls(document,{startGame,confirmPass});'+
   '\nreturn new CatalogModule.ItemCatalog(cards=>mix(cards));\n})();';
  const html=template.replace(marker,()=>embedded);
  if((html.match(/<script(?:\s[^>]*)?>/g)||[]).length!==1||/<script\s+[^>]*src=/.test(html))throw Error('HTML no autocontenido');

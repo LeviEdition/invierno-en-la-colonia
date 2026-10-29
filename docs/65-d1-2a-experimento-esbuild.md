@@ -1,5 +1,7 @@
 # 65 — D1.2a: experimento reversible de esbuild
 
+> **Instantánea histórica de D1.2a (918e241).** El creador autorizó continuar con un bloque acotado D1.2b después de esta entrega. [Informe66](66-d1-2b-contratos-inicio-y-pruebas.md) documenta la sustitución semántica del smoke, sin borrar la evidencia roja A. Los comandos/resultados de este informe corresponden a aquella instantánea.
+
 **29/10/2026. Rama:** `refactor/experiment-d1-2a-esbuild`, derivada de `ba9a4238d22ad968edbe74d0445949f9a631ec70`. **Estado:** PoC ejecutado y CI de implementación comprobado; compatibilidad parcial, no aprobado para adopción. **Recomendación: AJUSTAR; no adoptar todavía como build principal.** Hay una incompatibilidad de la suite del candidato que no se ocultó ni corrigió debilitando pruebas.
 
 ## 1. Estado inicial y autorización

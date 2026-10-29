@@ -1,0 +1,116 @@
+{
+  "htmlSha256": "bbf71aae0198d3c5bc72f73e3e2219c8f603f63a04b895880fea67de93c87fc5",
+  "chromium": "154.0.8037.57",
+  "scope": "inicio/pase, inyección de fallo en globals; estado preparado para pasar turno",
+  "records": [
+    {
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "mode": "local",
+      "started": {
+        "mode": "local",
+        "setupHidden": true,
+        "creates": 1,
+        "fallbacks": 0,
+        "exportedGame": false,
+        "exportedNamespace": false
+      },
+      "passed": {
+        "turn": "ai",
+        "pass": false,
+        "creates": 1,
+        "fallbacks": 0
+      }
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "mode": "ai",
+      "started": {
+        "mode": "ai",
+        "setupHidden": true,
+        "creates": 1,
+        "fallbacks": 0,
+        "exportedGame": false,
+        "exportedNamespace": false
+      }
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "mode": "local",
+      "started": {
+        "mode": "local",
+        "setupHidden": true,
+        "creates": 1,
+        "fallbacks": 0,
+        "exportedGame": false,
+        "exportedNamespace": false
+      },
+      "passed": {
+        "turn": "ai",
+        "pass": false,
+        "creates": 1,
+        "fallbacks": 0
+      }
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "mode": "ai",
+      "started": {
+        "mode": "ai",
+        "setupHidden": true,
+        "creates": 1,
+        "fallbacks": 0,
+        "exportedGame": false,
+        "exportedNamespace": false
+      }
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "mode": "local",
+      "started": {
+        "mode": "local",
+        "setupHidden": true,
+        "creates": 1,
+        "fallbacks": 0,
+        "exportedGame": false,
+        "exportedNamespace": false
+      },
+      "passed": {
+        "turn": "ai",
+        "pass": false,
+        "creates": 1,
+        "fallbacks": 0
+      }
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "mode": "ai",
+      "started": {
+        "mode": "ai",
+        "setupHidden": true,
+        "creates": 1,
+        "fallbacks": 0,
+        "exportedGame": false,
+        "exportedNamespace": false
+      }
+    }
+  ],
+  "errors": []
+}

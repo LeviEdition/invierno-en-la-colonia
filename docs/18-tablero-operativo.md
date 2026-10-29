@@ -1,5 +1,14 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## D1.2b — primer contrato UI/cargador, en verificación · 29/10/2026
+
+**Autorización de continuidad del creador:** tras discutir el método y el siguiente paso, «Bueno prodigamos». Se anunció y acotó D1.2b a cargador compartido, contrato de pruebas y piloto de inicio/pase. No aprobación de build principal, reglas, SP-02 o D2. Rama nueva `refactor/experiment-d1-2b-contracts`, desde918e241; main0b75d01 yD1ba9a423 intactas.
+
+**Resultado local:** referencia yPoC451/451,12 pruebas nuevas sin eliminar las439; smoke semántico con seis defectos deliberados detectados.40 configuraciones idénticas a referencia y evidencia A,5UI completas,3 viewports C16 y6 pruebas de comandos capturados. Los tres botones dejan de resolver el comando por su nombre global; resto de controles todavía conserva globals. Fuente/plantilla/HTML/build principal intactos. File de la nueva salida pendiente CI.
+
+[Informe66](66-d1-2b-contratos-inicio-y-pruebas.md), con límites y rollback. **Tarea activa única:** finalizar publicación/CI de este bloque y dejarlo para revisión. No ampliar controles, cambiar build por defecto ni iniciar D2 automáticamente. El informe65 y las cifras438/439 siguientes son historia de D1.2a, conservada como evidencia.
+
+
 ## D1.2a — experimento terminado, pendiente de revisión · 29/10/2026
 
 **Encargo vigente del creador:** PoC pequeño/reversible de esbuild, derivado de `refactor/d1-catalogo=ba9a423`, sin cambios de reglas ni otra auditoría de fidelidad. `main=0b75d01` coincide con referencia. Checkout previo limpio en rama C antigua; se creó `refactor/experiment-d1-2a-esbuild`. Los estados anteriores «pendiente de autorización» son históricos; SP-02 sigue siendo diseño separado, no implementación.

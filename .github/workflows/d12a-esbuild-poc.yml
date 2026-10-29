@@ -1,7 +1,7 @@
-name: D1.2a experimento esbuild
+name: D1.2 módulos y contratos experimentales
 on:
   push:
-    branches: [refactor/experiment-d1-2a-esbuild]
+    branches: [refactor/experiment-d1-2a-esbuild, refactor/experiment-d1-2b-contracts]
   workflow_dispatch:
 permissions:
   contents: read
@@ -57,6 +57,7 @@ jobs:
           node scripts/check-d1-offline-browser.mjs > /tmp/d12a-browser/offline-reference.json
           GAME_FILE_URL="file://$GITHUB_WORKSPACE/dist/invierno-esbuild-poc.html" node scripts/check-d1-offline-browser.mjs > /tmp/d12a-browser/offline-poc.json
           export GAME_URL=http://127.0.0.1:8765/dist/invierno-esbuild-poc.html
+          D12B_OUTPUT_DIR=/tmp/d12a-browser/handover node scripts/check-d12b-handover-browser.mjs
           C16_OUTPUT_DIR=/tmp/d12a-browser/focus node scripts/check-c16-focus-browser.mjs
           C14_BROWSER_OUTPUT=/tmp/d12a-browser/games node scripts/check-c14-browser.mjs
       - uses: actions/upload-artifact@v4

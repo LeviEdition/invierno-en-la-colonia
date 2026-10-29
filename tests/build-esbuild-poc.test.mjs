@@ -11,7 +11,7 @@ const marker='/* __D1_ITEM_CATALOG__ */';
 
 test('D1.2a: bundle usa dos módulos reales y conserva byte a byte la plantilla fuera del catálogo',async()=>{
  const {html,embedded,metafile}=await buildPoc();
- assert.deepEqual(Object.keys(metafile.inputs).sort(),['src/catalog-poc-entry.mjs','src/item-catalog.mjs']);
+ assert.deepEqual(Object.keys(metafile.inputs).sort(),['src/catalog-poc-entry.mjs','src/handover-ui.mjs','src/item-catalog.mjs']);
  const [before,after]=template.split(marker);
  assert.equal(html,before+embedded+after);
  assert.equal([...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)].length,1);
@@ -36,7 +36,8 @@ test('D1.2a: imports y exports alternativos no necesitan reemplazar la firma tex
  try{
   const source=await readFile(new URL('../src/item-catalog.mjs',import.meta.url),'utf8');
   await writeFile(join(dir,'catalog.mjs'),source.replace('export class ItemCatalog {','class ItemCatalog {')+'\nexport {ItemCatalog};\n');
-  await writeFile(join(dir,'entry.mjs'),'import {ItemCatalog as Catalog} from "./catalog.mjs"; export {Catalog as ItemCatalog};');
+  await writeFile(join(dir,'handover-ui.mjs'),await readFile(new URL('../src/handover-ui.mjs',import.meta.url),'utf8'));
+  await writeFile(join(dir,'entry.mjs'),'import {ItemCatalog as Catalog} from "./catalog.mjs"; export {Catalog as ItemCatalog}; export {bindHandoverControls} from "./handover-ui.mjs";');
   const {embedded}=await buildPoc({template,entryPoint:'entry.mjs',workingDir:dir});
   const context=createContext({mix:x=>x});runInContext(embedded,context);
   assert.equal(runInContext('catalog.resolve("ration").id',context),'ration');
