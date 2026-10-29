@@ -70,7 +70,7 @@ La evidencia local del navegador corresponde a iteraciones registradas; las comp
 
 ## Entrega y compuertas comprobadas
 
-Commits de implementación: `151be08` (motor sin DOM y adaptadores conservando distribución anterior), `34a6274e2fd8221e67601978c87543df0cbec9e0` (adopción de módulos privados, eventos, capacidades y compuertas). Rama subida exclusivamente a `refactor/d1-d2-arquitectura`. El commit documental posterior no cambia el código ni el HTML.
+Commits de implementación: `151be08` (motor sin DOM y adaptadores conservando distribución anterior), `34a6274e2fd8221e67601978c87543df0cbec9e0` (adopción de módulos privados, eventos, capacidades y compuertas). Rama subida exclusivamente a `refactor/d1-d2-arquitectura`. El commit documental posterior registra la evidencia. La revisión final del diff completo detectó cuatro espacios finales heredados en líneas extraídas del renderer; se normalizaron en un ajuste posterior. check:build confirmó que el HTML/JavaScript generado conserva exactamente los mismos bytes. No cambian reglas ni comportamiento.
 
 | Comprobación sobre34a6274 | Resultado |
 | --- | --- |

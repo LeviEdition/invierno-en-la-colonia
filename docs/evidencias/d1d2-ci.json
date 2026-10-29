@@ -765,5 +765,11 @@
     "file:// local bloqueado por política; offline aprobado en CI",
     "sin Android físico/TalkBack ni otros navegadores",
     "revisión crítica propia; aceptación humana pendiente"
-  ]
+  ],
+  "deliveryFormatting": {
+    "file": "src/presentation/reference-view.mjs",
+    "change": "cuatro espacios finales heredados; no cambia tokens JavaScript",
+    "productionSha256Unchanged": "e871484df909029973ce23046524eaa393ffd7a68e7e7eeb9aa6f2f42a0b5950",
+    "note": "los hashes de módulos de esta evidencia corresponden al SHA34a6274; el ajuste de formato cambia solo el hash fuente del renderer"
+  }
 }
