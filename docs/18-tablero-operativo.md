@@ -1,5 +1,14 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## SP-03 — Tres clases narrativas + regla de prioridad temporal · 29/10/2026
+
+**ACUERDO DEL CREADOR (diseño conceptual):** organizar la narrativa en **Encrucijadas** (dilemas menores de convivencia y recursos; dar vida al mundo), **Encuentros** (desarrollo y carácter de supervivientes, relaciones y conflictos, con posibles efectos persistentes) e **Historia principal** (acontecimientos reactivos vinculados a la campaña/objetivo y sus requisitos de victoria). **Clasificar por función narrativa y no por gravedad exacta**. La presencia de personajes de la secta en un evento del hospital pertenece a la **Historia principal** aunque el jugador todavía no conozca su identidad; no forzar acontecimientos importantes cada ronda. Ver [63 §6.2B](63-hoja-de-ruta-planificacion-singleplayer.md).
+
+**PRECISIÓN CRONOLÓGICA, prevalece sobre anteriores ideas de aplazar encrucijadas:** encrucijadas condicionadas, **máximo una por ronda**; **si ocurre una antes que un evento importante de historia principal, pueden suceder ambos en esa jornada**; **si ya ocurrió un evento principal, no activar una encrucijada nueva ese mismo día**. No cancelar ni revertir una decisión ya realizada. Encrucijada y evento principal no son cuotas obligatorias; los encuentros tienen frecuencia y reglas propias **pendientes de acuerdo**.
+
+**OBSERVACIONES CRÍTICAS EN ANÁLISIS:** distinguir función editorial de impacto, duración, prioridad y obligatoriedad; no crear encuentros que sean solo encrucijadas largas con `moral +1`; campaña puede avanzar por complicaciones sin aumentar contador de muestras; algunas escenas pueden informar sin exigir decisión. **ÚNICA SIGUIENTE TAREA DE DISEÑO:** definir disparadores y prioridades de **Encuentros** cuando coinciden con Encrucijadas o Historia principal, luego simular distintas cronologías de una ronda. No se autoriza código; D1/D2 y main no cambian por esta documentación.
+
+
 ## SP-03 — Campaña activada por acciones + encrucijadas cotidianas · 29/10/2026
 
 **ACLARACIÓN EXPRESA DEL CREADOR, ACUERDO CONCEPTUAL:** la partida inicia con una campaña/objetivo; el Director no debe forzar un gran evento narrativo cada ronda. **Los eventos de la campaña reaccionan a decisiones, lugares y hechos verificados**, y las pistas pueden sugerir destinos sin obligar al jugador. Ejemplo ilustrativo: en «Encontrar la cura», el rumor de desconocidos en hospital anticipa un **primer contacto al llegar allí por primera vez** con personas que pertenecen a la secta rival sin que el jugador lo sepa todavía; la decisión registrada condiciona escenas futuras. No convertir el ejemplo en guion canónico ni bloquear la victoria por no visitar el hospital: diseñar alternativas/contingencias.
