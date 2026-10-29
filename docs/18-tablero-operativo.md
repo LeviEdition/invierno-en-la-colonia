@@ -1,5 +1,14 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## SP-03 — Contingencia de muerte en historias secundarias reutilizables · 29/10/2026
+
+**CUESTIÓN ABIERTA PLANTEADA POR EL CREADOR:** la protagonista de un Encuentro/plantilla narrativa (p. ej., «Mara busca a su hermano») **puede morir una ronda después de iniciado**. El Director debe conservar la historia real sin inmortalidad, sin escenas con difuntos ni transferencia arbitraria de parentesco o motivaciones. [Evaluación y propuestas en 63 §6.2D](63-hoja-de-ruta-planificacion-singleplayer.md).
+
+**PROPUESTA CRÍTICA, NO APROBADA:** en caso de muerte, reevaluar si el arco se **cierra inconcluso**, **continúa opcionalmente con otro personaje que conocía la pista**, **se transforma** por consecuencias de NPCs/hechos persistentes, o **queda en pausa** hasta condiciones coherentes. Distinguir información que conoce el jugador de información que el líder y otros supervivientes realmente conocen. Mantener historia, familia, testigos, decisiones y agenda; no borrar ni reasignar silenciosamente los vínculos. Para evitar explosión de escritura: cada historia reutilizable requiere como mínimo un **cierre coherente tras muerte**, y solo algunas necesitan continuación; la campaña principal mantiene alternativas para evitar softlocks.
+
+**ÚNICA SIGUIENTE DECISIÓN DE DISEÑO:** confirmar o ajustar el criterio de mortalidad/continuidad de Encuentros (cierre posible; continuación solo sustentada por hechos y conocimiento) y después concretar un arco piloto con dos o tres escenas y muerte en distintos momentos. **Sin código, sin cambios mecánicos de V9.9 ni interferencias con D1/D2 o main.**
+
+
 ## SP-03 — Propuesta de Encuentros con historias reutilizables por personaje · 29/10/2026
 
 **PROPUESTA DEL CREADOR, en evaluación crítica:** no escribir un arco exclusivo por cada superviviente; diseñar **plantillas de historias secundarias** que puedan asignarse dinámicamente a un superviviente **elegible** de los que controla el jugador. Ejemplo «familiar desaparecido en una localidad»: Mara, Iris o Damián podrían protagonizar la misma estructura narrativa **siempre que su biografía y hechos previos sean compatibles**. Un arco ya comenzado queda **vinculado a su personaje y sus NPCs concretos**; no reasignarlo sin justificación tras una muerte. La agencia del líder decide qué recursos/acciones dedicar. La personalización de tono, motivación y consecuencias debe impedir que todos parezcan nombres intercambiables.
