@@ -1,12 +1,13 @@
+import {scenarioPage} from '../test-support/browser-game-page.mjs';
 import assert from 'node:assert/strict';
 import {writeFile} from 'node:fs/promises';
 const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',headless:true,args:['--no-sandbox']});
-const records=[],errors=[];const url=process.env.GAME_URL||'http://127.0.0.1:8765/invierno_colonia_v9_9.html';
+const records=[],errors=[];const url=process.env.GAME_URL||'http://127.0.0.1:8765/dist/invierno-test.html';
 try{
  for(const viewport of [{width:393,height:852},{width:1365,height:768}])for(const order of ['human-ai','ai-human','ai-auto']){
   const ctx=await browser.newContext({viewport,isMobile:viewport.width<500,hasTouch:viewport.width<500,reducedMotion:'reduce'});await ctx.addInitScript(()=>Math.random=()=>.45);
-  const page=await ctx.newPage();page.on('pageerror',e=>errors.push(e.message));await page.goto(url);
+  const page=scenarioPage(await ctx.newPage());page.on('pageerror',e=>errors.push(e.message));await page.goto(url);
   await page.locator('[onclick="startGame(\''+(order==='ai-auto'?'ai':'local')+'\')"]').click();
   await page.evaluate(order=>{
    game.crossPending=false;game.crossResolved=true;hide();game.leaderChosen=true;game.localLeaderChosen=true;game.food=30;game.morale=9;

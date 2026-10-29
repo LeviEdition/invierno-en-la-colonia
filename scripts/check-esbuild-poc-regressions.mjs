@@ -1,52 +1,33 @@
-// Ejecuta TODA la suite intacta sobre el HTML alternativo, en una copia temporal.
-// Un fallo se propaga como salida no cero: nunca se convierte en aprobación del PoC.
-import {cp,mkdtemp,writeFile,readFile,mkdir,symlink,rm} from 'node:fs/promises';
-import {tmpdir} from 'node:os';
-import {resolve,join} from 'node:path';
-import {fileURLToPath} from 'node:url';
-import {spawn} from 'node:child_process';
-import {createHash} from 'node:crypto';
-const root=fileURLToPath(new URL('../',import.meta.url));
-const output=process.env.D12A_OUTPUT_DIR||'/tmp/d12a-poc-regressions';
-const candidate=await readFile(resolve(root,'dist/invierno-esbuild-poc.html'));
-const sandbox=await mkdtemp(join(tmpdir(),'invierno-d12a-'));
-await mkdir(output,{recursive:true});
-async function execute(args,cwd,env=process.env){
- const child=spawn(process.execPath,args,{cwd,env,stdio:['ignore','pipe','pipe']});
- let stdout='',stderr='';child.stdout.on('data',chunk=>stdout+=chunk);child.stderr.on('data',chunk=>stderr+=chunk);
- const code=await new Promise((done,reject)=>{child.on('error',reject);child.on('close',done);});
- return {code,stdout,stderr};
+// Oráculo histórico independiente. Nunca comparar dos salidas del mismo motor como referencia.
+import {mkdtemp,readFile,writeFile,mkdir,symlink,unlink,rm} from 'node:fs/promises';
+import {tmpdir} from 'node:os';import {join} from 'node:path';import {fileURLToPath} from 'node:url';
+import {spawn} from 'node:child_process';import {createHash} from 'node:crypto';
+const root=fileURLToPath(new URL('../',import.meta.url)),reference='57872ee279e924460a126aecbcd0ee7141b5e078';
+const out=process.env.D12A_OUTPUT_DIR||'/tmp/d1d2-regressions';await mkdir(out,{recursive:true});
+const temporary=await mkdtemp(join(tmpdir(),'invierno-oracle-')),checkout=join(temporary,'reference');
+async function run(command,args,cwd=root,env=process.env){
+ const child=spawn(command,args,{cwd,env,stdio:['ignore','pipe','pipe']});let stdout='',stderr='';
+ child.stdout.on('data',s=>stdout+=s);child.stderr.on('data',s=>stderr+=s);
+ const code=await new Promise((resolve,reject)=>{child.on('error',reject);child.on('close',resolve);});return {code,stdout,stderr};
 }
+let added=false;
 try{
- for(const path of ['tests','test-support','src','scripts','package.json'])await cp(resolve(root,path),join(sandbox,path),{recursive:true});
- await symlink(resolve(root,'node_modules'),join(sandbox,'node_modules'),'dir');
- await writeFile(join(sandbox,'invierno_colonia_v9_9.html'),candidate);
- const {code:exitCode,stdout,stderr}=await execute(['--test','--test-reporter=tap'],sandbox);
- await writeFile(join(output,'suite.tap'),stdout);await writeFile(join(output,'stderr.log'),stderr);
- const count=key=>Number(stdout.match(new RegExp('^# '+key+' (\\d+)$','m'))?.[1]??NaN);
- const summary={artifact:'dist/invierno-esbuild-poc.html',htmlSha256:createHash('sha256').update(candidate).digest('hex'),
-  sameTestsAndAssertions:true,exitCode,tests:count('tests'),pass:count('pass'),fail:count('fail'),
-  cancelled:count('cancelled'),skipped:count('skipped'),todo:count('todo'),
-  failedTests:[...stdout.matchAll(/^not ok \d+ - (.+)$/gm)].map(m=>m[1])};
- // Comparación adicional del motor real: no reemplaza ni filtra el fallo de suite.
- const games=[];
- for(const [label,cwd] of [['reference',root],['candidate',sandbox]]){
-  const destination=resolve(output,label);
-  const run=await execute(['scripts/run-c14-games.mjs'],cwd,{...process.env,C14_COUNT:'20',C14_OUTPUT_DIR:destination});
-  await writeFile(join(output,label+'-games.log'),run.stdout+run.stderr);
-  if(run.code!==0)throw Error('Partidas interrumpidas en '+label+'; consultar evidencia');
-  games.push((await readFile(join(destination,'partidas.jsonl'),'utf8')).trim().split('\n').map(line=>JSON.parse(line)));
- }
+ const git=await run('git',['worktree','add','--detach',checkout,reference]);if(git.code)throw Error(git.stderr);added=true;
+ await symlink(join(root,'node_modules'),join(checkout,'node_modules'),'dir');
+ const variants=await Promise.all([['reference',checkout],['candidate',root]].map(async([name,cwd])=>{
+  const tests=await run(process.execPath,['--test','--test-reporter=tap'],cwd);await writeFile(join(out,name+'-suite.tap'),tests.stdout+tests.stderr);
+  const games=await run(process.execPath,['scripts/run-c14-games.mjs'],cwd,{...process.env,C14_COUNT:'20',C14_OUTPUT_DIR:join(out,name)});await writeFile(join(out,name+'-games.log'),games.stdout+games.stderr);
+  const count=key=>Number(tests.stdout.match(new RegExp('^# '+key+' (\\d+)$','m'))?.[1]??NaN);
+  return {name,tests:{exitCode:tests.code,tests:count('tests'),pass:count('pass'),fail:count('fail'),skipped:count('skipped'),cancelled:count('cancelled')},gameExit:games.code,
+   records:(await readFile(join(out,name,'partidas.jsonl'),'utf8')).trim().split('\n').map(JSON.parse)};
+ }));
  const digest=record=>{const {source,...behavior}=record;return createHash('sha256').update(JSON.stringify(behavior)).digest('hex');};
- const comparison=games[0].map((before,i)=>{
-  const after=games[1][i];
-  if(before.mode!==after.mode||before.seed!==after.seed)throw Error('Configuraciones no comparables');
-  return {mode:before.mode,seed:before.seed,result:after.final.result,rounds:after.roundsPlayed,
-   beforeDigest:digest(before),afterDigest:digest(after),equal:digest(before)===digest(after)};
- });
- await writeFile(join(output,'comparison.json'),JSON.stringify({excludedFields:['source (hashes de HTML/script)'],comparison},null,2)+'\n');
- summary.engineGames={configurations:comparison.length,equalBehavior:comparison.filter(x=>x.equal).length,
-  meaning:'mismos estados finales, acciones, eventos, mensajes e invariantes; solo se excluyen hashes de fuente'};
- await writeFile(join(output,'summary.json'),JSON.stringify(summary,null,2)+'\n');
- console.log(JSON.stringify(summary,null,2));process.exitCode=(exitCode!==0||comparison.some(x=>!x.equal))?1:0;
-}finally{await rm(sandbox,{recursive:true,force:true});}
+ const [before,after]=variants;if(before.records.length!==40||after.records.length!==40)throw Error('Se requieren40 partidas por variante');
+ const comparison=before.records.map((record,i)=>({mode:record.mode,seed:record.seed,beforeDigest:digest(record),afterDigest:digest(after.records[i]),equal:digest(record)===digest(after.records[i])}));
+ const summary={reference,variants:variants.map(({records,...variant})=>variant),excludedFields:['source (hashes de HTML/script/adaptador)'],comparison,equal:comparison.filter(x=>x.equal).length};
+ await writeFile(join(out,'summary.json'),JSON.stringify(summary,null,2)+'\n');console.log(JSON.stringify({reference,variants:summary.variants,configurations:40,equal:summary.equal,out},null,2));
+ if(summary.equal!==40||variants.some(v=>v.tests.exitCode||v.gameExit||v.tests.skipped||v.tests.cancelled))process.exitCode=1;
+}finally{
+ if(added){await unlink(join(checkout,'node_modules')).catch(()=>{});const removed=await run('git',['worktree','remove',checkout]);if(removed.code)throw Error('No se eliminó checkout temporal: '+removed.stderr);}
+ await rm(temporary,{recursive:true,force:true});
+}

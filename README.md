@@ -20,4 +20,14 @@ Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos un
 - [Alcance de la matriz F del juego propio](docs/61-alcance-matriz-f-juego-propio.md)
 - [Plan general](docs/01-plan-refactorizacion.md)
 
-La rama `refactor/d1-catalogo` incluye trabajo D1 todavía sin fusionar a `main`. La próxima tarea técnica propuesta es **D1.2a: experimento reversible con esbuild**, a evaluar con Codex. Esta actualización documental no cambia el ejecutable ni autoriza merges o publicaciones.
+La rama `refactor/d1-d2-arquitectura` continúa D1 y D2 con autorización del creador, sin modificar `main`. [Informe67](docs/67-d1-d2-arquitectura.md) y [tablero](docs/18-tablero-operativo.md) registran la implementación, compuertas y aceptación pendiente. No autoriza merges, releases ni mecánicas del juego propio.
+
+## Desarrollo y construcción
+
+Requiere Node22 o posterior. Ejecutar `npm ci`, `npm run build`, `npm run check:build` y `npm test`. El lockfile fija esbuild0.28.2; no hay dependencias de ejecución externas. Editar módulos `src/` y la plantilla, nunca el HTML generado a mano. `npm run build` empaqueta módulos reales en una IIFE y la inserta en un único HTML autocontenido. La salida conserva la apertura offline.
+
+El motor se importa desde `src/application/reference-engine.mjs`, admite reloj/RNG y efectos inyectados, y expone `start`, `dispatch` y `snapshot`. Un motor local funciona sin DOM ni cliente IA. La aplicación conecta vista y agente de referencia por capacidades explícitas; el estado mutable no se publica en window. El paquete de reglas V9.9 sigue representando dos grupos: no existe un nuevo modo singleplayer.
+
+`npm test` construye automáticamente el adaptador Node separado (`dist/reference-test-runtime.js`). Los fixtures históricos conservan VM y sus aserciones; ya no extraen ni reescriben funciones del HTML. `npm run test:poc` es un alias histórico que ahora compara contra el commit57872ee en un checkout temporal, incluyendo451 tests históricos y40 partidas por variante. Requiere historial Git completo.
+
+Para Chromium, ejecutar `node scripts/build-browser-scenario.mjs` y servir la raíz en8765. Los scripts de escenarios usan `dist/invierno-test.html` (instrumentación QA separada); `check-production-replays.mjs` repite las entradas sobre el HTML de producto, sin acceso al estado interno. Ver comandos y límites en el informe67.

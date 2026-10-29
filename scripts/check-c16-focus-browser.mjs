@@ -1,3 +1,4 @@
+import {scenarioPage} from '../test-support/browser-game-page.mjs';
 // C16/A1 — Recorrido de teclado real en Chromium, tres tamaños de pantalla.
 // Requiere servidor local en :8765 y PLAYWRIGHT_MODULE/CHROMIUM_PATH como C15.
 import assert from 'node:assert/strict';
@@ -5,7 +6,7 @@ import {mkdir,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 
 const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
-const url=process.env.GAME_URL||'http://127.0.0.1:8765/invierno_colonia_v9_9.html';
+const url=process.env.GAME_URL||'http://127.0.0.1:8765/dist/invierno-test.html';
 const output=process.env.C16_OUTPUT_DIR||'/tmp/c16-focus';
 await mkdir(output,{recursive:true});
 const html=await (await fetch(url)).text();
@@ -15,7 +16,7 @@ const result={htmlSha256:createHash('sha256').update(html).digest('hex'),chromiu
 try{
  for(const viewport of [{width:320,height:640},{width:393,height:852},{width:1365,height:768}]){
   const context=await browser.newContext({viewport,isMobile:viewport.width<500,hasTouch:viewport.width<500});
-  const page=await context.newPage();
+  const page=scenarioPage(await context.newPage());
   page.on('pageerror',e=>result.errors.push(e.message));
   await page.goto(url);
   const inside=selector=>page.evaluate(s=>document.querySelector(s).contains(document.activeElement),selector);

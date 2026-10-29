@@ -5,7 +5,9 @@ export function readOnlyContext(context){
  const wrap=value=>{
   if(value===null||typeof value!=='object')return value;
   if(cache.has(value))return cache.get(value);
-  const proxy=new Proxy(value,{
+  // Propiedades congeladas requieren un target espejo para no violar invariantes de Proxy.
+  const target=Object.isExtensible(value)?value:Array.isArray(value)?Array.from(value):Object.assign(Object.create(Object.getPrototypeOf(value)),value);
+  const proxy=new Proxy(target,{
    get(target,key,receiver){
     const result=Reflect.get(target,key,receiver);
     if(typeof result!=='function')return wrap(result);
@@ -15,9 +17,11 @@ export function readOnlyContext(context){
      return (...args)=>Reflect.apply(result,receiver,args);
     }
     return (...args)=>wrap(Reflect.apply(result,target,args));
-   },set:deny,deleteProperty:deny,defineProperty:deny,
+   },set:deny,deleteProperty:deny,defineProperty:deny,setPrototypeOf:deny,preventExtensions:deny,
+   getOwnPropertyDescriptor(target,key){const descriptor=Reflect.getOwnPropertyDescriptor(target,key);if(descriptor&&'value' in descriptor)return {...descriptor,value:wrap(descriptor.value)};return descriptor;},
   });cache.set(value,proxy);return proxy;
  };
+ let catalogView;
  const queries=new Set(['all','alive','person','ownerGroup','groupLeader','equipmentOf','crossActor','ownerHand','ownerGroupHand','currentHand','actionDice']);
- return new Proxy(context,{get(target,key){const value=Reflect.get(target,key);return typeof value==='function'?(queries.has(key)?(...args)=>wrap(value(...args)):value):wrap(value);},set:deny,defineProperty:deny,deleteProperty:deny});
+ return new Proxy(context,{get(target,key){const value=Reflect.get(target,key);if(key==='catalog'){catalogView??=Object.freeze({get definitions(){return wrap(value.definitions);},resolve:(...args)=>wrap(value.resolve(...args)),label:(...args)=>value.label(...args),legend:(...args)=>wrap(value.legend(...args))});return catalogView;}return typeof value==='function'?(queries.has(key)?(...args)=>wrap(value(...args)):value):wrap(value);},set:deny,defineProperty:deny,deleteProperty:deny});
 }

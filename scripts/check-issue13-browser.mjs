@@ -1,3 +1,4 @@
+import {scenarioPage} from '../test-support/browser-game-page.mjs';
 // C11/#13: geometría real y acciones con la interfaz, sin sustituir funciones del juego.
 // Servir raíz con python -m http.server 8765 --bind 127.0.0.1.
 // PLAYWRIGHT_MODULE=/ruta/a/playwright-core/index.mjs node scripts/check-issue13-browser.mjs
@@ -6,7 +7,7 @@ import {mkdir,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
 const output=process.env.C11_OUTPUT_DIR||'/tmp/c11-browser';
-const url=process.env.ISSUE13_URL||'http://127.0.0.1:8765/invierno_colonia_v9_9.html';
+const url=process.env.ISSUE13_URL||'http://127.0.0.1:8765/dist/invierno-test.html';
 await mkdir(output,{recursive:true});
 const servedHtml=await (await fetch(url)).text();
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',headless:true,args:['--no-sandbox']});
@@ -17,7 +18,7 @@ try{
   const touch=Math.min(viewport.width,viewport.height)<500;
   const context=await browser.newContext({viewport,isMobile:touch,hasTouch:touch,reducedMotion:'reduce'});
   await context.addInitScript(()=>{Math.random=()=>.45;});
-  const page=await context.newPage();page.on('pageerror',e=>evidence.errors.push({viewport,error:e.message}));
+  const page=scenarioPage(await context.newPage());page.on('pageerror',e=>evidence.errors.push({viewport,error:e.message}));
   const record={viewport,touch,measurements:[],trace:[]};evidence.viewports.push(record);
   async function interact(locator){
    await locator.evaluate(el=>{window.c11Click=false;el.addEventListener('click',()=>window.c11Click=true,{once:true});});

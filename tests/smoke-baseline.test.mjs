@@ -19,7 +19,7 @@ test('la versión estable contiene una página HTML completa', () => {
 });
 
 test('el JavaScript embebido se puede analizar sin errores de sintaxis', () => {
-  const program=programFromHtml(html);
+  const program={script:[...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)][0][1]};
   assert.doesNotThrow(() => new Script(program.script, { filename: 'invierno_colonia_v9_9.js' }));
 });
 

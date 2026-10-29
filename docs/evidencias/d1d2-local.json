@@ -1,0 +1,44 @@
+{
+  "stage": "local antes del commit de adopción",
+  "nodeTests": {
+    "tests": 462,
+    "pass": 462,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0
+  },
+  "artifactSha256": "e871484df909029973ce23046524eaa393ffd7a68e7e7eeb9aa6f2f42a0b5950",
+  "referenceCommit": "57872ee279e924460a126aecbcd0ee7141b5e078",
+  "fileLocal": "ERR_BLOCKED_BY_ADMINISTRATOR; no aprobado",
+  "ci": "pendiente",
+  "redEvidence": {
+    "queueMicrotask": "ReferenceError/Illegal invocation en Chromium, prueba de receptor falló y luego pasó",
+    "readOnly": "faltaba rechazo de escritura y consulta de propiedades congeladas fallaba; corregidos antes del commit"
+  },
+  "iterations": {
+    "focus": {
+      "artifactSha256": "269bf1bfcb4ee746ff0653f8105f771f31b79ed4b1b0de97e44dcc0424052a30",
+      "errors": [],
+      "records": 3,
+      "note": "iteración anterior al commit final; CI repetirá sobre SHA exacto"
+    },
+    "dice": {
+      "artifactSha256": "afeec9cf6f01ed610881d8b96dfcdfdc8e038ff0b5149a634cc1595224cd8007",
+      "errors": [],
+      "records": 6,
+      "note": "iteración anterior al commit final; CI repetirá sobre SHA exacto"
+    },
+    "handover": {
+      "artifactSha256": "269bf1bfcb4ee746ff0653f8105f771f31b79ed4b1b0de97e44dcc0424052a30",
+      "errors": [],
+      "records": 6,
+      "note": "iteración anterior al commit final; CI repetirá sobre SHA exacto"
+    },
+    "production": {
+      "artifactSha256": "ec1489620858a90aa4ea0b90bda79fbf6989cd9a9199a577cee59bcb225a7161",
+      "errors": [],
+      "records": 5,
+      "note": "iteración anterior al commit final; CI repetirá sobre SHA exacto"
+    }
+  }
+}

@@ -2,7 +2,9 @@
 
 ## D1 → D2 — continuidad técnica autorizada · 29/10/2026
 
-Encargo vigente: «Avanza todo incluso d2, manteniendo las reglas de alcance y de autorización». Rama `refactor/d1-d2-arquitectura` desde57872ee; main0b75d01 yD1ba9a423 intactas. Referencia451/451 ycheck:build aprobados. [Informe67](67-d1-d2-arquitectura.md) registra alcance, compuertas y resultados. Continúan prohibidos cambios de mecánicas/SP, fusiones yreleases. Los checkpoints siguientes son históricos y no bloquean esta autorización nueva. **Tarea activa:** completar D1/D2 con comparación independiente y validación, sin empezar el juego propio.
+Encargo vigente: «Avanza todo incluso d2, manteniendo las reglas de alcance y de autorización». Rama `refactor/d1-d2-arquitectura` desde57872ee; main0b75d01 yD1ba9a423 intactas. Referencia451/451 ycheck:build aprobados. [Informe67](67-d1-d2-arquitectura.md) registra alcance, compuertas y resultados. Continúan prohibidos cambios de mecánicas/SP, fusiones yreleases. Los checkpoints siguientes son históricos y no bloquean esta autorización nueva. **Tarea activa:** cerrar compuertas y revisión D1/D2 en esta rama, sin empezar el juego propio.
+
+Motor sin DOM, estado/reglas/turnos/objetos/crisis separados; vista protegida y agente opcional por comandos. Un solo build esbuild/IIFE autocontenido y eventos sin globals. Primer bloque151be08; segundo en validación.40/40 registros estrictos iguales a57872ee; suite ampliada sin omisiones. Chromium:5 partidas QA y5 reproducciones de producto,3C16,6contratos,6viewports táctiles; compuertas finales yCI exacto en curso. File local bloqueado por política; no declarado aprobado. Revisión crítica y límites en informe67; aceptación e integración humanas pendientes.
 
 
 ## D1.2b — primer contrato UI/cargador listo para revisión · 29/10/2026

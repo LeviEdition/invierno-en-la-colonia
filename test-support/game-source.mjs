@@ -24,3 +24,7 @@ export function readTestProgram(){
  const html=readFileSync(new URL('../invierno_colonia_v9_9.html',import.meta.url),'utf8');
  return Object.freeze({runtimeSource,script:runtimeSource,metadata:Object.freeze({htmlSha256:hash(html),scriptSha256:hash(runtimeSource)})});
 }
+export function programFromTestScript(script,{html}={}){
+ if(!script.startsWith('// Invierno: adaptador de pruebas\n'))throw Error('Se requiere un adaptador explícito de pruebas');
+ return Object.freeze({script,runtimeSource:script,metadata:Object.freeze({htmlSha256:html===undefined?null:hash(html),scriptSha256:hash(script)})});
+}

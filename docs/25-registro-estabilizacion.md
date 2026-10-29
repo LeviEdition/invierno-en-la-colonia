@@ -587,3 +587,5 @@ Se comprobaron JSON, hashes de motor/evidencias, enlaces locales, sintaxis de lo
 ## 29/10/2026 — continuidad técnica D1/D2 (no nuevas reglas de estabilización)
 
 Autorización ampliada del creador para completar D1 y D2. [Informe67](67-d1-d2-arquitectura.md), rama `refactor/d1-d2-arquitectura` desde57872ee. main0b75d01 intacta; PR14 ya fusionado históricamente, no por esta tarea. Referencia451/451, primer motor modular454/454 y40 comparaciones estrictas iguales. En curso: contratos de eventos/build, capacidades IA y compuertas completas. No comienza SP-02/Director/juego propio.
+
+**Continuación D1/D2, bloque de adopción:** build único esbuild/IIFE,55 atributos de eventos migrados, estado no publicado y agente mediante comandos.462/462 locales;40 registros iguales contra57872ee;5partidas QA y5 reproducciones sobre producto,3C16,6inicio/pase,6tamaños táctiles. Revisión propia detectó y corrigió receptor de queueMicrotask, fugas de vistas por descriptores y consulta de catálogo congelado, con pruebas de regresión. CI exacto y file:// en Actions pendientes al crear el commit; informe67 conserva límites y rollback. Sin otras reglas/features.

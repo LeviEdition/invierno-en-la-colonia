@@ -1,3 +1,4 @@
+import {capabilities,viewCapabilities,agentCapabilities} from './reference-contracts.mjs';
 import {createReferenceData} from '../domain/reference-data.mjs';
 import {createReferenceState} from '../domain/reference-state.mjs';
 import {createItemEngine} from '../domain/reference-items.mjs';
@@ -8,7 +9,7 @@ import {ItemCatalog} from '../item-catalog.mjs';
 import {createRules} from '../domain/reference-rules.mjs';
 import {createTurns} from './reference-turns.mjs';
 const noop=()=>{};
-export function createEngine({Math=globalThis.Math,queueMicrotask=globalThis.queueMicrotask||((f)=>Promise.resolve().then(f)),setTimeout=globalThis.setTimeout,stateFactory=createReferenceState,rulesFactory=createRules,effects={},automation=null}={}){
+export function createEngine({Math=globalThis.Math,queueMicrotask=globalThis.queueMicrotask||((f)=>Promise.resolve().then(f)),setTimeout=globalThis.setTimeout,stateFactory=createReferenceState,rulesFactory=createRules,turnsFactory=createTurns,effects={},automation=null}={}){
 let view=new Proxy(effects,{get:(target,key)=>target[key]||noop});
 let hasAutomation=!!automation;
 let agent=automation||{botTurn:()=>Promise.resolve(),botContributeTools:noop};
@@ -65,7 +66,7 @@ let applyFrost=(...args)=>turns["applyFrost"](...args);
 let finishTurn=(...args)=>turns["finishTurn"](...args);
 let botContributeTools=(...args)=>agent["botContributeTools"](...args);
 let botTurn=(...args)=>agent["botTurn"](...args);
-const c={get view(){return view;},get queueMicrotask(){return queueMicrotask;},get Math(){return Math;},get toastQueue(){return view.toastQueue;},get toastBusy(){return view.toastBusy;},get places(){return places;},
+const c={get pickActionDie(){return pickActionDie;},get skipAutomation(){return skipAutomation;},get deathContinue(){return deathContinue;},get view(){return view;},get queueMicrotask(){return fn=>queueMicrotask(fn); },get Math(){return Math;},get toastQueue(){return view.toastQueue;},get toastBusy(){return view.toastBusy;},get places(){return places;},
 get icons(){return icons;},
 get em(){return em;},
 get capacity(){return capacity;},
@@ -249,7 +250,7 @@ get applyFrost(){return applyFrost;},set applyFrost(value){applyFrost=value;},
 get finishTurn(){return finishTurn;},set finishTurn(value){finishTurn=value;},
 get botContributeTools(){return botContributeTools;},set botContributeTools(value){botContributeTools=value;},
 get botTurn(){return botTurn;},set botTurn(value){botTurn=value;},get catalog(){return catalog;}};
-const rules=rulesFactory(c),turns=createTurns(c,{Math,setTimeout});
+const rules=rulesFactory(c),turns=turnsFactory(c,{Math,setTimeout});
 const catalog=new ItemCatalog(cards=>mix(cards));
 'use strict';
 const {places,icons,em,capacity,zcap,objectives,roster}=createReferenceData();
@@ -773,14 +774,35 @@ function cancelAttract(){if(!canResolve('attractTarget'))return;pendingAttract=n
 function cancelHeal(){if(!canResolve('healTarget'))return;pendingHeal=null;hide();paint();}
 function cancelTransfer(){if(!canResolve('transferTarget'))return;pendingTransfer=null;hide();paint();}
 function paint(){if(!game)return;processRescueQueue();const decision=decisionKind();if(decision&&!game.ended&&!passScreenActive&&!deathWaiting()){opened=decision;view.openBackdrop();}view.draw();}
+function pickActionDie(i){picked=i;renderModal();paintDice();}
+function skipAutomation(){skipAI=true;}
+function deathContinue(){deathDirector.continue();}
+// Comandos primitivos de compatibilidad: la política no escribe directamente en la partida.
+const actor=id=>all().find(p=>p.id===id);
+const automationActions=Object.freeze({
+ contributeHand(i){if(!CrisisManager.add(game.botItems[i],'La IA'))return false;game.botItems.splice(i,1);return true;},
+ contributeEquipment(id,j){const p=actor(id);if(!CrisisManager.add(p.equipment[j],p.name))return false;p.equipment.splice(j,1);return true;},
+ treat(id,targetId){const p=actor(id),t=actor(targetId);if(p.skill==='medic')t.wounds--;else t.frost--;p.skillUsed=true;message('★ '+p.name+' atendió a '+t.name+'.');},
+ buildFree(id){const p=actor(id);game.zones[p.loc].b++;p.skillUsed=true;message('★ '+p.name+' construyó una barricada sin dado.');},
+ useItem(i,id){return itemEngine.use(i,actor(id),'ai');},
+ moveWithFuel(id,dest,i){return itemEngine.moveWithFuel(actor(id),dest,'ai',i);},
+ move(id,dest){const p=actor(id);p.loc=dest;p.moved=true;message('🤖 '+p.name+' se movió a '+places[dest]+'.');},
+ exposeMove(id){const p=actor(id);if(p.skill==='silent'&&!p.skillUsed)p.skillUsed=true;else expose(p,'movimiento IA');},
+ spendDie(i){return game.botDice.splice(i,1)[0];},
+ search(id,d){const p=actor(id);beginSearch(p,'ai');message('🎲 IA '+p.name+' usó dado '+d+' para buscar.');crossAction('search',p);},
+ attack(id,d){const p=actor(id);message('🎲 IA '+p.name+' gastó dado '+d+' al combatir.');return itemEngine.attack(p,'ai');},
+ clean(d){const n=Math.min(3,game.waste);game.waste-=n;message('♻ IA limpió '+n+' residuos con dado '+d+'.');},
+ barricade(id,d){const p=actor(id),n=(p.skill==='guard'?2:1)+(itemEngine.has(p,'repairkit')?1:0);for(let j=0;j<n&&openAccess(p.loc);j++)game.zones[p.loc].b++;message('▥ IA '+p.name+' colocó barricadas con dado '+d+'.');},
+});
 return Object.freeze({
- snapshot:()=>JSON.parse(JSON.stringify(game)),
+ snapshot:()=>game===undefined?null:JSON.parse(JSON.stringify(game)),
  dispatch(name,...args){if(!commands.has(name))throw TypeError('Comando desconocido: '+name);return c[name](...args);},
- connectPresentation(factory){const result=factory(readOnlyContext(c));effects=result;view=new Proxy(result,{get:(target,key)=>target[key]||noop});return result;},
- connectAutomation(factory){agent=factory(c);hasAutomation=true;},
+ connectPresentation(factory){const result=factory(capabilities(readOnlyContext(c),viewCapabilities));effects=result;view=new Proxy(result,{get:(target,key)=>target[key]||noop});return result;},
+ connectAutomation(factory){agent=factory(capabilities(new Proxy(readOnlyContext(c),{get(target,key){return key==='actions'?automationActions:Reflect.get(target,key);}}),agentCapabilities));hasAutomation=true;},
  start(mode='local'){return startGame(mode);},
  initialize(){create();view.showSetup();passScreenActive=true;paint();},
  ...(typeof __GAME_TEST__!=='undefined'&&__GAME_TEST__?{testBindings:c}:{}),
 });
 }
-const commands=new Set(["startGame","confirmPass","finishTurn","show","hide","showSetup","select","profile","destination","special","chooseHeal","chooseLeader","dismissRecruit","chooseBite","chooseAttract","cancelAttract","chooseTransfer","cancelTransfer","cancelHeal","chooseLoot","addNoiseSearch","crossAiContinue","crossChoose","startTransfer","contributeEquipment","equipItem","unequipItem","boostDie","pickFloatingDie","search","attack","doMove","barricade","clean","attract","playItem","contribute"]);
+export const commandNames=Object.freeze(["pickActionDie","skipAutomation","deathContinue","startGame","confirmPass","finishTurn","show","hide","showSetup","select","profile","destination","special","chooseHeal","chooseLeader","dismissRecruit","chooseBite","chooseAttract","cancelAttract","chooseTransfer","cancelTransfer","cancelHeal","chooseLoot","addNoiseSearch","crossAiContinue","crossChoose","startTransfer","contributeEquipment","equipItem","unequipItem","boostDie","pickFloatingDie","search","attack","doMove","barricade","clean","attract","playItem","contribute"]);
+const commands=new Set(commandNames);

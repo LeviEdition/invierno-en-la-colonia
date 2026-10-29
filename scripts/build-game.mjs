@@ -1,30 +1,25 @@
-// D1.1 — Genera el único HTML jugable desde fuentes separadas, sin dependencias.
+// Única construcción del producto: módulos reales → IIFE → HTML autocontenido.
+import {build} from 'esbuild';
 import {readFile,writeFile} from 'node:fs/promises';
-
-const templateUrl=new URL('../src/invierno.template.html',import.meta.url);
-const catalogUrl=new URL('../src/item-catalog.mjs',import.meta.url);
-const outputUrl=new URL('../invierno_colonia_v9_9.html',import.meta.url);
-const marker='/* __D1_ITEM_CATALOG__ */';
-
-export function assembleHtml(template,catalogSource){
-  if(template.split(marker).length!==2)throw Error('Debe existir exactamente un marcador de catálogo');
-  const signature='export class ItemCatalog {';
-  if(catalogSource.split(signature).length!==2)throw Error('Exportación de ItemCatalog inesperada');
-  const embedded=catalogSource.replace(signature,'class ItemCatalog {').trimEnd()+String.fromCharCode(10)+'const catalog=new ItemCatalog(cards=>mix(cards));';
-  const html=template.replace(marker,embedded);
-  if((html.match(/<script(?:\s[^>]*)?>/g)||[]).length!==1)throw Error('El artefacto debe contener un solo script embebido');
-  if(/<script\s+[^>]*src=/.test(html))throw Error('HTML no autocontenido');
-  return html;
+import {resolve} from 'node:path';import {fileURLToPath,pathToFileURL} from 'node:url';
+const root=fileURLToPath(new URL('../',import.meta.url));
+export async function buildGame({template,entryPoint='src/main.mjs',workingDir=root,test=false}={}){
+ template??=await readFile(resolve(workingDir,'src/invierno.template.html'),'utf8');
+ const marker='/* __GAME_BUNDLE__ */';
+ if(template.split(marker).length!==2)throw Error('Debe existir exactamente un marcador de aplicación');
+ const result=await build({absWorkingDir:workingDir,entryPoints:[entryPoint],outfile:'game.js',bundle:true,
+  format:'iife',platform:'browser',target:'es2022',write:false,sourcemap:false,minify:false,minifySyntax:true,
+  charset:'utf8',legalComments:'none',metafile:true,define:{__GAME_TEST__:String(test)}});
+ if(result.outputFiles.length!==1)throw Error('Se requiere un único bundle');
+ const embedded=result.outputFiles[0].text.replaceAll('</script','<\\/script');
+ const html=template.replace(marker,()=>embedded);
+ if((html.match(/<script(?:\s[^>]*)?>/g)||[]).length!==1||/<script\s+[^>]*(?:src=|type=["']module)/.test(html))throw Error('HTML no autocontenido');
+ return {html,embedded,metafile:result.metafile};
 }
-
-const template=await readFile(templateUrl,'utf8');
-const catalog=await readFile(catalogUrl,'utf8');
-const output=assembleHtml(template,catalog);
-if(process.argv.includes('--check')){
-  const committed=await readFile(outputUrl,'utf8');
-  if(committed!==output){console.error('HTML desactualizado: ejecutar npm run build y versionar el resultado');process.exitCode=1;}
-  else console.log('Build reproducible: HTML autocontenido actualizado');
-}else{
-  await writeFile(outputUrl,output);
-  console.log('Generado invierno_colonia_v9_9.html');
+if(process.argv[1]&&pathToFileURL(resolve(process.argv[1])).href===import.meta.url){
+ const output=resolve(root,'invierno_colonia_v9_9.html');const {html}=await buildGame();
+ if(process.argv.includes('--check')){
+  if(await readFile(output,'utf8')!==html||html!==(await buildGame()).html)throw Error('HTML desactualizado o no reproducible: npm run build');
+  console.log('Build reproducible: un HTML autocontenido');
+ }else{await writeFile(output,html);console.log('Generado invierno_colonia_v9_9.html');}
 }
