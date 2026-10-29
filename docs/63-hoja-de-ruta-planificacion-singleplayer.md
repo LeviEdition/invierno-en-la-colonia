@@ -406,15 +406,55 @@ Simular **2–3 rondas continuadas**, con estados de partida idénticos al comen
 
 **Próximo trabajo de diseño acordado:** cerrar el alcance conceptual de SP-02 como **«mecánica V9.9 de partida, balance singleplayer pendiente»**, y avanzar hacia **SP-03 (ciclo de ronda)** enlazándolo con **SP-04 (balance, pérdidas y reclutamiento)**. La prioridad de diseño no altera el tablero de tareas técnicas D1/D2. No hay nuevos cambios de código, tests, ni motor aprobados.
 
-## 6. Diseño de ronda provisional para SP-03 (no aprobado)
+## 6. SP-03 — Ciclo de una ronda singleplayer (propuesta 29/10/2026, NO APROBADA)
 
-1. **Apertura:** presentación de crisis, recursos, peligros e indicios válidos según el estado.
-2. **Órdenes del líder:** el jugador elige superviviente, ubicación, acciones y dados; resuelve reglas de riesgo sin turnos de otro grupo humano/IA obligatorios.
-3. **Encuentros:** pueden dispararse por acciones o por continuidad de historias; el Director propone eventos **permitidos por estado y condiciones**, no eventos arbitrarios.
-4. **Fin de jornada:** alimentación, basura, crisis, zombis, ruido, daños, derrota/victoria conforme a reglas que SP-04 termine de equilibrar.
-5. **Continuidad:** actualizar hechos, relaciones, promesas y escenas pendientes, mostrar resumen y preparar siguiente ronda.
+**Contexto y base acordada:** primer singleplayer sobre **mecánica de dados y acciones de V9.9**, con **un líder elegido de tres supervivientes iniciales** que distribuye los dados de su único equipo. El Director administra mundo, eventos, facciones y memoria sin ser un segundo equipo jugador. La fórmula de referencia `1 + supervivientes vivos` daría **4 dados con 3 supervivientes**; la cantidad definitiva se valida en SP-04. **No se cambia el código ni el flujo técnico D1/D2 con este borrador**.
 
-**Pendiente:** orden exacto de disparadores, cuántas decisiones narrativas soporta una ronda, prioridades entre terminales y escenas, si el tiempo narrativo equivale a ronda/día, y cómo manejar animaciones y decisiones bloqueantes. No congelar este esquema hasta haber cerrado SP-02 y revisado SP-04.
+### 6.1. Fases lógicas propuestas
+
+| Fase | Qué conoce o decide el jugador | Responsabilidad del motor y del Director | Precaución |
+| --- | --- | --- | --- |
+| **A. Apertura** | Consulta estado, crisis de la jornada, recursos, heridas, amenazas e indicios; conoce los dados disponibles; piensa prioridades | Motor crea/prepara la ronda según reglas; Director presenta mensajes e indicios **compatibles con hechos registrados**; una escena de apertura solo si corresponde | No entregar información omnisciente sobre intenciones secretas; no imponer un evento dramático en toda ronda |
+| **B. Planificación y órdenes** | Como líder, decide libremente actor, ubicación, carta, acción y dado elegible; mueve, busca, combate, aporta a crisis, utiliza habilidades | Motor valida y ejecuta acciones, exposición y efectos, conserva orden y estado; Director **observa resultados reales** y puede programar desencadenantes | No repartir dados por personaje por obligación; comprobar acciones sin dado, pausas y muerte a mitad de ronda |
+| **C. Encuentros contextuales** | Toma decisiones frente a situaciones activadas por hechos: entrar al hospital, encontrar persona, volver a colonia, etc. | Director comprueba condiciones y coherencia; registra elecciones y efectos usando reglas; puede detener momentáneamente la interfaz para decisión relevante | **No necesariamente una fase posterior a B**: se intercala durante B o en otros puntos; no lanzar un encuentro por cada acción |
+| **D. Resolución de la colonia** | Termina deliberadamente su fase de órdenes y ve consecuencias materiales del día | Motor procesa hambre, residuos, crisis, zombis, ruido, daños, victoria/derrota **en el orden probado/definido para el juego propio**; Director solo reacciona a hechos | El orden exacto heredado de V9.9 debe verificarse en motor y revisarse al pasar a grupo único; no duplicar resolución por antiguo J2 |
+| **E. Cierre y continuidad** | Lee un resumen breve de recursos, heridas, cambios, novedades relevantes y preparación de siguiente jornada | Persistir hechos, personas, relaciones, decisiones y eventos futuros; seleccionar qué consecuencia **ya vencida y válida** se muestra o se reprograma | Las promesas importantes no dependen únicamente de nuevo azar; no incluir personajes muertos; no posponer derrotas/victorias ya determinadas |
+
+**Regla de composición candidata:** A → B (con posibles C) → D → E → siguiente A. C también puede aparecer al inicio o tras D cuando su disparador es válido; no imponer un ciclo rígido A-B-C-D-E donde toda encrucijada espera al final. En la interfaz debe mostrarse con claridad que el jugador todavía está en su fase de acciones y qué órdenes le quedan.
+
+### 6.2. Comparación de ritmos narrativos (alternativas abiertas)
+
+- **R1 — Solo inicio/cierre:** pocas interrupciones, pero encuentro en hospital podría resolverse artificialmente al final del día. Desaconsejada como regla universal.
+- **R2 — Cada disparador contextual inmediatamente:** alta relación causa-efecto, pero riesgo de interrupciones sucesivas y fatiga.
+- **R3 — Híbrida contextual (hipótesis recomendada, NO aprobada):** escenas cuya decisión es urgente o cambia la acción actual se resuelven cuando ocurren; relatos diferibles se guardan en agenda para apertura, cierre o el siguiente momento válido. No garantizar ni exigir una escena importante en cada ronda. Explorar un **presupuesto flexible** de densidad dramática por jornada, con excepciones justificadas por hechos críticos.
+
+**Separar** mensajes informativos breves (sin elección), encuentros con decisión y consecuencias mecánicas obligatorias. Un ataque, la exposición o una muerte pueden resolverse por motor aunque no corresponda mostrar una escena narrada nueva. El Director **no puede cambiar reglas o anular dados para construir drama**.
+
+### 6.3. Recorrido sobre papel ilustrativo (NO simulación de balance)
+
+- Grupo elegido: Iris, Damián y Mara; **4 dados de referencia**, no balance definitivo.
+- Apertura: crisis de medicamentos y aviso fundamentado sobre actividad de desconocidos cerca del hospital.
+- Órdenes: el líder decide una búsqueda de Iris en hospital, defensa de Damián y otra acción con Mara según necesidades/dados válidos. Se aplican ubicación, búsqueda y exposición bajo el motor mecánico de referencia.
+- Encuentro contextual tras buscar: Iris encuentra a una persona herida vinculada con una facción; **decisión del jugador** entre ayudar, retirarse o negociar información, condicionada por recursos y estado. La escena registra consecuencias inmediatas y agenda ramificaciones futuras que solo ocurren si se cumplen sus condiciones.
+- Fin de jornada: el motor comprueba comida, crisis y zombis; si hay derrota/victoria terminal, no debe ejecutarse una siguiente escena contradictoria.
+- Cierre: resumen táctico y narrativo sin revelar artificialmente consecuencias futuras secretas. Una decisión previa puede reaparecer varias rondas después por una causa reconocible.
+
+### 6.4. Casos límite y reglas de prioridad por cerrar
+
+1. **Muerte del actor durante una acción:** detener la acción según reglas; no consumir un segundo dado ni duplicar efecto por un diálogo; actualizar equipo, inventario, líder y agenda. El destino de los dados restantes tras una muerte a mitad de ronda se decide con SP-04.
+2. **Muerte del líder:** aplicar elección de sucesor entre supervivientes disponibles en momento seguro; la partida no debe permitir nuevas órdenes mientras falta un líder válido. Si no queda nadie, aplicar condición terminal conforme reglas, no crear personaje de la nada.
+3. **Varias historias al mismo tiempo:** prioridad conceptual: seguridad/terminal del motor > interrupción de muerte y sucesión > decisión de la acción actual > continuación narrativa imprescindible > evento secundario. Esta prioridad es **hipótesis de diseño**, no orden ya integrado al motor; la gestión de cola debe evitar perder decisiones y preservar coherencia.
+4. **Terminar fase antes de gastar todos los dados:** debe existir una forma clara de cerrar el turno; confirmar si acciones pendientes y escenas pueden disparar algo, sin permitir vueltas atrás tras resolver colonia.
+5. **El Director y los turnos antiguos:** eliminar necesidad de pase J1→J2 obligatorio sin eliminar el ciclo de colonia, pero validar que acciones y resolución ocurren **exactamente una vez** por jornada y que el Director no consume turno de jugador.
+6. **Interacción con condición terminal:** si la crisis/moral provoca derrota, detener procesamiento posterior según reglas y no disparar encuentros incompatibles; si se gana, epílogo coherente con historial. Verificar prioridad entre una decisión ya abierta y un terminal del motor.
+7. **No saber aún qué día es cada ronda:** por claridad se propone **ronda = jornada narrativa de trabajo** para el prototipo, pero calendarios, distancias y sucesos que duran varios días quedan pendientes de discusión.
+8. **Carga de UI:** cuando aparezca encuentro bloqueante, enseñar contexto relevante y guardar su decisión antes de recuperar controles; evitar que clic repetido ejecute acciones durante el diálogo. En móvil, priorizar uno o dos puntos narrativos importantes antes que un bombardeo de mensajes.
+
+### 6.5. Contrato mínimo de validación antes de dar SP-03 por cerrado
+
+Probar en papel: **ronda normal**; encuentro durante búsqueda; ausencia total de escena si nada corresponde; muerte de superviviente con dados aún disponibles; **muerte de líder y sucesión**; derrota al resolver colonia; decisión diferida activada al día correcto; escena que quedó inválida por muerte de personaje; y jornada con solo uno/dos supervivientes. Contrastar **presupuesto de acciones, alimentación y pérdidas** en SP-04 sin mezclar con cambio de sistema de dados.
+
+**Única microdecisión que conviene tomar primero:** preferencia del creador entre encuentros **solo en apertura/cierre**, **siempre inmediatos** o **híbridos contextuales R3**, manteniendo al Director sometido a los hechos y sin escena obligatoria por jornada. Después especificar prioridad de interrupciones y el orden final de cierre.
 
 ## 7. Criterios de aceptación de la PLANIFICACIÓN antes de programar el singleplayer
 
