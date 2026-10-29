@@ -1,14 +1,18 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
-## Preservación formal V9.9 — tag publicado; release pendiente · 29/10/2026
+## Referencia V9.9 estable y modular preservada — hito2 cerrado · 29/10/2026
 
-**Autorización:** publicar tag anotado, release y HTML offline con manifiesto, verificar descargas y documentar. Remoto limpio en `62e4e85150b2416ccf07d671c186b5c421993b0b`, sin avances desde el cierre71 ni tags/releases previos. Ese SHA se preserva; los commits posteriores de publicación/documentación no cambian su referencia.
+**Autorización completada:** tag anotado y [release pública «V9.9 — Referencia estable y modular»](https://github.com/LeviEdition/invierno-en-la-colonia/releases/tag/v0.9.9-referencia-modular). Remoto inicial62e4e851, sin avances ni tags/releases previos. **Commit preservado: `62e4e85150b2416ccf07d671c186b5c421993b0b`**. Tag `v0.9.9-referencia-modular`, objeto `0fdb214612486f4cc46c1acb444390de963d05e8`, destino confirmado mediante Git y API; oráculo57872ee conservado. Los commits posteriores de automatización/documentación no forman parte del tag.
 
-**Verificado:** `v0.9.9-referencia-modular` anotado y publicado, objeto `0fdb214612486f4cc46c1acb444390de963d05e8`, destino62e4e85, oráculo57872ee ancestro. Checkout limpio: npm ci, check:build,467/467, build y check:build; recuperación independiente desde el tag reconstruye el mismo HTML. Producto225283 bytes, SHA-256 `43b8883ad4821e4b50c40791615c5ef6c0b3030476409b4e1c6da4dbd872d692`, sin QA. CI exacto62 reutilizado:40903853712/40903853822 success,40+40 equivalencias,5QA+5reproducciones producto,3 tamaños y4 aperturas offline.
+**Producto publicado y descargado:** `invierno_colonia_v9_9.html`,225283 bytes, SHA-256 `43b8883ad4821e4b50c40791615c5ef6c0b3030476409b4e1c6da4dbd872d692`; manifiesto de300 bytes. Ambos coinciden byte a byte con el build validado. No se distribuyó QA. Checkout limpio: npm ci/check:build/467 pruebas/build/check:build; recuperación independiente desde el tag reconstruye el mismo HTML.
 
-**Incidencia de publicación:** borrador release428084796 creado, pero `gh release create`/`upload` recibieron HTTP401 al subir a uploads.github.com, incluso fuera del sandbox; API y push funcionan. No se publicó una release vacía ni se descartó el tag. Se prepara workflow manual limitado al SHA/tag/release exactos para reconstruir, subir solo adjuntos faltantes y verificar bytes antes/después de publicar con credencial del runner. [Informe72](72-preservacion-referencia-modular.md) y[evidencia](evidencias/v099-preservacion.json).
+**Publicación verificada:** bloqueo401 de uploads.github.com local, también fuera del sandbox; resuelto mediante workflow manual acotado con credencial del runner. [40908114721](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40908114721) success: vuelve a construir exactamente62,467/467 y descarga/valida adjuntos antes y después de publicar. Descarga adicional local posterior también idéntica. Sin mover tags, reemplazar assets ni modificar reglas.
 
-**Única tarea activa:** ejecutar/verificar esa publicación. Hito1 sigue cerrado; preservación todavía no cerrada. SP-03/63 intacto; no código del juego ni reglas cambiados. Después: diseño SP-03 (ciclo de ronda), luego SP-04 (balance de un solo grupo), sin autorización de implementación. Los estados inferiores son historia.
+**Evidencia reutilizada del SHA62 exacto:** CI40903853712/40903853822 success;40/40 contra cada referencia,5QA+5reproducciones producto,3 tamaños, foco/pase/táctil/sucesiones/encrucijadas/finales y4file offline con red desactivada. Emulación móvil no equivale a Android físico. [Informe72](72-preservacion-referencia-modular.md), [evidencia](evidencias/v099-preservacion.json) y [manifiesto](evidencias/manifest-v0.9.9-referencia-modular.json) registran pruebas, reconstrucción y reservas. El CI de la documentación final se verifica por su SHA exacto antes de entregar.
+
+**Hitos1 y2 cerrados.** SP-03/63 intacto byte a byte; sin nueva rama del juego propio, mecánicas, balance o narrativa jugable. Reservas aceptadas: contexto de compatibilidad, esquema V9.9 de dos grupos, VM histórica; Android físico/TalkBack, otros navegadores y balance humano pendientes.
+
+**Único siguiente trabajo:** diseño SP-03 (ciclo de ronda), seguido de SP-04 (balance de un solo grupo), en una entrega separada. No implementar todavía. Los estados inferiores son registros históricos; no sustituyen este cierre.
 
 
 ## D1/D2 integradas en main y validadas — hito 1 cerrado ·29/10/2026

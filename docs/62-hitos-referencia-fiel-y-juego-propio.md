@@ -27,13 +27,13 @@ Esta aceptación **es una decisión de alcance del creador** sustentada en el tr
 
 **Criterio de terminado del hito 1:** referencia mecánica aceptada (YA DECIDIDO) **+ D1/D2 terminadas, probadas, aceptadas eintegradas** (COMPLETADO, PR15/6b8bfca). No pedir un proyecto RF nuevo antes de avanzar; la comparación del informe 49 sigue disponible para consultas concretas.
 
-## Hito 2 — Preservación autorizada, en curso
+## Hito 2 — COMPLETADO: referencia identificable y reproducible
 
-Al cerrar D1/D2, decidir expresamente cómo congelar una referencia reproducible con SHA, código fuente, build, pruebas y diferencias mecánicas aceptadas, antes de alterar deliberadamente las reglas.
+Autorizada y completada el29/10/2026. Commit `62e4e85150b2416ccf07d671c186b5c421993b0b`, tag anotado `v0.9.9-referencia-modular`, [release pública](https://github.com/LeviEdition/invierno-en-la-colonia/releases/tag/v0.9.9-referencia-modular) con HTML offline y manifiesto. Reconstrucción limpia467/467, recuperación desde tag y descargas del runner/local verificadas byte a byte. CI exacto del código reutilizado para navegador/offline; [informe72](72-preservacion-referencia-modular.md) distingue pruebas nuevas y anteriores. Los commits de cierre posteriores no alteran el tag.
 
 - Mantener las pruebas históricas para reconocer regresiones.
 - Conservar documentación del funcionamiento, reservas técnicas y modo de distribución.
-- Publicación autorizada el29/10/2026: tag anotado sobre62e4e851, release con HTML ymanifiesto. [Informe72](72-preservacion-referencia-modular.md). No crear rama del juego propio ni alterar referencias publicadas.
+- Publicación completada sin mover referencias ni distribuir QA. No crear rama del juego propio ni alterar referencias publicadas como parte de este cierre.
 
 **Puerta:** referencia estable y modular, reproducible, con respaldo de pruebas y preservación autorizada por el creador. **No depende de una nueva auditoría RF.**
 
@@ -57,7 +57,7 @@ Desde esa referencia preservada y en línea separada de desarrollo:
 
 **Ruta oficial:** `V9.9 estabilizada + fidelidad mecánica aceptada → cerrar D1 → cerrar D2 → preservar referencia modular → desarrollar juego propio (matriz F + singleplayer/Director) → expansión`.
 
-**Próxima tarea vigente:** completar publicación y verificación de la referencia autorizada. Después, diseño SP-03 (ciclo de ronda) y SP-04 (balance de un solo grupo), sin implementación autorizada. Los seguimientos fechados inferiores conservan decisiones históricas superadas.
+**Próximo trabajo:** diseño SP-03 (ciclo de ronda), seguido de SP-04 (balance de un solo grupo), en una entrega separada y sin implementación autorizada. Los seguimientos fechados inferiores conservan decisiones históricas superadas.
 
 **Alcance de esta acta:** decisión de producto y documentación, no modificación de ejecutable ni certificación de equivalencia literal.
 
@@ -76,3 +76,7 @@ El encargo posterior autorizó reconciliar la documentación SP-03 de833eae7 yab
 ## Cierre de integración29/10/2026
 
 El creador aprobó el merge convencional del head7f3ac7c. PR15 integrado en6b8bfca, padres0b75d01/7f3ac7c,57872ee conservado.467/467,40+40 comparaciones yCI completo sobre main aprobados; acuerdos/propuestas SP-03 preservados en63. [Informe71](71-integracion-main-y-cierre-d1-d2.md). Hito1 cerrado. Hito2 es el siguiente paso, **todavía sin crear tags/releases ni ramas del juego propio**. El cierre documental posterior no añade mecánicas ni cambia el ejecutable.
+
+## Cierre de preservación29/10/2026
+
+Hitos1 y2 completados: integración71 y preservación72. Tag anotado/HTML/manifiesto publicados, hash de descarga idéntico al build limpio y reconstrucción reproducible desde el tag. El401 de subida local se resolvió en Actions sin cambiar el juego ni las credenciales locales. SP-03 permanece intacto y no se agregan acuerdos narrativos nuevos. La autorización de publicación no autoriza implementar el juego propio.

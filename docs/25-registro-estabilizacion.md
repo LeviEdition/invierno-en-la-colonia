@@ -1,9 +1,14 @@
 # 25 — Registro de estabilización V9.9 (C1–C16)
 
-## Preservación formal V9.9 — 29/10/2026
+## Preservación formal V9.9 cerrada — 29/10/2026
 
-Main62e4e851 confirmado limpio ysin avances. Tag anotado `v0.9.9-referencia-modular` publicado sobre ese SHA, oráculo57872ee conservado. Reconstrucción limpia yrecuperación desde tag: npm ci/build/check y467/467; HTML SHA-256 `43b8883ad4821e4b50c40791615c5ef6c0b3030476409b4e1c6da4dbd872d692`. CI exacto62 reutilizado para navegador/offline ycomparaciones; no nuevas pruebas físicas. Release428084796 en borrador, adjuntos rechazados con401 local yfuera del sandbox. Se agrega workflow manual exclusivo de preservación con comprobaciones de commit/tag/hash/CI/descargas, sin modificar juego ni SP-03. [Informe72](72-preservacion-referencia-modular.md) registra pruebas yestado; preservación pendiente hasta completar publicación. Los apartados inferiores son históricos.
+Main inicial62e4e851 confirmado limpio y sin avances. Se preserva ese SHA con tag anotado `v0.9.9-referencia-modular`; oráculo57872ee ancestro. Publicada [release estable y modular](https://github.com/LeviEdition/invierno-en-la-colonia/releases/tag/v0.9.9-referencia-modular), con HTML de producto225283 bytes y manifiesto300 bytes. SHA-256 del HTML `43b8883ad4821e4b50c40791615c5ef6c0b3030476409b4e1c6da4dbd872d692`, verificado tras descarga pública en runner y local, idéntico al build limpio y a la recuperación desde el tag.
 
+Pruebas nuevas: npm ci/check:build/467 de467/build/check:build en checkout limpio; recuperación independiente desde tag con npm ci/build/check. Workflow manual de publicación [40908114721](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40908114721) success reconstruye62, repite467 pruebas, descarga/verifica antes y después de publicar. Resuelve401 de uploads.github.com local (también al reintentar fuera del sandbox) con credencial propia del runner. No mueve tags ni reemplaza adjuntos existentes. El primer dispatch devolvió404 mientras se registraba el workflow nuevo; segundo intento ejecutado correctamente. Consulta opcional de permisos Actions403 sin cambios de configuración.
+
+Evidencia CI reutilizada de62:40903853712/40903853822 success,40+40 equivalencias,5QA+5reproducciones producto,3 tamaños y4file offline. Sin nuevas pruebas físicas; se mantienen reservas de contexto/esquema dos grupos/VM histórica y Android/TalkBack/otros navegadores/balance humano. Documentos modificados: README,01,18,25,62, nuevo72, manifiesto y evidencia JSON; se agrega únicamente workflow de preservación manual. Informes anteriores y SP-03/63 intactos; producto/módulos/pruebas/reglas sin cambios.
+
+[Informe72](72-preservacion-referencia-modular.md): hitos1 y2 cerrados. Los commits posteriores de automatización/documentación no cambian el commit preservado; CI final se consulta por SHA exacto antes de entregar. Próximo trabajo: diseño SP-03 (ciclo de ronda) y luego SP-04 (balance de un solo grupo), sin iniciar implementación ni rama propia. Los apartados inferiores conservan estados históricos.
 
 ## D0-I-V — Chromium post-merge validado · 28/10/2026
 

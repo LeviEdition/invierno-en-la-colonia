@@ -1,5 +1,5 @@
 {
-  "status": "publication_pending",
+  "status": "published_and_verified",
   "preserved_commit": "62e4e85150b2416ccf07d671c186b5c421993b0b",
   "main_at_start": "62e4e85150b2416ccf07d671c186b5c421993b0b",
   "subsequent_commits_at_start": [],
@@ -207,10 +207,21 @@
   "sp03_blob_unchanged": "c9f931dc1df295bdbebd8f509bd1c9645f58c4d7",
   "release": {
     "id": 428084796,
-    "draft": true,
-    "published_at": null,
-    "assets": [],
-    "intended_url": "https://github.com/LeviEdition/invierno-en-la-colonia/releases/tag/v0.9.9-referencia-modular"
+    "draft": false,
+    "published_at": "2026-10-29T16:06:00Z",
+    "url": "https://github.com/LeviEdition/invierno-en-la-colonia/releases/tag/v0.9.9-referencia-modular",
+    "assets": [
+      {
+        "name": "invierno_colonia_v9_9.html",
+        "size": 225283,
+        "url": "https://github.com/LeviEdition/invierno-en-la-colonia/releases/download/v0.9.9-referencia-modular/invierno_colonia_v9_9.html"
+      },
+      {
+        "name": "manifest-v0.9.9-referencia-modular.json",
+        "size": 300,
+        "url": "https://github.com/LeviEdition/invierno-en-la-colonia/releases/download/v0.9.9-referencia-modular/manifest-v0.9.9-referencia-modular.json"
+      }
+    ]
   },
   "local_upload_failure": {
     "host": "uploads.github.com",
@@ -218,13 +229,10 @@
     "message": "Bad credentials",
     "retried_upload": true,
     "retried_outside_sandbox": true,
-    "api_and_git_push_work": true
+    "api_and_git_push_work": true,
+    "resolution": "Published by manual GitHub Actions with runner token; local credentials and published tag unchanged"
   },
-  "pending": [
-    "runner publication",
-    "published asset download and hash verification",
-    "final documentation CI"
-  ],
+  "pending": [],
   "limitations": [
     "finite regression sample",
     "no physical Android or TalkBack",
@@ -232,5 +240,67 @@
     "local managed Chromium blocks file://; exact-SHA CI used",
     "V9.9 two-group schema and compatibility context; VM in historical fixtures",
     "not full Dead of Winter rules equivalence"
-  ]
+  ],
+  "publication": {
+    "preserved_commit": "62e4e85150b2416ccf07d671c186b5c421993b0b",
+    "tag": "v0.9.9-referencia-modular",
+    "tag_object": "0fdb214612486f4cc46c1acb444390de963d05e8",
+    "release_id": 428084796,
+    "release_url": "https://github.com/LeviEdition/invierno-en-la-colonia/releases/tag/v0.9.9-referencia-modular",
+    "published_at": "2026-10-29T16:06:00Z",
+    "workflow_sha": "c46f13fdd3f71cecc12db60cf60aae2a95898b1c",
+    "run_id": "40908114721",
+    "downloaded_html_sha256": "43b8883ad4821e4b50c40791615c5ef6c0b3030476409b4e1c6da4dbd872d692",
+    "manifest": {
+      "format_version": 1,
+      "tag": "v0.9.9-referencia-modular",
+      "commit": "62e4e85150b2416ccf07d671c186b5c421993b0b",
+      "files": [
+        {
+          "file": "invierno_colonia_v9_9.html",
+          "sha256": "43b8883ad4821e4b50c40791615c5ef6c0b3030476409b4e1c6da4dbd872d692",
+          "bytes": 225283
+        }
+      ]
+    },
+    "verified_before_and_after_publication": true,
+    "assets": [
+      {
+        "name": "invierno_colonia_v9_9.html",
+        "size": 225283,
+        "url": "https://github.com/LeviEdition/invierno-en-la-colonia/releases/download/v0.9.9-referencia-modular/invierno_colonia_v9_9.html"
+      },
+      {
+        "name": "manifest-v0.9.9-referencia-modular.json",
+        "size": 300,
+        "url": "https://github.com/LeviEdition/invierno-en-la-colonia/releases/download/v0.9.9-referencia-modular/manifest-v0.9.9-referencia-modular.json"
+      }
+    ]
+  },
+  "local_download": {
+    "html_sha256": "43b8883ad4821e4b50c40791615c5ef6c0b3030476409b4e1c6da4dbd872d692",
+    "manifest_sha256": "2dc121b1bb29b3e80d08626e0dfd7a1c2b1335289df1dd4ad55b9bd449d6fddc",
+    "html_and_manifest_bytes_equal_to_validated_build": true
+  },
+  "publication_workflow": {
+    "run_id": 40908114721,
+    "head_sha": "c46f13fdd3f71cecc12db60cf60aae2a95898b1c",
+    "checked_out_code": "62e4e85150b2416ccf07d671c186b5c421993b0b",
+    "conclusion": "success",
+    "fresh_npm_test_pass": 467,
+    "url": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40908114721"
+  },
+  "milestones": {
+    "hito1": "closed",
+    "hito2": "closed",
+    "next_work": "design SP-03 round cycle, then SP-04 one-group balance; no implementation"
+  },
+  "final_documentation_ci": {
+    "verification_policy": "Before delivery query runs by exact final main SHA; results live in GitHub Actions and final delivery, avoiding self-referential document SHA",
+    "workflows": [
+      "Pruebas de regresión",
+      "D1 y D2 — arquitectura y regresiones"
+    ],
+    "runs_url": "https://github.com/LeviEdition/invierno-en-la-colonia/actions?query=branch%3Amain"
+  }
 }
