@@ -23,3 +23,9 @@ No se afirma cierre ni aprobación mientras haya bloqueos o validaciones pendien
 La prueba nueva falla enee73d29 porque no se rechaza la escritura a través del prototipo. La corrección entrega una fachada congelada de consultas (side/local/interactive/group/hand/dice/display), sin el prototipo del controlador interno. Las consultas siguen siendo vivas y conservan identidad de actores; sus resultados permanecen protegidos incluso al invocarlas mediante descriptores. No se reescribe el motor ni se cambia la representación del estado.
 
 Rojo→verde dirigido:1/1. Baseline reejecutada462/462 y npm ci/check:build aprobados. Suite tras B1:463/463,0 fallos/omisiones/cancelaciones; build reproducible. B2 aún bloquea el cierre; pendientes gates completos sobre implementación final.
+
+## Corrección B2
+
+Dos pruebas nuevas rojas: se podía reclutar sin comando y no existía una proyección de presentación segura. Se retiran crossroadsDeck/crossOptionAllowed de las capacidades de la vista; el motor ofrece crossroadsView con textos, cantidad de historias y opciones permitidas calculadas por las mismas reglas reales. Los callbacks originales permanecen privados e intactos. La IA y los fixtures QA siguen usando sus entradas internas autorizadas; el renderer recibe únicamente los datos que dibuja.
+
+Dirigidas B1/B2:3/3 verdes. Suite465/465,0 fallos/omisiones/cancelaciones; check:build y diffcheck aprobados. Prueba de elegibilidad demuestra comida1→opción de provisiones no disponible y comida3→disponible, sin consumir RNG ni modificar estado. No se introdujo un sistema narrativo ni cambió efecto alguno de carta. Pendiente validación integral en navegador y por SHA.

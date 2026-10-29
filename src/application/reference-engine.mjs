@@ -66,7 +66,7 @@ let applyFrost=(...args)=>turns["applyFrost"](...args);
 let finishTurn=(...args)=>turns["finishTurn"](...args);
 let botContributeTools=(...args)=>agent["botContributeTools"](...args);
 let botTurn=(...args)=>agent["botTurn"](...args);
-const c={get pickActionDie(){return pickActionDie;},get skipAutomation(){return skipAutomation;},get deathContinue(){return deathContinue;},get view(){return view;},get queueMicrotask(){return fn=>queueMicrotask(fn); },get Math(){return Math;},get toastQueue(){return view.toastQueue;},get toastBusy(){return view.toastBusy;},get places(){return places;},
+const c={get crossroadsView(){return crossroadsView;},get pickActionDie(){return pickActionDie;},get skipAutomation(){return skipAutomation;},get deathContinue(){return deathContinue;},get view(){return view;},get queueMicrotask(){return fn=>queueMicrotask(fn); },get Math(){return Math;},get toastQueue(){return view.toastQueue;},get toastBusy(){return view.toastBusy;},get places(){return places;},
 get icons(){return icons;},
 get em(){return em;},
 get capacity(){return capacity;},
@@ -773,6 +773,12 @@ function hide(){
 function cancelAttract(){if(!canResolve('attractTarget'))return;pendingAttract=null;hide();paint();}
 function cancelHeal(){if(!canResolve('healTarget'))return;pendingHeal=null;hide();paint();}
 function cancelTransfer(){if(!canResolve('transferTarget'))return;pendingTransfer=null;hide();paint();}
+// Datos para dibujar una carta: las funciones de consecuencias permanecen dentro del motor.
+function crossroadsView(){
+ const card=crossroadsDeck[game.crossCard];
+ return {count:crossroadsDeck.length,card:{title:card.title,story:card.story,choices:card.choices.map(choice=>choice.slice(0,2))},
+  allowed:game.crossPending&&!(game.crossOwner==='ai'&&game.mode!=='local')?card.choices.map((_,i)=>crossOptionAllowed(card,i,game.crossOwner)):[]};
+}
 function paint(){if(!game)return;processRescueQueue();const decision=decisionKind();if(decision&&!game.ended&&!passScreenActive&&!deathWaiting()){opened=decision;view.openBackdrop();}view.draw();}
 function pickActionDie(i){picked=i;renderModal();paintDice();}
 function skipAutomation(){skipAI=true;}

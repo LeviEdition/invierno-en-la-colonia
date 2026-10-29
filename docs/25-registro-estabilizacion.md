@@ -597,3 +597,5 @@ Autorización ampliada del creador para completar D1 y D2. [Informe67](67-d1-d2-
 ## 29/10/2026 — auditoría de integración D1/D2, sin nuevas mecánicas
 
 Encargo focalizado desdeee73d29, main0b75d01 verificada. Informe68: dos bloqueos reproducibles en capacidades de vista (prototipo de controles y callbacks de cartas). B1 corregido con fachada de consultas, prueba roja→verde,463/463; B2 ycompuertas finales pendientes. No PR abierto/fusionado, no referencia oficial ni singleplayer.
+
+**Auditoría D1/D2 B2:** se retiran callbacks del catálogo de la vista yse entrega proyección de textos/elegibilidad por reglas. Dos pruebas rojas→verdes,465/465 ybuild reproducible. Falta validación final ypreparación de PR; no se abrió PR.

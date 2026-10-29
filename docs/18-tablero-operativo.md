@@ -2,7 +2,7 @@
 
 ## Auditoría final de integración D1/D2 en curso ·29/10/2026
 
-Encargo nuevo: cierre focalizado, preparar informe y descripción de PR hacia main **sin abrirlo/fusionarlo**. No arquitectura singleplayer adicional. Base limpiaee73d29, main remoto0b75d01 confirmado. [Informe68](68-cierre-integracion-d1-d2.md) registra dos bloqueos reproducibles: fuga de grupo mediante prototipo de controles y callbacks de encrucijadas accesibles a la vista. Se corregirán con TDD y commits separados, sin cambios de reglas. **Tarea activa única:** cerrar esos bloqueos y ejecutar compuertas antes de dictamen. Las validaciones del informe67 siguen como historia del SHA anterior, no aprobación de esta auditoría.
+Encargo nuevo: cierre focalizado, preparar informe y descripción de PR hacia main **sin abrirlo/fusionarlo**. No arquitectura singleplayer adicional. Base limpiaee73d29, main remoto0b75d01 confirmado. [Informe68](68-cierre-integracion-d1-d2.md) registra dos bloqueos reproducibles: fuga de grupo mediante prototipo de controles y callbacks de encrucijadas accesibles a la vista. Corregidos con TDD: B1 en837e5ce yB2 en el commit siguiente;465/465 locales. Se conservan efectos y estrategia; faltan compuertas integrales yCI exacto. **Tarea activa única:** cerrar esos bloqueos y ejecutar compuertas antes de dictamen. Las validaciones del informe67 siguen como historia del SHA anterior, no aprobación de esta auditoría.
 
 
 ## D1/D2 — implementación técnica verificada, pendiente de revisión humana · 29/10/2026
