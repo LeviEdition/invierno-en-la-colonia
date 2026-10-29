@@ -593,3 +593,7 @@ Autorización ampliada del creador para completar D1 y D2. [Informe67](67-d1-d2-
 **Entrega técnica D1/D2:**34a6274 subido; Actions40877102864 y40877102629 success. Artifacts descargados,462/462 candidato,451/451 histórico,40/40 iguales,5QA+5producto,3C16/3viewports producto/6contratos/6tamaños táctiles,4file offline. Hashes de producto/QA y15módulos cotejados. [Informe67](67-d1-d2-arquitectura.md) y[evidencia](evidencias/d1d2-ci.json) contienen límites, fallos corregidos, commits y rollback. Recomendación única: revisión humana antes de integración/preservación. No reglas/features ni cambios de main.
 
 **Revisión final del diff completo:** se normalizaron cuatro espacios finales heredados del renderer extraído. check:build confirmó HTML/JS idéntico byte a byte; evidencia34a6274 conservada con aclaración de hash fuente. No se alteraron reglas ni aserciones; CI se verifica nuevamente en el SHA de entrega.
+
+## 29/10/2026 — auditoría de integración D1/D2, sin nuevas mecánicas
+
+Encargo focalizado desdeee73d29, main0b75d01 verificada. Informe68: dos bloqueos reproducibles en capacidades de vista (prototipo de controles y callbacks de cartas). B1 corregido con fachada de consultas, prueba roja→verde,463/463; B2 ycompuertas finales pendientes. No PR abierto/fusionado, no referencia oficial ni singleplayer.

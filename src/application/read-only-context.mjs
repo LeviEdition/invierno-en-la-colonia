@@ -21,7 +21,12 @@ export function readOnlyContext(context){
    getOwnPropertyDescriptor(target,key){const descriptor=Reflect.getOwnPropertyDescriptor(target,key);if(descriptor&&'value' in descriptor)return {...descriptor,value:wrap(descriptor.value)};return descriptor;},
   });cache.set(value,proxy);return proxy;
  };
- let catalogView;
+ let catalogView,controlsView;
+ const controlsFor=value=>controlsView??=Object.freeze({
+  get side(){return value.side;},get local(){return value.local;},get interactive(){return value.interactive;},
+  group:(...args)=>wrap(value.group(...args)),hand:(...args)=>wrap(value.hand(...args)),dice:(...args)=>wrap(value.dice(...args)),
+  display:(...args)=>value.display(...args),
+ });
  const queries=new Set(['all','alive','person','ownerGroup','groupLeader','equipmentOf','crossActor','ownerHand','ownerGroupHand','currentHand','actionDice']);
- return new Proxy(context,{get(target,key){const value=Reflect.get(target,key);if(key==='catalog'){catalogView??=Object.freeze({get definitions(){return wrap(value.definitions);},resolve:(...args)=>wrap(value.resolve(...args)),label:(...args)=>value.label(...args),legend:(...args)=>wrap(value.legend(...args))});return catalogView;}return typeof value==='function'?(queries.has(key)?(...args)=>wrap(value(...args)):value):wrap(value);},set:deny,defineProperty:deny,deleteProperty:deny});
+ return new Proxy(context,{get(target,key){const value=Reflect.get(target,key);if(key==='controls')return controlsFor(value);if(key==='catalog'){catalogView??=Object.freeze({get definitions(){return wrap(value.definitions);},resolve:(...args)=>wrap(value.resolve(...args)),label:(...args)=>value.label(...args),legend:(...args)=>wrap(value.legend(...args))});return catalogView;}return typeof value==='function'?(queries.has(key)?(...args)=>wrap(value(...args)):value):wrap(value);},set:deny,defineProperty:deny,deleteProperty:deny});
 }

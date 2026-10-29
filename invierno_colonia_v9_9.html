@@ -588,10 +588,24 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         }
       });
       return cache.set(value, proxy), proxy;
-    }, catalogView, queries = /* @__PURE__ */ new Set(["all", "alive", "person", "ownerGroup", "groupLeader", "equipmentOf", "crossActor", "ownerHand", "ownerGroupHand", "currentHand", "actionDice"]);
+    }, catalogView, controlsView, controlsFor = (value) => controlsView ??= Object.freeze({
+      get side() {
+        return value.side;
+      },
+      get local() {
+        return value.local;
+      },
+      get interactive() {
+        return value.interactive;
+      },
+      group: (...args) => wrap(value.group(...args)),
+      hand: (...args) => wrap(value.hand(...args)),
+      dice: (...args) => wrap(value.dice(...args)),
+      display: (...args) => value.display(...args)
+    }), queries = /* @__PURE__ */ new Set(["all", "alive", "person", "ownerGroup", "groupLeader", "equipmentOf", "crossActor", "ownerHand", "ownerGroupHand", "currentHand", "actionDice"]);
     return new Proxy(context, { get(target, key) {
       let value = Reflect.get(target, key);
-      return key === "catalog" ? (catalogView ??= Object.freeze({ get definitions() {
+      return key === "controls" ? controlsFor(value) : key === "catalog" ? (catalogView ??= Object.freeze({ get definitions() {
         return wrap(value.definitions);
       }, resolve: (...args) => wrap(value.resolve(...args)), label: (...args) => value.label(...args), legend: (...args) => wrap(value.legend(...args)) }), catalogView) : typeof value == "function" ? queries.has(key) ? (...args) => wrap(value(...args)) : value : wrap(value);
     }, set: deny, defineProperty: deny, deleteProperty: deny });

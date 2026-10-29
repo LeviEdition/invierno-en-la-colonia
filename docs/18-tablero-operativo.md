@@ -1,5 +1,10 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## Auditoría final de integración D1/D2 en curso ·29/10/2026
+
+Encargo nuevo: cierre focalizado, preparar informe y descripción de PR hacia main **sin abrirlo/fusionarlo**. No arquitectura singleplayer adicional. Base limpiaee73d29, main remoto0b75d01 confirmado. [Informe68](68-cierre-integracion-d1-d2.md) registra dos bloqueos reproducibles: fuga de grupo mediante prototipo de controles y callbacks de encrucijadas accesibles a la vista. Se corregirán con TDD y commits separados, sin cambios de reglas. **Tarea activa única:** cerrar esos bloqueos y ejecutar compuertas antes de dictamen. Las validaciones del informe67 siguen como historia del SHA anterior, no aprobación de esta auditoría.
+
+
 ## D1/D2 — implementación técnica verificada, pendiente de revisión humana · 29/10/2026
 
 **Autorización vigente:** «Avanza todo incluso d2, manteniendo las reglas de alcance y de autorización». Rama `refactor/d1-d2-arquitectura`, desde57872ee. Commits151be08 y34a6274; documentación posterior conserva código. main remoto0b75d01 yD1ba9a423 intactas; PR14 ya fusionado históricamente. No nuevas fusiones, cierres de issues, tags/releases, singleplayer, SP-02 o narrativa.
