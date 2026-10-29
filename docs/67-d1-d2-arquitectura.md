@@ -1,5 +1,8 @@
 # 67 — Continuación D1 y D2 (29/10/2026)
 
+**Seguimiento documental29/10:** el encargo posterior autoriza reconciliar el diseño SP-03 y abrir/comprobar el PR hacia main, sin fusionarlo. Este informe conserva los hechos, SHA y resultados de su cierre histórico; las frases «PR no abierto» o «esperar autorización de apertura» describen ese momento. Estado actual en [tablero18](18-tablero-operativo.md), [documento69](69-pr-propuesto-d1-d2.md) e [informe70](70-reconciliacion-documental-y-pr-d1-d2.md). La reconciliación no cambia el código auditado6277e62 ni sus reservas.
+
+
 ## Autorización y límites
 
 El creador indicó: «Avanza todo incluso d2, manteniendo las reglas de alcance y de autorización». Autoriza continuar las etapas técnicas después del checkpoint D1.2b. Los límites anteriores de detener cada subetapa quedan superados por esta autorización; siguen prohibidos cambios de reglas/balance, SP-02, singleplayer, narrativa, fusiones, releases y modificaciones de main. No crear una versión oficial de referencia (hito 2).

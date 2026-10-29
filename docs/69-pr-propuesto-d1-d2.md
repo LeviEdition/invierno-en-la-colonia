@@ -1,7 +1,9 @@
-# 69 — PR propuesto D1/D2 (preparado, NO abierto)
+# 69 — PR D1/D2: descripción y control de revisión
 
 Base: `main@0b75d01aba013cd029d9d0dd0bdbd20791be15fc`.
 Head: `refactor/d1-d2-arquitectura`, contenido técnico hasta`6277e62dbd8b917bac7d4c290b14096499d6b0f7`, más documentación de cierre. [Inventario exacto de commits/archivos](evidencias/d1d2-integracion-commits.json). Actualizar/revalidar si main o la rama se mueven antes de abrir.
+
+**Estado actual:** apertura autorizada por el creador en el encargo de reconciliación, condicionada a pruebas y CI aprobados. Todavía no abierto al preparar este commit; URL/checks se registrarán tras la creación. Fusión no autorizada.
 
 ## Título
 
@@ -13,7 +15,7 @@ La V9.9 de main concentra reglas, estado, interfaz y automatismos en un script d
 
 La auditoría final corrigió tres defectos de encapsulación/ciclo de vida: acceso a grupos mutables mediante el prototipo de controles, callbacks de encrucijadas ejecutables desde la vista ylisteners residuales tras construcción fallida. Cada defecto tiene prueba que fallaba antes ycommit independiente. La vista consulta datos sin callbacks; los efectos de las cartas siguen en el motor.
 
-Incluye caracterización D1.0/D1.1, experimentos y evidencias históricas, además de documentación de planificación anterior de SP-02. Esos documentos se conservan como historia: **este PR no implementa singleplayer, Director narrativo ni reglas nuevas**. El diff completo contra main es más amplio que los cinco commits finales de auditoría.
+Incluye caracterización D1.0/D1.1, experimentos y evidencias históricas, además de la planificación histórica SP-02 y la reconciliación SP-03 desde refactor/d1-catalogo@833eae7. Se distinguen acuerdos conceptuales (base V9.9, tres categorías, campaña reactiva y cronología de encrucijadas) de propuestas pendientes (ciclo completo, Encuentros reutilizables y contingencias por muerte). Se preservan los informes técnicos y los registros de diseño: **este PR no implementa singleplayer, Director narrativo ni reglas nuevas**. El diff completo contra main incluye D1/D2, las correcciones de auditoría y documentación reconciliada; el inventario original citado arriba corresponde al corte técnico6277e62, no enumera los commits documentales posteriores. [Informe70 y procedencia](70-reconciliacion-documental-y-pr-d1-d2.md).
 
 ### Validación
 
@@ -28,7 +30,7 @@ Incluye caracterización D1.0/D1.1, experimentos y evidencias históricas, adem�
 
 Las40 configuraciones yrecorridos no prueban todos los estados posibles. Persiste el esquema V9.9 de dos grupos yun contexto interno de compatibilidad amplio. VM yacceso interno solo en harness QA; el producto no publica estado/funciones del juego ni incluye eval/with/instrumentación. Android físico, TalkBack yotros navegadores no se validaron. No es una certificación universal de accesibilidad ni un motor singleplayer terminado.
 
-La comparación de integración parte de main0b75d01, ancestro de la entrega. Si main avanza, actualizar la comparación yvolver a validar el resultado antes de integrar. El workflow completo se prepara para PR/main; sus eventos de PR no se han ejecutado porque **no se abrió este PR**.
+La comparación de integración parte de main0b75d01, ancestro de la entrega. Si main avanza, actualizar la comparación yvolver a validar el resultado antes de integrar. El workflow completo contempla push de la rama, PR y main. Primero se verificará el SHA reconciliado por push; después de abrir se comprobarán también los checks del PR y su posibilidad de integración. No equivale a validar un merge futuro ejecutado.
 
 ### Reversión propuesta
 
@@ -38,4 +40,4 @@ El cambio integrado puede revertirse con un commit en una rama de corrección: `
 
 Restaurar exactamente main0b75d01 también retira el toolchain/lockfile nuevos: esa referencia ejecuta `npm test` directamente yusa su HTML/script histórico; **no exigir npm ci/check:build de D1 a una revisión anterior que no los tiene**. Validar con las pruebas yrecorridos propios de la referencia restaurada. Si hay cambios posteriores dependientes, analizar sus conflictos antes del revert; no reset destructivo ni force-push.
 
-La preparación no crea tags/releases ni preserva todavía una versión oficial. La revisión del informe/diff precede a cualquier autorización de abrir o fusionar este PR.
+La preparación no crea tags/releases ni preserva todavía una versión oficial. El creador autorizó abrir el PR tras esta reconciliación y sus compuertas; la aprobación final y el merge siguen pendientes de otra revisión independiente. No se fusionará automáticamente.

@@ -607,3 +607,7 @@ Encargo focalizado desdeee73d29, main0b75d01 verificada. Informe68: dos bloqueos
 **Validación ampliada:** Actions40883942064 rojo por invocar recorrido C15 que esperaba fuga de foco ya corregida por C16; engine/regresiones verdes. Se preserva script histórico yse incorpora recorrido terminal vigente con finales equivalentes, foco aislado ycomando directo bloqueado durante muerte:6/6 local. No se modifica ninguna regla para obtener verde; pendiente CI del ajuste.
 
 **Cierre de auditoría:**6277e62, CI40884309357 y40884309718 success;467/467,40/40 histórico y40/40 main,5QA+5producto ytodos los recorridos vigentes/offline. Artifacts descargados y15hashes/HTML cotejados. Informes68/69 yevidencia registran3 bloqueos corregidos, reservas yPR preparado sin abrir. Se recomienda integrar conservando historia del oráculo57872ee; squash/rebase sin preservarlo no aprobado técnicamente. main0b75d01 intacta; detención para revisión humana.
+
+## 29/10/2026 — reconciliación documental y apertura autorizada de PR D1/D2
+
+Nuevo encargo desde8e3e7d3: integrar únicamente novedades documentales de refactor/d1-catalogo@833eae7 (14 commits,18/63), con base comúnba9a423. Patch selectivo ybloques de diseño preservan registros técnicos. Acuerdos ypropuestas diferenciados; cronología sin cancelación retroactiva prevalece sobre formulaciones tempranas. Informes67/68 históricos conservados,69 actualizado einforme70 registra alcance/procedencia. No se modifica código ni mecánicas. Validación ycreación de PR pendientes de compuertas; merge no autorizado.

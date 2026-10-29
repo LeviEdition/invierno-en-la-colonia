@@ -1,5 +1,8 @@
 # 68 — Auditoría final de integración D1/D2
 
+**Seguimiento documental29/10:** el encargo posterior autoriza reconciliar el diseño SP-03 y abrir/comprobar el PR hacia main, sin fusionarlo. Este informe conserva los hechos, SHA y resultados de su cierre histórico; las frases «PR no abierto» o «esperar autorización de apertura» describen ese momento. Estado actual en [tablero18](18-tablero-operativo.md), [documento69](69-pr-propuesto-d1-d2.md) e [informe70](70-reconciliacion-documental-y-pr-d1-d2.md). La reconciliación no cambia el código auditado6277e62 ni sus reservas.
+
+
 **Dictamen final:** sí, D1/D2 es suficientemente modular, estable y comprobable para integrar y después preservar V9.9 como referencia, **tras corregir B1/B2/B3 y conservar la historia del oráculo al integrar**. Recomiendo aprobar la integración propuesta después de revisión humana; no ampliar arquitectura para singleplayer en esta etapa. No se abrió ni fusionó PR.
 
 **Código técnico auditado:**6277e62dbd8b917bac7d4c290b14096499d6b0f7. CI completo aprobado yartifacts descargados/cotejados. La entrega posterior agrega únicamente este informe, evidencia ytexto de PR.

@@ -1,5 +1,16 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## Reconciliación documental y apertura autorizada del PR D1/D2 ·29/10/2026
+
+**Encargo vigente:** incorporar novedades documentales SP-03 desde `refactor/d1-catalogo`, validar y abrir PR de `refactor/d1-d2-arquitectura` hacia main. **Apertura autorizada; fusión NO autorizada.** Base técnica8e3e7d3 ymain0b75d01 confirmadas; fuente de diseño833eae7, base comúnba9a423. Solo se trasladan hunks de63 ybloques nuevos de18: no se fusiona la rama de diseño ni se cambia código.
+
+[Informe70](70-reconciliacion-documental-y-pr-d1-d2.md) registra procedencia, aclaraciones y resultados. Acuerdos: base V9.9, tres categorías narrativas, campaña reactiva yencrucijadas condicionadas máximo una con causalidad cronológica. Ciclo completo, historias reutilizables, contingencias por muerte yprioridades de Encuentros siguen como propuestas/preguntas. Los registros técnicos67/68 yla evidencia anterior se conservan.
+
+**Resultado local:** npm ci/check:build y467/467 aprobados; producto y código idénticos al corte auditado. Pendiente CI exacto de la reconciliación.
+
+**Tarea activa única:** completar validación de la rama reconciliada y abrir/comprobar el PR si aprueba. No fusionar, tags/releases ni implementación singleplayer. Tras la apertura, detenerse para revisión final independiente.
+
+
 ## Cierre técnico D1/D2 — auditoría aprobada, integración pendiente de autorización ·29/10/2026
 
 Encargo focalizado desdeee73d29, main remoto0b75d01 sin cambios. **Dictamen:** referencia suficientemente modular/estable tras corregir3 bloqueos: controles por prototipo837e5ce, callbacks en vista5757a3c ylisteners de montaje fallidoee4b08e. No ampliar arquitectura singleplayer. [Informe68](68-cierre-integracion-d1-d2.md), [PR propuesto69](69-pr-propuesto-d1-d2.md) y[evidencia](evidencias/d1d2-cierre-integracion-ci.json).
@@ -38,6 +49,64 @@ Encargo focalizado desdeee73d29, main remoto0b75d01 sin cambios. **Dictamen:** r
 **Resultado local y revisión del experimento:** referencia433/433 inicial y439/439 con6 tests nuevos; candidato438/439, una aserción literal `class ItemCatalog` incompatible con salida del bundler. **No eliminada ni debilitada; adopción no aprobada.**40/40 configuraciones reales comparadas idénticas salvo hashes de fuente,5/5 partidas UI antes/después y3/3 viewports por variante. File local bloqueado por política de Chromium en ambas versiones; **CI4/4 aperturas aprobadas**, red desactivada. Lockfile nuevo permite npm ci. Motor/plantilla/catálogo/HTML/build de referencia intactos.
 
 [Informe65](65-d1-2a-experimento-esbuild.md) contiene diff lógico, evidencia, riesgos, comparación y rollback. Recomendación **ajustar**, no adoptar. Implementación181903c: CI40859658496 referencia success439/439; CI40859658678 experimento failure por el único fallo de formato, browser success5UI/3viewports/4file. Artifacts cotejados con local; no declarar CI global verde. Checkpoint/prueba diagnóstica final se verifican por su SHA al entregar. **Tarea activa única:** revisión del informe/diff por el creador/ChatGPT; Codex se detiene. Prohibido avanzar D1.2b/c/d o D2 automáticamente.
+
+
+## Reconciliación de los registros de diseño SP-03
+
+Los bloques siguientes provienen de `refactor/d1-catalogo@833eae7`, escritos en orden cronológico inverso. Se conservan sus preguntas y propuestas como historia. **Prevalece la precisión cronológica de tres categorías**, posterior a la propuesta de retener candidatas hasta el cierre: no hay cancelación retroactiva. La sección63 «Estado reconciliado» distingue acuerdos de propuestas. Las menciones a D1/D2 «en curso» describen el momento de redacción; el cierre técnico y la tarea vigente están arriba.
+
+## SP-03 — Contingencia de muerte en historias secundarias reutilizables · 29/10/2026
+
+**CUESTIÓN ABIERTA PLANTEADA POR EL CREADOR:** la protagonista de un Encuentro/plantilla narrativa (p. ej., «Mara busca a su hermano») **puede morir una ronda después de iniciado**. El Director debe conservar la historia real sin inmortalidad, sin escenas con difuntos ni transferencia arbitraria de parentesco o motivaciones. [Evaluación y propuestas en 63 §6.2D](63-hoja-de-ruta-planificacion-singleplayer.md).
+
+**PROPUESTA CRÍTICA, NO APROBADA:** en caso de muerte, reevaluar si el arco se **cierra inconcluso**, **continúa opcionalmente con otro personaje que conocía la pista**, **se transforma** por consecuencias de NPCs/hechos persistentes, o **queda en pausa** hasta condiciones coherentes. Distinguir información que conoce el jugador de información que el líder y otros supervivientes realmente conocen. Mantener historia, familia, testigos, decisiones y agenda; no borrar ni reasignar silenciosamente los vínculos. Para evitar explosión de escritura: cada historia reutilizable requiere como mínimo un **cierre coherente tras muerte**, y solo algunas necesitan continuación; la campaña principal mantiene alternativas para evitar softlocks.
+
+**ÚNICA SIGUIENTE DECISIÓN DE DISEÑO:** confirmar o ajustar el criterio de mortalidad/continuidad de Encuentros (cierre posible; continuación solo sustentada por hechos y conocimiento) y después concretar un arco piloto con dos o tres escenas y muerte en distintos momentos. **Sin código, sin cambios mecánicos de V9.9 ni interferencias con D1/D2 o main.**
+
+
+## SP-03 — Propuesta de Encuentros con historias reutilizables por personaje · 29/10/2026
+
+**PROPUESTA DEL CREADOR, en evaluación crítica:** no escribir un arco exclusivo por cada superviviente; diseñar **plantillas de historias secundarias** que puedan asignarse dinámicamente a un superviviente **elegible** de los que controla el jugador. Ejemplo «familiar desaparecido en una localidad»: Mara, Iris o Damián podrían protagonizar la misma estructura narrativa **siempre que su biografía y hechos previos sean compatibles**. Un arco ya comenzado queda **vinculado a su personaje y sus NPCs concretos**; no reasignarlo sin justificación tras una muerte. La agencia del líder decide qué recursos/acciones dedicar. La personalización de tono, motivación y consecuencias debe impedir que todos parezcan nombres intercambiables.
+
+**REVISIÓN CRÍTICA:** la reutilización ahorra escritura pero puede generar contradicciones familiares, repetición de historias, personajes indistintos y bloqueos por muerte. Antes de aprobar, prototipar **una plantilla** y contrastar sus escenas con varios protagonistas, pérdida de actor, decisiones rechazadas, relaciones y consecuencias mecánicas. **No se han aprobado** asignación aleatoria, biografías nuevas, tasa de encuentros, esquema técnico, rasgos ni reglas de persistencia concretas. [Ver 63 §6.2C](63-hoja-de-ruta-planificacion-singleplayer.md).
+
+**SIGUIENTE TAREA DE DISEÑO:** confirmar o refinar la filosofía de Encuentros compartidos **con protagonista persistente y elegibilidad**; luego detallar disparadores/ritmo y prioridad de los tres sistemas narrativos. **V9.9/main/D1/D2 sin modificación por este registro.**
+
+
+## SP-03 — Tres clases narrativas + regla de prioridad temporal · 29/10/2026
+
+**ACUERDO DEL CREADOR (diseño conceptual):** organizar la narrativa en **Encrucijadas** (dilemas menores de convivencia y recursos; dar vida al mundo), **Encuentros** (desarrollo y carácter de supervivientes, relaciones y conflictos, con posibles efectos persistentes) e **Historia principal** (acontecimientos reactivos vinculados a la campaña/objetivo y sus requisitos de victoria). **Clasificar por función narrativa y no por gravedad exacta**. La presencia de personajes de la secta en un evento del hospital pertenece a la **Historia principal** aunque el jugador todavía no conozca su identidad; no forzar acontecimientos importantes cada ronda. Ver [63 §6.2B](63-hoja-de-ruta-planificacion-singleplayer.md).
+
+**PRECISIÓN CRONOLÓGICA, prevalece sobre anteriores ideas de aplazar encrucijadas:** encrucijadas condicionadas, **máximo una por ronda**; **si ocurre una antes que un evento importante de historia principal, pueden suceder ambos en esa jornada**; **si ya ocurrió un evento principal, no activar una encrucijada nueva ese mismo día**. No cancelar ni revertir una decisión ya realizada. Encrucijada y evento principal no son cuotas obligatorias; los encuentros tienen frecuencia y reglas propias **pendientes de acuerdo**.
+
+**OBSERVACIONES CRÍTICAS EN ANÁLISIS:** distinguir función editorial de impacto, duración, prioridad y obligatoriedad; no crear encuentros que sean solo encrucijadas largas con `moral +1`; campaña puede avanzar por complicaciones sin aumentar contador de muestras; algunas escenas pueden informar sin exigir decisión. **ÚNICA SIGUIENTE TAREA DE DISEÑO:** definir disparadores y prioridades de **Encuentros** cuando coinciden con Encrucijadas o Historia principal, luego simular distintas cronologías de una ronda. No se autoriza código; D1/D2 y main no cambian por esta documentación.
+
+
+## SP-03 — Campaña activada por acciones + encrucijadas cotidianas · 29/10/2026
+
+**ACLARACIÓN EXPRESA DEL CREADOR, ACUERDO CONCEPTUAL:** la partida inicia con una campaña/objetivo; el Director no debe forzar un gran evento narrativo cada ronda. **Los eventos de la campaña reaccionan a decisiones, lugares y hechos verificados**, y las pistas pueden sugerir destinos sin obligar al jugador. Ejemplo ilustrativo: en «Encontrar la cura», el rumor de desconocidos en hospital anticipa un **primer contacto al llegar allí por primera vez** con personas que pertenecen a la secta rival sin que el jugador lo sepa todavía; la decisión registrada condiciona escenas futuras. No convertir el ejemplo en guion canónico ni bloquear la victoria por no visitar el hospital: diseñar alternativas/contingencias.
+
+**SEGUNDO FLUJO — DECISIÓN ACORDADA 29/10/2026:** conservar encrucijadas de V9.9 (nombre por revisar) como decisiones cotidianas breves, **flexibles y condicionadas**. **Máximo una por ronda, solo si se cumple una condición**; **si esa ronda se activó un evento importante de campaña, desactivar la encrucijada cotidiana de esa jornada**. No existe obligación de generar contenido narrativo cada ronda. Un evento menor puede tener consecuencias acumulativas o abrir secundarias sin forzar la trama principal. Véase [63 §6.2A](63-hoja-de-ruta-planificacion-singleplayer.md).
+
+**ÚNICA SIGUIENTE MICRODECISIÓN DE DISEÑO:** definir **cuándo comprobar y presentar las encrucijadas candidatas** para que un evento importante que se dispara más tarde en la misma ronda también suprima la cotidiana, y si se reevalúa en rondas posteriores una condición que siguió vigente. **Propuesta no aprobada:** reunir candidatas condicionadas durante las acciones y resolver si se muestra una al cierre de la fase, después de conocer si hubo escena principal. Falta delimitar qué cuenta como «evento importante». No se programó nada; D1/D2, referencia V9.9 y main sin cambios por esta decisión.
+
+
+## SP-03 — Borrador de ciclo de ronda singleplayer · 29/10/2026
+
+**Diseño EN DISCUSIÓN, no aprobado:** estructura lógica A apertura de crisis/estado → B acciones libres del líder y reserva de dados del grupo (V9.9 de base) → C encuentros del Director **intercalados por disparadores válidos** → D única resolución de colonia → E resumen y persistencia de hechos/agenda. El Director no es J2 y no debe existir pase obligatorio a un segundo equipo ni duplicar la resolución. [Ficha SP-03 sección 6](63-hoja-de-ruta-planificacion-singleplayer.md).
+
+**Microdecisión siguiente de DISEÑO:** cómo sincronizar historia y estrategia: R1 escenas solo apertura/cierre, R2 escenas inmediatas ante todo disparador, o R3 **modelo híbrido contextual recomendado para valorar**, con encuentros urgentes cuando suceden y otras consecuencias diferibles agendadas; evitar escenas forzadas en todas las rondas. Aún no se autorizó ningún modelo.
+
+**Riesgos y pruebas pendientes:** muerte del actor/líder durante la ronda, qué ocurre con dados restantes, prioridad de decisiones y terminales, escenas invalidadas por muerte, uso de un solo equipo, alimentación/crisis/zombis, ritmo móvil, relato diferido sin aleatoriedad obligatoria. SP-04 será responsable del balance y acceso a reclutamiento, no se decide aquí. **Sin cambios de implementación, branch de producto, motor V9.9 o main; D1/D2 continúan por separado.**
+
+
+## SP — Decisión de alcance y balance singleplayer · 29/10/2026
+
+**APROBADO EN DISEÑO por el creador:** primer juego propio singleplayer con **mecánicas/dados esencialmente basados en V9.9**; la investigación alternativa de pool/híbrido y estadísticas nuevas se **aplaza**, no se implementa ni se elimina de la documentación. Enfoque creativo: líder encarnado, Director de Juego, tramas y consecuencias persistentes. **No se aprueba todavía un balance final ni se modifican F-10/F-12/F-15 automáticamente**; revisar posteriormente su pertinencia en la matriz F.
+
+**Advertencia explícita del creador:** al arrancar con tres supervivientes, morir uno resulta especialmente grave y quizá requiera **mayor acceso a nuevos supervivientes**. La fórmula V9.9 de **1 + supervivientes vivos** pasaría de **cuatro a tres dados** tras la primera baja, además de perder habilidades y cobertura espacial. Deben evaluarse espiral de derrota, encuentros/reclutamientos accesibles pero con costos y consecuencias, grupos de uno o dos, lesiones, sucesión, alimentación, crisis, zombis, exposición, objetivos y el posible desequilibrio opuesto por reclutar en exceso. **Ninguna tasa de reclutamiento ni regla compensatoria está aprobada**.
+
+**Próximo paso único de DISEÑO:** **SP-03**, describir ronda de líder singleplayer con V9.9 como base; coordinar con **SP-04** escenarios de muerte/reclutamiento y balance de uno a tres supervivientes. Documento de decisiones: [63, sección 5K](63-hoja-de-ruta-planificacion-singleplayer.md). **Trabajo técnico D1/D2 separado**: no alterar reglas, motor, main, pruebas o ramas de producto por este registro; Codex continúa su cierre bajo sus autorizaciones vigentes.
 
 
 ## Cierre de jornada — bitácora 28/10/2026 y próximo SP-02 · 28/10/2026

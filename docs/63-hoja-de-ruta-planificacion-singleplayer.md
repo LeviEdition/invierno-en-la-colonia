@@ -1,5 +1,23 @@
 # 63 — Hoja de ruta de planificación: modo singleplayer de Invierno en la Colonia
 
+## Estado reconciliado al 29/10/2026
+
+Se incorporaron **los hunks documentales**, no una fusión de ramas, desde `refactor/d1-catalogo@833eae745479509ec8121707e9df452c1a5e85bc`, respecto de la base común `ba9a4238d22ad968edbe74d0445949f9a631ec70`. Se conservaron la investigación previa y los registros técnicos de la rama D1/D2. [Informe de reconciliación70](70-reconciliacion-documental-y-pr-d1-d2.md).
+
+| Tema | Estado vigente de DISEÑO |
+| --- | --- |
+| Primera versión propia con mecánicas V9.9 como base | **Alcance acordado**, §5K; balance singleplayer, reclutamiento y fórmulas finales pendientes. Investigación pool/híbrido aplazada, conservada como historia. |
+| Ciclo de ronda A → B con interrupciones C → D → E | **Propuesta**, §6.1; SP-03 no cerrado. No es un nuevo flujo implementado. |
+| Encrucijadas, Encuentros e Historia principal | **Tres categorías acordadas por función narrativa**, §6.2B. |
+| Eventos principales por acciones y condiciones reales | **Acuerdo conceptual**, §6.2A/B; no hay gran evento obligatorio por ronda. |
+| Encrucijadas flexibles y cronología | **Acuerdo**: condicionadas, máximo una por ronda. Encrucijada primero → puede suceder después el principal; principal primero → no generar nuevas encrucijadas ese día. Sin cancelación retroactiva. La precisión de §6.2B prevalece sobre fórmulas anteriores. |
+| Encuentros como historias reutilizables con protagonista compatible y persistente | **Propuesta del creador en evaluación**, §6.2C; no están aprobadas asignación, frecuencia, personalización ni esquema técnico. |
+| Muerte del protagonista: cierre, continuación justificada, transformación o pausa | **Alternativas propuestas, pendientes de aprobación**, §6.2D. No se aprobó política universal ni transferencia automática de biografía/parentesco. |
+| Prioridades de Encuentros, calendario de candidatas y balance de grupo único | **Pendientes**, §6.2B–6.5/SP-04. |
+
+**Límite de esta reconciliación:** ninguna propuesta autoriza código singleplayer ni modifica mecánicas, IA o narrativa jugable de V9.9. D1/D2 ya tienen cierre técnico auditado; la tarea técnica vigente es reconciliar documentación y abrir el PR hacia main si sus comprobaciones aprueban. El estado operativo actual está en el [tablero18](18-tablero-operativo.md); las prioridades antiguas se conservan como registros fechados.
+
+
 **Creada:** 28/10/2026. **Estado:** planificación y diseño conceptual; **NO autoriza programación ni cambios de reglas**. Este documento será el **índice vivo de decisiones y pendientes del modo singleplayer**. El [tablero 18](18-tablero-operativo.md) conserva la autoridad sobre el **próximo trabajo técnico**, las autorizaciones y el estado de D1/D2.
 
 ## 1. Contexto, objetivo y límites
@@ -8,7 +26,7 @@
 
 **Separación obligatoria de líneas de trabajo:**
 
-- **Referencia V9.9:** fidelidad mecánica **aceptada para nuestro alcance** y diferencias documentadas en [informe 49](49-c15-auditoria-final.md#comparación-con-dead-of-winter). Falta completar **D1/D2** sin alterar su comportamiento, probar y preservar una versión identificable: [ruta oficial 62](62-hitos-referencia-fiel-y-juego-propio.md).
+- **Referencia V9.9:** fidelidad mecánica **aceptada para nuestro alcance** y diferencias documentadas en [informe 49](49-c15-auditoria-final.md#comparación-con-dead-of-winter). **D1/D2 están implementadas y auditadas**, con integración y preservación oficial pendientes de revisión/autorización; se mantiene su comportamiento: [ruta oficial 62](62-hitos-referencia-fiel-y-juego-propio.md).
 - **Diseño del singleplayer (este documento):** **sí se puede avanzar ahora, en papel**. No se aplicará a la V9.9 ni es una instrucción técnica para Codex.
 - **Implementación del juego propio:** solo **después** de D1/D2, aceptación técnica y preservación de la referencia, en una línea de desarrollo separada, con autorización y pruebas específicas.
 - **Matriz F:** las filas F-xx comparan alternativas para el **juego propio**; **no** son fallos de la V9.9 ni la etapa F del plan histórico. La planilla F externa conserva sus propios estados de decisión; este índice **la referencia, no la reemplaza**: [acta 61](61-alcance-matriz-f-juego-propio.md).
@@ -33,8 +51,8 @@ Cada decisión relevante deberá registrar: **ID SP-xx**, objetivo, comparación
 | --- | --- | --- | --- |
 | **SP-00** | Identidad, alcance y rol del Director | **ACORDADO en lo esencial** | Visión consolidada: jugador como líder; supervivencia + narrativa; Director del mundo, no segundo jugador obligatorio. Verificar coherencia con [12](12-vision-narrativa-persistente.md), [51](51-rumbo-fidelidad-e-identidad.md) y [62](62-hitos-referencia-fiel-y-juego-propio.md). |
 | **SP-01** | Preparación, equipo y liderazgo | **ACORDADO parcialmente** | F-14: cinco candidatos aleatorios → elegir tres → designar líder manualmente. Resolver incorporación/reemplazo, sucesión y autoridad del líder en casos límite. |
-| **SP-02** | **Economía de acciones, dados y atributos** | **REPARTO ACORDADO; balance y detalles PENDIENTES** | El líder elige qué dado usar y qué superviviente ejecuta cada acción según atributos, pasivas, ubicación y necesidad; diseñar roles complementarios, reserva, acciones con/sin dado, comida, muerte y balance; vincular F-10/F-12/F-15. |
-| **SP-03** | Ciclo completo de una ronda singleplayer | **PROPUESTA inicial** | Describir con ejemplos las etapas inicio/información → órdenes/acciones → encuentros → resolución de colonia → consecuencias/continuidad; decidir puntos de interrupción y finalización. |
+| **SP-02** | **Economía de acciones, dados y atributos** | **BASE V9.9 ACORDADA para primera versión; balance PENDIENTE** | El líder elige qué dado usar y qué superviviente ejecuta cada acción según atributos, pasivas, ubicación y necesidad; diseñar roles complementarios, reserva, acciones con/sin dado, comida, muerte y balance; vincular F-10/F-12/F-15. |
+| **SP-03** | Ciclo completo de una ronda singleplayer | **ACUERDOS PARCIALES; ciclo y Encuentros PENDIENTES** | Describir con ejemplos las etapas inicio/información → órdenes/acciones → encuentros → resolución de colonia → consecuencias/continuidad; decidir puntos de interrupción y finalización. |
 | **SP-04** | Presión de supervivencia con un solo grupo | **PENDIENTE** | Ajustar y comparar crisis, comida/hambre, residuos, zombis, moral, botín y crecimiento de la colonia **sin asumir que todo se divide entre dos**. |
 | **SP-05** | Director de Juego y memoria del mundo | **Visión ACORDADA; reglas PENDIENTES** | Contratos de eventos, límites del Director, cuándo interviene, frecuencia, hechos persistentes, facciones, promesas y consecuencias diferidas/contingencias. |
 | **SP-06** | Campañas, progresión y condiciones de victoria | **Principios ACORDADOS; pilotos parciales** | Mantener carta/objetivo inicial como compromiso de victoria; unir trama principal y recursos; definir primer arco jugable y epílogos basados en hechos. |
@@ -60,7 +78,7 @@ Cada decisión relevante deberá registrar: **ID SP-xx**, objetivo, comparación
 
 **Importante:** los IDs SP-xx son **bloques de planificación**; los IDs F-xx son **filas de la matriz de diseño propio**. No reemplazar ni dar por cerrada la planilla F externa. Las reglas F-10/F-12/F-15 aparecen aquí según acuerdos previos y deberán cotejarse con la versión actual de esa planilla antes de especificarlas para programación.
 
-## 5. Próximo trabajo de diseño: SP-02 — decisiones por resolver
+## 5. Registro SP-02 — preguntas de diseño y balance (actualizado por §5K)
 
 La V9.9 dispone de **una reserva de grupo de `1 + supervivientes vivos` dados por ronda**, permite acciones que consumen dado y otras que no (por ejemplo, movimiento con límites). **Esto es BASE DE REFERENCIA**, no una aprobación de balance para un juego sin segundo grupo.
 
@@ -366,7 +384,7 @@ El **100 %** del híbrido surge porque Damián mata un zombi por orden sin riesg
 
 **Próxima prueba requerida:** comparar la misma defensa durante 2–3 rondas entre (A) determinista sin exposición, (B) determinista + exposición V9.9, (C) determinista + exposición contextual mitigada por cobertura/equipo y (D) combate por pool. **Medir por separado** zombis eliminados, acciones gastadas, daños, mordeduras, muertes, presión de oleadas, recursos consumidos y misión completada. Conservar preparativos/equipo constantes y definir quién cuenta como protegido. **No hay porcentajes de nuevas simulaciones en esta entrada**.
 
-## 5J. Replanteo del alcance para el primer videojuego: priorizar identidad narrativa (28/10/2026) — RECOMENDACIÓN / REFLEXIÓN, NO DECISIÓN FORMAL
+## 5J. Replanteo del alcance para el primer videojuego: priorizar identidad narrativa (28/10/2026) — REGISTRO HISTÓRICO, actualizado por §5K
 
 **Reflexión del creador:** dado que *Invierno en la Colonia* es su primer videojuego, sumar un motor alternativo de acciones, estadísticas y pruebas por dados a un Director de Juego y narrativa persistente quizá aumente excesivamente la complejidad. Considera **concentrarse en narrativa** y **conservar las mecánicas de V9.9** como base. Lo expresó de modo tentativo; **NO interpretar como una orden irrevocable de descartar las alternativas M2/híbrida** ni como autorización para programar.
 
@@ -376,17 +394,177 @@ El **100 %** del híbrido surge porque Damián mata un zombi por orden sin riesg
 
 **Vertical slice propuesta, no aprobada:** un objetivo/campaña breve, grupo inicial 3 de 5 y líder elegido, un par de encrucijadas con consecuencias diferidas que modifican eventos/recursos/relaciones en rondas posteriores, epílogo dependiente de decisiones. Director con **estado verificable y reglas** para las consecuencias; no depender de improvisación libre que altere la legalidad del juego. Reusar ataque/búsqueda/exposición/acciones de V9.9 salvo necesidad concreta demostrada.
 
-**Próxima decisión de alcance:** confirmar si el creador quiere **congelar explícitamente SP-02 (mecánicas nuevas) como backlog** y trasladar el foco del juego propio a SP-03/SP-05/SP-06 (ronda singleplayer, Director de Juego, narrativa persistente/campaña), mientras D1/D2 sigue por su vía técnica. Hasta la confirmación, **la nueva dirección es recomendación**, no compromiso definitivo. **No tocar código ni `main`.**
+**Registro del 28/10, posteriormente actualizado por la decisión explícita de §5K:** confirmar si el creador quiere **congelar explícitamente SP-02 (mecánicas nuevas) como backlog** y trasladar el foco del juego propio a SP-03/SP-05/SP-06 (ronda singleplayer, Director de Juego, narrativa persistente/campaña), mientras D1/D2 sigue por su vía técnica. Hasta la confirmación, **la nueva dirección es recomendación**, no compromiso definitivo. **No tocar código ni `main`.**
 
-## 6. Diseño de ronda provisional para SP-03 (no aprobado)
+## 5K. Alcance aprobado para el primer singleplayer y necesidad de balance (29/10/2026)
 
-1. **Apertura:** presentación de crisis, recursos, peligros e indicios válidos según el estado.
-2. **Órdenes del líder:** el jugador elige superviviente, ubicación, acciones y dados; resuelve reglas de riesgo sin turnos de otro grupo humano/IA obligatorios.
-3. **Encuentros:** pueden dispararse por acciones o por continuidad de historias; el Director propone eventos **permitidos por estado y condiciones**, no eventos arbitrarios.
-4. **Fin de jornada:** alimentación, basura, crisis, zombis, ruido, daños, derrota/victoria conforme a reglas que SP-04 termine de equilibrar.
-5. **Continuidad:** actualizar hechos, relaciones, promesas y escenas pendientes, mostrar resumen y preparar siguiente ronda.
+**DECISIÓN EXPLÍCITA DEL CREADOR — ACORDADO EN ALCANCE:** para la **primera versión** del videojuego propio, **mantener esencialmente las mecánicas y economía de dados de V9.9 como base**, en lugar de sustituir ahora el motor con reservas de dados por atributo, nuevas estadísticas o el híbrido contextual. **Prioridad de diferenciación:** líder encarnado, singleplayer, Director de Juego, relaciones y consecuencias narrativas persistentes. Los laboratorios M2/híbrido permanecen documentados como **investigación aplazada**, no trabajo actual ni ideas eliminadas definitivamente. Esto **no autoriza implementar nada durante D1/D2** y no declara idénticas las reglas o probabilidades finales del producto propio.
 
-**Pendiente:** orden exacto de disparadores, cuántas decisiones narrativas soporta una ronda, prioridades entre terminales y escenas, si el tiempo narrativo equivale a ronda/día, y cómo manejar animaciones y decisiones bloqueantes. No congelar este esquema hasta haber cerrado SP-02 y revisado SP-04.
+**Precisión sobre F-10/F-12/F-15:** por estar ligadas a una evolución de la mecánica, **quedan sujetas a revisión de compatibilidad y prioridad en la línea de producto propia**; no aplicarlas automáticamente ni considerarlas revocadas en la matriz F externa sin una conciliación explícita. La V9.9 de referencia no cambia.
+
+**OBSERVACIÓN DEL CREADOR — PROBLEMA REAL A RESOLVER:** con pocos supervivientes activos y sin segundo equipo, las muertes pueden crear desequilibrios graves; propuso explorar **más posibilidades de conseguir supervivientes nuevos**. Se acuerda **evaluar y balancear** este riesgo, **no** aprobar todavía una probabilidad de reclutamiento, un tamaño máximo de grupo ni una protección contra la muerte.
+
+### Riesgo de espiral de derrota
+
+Con la fórmula V9.9, **tres supervivientes vivos → cuatro dados; dos → tres; uno → dos** por ronda. La primera muerte reduce **25 % la reserva inicial de dados** y, además, elimina disponibilidad de personaje, capacidades, pasivas y cobertura espacial. El grupo más débil puede entonces buscar menos, defender peor y exponerse a nuevas pérdidas. Que se reduzca el consumo de comida al morir alguien **no garantiza** compensación suficiente.
+
+**No confundir** «más oportunidades de reclutamiento» con «reemplazo gratuito garantizado». Un rescate automático tras cada muerte trivializaría pérdidas, convertiría personas en recursos intercambiables y podría aumentar sin control la reserva de dados. El reclutamiento debe tener **costos, condiciones y consecuencias narrativas reconocibles**, y deben existir rutas accesibles incluso tras perder una especialidad indispensable.
+
+### Líneas de balance que habrá que contrastar (PROPUESTAS, NO REGLAS)
+
+1. **Acceso al reclutamiento:** oportunidades aleatorias + **vías buscables y previsibles**, como encuentros, rescate, solicitud de ayuda, pactos o vínculos; evaluar una ruta de recuperación tras bajas sin garantizarla ni imponer rescates obligatorios. Definir distinción entre población civil, supervivientes reclutados y equipo activo.
+2. **Capacidad de recuperación:** una pérdida debe doler, pero comprobar que con uno o dos supervivientes aún existe al menos una estrategia coherente para sostener la colonia y reconstruir la capacidad operativa antes del colapso. Sin inmunidad de guion.
+3. **Presión de supervivencia:** comparar comida, crisis, residuos, zombis, objetivos de campaña, rondas disponibles, exposición y heridas frente a **una sola reserva de acciones**, sin escalar todo proporcionalmente ni dividir parámetros por dos automáticamente.
+4. **Consecuencias de liderazgo y narrativa:** la muerte del líder exige sucesión donde sea posible; muerte de un personaje necesario para una misión debe activar sustitutos o rutas alternativas plausibles, no bloquear la campaña.
+5. **Curva de crecimiento:** nuevos supervivientes implican dados adicionales según la fórmula base, pero también posibles necesidades, relaciones, exposición y amenazas. Vigilar tanto la espiral descendente por muertes como la sobrepotencia por reclutar sin límite.
+
+### Experimentos de diseño necesarios
+
+Simular **2–3 rondas continuadas**, con estados de partida idénticos al comenzar cada variante: (A) tres supervivientes sanos; (B) muerte temprana de uno; (C) lesión y pérdida de especialista; (D) dos supervivientes con acceso a reclutamiento; (E) incorporación de uno o dos supervivientes. Medir **dados útiles**, comida, búsqueda, defensa, crisis, heridas/muertes, avance de campaña, frecuencia y costo de reclutar, y existencia de alternativas para recuperarse. **No cambiar simultáneamente reclutamiento, dificultad de crisis y heridas**: aislar las causas para saber qué ajuste realmente mejora la experiencia.
+
+**Próximo trabajo de diseño acordado:** cerrar el alcance conceptual de SP-02 como **«mecánica V9.9 de partida, balance singleplayer pendiente»**, y avanzar hacia **SP-03 (ciclo de ronda)** enlazándolo con **SP-04 (balance, pérdidas y reclutamiento)**. La prioridad de diseño no altera el tablero de tareas técnicas D1/D2. No hay nuevos cambios de código, tests, ni motor aprobados.
+
+## 6. SP-03 — Ciclo de una ronda singleplayer (propuesta 29/10/2026, NO APROBADA)
+
+**Contexto y base acordada:** primer singleplayer sobre **mecánica de dados y acciones de V9.9**, con **un líder elegido de tres supervivientes iniciales** que distribuye los dados de su único equipo. El Director administra mundo, eventos, facciones y memoria sin ser un segundo equipo jugador. La fórmula de referencia `1 + supervivientes vivos` daría **4 dados con 3 supervivientes**; la cantidad definitiva se valida en SP-04. **No se cambia el código ni el flujo técnico D1/D2 con este borrador**.
+
+### 6.1. Fases lógicas propuestas
+
+| Fase | Qué conoce o decide el jugador | Responsabilidad del motor y del Director | Precaución |
+| --- | --- | --- | --- |
+| **A. Apertura** | Consulta estado, crisis de la jornada, recursos, heridas, amenazas e indicios; conoce los dados disponibles; piensa prioridades | Motor crea/prepara la ronda según reglas; Director presenta mensajes e indicios **compatibles con hechos registrados**; una escena de apertura solo si corresponde | No entregar información omnisciente sobre intenciones secretas; no imponer un evento dramático en toda ronda |
+| **B. Planificación y órdenes** | Como líder, decide libremente actor, ubicación, carta, acción y dado elegible; mueve, busca, combate, aporta a crisis, utiliza habilidades | Motor valida y ejecuta acciones, exposición y efectos, conserva orden y estado; Director **observa resultados reales** y puede programar desencadenantes | No repartir dados por personaje por obligación; comprobar acciones sin dado, pausas y muerte a mitad de ronda |
+| **C. Encuentros contextuales** | Toma decisiones frente a situaciones activadas por hechos: entrar al hospital, encontrar persona, volver a colonia, etc. | Director comprueba condiciones y coherencia; registra elecciones y efectos usando reglas; puede detener momentáneamente la interfaz para decisión relevante | **No necesariamente una fase posterior a B**: se intercala durante B o en otros puntos; no lanzar un encuentro por cada acción |
+| **D. Resolución de la colonia** | Termina deliberadamente su fase de órdenes y ve consecuencias materiales del día | Motor procesa hambre, residuos, crisis, zombis, ruido, daños, victoria/derrota **en el orden probado/definido para el juego propio**; Director solo reacciona a hechos | El orden exacto heredado de V9.9 debe verificarse en motor y revisarse al pasar a grupo único; no duplicar resolución por antiguo J2 |
+| **E. Cierre y continuidad** | Lee un resumen breve de recursos, heridas, cambios, novedades relevantes y preparación de siguiente jornada | Persistir hechos, personas, relaciones, decisiones y eventos futuros; seleccionar qué consecuencia **ya vencida y válida** se muestra o se reprograma | Las promesas importantes no dependen únicamente de nuevo azar; no incluir personajes muertos; no posponer derrotas/victorias ya determinadas |
+
+**Regla de composición candidata:** A → B (con posibles C) → D → E → siguiente A. C también puede aparecer al inicio o tras D cuando su disparador es válido; no imponer un ciclo rígido A-B-C-D-E donde toda encrucijada espera al final. En la interfaz debe mostrarse con claridad que el jugador todavía está en su fase de acciones y qué órdenes le quedan.
+
+### 6.2. Comparación de ritmos narrativos (alternativas abiertas)
+
+- **R1 — Solo inicio/cierre:** pocas interrupciones, pero encuentro en hospital podría resolverse artificialmente al final del día. Desaconsejada como regla universal.
+- **R2 — Cada disparador contextual inmediatamente:** alta relación causa-efecto, pero riesgo de interrupciones sucesivas y fatiga.
+- **R3 — Híbrida contextual (dirección conceptual coherente con los acuerdos; detalles pendientes):** eventos de campaña por disparadores válidos cuando ocurren; relatos diferibles se agendan. **Encrucijada cotidiana flexible aprobada:** máximo una por ronda, activada por condiciones. Si una encrucijada ocurre **antes** que un evento principal, ambos pueden suceder; si el evento principal ocurre **primero**, no se generan nuevas encrucijadas en esa ronda. Los Encuentros tienen reglas de activación/solapamiento pendientes (§6.2B).
+
+**Separar** mensajes informativos breves (sin elección), encuentros con decisión y consecuencias mecánicas obligatorias. Un ataque, la exposición o una muerte pueden resolverse por motor aunque no corresponda mostrar una escena narrada nueva. El Director **no puede cambiar reglas o anular dados para construir drama**.
+
+### 6.2A. Campaña reactiva por disparadores + encrucijadas cotidianas (aclaración del creador, 29/10/2026)
+
+**ACUERDO CONCEPTUAL CONFIRMADO EN SP-03:** la partida **comienza con una campaña/objetivo elegido**, cuya historia y actores ya tienen condiciones, lugares, pistas y posibles ramificaciones. El Director **no inventa un acontecimiento central por obligación en cada ronda**: **reacciona a decisiones, acciones, localidades visitadas y hechos verificables**. Debe poder presentar indicios y preparar posibilidades narrativas sin imponer que el jugador siga una ruta concreta. Los eventos centrales de campaña se activan cuando sus **disparadores y requisitos** se cumplen, no porque «tocó la ronda 3». El protagonista conserva la decisión de qué investigar primero.
+
+**Segunda capa, diferenciada — FRECUENCIA FLEXIBLE ACORDADA EL 29/10/2026:** conservar las **encrucijadas** de V9.9 (nombre definitivo pendiente) como decisiones pequeñas o medianas de la vida de la colonia. **No hay una encrucijada obligatoria por jornada**: debe cumplirse una condición concreta del estado o de una acción para que exista una candidata; puede aparecer **como máximo una en la ronda**. **Si el evento principal ya ocurrió, no se generan nuevas encrucijadas ese día; si la encrucijada se resolvió primero, puede ocurrir después el principal sin cancelar lo ya sucedido** (precisión posterior de §6.2B). Si no hubo evento principal ni condiciones para encrucijadas, no aparece ninguna. «Menor impacto» no equivale a «sin consecuencias»: algunas encrucijadas pueden activar historias secundarias o efectos acumulativos sin sustituir los hitos de campaña.
+
+**Distinguir tres componentes sin crear una escena obligatoria nueva:**
+- **Pistas e información:** rumores sobre desconocidos en el hospital, marcas extrañas, registros, testimonios; preparan decisiones y pueden mostrar lo que el mundo sabe sin obligar al jugador a desplazarse.
+- **Eventos de campaña condicionados:** la historia central cuenta con hechos y escenas diseñadas con anticipación; el Director selecciona cuáles son **válidos ahora** según progreso de campaña, ubicación, decisiones previas, actores vivos e historial.
+- **Encrucijadas cotidianas:** decisiones de recursos, convivencia, protección o moral práctica, generalmente breves, en un flujo de ronda separado de los hitos obligatorios del objetivo.
+
+**Ejemplo propuesto por el creador para «Encontrar la cura» (ilustrativo, NO canon ni guion aprobado):** el jugador conoce el objetivo y puede oír la pista «Se avistaron desconocidos en el hospital». Si **elige ir al hospital por primera vez** y se cumplen las condiciones del evento, allí conoce a **algunas personas que pertenecen a la secta enemiga, sin saber aún que son miembros de ella**. Ante una decisión relevante (colaborar, desconfiar, intercambiar recursos o información, variantes a escribir), el juego registra la elección; **un encuentro posterior** con esa organización puede reconocerla y producir consecuencias diferenciadas. **No** disparar ese contacto solo porque avanzó una ronda ni revelar prematuramente la afiliación de esas personas. Si visita otros lugares, la historia principal **no se fuerza a aparecer allí** para cumplir una cuota narrativa. Habrá que diseñar rutas alternativas válidas y contingencias si nunca visita el hospital, la localidad queda bloqueada, no está el actor requerido o un personaje muere. Si la primera visita sucede antes de una pista planificada, ajustar el diálogo a los hechos reales en lugar de falsear un rumor ya conocido.
+
+**Regla de memoria y causalidad:** al resolver una escena, guardar una **identidad estable del evento**, qué jugador/personaje estuvo presente, qué opción eligió y qué hechos/cambios produjo; programar continuaciones con condiciones verificables, no depender de volver a sacar por azar la misma carta ni exigir que la continuación aparezca una ronda fija aunque contradiga el mundo. Evitar repetir el encuentro introductorio en visitas posteriores.
+
+**Reglas de responsabilidad para diseñar luego:** el **motor** sigue decidiendo si movimientos, búsquedas, dados, efectos, heridas y costos son legales; el **Director** observa sus resultados y administra escenas predefinidas, prioridades y consecuencias en estado persistente. Una escena en hospital **no debe conceder automáticamente muestras por visitar** ni reemplazar las acciones de búsqueda exigibles. Decidir aparte cuándo una elección narrativa consume acciones o recursos. Una encrucijada cotidiana no debe ocultar una derrota/victoria terminal ni interrumpir un desenlace urgente de campaña.
+
+**Frecuencia flexible ACORDADA, con precisión posterior del creador:** **máximo una encrucijada cotidiana por ronda**, activada por una condición real. **Si ya ocurrió un evento principal de campaña, no se activa ninguna encrucijada posterior en esa ronda**. **Si la encrucijada ocurrió primero y después el jugador activa un evento principal, ocurren ambos y ninguna decisión se cancela ni se revierte retroactivamente**. Si no hay condiciones, no hay encrucijada obligatoria. **Pendientes:** (1) cómo se priorizan encuentros personales cuando coinciden con la historia principal, (2) qué sucede con una encrucijada potencial suprimida por un evento principal previo (reevaluar condiciones futuras vs descartarla), (3) momentos concretos en que se buscan candidatas según estado y disparadores, (4) duración e impacto de eventos cotidianos, sin imponer una cuota de historias.
+
+### 6.2B. Tres clases de eventos narrativos y prioridad temporal (precisión del creador, 29/10/2026)
+
+**NUEVO ACUERDO CONCEPTUAL — clasificación POR FUNCIÓN NARRATIVA, no escala rígida de daño:**
+
+| Clase | Qué aporta | Activación típica | Efectos típicos y límites abiertos |
+| --- | --- | --- | --- |
+| **Encrucijadas** | **Dar vida cotidiana al mundo** mediante pequeñas decisiones de gestión, convivencia o supervivencia | Condición concreta de recursos, moral, ubicación o estado; **máximo una por ronda** | Suelen afectar recursos/moral y ser breves. No prohibir toda consecuencia diferida, pero evitar sorpresas desproporcionadas sin pistas. |
+| **Encuentros** | **Desarrollar y caracterizar supervivientes, relaciones y grupos**; historias secundarias con consecuencias persistentes | Situación, relación, rasgo o acción de un personaje; hechos previos; lugar y actores válidos | Pueden modificar stats, heridas, vínculos, reclutamiento o iniciar/cerrar un arco. **Frecuencia, topes y reglas de coincidencia NO aprobados**. |
+| **Historia principal** | **Desarrollar la campaña/objetivo elegido al inicio**, sus antagonistas, información, obstáculos y desenlaces | Hito de campaña + condiciones y acción/lugar/descubrimiento válido | Produce cambios de estado de campaña, rutas y consecuencias futuras; **no necesariamente da progreso mecánico o muestras** en cada escena; una complicación también puede avanzar la trama. No se fuerza cada ronda. |
+
+**Aclara expresamente el creador:** si la **encrucijada se dispara primero**, y después ocurre un **evento principal**, **ambos pueden suceder en la misma jornada**. No cancelar retrospectivamente contenido ni decisiones. Si **ya sucedió** una escena de historia principal importante **antes** de que se active una encrucijada, **desactivar nuevas encrucijadas de esa ronda**. Se elimina la propuesta anterior de retener toda candidata hasta el cierre de fase; no es necesaria para esta regla. Respetar la causalidad cronológica.
+
+**Revisión crítica — COMPROMISOS DE CALIDAD PROPUESTOS, no reglas cerradas:**
+- La clase identifica la **función editorial** del contenido; duración, gravedad, obligatoriedad y repetibilidad son **dimensiones separadas**. Una pequeña acción puede tener consecuencias indirectas más graves sin pasar automáticamente a «Encuentro». Pero debe existir causalidad y señales proporcionadas.
+- No duplicar Encrucijadas como Encuentros con más texto: un Encuentro necesita *personas particulares con identidad, motivación, relaciones o conflicto*, o un cambio reconocible de su arco, no solo `moral +1`.
+- «Historia principal» no equivale a **recompensa o victoria más cercana** en cada escena: un descubrimiento puede elevar un obstáculo, abrir una ruta o perder un aliado sin alterar arbitrariamente el objetivo fijo.
+- No exigir elección binaria en todos los eventos. Pistas, conversaciones o reacciones del mundo pueden ser **informativas** y no bloquear la acción si no hay decisión significativa.
+- Clasificar un encuentro que involucra la secta como **Historia principal** cuando la escena sirve al arco de campaña, incluso si en ese momento el jugador **ignora su afiliación**. La etiqueta técnica del Director no necesita revelarse al usuario.
+- Las historias no deben reescribir resultados del motor; al registrar una elección se guarda hecho, personas, tiempo y contexto. Efectos de recursos, heridas, muerte o progresión pasan por reglas normales y respetan estados terminales.
+- **No aplicar ahora un tope a Encuentros ni a Historia principal**; discutir densidad y prioridad para no superponer varias escenas fuertes y convertir el día en secuencia de diálogos.
+
+**Flujo candidato de ronda (ajuste de SP-03):** se revisan disparadores cuando suceden acciones o cambios reales del mundo. Si surge una Encrucijada válida y **todavía no ocurrió** una escena principal importante en la jornada y **no se usó** la única Encrucijada del día, puede mostrarse. Si más tarde el jugador activa un evento principal, ese evento se resuelve con normalidad. Si el principal se activó primero, se impiden nuevas Encrucijadas hasta la siguiente jornada. Los **Encuentros** necesitan un contrato propio de activación, continuidad, y límites por ronda; su ocurrencia no queda cancelada automáticamente por este acuerdo salvo posterior decisión. La jornada puede no contener ninguna de las tres categorías.
+
+**Ejemplo de clasificación sin spoilers:** encontrar en el hospital desconocidos pertenecientes secretamente a la secta es **Historia principal** por su vinculación real con la campaña «Encontrar la cura», aunque el jugador no conozca ese vínculo. En cambio, descubrir un conflicto personal de Mara con un antiguo conocido sería un **Encuentro**; resolver un desacuerdo breve por raciones sería una **Encrucijada**. Son ejemplos hipotéticos y no autorizan guiones o mecánicas.
+
+**Referencias de diseño comparadas (investigación, no copia):** `Wildermyth` distingue eventos de trama, personales vinculados a historia/relaciones y eventos contextuales por disparador; `The Banner Saga` combina campaña guionizada con incidentes de moral/suministros y conversaciones de personajes. Se toman principios generales, no texto, personajes ni contenido protegido.
+
+**Pendiente registrado al acordar §6.2B (actualizado después por §6.2C/D):** precisar el papel de **Encuentros** y las condiciones de prioridad si coinciden con Encrucijadas e Historia principal; después modelar una ronda completa con eventos en órdenes diferentes, casos sin historia, y casos de muerte antes de desencadenante.
+
+### 6.2C. Propuesta del creador: historias secundarias reutilizables asignadas a supervivientes (29/10/2026 — PROPUESTA, NO REGLA APROBADA)
+
+**Idea del creador:** evitar el costo de escribir una historia personal exclusiva para cada PJ. Preparar **plantillas de historias secundarias/Encuentros** que pueda protagonizar **cualquiera de los supervivientes elegibles** que controla el jugador en esa partida. Ejemplo: «Un familiar desaparecido». El Director puede vincular la historia a un personaje disponible y convertirla en un arco suyo durante esa partida, con decisiones y efectos posteriores. El relato no debe requerir que el elenco incluya un superviviente concreto. **Esto es una propuesta para evaluar, no aprobación de diseño ni permiso para implementar.**
+
+**Evaluación crítica:** favorece alcance abordable, variabilidad entre campañas y reutilización de contenido. Pero si los personajes solo sustituyen su nombre en una frase, serán intercambiables y las historias carecerán de identidad; si el Director inventa familiares o pasados contradictorios, la continuidad se rompe; y si reasigna el arco al morir su protagonista, las muertes pierden consecuencias dramáticas.
+
+**Diseño recomendado para estudiar:**
+1. **Plantilla vs instancia:** mantener separado un *arco genérico* (guion/episodios, requisitos, elecciones, disparadores y variaciones posibles) de su *instancia específica en esa partida*. Una vez asignado, grabar `arcId`, `ownerCharacterId`, `relatedNpcId` y estado/historial para que no cambie silenciosamente de dueño. Son campos orientativos, NO esquema aprobado.
+2. **Elegibilidad y coherencia:** preferir historias compatibles con atributos narrativos, biografías, vínculos, estado vital, localización y hechos anteriores. El ejemplo de un familiar exige un vínculo coherente; puede usar un pariente no definido previamente solo si la biografía permite introducirlo sin contradicción. Nunca escribir que el personaje es huérfano sin familiares y luego inventar un hermano vivo sin explicación.
+3. **Personalización liviana, no arcos completos duplicados:** tono de respuesta y alguna variante de condición, motivación, diálogo, ventaja o conflicto según carácter, habilidad, experiencia y relaciones. **No asumir un sistema complejo de personalidad todavía**: probar primero dos o tres variantes artesanales.
+4. **Agencia del líder:** el superviviente presenta una necesidad o deseo, pero **el jugador decide** si investigar, dedicar acciones/recursos, posponer o rechazar. Cada elección debe afectar la continuidad; la insistencia del PJ no debe quitar control arbitrariamente al jugador.
+5. **Muerte y continuidad:** si el protagonista muere, no reasignar la misma biografía a un personaje nuevo. La historia puede cerrar, dejar una consecuencia o continuar desde una persona distinta **solo si el guion prevé esa transmisión y respeta los hechos**. Si muere el familiar o se vuelve inaccesible el lugar, ofrecer cierres o alternativas según el caso.
+6. **Distribución justa y no repetición abusiva:** el Director comprueba elegibilidad cuando hay disparadores válidos y evita repetición del mismo arco dentro de la campaña salvo intención explícita. Vigilar que solo el líder o el personaje más usado reciba todas las historias y que una trama no se duplique con nuevo protagonista.
+7. **Vínculo con supervivencia:** decisiones personales deben producir dilemas reales de acciones, recursos, riesgos o relaciones, no solo un diálogo decorativo. El protagonista puede pedir ayuda, pero el rescate no debe generar automáticamente un superviviente adicional sin costos y límites validados en SP-04.
+
+**Ejemplo de arco compartido, no canon:** `persona_desaparecida`. Disparador: información creíble disponible y un superviviente elegible. Instancia de esta partida: `protagonista = Mara`, `familiar = hermano de Mara`, `localidad = farmacia`. El jugador decide ayudar, posponer o rechazar. Una decisión podría abrir expedición, conflicto interno o nueva información. **No** generar todas esas ramas automáticamente; son alternativas narrativas que requieren escritura, condiciones y reglas verificables.
+
+**Prototipo conceptual sugerido:** escribir **una** plantilla con 2–3 escenas, comprobarla primero con **tres personajes diferentes** y variar protagonista; inspeccionar inconsistencias, naturalidad del diálogo, identidad, muerte/sucesión y la influencia real de las decisiones en acciones/recursos. Después revisar si suficientes historias pueden ser compartidas o si algunos protagonistas requieren elementos exclusivos. No fijar proporciones ni construir un generador ilimitado de diálogos.
+
+**Pendiente de aprobación:** confirmar si la filosofía base de **Encuentros con guiones reutilizables, instanciados por personaje** se adopta para el primer singleplayer. Luego decidir criterios de elegibilidad, relación de estas historias con campañas e hitos, frecuencia/prioridad y niveles de personalización. No altera V9.9, D1/D2, matriz F ni código.
+
+### 6.2D. Muerte del protagonista de una historia secundaria (29/10/2026 — criterio propuesto, pendiente de aprobación)
+
+**Pregunta crítica del creador:** en un juego donde **cualquier superviviente puede morir en cualquier momento**, una historia secundaria genérica asignada a Mara (ejemplo: búsqueda del hermano desaparecido) podría quedar sin protagonista **a la ronda siguiente**. No es un caso excepcional: debe ser un contrato normal para **cada historia secundaria persistente**, si adoptamos el sistema reutilizable. El arco personal **no convierte a Mara en inmortal**, no debe reabrirla como personaje presente y **no debe transferirse a otro superviviente automáticamente**.
+
+**Principio recomendado (NO aprobado todavía):** muerte del protagonista = **reevaluación de continuidad narrativa según hechos**, no «fracaso» obligatorio ni progreso mágico. Mantener persistencia del hermano, pistas descubiertas, decisiones previas, relaciones y existencia en el mundo, **independientemente de si la misión se considera activa para el jugador**.
+
+| Salida narrativa posible | Cuándo corresponde | Ejemplo sin guion canónico |
+| --- | --- | --- |
+| **Cierre inconcluso** | La motivación pertenecía solo al difunto, no hay interés o información transmisible; el arco no forma parte del objetivo principal | Mara muere antes de revelar ninguna pista; la colonia registra la pérdida, pero no recibe una misión heredada arbitraria. No se afirma que el hermano también murió. |
+| **Continuación opcional con testigo** | Otro superviviente o el líder conocía la búsqueda, tiene una pista y puede elegir qué hacer | Iris había oído el relato o recibido una carta; el líder decide si destinar acciones y recursos a continuar por Mara. **No convertir a Iris en hermana del NPC**. |
+| **Transformación del arco** | La historia preveía hechos que pueden seguir existiendo con Mara muerta: un hermano que busca a Mara, un mensaje, una deuda o una consecuencia de decisiones anteriores | El hermano podría llegar a la colonia y descubrir lo ocurrido. Ese suceso depende de hechos y condiciones, **no aparece por obligación en una ronda predefinida**. |
+| **Pausa justificada** | Persisten causas/personas en el mundo pero no se cumplen requisitos actuales para una escena coherente | La pista está en manos de una facción; se mantiene el estado, sin prometer al jugador una misión imposible ni dejar un evento en bucle. |
+
+**Distinción crítica entre información del jugador y conocimiento del mundo:** que el lector haya visto «Mara piensa en su hermano» no significa automáticamente que **el líder o Iris lo sepan**; definir cuándo la información se hizo pública, por ejemplo si Mara se lo contó a la colonia, lo anotó o el líder participó en la conversación. Si los hechos narrados son decisiones del líder, la continuidad debe respetar ese conocimiento. El Director no inventa un testigo a posteriori para salvar la misión.
+
+**Persistencia de entidades y consecuencias:** `arcId`, personaje original, NPC relacionado, hechos, pistas conocidas, promesas, opciones elegidas, muerte del protagonista, estado de arco y eventos pendientes. Los nombres técnicos son orientativos. Una muerte es transición de estado, **no borrado del historial**; las agendas diferidas deben comprobar precondiciones de actores vivos y suprimir/reconducir escenas incompatibles. Un arco cerrado no significa que el NPC desaparezca mágicamente del mundo.
+
+**Control de alcance recomendado:** no escribir tres campañas completas por cada posible muerte. Para el primer prototipo, cada historia reutilizable tendrá **un cierre breve y coherente si muere el protagonista** y, únicamente cuando su diseño lo justifique, **una ruta de continuación o transformación**. La muerte puede truncar permanentemente una historia; eso no es un error de diseño para una **misión secundaria**. En cambio, si un arco cumple un requisito de la **campaña principal**, su pérdida no debe crear un bloqueo inevitable sin rutas alternativas previamente diseñadas.
+
+**Pruebas narrativas indispensables:** matar a la protagonista antes de compartir la pista, después de comunicarla, durante una expedición, después de rescatar al familiar y cuando está pendiente un evento; comprobar que nadie la nombra como viva, que las relaciones NPC permanecen correctas, que la recompensa no se duplica y que ninguna agenda dispara escenas imposibles. Probar también a Iris/Damián como protagonistas alternativos de la plantilla, sin alterar el parentesco una vez instanciado.
+
+**Estado:** alternativas sugeridas para discusión; todavía no se aprobó una política universal de cierre/continuación, ni condiciones precisas de conocimiento compartido. Siguiente microdecisión: determinar si aceptamos como regla base «cada historia personal debe soportar la muerte del protagonista con al menos un cierre coherente; prolongarla solo si hay razones y hechos conocidos». No implementarlo durante D1/D2.
+
+### 6.3. Recorrido sobre papel ilustrativo (NO simulación de balance)
+
+- Grupo elegido: Iris, Damián y Mara; **4 dados de referencia**, no balance definitivo.
+- Apertura: crisis de medicamentos y aviso fundamentado sobre actividad de desconocidos cerca del hospital.
+- Órdenes: el líder decide una búsqueda de Iris en hospital, defensa de Damián y otra acción con Mara según necesidades/dados válidos. Se aplican ubicación, búsqueda y exposición bajo el motor mecánico de referencia.
+- Encuentro de campaña condicionado a la **primera llegada válida al hospital**: Iris conoce a desconocidos que, sin revelar su identidad, pertenecen a una secta hostil. El jugador decide cómo tratarlos; la escena registra esa decisión y ramificaciones futuras. **No hace falta esperar una búsqueda exitosa, una carta aleatoria ni una ronda predeterminada** para activar el encuentro, siempre que se cumplan los requisitos de escenario.
+- Fin de jornada: el motor comprueba comida, crisis y zombis; si hay derrota/victoria terminal, no debe ejecutarse una siguiente escena contradictoria.
+- Cierre: resumen táctico y narrativo sin revelar artificialmente consecuencias futuras secretas. Una decisión previa puede reaparecer varias rondas después por una causa reconocible.
+
+### 6.4. Casos límite y reglas de prioridad por cerrar
+
+1. **Muerte del actor durante una acción:** detener la acción según reglas; no consumir un segundo dado ni duplicar efecto por un diálogo; actualizar equipo, inventario, líder y agenda. El destino de los dados restantes tras una muerte a mitad de ronda se decide con SP-04.
+2. **Muerte del líder:** aplicar elección de sucesor entre supervivientes disponibles en momento seguro; la partida no debe permitir nuevas órdenes mientras falta un líder válido. Si no queda nadie, aplicar condición terminal conforme reglas, no crear personaje de la nada.
+3. **Varias historias al mismo tiempo:** prioridad conceptual: seguridad/terminal del motor > interrupción de muerte y sucesión > decisión de la acción actual > continuación narrativa imprescindible > evento secundario. Esta prioridad es **hipótesis de diseño**, no orden ya integrado al motor; la gestión de cola debe evitar perder decisiones y preservar coherencia.
+4. **Terminar fase antes de gastar todos los dados:** debe existir una forma clara de cerrar el turno; confirmar si acciones pendientes y escenas pueden disparar algo, sin permitir vueltas atrás tras resolver colonia.
+5. **El Director y los turnos antiguos:** eliminar necesidad de pase J1→J2 obligatorio sin eliminar el ciclo de colonia, pero validar que acciones y resolución ocurren **exactamente una vez** por jornada y que el Director no consume turno de jugador.
+6. **Interacción con condición terminal:** si la crisis/moral provoca derrota, detener procesamiento posterior según reglas y no disparar encuentros incompatibles; si se gana, epílogo coherente con historial. Verificar prioridad entre una decisión ya abierta y un terminal del motor.
+7. **No saber aún qué día es cada ronda:** por claridad se propone **ronda = jornada narrativa de trabajo** para el prototipo, pero calendarios, distancias y sucesos que duran varios días quedan pendientes de discusión.
+8. **Carga de UI:** cuando aparezca encuentro bloqueante, enseñar contexto relevante y guardar su decisión antes de recuperar controles; evitar que clic repetido ejecute acciones durante el diálogo. En móvil, priorizar uno o dos puntos narrativos importantes antes que un bombardeo de mensajes.
+
+### 6.5. Contrato mínimo de validación antes de dar SP-03 por cerrado
+
+Probar en papel: **ronda normal**; encuentro durante búsqueda; ausencia total de escena si nada corresponde; muerte de superviviente con dados aún disponibles; **muerte de líder y sucesión**; derrota al resolver colonia; decisión diferida activada al día correcto; escena que quedó inválida por muerte de personaje; y jornada con solo uno/dos supervivientes. Contrastar **presupuesto de acciones, alimentación y pérdidas** en SP-04 sin mezclar con cambio de sistema de dados.
+
+**Acuerdos consolidados al 29/10:** quedan definidas tres **clases narrativas** por función: **Encrucijadas** (vida cotidiana), **Encuentros** (personajes, vínculos y consecuencias medias) e **Historia principal** (campaña/objetivo). **Regla temporal:** una encrucijada ya resuelta no se revierte si luego ocurre un evento principal; si el principal ya ocurrió, no se disparan nuevas encrucijadas ese día. **Pendientes:** activación y prioridad de los **Encuentros** frente a ambas categorías, sin forzar un evento por ronda ni aprobar tasas/cooldowns. **Próxima microdecisión según el registro más reciente833eae7:** confirmar o ajustar el criterio de muerte/continuidad de §6.2D, aún propuesto; después concretar un arco piloto y sus prioridades. SP-03 no está íntegramente cerrado.
 
 ## 7. Criterios de aceptación de la PLANIFICACIÓN antes de programar el singleplayer
 
@@ -414,8 +592,8 @@ El **100 %** del híbrido surge porque Damián mata un zombi por orden sin riesg
 
 **Un bloque de diseño a la vez:** describir regla actual → objetivo de experiencia → dos alternativas cuando exista una disyuntiva → riesgos y efectos sistémicos → escena/ejemplo de prueba → **decisión explícita** → actualizar este documento y [tablero 18](18-tablero-operativo.md). Seguir el [protocolo crítico 15](15-protocolo-revision-critica.md); no aprobar por entusiasmo o por un ejemplo aislado.
 
-- **Siguiente tarea de DISEÑO:** **SP-02 — especialización efectiva y economía de acciones**: después de acordar que el líder decide asignación por atributos, pasivas y contexto, comparar roles complementarios, acciones con/sin dado y escenarios en que un personaje podría monopolizar los dados. Dejar la **cantidad exacta de reserva y cualquier tope por personaje como cuestiones a validar**, sin reabrir liderazgo ni F-14.
-- **Siguiente tarea TÉCNICA:** **D1.2a** (PoC reversible con esbuild, pendiente de autorización), seguida de D1/D2 conservadores. El trabajo de diseño **no cambia** esta prioridad.
+- **Siguiente tarea de DISEÑO (actualizado 29/10/2026):** **SP-03 — ciclo de ronda singleplayer**, apoyado en mecánicas de V9.9 como base acordada; integrar desde el inicio las preguntas de **SP-04** sobre muerte, reducción de acciones, reclutamiento, presión de recursos y recuperación. No añadir motor nuevo de dados ni nuevas estadísticas en el primer alcance. Ver sección 5K; balance, fórmulas finales y reglas de reclutamiento siguen pendientes. La pregunta inmediata de Encuentros está en §6.2D: criterio de muerte/continuidad, sin aprobarlo en esta reconciliación.
+- **Estado TÉCNICO actualizado:** D1/D2 implementadas y auditadas; reconciliación documental y apertura autorizada de PR hacia main, condicionada a validación. No fusionar ni programar singleplayer. El antiguo próximo paso D1.2a se conserva en los informes históricos67/68; estado actual en tablero18 e informe70.
 - **Siguiente documentación cuando se cierre un bloque:** actualizar su estado, las decisiones/fuentes, escenarios de aceptación y la única siguiente tarea de diseño. Los ejemplos que no obtengan aprobación siguen como propuestas.
 - **No ejecutado:** ninguna especificación SP está implementada en la V9.9, no se creó rama de producto, no se cambió `main`, el catálogo, reglas, tests ni planilla XLSX por esta hoja de ruta.
 
