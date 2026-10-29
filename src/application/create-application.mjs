@@ -16,7 +16,10 @@ export function createApplication({environment=globalThis,autoStart=true}={}){
   statInfo:(key,{element,event})=>view.showStatInfo(key,element,event.type==='mouseenter'?'hover':'click'),
   statInfoClose:key=>view.closeStatInfo(key),
  });
- const dispose=bindCommands(environment.document,commands);
- if(autoStart)engine.initialize();
+ let dispose;
+ try{
+  dispose=bindCommands(environment.document,commands);
+  if(autoStart)engine.initialize();
+ }catch(error){dispose?.();view.dispose();throw error;}
  return {engine,dispose(){dispose();view.dispose();}};
 }

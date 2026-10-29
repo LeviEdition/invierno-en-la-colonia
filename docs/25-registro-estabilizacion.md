@@ -599,3 +599,5 @@ Autorización ampliada del creador para completar D1 y D2. [Informe67](67-d1-d2-
 Encargo focalizado desdeee73d29, main0b75d01 verificada. Informe68: dos bloqueos reproducibles en capacidades de vista (prototipo de controles y callbacks de cartas). B1 corregido con fachada de consultas, prueba roja→verde,463/463; B2 ycompuertas finales pendientes. No PR abierto/fusionado, no referencia oficial ni singleplayer.
 
 **Auditoría D1/D2 B2:** se retiran callbacks del catálogo de la vista yse entrega proyección de textos/elegibilidad por reglas. Dos pruebas rojas→verdes,465/465 ybuild reproducible. Falta validación final ypreparación de PR; no se abrió PR.
+
+**Auditoría B3:** dos regresiones de montaje fallido, listeners residuales16/10 ybloqueo de reconexión. Cleanup de recursos propios en catch, pruebas rojas→verdes;467/467 ybuild reproducible. Informe68 actualizado; ninguna aplicación viva se desconecta por un intento duplicado fallido.

@@ -29,3 +29,9 @@ Rojo→verde dirigido:1/1. Baseline reejecutada462/462 y npm ci/check:build apro
 Dos pruebas nuevas rojas: se podía reclutar sin comando y no existía una proyección de presentación segura. Se retiran crossroadsDeck/crossOptionAllowed de las capacidades de la vista; el motor ofrece crossroadsView con textos, cantidad de historias y opciones permitidas calculadas por las mismas reglas reales. Los callbacks originales permanecen privados e intactos. La IA y los fixtures QA siguen usando sus entradas internas autorizadas; el renderer recibe únicamente los datos que dibuja.
 
 Dirigidas B1/B2:3/3 verdes. Suite465/465,0 fallos/omisiones/cancelaciones; check:build y diffcheck aprobados. Prueba de elegibilidad demuestra comida1→opción de provisiones no disponible y comida3→disponible, sin consumir RNG ni modificar estado. No se introdujo un sistema narrativo ni cambió efecto alguno de carta. Pendiente validación integral en navegador y por SHA.
+
+## Hallazgo B3 — construcción fallida deja listeners
+
+**Bloqueante de ciclo de vida confirmado:** el segundo createApplication sobre el mismo documento lanza «ya están conectados» pero deja6 listeners visuales:16 en vez de10. También una inicialización que falla después de conectar deja los10 listeners yel registro marcado, impidiendo reconexión limpia. Dos pruebas rojas reproducen ambos defectos.
+
+La corrección limpia únicamente recursos instalados por el intento fallido (sus listeners y, si llegó a instalarlo, su registro de comandos); no desconecta la aplicación anterior. Tests de ciclo3/3 verdes, suite467/467 ybuild reproducible. Sin cambio de reglas ni de flujo exitoso. B1/B2/B3 cerrados en implementación; faltan validaciones finales ydictamen.

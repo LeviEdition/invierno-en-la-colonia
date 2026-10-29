@@ -3381,8 +3381,13 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       statInfo: (key, { element, event }) => view.showStatInfo(key, element, event.type === "mouseenter" ? "hover" : "click"),
       statInfoClose: (key) => view.closeStatInfo(key)
     });
-    let dispose = bindCommands(environment.document, commands2);
-    return autoStart && engine.initialize(), { engine, dispose() {
+    let dispose;
+    try {
+      dispose = bindCommands(environment.document, commands2), autoStart && engine.initialize();
+    } catch (error) {
+      throw dispose?.(), view.dispose(), error;
+    }
+    return { engine, dispose() {
       dispose(), view.dispose();
     } };
   }
