@@ -7,6 +7,12 @@
     "build": "node scripts/build-game.mjs",
     "check:build": "node scripts/build-game.mjs --check",
     "test": "node --test",
-    "check": "node --test"
+    "check": "node --test",
+    "build:poc": "node scripts/build-esbuild-poc.mjs",
+    "check:poc": "node scripts/build-esbuild-poc.mjs --check",
+    "test:poc": "node scripts/check-esbuild-poc-regressions.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
   }
 }

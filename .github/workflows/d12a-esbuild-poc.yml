@@ -1,0 +1,70 @@
+name: D1.2a experimento esbuild
+on:
+  push:
+    branches: [refactor/experiment-d1-2a-esbuild]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  candidate-regressions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - run: npm run check:build
+      - run: npm run build:poc
+      - run: npm run check:poc
+      - run: npm test
+      # Sin continue-on-error: una incompatibilidad real debe dejar CI rojo.
+      - name: Suite intacta y comparación de40 partidas sobre el candidato
+        run: npm run test:poc
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: d12a-regresiones-${{ github.sha }}
+          path: |
+            /tmp/d12a-poc-regressions/
+            dist/invierno-esbuild-poc.html
+          if-no-files-found: warn
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - name: Instalar herramienta de prueba externa al producto
+        run: |
+          npm install --no-save --package-lock=false playwright@1.57.0
+          npx playwright install --with-deps chromium
+      - run: npm run build:poc
+      - run: npm run check:poc
+      - name: Chromium HTTP y file en referencia y PoC
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/d12a-http.log 2>&1 &
+          trap 'kill $!' EXIT
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:8765/invierno_colonia_v9_9.html -o /dev/null && break; sleep 1; done
+          export CHROMIUM_PATH="$(node --input-type=module -e "import {chromium} from 'playwright';console.log(chromium.executablePath())")"
+          mkdir -p /tmp/d12a-browser
+          node scripts/check-d1-offline-browser.mjs > /tmp/d12a-browser/offline-reference.json
+          GAME_FILE_URL="file://$GITHUB_WORKSPACE/dist/invierno-esbuild-poc.html" node scripts/check-d1-offline-browser.mjs > /tmp/d12a-browser/offline-poc.json
+          export GAME_URL=http://127.0.0.1:8765/dist/invierno-esbuild-poc.html
+          C16_OUTPUT_DIR=/tmp/d12a-browser/focus node scripts/check-c16-focus-browser.mjs
+          C14_BROWSER_OUTPUT=/tmp/d12a-browser/games node scripts/check-c14-browser.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: d12a-chromium-${{ github.sha }}
+          path: |
+            /tmp/d12a-browser/
+            /tmp/d12a-http.log
+            dist/invierno-esbuild-poc.html
+          if-no-files-found: warn

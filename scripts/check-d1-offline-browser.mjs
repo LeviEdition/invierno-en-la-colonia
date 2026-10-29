@@ -1,15 +1,21 @@
 // D1.1 — Apertura directa file://: el HTML distribuido no necesita servidor ni módulos externos.
 import assert from 'node:assert/strict';
-import {chromium} from 'playwright';
+import {readFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
 
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||chromium.executablePath(),headless:true,args:['--no-sandbox']});
-const url=new URL('../invierno_colonia_v9_9.html',import.meta.url).href;
+const url=process.env.GAME_FILE_URL||new URL('../invierno_colonia_v9_9.html',import.meta.url).href;
+assert.match(url,/^file:/,'La comprobación offline requiere file://');
+const htmlSha256=createHash('sha256').update(await readFile(new URL(url))).digest('hex');
 const results=[];
 try {
  for(const mode of ['local','ai']){
   const context=await browser.newContext({viewport:{width:393,height:852},reducedMotion:'reduce'});
+  await context.setOffline(true);
   const page=await context.newPage();
-  const errors=[];
+  const errors=[],requests=[];
+  page.on('request',request=>requests.push(request.url()));
   page.on('pageerror',error=>errors.push(error.message));
   await page.goto(url);
   await page.locator('[onclick="startGame(\''+mode+'\')"]').click();
@@ -26,8 +32,9 @@ try {
   assert.equal(state.initialHand,7);
   assert.equal(state.resultOfResolve,'pistol');
   assert.deepEqual(errors,[]);
-  results.push({mode,ok:true,errors});
+  assert.ok(requests.every(request=>request.startsWith('file:')||request.startsWith('data:')),'Sin solicitudes de red');
+  results.push({mode,ok:true,errors,requests,networkOffline:true});
   await context.close();
  }
 } finally {await browser.close();}
-console.log(JSON.stringify({fileUrl:url,results},null,2));
+console.log(JSON.stringify({fileUrl:url,htmlSha256,chromium:browser.version(),results},null,2));

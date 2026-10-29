@@ -1,0 +1,20 @@
+{
+  "artifact": "dist/invierno-esbuild-poc.html",
+  "htmlSha256": "614295431619ffb6be7612ea04aaeaf7574bd57accd3663355e0f5d285fd5245",
+  "sameTestsAndAssertions": true,
+  "exitCode": 1,
+  "tests": 439,
+  "pass": 438,
+  "fail": 1,
+  "cancelled": 0,
+  "skipped": 0,
+  "todo": 0,
+  "failedTests": [
+    "la base conserva las cinco clases principales y los puntos de entrada"
+  ],
+  "engineGames": {
+    "configurations": 40,
+    "equalBehavior": 40,
+    "meaning": "mismos estados finales, acciones, eventos, mensajes e invariantes; solo se excluyen hashes de fuente"
+  }
+}

@@ -1,5 +1,14 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## D1.2a — experimento autorizado en curso · 29/10/2026
+
+**Encargo vigente del creador:** PoC pequeño/reversible de esbuild, derivado de `refactor/d1-catalogo=ba9a423`, sin cambios de reglas ni otra auditoría de fidelidad. `main=0b75d01` coincide con referencia. Checkout previo limpio en rama C antigua; se creó `refactor/experiment-d1-2a-esbuild`. Los estados anteriores «pendiente de autorización» son históricos; SP-02 sigue siendo diseño separado, no implementación.
+
+**Resultado local y revisión del experimento:** referencia433/433 inicial y439/439 con6 tests nuevos; candidato438/439, una aserción literal `class ItemCatalog` incompatible con salida del bundler. **No eliminada ni debilitada; adopción no aprobada.**40/40 configuraciones reales comparadas idénticas salvo hashes de fuente,5/5 partidas UI antes/después y3/3 viewports por variante. File local bloqueado por política de Chromium en ambas versiones; pendiente CI. Lockfile nuevo permite npm ci. Motor/plantilla/catálogo/HTML/build de referencia intactos.
+
+[Informe65](65-d1-2a-experimento-esbuild.md) contiene diff lógico, evidencia, riesgos, comparación y rollback. Recomendación provisional **ajustar**, no adoptar; falta CI exacto (job de candidato conservará fallo, sin tolerarlo). **Tarea activa única:** terminar publicación/verificación de D1.2a; luego detenerse para revisión del creador/ChatGPT. Prohibido avanzar D1.2b/c/d o D2 automáticamente.
+
+
 ## Cierre de jornada — bitácora 28/10/2026 y próximo SP-02 · 28/10/2026
 
 **Registro completo:** [64 — Bitácora de desarrollo del 28/10/2026](64-bitacora-2026-10-28.md). Cierre de la reflexión sobre alcance: **para el primer videojuego conviene examinar conservar las mecánicas V9.9 y priorizar narrativa persistente**. **No hay aprobación irreversible** de cancelar el motor híbrido ni autorización de iniciar código singleplayer. La investigación SP-02 queda documentada sin perderse.

@@ -26,6 +26,9 @@ jobs:
         with:
           node-version: '22'
 
+      - name: Instalar dependencias fijadas
+        run: npm ci
+
       - name: Comprobar HTML autocontenido generado
         run: npm run check:build
 

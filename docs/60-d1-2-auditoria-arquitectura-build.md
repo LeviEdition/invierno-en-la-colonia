@@ -72,3 +72,8 @@ Estos nombres son **propuesta de límites**, no obligación de crear un archivo 
 **D1.2 AUDITORÍA FINALIZADA: ACEPTAR D1.1 COMO PASO TRANSITORIO Y POSPONER SU MERGE A `main` HASTA RESOLVER LA ELECCIÓN DE BUILD.** Recomendar **PoC pequeño de esbuild antes de extraer un segundo módulo**; no adoptar esbuild, Vite ni módulos de UI sin pruebas y comparación. Es razonable que el PoC termine en descarte si los costos son superiores al beneficio.
 
 **Única próxima tarea a autorizar expresamente:** D1.2a — PoC comparativo y reversible de bundling con esbuild, todavía sin rediseñar reglas, sin merge a `main`, sin D2/F/E y con informe de viabilidad. `main` no se modificó por esta auditoría.
+
+
+## Seguimiento D1.2a — 29/10/2026
+
+El creador autorizó el PoC acotado y exigió detenerse antes de D1.2b. [Informe65](65-d1-2a-experimento-esbuild.md): rama experimental desde ba9a423, referencia intacta, ESM/IIFE solo catálogo,439/439 referencia y438/439 candidato por una aserción de forma preservada.40 partidas de motor comparadas, cinco UI y tres tamaños; file local bloqueado en ambas variantes, ver CI al publicar. La recomendación de esta auditoría era una propuesta, no permiso para migrar UI/fixtures completos; no se hizo esa migración. No adoptar ni fusionar por el resultado parcial.
