@@ -47,12 +47,14 @@ test('D1.2a: IIFE del script entero oculta handlers; no se migra UI/fixtures por
  const script=[...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)][0][1];
  const boot=/\ncreate\(\);\s*\ndocument\.getElementById\('setupScreen'\)\.hidden=false;passScreenActive=true;\s*\npaint\(\);\s*$/;
  assert.match(script,boot);
+ const whole=await build({stdin:{contents:script,loader:'js'},bundle:true,format:'iife',treeShaking:false,write:false,target:'es2022'});
+ assert.match(whole.outputFiles[0].text,/create\(\);[\s\S]*setupScreen/,'el bundle todavía contiene el arranque');
+ assert.doesNotMatch(whole.outputFiles[0].text,boot,'el cargador antiguo no reconoce el arranque dentro de IIFE');
  const {outputFiles}=await build({stdin:{contents:script.replace(boot,''),loader:'js'},bundle:true,format:'iife',treeShaking:false,write:false,target:'es2022'});
  const context=createContext({document:{addEventListener(){}},queueMicrotask(){}});
  runInContext(outputFiles[0].text,context);
  for(const name of ['startGame','show','search','game'])assert.equal(runInContext('typeof '+name,context),'undefined');
  assert.throws(()=>runInContext('startGame("local")',context),{name:'ReferenceError'});
- assert.doesNotMatch(outputFiles[0].text,boot,'el formato también cambia el anclaje del cargador antiguo');
 });
 test('D1.2a: un marcador ausente o duplicado se rechaza antes de generar artefacto',async()=>{
  await assert.rejects(buildPoc({template:template.replace(marker,'')}),/exactamente un marcador/);

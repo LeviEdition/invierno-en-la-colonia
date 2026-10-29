@@ -1,12 +1,12 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
-## D1.2a — experimento autorizado en curso · 29/10/2026
+## D1.2a — experimento terminado, pendiente de revisión · 29/10/2026
 
 **Encargo vigente del creador:** PoC pequeño/reversible de esbuild, derivado de `refactor/d1-catalogo=ba9a423`, sin cambios de reglas ni otra auditoría de fidelidad. `main=0b75d01` coincide con referencia. Checkout previo limpio en rama C antigua; se creó `refactor/experiment-d1-2a-esbuild`. Los estados anteriores «pendiente de autorización» son históricos; SP-02 sigue siendo diseño separado, no implementación.
 
-**Resultado local y revisión del experimento:** referencia433/433 inicial y439/439 con6 tests nuevos; candidato438/439, una aserción literal `class ItemCatalog` incompatible con salida del bundler. **No eliminada ni debilitada; adopción no aprobada.**40/40 configuraciones reales comparadas idénticas salvo hashes de fuente,5/5 partidas UI antes/después y3/3 viewports por variante. File local bloqueado por política de Chromium en ambas versiones; pendiente CI. Lockfile nuevo permite npm ci. Motor/plantilla/catálogo/HTML/build de referencia intactos.
+**Resultado local y revisión del experimento:** referencia433/433 inicial y439/439 con6 tests nuevos; candidato438/439, una aserción literal `class ItemCatalog` incompatible con salida del bundler. **No eliminada ni debilitada; adopción no aprobada.**40/40 configuraciones reales comparadas idénticas salvo hashes de fuente,5/5 partidas UI antes/después y3/3 viewports por variante. File local bloqueado por política de Chromium en ambas versiones; **CI4/4 aperturas aprobadas**, red desactivada. Lockfile nuevo permite npm ci. Motor/plantilla/catálogo/HTML/build de referencia intactos.
 
-[Informe65](65-d1-2a-experimento-esbuild.md) contiene diff lógico, evidencia, riesgos, comparación y rollback. Recomendación provisional **ajustar**, no adoptar; falta CI exacto (job de candidato conservará fallo, sin tolerarlo). **Tarea activa única:** terminar publicación/verificación de D1.2a; luego detenerse para revisión del creador/ChatGPT. Prohibido avanzar D1.2b/c/d o D2 automáticamente.
+[Informe65](65-d1-2a-experimento-esbuild.md) contiene diff lógico, evidencia, riesgos, comparación y rollback. Recomendación **ajustar**, no adoptar. Implementación181903c: CI40859658496 referencia success439/439; CI40859658678 experimento failure por el único fallo de formato, browser success5UI/3viewports/4file. Artifacts cotejados con local; no declarar CI global verde. Checkpoint/prueba diagnóstica final se verifican por su SHA al entregar. **Tarea activa única:** revisión del informe/diff por el creador/ChatGPT; Codex se detiene. Prohibido avanzar D1.2b/c/d o D2 automáticamente.
 
 
 ## Cierre de jornada — bitácora 28/10/2026 y próximo SP-02 · 28/10/2026

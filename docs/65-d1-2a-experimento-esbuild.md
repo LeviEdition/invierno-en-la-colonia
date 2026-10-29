@@ -1,6 +1,6 @@
 # 65 — D1.2a: experimento reversible de esbuild
 
-**29/10/2026. Rama:** `refactor/experiment-d1-2a-esbuild`, derivada de `ba9a4238d22ad968edbe74d0445949f9a631ec70`. **Estado:** PoC ejecutado localmente, pendiente CI del SHA de publicación. **Recomendación provisional: AJUSTAR; no adoptar todavía como build principal.** Hay una incompatibilidad de la suite del candidato que no se ocultó ni corrigió debilitando pruebas.
+**29/10/2026. Rama:** `refactor/experiment-d1-2a-esbuild`, derivada de `ba9a4238d22ad968edbe74d0445949f9a631ec70`. **Estado:** PoC ejecutado y CI de implementación comprobado; compatibilidad parcial, no aprobado para adopción. **Recomendación: AJUSTAR; no adoptar todavía como build principal.** Hay una incompatibilidad de la suite del candidato que no se ocultó ni corrigió debilitando pruebas.
 
 ## 1. Estado inicial y autorización
 
@@ -60,7 +60,7 @@ No se modifica ninguna prueba histórica. Tampoco dados, ataque, búsqueda, expo
 |Partidas completas del motor|40/40|40/40; mismas acciones/estados/eventos/mensajes/finales al excluir solo hashes de fuente |
 |Cinco partidas Chromium HTTP|5/5 completas|5/5 completas, finales idénticos a referencia,0 errores/invariantes |
 |Interfaz/foco C16|3/3:320×640,393×852,1365×768|3/3 en esos tamaños,0 errores JavaScript |
-|file:// local + IA|Bloqueada por política del navegador local|Mismo bloqueo; **no validada localmente**, pendiente comprobar en CI |
+|file:// local + IA|Bloqueada localmente; **2/2 aprobadas en CI**|Bloqueada localmente; **2/2 aprobadas en CI**, red desactivada/sin solicitudes HTTP |
 
 ### Incompatibilidad confirmada: prueba de forma de fuente
 
@@ -83,7 +83,7 @@ Son controladores de prueba usando el motor real, no humanos ni un simulador de 
 
 Las cinco UI repiten las semillas2654435761/1401181143 en IA y2654435761/3816266512/3189639203 en local; incluyen victoria y derrota de cada modo y confirmación informativa final. Los finales coinciden, sin errores/invariantes incumplidas. [Referencia](evidencias/d12a-browser-reference.json), [PoC](evidencias/d12a-browser-poc.json), [foco referencia](evidencias/d12a-focus-reference.json), [foco PoC](evidencias/d12a-focus-poc.json), [captura escritorio](evidencias/d12a-poc-desktop.png), [captura móvil](evidencias/d12a-poc-mobile.png).
 
-**file://:** Chromium local responde `net::ERR_BLOCKED_BY_ADMINISTRATOR` antes de cargar ambos HTML. No se desactiva ni elude esa política y no se cuentan los intentos como dos aprobaciones. El workflow prueba las dos versiones en un Chromium de GitHub Actions, con red desactivada y modo local/IA. Su resultado debe verificarse en el SHA publicado; hasta entonces queda pendiente. No Android físico/TalkBack/otros navegadores.
+**file://:** Chromium local responde `net::ERR_BLOCKED_BY_ADMINISTRATOR` antes de cargar ambos HTML. No se desactiva ni elude esa política y no se cuentan los intentos como dos aprobaciones. El workflow prueba las dos versiones en un Chromium de GitHub Actions, con red desactivada y modo local/IA. CI de181903c lo comprobó: **4/4 aperturas**, dos variantes × local/IA, red desactivada, sin solicitudes HTTP ni errores JS. [Offline referencia](evidencias/d12a-ci-offline-reference.json), [offline PoC](evidencias/d12a-ci-offline-poc.json). No Android físico/TalkBack/otros navegadores.
 
 ## 5. Comparación técnica y costo
 
@@ -95,7 +95,7 @@ Las cinco UI repiten las semillas2654435761/1401181143 en IA y2654435761/3816266
 |Handlers|Funcionan como globals clásicos|Se preservan porque están fuera del bundle; **no** demuestra contrato UI modular resuelto |
 |Fixtures|433 pruebas compatibles con forma monolítica|432 originales compatibles;1 aserción de forma falla; fixtures generales siguen acoplados |
 |Reproducibilidad|check:build compara artefacto versionado con fuentes|Versión/lockfile fijados; check:poc compara archivo generado y dos construcciones; artifact separado, no HTML versionado |
-|Distribución|Un HTML sin npm en máquina del jugador|Un HTML sin npm en máquina del jugador; file local bloqueado ambientalmente, pendiente CI |
+|Distribución|Un HTML sin npm en máquina del jugador|Un HTML sin npm en máquina del jugador; file local bloqueado ambientalmente; CI aprobó ambos modos |
 |Reversión|Referencia vigente|Rama aislada, build original y fuentes de juego intactos |
 
 Tamaños **en bytes UTF-8**, no caracteres/comprimidos: plantilla157.556, referencia162.499, candidato164.177 (**+1.678 bytes**). Hashes: referencia `726a929502debe38d5a2c81c0ad12838b2424e4ac1ad19b27a44131f88831014`; PoC `614295431619ffb6be7612ea04aaeaf7574bd57accd3663355e0f5d285fd5245`.
@@ -111,7 +111,7 @@ Tamaños **en bytes UTF-8**, no caracteres/comprimidos: plantilla157.556, refere
 - La convivencia de dos builds sirve para el experimento, pero no se recomienda mantenerla indefinidamente. Adoptar uno, ajustar o descartar exige revisión del creador.
 - El bloqueo file local y la ausencia inicial de lockfile son hechos del entorno/base, no regresiones atribuidas a esbuild.
 
-**Dictamen provisional: AJUSTAR, no adoptar todavía.** Esbuild demuestra viabilidad como empaquetador del catálogo y salida autocontenida HTTP. La cobertura mecánica comparada es favorable; la compatibilidad completa de la suite y el contrato de aplicación aún no están resueltos. Si CI confirma file://, sería evidencia adicional para considerar D1.2b; nunca autorización automática. Descartarlo sigue siendo una alternativa válida si el costo de migrar contratos no compensa.
+**Dictamen: AJUSTAR, no adoptar todavía.** Esbuild demuestra viabilidad como empaquetador del catálogo y salida autocontenida HTTP/file://. La cobertura mecánica comparada es favorable; la compatibilidad completa de la suite y el contrato de aplicación aún no están resueltos. CI confirma file:// en Chromium143.0.7499.4 (local HTTP:154.0.8037.57), lo que suma evidencia para considerar D1.2b; nunca autorización automática. Descartarlo sigue siendo una alternativa válida si el costo de migrar contratos no compensa.
 
 ## 7. Reproducción, reversión y punto de control
 
@@ -128,10 +128,22 @@ npm run test:poc
 
 **El último comando termina con1 por la aserción no modificada**, guarda suite.tap, summary.json, comparison.json y lotes de partidas en `/tmp/d12a-poc-regressions/`. No ejecutar un `|| true` para presentarlo como validación aprobada. Los scripts Chromium aceptan `PLAYWRIGHT_MODULE` externo y `CHROMIUM_PATH`; PoC HTTP por `GAME_URL=http://127.0.0.1:8765/dist/invierno-esbuild-poc.html`; offline por `GAME_FILE_URL=file:///ruta/al/dist/invierno-esbuild-poc.html`. Servir raíz con Python http.server8765. El workflow contiene comandos completos y versión de Playwright de prueba1.57.0, sin incorporarla al producto.
 
-**Rollback preferido:** con árbol limpio, volver a `refactor/d1-catalogo`; sigue en ba9a423 y conserva su build. Si se mantiene esta rama, `npm run build` sigue generando la referencia original sin utilizar esbuild. No se requiere revertir reglas, migrar partidas, restaurar main ni borrar datos. `dist` es regenerable. No usar reset destructivo. Si posteriormente se decide eliminar el experimento mediante commits, revertir sus commits en orden inverso, incluyendo lockfile/configuración de CI/comandos; documentar esa decisión sin merge automático.
+**Rollback preferido:** con árbol limpio, `git switch --detach ba9a4238d22ad968edbe74d0445949f9a631ec70` recupera exactamente la base sin modificar ninguna rama. La rama remota `refactor/d1-catalogo` sigue en ba9a423 y conserva su build; no se presupone que exista ya una rama local de ese nombre. Si se mantiene esta rama, `npm run build` sigue generando la referencia original sin utilizar esbuild. No se requiere revertir reglas, migrar partidas, restaurar main ni borrar datos. `dist` es regenerable. No usar reset destructivo. Si posteriormente se decide eliminar el experimento mediante commits, revertir sus commits en orden inverso, incluyendo lockfile/configuración de CI/comandos; documentar esa decisión sin merge automático.
 
 **Punto de control obligatorio:** terminar D1.2a entregando informe/diff/CI, y **detenerse**. No iniciar D1.2b/c/d, D2, SP-02 ni otro subsistema. El único próximo paso es la revisión del creador con ChatGPT para decidir adoptar/ajustar/descartar y autorizar lo que corresponda.
 
 ## 8. Publicación y CI
 
-Pendiente: crear commit experimental, subir solo esta rama y consultar Actions por su SHA exacto. Se espera que la suite de referencia esté verde y el job de regresiones del candidato esté rojo por la incompatibilidad registrada; el job de navegador/file es independiente. No afirmar CI global aprobado si ese fallo permanece. Las evidencias y resultados remotos se incorporarán aquí al conocerlos.
+**Implementación publicada:** `181903cac73f629ad68d0f8ee84000d84d571086`, exclusivamente en rama experimental. No se creó/fusionó PR ni se modificó main/refactor/d1-catalogo. [Diff desde la base](https://github.com/LeviEdition/invierno-en-la-colonia/compare/ba9a4238d22ad968edbe74d0445949f9a631ec70...refactor/experiment-d1-2a-esbuild).
+
+| Actions, SHA exacto181903c | Resultado comprobado |
+| --- | --- |
+|[40859658496, referencia](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40859658496)|completed/success; logs439/439,0 fallidas |
+|[40859658678, experimento](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40859658678)|completed/failure; candidato438/439, mismo fallo de formato; sin continue-on-error |
+|Job browser del experimento|success:5/5 partidas UI,3/3 viewports y4/4 aperturas file con red desactivada;0 errores/invariantes/reintentos |
+
+Se descargaron y cotejaron artifacts: el HTML de CI tiene exactamente el hash PoC local, las40 comparaciones completas de motor tienen los mismos digests y los cinco finales UI coinciden con local. [Evidencia remota estructurada](evidencias/d12a-ci.json); los artifacts de los runs conservan TAP, JSONL, capturas y HTML generado. **CI global del experimento está rojo**, no se presenta como adopción aprobada.
+
+La revisión final reforzó una de las seis pruebas nuevas: ahora verifica el anclaje del bootstrap contra un bundle que **sí contiene** el arranque completo, además de demostrar la privacidad de handlers en el diagnóstico sin arranque. No cambia ninguna prueba histórica, fuente de juego ni artefacto; no es migración de cargadores. Se versiona con este checkpoint y se comprueba su propio SHA en Actions antes de entregar.
+
+**Checkpoint: D1.2a terminado como experimento, adopción no aprobada.** Revisión del creador/ChatGPT es la única siguiente tarea. No comenzar D1.2b/c/d ni D2. La incompatibilidad de una prueba permanece visible para esa decisión; no hay defecto mecánico nuevo confirmado en la cobertura ejecutada.

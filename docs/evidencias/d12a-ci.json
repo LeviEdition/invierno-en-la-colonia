@@ -1,0 +1,264 @@
+{
+  "sha": "181903cac73f629ad68d0f8ee84000d84d571086",
+  "referenceRun": {
+    "id": 40859658496,
+    "status": "completed",
+    "conclusion": "success",
+    "tests": 439,
+    "pass": 439,
+    "fail": 0,
+    "logCountsVerified": true
+  },
+  "experimentRun": {
+    "id": 40859658678,
+    "status": "completed",
+    "conclusion": "failure",
+    "candidateRegressions": "failure",
+    "browser": "success"
+  },
+  "candidateSummary": {
+    "artifact": "dist/invierno-esbuild-poc.html",
+    "htmlSha256": "614295431619ffb6be7612ea04aaeaf7574bd57accd3663355e0f5d285fd5245",
+    "sameTestsAndAssertions": true,
+    "exitCode": 1,
+    "tests": 439,
+    "pass": 438,
+    "fail": 1,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0,
+    "failedTests": [
+      "la base conserva las cinco clases principales y los puntos de entrada"
+    ],
+    "engineGames": {
+      "configurations": 40,
+      "equalBehavior": 40,
+      "meaning": "mismos estados finales, acciones, eventos, mensajes e invariantes; solo se excluyen hashes de fuente"
+    }
+  },
+  "engineComparison": "All40 CI digests identical to40 local comparisons",
+  "offline": {
+    "reference": {
+      "fileUrl": "file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/invierno_colonia_v9_9.html",
+      "htmlSha256": "726a929502debe38d5a2c81c0ad12838b2424e4ac1ad19b27a44131f88831014",
+      "chromium": "143.0.7499.4",
+      "results": [
+        {
+          "mode": "local",
+          "ok": true,
+          "errors": [],
+          "requests": [
+            "file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/invierno_colonia_v9_9.html"
+          ],
+          "networkOffline": true
+        },
+        {
+          "mode": "ai",
+          "ok": true,
+          "errors": [],
+          "requests": [
+            "file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/invierno_colonia_v9_9.html"
+          ],
+          "networkOffline": true
+        }
+      ]
+    },
+    "poc": {
+      "fileUrl": "file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/dist/invierno-esbuild-poc.html",
+      "htmlSha256": "614295431619ffb6be7612ea04aaeaf7574bd57accd3663355e0f5d285fd5245",
+      "chromium": "143.0.7499.4",
+      "results": [
+        {
+          "mode": "local",
+          "ok": true,
+          "errors": [],
+          "requests": [
+            "file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/dist/invierno-esbuild-poc.html"
+          ],
+          "networkOffline": true
+        },
+        {
+          "mode": "ai",
+          "ok": true,
+          "errors": [],
+          "requests": [
+            "file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/dist/invierno-esbuild-poc.html"
+          ],
+          "networkOffline": true
+        }
+      ]
+    }
+  },
+  "ui": [
+    {
+      "mode": "ai",
+      "seed": 2654435761,
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "completed": true,
+      "final": {
+        "round": 4,
+        "result": "victory",
+        "food": 0,
+        "morale": 9,
+        "samples": 7,
+        "goal": 7,
+        "ended": true,
+        "pending": {
+          "bite": false,
+          "loot": false,
+          "cross": false,
+          "leaders": [],
+          "death": false
+        },
+        "opened": ""
+      },
+      "errors": [],
+      "invariants": [],
+      "harnessRetries": [],
+      "equalsLocalFinal": true
+    },
+    {
+      "mode": "ai",
+      "seed": 1401181143,
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "completed": true,
+      "final": {
+        "round": 6,
+        "result": "morale",
+        "food": 2,
+        "morale": 0,
+        "samples": 3,
+        "goal": 5,
+        "ended": true,
+        "pending": {
+          "bite": false,
+          "loot": false,
+          "cross": false,
+          "leaders": [],
+          "death": false
+        },
+        "opened": ""
+      },
+      "errors": [],
+      "invariants": [],
+      "harnessRetries": [],
+      "equalsLocalFinal": true
+    },
+    {
+      "mode": "local",
+      "seed": 2654435761,
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "completed": true,
+      "final": {
+        "round": 2,
+        "result": "victory",
+        "food": 3,
+        "morale": 10,
+        "samples": 7,
+        "goal": 7,
+        "ended": true,
+        "pending": {
+          "bite": false,
+          "loot": false,
+          "cross": false,
+          "leaders": [],
+          "death": false
+        },
+        "opened": ""
+      },
+      "errors": [],
+      "invariants": [],
+      "harnessRetries": [],
+      "equalsLocalFinal": true
+    },
+    {
+      "mode": "local",
+      "seed": 3816266512,
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "completed": true,
+      "final": {
+        "round": 4,
+        "result": "morale",
+        "food": 1,
+        "morale": 0,
+        "samples": 3,
+        "goal": 5,
+        "ended": true,
+        "pending": {
+          "bite": false,
+          "loot": false,
+          "cross": false,
+          "leaders": [],
+          "death": false
+        },
+        "opened": ""
+      },
+      "errors": [],
+      "invariants": [],
+      "harnessRetries": [],
+      "equalsLocalFinal": true
+    },
+    {
+      "mode": "local",
+      "seed": 3189639203,
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "completed": true,
+      "final": {
+        "round": 3,
+        "result": "victory",
+        "food": 8,
+        "morale": 8,
+        "samples": 5,
+        "goal": 5,
+        "ended": true,
+        "pending": {
+          "bite": false,
+          "loot": false,
+          "cross": false,
+          "leaders": [],
+          "death": false
+        },
+        "opened": ""
+      },
+      "errors": [],
+      "invariants": [],
+      "harnessRetries": [],
+      "equalsLocalFinal": true
+    }
+  ],
+  "focus": {
+    "chromium": "143.0.7499.4",
+    "htmlSha256": "614295431619ffb6be7612ea04aaeaf7574bd57accd3663355e0f5d285fd5245",
+    "viewports": [
+      {
+        "width": 320,
+        "height": 640
+      },
+      {
+        "width": 393,
+        "height": 852
+      },
+      {
+        "width": 1365,
+        "height": 768
+      }
+    ],
+    "errors": []
+  },
+  "artifactHtmlMatchesLocal": true
+}
