@@ -1,12 +1,12 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
-## D1.2b — primer contrato UI/cargador, en verificación · 29/10/2026
+## D1.2b — primer contrato UI/cargador listo para revisión · 29/10/2026
 
 **Autorización de continuidad del creador:** tras discutir el método y el siguiente paso, «Bueno prodigamos». Se anunció y acotó D1.2b a cargador compartido, contrato de pruebas y piloto de inicio/pase. No aprobación de build principal, reglas, SP-02 o D2. Rama nueva `refactor/experiment-d1-2b-contracts`, desde918e241; main0b75d01 yD1ba9a423 intactas.
 
-**Resultado local:** referencia yPoC451/451,12 pruebas nuevas sin eliminar las439; smoke semántico con seis defectos deliberados detectados.40 configuraciones idénticas a referencia y evidencia A,5UI completas,3 viewports C16 y6 pruebas de comandos capturados. Los tres botones dejan de resolver el comando por su nombre global; resto de controles todavía conserva globals. Fuente/plantilla/HTML/build principal intactos. File de la nueva salida pendiente CI.
+**Resultado local:** referencia yPoC451/451,12 pruebas nuevas sin eliminar las439; smoke semántico con seis defectos deliberados detectados.40 configuraciones idénticas a referencia y evidencia A,5UI completas,3 viewports C16 y6 pruebas de comandos capturados. Los tres botones dejan de resolver el comando por su nombre global; resto de controles todavía conserva globals. Fuente/plantilla/HTML/build principal intactos. File de la nueva salida aprobado en CI:4/4 aperturas con red desactivada.
 
-[Informe66](66-d1-2b-contratos-inicio-y-pruebas.md), con límites y rollback. **Tarea activa única:** finalizar publicación/CI de este bloque y dejarlo para revisión. No ampliar controles, cambiar build por defecto ni iniciar D2 automáticamente. El informe65 y las cifras438/439 siguientes son historia de D1.2a, conservada como evidencia.
+[Informe66](66-d1-2b-contratos-inicio-y-pruebas.md), con límites y rollback. Código8b738df, CI40865297188/40865297184 ambos success451/451; artifacts cotejados,40motor/5UI/3viewports/6contratos/4file. Checkpoint documental se verifica por su SHA antes de entregar. **Tarea activa única:** revisión del bloque por el creador/ChatGPT para delimitar otra ampliación. No ampliar controles, cambiar build por defecto ni iniciar D2 automáticamente. El informe65 y las cifras438/439 siguientes son historia de D1.2a, conservada como evidencia.
 
 
 ## D1.2a — experimento terminado, pendiente de revisión · 29/10/2026

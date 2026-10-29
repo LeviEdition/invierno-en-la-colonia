@@ -1,6 +1,6 @@
 # 66 — D1.2b: primer contrato de inicio/pase y cargador de pruebas
 
-**29/10/2026. Base918e24183a441c127ce23c75ea36d97f7f90f347. Rama `refactor/experiment-d1-2b-contracts`.** Primer bloque acotado implementado; validación local aprobada, CI exacto pendiente de publicación. No adopta el build experimental ni inicia D2.
+**29/10/2026. Base918e24183a441c127ce23c75ea36d97f7f90f347. Rama `refactor/experiment-d1-2b-contracts`.** Primer bloque acotado implementado y aprobado en pruebas locales y CI exacto8b738df; listo para revisión. No adopta el build experimental ni inicia D2.
 
 ## Autorización y estado inicial
 
@@ -57,13 +57,13 @@ Se introdujeron seis defectos **solo dentro de partidas aisladas de prueba**, un
 |Cinco partidas Chromium UI|5/5 completas, finales iguales a D1.2a;0 errores JS/invariantes/reintentos |
 |C16 interfaz/foco|3/3:320×640,393×852,1365×768,0 errores |
 |Contrato nuevo de inicio/pase|6/6:los tres tamaños × local/IA; una creación por inicio,0 llamadas a handlers globales sustituidos |
-|file:// local|No repetido: política administrativa ya bloqueada en ambas variantes en D1.2a; comprobar nueva salida en CI |
+|file://|Bloqueo local conocido; **4/4 aprobadas en CI8b738df**, referencia/PoC × local/IA, red desactivada/sin solicitudes HTTP |
 
 **439 existentes+12 nuevas=451**, no40 tests adicionales por repetir partidas. El rojo arquitectónico se reprodujo antes del adaptador en el PoC A: al sustituir deliberadamente los handlers globales, el primer inicio local llamaba al fallback y no creaba partida. Después, los seis casos pasan con0 fallbacks y una creación exacta. Esto es una prueba de desacoplamiento bajo fallo inyectado, **no un bug mecánico descubierto en V9.9**.
 
 Las pruebas de pase preparan explícitamente el estado para terminar turno; no se presentan como partidas naturales. Los cinco recorridos completos y las40 partidas del motor usan sus controladores existentes y el motor real. La emulación móvil no es Android físico/TalkBack.
 
-[Suite PoC](evidencias/d12b-suite.json), [comparación40](evidencias/d12b-engine-comparison.json), [5UI](evidencias/d12b-browser.json), [foco3](evidencias/d12b-focus.json), [contrato6](evidencias/d12b-handover.json), [metadatos/límites](evidencias/d12b-local.json). Los artifacts de CI conservarán TAP, JSONL completos y verificaciones file.
+[Suite PoC](evidencias/d12b-suite.json), [comparación40](evidencias/d12b-engine-comparison.json), [5UI](evidencias/d12b-browser.json), [foco3](evidencias/d12b-focus.json), [contrato6](evidencias/d12b-handover.json), [metadatos/límites](evidencias/d12b-local.json). Los artifacts de CI conservan TAP, JSONL completos y verificaciones file. [Resultados remotos por SHA](evidencias/d12b-ci.json).
 
 ## Revisión crítica y limitaciones
 
@@ -75,7 +75,7 @@ Las pruebas de pase preparan explícitamente el estado para terminar turno; no s
 - Durante una aplicación de parche se interrumpió el transporte del entorno. Se releyó Git/archivos, se confirmó que ese parche no se había aplicado y se reintentó tras recuperar conexión; sin reset ni pérdida de cambios.
 - Esta es autorrevisión técnica con pruebas, no una revisión independiente de ChatGPT ni autorización de adoptar el build.
 
-**Resultado provisional:** el primer bloque elimina la incompatibilidad concreta de D1.2a sin cambiar las reglas y demuestra un contrato UI pequeño. La construcción principal sigue sin sustituirse. No iniciar D2 ni migrar otros subsistemas automáticamente.
+**Resultado técnico:** el primer bloque elimina la incompatibilidad concreta de D1.2a sin cambiar las reglas y demuestra un contrato UI pequeño. La construcción principal sigue sin sustituirse. No iniciar D2 ni migrar otros subsistemas automáticamente.
 
 ## Reproducción, rollback y checkpoint
 
@@ -89,4 +89,14 @@ Con servidor8765, ejecutar `check-d12b-handover-browser.mjs`, `check-c16-focus-b
 
 ## Entrega remota
 
-Pendiente commit/push y CI exacto. El resultado local451/451 no se atribuye anticipadamente a GitHub Actions. Se actualizarán tablero y este checkpoint al confirmar el SHA.
+**Código:** `8b738df4bb9490726cceabd3b40c9a8a00327c40`, publicado solo en rama B. [Diff desde A](https://github.com/LeviEdition/invierno-en-la-colonia/compare/918e24183a441c127ce23c75ea36d97f7f90f347...refactor/experiment-d1-2b-contracts).
+
+| CI del SHA exacto8b738df | Resultado comprobado |
+| --- | --- |
+|[40865297188 — referencia](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40865297188)|completed/success, logs451/451,0 fallidas/omitidas/TODO |
+|[40865297184 — candidato y navegador](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40865297184)|completed/success, ambos jobs aprobados; PoC451/451 y40/40 comparaciones |
+|Navegador del mismo run|5/5 partidas,3/3 C16,6/6 comandos capturados,4/4 file offline;0 errores/invariantes/reintentos |
+
+Se descargaron los artifacts y se cotejaron datos: hash PoC `bbf71aae0198d3c5bc72f73e3e2219c8f603f63a04b895880fea67de93c87fc5` idéntico a local; cinco finales coincidentes; seis casos de handlers sin fallback; cuatro aperturas file con red desactivada. Fuente/plantilla/catálogo/build/HTML principal intactos. Main0b75d01, D1ba9a423 y experimentoA918e241 conservados; sin PR/merge/release ni cierre de issues.
+
+**Checkpoint final:** primer bloque D1.2b terminado para revisión; no declarar migrada toda la UI/pruebas ni adoptar el build principal. El commit documental de este checkpoint no cambia código y se verifica por su propio SHA en Actions antes de entregar. La única siguiente tarea es revisar este diff y delimitar otra ampliación; D1.2c/d y D2 no iniciadas.
