@@ -1,14 +1,14 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
-## Reconciliación documental y apertura autorizada del PR D1/D2 ·29/10/2026
+## PR15 D1/D2 abierto — documentación reconciliada, pendiente de revisión final ·29/10/2026
 
-**Encargo vigente:** incorporar novedades documentales SP-03 desde `refactor/d1-catalogo`, validar y abrir PR de `refactor/d1-d2-arquitectura` hacia main. **Apertura autorizada; fusión NO autorizada.** Base técnica8e3e7d3 ymain0b75d01 confirmadas; fuente de diseño833eae7, base comúnba9a423. Solo se trasladan hunks de63 ybloques nuevos de18: no se fusiona la rama de diseño ni se cambia código.
+**Encargo cumplido hasta apertura:** [PR15](https://github.com/LeviEdition/invierno-en-la-colonia/pull/15), rama `refactor/d1-d2-arquitectura` → main, regular/no draft. **No fusionado ni auto-merge.** Preapertura7d6a68a con árbol limpio,467/467, build reproducible y[CI40896698599](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40896698599)/[40896698392](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40896698392) success.40/40 contra cada referencia,5QA+5producto y4file offline; artifacts cotejados. GitHub sin conflictos; los checks del último head se verifican antes de entregar yse enlazan en el PR.
 
-[Informe70](70-reconciliacion-documental-y-pr-d1-d2.md) registra procedencia, aclaraciones y resultados. Acuerdos: base V9.9, tres categorías narrativas, campaña reactiva yencrucijadas condicionadas máximo una con causalidad cronológica. Ciclo completo, historias reutilizables, contingencias por muerte yprioridades de Encuentros siguen como propuestas/preguntas. Los registros técnicos67/68 yla evidencia anterior se conservan.
+**Documentación:** novedades de diseño833eae7 incorporadas por hunks/bloques de18/63; no merge de la rama D1. Base8e3e7d3 y código6277e62 intactos. Acuerdos (base V9.9, tres clases, campaña reactiva, cronología máximo una encrucijada) separados de propuestas (ciclo completo, Encuentros reutilizables y contingencias por muerte). Informes67/68 conservados;69 registra PR actual y[70](70-reconciliacion-documental-y-pr-d1-d2.md) detalla procedencia yvalidación.
 
-**Resultado local:** npm ci/check:build y467/467 aprobados; producto y código idénticos al corte auditado. Pendiente CI exacto de la reconciliación.
+**Estado protegido:** main remoto0b75d01 yD1 fuente833eae7 sin modificar. Nada de código singleplayer, reglas/IA/narrativa jugable, tags/releases o refactor extra. Estrategia propuesta de integración conserva ascendencia y57872ee mediante merge convencional, sujeto a aprobación futura.
 
-**Tarea activa única:** completar validación de la rama reconciliada y abrir/comprobar el PR si aprueba. No fusionar, tags/releases ni implementación singleplayer. Tras la apertura, detenerse para revisión final independiente.
+**Tarea activa única:** revisión final independiente del creador/ChatGPT ydecisión sobre aprobación/merge del PR. **No fusionar automáticamente ni iniciar juego propio.** Las secciones siguientes son registros históricos de preparación y diseño.
 
 
 ## Cierre técnico D1/D2 — auditoría aprobada, integración pendiente de autorización ·29/10/2026

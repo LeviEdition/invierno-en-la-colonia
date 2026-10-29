@@ -611,3 +611,5 @@ Encargo focalizado desdeee73d29, main0b75d01 verificada. Informe68: dos bloqueos
 ## 29/10/2026 — reconciliación documental y apertura autorizada de PR D1/D2
 
 Nuevo encargo desde8e3e7d3: integrar únicamente novedades documentales de refactor/d1-catalogo@833eae7 (14 commits,18/63), con base comúnba9a423. Patch selectivo ybloques de diseño preservan registros técnicos. Acuerdos ypropuestas diferenciados; cronología sin cancelación retroactiva prevalece sobre formulaciones tempranas. Informes67/68 históricos conservados,69 actualizado einforme70 registra alcance/procedencia. No se modifica código ni mecánicas. Validación ycreación de PR pendientes de compuertas; merge no autorizado.
+
+**Reconciliación/PR:**7d6a68a aprobado local yCI40896698599/40896698392 (467,40+40,5QA+5producto,4file); artifacts cotejados. Se abrió PR15 hacia main con árbol limpio ybase0b75d01; GitHub sin conflictos, sin auto-merge. Cierre documental registra URL, propuestas/acuerdos yresultados; se comprueban checks del head final antes de entregar. main intacta, fuente833eae7 intacta; no fusión ni implementación singleplayer.

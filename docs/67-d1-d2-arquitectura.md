@@ -1,6 +1,6 @@
 # 67 — Continuación D1 y D2 (29/10/2026)
 
-**Seguimiento documental29/10:** el encargo posterior autoriza reconciliar el diseño SP-03 y abrir/comprobar el PR hacia main, sin fusionarlo. Este informe conserva los hechos, SHA y resultados de su cierre histórico; las frases «PR no abierto» o «esperar autorización de apertura» describen ese momento. Estado actual en [tablero18](18-tablero-operativo.md), [documento69](69-pr-propuesto-d1-d2.md) e [informe70](70-reconciliacion-documental-y-pr-d1-d2.md). La reconciliación no cambia el código auditado6277e62 ni sus reservas.
+**Seguimiento documental29/10:** el encargo posterior autorizó reconciliar SP-03 y abrir/comprobar el PR hacia main. [PR15 abierto](https://github.com/LeviEdition/invierno-en-la-colonia/pull/15), sin fusionar; preapertura7d6a68a con CI aprobado. Este informe conserva los hechos, SHA y resultados de su cierre histórico; las frases «PR no abierto» o «esperar autorización de apertura» describen ese momento. Estado actual en [tablero18](18-tablero-operativo.md), [documento69](69-pr-propuesto-d1-d2.md) e [informe70](70-reconciliacion-documental-y-pr-d1-d2.md). La reconciliación no cambia el código auditado6277e62 ni sus reservas.
 
 
 ## Autorización y límites

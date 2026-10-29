@@ -68,3 +68,7 @@ El creador amplió autorización a D1/D2. [Informe67](67-d1-d2-arquitectura.md):
 ## Cierre técnico focalizado29/10/2026
 
 El creador decidió no ampliar arquitectura para singleplayer en esta etapa. Auditoría[68](68-cierre-integracion-d1-d2.md):3 defectos de frontera/ciclo corregidos,467/467 ycompuertas completasCI aprobadas sobre6277e62;40registros iguales a cada referencia, incluido main. Integración técnicamente recomendada conservando historia del oráculo;[PR69 preparado](69-pr-propuesto-d1-d2.md), **no abierto/fusionado**. Hito1 técnicamente listo para revisión; aceptación/apertura/merge pendientes. No se inició hito2 ni juego propio; reservas mantenibles se resolverán al implementar funcionalidades concretas.
+
+## Reconciliación y apertura autorizada del PR15 —29/10/2026
+
+El encargo posterior autorizó reconciliar la documentación SP-03 de833eae7 yabrir PR tras validar. [PR15 abierto](https://github.com/LeviEdition/invierno-en-la-colonia/pull/15), preapertura7d6a68a con467/467 yCI completo aprobado. Código yHTML del cierre auditado intactos; planificación conceptual no implementada. [Informe70](70-reconciliacion-documental-y-pr-d1-d2.md) distingue acuerdos ypropuestas. Hito1 espera revisión final/merge autorizado; hito2 yjuego propio no iniciados. No se fusionó ni cambió main.

@@ -106,6 +106,51 @@
   "checkBuild": "exit0",
   "executableChangesVsTechnicalBase": false,
   "productionSha256": "43b8883ad4821e4b50c40791615c5ef6c0b3030476409b4e1c6da4dbd872d692",
-  "ci": "pendiente de commit reconciliado",
-  "pr": "aún no abierto"
+  "ci": {
+    "preOpeningSha": "7d6a68a21a802d0938e67dd8a1d863484fc07530",
+    "runs": [
+      {
+        "id": 40896698599,
+        "event": "push",
+        "conclusion": "success"
+      },
+      {
+        "id": 40896698392,
+        "event": "push",
+        "conclusion": "success",
+        "jobs": [
+          "engine",
+          "browser"
+        ]
+      }
+    ],
+    "artifactsDownloadedAndVerified": true,
+    "tests": 467,
+    "comparisonHistorical": {
+      "reference": "57872ee279e924460a126aecbcd0ee7141b5e078",
+      "equal": 40
+    },
+    "comparisonMain": {
+      "reference": "0b75d01aba013cd029d9d0dd0bdbd20791be15fc",
+      "equal": 40
+    },
+    "qaGames": 5,
+    "productionReplays": 5,
+    "offlineOpenings": 4,
+    "sharedModuleHashesVerified": 15
+  },
+  "pr": {
+    "number": 15,
+    "url": "https://github.com/LeviEdition/invierno-en-la-colonia/pull/15",
+    "stateAtOpening": "OPEN",
+    "draft": false,
+    "base": "main",
+    "baseSha": "0b75d01aba013cd029d9d0dd0bdbd20791be15fc",
+    "headAtOpening": "7d6a68a21a802d0938e67dd8a1d863484fc07530",
+    "mergeableAtOpening": true,
+    "merged": false,
+    "autoMerge": false,
+    "reviewRequiredByCreator": true,
+    "checksOnDelivery": "consultar PR; commit posterior solo documental verificado antes de entregar"
+  }
 }

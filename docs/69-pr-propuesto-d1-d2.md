@@ -3,7 +3,9 @@
 Base: `main@0b75d01aba013cd029d9d0dd0bdbd20791be15fc`.
 Head: `refactor/d1-d2-arquitectura`, contenido técnico hasta`6277e62dbd8b917bac7d4c290b14096499d6b0f7`, más documentación de cierre. [Inventario exacto de commits/archivos](evidencias/d1d2-integracion-commits.json). Actualizar/revalidar si main o la rama se mueven antes de abrir.
 
-**Estado actual:** apertura autorizada por el creador en el encargo de reconciliación, condicionada a pruebas y CI aprobados. Todavía no abierto al preparar este commit; URL/checks se registrarán tras la creación. Fusión no autorizada.
+**Estado actual:** [PR15 abierto](https://github.com/LeviEdition/invierno-en-la-colonia/pull/15), no draft, desde `refactor/d1-d2-arquitectura` hacia `main`. Apertura autorizada y realizada después de comprobar árbol limpio yCI completo del SHA reconciliado7d6a68a. GitHub informa MERGEABLE (sin conflictos); checks de PR ydel commit documental posterior se comprueban antes de entregar. Sin auto-merge ni fusión autorizada. El head yestado actualizado de checks se consultan en el PR.
+
+**Reconciliación:** fuente833eae7, solo documentación; no nuevos cambios de código frente al cierre8e3e7d3/código6277e62. [Informe70](70-reconciliacion-documental-y-pr-d1-d2.md).
 
 ## Título
 
@@ -19,6 +21,8 @@ Incluye caracterización D1.0/D1.1, experimentos y evidencias históricas, adem�
 
 ### Validación
 
+Preapertura `7d6a68a21a802d0938e67dd8a1d863484fc07530`: [regresión40896698599](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40896698599) y [arquitectura40896698392](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40896698392), ambos **success**; engine/browser aprobados yartifacts descargados/cotejados. El cierre documental posterior no cambia el ejecutable; sus checks exactos se consultan en el PR antes de entregar.
+
 - npm ci/check:build/npm test:467 pruebas actuales, sin omisiones.
 -40 partidas del lote (20 IA+20 local), idénticas contra57872ee ycontra main0b75d01; solo se excluyen hashes de fuente. Las suites originales451 y408 permanecen verdes.
 -5 partidas QA y5 reproducciones de sus clics sobre el HTML de producto sin acceso interno; mismos recursos/objetivo/resultado visibles.
@@ -30,7 +34,7 @@ Incluye caracterización D1.0/D1.1, experimentos y evidencias históricas, adem�
 
 Las40 configuraciones yrecorridos no prueban todos los estados posibles. Persiste el esquema V9.9 de dos grupos yun contexto interno de compatibilidad amplio. VM yacceso interno solo en harness QA; el producto no publica estado/funciones del juego ni incluye eval/with/instrumentación. Android físico, TalkBack yotros navegadores no se validaron. No es una certificación universal de accesibilidad ni un motor singleplayer terminado.
 
-La comparación de integración parte de main0b75d01, ancestro de la entrega. Si main avanza, actualizar la comparación yvolver a validar el resultado antes de integrar. El workflow completo contempla push de la rama, PR y main. Primero se verificará el SHA reconciliado por push; después de abrir se comprobarán también los checks del PR y su posibilidad de integración. No equivale a validar un merge futuro ejecutado.
+La comparación de integración parte de main0b75d01, ancestro de la entrega. Si main avanza, actualizar la comparación yvolver a validar el resultado antes de integrar. El workflow completo contempla push de la rama, PR y main. Se verificó el SHA reconciliado por push antes de abrir; la creación activó además los checks pull_request. La rama no presenta conflictos; se comprueba su último head antes de entregar. No equivale a validar un merge futuro ejecutado.
 
 ### Reversión propuesta
 
