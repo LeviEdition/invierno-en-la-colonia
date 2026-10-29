@@ -33,7 +33,7 @@ Cada decisión relevante deberá registrar: **ID SP-xx**, objetivo, comparación
 | --- | --- | --- | --- |
 | **SP-00** | Identidad, alcance y rol del Director | **ACORDADO en lo esencial** | Visión consolidada: jugador como líder; supervivencia + narrativa; Director del mundo, no segundo jugador obligatorio. Verificar coherencia con [12](12-vision-narrativa-persistente.md), [51](51-rumbo-fidelidad-e-identidad.md) y [62](62-hitos-referencia-fiel-y-juego-propio.md). |
 | **SP-01** | Preparación, equipo y liderazgo | **ACORDADO parcialmente** | F-14: cinco candidatos aleatorios → elegir tres → designar líder manualmente. Resolver incorporación/reemplazo, sucesión y autoridad del líder en casos límite. |
-| **SP-02** | **Economía de acciones, dados y atributos** | **REPARTO ACORDADO; balance y detalles PENDIENTES** | El líder elige qué dado usar y qué superviviente ejecuta cada acción según atributos, pasivas, ubicación y necesidad; diseñar roles complementarios, reserva, acciones con/sin dado, comida, muerte y balance; vincular F-10/F-12/F-15. |
+| **SP-02** | **Economía de acciones, dados y atributos** | **BASE V9.9 ACORDADA para primera versión; balance PENDIENTE** | El líder elige qué dado usar y qué superviviente ejecuta cada acción según atributos, pasivas, ubicación y necesidad; diseñar roles complementarios, reserva, acciones con/sin dado, comida, muerte y balance; vincular F-10/F-12/F-15. |
 | **SP-03** | Ciclo completo de una ronda singleplayer | **PROPUESTA inicial** | Describir con ejemplos las etapas inicio/información → órdenes/acciones → encuentros → resolución de colonia → consecuencias/continuidad; decidir puntos de interrupción y finalización. |
 | **SP-04** | Presión de supervivencia con un solo grupo | **PENDIENTE** | Ajustar y comparar crisis, comida/hambre, residuos, zombis, moral, botín y crecimiento de la colonia **sin asumir que todo se divide entre dos**. |
 | **SP-05** | Director de Juego y memoria del mundo | **Visión ACORDADA; reglas PENDIENTES** | Contratos de eventos, límites del Director, cuándo interviene, frecuencia, hechos persistentes, facciones, promesas y consecuencias diferidas/contingencias. |
@@ -378,6 +378,34 @@ El **100 %** del híbrido surge porque Damián mata un zombi por orden sin riesg
 
 **Próxima decisión de alcance:** confirmar si el creador quiere **congelar explícitamente SP-02 (mecánicas nuevas) como backlog** y trasladar el foco del juego propio a SP-03/SP-05/SP-06 (ronda singleplayer, Director de Juego, narrativa persistente/campaña), mientras D1/D2 sigue por su vía técnica. Hasta la confirmación, **la nueva dirección es recomendación**, no compromiso definitivo. **No tocar código ni `main`.**
 
+## 5K. Alcance aprobado para el primer singleplayer y necesidad de balance (29/10/2026)
+
+**DECISIÓN EXPLÍCITA DEL CREADOR — ACORDADO EN ALCANCE:** para la **primera versión** del videojuego propio, **mantener esencialmente las mecánicas y economía de dados de V9.9 como base**, en lugar de sustituir ahora el motor con reservas de dados por atributo, nuevas estadísticas o el híbrido contextual. **Prioridad de diferenciación:** líder encarnado, singleplayer, Director de Juego, relaciones y consecuencias narrativas persistentes. Los laboratorios M2/híbrido permanecen documentados como **investigación aplazada**, no trabajo actual ni ideas eliminadas definitivamente. Esto **no autoriza implementar nada durante D1/D2** y no declara idénticas las reglas o probabilidades finales del producto propio.
+
+**Precisión sobre F-10/F-12/F-15:** por estar ligadas a una evolución de la mecánica, **quedan sujetas a revisión de compatibilidad y prioridad en la línea de producto propia**; no aplicarlas automáticamente ni considerarlas revocadas en la matriz F externa sin una conciliación explícita. La V9.9 de referencia no cambia.
+
+**OBSERVACIÓN DEL CREADOR — PROBLEMA REAL A RESOLVER:** con pocos supervivientes activos y sin segundo equipo, las muertes pueden crear desequilibrios graves; propuso explorar **más posibilidades de conseguir supervivientes nuevos**. Se acuerda **evaluar y balancear** este riesgo, **no** aprobar todavía una probabilidad de reclutamiento, un tamaño máximo de grupo ni una protección contra la muerte.
+
+### Riesgo de espiral de derrota
+
+Con la fórmula V9.9, **tres supervivientes vivos → cuatro dados; dos → tres; uno → dos** por ronda. La primera muerte reduce **25 % la reserva inicial de dados** y, además, elimina disponibilidad de personaje, capacidades, pasivas y cobertura espacial. El grupo más débil puede entonces buscar menos, defender peor y exponerse a nuevas pérdidas. Que se reduzca el consumo de comida al morir alguien **no garantiza** compensación suficiente.
+
+**No confundir** «más oportunidades de reclutamiento» con «reemplazo gratuito garantizado». Un rescate automático tras cada muerte trivializaría pérdidas, convertiría personas en recursos intercambiables y podría aumentar sin control la reserva de dados. El reclutamiento debe tener **costos, condiciones y consecuencias narrativas reconocibles**, y deben existir rutas accesibles incluso tras perder una especialidad indispensable.
+
+### Líneas de balance que habrá que contrastar (PROPUESTAS, NO REGLAS)
+
+1. **Acceso al reclutamiento:** oportunidades aleatorias + **vías buscables y previsibles**, como encuentros, rescate, solicitud de ayuda, pactos o vínculos; evaluar una ruta de recuperación tras bajas sin garantizarla ni imponer rescates obligatorios. Definir distinción entre población civil, supervivientes reclutados y equipo activo.
+2. **Capacidad de recuperación:** una pérdida debe doler, pero comprobar que con uno o dos supervivientes aún existe al menos una estrategia coherente para sostener la colonia y reconstruir la capacidad operativa antes del colapso. Sin inmunidad de guion.
+3. **Presión de supervivencia:** comparar comida, crisis, residuos, zombis, objetivos de campaña, rondas disponibles, exposición y heridas frente a **una sola reserva de acciones**, sin escalar todo proporcionalmente ni dividir parámetros por dos automáticamente.
+4. **Consecuencias de liderazgo y narrativa:** la muerte del líder exige sucesión donde sea posible; muerte de un personaje necesario para una misión debe activar sustitutos o rutas alternativas plausibles, no bloquear la campaña.
+5. **Curva de crecimiento:** nuevos supervivientes implican dados adicionales según la fórmula base, pero también posibles necesidades, relaciones, exposición y amenazas. Vigilar tanto la espiral descendente por muertes como la sobrepotencia por reclutar sin límite.
+
+### Experimentos de diseño necesarios
+
+Simular **2–3 rondas continuadas**, con estados de partida idénticos al comenzar cada variante: (A) tres supervivientes sanos; (B) muerte temprana de uno; (C) lesión y pérdida de especialista; (D) dos supervivientes con acceso a reclutamiento; (E) incorporación de uno o dos supervivientes. Medir **dados útiles**, comida, búsqueda, defensa, crisis, heridas/muertes, avance de campaña, frecuencia y costo de reclutar, y existencia de alternativas para recuperarse. **No cambiar simultáneamente reclutamiento, dificultad de crisis y heridas**: aislar las causas para saber qué ajuste realmente mejora la experiencia.
+
+**Próximo trabajo de diseño acordado:** cerrar el alcance conceptual de SP-02 como **«mecánica V9.9 de partida, balance singleplayer pendiente»**, y avanzar hacia **SP-03 (ciclo de ronda)** enlazándolo con **SP-04 (balance, pérdidas y reclutamiento)**. La prioridad de diseño no altera el tablero de tareas técnicas D1/D2. No hay nuevos cambios de código, tests, ni motor aprobados.
+
 ## 6. Diseño de ronda provisional para SP-03 (no aprobado)
 
 1. **Apertura:** presentación de crisis, recursos, peligros e indicios válidos según el estado.
@@ -414,7 +442,7 @@ El **100 %** del híbrido surge porque Damián mata un zombi por orden sin riesg
 
 **Un bloque de diseño a la vez:** describir regla actual → objetivo de experiencia → dos alternativas cuando exista una disyuntiva → riesgos y efectos sistémicos → escena/ejemplo de prueba → **decisión explícita** → actualizar este documento y [tablero 18](18-tablero-operativo.md). Seguir el [protocolo crítico 15](15-protocolo-revision-critica.md); no aprobar por entusiasmo o por un ejemplo aislado.
 
-- **Siguiente tarea de DISEÑO:** **SP-02 — especialización efectiva y economía de acciones**: después de acordar que el líder decide asignación por atributos, pasivas y contexto, comparar roles complementarios, acciones con/sin dado y escenarios en que un personaje podría monopolizar los dados. Dejar la **cantidad exacta de reserva y cualquier tope por personaje como cuestiones a validar**, sin reabrir liderazgo ni F-14.
+- **Siguiente tarea de DISEÑO (actualizado 29/10/2026):** **SP-03 — ciclo de ronda singleplayer**, apoyado en mecánicas de V9.9 como base acordada; integrar desde el inicio las preguntas de **SP-04** sobre muerte, reducción de acciones, reclutamiento, presión de recursos y recuperación. No añadir motor nuevo de dados ni nuevas estadísticas en el primer alcance. Ver sección 5K; balance, fórmulas finales y reglas de reclutamiento siguen pendientes.
 - **Siguiente tarea TÉCNICA:** **D1.2a** (PoC reversible con esbuild, pendiente de autorización), seguida de D1/D2 conservadores. El trabajo de diseño **no cambia** esta prioridad.
 - **Siguiente documentación cuando se cierre un bloque:** actualizar su estado, las decisiones/fuentes, escenarios de aceptación y la única siguiente tarea de diseño. Los ejemplos que no obtengan aprobación siguen como propuestas.
 - **No ejecutado:** ninguna especificación SP está implementada en la V9.9, no se creó rama de producto, no se cambió `main`, el catálogo, reglas, tests ni planilla XLSX por esta hoja de ruta.
