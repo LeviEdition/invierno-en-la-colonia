@@ -1,5 +1,14 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## SP — Decisión de alcance y balance singleplayer · 29/10/2026
+
+**APROBADO EN DISEÑO por el creador:** primer juego propio singleplayer con **mecánicas/dados esencialmente basados en V9.9**; la investigación alternativa de pool/híbrido y estadísticas nuevas se **aplaza**, no se implementa ni se elimina de la documentación. Enfoque creativo: líder encarnado, Director de Juego, tramas y consecuencias persistentes. **No se aprueba todavía un balance final ni se modifican F-10/F-12/F-15 automáticamente**; revisar posteriormente su pertinencia en la matriz F.
+
+**Advertencia explícita del creador:** al arrancar con tres supervivientes, morir uno resulta especialmente grave y quizá requiera **mayor acceso a nuevos supervivientes**. La fórmula V9.9 de **1 + supervivientes vivos** pasaría de **cuatro a tres dados** tras la primera baja, además de perder habilidades y cobertura espacial. Deben evaluarse espiral de derrota, encuentros/reclutamientos accesibles pero con costos y consecuencias, grupos de uno o dos, lesiones, sucesión, alimentación, crisis, zombis, exposición, objetivos y el posible desequilibrio opuesto por reclutar en exceso. **Ninguna tasa de reclutamiento ni regla compensatoria está aprobada**.
+
+**Próximo paso único de DISEÑO:** **SP-03**, describir ronda de líder singleplayer con V9.9 como base; coordinar con **SP-04** escenarios de muerte/reclutamiento y balance de uno a tres supervivientes. Documento de decisiones: [63, sección 5K](63-hoja-de-ruta-planificacion-singleplayer.md). **Trabajo técnico D1/D2 separado**: no alterar reglas, motor, main, pruebas o ramas de producto por este registro; Codex continúa su cierre bajo sus autorizaciones vigentes.
+
+
 ## Cierre de jornada — bitácora 28/10/2026 y próximo SP-02 · 28/10/2026
 
 **Registro completo:** [64 — Bitácora de desarrollo del 28/10/2026](64-bitacora-2026-10-28.md). Cierre de la reflexión sobre alcance: **para el primer videojuego conviene examinar conservar las mecánicas V9.9 y priorizar narrativa persistente**. **No hay aprobación irreversible** de cancelar el motor híbrido ni autorización de iniciar código singleplayer. La investigación SP-02 queda documentada sin perderse.
