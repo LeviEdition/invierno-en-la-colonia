@@ -1,5 +1,18 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## Prueba hospital 2.5D — implementada y validada; revisión visual pendiente · 29/10/2026
+
+**Rama:** `prototype/hospital-2-5d`, [PR16](https://github.com/LeviEdition/invierno-en-la-colonia/pull/16) en borrador, sin fusión. Materiales subidos por el creador ened3578f y sincronizados por fast-forward. PNG hospital/zombi con alfa0–255 real; suelo RGB opaco. Renombrados sin alterar bytes, manifest.json registra procedencia y hashes. Los bloqueos anteriores de archivos están resueltos.
+
+**Resultado:** entrada independiente `prototypes/hospital/`, Canvas2D y módulos sin dependencias nuevas, configuración/cámara/renderizado/controles separados. Tres posiciones con orden explícito, oclusión parcial por alfa en esquina, hospital transparente opcional, sombra separada, selección por alfa y controles HTML de44px. Arrastre, rueda/pinza ancladas, límites, teclado y restablecimiento. Sin movimiento libre ni motor V9.9.
+
+**Validación local:** 10/10 pruebas del prototipo y **477/477** suite completa; check:build y diff:check aprobados. Chromium escritorio1365×768 y móviles emulados393×852/320×640, tres posiciones/ocultos/selección/arrastre/rueda/pinza/teclado/reset;0 excepciones JS y0 overflow horizontal. Comparación de píxeles confirma capas alineadas y visibilidad delante100%, detrás0%, esquina≈56–57%. Fallo simulado de carga con aviso y controles deshabilitados. [Informe73](73-prototipo-visual-hospital-2-5d.md), [JSON](evidencias/hospital-prototipo.json), [delante](evidencias/hospital-delante.png), [esquina](evidencias/hospital-esquina.png). Gate visual nuevo en Actions; se verifican los checks del SHA exacto antes de entregar.
+
+**Referencia protegida:** main826199d, tagv0.9.9-referencia-modular→62e4e851 y HTML43b8883a… intactos; SP-03, reglas, datos y dependencias sin cambios. Reservas: bitmaps provisionales/zoom, suelo finito, perspectivas fijas; sin Android físico/TalkBack/otros navegadores. La emulación no certifica teléfono real.
+
+**Única siguiente tarea:** revisión visual del creador en PR16 (escala, profundidad y encuadre); no fusionar ni ampliar a otras localidades o mecánicas. Los bloques inferiores conservan la preparación histórica; SP-03/SP-04 siguen separados.
+
+
 ## Prueba hospital 2.5D — vistas previas recibidas; carga de originales pendiente · 29/10/2026
 
 Se recibieron en el chat las vistas previas del suelo, zombi y hospital completo. El entorno no expone sus archivos binarios descargables: formato PNG, alfa y hashes siguen sin verificar. No se reconstruyó arte ni se eliminó negro. Se crea `assets/prototipo-hospital/README.md` en la rama `prototype/hospital-2-5d` para permitir subir los originales directamente desde GitHub; por ahora la carpeta contiene instrucciones y no imágenes.

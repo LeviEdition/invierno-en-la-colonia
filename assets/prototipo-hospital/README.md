@@ -1,17 +1,15 @@
 # Recursos originales de la prueba del hospital
 
-Esta carpeta pertenece a la rama `prototype/hospital-2-5d`, PR16 en borrador. Los tres recursos ya se ven como imágenes en el chat, pero sus archivos binarios todavía no están disponibles en este checkout. Este README permite subirlos directamente desde GitHub; no sustituye ninguna imagen.
+Recibidos en el commit `ed3578f31d27fbdb1e09184de0073e911765b1e1`, conservado en la historia de `prototype/hospital-2-5d` (PR16). Se renombraron con `git mv`, **sin recortar, reescalar, convertir ni modificar sus bytes**. [Manifiesto de originales](manifest.json): nombres de subida, dimensiones, canal alfa, tamaño y SHA-256.
 
-## Subir los archivos
+| Archivo | Dimensiones | Formato comprobado |
+| --- | --- | --- |
+| hospital.png | 1254×1254 | PNG RGBA, alfa0–255 |
+| suelo-nevado.png | 1536×1024 | PNG RGB, opaco |
+| zombi.png | 1175×1338 | PNG RGBA, alfa0–255 |
 
-En esta carpeta de GitHub y en la rama `prototype/hospital-2-5d`, elegir **Add file / Agregar archivo → Upload files / Subir archivos**. Seleccionar los originales guardados en el dispositivo y confirmar el commit en esta misma rama, sin fusionar a main.
+No se eliminaron colores para simular transparencia. La inspección de alfa se hizo sobre los archivos, no sobre el fondo negro de una vista previa. Hay márgenes transparentes y residuos alfa1 alrededor de los recortes; se mantienen en los originales. La selección ignora alfa menor de16 sin alterar la imagen dibujada.
 
-Nombres propuestos:
+Configuración de posición, escala y anclajes: `prototypes/hospital/scene.mjs`. El zombi se ancla al pie más bajo, aproximadamente `(716,1218)` en el PNG original. Los recursos son provisionales: suelo finito, perspectivas fijas y pérdida de nitidez al ampliar; no representan arte final ni un modelo3D.
 
-- `hospital.png`: hospital completo con canal alfa original.
-- `suelo-nevado.png`: suelo opaco.
-- `zombi.png`: personaje con canal alfa original.
-
-Si los nombres originales son distintos, se pueden subir tal cual; al incorporarlos se elegirán nombres claros sin alterar sus bytes. Renombrar un JPG como PNG no recupera transparencia. No subir capturas con controles del teléfono ni borrar colores para simular un canal alfa.
-
-El asistente inspeccionará formato, dimensiones, alfa, márgenes y hashes cuando estén disponibles. Los originales permanecerán intactos; posición, escala y anclajes se configurarán por separado. No hay archivos de imagen ficticios ni arte generado en esta carpeta.
+Para abrir y validar la escena, ver [informe73](../../docs/73-prototipo-visual-hospital-2-5d.md). Esta carpeta no modifica el producto V9.9 ni sus recursos empaquetados.

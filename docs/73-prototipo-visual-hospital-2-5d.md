@@ -1,5 +1,111 @@
 # 73 — Prueba visual aislada 2.5D: hospital
 
+**29/10/2026, Montevideo. Prototipo implementado y validado localmente; entregado para revisión en PR16, sin fusión.** La escena no se conecta con reglas, estado, IA, guardados ni narrativa del juego. Los registros de bloqueos anteriores se conservan al final como historia superada.
+
+## Estado y alcance
+
+Rama `prototype/hospital-2-5d`, creada desde main `826199d96645b95869509995772c914290d63ac7`. El creador subió los tres originales en `ed3578f31d27fbdb1e09184de0073e911765b1e1`; se sincronizó por fast-forward, sin reescribir ni descartar su trabajo. Se revisaron README, tablero18, protocolo15 e informe72; no se encontró AGENTS.md aplicable.
+
+La referencia permanece en el tag anotado `v0.9.9-referencia-modular`, commit `62e4e85150b2416ccf07d671c186b5c421993b0b`. HTML de producto SHA-256 `43b8883ad4821e4b50c40791615c5ef6c0b3030476409b4e1c6da4dbd872d692`, sin cambios. Main y SP-03 intactos; no se modifican módulos, plantilla, dependencias o pruebas anteriores de V9.9.
+
+## Abrir localmente
+
+La entrada usa módulos nativos y Canvas2D, sin dependencias nuevas ni build propio. Para visualizarla basta Git, Python3 y Chromium. Desde un clon nuevo:
+
+```sh
+git clone --branch prototype/hospital-2-5d https://github.com/LeviEdition/invierno-en-la-colonia.git
+cd invierno-en-la-colonia
+python3 -m http.server 8770 --bind 127.0.0.1
+```
+
+Abrir **http://127.0.0.1:8770/prototypes/hospital/**. Si ya se tiene el repositorio, usar un checkout limpio y actualizado de `prototype/hospital-2-5d` y ejecutar solo el servidor desde su raíz. El prototipo requiere HTTP para cargar módulos; no se entrega como HTML offline autocontenido. El HTML offline de referencia sigue funcionando por separado y no se reemplaza.
+
+Recorrido manual: probar Delante/Detrás/Esquina; activar y desactivar Mostrar ocultos; tocar el hospital y luego suelo vacío; arrastrar sin seleccionar accidentalmente; ampliar con rueda/pinza o botones; restablecer. Todos los controles HTML aceptan teclado. Sobre el canvas: flechas desplazan la cámara, +/− amplían,0 restablece, Enter selecciona y Escape deselecciona. Las flechas no mueven al zombi.
+
+## Archivos y decisiones
+
+| Archivo | Responsabilidad |
+| --- | --- |
+| prototypes/hospital/index.html, style.css | Entrada independiente y controles HTML adaptables, con nombres accesibles, foco visible y objetivos de al menos44px |
+| prototypes/hospital/scene.mjs | Imágenes, posiciones, escalas, anclajes, encuadre y orden por demostración |
+| prototypes/hospital/camera.mjs | Transformaciones, arrastre, zoom anclado, pinza, límites y encuadre/restablecimiento sin DOM |
+| prototypes/hospital/renderer.mjs | Carga de PNG, dibujo y selección por alfa; sombra suave separada; una transformación compartida por todas las capas |
+| prototypes/hospital/controls.mjs, main.mjs | Gestos, umbral clic/arrastre, teclado y conexión de la escena visual |
+| assets/prototipo-hospital/ | Tres originales renombrados sin alterar bytes; README y manifest.json de procedencia/hashes |
+| tests/hospital-camera.test.mjs, hospital-assets.test.mjs | Siete pruebas geométricas y tres de integridad del arte; no se debilitaron las pruebas existentes |
+| scripts/check-hospital-prototype-browser.mjs | Pruebas de interfaz y píxeles reales en Chromium, capturas y JSON |
+| .github/workflows/hospital-prototype.yml | Gate visual del PR, checkout explícito de su head, herramientas externas de prueba y artifacts |
+
+Los originales se conservaron: hospital1254×1254 y zombi1175×1338, ambos RGBA con alfa0–255; suelo1536×1024 RGB opaco. El [manifiesto](../assets/prototipo-hospital/manifest.json) vincula cada nombre claro con el nombre de subida y su hash. Las pruebas de integridad comparan los bytes; el navegador confirma alfa0–255 en ambos recortes y255 en todo el suelo decodificado. No se borraron colores ni se regeneró arte.
+
+Se configura el hospital con escala0.65, el personaje0.095 y el anclaje del pie más bajo `(716,1218)` en su PNG, considerando sus márgenes. La silueta útil del personaje mide aproximadamente104 unidades de alto en la escena, ajustada visualmente respecto de la puerta; no se afirma una escala física definitiva. La sombra es una elipse degradada independiente. Ninguna transformación se aplica por CSS a una capa aislada.
+
+### Profundidad y límites del método
+
+- **Delante:** suelo → sombra → hospital → zombi. El personaje se dibuja completo aunque coincida con la fachada/escalera.
+- **Detrás:** suelo → sombra → zombi → hospital. La posición está cubierta por una zona opaca del edificio.
+- **Esquina:** el mismo orden de Detrás, con parte de la silueta del personaje fuera del borde izquierdo del PNG del hospital. No se corta manualmente el personaje.
+- **Mostrar ocultos:** conserva ese orden y reduce la opacidad del hospital a0.28. Al desactivar vuelve la oclusión normal.
+
+Son tres colocaciones explícitas para probar este sector. **No es una ordenación general por Y, navegación libre ni un sistema de colisiones.** Otros edificios/recorridos necesitarían criterios de oclusión propios; no se implementan aquí. El ángulo permanece fijo, sin rotación.
+
+El zoom varía entre50% y400% del encuadre inicial. Conserva el punto del mundo bajo el cursor o el centro de la pinza, incluyendo el desplazamiento del centro. El arrastre empieza a partir de6px; la pinza cancela cualquier selección pendiente. Restablecer vista recupera cámara/zoom, conservando la demostración elegida y la opción Mostrar ocultos.
+
+## Validación ejecutada
+
+**Node local24.19.0 / npm11.9.0.** Siete pruebas de cámara escritas primero en preparación (rojo por módulo inexistente, luego verde); tres pruebas adicionales de PNG e integridad. `node --test tests/hospital-camera.test.mjs tests/hospital-assets.test.mjs`: **10/10**. `npm run check:build`: aprobado. `npm test`: **477/477**,0 fallos, cancelaciones u omisiones; conserva las467 pruebas de referencia. `git diff --check`: aprobado.
+
+**Chromium local real, automatizado con Playwright:** escritorio1365×768 y móviles emulados393×852 y320×640; DPR1/2. [Evidencia JSON](evidencias/hospital-prototipo.json), que identifica versión de Chromium y hashes de los archivos ejecutados.
+
+| Comprobación | Resultado |
+| --- | --- |
+| Tres posiciones | Delante100% visible; detrás0% de píxeles reconocibles; esquina aproximadamente56–57% visible respecto de la composición sin oclusión |
+| Mostrar ocultos | Revela al personaje detrás; desactivar restaura oclusión normal |
+| Selección | Clic y tap seleccionan; transparencia/suelo descartan; arrastrar no selecciona |
+| Arrastre y capas | Comparación de píxeles antes/después: acuerdo99.81–100%, tolerancia RGB de4, sin desplazamientos independientes de edificio, personaje o sombras |
+| Rueda y zoom | Punto anclado al cursor, límites superior/inferior y botones +/− verificados |
+| Táctil emulado | Pinza CDP de dos dedos con escala y centro estables; arrastre posterior de un dedo sin selección accidental |
+| Teclado y controles | Posiciones, checkbox, zoom, selección, flechas y restablecimiento; botones/etiqueta táctil de al menos44px |
+| Viewports | Sin desplazamiento horizontal ni excepciones JavaScript en los recorridos normales |
+| PNG inaccesible, fallo simulado | Aviso visible y todos los controles deshabilitados; no se sustituye la imagen |
+
+La proporción de visibilidad compara el canvas real contra composiciones de referencia sin personaje y sin oclusión, con umbral de diferencia RGB de16 para ignorar residuos mínimos de alfa/interpolación. No se presenta como porcentaje físico exacto de superficie. El script comprueba el dibujo, además de atributos y CSS.
+
+Comandos para repetir Node desde la raíz: `npm ci`, `npm run check:build`, `npm test`. Para repetir el gate de navegador, manteniendo el servidor8770 abierto en otra terminal:
+
+```sh
+npm install --no-save --package-lock=false playwright@1.57.0
+npx playwright install --with-deps chromium
+export CHROMIUM_PATH="$(node --input-type=module -e "import {chromium} from 'playwright';console.log(chromium.executablePath())")"
+node scripts/check-hospital-prototype-browser.mjs
+```
+
+Playwright es herramienta de pruebas externa al producto, igual que en el CI existente; no se agrega al package.json ni al lockfile. El script guarda JSON y capturas en `/tmp/hospital-browser` (o `HOSPITAL_OUTPUT_DIR`). En este entorno se reutilizó el Playwright instalado, mediante PLAYWRIGHT_MODULE. CI usa Playwright1.57 y su Chromium propio; se consultan los checks por el SHA exacto final del PR antes de entregar, sin insertar aquí el SHA del propio documento.
+
+### Capturas para revisión
+
+- [Delante, escritorio](evidencias/hospital-delante.png).
+- [Esquina, escritorio](evidencias/hospital-esquina.png).
+- [Esquina, móvil emulado393×852](evidencias/hospital-movil-esquina.png).
+
+Las capturas adicionales de detrás y Mostrar ocultos quedan en los artifacts del gate visual.
+
+## Revisión crítica y reservas
+
+Revisión propia del alcance y del código: sin imports del motor; el estado visual es local al prototipo; originales conservados; dibujo y selección usan el alfa real; el orden está declarado por demostración; los gestos y teclado operan sobre la misma cámara; no se llama a funciones del juego. Se comprobó también el fallo de carga para evitar una pantalla vacía con controles aparentemente operativos. No se encargó una revisión a otro agente ni se presenta como independiente.
+
+Dos diagnósticos del arnés local se corrigieron sin debilitar aserciones del juego: el primer smoke esperaba visible el indicador ya oculto y agotó30s; después la prueba de rueda usaba coordenadas fraccionarias mientras Chromium entrega coordenadas enteras. Se corrigieron la espera y el punto de entrada; el recorrido final completo pasó, incluyendo pinza y arrastre táctil.
+
+**Reservas reales:** recursos raster provisionales; el hospital y el suelo pierden nitidez al ampliar por encima de su resolución; el zombi solo tiene una orientación y postura, sin animación. La perspectiva/iluminación no se recalculan en3D, y el suelo finito muestra sus bordes al alejar o desplazar. Hay residuos de alfa1 conservados en los originales, ignorados solo por la selección. En móvil pequeño el personaje es pequeño en el encuadre general; zoom/pinza permiten inspeccionarlo. No se validaron Android físico, TalkBack, otros motores de navegador ni accesibilidad completa; viewport y eventos táctiles emulados no los sustituyen.
+
+**Entrega:** PR16 en borrador para revisión visual. No fusionar ni continuar otras localidades, barricadas, casillas, movimiento libre, reglas, IA, narrativa o singleplayer. **Única siguiente tarea recomendada:** el creador revisa delante/esquina, proporción del personaje y comodidad del encuadre; los ajustes posteriores se acotan a esta escena. SP-03/SP-04 mantienen su planificación separada.
+
+
+<details>
+<summary>Registro histórico de preparación y acceso a materiales (superado)</summary>
+
+### Preparación anterior
+
 **29/10/2026, Montevideo. Estado: cámara matemática implementada y probada; escena bloqueada por los tres PNG no accesibles.** El creador autoriza un prototipo visual independiente y un PR en borrador, sin integración en main ni conexión con las reglas del juego.
 
 ## Recepción de vistas previas y acceso a los originales
@@ -60,3 +166,5 @@ Comprobar delante/detrás/esquina, Mostrar ocultos, selección, restablecer, est
 No existe aún una entrada jugable de este prototipo; no se proporcionan comandos de apertura de un archivo inexistente. El informe se actualizará con las instrucciones exactas, resultados y limitaciones después de implementar y probar con los PNG reales. El PR de preparación permanece en borrador y no presenta la escena como terminada.
 
 **Límites conservados:** ningún cambio de reglas, dados, IA, crisis, objetivos, guardados, balance, narrativa jugable, interfaz actual ni SP-03. No añadir otras localidades, barricadas o casillas. No fusionar a main, mover tags ni reemplazar la referencia modular. Única siguiente tarea de esta prueba: recibir e inspeccionar los tres PNG para implementar el sector del hospital.
+
+</details>

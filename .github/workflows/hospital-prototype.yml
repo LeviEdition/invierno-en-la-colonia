@@ -1,0 +1,53 @@
+name: Prototipo hospital — Canvas 2D
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'prototypes/hospital/**'
+      - 'assets/prototipo-hospital/**'
+      - 'tests/hospital-*.test.mjs'
+      - 'scripts/check-hospital-prototype-browser.mjs'
+      - '.github/workflows/hospital-prototype.yml'
+      - 'docs/73-prototipo-visual-hospital-2-5d.md'
+      - 'docs/evidencias/hospital*'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  visual:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - run: npm run check:build
+      - run: node --test tests/hospital-camera.test.mjs tests/hospital-assets.test.mjs
+      - name: Instalar herramienta de pruebas, fuera de dependencias del producto
+        run: |
+          npm install --no-save --package-lock=false playwright@1.57.0
+          npx playwright install --with-deps chromium
+      - name: Verificar PNG, profundidad, cámara, teclado y gestos emulados
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m http.server 8770 --bind 127.0.0.1 > /tmp/hospital-http.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid"' EXIT
+          for attempt in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8770/prototypes/hospital/ -o /dev/null; then break; fi
+            sleep 1
+          done
+          export CHROMIUM_PATH="$(node --input-type=module -e "import {chromium} from 'playwright';console.log(chromium.executablePath())")"
+          node scripts/check-hospital-prototype-browser.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: hospital-visual-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            /tmp/hospital-browser/
+            /tmp/hospital-http.log
