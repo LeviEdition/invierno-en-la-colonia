@@ -430,12 +430,31 @@ Simular **2–3 rondas continuadas**, con estados de partida idénticos al comen
 
 **Separar** mensajes informativos breves (sin elección), encuentros con decisión y consecuencias mecánicas obligatorias. Un ataque, la exposición o una muerte pueden resolverse por motor aunque no corresponda mostrar una escena narrada nueva. El Director **no puede cambiar reglas o anular dados para construir drama**.
 
+### 6.2A. Campaña reactiva por disparadores + encrucijadas cotidianas (aclaración del creador, 29/10/2026)
+
+**ACUERDO CONCEPTUAL CONFIRMADO EN SP-03:** la partida **comienza con una campaña/objetivo elegido**, cuya historia y actores ya tienen condiciones, lugares, pistas y posibles ramificaciones. El Director **no inventa un acontecimiento central por obligación en cada ronda**: **reacciona a decisiones, acciones, localidades visitadas y hechos verificables**. Debe poder presentar indicios y preparar posibilidades narrativas sin imponer que el jugador siga una ruta concreta. Los eventos centrales de campaña se activan cuando sus **disparadores y requisitos** se cumplen, no porque «tocó la ronda 3». El protagonista conserva la decisión de qué investigar primero.
+
+**Segunda capa, diferenciada:** conservar el espíritu de las **encrucijadas** de V9.9, quizá renombradas como «dilemas cotidianos» o «situaciones de supervivencia», para ofrecer **decisiones pequeñas o medianas de la vida de la colonia**. El creador propuso que **pueda haber una en cada ronda**; todavía hay que definir **si la frecuencia es obligatoria, máxima de una o contextual**, en qué instante aparece y cómo evitar que coincida con una escena extensa de campaña. «Menor impacto» no equivale a «sin consecuencias»: algunas situaciones pueden activar historias secundarias, relaciones o efectos acumulativos, sin desplazar la trama principal.
+
+**Distinguir tres componentes sin crear una escena obligatoria nueva:**
+- **Pistas e información:** rumores sobre desconocidos en el hospital, marcas extrañas, registros, testimonios; preparan decisiones y pueden mostrar lo que el mundo sabe sin obligar al jugador a desplazarse.
+- **Eventos de campaña condicionados:** la historia central cuenta con hechos y escenas diseñadas con anticipación; el Director selecciona cuáles son **válidos ahora** según progreso de campaña, ubicación, decisiones previas, actores vivos e historial.
+- **Encrucijadas cotidianas:** decisiones de recursos, convivencia, protección o moral práctica, generalmente breves, en un flujo de ronda separado de los hitos obligatorios del objetivo.
+
+**Ejemplo propuesto por el creador para «Encontrar la cura» (ilustrativo, NO canon ni guion aprobado):** el jugador conoce el objetivo y puede oír la pista «Se avistaron desconocidos en el hospital». Si **elige ir al hospital por primera vez** y se cumplen las condiciones del evento, allí conoce a **algunas personas que pertenecen a la secta enemiga, sin saber aún que son miembros de ella**. Ante una decisión relevante (colaborar, desconfiar, intercambiar recursos o información, variantes a escribir), el juego registra la elección; **un encuentro posterior** con esa organización puede reconocerla y producir consecuencias diferenciadas. **No** disparar ese contacto solo porque avanzó una ronda ni revelar prematuramente la afiliación de esas personas. Si visita otros lugares, la historia principal **no se fuerza a aparecer allí** para cumplir una cuota narrativa. Habrá que diseñar rutas alternativas válidas y contingencias si nunca visita el hospital, la localidad queda bloqueada, no está el actor requerido o un personaje muere. Si la primera visita sucede antes de una pista planificada, ajustar el diálogo a los hechos reales en lugar de falsear un rumor ya conocido.
+
+**Regla de memoria y causalidad:** al resolver una escena, guardar una **identidad estable del evento**, qué jugador/personaje estuvo presente, qué opción eligió y qué hechos/cambios produjo; programar continuaciones con condiciones verificables, no depender de volver a sacar por azar la misma carta ni exigir que la continuación aparezca una ronda fija aunque contradiga el mundo. Evitar repetir el encuentro introductorio en visitas posteriores.
+
+**Reglas de responsabilidad para diseñar luego:** el **motor** sigue decidiendo si movimientos, búsquedas, dados, efectos, heridas y costos son legales; el **Director** observa sus resultados y administra escenas predefinidas, prioridades y consecuencias en estado persistente. Una escena en hospital **no debe conceder automáticamente muestras por visitar** ni reemplazar las acciones de búsqueda exigibles. Decidir aparte cuándo una elección narrativa consume acciones o recursos. Una encrucijada cotidiana no debe ocultar una derrota/victoria terminal ni interrumpir un desenlace urgente de campaña.
+
+**Pendientes explícitos para la siguiente microdecisión SP-03:** (1) encrucijada cotidiana **exactamente una por jornada o hasta una según contexto**; (2) momento de presentación preferente; (3) prioridades si coincide con un disparador de campaña; (4) nombre diegético; (5) límite de longitud/impacto y probabilidad de abrir secundarias. Ninguna cifra o frecuencia se declara aprobada todavía.
+
 ### 6.3. Recorrido sobre papel ilustrativo (NO simulación de balance)
 
 - Grupo elegido: Iris, Damián y Mara; **4 dados de referencia**, no balance definitivo.
 - Apertura: crisis de medicamentos y aviso fundamentado sobre actividad de desconocidos cerca del hospital.
 - Órdenes: el líder decide una búsqueda de Iris en hospital, defensa de Damián y otra acción con Mara según necesidades/dados válidos. Se aplican ubicación, búsqueda y exposición bajo el motor mecánico de referencia.
-- Encuentro contextual tras buscar: Iris encuentra a una persona herida vinculada con una facción; **decisión del jugador** entre ayudar, retirarse o negociar información, condicionada por recursos y estado. La escena registra consecuencias inmediatas y agenda ramificaciones futuras que solo ocurren si se cumplen sus condiciones.
+- Encuentro de campaña condicionado a la **primera llegada válida al hospital**: Iris conoce a desconocidos que, sin revelar su identidad, pertenecen a una secta hostil. El jugador decide cómo tratarlos; la escena registra esa decisión y ramificaciones futuras. **No hace falta esperar una búsqueda exitosa, una carta aleatoria ni una ronda predeterminada** para activar el encuentro, siempre que se cumplan los requisitos de escenario.
 - Fin de jornada: el motor comprueba comida, crisis y zombis; si hay derrota/victoria terminal, no debe ejecutarse una siguiente escena contradictoria.
 - Cierre: resumen táctico y narrativo sin revelar artificialmente consecuencias futuras secretas. Una decisión previa puede reaparecer varias rondas después por una causa reconocible.
 
@@ -454,7 +473,7 @@ Simular **2–3 rondas continuadas**, con estados de partida idénticos al comen
 
 Probar en papel: **ronda normal**; encuentro durante búsqueda; ausencia total de escena si nada corresponde; muerte de superviviente con dados aún disponibles; **muerte de líder y sucesión**; derrota al resolver colonia; decisión diferida activada al día correcto; escena que quedó inválida por muerte de personaje; y jornada con solo uno/dos supervivientes. Contrastar **presupuesto de acciones, alimentación y pérdidas** en SP-04 sin mezclar con cambio de sistema de dados.
 
-**Única microdecisión que conviene tomar primero:** preferencia del creador entre encuentros **solo en apertura/cierre**, **siempre inmediatos** o **híbridos contextuales R3**, manteniendo al Director sometido a los hechos y sin escena obligatoria por jornada. Después especificar prioridad de interrupciones y el orden final de cierre.
+**Siguiente microdecisión vigente (29/10):** el creador aclaró que **los hitos de campaña son reactivos a los disparadores y no se fuerzan cada ronda**, mientras pueden existir **encrucijadas cotidianas** pequeñas de frecuencia cercana a una por jornada. Comparar **una por jornada obligatoria** frente a **hasta una por jornada según contexto**, y decidir cuándo se muestran y cómo se ordenan frente a escenas principales. Los detalles de R3, las prioridades y el orden final de cierre siguen pendientes.
 
 ## 7. Criterios de aceptación de la PLANIFICACIÓN antes de programar el singleplayer
 
