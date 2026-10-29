@@ -1,6 +1,6 @@
 # Plan de refactorización — por etapas, sin apuro
 
-> **Ejecución actual:** la fuente de verdad de **etapa activa, tarea única y criterios de terminado** es [el tablero operativo](18-tablero-operativo.md). Esta hoja conserva parte del historial de A/B/C; **D1 está en curso**, y el siguiente experimento propuesto es D1.2a (esbuild), sujeto a autorización. Este documento es planificación general, no autorización para empezar fases en paralelo.
+> **Ejecución actual:** la fuente de verdad de **etapa activa, tarea única y criterios de terminado** es [el tablero operativo](18-tablero-operativo.md). Esta hoja conserva parte del historial de A/B/C; **D1/D2 están integradas yvalidadas en main** mediante PR15/merge6b8bfca. El siguiente hito es preservar formalmente la referencia; todavía no se autorizaron tags/releases ni juego propio. [Cierre71](71-integracion-main-y-cierre-d1-d2.md). Este documento es planificación general, no autorización para empezar fases en paralelo.
 
 ## Objetivos
 
@@ -13,9 +13,9 @@
 
 ## Ruta de tres hitos: adaptación fiel y modular → preservación → juego propio
 
-**Decisiones vigentes:** [61 — matriz F solo para el juego propio](61-alcance-matriz-f-juego-propio.md) y [62 — fidelidad mecánica aceptada y D1/D2 como trabajo pendiente](62-hitos-referencia-fiel-y-juego-propio.md). La V9.9 estabilizada está **aceptada como suficientemente fiel en las mecánicas para ser nuestra referencia**, con las diferencias ya documentadas en el [informe 49](49-c15-auditoria-final.md#comparación-con-dead-of-winter). La ruta pendiente es:
+**Decisiones vigentes:** [61 — matriz F solo para el juego propio](61-alcance-matriz-f-juego-propio.md) y [62 — D1/D2 integradas ypreservación pendiente](62-hitos-referencia-fiel-y-juego-propio.md). La V9.9 estabilizada está **aceptada como suficientemente fiel en las mecánicas para ser nuestra referencia**, con las diferencias ya documentadas en el [informe 49](49-c15-auditoria-final.md#comparación-con-dead-of-winter). La ruta vigente es:
 
-- **Hito 1 — aceptación mecánica ya resuelta, arquitectura por completar:** la fidelidad funcional se acepta para el alcance de esta adaptación (no significa equivalencia idéntica de todo el reglamento). **Solo faltan D1 y D2** para tener módulos desacoplados y escalables; preservar reglas actuales y verificar que la refactorización no introduzca regresiones. **No realizar otra RF desde cero ni exigir nuevos cambios de fidelidad** para iniciar el juego propio.
+- **Hito 1 — completado e integrado:** la fidelidad funcional se acepta para el alcance de esta adaptación (no significa equivalencia idéntica de todo el reglamento). **D1 yD2 completadas**, integradas con aprobación del creador y467/467 más regresión de partidas/navegador sobre main; se preservan las reglas actuales. **No realizar otra RF desde cero ni exigir nuevos cambios de fidelidad** para iniciar el juego propio.
 - **Matriz F:** compara mecánicas con el juego de mesa **para decidir cómo funcionará nuestro videojuego propio**. `F-14` (cinco candidatos → elegir tres → líder manual) y otras filas *Conservar/Cambiar* **no se implementan en la V9.9 ni durante la refactorización D**.
 - **Hito 2 — referencia preservada:** después de aceptar la adaptación suficientemente fiel y modular, guardar una instantánea identificable con su código, ejecutable, criterios de fidelidad, resultados de prueba y desviaciones aprobadas; requiere autorización, no se crea ahora.
 - **Hito 3 — juego propio futuro:** desde esa referencia preservada, abrir línea de desarrollo separada; revalidar decisiones F según su aporte al singleplayer e incorporar gradualmente cambios propios y narrativa E.
@@ -81,14 +81,14 @@ Antes de comenzar una fase nueva, cerrar la anterior con evidencia y registrar u
 1. **A — Auditoría completa:** A2/A3/A4 tienen pruebas automatizadas; faltan observaciones de Android físico (A5-02), evaluación de accesibilidad/rendimiento y cierre de cobertura (A6). Documentar problemas y límites; no corregirlos a escondidas.
 2. **B — Decisiones y prioridad de defectos:** acordar qué es error y qué es regla deseada; clasificar impacto.
 3. **C — Estabilización:** corregir solo fallos priorizados, ejecutar regresiones y comprobar que el juego funciona en navegador real.
-4. **D1/D2 — Refactorización conservadora:** completar separación de módulos **sin cambiar reglas** y sin introducir decisiones de la matriz F; validar arquitectura, tests, navegador y partidas completas.
+4. **D1/D2 — Refactorización conservadora completada:** separación de módulos **sin cambiar reglas** y sin introducir decisiones de la matriz F; validar arquitectura, tests, navegador y partidas completas.
 5. **Preservar la referencia:** una vez completadas D1/D2, guardar su SHA/versión, build y evidencias con autorización. **La fidelidad mecánica actual ya está aceptada** y el informe 49 documenta diferencias; no hay etapa RF obligatoria.
 6. **Juego propio — matriz F y E:** desde esa referencia, seleccionar los cambios F valiosos para singleplayer y prototipar memoria narrativa y un arco conectado, en línea de desarrollo separada.
 7. **Etapa F de expansión (NO la matriz F):** ampliación de campañas, presentación y red después de demostrar que funciona el núcleo.
 
 Las etapas originales C/D/E/F que aparecen debajo contienen los detalles técnicos; el [tablero operativo](18-tablero-operativo.md) determina su ejecución efectiva.
 
-## Detalle futuro D1 — Primer módulo independiente
+## Criterios originales D1 (cumplidos; ver71) — Primer módulo independiente
 
 Extraer un componente pequeño y con pocas dependencias, probablemente el catálogo de objetos.
 
@@ -99,7 +99,7 @@ Extraer un componente pequeño y con pocas dependencias, probablemente el catál
 
 **Criterio de aceptación:** el módulo puede probarse por separado, sin alterar la partida original. **La refactorización no debe alterar la fidelidad mecánica aceptada por el creador y contrastada en el informe 49.**
 
-## Detalle futuro D2 — Motor desacoplado, todavía sobre la referencia
+## Criterios originales D2 (cumplidos; ver71) — Motor desacoplado, todavía sobre la referencia
 
 **Objetivo: preservar el comportamiento actual aprobado de V9.9, sin aplicar cambios de la matriz F ni alteraciones de reglas ocultas dentro de D.** Separar progresivamente:
 - Estado de partida y creación inicial.
@@ -127,7 +127,7 @@ Principio: **dibujar no modifica el estado del juego**.
 
 **Principio actualizado:** la narrativa **no es opcional para ganar la campaña**. Atravesar la trama principal y obtener recursos mecánicos son requisitos interrelacionados desde la carta inicial, aunque las rutas y los epílogos cambien. Algunas campañas serán más cortas y mecánicas, otras más largas y narrativas. Las historias secundarias independientes no deben bloquear la victoria.
 
-**Prioridad creativa no equivale a etapa activa:** la narrativa orienta nuestras decisiones arquitectónicas, pero su implementación pertenece al **Hito 3**. A fecha de esta actualización, D1 está en curso; no comenzar un arco nuevo ni introducir cambios F mientras refactorizamos la referencia. Consultar el tablero operativo para la siguiente tarea autorizada.
+**Prioridad creativa no equivale a etapa activa:** la narrativa orienta nuestras decisiones arquitectónicas, pero su implementación pertenece al **Hito 3**. D1/D2 ya se cerraron; no comenzar un arco nuevo ni cambios F antes de preservar formalmente la referencia yautorizar el desarrollo propio. Consultar el tablero operativo para la siguiente tarea autorizada.
 
 ## Detalle futuro E — Motor de historia y persistencia
 

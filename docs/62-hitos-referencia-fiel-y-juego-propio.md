@@ -4,7 +4,7 @@
 
 ## Decisión: la fidelidad mecánica de la referencia ya es suficiente para nuestro objetivo
 
-**Aceptamos la V9.9 estabilizada como una adaptación MECÁNICAMENTE SUFICIENTEMENTE FIEL a la experiencia central de *Dead of Winter* para utilizarla como referencia.** No pretendemos una copia reglamentaria exhaustiva. El objetivo pendiente del primer hito es **completar D1 y D2 para obtener una estructura modular, escalable, probada y fácil de evolucionar**. No se exige una nueva auditoría de fidelidad ni otro paquete de modificaciones mecánicas como puerta de entrada obligatoria al juego propio.
+**Aceptamos la V9.9 estabilizada como una adaptación MECÁNICAMENTE SUFICIENTEMENTE FIEL a la experiencia central de *Dead of Winter* para utilizarla como referencia.** No pretendemos una copia reglamentaria exhaustiva. El primer hito se completó al **integrar yvalidar D1/D2 en main** (PR15, merge6b8bfca; [informe71](71-integracion-main-y-cierre-d1-d2.md)). No se exige una nueva auditoría de fidelidad ni otro paquete de modificaciones mecánicas como puerta de entrada obligatoria al juego propio.
 
 Esta aceptación **es una decisión de alcance del creador** sustentada en el trabajo ya realizado, **no una certificación de equivalencia exacta de todas las reglas**:
 
@@ -14,9 +14,9 @@ Esta aceptación **es una decisión de alcance del creador** sustentada en el tr
 - Quedan **reservas técnicas y de experiencia**: pruebas Android físico/TalkBack, navegadores alternativos, balance con jugadores humanos y equivalencia de contenido completo. Se documentan, pero no constituyen una nueva etapa RF obligatoria.
 - Si surge un **defecto funcional grave confirmado**, se evalúa como incidencia puntual con autorización, incluso durante o después de D. No se convierte una diferencia de diseño aceptada en bug de forma retroactiva.
 
-## Hito 1 — FIDELIDAD MECÁNICA ACEPTADA; ARQUITECTURA D1/D2 EN CURSO
+## Hito 1 — COMPLETADO: fidelidad aceptada yD1/D2 integradas
 
-**La parte de fidelidad está aceptada por decisión del creador.** Falta cerrar el trabajo de ingeniería:
+**Fidelidad aceptada ytrabajo de ingeniería integrado por autorización del creador.** Los siguientes fueron los criterios exigidos, cumplidos yvalidados según71:
 
 1. **D1 — Modularización inicial:** mantener el catálogo separado, resolver mediante un PoC pequeño si conviene introducir `esbuild` y elegir un build reproducible. No replicar sustituciones textuales para cada sistema.
 2. **D2 — Motor desacoplado:** separar progresivamente estado, reglas, validaciones, acciones, turnos, UI y automatismos. Ninguna capa central de supervivencia debe depender necesariamente del DOM ni de que exista siempre un grupo de IA.
@@ -25,7 +25,7 @@ Esta aceptación **es una decisión de alcance del creador** sustentada en el tr
 5. **Evaluar escalabilidad de verdad:** comprobar interfaces entre motor, presentación y automatismos; poder construir después el singleplayer y Director de Juego sin reescribir todo. No basta con crear muchos archivos.
 6. **Cierre del hito:** D1/D2 integradas solo después de auditoría, CI y autorización; ninguna integración automática a `main`.
 
-**Criterio de terminado del hito 1:** referencia mecánica aceptada (YA DECIDIDO) **+ D1/D2 terminadas, probadas y aceptadas técnicamente** (PENDIENTE). No pedir un proyecto RF nuevo antes de avanzar; la comparación del informe 49 sigue disponible para consultas concretas.
+**Criterio de terminado del hito 1:** referencia mecánica aceptada (YA DECIDIDO) **+ D1/D2 terminadas, probadas, aceptadas eintegradas** (COMPLETADO, PR15/6b8bfca). No pedir un proyecto RF nuevo antes de avanzar; la comparación del informe 49 sigue disponible para consultas concretas.
 
 ## Hito 2 — Preservar una versión identificable de referencia
 
@@ -72,3 +72,7 @@ El creador decidió no ampliar arquitectura para singleplayer en esta etapa. Aud
 ## Reconciliación y apertura autorizada del PR15 —29/10/2026
 
 El encargo posterior autorizó reconciliar la documentación SP-03 de833eae7 yabrir PR tras validar. [PR15 abierto](https://github.com/LeviEdition/invierno-en-la-colonia/pull/15), preapertura7d6a68a con467/467 yCI completo aprobado. Código yHTML del cierre auditado intactos; planificación conceptual no implementada. [Informe70](70-reconciliacion-documental-y-pr-d1-d2.md) distingue acuerdos ypropuestas. Hito1 espera revisión final/merge autorizado; hito2 yjuego propio no iniciados. No se fusionó ni cambió main.
+
+## Cierre de integración29/10/2026
+
+El creador aprobó el merge convencional del head7f3ac7c. PR15 integrado en6b8bfca, padres0b75d01/7f3ac7c,57872ee conservado.467/467,40+40 comparaciones yCI completo sobre main aprobados; acuerdos/propuestas SP-03 preservados en63. [Informe71](71-integracion-main-y-cierre-d1-d2.md). Hito1 cerrado. Hito2 es el siguiente paso, **todavía sin crear tags/releases ni ramas del juego propio**. El cierre documental posterior no añade mecánicas ni cambia el ejecutable.

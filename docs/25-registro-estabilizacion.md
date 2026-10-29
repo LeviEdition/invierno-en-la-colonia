@@ -613,3 +613,9 @@ Encargo focalizado desdeee73d29, main0b75d01 verificada. Informe68: dos bloqueos
 Nuevo encargo desde8e3e7d3: integrar únicamente novedades documentales de refactor/d1-catalogo@833eae7 (14 commits,18/63), con base comúnba9a423. Patch selectivo ybloques de diseño preservan registros técnicos. Acuerdos ypropuestas diferenciados; cronología sin cancelación retroactiva prevalece sobre formulaciones tempranas. Informes67/68 históricos conservados,69 actualizado einforme70 registra alcance/procedencia. No se modifica código ni mecánicas. Validación ycreación de PR pendientes de compuertas; merge no autorizado.
 
 **Reconciliación/PR:**7d6a68a aprobado local yCI40896698599/40896698392 (467,40+40,5QA+5producto,4file); artifacts cotejados. Se abrió PR15 hacia main con árbol limpio ybase0b75d01; GitHub sin conflictos, sin auto-merge. Cierre documental registra URL, propuestas/acuerdos yresultados; se comprueban checks del head final antes de entregar. main intacta, fuente833eae7 intacta; no fusión ni implementación singleplayer.
+
+## 29/10/2026 — PR15 integrado en main y cierre D1/D2
+
+El creador aprobó integrar tras revisión independiente. Preflight exacto: head7f3ac7c, main0b75d01, MERGEABLE/CLEAN, seis checks SUCCESS yárbol limpio. Merge API con sha fijado ymethod=merge; resultado6b8bfca, padres0b75d01/7f3ac7c, árbol igual al aprobado y57872ee preservado. Ningún squash/rebase.
+
+Se hizo checkout real de main yse ejecutaron npm ci/check:build/467tests ycomparaciones40+40. CI del merge40902075722/40902075714/40902075817 success; artifacts descargados ycomparados,5QA+5producto, controles/foco/finales/offline aprobados.63 tiene el mismo blob que el head aprobado. [Informe71](71-integracion-main-y-cierre-d1-d2.md) y[evidencia](evidencias/d1d2-integracion-main.json). Registro de cierre en commit documental posterior, sin cambios ejecutables. Hito1 cerrado; preservación formal pendiente, sin tags/releases/ramas del juego propio ni nuevas mecánicas.

@@ -5,7 +5,7 @@ Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos un
 ## Rumbo acordado
 
 1. **Fidelidad mecánica de la V9.9: ACEPTADA para nuestro objetivo.** La estabilización C está integrada y la [comparación de 14 áreas con el reglamento oficial](docs/49-c15-auditoria-final.md#comparación-con-dead-of-winter) documenta semejanzas y diferencias. El creador acepta esta fidelidad **suficiente**, sin exigir copia literal, reauditoría RF desde cero ni reproducir todas las reglas oficiales. Las reservas sobre Android físico, accesibilidad y balance siguen documentadas.
-2. **D1 y D2: implementación técnica en rama para revisión.** Estado, reglas, acciones, turnos, IA/interfaz separados; conservar el comportamiento y demostrar que el motor es modular, escalable y comprobable. **No modificar reglas ni introducir mecánicas nuevas** durante este refactor.
+2. **D1 y D2: integradas y validadas en main.** Estado, reglas, acciones, turnos, IA/interfaz separados;467 pruebas ycomparaciones de partidas preservan el comportamiento de referencia. **No modificar reglas ni introducir mecánicas nuevas** durante este refactor.
 3. **Preservar la referencia resultante.** Una vez aceptada la arquitectura, conservar una versión identificable y reproducible (SHA, build y pruebas) con autorización.
 4. **Comenzar nuestro juego propio.** En otra línea de desarrollo, revisar la **matriz F** (F-01, F-14, etc.) e implementar cambios propios, singleplayer, Director y narrativa persistente por etapas.
 
@@ -14,13 +14,15 @@ Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos un
 ## Documentación y estado
 
 - [Tablero operativo — próxima tarea](docs/18-tablero-operativo.md)
-- [Decisión vigente — fidelidad aceptada y D1/D2 pendientes](docs/62-hitos-referencia-fiel-y-juego-propio.md)
+- [Decisión vigente — D1/D2 cerradas y preservación formal pendiente](docs/62-hitos-referencia-fiel-y-juego-propio.md)
 - [Hoja de ruta del singleplayer — bloques SP-00 a SP-08, acuerdos y pendientes](docs/63-hoja-de-ruta-planificacion-singleplayer.md)
 - [Dirección de producto](docs/51-rumbo-fidelidad-e-identidad.md)
 - [Alcance de la matriz F del juego propio](docs/61-alcance-matriz-f-juego-propio.md)
 - [Plan general](docs/01-plan-refactorizacion.md)
 
-La rama `refactor/d1-d2-arquitectura` continúa D1 y D2 con autorización del creador, sin modificar `main`. [Informe67](docs/67-d1-d2-arquitectura.md) y [tablero](docs/18-tablero-operativo.md) registran la implementación, compuertas y aceptación pendiente. No autoriza merges, releases ni mecánicas del juego propio.
+El [PR15](https://github.com/LeviEdition/invierno-en-la-colonia/pull/15) se integró mediante merge convencional `6b8bfcadfeb99d16a10b6f4576f3b061584ee1f9`, preservando historia yoráculo57872ee. [Informe71](docs/71-integracion-main-y-cierre-d1-d2.md) registra la validación posterior:467/467,40/40 contra cada referencia, partidas Chromium yoffline aprobados. SP-03 permanece conceptual ysin cambios respecto del head aprobado.
+
+**Próximo paso:** preservar formalmente la versión modular de referencia con autorización específica. Todavía no hay nuevo tag/release ni rama del juego propio; no comenzar mecánicas singleplayer o Director narrativo.
 
 ## Desarrollo y construcción
 

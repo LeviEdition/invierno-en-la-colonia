@@ -1,5 +1,8 @@
 # 68 — Auditoría final de integración D1/D2
 
+**Cierre posterior autorizado:** PR15 fusionado en main mediante merge convencional `6b8bfcadfeb99d16a10b6f4576f3b061584ee1f9`, validado sobre el código realmente integrado. [Informe71](71-integracion-main-y-cierre-d1-d2.md). Las menciones siguientes a «PR abierto», «sin fusionar» o autorización pendiente conservan los estados históricos de este informe, anteriores a la aprobación expresa posterior. D1/D2 cerradas; preservación formal aún pendiente, sin nueva implementación.
+
+
 **Seguimiento documental29/10:** el encargo posterior autorizó reconciliar SP-03 y abrir/comprobar el PR hacia main. [PR15 abierto](https://github.com/LeviEdition/invierno-en-la-colonia/pull/15), sin fusionar; preapertura7d6a68a con CI aprobado. Este informe conserva los hechos, SHA y resultados de su cierre histórico; las frases «PR no abierto» o «esperar autorización de apertura» describen ese momento. Estado actual en [tablero18](18-tablero-operativo.md), [documento69](69-pr-propuesto-d1-d2.md) e [informe70](70-reconciliacion-documental-y-pr-d1-d2.md). La reconciliación no cambia el código auditado6277e62 ni sus reservas.
 
 

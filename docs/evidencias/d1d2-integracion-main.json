@@ -1,0 +1,1170 @@
+{
+  "mergeSha": "6b8bfcadfeb99d16a10b6f4576f3b061584ee1f9",
+  "method": "merge",
+  "parents": [
+    "0b75d01aba013cd029d9d0dd0bdbd20791be15fc",
+    "7f3ac7c813fb3bf392595a6e5db13397c4d8f427"
+  ],
+  "approvedHead": "7f3ac7c813fb3bf392595a6e5db13397c4d8f427",
+  "mainBefore": "0b75d01aba013cd029d9d0dd0bdbd20791be15fc",
+  "preflight": {
+    "expectedBase": "0b75d01aba013cd029d9d0dd0bdbd20791be15fc",
+    "expectedHead": "7f3ac7c813fb3bf392595a6e5db13397c4d8f427",
+    "checks": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-29T15:07:29Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40898201779/job/123532995458",
+        "name": "engine",
+        "startedAt": "2026-10-29T15:06:39Z",
+        "status": "COMPLETED",
+        "workflowName": "D1.2a experimento esbuild"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-29T15:07:34Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40898187099/job/123532942807",
+        "name": "engine",
+        "startedAt": "2026-10-29T15:06:34Z",
+        "status": "COMPLETED",
+        "workflowName": "D1.2a experimento esbuild"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-29T15:06:57Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40898201849/job/123532994574",
+        "name": "pruebas",
+        "startedAt": "2026-10-29T15:06:39Z",
+        "status": "COMPLETED",
+        "workflowName": "Pruebas de regresión"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-29T15:06:52Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40898186632/job/123532938119",
+        "name": "pruebas",
+        "startedAt": "2026-10-29T15:06:34Z",
+        "status": "COMPLETED",
+        "workflowName": "Pruebas de regresión"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-29T15:10:13Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40898201779/job/123532994833",
+        "name": "browser",
+        "startedAt": "2026-10-29T15:06:39Z",
+        "status": "COMPLETED",
+        "workflowName": "D1.2a experimento esbuild"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-29T15:09:53Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40898187099/job/123532940600",
+        "name": "browser",
+        "startedAt": "2026-10-29T15:06:34Z",
+        "status": "COMPLETED",
+        "workflowName": "D1.2a experimento esbuild"
+      }
+    ],
+    "mergeable": "MERGEABLE",
+    "mergeStateStatus": "CLEAN",
+    "method": "merge",
+    "reference": "57872ee279e924460a126aecbcd0ee7141b5e078"
+  },
+  "mergedTreeEqualsApprovedTree": true,
+  "referencePreserved": "57872ee279e924460a126aecbcd0ee7141b5e078",
+  "local": {
+    "npmCi": "exit0",
+    "checkBuild": "exit0",
+    "tests": {
+      "tests": 467,
+      "pass": 467,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0
+    },
+    "historicalEqual": 40,
+    "v99Equal": 40
+  },
+  "runs": [
+    {
+      "id": 40902075722,
+      "name": "Pruebas de regresión",
+      "conclusion": "success"
+    },
+    {
+      "id": 40902075714,
+      "name": "D1 y D2 — arquitectura y regresiones",
+      "conclusion": "success",
+      "jobs": [
+        "engine",
+        "browser"
+      ]
+    },
+    {
+      "id": 40902075817,
+      "name": "Chromium D0-I-V y D0-P1-I post integración",
+      "conclusion": "success"
+    }
+  ],
+  "comparisons": [
+    {
+      "reference": "0b75d01aba013cd029d9d0dd0bdbd20791be15fc",
+      "variants": [
+        {
+          "name": "reference",
+          "tests": {
+            "exitCode": 0,
+            "tests": 408,
+            "pass": 408,
+            "fail": 0,
+            "skipped": 0,
+            "cancelled": 0
+          },
+          "gameExit": 0
+        },
+        {
+          "name": "candidate",
+          "tests": {
+            "exitCode": 0,
+            "tests": 467,
+            "pass": 467,
+            "fail": 0,
+            "skipped": 0,
+            "cancelled": 0
+          },
+          "gameExit": 0
+        }
+      ],
+      "excludedFields": [
+        "source (hashes de HTML/script/adaptador)"
+      ],
+      "comparison": [
+        {
+          "mode": "ai",
+          "seed": 2654435761,
+          "beforeDigest": "7bc0d21faa213bbf404862bfe7874197b771ae14a7d464e48610dce81d684570",
+          "afterDigest": "7bc0d21faa213bbf404862bfe7874197b771ae14a7d464e48610dce81d684570",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 1013904226,
+          "beforeDigest": "86a7abc321839fd8acb135eef416565c2e6ee23f063fafce34eb4aa6972957bd",
+          "afterDigest": "86a7abc321839fd8acb135eef416565c2e6ee23f063fafce34eb4aa6972957bd",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 3668339987,
+          "beforeDigest": "07432f278e7a8b8e44fad82ae718ce5c047ae7a7be7ba316f08cc48d428c21ea",
+          "afterDigest": "07432f278e7a8b8e44fad82ae718ce5c047ae7a7be7ba316f08cc48d428c21ea",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 2027808452,
+          "beforeDigest": "e17a24076aaf963845b507427f9b6b5227214d34ef0d2950ec920889a1ebcd76",
+          "afterDigest": "e17a24076aaf963845b507427f9b6b5227214d34ef0d2950ec920889a1ebcd76",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 387276917,
+          "beforeDigest": "923253bf86f1f9d0c175a348bc23984a5e25698f1c00292ec6dbe6521b40ed13",
+          "afterDigest": "923253bf86f1f9d0c175a348bc23984a5e25698f1c00292ec6dbe6521b40ed13",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 3041712678,
+          "beforeDigest": "faa6dacbec143761a9180c510ef17a3816855c44b993359e152ead8c01a5a59a",
+          "afterDigest": "faa6dacbec143761a9180c510ef17a3816855c44b993359e152ead8c01a5a59a",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 1401181143,
+          "beforeDigest": "ae4bbd29648ab4511ee459d4b958e9dbe4c491ae004be03a0982cbb751cc5f92",
+          "afterDigest": "ae4bbd29648ab4511ee459d4b958e9dbe4c491ae004be03a0982cbb751cc5f92",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 4055616904,
+          "beforeDigest": "92cb53626e3515164a04e666728cd06317610a472d391390ba3ef90ab7e860ec",
+          "afterDigest": "92cb53626e3515164a04e666728cd06317610a472d391390ba3ef90ab7e860ec",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 2415085369,
+          "beforeDigest": "ea36d6c2c43adc6b96ec48cbe67c02b3d83738e95ea926799625b0fd67637b56",
+          "afterDigest": "ea36d6c2c43adc6b96ec48cbe67c02b3d83738e95ea926799625b0fd67637b56",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 774553834,
+          "beforeDigest": "c91c8c87d01ef8b190c2e195824bcedb59454c77df736dab8a23217f983b110a",
+          "afterDigest": "c91c8c87d01ef8b190c2e195824bcedb59454c77df736dab8a23217f983b110a",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 3428989595,
+          "beforeDigest": "63e527bf565fb0ed5e9e07c54c04c9e1399eca7a2472555cd41aa1092117efcb",
+          "afterDigest": "63e527bf565fb0ed5e9e07c54c04c9e1399eca7a2472555cd41aa1092117efcb",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 1788458060,
+          "beforeDigest": "4376cf17669e4dfb8a634d3dfe35bc99a1a62f47e474cc52c68c1f130bcb6436",
+          "afterDigest": "4376cf17669e4dfb8a634d3dfe35bc99a1a62f47e474cc52c68c1f130bcb6436",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 147926525,
+          "beforeDigest": "4c64525e2fb555d6a7f83b2ef6a2ddbf049306888be842005788e752985f174c",
+          "afterDigest": "4c64525e2fb555d6a7f83b2ef6a2ddbf049306888be842005788e752985f174c",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 2802362286,
+          "beforeDigest": "b454a59f353bb563208cc81d13416babefb3a9965ab6fbcc220a9d1fb1ad71b9",
+          "afterDigest": "b454a59f353bb563208cc81d13416babefb3a9965ab6fbcc220a9d1fb1ad71b9",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 1161830751,
+          "beforeDigest": "3ea698014533b67d11613a9a011ef7c96f9008a2fe833ae2ee4239dde891f0dc",
+          "afterDigest": "3ea698014533b67d11613a9a011ef7c96f9008a2fe833ae2ee4239dde891f0dc",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 3816266512,
+          "beforeDigest": "3c7488223e3304f44ee9b24ea39792f9f929f15ae28863b392c5ea8349b9e9d1",
+          "afterDigest": "3c7488223e3304f44ee9b24ea39792f9f929f15ae28863b392c5ea8349b9e9d1",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 2175734977,
+          "beforeDigest": "d86bfd0beccf57521bc1ef7afa5104a538e0ece076e045daae38d63471c1b6c5",
+          "afterDigest": "d86bfd0beccf57521bc1ef7afa5104a538e0ece076e045daae38d63471c1b6c5",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 535203442,
+          "beforeDigest": "9c766969c4270ed5784fe652c25e7f71035637a62166a3ac7819335c8308b7c4",
+          "afterDigest": "9c766969c4270ed5784fe652c25e7f71035637a62166a3ac7819335c8308b7c4",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 3189639203,
+          "beforeDigest": "7e991839c5438537703ff2cc17309661d1006897350944a370eab4b1075a21c8",
+          "afterDigest": "7e991839c5438537703ff2cc17309661d1006897350944a370eab4b1075a21c8",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 1549107668,
+          "beforeDigest": "f5e6d4e09a684c5e2913f2312129a90830424f8ca6ede5a54aca01f02bcf2f6c",
+          "afterDigest": "f5e6d4e09a684c5e2913f2312129a90830424f8ca6ede5a54aca01f02bcf2f6c",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 2654435761,
+          "beforeDigest": "17a35f9cc3d574eb43a9f944b28c834079fb360156123f2710e4dee6dfe99d87",
+          "afterDigest": "17a35f9cc3d574eb43a9f944b28c834079fb360156123f2710e4dee6dfe99d87",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 1013904226,
+          "beforeDigest": "a2973a92e8e65df7c9be6e5e61af671e4436ce1d61122345a2472e8a8ef9db2e",
+          "afterDigest": "a2973a92e8e65df7c9be6e5e61af671e4436ce1d61122345a2472e8a8ef9db2e",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 3668339987,
+          "beforeDigest": "5a78a2f117b232c5d065df34b1405de2e8c24ea30a5e86f69c1a45453446ee54",
+          "afterDigest": "5a78a2f117b232c5d065df34b1405de2e8c24ea30a5e86f69c1a45453446ee54",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 2027808452,
+          "beforeDigest": "6f85475d2b12eef354c4f80d16bab647369cb27348f86f542478704b0eba4249",
+          "afterDigest": "6f85475d2b12eef354c4f80d16bab647369cb27348f86f542478704b0eba4249",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 387276917,
+          "beforeDigest": "28c4f79d33ec74c2072e2d84c90e0960659617ea393e6d9436b49e0a7aeeeb13",
+          "afterDigest": "28c4f79d33ec74c2072e2d84c90e0960659617ea393e6d9436b49e0a7aeeeb13",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 3041712678,
+          "beforeDigest": "2b3158707b68946bf020a9a3c94640cb46c321a73a214938d39696112879be4e",
+          "afterDigest": "2b3158707b68946bf020a9a3c94640cb46c321a73a214938d39696112879be4e",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 1401181143,
+          "beforeDigest": "67893dd0644efb88d05450ae77bab6709131c31bdd60bb3411f396e4834a830c",
+          "afterDigest": "67893dd0644efb88d05450ae77bab6709131c31bdd60bb3411f396e4834a830c",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 4055616904,
+          "beforeDigest": "1fb493b840a9ce347b648fea3d1a93007d3ed8091f2ae1c9c99dfff280f6fb6d",
+          "afterDigest": "1fb493b840a9ce347b648fea3d1a93007d3ed8091f2ae1c9c99dfff280f6fb6d",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 2415085369,
+          "beforeDigest": "580d7b088d4a6f640d044d1fa7bc09a2c2de24178dbf72ae7112631525711b85",
+          "afterDigest": "580d7b088d4a6f640d044d1fa7bc09a2c2de24178dbf72ae7112631525711b85",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 774553834,
+          "beforeDigest": "5e831d305334cd98583f1c393d8740b367a7a8cf0bbc5a8300938052575dcb22",
+          "afterDigest": "5e831d305334cd98583f1c393d8740b367a7a8cf0bbc5a8300938052575dcb22",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 3428989595,
+          "beforeDigest": "d153402a3119b47c90f049099352bd112b0fb44ad7a68f51d5ebe05f1dc3691a",
+          "afterDigest": "d153402a3119b47c90f049099352bd112b0fb44ad7a68f51d5ebe05f1dc3691a",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 1788458060,
+          "beforeDigest": "9d814fab9f64262115f66a4d4efe9a0737cc6b54190c4954f53bc161f43ba910",
+          "afterDigest": "9d814fab9f64262115f66a4d4efe9a0737cc6b54190c4954f53bc161f43ba910",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 147926525,
+          "beforeDigest": "534d352493fb8e5f87c467a4e49038c79eb2cab522795e5dcc1faf049cc294e5",
+          "afterDigest": "534d352493fb8e5f87c467a4e49038c79eb2cab522795e5dcc1faf049cc294e5",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 2802362286,
+          "beforeDigest": "82c5e549c06e585a48032c4ab615a1162ca2885cbc405c322fd224625c757bb7",
+          "afterDigest": "82c5e549c06e585a48032c4ab615a1162ca2885cbc405c322fd224625c757bb7",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 1161830751,
+          "beforeDigest": "4f2bf0f3923f70d4e348488173a245ae2238f8d159693aecdaeb259137969ca2",
+          "afterDigest": "4f2bf0f3923f70d4e348488173a245ae2238f8d159693aecdaeb259137969ca2",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 3816266512,
+          "beforeDigest": "c9a8877b1e829d3a68700c423956d475b47306adf54c40d362241eddf4942149",
+          "afterDigest": "c9a8877b1e829d3a68700c423956d475b47306adf54c40d362241eddf4942149",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 2175734977,
+          "beforeDigest": "5871dd9a5a0b0f275ef49564e55f7032f12ce5b4b1c2f79f1041f584a4307d6f",
+          "afterDigest": "5871dd9a5a0b0f275ef49564e55f7032f12ce5b4b1c2f79f1041f584a4307d6f",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 535203442,
+          "beforeDigest": "82c1de68f2233f5a592c4c4f457b645013ccf9e634b33e30930ec00752d87b47",
+          "afterDigest": "82c1de68f2233f5a592c4c4f457b645013ccf9e634b33e30930ec00752d87b47",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 3189639203,
+          "beforeDigest": "a586bdfc65ab00be2c6901a5d5fbf99883b1264e16b6bd564881ae244b5588a0",
+          "afterDigest": "a586bdfc65ab00be2c6901a5d5fbf99883b1264e16b6bd564881ae244b5588a0",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 1549107668,
+          "beforeDigest": "5f5b226606f7d02a6294f9d8c91fa2a6f5b8acc7952abf688e1458b61576d73e",
+          "afterDigest": "5f5b226606f7d02a6294f9d8c91fa2a6f5b8acc7952abf688e1458b61576d73e",
+          "equal": true
+        }
+      ],
+      "equal": 40
+    },
+    {
+      "reference": "57872ee279e924460a126aecbcd0ee7141b5e078",
+      "variants": [
+        {
+          "name": "reference",
+          "tests": {
+            "exitCode": 0,
+            "tests": 451,
+            "pass": 451,
+            "fail": 0,
+            "skipped": 0,
+            "cancelled": 0
+          },
+          "gameExit": 0
+        },
+        {
+          "name": "candidate",
+          "tests": {
+            "exitCode": 0,
+            "tests": 467,
+            "pass": 467,
+            "fail": 0,
+            "skipped": 0,
+            "cancelled": 0
+          },
+          "gameExit": 0
+        }
+      ],
+      "excludedFields": [
+        "source (hashes de HTML/script/adaptador)"
+      ],
+      "comparison": [
+        {
+          "mode": "ai",
+          "seed": 2654435761,
+          "beforeDigest": "7bc0d21faa213bbf404862bfe7874197b771ae14a7d464e48610dce81d684570",
+          "afterDigest": "7bc0d21faa213bbf404862bfe7874197b771ae14a7d464e48610dce81d684570",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 1013904226,
+          "beforeDigest": "86a7abc321839fd8acb135eef416565c2e6ee23f063fafce34eb4aa6972957bd",
+          "afterDigest": "86a7abc321839fd8acb135eef416565c2e6ee23f063fafce34eb4aa6972957bd",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 3668339987,
+          "beforeDigest": "07432f278e7a8b8e44fad82ae718ce5c047ae7a7be7ba316f08cc48d428c21ea",
+          "afterDigest": "07432f278e7a8b8e44fad82ae718ce5c047ae7a7be7ba316f08cc48d428c21ea",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 2027808452,
+          "beforeDigest": "e17a24076aaf963845b507427f9b6b5227214d34ef0d2950ec920889a1ebcd76",
+          "afterDigest": "e17a24076aaf963845b507427f9b6b5227214d34ef0d2950ec920889a1ebcd76",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 387276917,
+          "beforeDigest": "923253bf86f1f9d0c175a348bc23984a5e25698f1c00292ec6dbe6521b40ed13",
+          "afterDigest": "923253bf86f1f9d0c175a348bc23984a5e25698f1c00292ec6dbe6521b40ed13",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 3041712678,
+          "beforeDigest": "faa6dacbec143761a9180c510ef17a3816855c44b993359e152ead8c01a5a59a",
+          "afterDigest": "faa6dacbec143761a9180c510ef17a3816855c44b993359e152ead8c01a5a59a",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 1401181143,
+          "beforeDigest": "ae4bbd29648ab4511ee459d4b958e9dbe4c491ae004be03a0982cbb751cc5f92",
+          "afterDigest": "ae4bbd29648ab4511ee459d4b958e9dbe4c491ae004be03a0982cbb751cc5f92",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 4055616904,
+          "beforeDigest": "92cb53626e3515164a04e666728cd06317610a472d391390ba3ef90ab7e860ec",
+          "afterDigest": "92cb53626e3515164a04e666728cd06317610a472d391390ba3ef90ab7e860ec",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 2415085369,
+          "beforeDigest": "ea36d6c2c43adc6b96ec48cbe67c02b3d83738e95ea926799625b0fd67637b56",
+          "afterDigest": "ea36d6c2c43adc6b96ec48cbe67c02b3d83738e95ea926799625b0fd67637b56",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 774553834,
+          "beforeDigest": "c91c8c87d01ef8b190c2e195824bcedb59454c77df736dab8a23217f983b110a",
+          "afterDigest": "c91c8c87d01ef8b190c2e195824bcedb59454c77df736dab8a23217f983b110a",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 3428989595,
+          "beforeDigest": "63e527bf565fb0ed5e9e07c54c04c9e1399eca7a2472555cd41aa1092117efcb",
+          "afterDigest": "63e527bf565fb0ed5e9e07c54c04c9e1399eca7a2472555cd41aa1092117efcb",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 1788458060,
+          "beforeDigest": "4376cf17669e4dfb8a634d3dfe35bc99a1a62f47e474cc52c68c1f130bcb6436",
+          "afterDigest": "4376cf17669e4dfb8a634d3dfe35bc99a1a62f47e474cc52c68c1f130bcb6436",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 147926525,
+          "beforeDigest": "4c64525e2fb555d6a7f83b2ef6a2ddbf049306888be842005788e752985f174c",
+          "afterDigest": "4c64525e2fb555d6a7f83b2ef6a2ddbf049306888be842005788e752985f174c",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 2802362286,
+          "beforeDigest": "b454a59f353bb563208cc81d13416babefb3a9965ab6fbcc220a9d1fb1ad71b9",
+          "afterDigest": "b454a59f353bb563208cc81d13416babefb3a9965ab6fbcc220a9d1fb1ad71b9",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 1161830751,
+          "beforeDigest": "3ea698014533b67d11613a9a011ef7c96f9008a2fe833ae2ee4239dde891f0dc",
+          "afterDigest": "3ea698014533b67d11613a9a011ef7c96f9008a2fe833ae2ee4239dde891f0dc",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 3816266512,
+          "beforeDigest": "3c7488223e3304f44ee9b24ea39792f9f929f15ae28863b392c5ea8349b9e9d1",
+          "afterDigest": "3c7488223e3304f44ee9b24ea39792f9f929f15ae28863b392c5ea8349b9e9d1",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 2175734977,
+          "beforeDigest": "d86bfd0beccf57521bc1ef7afa5104a538e0ece076e045daae38d63471c1b6c5",
+          "afterDigest": "d86bfd0beccf57521bc1ef7afa5104a538e0ece076e045daae38d63471c1b6c5",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 535203442,
+          "beforeDigest": "9c766969c4270ed5784fe652c25e7f71035637a62166a3ac7819335c8308b7c4",
+          "afterDigest": "9c766969c4270ed5784fe652c25e7f71035637a62166a3ac7819335c8308b7c4",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 3189639203,
+          "beforeDigest": "7e991839c5438537703ff2cc17309661d1006897350944a370eab4b1075a21c8",
+          "afterDigest": "7e991839c5438537703ff2cc17309661d1006897350944a370eab4b1075a21c8",
+          "equal": true
+        },
+        {
+          "mode": "ai",
+          "seed": 1549107668,
+          "beforeDigest": "f5e6d4e09a684c5e2913f2312129a90830424f8ca6ede5a54aca01f02bcf2f6c",
+          "afterDigest": "f5e6d4e09a684c5e2913f2312129a90830424f8ca6ede5a54aca01f02bcf2f6c",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 2654435761,
+          "beforeDigest": "17a35f9cc3d574eb43a9f944b28c834079fb360156123f2710e4dee6dfe99d87",
+          "afterDigest": "17a35f9cc3d574eb43a9f944b28c834079fb360156123f2710e4dee6dfe99d87",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 1013904226,
+          "beforeDigest": "a2973a92e8e65df7c9be6e5e61af671e4436ce1d61122345a2472e8a8ef9db2e",
+          "afterDigest": "a2973a92e8e65df7c9be6e5e61af671e4436ce1d61122345a2472e8a8ef9db2e",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 3668339987,
+          "beforeDigest": "5a78a2f117b232c5d065df34b1405de2e8c24ea30a5e86f69c1a45453446ee54",
+          "afterDigest": "5a78a2f117b232c5d065df34b1405de2e8c24ea30a5e86f69c1a45453446ee54",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 2027808452,
+          "beforeDigest": "6f85475d2b12eef354c4f80d16bab647369cb27348f86f542478704b0eba4249",
+          "afterDigest": "6f85475d2b12eef354c4f80d16bab647369cb27348f86f542478704b0eba4249",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 387276917,
+          "beforeDigest": "28c4f79d33ec74c2072e2d84c90e0960659617ea393e6d9436b49e0a7aeeeb13",
+          "afterDigest": "28c4f79d33ec74c2072e2d84c90e0960659617ea393e6d9436b49e0a7aeeeb13",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 3041712678,
+          "beforeDigest": "2b3158707b68946bf020a9a3c94640cb46c321a73a214938d39696112879be4e",
+          "afterDigest": "2b3158707b68946bf020a9a3c94640cb46c321a73a214938d39696112879be4e",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 1401181143,
+          "beforeDigest": "67893dd0644efb88d05450ae77bab6709131c31bdd60bb3411f396e4834a830c",
+          "afterDigest": "67893dd0644efb88d05450ae77bab6709131c31bdd60bb3411f396e4834a830c",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 4055616904,
+          "beforeDigest": "1fb493b840a9ce347b648fea3d1a93007d3ed8091f2ae1c9c99dfff280f6fb6d",
+          "afterDigest": "1fb493b840a9ce347b648fea3d1a93007d3ed8091f2ae1c9c99dfff280f6fb6d",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 2415085369,
+          "beforeDigest": "580d7b088d4a6f640d044d1fa7bc09a2c2de24178dbf72ae7112631525711b85",
+          "afterDigest": "580d7b088d4a6f640d044d1fa7bc09a2c2de24178dbf72ae7112631525711b85",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 774553834,
+          "beforeDigest": "5e831d305334cd98583f1c393d8740b367a7a8cf0bbc5a8300938052575dcb22",
+          "afterDigest": "5e831d305334cd98583f1c393d8740b367a7a8cf0bbc5a8300938052575dcb22",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 3428989595,
+          "beforeDigest": "d153402a3119b47c90f049099352bd112b0fb44ad7a68f51d5ebe05f1dc3691a",
+          "afterDigest": "d153402a3119b47c90f049099352bd112b0fb44ad7a68f51d5ebe05f1dc3691a",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 1788458060,
+          "beforeDigest": "9d814fab9f64262115f66a4d4efe9a0737cc6b54190c4954f53bc161f43ba910",
+          "afterDigest": "9d814fab9f64262115f66a4d4efe9a0737cc6b54190c4954f53bc161f43ba910",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 147926525,
+          "beforeDigest": "534d352493fb8e5f87c467a4e49038c79eb2cab522795e5dcc1faf049cc294e5",
+          "afterDigest": "534d352493fb8e5f87c467a4e49038c79eb2cab522795e5dcc1faf049cc294e5",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 2802362286,
+          "beforeDigest": "82c5e549c06e585a48032c4ab615a1162ca2885cbc405c322fd224625c757bb7",
+          "afterDigest": "82c5e549c06e585a48032c4ab615a1162ca2885cbc405c322fd224625c757bb7",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 1161830751,
+          "beforeDigest": "4f2bf0f3923f70d4e348488173a245ae2238f8d159693aecdaeb259137969ca2",
+          "afterDigest": "4f2bf0f3923f70d4e348488173a245ae2238f8d159693aecdaeb259137969ca2",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 3816266512,
+          "beforeDigest": "c9a8877b1e829d3a68700c423956d475b47306adf54c40d362241eddf4942149",
+          "afterDigest": "c9a8877b1e829d3a68700c423956d475b47306adf54c40d362241eddf4942149",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 2175734977,
+          "beforeDigest": "5871dd9a5a0b0f275ef49564e55f7032f12ce5b4b1c2f79f1041f584a4307d6f",
+          "afterDigest": "5871dd9a5a0b0f275ef49564e55f7032f12ce5b4b1c2f79f1041f584a4307d6f",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 535203442,
+          "beforeDigest": "82c1de68f2233f5a592c4c4f457b645013ccf9e634b33e30930ec00752d87b47",
+          "afterDigest": "82c1de68f2233f5a592c4c4f457b645013ccf9e634b33e30930ec00752d87b47",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 3189639203,
+          "beforeDigest": "a586bdfc65ab00be2c6901a5d5fbf99883b1264e16b6bd564881ae244b5588a0",
+          "afterDigest": "a586bdfc65ab00be2c6901a5d5fbf99883b1264e16b6bd564881ae244b5588a0",
+          "equal": true
+        },
+        {
+          "mode": "local",
+          "seed": 1549107668,
+          "beforeDigest": "5f5b226606f7d02a6294f9d8c91fa2a6f5b8acc7952abf688e1458b61576d73e",
+          "afterDigest": "5f5b226606f7d02a6294f9d8c91fa2a6f5b8acc7952abf688e1458b61576d73e",
+          "equal": true
+        }
+      ],
+      "equal": 40
+    }
+  ],
+  "browser": {
+    "productionSha256": "43b8883ad4821e4b50c40791615c5ef6c0b3030476409b4e1c6da4dbd872d692",
+    "qaSha256": "b77d4fdcaa138ec0134f258180859ea6e96f0f4e31cc2ec463cce4903b1300b1",
+    "gamesQA": [
+      {
+        "mode": "ai",
+        "seed": 2654435761,
+        "final": {
+          "round": 4,
+          "result": "victory",
+          "food": 0,
+          "morale": 9,
+          "samples": 7,
+          "goal": 7,
+          "ended": true,
+          "pending": {
+            "bite": false,
+            "loot": false,
+            "cross": false,
+            "leaders": [],
+            "death": false
+          },
+          "opened": ""
+        },
+        "errors": [],
+        "invariants": []
+      },
+      {
+        "mode": "ai",
+        "seed": 1401181143,
+        "final": {
+          "round": 6,
+          "result": "morale",
+          "food": 2,
+          "morale": 0,
+          "samples": 3,
+          "goal": 5,
+          "ended": true,
+          "pending": {
+            "bite": false,
+            "loot": false,
+            "cross": false,
+            "leaders": [],
+            "death": false
+          },
+          "opened": ""
+        },
+        "errors": [],
+        "invariants": []
+      },
+      {
+        "mode": "local",
+        "seed": 2654435761,
+        "final": {
+          "round": 2,
+          "result": "victory",
+          "food": 3,
+          "morale": 10,
+          "samples": 7,
+          "goal": 7,
+          "ended": true,
+          "pending": {
+            "bite": false,
+            "loot": false,
+            "cross": false,
+            "leaders": [],
+            "death": false
+          },
+          "opened": ""
+        },
+        "errors": [],
+        "invariants": []
+      },
+      {
+        "mode": "local",
+        "seed": 3816266512,
+        "final": {
+          "round": 4,
+          "result": "morale",
+          "food": 1,
+          "morale": 0,
+          "samples": 3,
+          "goal": 5,
+          "ended": true,
+          "pending": {
+            "bite": false,
+            "loot": false,
+            "cross": false,
+            "leaders": [],
+            "death": false
+          },
+          "opened": ""
+        },
+        "errors": [],
+        "invariants": []
+      },
+      {
+        "mode": "local",
+        "seed": 3189639203,
+        "final": {
+          "round": 3,
+          "result": "victory",
+          "food": 8,
+          "morale": 8,
+          "samples": 5,
+          "goal": 5,
+          "ended": true,
+          "pending": {
+            "bite": false,
+            "loot": false,
+            "cross": false,
+            "leaders": [],
+            "death": false
+          },
+          "opened": ""
+        },
+        "errors": [],
+        "invariants": []
+      }
+    ],
+    "productReplays": [
+      {
+        "mode": "ai",
+        "seed": 2654435761,
+        "completed": true,
+        "final": {
+          "label": "FIN DE PARTIDA",
+          "banner": "🏆 ¡Victoria! Se completó el objetivo general.",
+          "stats": {
+            "morale": "9",
+            "comida": "0",
+            "hambre": "0",
+            "ronda": "4/8",
+            "residuos": "7",
+            "zombis": "18",
+            "indefensos": "5"
+          },
+          "goal": "⚑ OBJETIVO GENERALEncontrar la cura7/7Reunir 7 muestras de investigación para salvar a la colonia."
+        },
+        "errors": []
+      },
+      {
+        "mode": "ai",
+        "seed": 1401181143,
+        "completed": true,
+        "final": {
+          "label": "FIN DE PARTIDA",
+          "banner": "☠ Derrota: la moral llegó a cero.",
+          "stats": {
+            "morale": "0",
+            "comida": "2",
+            "hambre": "1",
+            "ronda": "6/6",
+            "residuos": "7",
+            "zombis": "12",
+            "indefensos": "2"
+          },
+          "goal": "⚑ OBJETIVO GENERALOperación antídoto3/5Reunir 5 muestras antes de que se agoten las 6 rondas."
+        },
+        "errors": []
+      },
+      {
+        "mode": "local",
+        "seed": 2654435761,
+        "completed": true,
+        "final": {
+          "label": "FIN DE PARTIDA",
+          "banner": "🏆 ¡Victoria! Se completó el objetivo general.",
+          "stats": {
+            "morale": "10",
+            "comida": "3",
+            "hambre": "0",
+            "ronda": "2/8",
+            "residuos": "8",
+            "zombis": "13",
+            "indefensos": "3"
+          },
+          "goal": "⚑ OBJETIVO GENERALEncontrar la cura7/7Reunir 7 muestras de investigación para salvar a la colonia."
+        },
+        "errors": []
+      },
+      {
+        "mode": "local",
+        "seed": 3816266512,
+        "completed": true,
+        "final": {
+          "label": "FIN DE PARTIDA",
+          "banner": "☠ Derrota: la moral llegó a cero.",
+          "stats": {
+            "morale": "0",
+            "comida": "1",
+            "hambre": "2",
+            "ronda": "4/6",
+            "residuos": "8",
+            "zombis": "19",
+            "indefensos": "3"
+          },
+          "goal": "⚑ OBJETIVO GENERALOperación antídoto3/5Reunir 5 muestras antes de que se agoten las 6 rondas."
+        },
+        "errors": []
+      },
+      {
+        "mode": "local",
+        "seed": 3189639203,
+        "completed": true,
+        "final": {
+          "label": "FIN DE PARTIDA",
+          "banner": "🏆 ¡Victoria! Se completó el objetivo general.",
+          "stats": {
+            "morale": "8",
+            "comida": "8",
+            "hambre": "0",
+            "ronda": "3/6",
+            "residuos": "3",
+            "zombis": "16",
+            "indefensos": "0"
+          },
+          "goal": "⚑ OBJETIVO GENERALOperación antídoto5/5Reunir 5 muestras antes de que se agoten las 6 rondas."
+        },
+        "errors": []
+      }
+    ],
+    "viewports": [
+      {
+        "viewport": {
+          "width": 320,
+          "height": 640
+        },
+        "geometry": [
+          {
+            "x": 32,
+            "y": 582,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "x": 84,
+            "y": 582,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "x": 136,
+            "y": 582,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "x": 188,
+            "y": 582,
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "errors": [],
+        "ok": true
+      },
+      {
+        "viewport": {
+          "width": 393,
+          "height": 852
+        },
+        "geometry": [
+          {
+            "x": 105,
+            "y": 794,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "x": 157,
+            "y": 794,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "x": 209,
+            "y": 794,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "x": 261,
+            "y": 794,
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "errors": [],
+        "ok": true
+      },
+      {
+        "viewport": {
+          "width": 1365,
+          "height": 768
+        },
+        "geometry": [
+          {
+            "x": 1077,
+            "y": 710,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "x": 1129,
+            "y": 710,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "x": 1181,
+            "y": 710,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "x": 1233,
+            "y": 710,
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "errors": [],
+        "ok": true
+      }
+    ],
+    "checks": {
+      "focus": 3,
+      "handover": 6,
+      "dice": 6,
+      "terminal": 6,
+      "c12": 6,
+      "c13": 6,
+      "issue7": 16
+    },
+    "offline": [
+      {
+        "fileUrl": "file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/invierno_colonia_v9_9.html",
+        "htmlSha256": "43b8883ad4821e4b50c40791615c5ef6c0b3030476409b4e1c6da4dbd872d692",
+        "chromium": "143.0.7499.4",
+        "results": [
+          {
+            "mode": "local",
+            "ok": true,
+            "errors": [],
+            "requests": [
+              "file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/invierno_colonia_v9_9.html"
+            ],
+            "networkOffline": true,
+            "variant": "producto: interfaz y globals"
+          },
+          {
+            "mode": "ai",
+            "ok": true,
+            "errors": [],
+            "requests": [
+              "file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/invierno_colonia_v9_9.html"
+            ],
+            "networkOffline": true,
+            "variant": "producto: interfaz y globals"
+          }
+        ]
+      },
+      {
+        "fileUrl": "file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/dist/invierno-test.html",
+        "htmlSha256": "b77d4fdcaa138ec0134f258180859ea6e96f0f4e31cc2ec463cce4903b1300b1",
+        "chromium": "143.0.7499.4",
+        "results": [
+          {
+            "mode": "local",
+            "ok": true,
+            "errors": [],
+            "requests": [
+              "file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/dist/invierno-test.html"
+            ],
+            "networkOffline": true,
+            "variant": "QA: incluye aserciones internas históricas"
+          },
+          {
+            "mode": "ai",
+            "ok": true,
+            "errors": [],
+            "requests": [
+              "file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/dist/invierno-test.html"
+            ],
+            "networkOffline": true,
+            "variant": "QA: incluye aserciones internas históricas"
+          }
+        ]
+      }
+    ],
+    "legacyAdditionalQAGames": 5,
+    "chromiumCI": "143.0.7499.4"
+  },
+  "sharedSourceHashes": {
+    "src/application/reference-contracts.mjs": "40fffa92ecb205cd791cc62353cb409066a6e43afb22c3700365e09fef56645f",
+    "src/domain/reference-data.mjs": "13020c1caddeadb295d25126623906c50d47bb39073a85ba0d57156544060295",
+    "src/domain/reference-state.mjs": "c865769ffcbd5862a3497a26a241e146ce6f43da902abd7eb1845c0f8f952e39",
+    "src/domain/reference-items.mjs": "ebbf0849644fd1b9f930c323562305919d074cf49093188ccbb357fcb5a28e0f",
+    "src/domain/reference-crisis.mjs": "35bdca60a96640bc032a081a6ae9aed035c3de694135b1370347d1b79b520e2a",
+    "src/application/death-director.mjs": "539c5197d125d65e055bb544df80cd9213a229c71df11d8fceadfc852b8a0b6b",
+    "src/application/read-only-context.mjs": "4a4d926cf8aab199b8e03306ce61dfa01dd46b541eadebd0a822ab19ec5b160c",
+    "src/item-catalog.mjs": "c799bdd27ae6b5a4a5800e57d5d00588b5350403bb792243c39f0f082fe054c0",
+    "src/domain/reference-rules.mjs": "5ea003bf88498131ebbb794ffa2e7b0e0d6e270046b8d8277326a268a38679cf",
+    "src/application/reference-turns.mjs": "9eda490391c3795c1ebb866a753d95916d666490d696eeb9fd6e5c66e9b4b516",
+    "src/application/reference-engine.mjs": "8f6719ccb8f117c0c6c813049903c456007f83422d6cb5392d31832be95d62ea",
+    "src/presentation/commands.mjs": "4a95754b8cf97317673855cbb0bb67b8f7b889ae5973fa0a28e5a57e16a885e9",
+    "src/presentation/reference-view.mjs": "0c28c581cfc3088717d43116321feaf5f1305edf34ff487336df26240407cfdf",
+    "src/agents/reference-agent.mjs": "a2182b857b3ad41e7fb152b15d25091cbe2a5903834dd1e548e528675a4b83c0",
+    "src/application/create-application.mjs": "6792b286752a41a73147b7855b19e2c290a8a8043f265e0dfd14884f803d72c6"
+  },
+  "sp03": {
+    "file": "docs/63-hoja-de-ruta-planificacion-singleplayer.md",
+    "approvedAndIntegratedGitBlob": "c9f931dc1df295bdbebd8f509bd1c9645f58c4d7",
+    "identicalBytes": true,
+    "agreementsAndProposalsPreserved": true
+  },
+  "limits": [
+    "no Android físico/TalkBack ni otros navegadores",
+    "regresión finita, no prueba universal de equivalencia",
+    "sin tag/release/rama del juego propio; preservación formal aún pendiente"
+  ]
+}

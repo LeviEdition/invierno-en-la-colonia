@@ -1,5 +1,16 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## D1/D2 integradas en main y validadas — hito 1 cerrado ·29/10/2026
+
+**Autorización del creador:** integrar PR15 tras revisión independiente, conservando historia. Se verificaron otra vez head7f3ac7c, main0b75d01, ausencia de conflictos yseis checks aprobados. **Merge convencional6b8bfcadfeb99d16a10b6f4576f3b061584ee1f9**, padres exactos0b75d01 y7f3ac7c; árbol idéntico al aprobado. Oráculo57872ee confirmado como ancestro de main. No squash/rebase.
+
+**Validación posterior en main:** npm ci/check:build,467/467 local yCI,40/40 iguales contra57872ee y40/40 contra V9.9/main0b75d01. Chromium5QA+5producto,3tamaños de producto,3C16/6pase/6táctiles/6C12/6C13/16issue7/6terminal y4file offlineCI; workflow D0 añade5QA/foco aprobados. [CI40902075722](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40902075722), [40902075714](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40902075714) y[40902075817](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40902075817): success sobre el merge real. Artifacts, HTML y15módulos cotejados.
+
+**SP-03 preservado byte a byte** en63 respecto del head aprobado; acuerdos ypropuestas conservan su estado. [Informe71](71-integracion-main-y-cierre-d1-d2.md) y[evidencia](evidencias/d1d2-integracion-main.json) registran SHA, padres, pruebas, límites yresultados. El commit posterior de cierre solo actualiza documentación; no altera el código integrado yse verifica también su CI exacto.
+
+**Tarea activa única:** preparar la preservación formal de la versión modular de referencia, pendiente de autorización específica. **No crear todavía tags/releases o ramas del juego propio ni implementar nuevas mecánicas.** D1/D2 cerradas; detener refactorización general. Reservas: contexto de compatibilidad, schema V9.9 dos grupos, VM de fixtures yvalidación física/otros navegadores/balance humano pendientes. Las secciones siguientes conservan los estados históricos previos al merge.
+
+
 ## PR15 D1/D2 abierto — documentación reconciliada, pendiente de revisión final ·29/10/2026
 
 **Encargo cumplido hasta apertura:** [PR15](https://github.com/LeviEdition/invierno-en-la-colonia/pull/15), rama `refactor/d1-d2-arquitectura` → main, regular/no draft. **No fusionado ni auto-merge.** Preapertura7d6a68a con árbol limpio,467/467, build reproducible y[CI40896698599](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40896698599)/[40896698392](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40896698392) success.40/40 contra cada referencia,5QA+5producto y4file offline; artifacts cotejados. GitHub sin conflictos; los checks del último head se verifican antes de entregar yse enlazan en el PR.

@@ -3,7 +3,7 @@
 Base: `main@0b75d01aba013cd029d9d0dd0bdbd20791be15fc`.
 Head: `refactor/d1-d2-arquitectura`, contenido técnico hasta`6277e62dbd8b917bac7d4c290b14096499d6b0f7`, más documentación de cierre. [Inventario exacto de commits/archivos](evidencias/d1d2-integracion-commits.json). Actualizar/revalidar si main o la rama se mueven antes de abrir.
 
-**Estado actual:** [PR15 abierto](https://github.com/LeviEdition/invierno-en-la-colonia/pull/15), no draft, desde `refactor/d1-d2-arquitectura` hacia `main`. Apertura autorizada y realizada después de comprobar árbol limpio yCI completo del SHA reconciliado7d6a68a. GitHub informa MERGEABLE (sin conflictos); checks de PR ydel commit documental posterior se comprueban antes de entregar. Sin auto-merge ni fusión autorizada. El head yestado actualizado de checks se consultan en el PR.
+**Estado actual:** [PR15 MERGED](https://github.com/LeviEdition/invierno-en-la-colonia/pull/15), por autorización expresa del creador tras revisión independiente. Merge convencional `6b8bfcadfeb99d16a10b6f4576f3b061584ee1f9`, padres0b75d01/7f3ac7c; no squash/rebase. El código integrado aprobó467/467,40+40 comparaciones ylos tres workflows de main. [Cierre71](71-integracion-main-y-cierre-d1-d2.md). El texto de descripción/reversión siguiente conserva la propuesta revisada antes de fusionar; su aprobación posterior queda registrada aquí. No se creó tag/release ni juego propio.
 
 **Reconciliación:** fuente833eae7, solo documentación; no nuevos cambios de código frente al cierre8e3e7d3/código6277e62. [Informe70](70-reconciliacion-documental-y-pr-d1-d2.md).
 

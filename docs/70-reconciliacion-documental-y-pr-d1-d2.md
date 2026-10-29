@@ -1,5 +1,8 @@
 # 70 — Reconciliación documental SP-03 y apertura de PR D1/D2
 
+**Cierre posterior autorizado:** PR15 fusionado en main mediante merge convencional `6b8bfcadfeb99d16a10b6f4576f3b061584ee1f9`, validado sobre el código realmente integrado. [Informe71](71-integracion-main-y-cierre-d1-d2.md). Las menciones siguientes a «PR abierto», «sin fusionar» o autorización pendiente conservan los estados históricos de este informe, anteriores a la aprobación expresa posterior. D1/D2 cerradas; preservación formal aún pendiente, sin nueva implementación.
+
+
 **Resultado:** reconciliación incorporada y [PR15 abierto](https://github.com/LeviEdition/invierno-en-la-colonia/pull/15) para revisión final, sin fusionar. Se abrió sobre7d6a68a después de pruebas yCI completos; el commit documental posterior registra la apertura. Código yHTML idénticos al corte técnico auditado. GitHub confirmó ausencia de conflictos. **Única siguiente tarea del creador/ChatGPT:** revisión independiente ydecidir aprobación/merge; no hay autorización de fusionar automáticamente.
 
 
