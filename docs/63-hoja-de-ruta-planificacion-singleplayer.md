@@ -499,6 +499,29 @@ Simular **2–3 rondas continuadas**, con estados de partida idénticos al comen
 
 **Pendiente de aprobación:** confirmar si la filosofía base de **Encuentros con guiones reutilizables, instanciados por personaje** se adopta para el primer singleplayer. Luego decidir criterios de elegibilidad, relación de estas historias con campañas e hitos, frecuencia/prioridad y niveles de personalización. No altera V9.9, D1/D2, matriz F ni código.
 
+### 6.2D. Muerte del protagonista de una historia secundaria (29/10/2026 — criterio propuesto, pendiente de aprobación)
+
+**Pregunta crítica del creador:** en un juego donde **cualquier superviviente puede morir en cualquier momento**, una historia secundaria genérica asignada a Mara (ejemplo: búsqueda del hermano desaparecido) podría quedar sin protagonista **a la ronda siguiente**. No es un caso excepcional: debe ser un contrato normal para **cada historia secundaria persistente**, si adoptamos el sistema reutilizable. El arco personal **no convierte a Mara en inmortal**, no debe reabrirla como personaje presente y **no debe transferirse a otro superviviente automáticamente**.
+
+**Principio recomendado (NO aprobado todavía):** muerte del protagonista = **reevaluación de continuidad narrativa según hechos**, no «fracaso» obligatorio ni progreso mágico. Mantener persistencia del hermano, pistas descubiertas, decisiones previas, relaciones y existencia en el mundo, **independientemente de si la misión se considera activa para el jugador**.
+
+| Salida narrativa posible | Cuándo corresponde | Ejemplo sin guion canónico |
+| --- | --- | --- |
+| **Cierre inconcluso** | La motivación pertenecía solo al difunto, no hay interés o información transmisible; el arco no forma parte del objetivo principal | Mara muere antes de revelar ninguna pista; la colonia registra la pérdida, pero no recibe una misión heredada arbitraria. No se afirma que el hermano también murió. |
+| **Continuación opcional con testigo** | Otro superviviente o el líder conocía la búsqueda, tiene una pista y puede elegir qué hacer | Iris había oído el relato o recibido una carta; el líder decide si destinar acciones y recursos a continuar por Mara. **No convertir a Iris en hermana del NPC**. |
+| **Transformación del arco** | La historia preveía hechos que pueden seguir existiendo con Mara muerta: un hermano que busca a Mara, un mensaje, una deuda o una consecuencia de decisiones anteriores | El hermano podría llegar a la colonia y descubrir lo ocurrido. Ese suceso depende de hechos y condiciones, **no aparece por obligación en una ronda predefinida**. |
+| **Pausa justificada** | Persisten causas/personas en el mundo pero no se cumplen requisitos actuales para una escena coherente | La pista está en manos de una facción; se mantiene el estado, sin prometer al jugador una misión imposible ni dejar un evento en bucle. |
+
+**Distinción crítica entre información del jugador y conocimiento del mundo:** que el lector haya visto «Mara piensa en su hermano» no significa automáticamente que **el líder o Iris lo sepan**; definir cuándo la información se hizo pública, por ejemplo si Mara se lo contó a la colonia, lo anotó o el líder participó en la conversación. Si los hechos narrados son decisiones del líder, la continuidad debe respetar ese conocimiento. El Director no inventa un testigo a posteriori para salvar la misión.
+
+**Persistencia de entidades y consecuencias:** `arcId`, personaje original, NPC relacionado, hechos, pistas conocidas, promesas, opciones elegidas, muerte del protagonista, estado de arco y eventos pendientes. Los nombres técnicos son orientativos. Una muerte es transición de estado, **no borrado del historial**; las agendas diferidas deben comprobar precondiciones de actores vivos y suprimir/reconducir escenas incompatibles. Un arco cerrado no significa que el NPC desaparezca mágicamente del mundo.
+
+**Control de alcance recomendado:** no escribir tres campañas completas por cada posible muerte. Para el primer prototipo, cada historia reutilizable tendrá **un cierre breve y coherente si muere el protagonista** y, únicamente cuando su diseño lo justifique, **una ruta de continuación o transformación**. La muerte puede truncar permanentemente una historia; eso no es un error de diseño para una **misión secundaria**. En cambio, si un arco cumple un requisito de la **campaña principal**, su pérdida no debe crear un bloqueo inevitable sin rutas alternativas previamente diseñadas.
+
+**Pruebas narrativas indispensables:** matar a la protagonista antes de compartir la pista, después de comunicarla, durante una expedición, después de rescatar al familiar y cuando está pendiente un evento; comprobar que nadie la nombra como viva, que las relaciones NPC permanecen correctas, que la recompensa no se duplica y que ninguna agenda dispara escenas imposibles. Probar también a Iris/Damián como protagonistas alternativos de la plantilla, sin alterar el parentesco una vez instanciado.
+
+**Estado:** alternativas sugeridas para discusión; todavía no se aprobó una política universal de cierre/continuación, ni condiciones precisas de conocimiento compartido. Siguiente microdecisión: determinar si aceptamos como regla base «cada historia personal debe soportar la muerte del protagonista con al menos un cierre coherente; prolongarla solo si hay razones y hechos conocidos». No implementarlo durante D1/D2.
+
 ### 6.3. Recorrido sobre papel ilustrativo (NO simulación de balance)
 
 - Grupo elegido: Iris, Damián y Mara; **4 dados de referencia**, no balance definitivo.
