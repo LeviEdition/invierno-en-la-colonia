@@ -603,3 +603,5 @@ Encargo focalizado desdeee73d29, main0b75d01 verificada. Informe68: dos bloqueos
 **Auditoría B3:** dos regresiones de montaje fallido, listeners residuales16/10 ybloqueo de reconexión. Cleanup de recursos propios en catch, pruebas rojas→verdes;467/467 ybuild reproducible. Informe68 actualizado; ninguna aplicación viva se desconecta por un intento duplicado fallido.
 
 **Preparación CI D1/D2:** se conserva gate completo para futuros PR/main sin abrir/fusionar nada; workflows históricos construyen QA explícitamente. Comparación directa contra main0b75d01:408/408 y40/40 iguales, actual467/467. Se añaden recorridos existentes C12/C13/issue7/terminal al CI; no nuevas reglas ni arquitectura singleplayer.
+
+**Validación ampliada:** Actions40883942064 rojo por invocar recorrido C15 que esperaba fuga de foco ya corregida por C16; engine/regresiones verdes. Se preserva script histórico yse incorpora recorrido terminal vigente con finales equivalentes, foco aislado ycomando directo bloqueado durante muerte:6/6 local. No se modifica ninguna regla para obtener verde; pendiente CI del ajuste.

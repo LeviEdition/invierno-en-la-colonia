@@ -41,3 +41,9 @@ La corrección limpia únicamente recursos instalados por el intento fallido (su
 Se amplía el workflow completo a futuros PR hacia main ypush de main, para conservar estas compuertas después de una integración autorizada. Los workflows históricos D0/D1 que ahora invocan scripts de escenarios reciben la construcción explícita del HTML QA yla instalación reproducible; no se modifica el juego. La comparación permite elegir REFERENCE_COMMIT, manteniendo57872ee por defecto, yse añade comparación directa contra main0b75d01. C12/C13/issue7/terminal existentes se incorporan al recorrido actual, además de C16/C11/partidas/offline. No se abre PR para activar esta preparación.
 
 Resultado local directo contra main:40/40 registros iguales, excluyendo solo metadatos source; suite histórica main408/408 yactual467/467. La comparación histórica anterior57872ee también dio40/40 (451/451 referencia). Esto refuerza que las extracciones preservan estrategia, mensajes, muertes, rondas yRNG; no afirma equivalencia universal para todas las semillas.
+
+## Ajuste del recorrido terminal histórico
+
+La ampliación inicial del CI en352c094 invocó check-c15-terminal-browser.mjs, que exige poder escapar del diálogo de muerte mediante Tab (assert reached=true). C16 ya eliminó esa fuga; el propio workflow D0 documentaba que esa precondición histórica dejó de ser contrato vigente. Local yActions40883942064 fallaron exactamente allí, con0 errores JS; no se atribuye ese rojo a un defecto del juego ni se declara ese run aprobado.
+
+Se conserva el script C15 sin tocar sus aserciones históricas. Un recorrido de integración separado conserva las verificaciones de hambre/residuos, exige el foco aislado vigente yademás intenta chooseLeader directamente para comprobar la defensa del motor durante fallecimiento.6/6 casos locales actuales,0 errores. Se usa ese contrato vigente en el CI, sin filtrar pruebas ni reducir la suite Node. C16 mantiene sus3 recorridos completos.
