@@ -17,3 +17,10 @@ export function programFromHtml(html){
 export function readGameProgram(file=new URL('../invierno_colonia_v9_9.html',import.meta.url)){
  return programFromHtml(readFileSync(file,'utf8'));
 }
+
+// D2: entrada explícita para el motor modular; no intenta abrir una IIFE de producción.
+export function readTestProgram(){
+ const runtimeSource=readFileSync(new URL('../dist/reference-test-runtime.js',import.meta.url),'utf8');
+ const html=readFileSync(new URL('../invierno_colonia_v9_9.html',import.meta.url),'utf8');
+ return Object.freeze({runtimeSource,script:runtimeSource,metadata:Object.freeze({htmlSha256:hash(html),scriptSha256:hash(runtimeSource)})});
+}

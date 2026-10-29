@@ -1,3 +1,4 @@
+import {readTestProgram} from '../test-support/game-source.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -7,14 +8,7 @@ import { createContext, runInContext } from 'node:vm';
 
 // Ejecuta las reglas de V9.9. Aislamos DOM, tiempos de animación y encrucijadas.
 // Estas últimas se auditarán por separado: NO quedan cubiertas por este archivo.
-const html = readFileSync(join(dirname(fileURLToPath(import.meta.url)), '..', 'invierno_colonia_v9_9.html'), 'utf8');
-const scripts = [...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)];
-assert.equal(scripts.length, 1);
-const bootstrap = /\ncreate\(\);\s*\ndocument\.getElementById\('setupScreen'\)\.hidden=false;passScreenActive=true;\s*\npaint\(\);\s*$/;
-assert.match(scripts[0][1], bootstrap);
-const oldPause = /const pause=async\(\)=>\{[\s\S]*?\n\};/;
-assert.match(scripts[0][1], oldPause, 'Si cambió la coordinación de animaciones, actualizar el adaptador de pruebas');
-const source = scripts[0][1].replace(bootstrap, '').replace(oldPause, 'const pause=async()=>{};');
+const source=readTestProgram().runtimeSource+'\npause=async()=>{};';
 
 function fixture() {
   const rng = { value: (4 - 0.5) / 6 };

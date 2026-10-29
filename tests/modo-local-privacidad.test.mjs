@@ -1,3 +1,4 @@
+import {readTestProgram} from '../test-support/game-source.mjs';
 // A2-01: caracterización del modo local. Ejecuta el script original de la V9.9.
 // DOM simulado: la privacidad *visual* y el uso táctil requieren una prueba manual posterior.
 import test from 'node:test';
@@ -7,12 +8,7 @@ import {fileURLToPath} from 'node:url';
 import {dirname,join} from 'node:path';
 import {createContext,runInContext} from 'node:vm';
 
-const html=readFileSync(join(dirname(fileURLToPath(import.meta.url)),'..','invierno_colonia_v9_9.html'),'utf8');
-const scripts=[...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)];
-assert.equal(scripts.length,1);
-const bootstrap=/\ncreate\(\);\s*\ndocument\.getElementById\('setupScreen'\)\.hidden=false;passScreenActive=true;\s*\npaint\(\);\s*$/;
-assert.match(scripts[0][1],bootstrap);
-const source=scripts[0][1].replace(bootstrap,'');
+const source=readTestProgram().runtimeSource;
 
 function fixture(){
  const random={value:0.55},math=Object.create(Math);math.random=()=>random.value;

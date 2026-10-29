@@ -583,3 +583,7 @@ CI exacto d801dbb / [40688534944](https://github.com/LeviEdition/invierno-en-la-
 Se comprobaron JSON, hashes de motor/evidencias, enlaces locales, sintaxis de los scripts y git diff --check. Capturas320px y continuidad393px inspeccionadas. Revisión independiente final técnica/documental aprobada; informes46–49, matriz04 y tablero18 coherentes. A1 y adaptaciones requieren revisión humana; **misión técnicamente entregada con reservas, etapa C no oficialmente cerrada**. Nueve issues abiertos conservados, #4/#5/#6 ya estaban cerrados. Sin stable, main, D/E/F ni cambios de balance. El commit documental de este checkpoint también se verifica por SHA en Actions al entregar; no se reutiliza para él el CI del código.
 
 **Única siguiente tarea:** aceptación del creador usando checklist49; decidir cierre con reservas o autorizar una corrección acotada de A1. El plan D es solo propuesta, sin implementación.
+
+## 29/10/2026 — continuidad técnica D1/D2 (no nuevas reglas de estabilización)
+
+Autorización ampliada del creador para completar D1 y D2. [Informe67](67-d1-d2-arquitectura.md), rama `refactor/d1-d2-arquitectura` desde57872ee. main0b75d01 intacta; PR14 ya fusionado históricamente, no por esta tarea. Referencia451/451, primer motor modular454/454 y40 comparaciones estrictas iguales. En curso: contratos de eventos/build, capacidades IA y compuertas completas. No comienza SP-02/Director/juego propio.

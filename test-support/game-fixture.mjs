@@ -1,7 +1,7 @@
 // Motor real del HTML. DOM mínimo solo para pruebas que no afirman geometría/foco real.
 import {createContext,runInContext} from 'node:vm';
-import {readGameProgram} from './game-source.mjs';
-const referenceProgram=readGameProgram();
+import {readTestProgram} from './game-source.mjs';
+const referenceProgram=readTestProgram();
 const rngDescription='LCG32: x=(1664525*x+1013904223) modulo 2^32; random=x/2^32';
 export const engineMetadata={...referenceProgram.metadata,rng:rngDescription};
 export function fixture({mode='local',face=6,seed,render=false,natural=false,program=referenceProgram}={}){

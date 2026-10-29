@@ -1,5 +1,10 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## D1 → D2 — continuidad técnica autorizada · 29/10/2026
+
+Encargo vigente: «Avanza todo incluso d2, manteniendo las reglas de alcance y de autorización». Rama `refactor/d1-d2-arquitectura` desde57872ee; main0b75d01 yD1ba9a423 intactas. Referencia451/451 ycheck:build aprobados. [Informe67](67-d1-d2-arquitectura.md) registra alcance, compuertas y resultados. Continúan prohibidos cambios de mecánicas/SP, fusiones yreleases. Los checkpoints siguientes son históricos y no bloquean esta autorización nueva. **Tarea activa:** completar D1/D2 con comparación independiente y validación, sin empezar el juego propio.
+
+
 ## D1.2b — primer contrato UI/cargador listo para revisión · 29/10/2026
 
 **Autorización de continuidad del creador:** tras discutir el método y el siguiente paso, «Bueno prodigamos». Se anunció y acotó D1.2b a cargador compartido, contrato de pruebas y piloto de inicio/pase. No aprobación de build principal, reglas, SP-02 o D2. Rama nueva `refactor/experiment-d1-2b-contracts`, desde918e241; main0b75d01 yD1ba9a423 intactas.

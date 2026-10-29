@@ -1,3 +1,4 @@
+import {readTestProgram} from '../test-support/game-source.mjs';
 // A4: Integración sobre V9.9 intacta. DOM simulado, RNG y mazos preparados.
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -5,11 +6,7 @@ import {readFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {dirname,join} from 'node:path';
 import {createContext,runInContext} from 'node:vm';
-const html=readFileSync(join(dirname(fileURLToPath(import.meta.url)),'..','invierno_colonia_v9_9.html'),'utf8');
-const scripts=[...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)];
-assert.equal(scripts.length,1);
-const boot=/\ncreate\(\);\s*\ndocument\.getElementById\('setupScreen'\)\.hidden=false;passScreenActive=true;\s*\npaint\(\);\s*$/;
-assert.match(scripts[0][1],boot);const source=scripts[0][1].replace(boot,'');
+const source=readTestProgram().runtimeSource;
 function fixture(mode='local'){
  const math=Object.create(Math);math.random=()=>5.5/6;
  const nodes=new Map();

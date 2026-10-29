@@ -1,3 +1,4 @@
+import {readTestProgram} from '../test-support/game-source.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -6,13 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { createContext, runInContext } from 'node:vm';
 
 // Caracterización de V9.9: ejecutamos las reglas originales y aislamos solo la interfaz.
-const file = join(dirname(fileURLToPath(import.meta.url)), '..', 'invierno_colonia_v9_9.html');
-const html = readFileSync(file, 'utf8');
-const scripts = [...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)];
-assert.equal(scripts.length, 1);
-const bootstrap = /\ncreate\(\);\s*\ndocument\.getElementById\('setupScreen'\)\.hidden=false;passScreenActive=true;\s*\npaint\(\);\s*$/;
-assert.match(scripts[0][1], bootstrap);
-const source = scripts[0][1].replace(bootstrap, '');
+const source=readTestProgram().runtimeSource;
 
 function fixture() {
   const rng = { value: 0.6 };

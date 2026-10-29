@@ -1,3 +1,4 @@
+import {readTestProgram} from '../test-support/game-source.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -7,12 +8,7 @@ import { createContext, runInContext } from 'node:vm';
 
 // Caracterización de la V9.9 SIN cambiar las reglas originales.
 // Solo se aísla el DOM y la presentación de mensajes/animaciones.
-const html = readFileSync(join(dirname(fileURLToPath(import.meta.url)), '..', 'invierno_colonia_v9_9.html'), 'utf8');
-const scripts = [...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)];
-assert.equal(scripts.length, 1);
-const bootstrap = /\ncreate\(\);\s*\ndocument\.getElementById\('setupScreen'\)\.hidden=false;passScreenActive=true;\s*\npaint\(\);\s*$/;
-assert.match(scripts[0][1], bootstrap, 'Si cambia el arranque hay que revisar el adaptador de pruebas');
-const source = scripts[0][1].replace(bootstrap, '');
+const source=readTestProgram().runtimeSource;
 
 function fixture({ mode = 'ai', face = 4 } = {}) {
   const random = { value: (face - 0.5) / 6 };

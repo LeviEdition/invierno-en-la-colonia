@@ -1,3 +1,4 @@
+import {readTestProgram} from '../test-support/game-source.mjs';
 // C16/A1 — Contratos de foco: Ayuda, fallecimiento y continuidad de las decisiones.
 // La geometría y el recorrido de teclado reales requieren Chromium (script separado).
 import test from 'node:test';
@@ -5,9 +6,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createContext,runInContext} from 'node:vm';
 
-const html=readFileSync(new URL('../invierno_colonia_v9_9.html',import.meta.url),'utf8');
-const source=[...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)][0][1]
- .replace(/\ncreate\(\);\s*\ndocument\.getElementById\('setupScreen'\)\.hidden=false;passScreenActive=true;\s*\npaint\(\);\s*$/,'');
+const source=readTestProgram().runtimeSource;
 
 function fixture(){
  const handlers=new Map(),nodes=new Map();

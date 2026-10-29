@@ -10,7 +10,10 @@
     "check": "node --test",
     "build:poc": "node scripts/build-esbuild-poc.mjs",
     "check:poc": "node scripts/build-esbuild-poc.mjs --check",
-    "test:poc": "node scripts/check-esbuild-poc-regressions.mjs"
+    "test:poc": "node scripts/check-esbuild-poc-regressions.mjs",
+    "build:test": "node scripts/build-test-runtime.mjs",
+    "pretest": "npm run build:test",
+    "precheck": "npm run build:test"
   },
   "devDependencies": {
     "esbuild": "0.28.2"
