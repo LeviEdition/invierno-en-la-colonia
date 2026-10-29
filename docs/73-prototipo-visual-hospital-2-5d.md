@@ -2,6 +2,14 @@
 
 **29/10/2026, Montevideo. Estado: cámara matemática implementada y probada; escena bloqueada por los tres PNG no accesibles.** El creador autoriza un prototipo visual independiente y un PR en borrador, sin integración en main ni conexión con las reglas del juego.
 
+## Recepción de vistas previas y acceso a los originales
+
+El creador envió después las vistas previas del suelo, zombi y hospital; primero una captura del hospital con interfaz del teléfono y luego el hospital completo. Las tres imágenes se pueden inspeccionar visualmente en el chat, pero no se exponen archivos binarios descargables en los adjuntos del entorno. No se puede certificar formato PNG o canal alfa desde la vista previa, ni copiarla como si fuera el archivo original. No se utilizó generación de imágenes, recorte o eliminación del negro para reemplazar los originales.
+
+Se crea `assets/prototipo-hospital/README.md` para habilitar la carga directa de los tres archivos desde GitHub en esta misma rama. Hasta este commit esa carpeta no existía en los árboles comprobados; desde ahora contiene instrucciones, **todavía ningún PNG**. Los nombres propuestos son hospital.png, suelo-nevado.png y zombi.png, sin exigir que el creador los renombre para subirlos. La inspección y las decisiones geométricas siguen pendientes de los archivos reales.
+
+CI del código de cámara `bd79053cee366ed3dd20fb51a986b69d8b05ddf0` consultado: `pruebas`, `engine` y `browser` completed/success en PR16. El navegador de ese workflow verifica V9.9, no la futura escena del hospital. Esta continuación solo modifica documentación; no repite ni presenta nuevas pruebas visuales. Main continúa en826199d, PR16 en borrador y referencia intacta.
+
 ## Continuación: ruta indicada por el creador
 
 El creador indicó `assets/prototipo-hospital`. Se volvió a consultar Git remoto y GitHub: main sigue en826199d y la rama de esta prueba en19b5508 antes de este avance; la carpeta no existe en ninguno de los dos árboles. Las consultas de Contents para esa ruta en main y en `prototype/hospital-2-5d` devolvieron404; tampoco existe localmente ni en los adjuntos accesibles. Se solicitó la rama/commit o el enlace de GitHub para localizarla. No se interpreta esa ausencia como permiso para sustituir imágenes.

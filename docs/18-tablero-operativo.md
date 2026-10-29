@@ -1,5 +1,14 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## Prueba hospital 2.5D — vistas previas recibidas; carga de originales pendiente · 29/10/2026
+
+Se recibieron en el chat las vistas previas del suelo, zombi y hospital completo. El entorno no expone sus archivos binarios descargables: formato PNG, alfa y hashes siguen sin verificar. No se reconstruyó arte ni se eliminó negro. Se crea `assets/prototipo-hospital/README.md` en la rama `prototype/hospital-2-5d` para permitir subir los originales directamente desde GitHub; por ahora la carpeta contiene instrucciones y no imágenes.
+
+Cámara `bd79053` con474/474 y CI consultado `pruebas`/`engine`/`browser` success; ese navegador verifica V9.9, no una escena del hospital todavía inexistente. Esta actualización solo documenta recepción y acceso. Main826199d, referencia modular y SP-03 intactos; [PR16](https://github.com/LeviEdition/invierno-en-la-colonia/pull/16) sigue en borrador. [Informe73](73-prototipo-visual-hospital-2-5d.md) registra la distinción entre vista previa y archivo original.
+
+**Única siguiente tarea:** subir los tres archivos originales a esta carpeta de la rama del prototipo e inspeccionarlos para completar la escena autorizada. Los bloques inferiores conservan los estados anteriores, incluida la ausencia de la carpeta antes de crear este README.
+
+
 ## Prueba hospital 2.5D — cámara probada; pendiente localizar recursos · 29/10/2026
 
 **Continuación del encargo:** el creador indicó `assets/prototipo-hospital`; se comprobaron ruta local, main remoto826199d y rama remota19b5508. La carpeta no aparece en esos árboles y GitHub Contents devuelve404 para ambas ramas. Se solicitó rama/commit o enlace de la carpeta. No se sustituyeron imágenes ni se modificó alfa.
