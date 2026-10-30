@@ -324,3 +324,102 @@ Se conserva el rojo de producto previo: el gate de calidad espera9987 y encuentr
 Una hipótesis nueva del arnés de calidad exigía20% menos MAE RGB también al alejar: no se sostiene con el margen1 (hospital mejora aproximadamente9,6%). Se conserva ese resultado experimental; el gate nuevo exige≥20% de mejora inicial del hospital/zombi y mejora al alejar, además de mipmaps efectivos y tamaños/frames exactos. **MAE RGB mide diferencia con Canvas, no nitidez ni aceptación visual.** No se convierte una cifra elegida para QA en requisito artístico ni se debilita un gate Canvas previo. La textura de suelo puede quedar algo más suave y más distante de Canvas en la vista inicial, aun mejorando al alejar.
 
 Las comparativas muestran **Canvas | Phaser antes | Phaser después**. Cada columna y recorte utiliza los mismos píxeles físicos y ROI; no hay escalados diferentes ni ampliaciones del zombi. Los recortes pequeños tienen margen exterior uniforme para leer las etiquetas. Abrir/descargar el PNG al100%: GitHub o el navegador pueden reducir la imagen para encajarla. El arte original no se modifica para producir la evidencia.
+
+### Comparativas para revisar
+
+- Composición completa: [inicial](evidencias/h32-nitidez-desktop-dpr1-initial.png), [acercamiento1,25×](evidencias/h32-nitidez-desktop-dpr1-in.png), [alejamiento0,8×](evidencias/h32-nitidez-desktop-dpr1-out.png).
+- Recortes iniciales: [hospital](evidencias/h32-nitidez-desktop-dpr1-initial-hospital.png), [suelo](evidencias/h32-nitidez-desktop-dpr1-initial-ground.png), [zombi](evidencias/h32-nitidez-desktop-dpr1-initial-zombie.png).
+- Acercamiento: [hospital](evidencias/h32-nitidez-desktop-dpr1-in-hospital.png), [suelo](evidencias/h32-nitidez-desktop-dpr1-in-ground.png), [zombi](evidencias/h32-nitidez-desktop-dpr1-in-zombie.png).
+- Alejamiento: [hospital](evidencias/h32-nitidez-desktop-dpr1-out-hospital.png), [suelo](evidencias/h32-nitidez-desktop-dpr1-out-ground.png), [zombi](evidencias/h32-nitidez-desktop-dpr1-out-zombie.png).
+- DPR1,25 inicial: [hospital](evidencias/h32-nitidez-desktop-dpr125-initial-hospital.png), [suelo](evidencias/h32-nitidez-desktop-dpr125-initial-ground.png), [zombi](evidencias/h32-nitidez-desktop-dpr125-initial-zombie.png).
+- Móvil emulado/DPR2 inicial: [hospital](evidencias/h32-nitidez-mobile-dpr2-initial-hospital.png), [suelo](evidencias/h32-nitidez-mobile-dpr2-initial-ground.png), [zombi](evidencias/h32-nitidez-mobile-dpr2-initial-zombie.png).
+
+![Hospital: Canvas, Phaser antes, Phaser después, recortes a escala idéntica](evidencias/h32-nitidez-desktop-dpr1-initial-hospital.png)
+
+Los18 PNG del repositorio ocupan10.648.485 bytes, **evidencia QA fuera del producto**. [Manifiesto con dimensiones/hashes](evidencias/h32-nitidez-capturas.json). Se recomprimió IDAT con zlib9 sin pérdida, verificando igualdad del stream de píxeles filtrados; no se cambió resolución. El artifact CI incluye además las composiciones/recortes de todos los zooms y DPR generados por el arnés. El parche de suelo se elige dentro del encuadre de cada viewport: más amplio a la izquierda en escritorio, a la derecha en móvil. Dentro de cada comparación es idéntico para los tres backends/versiones; sus coordenadas físicas quedan registradas.
+
+**MAE RGB del recorte, escritorio/DPR1** (0 significa igualdad; no es puntuación artística):
+
+| Vista | Hospital antes → después | Suelo antes → después | Zombi antes → después |
+| --- | --- | --- | --- |
+| Inicial | 5,71 → 4,40 | 0,94 → 3,25 | 10,34 → 5,13 |
+| Acercar1,25× | 5,54 → 4,86 | 0,65 → 1,81 | 7,18 → 6,46 |
+| Alejar0,8× | 5,87 → 5,31 | 5,03 → 1,71 | 11,49 → 5,62 |
+
+No hay equivalencia píxel a píxel ni mejora uniforme de este indicador. El suelo inicial se suaviza más que en Canvas; al alejar mejora la reducción. Los mipmaps también pueden suavizar detalles finos del hospital. **La revisión visual del creador sigue abierta**, incluso con todos los gates verdes. No se declara resuelta su percepción en su propio equipo.
+
+### Costo medido y estimado
+
+Linux6.18.55, AMD EPYC9V74,5 CPU lógicas visibles, memoria de sistema visible35.743.760.384 bytes, entorno compartido; Node24.19.0, Playwright1.57.0, Chromium154.0.8037.57 headless y ANGLE/Vulkan **SwiftShader por software**, no GPU física. HTTP localhost, sin throttling/compresión. Ningún otro build/gate de esta tarea en paralelo; carga ajena no controlada.
+
+Seis contextos nuevos, tres por variante y orden alternado,1365×768/DPR1. Bundles QA minificados con las mismas sondas en ambas variantes; no son un benchmark exacto del bundle sin sondas. Medianas de las tres muestras, no inferencia estadística ni presupuesto de un teléfono:
+
+| Medida | Antes | Después |
+| --- | --- | --- |
+| Navegación hasta `hospital-ready` | 482,4 ms | 597,0 ms |
+| Preparar texturas y enviar trabajo al renderer | 66,4 ms | 117,8 ms |
+| Mediana de intervalo de navegación,60 comandos por rAF | 18,8 ms | 21,8 ms |
+| P95 de esos intervalos, mediana entre ensayos | 23,2 ms | 27,0 ms |
+| Dibujos en350ms de reposo, cada ensayo | 0 | 0 |
+| Heap JS utilizado tras GC | 5.001.520 bytes | 5.027.948 bytes |
+
+El tiempo de preparación no espera finalización de GPU. Los intervalos incluyen planificación/JS/render del entorno; no son tiempo GPU. El heap no contabiliza los bitmaps ni VRAM y no demuestra que el incremento de memoria sea solo26KB. [Muestras completas](evidencias/h32-nitidez-calidad.json).
+
+**Estimación RGBA de las tres texturas principales:** antes18.870.120 bytes (~18,00MiB); después41.943.040 bytes de nivel base +13.981.012 de niveles inferiores =55.924.052 (~53,33MiB). Incremento estimado~35,34MiB, sin contar sombra, framebuffer, temporales/cachés/driver ni superficies auxiliares. Los Canvas auxiliares suman40MiB de backing RGBA teórico mientras viven las texturas; el navegador puede usar copias o almacenamiento acelerado. **No se midió VRAM ni RAM total de proceso.** El formato/almacenamiento efectivo depende del navegador/GPU.
+
+El bundle de producto pasa de1.412.238 a**1.412.823 bytes** (+585); gzip9 de378.108 a**378.382** (+274). SHA-256: `7e7b90ab465bc4b7113ffb20c4c0780a9c0e9d0db1d0cfab83659b46632f5e54`. Mismos6.478.691 bytes de PNG descargados,0 recursos nuevos de arte y0 dependencias nuevas. [Build](evidencias/h32-nitidez-build.json).
+
+### Validación integrada y revisión crítica
+
+**Ejecutado ahora:** instalación limpia `npm ci`, `npm run check:build`,483/483 mediante `npm test`, `npm run build:hospital` y `npm run check:hospital-build`. Sin quitar cobertura;467 del juego,10 Canvas y6 H3.2. Los cuatro checks del head6036b81 se consultaron como referencia inicial, no se presentan como CI de esta corrección.
+
+| Compuerta nueva o repetida | Resultado local y evidencia |
+| --- | --- |
+| Calidad controlada | 27 registros:15 de escritorio con5 variantes×3 zooms;6 deDPR1,25 y6 móvil/DPR2. [JSON](evidencias/h32-nitidez-calidad.json) |
+| Originales en los frames auxiliares | 18.870.120 canales RGBA comparados a escala1:1;0 diferencias, incluido alfa. [JSON de calidad](evidencias/h32-nitidez-calidad.json) |
+| Canvas real original | Tres tamaños, mismas pruebas intactas. [JSON](evidencias/h32-nitidez-canvas.json) |
+| Phaser normal | Tres posiciones, ocultos, selección, teclado/tacto CDP, resize/reset/reinicio, recursos fallidos y ausencia WebGL.0 errores normales,0 overflow. [JSON](evidencias/h32-nitidez-browser.json) |
+| Geometría y oclusión | Pivotes/escalas exactos; esquina difiere1,90/0,62/2,94pp en1365/393/320, dentro de±3pp existentes. Pan de framebuffer100% en los tres tamaños |
+| Liberación/contexto | Cinco reinicios con recursos estables; pérdida/restauración de contexto, disposición final0 objetos GL/observers; solo2 hooks de página intencionales. [JSON](evidencias/h32-nitidez-lifecycle.json) |
+| Navegación/arranque | Tres retornos bfcache reales; cancelación durante PNG/Game, seis fallos, reintentos y callbacks tardíos. [JSON](evidencias/h32-nitidez-navigation.json) |
+| Adaptador de arranque | Mismo código Game.start/teardown que6036b81. Foco/visibilidad sintéticos, suspensión observada en bfcache, reanudación/destrucción y handlers ajenos conservados. [JSON](evidencias/h32-nitidez-adapter.json) |
+
+**Evidencia previa conservada:** [rojo sin mipmaps](evidencias/h32-nitidez-rojo.json), [filtros](evidencias/h32-nitidez-filtros.json), [márgenes](evidencias/h32-nitidez-margenes.json) y todos los archivos h32-cierre-* anteriores. Los ajustes iniciales del arnés (nombre de método diagnóstico y ROI fuera de cuadro) se corrigieron antes de contar las pruebas; no eran defectos del producto.
+
+**Revisión crítica:** no se añadieron listeners, contextos o rutas de entrada. Las superficies se registran en TextureManager y las libera el ciclo de vida existente; se comprobó recuperación de contexto con los atlas. El frame declarado y la copia RGBA son exactos, no se cambian reglas, pivotes ni hit-test. La elección de un margen1 influye en la fase de muestreo, no en coordenadas del mundo; el caso borde320 queda próximo al límite y no debe tomarse como equivalencia universal. La prueba de calidad numérica no sustituye inspección visual ni caracteriza todos los zooms/dispositivos.
+
+HospitalGame sigue siendo un adaptador protegido fijado a4.2.1: no surgió necesidad de ampliarlo. Se reutiliza la comparación oficial y justificación de las omisiones del cierre anterior, y se repiten sus gates sobre el producto actual. Siguen pendientes revisión al cambiar versión/capacidades y teardown específico. No hubo actualización de Phaser.
+
+**Reservas:** costo de memoria/carga y suavizado residual; GPU física, Android/iOS físico, batería, Safari/Firefox y suspensión física del SO no probados. CDP frozen no cuenta como suspensión validada; bfcache real sí se ejerció. No se afirma que aumentar calidad mejore arte, proporciones o encaje. No hubo aprobación visual del creador posterior a esta corrección.
+
+### Reproducir y revisar sin Python
+
+En VS Code, abrir la carpeta con `package.json` **y** `package-lock.json`, revisar `git status` y actualizar la rama experimental sin descartar cambios. Detener cualquier servidor anterior conCtrl+C. En PowerShell:
+
+```powershell
+git fetch origin
+git switch experiment/h3-2-phaser-hospital
+git pull --ff-only
+npm.cmd ci
+npm.cmd run dev:hospital
+```
+
+Las últimas dos líneas evitan el bloqueo confirmado de `npm.ps1` sin cambiar la política de PowerShell. La captura posterior de EUSAGE y el listado sin lockfile, con una subcarpeta `invierno-en-la-colonia`, motivaron indicar entrar a esa copia y comprobar ambos archivos; no se generó un lockfile distinto ni se probó su PC remotamente.
+
+Abrir [Phaser](http://127.0.0.1:8771/prototypes/hospital-phaser/) y [Canvas](http://127.0.0.1:8771/prototypes/hospital/) en el mismo navegador/zoom. El comando reconstruye el bundle ignorado por Git. Comparar tras Restablecer vista, después un clic en+ y uno en− desde la vista restablecida; revisar los tres elementos. Probar Esquina/Mostrar ocultos/selección y enlace Canvas→Atrás. Desde Live Server, ejecutar antes `npm.cmd run build:hospital` y servir la raíz completa, no una subcarpeta.
+
+Celular en la misma Wi-Fi: `npm.cmd run dev:hospital -- --host 0.0.0.0`, IPv4 de la PC obtenida con `ipconfig`, mismas rutas sustituyendo127.0.0.1. Node permitido en red privada y terminal abierta. Esta instrucción no acredita una prueba física o de la red doméstica.
+
+QA automatizado (Playwright externo y `CHROMIUM_PATH` como en las instrucciones previas): `node scripts/check-h32-quality.mjs`. El workflow hospital incluye esa comparación, historial completo para recuperar el renderer6036b81 y artifacts; esbuild sigue siendo el único bundler.
+
+**Recomendación:** conservar Phaser como candidato y revisar estas imágenes/ambas escenas antes de aceptar H3.2. La reducción está corregida en el entorno probado, con diferencias residuales y costo importante explicitados; no se declara cerrada la observación perceptual del creador. Mantener el dictamen **ajustar antes de adopción definitiva**. Detenerse: sin H3.3, motor, mapa completo, animaciones, fusiones o publicación.
+
+### Commits y CI de esta revisión
+
+Implementación **`9ef2e392fd2ed23a289bbc031ea892bffc26dffb`**, con cuatro checks SUCCESS verificados: [regresión483](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41064115172), [engine y browser](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41064115216), [hospital/calidad/cierre/benchmark](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41064115192). El workflow hospital hace checkout del head exacto; no se sustituye por el CI inicial6036b81.
+
+Artifact descargado y contrastado: siete JSON passed,27 comparaciones/6 muestras de costo de calidad,18 ensayos del benchmark general y bfcache realmente ejercida también en Chromium143. Bundle idéntico al local Node24/Chromium154; CI usa Node22 y su Chromium/SwiftShader. [Registro CI](evidencias/h32-nitidez-ci.json) · [validación local](evidencias/h32-nitidez-validacion-local.json). No se mezclan mediciones de equipos/versiones como si fueran una misma muestra.
+
+Comprobación adicional de liberación: las tres TextureSource auxiliares anulan image/source/renderer/texture/glTexture tras disponer la escena. [Resultado](evidencias/h32-nitidez-atlas-dispose.json). Comprueba referencias, no el instante de recolección del bitmap ni VRAM efectiva. La revisión del código oficial TextureSource.destroy respalda esa ruta pública.
+
+El commit posterior incorpora capturas y este cierre documental; conserva exactamente el mismo bundle de producto y recibe su propia verificación de checks. Su SHA y resultado final se registran en la descripción de [PR18](https://github.com/LeviEdition/invierno-en-la-colonia/pull/18), evitando autorreferencia al SHA del propio documento. No hay merge ni release. Main826199d9, tag62e4e851, release y sus adjuntos, PR16/arte/Canvas y SP-03 se comprobaron intactos antes de entregar.

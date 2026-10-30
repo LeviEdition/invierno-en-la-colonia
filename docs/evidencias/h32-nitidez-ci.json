@@ -1,0 +1,102 @@
+{
+  "implementationCommit": "9ef2e392fd2ed23a289bbc031ea892bffc26dffb",
+  "hospitalRun": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41064115192",
+  "engineBrowserRun": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41064115216",
+  "regressionRun": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41064115172",
+  "artifact": "h32-hospital-9ef2e392fd2ed23a289bbc031ea892bffc26dffb",
+  "artifactDownloaded": true,
+  "records": [
+    {
+      "file": "tmp/h32-adapter/resultados.json",
+      "passed": true,
+      "chromium": "143.0.7499.4"
+    },
+    {
+      "file": "tmp/h32-browser/resultados.json",
+      "passed": true,
+      "chromium": "143.0.7499.4",
+      "records": 3
+    },
+    {
+      "file": "tmp/h32-canvas/resultados.json",
+      "passed": true,
+      "chromium": "143.0.7499.4"
+    },
+    {
+      "file": "tmp/h32-closure/resultados.json",
+      "passed": true,
+      "chromium": "143.0.7499.4",
+      "bfcache": true
+    },
+    {
+      "file": "tmp/h32-lifecycle/resultados.json",
+      "passed": true
+    },
+    {
+      "file": "tmp/h32-performance/resultados.json",
+      "passed": true,
+      "chromium": "143.0.7499.4",
+      "samples": 18
+    },
+    {
+      "file": "tmp/h32-quality/resultados.json",
+      "passed": true,
+      "chromium": "143.0.7499.4",
+      "records": 27,
+      "qualitySamples": 6
+    }
+  ],
+  "build": {
+    "phaser": "4.2.1",
+    "esbuild": "0.28.2",
+    "rawBytes": 1412823,
+    "gzip9Bytes": 378382,
+    "sha256": "7e7b90ab465bc4b7113ffb20c4c0780a9c0e9d0db1d0cfab83659b46632f5e54",
+    "inputs": 11
+  },
+  "bundleMatchesLocal": true,
+  "note": "Cuatro checks SUCCESS sobre el commit de implementación. Artifact descargado: siete JSON passed y bundle idéntico al local. El commit documental posterior se verifica aparte en PR18. Emulación, no dispositivo físico.",
+  "checks": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-30T13:33:37Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41064115216/job/124090935933",
+      "name": "engine",
+      "startedAt": "2026-10-30T13:32:40Z",
+      "status": "COMPLETED",
+      "workflowName": "D1 y D2 — arquitectura y regresiones"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-30T13:38:56Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41064115192/job/124090936096",
+      "name": "hospital",
+      "startedAt": "2026-10-30T13:32:41Z",
+      "status": "COMPLETED",
+      "workflowName": "H3.2 — Hospital Canvas y Phaser"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-30T13:33:01Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41064115172/job/124090935723",
+      "name": "pruebas",
+      "startedAt": "2026-10-30T13:32:40Z",
+      "status": "COMPLETED",
+      "workflowName": "Pruebas de regresión"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-30T13:36:20Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41064115216/job/124090936365",
+      "name": "browser",
+      "startedAt": "2026-10-30T13:32:40Z",
+      "status": "COMPLETED",
+      "workflowName": "D1 y D2 — arquitectura y regresiones"
+    }
+  ],
+  "passed": true
+}

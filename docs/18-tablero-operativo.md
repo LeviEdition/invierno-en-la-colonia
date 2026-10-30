@@ -1,12 +1,14 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
-## Revisión adicional de nitidez H3.2 — validación y revisión visual pendientes
+## Revisión adicional de nitidez H3.2 — corrección validada, aceptación visual pendiente
 
 El creador autoriza revisar la pixelación global en PR18; Phaser sigue siendo candidato, sin H3.3. Base remota6036b81 (4 checks success), rama experimental; dos notas locales de soporte Windows preservadas. Main826199d9, PR16 ba1d93a4 y referencia/tag/release intactos.
 
 **Reproducción confirmada:** resolución/DPR y filtro LINEAR correctos; aliasing de minificación sin mipmaps sobre los PNG NPOT. Comparaciones controladas antialiasGL, mipmaps sin adaptar, adaptación sin mipmaps y combinación. Corrección pequeña mediante API pública: atlas auxiliar potencia de dos en memoria, frame original/pivote intactos, margen mínimo y filtrado trilineal. Arte y Canvas sin cambios. Candidato inicial falla esquina320 por3,0786pp; margen mínimo1 conserva el criterio±3pp, con resultados1,90/0,62/2,94pp. No se movió al personaje ni se amplió la banda.
 
-**Estado local:** npm ci, check:build,483/483, bundle reproducible; Canvas/Phaser3 tamaños, cámara/pan100%, selección, tacto, reinicios/contexto, bfcache real, seis fallos/reintentos de arranque y adaptador aprobados. Comparativas inicial/acercar/alejar enDPR1/1,25/2; aprobación perceptual del creador pendiente. Informe76 registra causa, controles, evidencia previa, derivados y reservas. Aumentan memoria y costo de carga; no se presume calidad por pasar geometría. Se verificará CI sobre el head entregado antes de cerrar la entrega.
+**Estado local:** npm ci, check:build,483/483, bundle reproducible; Canvas/Phaser3 tamaños, cámara/pan100%, selección, tacto, reinicios/contexto, bfcache real, seis fallos/reintentos de arranque y adaptador aprobados. Comparativas inicial/acercar/alejar enDPR1/1,25/2;18 capturas nativas y copia RGBA exacta. Aprobación perceptual del creador pendiente. Informe76 registra causa, controles, evidencia previa, derivados y reservas. Aumentan memoria estimada de texturas (~18→53MiB) y carga local (482→597ms); el suelo inicial queda más suave. No se presume calidad por pasar geometría.
+
+**CI:** implementación9ef2e392fd2ed23a289bbc031ea892bffc26dffb,4 checks SUCCESS ([hospital](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41064115192), [engine/browser](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41064115216), [regresión](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41064115172)). Artifact descargado:7 JSON passed, bundle idéntico local/CI. [Resumen](evidencias/h32-nitidez-ci.json). Capturas/informe se agregan en commit documental posterior con el mismo producto; sus checks exactos se comprueban y enlazan en PR18 antes de entregar. Sin adopción definitiva ni prueba de teléfono físico.
 
 **Única siguiente tarea:** revisión del creador de ambas versiones y las capturas, antes de aceptar H3.2. No adopción definitiva, merge, publicación o H3.3. Los apartados siguientes conservan la historia de las entregas anteriores.
 
