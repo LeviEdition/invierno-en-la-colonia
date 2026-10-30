@@ -1,5 +1,65 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## Revisión adicional de nitidez H3.2 — corrección validada, aceptación visual pendiente
+
+El creador autoriza revisar la pixelación global en PR18; Phaser sigue siendo candidato, sin H3.3. Base remota6036b81 (4 checks success), rama experimental; dos notas locales de soporte Windows preservadas. Main826199d9, PR16 ba1d93a4 y referencia/tag/release intactos.
+
+**Reproducción confirmada:** resolución/DPR y filtro LINEAR correctos; aliasing de minificación sin mipmaps sobre los PNG NPOT. Comparaciones controladas antialiasGL, mipmaps sin adaptar, adaptación sin mipmaps y combinación. Corrección pequeña mediante API pública: atlas auxiliar potencia de dos en memoria, frame original/pivote intactos, margen mínimo y filtrado trilineal. Arte y Canvas sin cambios. Candidato inicial falla esquina320 por3,0786pp; margen mínimo1 conserva el criterio±3pp, con resultados1,90/0,62/2,94pp. No se movió al personaje ni se amplió la banda.
+
+**Estado local:** npm ci, check:build,483/483, bundle reproducible; Canvas/Phaser3 tamaños, cámara/pan100%, selección, tacto, reinicios/contexto, bfcache real, seis fallos/reintentos de arranque y adaptador aprobados. Comparativas inicial/acercar/alejar enDPR1/1,25/2;18 capturas nativas y copia RGBA exacta. Aprobación perceptual del creador pendiente. Informe76 registra causa, controles, evidencia previa, derivados y reservas. Aumentan memoria estimada de texturas (~18→53MiB) y carga local (482→597ms); el suelo inicial queda más suave. No se presume calidad por pasar geometría.
+
+**CI:** implementación9ef2e392fd2ed23a289bbc031ea892bffc26dffb,4 checks SUCCESS ([hospital](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41064115192), [engine/browser](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41064115216), [regresión](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41064115172)). Artifact descargado:7 JSON passed, bundle idéntico local/CI. [Resumen](evidencias/h32-nitidez-ci.json). Capturas/informe se agregan en commit documental posterior con el mismo producto; sus checks exactos se comprueban y enlazan en PR18 antes de entregar. Sin adopción definitiva ni prueba de teléfono físico.
+
+**Única siguiente tarea:** revisión del creador de ambas versiones y las capturas, antes de aceptar H3.2. No adopción definitiva, merge, publicación o H3.3. Los apartados siguientes conservan la historia de las entregas anteriores.
+
+
+## Revisión acotada de cierre H3.2 — corregida localmente, aceptación pendiente
+
+**Consulta de uso posterior:** el creador informa «Inicializando» desde VS Code. Captura posterior confirma bloqueo npm.ps1 por política de PowerShell (PSSecurityException); se indicó npm.cmd ci y npm.cmd run dev:hospital, sin modificar políticas. La posible falta del módulo generado y el resultado final de apertura siguen pendientes de confirmación del creador. Se indicó npm ci + npm run dev:hospital (Node22+), o build:hospital antes de Live Server. Si continúa, revisar primer error de consola. Registro en76; sin nueva implementación, publicación o autorización de H3.3.
+
+Autorización nueva: revisar solo PR18/rama experimental, sin H3.3 ni adopción definitiva. Base320fc92 limpia e igual a FETCH_HEAD remoto. Main826199d9, PR16 ba1d93a4 y tag62e4e851 intactos;480/480 de referencia.
+
+**Reproducción antes de corregir:** Chromium154, restauración bfcache real (`pageshow.persisted=true`, misma identidad de documento) vuelve en estado disposed sin app. Pagehide sintético durante descarga permite publicación tardía (caso controlado de cancelación, no prueba bfcache). Inyección QA de excepción síncrona tras construir Game muestra aviso pero deja Game parcial corriendo; excepción asíncrona en Scene.create y create que retorna sin completar quedan loading. [JSON rojo](evidencias/h32-cierre-reproduccion-inicial.json). **Resultado:** corrección `b4df86688f22717ab7ff706d482e0f0c2d99a6a0`: cancelación por intento/cola serial, recuperación en pageshow, reset visual definido, deadline total15s y limpieza de Game parcial. Tres ciclos bfcache y navegación durante Game pendiente confirmados con persisted=true; timer detenido entre freeze/resume. Seis fallos de arranque, reintento y callbacks tardíos aprobados.483/483, Canvas/Phaser3 tamaños,5 reinicios y recursos0 tras disposición (2 hooks de página necesarios). [Informe76](76-h3-2-phaser-hospital.md), evidencias h32-cierre-* y fuente oficial contrastada registran el detalle.
+
+**Adaptador:** sin alternativa pública equivalente para excluir VisibilityHandler anónimo; mismo Phaser4.2.1. Única ampliación funcional: guardia de instancia retirada, tras reproducir start tardío contra loop destruido. Omite broadcasts sin consumidores efectivos, HEADLESS y legacy; revisar al cambiar versión/capacidades. Preserva foco/reloj/PAUSE/RESUME y handlers ajenos. CDP frozen no produjo suspensión observable en este entorno y no se cuenta; bfcache real sí. Sin teléfono físico. Preview LAN opcional probado solo desde el propio entorno, con rutas canónicas restringidas.
+
+**Estado de entrega:** código b4df866 con cuatro checks success ([hospital](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41048175185), [engine/browser](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41048175119), [regresión](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41048175125)). Artifact descargado, seis JSON passed y bundle idéntico local/CI; [resumen](evidencias/h32-cierre-ci.json). El commit documental posterior se valida nuevamente y se registra con su head exacto en PR18. No aceptación automática, adopción definitiva ni H3.3. **Única siguiente tarea: revisión del creador del cierre técnico.** Main/tag/release, PR16, arte original, reglas y SP-03 intactos. Los bloques inferiores son historia.
+
+
+## H3.2 terminada técnicamente — pendiente de revisión del creador
+
+**Alcance autorizado cumplido:** hospital aislado con Phaser4.2.1/WebGL, rama `experiment/h3-2-phaser-hospital`; implementación `678fd0cd1b6b9c569fad1d507b97d8547468192d`. Sin conexión al motor, nuevas reglas, PixiJS, mapa completo o H3.3. H3.1 aceptada con dirección de **tablero ilustrado2D por capas y mapa continuo de siete localidades**; propuestas anteriores conservadas como historia. PR16/17 siguen sin fusionar.
+
+**Comparación:** PNG/pivotes y referencia Canvas exactos del head auditado PR16 `ba1d93a4ae73a91a6f07660584e2374b53043a67`, copiados sin merge y protegidos por hashes. Delante100%/detrás0%; esquina Canvas56,08–56,74% frente a Phaser53,68–54,85%. La tolerancia inicial±2pp falló en320px (2,40pp); se calibró±3pp con geometría exacta y prueba independiente de cámara/pan. Sin mover recursos ni aprobar arte. Pan framebuffer100% en los tres tamaños.
+
+**Validación local:** npm ci, check:build,480/480 (467 juego+10 Canvas+3 H3.2), build Phaser reproducible. Gates Canvas y Phaser en1365×768,393×852,320×640, teclado/rueda/pinza CDP, selección/ocultos, resize/reset, recursos fallidos y WebGL ausente. Cinco reinicios con listeners/objetos GL estables y disposición final limpia, pérdida/restauración de contexto. Sin errores JS normales ni overflow. Emulación, no Android físico. [Informe76](76-h3-2-phaser-hospital.md) y JSON/capturas guardan evidencia y fallos iniciales.
+
+**Medición final local:** Chromium154 headless, SwiftShader software;18 ensayos secuenciales,3 por configuración/viewport. Canvas listo frío mediana181/207ms; Phaser bajo demanda378/401ms (escritorio/móvil emulado). Bundle1.409.348 bytes, gzip9 376.966; PNG comunes6.478.691. P95 rAF≈16,7–16,8ms, no tiempo GPU; reposo0 draws bajo demanda. Heap JS tras GC≈1,6MiB Canvas/4,8MiB Phaser; VRAM no medida. Resultados no extrapolables al mapa completo o teléfono.
+
+**Revisión crítica:** mitigados listener de visibilidad persistente y textura temporal del framework; adaptador de método protegido fijado a4.2.1 y liberación explícita del contexto. Se conserva el rojo. **Recomendación: ajustar antes de adopción definitiva**, por carga/mantenimiento y pruebas físicas pendientes. No hay mejora artística implícita. **[PR18 en borrador](https://github.com/LeviEdition/invierno-en-la-colonia/pull/18)** hacia main, sin merge. Head930117e: cuatro checks success (regresión/engine/browser/hospital), artifacts del hospital descargados y bundle CI idéntico al local; [evidencia CI](evidencias/h32-ci.json). El cierre documental posterior se verifica nuevamente y se comunica en el PR, sin circularidad de SHA.
+
+Main remoto826199d9, tag/release de referencia y HTML43b8883a… intactos; SP-03/63 sin cambios. **Única siguiente tarea: revisión del creador del PoC, diff e informe y decisión sobre renderer/H3.3. Detenerse.** Sin merge/publicación automática. Los bloques inferiores conservan la historia y sus checkpoints anteriores.
+
+## H3.1 aceptada; H3.2 autorizada con dirección visual precisada
+
+Acuerdo del creador: tablero ilustrado2D por capas y mapa continuo de siete localidades, cámara fija con pan/zoom; elementos independientes y personajes estáticos posibles. Botones de centrado/paneles móviles son compatibles, sectores separados no sustituyen al mapa continuo. Sin3D, rotación, navegación libre, distancias, colisiones o nuevas reglas. La propuesta anterior de resumen/sector queda histórica.
+
+**Única tarea activa:** H3.2, PoC exclusivo del hospital con Phaser candidato principal, versión fija y Canvas de comparación, en rama experimental independiente. PixiJS solo como alternativa ante bloqueo concreto. Comparar composición/controles y esquina contra la medida Canvas, medir costos y probar fallos/resize/reinicio/limpieza. No fusionar PR16/17 ni publicar. No motor, mapa completo o H3.3. Proporciones/encaje/aprobación artística quedan para H3.3. Informes74/75 actualizados antes de implementar.
+
+
+## H3.1 — auditoría y planificación visual terminadas; revisión pendiente · 29/10/2026
+
+**Encargo vigente:** iniciar Hito 3 «Identidad Visual y Experiencia Jugable» con auditoría documental. El creador aprobó el hospital como **base experimental**, no su merge. Rama de esta entrega `docs/h3-1-identidad-visual` desde main 826199d, en worktree separado. PR #16 sigue OPEN/draft sobre ba1d93a; main, prototipo, tag/release y SP-03 intactos. No se encontró AGENTS.md aplicable; se siguieron README y protocolo15.
+
+**Entregables:** [informe 74](74-h3-1-auditoria-identidad-visual.md), inventario de siete áreas/16 definiciones de superviviente/17 objetos/26 encrucijadas/tres objetivos/16 tipos de modal, guía visual propuesta, comparación versionada Phaser/Canvas y arquitectura con un único motor; [plan 75 H3.1–H3.6](75-plan-hito-3-identidad-visual.md), dependencias, criterios verificables y decisiones V-01–V-06. [Evidencia](evidencias/h31-auditoria.json) y capturas documentan la inspección. Se registra la priorización visual actual sin borrar la ruta histórica de SP.
+
+**Hallazgos que condicionan la decisión:** Phaser 4.2.1 es candidato, no dependencia instalada; Canvas interno disponible pero deprecado y APIs v4 diferentes. Snapshot no incluye interacción privada ni existe subscribe; el puerto de presentación es único. El loop gráfico no debe invocar paint(), procesar reglas o consumir RNG del motor. Recomendada evaluación de mundo gráfico + HUD HTML, con proyección por audiencia y sin física que decida acciones.
+
+**Verificación nueva:** npm ci/check:build y 467/467 en main limpio; Chromium en 1365×768,393×852,320×640, tablero/inicio y ocho paneles,0 excepciones normales y 0 overflow horizontal. Gate del hospital repetido y aprobado en tres tamaños. Fuente de restantes diálogos y pruebas existentes revisadas; no se ejecutaron de nuevo partidas completas/offline, Android físico o Phaser. No se afirma benchmark de un framework que no se ejecutó. Distribución Phaser medida solo como archivo:1,375,976 bytes,352,441 gzip9 local; arte actual≈18MiB RGBA base estimada.
+
+**Límite de la entrega:** solo Markdown, JSON de evidencia y capturas; sin código, dependencias, tests, workflows o assets originales nuevos/modificados. Referencia HTML43b8883a… y tag→62e4e851 preservados. **Única siguiente tarea:** revisión del creador de74/75 y decisión sobre autorizar H3.2. Detenerse; no implementar renderer, nuevos recursos, singleplayer ni otro hito en paralelo. Los bloques inferiores conservan el historial anterior.
+
+
 ## Referencia V9.9 estable y modular preservada — hito2 cerrado · 29/10/2026
 
 **Autorización completada:** tag anotado y [release pública «V9.9 — Referencia estable y modular»](https://github.com/LeviEdition/invierno-en-la-colonia/releases/tag/v0.9.9-referencia-modular). Remoto inicial62e4e851, sin avances ni tags/releases previos. **Commit preservado: `62e4e85150b2416ccf07d671c186b5c421993b0b`**. Tag `v0.9.9-referencia-modular`, objeto `0fdb214612486f4cc46c1acb444390de963d05e8`, destino confirmado mediante Git y API; oráculo57872ee conservado. Los commits posteriores de automatización/documentación no forman parte del tag.

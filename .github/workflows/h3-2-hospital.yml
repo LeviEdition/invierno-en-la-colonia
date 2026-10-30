@@ -1,0 +1,69 @@
+name: H3.2 — Hospital Canvas y Phaser
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'prototypes/**'
+      - 'assets/prototipo-hospital/**'
+      - 'scripts/*hospital*'
+      - 'scripts/*h32*'
+      - 'test-support/h32*'
+      - 'tests/hospital*'
+      - 'tests/h32*'
+      - 'package*.json'
+      - '.github/workflows/h3-2-hospital.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  hospital:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - run: npm run check:build
+      - run: npm test
+      - run: npm run build:hospital && npm run check:hospital-build
+      - name: Preparar Chromium externo al producto
+        run: |
+          npm install --no-save --package-lock=false playwright@1.57.0
+          npx playwright install --with-deps chromium
+      - name: Comparación y ciclo de vida sobre el head exacto
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/serve-hospital.mjs > /tmp/h32-server.log 2>&1 &
+          H32_SERVER_PID=$!
+          trap 'kill "$H32_SERVER_PID"' EXIT
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:8771/ -o /dev/null && break; sleep 1; done
+          export CHROMIUM_PATH="$(node --input-type=module -e "import {chromium} from 'playwright';console.log(chromium.executablePath())")"
+          git rev-parse HEAD
+          HOSPITAL_URL=http://127.0.0.1:8771/prototypes/hospital/ HOSPITAL_OUTPUT_DIR=/tmp/h32-canvas node scripts/check-hospital-prototype-browser.mjs
+          H32_OUTPUT_DIR=/tmp/h32-browser node scripts/check-h32-browser.mjs
+          H32_LIFECYCLE_DIR=/tmp/h32-lifecycle node scripts/check-h32-lifecycle.mjs
+          H32_CLOSURE_DIR=/tmp/h32-closure node scripts/check-h32-navigation-startup.mjs
+          H32_ADAPTER_DIR=/tmp/h32-adapter node scripts/check-h32-adapter.mjs
+          H32_QUALITY_DIR=/tmp/h32-quality node scripts/check-h32-quality.mjs
+          # Benchmark separado de las pruebas funcionales; datos de runner, no teléfono.
+          H32_PERF_DIR=/tmp/h32-performance node scripts/measure-h32-renderers.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: h32-hospital-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            /tmp/h32-canvas/
+            /tmp/h32-browser/
+            /tmp/h32-lifecycle/
+            /tmp/h32-closure/
+            /tmp/h32-adapter/
+            /tmp/h32-quality/
+            /tmp/h32-performance/
+            /tmp/h32-server.log
+            dist/hospital-phaser/build.json

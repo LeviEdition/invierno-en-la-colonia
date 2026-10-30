@@ -1,0 +1,29 @@
+{
+  "baseHead": "320fc92ac0d50e4bf5e4170612734656bd554b84",
+  "node": "v24.19.0",
+  "tests": {
+    "passed": 483,
+    "failed": 0,
+    "skipped": 0
+  },
+  "commands": [
+    "npm ci",
+    "npm test",
+    "npm run check:build",
+    "npm run build:hospital",
+    "npm run check:hospital-build"
+  ],
+  "evidence": [
+    "h32-cierre-navegacion-arranque.json",
+    "h32-cierre-adapter.json",
+    "h32-cierre-browser.json",
+    "h32-cierre-canvas.json",
+    "h32-cierre-lifecycle.json",
+    "h32-cierre-lan.json"
+  ],
+  "bfcacheActuallyExercised": true,
+  "physicalMobile": false,
+  "productSha256": "43b8883ad4821e4b50c40791615c5ef6c0b3030476409b4e1c6da4dbd872d692",
+  "phaserVersion": "4.2.1",
+  "note": "Regresi\u00f3n local final; mediciones H3.2 previas se conservan como hist\u00f3ricas. CI se verifica nuevamente sobre el head entregado."
+}

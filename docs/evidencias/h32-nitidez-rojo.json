@@ -1,0 +1,3039 @@
+{
+  "baselineCommit": "6036b81779079c8721d7e5fd4b44744cc9c4459f",
+  "baselineRendererSha256": "5a86cdedb43696e1ce59892ee8e35362caaf344b25bae321408cae70856f3fa1",
+  "chromium": "154.0.8037.57",
+  "platform": "linux",
+  "node": "v24.19.0",
+  "physicalDevice": false,
+  "method": "Mismo renderer Canvas original, PNG, cámara, framebuffer, tamaño CSS y DPR. PNG sin reescalar. MAE RGB no equivale a aprobación perceptual.",
+  "records": [
+    {
+      "configuration": {
+        "name": "desktop-dpr1",
+        "width": 1365,
+        "height": 768,
+        "dpr": 1
+      },
+      "variant": "before",
+      "zoom": "initial",
+      "metrics": {
+        "hospital": {
+          "maeRGB": 5.708005959382106
+        },
+        "ground": {
+          "maeRGB": 0.6267533356140951
+        },
+        "zombie": {
+          "maeRGB": 10.337899543378995
+        }
+      },
+      "camera": {
+        "x": 26.000000000000057,
+        "y": 48.33333333333334,
+        "zoom": 0.6083333333333333,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "viewport": {
+        "width": 1001,
+        "height": 559,
+        "dpr": 1
+      },
+      "css": {
+        "width": 1001,
+        "height": 558.625,
+        "clientWidth": 1001,
+        "clientHeight": 559,
+        "imageRendering": "auto"
+      },
+      "internal": {
+        "width": 1001,
+        "height": 559,
+        "drawingBufferWidth": 1001,
+        "drawingBufferHeight": 559
+      },
+      "config": {
+        "antialias": true,
+        "antialiasGL": true,
+        "pixelArt": false,
+        "roundPixels": false,
+        "mipmapFilter": ""
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "ground": {
+          "width": 1536,
+          "height": 1024,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1536,
+            "h": 1024
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "hospital": {
+          "width": 1254,
+          "height": 1254,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1254,
+            "height": 1254
+          }
+        },
+        "zombie": {
+          "width": 1175,
+          "height": 1338,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1175,
+            "h": 1338
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1175,
+            "height": 1338
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "name": "desktop-dpr1",
+        "width": 1365,
+        "height": 768,
+        "dpr": 1
+      },
+      "variant": "before",
+      "zoom": "in",
+      "metrics": {
+        "hospital": {
+          "maeRGB": 5.542899482342575
+        },
+        "ground": {
+          "maeRGB": 0.5357195139803835
+        },
+        "zombie": {
+          "maeRGB": 7.1755852842809364
+        }
+      },
+      "camera": {
+        "x": -92.625,
+        "y": -9.458333333333314,
+        "zoom": 0.7604166666666666,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "viewport": {
+        "width": 1001,
+        "height": 559,
+        "dpr": 1
+      },
+      "css": {
+        "width": 1001,
+        "height": 558.625,
+        "clientWidth": 1001,
+        "clientHeight": 559,
+        "imageRendering": "auto"
+      },
+      "internal": {
+        "width": 1001,
+        "height": 559,
+        "drawingBufferWidth": 1001,
+        "drawingBufferHeight": 559
+      },
+      "config": {
+        "antialias": true,
+        "antialiasGL": true,
+        "pixelArt": false,
+        "roundPixels": false,
+        "mipmapFilter": ""
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "ground": {
+          "width": 1536,
+          "height": 1024,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1536,
+            "h": 1024
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "hospital": {
+          "width": 1254,
+          "height": 1254,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1254,
+            "height": 1254
+          }
+        },
+        "zombie": {
+          "width": 1175,
+          "height": 1338,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1175,
+            "h": 1338
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1175,
+            "height": 1338
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "name": "desktop-dpr1",
+        "width": 1365,
+        "height": 768,
+        "dpr": 1
+      },
+      "variant": "before",
+      "zoom": "out",
+      "metrics": {
+        "hospital": {
+          "maeRGB": 5.870775058275059
+        },
+        "ground": {
+          "maeRGB": 2.5245393176427657
+        },
+        "zombie": {
+          "maeRGB": 11.488902100673801
+        }
+      },
+      "camera": {
+        "x": 120.90000000000003,
+        "y": 94.56666666666669,
+        "zoom": 0.48666666666666664,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "viewport": {
+        "width": 1001,
+        "height": 559,
+        "dpr": 1
+      },
+      "css": {
+        "width": 1001,
+        "height": 558.625,
+        "clientWidth": 1001,
+        "clientHeight": 559,
+        "imageRendering": "auto"
+      },
+      "internal": {
+        "width": 1001,
+        "height": 559,
+        "drawingBufferWidth": 1001,
+        "drawingBufferHeight": 559
+      },
+      "config": {
+        "antialias": true,
+        "antialiasGL": true,
+        "pixelArt": false,
+        "roundPixels": false,
+        "mipmapFilter": ""
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "ground": {
+          "width": 1536,
+          "height": 1024,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1536,
+            "h": 1024
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "hospital": {
+          "width": 1254,
+          "height": 1254,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1254,
+            "height": 1254
+          }
+        },
+        "zombie": {
+          "width": 1175,
+          "height": 1338,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1175,
+            "h": 1338
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1175,
+            "height": 1338
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "name": "desktop-dpr1",
+        "width": 1365,
+        "height": 768,
+        "dpr": 1
+      },
+      "variant": "aaOff",
+      "zoom": "initial",
+      "metrics": {
+        "hospital": {
+          "maeRGB": 5.708005959382106
+        },
+        "ground": {
+          "maeRGB": 0.6267533356140951
+        },
+        "zombie": {
+          "maeRGB": 10.337159076885104
+        }
+      },
+      "camera": {
+        "x": 26.000000000000057,
+        "y": 48.33333333333334,
+        "zoom": 0.6083333333333333,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "viewport": {
+        "width": 1001,
+        "height": 559,
+        "dpr": 1
+      },
+      "css": {
+        "width": 1001,
+        "height": 558.625,
+        "clientWidth": 1001,
+        "clientHeight": 559,
+        "imageRendering": "auto"
+      },
+      "internal": {
+        "width": 1001,
+        "height": 559,
+        "drawingBufferWidth": 1001,
+        "drawingBufferHeight": 559
+      },
+      "config": {
+        "antialias": true,
+        "antialiasGL": false,
+        "pixelArt": false,
+        "roundPixels": false,
+        "mipmapFilter": ""
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "ground": {
+          "width": 1536,
+          "height": 1024,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1536,
+            "h": 1024
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "hospital": {
+          "width": 1254,
+          "height": 1254,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1254,
+            "height": 1254
+          }
+        },
+        "zombie": {
+          "width": 1175,
+          "height": 1338,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1175,
+            "h": 1338
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1175,
+            "height": 1338
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "name": "desktop-dpr1",
+        "width": 1365,
+        "height": 768,
+        "dpr": 1
+      },
+      "variant": "aaOff",
+      "zoom": "in",
+      "metrics": {
+        "hospital": {
+          "maeRGB": 5.542899482342575
+        },
+        "ground": {
+          "maeRGB": 0.5357195139803835
+        },
+        "zombie": {
+          "maeRGB": 7.175505653766523
+        }
+      },
+      "camera": {
+        "x": -92.625,
+        "y": -9.458333333333314,
+        "zoom": 0.7604166666666666,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "viewport": {
+        "width": 1001,
+        "height": 559,
+        "dpr": 1
+      },
+      "css": {
+        "width": 1001,
+        "height": 558.625,
+        "clientWidth": 1001,
+        "clientHeight": 559,
+        "imageRendering": "auto"
+      },
+      "internal": {
+        "width": 1001,
+        "height": 559,
+        "drawingBufferWidth": 1001,
+        "drawingBufferHeight": 559
+      },
+      "config": {
+        "antialias": true,
+        "antialiasGL": false,
+        "pixelArt": false,
+        "roundPixels": false,
+        "mipmapFilter": ""
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "ground": {
+          "width": 1536,
+          "height": 1024,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1536,
+            "h": 1024
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "hospital": {
+          "width": 1254,
+          "height": 1254,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1254,
+            "height": 1254
+          }
+        },
+        "zombie": {
+          "width": 1175,
+          "height": 1338,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1175,
+            "h": 1338
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1175,
+            "height": 1338
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "name": "desktop-dpr1",
+        "width": 1365,
+        "height": 768,
+        "dpr": 1
+      },
+      "variant": "aaOff",
+      "zoom": "out",
+      "metrics": {
+        "hospital": {
+          "maeRGB": 5.870775058275059
+        },
+        "ground": {
+          "maeRGB": 2.5245393176427657
+        },
+        "zombie": {
+          "maeRGB": 11.487118509710662
+        }
+      },
+      "camera": {
+        "x": 120.90000000000003,
+        "y": 94.56666666666669,
+        "zoom": 0.48666666666666664,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "viewport": {
+        "width": 1001,
+        "height": 559,
+        "dpr": 1
+      },
+      "css": {
+        "width": 1001,
+        "height": 558.625,
+        "clientWidth": 1001,
+        "clientHeight": 559,
+        "imageRendering": "auto"
+      },
+      "internal": {
+        "width": 1001,
+        "height": 559,
+        "drawingBufferWidth": 1001,
+        "drawingBufferHeight": 559
+      },
+      "config": {
+        "antialias": true,
+        "antialiasGL": false,
+        "pixelArt": false,
+        "roundPixels": false,
+        "mipmapFilter": ""
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "ground": {
+          "width": 1536,
+          "height": 1024,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1536,
+            "h": 1024
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "hospital": {
+          "width": 1254,
+          "height": 1254,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1254,
+            "height": 1254
+          }
+        },
+        "zombie": {
+          "width": 1175,
+          "height": 1338,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1175,
+            "h": 1338
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1175,
+            "height": 1338
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "name": "desktop-dpr1",
+        "width": 1365,
+        "height": 768,
+        "dpr": 1
+      },
+      "variant": "mipOnly",
+      "zoom": "initial",
+      "metrics": {
+        "hospital": {
+          "maeRGB": 5.708005959382106
+        },
+        "ground": {
+          "maeRGB": 0.6267533356140951
+        },
+        "zombie": {
+          "maeRGB": 10.348019252128841
+        }
+      },
+      "camera": {
+        "x": 26.000000000000057,
+        "y": 48.33333333333334,
+        "zoom": 0.6083333333333333,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "viewport": {
+        "width": 1001,
+        "height": 559,
+        "dpr": 1
+      },
+      "css": {
+        "width": 1001,
+        "height": 558.625,
+        "clientWidth": 1001,
+        "clientHeight": 559,
+        "imageRendering": "auto"
+      },
+      "internal": {
+        "width": 1001,
+        "height": 559,
+        "drawingBufferWidth": 1001,
+        "drawingBufferHeight": 559
+      },
+      "config": {
+        "antialias": true,
+        "antialiasGL": true,
+        "pixelArt": false,
+        "roundPixels": false,
+        "mipmapFilter": "LINEAR_MIPMAP_LINEAR"
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "ground": {
+          "width": 1536,
+          "height": 1024,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1536,
+            "h": 1024
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "hospital": {
+          "width": 1254,
+          "height": 1254,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1254,
+            "height": 1254
+          }
+        },
+        "zombie": {
+          "width": 1175,
+          "height": 1338,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1175,
+            "h": 1338
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1175,
+            "height": 1338
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "name": "desktop-dpr1",
+        "width": 1365,
+        "height": 768,
+        "dpr": 1
+      },
+      "variant": "mipOnly",
+      "zoom": "in",
+      "metrics": {
+        "hospital": {
+          "maeRGB": 5.542899482342575
+        },
+        "ground": {
+          "maeRGB": 0.5357195139803835
+        },
+        "zombie": {
+          "maeRGB": 7.184265010351967
+        }
+      },
+      "camera": {
+        "x": -92.625,
+        "y": -9.458333333333314,
+        "zoom": 0.7604166666666666,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "viewport": {
+        "width": 1001,
+        "height": 559,
+        "dpr": 1
+      },
+      "css": {
+        "width": 1001,
+        "height": 558.625,
+        "clientWidth": 1001,
+        "clientHeight": 559,
+        "imageRendering": "auto"
+      },
+      "internal": {
+        "width": 1001,
+        "height": 559,
+        "drawingBufferWidth": 1001,
+        "drawingBufferHeight": 559
+      },
+      "config": {
+        "antialias": true,
+        "antialiasGL": true,
+        "pixelArt": false,
+        "roundPixels": false,
+        "mipmapFilter": "LINEAR_MIPMAP_LINEAR"
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "ground": {
+          "width": 1536,
+          "height": 1024,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1536,
+            "h": 1024
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "hospital": {
+          "width": 1254,
+          "height": 1254,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1254,
+            "height": 1254
+          }
+        },
+        "zombie": {
+          "width": 1175,
+          "height": 1338,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1175,
+            "h": 1338
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1175,
+            "height": 1338
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "name": "desktop-dpr1",
+        "width": 1365,
+        "height": 768,
+        "dpr": 1
+      },
+      "variant": "mipOnly",
+      "zoom": "out",
+      "metrics": {
+        "hospital": {
+          "maeRGB": 5.870775058275059
+        },
+        "ground": {
+          "maeRGB": 2.5245393176427657
+        },
+        "zombie": {
+          "maeRGB": 11.490883868410622
+        }
+      },
+      "camera": {
+        "x": 120.90000000000003,
+        "y": 94.56666666666669,
+        "zoom": 0.48666666666666664,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "viewport": {
+        "width": 1001,
+        "height": 559,
+        "dpr": 1
+      },
+      "css": {
+        "width": 1001,
+        "height": 558.625,
+        "clientWidth": 1001,
+        "clientHeight": 559,
+        "imageRendering": "auto"
+      },
+      "internal": {
+        "width": 1001,
+        "height": 559,
+        "drawingBufferWidth": 1001,
+        "drawingBufferHeight": 559
+      },
+      "config": {
+        "antialias": true,
+        "antialiasGL": true,
+        "pixelArt": false,
+        "roundPixels": false,
+        "mipmapFilter": "LINEAR_MIPMAP_LINEAR"
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "ground": {
+          "width": 1536,
+          "height": 1024,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1536,
+            "h": 1024
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "hospital": {
+          "width": 1254,
+          "height": 1254,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1254,
+            "height": 1254
+          }
+        },
+        "zombie": {
+          "width": 1175,
+          "height": 1338,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1175,
+            "h": 1338
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1175,
+            "height": 1338
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "name": "desktop-dpr1",
+        "width": 1365,
+        "height": 768,
+        "dpr": 1
+      },
+      "variant": "potOnly",
+      "zoom": "initial",
+      "metrics": {
+        "hospital": {
+          "maeRGB": 5.708162785227006
+        },
+        "ground": {
+          "maeRGB": 0.6266392975253735
+        },
+        "zombie": {
+          "maeRGB": 10.33802295446131
+        }
+      },
+      "camera": {
+        "x": 26.000000000000057,
+        "y": 48.33333333333334,
+        "zoom": 0.6083333333333333,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "viewport": {
+        "width": 1001,
+        "height": 559,
+        "dpr": 1
+      },
+      "css": {
+        "width": 1001,
+        "height": 558.625,
+        "clientWidth": 1001,
+        "clientHeight": 559,
+        "imageRendering": "auto"
+      },
+      "internal": {
+        "width": 1001,
+        "height": 559,
+        "drawingBufferWidth": 1001,
+        "drawingBufferHeight": 559
+      },
+      "config": {
+        "antialias": true,
+        "antialiasGL": true,
+        "pixelArt": false,
+        "roundPixels": false,
+        "mipmapFilter": ""
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "ground": {
+          "width": 2048,
+          "height": 1024,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1536,
+            "h": 1024
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "hospital": {
+          "width": 2048,
+          "height": 2048,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1254,
+            "height": 1254
+          }
+        },
+        "zombie": {
+          "width": 2048,
+          "height": 2048,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1175,
+            "h": 1338
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1175,
+            "height": 1338
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "name": "desktop-dpr1",
+        "width": 1365,
+        "height": 768,
+        "dpr": 1
+      },
+      "variant": "potOnly",
+      "zoom": "in",
+      "metrics": {
+        "hospital": {
+          "maeRGB": 5.5428894696264255
+        },
+        "ground": {
+          "maeRGB": 0.5357927097057532
+        },
+        "zombie": {
+          "maeRGB": 7.175346392737697
+        }
+      },
+      "camera": {
+        "x": -92.625,
+        "y": -9.458333333333314,
+        "zoom": 0.7604166666666666,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "viewport": {
+        "width": 1001,
+        "height": 559,
+        "dpr": 1
+      },
+      "css": {
+        "width": 1001,
+        "height": 558.625,
+        "clientWidth": 1001,
+        "clientHeight": 559,
+        "imageRendering": "auto"
+      },
+      "internal": {
+        "width": 1001,
+        "height": 559,
+        "drawingBufferWidth": 1001,
+        "drawingBufferHeight": 559
+      },
+      "config": {
+        "antialias": true,
+        "antialiasGL": true,
+        "pixelArt": false,
+        "roundPixels": false,
+        "mipmapFilter": ""
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "ground": {
+          "width": 2048,
+          "height": 1024,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1536,
+            "h": 1024
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "hospital": {
+          "width": 2048,
+          "height": 2048,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1254,
+            "height": 1254
+          }
+        },
+        "zombie": {
+          "width": 2048,
+          "height": 2048,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1175,
+            "h": 1338
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1175,
+            "height": 1338
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "name": "desktop-dpr1",
+        "width": 1365,
+        "height": 768,
+        "dpr": 1
+      },
+      "variant": "potOnly",
+      "zoom": "out",
+      "metrics": {
+        "hospital": {
+          "maeRGB": 5.8708479020979025
+        },
+        "ground": {
+          "maeRGB": 2.5245393176427657
+        },
+        "zombie": {
+          "maeRGB": 11.489298454221165
+        }
+      },
+      "camera": {
+        "x": 120.90000000000003,
+        "y": 94.56666666666669,
+        "zoom": 0.48666666666666664,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "viewport": {
+        "width": 1001,
+        "height": 559,
+        "dpr": 1
+      },
+      "css": {
+        "width": 1001,
+        "height": 558.625,
+        "clientWidth": 1001,
+        "clientHeight": 559,
+        "imageRendering": "auto"
+      },
+      "internal": {
+        "width": 1001,
+        "height": 559,
+        "drawingBufferWidth": 1001,
+        "drawingBufferHeight": 559
+      },
+      "config": {
+        "antialias": true,
+        "antialiasGL": true,
+        "pixelArt": false,
+        "roundPixels": false,
+        "mipmapFilter": ""
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "ground": {
+          "width": 2048,
+          "height": 1024,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1536,
+            "h": 1024
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "hospital": {
+          "width": 2048,
+          "height": 2048,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1254,
+            "height": 1254
+          }
+        },
+        "zombie": {
+          "width": 2048,
+          "height": 2048,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1175,
+            "h": 1338
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1175,
+            "height": 1338
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "name": "desktop-dpr1",
+        "width": 1365,
+        "height": 768,
+        "dpr": 1
+      },
+      "variant": "after",
+      "zoom": "initial",
+      "metrics": {
+        "hospital": {
+          "maeRGB": 5.708005959382106
+        },
+        "ground": {
+          "maeRGB": 0.6267533356140951
+        },
+        "zombie": {
+          "maeRGB": 10.337899543378995
+        }
+      },
+      "camera": {
+        "x": 26.000000000000057,
+        "y": 48.33333333333334,
+        "zoom": 0.6083333333333333,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "viewport": {
+        "width": 1001,
+        "height": 559,
+        "dpr": 1
+      },
+      "css": {
+        "width": 1001,
+        "height": 558.625,
+        "clientWidth": 1001,
+        "clientHeight": 559,
+        "imageRendering": "auto"
+      },
+      "internal": {
+        "width": 1001,
+        "height": 559,
+        "drawingBufferWidth": 1001,
+        "drawingBufferHeight": 559
+      },
+      "config": {
+        "antialias": true,
+        "antialiasGL": true,
+        "pixelArt": false,
+        "roundPixels": false,
+        "mipmapFilter": ""
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "ground": {
+          "width": 1536,
+          "height": 1024,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1536,
+            "h": 1024
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "hospital": {
+          "width": 1254,
+          "height": 1254,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1254,
+            "height": 1254
+          }
+        },
+        "zombie": {
+          "width": 1175,
+          "height": 1338,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1175,
+            "h": 1338
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1175,
+            "height": 1338
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "name": "desktop-dpr1",
+        "width": 1365,
+        "height": 768,
+        "dpr": 1
+      },
+      "variant": "after",
+      "zoom": "in",
+      "metrics": {
+        "hospital": {
+          "maeRGB": 5.542899482342575
+        },
+        "ground": {
+          "maeRGB": 0.5357195139803835
+        },
+        "zombie": {
+          "maeRGB": 7.1755852842809364
+        }
+      },
+      "camera": {
+        "x": -92.625,
+        "y": -9.458333333333314,
+        "zoom": 0.7604166666666666,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "viewport": {
+        "width": 1001,
+        "height": 559,
+        "dpr": 1
+      },
+      "css": {
+        "width": 1001,
+        "height": 558.625,
+        "clientWidth": 1001,
+        "clientHeight": 559,
+        "imageRendering": "auto"
+      },
+      "internal": {
+        "width": 1001,
+        "height": 559,
+        "drawingBufferWidth": 1001,
+        "drawingBufferHeight": 559
+      },
+      "config": {
+        "antialias": true,
+        "antialiasGL": true,
+        "pixelArt": false,
+        "roundPixels": false,
+        "mipmapFilter": ""
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "ground": {
+          "width": 1536,
+          "height": 1024,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1536,
+            "h": 1024
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "hospital": {
+          "width": 1254,
+          "height": 1254,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1254,
+            "height": 1254
+          }
+        },
+        "zombie": {
+          "width": 1175,
+          "height": 1338,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1175,
+            "h": 1338
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1175,
+            "height": 1338
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "name": "desktop-dpr1",
+        "width": 1365,
+        "height": 768,
+        "dpr": 1
+      },
+      "variant": "after",
+      "zoom": "out",
+      "metrics": {
+        "hospital": {
+          "maeRGB": 5.870775058275059
+        },
+        "ground": {
+          "maeRGB": 2.5245393176427657
+        },
+        "zombie": {
+          "maeRGB": 11.488902100673801
+        }
+      },
+      "camera": {
+        "x": 120.90000000000003,
+        "y": 94.56666666666669,
+        "zoom": 0.48666666666666664,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "viewport": {
+        "width": 1001,
+        "height": 559,
+        "dpr": 1
+      },
+      "css": {
+        "width": 1001,
+        "height": 558.625,
+        "clientWidth": 1001,
+        "clientHeight": 559,
+        "imageRendering": "auto"
+      },
+      "internal": {
+        "width": 1001,
+        "height": 559,
+        "drawingBufferWidth": 1001,
+        "drawingBufferHeight": 559
+      },
+      "config": {
+        "antialias": true,
+        "antialiasGL": true,
+        "pixelArt": false,
+        "roundPixels": false,
+        "mipmapFilter": ""
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "ground": {
+          "width": 1536,
+          "height": 1024,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1536,
+            "h": 1024
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "hospital": {
+          "width": 1254,
+          "height": 1254,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1254,
+            "height": 1254
+          }
+        },
+        "zombie": {
+          "width": 1175,
+          "height": 1338,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1175,
+            "h": 1338
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1175,
+            "height": 1338
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "name": "desktop-dpr125",
+        "width": 1365,
+        "height": 768,
+        "dpr": 1.25
+      },
+      "variant": "before",
+      "zoom": "initial",
+      "metrics": {
+        "hospital": {
+          "maeRGB": 5.594735313848588
+        },
+        "ground": {
+          "maeRGB": 0.5439906309471527
+        },
+        "zombie": {
+          "maeRGB": 7.468227424749164
+        }
+      },
+      "camera": {
+        "x": 26.000000000000057,
+        "y": 48.33333333333334,
+        "zoom": 0.6083333333333333,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "viewport": {
+        "width": 1001,
+        "height": 559,
+        "dpr": 1.25
+      },
+      "css": {
+        "width": 1001,
+        "height": 558.625,
+        "clientWidth": 1001,
+        "clientHeight": 559,
+        "imageRendering": "auto"
+      },
+      "internal": {
+        "width": 1251,
+        "height": 699,
+        "drawingBufferWidth": 1251,
+        "drawingBufferHeight": 699
+      },
+      "config": {
+        "antialias": true,
+        "antialiasGL": true,
+        "pixelArt": false,
+        "roundPixels": false,
+        "mipmapFilter": ""
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "ground": {
+          "width": 1536,
+          "height": 1024,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1536,
+            "h": 1024
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "hospital": {
+          "width": 1254,
+          "height": 1254,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1254,
+            "height": 1254
+          }
+        },
+        "zombie": {
+          "width": 1175,
+          "height": 1338,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1175,
+            "h": 1338
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1175,
+            "height": 1338
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "name": "desktop-dpr125",
+        "width": 1365,
+        "height": 768,
+        "dpr": 1.25
+      },
+      "variant": "before",
+      "zoom": "in",
+      "metrics": {
+        "hospital": {
+          "maeRGB": 0.9201805683800144
+        },
+        "ground": {
+          "maeRGB": 0.5332484436898698
+        },
+        "zombie": {
+          "maeRGB": 5.562788550323177
+        }
+      },
+      "camera": {
+        "x": -92.625,
+        "y": -9.458333333333314,
+        "zoom": 0.7604166666666666,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "viewport": {
+        "width": 1001,
+        "height": 559,
+        "dpr": 1.25
+      },
+      "css": {
+        "width": 1001,
+        "height": 558.625,
+        "clientWidth": 1001,
+        "clientHeight": 559,
+        "imageRendering": "auto"
+      },
+      "internal": {
+        "width": 1251,
+        "height": 699,
+        "drawingBufferWidth": 1251,
+        "drawingBufferHeight": 699
+      },
+      "config": {
+        "antialias": true,
+        "antialiasGL": true,
+        "pixelArt": false,
+        "roundPixels": false,
+        "mipmapFilter": ""
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "ground": {
+          "width": 1536,
+          "height": 1024,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1536,
+            "h": 1024
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "hospital": {
+          "width": 1254,
+          "height": 1254,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1254,
+            "height": 1254
+          }
+        },
+        "zombie": {
+          "width": 1175,
+          "height": 1338,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1175,
+            "h": 1338
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1175,
+            "height": 1338
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "name": "desktop-dpr125",
+        "width": 1365,
+        "height": 768,
+        "dpr": 1.25
+      },
+      "variant": "before",
+      "zoom": "out",
+      "metrics": {
+        "hospital": {
+          "maeRGB": 5.67986013986014
+        },
+        "ground": {
+          "maeRGB": 0.6408940586155776
+        },
+        "zombie": {
+          "maeRGB": 9.971615451067505
+        }
+      },
+      "camera": {
+        "x": 120.90000000000003,
+        "y": 94.56666666666669,
+        "zoom": 0.48666666666666664,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "viewport": {
+        "width": 1001,
+        "height": 559,
+        "dpr": 1.25
+      },
+      "css": {
+        "width": 1001,
+        "height": 558.625,
+        "clientWidth": 1001,
+        "clientHeight": 559,
+        "imageRendering": "auto"
+      },
+      "internal": {
+        "width": 1251,
+        "height": 699,
+        "drawingBufferWidth": 1251,
+        "drawingBufferHeight": 699
+      },
+      "config": {
+        "antialias": true,
+        "antialiasGL": true,
+        "pixelArt": false,
+        "roundPixels": false,
+        "mipmapFilter": ""
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "ground": {
+          "width": 1536,
+          "height": 1024,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1536,
+            "h": 1024
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "hospital": {
+          "width": 1254,
+          "height": 1254,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1254,
+            "height": 1254
+          }
+        },
+        "zombie": {
+          "width": 1175,
+          "height": 1338,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1175,
+            "h": 1338
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1175,
+            "height": 1338
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "name": "desktop-dpr125",
+        "width": 1365,
+        "height": 768,
+        "dpr": 1.25
+      },
+      "variant": "after",
+      "zoom": "initial",
+      "metrics": {
+        "hospital": {
+          "maeRGB": 5.594735313848588
+        },
+        "ground": {
+          "maeRGB": 0.5439906309471527
+        },
+        "zombie": {
+          "maeRGB": 7.468227424749164
+        }
+      },
+      "camera": {
+        "x": 26.000000000000057,
+        "y": 48.33333333333334,
+        "zoom": 0.6083333333333333,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "viewport": {
+        "width": 1001,
+        "height": 559,
+        "dpr": 1.25
+      },
+      "css": {
+        "width": 1001,
+        "height": 558.625,
+        "clientWidth": 1001,
+        "clientHeight": 559,
+        "imageRendering": "auto"
+      },
+      "internal": {
+        "width": 1251,
+        "height": 699,
+        "drawingBufferWidth": 1251,
+        "drawingBufferHeight": 699
+      },
+      "config": {
+        "antialias": true,
+        "antialiasGL": true,
+        "pixelArt": false,
+        "roundPixels": false,
+        "mipmapFilter": ""
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "ground": {
+          "width": 1536,
+          "height": 1024,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1536,
+            "h": 1024
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "hospital": {
+          "width": 1254,
+          "height": 1254,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1254,
+            "height": 1254
+          }
+        },
+        "zombie": {
+          "width": 1175,
+          "height": 1338,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1175,
+            "h": 1338
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1175,
+            "height": 1338
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "name": "desktop-dpr125",
+        "width": 1365,
+        "height": 768,
+        "dpr": 1.25
+      },
+      "variant": "after",
+      "zoom": "in",
+      "metrics": {
+        "hospital": {
+          "maeRGB": 0.9201805683800144
+        },
+        "ground": {
+          "maeRGB": 0.5332484436898698
+        },
+        "zombie": {
+          "maeRGB": 5.562788550323177
+        }
+      },
+      "camera": {
+        "x": -92.625,
+        "y": -9.458333333333314,
+        "zoom": 0.7604166666666666,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "viewport": {
+        "width": 1001,
+        "height": 559,
+        "dpr": 1.25
+      },
+      "css": {
+        "width": 1001,
+        "height": 558.625,
+        "clientWidth": 1001,
+        "clientHeight": 559,
+        "imageRendering": "auto"
+      },
+      "internal": {
+        "width": 1251,
+        "height": 699,
+        "drawingBufferWidth": 1251,
+        "drawingBufferHeight": 699
+      },
+      "config": {
+        "antialias": true,
+        "antialiasGL": true,
+        "pixelArt": false,
+        "roundPixels": false,
+        "mipmapFilter": ""
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "ground": {
+          "width": 1536,
+          "height": 1024,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1536,
+            "h": 1024
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "hospital": {
+          "width": 1254,
+          "height": 1254,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1254,
+            "height": 1254
+          }
+        },
+        "zombie": {
+          "width": 1175,
+          "height": 1338,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1175,
+            "h": 1338
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1175,
+            "height": 1338
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "name": "desktop-dpr125",
+        "width": 1365,
+        "height": 768,
+        "dpr": 1.25
+      },
+      "variant": "after",
+      "zoom": "out",
+      "metrics": {
+        "hospital": {
+          "maeRGB": 5.67986013986014
+        },
+        "ground": {
+          "maeRGB": 0.6408940586155776
+        },
+        "zombie": {
+          "maeRGB": 9.971615451067505
+        }
+      },
+      "camera": {
+        "x": 120.90000000000003,
+        "y": 94.56666666666669,
+        "zoom": 0.48666666666666664,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "viewport": {
+        "width": 1001,
+        "height": 559,
+        "dpr": 1.25
+      },
+      "css": {
+        "width": 1001,
+        "height": 558.625,
+        "clientWidth": 1001,
+        "clientHeight": 559,
+        "imageRendering": "auto"
+      },
+      "internal": {
+        "width": 1251,
+        "height": 699,
+        "drawingBufferWidth": 1251,
+        "drawingBufferHeight": 699
+      },
+      "config": {
+        "antialias": true,
+        "antialiasGL": true,
+        "pixelArt": false,
+        "roundPixels": false,
+        "mipmapFilter": ""
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "ground": {
+          "width": 1536,
+          "height": 1024,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1536,
+            "h": 1024
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "hospital": {
+          "width": 1254,
+          "height": 1254,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1254,
+            "height": 1254
+          }
+        },
+        "zombie": {
+          "width": 1175,
+          "height": 1338,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1175,
+            "h": 1338
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1175,
+            "height": 1338
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "name": "mobile-dpr2",
+        "width": 393,
+        "height": 852,
+        "dpr": 2
+      },
+      "variant": "before",
+      "zoom": "initial",
+      "metrics": {
+        "hospital": {
+          "maeRGB": 5.767725968662316
+        },
+        "ground": {
+          "maeRGB": 0.553328645100797
+        },
+        "zombie": {
+          "maeRGB": 10.317732115677321
+        }
+      },
+      "camera": {
+        "x": -54.74999999999997,
+        "y": 130.90384615384616,
+        "zoom": 0.30288461538461536,
+        "minZoom": 0.15144230769230768,
+        "maxZoom": 1.2115384615384615
+      },
+      "viewport": {
+        "width": 363,
+        "height": 492,
+        "dpr": 2
+      },
+      "css": {
+        "width": 363,
+        "height": 492.15625,
+        "clientWidth": 363,
+        "clientHeight": 492,
+        "imageRendering": "auto"
+      },
+      "internal": {
+        "width": 726,
+        "height": 984,
+        "drawingBufferWidth": 726,
+        "drawingBufferHeight": 984
+      },
+      "config": {
+        "antialias": true,
+        "antialiasGL": true,
+        "pixelArt": false,
+        "roundPixels": false,
+        "mipmapFilter": ""
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "ground": {
+          "width": 1536,
+          "height": 1024,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1536,
+            "h": 1024
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "hospital": {
+          "width": 1254,
+          "height": 1254,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1254,
+            "height": 1254
+          }
+        },
+        "zombie": {
+          "width": 1175,
+          "height": 1338,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1175,
+            "h": 1338
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1175,
+            "height": 1338
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "name": "mobile-dpr2",
+        "width": 393,
+        "height": 852,
+        "dpr": 2
+      },
+      "variant": "before",
+      "zoom": "in",
+      "metrics": {
+        "hospital": {
+          "maeRGB": 5.693364122508507
+        },
+        "ground": {
+          "maeRGB": 0.5881330309901739
+        },
+        "zombie": {
+          "maeRGB": 8.92055352055352
+        }
+      },
+      "camera": {
+        "x": -113.8125,
+        "y": 102.12980769230771,
+        "zoom": 0.3786057692307692,
+        "minZoom": 0.15144230769230768,
+        "maxZoom": 1.2115384615384615
+      },
+      "viewport": {
+        "width": 363,
+        "height": 492,
+        "dpr": 2
+      },
+      "css": {
+        "width": 363,
+        "height": 492.15625,
+        "clientWidth": 363,
+        "clientHeight": 492,
+        "imageRendering": "auto"
+      },
+      "internal": {
+        "width": 726,
+        "height": 984,
+        "drawingBufferWidth": 726,
+        "drawingBufferHeight": 984
+      },
+      "config": {
+        "antialias": true,
+        "antialiasGL": true,
+        "pixelArt": false,
+        "roundPixels": false,
+        "mipmapFilter": ""
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "ground": {
+          "width": 1536,
+          "height": 1024,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1536,
+            "h": 1024
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "hospital": {
+          "width": 1254,
+          "height": 1254,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1254,
+            "height": 1254
+          }
+        },
+        "zombie": {
+          "width": 1175,
+          "height": 1338,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1175,
+            "h": 1338
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1175,
+            "height": 1338
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "name": "mobile-dpr2",
+        "width": 393,
+        "height": 852,
+        "dpr": 2
+      },
+      "variant": "before",
+      "zoom": "out",
+      "metrics": {
+        "hospital": {
+          "maeRGB": 5.748708441478185
+        },
+        "ground": {
+          "maeRGB": 2.565407772304324
+        },
+        "zombie": {
+          "maeRGB": 11.468688069758224
+        }
+      },
+      "camera": {
+        "x": -7.5,
+        "y": 153.9230769230769,
+        "zoom": 0.2423076923076923,
+        "minZoom": 0.15144230769230768,
+        "maxZoom": 1.2115384615384615
+      },
+      "viewport": {
+        "width": 363,
+        "height": 492,
+        "dpr": 2
+      },
+      "css": {
+        "width": 363,
+        "height": 492.15625,
+        "clientWidth": 363,
+        "clientHeight": 492,
+        "imageRendering": "auto"
+      },
+      "internal": {
+        "width": 726,
+        "height": 984,
+        "drawingBufferWidth": 726,
+        "drawingBufferHeight": 984
+      },
+      "config": {
+        "antialias": true,
+        "antialiasGL": true,
+        "pixelArt": false,
+        "roundPixels": false,
+        "mipmapFilter": ""
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "ground": {
+          "width": 1536,
+          "height": 1024,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1536,
+            "h": 1024
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "hospital": {
+          "width": 1254,
+          "height": 1254,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1254,
+            "height": 1254
+          }
+        },
+        "zombie": {
+          "width": 1175,
+          "height": 1338,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1175,
+            "h": 1338
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1175,
+            "height": 1338
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "name": "mobile-dpr2",
+        "width": 393,
+        "height": 852,
+        "dpr": 2
+      },
+      "variant": "after",
+      "zoom": "initial",
+      "metrics": {
+        "hospital": {
+          "maeRGB": 5.767725968662316
+        },
+        "ground": {
+          "maeRGB": 0.553328645100797
+        },
+        "zombie": {
+          "maeRGB": 10.317732115677321
+        }
+      },
+      "camera": {
+        "x": -54.74999999999997,
+        "y": 130.90384615384616,
+        "zoom": 0.30288461538461536,
+        "minZoom": 0.15144230769230768,
+        "maxZoom": 1.2115384615384615
+      },
+      "viewport": {
+        "width": 363,
+        "height": 492,
+        "dpr": 2
+      },
+      "css": {
+        "width": 363,
+        "height": 492.15625,
+        "clientWidth": 363,
+        "clientHeight": 492,
+        "imageRendering": "auto"
+      },
+      "internal": {
+        "width": 726,
+        "height": 984,
+        "drawingBufferWidth": 726,
+        "drawingBufferHeight": 984
+      },
+      "config": {
+        "antialias": true,
+        "antialiasGL": true,
+        "pixelArt": false,
+        "roundPixels": false,
+        "mipmapFilter": ""
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "ground": {
+          "width": 1536,
+          "height": 1024,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1536,
+            "h": 1024
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "hospital": {
+          "width": 1254,
+          "height": 1254,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1254,
+            "height": 1254
+          }
+        },
+        "zombie": {
+          "width": 1175,
+          "height": 1338,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1175,
+            "h": 1338
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1175,
+            "height": 1338
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "name": "mobile-dpr2",
+        "width": 393,
+        "height": 852,
+        "dpr": 2
+      },
+      "variant": "after",
+      "zoom": "in",
+      "metrics": {
+        "hospital": {
+          "maeRGB": 5.693364122508507
+        },
+        "ground": {
+          "maeRGB": 0.5881330309901739
+        },
+        "zombie": {
+          "maeRGB": 8.92055352055352
+        }
+      },
+      "camera": {
+        "x": -113.8125,
+        "y": 102.12980769230771,
+        "zoom": 0.3786057692307692,
+        "minZoom": 0.15144230769230768,
+        "maxZoom": 1.2115384615384615
+      },
+      "viewport": {
+        "width": 363,
+        "height": 492,
+        "dpr": 2
+      },
+      "css": {
+        "width": 363,
+        "height": 492.15625,
+        "clientWidth": 363,
+        "clientHeight": 492,
+        "imageRendering": "auto"
+      },
+      "internal": {
+        "width": 726,
+        "height": 984,
+        "drawingBufferWidth": 726,
+        "drawingBufferHeight": 984
+      },
+      "config": {
+        "antialias": true,
+        "antialiasGL": true,
+        "pixelArt": false,
+        "roundPixels": false,
+        "mipmapFilter": ""
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "ground": {
+          "width": 1536,
+          "height": 1024,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1536,
+            "h": 1024
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "hospital": {
+          "width": 1254,
+          "height": 1254,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1254,
+            "height": 1254
+          }
+        },
+        "zombie": {
+          "width": 1175,
+          "height": 1338,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1175,
+            "h": 1338
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1175,
+            "height": 1338
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "name": "mobile-dpr2",
+        "width": 393,
+        "height": 852,
+        "dpr": 2
+      },
+      "variant": "after",
+      "zoom": "out",
+      "metrics": {
+        "hospital": {
+          "maeRGB": 5.748708441478185
+        },
+        "ground": {
+          "maeRGB": 2.565407772304324
+        },
+        "zombie": {
+          "maeRGB": 11.468688069758224
+        }
+      },
+      "camera": {
+        "x": -7.5,
+        "y": 153.9230769230769,
+        "zoom": 0.2423076923076923,
+        "minZoom": 0.15144230769230768,
+        "maxZoom": 1.2115384615384615
+      },
+      "viewport": {
+        "width": 363,
+        "height": 492,
+        "dpr": 2
+      },
+      "css": {
+        "width": 363,
+        "height": 492.15625,
+        "clientWidth": 363,
+        "clientHeight": 492,
+        "imageRendering": "auto"
+      },
+      "internal": {
+        "width": 726,
+        "height": 984,
+        "drawingBufferWidth": 726,
+        "drawingBufferHeight": 984
+      },
+      "config": {
+        "antialias": true,
+        "antialiasGL": true,
+        "pixelArt": false,
+        "roundPixels": false,
+        "mipmapFilter": ""
+      },
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "ground": {
+          "width": 1536,
+          "height": 1024,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1536,
+            "h": 1024
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "hospital": {
+          "width": 1254,
+          "height": 1254,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1254,
+            "height": 1254
+          }
+        },
+        "zombie": {
+          "width": 1175,
+          "height": 1338,
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1175,
+            "h": 1338
+          },
+          "minFilter": 9729,
+          "magFilter": 9729,
+          "mipmaps": false,
+          "source": {
+            "width": 1175,
+            "height": 1338
+          }
+        }
+      }
+    }
+  ],
+  "failures": [
+    "AssertionError [ERR_ASSERTION]: Falta filtrado trilineal con mipmaps reales\n\n9729 !== 9987\n\n    at file:///tmp/invierno-h32/scripts/check-h32-quality.mjs:92:10"
+  ],
+  "passed": false
+}

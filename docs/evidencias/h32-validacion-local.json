@@ -1,0 +1,26 @@
+{
+  "implementationCommit": "678fd0cd1b6b9c569fad1d507b97d8547468192d",
+  "initialMain": "826199d96645b95869509995772c914290d63ac7",
+  "referenceCanvasCommit": "ba1d93a4ae73a91a6f07660584e2374b53043a67",
+  "commands": {
+    "npm ci": "exit0",
+    "npm run check:build": "exit0",
+    "npm test": {
+      "passed": 480,
+      "failed": 0,
+      "skipped": 0
+    },
+    "npm run build:hospital": "exit0",
+    "npm run check:hospital-build": "exit0"
+  },
+  "browserEvidence": [
+    "h32-canvas.json",
+    "h32-browser.json",
+    "h32-lifecycle.json"
+  ],
+  "performanceEvidence": "h32-performance.json",
+  "physicalPhone": false,
+  "protectedProductSha256": "43b8883ad4821e4b50c40791615c5ef6c0b3030476409b4e1c6da4dbd872d692",
+  "sp03Blob": "c9f931dc1df295bdbebd8f509bd1c9645f58c4d7",
+  "ci": "Se verifica contra el head final y se registra en el PR de borrador; no es evidencia local reutilizada"
+}

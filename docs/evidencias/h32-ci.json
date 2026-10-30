@@ -1,0 +1,202 @@
+{
+  "validatedHead": "930117e656a26022af0a1e1ce2afeb021c97181f",
+  "implementationCommit": "678fd0cd1b6b9c569fad1d507b97d8547468192d",
+  "pr": "https://github.com/LeviEdition/invierno-en-la-colonia/pull/18",
+  "state": "OPEN",
+  "draft": true,
+  "checks": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-30T02:09:55Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40989984388/job/123849774795",
+      "name": "engine",
+      "startedAt": "2026-10-30T02:09:00Z",
+      "status": "COMPLETED",
+      "workflowName": "D1 y D2 \u2014 arquitectura y regresiones"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-30T02:12:59Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40989984474/job/123849774879",
+      "name": "hospital",
+      "startedAt": "2026-10-30T02:09:00Z",
+      "status": "COMPLETED",
+      "workflowName": "H3.2 \u2014 Hospital Canvas y Phaser"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-30T02:09:25Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40989984441/job/123849774997",
+      "name": "pruebas",
+      "startedAt": "2026-10-30T02:09:00Z",
+      "status": "COMPLETED",
+      "workflowName": "Pruebas de regresi\u00f3n"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-30T02:12:39Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40989984388/job/123849775287",
+      "name": "browser",
+      "startedAt": "2026-10-30T02:09:00Z",
+      "status": "COMPLETED",
+      "workflowName": "D1 y D2 \u2014 arquitectura y regresiones"
+    }
+  ],
+  "localBundleEqualsCi": true,
+  "build": {
+    "phaser": "4.2.1",
+    "esbuild": "0.28.2",
+    "rawBytes": 1409348,
+    "gzip9Bytes": 376966,
+    "sha256": "e0afde9f6f41d7e85bcb08d617cc14abdea0f586a3a4d31a46dde6a029a1939f",
+    "inputs": 8
+  },
+  "ciBrowserVersion": "143.0.7499.4",
+  "ciBrowser": {
+    "passed": true,
+    "physicalDevice": false,
+    "cases": [
+      {
+        "viewport": {
+          "width": 1365,
+          "height": 768
+        },
+        "dpr": 1,
+        "gpu": {
+          "vendor": "Google Inc. (Google)",
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+          "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+          "maxTextureSize": 8192
+        },
+        "corner": {
+          "position": "esquina",
+          "showHidden": false,
+          "phaser": {
+            "visible": 560,
+            "total": 1023,
+            "ratio": 0.5474095796676441
+          },
+          "canvas": {
+            "visible": 678,
+            "total": 1195,
+            "ratio": 0.5673640167364017
+          },
+          "absoluteDifference": 0.019954437068757547,
+          "tolerance": 0.03,
+          "toleranceReason": "3 puntos porcentuales: banda estrecha de paridad perceptual para minificaci\u00f3n Canvas/WebGL; se verifica adem\u00e1s geometr\u00eda exacta, sin mover pivotes o posiciones"
+        },
+        "panPixelAgreement": 1,
+        "errors": []
+      },
+      {
+        "viewport": {
+          "width": 393,
+          "height": 852
+        },
+        "dpr": 2,
+        "gpu": {
+          "vendor": "Google Inc. (Google)",
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+          "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+          "maxTextureSize": 8192
+        },
+        "corner": {
+          "position": "esquina",
+          "showHidden": false,
+          "phaser": {
+            "visible": 554,
+            "total": 1010,
+            "ratio": 0.5485148514851486
+          },
+          "canvas": {
+            "visible": 662,
+            "total": 1168,
+            "ratio": 0.5667808219178082
+          },
+          "absoluteDifference": 0.01826597043265965,
+          "tolerance": 0.03,
+          "toleranceReason": "3 puntos porcentuales: banda estrecha de paridad perceptual para minificaci\u00f3n Canvas/WebGL; se verifica adem\u00e1s geometr\u00eda exacta, sin mover pivotes o posiciones"
+        },
+        "panPixelAgreement": 1,
+        "errors": []
+      },
+      {
+        "viewport": {
+          "width": 320,
+          "height": 640
+        },
+        "dpr": 2,
+        "gpu": {
+          "vendor": "Google Inc. (Google)",
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+          "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+          "maxTextureSize": 8192
+        },
+        "corner": {
+          "position": "esquina",
+          "showHidden": false,
+          "phaser": {
+            "visible": 321,
+            "total": 598,
+            "ratio": 0.5367892976588629
+          },
+          "canvas": {
+            "visible": 392,
+            "total": 699,
+            "ratio": 0.5608011444921316
+          },
+          "absoluteDifference": 0.024011846833268735,
+          "tolerance": 0.03,
+          "toleranceReason": "3 puntos porcentuales: banda estrecha de paridad perceptual para minificaci\u00f3n Canvas/WebGL; se verifica adem\u00e1s geometr\u00eda exacta, sin mover pivotes o posiciones"
+        },
+        "panPixelAgreement": 1,
+        "errors": []
+      }
+    ]
+  },
+  "canvasPassed": true,
+  "lifecycle": {
+    "passed": true,
+    "disposed": {
+      "listeners": [],
+      "resizeTargets": 0,
+      "gl": {
+        "Texture": 0,
+        "Buffer": 0,
+        "Framebuffer": 0,
+        "Renderbuffer": 0,
+        "Program": 0,
+        "Shader": 0
+      }
+    },
+    "cycles": 5,
+    "contextRecovery": true
+  },
+  "performance": {
+    "passed": true,
+    "conditions": {
+      "os": "linux 7.0.0-1017-azure",
+      "cpu": "AMD EPYC 7763 64-Core Processor",
+      "logicalCpus": 4,
+      "totalSystemMemoryBytes": 16764678144,
+      "node": "v22.23.4",
+      "chromium": "143.0.7499.4",
+      "headless": true,
+      "network": "HTTP localhost, sin compresi\u00f3n ni throttling",
+      "gpu": "consultar renderer por muestra; no GPU f\u00edsica garantizada",
+      "isolation": "Ensayos de renderizadores secuenciales; sin otros tests de navegador o builds ejecutados por esta tarea durante la medici\u00f3n. Host compartido, carga externa no controlada",
+      "physicalMobile": false,
+      "heap": "CDP JSHeapUsedSize despu\u00e9s de GC forzada; no incluye memoria GPU",
+      "navigation": "4 s, una tecla de pan por rAF, direcci\u00f3n alternada cada 30 cuadros; zoom cada 45. Eventos DOM reales de teclado sint\u00e9ticos, no entrada humana",
+      "idle": "3 s sin interacci\u00f3n; instrumentaci\u00f3n drawImage/drawArrays/drawElements",
+      "samplesPerConfiguration": 3
+    },
+    "samples": 18
+  },
+  "artifact": "h32-hospital-930117e656a26022af0a1e1ce2afeb021c97181f",
+  "note": "Artifacts descargados y cotejados; evidencia fresca CI de este head. El cierre documental posterior no cambia el c\u00f3digo; sus checks se verifican nuevamente y se registran en el PR, evitando SHA circular."
+}

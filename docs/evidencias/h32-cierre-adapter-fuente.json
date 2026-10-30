@@ -1,0 +1,32 @@
+{
+  "version": "4.2.1",
+  "officialTag": "v4.2.1",
+  "tagObject": "41be1e462bc600064e498cba370bfa8c5c055a22",
+  "files": [
+    {
+      "path": "src/core/Game.js",
+      "officialUrl": "https://github.com/phaserjs/phaser/blob/v4.2.1/src/core/Game.js",
+      "githubBlob": "43072f8b1b7a70446bc824f1aaba9c2f5927aa12",
+      "npmBytesSha256": "592649ab651693b367dbed86b87ff48684daef777212be01f95fda0ae7eb08a3",
+      "upstreamNormalizedEqualsNpm": true,
+      "byteIdentical": false
+    },
+    {
+      "path": "src/core/VisibilityHandler.js",
+      "officialUrl": "https://github.com/phaserjs/phaser/blob/v4.2.1/src/core/VisibilityHandler.js",
+      "githubBlob": "416a1f262792920b075ef8ca04db8ab05f6049f6",
+      "npmBytesSha256": "5a520230ec2af86e779655102ea3b7217a989a5cd5cdd06bc3a644fa9b7d1d93",
+      "upstreamNormalizedEqualsNpm": true,
+      "byteIdentical": false
+    },
+    {
+      "path": "src/core/Config.js",
+      "officialUrl": "https://github.com/phaserjs/phaser/blob/v4.2.1/src/core/Config.js",
+      "githubBlob": "9c3c731425eac2d0ac7e32e4993ed463198a9750",
+      "npmBytesSha256": "a2197baffa76b9ad1bd94c3f32e285804b1d111152369e43c18cf9e90f39ca12",
+      "upstreamNormalizedEqualsNpm": true,
+      "byteIdentical": false
+    }
+  ],
+  "review": "Game.start/VisibilityHandler y Config contrastados con tag oficial. No se encontr\u00f3 opci\u00f3n p\u00fablica para excluir \u00fanicamente VisibilityHandler ni recuperar su listener an\u00f3nimo. pre/postBoot no sustituyen esa funci\u00f3n; autoFocus=false solo evita focus autom\u00e1tico."
+}

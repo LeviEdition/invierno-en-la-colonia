@@ -1,0 +1,197 @@
+{
+  "date_montevideo": "2026-10-29",
+  "task": "H3.1 auditoría y planificación, sin implementación",
+  "baseline_main": "826199d96645b95869509995772c914290d63ac7",
+  "prototype_head": "ba1d93a4ae73a91a6f07660584e2374b53043a67",
+  "prototype_pr": {
+    "number": 16,
+    "state": "OPEN",
+    "draft": true,
+    "creator_acceptance": "Base experimental aprobada por el encargo H3.1; sin autorización de merge"
+  },
+  "reference_tag": {
+    "name": "v0.9.9-referencia-modular",
+    "object": "0fdb214612486f4cc46c1acb444390de963d05e8",
+    "commit": "62e4e85150b2416ccf07d671c186b5c421993b0b",
+    "html_sha256": "43b8883ad4821e4b50c40791615c5ef6c0b3030476409b4e1c6da4dbd872d692"
+  },
+  "new_baseline_checks": {
+    "npm_ci": true,
+    "check_build": true,
+    "npm_test": {
+      "tests": 467,
+      "pass": 467,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    }
+  },
+  "new_browser_inspection": {
+    "chromium": "154.0.8037.57",
+    "viewports": [
+      {
+        "width": 1365,
+        "height": 768
+      },
+      {
+        "width": 393,
+        "height": 852
+      },
+      {
+        "width": 320,
+        "height": 640
+      }
+    ],
+    "modals_per_viewport": [
+      "actions",
+      "inventory",
+      "group",
+      "crossroads",
+      "log",
+      "help",
+      "goal",
+      "crisis"
+    ],
+    "normal_js_errors": 0,
+    "horizontal_overflow": false,
+    "local_context_only": true,
+    "full_games_rerun": false,
+    "physical_android": false,
+    "artifact": "h31-ui-v99.json"
+  },
+  "new_prototype_gate": {
+    "chromium": "154.0.8037.57",
+    "passed": true,
+    "viewports": 3,
+    "artifact": "h31-prototipo-controles.json"
+  },
+  "static_inventory": {
+    "logical_zones": 7,
+    "external_locations": 6,
+    "survivor_definitions": 16,
+    "item_definitions": 17,
+    "objective_definitions": 3,
+    "crossroads_definitions": 26,
+    "access_slots_capacity": 36,
+    "modal_titles": {
+      "biteChoice": "☣ Propagación de mordedura",
+      "attractTarget": "Atraer zombis",
+      "transferTarget": "Transferir equipamiento",
+      "healTarget": "Elegir paciente",
+      "lootChoice": "⌕ Resultado de búsqueda",
+      "actions": "Acciones del superviviente",
+      "inventory": "Objetos y crisis",
+      "log": "Registro de la partida",
+      "crossroads": "Encrucijadas",
+      "help": "Reglas y controles",
+      "group": "Grupos y líderes",
+      "leaderChoice": "♛ Elegí un nuevo líder",
+      "recruitSuccess": "Un nuevo superviviente",
+      "goal": "Objetivo general",
+      "crisis": "Crisis actual",
+      "profile": "Ficha del superviviente"
+    },
+    "literal_important_tokens": 414,
+    "engine_snapshot_has_private_ui_state": false,
+    "engine_has_subscribe": false
+  },
+  "assets": [
+    {
+      "file": "hospital.png",
+      "uploaded_as": "Hospital abandonado bajo la nieve-1.png",
+      "upload_commit": "ed3578f31d27fbdb1e09184de0073e911765b1e1",
+      "sha256": "fc85ae8199e1d94b7f4636bed4b8f293c0e15ce64b8235dbbf63b2b3e0e76159",
+      "bytes": 2391925,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "visible_alpha_gt16_bbox": [
+        39,
+        134,
+        1221,
+        1148
+      ]
+    },
+    {
+      "file": "suelo-nevado.png",
+      "uploaded_as": "Terreno nevado vacío para hospital-2.png",
+      "upload_commit": "ed3578f31d27fbdb1e09184de0073e911765b1e1",
+      "sha256": "71487b23b4be9eba5c96e6e6c5d9feffaff025542339392c55f773384d12687a",
+      "bytes": 3270542,
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGB",
+      "alpha_extrema": null,
+      "visible_alpha_gt16_bbox": null
+    },
+    {
+      "file": "zombi.png",
+      "uploaded_as": "Zombi invernal encorvado-3.png",
+      "upload_commit": "ed3578f31d27fbdb1e09184de0073e911765b1e1",
+      "sha256": "4f569398e24f4a1358348b5a1e770f3e41913386323f1478d0102d8df2349f82",
+      "bytes": 816224,
+      "width": 1175,
+      "height": 1338,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "visible_alpha_gt16_bbox": [
+        340,
+        126,
+        844,
+        1219
+      ]
+    }
+  ],
+  "asset_cost": {
+    "png_bytes": 6478691,
+    "rgba_base_estimate_bytes": 18870120,
+    "note": "Estimación RGBA8 sin buffers, mipmaps, copias ni atlas; no medición de VRAM"
+  },
+  "phaser_audit": {
+    "version_in_registry": "4.2.1",
+    "license": "MIT",
+    "installed_in_repo": false,
+    "executed": false,
+    "renderer_performance_benchmarked": false,
+    "minified_file_bytes": 1375976,
+    "local_gzip9_bytes": 352441,
+    "minified_sha256": "66348b1b5141e49b7d5ebbe688cddcb502eab1cb00f21c538686a5b2c5abe4de",
+    "npm_unpacked_bytes": 112530289,
+    "canvas_fallback_status": "Disponible pero deprecado según guía oficial v3 a v4",
+    "sources": [
+      "https://registry.npmjs.org/phaser/latest",
+      "https://raw.githubusercontent.com/phaserjs/phaser/v4.2.1/README.md",
+      "https://raw.githubusercontent.com/phaserjs/phaser/v4.2.1/changelog/v4/4.0/MIGRATION-GUIDE.md",
+      "https://raw.githubusercontent.com/phaserjs/phaser/v4.2.1/src/core/CreateRenderer.js",
+      "https://cdn.jsdelivr.net/npm/phaser@4.2.1/dist/phaser.min.js"
+    ]
+  },
+  "inspection_tooling_incidents": [
+    {
+      "issue": "El primer arnés de inspección intentó pulsar un crossChoose presente pero oculto en DOM",
+      "resolution": "Selector :visible en script temporal; producto sin cambios"
+    },
+    {
+      "issue": "La captura inicial tomó la transición del modal",
+      "resolution": "Capturas con animations disabled y reducedMotion; no cambio del producto"
+    },
+    {
+      "issue": "docs.phaser.io/llms.txt devuelve404",
+      "resolution": "Documentación y código oficiales fijados al tagv4.2.1"
+    }
+  ],
+  "preserved_files": {
+    "src": true,
+    "package_json": true,
+    "package_lock": true,
+    "html_product": true,
+    "SP03_blob": "c9f931dc1df295bdbebd8f509bd1c9645f58c4d7"
+  }
+}
