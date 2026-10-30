@@ -1,5 +1,12 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## Hospital 2.5D — acceso local confirmado; revisión visual pendiente
+
+El creador confirmó «listo ya pude acceder» después de las instrucciones de VS Code/Live Server. Bloqueo de acceso local resuelto; README e informe73 registran esa opción sin Python. La confirmación corresponde al acceso, no a aceptación visual del prototipo ni a pruebas físicas de dispositivos o de la alternativa RawGitHack.
+
+Actualización exclusivamente documental, con diff:check aprobado; código, arte, main, referencia y SP-03 intactos. No se repiten pruebas funcionales por este registro. PR16 continúa en borrador. **Única siguiente tarea:** el creador revisa Delante/Detrás/Esquina, Mostrar ocultos, escala y cámara; no se implementan cambios ni se fusiona automáticamente. Los bloques inferiores conservan el historial de acceso y validación.
+
+
 ## Acceso al prototipo — alternativa web incorporada · 29/10/2026
 
 El creador reportó rechazo de conexión desde su PC y confirmó que no tiene Python. Se aclaró el alcance de localhost: necesita un servidor activo en ese mismo equipo. Servidor del entornoHTTP200, sin implicar disponibilidad en el PC del usuario. Se añade [vista previa web](https://raw.githack.com/LeviEdition/invierno-en-la-colonia/901a21ea23311dc0860c4e5363836e352ae29d66/prototypes/hospital/index.html) de los archivos públicos del commit901a21e mediante RawGitHack, sin instalar herramientas; no se cambió main, el juego o la release.

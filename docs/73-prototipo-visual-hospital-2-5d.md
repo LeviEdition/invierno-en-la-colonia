@@ -22,7 +22,20 @@ La prueba de navegador sobre la URL externa no pudo completarse en el Chromium a
 
 ## Abrir localmente
 
-La entrada usa módulos nativos y Canvas2D, sin dependencias nuevas ni build propio. Para visualizarla basta Git, Python3 y Chromium. Desde un clon nuevo:
+La entrada usa módulos nativos y Canvas2D, sin dependencias nuevas ni build propio. Se puede servir desde VS Code con Live Server o mediante Python3.
+
+### VS Code y Live Server — acceso confirmado
+
+1. Abrir la raíz completa del repositorio en VS Code y seleccionar `prototype/hospital-2-5d`.
+2. Instalar la extensión **Live Server**, de Ritwick Dey.
+3. Abrir `prototypes/hospital/index.html`, clic derecho → **Open with Live Server**.
+4. Usar la dirección que abre la extensión, normalmente `http://127.0.0.1:5500/prototypes/hospital/index.html`, manteniendo VS Code abierto.
+
+El creador confirmó «listo ya pude acceder» después de estas indicaciones. Se registra acceso local resuelto; la evaluación humana de escala, oclusión y controles sigue pendiente. Esa confirmación no valida por sí sola la alternativa externa RawGitHack ni un teléfono físico. No se cambió código o arte por este registro.
+
+### Servidor Python, como alternativa
+
+Desde un clon nuevo con Git, Python3 y navegador:
 
 ```sh
 git clone --branch prototype/hospital-2-5d https://github.com/LeviEdition/invierno-en-la-colonia.git

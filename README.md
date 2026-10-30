@@ -30,6 +30,8 @@ El [PR15](https://github.com/LeviEdition/invierno-en-la-colonia/pull/15) se inte
 
 **[Abrir la vista previa web sin instalar herramientas](https://raw.githack.com/LeviEdition/invierno-en-la-colonia/901a21ea23311dc0860c4e5363836e352ae29d66/prototypes/hospital/index.html)**, mediante RawGitHack y fijada al commit901a21e. El enlace127.0.0.1 de las instrucciones locales requiere que el servidor esté ejecutándose en el mismo equipo donde se abre el navegador.
 
+**Desde VS Code:** abrir la raíz del repositorio, instalar Live Server (Ritwick Dey) y usar **Open with Live Server** sobre `prototypes/hospital/index.html`. Acceso confirmado por el creador; la extensión inicia el servidor local.
+
 [Instrucciones, pruebas, capturas y límites](docs/73-prototipo-visual-hospital-2-5d.md). No se conecta con reglas ni reemplaza la interfaz o distribución offline de referencia. Validación táctil emulada, sin prueba en teléfono físico.
 
 ## Descargar la referencia y jugar offline
