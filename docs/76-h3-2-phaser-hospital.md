@@ -1,5 +1,7 @@
 # 76 — H3.2: comparación técnica del hospital con Phaser
 
+**Actualización vigente ·30/10/2026:** revisión acotada posterior al PR18, código `b4df86688f22717ab7ff706d482e0f0c2d99a6a0`. Los riesgos de bfcache y arranque se reprodujeron y corrigieron;483 pruebas locales aprobadas. El bloque final registra soluciones, evidencias y reservas. Las mediciones y cierres anteriores se conservan como historia, no como aceptación del creador ni adopción definitiva de Phaser.
+
 **Entrega experimental para revisión.** H3.1 aceptada con las precisiones del creador; H3.2 autorizada, H3.3 no iniciada. [Tablero](18-tablero-operativo.md) · [auditoría74](74-h3-1-auditoria-identidad-visual.md) · [plan75](75-plan-hito-3-identidad-visual.md).
 
 ## Resultado y recomendación
@@ -180,3 +182,108 @@ Base320fc92, sin cambios locales y coincidente con FETCH_HEAD. No hubo avance re
 - **Fallo asíncrono confirmado:** QA lanza en Scene.create; queda loading/starting y aparece pageerror. **Arranque sin completar:** create retorna sin resolver; también queda loading. La observación inicial fue1,5s, no demuestra que ningún driver vaya a fallar así sin la inyección.
 
 Las inyecciones solo existen en bundles construidos por QA con esbuild; no cambian arte ni añaden mecanismos de fallo al producto. Revisión y corrección aún en curso; los cierres previos superiores conservan su carácter histórico y no aceptan automáticamente esta revisión nueva.
+
+
+## Cierre de la revisión acotada de H3.2 ·30/10/2026
+
+### Hallazgos, reproducción y resultado
+
+| Caso | Estado confirmado | Corrección y comprobación |
+| --- | --- | --- |
+| Atrás con bfcache | En320fc92 volvía el mismo documento con app liberada | `pageshow.persisted` solicita un montaje nuevo. Tres ciclos reales con misma identidad, persisted=true, recursos/listeners estables y un comando por clic |
+| Salida durante PNG pendiente | Pagehide controlado permitía publicar al terminar la descarga | AbortController y generación invalidan el intento; cola serial limpia antes de montar otra instancia. Caso controlado y navegación real durante carga verificados por separado |
+| Salida durante Game/Scene pendiente | Riesgo de publicación o callback fuera de su pantalla | Navegación real durante Scene.create pendiente restauró bfcache y permitió ignorar el create viejo, con una sola escena/contexto operativo |
+| Constructor lanza después de asignar recursos | El aviso aparecía, pero Game parcial seguía activo | Captura mediante callback público preBoot y liberación de la instancia parcial antes de habilitar reintento; cero contextos/loops activos del intento fallido |
+| Excepción asíncrona en create/start | Create quedaba loading; start también requiere una frontera de error | Create tiene rechazo explícito. Errores JS del propio bundle durante boot rechazan la espera; listener temporal, sin ocultar errores ajenos ni reemplazar window.onerror |
+| Game/Scene no completa | Espera sin límite | Presupuesto compartido15s desde montaje, con timeout, aviso role=alert y reintento. Create sin completar y callbacks tardíos probados |
+| Callback de start después de retirar Game | En la primera corrección se reprodujo acceso al loop destruido | Guardia WeakSet en HospitalGame.start. Prueba espera el callback real de17s, confirma que ocurrió, loop viejo detenido y nuevo contexto único |
+
+**Explicación sencilla:** bfcache conserva la página y su JavaScript; no equivale a abrirla desde cero. Por eso «destruir al salir» necesita «reconstruir al volver». Además, salir de una página no cancela automáticamente una promesa. Cada montaje ahora tiene una identidad y una señal de cancelación: un resultado viejo se consume y se descarta, no publica otra escena. No se modifica el cargador Canvas original: sus descargas PNG pueden completar; se cancela la espera y se consume su resultado tardío sin crear Game.
+
+**Política visual explícita:** tras restauración desde bfcache se restablecen Delante, cámara encuadrada, selección=false y ocultos=false; botones, checkbox, descripciones y zoom coinciden. No se intenta persistir cámara o posición de demostración. El scroll de la página lo conserva el navegador. Cambiar foco/visibilidad sin navegar no crea otra instancia ni resetea esa escena. V9.9 y guardados no están conectados.
+
+`pagehide`/`pageshow` son suscripciones de vida de la página y permanecen una vez cada una para poder volver. Los recursos de cada escena se retiran: controles, observer, RAF, hooks de Phaser, contexto y texturas. El nuevo criterio distingue **dos listeners de navegación estables** de **cero listeners de escena/observadores/contextos activos tras disponer**. El cero absoluto del gate anterior no contemplaba recuperar bfcache; se conserva su evidencia histórica.
+
+### Arranque acotado y limpieza parcial
+
+La promesa ya no da por terminado el arranque solo porque entró en Scene.create: espera también el primer POST_RENDER real de Game. Esto distingue «se crearon objetos» de «el loop del renderer comenzó». Un solo deadline de15.000ms cubre PNG, Game/Scene y primer frame, con temporizadores cancelados al resolver, rechazar o abortar. La cifra ofrece más de30 veces el mayor arranque local anterior (~453ms); es una política conservadora del PoC, no un SLA de cualquier dispositivo/red.
+
+La prueba de bloqueo usa los15s reales, sin bajar el timeout del producto. Los fallos sintéticos ocurrieron aproximadamente a452/422/487ms (constructor/create/start); las esperas agotadas a15,29–15,38s desde navegación, incluyendo tiempo previo al montaje. Un arranque que aparece después del timeout o la cancelación ya no puede publicar ni reactivar la instancia vieja. El watchdog no interrumpe una ejecución JS síncrona infinita ni un navegador/driver bloqueado; depende de que el event loop pueda ejecutarse. Suspensión/throttling del navegador puede demorar su entrega.
+
+La captura pública preBoot permite conservar el handle de Game aunque new lance después de super. En una instancia inicializada se solicita Game.destroy y se procesa su pendingDestroy mediante el método público Game.step; así la liberación no depende del siguiente rAF, que puede estar congelado al navegar. Antes de READY, Phaser4.2.1 presupone systemScene/stamp al destruir: el helper corta las suscripciones READY, libera los gestores inicializados, retira el canvas/pool y pierde el contexto. Los Image.onload internos que eventualmente terminen no tienen un renderer ni un READY donde reactivar Game; las referencias CPU restantes quedan para GC. Se comprueba actividad/listeners/objetos GL, no VRAM ni liberación inmediata de toda memoria CPU.
+
+El teardown parcial y las comprobaciones de fase son específicos de4.2.1 y deben revisarse junto al adaptador al cambiar versión. No es una utilidad genérica para varias instancias Phaser compartiendo plugins. El PoC mantiene una sola instancia publicada. Los errores de limpieza se registran; en los casos ejecutados fueron0.
+
+### Revisión final de HospitalGame contra el código oficial
+
+Se contrastaron `Game.js`, `VisibilityHandler.js` y `Config.js` instalados por npm con el [tag oficial v4.2.1](https://github.com/phaserjs/phaser/tree/v4.2.1). El contenido coincide normalizando LF/CRLF; no se afirma igualdad de bytes entre distribuciones. [SHAs y enlaces](evidencias/h32-cierre-adapter-fuente.json).
+
+**No se encontró una solución por API pública equivalente y más pequeña.** autoFocus=false evita el focus automático, pero no las asignaciones onblur/onfocus ni el listener anónimo. pre/postBoot sirven para capturar o observar Game; postBoot se llama antes de instalar VisibilityHandler y no proporciona su callback. Quitar handlers del emisor Game tampoco elimina la referencia DOM. Restaurar solo window.onblur/onfocus dejaría el listener de documento. Un parche de la distribución trasladaría la dependencia privada a un parche del vendor; no simplifica su mantenimiento.
+
+| Comportamiento oficial | Tratamiento del PoC y alcance |
+| --- | --- |
+| isRunning, postBoot y loop.start(step) | Reproducidos para el renderer WebGL seleccionado |
+| Rama headlessStep | Omitida: no hay backend HEADLESS ni fallback Phaser Canvas en este PoC |
+| VisibilityHandler instala callbacks DOM y emite HIDDEN/VISIBLE/BLUR/FOCUS | Sustituido por callbacks cancelables que llaman directamente onHidden/onVisible/onBlur/onFocus |
+| Reloj/foco y PAUSE/RESUME | Conservados a través de esos métodos; comprobados en la prueba dirigida |
+| Broadcasts HIDDEN/VISIBLE/BLUR/FOCUS a terceros | **No reproducidos**. El PoC no tiene consumidores efectivos: teclado Phaser desactivado, NoAudio con handlers NOOP, cero sonidos y plugins custom. No se declara equivalencia general de la API |
+| Autoenfoque y prefijos de navegadores antiguos | autoFocus=false; se usa document.hidden estándar. No se certifican navegadores antiguos |
+| Start tardío de instancia cancelada | Guardia añadida solo tras reproducir el callback contra un loop destruido; WeakSet no retiene la instancia por sí mismo |
+
+Se mantiene **Phaser4.2.1**, sin editar node_modules. El reemplazo protegido sigue siendo una reserva técnica, no una base aprobada para activar audio, plugins o consumidores nuevos. La advertencia exige revisión antes de cambiar versión **o capacidades**. No se amplió a otro renderer ni a un motor lógico.
+
+### Pruebas y honestidad de la evidencia
+
+- **483/483 Node**, cero fallos/omisiones;467 juego+10 Canvas+3 H3.2 inicial+3 de cancelación/timeout. npm ci/check:build/build:hospital/check:hospital-build aprobados. [Registro local](evidencias/h32-cierre-validacion-local.json).
+- Gate Canvas original sin editar y gate Phaser en1365×768,393×852 y320×640 aprobados. Delante/detrás/esquina, banda±3pp, ocultos, selección, cámara, pan framebuffer100%, teclado y táctil conservados. [Canvas](evidencias/h32-cierre-canvas.json) · [Phaser](evidencias/h32-cierre-browser.json).
+- [Gate de navegación/arranque](evidencias/h32-cierre-navegacion-arranque.json):3 restauraciones bfcache reales; misma identidad y persisted=true. Los contadores de un timer permanecieron constantes entre eventos **freeze y resume reales** durante353–400ms. No se usa pagehide→pageshow para exigir cero ticks: puede haber un callback antes de congelar o tras reanudar.
+- Recarga normal identificada por documento nuevo/persisted=false. Salida real durante PNG pendiente volvió con recarga normal; no se cuenta como bfcache. La salida real durante Game pendiente sí restauró bfcache. Caso sintético de cancelación de PNG etiquetado por separado, sin afirmar navegación real.
+- Seis fallos inyectados solo en bundles QA: constructor síncrono, create asíncrono, start asíncrono, create sin completar, create tardío y start tardío. Todos salen de Cargando, muestran alerta, liberan recursos, cancelan timers y recuperan mediante el botón. Loop retirado detenido y máximo un contexto operativo. Un error de otro script no se atribuye a Phaser.
+- En el caso negativo de start se conserva la propagación normal del error JS a window.onerror/Playwright (H32_ASYNC_START esperado); no se oculta. Los recorridos sanos no generan pageerror/console.error. Handlers ajenos de error/foco/visibilidad conservados.
+- [Adaptador](evidencias/h32-cierre-adapter.json): blur/focus y hidden/visible **sintéticos**, reloj, PAUSE/RESUME y reanudación de controles; destrucción y handlers ajenos comprobados. El comando CDP frozen fue aceptado pero **no detuvo un timer** en este headless: verified=false, no se cuenta como suspensión real. La suspensión real dentro de bfcache sí se prueba arriba. No hay validación de suspensión física del SO/teléfono.
+- [Ciclo de vida](evidencias/h32-cierre-lifecycle.json):5 reinicios, contexto perdido/restaurado y limpieza final con2 hooks de página y0 recursos de escena.
+- [LAN](evidencias/h32-cierre-lan.json):4 respuestas200 desde loopback/interfaz virtual del mismo entorno, ambas versiones. No es una prueba desde teléfono ni de la red del creador. Se conserva por defecto127.0.0.1 y se ofrece --host0.0.0.0 explícito.
+
+Evidencia previa conservada. [Diagnósticos de QA](evidencias/h32-cierre-diagnosticos-qa.json) distinguen la aserción de freeze no demostrada y el conteo incorrecto pagehide→pageshow de un fallo del producto. También guardan un rechazo tardío de la primera versión del helper, reproducido y corregido para consumir promesas incluso con señal ya abortada.
+
+Al habilitar acceso LAN se añadió una comprobación de rutas codificadas: el servidor podía entregar package.json fuera de sus directorios previstos. Se reprodujo200 y corrigió404 validando otra vez la ruta canónica; la prueba quedó en el test del servidor. No se accedió a secretos ni se realizó otra auditoría general.
+
+**Build actual:**1.412.238 bytes, gzip9 378.108, SHA-256 `ed6b74eb280ea288971e79c797ab8d31cf5b817d7b3ace79927e4a5af9ee37d8`, reproducible. [Metadatos nuevos](evidencias/h32-cierre-build.json). Son2.890 bytes más que la primera entrega. La tabla de rendimiento superior corresponde a la entrega inicial, conservada como histórica; no se presenta como medición nueva del arranque corregido. El CI ejecuta de nuevo el benchmark y conserva sus condiciones/resultados en su artifact.
+
+Condiciones: Linux, Node24.19.0, Chromium154.0.8037.57/Playwright1.57, WebGL SwiftShader software. CI usa su Node22/Chromium y registra resultados aparte. No Android/iOS físico, batería, VRAM, Safari/Firefox, foco físico del escritorio o red Wi-Fi del creador. No se simularon todas las fallas extremas de GPU/memoria ni se garantiza interrupción de código síncrono bloqueado.
+
+### Probar desde VS Code y celular
+
+En la copia local y rama experimental, actualizar sin reescribir historial y abrir terminal en la raíz:
+
+```sh
+git fetch origin
+git switch experiment/h3-2-phaser-hospital
+git pull --ff-only
+npm ci
+npm run dev:hospital
+```
+
+Node22+. Abrir `http://127.0.0.1:8771/prototypes/hospital-phaser/` y `http://127.0.0.1:8771/prototypes/hospital/`. Sin Python. Probar Esquina/ocultos/zoom/selección, abrir el enlace Canvas y volver con Atrás: Phaser vuelve limpio según la política descrita. Atrás por sí solo no demuestra bfcache: la evidencia automatizada registra persisted y la identidad del documento. Cambiar de pestaña sin navegar no debe reiniciar la escena. Reiniciar y restablecer vista conservan sus significados distintos.
+
+Para celular, detener ese servidor y ejecutar `npm run dev:hospital -- --host 0.0.0.0`. Obtener IPv4 Wi-Fi/Ethernet de la PC (`ipconfig` en Windows) y abrir las mismas rutas sustituyendo127.0.0.1 por esa IPv4. Misma red, terminal abierta y Node permitido en red privada si Windows lo solicita. En el celular, localhost sería el propio celular. El servidor imprime interfaces; elegir la de la red correcta. No se desplegó un sitio ni se publicó una release.
+
+QA adicional, con el servidor y Playwright/CHROMIUM_PATH configurados como en las instrucciones anteriores:
+
+```sh
+node scripts/check-h32-navigation-startup.mjs
+node scripts/check-h32-adapter.mjs
+```
+
+### Dictamen de cierre
+
+Los riesgos reproducidos quedan corregidos dentro de H3.2. La elección sigue siendo **ajustar antes de adopción definitiva**, por dependencia protegida, teardown específico y cobertura física pendiente. No existe aprobación artística o de producción por este cierre. Main, referencia/tag/release, PR16, arte, Canvas y SP-03 permanecen intactos; no motor, reglas, mapa ni H3.3.
+
+**Único siguiente paso: revisión y aceptación del creador de esta corrección de cierre.** No fusionar ni avanzar automáticamente. El head exacto final y sus checks se verifican antes de entregar y se enlazan en PR18; el commit documental posterior se distingue del código b4df866, sin SHA circular en este documento.
+
+
+### CI de la corrección y entrega documental
+
+Código **b4df86688f22717ab7ff706d482e0f0c2d99a6a0**, cuatro checks success: [regresión483](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41048175125), [engine/browser D1-D2](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41048175119) y [hospital/cierre/benchmark](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41048175185). Incluye las regresiones de referencia existentes,40 comparaciones por variante, partidas QA/producto y gates offline. El workflow hospital comprueba explícitamente el head, además de los checks PR asociados.
+
+Artifact descargado: seis JSON passed (Canvas, Phaser, ciclo de vida, navegación/arranque, adaptador y rendimiento),18 muestras de benchmark y **bundle idéntico al local**. [Resumen durable](evidencias/h32-cierre-ci.json) distingue Chromium/condiciones del runner y evidencia local. No se sustituyó esta verificación por checks previos. La documentación posterior registra este resultado sin alterar el código; sus checks finales se verifican también y se enlazan en PR18 con el head exacto, sin una referencia circular al SHA de este documento.

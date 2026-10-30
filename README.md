@@ -46,6 +46,18 @@ El comando genera el bundle con esbuild y sirve ambos experimentos; Ctrl+C lo de
 
 Controles HTML: Delante/Detrás/Esquina, Mostrar ocultos, selección, zoom, flechas y restablecer. Arrastre, rueda y pinza sobre la escena; teclado con foco en el canvas: flechas, +/−,0,Enter,Escape. «Restablecer vista» reinicia la cámara; «Reiniciar escena» libera el renderer y carga el estado inicial. Sin WebGL se muestra un aviso y el enlace a Canvas, sin fallback automático de Phaser.
 
+**Atrás y reinicios:** al volver desde la caché de navegación, Phaser reconstruye una escena limpia: Delante, cámara inicial, selección y Mostrar ocultos desactivados. El navegador puede conservar el scroll de la página. El montaje se cancela al salir; si el arranque no completa en15 segundos, aparece un aviso accesible con reintento. No se guardan ni modifican partidas.
+
+**Celular en la misma red Wi-Fi:** detener el servidor anterior con Ctrl+C y ejecutar:
+
+```sh
+npm run dev:hospital -- --host 0.0.0.0
+```
+
+En Windows, `ipconfig` muestra la IPv4 del adaptador Wi-Fi/Ethernet de la PC. Desde el celular abrir `http://IP_DE_LA_PC:8771/prototypes/hospital-phaser/` y `http://IP_DE_LA_PC:8771/prototypes/hospital/`. Por ejemplo, si la IPv4 es192.168.1.50, usar `http://192.168.1.50:8771/prototypes/hospital-phaser/`. PC y celular deben compartir red; mantener la terminal abierta y permitir Node en la red privada si Windows lo solicita. En el teléfono no usar127.0.0.1: apunta al propio teléfono. El servidor también imprime direcciones de red; elegir la interfaz local correcta, no una VPN. El modo normal sigue escuchando solo en127.0.0.1.
+
+El acceso HTTP se comprobó desde loopback y la interfaz virtual del entorno. **No se probó un celular físico ni el router/firewall de tu casa.** Si no conecta, comprobar servidor, misma red, IPv4 y permiso de red privada; usar Canvas para distinguir falta de WebGL de un problema de conexión.
+
 Se reutilizan sin cambios los PNG, pivotes, controles y cámara del [commit auditado PR16](https://github.com/LeviEdition/invierno-en-la-colonia/tree/ba1d93a4ae73a91a6f07660584e2374b53043a67), copiados con manifiesto de hashes, sin merge. Canvas conserva sus archivos originales. [Informe76: comparación, pruebas, costos y reservas](docs/76-h3-2-phaser-hospital.md) · [H3.1](docs/74-h3-1-auditoria-identidad-visual.md) · [plan](docs/75-plan-hito-3-identidad-visual.md).
 
 La escena es independiente del juego. Cambiar renderer no aprueba proporciones, encaje con el suelo ni calidad artística: corresponde a H3.3. El mapa continuo es el objetivo acordado, todavía no construido.
