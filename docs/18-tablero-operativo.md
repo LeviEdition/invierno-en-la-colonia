@@ -1,5 +1,17 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## H3.3 — preparación técnica del taller autorizada; maqueta pendiente
+
+Autorización del creador: preparar un taller independiente del hospital y un contrato pequeño del kit, con referencias provisionales, posiciones de ensayo y comparación acotada de texturas. **No implica aceptación visual de H3.2 ni pruebas físicas aprobadas.** Phaser4.2.1 sigue como candidato de trabajo.
+
+Rama `experiment/h3-3-taller-visual`, desde PR18/head `4fc7c66c1af1d053458519b5c6367a8b9224e8a0`, árbol inicial limpio. PR16/17/18 abiertos/draft, sin merge. El PR de H3.3 dependerá de la rama H3.2 para aislar su diff; no altera las referencias Canvas/Phaser. Main826199d9 y tag/release preservados. [Informe77](77-h3-3-taller-visual-y-kit-piloto.md).
+
+**Preparación local revisable:** entrada independiente `prototypes/hospital-workshop`, contrato validado y guía de incorporación. Pan/zoom/selección/centrado, cuadrícula XY, apoyos/límites/capas, guías H/P, oclusión y4S/4 accesos de ensayo. Perfiles explícitos100/75/50%; memoria principal estimada53,33/21,33/13,33MiB, red original6.478.691 bytes igual en los tres. Propuesta de presupuesto, no aprobación de pérdida visual.
+
+**Validación local y CI:**491/491 (483 anteriores+8 nuevas), build V9.9/Phaser/taller reproducibles; referencias conservadas por hashes y gates Chromium; taller1365/393/320, tacto/teclado, cinco reinicios por tamaño, contexto75%, cancelación de carga y bfcache real.0 errores normales/overflow.18 muestras de montaje y18 comparativas de texturas,24 capturas nativas. Sin teléfono físico ni VRAM real. **[PR19 draft](https://github.com/LeviEdition/invierno-en-la-colonia/pull/19)**, implementación21a805ec84868440a24608edeb088624c1d74f81 con [CI SUCCESS](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41097311067); artifact descargado,4 JSON passed y bundle idéntico local/CI. [Registro](evidencias/h33-ci.json). El commit documental posterior conserva ese producto y se verifica nuevamente por head exacto en PR19. Informe77 separa datos medidos/estimados y hallazgos del arnés.
+
+**Pendientes explícitos:** maqueta, perspectiva/proporciones aprobadas, capas finales, presupuesto con hardware real y aceptación artística. Solo marcadores para recursos ausentes. Sin motor, reglas, guardados, catálogo completo, animaciones definitivas o H3.4. **Única siguiente tarea: revisión del creador del taller y aporte de la maqueta según la lista de77/guía. H3.3 no queda terminado.**
+
 ## Revisión adicional de nitidez H3.2 — corrección validada, aceptación visual pendiente
 
 El creador autoriza revisar la pixelación global en PR18; Phaser sigue siendo candidato, sin H3.3. Base remota6036b81 (4 checks success), rama experimental; dos notas locales de soporte Windows preservadas. Main826199d9, PR16 ba1d93a4 y referencia/tag/release intactos.

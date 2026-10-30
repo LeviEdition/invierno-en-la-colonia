@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <title>H3.3 · Taller provisional del hospital</title><link rel="icon" href="data:,">
+ <link rel="stylesheet" href="../hospital/style.css"><link rel="stylesheet" href="./style.css">
+ <script type="module" src="../../dist/hospital-workshop/game.mjs"></script>
+</head>
+<body>
+ <main>
+  <header class="heading"><div><p class="eyebrow">Invierno en la Colonia <span>/</span> H3.3 · Taller técnico</p><h1>Taller del hospital</h1><p class="subtitle">Kit provisional · Perspectiva, proporciones y arte pendientes de la maqueta.</p></div><span class="badge">Phaser 4.2.1 · candidato</span></header>
+  <div class="workspace">
+   <section class="scene-panel" aria-label="Sector de ensayo">
+    <div class="viewport"><canvas id="scene" tabindex="0" role="img" aria-label="Taller visual del hospital con imágenes y marcadores provisionales" aria-describedby="instructions scene-summary"></canvas><div id="labels" aria-hidden="true"></div><span class="scene-tag" aria-hidden="true">PROVISIONAL · SIN REGLAS</span><div id="loading" role="status">Inicializando taller…</div></div>
+    <p id="instructions" class="instructions">Arrastre, rueda y pinza · Flechas, +/− y0 sobre la escena.<br>Enter selecciona el hospital; Escape limpia la selección. Las formas de color son marcadores, no arte aprobado.</p>
+    <p id="scene-summary" role="status"></p><p id="selection-status" role="status">Sin selección.</p><p class="hint">H: referencia humana · P: referencia de puerta. Ambas son guías provisionales, no arte ni medidas aprobadas.</p>
+    <details><summary>Recursos y límites de esta prueba</summary><ul id="resource-list"></ul><p>Cuatro marcas de superviviente y cuatro accesos de ensayo. No crean capacidades, distancias, movimiento o reglas. La cuadrícula XY no determina la perspectiva del suelo.</p></details>
+    <p class="compare-links"><a href="../hospital/">Referencia Canvas</a> · <a href="../hospital-phaser/">Referencia Phaser H3.2</a> · <a href="./kit.json">Manifiesto del kit</a></p>
+   </section>
+   <aside aria-label="Controles del taller">
+    <p id="renderer-status" role="status">Preparando recursos locales…</p>
+    <fieldset><legend>Composición de ensayo</legend><label for="case">Caso preparado</label><select id="case"><option value="occlusion">Actor de prueba y oclusión</option><option value="max-zombies">4 supervivientes + 4 zombis</option><option value="max-barricades">4 supervivientes + 4 barricadas</option><option value="mixed">4 supervivientes + ocupación mixta</option><option value="custom">Accesos elegidos abajo</option></select>
+     <div class="positions"><button data-pose="delante" aria-pressed="true">Delante</button><button data-pose="detras" aria-pressed="false">Detrás</button><button data-pose="esquina" aria-pressed="false">Esquina</button></div>
+     <label class="toggle"><input id="show-hidden" type="checkbox">Mostrar ocultos</label><p class="hint">Delante/Detrás/Esquina vuelven al actor de oclusión. H y P son guías, no ocupantes. Etiquetas y apoyos se superponen para diagnóstico, incluso sobre figuras ocultas.</p>
+     <div class="accesses" role="group" aria-label="Cuatro accesos compartidos de prueba">
+      <label>A1<select data-access="0"><option value="empty">Vacío</option><option value="zombie">Zombi</option><option value="barricade">Barricada</option></select></label>
+      <label>A2<select data-access="1"><option value="empty">Vacío</option><option value="zombie">Zombi</option><option value="barricade">Barricada</option></select></label>
+      <label>A3<select data-access="2"><option value="empty">Vacío</option><option value="zombie">Zombi</option><option value="barricade">Barricada</option></select></label>
+      <label>A4<select data-access="3"><option value="empty">Vacío</option><option value="zombie">Zombi</option><option value="barricade">Barricada</option></select></label>
+     </div><p class="hint">Cada acceso de prueba muestra zombi, barricada o vacío; nunca ambos.</p>
+    <a class="back-to-scene" href="#scene">Volver al sector</a></fieldset>
+    <fieldset><legend>Cámara y escala</legend><div class="zoom-controls"><button id="zoom-out" aria-label="Alejar">−</button><output id="zoom-value" aria-label="Zoom">100 %</output><button id="zoom-in" aria-label="Acercar">+</button></div><button id="reset-view" class="wide">Restablecer vista</button><div class="pan-controls"><button data-pan="left" aria-label="Mirar a la izquierda">←</button><button data-pan="up" aria-label="Mirar arriba">↑</button><button data-pan="down" aria-label="Mirar abajo">↓</button><button data-pan="right" aria-label="Mirar a la derecha">→</button></div><label for="actor-scale">Escala de figuras, provisional</label><input id="actor-scale" type="range" min="0.75" max="1.25" step="0.05" value="1"><output id="scale-value">1,00×</output><button id="select-hospital" class="wide" aria-pressed="false">Seleccionar hospital</button><label for="selected-resource">Seleccionar otro recurso</label><select id="selected-resource"><option value="">Sin selección</option></select><button id="center-selection" class="wide">Centrar recurso seleccionado</button><a class="back-to-scene" href="#scene">Volver al sector</a></fieldset>
+    <fieldset><legend>Guías y capas</legend><label class="toggle"><input id="grid" type="checkbox">Cuadrícula XY de diagnóstico</label><label for="grid-step">Paso de cuadrícula (unidades ilustradas)</label><input id="grid-step" type="number" min="40" max="160" step="10" value="80"><div class="checks"><label><input id="axes" type="checkbox" checked>Ejes XY</label><label><input id="pivots" type="checkbox" checked>Apoyos</label><label><input id="bounds" type="checkbox">Límites visibles</label><label><input id="labels-toggle" type="checkbox" checked>Etiquetas</label></div><div class="checks layers"><label><input data-layer="ground" type="checkbox" checked>Suelo</label><label><input data-layer="building" type="checkbox" checked>Hospital</label><label><input data-layer="actors" type="checkbox" checked>Figuras</label><label><input data-layer="shadows" type="checkbox" checked>Sombras</label><label><input data-layer="slots" type="checkbox" checked>Marcas de ensayo</label><label><input data-layer="guides" type="checkbox" checked>Persona/puerta</label></div><a class="back-to-scene" href="#scene">Volver al sector</a></fieldset>
+    <fieldset><legend>Comparación técnica de texturas</legend><label for="profile">Preparación aislada</label><select id="profile"><option value="h32">H3.2 — resolución original</option><option value="three-quarter">Ensayo 75% — no aprobado</option><option value="half">Ensayo 50% — no aprobado</option></select><p id="texture-summary" role="status"></p><p class="hint">Los derivados se generan en memoria. Descargar los PNG originales cuesta lo mismo en los tres perfiles. La calidad reducida no está aprobada.</p><a class="back-to-scene" href="#scene">Volver al sector</a></fieldset>
+    <button id="restart-scene" class="wide">Reiniciar taller</button><p class="art-note">Sin arte definitivo ni aprobación de perspectiva. H3.3 sigue abierto hasta recibir la maqueta y la revisión del creador.</p>
+   </aside>
+  </div>
+  <footer>Herramienta de desarrollo independiente · Sin motor, partidas, IA o guardados.</footer>
+ </main>
+</body>
+</html>
