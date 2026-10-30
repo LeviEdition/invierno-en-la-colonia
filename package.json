@@ -13,9 +13,13 @@
     "test:poc": "node scripts/check-esbuild-poc-regressions.mjs",
     "build:test": "node scripts/build-test-runtime.mjs",
     "pretest": "npm run build:test",
-    "precheck": "npm run build:test"
+    "precheck": "npm run build:test",
+    "build:hospital": "node scripts/build-hospital-phaser.mjs",
+    "check:hospital-build": "node scripts/build-hospital-phaser.mjs --check",
+    "dev:hospital": "node scripts/serve-hospital.mjs"
   },
   "devDependencies": {
-    "esbuild": "0.28.2"
+    "esbuild": "0.28.2",
+    "phaser": "4.2.1"
   }
 }

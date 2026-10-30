@@ -1,0 +1,173 @@
+{
+  "implementation_commit": "c9452c7af55959a5373510dc6e9c7c87e308eeb9",
+  "pr": 16,
+  "draft": true,
+  "runs": [
+    {
+      "head_sha": "c9452c7af55959a5373510dc6e9c7c87e308eeb9",
+      "url": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40962825768",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "pruebas",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "head_sha": "c9452c7af55959a5373510dc6e9c7c87e308eeb9",
+      "url": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40962825739",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "browser",
+          "conclusion": "success"
+        },
+        {
+          "name": "engine",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "head_sha": "c9452c7af55959a5373510dc6e9c7c87e308eeb9",
+      "url": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40962825850",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "visual",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "visual_artifact_downloaded_and_inspected": true,
+  "chromium_ci": "143.0.7499.4",
+  "viewports": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "mobile_emulation": false,
+      "occlusion": [
+        {
+          "mode": "delante",
+          "show_hidden": false,
+          "visible_ratio": 1
+        },
+        {
+          "mode": "detras",
+          "show_hidden": false,
+          "visible_ratio": 0
+        },
+        {
+          "mode": "esquina",
+          "show_hidden": false,
+          "visible_ratio": 0.5673640167364017
+        },
+        {
+          "mode": "detras",
+          "show_hidden": true,
+          "visible_ratio": 0.990909090909091
+        }
+      ],
+      "pan_pixel_agreement": 1,
+      "checks": [
+        "Mostrar ocultos revela; desactivar restaura oclusión normal",
+        "Seleccionar hospital por clic/tap y descartar al tocar fuera de su alfa",
+        "Arrastre sin selección accidental; imagen completa y sombras se trasladan juntas",
+        "Rueda anclada al cursor y límites superior/inferior",
+        "Botones y posiciones con teclado; flechas/Enter/Escape/0 y restablecimiento"
+      ],
+      "errors": []
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "mobile_emulation": true,
+      "occlusion": [
+        {
+          "mode": "delante",
+          "show_hidden": false,
+          "visible_ratio": 1
+        },
+        {
+          "mode": "detras",
+          "show_hidden": false,
+          "visible_ratio": 0
+        },
+        {
+          "mode": "esquina",
+          "show_hidden": false,
+          "visible_ratio": 0.5667808219178082
+        },
+        {
+          "mode": "detras",
+          "show_hidden": true,
+          "visible_ratio": 0.993322203672788
+        }
+      ],
+      "pan_pixel_agreement": 0.9985236985236985,
+      "checks": [
+        "Mostrar ocultos revela; desactivar restaura oclusión normal",
+        "Seleccionar hospital por clic/tap y descartar al tocar fuera de su alfa",
+        "Arrastre sin selección accidental; imagen completa y sombras se trasladan juntas",
+        "Rueda anclada al cursor y límites superior/inferior",
+        "Botones y posiciones con teclado; flechas/Enter/Escape/0 y restablecimiento",
+        "Pinza CDP de dos dedos: escala y centro estables, sin selección accidental",
+        "Arrastre CDP de un dedo después de pinza, sin selección accidental"
+      ],
+      "errors": []
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "mobile_emulation": true,
+      "occlusion": [
+        {
+          "mode": "delante",
+          "show_hidden": false,
+          "visible_ratio": 1
+        },
+        {
+          "mode": "detras",
+          "show_hidden": false,
+          "visible_ratio": 0
+        },
+        {
+          "mode": "esquina",
+          "show_hidden": false,
+          "visible_ratio": 0.5608011444921316
+        },
+        {
+          "mode": "detras",
+          "show_hidden": true,
+          "visible_ratio": 0.9901269393511989
+        }
+      ],
+      "pan_pixel_agreement": 0.998103323699422,
+      "checks": [
+        "Mostrar ocultos revela; desactivar restaura oclusión normal",
+        "Seleccionar hospital por clic/tap y descartar al tocar fuera de su alfa",
+        "Arrastre sin selección accidental; imagen completa y sombras se trasladan juntas",
+        "Rueda anclada al cursor y límites superior/inferior",
+        "Botones y posiciones con teclado; flechas/Enter/Escape/0 y restablecimiento",
+        "Pinza CDP de dos dedos: escala y centro estables, sin selección accidental",
+        "Arrastre CDP de un dedo después de pinza, sin selección accidental"
+      ],
+      "errors": []
+    }
+  ],
+  "missing_asset_check": "PNG inaccesible: aviso visible y controles deshabilitados, sin sustitución",
+  "reference_html_unchanged": true,
+  "main_unchanged": "826199d96645b95869509995772c914290d63ac7",
+  "scope": "No Android físico, ningún merge ni cambios de reglas. El commit posterior solo documenta este resultado; sus checks se verifican antes de entregar."
+}
