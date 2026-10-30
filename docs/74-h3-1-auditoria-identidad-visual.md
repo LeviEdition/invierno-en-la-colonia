@@ -10,6 +10,8 @@ En móvil se admiten botones de centrado y paneles contextuales. **El resumen co
 
 H3.2 se limita al hospital y Phaser como candidato principal, conservando Canvas de comparación. PixiJS queda como alternativa solo ante un bloqueo concreto, sin PoC paralelo. Debe fijarse versión, respetar originales/pivotes, comparar esquina con tolerancia alrededor de Canvas y medir costos/reinicio/limpieza. La aprobación artística de proporciones, encaje y kit corresponde a H3.3: cambiar renderer no promete mejorar la apariencia. No se autoriza fusionar PR16/17, conectar reglas, construir el mapa completo, publicar o comenzar H3.3.
 
+**Resultado técnico posterior:** H3.2 queda documentada en el [informe76](76-h3-2-phaser-hospital.md), con Phaser4.2.1 fijado, comparación Canvas conservada y reservas de mantenimiento. La prueba estrecha de esquina se calibró de±2 a±3pp tras un fallo de2,40pp en320px, sin modificar geometría. Las afirmaciones de «sin implementación» de este informe describen exclusivamente la entrega histórica H3.1. H3.3 sigue pendiente de autorización.
+
 ## 1. Dictamen ejecutivo
 
 La base permite comenzar una evaluación visual gradual: el motor se ejecuta sin DOM y el hospital demuestra composición 2.5D, cámara y controles. Todavía no hay una representación gráfica conectada al juego. El refactor D1/D2 no convierte automáticamente la presentación actual en una API gráfica completa: persisten estado de interacción privado, un único puerto de presentación y efectos con nombres procedentes de la interfaz HTML.

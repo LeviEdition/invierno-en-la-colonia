@@ -1,5 +1,20 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+
+## H3.2 terminada técnicamente — pendiente de revisión del creador
+
+**Alcance autorizado cumplido:** hospital aislado con Phaser4.2.1/WebGL, rama `experiment/h3-2-phaser-hospital`; implementación `678fd0cd1b6b9c569fad1d507b97d8547468192d`. Sin conexión al motor, nuevas reglas, PixiJS, mapa completo o H3.3. H3.1 aceptada con dirección de **tablero ilustrado2D por capas y mapa continuo de siete localidades**; propuestas anteriores conservadas como historia. PR16/17 siguen sin fusionar.
+
+**Comparación:** PNG/pivotes y referencia Canvas exactos del head auditado PR16 `ba1d93a4ae73a91a6f07660584e2374b53043a67`, copiados sin merge y protegidos por hashes. Delante100%/detrás0%; esquina Canvas56,08–56,74% frente a Phaser53,68–54,85%. La tolerancia inicial±2pp falló en320px (2,40pp); se calibró±3pp con geometría exacta y prueba independiente de cámara/pan. Sin mover recursos ni aprobar arte. Pan framebuffer100% en los tres tamaños.
+
+**Validación local:** npm ci, check:build,480/480 (467 juego+10 Canvas+3 H3.2), build Phaser reproducible. Gates Canvas y Phaser en1365×768,393×852,320×640, teclado/rueda/pinza CDP, selección/ocultos, resize/reset, recursos fallidos y WebGL ausente. Cinco reinicios con listeners/objetos GL estables y disposición final limpia, pérdida/restauración de contexto. Sin errores JS normales ni overflow. Emulación, no Android físico. [Informe76](76-h3-2-phaser-hospital.md) y JSON/capturas guardan evidencia y fallos iniciales.
+
+**Medición final local:** Chromium154 headless, SwiftShader software;18 ensayos secuenciales,3 por configuración/viewport. Canvas listo frío mediana181/207ms; Phaser bajo demanda378/401ms (escritorio/móvil emulado). Bundle1.409.348 bytes, gzip9 376.966; PNG comunes6.478.691. P95 rAF≈16,7–16,8ms, no tiempo GPU; reposo0 draws bajo demanda. Heap JS tras GC≈1,6MiB Canvas/4,8MiB Phaser; VRAM no medida. Resultados no extrapolables al mapa completo o teléfono.
+
+**Revisión crítica:** mitigados listener de visibilidad persistente y textura temporal del framework; adaptador de método protegido fijado a4.2.1 y liberación explícita del contexto. Se conserva el rojo. **Recomendación: ajustar antes de adopción definitiva**, por carga/mantenimiento y pruebas físicas pendientes. No hay mejora artística implícita. El CI del head exacto y el enlace al PR de borrador se verifican al entregar; sus resultados se registran en el PR, sin circularidad documental.
+
+Main remoto826199d9, tag/release de referencia y HTML43b8883a… intactos; SP-03/63 sin cambios. **Única siguiente tarea: revisión del creador del PoC, diff e informe y decisión sobre renderer/H3.3. Detenerse.** Sin merge/publicación automática. Los bloques inferiores conservan la historia y sus checkpoints anteriores.
+
 ## H3.1 aceptada; H3.2 autorizada con dirección visual precisada
 
 Acuerdo del creador: tablero ilustrado2D por capas y mapa continuo de siete localidades, cámara fija con pan/zoom; elementos independientes y personajes estáticos posibles. Botones de centrado/paneles móviles son compatibles, sectores separados no sustituyen al mapa continuo. Sin3D, rotación, navegación libre, distancias, colisiones o nuevas reglas. La propuesta anterior de resumen/sector queda histórica.

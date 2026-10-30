@@ -1,6 +1,6 @@
 # Plan de refactorización — por etapas, sin apuro
 
-> **Ejecución actual:** [tablero 18](18-tablero-operativo.md). D1/D2 y preservación de referencia cerradas. El encargo actual prioriza **H3.1, auditoría y planificación visual**, sin código ni cambios de reglas; [informe 74](74-h3-1-auditoria-identidad-visual.md) y [plan 75](75-plan-hito-3-identidad-visual.md). El hospital fue aceptado como base experimental; PR #16 no se fusiona. H3.2–H3.6 son propuestas sujetas a autorización. SP-03/SP-04 permanecen separados y no se implementan. Las secciones históricas siguientes no conceden autorización para empezar otras fases.
+> **Ejecución actual:** [tablero18](18-tablero-operativo.md). D1/D2 y referencia preservadas. H3.1 aceptada con tablero2D por capas y mapa continuo; H3.2 implementada como experimento aislado del hospital, [informe76](76-h3-2-phaser-hospital.md), pendiente de revisión. Sin fusión PR16/17 ni adopción definitiva del renderer. H3.3–H3.6 siguen sin autorización; SP-03/SP-04 separados e intactos. Las secciones históricas no autorizan otras fases.
 
 ## Objetivos
 

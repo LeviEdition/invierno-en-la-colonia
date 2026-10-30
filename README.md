@@ -24,13 +24,31 @@ Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos un
 
 El [PR15](https://github.com/LeviEdition/invierno-en-la-colonia/pull/15) se integró mediante merge convencional `6b8bfcadfeb99d16a10b6f4576f3b061584ee1f9`, preservando historia yoráculo57872ee. [Informe71](docs/71-integracion-main-y-cierre-d1-d2.md) registra la validación posterior:467/467,40/40 contra cada referencia, partidas Chromium yoffline aprobados. SP-03 permanece conceptual ysin cambios respecto del head aprobado.
 
-**Referencia cerrada:** D1/D2 integradas y versión modular preservada. **Encargo vigente: H3.1, auditoría y planificación de identidad visual**, en una rama documental independiente. El creador aprobó la experiencia del hospital como base experimental; PR #16 sigue abierto y en borrador, sin autorización de merge. No se implementó Phaser ni se autorizó H3.2. SP-03/SP-04 siguen separados y sin cambios. Los commits documentales posteriores al tag no alteran la referencia preservada.
+**Referencia cerrada:** D1/D2 y V9.9 modular preservadas. H3.1 fue aceptada con la dirección de tablero ilustrado por capas y mapa continuo de siete localidades. Esta rama contiene **H3.2, experimento técnico del hospital con Phaser4.2.1**, pendiente de revisión. PR16/17 no están fusionados. SP-03/SP-04 y reglas permanecen intactos; H3.3 no comenzó.
 
-## Experimento visual e inicio de H3
+## Probar H3.2 desde VS Code, sin Python
 
-El [PR #16](https://github.com/LeviEdition/invierno-en-la-colonia/pull/16), rama `prototype/hospital-2-5d`, contiene la escena Canvas 2D aislada del hospital. El código y los originales permanecen en esa rama: esta entrega documental no los incorpora ni sustituye V9.9. [Snapshot del experimento auditado](https://github.com/LeviEdition/invierno-en-la-colonia/tree/ba1d93a4ae73a91a6f07660584e2374b53043a67).
+En esta rama `experiment/h3-2-phaser-hospital`, abrir la carpeta del repositorio en VS Code y **Terminal → Nueva terminal**. Con Node22 o posterior instalado:
 
-H3.1 recomienda evaluar Phaser como renderizador del mundo con HUD HTML y un único motor de reglas. La versión observada es 4.2.1; su fallback Canvas está deprecado y requiere una decisión de compatibilidad. El [informe 74](docs/74-h3-1-auditoria-identidad-visual.md) distingue hechos, pruebas y propuestas. **Siguiente paso: revisión del creador; H3.2 pendiente de autorización.**
+```sh
+npm ci
+npm run dev:hospital
+```
+
+Mantener la terminal abierta y abrir en el navegador del mismo equipo:
+
+- Phaser: http://127.0.0.1:8771/prototypes/hospital-phaser/
+- Referencia Canvas: http://127.0.0.1:8771/prototypes/hospital/
+
+El comando genera el bundle con esbuild y sirve ambos experimentos; Ctrl+C lo detiene. Si el puerto8771 está ocupado, cerrar el servidor anterior o usar otro puerto: PowerShell `$env:HOSPITAL_PORT=8772; npm run dev:hospital`, bash `HOSPITAL_PORT=8772 npm run dev:hospital`; sustituir8771 por8772 en los enlaces. Los cambios JS requieren volver a ejecutar el comando y recargar. No abrir este prototipo mediante doble clic/file://: usa módulos y PNG locales servidos por HTTP.
+
+**Alternativa con Live Server:** ejecutar `npm ci` y `npm run build:hospital`, abrir `prototypes/hospital-phaser/index.html` → «Open with Live Server», desde la raíz completa del repositorio. Para comparar, abrir `prototypes/hospital/index.html` en el mismo servidor. No se usa CDN ni se exige Python; Internet hace falta para la instalación inicial de dependencias, no para la escena ya construida.
+
+Controles HTML: Delante/Detrás/Esquina, Mostrar ocultos, selección, zoom, flechas y restablecer. Arrastre, rueda y pinza sobre la escena; teclado con foco en el canvas: flechas, +/−,0,Enter,Escape. «Restablecer vista» reinicia la cámara; «Reiniciar escena» libera el renderer y carga el estado inicial. Sin WebGL se muestra un aviso y el enlace a Canvas, sin fallback automático de Phaser.
+
+Se reutilizan sin cambios los PNG, pivotes, controles y cámara del [commit auditado PR16](https://github.com/LeviEdition/invierno-en-la-colonia/tree/ba1d93a4ae73a91a6f07660584e2374b53043a67), copiados con manifiesto de hashes, sin merge. Canvas conserva sus archivos originales. [Informe76: comparación, pruebas, costos y reservas](docs/76-h3-2-phaser-hospital.md) · [H3.1](docs/74-h3-1-auditoria-identidad-visual.md) · [plan](docs/75-plan-hito-3-identidad-visual.md).
+
+La escena es independiente del juego. Cambiar renderer no aprueba proporciones, encaje con el suelo ni calidad artística: corresponde a H3.3. El mapa continuo es el objetivo acordado, todavía no construido.
 
 ## Descargar la referencia y jugar offline
 
@@ -48,7 +66,7 @@ La validación cubre Node y Chromium automatizado; no certifica equivalencia reg
 
 ## Desarrollo y construcción
 
-Requiere Node22 o posterior. Ejecutar `npm ci`, `npm run build`, `npm run check:build` y `npm test`. El lockfile fija esbuild0.28.2; no hay dependencias de ejecución externas. Editar módulos `src/` y la plantilla, nunca el HTML generado a mano. `npm run build` empaqueta módulos reales en una IIFE y la inserta en un único HTML autocontenido. La salida conserva la apertura offline.
+Requiere Node22 o posterior. Ejecutar `npm ci`, `npm run build`, `npm run check:build` y `npm test`. El lockfile fija esbuild0.28.2 y, solo para H3.2, Phaser4.2.1. El HTML V9.9 conserva su distribución sin dependencias externas. Editar módulos `src/` y la plantilla, nunca el HTML generado a mano. `npm run build` empaqueta módulos reales en una IIFE y la inserta en un único HTML autocontenido. La salida conserva la apertura offline.
 
 El motor se importa desde `src/application/reference-engine.mjs`, admite reloj/RNG y efectos inyectados, y expone `start`, `dispatch` y `snapshot`. Un motor local funciona sin DOM ni cliente IA. La aplicación conecta vista y agente de referencia por capacidades explícitas; el estado mutable no se publica en window. El paquete de reglas V9.9 sigue representando dos grupos: no existe un nuevo modo singleplayer.
 
