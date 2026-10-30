@@ -1,5 +1,63 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## Hospital 2.5D — acceso local confirmado; revisión visual pendiente
+
+El creador confirmó «listo ya pude acceder» después de las instrucciones de VS Code/Live Server. Bloqueo de acceso local resuelto; README e informe73 registran esa opción sin Python. La confirmación corresponde al acceso, no a aceptación visual del prototipo ni a pruebas físicas de dispositivos o de la alternativa RawGitHack.
+
+Actualización exclusivamente documental, con diff:check aprobado; código, arte, main, referencia y SP-03 intactos. No se repiten pruebas funcionales por este registro. PR16 continúa en borrador. **Única siguiente tarea:** el creador revisa Delante/Detrás/Esquina, Mostrar ocultos, escala y cámara; no se implementan cambios ni se fusiona automáticamente. Los bloques inferiores conservan el historial de acceso y validación.
+
+
+## Acceso al prototipo — alternativa web incorporada · 29/10/2026
+
+El creador reportó rechazo de conexión desde su PC y confirmó que no tiene Python. Se aclaró el alcance de localhost: necesita un servidor activo en ese mismo equipo. Servidor del entornoHTTP200, sin implicar disponibilidad en el PC del usuario. Se añade [vista previa web](https://raw.githack.com/LeviEdition/invierno-en-la-colonia/901a21ea23311dc0860c4e5363836e352ae29d66/prototypes/hospital/index.html) de los archivos públicos del commit901a21e mediante RawGitHack, sin instalar herramientas; no se cambió main, el juego o la release.
+
+**Comprobado:** diez recursos HTTP200, MIME correctos y hashes idénticos al prototipo validado; [evidencia](evidencias/hospital-acceso-web.json). Navegación HTTPS externa desde Chromium administrado bloqueada por ERR_CERT_AUTHORITY_INVALID antes de cargar la app; no se desactivó TLS ni se declara pasada esa prueba. Escena local y CI de901a21e con cuatro checks aprobados. README e informe73 explican acceso web/local y sus límites.
+
+**Única siguiente tarea:** confirmar la apertura de la vista web en el navegador del creador y continuar su revisión visual en PR16, todavía en borrador. Este cambio solo documenta acceso; cámara, arte, reglas, referencia y SP-03 intactos. Los bloques inferiores conservan el historial.
+
+
+## Prueba hospital 2.5D — implementada y validada; revisión visual pendiente · 29/10/2026
+
+**Rama:** `prototype/hospital-2-5d`, [PR16](https://github.com/LeviEdition/invierno-en-la-colonia/pull/16) en borrador, sin fusión. Materiales subidos por el creador ened3578f y sincronizados por fast-forward. PNG hospital/zombi con alfa0–255 real; suelo RGB opaco. Renombrados sin alterar bytes, manifest.json registra procedencia y hashes. Los bloqueos anteriores de archivos están resueltos.
+
+**Resultado:** entrada independiente `prototypes/hospital/`, Canvas2D y módulos sin dependencias nuevas, configuración/cámara/renderizado/controles separados. Tres posiciones con orden explícito, oclusión parcial por alfa en esquina, hospital transparente opcional, sombra separada, selección por alfa y controles HTML de44px. Arrastre, rueda/pinza ancladas, límites, teclado y restablecimiento. Sin movimiento libre ni motor V9.9.
+
+**Validación local:** 10/10 pruebas del prototipo y **477/477** suite completa; check:build y diff:check aprobados. Chromium escritorio1365×768 y móviles emulados393×852/320×640, tres posiciones/ocultos/selección/arrastre/rueda/pinza/teclado/reset;0 excepciones JS y0 overflow horizontal. Comparación de píxeles confirma capas alineadas y visibilidad delante100%, detrás0%, esquina≈56–57%. Fallo simulado de carga con aviso y controles deshabilitados. [Informe73](73-prototipo-visual-hospital-2-5d.md), [JSON](evidencias/hospital-prototipo.json), [delante](evidencias/hospital-delante.png), [esquina](evidencias/hospital-esquina.png). CI del código `c9452c7` aprobado: regresión40962825768, arquitectura/V9.9 (engine/browser)40962825739 y visual40962825850; artifact visual descargado e inspeccionado, con ChromiumCI143 y los tres viewports aprobados. [EvidenciaCI](evidencias/hospital-ci.json). El cierre documental posterior conserva código y recursos; se consultan sus checks exactos antes de entregar.
+
+**Referencia protegida:** main826199d, tagv0.9.9-referencia-modular→62e4e851 y HTML43b8883a… intactos; SP-03, reglas, datos y dependencias sin cambios. Reservas: bitmaps provisionales/zoom, suelo finito, perspectivas fijas; sin Android físico/TalkBack/otros navegadores. La emulación no certifica teléfono real.
+
+**Única siguiente tarea:** revisión visual del creador en PR16 (escala, profundidad y encuadre); no fusionar ni ampliar a otras localidades o mecánicas. Los bloques inferiores conservan la preparación histórica; SP-03/SP-04 siguen separados.
+
+
+## Prueba hospital 2.5D — vistas previas recibidas; carga de originales pendiente · 29/10/2026
+
+Se recibieron en el chat las vistas previas del suelo, zombi y hospital completo. El entorno no expone sus archivos binarios descargables: formato PNG, alfa y hashes siguen sin verificar. No se reconstruyó arte ni se eliminó negro. Se crea `assets/prototipo-hospital/README.md` en la rama `prototype/hospital-2-5d` para permitir subir los originales directamente desde GitHub; por ahora la carpeta contiene instrucciones y no imágenes.
+
+Cámara `bd79053` con474/474 y CI consultado `pruebas`/`engine`/`browser` success; ese navegador verifica V9.9, no una escena del hospital todavía inexistente. Esta actualización solo documenta recepción y acceso. Main826199d, referencia modular y SP-03 intactos; [PR16](https://github.com/LeviEdition/invierno-en-la-colonia/pull/16) sigue en borrador. [Informe73](73-prototipo-visual-hospital-2-5d.md) registra la distinción entre vista previa y archivo original.
+
+**Única siguiente tarea:** subir los tres archivos originales a esta carpeta de la rama del prototipo e inspeccionarlos para completar la escena autorizada. Los bloques inferiores conservan los estados anteriores, incluida la ausencia de la carpeta antes de crear este README.
+
+
+## Prueba hospital 2.5D — cámara probada; pendiente localizar recursos · 29/10/2026
+
+**Continuación del encargo:** el creador indicó `assets/prototipo-hospital`; se comprobaron ruta local, main remoto826199d y rama remota19b5508. La carpeta no aparece en esos árboles y GitHub Contents devuelve404 para ambas ramas. Se solicitó rama/commit o enlace de la carpeta. No se sustituyeron imágenes ni se modificó alfa.
+
+**Avance independiente del arte:** módulo de cámara en `prototypes/hospital/camera.mjs`, sin DOM ni motor; pruebas geométricas de transformación/inversa, arrastre, zoom anclado, pinza, límites y encuadre. Rojo por módulo inexistente, verde7/7. Suite completa **474/474**,0 fallos/omisiones/cancelaciones; `check:build` aprobado. Referencia HTML43b8883a…, tag y main intactos, SP-03 sin cambios. No hay nueva entrada HTML, capturas ni validación visual todavía.
+
+[PR16](https://github.com/LeviEdition/invierno-en-la-colonia/pull/16) en borrador, rama `prototype/hospital-2-5d`; [informe73](73-prototipo-visual-hospital-2-5d.md) actualizado. El CI del avance se consulta por su SHA, sin confundirlo con una prueba de la escena. **Única siguiente tarea:** localizar los tres PNG reales para completar renderizado, controles e inspección visual. El siguiente bloque y los inferiores conservan estados históricos.
+
+
+## Prueba visual aislada 2.5D — preparación bloqueada por PNG · 29/10/2026
+
+**Encargo autorizado:** un sector del hospital con suelo nevado y zombi independientes, Canvas2D, cámara fija con arrastre/zoom, tres posiciones de oclusión, Mostrar ocultos y selección; sin conectar reglas ni sustituir la interfaz existente. Rama `prototype/hospital-2-5d` creada desde main remoto actualizado `826199d96645b95869509995772c914290d63ac7`, limpio y sin avances. No se encontró AGENTS.md aplicable; README, tablero, protocolo15 e informe72 revisados.
+
+**Bloqueo real:** no están disponibles los tres PNG originales: hospital transparente, suelo nevado opaco y zombi transparente. Los adjuntos accesibles solo contienen textos anteriores; las capturas históricas del repositorio no son sustitutos. No se generó arte ni se simuló alfa eliminando colores. Sin esos archivos quedan pendientes escala, anclaje por pies, oclusión, implementación y capturas.
+
+**Verificado ahora:** `npm run check:build` aprobado; HTML de referencia conserva hash43b8883a… y tag anotado v0.9.9-referencia-modular sigue sobre62e4e851. Sin cambios de main, juego o SP-03. Esta preparación solo modifica documentación; no se ejecutaron suite completa ni navegador nuevos, ni se declara listo el prototipo. [Informe73](73-prototipo-visual-hospital-2-5d.md) registra alcance, estado y comprobaciones.
+
+**Única siguiente tarea de la prueba:** recibir los tres PNG originales e inspeccionar dimensiones y alfa para implementar y validar. El diseño SP-03/SP-04 sigue siendo trabajo posterior separado; este experimento visual no autoriza mecánicas ni desarrollo singleplayer. Los estados inferiores son históricos.
+
+
 ## Referencia V9.9 estable y modular preservada — hito2 cerrado · 29/10/2026
 
 **Autorización completada:** tag anotado y [release pública «V9.9 — Referencia estable y modular»](https://github.com/LeviEdition/invierno-en-la-colonia/releases/tag/v0.9.9-referencia-modular). Remoto inicial62e4e851, sin avances ni tags/releases previos. **Commit preservado: `62e4e85150b2416ccf07d671c186b5c421993b0b`**. Tag `v0.9.9-referencia-modular`, objeto `0fdb214612486f4cc46c1acb444390de963d05e8`, destino confirmado mediante Git y API; oráculo57872ee conservado. Los commits posteriores de automatización/documentación no forman parte del tag.

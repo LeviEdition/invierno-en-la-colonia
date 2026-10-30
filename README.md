@@ -24,6 +24,16 @@ El [PR15](https://github.com/LeviEdition/invierno-en-la-colonia/pull/15) se inte
 
 **Etapa de referencia cerrada:** D1/D2 integradas y preservación formal completada. **Próximo trabajo:** diseño SP-03 (ciclo de ronda), seguido de SP-04 (balance de un solo grupo), en una entrega separada; no hay implementación autorizada. SP-03 permanece intacto y no se creó rama del juego propio. Los commits documentales posteriores al tag no cambian la referencia preservada.
 
+## Prueba visual del hospital — rama de revisión
+
+[PR16 en borrador](https://github.com/LeviEdition/invierno-en-la-colonia/pull/16): escena 2.5D independiente de V9.9, con tres PNG originales, demostraciones delante/detrás/esquina y cámara por arrastre/zoom. En la rama `prototype/hospital-2-5d`, servir la raíz con `python3 -m http.server 8770 --bind 127.0.0.1` y abrir **http://127.0.0.1:8770/prototypes/hospital/**. No necesita instalar dependencias para visualizarla.
+
+**[Abrir la vista previa web sin instalar herramientas](https://raw.githack.com/LeviEdition/invierno-en-la-colonia/901a21ea23311dc0860c4e5363836e352ae29d66/prototypes/hospital/index.html)**, mediante RawGitHack y fijada al commit901a21e. El enlace127.0.0.1 de las instrucciones locales requiere que el servidor esté ejecutándose en el mismo equipo donde se abre el navegador.
+
+**Desde VS Code:** abrir la raíz del repositorio, instalar Live Server (Ritwick Dey) y usar **Open with Live Server** sobre `prototypes/hospital/index.html`. Acceso confirmado por el creador; la extensión inicia el servidor local.
+
+[Instrucciones, pruebas, capturas y límites](docs/73-prototipo-visual-hospital-2-5d.md). No se conecta con reglas ni reemplaza la interfaz o distribución offline de referencia. Validación táctil emulada, sin prueba en teléfono físico.
+
 ## Descargar la referencia y jugar offline
 
 Descargá [invierno_colonia_v9_9.html](https://github.com/LeviEdition/invierno-en-la-colonia/releases/download/v0.9.9-referencia-modular/invierno_colonia_v9_9.html) desde la release y abrilo directamente en Chromium, mediante doble clic o «Abrir archivo». No requiere servidor, Node ni Internet para jugar. Conserva los modos contra IA y dos jugadores locales.
