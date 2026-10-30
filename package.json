@@ -16,7 +16,11 @@
     "precheck": "npm run build:test",
     "build:hospital": "node scripts/build-hospital-phaser.mjs",
     "check:hospital-build": "node scripts/build-hospital-phaser.mjs --check",
-    "dev:hospital": "node scripts/serve-hospital.mjs"
+    "dev:hospital": "node scripts/serve-hospital.mjs",
+    "check:workshop-kit": "node scripts/check-workshop-kit.mjs",
+    "build:workshop": "node scripts/build-workshop.mjs",
+    "check:workshop-build": "node scripts/build-workshop.mjs --check",
+    "dev:workshop": "node scripts/serve-workshop.mjs"
   },
   "devDependencies": {
     "esbuild": "0.28.2",

@@ -1,0 +1,64 @@
+name: H3.3 — Taller y kit provisional
+on:
+  pull_request:
+    branches: [experiment/h3-2-phaser-hospital, main]
+    paths:
+      - 'prototypes/**'
+      - 'assets/**'
+      - 'scripts/*workshop*'
+      - 'scripts/*h33*'
+      - 'tests/h33*'
+      - 'test-support/h33*'
+      - 'package*.json'
+      - '.github/workflows/h3-3-workshop.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  workshop:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - run: npm run check:build && npm test
+      - run: node scripts/check-workshop-kit.mjs > /tmp/h33-kit.json
+      - run: npm run build:hospital && npm run check:hospital-build && npm run build:workshop && npm run check:workshop-build
+      - name: Chromium externo al producto
+        run: |
+          npm install --no-save --package-lock=false playwright@1.57.0
+          npx playwright install --with-deps chromium
+      - name: Referencias intactas y taller sobre head exacto
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/serve-workshop.mjs > /tmp/h33-server.log 2>&1 &
+          WORKSHOP_SERVER_PID=$!
+          trap 'kill "$WORKSHOP_SERVER_PID"' EXIT
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:8772/ -o /dev/null && break; sleep 1; done
+          export CHROMIUM_PATH="$(node --input-type=module -e "import {chromium} from 'playwright';console.log(chromium.executablePath())")"
+          git rev-parse HEAD
+          HOSPITAL_URL=http://127.0.0.1:8772/prototypes/hospital/ HOSPITAL_OUTPUT_DIR=/tmp/h33-reference-canvas node scripts/check-hospital-prototype-browser.mjs
+          H32_ORIGIN=http://127.0.0.1:8772 H32_OUTPUT_DIR=/tmp/h33-reference-phaser node scripts/check-h32-browser.mjs
+          node scripts/check-h33-browser.mjs
+          # Comparación de recursos secuencial después de los gates funcionales.
+          node scripts/measure-h33-textures.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: h33-workshop-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            /tmp/h33-reference-canvas/
+            /tmp/h33-reference-phaser/
+            /tmp/h33-browser/
+            /tmp/h33-textures/
+            /tmp/h33-kit.json
+            /tmp/h33-server.log
+            dist/hospital-workshop/build.json
+            dist/hospital-phaser/build.json

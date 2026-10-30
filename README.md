@@ -16,6 +16,7 @@ Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos un
 - [Tablero operativo — próxima tarea](docs/18-tablero-operativo.md)
 - [H3.1 — Auditoría de identidad visual](docs/74-h3-1-auditoria-identidad-visual.md)
 - [Plan propuesto H3.1–H3.6](docs/75-plan-hito-3-identidad-visual.md)
+- [H3.3 — Taller técnico y kit provisional, maqueta pendiente](docs/77-h3-3-taller-visual-y-kit-piloto.md)
 - [Decisión vigente — D1/D2 cerradas y referencia preservada](docs/62-hitos-referencia-fiel-y-juego-propio.md)
 - [Hoja de ruta del singleplayer — bloques SP-00 a SP-08, acuerdos y pendientes](docs/63-hoja-de-ruta-planificacion-singleplayer.md)
 - [Dirección de producto](docs/51-rumbo-fidelidad-e-identidad.md)
@@ -24,7 +25,20 @@ Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos un
 
 El [PR15](https://github.com/LeviEdition/invierno-en-la-colonia/pull/15) se integró mediante merge convencional `6b8bfcadfeb99d16a10b6f4576f3b061584ee1f9`, preservando historia yoráculo57872ee. [Informe71](docs/71-integracion-main-y-cierre-d1-d2.md) registra la validación posterior:467/467,40/40 contra cada referencia, partidas Chromium yoffline aprobados. SP-03 permanece conceptual ysin cambios respecto del head aprobado.
 
-**Referencia cerrada:** D1/D2 y V9.9 modular preservadas. H3.1 fue aceptada con la dirección de tablero ilustrado por capas y mapa continuo de siete localidades. Esta rama contiene **H3.2, experimento técnico del hospital con Phaser4.2.1**, pendiente de revisión, incluida la nitidez observada por el creador. PR16/17 no están fusionados. SP-03/SP-04 y reglas permanecen intactos; H3.3 no comenzó.
+**Referencia cerrada:** D1/D2 y V9.9 modular preservadas. H3.1 fue aceptada con la dirección de tablero ilustrado por capas y mapa continuo de siete localidades. Esta rama añade la **preparación técnica H3.3**, dependiente del experimento H3.2/Phaser4.2.1. No acepta visualmente H3.2 ni sus pruebas físicas pendientes. PR16/17/18 no están fusionados. SP-03/SP-04 y reglas permanecen intactos; H3.3 sigue abierto hasta recibir la maqueta y aprobación artística.
+
+## Taller provisional H3.3 desde VS Code
+
+Rama `experiment/h3-3-taller-visual`, carpeta con package.json y package-lock.json, Node22+. En PowerShell:
+
+```powershell
+npm.cmd ci
+npm.cmd run dev:workshop
+```
+
+Abrir http://127.0.0.1:8772/prototypes/hospital-workshop/ y mantener terminal abierta. Sin Python; npm.cmd evita el bloqueo npm.ps1. El comando construye el taller y también sirve las referencias sin cambios: `/prototypes/hospital/` y `/prototypes/hospital-phaser/` en el mismo puerto8772.
+
+Cuadrícula XY, apoyos/límites/capas, selección y centrado, persona/puerta de referencia, oclusión y casos de4 supervivientes/4 accesos de ensayo. Marcadores y escala provisionales, sin motor o reglas. Los perfiles100/75/50% comparan memoria/detalle sin sustituir H3.2; la reducción no está aprobada. [Guía, Windows/LAN e incorporación de próximos PNG](prototypes/hospital-workshop/README.md) · [contrato del kit](prototypes/hospital-workshop/kit.json) · [evidencia y reservas](docs/77-h3-3-taller-visual-y-kit-piloto.md). No doble clic/file://, editor, importación arbitraria ni guardados.
 
 ## Probar H3.2 desde VS Code, sin Python
 
