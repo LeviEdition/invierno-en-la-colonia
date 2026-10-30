@@ -1,5 +1,14 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## H3.3 — referencias visuales aportadas y acercamiento aprobado · 30/10/2026
+
+El creador aportó maqueta Tinkercad y aprobó la dirección del mapa ilustrado y del acercamiento al hospital con interfaz. [Galería y acuerdos 78](78-h3-3-referencias-visuales-y-acuerdos.md) registra las ocho referencias, evolución y límites. **Los PNG siguen externos en ChatGPT; sus enlaces requieren acceso a la cuenta. Falta incorporarlos como archivos al repositorio.** No se afirma disponibilidad de assets para Codex.
+
+Acuerdos posteriores al encargo del taller: mapa continuo usado principalmente con zoom; vista lejana táctica; retratos seleccionables sobre edificios (4 por localidad exterior, 12 colonia); accesos compartidos punteados (4/12), algunos con 2 al frente y 2 al costado; dossier sombrío con dados del grupo encima de acciones, barra general y menú flotante. El acercamiento con 4 retratos y 2 zombis/2 barricadas fue aprobado como boceto. Datos ilustrativos, no reglas ni prueba interactiva.
+
+**Siguiente trabajo:** incorporar originales, revisar la entrega PR19 y planificar su adaptación acotada a estos acuerdos. La maqueta y dirección visual ya fueron aportadas; reemplazan ese pendiente del encargo inicial, pero no resuelven automáticamente proyección técnica, resolución, presupuesto ni aceptación del taller. H3.3 sigue abierto; H3.2 visual/pruebas físicas siguen pendientes. Sin H3.4, merge, publicación o cambios de reglas. El bloque siguiente conserva la entrega técnica previa como historia.
+
+
 ## H3.3 — preparación técnica del taller autorizada; maqueta pendiente
 
 Autorización del creador: preparar un taller independiente del hospital y un contrato pequeño del kit, con referencias provisionales, posiciones de ensayo y comparación acotada de texturas. **No implica aceptación visual de H3.2 ni pruebas físicas aprobadas.** Phaser4.2.1 sigue como candidato de trabajo.
