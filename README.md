@@ -28,6 +28,8 @@ El [PR15](https://github.com/LeviEdition/invierno-en-la-colonia/pull/15) se inte
 
 [PR16 en borrador](https://github.com/LeviEdition/invierno-en-la-colonia/pull/16): escena 2.5D independiente de V9.9, con tres PNG originales, demostraciones delante/detrás/esquina y cámara por arrastre/zoom. En la rama `prototype/hospital-2-5d`, servir la raíz con `python3 -m http.server 8770 --bind 127.0.0.1` y abrir **http://127.0.0.1:8770/prototypes/hospital/**. No necesita instalar dependencias para visualizarla.
 
+**[Abrir la vista previa web sin instalar herramientas](https://raw.githack.com/LeviEdition/invierno-en-la-colonia/901a21ea23311dc0860c4e5363836e352ae29d66/prototypes/hospital/index.html)**, mediante RawGitHack y fijada al commit901a21e. El enlace127.0.0.1 de las instrucciones locales requiere que el servidor esté ejecutándose en el mismo equipo donde se abre el navegador.
+
 [Instrucciones, pruebas, capturas y límites](docs/73-prototipo-visual-hospital-2-5d.md). No se conecta con reglas ni reemplaza la interfaz o distribución offline de referencia. Validación táctil emulada, sin prueba en teléfono físico.
 
 ## Descargar la referencia y jugar offline

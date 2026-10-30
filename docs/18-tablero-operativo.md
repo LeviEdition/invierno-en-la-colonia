@@ -1,5 +1,14 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## Acceso al prototipo — alternativa web incorporada · 29/10/2026
+
+El creador reportó rechazo de conexión desde su PC y confirmó que no tiene Python. Se aclaró el alcance de localhost: necesita un servidor activo en ese mismo equipo. Servidor del entornoHTTP200, sin implicar disponibilidad en el PC del usuario. Se añade [vista previa web](https://raw.githack.com/LeviEdition/invierno-en-la-colonia/901a21ea23311dc0860c4e5363836e352ae29d66/prototypes/hospital/index.html) de los archivos públicos del commit901a21e mediante RawGitHack, sin instalar herramientas; no se cambió main, el juego o la release.
+
+**Comprobado:** diez recursos HTTP200, MIME correctos y hashes idénticos al prototipo validado; [evidencia](evidencias/hospital-acceso-web.json). Navegación HTTPS externa desde Chromium administrado bloqueada por ERR_CERT_AUTHORITY_INVALID antes de cargar la app; no se desactivó TLS ni se declara pasada esa prueba. Escena local y CI de901a21e con cuatro checks aprobados. README e informe73 explican acceso web/local y sus límites.
+
+**Única siguiente tarea:** confirmar la apertura de la vista web en el navegador del creador y continuar su revisión visual en PR16, todavía en borrador. Este cambio solo documenta acceso; cámara, arte, reglas, referencia y SP-03 intactos. Los bloques inferiores conservan el historial.
+
+
 ## Prueba hospital 2.5D — implementada y validada; revisión visual pendiente · 29/10/2026
 
 **Rama:** `prototype/hospital-2-5d`, [PR16](https://github.com/LeviEdition/invierno-en-la-colonia/pull/16) en borrador, sin fusión. Materiales subidos por el creador ened3578f y sincronizados por fast-forward. PNG hospital/zombi con alfa0–255 real; suelo RGB opaco. Renombrados sin alterar bytes, manifest.json registra procedencia y hashes. Los bloqueos anteriores de archivos están resueltos.

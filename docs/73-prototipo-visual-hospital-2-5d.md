@@ -8,6 +8,18 @@ Rama `prototype/hospital-2-5d`, creada desde main `826199d96645b95869509995772c9
 
 La referencia permanece en el tag anotado `v0.9.9-referencia-modular`, commit `62e4e85150b2416ccf07d671c186b5c421993b0b`. HTML de producto SHA-256 `43b8883ad4821e4b50c40791615c5ef6c0b3030476409b4e1c6da4dbd872d692`, sin cambios. Main y SP-03 intactos; no se modifican módulos, plantilla, dependencias o pruebas anteriores de V9.9.
 
+## Abrir en la web, sin instalar herramientas
+
+**[Vista previa del hospital](https://raw.githack.com/LeviEdition/invierno-en-la-colonia/901a21ea23311dc0860c4e5363836e352ae29d66/prototypes/hospital/index.html)**, servida por RawGitHack desde los archivos públicos del commit `901a21ea23311dc0860c4e5363836e352ae29d66`. Basta abrir el enlace en el navegador; no requiere iniciar un servidor en el dispositivo. Es una vista de revisión del PR mediante un servicio de terceros y queda fijada a ese commit; actualizar el código del prototipo requiere actualizar también la URL para mostrar otra versión.
+
+### Diagnóstico del rechazo de conexión
+
+El creador informó rechazo de conexión al abrir127.0.0.1 desde su PC y confirmó que no tiene Python instalado. Esa dirección apunta al propio equipo donde se abre el navegador: requiere que el comando del servidor haya arrancado allí y permanezca abierto. El servidor del entorno de desarrollo respondió HTTP200, pero eso no inicia un servidor en el PC del creador.
+
+Se comprobó por HTTPS la entrega de los diez archivos de la vista web: HTML, CSS, cinco módulos y tres PNG, todos HTTP200, tipos MIME adecuados y bytes idénticos al checkout validado. [Evidencia de acceso](evidencias/hospital-acceso-web.json). No se publicó una release nueva, cambió main ni modificó el prototipo para resolver el acceso.
+
+La prueba de navegador sobre la URL externa no pudo completarse en el Chromium administrado por `ERR_CERT_AUTHORITY_INVALID` del entorno/proxy; no se desactivó la verificación TLS. Por eso se distinguen **entrega HTTP y hashes comprobados** de **navegación externa pendiente**. La escena sí está validada localmente y en CI sobre los mismos archivos. La apertura del enlace en el navegador del creador queda por confirmar; si aparece una advertencia de certificado, conservarla y revisar el acceso, sin desactivar seguridad.
+
 ## Abrir localmente
 
 La entrada usa módulos nativos y Canvas2D, sin dependencias nuevas ni build propio. Para visualizarla basta Git, Python3 y Chromium. Desde un clon nuevo:
