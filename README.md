@@ -24,7 +24,7 @@ Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos un
 
 El [PR15](https://github.com/LeviEdition/invierno-en-la-colonia/pull/15) se integró mediante merge convencional `6b8bfcadfeb99d16a10b6f4576f3b061584ee1f9`, preservando historia yoráculo57872ee. [Informe71](docs/71-integracion-main-y-cierre-d1-d2.md) registra la validación posterior:467/467,40/40 contra cada referencia, partidas Chromium yoffline aprobados. SP-03 permanece conceptual ysin cambios respecto del head aprobado.
 
-**Referencia cerrada:** D1/D2 y V9.9 modular preservadas. H3.1 fue aceptada con la dirección de tablero ilustrado por capas y mapa continuo de siete localidades. Esta rama contiene **H3.2, experimento técnico del hospital con Phaser4.2.1**, pendiente de revisión. PR16/17 no están fusionados. SP-03/SP-04 y reglas permanecen intactos; H3.3 no comenzó.
+**Referencia cerrada:** D1/D2 y V9.9 modular preservadas. H3.1 fue aceptada con la dirección de tablero ilustrado por capas y mapa continuo de siete localidades. Esta rama contiene **H3.2, experimento técnico del hospital con Phaser4.2.1**, pendiente de revisión, incluida la nitidez observada por el creador. PR16/17 no están fusionados. SP-03/SP-04 y reglas permanecen intactos; H3.3 no comenzó.
 
 ## Probar H3.2 desde VS Code, sin Python
 
@@ -34,6 +34,8 @@ En esta rama `experiment/h3-2-phaser-hospital`, abrir la carpeta del repositorio
 npm ci
 npm run dev:hospital
 ```
+
+**Windows/PowerShell:** si aparece `npm.ps1`/`PSSecurityException`, usar `npm.cmd ci` y `npm.cmd run dev:hospital`; no hace falta cambiar la política de scripts. La terminal debe estar en la carpeta con **package.json y package-lock.json**. Si `npm ci` devuelve EUSAGE por falta del lockfile, comprobar la ubicación y la rama antes de generar otro: no sustituir la instalación reproducible por `npm install` para ocultar ese error.
 
 Mantener la terminal abierta y abrir en el navegador del mismo equipo:
 
@@ -59,6 +61,8 @@ En Windows, `ipconfig` muestra la IPv4 del adaptador Wi-Fi/Ethernet de la PC. De
 El acceso HTTP se comprobó desde loopback y la interfaz virtual del entorno. **No se probó un celular físico ni el router/firewall de tu casa.** Si no conecta, comprobar servidor, misma red, IPv4 y permiso de red privada; usar Canvas para distinguir falta de WebGL de un problema de conexión.
 
 Se reutilizan sin cambios los PNG, pivotes, controles y cámara del [commit auditado PR16](https://github.com/LeviEdition/invierno-en-la-colonia/tree/ba1d93a4ae73a91a6f07660584e2374b53043a67), copiados con manifiesto de hashes, sin merge. Canvas conserva sus archivos originales. [Informe76: comparación, pruebas, costos y reservas](docs/76-h3-2-phaser-hospital.md) · [H3.1](docs/74-h3-1-auditoria-identidad-visual.md) · [plan](docs/75-plan-hito-3-identidad-visual.md).
+
+**Revisión de nitidez:** Phaser usa mipmaps trilineales con texturas auxiliares generadas en memoria; conserva los PNG y sus frames/pivotes. Las comparativas Canvas/antes/después del informe76 incluyen hospital, suelo y zombi al mismo DPR/zoom. Hay diferencias residuales de rasterización y un costo adicional de memoria/carga; la aprobación visual sigue pendiente del creador. No equivale a una adopción definitiva del renderizador.
 
 La escena es independiente del juego. Cambiar renderer no aprueba proporciones, encaje con el suelo ni calidad artística: corresponde a H3.3. El mapa continuo es el objetivo acordado, todavía no construido.
 

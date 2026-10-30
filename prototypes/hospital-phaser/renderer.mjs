@@ -2,6 +2,7 @@ import Phaser from 'phaser';
 import {HospitalGame} from './game.mjs';
 import {waitForStartup} from './startup.mjs';
 import {disposeGame} from './dispose-game.mjs';
+import {addIllustratedTexture} from './texture-quality.mjs';
 import {scene as config,drawOrder,spriteRect} from '../hospital/scene.mjs';
 
 export function webglAvailable(){
@@ -33,9 +34,9 @@ export async function createRenderer(canvas,images,{signal,deadline}={}){
     try{
     if(disposed||signal?.aborted)return;
     world=this;
-    for(const key of ['ground','hospital','zombie'])this.textures.addImage('h32-'+key,images[key]);
+    for(const key of ['ground','hospital','zombie'])addIllustratedTexture(this.textures,'h32-'+key,images[key]);
     this.textures.addCanvas('h32-shadow',shadowTexture());
-    const sprite=(key,asset)=>this.add.image(asset.position?.x||0,asset.position?.y||0,'h32-'+key).setOrigin(asset.anchor.x/images[key].width,asset.anchor.y/images[key].height).setScale(asset.scale);
+    const sprite=(key,asset)=>this.add.image(asset.position?.x||0,asset.position?.y||0,'h32-'+key,'original').setOrigin(asset.anchor.x/images[key].width,asset.anchor.y/images[key].height).setScale(asset.scale);
     objects={ground:sprite('ground',config.ground),hospital:sprite('hospital',config.hospital),zombie:sprite('zombie',config.zombie),shadow:this.add.image(0,0,'h32-shadow').setDisplaySize(38,10),selection:this.add.graphics().setDepth(10)};
     this.game.events.on(Phaser.Core.Events.PRE_RENDER,()=>{preRenderAt=performance.now();});
     this.game.events.on(Phaser.Core.Events.POST_RENDER,()=>{renderEvents++;renderMs+=performance.now()-preRenderAt;if(model&&frameMode==='demand')game.loop.sleep();});
@@ -44,6 +45,7 @@ export async function createRenderer(canvas,images,{signal,deadline}={}){
    }
   }
   game=new HospitalGame({type:Phaser.WEBGL,canvas,width:1,height:1,backgroundColor:'#c5ced8',banner:false,autoFocus:false,
+   render:{mipmapFilter:'LINEAR_MIPMAP_LINEAR'},
    callbacks:{preBoot:instance=>{game=instance;}},audio:{noAudio:true},input:{keyboard:false,mouse:false,touch:false,gamepad:false},scale:{mode:Phaser.Scale.NONE},fps:{target:60},scene:[HospitalScene]});
  await waitForStartup(ready,{signal,deadline});
  window.removeEventListener('error',bootError);

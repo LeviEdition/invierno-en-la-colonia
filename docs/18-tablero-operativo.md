@@ -1,7 +1,19 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## Revisión adicional de nitidez H3.2 — validación y revisión visual pendientes
+
+El creador autoriza revisar la pixelación global en PR18; Phaser sigue siendo candidato, sin H3.3. Base remota6036b81 (4 checks success), rama experimental; dos notas locales de soporte Windows preservadas. Main826199d9, PR16 ba1d93a4 y referencia/tag/release intactos.
+
+**Reproducción confirmada:** resolución/DPR y filtro LINEAR correctos; aliasing de minificación sin mipmaps sobre los PNG NPOT. Comparaciones controladas antialiasGL, mipmaps sin adaptar, adaptación sin mipmaps y combinación. Corrección pequeña mediante API pública: atlas auxiliar potencia de dos en memoria, frame original/pivote intactos, margen mínimo y filtrado trilineal. Arte y Canvas sin cambios. Candidato inicial falla esquina320 por3,0786pp; margen mínimo1 conserva el criterio±3pp, con resultados1,90/0,62/2,94pp. No se movió al personaje ni se amplió la banda.
+
+**Estado local:** npm ci, check:build,483/483, bundle reproducible; Canvas/Phaser3 tamaños, cámara/pan100%, selección, tacto, reinicios/contexto, bfcache real, seis fallos/reintentos de arranque y adaptador aprobados. Comparativas inicial/acercar/alejar enDPR1/1,25/2; aprobación perceptual del creador pendiente. Informe76 registra causa, controles, evidencia previa, derivados y reservas. Aumentan memoria y costo de carga; no se presume calidad por pasar geometría. Se verificará CI sobre el head entregado antes de cerrar la entrega.
+
+**Única siguiente tarea:** revisión del creador de ambas versiones y las capturas, antes de aceptar H3.2. No adopción definitiva, merge, publicación o H3.3. Los apartados siguientes conservan la historia de las entregas anteriores.
+
 
 ## Revisión acotada de cierre H3.2 — corregida localmente, aceptación pendiente
+
+**Consulta de uso posterior:** el creador informa «Inicializando» desde VS Code. Captura posterior confirma bloqueo npm.ps1 por política de PowerShell (PSSecurityException); se indicó npm.cmd ci y npm.cmd run dev:hospital, sin modificar políticas. La posible falta del módulo generado y el resultado final de apertura siguen pendientes de confirmación del creador. Se indicó npm ci + npm run dev:hospital (Node22+), o build:hospital antes de Live Server. Si continúa, revisar primer error de consola. Registro en76; sin nueva implementación, publicación o autorización de H3.3.
 
 Autorización nueva: revisar solo PR18/rama experimental, sin H3.3 ni adopción definitiva. Base320fc92 limpia e igual a FETCH_HEAD remoto. Main826199d9, PR16 ba1d93a4 y tag62e4e851 intactos;480/480 de referencia.
 

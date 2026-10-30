@@ -25,6 +25,7 @@ try{
   const initial=await verifyCamera(page),record={viewport,dpr:initial.app.viewport.dpr,gpu:initial.app.renderer.gpu,occlusion:[],checks:[],errors};evidence.records.push(record);
   assert.equal(initial.app.renderer.phaser,'4.2.1');assert.deepEqual(initial.app.renderer.inputPlugins,{mouse:false,touch:false,keyboard:false});
   const transforms=initial.app.renderer.transforms;
+  for(const key of ['ground','hospital','zombie'])assert.equal(transforms[key].filter,9987,'Texturas ilustradas con reducción trilineal');
   near(transforms.hospital.x,780,1e-9);near(transforms.hospital.y,670,1e-9);near(transforms.hospital.scaleX,.65,1e-9);
   near(transforms.hospital.originX,630/1254,1e-9);near(transforms.hospital.originY,1148/1254,1e-9);
   near(transforms.zombie.originX,716/1175,1e-9);near(transforms.zombie.originY,1218/1338,1e-9);near(transforms.zombie.scaleX,.095,1e-9);
