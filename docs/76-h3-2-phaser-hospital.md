@@ -166,3 +166,17 @@ Implementación: `678fd0cd1b6b9c569fad1d507b97d8547468192d`. La documentación y
 Se descargó el artifact del hospital y se comprobaron los cuatro JSON passed, los tres viewports, cinco reinicios,18 ensayos y el build. **Bundle CI idéntico al local**, incluido SHA-256 y tamaño. [Resumen duradero de CI](evidencias/h32-ci.json) identifica condiciones/versiones de runner separadas de la medición local; los datos y capturas completos quedan en el artifact del run. El commit posterior solo registra este resultado y se comprueba de nuevo en CI; su head final se comunica en el PR y entrega, evitando referenciar el SHA de este mismo documento.
 
 Ramas remotas main826199d9 y prototipo ba1d93a4, tag/release y SP-03 verificados intactos tras preparar el PR. Trabajo detenido para revisión del creador; sin H3.3 ni publicación.
+
+
+## Revisión acotada de cierre solicitada tras PR18 — reproducciones iniciales
+
+Base320fc92, sin cambios locales y coincidente con FETCH_HEAD. No hubo avance remoto ni cambios de main/prototipo/referencia. Se repitieron npm ci y480/480 antes de corregir. La configuración de fetch solo obtiene la rama en FETCH_HEAD, sin ref origin/..., por eso se contrastó directamente ese SHA; no hay divergencia ni pérdida de trabajo.
+
+[Evidencia roja nueva](evidencias/h32-cierre-reproduccion-inicial.json), conservada junto a la evidencia anterior:
+
+- **bfcache confirmado:** Chromium154 con el argumento de Playwright que desactiva bfcache retirado, sin desactivar otras protecciones. Salida a Canvas y Atrás: misma identidad aleatoria del documento, pagehide.persisted=true y pageshow.persisted=true. Estado final disposed, app=null. No es una recarga normal.
+- **Cancelación confirmada en caso controlado:** se retrasa un PNG y se envía pagehide sintético, luego se deja completar; termina ready/publica app. Esta reproducción controla la carrera, no afirma navegación física ni bfcache en ese caso.
+- **Excepción síncrona confirmada:** QA lanza tras super(config) en el constructor; aparece aviso de error, pero Game parcial conserva running/booted/renderer. No basta con mostrar el aviso.
+- **Fallo asíncrono confirmado:** QA lanza en Scene.create; queda loading/starting y aparece pageerror. **Arranque sin completar:** create retorna sin resolver; también queda loading. La observación inicial fue1,5s, no demuestra que ningún driver vaya a fallar así sin la inyección.
+
+Las inyecciones solo existen en bundles construidos por QA con esbuild; no cambian arte ni añaden mecanismos de fallo al producto. Revisión y corrección aún en curso; los cierres previos superiores conservan su carácter histórico y no aceptan automáticamente esta revisión nueva.

@@ -3,28 +3,50 @@ import {fitCamera,panCamera,zoomCameraAt,pinchCamera,screenToWorld} from '../hos
 import {loadImages,makeHospitalHitTest} from '../hospital/renderer.mjs';
 import {bindControls} from '../hospital/controls.mjs';
 import {createRenderer,webglAvailable} from './renderer.mjs';
+import {waitForStartup,STARTUP_TIMEOUT_MS} from './startup.mjs';
 
-let current=null,lastDisposal=null,starts=0,restarts=0,starting=false;
+let current=null,lastDisposal=null,lastError=null,starts=0,restarts=0,starting=false;
+let generation=0,controller=null,serial=Promise.resolve(),pageActive=true;
+const navigation={pageHides:0,bfcacheRestores:0};
 const loading=document.querySelector('#loading'),status=document.querySelector('#renderer-status');
 const canvasTemplate=document.querySelector('#scene').cloneNode(false);
 const controls=()=>[...document.querySelectorAll('button,input')].filter(el=>el.id!=='restart-scene');
-export function inspect(){return {starting,starts,restarts,lastDisposal,state:document.body.dataset.state,app:current?.inspect()||null};}
-export async function disposeExperiment(){
- if(!current)return;const app=current;current=null;await app.destroy();lastDisposal={...app.counters,disposed:true};
- document.body.dataset.state='disposed';controls().forEach(el=>el.disabled=true);status.textContent='Escena liberada. Reiniciar vuelve a cargarla.';
+export function inspect(){return {starting,starts,restarts,lastDisposal,lastError,navigation:{...navigation},state:document.body.dataset.state,app:current?.inspect()||null};}
+async function clearCurrent(){
+ const app=current;current=null;if(!app)return;
+ const result=await app.destroy();lastDisposal={...app.counters,...result,disposed:true};
 }
-async function mount(){
- if(starting)return;starting=true;starts++;document.body.dataset.state='loading';loading.hidden=false;loading.setAttribute('role','status');loading.textContent='Cargando imágenes y WebGL…';controls().forEach(el=>el.disabled=true);
+export function disposeExperiment(){
+ const id=++generation;controller?.abort();controller=null;
+ serial=serial.catch(()=>{}).then(async()=>{
+  await clearCurrent();
+  if(generation!==id)return;
+  starting=false;document.body.dataset.state='disposed';loading.hidden=true;controls().forEach(el=>el.disabled=true);
+  document.querySelector('#restart-scene').disabled=!pageActive;status.textContent='Escena liberada. Reiniciar vuelve a cargarla.';
+ });
+ return serial;
+}
+function mount(){
+ if(!pageActive)return serial;
+ const id=++generation;controller?.abort();const attempt=new AbortController();controller=attempt;starting=true;
  document.querySelector('#restart-scene').disabled=true;
+ serial=serial.catch(()=>{}).then(async()=>{
+  await clearCurrent();if(id!==generation||attempt.signal.aborted)return;
+  await runMount(attempt.signal,id);
+ });
+ return serial;
+}
+async function runMount(signal,id){
+ starts++;lastError=null;document.body.dataset.state='loading';loading.hidden=false;loading.setAttribute('role','status');loading.textContent='Cargando imágenes y WebGL…';controls().forEach(el=>el.disabled=true);
+ const deadline=performance.now()+STARTUP_TIMEOUT_MS;
  let canvas,renderer,observer,unbind,signalController,frame=0;
  try{
-  await disposeExperiment();document.body.dataset.state='loading';
   const old=document.querySelector('#scene'),replacement=canvasTemplate.cloneNode(false);
   replacement.id='scene';replacement.tabIndex=0;replacement.style.width='100%';replacement.style.height='100%';
   if(old)old.replaceWith(replacement);else document.querySelector('.viewport').prepend(replacement);canvas=replacement;
   if(!webglAvailable())throw Error('WEBGL_UNAVAILABLE');
-  const images=await loadImages(),hit=makeHospitalHitTest(images.hospital);
-  renderer=await createRenderer(canvas,images);
+  const images=await waitForStartup(loadImages(),{signal,deadline}),hit=makeHospitalHitTest(images.hospital);
+  signal.throwIfAborted();renderer=await createRenderer(canvas,images,{signal,deadline});signal.throwIfAborted();
   let viewport,camera,initialZoom,position='delante',showHidden=false,selected=false;
   const counters={inputCommands:0,drawRequests:0};
   signalController=new AbortController();const options={signal:signalController.signal};
@@ -52,19 +74,22 @@ async function mount(){
   canvas.addEventListener('webglcontextrestored',()=>{status.textContent='Contexto WebGL recuperado';controls().forEach(el=>el.disabled=false);schedule();},options);
   for(const button of document.querySelectorAll('[data-position]'))button.setAttribute('aria-pressed',String(button.dataset.position==='delante'));
   document.querySelector('#show-hidden').checked=false;document.querySelector('#position-description').textContent=scene.positions.delante.description;select(false);resize();if(frame)cancelAnimationFrame(frame);frame=0;render();
-  await renderer.nextFrame();
-  current={counters,inspect:()=>({camera:{...camera},viewport:{...viewport},position,selected,showHidden,counters:{...counters},renderer:renderer.inspect()}),worldAt:p=>renderer.worldAt(p),diagnosticFrame:kind=>renderer.diagnosticFrame(kind),diagnosticPixels:()=>renderer.diagnosticPixels(),async destroy(){signalController.abort();observer.disconnect();unbind();if(frame)cancelAnimationFrame(frame);frame=0;await renderer.destroy();}};
+  await waitForStartup(renderer.nextFrame(),{signal,deadline});signal.throwIfAborted();
+  current={counters,inspect:()=>({camera:{...camera},viewport:{...viewport},position,selected,showHidden,counters:{...counters},renderer:renderer.inspect()}),worldAt:p=>renderer.worldAt(p),diagnosticFrame:kind=>renderer.diagnosticFrame(kind),diagnosticPixels:()=>renderer.diagnosticPixels(),async destroy(){signalController.abort();observer.disconnect();unbind();if(frame)cancelAnimationFrame(frame);frame=0;return renderer.destroy();}};
   loading.hidden=true;status.textContent='Phaser 4.2.1 · WebGL · misma escena de referencia';document.body.dataset.state='ready';controls().forEach(el=>el.disabled=false);performance.mark('hospital-ready');
  }catch(error){
-  signalController?.abort();observer?.disconnect();unbind?.();if(frame)cancelAnimationFrame(frame);await renderer?.destroy();
-  loading.setAttribute('role','alert');loading.textContent=error.message==='WEBGL_UNAVAILABLE'?'WebGL no está disponible. Podés abrir la referencia Canvas o reintentar.':'No se pudo cargar la escena. Revisá los recursos y reintentá.';
+  signalController?.abort();observer?.disconnect();unbind?.();if(frame)cancelAnimationFrame(frame);const cleanup=await renderer?.destroy();
+  if(signal.aborted||id!==generation)return;
+  lastError={message:error.message,code:error.code||'STARTUP_ERROR',cleanupErrors:error.cleanupErrors||cleanup?.cleanupErrors||[]};
+  loading.setAttribute('role','alert');loading.textContent=error.code==='STARTUP_TIMEOUT'?'El arranque superó 15 segundos. Podés reintentar o abrir Canvas.':error.message==='WEBGL_UNAVAILABLE'?'WebGL no está disponible. Podés abrir la referencia Canvas o reintentar.':'No se pudo cargar la escena. Revisá los recursos y reintentá.';
   status.textContent=error.message==='WEBGL_UNAVAILABLE'?'WebGL requerido; no se usa Canvas deprecado de Phaser.':'Fallo de carga';document.body.dataset.state=error.message==='WEBGL_UNAVAILABLE'?'unsupported':'error';
- }finally{starting=false;document.querySelector('#restart-scene').disabled=false;}
+ }finally{if(id===generation){starting=false;document.querySelector('#restart-scene').disabled=false;}}
 }
 export function worldAt(point){return current?.worldAt(point)||null;}
 // Sondas de comparación del PoC: no están conectadas a los controles normales.
 export async function diagnosticFrame(kind){if(!new URLSearchParams(location.search).has('diagnostics'))throw Error('Requiere modo diagnóstico');await current?.diagnosticFrame(kind);}
 export async function diagnosticPixels(){if(!new URLSearchParams(location.search).has('diagnostics'))throw Error('Requiere modo diagnóstico');return current?.diagnosticPixels();}
 document.querySelector('#restart-scene').addEventListener('click',()=>{restarts++;void mount();});
-window.addEventListener('pagehide',()=>{void disposeExperiment();},{once:true});
+window.addEventListener('pagehide',()=>{pageActive=false;navigation.pageHides++;void disposeExperiment();});
+window.addEventListener('pageshow',event=>{pageActive=true;if(event.persisted){navigation.bfcacheRestores++;void mount();}});
 void mount();

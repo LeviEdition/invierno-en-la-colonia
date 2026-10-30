@@ -1,0 +1,1936 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "bfcacheConfiguration": "Se retira únicamente --disable-back-forward-cache de Playwright; persisted y token prueban cada restauración real",
+  "navigation": [
+    {
+      "cycle": 1,
+      "restoredFromBfcache": true,
+      "before": {
+        "visit": {
+          "id": "4861c3cd-b7fe-422c-aaeb-4b375b526254",
+          "events": [
+            {
+              "type": "pageshow",
+              "persisted": false,
+              "time": 394.89999997615814,
+              "ticks": 6
+            }
+          ],
+          "freezeEvents": [],
+          "ticks": 25
+        },
+        "app": {
+          "starting": false,
+          "starts": 1,
+          "restarts": 0,
+          "lastDisposal": null,
+          "lastError": null,
+          "navigation": {
+            "pageHides": 0,
+            "bfcacheRestores": 0
+          },
+          "state": "ready",
+          "app": {
+            "camera": {
+              "x": -94.49999999999989,
+              "y": -7.166666666666629,
+              "zoom": 0.7083333333333333,
+              "minZoom": 0.2833333333333333,
+              "maxZoom": 2.2666666666666666
+            },
+            "viewport": {
+              "width": 916,
+              "height": 524,
+              "dpr": 1
+            },
+            "position": "esquina",
+            "selected": true,
+            "showHidden": true,
+            "counters": {
+              "inputCommands": 4,
+              "drawRequests": 6
+            },
+            "renderer": {
+              "phaser": "4.2.1",
+              "backend": "WebGL",
+              "frameMode": "demand",
+              "loopRunning": false,
+              "hasFocus": false,
+              "clockInFocus": true,
+              "clockPauseTime": 0,
+              "clockPauseDuration": 0,
+              "gpu": {
+                "vendor": "Google Inc. (Google)",
+                "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+                "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+                "maxTextureSize": 8192
+              },
+              "renderEvents": 7,
+              "renderMs": 25.899999976158142,
+              "textureKeys": [
+                "h32-ground",
+                "h32-hospital",
+                "h32-zombie",
+                "h32-shadow"
+              ],
+              "objectCount": 5,
+              "inputPlugins": {
+                "mouse": false,
+                "touch": false,
+                "keyboard": false
+              },
+              "actorBounds": {
+                "x": 342.98,
+                "y": 404.28999999999996,
+                "width": 111.625,
+                "height": 127.11
+              },
+              "transforms": {
+                "ground": {
+                  "x": 0,
+                  "y": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "originX": 0,
+                  "originY": 0,
+                  "depth": 0,
+                  "filter": 9729,
+                  "textureWidth": 1536,
+                  "textureHeight": 1024
+                },
+                "hospital": {
+                  "x": 780,
+                  "y": 670,
+                  "scaleX": 0.65,
+                  "scaleY": 0.65,
+                  "originX": 0.5023923444976076,
+                  "originY": 0.9154704944178629,
+                  "depth": 3,
+                  "filter": 9729,
+                  "textureWidth": 1254,
+                  "textureHeight": 1254
+                },
+                "zombie": {
+                  "x": 411,
+                  "y": 520,
+                  "scaleX": 0.095,
+                  "scaleY": 0.095,
+                  "originX": 0.6093617021276596,
+                  "originY": 0.9103139013452914,
+                  "depth": 2,
+                  "filter": 9729,
+                  "textureWidth": 1175,
+                  "textureHeight": 1338
+                },
+                "shadow": {
+                  "x": 404,
+                  "y": 519,
+                  "scaleX": 0.296875,
+                  "scaleY": 0.15625,
+                  "originX": 0.5,
+                  "originY": 0.5,
+                  "depth": 1,
+                  "filter": 9729,
+                  "textureWidth": 128,
+                  "textureHeight": 64
+                }
+              }
+            }
+          }
+        }
+      },
+      "after": {
+        "visit": {
+          "id": "4861c3cd-b7fe-422c-aaeb-4b375b526254",
+          "events": [
+            {
+              "type": "pageshow",
+              "persisted": false,
+              "time": 394.89999997615814,
+              "ticks": 6
+            },
+            {
+              "type": "pagehide",
+              "persisted": true,
+              "time": 1189.0999999940395,
+              "ticks": 26
+            },
+            {
+              "type": "pageshow",
+              "persisted": true,
+              "time": 1568.8999999761581,
+              "ticks": 26
+            }
+          ],
+          "freezeEvents": [
+            {
+              "type": "freeze",
+              "ticks": 26,
+              "time": 1215.7999999821186
+            },
+            {
+              "type": "resume",
+              "ticks": 26,
+              "time": 1568.5
+            }
+          ],
+          "ticks": 29
+        },
+        "app": {
+          "starting": false,
+          "starts": 2,
+          "restarts": 0,
+          "lastDisposal": {
+            "inputCommands": 4,
+            "drawRequests": 6,
+            "cleanupErrors": [],
+            "disposed": true
+          },
+          "lastError": null,
+          "navigation": {
+            "pageHides": 1,
+            "bfcacheRestores": 1
+          },
+          "state": "ready",
+          "app": {
+            "camera": {
+              "x": 16,
+              "y": 46.666666666666686,
+              "zoom": 0.5666666666666667,
+              "minZoom": 0.2833333333333333,
+              "maxZoom": 2.2666666666666666
+            },
+            "viewport": {
+              "width": 916,
+              "height": 524,
+              "dpr": 1
+            },
+            "position": "delante",
+            "selected": false,
+            "showHidden": false,
+            "counters": {
+              "inputCommands": 0,
+              "drawRequests": 2
+            },
+            "renderer": {
+              "phaser": "4.2.1",
+              "backend": "WebGL",
+              "frameMode": "demand",
+              "loopRunning": false,
+              "hasFocus": false,
+              "clockInFocus": true,
+              "clockPauseTime": 0,
+              "clockPauseDuration": 0,
+              "gpu": {
+                "vendor": "Google Inc. (Google)",
+                "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+                "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+                "maxTextureSize": 8192
+              },
+              "renderEvents": 3,
+              "renderMs": 12.599999994039536,
+              "textureKeys": [
+                "h32-ground",
+                "h32-hospital",
+                "h32-zombie",
+                "h32-shadow"
+              ],
+              "objectCount": 5,
+              "inputPlugins": {
+                "mouse": false,
+                "touch": false,
+                "keyboard": false
+              },
+              "actorBounds": {
+                "x": 641.98,
+                "y": 554.29,
+                "width": 111.625,
+                "height": 127.11
+              },
+              "transforms": {
+                "ground": {
+                  "x": 0,
+                  "y": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "originX": 0,
+                  "originY": 0,
+                  "depth": 0,
+                  "filter": 9729,
+                  "textureWidth": 1536,
+                  "textureHeight": 1024
+                },
+                "hospital": {
+                  "x": 780,
+                  "y": 670,
+                  "scaleX": 0.65,
+                  "scaleY": 0.65,
+                  "originX": 0.5023923444976076,
+                  "originY": 0.9154704944178629,
+                  "depth": 2,
+                  "filter": 9729,
+                  "textureWidth": 1254,
+                  "textureHeight": 1254
+                },
+                "zombie": {
+                  "x": 710,
+                  "y": 670,
+                  "scaleX": 0.095,
+                  "scaleY": 0.095,
+                  "originX": 0.6093617021276596,
+                  "originY": 0.9103139013452914,
+                  "depth": 3,
+                  "filter": 9729,
+                  "textureWidth": 1175,
+                  "textureHeight": 1338
+                },
+                "shadow": {
+                  "x": 703,
+                  "y": 669,
+                  "scaleX": 0.296875,
+                  "scaleY": 0.15625,
+                  "originX": 0.5,
+                  "originY": 0.5,
+                  "depth": 1,
+                  "filter": 9729,
+                  "textureWidth": 128,
+                  "textureHeight": 64
+                }
+              }
+            }
+          }
+        },
+        "resources": {
+          "listeners": [
+            {
+              "target": "document",
+              "type": "fullscreenchange"
+            },
+            {
+              "target": "document",
+              "type": "fullscreenerror"
+            },
+            {
+              "target": "document",
+              "type": "mozfullscreenchange"
+            },
+            {
+              "target": "document",
+              "type": "mozfullscreenerror"
+            },
+            {
+              "target": "document",
+              "type": "MSFullscreenChange"
+            },
+            {
+              "target": "document",
+              "type": "MSFullscreenError"
+            },
+            {
+              "target": "document",
+              "type": "visibilitychange"
+            },
+            {
+              "target": "document",
+              "type": "webkitfullscreenchange"
+            },
+            {
+              "target": "document",
+              "type": "webkitfullscreenerror"
+            },
+            {
+              "target": "scene",
+              "type": "keydown"
+            },
+            {
+              "target": "scene",
+              "type": "lostpointercapture"
+            },
+            {
+              "target": "scene",
+              "type": "pointercancel"
+            },
+            {
+              "target": "scene",
+              "type": "pointerdown"
+            },
+            {
+              "target": "scene",
+              "type": "pointermove"
+            },
+            {
+              "target": "scene",
+              "type": "pointerup"
+            },
+            {
+              "target": "scene",
+              "type": "webglcontextlost"
+            },
+            {
+              "target": "scene",
+              "type": "webglcontextlost"
+            },
+            {
+              "target": "scene",
+              "type": "webglcontextrestored"
+            },
+            {
+              "target": "scene",
+              "type": "webglcontextrestored"
+            },
+            {
+              "target": "scene",
+              "type": "wheel"
+            },
+            {
+              "target": "window",
+              "type": "blur"
+            },
+            {
+              "target": "window",
+              "type": "blur"
+            },
+            {
+              "target": "window",
+              "type": "focus"
+            },
+            {
+              "target": "window",
+              "type": "pagehide"
+            },
+            {
+              "target": "window",
+              "type": "pageshow"
+            },
+            {
+              "target": "window",
+              "type": "resize"
+            }
+          ],
+          "resizeTargets": 1,
+          "gl": {
+            "Texture": 9,
+            "Buffer": 9,
+            "Framebuffer": 0,
+            "Renderbuffer": 0,
+            "Program": 1,
+            "Shader": 2
+          },
+          "startupTimers": 0,
+          "activeSceneContexts": 1
+        },
+        "timerSuspension": {
+          "frozen": {
+            "type": "freeze",
+            "ticks": 26,
+            "time": 1215.7999999821186
+          },
+          "resumed": {
+            "type": "resume",
+            "ticks": 26,
+            "time": 1568.5
+          }
+        }
+      }
+    },
+    {
+      "cycle": 2,
+      "restoredFromBfcache": true,
+      "before": {
+        "visit": {
+          "id": "4861c3cd-b7fe-422c-aaeb-4b375b526254",
+          "events": [
+            {
+              "type": "pageshow",
+              "persisted": false,
+              "time": 394.89999997615814,
+              "ticks": 6
+            },
+            {
+              "type": "pagehide",
+              "persisted": true,
+              "time": 1189.0999999940395,
+              "ticks": 26
+            },
+            {
+              "type": "pageshow",
+              "persisted": true,
+              "time": 1568.8999999761581,
+              "ticks": 26
+            }
+          ],
+          "freezeEvents": [
+            {
+              "type": "freeze",
+              "ticks": 26,
+              "time": 1215.7999999821186
+            },
+            {
+              "type": "resume",
+              "ticks": 26,
+              "time": 1568.5
+            }
+          ],
+          "ticks": 43
+        },
+        "app": {
+          "starting": false,
+          "starts": 2,
+          "restarts": 0,
+          "lastDisposal": {
+            "inputCommands": 4,
+            "drawRequests": 6,
+            "cleanupErrors": [],
+            "disposed": true
+          },
+          "lastError": null,
+          "navigation": {
+            "pageHides": 1,
+            "bfcacheRestores": 1
+          },
+          "state": "ready",
+          "app": {
+            "camera": {
+              "x": -232.62499999999977,
+              "y": -74.45833333333326,
+              "zoom": 0.8854166666666665,
+              "minZoom": 0.2833333333333333,
+              "maxZoom": 2.2666666666666666
+            },
+            "viewport": {
+              "width": 916,
+              "height": 524,
+              "dpr": 1
+            },
+            "position": "esquina",
+            "selected": true,
+            "showHidden": true,
+            "counters": {
+              "inputCommands": 5,
+              "drawRequests": 7
+            },
+            "renderer": {
+              "phaser": "4.2.1",
+              "backend": "WebGL",
+              "frameMode": "demand",
+              "loopRunning": false,
+              "hasFocus": false,
+              "clockInFocus": true,
+              "clockPauseTime": 0,
+              "clockPauseDuration": 0,
+              "gpu": {
+                "vendor": "Google Inc. (Google)",
+                "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+                "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+                "maxTextureSize": 8192
+              },
+              "renderEvents": 8,
+              "renderMs": 14.900000005960464,
+              "textureKeys": [
+                "h32-ground",
+                "h32-hospital",
+                "h32-zombie",
+                "h32-shadow"
+              ],
+              "objectCount": 5,
+              "inputPlugins": {
+                "mouse": false,
+                "touch": false,
+                "keyboard": false
+              },
+              "actorBounds": {
+                "x": 342.98,
+                "y": 404.28999999999996,
+                "width": 111.625,
+                "height": 127.11
+              },
+              "transforms": {
+                "ground": {
+                  "x": 0,
+                  "y": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "originX": 0,
+                  "originY": 0,
+                  "depth": 0,
+                  "filter": 9729,
+                  "textureWidth": 1536,
+                  "textureHeight": 1024
+                },
+                "hospital": {
+                  "x": 780,
+                  "y": 670,
+                  "scaleX": 0.65,
+                  "scaleY": 0.65,
+                  "originX": 0.5023923444976076,
+                  "originY": 0.9154704944178629,
+                  "depth": 3,
+                  "filter": 9729,
+                  "textureWidth": 1254,
+                  "textureHeight": 1254
+                },
+                "zombie": {
+                  "x": 411,
+                  "y": 520,
+                  "scaleX": 0.095,
+                  "scaleY": 0.095,
+                  "originX": 0.6093617021276596,
+                  "originY": 0.9103139013452914,
+                  "depth": 2,
+                  "filter": 9729,
+                  "textureWidth": 1175,
+                  "textureHeight": 1338
+                },
+                "shadow": {
+                  "x": 404,
+                  "y": 519,
+                  "scaleX": 0.296875,
+                  "scaleY": 0.15625,
+                  "originX": 0.5,
+                  "originY": 0.5,
+                  "depth": 1,
+                  "filter": 9729,
+                  "textureWidth": 128,
+                  "textureHeight": 64
+                }
+              }
+            }
+          }
+        }
+      },
+      "after": {
+        "visit": {
+          "id": "4861c3cd-b7fe-422c-aaeb-4b375b526254",
+          "events": [
+            {
+              "type": "pageshow",
+              "persisted": false,
+              "time": 394.89999997615814,
+              "ticks": 6
+            },
+            {
+              "type": "pagehide",
+              "persisted": true,
+              "time": 1189.0999999940395,
+              "ticks": 26
+            },
+            {
+              "type": "pageshow",
+              "persisted": true,
+              "time": 1568.8999999761581,
+              "ticks": 26
+            },
+            {
+              "type": "pagehide",
+              "persisted": true,
+              "time": 2224,
+              "ticks": 44
+            },
+            {
+              "type": "pageshow",
+              "persisted": true,
+              "time": 2630,
+              "ticks": 44
+            }
+          ],
+          "freezeEvents": [
+            {
+              "type": "freeze",
+              "ticks": 26,
+              "time": 1215.7999999821186
+            },
+            {
+              "type": "resume",
+              "ticks": 26,
+              "time": 1568.5
+            },
+            {
+              "type": "freeze",
+              "ticks": 44,
+              "time": 2243.7999999821186
+            },
+            {
+              "type": "resume",
+              "ticks": 44,
+              "time": 2629.5999999940395
+            }
+          ],
+          "ticks": 47
+        },
+        "app": {
+          "starting": false,
+          "starts": 3,
+          "restarts": 0,
+          "lastDisposal": {
+            "inputCommands": 5,
+            "drawRequests": 7,
+            "cleanupErrors": [],
+            "disposed": true
+          },
+          "lastError": null,
+          "navigation": {
+            "pageHides": 2,
+            "bfcacheRestores": 2
+          },
+          "state": "ready",
+          "app": {
+            "camera": {
+              "x": 16,
+              "y": 46.666666666666686,
+              "zoom": 0.5666666666666667,
+              "minZoom": 0.2833333333333333,
+              "maxZoom": 2.2666666666666666
+            },
+            "viewport": {
+              "width": 916,
+              "height": 524,
+              "dpr": 1
+            },
+            "position": "delante",
+            "selected": false,
+            "showHidden": false,
+            "counters": {
+              "inputCommands": 0,
+              "drawRequests": 2
+            },
+            "renderer": {
+              "phaser": "4.2.1",
+              "backend": "WebGL",
+              "frameMode": "demand",
+              "loopRunning": false,
+              "hasFocus": false,
+              "clockInFocus": true,
+              "clockPauseTime": 0,
+              "clockPauseDuration": 0,
+              "gpu": {
+                "vendor": "Google Inc. (Google)",
+                "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+                "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+                "maxTextureSize": 8192
+              },
+              "renderEvents": 3,
+              "renderMs": 8.899999976158142,
+              "textureKeys": [
+                "h32-ground",
+                "h32-hospital",
+                "h32-zombie",
+                "h32-shadow"
+              ],
+              "objectCount": 5,
+              "inputPlugins": {
+                "mouse": false,
+                "touch": false,
+                "keyboard": false
+              },
+              "actorBounds": {
+                "x": 641.98,
+                "y": 554.29,
+                "width": 111.625,
+                "height": 127.11
+              },
+              "transforms": {
+                "ground": {
+                  "x": 0,
+                  "y": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "originX": 0,
+                  "originY": 0,
+                  "depth": 0,
+                  "filter": 9729,
+                  "textureWidth": 1536,
+                  "textureHeight": 1024
+                },
+                "hospital": {
+                  "x": 780,
+                  "y": 670,
+                  "scaleX": 0.65,
+                  "scaleY": 0.65,
+                  "originX": 0.5023923444976076,
+                  "originY": 0.9154704944178629,
+                  "depth": 2,
+                  "filter": 9729,
+                  "textureWidth": 1254,
+                  "textureHeight": 1254
+                },
+                "zombie": {
+                  "x": 710,
+                  "y": 670,
+                  "scaleX": 0.095,
+                  "scaleY": 0.095,
+                  "originX": 0.6093617021276596,
+                  "originY": 0.9103139013452914,
+                  "depth": 3,
+                  "filter": 9729,
+                  "textureWidth": 1175,
+                  "textureHeight": 1338
+                },
+                "shadow": {
+                  "x": 703,
+                  "y": 669,
+                  "scaleX": 0.296875,
+                  "scaleY": 0.15625,
+                  "originX": 0.5,
+                  "originY": 0.5,
+                  "depth": 1,
+                  "filter": 9729,
+                  "textureWidth": 128,
+                  "textureHeight": 64
+                }
+              }
+            }
+          }
+        },
+        "resources": {
+          "listeners": [
+            {
+              "target": "document",
+              "type": "fullscreenchange"
+            },
+            {
+              "target": "document",
+              "type": "fullscreenerror"
+            },
+            {
+              "target": "document",
+              "type": "mozfullscreenchange"
+            },
+            {
+              "target": "document",
+              "type": "mozfullscreenerror"
+            },
+            {
+              "target": "document",
+              "type": "MSFullscreenChange"
+            },
+            {
+              "target": "document",
+              "type": "MSFullscreenError"
+            },
+            {
+              "target": "document",
+              "type": "visibilitychange"
+            },
+            {
+              "target": "document",
+              "type": "webkitfullscreenchange"
+            },
+            {
+              "target": "document",
+              "type": "webkitfullscreenerror"
+            },
+            {
+              "target": "scene",
+              "type": "keydown"
+            },
+            {
+              "target": "scene",
+              "type": "lostpointercapture"
+            },
+            {
+              "target": "scene",
+              "type": "pointercancel"
+            },
+            {
+              "target": "scene",
+              "type": "pointerdown"
+            },
+            {
+              "target": "scene",
+              "type": "pointermove"
+            },
+            {
+              "target": "scene",
+              "type": "pointerup"
+            },
+            {
+              "target": "scene",
+              "type": "webglcontextlost"
+            },
+            {
+              "target": "scene",
+              "type": "webglcontextlost"
+            },
+            {
+              "target": "scene",
+              "type": "webglcontextrestored"
+            },
+            {
+              "target": "scene",
+              "type": "webglcontextrestored"
+            },
+            {
+              "target": "scene",
+              "type": "wheel"
+            },
+            {
+              "target": "window",
+              "type": "blur"
+            },
+            {
+              "target": "window",
+              "type": "blur"
+            },
+            {
+              "target": "window",
+              "type": "focus"
+            },
+            {
+              "target": "window",
+              "type": "pagehide"
+            },
+            {
+              "target": "window",
+              "type": "pageshow"
+            },
+            {
+              "target": "window",
+              "type": "resize"
+            }
+          ],
+          "resizeTargets": 1,
+          "gl": {
+            "Texture": 9,
+            "Buffer": 9,
+            "Framebuffer": 0,
+            "Renderbuffer": 0,
+            "Program": 1,
+            "Shader": 2
+          },
+          "startupTimers": 0,
+          "activeSceneContexts": 1
+        },
+        "timerSuspension": {
+          "frozen": {
+            "type": "freeze",
+            "ticks": 44,
+            "time": 2243.7999999821186
+          },
+          "resumed": {
+            "type": "resume",
+            "ticks": 44,
+            "time": 2629.5999999940395
+          }
+        }
+      }
+    },
+    {
+      "cycle": 3,
+      "restoredFromBfcache": true,
+      "before": {
+        "visit": {
+          "id": "4861c3cd-b7fe-422c-aaeb-4b375b526254",
+          "events": [
+            {
+              "type": "pageshow",
+              "persisted": false,
+              "time": 394.89999997615814,
+              "ticks": 6
+            },
+            {
+              "type": "pagehide",
+              "persisted": true,
+              "time": 1189.0999999940395,
+              "ticks": 26
+            },
+            {
+              "type": "pageshow",
+              "persisted": true,
+              "time": 1568.8999999761581,
+              "ticks": 26
+            },
+            {
+              "type": "pagehide",
+              "persisted": true,
+              "time": 2224,
+              "ticks": 44
+            },
+            {
+              "type": "pageshow",
+              "persisted": true,
+              "time": 2630,
+              "ticks": 44
+            }
+          ],
+          "freezeEvents": [
+            {
+              "type": "freeze",
+              "ticks": 26,
+              "time": 1215.7999999821186
+            },
+            {
+              "type": "resume",
+              "ticks": 26,
+              "time": 1568.5
+            },
+            {
+              "type": "freeze",
+              "ticks": 44,
+              "time": 2243.7999999821186
+            },
+            {
+              "type": "resume",
+              "ticks": 44,
+              "time": 2629.5999999940395
+            }
+          ],
+          "ticks": 59
+        },
+        "app": {
+          "starting": false,
+          "starts": 3,
+          "restarts": 0,
+          "lastDisposal": {
+            "inputCommands": 5,
+            "drawRequests": 7,
+            "cleanupErrors": [],
+            "disposed": true
+          },
+          "lastError": null,
+          "navigation": {
+            "pageHides": 2,
+            "bfcacheRestores": 2
+          },
+          "state": "ready",
+          "app": {
+            "camera": {
+              "x": -232.62499999999977,
+              "y": -74.45833333333326,
+              "zoom": 0.8854166666666665,
+              "minZoom": 0.2833333333333333,
+              "maxZoom": 2.2666666666666666
+            },
+            "viewport": {
+              "width": 916,
+              "height": 524,
+              "dpr": 1
+            },
+            "position": "esquina",
+            "selected": true,
+            "showHidden": true,
+            "counters": {
+              "inputCommands": 5,
+              "drawRequests": 7
+            },
+            "renderer": {
+              "phaser": "4.2.1",
+              "backend": "WebGL",
+              "frameMode": "demand",
+              "loopRunning": false,
+              "hasFocus": false,
+              "clockInFocus": true,
+              "clockPauseTime": 0,
+              "clockPauseDuration": 0,
+              "gpu": {
+                "vendor": "Google Inc. (Google)",
+                "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+                "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+                "maxTextureSize": 8192
+              },
+              "renderEvents": 8,
+              "renderMs": 11.199999988079071,
+              "textureKeys": [
+                "h32-ground",
+                "h32-hospital",
+                "h32-zombie",
+                "h32-shadow"
+              ],
+              "objectCount": 5,
+              "inputPlugins": {
+                "mouse": false,
+                "touch": false,
+                "keyboard": false
+              },
+              "actorBounds": {
+                "x": 342.98,
+                "y": 404.28999999999996,
+                "width": 111.625,
+                "height": 127.11
+              },
+              "transforms": {
+                "ground": {
+                  "x": 0,
+                  "y": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "originX": 0,
+                  "originY": 0,
+                  "depth": 0,
+                  "filter": 9729,
+                  "textureWidth": 1536,
+                  "textureHeight": 1024
+                },
+                "hospital": {
+                  "x": 780,
+                  "y": 670,
+                  "scaleX": 0.65,
+                  "scaleY": 0.65,
+                  "originX": 0.5023923444976076,
+                  "originY": 0.9154704944178629,
+                  "depth": 3,
+                  "filter": 9729,
+                  "textureWidth": 1254,
+                  "textureHeight": 1254
+                },
+                "zombie": {
+                  "x": 411,
+                  "y": 520,
+                  "scaleX": 0.095,
+                  "scaleY": 0.095,
+                  "originX": 0.6093617021276596,
+                  "originY": 0.9103139013452914,
+                  "depth": 2,
+                  "filter": 9729,
+                  "textureWidth": 1175,
+                  "textureHeight": 1338
+                },
+                "shadow": {
+                  "x": 404,
+                  "y": 519,
+                  "scaleX": 0.296875,
+                  "scaleY": 0.15625,
+                  "originX": 0.5,
+                  "originY": 0.5,
+                  "depth": 1,
+                  "filter": 9729,
+                  "textureWidth": 128,
+                  "textureHeight": 64
+                }
+              }
+            }
+          }
+        }
+      },
+      "after": {
+        "visit": {
+          "id": "4861c3cd-b7fe-422c-aaeb-4b375b526254",
+          "events": [
+            {
+              "type": "pageshow",
+              "persisted": false,
+              "time": 394.89999997615814,
+              "ticks": 6
+            },
+            {
+              "type": "pagehide",
+              "persisted": true,
+              "time": 1189.0999999940395,
+              "ticks": 26
+            },
+            {
+              "type": "pageshow",
+              "persisted": true,
+              "time": 1568.8999999761581,
+              "ticks": 26
+            },
+            {
+              "type": "pagehide",
+              "persisted": true,
+              "time": 2224,
+              "ticks": 44
+            },
+            {
+              "type": "pageshow",
+              "persisted": true,
+              "time": 2630,
+              "ticks": 44
+            },
+            {
+              "type": "pagehide",
+              "persisted": true,
+              "time": 3190.199999988079,
+              "ticks": 59
+            },
+            {
+              "type": "pageshow",
+              "persisted": true,
+              "time": 3613.899999976158,
+              "ticks": 60
+            }
+          ],
+          "freezeEvents": [
+            {
+              "type": "freeze",
+              "ticks": 26,
+              "time": 1215.7999999821186
+            },
+            {
+              "type": "resume",
+              "ticks": 26,
+              "time": 1568.5
+            },
+            {
+              "type": "freeze",
+              "ticks": 44,
+              "time": 2243.7999999821186
+            },
+            {
+              "type": "resume",
+              "ticks": 44,
+              "time": 2629.5999999940395
+            },
+            {
+              "type": "freeze",
+              "ticks": 60,
+              "time": 3214.199999988079
+            },
+            {
+              "type": "resume",
+              "ticks": 60,
+              "time": 3613.699999988079
+            }
+          ],
+          "ticks": 63
+        },
+        "app": {
+          "starting": false,
+          "starts": 4,
+          "restarts": 0,
+          "lastDisposal": {
+            "inputCommands": 5,
+            "drawRequests": 7,
+            "cleanupErrors": [],
+            "disposed": true
+          },
+          "lastError": null,
+          "navigation": {
+            "pageHides": 3,
+            "bfcacheRestores": 3
+          },
+          "state": "ready",
+          "app": {
+            "camera": {
+              "x": 16,
+              "y": 46.666666666666686,
+              "zoom": 0.5666666666666667,
+              "minZoom": 0.2833333333333333,
+              "maxZoom": 2.2666666666666666
+            },
+            "viewport": {
+              "width": 916,
+              "height": 524,
+              "dpr": 1
+            },
+            "position": "delante",
+            "selected": false,
+            "showHidden": false,
+            "counters": {
+              "inputCommands": 0,
+              "drawRequests": 2
+            },
+            "renderer": {
+              "phaser": "4.2.1",
+              "backend": "WebGL",
+              "frameMode": "demand",
+              "loopRunning": false,
+              "hasFocus": false,
+              "clockInFocus": true,
+              "clockPauseTime": 0,
+              "clockPauseDuration": 0,
+              "gpu": {
+                "vendor": "Google Inc. (Google)",
+                "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+                "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+                "maxTextureSize": 8192
+              },
+              "renderEvents": 3,
+              "renderMs": 9.099999994039536,
+              "textureKeys": [
+                "h32-ground",
+                "h32-hospital",
+                "h32-zombie",
+                "h32-shadow"
+              ],
+              "objectCount": 5,
+              "inputPlugins": {
+                "mouse": false,
+                "touch": false,
+                "keyboard": false
+              },
+              "actorBounds": {
+                "x": 641.98,
+                "y": 554.29,
+                "width": 111.625,
+                "height": 127.11
+              },
+              "transforms": {
+                "ground": {
+                  "x": 0,
+                  "y": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "originX": 0,
+                  "originY": 0,
+                  "depth": 0,
+                  "filter": 9729,
+                  "textureWidth": 1536,
+                  "textureHeight": 1024
+                },
+                "hospital": {
+                  "x": 780,
+                  "y": 670,
+                  "scaleX": 0.65,
+                  "scaleY": 0.65,
+                  "originX": 0.5023923444976076,
+                  "originY": 0.9154704944178629,
+                  "depth": 2,
+                  "filter": 9729,
+                  "textureWidth": 1254,
+                  "textureHeight": 1254
+                },
+                "zombie": {
+                  "x": 710,
+                  "y": 670,
+                  "scaleX": 0.095,
+                  "scaleY": 0.095,
+                  "originX": 0.6093617021276596,
+                  "originY": 0.9103139013452914,
+                  "depth": 3,
+                  "filter": 9729,
+                  "textureWidth": 1175,
+                  "textureHeight": 1338
+                },
+                "shadow": {
+                  "x": 703,
+                  "y": 669,
+                  "scaleX": 0.296875,
+                  "scaleY": 0.15625,
+                  "originX": 0.5,
+                  "originY": 0.5,
+                  "depth": 1,
+                  "filter": 9729,
+                  "textureWidth": 128,
+                  "textureHeight": 64
+                }
+              }
+            }
+          }
+        },
+        "resources": {
+          "listeners": [
+            {
+              "target": "document",
+              "type": "fullscreenchange"
+            },
+            {
+              "target": "document",
+              "type": "fullscreenerror"
+            },
+            {
+              "target": "document",
+              "type": "mozfullscreenchange"
+            },
+            {
+              "target": "document",
+              "type": "mozfullscreenerror"
+            },
+            {
+              "target": "document",
+              "type": "MSFullscreenChange"
+            },
+            {
+              "target": "document",
+              "type": "MSFullscreenError"
+            },
+            {
+              "target": "document",
+              "type": "visibilitychange"
+            },
+            {
+              "target": "document",
+              "type": "webkitfullscreenchange"
+            },
+            {
+              "target": "document",
+              "type": "webkitfullscreenerror"
+            },
+            {
+              "target": "scene",
+              "type": "keydown"
+            },
+            {
+              "target": "scene",
+              "type": "lostpointercapture"
+            },
+            {
+              "target": "scene",
+              "type": "pointercancel"
+            },
+            {
+              "target": "scene",
+              "type": "pointerdown"
+            },
+            {
+              "target": "scene",
+              "type": "pointermove"
+            },
+            {
+              "target": "scene",
+              "type": "pointerup"
+            },
+            {
+              "target": "scene",
+              "type": "webglcontextlost"
+            },
+            {
+              "target": "scene",
+              "type": "webglcontextlost"
+            },
+            {
+              "target": "scene",
+              "type": "webglcontextrestored"
+            },
+            {
+              "target": "scene",
+              "type": "webglcontextrestored"
+            },
+            {
+              "target": "scene",
+              "type": "wheel"
+            },
+            {
+              "target": "window",
+              "type": "blur"
+            },
+            {
+              "target": "window",
+              "type": "blur"
+            },
+            {
+              "target": "window",
+              "type": "focus"
+            },
+            {
+              "target": "window",
+              "type": "pagehide"
+            },
+            {
+              "target": "window",
+              "type": "pageshow"
+            },
+            {
+              "target": "window",
+              "type": "resize"
+            }
+          ],
+          "resizeTargets": 1,
+          "gl": {
+            "Texture": 9,
+            "Buffer": 9,
+            "Framebuffer": 0,
+            "Renderbuffer": 0,
+            "Program": 1,
+            "Shader": 2
+          },
+          "startupTimers": 0,
+          "activeSceneContexts": 1
+        },
+        "timerSuspension": {
+          "frozen": {
+            "type": "freeze",
+            "ticks": 60,
+            "time": 3214.199999988079
+          },
+          "resumed": {
+            "type": "resume",
+            "ticks": 60,
+            "time": 3613.699999988079
+          }
+        }
+      }
+    }
+  ],
+  "startup": [
+    {
+      "fault": "sync-constructor",
+      "elapsedMs": 452,
+      "failed": {
+        "starting": false,
+        "starts": 1,
+        "restarts": 0,
+        "lastDisposal": null,
+        "lastError": {
+          "message": "H32_SYNC_CONSTRUCTOR",
+          "code": "STARTUP_ERROR",
+          "cleanupErrors": []
+        },
+        "navigation": {
+          "pageHides": 0,
+          "bfcacheRestores": 0
+        },
+        "state": "error",
+        "app": null
+      },
+      "resources": {
+        "listeners": [
+          {
+            "target": "window",
+            "type": "pagehide"
+          },
+          {
+            "target": "window",
+            "type": "pageshow"
+          }
+        ],
+        "resizeTargets": 0,
+        "gl": {
+          "Texture": 0,
+          "Buffer": 0,
+          "Framebuffer": 0,
+          "Renderbuffer": 0,
+          "Program": 0,
+          "Shader": 0
+        },
+        "startupTimers": 0,
+        "activeSceneContexts": 0
+      },
+      "retiredGame": {
+        "loopRunning": false
+      },
+      "recoveredStarts": 2,
+      "disposed": {
+        "listeners": [
+          {
+            "target": "window",
+            "type": "pagehide"
+          },
+          {
+            "target": "window",
+            "type": "pageshow"
+          }
+        ],
+        "resizeTargets": 0,
+        "gl": {
+          "Texture": 0,
+          "Buffer": 0,
+          "Framebuffer": 0,
+          "Renderbuffer": 0,
+          "Program": 0,
+          "Shader": 0
+        },
+        "startupTimers": 0,
+        "activeSceneContexts": 0
+      },
+      "expectedPageErrors": [],
+      "foreignError": {
+        "count": 0,
+        "preserved": true
+      }
+    },
+    {
+      "fault": "async-create",
+      "elapsedMs": 422,
+      "failed": {
+        "starting": false,
+        "starts": 1,
+        "restarts": 0,
+        "lastDisposal": null,
+        "lastError": {
+          "message": "H32_ASYNC_CREATE",
+          "code": "STARTUP_ERROR",
+          "cleanupErrors": []
+        },
+        "navigation": {
+          "pageHides": 0,
+          "bfcacheRestores": 0
+        },
+        "state": "error",
+        "app": null
+      },
+      "resources": {
+        "listeners": [
+          {
+            "target": "window",
+            "type": "pagehide"
+          },
+          {
+            "target": "window",
+            "type": "pageshow"
+          }
+        ],
+        "resizeTargets": 0,
+        "gl": {
+          "Texture": 0,
+          "Buffer": 0,
+          "Framebuffer": 0,
+          "Renderbuffer": 0,
+          "Program": 0,
+          "Shader": 0
+        },
+        "startupTimers": 0,
+        "activeSceneContexts": 0
+      },
+      "retiredGame": {
+        "loopRunning": false
+      },
+      "recoveredStarts": 2,
+      "disposed": {
+        "listeners": [
+          {
+            "target": "window",
+            "type": "pagehide"
+          },
+          {
+            "target": "window",
+            "type": "pageshow"
+          }
+        ],
+        "resizeTargets": 0,
+        "gl": {
+          "Texture": 0,
+          "Buffer": 0,
+          "Framebuffer": 0,
+          "Renderbuffer": 0,
+          "Program": 0,
+          "Shader": 0
+        },
+        "startupTimers": 0,
+        "activeSceneContexts": 0
+      },
+      "expectedPageErrors": [],
+      "foreignError": {
+        "count": 0,
+        "preserved": true
+      }
+    },
+    {
+      "fault": "async-start",
+      "elapsedMs": 487,
+      "failed": {
+        "starting": false,
+        "starts": 1,
+        "restarts": 0,
+        "lastDisposal": null,
+        "lastError": {
+          "message": "H32_ASYNC_START",
+          "code": "STARTUP_ERROR",
+          "cleanupErrors": []
+        },
+        "navigation": {
+          "pageHides": 0,
+          "bfcacheRestores": 0
+        },
+        "state": "error",
+        "app": null
+      },
+      "resources": {
+        "listeners": [
+          {
+            "target": "window",
+            "type": "pagehide"
+          },
+          {
+            "target": "window",
+            "type": "pageshow"
+          }
+        ],
+        "resizeTargets": 0,
+        "gl": {
+          "Texture": 0,
+          "Buffer": 0,
+          "Framebuffer": 0,
+          "Renderbuffer": 0,
+          "Program": 0,
+          "Shader": 0
+        },
+        "startupTimers": 0,
+        "activeSceneContexts": 0
+      },
+      "retiredGame": {
+        "loopRunning": false
+      },
+      "recoveredStarts": 2,
+      "disposed": {
+        "listeners": [
+          {
+            "target": "window",
+            "type": "pagehide"
+          },
+          {
+            "target": "window",
+            "type": "pageshow"
+          }
+        ],
+        "resizeTargets": 0,
+        "gl": {
+          "Texture": 0,
+          "Buffer": 0,
+          "Framebuffer": 0,
+          "Renderbuffer": 0,
+          "Program": 0,
+          "Shader": 0
+        },
+        "startupTimers": 0,
+        "activeSceneContexts": 0
+      },
+      "expectedPageErrors": [
+        "H32_ASYNC_START"
+      ],
+      "foreignError": {
+        "count": 1,
+        "preserved": true
+      }
+    },
+    {
+      "fault": "never-create",
+      "elapsedMs": 15290,
+      "failed": {
+        "starting": false,
+        "starts": 1,
+        "restarts": 0,
+        "lastDisposal": null,
+        "lastError": {
+          "message": "El arranque superó 15 segundos",
+          "code": "STARTUP_TIMEOUT",
+          "cleanupErrors": []
+        },
+        "navigation": {
+          "pageHides": 0,
+          "bfcacheRestores": 0
+        },
+        "state": "error",
+        "app": null
+      },
+      "resources": {
+        "listeners": [
+          {
+            "target": "window",
+            "type": "pagehide"
+          },
+          {
+            "target": "window",
+            "type": "pageshow"
+          }
+        ],
+        "resizeTargets": 0,
+        "gl": {
+          "Texture": 0,
+          "Buffer": 0,
+          "Framebuffer": 0,
+          "Renderbuffer": 0,
+          "Program": 0,
+          "Shader": 0
+        },
+        "startupTimers": 0,
+        "activeSceneContexts": 0
+      },
+      "retiredGame": {
+        "loopRunning": false
+      },
+      "recoveredStarts": 2,
+      "disposed": {
+        "listeners": [
+          {
+            "target": "window",
+            "type": "pagehide"
+          },
+          {
+            "target": "window",
+            "type": "pageshow"
+          }
+        ],
+        "resizeTargets": 0,
+        "gl": {
+          "Texture": 0,
+          "Buffer": 0,
+          "Framebuffer": 0,
+          "Renderbuffer": 0,
+          "Program": 0,
+          "Shader": 0
+        },
+        "startupTimers": 0,
+        "activeSceneContexts": 0
+      },
+      "expectedPageErrors": [],
+      "foreignError": {
+        "count": 0,
+        "preserved": true
+      }
+    },
+    {
+      "fault": "late-create",
+      "elapsedMs": 15382,
+      "failed": {
+        "starting": false,
+        "starts": 1,
+        "restarts": 0,
+        "lastDisposal": null,
+        "lastError": {
+          "message": "El arranque superó 15 segundos",
+          "code": "STARTUP_TIMEOUT",
+          "cleanupErrors": []
+        },
+        "navigation": {
+          "pageHides": 0,
+          "bfcacheRestores": 0
+        },
+        "state": "error",
+        "app": null
+      },
+      "resources": {
+        "listeners": [
+          {
+            "target": "window",
+            "type": "pagehide"
+          },
+          {
+            "target": "window",
+            "type": "pageshow"
+          }
+        ],
+        "resizeTargets": 0,
+        "gl": {
+          "Texture": 0,
+          "Buffer": 0,
+          "Framebuffer": 0,
+          "Renderbuffer": 0,
+          "Program": 0,
+          "Shader": 0
+        },
+        "startupTimers": 0,
+        "activeSceneContexts": 0
+      },
+      "retiredGame": {
+        "loopRunning": false
+      },
+      "recoveredStarts": 2,
+      "disposed": {
+        "listeners": [
+          {
+            "target": "window",
+            "type": "pagehide"
+          },
+          {
+            "target": "window",
+            "type": "pageshow"
+          }
+        ],
+        "resizeTargets": 0,
+        "gl": {
+          "Texture": 0,
+          "Buffer": 0,
+          "Framebuffer": 0,
+          "Renderbuffer": 0,
+          "Program": 0,
+          "Shader": 0
+        },
+        "startupTimers": 0,
+        "activeSceneContexts": 0
+      },
+      "expectedPageErrors": [],
+      "foreignError": {
+        "count": 0,
+        "preserved": true
+      }
+    },
+    {
+      "fault": "late-start",
+      "elapsedMs": 15314,
+      "failed": {
+        "starting": false,
+        "starts": 1,
+        "restarts": 0,
+        "lastDisposal": null,
+        "lastError": {
+          "message": "El arranque superó 15 segundos",
+          "code": "STARTUP_TIMEOUT",
+          "cleanupErrors": []
+        },
+        "navigation": {
+          "pageHides": 0,
+          "bfcacheRestores": 0
+        },
+        "state": "error",
+        "app": null
+      },
+      "resources": {
+        "listeners": [
+          {
+            "target": "window",
+            "type": "pagehide"
+          },
+          {
+            "target": "window",
+            "type": "pageshow"
+          }
+        ],
+        "resizeTargets": 0,
+        "gl": {
+          "Texture": 0,
+          "Buffer": 0,
+          "Framebuffer": 0,
+          "Renderbuffer": 0,
+          "Program": 0,
+          "Shader": 0
+        },
+        "startupTimers": 0,
+        "activeSceneContexts": 0
+      },
+      "retiredGame": {
+        "loopRunning": false
+      },
+      "recoveredStarts": 2,
+      "disposed": {
+        "listeners": [
+          {
+            "target": "window",
+            "type": "pagehide"
+          },
+          {
+            "target": "window",
+            "type": "pageshow"
+          }
+        ],
+        "resizeTargets": 0,
+        "gl": {
+          "Texture": 0,
+          "Buffer": 0,
+          "Framebuffer": 0,
+          "Renderbuffer": 0,
+          "Program": 0,
+          "Shader": 0
+        },
+        "startupTimers": 0,
+        "activeSceneContexts": 0
+      },
+      "expectedPageErrors": [],
+      "foreignError": {
+        "count": 0,
+        "preserved": true
+      }
+    }
+  ],
+  "errors": [],
+  "bfcacheActuallyExercised": true,
+  "normalReload": true,
+  "cancelDuringImages": {
+    "passed": true,
+    "syntheticLifecycleEvents": true,
+    "note": "Caso controlado de cancelación; no demuestra bfcache"
+  },
+  "realLeaveDuringLoad": {
+    "passed": true,
+    "sameDocument": true,
+    "pageshow": {
+      "type": "pageshow",
+      "persisted": false,
+      "time": 506.80000001192093,
+      "ticks": 8
+    }
+  },
+  "realLeaveDuringGame": {
+    "passed": true,
+    "restoredFromBfcache": true,
+    "sameDocument": true,
+    "lateCreateIgnored": true
+  },
+  "unrelatedScriptError": {
+    "passed": true,
+    "expectedPageErrors": [
+      "H32_UNRELATED_SCRIPT"
+    ],
+    "note": "El error de otro script no se atribuye a Phaser ni se oculta"
+  },
+  "passed": true
+}

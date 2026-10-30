@@ -14,7 +14,7 @@ test('H3.2: servidor entrega HTML/módulos/PNG, revalida caché y limita sus rut
   const image=await fetch(base+'/assets/prototipo-hospital/hospital.png');assert.equal(image.status,200);
   const bytes=Buffer.from(await image.arrayBuffer());assert.equal(createHash('sha256').update(bytes).digest('hex'),'fc85ae8199e1d94b7f4636bed4b8f293c0e15ce64b8235dbbf63b2b3e0e76159');
   const cached=await fetch(base+'/assets/prototipo-hospital/hospital.png',{headers:{'If-None-Match':image.headers.get('etag')}});assert.equal(cached.status,304);
-  for(const path of ['/package.json','/.git/config','/node_modules/phaser/package.json','/assets/prototipo-hospital/%2e%2e/%2e%2e/package.json'])assert.equal((await fetch(base+path)).status,404);
+  for(const path of ['/package.json','/.git/config','/node_modules/phaser/package.json','/assets/prototipo-hospital/..%2f..%2fpackage.json','/assets/prototipo-hospital/%2e%2e/%2e%2e/package.json'])assert.equal((await fetch(base+path)).status,404);
  }finally{server.closeAllConnections();await new Promise(resolve=>server.close(resolve));}
 });
 

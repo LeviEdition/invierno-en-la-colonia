@@ -47,6 +47,8 @@ jobs:
           HOSPITAL_URL=http://127.0.0.1:8771/prototypes/hospital/ HOSPITAL_OUTPUT_DIR=/tmp/h32-canvas node scripts/check-hospital-prototype-browser.mjs
           H32_OUTPUT_DIR=/tmp/h32-browser node scripts/check-h32-browser.mjs
           H32_LIFECYCLE_DIR=/tmp/h32-lifecycle node scripts/check-h32-lifecycle.mjs
+          H32_CLOSURE_DIR=/tmp/h32-closure node scripts/check-h32-navigation-startup.mjs
+          H32_ADAPTER_DIR=/tmp/h32-adapter node scripts/check-h32-adapter.mjs
           # Benchmark separado de las pruebas funcionales; datos de runner, no teléfono.
           H32_PERF_DIR=/tmp/h32-performance node scripts/measure-h32-renderers.mjs
       - uses: actions/upload-artifact@v4
@@ -57,6 +59,8 @@ jobs:
             /tmp/h32-canvas/
             /tmp/h32-browser/
             /tmp/h32-lifecycle/
+            /tmp/h32-closure/
+            /tmp/h32-adapter/
             /tmp/h32-performance/
             /tmp/h32-server.log
             dist/hospital-phaser/build.json

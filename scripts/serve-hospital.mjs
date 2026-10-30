@@ -1,4 +1,5 @@
 import http from 'node:http';
+import {networkInterfaces} from 'node:os';
 import {readFile,stat} from 'node:fs/promises';
 import {resolve,extname,sep} from 'node:path';
 import {pathToFileURL} from 'node:url';
@@ -13,7 +14,7 @@ export function createPreviewServer(){
    if(!prefixes.some(prefix=>path.startsWith(prefix))||path.includes('\\')){res.writeHead(404);res.end('No disponible');return;}
    if(path.endsWith('/'))path+='index.html';
    const file=resolve(projectRoot,'.'+path);
-   if(!file.startsWith(projectRoot+sep)){res.writeHead(404);res.end();return;}
+   if(!file.startsWith(projectRoot+sep)||!prefixes.some(prefix=>file.startsWith(resolve(projectRoot,'.'+prefix)+sep))){res.writeHead(404);res.end();return;}
    const info=await stat(file);if(!info.isFile())throw Error('No es archivo');
    const etag='"'+info.size+'-'+info.mtimeMs+'"';
    const headers={'Content-Type':types[extname(file)]||'text/plain; charset=utf-8','Cache-Control':'no-cache',ETag:etag};
@@ -24,6 +25,11 @@ export function createPreviewServer(){
 }
 if(process.argv[1]&&pathToFileURL(resolve(process.argv[1])).href===import.meta.url){
  await buildHospital();const port=Number(process.env.HOSPITAL_PORT||8771),server=createPreviewServer();
- server.listen(port,'127.0.0.1',()=>console.log(`Phaser: http://127.0.0.1:${port}/prototypes/hospital-phaser/\nCanvas: http://127.0.0.1:${port}/prototypes/hospital/`));
+ const hostIndex=process.argv.indexOf('--host'),host=hostIndex<0?'127.0.0.1':process.argv[hostIndex+1];
+ if(!['127.0.0.1','0.0.0.0'].includes(host))throw Error('Usar --host 127.0.0.1 o --host 0.0.0.0 para red local');
+ server.listen(port,host,()=>{
+  console.log(`Phaser: http://127.0.0.1:${port}/prototypes/hospital-phaser/\nCanvas: http://127.0.0.1:${port}/prototypes/hospital/`);
+  if(host==='0.0.0.0')for(const address of Object.values(networkInterfaces()).flat().filter(x=>x.family==='IPv4'&&!x.internal))console.log(`Red local: http://${address.address}:${port}/prototypes/hospital-phaser/ (Canvas: /prototypes/hospital/)`);
+ });
  server.on('error',error=>{console.error(error.message);process.exitCode=1;});
 }

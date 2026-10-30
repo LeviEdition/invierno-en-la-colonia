@@ -1,6 +1,13 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
 
+## Revisión acotada de cierre H3.2 — en curso, aceptación pendiente
+
+Autorización nueva: revisar solo PR18/rama experimental, sin H3.3 ni adopción definitiva. Base320fc92 limpia e igual a FETCH_HEAD remoto. Main826199d9, PR16 ba1d93a4 y tag62e4e851 intactos;480/480 de referencia.
+
+**Reproducción antes de corregir:** Chromium154, restauración bfcache real (`pageshow.persisted=true`, misma identidad de documento) vuelve en estado disposed sin app. Pagehide sintético durante descarga permite publicación tardía (caso controlado de cancelación, no prueba bfcache). Inyección QA de excepción síncrona tras construir Game muestra aviso pero deja Game parcial corriendo; excepción asíncrona en Scene.create y create que retorna sin completar quedan loading. [JSON rojo](evidencias/h32-cierre-reproduccion-inicial.json). El adaptador y las alternativas públicas están bajo revisión. No declarar cierre aceptado hasta completar regresión/CI del nuevo head.
+
+
 ## H3.2 terminada técnicamente — pendiente de revisión del creador
 
 **Alcance autorizado cumplido:** hospital aislado con Phaser4.2.1/WebGL, rama `experiment/h3-2-phaser-hospital`; implementación `678fd0cd1b6b9c569fad1d507b97d8547468192d`. Sin conexión al motor, nuevas reglas, PixiJS, mapa completo o H3.3. H3.1 aceptada con dirección de **tablero ilustrado2D por capas y mapa continuo de siete localidades**; propuestas anteriores conservadas como historia. PR16/17 siguen sin fusionar.

@@ -1,21 +1,11 @@
+import {installLifecycleProbe} from '../test-support/h32-lifecycle-probe.mjs';
 import assert from 'node:assert/strict';
 import {mkdir,writeFile} from 'node:fs/promises';
 const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
 const output=process.env.H32_LIFECYCLE_DIR||'/tmp/h32-lifecycle';await mkdir(output,{recursive:true});
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',headless:true,args:['--no-sandbox']});
 const page=await browser.newPage({viewport:{width:1365,height:768}}),evidence={method:'Sondas QA de listeners, observers y objetos GL creados/eliminados; no miden VRAM',cycles:[]};
-await page.addInitScript(()=>{
- window.h32OriginalBlur=()=>{};window.onblur=window.h32OriginalBlur;window.h32OriginalFocus=()=>{};window.onfocus=window.h32OriginalFocus;
- const listeners=[],observers=[],glObjects=new Map();const add=EventTarget.prototype.addEventListener,remove=EventTarget.prototype.removeEventListener;
- EventTarget.prototype.addEventListener=function(type,fn,options){const capture=typeof options==='boolean'?options:!!options?.capture;if(!options?.once&&!listeners.some(x=>x.target===this&&x.type===type&&x.fn===fn&&x.capture===capture&&!x.removed&&!x.signal?.aborted))listeners.push({target:this,type,fn,capture,signal:options?.signal,owned:new Error().stack.includes('/dist/hospital-phaser/game.mjs'),removed:false});return add.call(this,type,fn,options);};
- EventTarget.prototype.removeEventListener=function(type,fn,options){const capture=typeof options==='boolean'?options:!!options?.capture;for(const item of listeners)if(item.target===this&&item.type===type&&item.fn===fn&&item.capture===capture)item.removed=true;return remove.call(this,type,fn,options);};
- const OriginalObserver=ResizeObserver;window.ResizeObserver=class extends OriginalObserver{constructor(callback){super(callback);this.targets=new Set();observers.push(this);}observe(target,options){this.targets.add(target);super.observe(target,options);}unobserve(target){this.targets.delete(target);super.unobserve(target);}disconnect(){this.targets.clear();super.disconnect();}};
- for(const proto of [WebGLRenderingContext.prototype,WebGL2RenderingContext.prototype])for(const kind of ['Texture','Buffer','Framebuffer','Renderbuffer','Program','Shader']){
-  const create=proto['create'+kind],destroy=proto['delete'+kind];proto['create'+kind]=function(...args){const obj=create.apply(this,args);if(obj)glObjects.set(obj,{kind,canvas:this.canvas,context:this,stack:new Error().stack});return obj;};proto['delete'+kind]=function(obj){glObjects.delete(obj);return destroy.call(this,obj);};
- }
- window.h32TextureStacks=()=>[...glObjects.values()].filter(x=>x.kind==='Texture'&&x.canvas.id==='scene').map(x=>x.stack);
- window.h32Lifecycle=()=>({listeners:listeners.filter(x=>x.owned&&!x.removed&&!x.signal?.aborted&&(x.target===window||x.target===document||x.target instanceof HTMLCanvasElement)).map(x=>({target:x.target===window?'window':x.target===document?'document':x.target.id||'canvas',type:x.type})).sort((a,b)=>(a.target+a.type).localeCompare(b.target+b.type)),resizeTargets:observers.reduce((n,o)=>n+o.targets.size,0),gl:Object.fromEntries(['Texture','Buffer','Framebuffer','Renderbuffer','Program','Shader'].map(kind=>[kind,[...glObjects.entries()].filter(([obj,x])=>x.kind===kind&&x.canvas.id==='scene'&&!x.context.isContextLost()&&x.context['is'+kind](obj)).length]))});
-});
+await page.addInitScript(installLifecycleProbe);
 const snapshot=()=>page.evaluate(()=>window.h32Lifecycle());
 const ready=()=>page.waitForFunction(()=>document.body.dataset.state==='ready');
 try{
@@ -35,7 +25,7 @@ try{
  await page.evaluate(()=>window.h32ContextExtension.restoreContext());await page.waitForFunction(()=>document.querySelector('#renderer-status').textContent.includes('recuperado'));
  await page.locator('#reset-view').click();evidence.contextRecovery=true;
  await page.evaluate(async()=>(await import('/dist/hospital-phaser/game.mjs')).disposeExperiment());const final=await snapshot();evidence.disposed=final;evidence.contextRelease='Game.destroy elimina wrappers; WEBGL_lose_context libera también la textura temporal no registrada de Phaser 4.2.1. Conteo GL excluye contextos perdidos; no es una medición de VRAM';evidence.contextReleasedTextureHandles=await page.evaluate(()=>window.h32TextureStacks().length);
- assert.equal(final.resizeTargets,0);assert.deepEqual(final.gl,{Texture:0,Buffer:0,Framebuffer:0,Renderbuffer:0,Program:0,Shader:0});assert.deepEqual(final.listeners,[]);
+ assert.equal(final.resizeTargets,0);assert.deepEqual(final.gl,{Texture:0,Buffer:0,Framebuffer:0,Renderbuffer:0,Program:0,Shader:0});assert.deepEqual(final.listeners,[{target:'window',type:'pagehide'},{target:'window',type:'pageshow'}]);evidence.pageLifetimeListeners=2;
  assert.ok(await page.evaluate(()=>window.onblur===window.h32OriginalBlur&&window.onfocus===window.h32OriginalFocus));evidence.existingWindowHandlersPreserved=true;
  evidence.passed=true;
 }catch(error){evidence.passed=false;evidence.error=error.stack;throw error;}
