@@ -1,6 +1,6 @@
 # 74 — H3.1: auditoría y planificación de identidad visual
 
-**29/10/2026, Montevideo. Auditoría documental terminada; pendiente de revisión del creador.** Este encargo inicia H3 «Identidad Visual y Experiencia Jugable». No implementa Phaser, modifica el producto ni autoriza H3.2. [Plan incremental H3.1–H3.6](75-plan-hito-3-identidad-visual.md) · [evidencia](evidencias/h31-auditoria.json).
+**29/10/2026, Montevideo. H3.1 aceptada por el creador con las precisiones registradas debajo.** Este encargo inicia H3 «Identidad Visual y Experiencia Jugable». Este informe no implementa producto. La autorización posterior de H3.2 se registra en el bloque de acuerdos. [Plan incremental H3.1–H3.6](75-plan-hito-3-identidad-visual.md) · [evidencia](evidencias/h31-auditoria.json).
 
 ## Acuerdos posteriores del creador — H3.1 aceptada con precisiones
 
@@ -272,4 +272,4 @@ Criterios de esta entrega:
 - Plan H3.2–H3.6 con criterios verificables, decisiones y compuertas de autorización.
 - Rama documental independiente: solo Markdown, JSON de evidencia y capturas en docs; sin cambios de código, dependencias, assets originales, workflows, main, prototipo o SP-03.
 
-**Estado final de alcance:** H3.1 listo para revisión, no aceptado automáticamente. Detenerse. La única siguiente tarea es la revisión del creador del informe/plan y su decisión sobre H3.2. No se crea código, instala Phaser, fusiona PR #16 ni comienza otro hito como consecuencia de este informe.
+**Cierre original de H3.1 (histórico, superado por los acuerdos posteriores):** H3.1 listo para revisión, no aceptado automáticamente. Detenerse. La única siguiente tarea es la revisión del creador del informe/plan y su decisión sobre H3.2. No se crea código, instala Phaser, fusiona PR #16 ni comienza otro hito como consecuencia de este informe.

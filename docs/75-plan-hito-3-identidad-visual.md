@@ -39,7 +39,7 @@ No se asignan fechas ni se prometen horas sin resolver recursos y equipos. Los b
 4. Adaptar el arnés a una observación del render independiente de `getContext('2d')`, conservando sus criterios. Mantener las pruebas Canvas originales sin borrarlas.
 5. Medir carga, parseo, texturas, reposo, navegación y un estrés puramente gráfico con copias de sprites. Ese estrés **no es una partida válida** ni cambia las capacidades del motor.
 
-**Aceptación verificable:** frente≥99% reconocible, detrás≤2%, esquina entre10–90%, Mostrar ocultos revela y desactivar restaura; comparación visual tolerante a diferencias de rasterización entre backends. Zoom conserva el punto de entrada con desviación≤1 px CSS, límites y reset reproducibles. Controles≥44 px, teclado y 0 overflow horizontal en 1365×768,393×852 y 320×640;0 excepciones normales. No afirmar prueba física por usar CDP.
+**Aceptación actualizada para H3.2:** frente≥99% reconocible, detrás≤2%; esquina dentro de±2 puntos porcentuales respecto de Canvas en el mismo viewport/DPR, con medición reproducible y justificación por rasterización/interpolación, Mostrar ocultos revela y desactivar restaura; comparación visual tolerante a diferencias de rasterización entre backends. Zoom conserva el punto de entrada con desviación≤1 px CSS, límites y reset reproducibles. Controles≥44 px, teclado y 0 overflow horizontal en 1365×768,393×852 y 320×640;0 excepciones normales. No afirmar prueba física por usar CDP.
 
 **Salida:** tabla medida del mismo escenario y decisión razonada sobre renderer/costo. Si no hay ventaja para el alcance acordado o hay un bloqueo de compatibilidad, proponer Canvas o ajustar el plan. No continuar a integrar todo el motor para justificar una elección previa.
 
@@ -92,6 +92,6 @@ Pruebas de cierre:
 
 ## 8. Control de alcance y próxima decisión
 
-H3.1 entrega solo documentos, capturas y evidencia. H3.2 todavía **no está autorizado**. No se implementó Phaser ni se prepararon módulos, perfiles, Director, cambios de balance o guardados. Main, referencia, PR #16 y SP-03 se conservan.
+H3.1 entrega solo documentos, capturas y evidencia. Este era el checkpoint original; la actualización superior registra H3.2 autorizada. No se implementó Phaser ni se prepararon módulos, perfiles, Director, cambios de balance o guardados. Main, referencia, PR #16 y SP-03 se conservan.
 
-**Única siguiente tarea:** el creador revisa74/75, ajusta V-01–V-06 y decide si autoriza el PoC H3.2. Detener el trabajo técnico en este punto de control.
+**Checkpoint actualizado:** H3.2 autorizada bajo las precisiones superiores. Al completarla, entregar comparación y detenerse antes de H3.3.
