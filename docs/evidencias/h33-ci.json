@@ -1,0 +1,51 @@
+{
+  "implementationCommit": "21a805ec84868440a24608edeb088624c1d74f81",
+  "run": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41097311067",
+  "conclusion": "SUCCESS",
+  "artifact": "h33-workshop-21a805ec84868440a24608edeb088624c1d74f81",
+  "artifactDownloaded": true,
+  "records": [
+    {
+      "file": "tmp/h33-browser/resultados.json",
+      "passed": true,
+      "browser": "143.0.7499.4",
+      "records": 3,
+      "navigation": {
+        "persisted": true,
+        "sameDocument": true,
+        "profile": "h32"
+      }
+    },
+    {
+      "file": "tmp/h33-reference-canvas/resultados.json",
+      "passed": true,
+      "browser": "143.0.7499.4"
+    },
+    {
+      "file": "tmp/h33-reference-phaser/resultados.json",
+      "passed": true,
+      "records": 3,
+      "browser": "143.0.7499.4"
+    },
+    {
+      "file": "tmp/h33-textures/resultados.json",
+      "passed": true,
+      "browser": "143.0.7499.4",
+      "samples": 18,
+      "comparisons": 18,
+      "exportsIndependentOfDpr": true
+    }
+  ],
+  "build": {
+    "phaser": "4.2.1",
+    "esbuild": "0.28.2",
+    "sha256": "8bff2779567e5cd1d142932e75e80fc15950500a1b18cb4ff3a2c8193b928d69",
+    "rawBytes": 1430363,
+    "gzip9Bytes": 384574
+  },
+  "bundleMatchesLocal": true,
+  "referencePhaserSha256": "7e7b90ab465bc4b7113ffb20c4c0780a9c0e9d0db1d0cfab83659b46632f5e54",
+  "scope": "PR19 base PR18: workflow propio con491 pruebas, builds, referencias y taller. Otros workflows filtrados a main no se presuponen ejecutados. Commit documental posterior se verifica aparte.",
+  "physicalDevice": false,
+  "passed": true
+}

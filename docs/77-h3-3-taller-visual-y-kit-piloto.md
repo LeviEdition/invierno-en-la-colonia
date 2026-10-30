@@ -14,7 +14,7 @@ No motor, reglas, IA, dados, balance, crisis, narrativa, guardados, navegación 
 
 ## Estado
 
-Preparación técnica ejecutable y validada localmente; CI pendiente de verificar sobre el commit publicado en el PR de esta entrega. **H3.3 no terminado:** faltan maqueta y aprobación artística. No hay aceptación implícita de H3.2 ni de pruebas físicas.
+Preparación técnica ejecutable y validada localmente y en CI del commit de implementación, detallado al final. **H3.3 no terminado:** faltan maqueta y aprobación artística. No hay aceptación implícita de H3.2 ni de pruebas físicas. PR19 permanece en borrador.
 
 ## Diseño y archivos
 
@@ -139,3 +139,17 @@ La [guía](../prototypes/hospital-workshop/README.md#qué-debe-aportar-la-maquet
 **No ejecutado:** dispositivo físico, red doméstica del creador, GPU física/VRAM, Safari/Firefox, accesibilidad con lector físico ni aprobación artística/visual del creador. Emulación y captura técnica no los sustituyen. H3.2 visual y pruebas físicas siguen pendientes aunque se autorice este taller.
 
 **Único siguiente paso:** revisión del creador del taller y aporte de la maqueta. H3.3 sigue abierto; no H3.4, motor, mapa completo, arte final, reglas, fusiones o releases.
+
+## Entrega y CI
+
+[PR19 en borrador](https://github.com/LeviEdition/invierno-en-la-colonia/pull/19), hacia `experiment/h3-2-phaser-hospital`. Implementación **21a805ec84868440a24608edeb088624c1d74f81**, [CI SUCCESS](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41097311067) sobre ese SHA exacto:491 tests/491 pass/0 fail, builds, contrato/archivos, referencias Canvas/Phaser, taller y texturas.
+
+Artifact descargado: cuatro JSON passed,3 viewports,18 muestras/18 comparativas, bfcache real también en Chromium143. Bundle reproducible idéntico al local Node24/Chromium154:1.430.363 bytes, gzip9 384.574, SHA-256 `8bff2779567e5cd1d142932e75e80fc15950500a1b18cb4ff3a2c8193b928d69`. La referencia Phaser conserva `7e7b90ab465bc4b7113ffb20c4c0780a9c0e9d0db1d0cfab83659b46632f5e54`. [Resumen CI](evidencias/h33-ci.json) · [validación local](evidencias/h33-validacion-local.json).
+
+El workflow propio es necesario porque el PR tiene base en PR18; no se afirman ejecutados los workflows filtrados solo a main. La evidencia previa de partidas completas/offline de V9.9 mantiene su procedencia histórica; en este encargo se reejecutan suite/build y gates gráficos correspondientes, sin cambios del motor o del HTML. El siguiente commit documental agrega este resultado y recibe su verificación de head exacto; SHA y checks finales se registran en la descripción del PR, sin SHA autorreferente en este documento.
+
+Los árboles Git de `prototypes/hospital`, `prototypes/hospital-phaser` y `assets` son idénticos a la base4fc7c66. No se alteraron main826199d9, tag/release y sus adjuntos, PR16/17/18, SP-03, lockfile ni reglas. No hubo fusión, despliegue o nueva release.
+
+**Límite del contrato:** la sustitución1:1 (incluido marcador→PNG por kind) está preparada. Si la maqueta exige nuevas capas de marquesina/frente u otra geometría de oclusión, habrá que decidir esos datos y un ajuste acotado del piloto después de revisarla; este taller no inventa capas ni un sistema general de edificios.
+
+**Entrega técnica revisable; H3.3 sigue abierto.** Próxima y única tarea: revisión del creador y recepción de la maqueta según el checklist. Aprobación artística, elección final de perfiles/renderer y pruebas físicas continúan pendientes. Detenerse antes de H3.4.
