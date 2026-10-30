@@ -1,6 +1,14 @@
 # 75 — Plan incremental del Hito 3: identidad visual y experiencia jugable
 
-**Propuesta del29/10/2026, Montevideo. Solo H3.1 está autorizado y documentado.** Cada etapa posterior exige revisión del resultado anterior y autorización del creador. [Diagnóstico y decisiones74](74-h3-1-auditoria-identidad-visual.md) · [tablero 18](18-tablero-operativo.md).
+**Propuesta del29/10/2026, Montevideo. Actualización posterior: H3.1 aceptada y H3.2 autorizada; las demás etapas siguen sujetas a revisión.** Cada etapa posterior exige revisión del resultado anterior y autorización del creador. [Diagnóstico y decisiones74](74-h3-1-auditoria-identidad-visual.md) · [tablero 18](18-tablero-operativo.md).
+
+## Actualización de acuerdos y autorización
+
+**H3.1 aceptada con ajustes; H3.2 autorizada exclusivamente.** Objetivo visual: tablero ilustrado2D por capas, mapa continuo de siete localidades, cámara fija con pan/zoom, elementos físicos independientes y personajes estáticos posibles. Sin3D/rotación, navegación libre, distancias, colisiones o reglas nuevas. En móvil se admiten botones de centrado y paneles; un resumen de sectores no reemplaza el mapa continuo.
+
+Se conserva el plan original como historia. H3.2 compara solo el hospital con Phaser como candidato principal y versión fija, sin PixiJS paralelo salvo bloqueo documentado. No fusionar PR16/17, publicar, conectar motor ni construir siete localidades. H3.3 decidirá la aprobación artística; no se promete mejora visual por cambiar de renderizador. H3.3–H3.6 siguen pendientes de autorización.
+
+La esquina debe compararse con la fracción medida en Canvas, no solo con10–90%. Se medirán carga/tamaño/navegación/reposo/recursos e identificarán condiciones y equipo; WebGL ausente, recursos fallidos, resize, reinicio y limpieza tendrán pruebas. Acceso sencillo desde VS Code/navegador sin exigir Python.
 
 ## 1. Qué significa este hito
 

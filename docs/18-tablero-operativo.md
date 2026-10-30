@@ -1,5 +1,12 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## H3.1 aceptada; H3.2 autorizada con dirección visual precisada
+
+Acuerdo del creador: tablero ilustrado2D por capas y mapa continuo de siete localidades, cámara fija con pan/zoom; elementos independientes y personajes estáticos posibles. Botones de centrado/paneles móviles son compatibles, sectores separados no sustituyen al mapa continuo. Sin3D, rotación, navegación libre, distancias, colisiones o nuevas reglas. La propuesta anterior de resumen/sector queda histórica.
+
+**Única tarea activa:** H3.2, PoC exclusivo del hospital con Phaser candidato principal, versión fija y Canvas de comparación, en rama experimental independiente. PixiJS solo como alternativa ante bloqueo concreto. Comparar composición/controles y esquina contra la medida Canvas, medir costos y probar fallos/resize/reinicio/limpieza. No fusionar PR16/17 ni publicar. No motor, mapa completo o H3.3. Proporciones/encaje/aprobación artística quedan para H3.3. Informes74/75 actualizados antes de implementar.
+
+
 ## H3.1 — auditoría y planificación visual terminadas; revisión pendiente · 29/10/2026
 
 **Encargo vigente:** iniciar Hito 3 «Identidad Visual y Experiencia Jugable» con auditoría documental. El creador aprobó el hospital como **base experimental**, no su merge. Rama de esta entrega `docs/h3-1-identidad-visual` desde main 826199d, en worktree separado. PR #16 sigue OPEN/draft sobre ba1d93a; main, prototipo, tag/release y SP-03 intactos. No se encontró AGENTS.md aplicable; se siguieron README y protocolo15.

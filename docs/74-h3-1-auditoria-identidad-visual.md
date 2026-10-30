@@ -2,6 +2,14 @@
 
 **29/10/2026, Montevideo. Auditoría documental terminada; pendiente de revisión del creador.** Este encargo inicia H3 «Identidad Visual y Experiencia Jugable». No implementa Phaser, modifica el producto ni autoriza H3.2. [Plan incremental H3.1–H3.6](75-plan-hito-3-identidad-visual.md) · [evidencia](evidencias/h31-auditoria.json).
 
+## Acuerdos posteriores del creador — H3.1 aceptada con precisiones
+
+El creador acepta H3.1 y autoriza exclusivamente H3.2. La dirección acordada es **un tablero ilustrado y detallado en2D por capas, mapa continuo con las siete localidades, cámara de ángulo fijo, desplazamiento y zoom**. Edificios, supervivientes, zombis y barricadas son elementos independientes. No se requieren modelos3D ni rotación. Los espacios son representaciones de tablero, sin navegación libre, distancias, colisiones o nuevas reglas. Los personajes pueden permanecer estáticos; animación/efectos son feedback.
+
+En móvil se admiten botones de centrado y paneles contextuales. **El resumen con sectores separados no sustituye al mapa continuo como objetivo.** La recomendación anterior de resumen + sector ampliado queda conservada abajo como propuesta histórica y no es la dirección aprobada.
+
+H3.2 se limita al hospital y Phaser como candidato principal, conservando Canvas de comparación. PixiJS queda como alternativa solo ante un bloqueo concreto, sin PoC paralelo. Debe fijarse versión, respetar originales/pivotes, comparar esquina con tolerancia alrededor de Canvas y medir costos/reinicio/limpieza. La aprobación artística de proporciones, encaje y kit corresponde a H3.3: cambiar renderer no promete mejorar la apariencia. No se autoriza fusionar PR16/17, conectar reglas, construir el mapa completo, publicar o comenzar H3.3.
+
 ## 1. Dictamen ejecutivo
 
 La base permite comenzar una evaluación visual gradual: el motor se ejecuta sin DOM y el hospital demuestra composición 2.5D, cámara y controles. Todavía no hay una representación gráfica conectada al juego. El refactor D1/D2 no convierte automáticamente la presentación actual en una API gráfica completa: persisten estado de interacción privado, un único puerto de presentación y efectos con nombres procedentes de la interfaz HTML.
@@ -241,9 +249,9 @@ No se confirma una regresión funcional grave que obligue a modificar V9.9 en es
 
 ### Decisiones pendientes, en orden
 
-1. **V-01:** autorizar o ajustar el PoC H3.2; evaluar Phaser 4.2.1 como candidato, sin adopción definitiva ni migración completa.
+1. **V-01 — autorizado después del informe:** PoC H3.2 exclusivo del hospital con Phaser candidato y Canvas de referencia; versión fija y adopción aún por evaluar.
 2. **V-02:** aprobar/refinar perspectiva, lámina de escala y paleta/lectura de la guía preliminar antes del kit artístico H3.3.
-3. **V-03:** elegir resumen de localidades + sector ampliado (recomendación) o un único escenario con las siete áreas simultáneas; definir cómo se mantiene la lectura táctica en móvil.
+3. **V-03 — acordado después del informe:** mapa continuo con siete localidades,2D por capas y cámara fija. En móvil se permiten centrado y paneles contextuales; sectores separados no sustituyen ese objetivo. H3.2 aún no construye el mapa completo.
 4. **V-04:** definir PC/móvil/navegadores mínimos y qué ocurre sin WebGL; el Canvas deprecado de Phaser no resuelve por sí solo esa decisión.
 5. **V-05:** conservar HTML único también para el futuro producto visual o adoptar carpeta web/otro formato offline. La release de referencia sigue inalterable cualquiera sea la respuesta.
 6. **V-06:** aprobar el alcance/costo del kit piloto de superviviente, barricada y capas del hospital, antes de producir todas las localidades y animaciones.
