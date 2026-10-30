@@ -1,5 +1,18 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## H3.1 — auditoría y planificación visual terminadas; revisión pendiente · 29/10/2026
+
+**Encargo vigente:** iniciar Hito 3 «Identidad Visual y Experiencia Jugable» con auditoría documental. El creador aprobó el hospital como **base experimental**, no su merge. Rama de esta entrega `docs/h3-1-identidad-visual` desde main 826199d, en worktree separado. PR #16 sigue OPEN/draft sobre ba1d93a; main, prototipo, tag/release y SP-03 intactos. No se encontró AGENTS.md aplicable; se siguieron README y protocolo15.
+
+**Entregables:** [informe 74](74-h3-1-auditoria-identidad-visual.md), inventario de siete áreas/16 definiciones de superviviente/17 objetos/26 encrucijadas/tres objetivos/16 tipos de modal, guía visual propuesta, comparación versionada Phaser/Canvas y arquitectura con un único motor; [plan 75 H3.1–H3.6](75-plan-hito-3-identidad-visual.md), dependencias, criterios verificables y decisiones V-01–V-06. [Evidencia](evidencias/h31-auditoria.json) y capturas documentan la inspección. Se registra la priorización visual actual sin borrar la ruta histórica de SP.
+
+**Hallazgos que condicionan la decisión:** Phaser 4.2.1 es candidato, no dependencia instalada; Canvas interno disponible pero deprecado y APIs v4 diferentes. Snapshot no incluye interacción privada ni existe subscribe; el puerto de presentación es único. El loop gráfico no debe invocar paint(), procesar reglas o consumir RNG del motor. Recomendada evaluación de mundo gráfico + HUD HTML, con proyección por audiencia y sin física que decida acciones.
+
+**Verificación nueva:** npm ci/check:build y 467/467 en main limpio; Chromium en 1365×768,393×852,320×640, tablero/inicio y ocho paneles,0 excepciones normales y 0 overflow horizontal. Gate del hospital repetido y aprobado en tres tamaños. Fuente de restantes diálogos y pruebas existentes revisadas; no se ejecutaron de nuevo partidas completas/offline, Android físico o Phaser. No se afirma benchmark de un framework que no se ejecutó. Distribución Phaser medida solo como archivo:1,375,976 bytes,352,441 gzip9 local; arte actual≈18MiB RGBA base estimada.
+
+**Límite de la entrega:** solo Markdown, JSON de evidencia y capturas; sin código, dependencias, tests, workflows o assets originales nuevos/modificados. Referencia HTML43b8883a… y tag→62e4e851 preservados. **Única siguiente tarea:** revisión del creador de74/75 y decisión sobre autorizar H3.2. Detenerse; no implementar renderer, nuevos recursos, singleplayer ni otro hito en paralelo. Los bloques inferiores conservan el historial anterior.
+
+
 ## Referencia V9.9 estable y modular preservada — hito2 cerrado · 29/10/2026
 
 **Autorización completada:** tag anotado y [release pública «V9.9 — Referencia estable y modular»](https://github.com/LeviEdition/invierno-en-la-colonia/releases/tag/v0.9.9-referencia-modular). Remoto inicial62e4e851, sin avances ni tags/releases previos. **Commit preservado: `62e4e85150b2416ccf07d671c186b5c421993b0b`**. Tag `v0.9.9-referencia-modular`, objeto `0fdb214612486f4cc46c1acb444390de963d05e8`, destino confirmado mediante Git y API; oráculo57872ee conservado. Los commits posteriores de automatización/documentación no forman parte del tag.

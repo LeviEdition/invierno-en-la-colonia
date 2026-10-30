@@ -14,6 +14,8 @@ Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos un
 ## Documentación y estado
 
 - [Tablero operativo — próxima tarea](docs/18-tablero-operativo.md)
+- [H3.1 — Auditoría de identidad visual](docs/74-h3-1-auditoria-identidad-visual.md)
+- [Plan propuesto H3.1–H3.6](docs/75-plan-hito-3-identidad-visual.md)
 - [Decisión vigente — D1/D2 cerradas y referencia preservada](docs/62-hitos-referencia-fiel-y-juego-propio.md)
 - [Hoja de ruta del singleplayer — bloques SP-00 a SP-08, acuerdos y pendientes](docs/63-hoja-de-ruta-planificacion-singleplayer.md)
 - [Dirección de producto](docs/51-rumbo-fidelidad-e-identidad.md)
@@ -22,7 +24,13 @@ Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos un
 
 El [PR15](https://github.com/LeviEdition/invierno-en-la-colonia/pull/15) se integró mediante merge convencional `6b8bfcadfeb99d16a10b6f4576f3b061584ee1f9`, preservando historia yoráculo57872ee. [Informe71](docs/71-integracion-main-y-cierre-d1-d2.md) registra la validación posterior:467/467,40/40 contra cada referencia, partidas Chromium yoffline aprobados. SP-03 permanece conceptual ysin cambios respecto del head aprobado.
 
-**Etapa de referencia cerrada:** D1/D2 integradas y preservación formal completada. **Próximo trabajo:** diseño SP-03 (ciclo de ronda), seguido de SP-04 (balance de un solo grupo), en una entrega separada; no hay implementación autorizada. SP-03 permanece intacto y no se creó rama del juego propio. Los commits documentales posteriores al tag no cambian la referencia preservada.
+**Referencia cerrada:** D1/D2 integradas y versión modular preservada. **Encargo vigente: H3.1, auditoría y planificación de identidad visual**, en una rama documental independiente. El creador aprobó la experiencia del hospital como base experimental; PR #16 sigue abierto y en borrador, sin autorización de merge. No se implementó Phaser ni se autorizó H3.2. SP-03/SP-04 siguen separados y sin cambios. Los commits documentales posteriores al tag no alteran la referencia preservada.
+
+## Experimento visual e inicio de H3
+
+El [PR #16](https://github.com/LeviEdition/invierno-en-la-colonia/pull/16), rama `prototype/hospital-2-5d`, contiene la escena Canvas 2D aislada del hospital. El código y los originales permanecen en esa rama: esta entrega documental no los incorpora ni sustituye V9.9. [Snapshot del experimento auditado](https://github.com/LeviEdition/invierno-en-la-colonia/tree/ba1d93a4ae73a91a6f07660584e2374b53043a67).
+
+H3.1 recomienda evaluar Phaser como renderizador del mundo con HUD HTML y un único motor de reglas. La versión observada es 4.2.1; su fallback Canvas está deprecado y requiere una decisión de compatibilidad. El [informe 74](docs/74-h3-1-auditoria-identidad-visual.md) distingue hechos, pruebas y propuestas. **Siguiente paso: revisión del creador; H3.2 pendiente de autorización.**
 
 ## Descargar la referencia y jugar offline
 
