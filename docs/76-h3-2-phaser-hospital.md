@@ -157,3 +157,12 @@ Reservas: método protegido del framework fijado, WebGL requerido, minificación
 ## Commits, PR y CI
 
 Implementación: `678fd0cd1b6b9c569fad1d507b97d8547468192d`. La documentación y evidencia local se añaden en un commit posterior de la misma rama experimental. No se escribe aquí el SHA de este mismo documento; el head exacto, checks y enlaces de ejecución se registran en el PR de borrador y en la evidencia de entrega posterior. Así se evita una referencia circular al commit que contiene este texto. El workflow H3.2 hace checkout explícito de `pull_request.head.sha`; los workflows existentes de regresión D1/D2 conservan sus contratos.
+
+
+### Comprobación de GitHub Actions y cierre documental
+
+[PR18, abierto en borrador hacia main](https://github.com/LeviEdition/invierno-en-la-colonia/pull/18), sin merge ni auto-merge. Head de validación `930117e656a26022af0a1e1ce2afeb021c97181f`, código de implementación678fd0c. **Cuatro checks success:** [regresión480/480](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40989984441), [engine y navegador D1/D2](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40989984388), [hospital H3.2](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40989984474). El workflow D1/D2 ejecutó comparaciones40/40 por referencia, cinco partidas QA y su reproducción en producto, compuertas de interfaz y file offline. Evidencia fresca de esta entrega, no una sustitución por CI histórico de H3.1.
+
+Se descargó el artifact del hospital y se comprobaron los cuatro JSON passed, los tres viewports, cinco reinicios,18 ensayos y el build. **Bundle CI idéntico al local**, incluido SHA-256 y tamaño. [Resumen duradero de CI](evidencias/h32-ci.json) identifica condiciones/versiones de runner separadas de la medición local; los datos y capturas completos quedan en el artifact del run. El commit posterior solo registra este resultado y se comprueba de nuevo en CI; su head final se comunica en el PR y entrega, evitando referenciar el SHA de este mismo documento.
+
+Ramas remotas main826199d9 y prototipo ba1d93a4, tag/release y SP-03 verificados intactos tras preparar el PR. Trabajo detenido para revisión del creador; sin H3.3 ni publicación.
