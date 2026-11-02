@@ -1,0 +1,15 @@
+KIT PILOTO H3.3 — INVIERNO EN LA COLONIA
+
+1. Descomprimí este ZIP en una carpeta accesible para Codex.
+2. Pedile: «Leé PROMPT_CODEX.md y ejecutá el encargo usando los archivos de este paquete».
+3. Si tu interfaz permite adjuntar ZIP, podés adjuntarlo directamente con ese mensaje. Si no lo puede abrir, usá la carpeta descomprimida dentro del proyecto.
+
+Contenido:
+- assets/: mapa, cuatro retratos, zombi y barricada (7 PNG).
+- referencias/: dos bocetos de composición e interfaz (2 PNG).
+- PROMPT_CODEX.md: encargo completo actualizado.
+- manifest.json: inventario técnico y hashes.
+
+El mapa está aceptado como prototipo. El conjunto todavía requiere prueba de integración, escala, recortes y nitidez. Los recursos son imágenes generadas con IA para este proyecto; no son fotografías ni arte dibujado manualmente. No se incluyen versiones antiguas descartadas.
+Los PNG se conservan sin editar. Transparencia comprobada a nivel de canal; revisar bordes/halos sobre el mapa. No hay sprites animados ni imágenes de supervivientes de cuerpo completo: se usan retratos.
+Este paquete no modifica ni integra nada en GitHub por sí mismo.
