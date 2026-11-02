@@ -7,6 +7,7 @@ import {gzipSync} from 'node:zlib';
 import {checkWorkshopKit,workshopRoot} from './check-workshop-kit.mjs';
 export async function buildWorkshop({check=false}={}){
  const {profiles}=await checkWorkshopKit();
+ await checkWorkshopKit({uploaded:true});
  const result=await build({absWorkingDir:workshopRoot,entryPoints:['prototypes/hospital-workshop/main.mjs'],outfile:'dist/hospital-workshop/game.mjs',bundle:true,format:'esm',platform:'browser',target:'es2022',minify:true,legalComments:'eof',metafile:true,write:false});
  const inputs=Object.keys(result.metafile.inputs).map(p=>p.replaceAll('\\','/'));
  if(inputs.some(p=>p.startsWith('src/')||['prototypes/hospital/main.mjs','prototypes/hospital-phaser/main.mjs'].includes(p)))throw Error('El taller no puede importar motor ni entradas de las referencias');

@@ -8,8 +8,8 @@ test('H3.3: validador cruza PNG, canal alfa, hash y manifiesto original',async()
 test('H3.3: preview sirve taller y referencias sin exponer archivos fuera de sus rutas',async()=>{
  const server=createWorkshopServer();await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));const base='http://127.0.0.1:'+server.address().port;
  try{
-  for(const path of ['/prototypes/hospital-workshop/','/prototypes/hospital-workshop/kit.json','/prototypes/hospital/','/prototypes/hospital-phaser/'])assert.equal((await fetch(base+path)).status,200,path);
+  for(const path of ['/prototypes/hospital-workshop/','/prototypes/hospital-workshop/kit.json','/prototypes/hospital-workshop/uploaded-kit.json','/prototypes/hospital/','/prototypes/hospital-phaser/','/kit_arte_h33/assets/zombi.png','/kit_arte_h33/referencias/boceto-hospital-cercano.png'])assert.equal((await fetch(base+path)).status,200,path);
   assert.equal(new URL((await fetch(base)).url).pathname,'/prototypes/hospital-workshop/');
-  for(const path of ['/package.json','/src/domain/reference-state.mjs','/prototypes/hospital-workshop/%2e%2e%2f%2e%2e%2fpackage.json','/assets/hospital-workshop/%2e%2e%2f%2e%2e%2fpackage.json','/prototypes/hospital-workshop/%5c..%5cpackage.json'])assert.equal((await fetch(base+path)).status,404,path);
+  for(const path of ['/package.json','/src/domain/reference-state.mjs','/prototypes/hospital-workshop/%2e%2e%2f%2e%2e%2fpackage.json','/assets/hospital-workshop/%2e%2e%2f%2e%2e%2fpackage.json','/prototypes/hospital-workshop/%5c..%5cpackage.json','/kit_arte_h33/PROMPT_CODEX.md','/kit_arte_h33/assets/%2e%2e%2f%2e%2e%2fpackage.json'])assert.equal((await fetch(base+path)).status,404,path);
  }finally{server.closeAllConnections();await new Promise(resolve=>server.close(resolve));}
 });

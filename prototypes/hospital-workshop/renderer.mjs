@@ -24,7 +24,7 @@ export async function createWorkshopRenderer(canvas,kit,prepared,{signal,deadlin
  const nextFrame=()=>new Promise(resolve=>{game.events.once(Phaser.Core.Events.POST_RENDER,resolve);wake();});
  const release=()=>{
   if(disposed)return;disposed=true;
-  const sources=Object.values(prepared).map(p=>world?.textures.get('h33-'+p.sourceId)?.source[0]),auxiliaries=sources.map(s=>s?.image).filter(c=>c instanceof HTMLCanvasElement),derived=Object.values(prepared).filter(p=>p.factor!==1).map(p=>p.image);
+  const sources=Object.values(prepared).map(p=>world?.textures.get('h33-'+p.sourceId)?.source[0]),auxiliaries=sources.map(s=>s?.image).filter(c=>c instanceof HTMLCanvasElement),derived=Object.values(prepared).filter(p=>p.generated).map(p=>p.image);
   const result=disposeGame(game,canvas);
   // Solo superficies generadas por esta instancia, después de retirar la GPU.
   // Libera su backing lógico sin esperar al GC; nunca toca las Image originales.
@@ -70,7 +70,7 @@ export async function createWorkshopRenderer(canvas,kit,prepared,{signal,deadlin
    for(const node of nodes.filter(n=>n.visible&&n.role!=='ground')){
     const a=assets[node.assetId],scale=a.scale*node.multiplier,r={x:node.position.x-a.pivot.x*scale,y:node.position.y-a.pivot.y*scale};
     if(state.pivots){diagnostics.lineStyle(1.5*line,0x982967,1);diagnostics.lineBetween(node.position.x-5*line,node.position.y,node.position.x+5*line,node.position.y);diagnostics.lineBetween(node.position.x,node.position.y-5*line,node.position.x,node.position.y+5*line);}
-    if(state.bounds||state.selected===node.id){const b=a.visibleBounds;diagnostics.lineStyle((state.selected===node.id?2:1)*line,state.selected===node.id?0x9b6521:0x45618a,.9);diagnostics.strokeRect(r.x+b.x*scale,r.y+b.y*scale,b.width*scale,b.height*scale);}
+    if(state.bounds||state.selected===node.id){const b=a.visibleBounds;diagnostics.lineStyle((state.selected===node.id?2:1)*line,state.selected===node.id?0x9b6521:0x45618a,.9);if(a.presentation==='circular-portrait')diagnostics.strokeEllipse(node.position.x,node.position.y,a.width*scale,a.height*scale);else diagnostics.strokeRect(r.x+b.x*scale,r.y+b.y*scale,b.width*scale,b.height*scale);}
    }
    wake();
   }

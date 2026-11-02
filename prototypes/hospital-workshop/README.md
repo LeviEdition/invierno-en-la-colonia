@@ -14,6 +14,7 @@ npm.cmd run dev:workshop
 Mantener terminal abierta. Abrir:
 
 - Taller: http://127.0.0.1:8772/prototypes/hospital-workshop/
+- Kit subido: http://127.0.0.1:8772/prototypes/hospital-workshop/?kit=uploaded
 - Canvas sin cambios: http://127.0.0.1:8772/prototypes/hospital/
 - Phaser H3.2 sin cambios: http://127.0.0.1:8772/prototypes/hospital-phaser/
 
@@ -32,6 +33,12 @@ Usar la IPv4 Wi-Fi/Ethernet de la PC en lugar de127.0.0.1, mantener la terminal 
 
 ## Controles y significado
 
+- «Kit de comparación» cambia entre la referencia técnica anterior y el kit recibido en `kit_arte_h33/`. Es una navegación que restablece la escena; no un guardado. El mapa y los bocetos están en la galería de referencias, fuera de WebGL; los controles dibujados en los bocetos no funcionan como interfaz. No se ha construido un mapa interactivo de siete localidades.
+- En el kit subido, S1–S4 son **fichas de retrato**, no cuerpos de superviviente sobre el suelo. La selección usa su círculo y se indica con un aro ámbar. El nombre `retrato-mara` identifica el archivo; no asigna una identidad al catálogo del juego. Los PNG originales tienen fondo pintado, no se les eliminó.
+- Los retratos se recortan circularmente en memoria con límite de384px por defecto. «Sin límite384» permite comparar la resolución del perfil activo sin cambiar tamaño/apoyo; al100% usa los1254px originales. Se mantienen cámara y selección. Cuatro retratos originales necesitan85,33MiB RGBA+mipmaps estimados frente a5,33MiB con384px; las fuentes originales se descargan/decodifican en ambos casos. Esto no mide VRAM ni aprueba la pérdida visual. Con mucho zoom/DPR puede faltar detalle; comparar ambas preparaciones antes de decidir.
+- Zombi y barricada conservan el alfa original, incluidos bordes tenues. Sus apoyos se estimaron entre contactos visibles de ambos pies/patines, no en el borde del PNG; siguen pendientes de la maqueta. Los retratos se anclan al centro de su ficha, que no es un apoyo anatómico.
+- En móvil lejano las fichas son pequeñas: usar zoom o el selector HTML y «Centrar recurso seleccionado». Los44px corresponden a controles HTML, no al diámetro de cada figura en cualquier zoom. La franja gris del encuadre móvil es fondo del canvas fuera del suelo de referencia; no significa que falten capas.
+
 - Arrastre, rueda/pinza, flechas, +/− y0. Enter selecciona hospital; Escape limpia selección. También se puede seleccionar cualquier recurso mediante HTML y centrarlo. «Volver al sector» evita recorrer toda la página móvil hacia arriba.
 - Delante/Detrás/Esquina usan las tres posiciones de H3.2 y orden explícito. **No es una ordenación general por Y para cualquier edificio.** Mostrar ocultos transparenta el hospital.
 - Cuadrícula XY: referencia de coordenadas ilustradas, paso40–160. **No es cuadrícula de movimiento ni proyección del suelo aprobada.** Ejes, apoyos, límites y etiquetas se controlan por separado.
@@ -43,6 +50,8 @@ Usar la IPv4 Wi-Fi/Ethernet de la PC en lugar de127.0.0.1, mantener la terminal 
 - Restablecer vista solo reencuadra. Reiniciar taller y volver desde bfcache restablecen el estado provisional inicial. Los cambios no persisten ni modifican archivos.
 
 ## Incorporar el próximo material sin reescribir la escena
+
+**Entrega ya incorporada02/11:** los siete PNG y dos bocetos permanecen en las rutas originales versionadas de `kit_arte_h33/`, commit `d9f73be0c30c2218658e50cbf5fb9bec362697ce`. No duplicarlos en otra carpeta. `uploaded-kit.json` referencia directamente esos archivos y su manifiesto `files`; los RGB/RGBA, bytes y SHA-256 se comprueban durante el build. La escena usa solo los dos actores y los cuatro retratos de esa entrega, además del suelo/hospital anteriores. Los originales de mapa/bocetos se sirven solo como referencias. Los pasos siguientes describen futuras entregas, no una instrucción para mover esta.
 
 1. **Conservar** `assets/prototipo-hospital` y ambas referencias. Añadir PNG RGB (suelo) o RGBA (recursos transparentes) nuevos bajo `assets/hospital-workshop/`, con nombres de versión claros y sin eliminar colores para crear alfa.
 2. Registrar en `assets/hospital-workshop/manifest.json` un array `assets` con, por archivo: `file`, `width`, `height`, `bytes`, `sha256` y procedencia real. El esquema mínimo reutiliza el manifiesto original. Registrar el commit donde se incorporó el original, separado de cualquier commit posterior que lo describa.

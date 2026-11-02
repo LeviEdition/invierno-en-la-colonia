@@ -38,6 +38,8 @@ npm.cmd run dev:workshop
 
 Abrir http://127.0.0.1:8772/prototypes/hospital-workshop/ y mantener terminal abierta. Sin Python; npm.cmd evita el bloqueo npm.ps1. El comando construye el taller y también sirve las referencias sin cambios: `/prototypes/hospital/` y `/prototypes/hospital-phaser/` en el mismo puerto8772.
 
+**Kit recibido:** abrir http://127.0.0.1:8772/prototypes/hospital-workshop/?kit=uploaded para comparar el zombi, barricadas y cuatro fichas circulares de retrato. El selector «Kit de comparación» permite volver a los marcadores anteriores; cambiarlo recarga/restablece la escena. El mapa y los dos bocetos se consultan en «Mapa y bocetos recibidos — solo referencia»; no son el fondo jugable ni se ha implementado el mapa completo. Originales conservados en `kit_arte_h33/`, sin duplicarlos ni editarlos. La integración sigue siendo provisional.
+
 Cuadrícula XY, apoyos/límites/capas, selección y centrado, persona/puerta de referencia, oclusión y casos de4 supervivientes/4 accesos de ensayo. Marcadores y escala provisionales, sin motor o reglas. Los perfiles100/75/50% comparan memoria/detalle sin sustituir H3.2; la reducción no está aprobada. [Guía, Windows/LAN e incorporación de próximos PNG](prototypes/hospital-workshop/README.md) · [contrato del kit](prototypes/hospital-workshop/kit.json) · [evidencia y reservas](docs/77-h3-3-taller-visual-y-kit-piloto.md). No doble clic/file://, editor, importación arbitraria ni guardados.
 
 ## Probar H3.2 desde VS Code, sin Python

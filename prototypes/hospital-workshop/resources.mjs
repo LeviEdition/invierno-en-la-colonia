@@ -1,4 +1,4 @@
-import {textureEstimate} from './kit.mjs';
+import {textureEstimate,resourceFactor} from './kit.mjs';
 
 export async function loadResources(kit){
  const records=await Promise.all(kit.assets.filter(a=>a.kind==='image').map(async asset=>{
@@ -12,16 +12,19 @@ export async function loadResources(kit){
   return [asset.id,{image,alpha}];
  }));return Object.fromEntries(records);
 }
-export function prepareResources(kit,originals,profile){
+export function prepareResources(kit,originals,profile,{portraitQuality='384'}={}){
  return Object.fromEntries(kit.assets.filter(a=>a.kind==='image').map(asset=>{
-  const source=originals[asset.id],estimate=textureEstimate(asset,profile.factor);let image=source.image;
-  if(profile.factor!==1){
+  const source=originals[asset.id],factor=resourceFactor(asset,profile.factor,portraitQuality),estimate=textureEstimate(asset,factor);let image=source.image;
+  const generated=factor!==1||asset.presentation==='circular-portrait';
+  if(generated){
    image=document.createElement('canvas');image.width=estimate.width;image.height=estimate.height;
    const ctx=image.getContext('2d');ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
    // Transformación uniforme. ceil solo reserva el margen fraccionario; no estira.
-   ctx.setTransform(profile.factor,0,0,profile.factor,0,0);ctx.drawImage(source.image,0,0);
+   ctx.setTransform(factor,0,0,factor,0,0);
+   if(asset.presentation==='circular-portrait'){ctx.beginPath();ctx.arc(asset.width/2,asset.height/2,asset.width/2,0,Math.PI*2);ctx.clip();}
+   ctx.drawImage(source.image,0,0);
   }
-  return [asset.id,{...source,image,estimate,factor:profile.factor,sourceId:asset.id,provenance:asset.provenance}];
+  return [asset.id,{...source,image,estimate,factor,generated,sourceId:asset.id,provenance:asset.provenance}];
  }));
 }
 export function pickNode(nodes,assets,originals,point){
@@ -29,6 +32,7 @@ export function pickNode(nodes,assets,originals,point){
   if(!node.visible||node.role==='ground')continue;
   const asset=assets[node.assetId],scale=asset.scale*node.multiplier,x=Math.floor((point.x-node.position.x)/scale+asset.pivot.x),y=Math.floor((point.y-node.position.y)/scale+asset.pivot.y);
   if(x<0||y<0||x>=asset.width||y>=asset.height)continue;
+  if(asset.presentation==='circular-portrait'&&Math.hypot(x-asset.width/2,y-asset.height/2)>asset.width/2)continue;
   if(asset.kind==='marker'||!originals[asset.id].alpha||originals[asset.id].alpha[y*asset.width+x]>=16)return node.id;
  }return null;
 }

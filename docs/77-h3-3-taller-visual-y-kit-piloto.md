@@ -1,5 +1,94 @@
 # 77 — H3.3: preparación técnica del taller visual y kit piloto
 
+**Actualización02/11/2026, Montevideo:** archivos de la entrega accesibles e incorporados en un modo optativo del sector, descrito debajo. El bloqueo de acceso de la revisión anterior queda resuelto. Las fechas, capturas y resultados anteriores se conservan como evidencia histórica; no equivalen a validaciones del nuevo kit.
+
+## Integración acotada del kit recibido — 02/11/2026
+
+### Base, alcance y procedencia
+
+La subida del creador `d9f73be0c30c2218658e50cbf5fb9bec362697ce` agrega `kit_arte_h33/`: siete PNG, dos bocetos, manifiesto y notas. Se restauró el worktree temporal perdido por reemplazo del entorno desde la rama existente8d7d72b y se avanzó **solo por fast-forward**, sin descartar archivos ni reescribir historia. Checkout principal limpio en PR16; main826199d9 y PR18/4fc7c66 intactos. No AGENTS.md aplicable. Releídos protocolo15,74–77, README y notas del paquete. PR19 sigue OPEN/draft, dependiente de PR18.
+
+**Diferencia de alcance:** `PROMPT_CODEX.md` del paquete propone mapa interactivo completo, siete localidades,36 plazas/accesos, expediente, dados/acciones de muestra y ambiente. La autorización vigente en el chat limita H3.3 al sector hospital y prohíbe construir el mapa completo. La subida de archivos no se interpreta como sustitución de esas restricciones. Se conserva el documento como propuesta pendiente; no se implementan esa ampliación ni sus acciones/estadísticas, efectos o capacidades. Que las notas llamen al mapa «aceptado» queda atribuido al paquete, sin inventar una aceptación artística adicional del creador en esta entrega.
+
+**Originales sin edición ni duplicación:** se usan directamente las rutas versionadas `kit_arte_h33/assets/` y `referencias/`; no se copian los PNG a otra carpeta. La procedencia declara arte generado con IA aportado por el creador, según LEEME del paquete, sin atribuirlo a fotografía o dibujo manual. Nombres como `retrato-mara` son identificadores de archivo, no conexión al catálogo del motor. El validador acotado cruza los nueve registros con bytes/hash/cabecera PNG y el manifiesto de la entrega; Pillow12.3 leyó además los canales completos para la evidencia de alfa. No se añade dependencia al producto.
+
+| Original recibido | Dimensiones / modo | Bytes | Uso en esta entrega |
+| --- | --- | --- | --- |
+| mapa-prototipo.png |1448×1086 RGB|4.032.838|Referencia de composición fuera de WebGL; no fondo ni mapa jugable |
+| retrato-mara.png |1254² RGB|2.932.420|Ficha S1 circular de muestra |
+| retrato-superviviente-02.png |1254² RGB|2.525.733|Ficha S2 circular de muestra |
+| retrato-superviviente-03.png |1254² RGB|2.798.578|Ficha S3 circular de muestra |
+| retrato-superviviente-04.png |1254² RGB|2.670.374|Ficha S4 circular de muestra |
+| zombi.png |1312×1199 RGBA|932.878|Actor de oclusión/accesos del sector |
+| barricada.png |1536×1024 RGBA|2.103.514|Actor de accesos del sector |
+| Dos bocetos de interfaz |1672×941 RGBA, alfa255|3.987.864+4.002.443|Solo galería; no se usan como fondo ni controles reales |
+
+Los nueve archivos suman25.986.642 bytes; los siete recursos17.996.335. El sector carga ocho imágenes: hospital/suelo anteriores, dos actores nuevos y cuatro retratos, **19.625.964 bytes de PNG originales**. La galería carga mapa/bocetos fuera de la escena mediante lazy-loading del navegador; no se cuentan como texturas WebGL ni se afirma que no tengan costo de descarga/decodificación. [Inspección y hashes](evidencias/h33-kit-recibido-inspeccion.json).
+
+### Incorporación y límites visuales
+
+`?kit=uploaded` selecciona `uploaded-kit.json`; la URL sin ese parámetro mantiene el kit técnico anterior. Se reutilizan cámara, controles PointerEvents, arranque/cancelación, selección y renderer. El selector de kit navega/recarga, restablece vista y evita dos escenas simultáneas. Cambiar perfil o preparación de retratos conserva cámara/selección mediante el mismo montaje serial. Las dos referencias Canvas/H3.2 y `kit.json` anterior quedan intactas.
+
+Cuatro retratos diferentes sustituyen las cuatro siluetas **como fichas**, no como cuerpos de superviviente. Se recortan en círculo solo en Canvas auxiliar, con selección circular y aro ámbar. Sus centros son anclas de fichas; no pies ni patrón de altura. Los PNG RGB con su fondo pintado permanecen intactos. Los cuatro accesos mantienen un único ocupante: vacío, zombi o barricada; casos máximos/mixtos siguen siendo datos de presentación sin reglas.
+
+Zombi: límites con alfa>16 `(397,35,558,1122)`, apoyo provisional `(718,1090)`, escala0,095; barricada: `(194,99,1183,864)`, apoyo `(752,810)`, escala0,07. Los puntos se estimaron visualmente entre contactos de ambos pies/patines, no sobre el margen inferior del PNG. Alturas visibles106,59 y60,48 unidades, respectivamente, frente a puerta de ensayo126. No son medidas físicas ni aprobación de proporciones. Se preservan posiciones Delante/Detrás/Esquina y orden explícito. La nueva silueta tiene una fracción de esquina distinta de la anterior: se registra su propia oclusión, **sin atribuir equivalencia de píxeles entre imágenes diferentes**; el gate del kit previo conserva su tolerancia estrecha frente a H3.2.
+
+Alfa real: zombi0–255, barricada0–254. Ambos tienen píxeles de baja opacidad fuera de la silueta principal; inspección en fondo claro, oscuro y damero documentada, sin eliminar colores ni aplicar umbral a la imagen. Alfa16 es criterio de diagnóstico/selección, **no un recorte destructivo del render**. No se generó una versión normalizada. [Comparación de alfa](evidencias/h33-kit-alfa.png).
+
+### Ensayo de texturas y retratos
+
+Mismo camino POT/mipmaps de H3.2, aislado en este taller; no implica aprobarlo para todos los recursos del futuro juego. Los retratos circulares tienen un ensayo explícito384px y una opción sin ese límite (resolución del perfil activo). Se justificó comparar por el costo de cuatro imágenes1254² que se dibujan como fichas de64 unidades. Recorte original y reducido conservan centro, proporciones y tamaño de representación; no se escriben derivados a assets.
+
+| Kit subido | RGBA+mipmaps estimados | Auxiliares POT, backing lógico | Canvas de preparación, backing lógico |
+| --- | --- | --- | --- |
+|100%, retratos384|69,33MiB|52MiB|2,25MiB|
+|75%, retratos384|37,33MiB|28MiB|15,76MiB|
+|50%, retratos384|21,33MiB|16MiB|8,25MiB|
+|100%, retratos sin límite384|149,33MiB|112MiB|24,00MiB|
+
+Son ocho texturas principales, no el alcance de tres imágenes de la tabla histórica inferior. La barricada75% sigue en POT2048×1024: por eso el costo intermedio es37,33MiB y **corrige la estimación conversacional inicial de32MiB**, que suponía un salto de tamaño inexistente. Los cuatro retratos nativos explican85,33MiB frente a5,33MiB con384px: diferencia80MiB en la estimación de texturas. Incluso sin reducir, el círculo requiere cuatro Canvas de preparación1254²; se corrigió el contador para incluirlos. La tabla no mide VRAM/RAM real ni suma recursos compartidos/caches como si fueran asignaciones físicas independientes. Excluye framebuffer, driver, sombras y recursos internos.
+
+La red del sector es idéntica en todos los perfiles:19.625.964 bytes originales, más bundle/HTML. El círculo384 es optativo/comparable y no sirve aún archivos más pequeños. Su detalle debe aceptarse visualmente: puede resultar insuficiente con zoom/DPR mayores que los probados. Las tiras de retratos por perfil100/75/50 conservan el límite384 y por eso muestran la misma preparación; **la tira adicional original vs384 es la comparación de esa reducción**, no se confunden ambos experimentos. Recortes192×160 píxeles físicos por panel, sin reescalar una alternativa más que otra. [Original/384 al zoom máximo](evidencias/h33-kit-retrato-original-vs384.png).
+
+No se define un nuevo presupuesto de producto. Los64/24/16MiB históricos eran propuesta para otras tres texturas; el aumento y los resultados nuevos se dejan para revisión con hardware objetivo y futura maqueta, sin extrapolar a siete localidades.
+
+### Validación y reservas de esta continuación
+
+Referencia inicial ejecutada: `npm ci`, `check:build`,491/491. El primer intento de instalación no pudo crear la caché predeterminada fuera del workspace; se repitió con caché temporal y permisos concedidos. No se cambió lockfile ni versiones. Cuatro pruebas nuevas se escribieron antes de incorporar el contrato/selector de arte (rojo: exportación/kit nuevos ausentes); después verifican integridad/procedencia, representación de retratos y ocupación exclusiva, apoyo bajo derivación, círculo de selección y costos nativo/384. Suite final495/495, sin quitar cobertura. Los builds verifican ambos kits y rechazan importar el motor o entradas completas de referencia.
+
+La evidencia de navegador se ejecuta secuencialmente: gates existentes de Canvas, Phaser y taller anterior; nuevo gate de kit recibido; comparación de texturas anterior. Chromium de escritorio y dos móviles emulados, DPR1/2, no teléfono físico. Los JSON nuevos y capturas enlazados abajo detallan condiciones, conteos, oclusión, perfiles, círculos, cámara, teclado/tap/pinza, resize, cinco reinicios por tamaño, recuperación de contexto, carga fallida/reintento, retorno real bfcache cuando se registra persisted=true y liberación de ocho fuentes/auxiliares/Canvas derivados. Sin errores normales ni overflow. Solo dos hooks de navegación por documento intencionales después del desmontaje; se preservan handlers ajenos. Reposo sin draws durante la ventana de350ms observada.
+
+| Nueva imagen de zombi |1365×768 /DPR1|393×852 /DPR2|320×640 /DPR2|
+| --- | --- | --- | --- |
+| Delante |100%|100%|100%|
+| Detrás |0%|0%|0%|
+| Esquina |52,61%|51,67%|53,70%|
+
+La comparación estrecha anterior con H3.2 se reejecutó sobre el kit anterior, sin cambiar sus PNG/pivotes o tolerancias. La tabla nueva corresponde a **otra silueta**, con lectura de framebuffer y orden explícito; no establece una tolerancia nueva contra Canvas ni aprobación artística.
+
+Entorno local: Linux6.18.57, Node24.19, Chromium154/Playwright1.57, CPU visible AMDEPYC9V74/5 procesadores lógicos y35.743.748.096 bytes de memoria del host. WebGL mediante ANGLE/Vulkan SwiftShader por software, no GPU física. HTTP localhost sin throttling. Tiempos registrados son una observación funcional por configuración, con imágenes calientes al cambiar preparación; no serie estadística, tiempo GPU, rendimiento físico móvil ni presupuesto de FPS.
+
+Evidencia nueva: [kit recibido y condiciones](evidencias/h33-kit-recibido-browser.json), [Canvas](evidencias/h33-kit-recibido-canvas.json), [Phaser](evidencias/h33-kit-recibido-phaser.json), [taller anterior](evidencias/h33-kit-recibido-taller-anterior.json), [18 muestras/18 comparativas del tratamiento anterior reejecutadas](evidencias/h33-kit-recibido-texturas-referencia.json), [build](evidencias/h33-kit-recibido-build.json) y [resumen local](evidencias/h33-kit-recibido-validacion.json). Diez capturas seleccionadas versionadas (4.869.552 bytes), [dimensiones y hashes](evidencias/h33-kit-recibido-capturas.json); el gate produce25 imágenes completas disponibles en el artifact CI. La lámina de alfa adicional se generó e inspeccionó localmente y está versionada.
+
+- Sector: [delante](evidencias/h33-kit-delante.png), [esquina](evidencias/h33-kit-esquina.png), [mixto escritorio](evidencias/h33-kit-mixto.png), [mixto393](evidencias/h33-kit-mixto-393.png), [interfaz320](evidencias/h33-kit-interfaz-320.png).
+- Recortes nativos al zoom máximo100/75/50: [barricada](evidencias/h33-kit-barricada-max.png), [zombi](evidencias/h33-kit-zombi-max.png), [retratos con límite común384](evidencias/h33-kit-retrato-perfiles-max.png). [Original vs384](evidencias/h33-kit-retrato-original-vs384.png), original a la izquierda, muestra diferencias residuales del retrato a igual escala; no demuestra que384 sirva para cualquierDPR.
+
+Inspección visual realizada sobre las capturas de sector, interfaz móvil, comparaciones de actores y original/384: se ven las fichas completas y rostros reconocibles al acercar; se mantienen los espacios libres/ocupados y oclusión parcial natural en la esquina. Hay diferencias de rasterización y detalle fino, no una aprobación artística. El cuerpo del zombi puede quedar fuera de un recorte diagnóstico192×160 al zoom máximo: el panel centra el mismo punto en las tres preparaciones y no se reencuadra una para disimularlo.
+
+CI: el workflow H3.3 incluye ahora las rutas del paquete, valida ambos manifiestos y ejecuta también el nuevo gate, conservando los anteriores y el artifact completo. Hace checkout del head exacto. El resultado remoto y su SHA se registran en la [descripción/checks del PR19](https://github.com/LeviEdition/invierno-en-la-colonia/pull/19), separados del commit de subida y de la evidencia local. Este documento no se refiere al SHA de su propio commit. Bundle local reproducible:1.440.282 bytes/gzip9 386.215, SHA-256 `212b0e9f55f2dedea639dc627ee838cf8b8a26b3767c0df8a0d3922f859b5a41`. Referencia Phaser permanece `7e7b90ab465bc4b7113ffb20c4c0780a9c0e9d0db1d0cfab83659b46632f5e54`.
+
+Para probar: `npm.cmd ci`, `npm.cmd run dev:workshop`, mantener terminal abierta y abrir **http://127.0.0.1:8772/prototypes/hospital-workshop/?kit=uploaded**. Seleccionar «4 supervivientes + ocupación mixta» para ver los seis recursos del sector juntos; usar Delante/Detrás/Esquina para la oclusión. La galería debajo conserva mapa/bocetos y permite abrir sus originales. [Guía Windows/VSCode/LAN](../prototypes/hospital-workshop/README.md). Sin Python. Windows y la red doméstica son instrucciones, no plataformas físicamente comprobadas aquí.
+
+La primera comprobación de reinicios comparó una escena mixta que había compilado tres programas GL con una escena inicial que necesitaba dos; no era acumulación. Se conservó el fallo del arnés y se comparan cinco instancias de la **misma composición**, manteniendo igualdad estricta de listeners/objetos GL y liberación final a cero. No se relajaron los criterios visuales anteriores. [Primer gate y diagnóstico](evidencias/h33-kit-recibido-primer-gate.json).
+
+**Revisión crítica:** los originales son inmutables y la procedencia llega al commit de subida; la ruta HTTP sirve solo assets/referencias del paquete, no sus instrucciones ni el resto del repositorio. El recorte afecta tanto imagen como hit-test; auxiliares circulares se liberan incluso al factor1. No se duplica input ni se amplía el adaptador Phaser4.2.1. El cambio de kit cancela/desmonta mediante navegación y los cambios de calidad comparten la cola existente. Queda abierta la elección de preparación y hardware, sin modificar la solución H3.2. Un renderizador nuevo no arreglaría la proyección de los recursos.
+
+**Reservas visuales:** hospital/suelo pertenecen al arte anterior, que no coincide aún con el nuevo mapa; no se simula una unificación. Fichas pequeñas en encuadre móvil lejano; hay zoom y selección HTML accesible, pero no se promete44px para cada actor a cualquier escala. Se conserva la franja de fondo fuera del suelo al encuadrar en móvil. No se fingió navegación por el nuevo mapa ni se usaron bocetos con HUD pintado como controles reales. Apoyos, distribución final, proyección, nitidez y aceptación artística permanecen pendientes. Sin físicos Android/iOS, GPU/VRAM real, red doméstica, Safari/Firefox o aceptación visual H3.2.
+
+Los dos bocetos recibidos sí orientan la composición y la interfaz; no se los descarta. Aún no aportan un hospital separado con geometría/apoyos medidos, referencia humana erguida común ni aprobación de capas/proyección. Estas son las decisiones de maqueta que siguen pendientes, no un pedido de reenviar las imágenes ya recibidas.
+
+**Único siguiente paso:** revisión del creador del sector con los recursos recibidos y confirmación de la referencia de escala/apoyo/proyección de la maqueta. El mapa completo, las36 posiciones y el expediente del documento adjunto son propuestas pendientes de autorización separada. H3.3 sigue abierto, sin H3.4, fusiones, releases o reglas nuevas.
+
 **30/10/2026, Montevideo. Trabajo autorizado: preparación técnica, no cierre artístico de H3.3.** El creador prepara una maqueta del hospital. El taller permite evaluar lo actual y sustituir después sus recursos; no aprueba ángulos, proporciones, capas o arte que dependan de esa maqueta.
 
 ## Base y límites

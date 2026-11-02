@@ -8,7 +8,7 @@ import {buildHospital} from './build-hospital-phaser.mjs';
 import {buildWorkshop} from './build-workshop.mjs';
 import {workshopRoot} from './check-workshop-kit.mjs';
 export function createWorkshopServer(){
- const references=createPreviewServer(),prefixes=['/prototypes/hospital-workshop/','/dist/hospital-workshop/','/assets/hospital-workshop/'];
+ const references=createPreviewServer(),prefixes=['/prototypes/hospital-workshop/','/dist/hospital-workshop/','/assets/hospital-workshop/','/kit_arte_h33/assets/','/kit_arte_h33/referencias/'];
  return http.createServer(async(req,res)=>{
   try{
    const pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname);

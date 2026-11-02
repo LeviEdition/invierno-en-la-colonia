@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-02",
+  "baseUpload": "d9f73be0c30c2218658e50cbf5fb9bec362697ce",
+  "initialNodeTests": 491,
+  "finalNodeTests": 495,
+  "passed": 495,
+  "failed": 0,
+  "skipped": 0,
+  "commands": {
+    "installation": "npm ci --cache /tmp/h33-npm-cache (escalated permission granted after default cache inaccessible)",
+    "builds": [
+      "npm run check:build",
+      "npm run build:hospital",
+      "npm run check:hospital-build",
+      "npm run build:workshop",
+      "npm run check:workshop-build"
+    ],
+    "browserSequential": [
+      "check-hospital-prototype-browser.mjs",
+      "check-h32-browser.mjs",
+      "check-h33-browser.mjs",
+      "check-h33-uploaded-browser.mjs",
+      "measure-h33-textures.mjs"
+    ]
+  },
+  "evidence": {
+    "uploaded": "h33-kit-recibido-browser.json",
+    "originalCanvas": "h33-kit-recibido-canvas.json",
+    "originalPhaser": "h33-kit-recibido-phaser.json",
+    "previousWorkshop": "h33-kit-recibido-taller-anterior.json",
+    "previousTextureTreatment": "h33-kit-recibido-texturas-referencia.json",
+    "inspection": "h33-kit-recibido-inspeccion.json"
+  },
+  "review": {
+    "originalsModified": false,
+    "mainModified": false,
+    "referencePrototypesModified": false,
+    "rulesOrEngineChanged": false,
+    "newDependencies": false,
+    "gameMapImplemented": false,
+    "physicalMobileTested": false,
+    "artApproved": false,
+    "h33Closed": false
+  },
+  "ci": "Exact implementation head, run and artifact verification recorded in PR19 description; local evidence is not CI evidence."
+}

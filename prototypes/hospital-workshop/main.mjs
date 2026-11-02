@@ -1,4 +1,5 @@
-import kitData from './kit.json';
+import referenceKitData from './kit.json';
+import uploadedKitData from './uploaded-kit.json';
 import {validateKit,defaultState,sceneNodes,visibleCounts,caseOccupants} from './kit.mjs';
 import {loadResources,prepareResources,pickNode} from './resources.mjs';
 import {createWorkshopRenderer} from './renderer.mjs';
@@ -7,11 +8,12 @@ import {bindControls} from '../hospital/controls.mjs';
 import {webglAvailable} from '../hospital-phaser/renderer.mjs';
 import {waitForStartup,STARTUP_TIMEOUT_MS} from '../hospital-phaser/startup.mjs';
 
-const kit=validateKit(kitData),assets=Object.fromEntries(kit.assets.map(a=>[a.id,a]));
+const uploaded=new URLSearchParams(location.search).get('kit')==='uploaded';
+const kit=validateKit(uploaded?uploadedKitData:referenceKitData),assets=Object.fromEntries(kit.assets.map(a=>[a.id,a]));
 const loading=document.querySelector('#loading'),status=document.querySelector('#renderer-status'),labels=document.querySelector('#labels'),template=document.querySelector('#scene').cloneNode(false);
 const controls=()=>[...document.querySelectorAll('button,input,select')].filter(el=>el.id!=='restart-scene');
 let state=defaultState(kit),savedView=null,current=null,lastDisposal=null,lastError=null,starts=0,generation=0,controller=null,serial=Promise.resolve(),pageActive=true;
-const enableControls=()=>{controls().forEach(el=>el.disabled=false);document.querySelector('#select-hospital').disabled=!state.layers.building;document.querySelector('#center-selection').disabled=!state.selected;};
+const enableControls=()=>{controls().forEach(el=>el.disabled=false);document.querySelector('#portrait-quality').disabled=!uploaded;document.querySelector('#select-hospital').disabled=!state.layers.building;document.querySelector('#center-selection').disabled=!state.selected;};
 export function inspect(){return {state:document.body.dataset.state,starts,lastError,lastDisposal,app:current?.inspect()||null};}
 async function clearCurrent(){const app=current;current=null;if(app)lastDisposal=await app.destroy();labels.replaceChildren();}
 export function disposeWorkshop(){const id=++generation;controller?.abort();serial=serial.catch(()=>{}).then(async()=>{await clearCurrent();if(id===generation){document.body.dataset.state='disposed';controls().forEach(el=>el.disabled=true);loading.hidden=true;status.textContent='Taller desmontado.';}});return serial;}
@@ -29,7 +31,7 @@ async function runMount(signal,id,requestedAt){
   if(!webglAvailable())throw Error('WEBGL_UNAVAILABLE');
   const originals=await waitForStartup(loadResources(kit),{signal,deadline});signal.throwIfAborted();
   timings.loadAndAlphaMs=performance.now()-timings.startedAt;
-  const profile=kit.profiles.find(p=>p.id===state.profile),preparationStart=performance.now(),prepared=prepareResources(kit,originals,profile);timings.derivationSubmitMs=performance.now()-preparationStart;signal.throwIfAborted();
+  const profile=kit.profiles.find(p=>p.id===state.profile),preparationStart=performance.now(),prepared=prepareResources(kit,originals,profile,state);timings.derivationSubmitMs=performance.now()-preparationStart;signal.throwIfAborted();
   const rendererStart=performance.now();renderer=await createWorkshopRenderer(canvas,kit,prepared,{signal,deadline});signal.throwIfAborted();
   let camera=savedView?{...savedView.camera}:null,viewport=savedView?{...savedView.viewport}:null,initialZoom=savedView?.initialZoom,nodes=[];
   ui=new AbortController();const options={signal:ui.signal},counters={commands:0,draws:0};
@@ -51,6 +53,7 @@ async function runMount(signal,id,requestedAt){
   const reset=()=>change(fitCamera(kit.bounds,viewport.width,viewport.height));
   const command=fn=>(...args)=>{counters.commands++;return fn(...args);};
   const listen=(selector,type,fn)=>{for(const el of document.querySelectorAll(selector))el.addEventListener(type,command(fn),options);};
+  listen('#kit-source','change',e=>{const url=new URL(location.href);if(e.target.value==='uploaded')url.searchParams.set('kit','uploaded');else url.searchParams.delete('kit');location.assign(url);});
   function resize(){const next={width:canvas.clientWidth,height:canvas.clientHeight,dpr:Math.min(devicePixelRatio||1,3)},fitted=fitCamera(kit.bounds,next.width,next.height);if(camera&&viewport){const old=screenToWorld(camera,center()),zoom=Math.max(fitted.minZoom,Math.min(fitted.maxZoom,fitted.zoom*camera.zoom/initialZoom));camera={...fitted,zoom,x:next.width/2-old.x*zoom,y:next.height/2-old.y*zoom};}else camera=fitted;viewport=next;initialZoom=fitted.zoom;schedule();}
   observer=new ResizeObserver(resize);observer.observe(canvas);
   unbind=bindControls({canvas,onPan:command((x,y)=>change(panCamera(camera,x,y))),onZoom:command((factor,anchor=center())=>change(zoomCameraAt(camera,factor,anchor))),onPinch:command((a,b,f)=>change(pinchCamera(camera,a,b,f))),onPick:command(point=>{state.selected=pickNode(nodes,assets,originals,screenToWorld(camera,point));schedule();}),onReset:command(reset),onSelect:command(()=>{state.selected=state.selected==='hospital'?null:'hospital';schedule();}),onClear:command(()=>{state.selected=null;schedule();})});
@@ -68,12 +71,14 @@ async function runMount(signal,id,requestedAt){
   listen('#selected-resource','change',e=>{state.selected=e.target.value||null;schedule();});
   listen('#center-selection','click',()=>{const node=nodes.find(n=>n.id===state.selected&&n.visible);if(!node)return;const a=assets[node.assetId],b=a.visibleBounds,scale=a.scale*node.multiplier,x=node.position.x+(b.x+b.width/2-a.pivot.x)*scale,y=node.position.y+(b.y+b.height/2-a.pivot.y)*scale;change({...camera,x:viewport.width/2-x*camera.zoom,y:viewport.height/2-y*camera.zoom});});
   listen('#profile','change',e=>{savedView={camera:{...camera},viewport:{...viewport},initialZoom};state.profile=e.target.value;void mount();});
+  listen('#portrait-quality','change',e=>{savedView={camera:{...camera},viewport:{...viewport},initialZoom};state.portraitQuality=e.target.value;void mount();});
   canvas.addEventListener('webglcontextlost',()=>{contextLost=true;controls().forEach(el=>el.disabled=true);status.textContent='Contexto perdido; reiniciá si no vuelve.';},options);canvas.addEventListener('webglcontextrestored',()=>{contextLost=false;enableControls();status.textContent='Contexto recuperado.';schedule();},options);
+  document.querySelector('#kit-source').value=uploaded?'uploaded':'reference';document.querySelector('#portrait-quality').value=state.portraitQuality;document.querySelector('#kit-note').textContent=uploaded?'Kit subido: zombi, barricadas y cuatro fichas de retrato. Recorte circular solo de presentación; apoyos y escala provisionales. No hay cuerpos de superviviente ni reglas conectadas.':'Referencia técnica anterior: tres PNG y marcadores, conservados para comparar.';document.querySelector('#kit-manifest-link').href=uploaded?'./uploaded-kit.json':'./kit.json';document.querySelector('#profile option[value="h32"]').textContent=kit.profiles[0].label;
   document.querySelector('#case').value=state.case;document.querySelector('#profile').value=state.profile;document.querySelector('#actor-scale').value=state.actorScale;document.querySelector('#scale-value').value=state.actorScale.toFixed(2)+'×';document.querySelector('#grid-step').value=state.gridStep;
   for(const key of ['grid','axes','pivots','bounds'])document.querySelector('#'+key).checked=state[key];document.querySelector('#labels-toggle').checked=state.labels;document.querySelector('#show-hidden').checked=state.showHidden;
   for(const el of document.querySelectorAll('[data-layer]'))el.checked=state.layers[el.dataset.layer];for(const el of document.querySelectorAll('[data-access]'))el.value=state.accesses[Number(el.dataset.access)];for(const b of document.querySelectorAll('[data-pose]'))b.setAttribute('aria-pressed',String(b.dataset.pose===state.pose));
-  const memory=Object.values(prepared).reduce((sum,p)=>sum+p.estimate.rgbaWithMips,0);document.querySelector('#texture-summary').textContent=`${profile.label}: ${(memory/1048576).toFixed(2)} MiB RGBA + mipmaps estimados. No es VRAM medida; excluye auxiliares y framebuffer.`;
-  document.querySelector('#resource-list').replaceChildren(...kit.assets.map(a=>{const li=document.createElement('li');li.textContent=`${a.id}: ${a.width}×${a.height}, apoyo (${a.pivot.x}, ${a.pivot.y}), escala ${a.scale}; ${a.kind==='marker'?'marcador sin arte':'PNG original'}, provisional.`;return li;}));
+  const memory=Object.values(prepared).reduce((sum,p)=>sum+p.estimate.rgbaWithMips,0);document.querySelector('#texture-summary').textContent=`${profile.label}${uploaded?`; retratos ${state.portraitQuality==='original'?'sin límite384 (perfil activo)':'limitados a384px'}`:''}: ${(memory/1048576).toFixed(2)} MiB RGBA + mipmaps estimados. No es VRAM medida; excluye auxiliares y framebuffer.`;
+  document.querySelector('#resource-list').replaceChildren(...kit.assets.map(a=>{const li=document.createElement('li');li.textContent=`${a.id}: ${a.width}×${a.height}, apoyo (${a.pivot.x}, ${a.pivot.y}), escala ${a.scale}; ${a.kind==='marker'?'marcador sin arte':'PNG original'}${a.presentation==='circular-portrait'?`; ficha circular en memoria ${state.portraitQuality==='original'?'sin límite384':'con límite384px'} (ensayo, no aprobado)`:''}, provisional.`;return li;}));
   resize();if(frame)cancelAnimationFrame(frame);render();await waitForStartup(renderer.nextFrame(),{signal,deadline});signal.throwIfAborted();
   timings.rendererAndFirstFrameMs=performance.now()-rendererStart;timings.readyMs=performance.now()-timings.startedAt;timings.totalMountMs=performance.now()-requestedAt;
   current={inspect:()=>({state:structuredClone(state),camera:{...camera},viewport:{...viewport},initialZoom,nodes:structuredClone(nodes),counts:visibleCounts(nodes),counters:{...counters},timings:{...timings},renderer:renderer.inspect()}),worldAt:p=>renderer.worldAt(p),pixels:()=>renderer.pixels(),diagnosticFrame:k=>renderer.diagnosticFrame(k),prepared,
