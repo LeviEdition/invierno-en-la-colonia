@@ -1,0 +1,259 @@
+{
+  "browser": "143.0.7499.4",
+  "upload": "d9f73be0c30c2218658e50cbf5fb9bec362697ce",
+  "physicalMobile": false,
+  "build": {
+    "phaser": "4.2.1",
+    "esbuild": "0.28.2",
+    "rawBytes": 1440282,
+    "gzip9Bytes": 386215,
+    "sha256": "212b0e9f55f2dedea639dc627ee838cf8b8a26b3767c0df8a0d3922f859b5a41",
+    "inputs": [
+      "prototypes/hospital-workshop/kit.json",
+      "prototypes/hospital-workshop/uploaded-kit.json",
+      "prototypes/hospital-workshop/kit.mjs",
+      "prototypes/hospital-workshop/resources.mjs",
+      "node_modules/phaser/dist/phaser.esm.js",
+      "prototypes/hospital-phaser/game.mjs",
+      "prototypes/hospital-phaser/dispose-game.mjs",
+      "prototypes/hospital-phaser/startup.mjs",
+      "prototypes/hospital-phaser/texture-quality.mjs",
+      "prototypes/hospital-workshop/renderer.mjs",
+      "prototypes/hospital/camera.mjs",
+      "prototypes/hospital/controls.mjs",
+      "prototypes/hospital/scene.mjs",
+      "prototypes/hospital-phaser/renderer.mjs",
+      "prototypes/hospital-workshop/main.mjs"
+    ],
+    "profiles": [
+      {
+        "id": "h32",
+        "factor": 1,
+        "textures": [
+          {
+            "id": "hospital",
+            "width": 1254,
+            "height": 1254,
+            "potWidth": 2048,
+            "potHeight": 2048,
+            "rgbaBase": 16777216,
+            "rgbaWithMips": 22369620,
+            "auxiliaryRgba": 16777216,
+            "derivedRgba": 0
+          },
+          {
+            "id": "ground",
+            "width": 1536,
+            "height": 1024,
+            "potWidth": 2048,
+            "potHeight": 1024,
+            "rgbaBase": 8388608,
+            "rgbaWithMips": 11184812,
+            "auxiliaryRgba": 8388608,
+            "derivedRgba": 0
+          },
+          {
+            "id": "zombie",
+            "width": 1175,
+            "height": 1338,
+            "potWidth": 2048,
+            "potHeight": 2048,
+            "rgbaBase": 16777216,
+            "rgbaWithMips": 22369620,
+            "auxiliaryRgba": 16777216,
+            "derivedRgba": 0
+          }
+        ]
+      },
+      {
+        "id": "three-quarter",
+        "factor": 0.75,
+        "textures": [
+          {
+            "id": "hospital",
+            "width": 941,
+            "height": 941,
+            "potWidth": 1024,
+            "potHeight": 1024,
+            "rgbaBase": 4194304,
+            "rgbaWithMips": 5592404,
+            "auxiliaryRgba": 4194304,
+            "derivedRgba": 3541924
+          },
+          {
+            "id": "ground",
+            "width": 1152,
+            "height": 768,
+            "potWidth": 2048,
+            "potHeight": 1024,
+            "rgbaBase": 8388608,
+            "rgbaWithMips": 11184812,
+            "auxiliaryRgba": 8388608,
+            "derivedRgba": 3538944
+          },
+          {
+            "id": "zombie",
+            "width": 882,
+            "height": 1004,
+            "potWidth": 1024,
+            "potHeight": 1024,
+            "rgbaBase": 4194304,
+            "rgbaWithMips": 5592404,
+            "auxiliaryRgba": 4194304,
+            "derivedRgba": 3542112
+          }
+        ]
+      },
+      {
+        "id": "half",
+        "factor": 0.5,
+        "textures": [
+          {
+            "id": "hospital",
+            "width": 627,
+            "height": 627,
+            "potWidth": 1024,
+            "potHeight": 1024,
+            "rgbaBase": 4194304,
+            "rgbaWithMips": 5592404,
+            "auxiliaryRgba": 4194304,
+            "derivedRgba": 1572516
+          },
+          {
+            "id": "ground",
+            "width": 768,
+            "height": 512,
+            "potWidth": 1024,
+            "potHeight": 512,
+            "rgbaBase": 2097152,
+            "rgbaWithMips": 2796204,
+            "auxiliaryRgba": 2097152,
+            "derivedRgba": 1572864
+          },
+          {
+            "id": "zombie",
+            "width": 588,
+            "height": 669,
+            "potWidth": 1024,
+            "potHeight": 1024,
+            "rgbaBase": 4194304,
+            "rgbaWithMips": 5592404,
+            "auxiliaryRgba": 4194304,
+            "derivedRgba": 1573488
+          }
+        ]
+      }
+    ]
+  },
+  "conditions": {
+    "os": "linux 7.0.0-1017-azure",
+    "cpu": "AMD EPYC 9V45 96-Core Processor",
+    "logicalCpus": 4,
+    "totalSystemMemoryBytes": 16760344576,
+    "node": "v22.23.4",
+    "headless": true,
+    "network": "HTTP localhost sin throttling; caché caliente al cambiar perfil",
+    "timings": "Una observación por configuración; prueba funcional, no benchmark estadístico ni tiempo GPU. No VRAM medida."
+  },
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "readyWallMs": 760,
+      "timings": {
+        "requestedAt": 116,
+        "startedAt": 117.30000000000291,
+        "loadAndAlphaMs": 155.39999999999418,
+        "derivationSubmitMs": 1.3000000000029104,
+        "rendererAndFirstFrameMs": 352,
+        "readyMs": 508.6999999999971,
+        "totalMountMs": 510
+      },
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "occlusion": [
+        {
+          "pose": "delante",
+          "visible": 1380,
+          "total": 1380,
+          "ratio": 1
+        },
+        {
+          "pose": "detras",
+          "visible": 0,
+          "total": 1387,
+          "ratio": 0
+        },
+        {
+          "pose": "esquina",
+          "visible": 735,
+          "total": 1397,
+          "ratio": 0.5261274158911954
+        }
+      ],
+      "profiles": [],
+      "errors": [],
+      "network": [
+        {
+          "file": "/assets/prototipo-hospital/hospital.png",
+          "transferSize": 2392225,
+          "encodedBodySize": 2391925,
+          "duration": 40.40000000000873
+        },
+        {
+          "file": "/assets/prototipo-hospital/suelo-nevado.png",
+          "transferSize": 3270842,
+          "encodedBodySize": 3270542,
+          "duration": 47.39999999999418
+        },
+        {
+          "file": "/kit_arte_h33/assets/zombi.png",
+          "transferSize": 933178,
+          "encodedBodySize": 932878,
+          "duration": 9.599999999991269
+        },
+        {
+          "file": "/kit_arte_h33/assets/barricada.png",
+          "transferSize": 2103814,
+          "encodedBodySize": 2103514,
+          "duration": 43.79999999998836
+        },
+        {
+          "file": "/kit_arte_h33/assets/retrato-mara.png",
+          "transferSize": 2932720,
+          "encodedBodySize": 2932420,
+          "duration": 50.39999999999418
+        },
+        {
+          "file": "/kit_arte_h33/assets/retrato-superviviente-02.png",
+          "transferSize": 2526033,
+          "encodedBodySize": 2525733,
+          "duration": 49.5
+        },
+        {
+          "file": "/kit_arte_h33/assets/retrato-superviviente-03.png",
+          "transferSize": 2798878,
+          "encodedBodySize": 2798578,
+          "duration": 47.59999999999127
+        },
+        {
+          "file": "/kit_arte_h33/assets/retrato-superviviente-04.png",
+          "transferSize": 2670674,
+          "encodedBodySize": 2670374,
+          "duration": 64.5
+        }
+      ]
+    }
+  ],
+  "comparisons": [],
+  "failures": [
+    "TypeError: Cannot read properties of null (reading 'nodes')\n    at geometry (file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/scripts/check-h33-uploaded-browser.mjs:20:22)\n    at file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/scripts/check-h33-uploaded-browser.mjs:73:122"
+  ],
+  "passed": false
+}

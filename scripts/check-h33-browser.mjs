@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import {mkdir,readFile,writeFile} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {installLifecycleProbe} from '../test-support/h32-lifecycle-probe.mjs';
+import {waitForWorkshopMount} from '../test-support/h33-browser-wait.mjs';
 const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
 const base=process.env.H33_ORIGIN||'http://127.0.0.1:8772',output=process.env.H33_OUTPUT_DIR||'/tmp/h33-browser',modulePath='/dist/hospital-workshop/game.mjs';await mkdir(output,{recursive:true});
 const kit=JSON.parse(await readFile(new URL('../prototypes/hospital-workshop/kit.json',import.meta.url))),assets=Object.fromEntries(kit.assets.map(a=>[a.id,a]));
@@ -10,10 +11,10 @@ const evidence={browser:browser.version(),physicalMobile:false,baseline:kit.sour
 const frames=page=>page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
 const inspect=page=>page.evaluate(async path=>(await import(path)).inspect(),modulePath);
 const call=(page,name,arg)=>page.evaluate(async({path,name,arg})=>(await import(path))[name](arg),{path:modulePath,name,arg});
-const ready=page=>page.waitForFunction(()=>document.body.dataset.state==='ready');
+const ready=page=>waitForWorkshopMount(page,modulePath);
 const near=(a,b,t=.02)=>assert.ok(Math.abs(a-b)<=t,`${a} != ${b}`);
 const probe=page=>page.evaluate(()=>window.h32StartupProbe());
-async function profile(page,id){const starts=(await inspect(page)).starts;await page.locator('#profile').selectOption(id);await page.waitForFunction(({path,starts})=>import(path).then(m=>m.inspect().starts===starts+1&&m.inspect().state==='ready'),{path:modulePath,starts});await frames(page);}
+async function profile(page,id){const starts=(await inspect(page)).starts;await page.locator('#profile').selectOption(id);await waitForWorkshopMount(page,modulePath,starts+1);await frames(page);}
 async function camera(page){const {app}=await inspect(page);for(const p of [{x:0,y:0},{x:app.viewport.width*.37,y:app.viewport.height*.53}]){const world=await call(page,'worldAt',p);near(world.x,(p.x-app.camera.x)/app.camera.zoom);near(world.y,(p.y-app.camera.y)/app.camera.zoom);}return app;}
 function stablePivots(app){
  for(const node of app.nodes.filter(n=>n.visible&&assets[n.assetId].kind==='image')){
@@ -79,7 +80,7 @@ try{
   }
   await page.setViewportSize(viewport.width>500?{width:1110,height:800}:{width:360,height:740});await frames(page);await camera(page);await page.locator('#reset-view').click();await frames(page);stablePivots(await camera(page));assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
   await page.locator('#restart-scene').click();await ready(page);await frames(page);const initialProbe=await probe(page);record.initialResources=initialProbe;
-  for(let cycle=0;cycle<5;cycle++){const starts=(await inspect(page)).starts;await page.locator('#restart-scene').click();await page.waitForFunction(({path,starts})=>import(path).then(m=>m.inspect().starts===starts+1&&m.inspect().state==='ready'),{path:modulePath,starts});await frames(page);const app=await inspect(page),snapshot=await probe(page);assert.deepEqual(snapshot.listeners,initialProbe.listeners);assert.deepEqual(snapshot.gl,initialProbe.gl);assert.equal(snapshot.activeSceneContexts,1);assert.equal(snapshot.resizeTargets,1);assert.equal(snapshot.startupTimers,0);assert.equal(app.lastDisposal.sourcesReleased,true);const n=app.app.counters.commands;await page.locator('#zoom-in').click();await frames(page);assert.equal((await inspect(page)).app.counters.commands,n+1);}
+  for(let cycle=0;cycle<5;cycle++){const starts=(await inspect(page)).starts;await page.locator('#restart-scene').click();await waitForWorkshopMount(page,modulePath,starts+1);await frames(page);const app=await inspect(page),snapshot=await probe(page);assert.deepEqual(snapshot.listeners,initialProbe.listeners);assert.deepEqual(snapshot.gl,initialProbe.gl);assert.equal(snapshot.activeSceneContexts,1);assert.equal(snapshot.resizeTargets,1);assert.equal(snapshot.startupTimers,0);assert.equal(app.lastDisposal.sourcesReleased,true);const n=app.app.counters.commands;await page.locator('#zoom-in').click();await frames(page);assert.equal((await inspect(page)).app.counters.commands,n+1);}
   record.checks.push('Cámara/picking/rueda/drag/reset/resize, cinco reinicios y un comando por activación');
   await profile(page,'three-quarter');await page.evaluate(()=>{window.h33LostContext=document.querySelector('#scene').getContext('webgl').getExtension('WEBGL_lose_context');window.h33LostContext.loseContext();});await page.waitForFunction(()=>document.querySelector('#renderer-status').textContent.includes('perdido'));await page.waitForTimeout(150);await page.evaluate(()=>window.h33LostContext.restoreContext());await page.waitForFunction(()=>document.querySelector('#renderer-status').textContent.includes('recuperado'));await frames(page);stablePivots(await camera(page));record.contextRecovery='Pérdida/restauración con derivados75%, apoyos y mipmaps operativos';
   assert.ok(await page.locator('#center-selection').isDisabled(),'Restaurar contexto conserva selección vacía');

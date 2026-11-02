@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import {mkdir,writeFile,readFile} from 'node:fs/promises';
 import {cpus,totalmem,release} from 'node:os';
 import {createHash} from 'node:crypto';
+import {waitForWorkshopMount} from '../test-support/h33-browser-wait.mjs';
 const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
 const base=process.env.H33_ORIGIN||'http://127.0.0.1:8772',output=process.env.H33_TEXTURE_DIR||'/tmp/h33-textures',path='/dist/hospital-workshop/game.mjs';await mkdir(output,{recursive:true});
 const kit=JSON.parse(await readFile(new URL('../prototypes/hospital-workshop/kit.json',import.meta.url)));
@@ -9,7 +10,7 @@ const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'
 const evidence={conditions:{os:process.platform+' '+release(),cpu:cpus()[0].model,logicalCpus:cpus().length,totalSystemMemoryBytes:totalmem(),node:process.version,chromium:browser.version(),headless:true,physicalMobile:false,network:'HTTP localhost, sin compresión ni throttling; PNG originales comunes, caché caliente durante cambios de perfil',method:'3 ensayos por perfil/viewport, orden rotativo, sin exportación PNG durante tiempos; host compartido con carga ajena no controlada. Tiempos CPU/envío y primer frame, no finalización GPU; no VRAM medida',memory:'RGBA teórica por dimensiones/potencias/niveles; excluye framebuffer, driver, cachés y marcadores. Auxiliares y derivados separados.'},sourceSnapshot:kit.sourceSnapshot,originalFiles:kit.assets.filter(a=>a.kind==='image').map(a=>({id:a.id,width:a.width,height:a.height,bytes:a.bytes,sha256:a.sha256,alpha:a.alpha})),samples:[],exports:[],comparisons:[],failures:[]};
 evidence.build=JSON.parse(await readFile(new URL('../dist/hospital-workshop/build.json',import.meta.url)));
 const inspect=page=>page.evaluate(async path=>(await import(path)).inspect(),path),frames=page=>page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
-async function profile(page,id){const starts=(await inspect(page)).starts;await page.locator('#profile').selectOption(id);await page.waitForFunction(({path,starts})=>import(path).then(m=>m.inspect().starts===starts+1&&m.inspect().state==='ready'),{path,starts});await frames(page);}
+async function profile(page,id){const starts=(await inspect(page)).starts;await page.locator('#profile').selectOption(id);await waitForWorkshopMount(page,path,starts+1);await frames(page);}
 const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-8,`${a} != ${b}`);
 const savePng=(file,url)=>writeFile(output+'/'+file,Buffer.from(url.split(',')[1],'base64'));
 try{
