@@ -1,5 +1,15 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## H3.4.1 — integración de consulta autorizada ·03/11/2026
+
+**Decisión posterior del creador:** H3.3 aceptada como dirección visual, incluida ambientación; detalles artísticos y pruebas físicas no bloquean H3.4.1. Se autoriza nueva rama/PR contra H3.3, **sin acciones desde el mapa ni merge**. La maqueta permanece independiente. [Informe83](83-h3-4-1-estado-real-consulta.md).
+
+**Base real:**0d7afce6/PR19 draft, CI41703994304 success sobre SHA completo:512/512 y siete JSON aprobados, artifact13264114406 descargado/hashes comparados. Esta evidencia cierra la validación técnica de82; no se confunde con CI de la nueva integración. Main826199d9, tag/release y PR16/18 intactos; PR20 documental no fusionado.
+
+**En curso:** rama `experiment/h3-4-1-estado-real`; inspección del contrato, fábrica de presentación opcional con prueba roja→verde, sin sustituir la vista. `paint` procesa rescates y `playable` sincroniza líderes: el visor no los invoca por su cuenta. Se prepara proyección pública, canal de solo lectura y flujo original de preparación. Capacidades reales/overflow se representarán sin cambiar reglas. No H3.4.1 terminado ni avances a acciones.
+
+---
+
 ## H3.3 — luces asincrónicas, humo negro y sonido de ventisca ·03/11/2026
 
 **Nueva precisión del creador:**81 aún no muestra suficientemente luces/viento; pide titilar asincrónico, humo más negro y sonido de ventisca. Esa solicitud autoriza el audio ambiental y supera su exclusión anterior. Base25d5144/CI41698612565 success, sin confundir ese CI o sus métricas con aceptación visual. [Informe82](82-h3-3-luces-viento-y-ventisca.md);81 queda histórico.

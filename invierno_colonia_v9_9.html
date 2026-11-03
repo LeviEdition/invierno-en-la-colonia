@@ -3362,8 +3362,8 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
   }
 
   // src/application/create-application.mjs
-  function createApplication({ environment = globalThis, autoStart = !0 } = {}) {
-    let engine = createEngine(), view = engine.connectPresentation((context) => createUi(context, environment));
+  function createApplication({ environment = globalThis, autoStart = !0, createPresentation = createUi } = {}) {
+    let engine = createEngine(), view = engine.connectPresentation((context) => createPresentation(context, environment));
     engine.connectAutomation((context) => createAgent(context));
     let commands2 = Object.fromEntries(commandNames.map((name) => [name, (...args) => engine.dispatch(name, ...args)]));
     Object.assign(commands2, {
