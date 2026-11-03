@@ -1,0 +1,27 @@
+{
+  "os": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "node": "v24.19.0",
+  "cpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           46 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  5\nOn-line CPU(s) list:                     0-4\nVendor ID:                               AuthenticAMD\nModel name:                              AMD EPYC 9V74 80-Core Processor\nCPU family:                              25\nModel:                                   17\nThread(s) per core:                      1\nCore(s) per socket:                      5\nSocket(s):                               1\nStepping:                                1\nBogoMIPS:                                5192.26\n",
+  "browser": "Chromium154 /usr/bin/chromium",
+  "playwright": "1.57.0 externo al producto",
+  "rendering": "Headless/SwiftShader, no GPU o teléfono físico certificado",
+  "viewports": [
+    {
+      "width": 1365,
+      "height": 768,
+      "dpr": 1
+    },
+    {
+      "width": 393,
+      "height": 852,
+      "dpr": 2,
+      "touchEmulated": true
+    },
+    {
+      "width": 320,
+      "height": 640,
+      "dpr": 2,
+      "touchEmulated": true
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+#shell-nav{display:flex;flex:none;align-items:center;flex-wrap:wrap;gap:6px;padding:5px 8px;border-bottom:1px solid var(--edge);font:12px system-ui,sans-serif;background:#161e20}
+#shell-nav button{font-size:12px;padding:6px 9px}#connection-status{flex:1;min-width:140px;color:var(--muted);line-height:1.4}#shell-nav a{font-size:11px}
+#reference-frame{display:block;flex:1;min-height:0;width:100%;border:0;background:#dedaca}#map-app{display:flex;flex:1;min-height:0;flex-direction:column}
+#map-labels{position:absolute;inset:0;overflow:hidden;pointer-events:none}.group-badge,.overflow-badge{position:absolute;pointer-events:none;transform:translate(-50%,-50%);white-space:nowrap;font:700 10px system-ui,sans-serif;padding:2px 4px;color:#f2e9d5;background:#20292de8;border:1px solid #9e8a66;border-radius:3px}.group-ai{background:#3c3b4ae8}.overflow-badge{background:#372d1de8;color:#ffe3a5;font-size:11px}
+#character-identity{font:11px system-ui,sans-serif;color:var(--muted)}#character-equipment{padding-left:20px;font-size:13px;line-height:1.5}#character-equipment li{margin:7px 0}.attributes dd{margin:0}.actions button:disabled{opacity:.65;cursor:default}
+#map-app .dice-pool .die{display:grid;place-items:center;width:44px;height:44px;background:#ccc19a;color:#232923;font:bold 22px Georgia;border:2px solid #eee2b4;border-radius:3px}.dice-pool{flex-wrap:wrap}.portrait-row img{object-fit:cover}.provisional-note{line-height:1.45}#locality-survivors button span{display:block}
+#locality-description{color:var(--muted);font-size:12px}#loading[role=alert]{color:#f4c6b2}#retry-view{position:absolute;left:20px;top:70px;z-index:3}
+@media(max-width:800px){#shell-nav{gap:4px}#shell-nav button{flex:1}#connection-status{flex-basis:100%;font-size:11px}#shell-nav a{display:none}#map-app .topbar .brand h1{font-size:15px}#map-app .topbar{padding:5px 8px}#map-app #dossier{max-height:35dvh}#map-app .map-tools{gap:4px}#map-app .map-tools select{min-width:0}#map-app .sample-badge{font-size:7px}}
+
+.portrait-row>img{width:80px;height:80px}.attributes dd{font-size:15px}

@@ -1,0 +1,61 @@
+{
+  "phaser": "4.2.1",
+  "esbuild": "0.28.2",
+  "qa": false,
+  "map": {
+    "rawBytes": 1460123,
+    "gzip9Bytes": 394992,
+    "sha256": "8131029d068b159d9a9ddf29d77f04819a11417478f6015505cf69ddda4b957a",
+    "inputs": [
+      "prototypes/hospital-workshop/mockup/scene.json",
+      "prototypes/hospital-workshop/uploaded-kit.json",
+      "kit_arte_h33/manifest.json",
+      "prototypes/hospital-workshop/mockup/atmosphere.json",
+      "prototypes/hospital-workshop/mockup/assets.mjs",
+      "prototypes/hospital-workshop/kit.mjs",
+      "prototypes/hospital-workshop/resources.mjs",
+      "node_modules/phaser/dist/phaser.esm.js",
+      "prototypes/hospital-phaser/game.mjs",
+      "prototypes/hospital-phaser/dispose-game.mjs",
+      "prototypes/hospital-phaser/startup.mjs",
+      "prototypes/hospital-phaser/texture-quality.mjs",
+      "prototypes/hospital-workshop/renderer.mjs",
+      "prototypes/hospital-workshop/mockup/atmosphere-model.mjs",
+      "prototypes/hospital-workshop/mockup/atmosphere-view.mjs",
+      "prototypes/hospital-workshop/mockup/atmosphere-audio.mjs",
+      "prototypes/hospital/camera.mjs",
+      "prototypes/hospital-workshop/mockup/camera.mjs",
+      "prototypes/hospital/controls.mjs",
+      "prototypes/hospital-workshop/mockup/model.mjs",
+      "prototypes/hospital/scene.mjs",
+      "prototypes/hospital-phaser/renderer.mjs",
+      "prototypes/state-map/layout.mjs",
+      "prototypes/state-map/map-view.mjs",
+      "prototypes/state-map/main.mjs"
+    ]
+  },
+  "host": {
+    "rawBytes": 233387,
+    "sha256": "a9960a9aaca218163537afaf0611032045667deb5b826313641a244fafabef2b",
+    "inputs": [
+      "src/application/reference-contracts.mjs",
+      "src/domain/reference-data.mjs",
+      "src/domain/reference-state.mjs",
+      "src/domain/reference-items.mjs",
+      "src/domain/reference-crisis.mjs",
+      "src/application/death-director.mjs",
+      "src/application/read-only-context.mjs",
+      "src/item-catalog.mjs",
+      "src/domain/reference-rules.mjs",
+      "src/application/reference-turns.mjs",
+      "src/application/reference-engine.mjs",
+      "src/presentation/commands.mjs",
+      "src/presentation/reference-view.mjs",
+      "src/agents/reference-agent.mjs",
+      "src/application/create-application.mjs",
+      "prototypes/state-map/projection.mjs",
+      "prototypes/state-map/reference-observer.mjs",
+      "prototypes/state-map/reference-host.mjs"
+    ]
+  }
+}

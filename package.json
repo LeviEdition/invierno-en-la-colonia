@@ -20,7 +20,10 @@
     "check:workshop-kit": "node scripts/check-workshop-kit.mjs",
     "build:workshop": "node scripts/build-workshop.mjs",
     "check:workshop-build": "node scripts/build-workshop.mjs --check",
-    "dev:workshop": "node scripts/serve-workshop.mjs"
+    "dev:workshop": "node scripts/serve-workshop.mjs",
+    "build:state-map": "node scripts/build-state-map.mjs",
+    "check:state-map-build": "node scripts/build-state-map.mjs --check",
+    "dev:state-map": "node scripts/serve-state-map.mjs"
   },
   "devDependencies": {
     "esbuild": "0.28.2",

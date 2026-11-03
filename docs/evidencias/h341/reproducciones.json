@@ -1,0 +1,30 @@
+{
+  "reinicio": {
+    "view": null,
+    "starts": 2,
+    "lastError": "Cannot read properties of null (reading 'cloneNode')",
+    "lastDisposal": {
+      "cleanupErrors": [],
+      "atmosphereRelease": {
+        "objectsReleased": 126,
+        "textureReleased": true
+      },
+      "sourcesReleased": true,
+      "auxiliaryCanvasesReleased": 7,
+      "derivedCanvasesReleased": 4,
+      "audioRelease": {
+        "closedContexts": 0,
+        "nodesReleased": true,
+        "disposed": true
+      },
+      "disposed": true
+    }
+  },
+  "ajustesDelArnes": [
+    "Inventario: cardId en vez de id; equipar requiere abrir profile en la interfaz existente. No se cambió el motor.",
+    "Volver a Ver mapa después de cerrar un modal; menú inicial cerrado al reiniciar el visor.",
+    "Shaders/programas compilados a demanda varían según los efectos dibujados: se comprueba cota, contextos únicos y cero recursos al salir, no igualdad de shaders usados en fotogramas distintos.",
+    "Playwright no enumera el iframe restaurado por bfcache: snapshot QA comprobado mediante contentWindow del mismo origen.",
+    "Primer reintento tras reiniciar el servidor ocurrió antes de listen y dio ERR_CONNECTION_REFUSED: se repitió con el servidor listo."
+  ]
+}

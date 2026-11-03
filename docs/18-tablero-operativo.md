@@ -6,7 +6,13 @@
 
 **Base real:**0d7afce6/PR19 draft, CI41703994304 success sobre SHA completo:512/512 y siete JSON aprobados, artifact13264114406 descargado/hashes comparados. Esta evidencia cierra la validación técnica de82; no se confunde con CI de la nueva integración. Main826199d9, tag/release y PR16/18 intactos; PR20 documental no fusionado.
 
-**En curso:** rama `experiment/h3-4-1-estado-real`; inspección del contrato, fábrica de presentación opcional con prueba roja→verde, sin sustituir la vista. `paint` procesa rescates y `playable` sincroniza líderes: el visor no los invoca por su cuenta. Se prepara proyección pública, canal de solo lectura y flujo original de preparación. Capacidades reales/overflow se representarán sin cambiar reglas. No H3.4.1 terminado ni avances a acciones.
+**Entrega técnica para revisión:** rama `experiment/h3-4-1-estado-real`, nuevo PR draft contra H3.3. Partida única en host V9.9, preparación/acciones originales y mapa de consulta sincronizado mediante proyección pública. Fábrica opcional de presentación de dos líneas, receptor encadenado, sin llamadas adicionales a `paint`/`playable`. Sin manos/mazos/comandos en el mapa; pases/diálogos redactan el estado y vuelven a V9.9. Datos/capacidades reales, retratos/posiciones provisionales y excedentes con lista completa. Maqueta H3.3 y experimentos intactos.
+
+**Validación local:** instalación reproducible, builds/checks, **528/528**, oráculo57872ee **40/40**, Chromium1365/393/320 y **9/9 casos de borde**,0 errores normales. Acciones legales desde V9.9/API QA reflejan movimiento, heridas/cura, equipo, barricadas, dados/comida y ronda; mismos snapshot/RNG con FX on/off. Fallecimiento/sucesión, sobreocupación del dibujo, turno IA, error de recurso/reintento, tres reinicios por tamaño y restauración **bfcache real** comprobados. Se corrigieron Registro abierto obsoleto y canvas eliminado al reiniciar; se registran por separado ajustes del arnés. Producto sin globals QA. Guía/capturas/evidencia y reservas en [83](83-h3-4-1-estado-real-consulta.md) y [guía local](../prototypes/state-map/README.md). CI del head exacto se verifica y enlaza en el nuevo PR antes de entregar; el de la base no se atribuye a esta integración.
+
+**Inicio:** `npm.cmd ci` → `npm.cmd run dev:state-map` → **http://127.0.0.1:8775/prototypes/state-map/** → preparación V9.9 → Ver mapa. Referencia H3.3 independiente en el mismo servidor, `/prototypes/hospital-workshop/`. Sin Python.
+
+**Reservas:** sin teléfono físico, sin nuevo benchmark móvil ni persistencia añadida. Arte/slots/Phaser pendientes de revisión. Main/referencia/tag/release, SP-03 y reglas intactos. **Única siguiente tarea: revisión del creador de H3.4.1.** No acciones desde el mapa ni avance automático. Bloques inferiores históricos.
 
 ---
 
