@@ -1,0 +1,4 @@
+snow { changed: 201, max: 22, total: 2173 }
+smoke { changed: 758, max: 10, total: 5721 }
+wind { changed: 108, max: 2, total: 390 }
+lights { changed: 323, max: 7, total: 2501 }

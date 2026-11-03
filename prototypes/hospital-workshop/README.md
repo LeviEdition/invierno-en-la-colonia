@@ -48,6 +48,14 @@ El mapa1448×1086 conserva su detalle original al ampliar: no se sustituye por o
 
 La consulta por teclado está en el selector superior (seleccionar y centrar) o en «Composición y selección por teclado» → «Consultar localidad» (conserva cámara). El expediente alterna entre localidad y superviviente y se cierra con×. Los dados pertenecen al grupo A incluso al seleccionar B. [Revisión y limitaciones79](../../docs/79-h3-3-localidades-capacidades-e-interfaz.md). Se explorará un mapa más horizontal **en otra revisión artística**; el actual mantiene proporciones y originales.
 
+## Ambientación de la maqueta
+
+Sección secundaria **Ambientación** del panel lateral/inferior: total, Nieve/Viento/Humo/Luces e intensidad Baja/Normal. La entrada normal inicia sutil en Baja. Con `prefers-reduced-motion: reduce` inicia apagada; podés activarla expresamente. Cambiar la preferencia a reducir movimiento detiene efectos. No se guarda configuración en partidas ni almacenamiento.
+
+Humo solo en la chimenea oeste de colonia; hospital omitido por salida no inequívoca. Luces sobre cristales iluminados existentes, sin parpadeos rápidos o globales; viento de suelo solo en tres calles/zonas despejadas. El apagado total detiene la animación y conserva la navegación bajo demanda. Reiniciar reconstruye el pool y devuelve las opciones iniciales según la preferencia actual. Pausa por visibilidad, reanuda sin recuperar tiempo perdido. [Ubicaciones, pruebas, rendimiento y video80](../../docs/80-h3-3-ambientacion-visual.md).
+
+Efectos en coordenadas del mapa, sin colisiones/entrada de partículas ni modificación de fichas, espacios o reglas. PNG intactos; configuración en `mockup/atmosphere.json`. No se ejecutó teléfono físico; la ocultación real de pestaña no fue expuesta por el headless local y se probó además mediante evento/estado controlado, rotulado en el informe.
+
 ## Controles del taller técnico anterior
 
 El resto de esta guía describe exclusivamente **tecnico.html**, no la maqueta principal. Conserva el sector antiguo para comparación de cámara, oclusión y texturas.

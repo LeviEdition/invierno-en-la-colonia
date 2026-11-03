@@ -16,21 +16,23 @@ function marker(scene,asset){
  else{g.fillStyle(asset.id==='human-guide'?0xdacdac:0x79d9dd,.9);g.fillCircle(0,-h+10,9);g.fillRoundedRect(-11,-h+23,22,h*.42,4);g.fillRect(-10,-h*.38,8,h*.38);g.fillRect(2,-h*.38,8,h*.38);}
  return g;
 }
-export async function createWorkshopRenderer(canvas,kit,prepared,{signal,deadline,backgroundColor='#c5ced8'}={}){
+export async function createWorkshopRenderer(canvas,kit,prepared,{signal,deadline,backgroundColor='#c5ced8',createAtmosphere,atmosphereFrameRate=30}={}){
  let game,world,model,disposed=false,renderEvents=0,resolveReady,rejectReady;
- const assets=Object.fromEntries(kit.assets.map(a=>[a.id,a])),objects=new Map();let diagnostics,slots;
+ const assets=Object.fromEntries(kit.assets.map(a=>[a.id,a])),objects=new Map();let diagnostics,slots,atmosphere;
  const ready=new Promise((resolve,reject)=>{resolveReady=resolve;rejectReady=reject;});
- const wake=()=>{if(!disposed)game.loop.wake();};
+ const wake=()=>{if(!disposed&&(!atmosphere||(!document.hidden&&!game.loop.running)))game.loop.wake();};
+ const refreshLoop=()=>{if(atmosphere){const limit=atmosphere.isAnimating()?atmosphereFrameRate:0;if(game.loop.fpsLimit!==limit)game.loop.setFPSLimit(limit);}wake();};
  const nextFrame=()=>new Promise(resolve=>{game.events.once(Phaser.Core.Events.POST_RENDER,resolve);wake();});
  const release=()=>{
   if(disposed)return;disposed=true;
   const sources=Object.values(prepared).map(p=>world?.textures.get('h33-'+p.sourceId)?.source[0]),auxiliaries=sources.map(s=>s?.image).filter(c=>c instanceof HTMLCanvasElement),derived=Object.values(prepared).filter(p=>p.generated).map(p=>p.image);
+  const atmosphereRelease=atmosphere?.destroy();
   const result=disposeGame(game,canvas);
   // Solo superficies generadas por esta instancia, después de retirar la GPU.
   // Libera su backing lógico sin esperar al GC; nunca toca las Image originales.
   for(const c of [...auxiliaries,...derived])try{c.width=c.height=1;}catch(error){result.cleanupErrors.push(error.message);}
   objects.clear();world=null;model=null;
-  return {...result,sourcesReleased:sources.filter(Boolean).every(s=>s.image===null&&s.glTexture===null),auxiliaryCanvasesReleased:auxiliaries.filter(c=>c.width===1&&c.height===1).length,derivedCanvasesReleased:derived.filter(c=>c.width===1&&c.height===1).length};
+  return {...result,atmosphereRelease,sourcesReleased:sources.filter(Boolean).every(s=>s.image===null&&s.glTexture===null),auxiliaryCanvasesReleased:auxiliaries.filter(c=>c.width===1&&c.height===1).length,derivedCanvasesReleased:derived.filter(c=>c.width===1&&c.height===1).length};
  };
  const bootError=e=>{if(e.error&&(e.filename===import.meta.url||e.error.stack?.includes(import.meta.url)))rejectReady(e.error);};window.addEventListener('error',bootError);
  try{
@@ -38,11 +40,12 @@ export async function createWorkshopRenderer(canvas,kit,prepared,{signal,deadlin
    create(){try{
     if(disposed||signal?.aborted)return;world=this;
     for(const [id,p]of Object.entries(prepared))addIllustratedTexture(this.textures,'h33-'+id,p.image);
-    this.textures.addCanvas('h33-shadow',shadowTexture());slots=this.add.graphics().setDepth(1);diagnostics=this.add.graphics().setDepth(100);
-    this.game.events.on(Phaser.Core.Events.POST_RENDER,()=>{renderEvents++;if(model)game.loop.sleep();});this.game.events.once(Phaser.Core.Events.POST_RENDER,resolveReady);
+    this.textures.addCanvas('h33-shadow',shadowTexture());slots=this.add.graphics().setDepth(1);diagnostics=this.add.graphics().setDepth(100);atmosphere=createAtmosphere?.(this);if(atmosphere&&this.game.loop.fpsLimit!==(atmosphere.isAnimating()?atmosphereFrameRate:0))this.game.loop.setFPSLimit(atmosphere.isAnimating()?atmosphereFrameRate:0);
+    this.game.events.on(Phaser.Core.Events.POST_RENDER,()=>{renderEvents++;if(model&&!atmosphere?.isAnimating())game.loop.sleep();});this.game.events.once(Phaser.Core.Events.POST_RENDER,resolveReady);
    }catch(error){rejectReady(error);}}
+   update(_time,delta){atmosphere?.step(delta);}
   }
-  game=new HospitalGame({type:Phaser.WEBGL,canvas,width:1,height:1,backgroundColor,banner:false,autoFocus:false,render:{mipmapFilter:'LINEAR_MIPMAP_LINEAR'},callbacks:{preBoot:instance=>{game=instance;}},audio:{noAudio:true},input:{keyboard:false,mouse:false,touch:false,gamepad:false},scale:{mode:Phaser.Scale.NONE},scene:[WorkshopScene]});
+  game=new HospitalGame({type:Phaser.WEBGL,canvas,width:1,height:1,backgroundColor,banner:false,autoFocus:false,render:{mipmapFilter:'LINEAR_MIPMAP_LINEAR'},callbacks:{preBoot:instance=>{game=instance;}},audio:{noAudio:true},input:{keyboard:false,mouse:false,touch:false,gamepad:false},...(createAtmosphere?{fps:{limit:atmosphereFrameRate}}:{}),scale:{mode:Phaser.Scale.NONE},scene:[WorkshopScene]});
   await waitForStartup(ready,{signal,deadline});signal?.throwIfAborted();window.removeEventListener('error',bootError);
   const gl=game.renderer.gl,ext=gl.getExtension('WEBGL_debug_renderer_info'),gpu={renderer:ext?gl.getParameter(ext.UNMASKED_RENDERER_WEBGL):gl.getParameter(gl.RENDERER),version:gl.getParameter(gl.VERSION),maxTextureSize:gl.getParameter(gl.MAX_TEXTURE_SIZE)};
   function update(next){
@@ -81,7 +84,7 @@ export async function createWorkshopRenderer(canvas,kit,prepared,{signal,deadlin
    }
    wake();
   }
-  return {update,nextFrame,destroy:release,worldAt(point){const p=world.cameras.main.getWorldPoint(point.x*model.viewport.dpr,point.y*model.viewport.dpr);return {x:p.x,y:p.y};},inspect(){return {gpu,renderEvents,objectCount:world.children.list.length,inputPlugins:{mouse:game.config.inputMouse,touch:game.config.inputTouch,keyboard:game.config.inputKeyboard},nodes:[...objects].map(([id,e])=>({id,x:e.object.x,y:e.object.y,originX:e.object.originX,originY:e.object.originY,scaleX:e.object.scaleX,scaleY:e.object.scaleY,depth:e.object.depth,visible:e.object.visible,displayOriginX:e.object.displayOriginX,displayOriginY:e.object.displayOriginY})),textures:Object.fromEntries(Object.entries(prepared).map(([id,p])=>{const s=world.textures.get('h33-'+id).source[0];return [id,{...p.estimate,factor:p.factor,minFilter:s.glTexture.minFilter,sourceWidth:s.width,sourceHeight:s.height}];}))};},
+  return {update,nextFrame,destroy:release,setAtmosphere(patch){atmosphere?.setSettings(patch);refreshLoop();},pauseAtmosphere(value){atmosphere?.setPaused(value);if(value)game.loop.sleep();else refreshLoop();},worldAt(point){const p=world.cameras.main.getWorldPoint(point.x*model.viewport.dpr,point.y*model.viewport.dpr);return {x:p.x,y:p.y};},inspect(){return {gpu,renderEvents,loopRunning:game.loop.running,frameRateLimit:game.loop.fpsLimit,atmosphere:atmosphere?.inspect()||null,objectCount:world.children.list.length,inputPlugins:{mouse:game.config.inputMouse,touch:game.config.inputTouch,keyboard:game.config.inputKeyboard},nodes:[...objects].map(([id,e])=>({id,x:e.object.x,y:e.object.y,originX:e.object.originX,originY:e.object.originY,scaleX:e.object.scaleX,scaleY:e.object.scaleY,depth:e.object.depth,visible:e.object.visible,displayOriginX:e.object.displayOriginX,displayOriginY:e.object.displayOriginY})),textures:Object.fromEntries(Object.entries(prepared).map(([id,p])=>{const s=world.textures.get('h33-'+id).source[0];return [id,{...p.estimate,factor:p.factor,minFilter:s.glTexture.minFilter,sourceWidth:s.width,sourceHeight:s.height}];}))};},
    async diagnosticFrame(kind){if(!['normal','no-actor','actor-front'].includes(kind))throw Error('Composición inválida');const e=objects.get('test-actor'),node=model.nodes.find(n=>n.id==='test-actor');if(e){e.object.setVisible(kind!=='no-actor'&&node.visible);e.object.setDepth(kind==='actor-front'?9:node.depth);}await nextFrame();},
    async pixels(){return new Promise(resolve=>{game.events.once(Phaser.Core.Events.POST_RENDER,()=>{const width=canvas.width,height=canvas.height,raw=new Uint8Array(width*height*4);gl.readPixels(0,0,width,height,gl.RGBA,gl.UNSIGNED_BYTE,raw);const data=new Uint8Array(raw.length);for(let y=0;y<height;y++)data.set(raw.subarray((height-y-1)*width*4,(height-y)*width*4),y*width*4);resolve({width,height,data});});wake();});}
   };

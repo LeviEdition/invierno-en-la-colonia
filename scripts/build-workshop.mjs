@@ -5,6 +5,7 @@ import {pathToFileURL} from 'node:url';
 import {createHash} from 'node:crypto';
 import {gzipSync} from 'node:zlib';
 import {checkWorkshopKit,workshopRoot} from './check-workshop-kit.mjs';
+import {validateAtmosphere} from '../prototypes/hospital-workshop/mockup/atmosphere-model.mjs';
 import {validateScene} from '../prototypes/hospital-workshop/mockup/model.mjs';
 import {makeMockupKit} from '../prototypes/hospital-workshop/mockup/assets.mjs';
 import {resourceFactor,textureEstimate} from '../prototypes/hospital-workshop/kit.mjs';
@@ -12,6 +13,7 @@ export async function buildWorkshop({check=false}={}){
  const {profiles}=await checkWorkshopKit();
  const uploaded=await checkWorkshopKit({uploaded:true});
  const scene=validateScene(JSON.parse(await readFile(resolve(workshopRoot,'prototypes/hospital-workshop/mockup/scene.json'))));
+ validateAtmosphere(JSON.parse(await readFile(resolve(workshopRoot,'prototypes/hospital-workshop/mockup/atmosphere.json'))));
  const mapKit=makeMockupKit(scene,uploaded.kit,JSON.parse(await readFile(resolve(workshopRoot,'kit_arte_h33/manifest.json'))));
  async function bundle(entry,filename){
  const result=await build({absWorkingDir:workshopRoot,entryPoints:[entry],outfile:'dist/hospital-workshop/'+filename,bundle:true,format:'esm',platform:'browser',target:'es2022',minify:true,legalComments:'eof',metafile:true,write:false});

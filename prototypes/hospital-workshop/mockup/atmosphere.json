@@ -1,0 +1,235 @@
+{
+  "version": 1,
+  "bounds": {
+    "x": 0,
+    "y": 0,
+    "width": 1448,
+    "height": 1086
+  },
+  "frameRate": 30,
+  "maxDelta": 0.05,
+  "limits": {
+    "snow": 96,
+    "smoke": 18,
+    "wind": 6
+  },
+  "intensities": {
+    "low": {
+      "count": 0.5,
+      "alpha": 0.65
+    },
+    "normal": {
+      "count": 1,
+      "alpha": 1
+    }
+  },
+  "depths": {
+    "lights": 2,
+    "wind": 2.5,
+    "smoke": 4,
+    "snow": 6
+  },
+  "edgeFade": 18,
+  "snow": {
+    "size": [
+      1.2,
+      3.8
+    ],
+    "speed": [
+      8,
+      18
+    ],
+    "opacity": [
+      0.18,
+      0.46
+    ]
+  },
+  "wind": {
+    "base": 4,
+    "amplitude": 5,
+    "period": 17,
+    "secondaryPeriod": 10.7,
+    "size": [
+      28,
+      60
+    ],
+    "height": [
+      2,
+      4
+    ],
+    "life": [
+      7,
+      12
+    ],
+    "opacity": [
+      0.08,
+      0.14
+    ]
+  },
+  "windZones": [
+    {
+      "id": "calle-central-oeste",
+      "x": 190,
+      "y": 672,
+      "width": 260,
+      "height": 28
+    },
+    {
+      "id": "calle-central-este",
+      "x": 935,
+      "y": 672,
+      "width": 300,
+      "height": 28
+    },
+    {
+      "id": "calle-sur-comisaria",
+      "x": 590,
+      "y": 982,
+      "width": 235,
+      "height": 24
+    }
+  ],
+  "smokeEmitters": [
+    {
+      "id": "colonia-chimenea-oeste",
+      "locality": "colonia",
+      "x": 738,
+      "y": 310,
+      "source": "Boca superior del conducto de ladrillo del sector oeste, mapa original",
+      "life": [
+        9,
+        14
+      ],
+      "rise": [
+        5,
+        8
+      ],
+      "size": [
+        5,
+        8
+      ],
+      "opacity": [
+        0.08,
+        0.15
+      ]
+    }
+  ],
+  "omissions": [
+    {
+      "locality": "hospital",
+      "reason": "El tejado contiene conductos/equipos de ventilación; no se identifica una chimenea de combustión inequívoca. Se omite humo para no inventar una salida."
+    }
+  ],
+  "lights": [
+    {
+      "id": "hospital-ventana-oeste",
+      "locality": "hospital",
+      "polygon": [
+        [
+          182,
+          447
+        ],
+        [
+          195,
+          447
+        ],
+        [
+          195,
+          461
+        ],
+        [
+          182,
+          461
+        ]
+      ],
+      "period": 8.7,
+      "phase": 0.8,
+      "base": 0.06,
+      "variation": 0.018
+    },
+    {
+      "id": "hospital-ventana-este",
+      "locality": "hospital",
+      "polygon": [
+        [
+          359,
+          450
+        ],
+        [
+          371,
+          450
+        ],
+        [
+          371,
+          464
+        ],
+        [
+          359,
+          464
+        ]
+      ],
+      "period": 12.1,
+      "phase": 3.1,
+      "base": 0.055,
+      "variation": 0.016
+    },
+    {
+      "id": "colonia-entrada",
+      "locality": "colonia",
+      "polygon": [
+        [
+          913,
+          470
+        ],
+        [
+          920,
+          470
+        ],
+        [
+          920,
+          478
+        ],
+        [
+          913,
+          478
+        ]
+      ],
+      "period": 10.4,
+      "phase": 1.9,
+      "base": 0.055,
+      "variation": 0.017
+    },
+    {
+      "id": "colonia-ventana-oeste",
+      "locality": "colonia",
+      "polygon": [
+        [
+          748,
+          456
+        ],
+        [
+          760,
+          456
+        ],
+        [
+          760,
+          471
+        ],
+        [
+          748,
+          471
+        ]
+      ],
+      "period": 13.6,
+      "phase": 4.6,
+      "base": 0.05,
+      "variation": 0.015
+    }
+  ],
+  "colors": {
+    "snow": "#e4e9e6",
+    "wind": "#f0f3f4",
+    "smoke": "#9da5a7",
+    "lights": "#ffc76b"
+  }
+}

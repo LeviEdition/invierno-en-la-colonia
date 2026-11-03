@@ -11,3 +11,10 @@ export async function waitForWorkshopMount(page,modulePath,expectedStarts){
   },{module,expectedStarts});
  }finally{await module.dispose();}
 }
+
+// Mantiene las comparaciones estáticas previas. El gate de ambientación prueba
+// aparte los valores iniciales y la interacción real con estos controles.
+export async function freezeAtmosphere(page){
+ await page.evaluate(()=>{const button=document.getElementById('ambient-enabled');if(button?.getAttribute('aria-pressed')==='true')button.click();});
+ await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+}

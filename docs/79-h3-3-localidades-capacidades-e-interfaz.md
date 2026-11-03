@@ -1,5 +1,7 @@
 # 79 — H3.3: localidades seleccionables, capacidades e interfaz
 
+**Continuación:** [pasada visual80](80-h3-3-ambientacion-visual.md), con efectos opcionales y sin corregir capacidades exteriores. Este informe conserva la evidencia de `c61be77`.
+
 03/11/2026, America/Montevideo. [PR19 draft](https://github.com/LeviEdition/invierno-en-la-colonia/pull/19), rama `experiment/h3-3-taller-visual`. **Pendiente de aprobación visual del creador**, sin H3.4, merge o conexión al motor. Continúa la maqueta del [informe78](78-h3-3-maqueta-mapa-interactivo.md), que conserva la evidencia anterior.
 
 ## Encargo y base comprobada

@@ -1,3 +1,6 @@
+import atmosphereConfig from './atmosphere.json';
+import {initialAtmosphereSettings} from './atmosphere-model.mjs';
+import {createAtmosphereView} from './atmosphere-view.mjs';
 import sceneData from './scene.json';
 import uploadedKit from '../uploaded-kit.json';
 import manifest from '../../../kit_arte_h33/manifest.json';
@@ -28,13 +31,13 @@ function mount(reset=true){
 }
 async function runMount(signal,id){
  starts++;lastError=null;document.body.dataset.state='loading';$('loading').hidden=false;$('loading').setAttribute('role','status');$('loading').textContent='Cargando el mapa y las fichas…';$('retry-load').hidden=true;controls().forEach(el=>el.disabled=true);
- const deadline=performance.now()+STARTUP_TIMEOUT_MS,timings={startedAt:performance.now()};let renderer,observer,unbind,ui,frame=0;
+ const deadline=performance.now()+STARTUP_TIMEOUT_MS,timings={startedAt:performance.now()},motionQuery=matchMedia('(prefers-reduced-motion: reduce)');let ambientSettings=initialAtmosphereSettings(motionQuery.matches),renderer,observer,unbind,ui,frame=0;
  try{
   const canvas=template.cloneNode(false);$('scene')?.remove();document.querySelector('.map-viewport').prepend(canvas);
   if(!webglAvailable())throw Error('WEBGL_UNAVAILABLE');
   const originals=await waitForStartup(loadResources(kit),{signal,deadline});signal.throwIfAborted();timings.loadAndAlphaMs=performance.now()-timings.startedAt;
   const prepared=prepareResources(kit,originals,{factor:1}),prepareEnd=performance.now();timings.preparationMs=prepareEnd-timings.startedAt-timings.loadAndAlphaMs;
-  renderer=await createWorkshopRenderer(canvas,kit,prepared,{signal,deadline,backgroundColor:'#171d20'});signal.throwIfAborted();
+  renderer=await createWorkshopRenderer(canvas,kit,prepared,{signal,deadline,backgroundColor:'#171d20',atmosphereFrameRate:atmosphereConfig.frameRate,createAtmosphere:world=>createAtmosphereView(world,atmosphereConfig,{settings:ambientSettings})});signal.throwIfAborted();
   let fixture=createFixture(scene,state.fixture),camera,viewport,nodes=[],panelKey='',contextLost=false,menuOpen=false;
   const log=[],counters={commands:0,draws:0},images=Object.fromEntries(kit.assets.map(a=>[a.id,a]));
   ui=new AbortController();const options={signal:ui.signal};
@@ -90,6 +93,20 @@ async function runMount(signal,id){
   $('round').textContent=sampleTurn.round;$('turn').textContent='Grupo '+sampleTurn.group;$('morale').textContent=sampleTurn.morale;$('food').textContent=sampleTurn.food;
   observer=new ResizeObserver(resize);observer.observe(canvas);window.addEventListener('resize',resize,options);
   unbind=bindControls({canvas,onPan:command((x,y)=>change(panCamera(camera,x,y))),onZoom:command((factor,anchor=center())=>change(zoomCameraAt(camera,factor,anchor))),onPinch:command((a,b,f)=>change(pinchCamera(camera,a,b,f))),onPick:command(p=>{const point=screenToWorld(camera,p),selected=pickCharacter(fixture.characters,point),locality=pickLocality(scene,point);if(selected)select(selected);else if(locality)selectLocality(locality);else clearSelection();}),onReset:command(reset),onSelect:command(()=>state.selectedLocality?selectLocality(state.selectedLocality):select(state.selected||fixture.characters[0].id)),onClear:command(clearSelection)});
+  const ambientKinds=['snow','wind','smoke','lights'];
+  function syncAmbientUI(){
+   const active=ambientSettings.enabled&&ambientKinds.some(k=>ambientSettings[k]);$('ambient-enabled').setAttribute('aria-pressed',String(active));$('ambient-enabled').textContent=active?'Efectos: activados':'Efectos: desactivados';
+   for(const button of document.querySelectorAll('[data-ambient]'))button.setAttribute('aria-pressed',String(ambientSettings.enabled&&ambientSettings[button.dataset.ambient]));
+   $('ambient-intensity').value=ambientSettings.intensity;$('ambient-reduced').hidden=!motionQuery.matches;
+   $('ambient-status').textContent=active?(document.hidden?'En pausa: pestaña oculta.':ambientSettings.intensity==='low'?'Intensidad baja.':'Intensidad normal.'):'Sin efectos animados.';
+  }
+  function setAmbient(patch){ambientSettings={...ambientSettings,...patch};renderer.setAtmosphere(patch);syncAmbientUI();}
+  listen('#ambient-enabled','click',()=>{const on=!(ambientSettings.enabled&&ambientKinds.some(k=>ambientSettings[k]));setAmbient({enabled:on,snow:on,wind:on,smoke:on,lights:on});});
+  listen('[data-ambient]','click',e=>{const kind=e.currentTarget.dataset.ambient;setAmbient(ambientSettings.enabled?{[kind]:!ambientSettings[kind]}:{enabled:true,snow:false,wind:false,smoke:false,lights:false,[kind]:true});});
+  listen('#ambient-intensity','change',e=>setAmbient({intensity:e.target.value}));
+  const visibility=()=>{renderer.pauseAtmosphere(document.hidden||contextLost);syncAmbientUI();};document.addEventListener('visibilitychange',visibility,options);
+  motionQuery.addEventListener('change',e=>{if(e.matches)setAmbient({enabled:false,snow:false,wind:false,smoke:false,lights:false});syncAmbientUI();},options);
+  $('atmosphere-controls').open=false;visibility();
   listen('#locality','change',e=>{const id=e.target.value;if(id!=='general')selectLocality(id);resize();change(focusLocality(scene,id,viewport),id);});
   listen('#locality-select','change',e=>{if(e.target.value)selectLocality(e.target.value);else clearSelection();});
   listen('#locality-survivors','click',e=>{const b=e.target.closest('[data-character]');if(b)select(b.dataset.character);});
@@ -107,8 +124,8 @@ async function runMount(signal,id){
    $('dialog-title').textContent=titles[kind];$('dialog-content').textContent=text[kind];closeMenu();$('info-dialog').showModal();
   });
   listen('#close-dialog','click',()=>$('info-dialog').close());
-  canvas.addEventListener('webglcontextlost',()=>{contextLost=true;controls().forEach(el=>el.disabled=true);$('retry-load').hidden=false;feedback('Se perdió el contexto gráfico; reiniciá si no se recupera.');},options);
-  canvas.addEventListener('webglcontextrestored',()=>{contextLost=false;controls().forEach(el=>el.disabled=false);$('retry-load').hidden=true;feedback('Contexto gráfico recuperado.');schedule();},options);
+  canvas.addEventListener('webglcontextlost',()=>{contextLost=true;renderer.pauseAtmosphere(true);controls().forEach(el=>el.disabled=true);$('retry-load').hidden=false;feedback('Se perdió el contexto gráfico; reiniciá si no se recupera.');},options);
+  canvas.addEventListener('webglcontextrestored',()=>{contextLost=false;renderer.pauseAtmosphere(document.hidden);controls().forEach(el=>el.disabled=false);$('retry-load').hidden=true;feedback('Contexto gráfico recuperado.');schedule();},options);
   resize();if(frame)cancelAnimationFrame(frame);render();await waitForStartup(renderer.nextFrame(),{signal,deadline});signal.throwIfAborted();
   timings.readyMs=performance.now()-timings.startedAt;
   current={inspect:()=>({state:structuredClone(state),fixture:structuredClone(fixture),counts:sceneCounts(fixture),locality:localityDetails(scene,fixture,state.selectedLocality),turn:structuredClone(sampleTurn),camera:{...camera},viewport:{...viewport},nodes:structuredClone(nodes),counters:{...counters},timings:{...timings},renderer:renderer.inspect(),contextLost}),worldAt:p=>renderer.worldAt(p),pixels:()=>renderer.pixels(),destroy(){ui.abort();observer.disconnect();unbind();if(frame)cancelAnimationFrame(frame);$('info-dialog').close();$('floating-menu').hidden=true;return {...renderer.destroy(),disposed:true};}};

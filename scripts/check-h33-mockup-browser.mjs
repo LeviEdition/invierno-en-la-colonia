@@ -3,7 +3,7 @@ import {mkdir,readFile,writeFile} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {installLifecycleProbe} from '../test-support/h32-lifecycle-probe.mjs';
 import {visibleControl,checkInitialInterface,checkLocalities,assertReadableName} from '../test-support/h33-locality-checks.mjs';
-import {waitForWorkshopMount} from '../test-support/h33-browser-wait.mjs';
+import {waitForWorkshopMount,freezeAtmosphere} from '../test-support/h33-browser-wait.mjs';
 const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
 const origin=process.env.H33_ORIGIN||'http://127.0.0.1:8772',output=process.env.H33_MOCKUP_OUTPUT_DIR||'/tmp/h33-mockup',modulePath='/dist/hospital-workshop/mockup.mjs',url=origin+'/prototypes/hospital-workshop/';
 await mkdir(output,{recursive:true});
@@ -12,7 +12,7 @@ const evidence={browser:browser.version(),physicalMobile:false,build:JSON.parse(
 const frames=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
 const api=(p,name='inspect',arg)=>p.evaluate(async({path,name,arg})=>(await import(path))[name](arg),{path:modulePath,name,arg});
 const app=async p=>(await api(p)).app;
-const ready=p=>waitForWorkshopMount(p,modulePath);
+const ready=async p=>{await waitForWorkshopMount(p,modulePath);await freezeAtmosphere(p);};
 const near=(a,b,t=.03)=>assert.ok(Math.abs(a-b)<=t,`${a} != ${b}`);
 const probe=p=>p.evaluate(()=>window.h32StartupProbe());
 async function fixture(p,name){if(!await p.locator('#panel-content').isVisible())await p.locator('#panel-toggle').click();await p.locator('#demo-controls').evaluate(el=>el.open=true);await p.selectOption('#fixture',name);await frames(p);}
@@ -68,7 +68,7 @@ try{
   for(const el of await p.locator('button:visible,select:visible,summary:visible').all()){await visibleControl(p,el);}
   r.checks.push('Acciones responden sin mutar datos/dados; diálogos, historia, máximos33/36 y colonia12, depuración oculta, teclado, resize sin overflow');
   // Todas las instancias se comparan con la misma composición inicial.
-  async function restart(){await p.locator('#menu-toggle').click();const n=(await api(p)).starts;await p.locator('#restart-mockup').click();await waitForWorkshopMount(p,modulePath,n+1);await frames(p);}
+  async function restart(){await p.locator('#menu-toggle').click();const n=(await api(p)).starts;await p.locator('#restart-mockup').click();await waitForWorkshopMount(p,modulePath,n+1);await freezeAtmosphere(p);await frames(p);}
   await restart();const stable=await probe(p);for(let i=0;i<5;i++){await restart();const next=await probe(p);assert.deepEqual(next.listeners,stable.listeners);assert.deepEqual(next.gl,stable.gl);assert.equal(next.activeSceneContexts,1);assert.equal((await api(p)).lastDisposal.sourcesReleased,true);assert.equal(await p.locator('#menu-toggle').getAttribute('aria-expanded'),'false');assert.equal(await p.locator('#debug-toggle').getAttribute('aria-pressed'),'false');const n=(await app(p)).counters.commands;await p.locator('#zoom-in').click();await frames(p);assert.equal((await app(p)).counters.commands,n+1);}
   await p.locator('[data-info="objetivo"]').click();await p.evaluate(()=>{window.mockupGl=document.querySelector('#scene').getContext('webgl').getExtension('WEBGL_lose_context');window.mockupGl.loseContext();});await p.waitForFunction(()=>document.querySelector('#demo-feedback').textContent.includes('perdió'));assert.ok(await p.locator('#close-dialog').isEnabled());await p.locator('#close-dialog').click();assert.ok(await p.locator('#retry-load').isVisible());await p.waitForTimeout(150);await p.evaluate(()=>window.mockupGl.restoreContext());await p.waitForFunction(()=>document.querySelector('#demo-feedback').textContent.includes('recuperado'));await frames(p);assert.ok(await p.locator('#retry-load').isHidden());await geometry(p);
   const renders=(await app(p)).renderer.renderEvents;await p.waitForTimeout(350);assert.equal((await app(p)).renderer.renderEvents,renders);r.idleDraws=0;

@@ -1,0 +1,62 @@
+{
+  "browser": "Chromium154.0.8037.57 headless",
+  "physicalMobile": false,
+  "nativeScale": true,
+  "dpr": {
+    "1365": 1,
+    "393": 2,
+    "320": 2
+  },
+  "artInspection": "PNG original ampliado3x mediante navegador para ubicar salidas y ventanas; no derivado de producto",
+  "screenshots": [
+    {
+      "file": "1365-colonia-normal.png",
+      "width": 1365,
+      "height": 768,
+      "sha256": "2b18fa0d35570a56a10c6f50f7272aa2d97b46ee34dd11beb3a2a144805acc63",
+      "kind": "captura nativa del viewport"
+    },
+    {
+      "file": "1365-general-baja.png",
+      "width": 1365,
+      "height": 768,
+      "sha256": "5b9728309a16d26334fd324eb11ed9e523fd3c8972f318aa555b5dd4dff1999f",
+      "kind": "captura nativa del viewport"
+    },
+    {
+      "file": "1365-hospital-normal.png",
+      "width": 1365,
+      "height": 768,
+      "sha256": "d37a9290860242e48c351f8dfdf059ef84b26f2bd582e890df780c5371a07f99",
+      "kind": "captura nativa del viewport"
+    },
+    {
+      "file": "320-hospital-normal.png",
+      "width": 640,
+      "height": 1280,
+      "sha256": "8fdc9ccf2885d37cd8d9c29d19303e02b0e4c3617bcaa9550bf83e8542f36653",
+      "kind": "captura nativa del viewport"
+    },
+    {
+      "file": "393-colonia-normal.png",
+      "width": 786,
+      "height": 1704,
+      "sha256": "753f6426530a728fd73d3272a878e79d96003dd16bd7410161edaf29a75ad60f",
+      "kind": "captura nativa del viewport"
+    },
+    {
+      "file": "colonia-arte.png",
+      "width": 1100,
+      "height": 800,
+      "sha256": "2cf25a1a8d48d5294a003cf9c9b28c57d0cdfecdd21f2d8243a3c329a0ebcf3f",
+      "kind": "diagnóstico de arte3x"
+    },
+    {
+      "file": "hospital-arte.png",
+      "width": 1100,
+      "height": 800,
+      "sha256": "312cf43eed111d85cb0720de6707764619e4bc80d4bb4a211c1a708e22711884",
+      "kind": "diagnóstico de arte3x"
+    }
+  ]
+}

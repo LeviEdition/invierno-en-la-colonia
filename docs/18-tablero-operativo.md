@@ -1,5 +1,14 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## H3.3 — pasada de ambientación visual autorizada ·03/11/2026
+
+Base comprobada `c61be77ae71d371e7c1b148bd51eff7e32d3c07f`, árbol limpio y remoto igual, PR19 OPEN/draft hacia PR18. Sin AGENTS.md aplicable; releídos README, protocolo15, tablero e informes74–79. Main/referencia/tag/release y prototipos de comparación preservados. **Autorizado:** nieve y viento sutiles, humo solo en salida coherente, luces localizadas, controles secundarios y pruebas; no motor/H3.4, sonido, animaciones de actores, mapa horizontal ni corrección de capacidades exteriores.
+
+**Implementación disponible para revisión:** configuración central, simulación visual/RNG propios, pool120 y una textura procedural; misma cámara y WebGL existentes. Nieve continua en mundo con bordes desvanecidos; tres zonas despejadas de viento. Chimenea de colonia(738,310), sin humo de hospital por salida ambigua; cuatro superposiciones lentas en cristales iluminados del hospital/colonia. Capas bajo las fichas, sin entrada propia. Ambientación: total/por efecto/baja-normal, inicial baja y apagada con movimiento reducido. Loop Phaser limitado nominalmente a30FPS solo con efectos; apagado vuelve a demanda. Pausa explícita y delta acotado sin ráfaga acumulada. [Informe80](80-h3-3-ambientacion-visual.md).
+
+**Validación local terminada:**507/507 Node, builds reproducibles y siete JSON aprobados: Canvas, H3.2, técnico, kit técnico, maqueta, ambientación y texturas. Tres tamaños1365/393/320, cinco reinicios por tamaño, pool/contextos/listeners estables, apagado0 renders en reposo. Video≈8s y capturas inspeccionadas; por software se miden≈30 renders/s activos con costo considerable de redibujado, no rendimiento de teléfono. CI del head exacto se registra en PR19 antes de entregar. Cambiar pestaña no expone `document.hidden` en este headless: pausa/reanudación controlada diferenciada de prueba real pendiente. Contraste de estelas calibrado tras una muestra aislada sin cambio detectable sobre nieve. Los resultados finales/limitaciones quedan en80/PR19. **Única siguiente tarea tras la entrega: revisión visual del creador.** H3.3 no cerrado y PR sin merge. Bloques inferiores históricos.
+
+
 ## H3.3 — capacidades33, localidades seleccionables y revisión de interfaz ·03/11/2026
 
 Encargo adjunto vigente: actualizar gasolinera a2, biblioteca a3, otros exteriores a4 y colonia a12 **solo en la maqueta**, manteniendo36 espacios exteriores compartidos. Rama/PR19 desde `0b5a05cfd487e8130f47d38947a1f42ca736b8cf`; remoto igual, sin retroceder ni descartar trabajo. Dos pruebas locales pausadas se ajustan al encargo que reemplaza la primera interpretación de ocupación inicial. Sin cambios de motor, main, tag/release, arte, H3.2 o H3.4.

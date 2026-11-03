@@ -16,6 +16,7 @@ Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos un
 - [Tablero operativo — próxima tarea](docs/18-tablero-operativo.md)
 - [H3.1 — Auditoría de identidad visual](docs/74-h3-1-auditoria-identidad-visual.md)
 - [Plan propuesto H3.1–H3.6](docs/75-plan-hito-3-identidad-visual.md)
+- [H3.3 — Ambientación visual, revisión pendiente](docs/80-h3-3-ambientacion-visual.md)
 - [H3.3 — Localidades seleccionables y revisión de interfaz](docs/79-h3-3-localidades-capacidades-e-interfaz.md)
 - [Decisión vigente — D1/D2 cerradas y referencia preservada](docs/62-hitos-referencia-fiel-y-juego-propio.md)
 - [Hoja de ruta del singleplayer — bloques SP-00 a SP-08, acuerdos y pendientes](docs/63-hoja-de-ruta-planificacion-singleplayer.md)
@@ -44,6 +45,7 @@ Mantener terminal abierta y abrir **http://127.0.0.1:8772/prototypes/hospital-wo
 - Usar «Hospital cercano» para ver cuatro retratos y dos zombis/dos barricadas sobre el terreno. Arrastre/rueda o pinza; Restablecer y tecla0 vuelven a la vista general.
 - Seleccionar un edificio abre su localidad (ocupación, capacidad y espacios); sus retratos abren al superviviente y tienen prioridad sobre el edificio. Seleccionar una ficha circular actualiza el expediente. En móvil se abre el panel inferior; «×» lo cierra para disponer de más mapa.
 - «Composición y selección por teclado» contiene el selector accesible y las composiciones: hospital mixto, un zombi por localidad y máximo33 fichas/36 espacios. Elegir máximo y centrar Colonia muestra sus12 fichas.
+- «Ambientación» permite apagar todo, elegir nieve/viento/humo/luces y baja/normal. Inicia en baja; con movimiento reducido inicia apagado. El hospital no tiene humo; la salida confirmada está en la chimenea oeste de colonia. [Evidencia/video y límites](docs/80-h3-3-ambientacion-visual.md).
 - Dados del grupo/turno y acciones muestran feedback sin consumir ni resolver reglas. Objetivo/crisis y menú son paneles de demostración. «Depuración» activa etiquetas técnicas, apagadas por defecto.
 
 El taller anterior sigue en **`/prototypes/hospital-workshop/tecnico.html`** (su kit opcional: `tecnico.html?kit=uploaded`). Referencias Canvas y Phaser H3.2: `/prototypes/hospital/` y `/prototypes/hospital-phaser/`, en el mismo puerto8772. Los originales siguen en `kit_arte_h33/`, sin edición ni duplicación. [Guía Windows/VSCode/LAN](prototypes/hospital-workshop/README.md) · [Escena de muestra y coordenadas](prototypes/hospital-workshop/mockup/scene.json).

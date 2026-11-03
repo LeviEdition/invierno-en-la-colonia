@@ -125,3 +125,5 @@ dialog a{display:inline-block;min-height:44px;padding:10px 0;font-size:13px}
 }
 @media(max-width:360px){.brand h1{font-size:16px;letter-spacing:.01em}.brand{gap:6px}.sample-badge{font-size:8px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+
+#ambient-enabled{width:100%;margin-bottom:6px}.ambient-toggles{display:grid;grid-template-columns:1fr 1fr;gap:6px}#ambient-status{margin:6px 0 10px}
