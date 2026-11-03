@@ -50,6 +50,7 @@ jobs:
           H32_ORIGIN=http://127.0.0.1:8772 H32_OUTPUT_DIR=/tmp/h33-reference-phaser node scripts/check-h32-browser.mjs
           node scripts/check-h33-browser.mjs
           node scripts/check-h33-uploaded-browser.mjs
+          node scripts/check-h33-mockup-browser.mjs
           # Comparación de recursos secuencial después de los gates funcionales.
           node scripts/measure-h33-textures.mjs
       - uses: actions/upload-artifact@v4
@@ -64,6 +65,7 @@ jobs:
             /tmp/h33-kit.json
             /tmp/h33-kit-uploaded.json
             /tmp/h33-uploaded/
+            /tmp/h33-mockup/
             /tmp/h33-server.log
             dist/hospital-workshop/build.json
             dist/hospital-phaser/build.json

@@ -16,7 +16,7 @@ function marker(scene,asset){
  else{g.fillStyle(asset.id==='human-guide'?0xdacdac:0x79d9dd,.9);g.fillCircle(0,-h+10,9);g.fillRoundedRect(-11,-h+23,22,h*.42,4);g.fillRect(-10,-h*.38,8,h*.38);g.fillRect(2,-h*.38,8,h*.38);}
  return g;
 }
-export async function createWorkshopRenderer(canvas,kit,prepared,{signal,deadline}={}){
+export async function createWorkshopRenderer(canvas,kit,prepared,{signal,deadline,backgroundColor='#c5ced8'}={}){
  let game,world,model,disposed=false,renderEvents=0,resolveReady,rejectReady;
  const assets=Object.fromEntries(kit.assets.map(a=>[a.id,a])),objects=new Map();let diagnostics,slots;
  const ready=new Promise((resolve,reject)=>{resolveReady=resolve;rejectReady=reject;});
@@ -42,7 +42,7 @@ export async function createWorkshopRenderer(canvas,kit,prepared,{signal,deadlin
     this.game.events.on(Phaser.Core.Events.POST_RENDER,()=>{renderEvents++;if(model)game.loop.sleep();});this.game.events.once(Phaser.Core.Events.POST_RENDER,resolveReady);
    }catch(error){rejectReady(error);}}
   }
-  game=new HospitalGame({type:Phaser.WEBGL,canvas,width:1,height:1,backgroundColor:'#c5ced8',banner:false,autoFocus:false,render:{mipmapFilter:'LINEAR_MIPMAP_LINEAR'},callbacks:{preBoot:instance=>{game=instance;}},audio:{noAudio:true},input:{keyboard:false,mouse:false,touch:false,gamepad:false},scale:{mode:Phaser.Scale.NONE},scene:[WorkshopScene]});
+  game=new HospitalGame({type:Phaser.WEBGL,canvas,width:1,height:1,backgroundColor,banner:false,autoFocus:false,render:{mipmapFilter:'LINEAR_MIPMAP_LINEAR'},callbacks:{preBoot:instance=>{game=instance;}},audio:{noAudio:true},input:{keyboard:false,mouse:false,touch:false,gamepad:false},scale:{mode:Phaser.Scale.NONE},scene:[WorkshopScene]});
   await waitForStartup(ready,{signal,deadline});signal?.throwIfAborted();window.removeEventListener('error',bootError);
   const gl=game.renderer.gl,ext=gl.getExtension('WEBGL_debug_renderer_info'),gpu={renderer:ext?gl.getParameter(ext.UNMASKED_RENDERER_WEBGL):gl.getParameter(gl.RENDERER),version:gl.getParameter(gl.VERSION),maxTextureSize:gl.getParameter(gl.MAX_TEXTURE_SIZE)};
   function update(next){
@@ -61,9 +61,13 @@ export async function createWorkshopRenderer(canvas,kit,prepared,{signal,deadlin
     if(asset.kind==='image'){const p=prepared[asset.id],r=representation(asset,p.factor,node.multiplier,node.position);object.setOrigin(r.pivot.x/p.image.width,r.pivot.y/p.image.height).setScale(r.scale);}
     else object.setScale(asset.scale*node.multiplier);
     object.setPosition(node.position.x,node.position.y).setDepth(node.depth).setVisible(node.visible).setAlpha(node.id==='hospital'&&state.showHidden ? .28 : 1);
-    if(shadow)shadow.setPosition(node.position.x-7*node.multiplier,node.position.y-node.multiplier).setDisplaySize(38*node.multiplier,10*node.multiplier).setDepth(node.depth-1).setVisible(node.visible&&state.layers.shadows);
+    if(shadow)shadow.setPosition(node.position.x+(node.shadow?.dx??-7*node.multiplier),node.position.y+(node.shadow?.dy??-node.multiplier)).setDisplaySize(node.shadow?.width??38*node.multiplier,node.shadow?.height??10*node.multiplier).setDepth(node.depth-1).setVisible(node.visible&&state.layers.shadows);
    }
-   slots.clear();if(state.layers.slots&&state.case!=='occlusion')for(const [color,positions]of [[0x227d8d,kit.survivorPositions],[0x9b6929,kit.accessPositions]]){slots.lineStyle(1.5/camera.zoom,color,1);for(const p of positions)slots.strokeEllipse(p.x,p.y,44,16);}
+   slots.clear();
+   if(model.slotContours){
+    slots.lineStyle(1.4/camera.zoom,0x514b40,.95);
+    for(const a of model.slotContours){const angle=a.rotation||0,cos=Math.cos(angle),sin=Math.sin(angle),p=t=>{const x=Math.cos(t)*a.width/2,y=Math.sin(t)*a.height/2;return {x:a.position.x+x*cos-y*sin,y:a.position.y+x*sin+y*cos};};for(let i=0;i<48;i++)if(i%4<2){const from=p(i*Math.PI/24),to=p((i+1)*Math.PI/24);slots.lineBetween(from.x,from.y,to.x,to.y);}}
+   }else if(state.layers.slots&&state.case!=='occlusion')for(const [color,positions]of [[0x227d8d,kit.survivorPositions],[0x9b6929,kit.accessPositions]]){slots.lineStyle(1.5/camera.zoom,color,1);for(const p of positions)slots.strokeEllipse(p.x,p.y,44,16);}
    diagnostics.clear();const line=1/camera.zoom;
    if(state.grid){diagnostics.lineStyle(line,0x314b61,.25);const b=kit.bounds;let count=0;for(let x=Math.floor(b.x/state.gridStep)*state.gridStep;x<=b.x+b.width&&count++<300;x+=state.gridStep)diagnostics.lineBetween(x,b.y,x,b.y+b.height);count=0;for(let y=Math.floor(b.y/state.gridStep)*state.gridStep;y<=b.y+b.height&&count++<300;y+=state.gridStep)diagnostics.lineBetween(b.x,y,b.x+b.width,y);}
    if(state.axes){const p=kit.buildingPosition;diagnostics.lineStyle(2*line,0x9c3c38,1);diagnostics.lineBetween(p.x,p.y,p.x+90,p.y);diagnostics.lineStyle(2*line,0x287a64,1);diagnostics.lineBetween(p.x,p.y,p.x,p.y-90);}

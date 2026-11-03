@@ -1,0 +1,42 @@
+{
+  "browser": "Chromium154.0.8037.57 headless",
+  "renderer": "SwiftShader software",
+  "physicalDevice": false,
+  "screenshots": [
+    {
+      "file": "1365-colonia12.png",
+      "width": 1365,
+      "height": 768,
+      "sha256": "7faa9641b6c92e6568ee0de333ce2914e4aa51e3537b9e8ba8c4fc48aa2c531e",
+      "nativeScale": true
+    },
+    {
+      "file": "1365-general.png",
+      "width": 1365,
+      "height": 768,
+      "sha256": "8f1f10af580b183a44b611184932a98904ea61d04dbb080797d2fcf0977b4990",
+      "nativeScale": true
+    },
+    {
+      "file": "1365-hospital.png",
+      "width": 1365,
+      "height": 768,
+      "sha256": "d7383dcc80fd11cb8a54b99a794ed68e8baa6a36f749bc694b914e5d0c7b01a4",
+      "nativeScale": true
+    },
+    {
+      "file": "320-colonia12.png",
+      "width": 640,
+      "height": 1280,
+      "sha256": "71168187a5d3808b32ff3323507809ec724287b6eade4e0e55c21afadc793609",
+      "nativeScale": true
+    },
+    {
+      "file": "393-hospital.png",
+      "width": 786,
+      "height": 1704,
+      "sha256": "ded9988226d371bf2391890b35749c3a551a5fc62e6256c3f4fd9dfca31f5bc5",
+      "nativeScale": true
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 # 77 — H3.3: preparación técnica del taller visual y kit piloto
 
+**Actualización03/11/2026:** el creador autoriza expresamente el encargo completo del paquete y precisa mapa principal,36 fichas/espacios, interfaz y conservación del taller. Las reservas de autorización de alcance de este informe quedan como **historia superada**, no como bloqueo vigente. La continuación se registra en el [informe78](78-h3-3-maqueta-mapa-interactivo.md); H3.3 sigue sujeto a revisión visual, sin H3.4 o motor.
+
 **Actualización02/11/2026, Montevideo:** archivos de la entrega accesibles e incorporados en un modo optativo del sector, descrito debajo. El bloqueo de acceso de la revisión anterior queda resuelto. Las fechas, capturas y resultados anteriores se conservan como evidencia histórica; no equivalen a validaciones del nuevo kit.
 
 ## Integración acotada del kit recibido — 02/11/2026

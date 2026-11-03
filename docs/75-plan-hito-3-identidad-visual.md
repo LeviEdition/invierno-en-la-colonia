@@ -1,5 +1,7 @@
 # 75 — Plan incremental del Hito 3: identidad visual y experiencia jugable
 
+**Acuerdo03/11/2026:** ejecutar H3.3 completo según `kit_arte_h33/PROMPT_CODEX.md` y precisiones del creador: mapa continuo como entrada principal, siete localidades,36 fichas y36 espacios compartidos de muestra e interfaz fija/adaptable. Taller técnico separado. No H3.4 ni motor; cierre visual pendiente. Las restricciones de alcance anteriores se conservan como historia superada por esta autorización. [Maqueta implementada, pruebas y revisión pendiente:78](78-h3-3-maqueta-mapa-interactivo.md).
+
 **Actualización30/10:** autorizada solo la preparación técnica del taller H3.3 y contrato del kit, con Phaser4.2.1 candidato, maqueta y aprobación artística pendientes. No implica aceptación visual de H3.2 ni pruebas físicas. [Informe77](77-h3-3-taller-visual-y-kit-piloto.md) delimita esta entrega; H3.4–H3.6 no están autorizadas. Los checkpoints inferiores se conservan como historia.
 
 **Propuesta del29/10/2026, Montevideo. Actualización posterior: H3.1 aceptada y H3.2 autorizada; las demás etapas siguen sujetas a revisión.** Cada etapa posterior exige revisión del resultado anterior y autorización del creador. [Diagnóstico y decisiones74](74-h3-1-auditoria-identidad-visual.md) · [tablero 18](18-tablero-operativo.md).

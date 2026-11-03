@@ -5,7 +5,7 @@ import {cpus,totalmem,release} from 'node:os';
 import {installLifecycleProbe} from '../test-support/h32-lifecycle-probe.mjs';
 import {waitForWorkshopMount} from '../test-support/h33-browser-wait.mjs';
 const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
-const origin=process.env.H33_ORIGIN||'http://127.0.0.1:8772',output=process.env.H33_UPLOADED_OUTPUT_DIR||'/tmp/h33-uploaded',path='/dist/hospital-workshop/game.mjs',url=origin+'/prototypes/hospital-workshop/?kit=uploaded&diagnostics';
+const origin=process.env.H33_ORIGIN||'http://127.0.0.1:8772',output=process.env.H33_UPLOADED_OUTPUT_DIR||'/tmp/h33-uploaded',path='/dist/hospital-workshop/game.mjs',url=origin+'/prototypes/hospital-workshop/tecnico.html?kit=uploaded&diagnostics';
 const kit=JSON.parse(await readFile(new URL('../prototypes/hospital-workshop/uploaded-kit.json',import.meta.url))),assets=Object.fromEntries(kit.assets.map(a=>[a.id,a]));
 await mkdir(output,{recursive:true});
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',headless:true,ignoreDefaultArgs:['--disable-back-forward-cache'],args:['--no-sandbox']});

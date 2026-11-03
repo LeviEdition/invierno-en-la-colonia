@@ -16,7 +16,7 @@ const savePng=(file,url)=>writeFile(output+'/'+file,Buffer.from(url.split(',')[1
 try{
  for(const viewport of [{width:1365,height:768},{width:393,height:852}]){
   const dpr=viewport.width<500?2:1,context=await browser.newContext({viewport,deviceScaleFactor:dpr,isMobile:viewport.width<500,hasTouch:viewport.width<500}),page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
-  await page.goto(base+'/prototypes/hospital-workshop/?diagnostics');await page.waitForFunction(()=>document.body.dataset.state==='ready');await frames(page);
+  await page.goto(base+'/prototypes/hospital-workshop/tecnico.html?diagnostics');await page.waitForFunction(()=>document.body.dataset.state==='ready');await frames(page);
   const cold=await page.evaluate(()=>performance.getEntriesByType('resource').filter(r=>r.name.includes('/assets/')).map(r=>({name:new URL(r.name).pathname,transferSize:r.transferSize,encodedBodySize:r.encodedBodySize,duration:r.duration})));
   for(let trial=0;trial<3;trial++)for(const p of [...kit.profiles.slice(trial),...kit.profiles.slice(0,trial)]){
    await profile(page,p.id);const app=(await inspect(page)).app;

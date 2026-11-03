@@ -2,7 +2,8 @@ import {textureEstimate,resourceFactor} from './kit.mjs';
 
 export async function loadResources(kit){
  const records=await Promise.all(kit.assets.filter(a=>a.kind==='image').map(async asset=>{
-  const image=new Image();image.src=new URL(asset.file,import.meta.url).href;await image.decode();
+  const image=new Image();image.src=new URL(asset.file,import.meta.url).href;
+  try{await image.decode();}catch(error){throw Error('Recurso no disponible: '+asset.file,{cause:error});}
   if(image.width!==asset.width||image.height!==asset.height)throw Error('Dimensiones distintas del manifiesto: '+asset.id);
   let alpha=null;
   if(asset.alpha){

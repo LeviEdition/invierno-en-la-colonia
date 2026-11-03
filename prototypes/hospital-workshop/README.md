@@ -1,6 +1,6 @@
-# Taller técnico H3.3 del hospital
+# Maqueta H3.3 y taller técnico conservado
 
-Herramienta de desarrollo independiente. **Kit, perspectiva, proporciones y marcadores provisionales** hasta recibir la maqueta y aprobación artística. Phaser4.2.1 es candidato de trabajo; H3.2 no se considera visualmente aprobado ni físicamente probado por esta entrega.
+Maqueta independiente del motor. El mapa está aprobado como prototipo; su integración, proporciones e interfaz quedan para revisión visual del creador. Phaser4.2.1 sigue como candidato. No se considera H3.3 aprobado, H3.4 iniciado ni H3.2 físicamente probado por esta entrega.
 
 ## Abrir en Windows/VS Code
 
@@ -13,12 +13,13 @@ npm.cmd run dev:workshop
 
 Mantener terminal abierta. Abrir:
 
-- Taller: http://127.0.0.1:8772/prototypes/hospital-workshop/
-- Kit subido: http://127.0.0.1:8772/prototypes/hospital-workshop/?kit=uploaded
+- **Maqueta principal:** http://127.0.0.1:8772/prototypes/hospital-workshop/
+- Taller técnico anterior: http://127.0.0.1:8772/prototypes/hospital-workshop/tecnico.html
+- Kit en el taller técnico: http://127.0.0.1:8772/prototypes/hospital-workshop/tecnico.html?kit=uploaded
 - Canvas sin cambios: http://127.0.0.1:8772/prototypes/hospital/
 - Phaser H3.2 sin cambios: http://127.0.0.1:8772/prototypes/hospital-phaser/
 
-`npm.cmd` evita el bloqueo de npm.ps1 sin cambiar políticas de PowerShell. No requiere Python. El servidor construye ambas entradas Phaser con esbuild existente. Ctrl+C lo detiene. Si el puerto está ocupado, usar `$env:WORKSHOP_PORT=8775` antes de ejecutar y sustituir el puerto en las URL. No usar doble clic/file:// para el taller.
+`npm.cmd` evita el bloqueo de npm.ps1 sin cambiar políticas de PowerShell. No requiere Python. El servidor construye maqueta y taller técnico con esbuild existente, además de la referencia Phaser H3.2. Ctrl+C lo detiene. Si el puerto está ocupado, usar `$env:WORKSHOP_PORT=8775` antes de ejecutar y sustituir el puerto en las URL. No usar doble clic/file:// para el taller.
 
 Con Live Server: `npm.cmd run build:hospital` y `npm.cmd run build:workshop` antes de abrir esta página desde la raíz completa. Después de editar JS/JSON hay que reconstruir/volver a iniciar y recargar; no hay HMR ni editor de archivos dentro del taller.
 
@@ -31,9 +32,26 @@ ipconfig
 
 Usar la IPv4 Wi-Fi/Ethernet de la PC en lugar de127.0.0.1, mantener la terminal abierta y permitir Node en red privada si Windows lo solicita. **Son instrucciones, no una prueba de teléfono físico o de esa red.** No se despliega un sitio público.
 
-## Controles y significado
+## Usar la maqueta principal
 
-- «Kit de comparación» cambia entre la referencia técnica anterior y el kit recibido en `kit_arte_h33/`. Es una navegación que restablece la escena; no un guardado. El mapa y los bocetos están en la galería de referencias, fuera de WebGL; los controles dibujados en los bocetos no funcionan como interfaz. No se ha construido un mapa interactivo de siete localidades.
+El índice abre directamente el mapa continuo del kit. El hospital/suelo anteriores no se usan como fondo de esta página. Rueda, pinza y arrastre comparten la cámara; el HUD y expediente son HTML fijo. Flechas, +/− y0 con foco en la escena. Los límites conservan el mapa visible; junto a sus bordes un zoom puede ajustar el encuadre para respetarlos.
+
+1. Elegir «Hospital cercano»: cuatro retratos sobre el edificio y cuatro espacios de terreno, dos delante y dos al costado, con dos zombis/dos barricadas.
+2. Clic/tap en una ficha la selecciona con aro ámbar y actualiza nombre, localidad, grupo y atributos de muestra. En móvil abre el panel inferior; cerrarlo con «×» da más espacio al mapa. El panel y el menú tienen desplazamiento interno cuando falta altura.
+3. Abrir «Escena y selección por teclado» en la ficha para elegir otro superviviente o composición. Máximo muestra36 IDs distintos,12 en Colonia y4 en cada exterior. Centrar Colonia permite revisar sus12 fichas y12 espacios compartidos.
+4. Dados: reserva del grupo A/turno de muestra, incluso cuando la ficha seleccionada pertenece al grupo B. Se puede señalar un dado; no se tira ni consume. Las cuatro acciones solo muestran respuesta de demostración, sin modificar posición, recursos, ocupación o turnos.
+5. Objetivo/crisis, inventarios, registro y ayuda abren paneles de muestra. Historia y detalles se despliega. Menú → Depuración activa coordenadas, apoyos/límites; la vista principal no muestra A1/S1/H/P. Menú → Reiniciar restablece composición/vista/selección. Volver mediante bfcache también restablece el caso inicial.
+
+`mockup/scene.json` configura posiciones, encuadres, diámetros y escalas del ensayo. Los rectángulos de edificio solo revisan la colocación gráfica: **no son colisiones ni reglas**. No hay movimiento de personajes ni edición/guardado de espacios; son tres casos reproducibles. Las siete imágenes originales permanecen en `kit_arte_h33/assets`. Los dos bocetos orientan la composición; **no son el fondo ni controles reales**. Los recortes circulares384px se generan en memoria, sin tocar los originales.
+
+El mapa1448×1086 conserva su detalle original al ampliar: no se sustituye por otro hospital de más resolución. Las fichas son pequeñas en vista general; usar zoom, centrado y selector HTML. Los44px de accesibilidad corresponden a controles HTML, no a cada ficha en cualquier zoom. Emulación y capturas no prueban rendimiento/uso en teléfono físico.
+
+## Controles del taller técnico anterior
+
+El resto de esta guía describe exclusivamente **tecnico.html**, no la maqueta principal. Conserva el sector antiguo para comparación de cámara, oclusión y texturas.
+
+
+- «Kit de comparación» cambia entre la referencia técnica anterior y el kit recibido en `kit_arte_h33/`. Es una navegación que restablece la escena; no un guardado. El mapa y los bocetos están en la galería de referencias, fuera de WebGL; los controles dibujados en los bocetos no funcionan como interfaz. Esta página técnica no usa el mapa; la maqueta principal sí contiene las siete localidades.
 - En el kit subido, S1–S4 son **fichas de retrato**, no cuerpos de superviviente sobre el suelo. La selección usa su círculo y se indica con un aro ámbar. El nombre `retrato-mara` identifica el archivo; no asigna una identidad al catálogo del juego. Los PNG originales tienen fondo pintado, no se les eliminó.
 - Los retratos se recortan circularmente en memoria con límite de384px por defecto. «Sin límite384» permite comparar la resolución del perfil activo sin cambiar tamaño/apoyo; al100% usa los1254px originales. Se mantienen cámara y selección. Cuatro retratos originales necesitan85,33MiB RGBA+mipmaps estimados frente a5,33MiB con384px; las fuentes originales se descargan/decodifican en ambos casos. Esto no mide VRAM ni aprueba la pérdida visual. Con mucho zoom/DPR puede faltar detalle; comparar ambas preparaciones antes de decidir.
 - Zombi y barricada conservan el alfa original, incluidos bordes tenues. Sus apoyos se estimaron entre contactos visibles de ambos pies/patines, no en el borde del PNG; siguen pendientes de la maqueta. Los retratos se anclan al centro de su ficha, que no es un apoyo anatómico.

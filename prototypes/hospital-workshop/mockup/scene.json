@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "status": "visual-demonstration-not-game-state",
+  "bounds": {"x": 0, "y": 0, "width": 1448, "height": 1086},
+  "mapFile": "assets/mapa-prototipo.png",
+  "actorScale": {"zombie": 0.04, "barricade": 0.035},
+  "zones": [
+    {
+      "id": "escuela", "name": "Escuela", "capacity": 4, "portraitDiameter": 44,
+      "buildingBounds": {"x": 255, "y": 52, "width": 392, "height": 163},
+      "focus": {"x": 205, "y": 25, "width": 500, "height": 285},
+      "portraits": [[324,112],[404,112],[484,112],[564,112]],
+      "accesses": [{"x":303,"y":242,"side":"front"},{"x":393,"y":242,"side":"front"},{"x":483,"y":242,"side":"front"},{"x":573,"y":242,"side":"front"}]
+    },
+    {
+      "id": "biblioteca", "name": "Biblioteca", "capacity": 4, "portraitDiameter": 44,
+      "buildingBounds": {"x": 962, "y": 52, "width": 290, "height": 165},
+      "focus": {"x": 875, "y": 20, "width": 470, "height": 290},
+      "portraits": [[1005,124],[1068,124],[1131,124],[1194,124]],
+      "accesses": [{"x":1005,"y":245,"side":"front"},{"x":1090,"y":245,"side":"front"},{"x":1175,"y":245,"side":"front"},{"x":1260,"y":245,"side":"front"}]
+    },
+    {
+      "id": "hospital", "name": "Hospital", "capacity": 4, "portraitDiameter": 44,
+      "buildingBounds": {"x": 130, "y": 312, "width": 300, "height": 237},
+      "focus": {"x": 55, "y": 270, "width": 520, "height": 410},
+      "portraits": [[198,379],[251,380],[304,381],[357,382]],
+      "accesses": [{"x":183,"y":601,"side":"front"},{"x":324,"y":601,"side":"front"},{"x":449,"y":465,"side":"side"},{"x":445,"y":558,"side":"side"}]
+    },
+    {
+      "id": "colonia", "name": "Colonia", "capacity": 12, "portraitDiameter": 44,
+      "buildingBounds": {"x": 594, "y": 310, "width": 760, "height": 280},
+      "focus": {"x": 580, "y": 295, "width": 805, "height": 385},
+      "portraits": [[775,375],[891,375],[1007,375],[833,375],[949,375],[1065,375],[775,425],[833,425],[891,425],[949,425],[1007,425],[1065,425]],
+      "accesses": [{"x":687,"y":610,"side":"front"},{"x":799,"y":610,"side":"front"},{"x":911,"y":610,"side":"front"},{"x":1023,"y":610,"side":"front"},{"x":1135,"y":610,"side":"front"},{"x":1247,"y":610,"side":"front"},{"x":740,"y":651,"side":"front"},{"x":852,"y":651,"side":"front"},{"x":964,"y":651,"side":"front"},{"x":1076,"y":651,"side":"front"},{"x":1188,"y":651,"side":"front"},{"x":1300,"y":651,"side":"front"}]
+    },
+    {
+      "id": "gasolinera", "name": "Gasolinera", "capacity": 4, "portraitDiameter": 44,
+      "buildingBounds": {"x": 84, "y": 717, "width": 360, "height": 181},
+      "focus": {"x": 45, "y": 695, "width": 475, "height": 305},
+      "portraits": [[155,767],[216,767],[277,767],[338,767]],
+      "accesses": [{"x":145,"y":947,"side":"front"},{"x":240,"y":947,"side":"front"},{"x":335,"y":947,"side":"front"},{"x":430,"y":947,"side":"front"}]
+    },
+    {
+      "id": "comisaria", "name": "Comisaría", "capacity": 4, "portraitDiameter": 36,
+      "buildingBounds": {"x": 590, "y": 738, "width": 217, "height": 162},
+      "focus": {"x": 550, "y": 700, "width": 355, "height": 300},
+      "portraits": [[644,777],[684,777],[724,777],[764,777]],
+      "accesses": [{"x":640,"y":943,"side":"front"},{"x":760,"y":943,"side":"front"},{"x":850,"y":843,"side":"side"},{"x":850,"y":923,"side":"side"}]
+    },
+    {
+      "id": "supermercado", "name": "Supermercado", "capacity": 4, "portraitDiameter": 44,
+      "buildingBounds": {"x": 970, "y": 720, "width": 450, "height": 205},
+      "focus": {"x": 945, "y": 700, "width": 495, "height": 315},
+      "portraits": [[1040,786],[1110,786],[1180,786],[1250,786]],
+      "accesses": [{"x":1040,"y":963,"side":"front"},{"x":1150,"y":963,"side":"front"},{"x":1260,"y":963,"side":"front"},{"x":1370,"y":963,"side":"front"}]
+    }
+  ]
+}
