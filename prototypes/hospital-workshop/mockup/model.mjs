@@ -11,7 +11,10 @@ export function validateScene(scene){
  require(scene.zones.length===7&&scene.zones.every((z,i)=>z.id===ids[i]),'siete localidades del mapa');
  const positions=new Set();
  for(const z of scene.zones){
-  require(z.capacity===(z.id==='colonia'?12:4)&&z.portraits.length===z.capacity&&z.accesses.length===z.capacity,'capacidad visual '+z.id);
+  require(z.survivorCapacity===({colonia:12,gasolinera:2,biblioteca:3}[z.id]||4)&&z.portraits.length===z.survivorCapacity,'capacidad de supervivientes '+z.id);
+  require(z.exteriorCapacity===(z.id==='colonia'?12:4)&&z.accesses.length===z.exteriorCapacity,'espacios exteriores independientes '+z.id);
+  require(typeof z.description==='string'&&z.description.length>15,'descripción provisional');
+  require(Array.isArray(z.selectionPolygon)&&z.selectionPolygon.length>=3&&z.selectionPolygon.every(p=>Array.isArray(p)&&p.length===2&&inRect({x:p[0],y:p[1]},scene.bounds)),'zona de selección '+z.id);
   require(finite(z.portraitDiameter)&&z.portraitDiameter>=32&&z.portraitDiameter<=48,'diámetro de ficha');
   for(const b of [z.buildingBounds,z.focus])require(point(b)&&finite(b.width)&&finite(b.height)&&b.width>0&&b.height>0,'referencia visual/encuadre');
   for(const [x,y]of z.portraits){const p={x,y},key=x+','+y;require(point(p)&&inRect(p,scene.bounds)&&inRect(p,z.buildingBounds)&&!positions.has(key),'ficha sobre localidad '+z.id);positions.add(key);}
@@ -27,7 +30,7 @@ export function createFixture(scene,mode='hospital'){
  require(['hospital','one-zombie','maximum'].includes(mode),'fixture desconocido');
  const characters=[],accesses=[];
  for(const z of scene.zones){
-  const count=mode==='maximum'?z.capacity:z.id==='hospital'?4:z.id==='colonia'?3:1;
+  const count=mode==='maximum'?z.survivorCapacity:z.id==='hospital'?4:z.id==='colonia'?3:1;
   for(let i=0;i<count;i++)characters.push({id:z.id+'-person-'+(i+1),zoneId:z.id,zoneName:z.name,portraitId:portraits[i%4],position:{x:z.portraits[i][0],y:z.portraits[i][1]},diameter:z.portraitDiameter,group:i%2?'B':'A',...structuredClone(samples[i%4]),demonstration:true});
   z.accesses.forEach((p,i)=>accesses.push({id:z.id+'-access-'+(i+1),zoneId:z.id,position:{x:p.x,y:p.y},side:p.side,width:p.side==='side'?58:72,height:24,rotation:0,occupant:mode==='maximum'?i%2?'barricade':'zombie':mode==='hospital'&&z.id==='hospital'?i%2?'barricade':'zombie':i===0?'zombie':'empty'}));
  }
@@ -41,3 +44,19 @@ export function sceneNodes(scene,fixture){
  return nodes;
 }
 export function pickCharacter(characters,point){return [...characters].reverse().find(c=>Math.hypot(point.x-c.position.x,point.y-c.position.y)<=c.diameter/2)?.id||null;}
+
+// Polígonos de selección del arte compuesto; no son colisiones ni reglas.
+export function pointInPolygon(point,polygon){
+ let inside=false;
+ for(let i=0,j=polygon.length-1;i<polygon.length;j=i++){
+  const [x,y]=polygon[i],[px,py]=polygon[j];
+  if(((y>point.y)!==(py>point.y))&&point.x<(px-x)*(point.y-y)/(py-y)+x)inside=!inside;
+ }
+ return inside;
+}
+export function pickLocality(scene,point){return scene.zones.find(z=>pointInPolygon(point,z.selectionPolygon))?.id||null;}
+export function localityDetails(scene,fixture,id){
+ const zone=scene.zones.find(z=>z.id===id);if(!zone)return null;
+ const slots=fixture.accesses.filter(a=>a.zoneId===id);
+ return {id,name:zone.name,description:zone.description,survivorCapacity:zone.survivorCapacity,exteriorCapacity:zone.exteriorCapacity,characters:structuredClone(fixture.characters.filter(c=>c.zoneId===id)),zombies:slots.filter(a=>a.occupant==='zombie').length,barricades:slots.filter(a=>a.occupant==='barricade').length,empty:slots.filter(a=>a.occupant==='empty').length};
+}

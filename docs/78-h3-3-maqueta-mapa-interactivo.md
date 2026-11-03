@@ -1,5 +1,7 @@
 # 78 — H3.3: maqueta interactiva del mapa y kit recibido
 
+**Continuación autorizada posterior:** [informe79](79-h3-3-localidades-capacidades-e-interfaz.md): capacidades visuales33/espacios36, edificios seleccionables y correcciones de interfaz. Este documento y sus capturas conservan la entrega anterior `0b5a05c`; sus36 fichas máximas quedan como dato histórico.
+
 03/11/2026, America/Montevideo. **Entrega para revisión visual, no aceptación de H3.3.** [PR19 en borrador](https://github.com/LeviEdition/invierno-en-la-colonia/pull/19), rama `experiment/h3-3-taller-visual`, dependiente de PR18. Sin merge, motor ni H3.4.
 
 ## Encargo vigente y estado inicial

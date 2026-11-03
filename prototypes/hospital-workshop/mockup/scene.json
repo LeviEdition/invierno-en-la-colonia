@@ -1,58 +1,100 @@
 {
   "version": 1,
   "status": "visual-demonstration-not-game-state",
-  "bounds": {"x": 0, "y": 0, "width": 1448, "height": 1086},
+  "bounds": {"x": 0,"y": 0,"width": 1448,"height": 1086},
   "mapFile": "assets/mapa-prototipo.png",
-  "actorScale": {"zombie": 0.04, "barricade": 0.035},
+  "actorScale": {"zombie": 0.04,"barricade": 0.035},
   "zones": [
     {
-      "id": "escuela", "name": "Escuela", "capacity": 4, "portraitDiameter": 44,
-      "buildingBounds": {"x": 255, "y": 52, "width": 392, "height": 163},
-      "focus": {"x": 205, "y": 25, "width": 500, "height": 285},
+      "id": "escuela",
+      "name": "Escuela",
+      "portraitDiameter": 44,
+      "buildingBounds": {"x": 255,"y": 52,"width": 392,"height": 163},
+      "focus": {"x": 205,"y": 25,"width": 500,"height": 285},
       "portraits": [[324,112],[404,112],[484,112],[564,112]],
-      "accesses": [{"x":303,"y":242,"side":"front"},{"x":393,"y":242,"side":"front"},{"x":483,"y":242,"side":"front"},{"x":573,"y":242,"side":"front"}]
+      "accesses": [{"x": 303,"y": 242,"side": "front"},{"x": 393,"y": 242,"side": "front"},{"x": 483,"y": 242,"side": "front"},{"x": 573,"y": 242,"side": "front"}],
+      "survivorCapacity": 4,
+      "exteriorCapacity": 4,
+      "selectionPolygon": [[283,62],[630,61],[632,178],[502,194],[498,217],[413,215],[408,198],[265,188],[255,133]],
+      "description": "El patio está cubierto de nieve. Tras las ventanas oscuras quedan aulas y pasillos en silencio."
     },
     {
-      "id": "biblioteca", "name": "Biblioteca", "capacity": 4, "portraitDiameter": 44,
-      "buildingBounds": {"x": 962, "y": 52, "width": 290, "height": 165},
-      "focus": {"x": 875, "y": 20, "width": 470, "height": 290},
-      "portraits": [[1005,124],[1068,124],[1131,124],[1194,124]],
-      "accesses": [{"x":1005,"y":245,"side":"front"},{"x":1090,"y":245,"side":"front"},{"x":1175,"y":245,"side":"front"},{"x":1260,"y":245,"side":"front"}]
+      "id": "biblioteca",
+      "name": "Biblioteca",
+      "portraitDiameter": 44,
+      "buildingBounds": {"x": 962,"y": 52,"width": 290,"height": 165},
+      "focus": {"x": 875,"y": 20,"width": 470,"height": 290},
+      "portraits": [[1040,124],[1100,124],[1160,124]],
+      "accesses": [{"x": 1005,"y": 245,"side": "front"},{"x": 1090,"y": 245,"side": "front"},{"x": 1175,"y": 245,"side": "front"},{"x": 1260,"y": 245,"side": "front"}],
+      "survivorCapacity": 3,
+      "exteriorCapacity": 4,
+      "selectionPolygon": [[975,67],[1041,71],[1099,50],[1165,78],[1225,80],[1240,139],[1236,193],[1145,198],[1143,218],[1054,218],[1052,198],[965,192],[962,137]],
+      "description": "La nieve rodea el viejo edificio. Sus archivos y estanterías pertenecen a un mundo que se detuvo."
     },
     {
-      "id": "hospital", "name": "Hospital", "capacity": 4, "portraitDiameter": 44,
-      "buildingBounds": {"x": 130, "y": 312, "width": 300, "height": 237},
-      "focus": {"x": 55, "y": 270, "width": 520, "height": 410},
+      "id": "hospital",
+      "name": "Hospital",
+      "portraitDiameter": 44,
+      "buildingBounds": {"x": 130,"y": 312,"width": 300,"height": 237},
+      "focus": {"x": 55,"y": 270,"width": 520,"height": 410},
       "portraits": [[198,379],[251,380],[304,381],[357,382]],
-      "accesses": [{"x":183,"y":601,"side":"front"},{"x":324,"y":601,"side":"front"},{"x":449,"y":465,"side":"side"},{"x":445,"y":558,"side":"side"}]
+      "accesses": [{"x": 183,"y": 601,"side": "front"},{"x": 324,"y": 601,"side": "front"},{"x": 449,"y": 465,"side": "side"},{"x": 445,"y": 558,"side": "side"}],
+      "survivorCapacity": 4,
+      "exteriorCapacity": 4,
+      "selectionPolygon": [[199,320],[425,326],[431,389],[416,490],[327,522],[326,544],[190,542],[184,523],[144,505],[150,419]],
+      "description": "Una cruz desgastada señala la entrada. La luz de las ventanas contrasta con el frío del exterior."
     },
     {
-      "id": "colonia", "name": "Colonia", "capacity": 12, "portraitDiameter": 44,
-      "buildingBounds": {"x": 594, "y": 310, "width": 760, "height": 280},
-      "focus": {"x": 580, "y": 295, "width": 805, "height": 385},
+      "id": "colonia",
+      "name": "Colonia",
+      "portraitDiameter": 44,
+      "buildingBounds": {"x": 594,"y": 310,"width": 760,"height": 280},
+      "focus": {"x": 580,"y": 295,"width": 805,"height": 385},
       "portraits": [[775,375],[891,375],[1007,375],[833,375],[949,375],[1065,375],[775,425],[833,425],[891,425],[949,425],[1007,425],[1065,425]],
-      "accesses": [{"x":687,"y":610,"side":"front"},{"x":799,"y":610,"side":"front"},{"x":911,"y":610,"side":"front"},{"x":1023,"y":610,"side":"front"},{"x":1135,"y":610,"side":"front"},{"x":1247,"y":610,"side":"front"},{"x":740,"y":651,"side":"front"},{"x":852,"y":651,"side":"front"},{"x":964,"y":651,"side":"front"},{"x":1076,"y":651,"side":"front"},{"x":1188,"y":651,"side":"front"},{"x":1300,"y":651,"side":"front"}]
+      "accesses": [{"x": 687,"y": 610,"side": "front"},{"x": 799,"y": 610,"side": "front"},{"x": 911,"y": 610,"side": "front"},{"x": 1023,"y": 610,"side": "front"},{"x": 1135,"y": 610,"side": "front"},{"x": 1247,"y": 610,"side": "front"},{"x": 740,"y": 651,"side": "front"},{"x": 852,"y": 651,"side": "front"},{"x": 964,"y": 651,"side": "front"},{"x": 1076,"y": 651,"side": "front"},{"x": 1188,"y": 651,"side": "front"},{"x": 1300,"y": 651,"side": "front"}],
+      "survivorCapacity": 12,
+      "exteriorCapacity": 12,
+      "selectionPolygon": [[746,340],[1139,342],[1156,404],[1193,429],[1190,504],[1110,512],[1110,528],[848,529],[842,518],[705,511],[701,449],[729,421]],
+      "description": "Una empalizada rodea el refugio. Desde las torres se vigilan los caminos nevados del asentamiento."
     },
     {
-      "id": "gasolinera", "name": "Gasolinera", "capacity": 4, "portraitDiameter": 44,
-      "buildingBounds": {"x": 84, "y": 717, "width": 360, "height": 181},
-      "focus": {"x": 45, "y": 695, "width": 475, "height": 305},
-      "portraits": [[155,767],[216,767],[277,767],[338,767]],
-      "accesses": [{"x":145,"y":947,"side":"front"},{"x":240,"y":947,"side":"front"},{"x":335,"y":947,"side":"front"},{"x":430,"y":947,"side":"front"}]
+      "id": "gasolinera",
+      "name": "Gasolinera",
+      "portraitDiameter": 44,
+      "buildingBounds": {"x": 84,"y": 717,"width": 360,"height": 181},
+      "focus": {"x": 45,"y": 695,"width": 475,"height": 305},
+      "portraits": [[210,768],[278,768]],
+      "accesses": [{"x": 145,"y": 947,"side": "front"},{"x": 240,"y": 947,"side": "front"},{"x": 335,"y": 947,"side": "front"},{"x": 430,"y": 947,"side": "front"}],
+      "survivorCapacity": 2,
+      "exteriorCapacity": 4,
+      "selectionPolygon": [[175,724],[375,744],[373,788],[434,775],[443,807],[436,858],[303,869],[295,881],[131,866],[104,810],[106,775]],
+      "description": "Los surtidores quedaron en silencio. La nieve se acumula bajo la marquesina y junto al taller."
     },
     {
-      "id": "comisaria", "name": "Comisaría", "capacity": 4, "portraitDiameter": 36,
-      "buildingBounds": {"x": 590, "y": 738, "width": 217, "height": 162},
-      "focus": {"x": 550, "y": 700, "width": 355, "height": 300},
+      "id": "comisaria",
+      "name": "Comisaría",
+      "portraitDiameter": 36,
+      "buildingBounds": {"x": 590,"y": 738,"width": 217,"height": 162},
+      "focus": {"x": 550,"y": 700,"width": 355,"height": 300},
       "portraits": [[644,777],[684,777],[724,777],[764,777]],
-      "accesses": [{"x":640,"y":943,"side":"front"},{"x":760,"y":943,"side":"front"},{"x":850,"y":843,"side":"side"},{"x":850,"y":923,"side":"side"}]
+      "accesses": [{"x": 640,"y": 943,"side": "front"},{"x": 760,"y": 943,"side": "front"},{"x": 850,"y": 843,"side": "side"},{"x": 850,"y": 923,"side": "side"}],
+      "survivorCapacity": 4,
+      "exteriorCapacity": 4,
+      "selectionPolygon": [[620,744],[791,744],[799,803],[800,880],[756,890],[755,903],[675,902],[673,889],[592,882],[590,820],[611,790]],
+      "description": "La fachada sigue en pie entre postes y árboles desnudos. Sus ventanas iluminadas rompen la oscuridad."
     },
     {
-      "id": "supermercado", "name": "Supermercado", "capacity": 4, "portraitDiameter": 44,
-      "buildingBounds": {"x": 970, "y": 720, "width": 450, "height": 205},
-      "focus": {"x": 945, "y": 700, "width": 495, "height": 315},
+      "id": "supermercado",
+      "name": "Supermercado",
+      "portraitDiameter": 44,
+      "buildingBounds": {"x": 970,"y": 720,"width": 450,"height": 205},
+      "focus": {"x": 945,"y": 700,"width": 495,"height": 315},
       "portraits": [[1040,786],[1110,786],[1180,786],[1250,786]],
-      "accesses": [{"x":1040,"y":963,"side":"front"},{"x":1150,"y":963,"side":"front"},{"x":1260,"y":963,"side":"front"},{"x":1370,"y":963,"side":"front"}]
+      "accesses": [{"x": 1040,"y": 963,"side": "front"},{"x": 1150,"y": 963,"side": "front"},{"x": 1260,"y": 963,"side": "front"},{"x": 1370,"y": 963,"side": "front"}],
+      "survivorCapacity": 4,
+      "exteriorCapacity": 4,
+      "selectionPolygon": [[1018,735],[1349,730],[1364,801],[1407,810],[1391,889],[1277,918],[991,899],[978,846],[996,806]],
+      "description": "La nieve cubre el techo del comercio. El acceso principal destaca entre persianas y paredes gastadas."
     }
   ]
 }

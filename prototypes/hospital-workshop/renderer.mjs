@@ -65,10 +65,13 @@ export async function createWorkshopRenderer(canvas,kit,prepared,{signal,deadlin
    }
    slots.clear();
    if(model.slotContours){
-    slots.lineStyle(1.4/camera.zoom,0x514b40,.95);
-    for(const a of model.slotContours){const angle=a.rotation||0,cos=Math.cos(angle),sin=Math.sin(angle),p=t=>{const x=Math.cos(t)*a.width/2,y=Math.sin(t)*a.height/2;return {x:a.position.x+x*cos-y*sin,y:a.position.y+x*sin+y*cos};};for(let i=0;i<48;i++)if(i%4<2){const from=p(i*Math.PI/24),to=p((i+1)*Math.PI/24);slots.lineBetween(from.x,from.y,to.x,to.y);}}
+    for(const [width,color,alpha]of [[2.4,0xe3d8bb,.8],[1.2,0x332c21,.95]]){
+     slots.lineStyle(width/camera.zoom,color,alpha);
+     for(const a of model.slotContours){const angle=a.rotation||0,cos=Math.cos(angle),sin=Math.sin(angle),p=t=>{const x=Math.cos(t)*a.width/2,y=Math.sin(t)*a.height/2;return {x:a.position.x+x*cos-y*sin,y:a.position.y+x*sin+y*cos};};for(let i=0;i<48;i++)if(i%4<2){const from=p(i*Math.PI/24),to=p((i+1)*Math.PI/24);slots.lineBetween(from.x,from.y,to.x,to.y);}}
+    }
    }else if(state.layers.slots&&state.case!=='occlusion')for(const [color,positions]of [[0x227d8d,kit.survivorPositions],[0x9b6929,kit.accessPositions]]){slots.lineStyle(1.5/camera.zoom,color,1);for(const p of positions)slots.strokeEllipse(p.x,p.y,44,16);}
    diagnostics.clear();const line=1/camera.zoom;
+   if(model.localityHighlight){diagnostics.lineStyle(1.5*line,0xd8a54b,.8);const points=model.localityHighlight;for(let i=0;i<points.length;i++){const a=points[i],b=points[(i+1)%points.length];diagnostics.lineBetween(a[0],a[1],b[0],b[1]);}}
    if(state.grid){diagnostics.lineStyle(line,0x314b61,.25);const b=kit.bounds;let count=0;for(let x=Math.floor(b.x/state.gridStep)*state.gridStep;x<=b.x+b.width&&count++<300;x+=state.gridStep)diagnostics.lineBetween(x,b.y,x,b.y+b.height);count=0;for(let y=Math.floor(b.y/state.gridStep)*state.gridStep;y<=b.y+b.height&&count++<300;y+=state.gridStep)diagnostics.lineBetween(b.x,y,b.x+b.width,y);}
    if(state.axes){const p=kit.buildingPosition;diagnostics.lineStyle(2*line,0x9c3c38,1);diagnostics.lineBetween(p.x,p.y,p.x+90,p.y);diagnostics.lineStyle(2*line,0x287a64,1);diagnostics.lineBetween(p.x,p.y,p.x,p.y-90);}
    for(const node of nodes.filter(n=>n.visible&&n.role!=='ground')){

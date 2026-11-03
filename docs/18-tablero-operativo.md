@@ -1,5 +1,16 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## H3.3 — capacidades33, localidades seleccionables y revisión de interfaz ·03/11/2026
+
+Encargo adjunto vigente: actualizar gasolinera a2, biblioteca a3, otros exteriores a4 y colonia a12 **solo en la maqueta**, manteniendo36 espacios exteriores compartidos. Rama/PR19 desde `0b5a05cfd487e8130f47d38947a1f42ca736b8cf`; remoto igual, sin retroceder ni descartar trabajo. Dos pruebas locales pausadas se ajustan al encargo que reemplaza la primera interpretación de ocupación inicial. Sin cambios de motor, main, tag/release, arte, H3.2 o H3.4.
+
+**Implementación:** datos `survivorCapacity` y `exteriorCapacity` separados; fichas2/3 centradas. Siete polígonos ajustados al edificio, prioridad de retratos, clic/tap y selección HTML, panel alternable/cerrable con datos derivados del fixture y ambientación provisional. Sin probabilidades, bonificaciones o inventarios reales. Interfaz compacta, barra con columnas acotadas, nombres sin cortes internos, dados con puntos e iconos SVG/texto, mayor contraste fino de espacios, controles de ensayo secundarios. [Informe79](79-h3-3-localidades-capacidades-e-interfaz.md).
+
+**Revisión inicial:** acciones fuera de vista inicial de escritorio reproducidas; en Chromium154 local, Objetivo61×44 y Restablecer dentro del ancho320 en carga inicial. No se declara reproducido el fallo independiente de Chromium153. Gate fortalecido: tamaño mínimo44 estricto, contención en viewport y ancestros que recortan/scroll, acciones iniciales de escritorio, nombres por palabra y los siete edificios. **501/501 Node**, builds reproducibles y gates locales Canvas/H3.2/técnico/kit técnico aprobados; maqueta aprobada técnicamente en los tres tamaños con siete edificios, máximos33/36, palabras completas y contención de controles; comparación de texturas18 muestras. Los seis JSON locales pasaron y las nuevas capturas se inspeccionaron visualmente. Evidencia final en79; CI del head exacto se registra en PR19 antes de entregar.
+
+**Decisión pendiente:** explorar un mapa más horizontal como composición artística posterior. No estirar/recortar el mapa1448×1086 actual; conservar coordenadas/polígonos configurables. **Única siguiente tarea: revisión visual del creador tras la validación de esta entrega.** H3.3 no aprobado, sin H3.4 ni merge. Los bloques inferiores son historia.
+
+
 ## H3.3 — maqueta principal del mapa implementada; revisión visual pendiente ·03/11/2026
 
 El creador autoriza expresamente `kit_arte_h33/PROMPT_CODEX.md`: mapa continuo con siete localidades,36 fichas y36 espacios compartidos de muestra, selección e interfaz inspirada en los bocetos. La restricción anterior que dejaba esa ampliación pendiente queda **superada**, conservada debajo como historia. La maqueta es la entrada principal; el taller técnico tiene ruta separada. Sin motor, reglas, turnos reales, IA, guardados, arte nuevo, merge ni H3.4. Falta revisión visual del creador; no se declara H3.3 aprobado.

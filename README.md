@@ -16,7 +16,7 @@ Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos un
 - [Tablero operativo — próxima tarea](docs/18-tablero-operativo.md)
 - [H3.1 — Auditoría de identidad visual](docs/74-h3-1-auditoria-identidad-visual.md)
 - [Plan propuesto H3.1–H3.6](docs/75-plan-hito-3-identidad-visual.md)
-- [H3.3 — Maqueta interactiva del mapa, revisión pendiente](docs/78-h3-3-maqueta-mapa-interactivo.md)
+- [H3.3 — Localidades seleccionables y revisión de interfaz](docs/79-h3-3-localidades-capacidades-e-interfaz.md)
 - [Decisión vigente — D1/D2 cerradas y referencia preservada](docs/62-hitos-referencia-fiel-y-juego-propio.md)
 - [Hoja de ruta del singleplayer — bloques SP-00 a SP-08, acuerdos y pendientes](docs/63-hoja-de-ruta-planificacion-singleplayer.md)
 - [Dirección de producto](docs/51-rumbo-fidelidad-e-identidad.md)
@@ -25,7 +25,7 @@ Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos un
 
 El [PR15](https://github.com/LeviEdition/invierno-en-la-colonia/pull/15) se integró mediante merge convencional `6b8bfcadfeb99d16a10b6f4576f3b061584ee1f9`, preservando historia yoráculo57872ee. [Informe71](docs/71-integracion-main-y-cierre-d1-d2.md) registra la validación posterior:467/467,40/40 contra cada referencia, partidas Chromium yoffline aprobados. SP-03 permanece conceptual ysin cambios respecto del head aprobado.
 
-**Referencia cerrada:** D1/D2 y V9.9 modular preservadas. Esta rama incluye la **maqueta visual H3.3 del mapa continuo**, con el kit recibido y datos de demostración, dependiente del experimento Phaser4.2.1. H3.3 queda abierto para revisión visual; no conecta el motor ni autoriza H3.4. Main, referencia/tag/release, reglas y SP-03 permanecen intactos. [Informe78](docs/78-h3-3-maqueta-mapa-interactivo.md); el [informe77](docs/77-h3-3-taller-visual-y-kit-piloto.md) conserva la historia del taller.
+**Referencia cerrada:** D1/D2 y V9.9 modular preservadas. Esta rama incluye la **maqueta visual H3.3 del mapa continuo**, con el kit recibido y datos de demostración, dependiente del experimento Phaser4.2.1. H3.3 queda abierto para revisión visual; no conecta el motor ni autoriza H3.4. Main, referencia/tag/release, reglas y SP-03 permanecen intactos. [Informe79](docs/79-h3-3-localidades-capacidades-e-interfaz.md); el [informe78](docs/78-h3-3-maqueta-mapa-interactivo.md) registra la entrega anterior; el [informe77](docs/77-h3-3-taller-visual-y-kit-piloto.md) conserva la historia del taller.
 
 ## Maqueta H3.3 desde VS Code
 
@@ -42,8 +42,8 @@ npm.cmd run dev:workshop
 Mantener terminal abierta y abrir **http://127.0.0.1:8772/prototypes/hospital-workshop/**. La entrada carga directamente `mapa-prototipo.png` con las siete localidades; no hace falta elegir un kit. No requiere Python ni recursos externos. `npm.cmd` evita el bloqueo de npm.ps1 sin cambiar políticas.
 
 - Usar «Hospital cercano» para ver cuatro retratos y dos zombis/dos barricadas sobre el terreno. Arrastre/rueda o pinza; Restablecer y tecla0 vuelven a la vista general.
-- Seleccionar una ficha circular actualiza el expediente. En móvil se abre el panel inferior; «×» lo cierra para disponer de más mapa.
-- «Escena y selección por teclado» contiene el selector accesible y las composiciones: hospital mixto, un zombi por localidad y máximo36 fichas/36 espacios. Elegir máximo y centrar Colonia muestra sus12 fichas.
+- Seleccionar un edificio abre su localidad (ocupación, capacidad y espacios); sus retratos abren al superviviente y tienen prioridad sobre el edificio. Seleccionar una ficha circular actualiza el expediente. En móvil se abre el panel inferior; «×» lo cierra para disponer de más mapa.
+- «Composición y selección por teclado» contiene el selector accesible y las composiciones: hospital mixto, un zombi por localidad y máximo33 fichas/36 espacios. Elegir máximo y centrar Colonia muestra sus12 fichas.
 - Dados del grupo/turno y acciones muestran feedback sin consumir ni resolver reglas. Objetivo/crisis y menú son paneles de demostración. «Depuración» activa etiquetas técnicas, apagadas por defecto.
 
 El taller anterior sigue en **`/prototypes/hospital-workshop/tecnico.html`** (su kit opcional: `tecnico.html?kit=uploaded`). Referencias Canvas y Phaser H3.2: `/prototypes/hospital/` y `/prototypes/hospital-phaser/`, en el mismo puerto8772. Los originales siguen en `kit_arte_h33/`, sin edición ni duplicación. [Guía Windows/VSCode/LAN](prototypes/hospital-workshop/README.md) · [Escena de muestra y coordenadas](prototypes/hospital-workshop/mockup/scene.json).
