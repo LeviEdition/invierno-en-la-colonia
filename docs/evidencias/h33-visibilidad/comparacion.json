@@ -1,0 +1,92 @@
+{
+  "method": "Cambios dentro del canvas frente a apagado; strong=canal\u22658/255; misma c\u00e1mara y PNG, tiempo observado registrado, no igualdad exacta de fases",
+  "baselineCommit": "d003e9f475c3579d0cc22f00df1020669c92030f",
+  "baselineBundle": "85c0013b9c96928282f1480e9019a7ab82d5fc96de3d08c660bd0cbfd1353f40",
+  "currentBundle": "b439405b73525830b6880426235a97211ca59c2c3c88a9b0f8b3fb8a2ef4f95f",
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "scene": "general",
+      "cameraIdentical": true,
+      "dpr": 1,
+      "beforeStrong": 172,
+      "afterStrong": 2172,
+      "ratio": 12.627906976744185,
+      "beforeElapsed": 1.5049666667124018,
+      "afterElapsed": 1.2163866666866388
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "scene": "colonia",
+      "cameraIdentical": true,
+      "dpr": 1,
+      "beforeStrong": 568,
+      "afterStrong": 3415,
+      "ratio": 6.012323943661972,
+      "beforeElapsed": 3.4288333334848335,
+      "afterElapsed": 2.676363333379782
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "scene": "general",
+      "cameraIdentical": true,
+      "dpr": 2,
+      "beforeStrong": 150,
+      "afterStrong": 1898,
+      "ratio": 12.653333333333334,
+      "beforeElapsed": 1.4326266665980365,
+      "afterElapsed": 1.3021800000000023
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "scene": "colonia",
+      "cameraIdentical": true,
+      "dpr": 2,
+      "beforeStrong": 335,
+      "afterStrong": 2723,
+      "ratio": 8.128358208955223,
+      "beforeElapsed": 3.218513333257995,
+      "afterElapsed": 2.9484466666931084
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "scene": "general",
+      "cameraIdentical": true,
+      "dpr": 2,
+      "beforeStrong": 86,
+      "afterStrong": 1379,
+      "ratio": 16.03488372093023,
+      "beforeElapsed": 1.3446333333333194,
+      "afterElapsed": 0.9567333333480116
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "scene": "colonia",
+      "cameraIdentical": true,
+      "dpr": 2,
+      "beforeStrong": 191,
+      "afterStrong": 1657,
+      "ratio": 8.675392670157068,
+      "beforeElapsed": 2.907586666641665,
+      "afterElapsed": 2.7742233333494886
+    }
+  ]
+}

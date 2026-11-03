@@ -50,9 +50,9 @@ La consulta por teclado está en el selector superior (seleccionar y centrar) o 
 
 ## Ambientación de la maqueta
 
-Sección secundaria **Ambientación** del panel lateral/inferior: total, Nieve/Viento/Humo/Luces e intensidad Baja/Normal. La entrada normal inicia sutil en Baja. Con `prefers-reduced-motion: reduce` inicia apagada; podés activarla expresamente. Cambiar la preferencia a reducir movimiento detiene efectos. No se guarda configuración en partidas ni almacenamiento.
+Sección secundaria **Ambientación** del panel lateral/inferior: total, Nieve/Viento/Humo/Luces e intensidad Baja/Normal. La entrada inicia en **Normal**, reforzada tras la revisión del creador; Baja permite reducir la presencia de los efectos. Con `prefers-reduced-motion: reduce` inicia apagada; podés activarla expresamente. Cambiar la preferencia a reducir movimiento detiene efectos. No se guarda configuración en partidas ni almacenamiento.
 
-Humo solo en la chimenea oeste de colonia; hospital omitido por salida no inequívoca. Luces sobre cristales iluminados existentes, sin parpadeos rápidos o globales; viento de suelo solo en tres calles/zonas despejadas. El apagado total detiene la animación y conserva la navegación bajo demanda. Reiniciar reconstruye el pool y devuelve las opciones iniciales según la preferencia actual. Pausa por visibilidad, reanuda sin recuperar tiempo perdido. [Ubicaciones, pruebas, rendimiento y video80](../../docs/80-h3-3-ambientacion-visual.md).
+Humo solo en la chimenea oeste de colonia; hospital omitido por salida no inequívoca. Luces sobre cristales iluminados existentes, sin parpadeos rápidos o globales; viento de suelo solo en tres calles/zonas despejadas. El apagado total detiene la animación y conserva la navegación bajo demanda. Reiniciar reconstruye el pool y devuelve las opciones iniciales según la preferencia actual. Pausa por visibilidad, reanuda sin recuperar tiempo perdido. [Ajuste de visibilidad, pruebas, rendimiento y video81](../../docs/81-h3-3-visibilidad-ambientacion.md).
 
 Efectos en coordenadas del mapa, sin colisiones/entrada de partículas ni modificación de fichas, espacios o reglas. PNG intactos; configuración en `mockup/atmosphere.json`. No se ejecutó teléfono físico; la ocultación real de pestaña no fue expuesta por el headless local y se probó además mediante evento/estado controlado, rotulado en el informe.
 

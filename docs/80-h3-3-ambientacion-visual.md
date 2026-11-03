@@ -2,6 +2,8 @@
 
 03/11/2026, America/Montevideo. [PR19 en borrador](https://github.com/LeviEdition/invierno-en-la-colonia/pull/19), rama `experiment/h3-3-taller-visual`. **Aprobación visual pendiente; H3.3 abierto.** Sin H3.4, motor, merge o publicación de versión.
 
+> **Registro histórico:** el creador consideró esta intensidad prácticamente imperceptible. La calibración y el valor inicial Baja descritos aquí quedan sustituidos por la [revisión81](81-h3-3-visibilidad-ambientacion.md). Se conserva esta evidencia sin reescribir sus resultados.
+
 ## Base y alcance
 
 Inicio limpio en `c61be77ae71d371e7c1b148bd51eff7e32d3c07f`, igual al remoto; PR19 OPEN/draft hacia PR18. No AGENTS.md aplicable. Revisados README, protocolo15, tablero,74–79 y código gráfico. Conservados originales, capacidades y comportamiento de la maqueta. No se modifica main, referencia/tag/release, SP-03, Canvas o Phaser H3.2.

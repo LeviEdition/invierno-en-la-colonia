@@ -1,5 +1,17 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## H3.3 — ambientación reforzada tras revisión del creador ·03/11/2026
+
+**Observación vigente:** la intensidad anterior resultaba prácticamente imperceptible; se autoriza aumentarla claramente. Este bloque sustituye la calibración inicial Baja del informe80, conservada como historia. Mismo alcance H3.3/PR19 draft, sin merge ni motor/H3.4; capacidades exteriores aplazadas.
+
+**Cambio:** nieve más grande, opaca y rápida con núcleo firme; estelas más anchas/contrastadas, humo más visible y cuatro halos de luces locales. Entrada **Normal**, Baja disponible, movimiento reducido inicia apagado. Misma cámara/anclajes, mismos originales; hospital sin humo por salida ambigua. Pool120 conservado,125 objetos y dos texturas pequeñas (17KiB RGBA base estimados). Fichas e interfaz conservan prioridad. [Informe81](81-h3-3-visibilidad-ambientacion.md).
+
+**Validación:**507/507 Node y builds/checks aprobados; gates locales de maqueta y ambientación aprobados en1365/393/320. El nuevo criterio de contraste en vista general supera500 píxeles fuertes por tamaño (2036/1825/1205); la muestra histórica solo86–172. Cinco reinicios por tamaño,125 objetos liberados, pool/GL/listeners estables y0 errores normales. Apagado0 renders/s, activo≈30; costo considerable en software. Una carrera del arnés de preferencia reducida se reprodujo y corrigió esperando cada notificación real, sin modificar la aplicación. Capturas comparables/video y prueba roja conservados en81. CI del head exacto y artifact se verifican en PR19 antes de entregar.
+
+**Reservas:** revisión perceptual del creador y dispositivos físicos pendientes; renderizado software no demuestra rendimiento móvil. Ocultación de pestaña en headless solo comprobada con alternativa controlada. H3.3 no cerrado. **Única siguiente tarea: revisión visual del creador de esta versión y su video.** Bloques inferiores históricos.
+
+---
+
 ## H3.3 — pasada de ambientación visual autorizada ·03/11/2026
 
 Base comprobada `c61be77ae71d371e7c1b148bd51eff7e32d3c07f`, árbol limpio y remoto igual, PR19 OPEN/draft hacia PR18. Sin AGENTS.md aplicable; releídos README, protocolo15, tablero e informes74–79. Main/referencia/tag/release y prototipos de comparación preservados. **Autorizado:** nieve y viento sutiles, humo solo en salida coherente, luces localizadas, controles secundarios y pruebas; no motor/H3.4, sonido, animaciones de actores, mapa horizontal ni corrección de capacidades exteriores.

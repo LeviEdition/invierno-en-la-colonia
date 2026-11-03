@@ -32,38 +32,38 @@
   "edgeFade": 18,
   "snow": {
     "size": [
-      1.2,
-      3.8
+      4,
+      7
     ],
     "speed": [
-      8,
-      18
+      18,
+      34
     ],
     "opacity": [
-      0.18,
-      0.46
+      0.65,
+      0.95
     ]
   },
   "wind": {
-    "base": 4,
-    "amplitude": 5,
+    "base": 9,
+    "amplitude": 8,
     "period": 17,
     "secondaryPeriod": 10.7,
     "size": [
-      28,
-      60
+      70,
+      120
     ],
     "height": [
-      2,
-      4
+      5,
+      9
     ],
     "life": [
       7,
       12
     ],
     "opacity": [
-      0.08,
-      0.14
+      0.28,
+      0.48
     ]
   },
   "windZones": [
@@ -97,20 +97,20 @@
       "y": 310,
       "source": "Boca superior del conducto de ladrillo del sector oeste, mapa original",
       "life": [
-        9,
-        14
+        10,
+        16
       ],
       "rise": [
-        5,
-        8
+        7,
+        11
       ],
       "size": [
-        5,
-        8
+        10,
+        16
       ],
       "opacity": [
-        0.08,
-        0.15
+        0.24,
+        0.4
       ]
     }
   ],
@@ -144,8 +144,8 @@
       ],
       "period": 8.7,
       "phase": 0.8,
-      "base": 0.06,
-      "variation": 0.018
+      "base": 0.22,
+      "variation": 0.12
     },
     {
       "id": "hospital-ventana-este",
@@ -170,8 +170,8 @@
       ],
       "period": 12.1,
       "phase": 3.1,
-      "base": 0.055,
-      "variation": 0.016
+      "base": 0.2,
+      "variation": 0.1
     },
     {
       "id": "colonia-entrada",
@@ -196,8 +196,8 @@
       ],
       "period": 10.4,
       "phase": 1.9,
-      "base": 0.055,
-      "variation": 0.017
+      "base": 0.22,
+      "variation": 0.11
     },
     {
       "id": "colonia-ventana-oeste",
@@ -222,14 +222,16 @@
       ],
       "period": 13.6,
       "phase": 4.6,
-      "base": 0.05,
-      "variation": 0.015
+      "base": 0.2,
+      "variation": 0.12
     }
   ],
   "colors": {
-    "snow": "#e4e9e6",
+    "snow": "#f8fafb",
     "wind": "#f0f3f4",
-    "smoke": "#9da5a7",
+    "smoke": "#78858d",
     "lights": "#ffc76b"
-  }
+  },
+  "lightsHaloScale": 1.9,
+  "lightsHaloAlpha": 0.28
 }

@@ -11,9 +11,10 @@ test('H3.3 ambiente: límites, emisores documentados y calles configuradas fuera
  for(const zone of config.windZones)for(const p of [{x:zone.x,y:zone.y},{x:zone.x+zone.width,y:zone.y+zone.height},{x:zone.x+zone.width/2,y:zone.y+zone.height/2}])assert.equal(pickLocality(scene,p),null);
  assert.ok(config.smokeEmitters.every(e=>e.source&&e.id&&e.x>0&&e.y>0));assert.ok(config.omissions.some(e=>e.locality==='hospital'&&e.reason));
  const bad=structuredClone(config);bad.limits.snow=10000;assert.throws(()=>validateAtmosphere(bad));
+ const halo=structuredClone(config);halo.lightsHaloScale=Infinity;assert.throws(()=>validateAtmosphere(halo));
 });
 test('H3.3 ambiente: movimiento reducido inicia apagado y admite habilitación explícita',()=>{
- assert.equal(initialAtmosphereSettings(true).enabled,false);const m=createAtmosphereModel(config,{seed:7,settings:initialAtmosphereSettings(true)});assert.equal(m.isAnimating(),false);m.setSettings({enabled:true});assert.equal(m.isAnimating(),true);m.setSettings({snow:false,wind:false,smoke:false,lights:false});assert.equal(m.isAnimating(),false);
+ assert.equal(initialAtmosphereSettings(false).intensity,'normal');assert.equal(initialAtmosphereSettings(true).enabled,false);const m=createAtmosphereModel(config,{seed:7,settings:initialAtmosphereSettings(true)});assert.equal(m.isAnimating(),false);m.setSettings({enabled:true});assert.equal(m.isAnimating(),true);m.setSettings({snow:false,wind:false,smoke:false,lights:false});assert.equal(m.isAnimating(),false);
 });
 test('H3.3 ambiente: RNG propio, semilla reproducible y objetos reutilizados sin crecimiento',()=>{
  const saved=Math.random;Math.random=()=>{throw Error('RNG compartido');};
@@ -24,7 +25,7 @@ test('H3.3 ambiente: tiempo transcurrido, pausa y delta limitado sin ráfaga al 
  a.setPaused(true);const before=a.snapshot();for(let i=0;i<60;i++)a.step(1);assert.deepEqual(a.snapshot(),before);a.setPaused(false);const time=a.snapshot().elapsed;a.step(60);assert.ok(a.snapshot().elapsed-time<=config.maxDelta+.00001);
 });
 test('H3.3 ambiente: controles independientes, baja/normal y apagado sin cambios tardíos',()=>{
- const m=createAtmosphereModel(config,{seed:21});const low=m.snapshot().visibleParticles;m.setSettings({intensity:'normal'});assert.ok(m.snapshot().visibleParticles>low);
+ const m=createAtmosphereModel(config,{seed:21,settings:{...initialAtmosphereSettings(false),intensity:'low'}});const low=m.snapshot().visibleParticles;m.setSettings({intensity:'normal'});assert.ok(m.snapshot().visibleParticles>low);
  for(const kind of ['snow','wind','smoke','lights']){m.setSettings({snow:false,wind:false,smoke:false,lights:false,[kind]:true});assert.equal(m.isAnimating(),true);assert.ok(m.particles.every(p=>p.type===kind||p.alpha===0));if(kind!=='lights')assert.ok(m.lights.every(p=>p.alpha===0));}
  m.setSettings({enabled:false});const frozen=m.snapshot();m.step(1);assert.deepEqual(m.snapshot(),frozen);assert.ok(m.particles.every(p=>p.alpha===0));assert.ok(m.lights.every(p=>p.alpha===0));assert.throws(()=>m.setSettings({intensity:'storm'}));
 });

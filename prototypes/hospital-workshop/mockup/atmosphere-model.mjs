@@ -2,7 +2,7 @@
 const kinds=['snow','wind','smoke','lights'];
 const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
 const tau=Math.PI*2;
-export function initialAtmosphereSettings(reduced=false){return {enabled:!reduced,snow:true,wind:true,smoke:true,lights:true,intensity:'low'};}
+export function initialAtmosphereSettings(reduced=false){return {enabled:!reduced,snow:true,wind:true,smoke:true,lights:true,intensity:'normal'};}
 export function validateAtmosphere(c){
  const require=(ok,label)=>{if(!ok)throw TypeError('Ambientación: '+label);};
  require(c.version===1&&c.bounds.width===1448&&c.bounds.height===1086,'mapa');
@@ -13,7 +13,8 @@ export function validateAtmosphere(c){
  require(c.windZones.length>0||c.limits.wind===0,'pool de viento sin zona');
  for(const z of c.windZones)require(z.width>=80&&z.height>=12&&z.x>=0&&z.y>=0&&z.x+z.width<=c.bounds.width&&z.y+z.height<=c.bounds.height,'calle');
  for(const e of c.smokeEmitters)require(e.source&&e.x>40&&e.x<c.bounds.width-40&&e.y>140&&e.y<c.bounds.height-40,'emisor');
- for(const l of c.lights)require(l.period>=7&&l.base>l.variation&&l.base+l.variation<=.15&&l.polygon.length>=3,'luz lenta');
+ for(const l of c.lights)require(l.period>=7&&l.base>l.variation&&l.base+l.variation<=.4&&l.polygon.length>=3,'luz lenta');
+ require(Number.isFinite(c.lightsHaloScale)&&c.lightsHaloScale>=1&&c.lightsHaloScale<=3&&Number.isFinite(c.lightsHaloAlpha)&&c.lightsHaloAlpha>=0&&c.lightsHaloAlpha<=.5,'halo local');
  return c;
 }
 function randomSource(seed){let n=seed>>>0;return ()=>{n+=0x6D2B79F5;let t=n;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return ((t^t>>>14)>>>0)/4294967296;};}
