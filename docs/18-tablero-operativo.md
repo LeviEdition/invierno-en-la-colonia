@@ -1,5 +1,17 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## H3.3 — luces asincrónicas, humo negro y sonido de ventisca ·03/11/2026
+
+**Nueva precisión del creador:**81 aún no muestra suficientemente luces/viento; pide titilar asincrónico, humo más negro y sonido de ventisca. Esa solicitud autoriza el audio ambiental y supera su exclusión anterior. Base25d5144/CI41698612565 success, sin confundir ese CI o sus métricas con aceptación visual. [Informe82](82-h3-3-luces-viento-y-ventisca.md);81 queda histórico.
+
+**Entrega para revisión:** cristales atenuados/iluminados localmente, ondas/fases independientes y continuas; humo casi negro en la misma chimenea de colonia, hospital omitido; estelas curvas más contrastadas, sin reiniciar su fase al envolver una zona. Pool120,126 objetos y33KiB de texturas procedurales base estimados. Audio Web Audio procedural independiente del motor, inicialmente apagado, activación expresa/volumen/pausa/limpieza; control general apaga también sonido. Sin nuevos PNG ni dependencias. No se altera main, referencia, reglas, capacidades exteriores, PR16/18 o SP-03.
+
+**Validación:**512/512 Node,11 dirigidas verdes tras rojo, builds/checks y gates locales de maqueta/ambientación aprobados en1365/393/320. Luces con cambio temporal real de píxeles105–118/255 y fases separadas; estelas aisladas2995/936/854 píxeles fuertes. Audio explícito, teclado/volumen, señal digital, pausa/limpieza y fallo/reintento comprobados; seis contextos cerrados por tamaño. Video y muestra de audio12s disponibles en82. Apagado0 renders/s, activo≈30 con costo alto en software. CI del nuevo head y artifact se verifican en PR19 antes de entregar.
+
+**Pendientes:** revisión visual/acústica y teléfono físico; ocultación real no expuesta por headless y consumo móvil no verificado. PR19 sigue draft, H3.3 abierto y sin H3.4/merge. **Única siguiente tarea: revisión del creador.** Bloques inferiores históricos.
+
+---
+
 ## H3.3 — ambientación reforzada tras revisión del creador ·03/11/2026
 
 **Observación vigente:** la intensidad anterior resultaba prácticamente imperceptible; se autoriza aumentarla claramente. Este bloque sustituye la calibración inicial Baja del informe80, conservada como historia. Mismo alcance H3.3/PR19 draft, sin merge ni motor/H3.4; capacidades exteriores aplazadas.

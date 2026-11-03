@@ -45,25 +45,25 @@
     ]
   },
   "wind": {
-    "base": 9,
-    "amplitude": 8,
+    "base": 18,
+    "amplitude": 12,
     "period": 17,
     "secondaryPeriod": 10.7,
     "size": [
-      70,
-      120
+      100,
+      180
     ],
     "height": [
-      5,
-      9
+      10,
+      16
     ],
     "life": [
       7,
       12
     ],
     "opacity": [
-      0.28,
-      0.48
+      0.65,
+      0.9
     ]
   },
   "windZones": [
@@ -105,19 +105,19 @@
         11
       ],
       "size": [
-        10,
-        16
+        12,
+        20
       ],
       "opacity": [
-        0.24,
-        0.4
+        0.48,
+        0.7
       ]
     }
   ],
   "omissions": [
     {
       "locality": "hospital",
-      "reason": "El tejado contiene conductos/equipos de ventilación; no se identifica una chimenea de combustión inequívoca. Se omite humo para no inventar una salida."
+      "reason": "El tejado contiene conductos/equipos de ventilaci\u00f3n; no se identifica una chimenea de combusti\u00f3n inequ\u00edvoca. Se omite humo para no inventar una salida."
     }
   ],
   "lights": [
@@ -142,10 +142,10 @@
           461
         ]
       ],
-      "period": 8.7,
+      "period": 3.7,
       "phase": 0.8,
-      "base": 0.22,
-      "variation": 0.12
+      "base": 0.43,
+      "variation": 0.41
     },
     {
       "id": "hospital-ventana-este",
@@ -168,10 +168,10 @@
           464
         ]
       ],
-      "period": 12.1,
+      "period": 5.9,
       "phase": 3.1,
-      "base": 0.2,
-      "variation": 0.1
+      "base": 0.43,
+      "variation": 0.41
     },
     {
       "id": "colonia-entrada",
@@ -194,10 +194,10 @@
           478
         ]
       ],
-      "period": 10.4,
+      "period": 4.7,
       "phase": 1.9,
-      "base": 0.22,
-      "variation": 0.11
+      "base": 0.43,
+      "variation": 0.41
     },
     {
       "id": "colonia-ventana-oeste",
@@ -220,18 +220,27 @@
           471
         ]
       ],
-      "period": 13.6,
+      "period": 6.3,
       "phase": 4.6,
-      "base": 0.2,
-      "variation": 0.12
+      "base": 0.43,
+      "variation": 0.41
     }
   ],
   "colors": {
     "snow": "#f8fafb",
     "wind": "#f0f3f4",
-    "smoke": "#78858d",
+    "smoke": "#15171c",
     "lights": "#ffc76b"
   },
-  "lightsHaloScale": 1.9,
-  "lightsHaloAlpha": 0.28
+  "lightsHaloScale": 2.8,
+  "lightsHaloAlpha": 0.5,
+  "lightsShadeAlpha": 0.8,
+  "audio": {
+    "bufferSeconds": 4,
+    "volume": 0.4,
+    "highpass": 90,
+    "lowpass": 1600,
+    "gustPeriod": 11,
+    "maxGain": 0.35
+  }
 }

@@ -51,7 +51,10 @@
     <details id="atmosphere-controls" class="demo-controls"><summary>Ambientación</summary>
      <button id="ambient-enabled" aria-pressed="true">Efectos: activados</button>
      <div class="ambient-toggles"><button data-ambient="snow" aria-pressed="true">Nieve</button><button data-ambient="wind" aria-pressed="true">Viento</button><button data-ambient="smoke" aria-pressed="true">Humo</button><button data-ambient="lights" aria-pressed="true">Luces</button></div>
-     <label for="ambient-intensity">Intensidad general</label><select id="ambient-intensity"><option value="low">Baja</option><option value="normal">Normal</option></select>
+     <label for="ambient-intensity">Intensidad visual</label><select id="ambient-intensity"><option value="low">Baja</option><option value="normal">Normal</option></select>
+     <button id="ambient-audio" aria-pressed="false">Ventisca: sonido desactivado</button>
+     <label for="ambient-volume">Volumen de la ventisca <output id="ambient-volume-value" for="ambient-volume">40%</output></label><input id="ambient-volume" type="range" min="0" max="100" value="40" step="5">
+     <p id="ambient-audio-status" class="provisional-note" role="status"></p>
      <p id="ambient-status" class="provisional-note" role="status"></p><p id="ambient-reduced" class="provisional-note" hidden>Movimiento reducido: efectos apagados al inicio. Podés activarlos expresamente.</p>
     </details>
     <details id="demo-controls" class="demo-controls"><summary>Composición y selección por teclado</summary><label for="fixture">Composición de muestra</label><select id="fixture"><option value="hospital">Hospital: cuatro fichas y ocupación mixta</option><option value="one-zombie">Un zombi por localidad</option><option value="maximum">Capacidad visual máxima</option></select><label for="locality-select">Consultar localidad</label><select id="locality-select"><option value="">Elegir localidad</option></select><label for="survivor-select">Seleccionar superviviente</label><select id="survivor-select"></select></details>

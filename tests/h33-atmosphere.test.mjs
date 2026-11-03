@@ -34,6 +34,15 @@ test('H3.3 ambiente: partículas enteras dentro del mapa, estelas dentro de su z
  for(let i=0;i<1800;i++){
   const previous=m.lights.map(l=>l.alpha);m.step(1/60);
   for(const p of m.particles)if(p.alpha>0){assert.ok(p.x-p.width/2>=0&&p.x+p.width/2<=config.bounds.width);assert.ok(p.y-p.height/2>=0&&p.y+p.height/2<=config.bounds.height);if(p.type==='wind'){const z=config.windZones[p.zone];assert.ok(p.x-p.width/2>=z.x&&p.x+p.width/2<=z.x+z.width);assert.ok(p.y-p.height/2>=z.y&&p.y+p.height/2<=z.y+z.height);}}
-  m.lights.forEach((l,j)=>assert.ok(Math.abs(l.alpha-previous[j])<.002));
+  m.lights.forEach((l,j)=>assert.ok(Math.abs(l.alpha-previous[j])<.02));
  }
+});
+
+test('H3.3 ambiente: las cuatro luces varían claramente y no titilan al unísono',()=>{
+ const m=createAtmosphereModel(config,{seed:9}),ranges=m.lights.map(()=>({min:1,max:0}));let separated=0;
+ for(let i=0;i<720;i++){m.step(1/60);m.lights.forEach((l,k)=>{ranges[k].min=Math.min(ranges[k].min,l.alpha);ranges[k].max=Math.max(ranges[k].max,l.alpha);});if(Math.max(...m.lights.map(l=>l.alpha))-Math.min(...m.lights.map(l=>l.alpha))>.25)separated++;}
+ assert.ok(ranges.every(r=>r.max-r.min>.45),'La variación no alcanza para distinguir encendido/atenuado');assert.ok(separated>120,'Las luces varían juntas');
+});
+test('H3.3 ambiente: cruzar una zona corta no reinicia la fase de una estela',()=>{
+ const m=createAtmosphereModel(config,{seed:12}),p=m.particles.find(x=>x.type==='wind'),z=config.windZones[p.zone];p.age=p.life*.45;p.x=z.x+z.width-p.width/2-.1;const previous=p.age;m.step(.05);assert.ok(p.age>previous,'La estela pierde su fase antes de alcanzar contraste');
 });

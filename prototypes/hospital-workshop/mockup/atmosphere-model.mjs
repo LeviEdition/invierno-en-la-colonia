@@ -13,8 +13,9 @@ export function validateAtmosphere(c){
  require(c.windZones.length>0||c.limits.wind===0,'pool de viento sin zona');
  for(const z of c.windZones)require(z.width>=80&&z.height>=12&&z.x>=0&&z.y>=0&&z.x+z.width<=c.bounds.width&&z.y+z.height<=c.bounds.height,'calle');
  for(const e of c.smokeEmitters)require(e.source&&e.x>40&&e.x<c.bounds.width-40&&e.y>140&&e.y<c.bounds.height-40,'emisor');
- for(const l of c.lights)require(l.period>=7&&l.base>l.variation&&l.base+l.variation<=.4&&l.polygon.length>=3,'luz lenta');
+ for(const l of c.lights)require(l.period>=3.5&&l.base>l.variation&&l.base+l.variation<=.9&&l.polygon.length>=3,'luz lenta');
  require(Number.isFinite(c.lightsHaloScale)&&c.lightsHaloScale>=1&&c.lightsHaloScale<=3&&Number.isFinite(c.lightsHaloAlpha)&&c.lightsHaloAlpha>=0&&c.lightsHaloAlpha<=.5,'halo local');
+ require(Number.isFinite(c.lightsShadeAlpha)&&c.lightsShadeAlpha>=0&&c.lightsShadeAlpha<=.85,'atenuación local');
  return c;
 }
 function randomSource(seed){let n=seed>>>0;return ()=>{n+=0x6D2B79F5;let t=n;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return ((t^t>>>14)>>>0)/4294967296;};}
@@ -47,7 +48,12 @@ export function createAtmosphereModel(raw,{seed=1,settings=initialAtmosphereSett
    const edge=Math.min(p.x-p.width/2,p.y-p.height/2,b.width-p.x-p.width/2,b.height-p.y-p.height/2);
    p.alpha=edge<0?0:alpha*clamp(edge/config.edgeFade,0,1);
   }
-  for(const l of lights)l.alpha=options.enabled&&options.lights?(l.base+l.variation*Math.sin(elapsed*tau/l.period+l.phase))*intensity.alpha:0;
+  for(const l of lights){
+   const active=options.enabled&&options.lights,phase=elapsed*tau/l.period+l.phase;
+   // Dos ondas suaves por ventana: variación independiente sin flashes rápidos.
+   const level=l.base+l.variation*(.78*Math.sin(phase)+.22*Math.sin(1.93*phase+l.phase*.7));
+   l.alpha=active?level*intensity.alpha:0;l.shadeAlpha=active?(1-level)*config.lightsShadeAlpha*intensity.alpha:0;
+  }
  }
  function step(seconds){
   if(!running())return false;const dt=clamp(Number.isFinite(seconds)?seconds:0,0,config.maxDelta);if(!dt)return false;elapsed+=dt;steps++;const gust=wind();
@@ -61,7 +67,7 @@ export function createAtmosphereModel(raw,{seed=1,settings=initialAtmosphereSett
     p.x+=(gust*.35+Math.sin(elapsed*.6+p.phase)*.4)*dt;p.y-=p.rise*dt;
    }else{
     const z=config.windZones[p.zone];p.age=(p.age+dt)%p.life;p.x+=Math.max(.4,gust+5)*dt;
-    if(p.x+p.width/2>z.x+z.width){p.x=z.x+p.width/2;p.age=0;}
+    if(p.x+p.width/2>z.x+z.width){p.x=z.x+p.width/2;}
    }
   }
   paint();return true;

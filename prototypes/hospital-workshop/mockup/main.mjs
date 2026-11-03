@@ -1,6 +1,7 @@
 import atmosphereConfig from './atmosphere.json';
 import {initialAtmosphereSettings} from './atmosphere-model.mjs';
 import {createAtmosphereView} from './atmosphere-view.mjs';
+import {createWindAudio} from './atmosphere-audio.mjs';
 import sceneData from './scene.json';
 import uploadedKit from '../uploaded-kit.json';
 import manifest from '../../../kit_arte_h33/manifest.json';
@@ -16,7 +17,7 @@ import {waitForStartup,STARTUP_TIMEOUT_MS} from '../../hospital-phaser/startup.m
 
 const scene=validateScene(sceneData),kit=makeMockupKit(scene,uploadedKit,manifest);
 const $=id=>document.getElementById(id),template=$('scene').cloneNode(false);
-const controls=()=>[...document.querySelectorAll('button,select')].filter(el=>!['restart-mockup','retry-load','close-dialog'].includes(el.id));
+const controls=()=>[...document.querySelectorAll('button,select,input')].filter(el=>!['restart-mockup','retry-load','close-dialog'].includes(el.id));
 const defaults=()=>({fixture:'hospital',selected:'hospital-person-1',selectedLocality:null,selectedDie:null,panelOpen:!matchMedia('(max-width:800px)').matches,debug:false,focus:'general'});
 let state=defaults(),current=null,starts=0,generation=0,controller,serial=Promise.resolve(),pageActive=true,lastDisposal=null,lastError=null;
 export function inspect(){return {state:document.body.dataset.state,starts,lastDisposal,lastError,app:current?.inspect()||null};}
@@ -31,13 +32,14 @@ function mount(reset=true){
 }
 async function runMount(signal,id){
  starts++;lastError=null;document.body.dataset.state='loading';$('loading').hidden=false;$('loading').setAttribute('role','status');$('loading').textContent='Cargando el mapa y las fichas…';$('retry-load').hidden=true;controls().forEach(el=>el.disabled=true);
- const deadline=performance.now()+STARTUP_TIMEOUT_MS,timings={startedAt:performance.now()},motionQuery=matchMedia('(prefers-reduced-motion: reduce)');let ambientSettings=initialAtmosphereSettings(motionQuery.matches),renderer,observer,unbind,ui,frame=0;
+ const deadline=performance.now()+STARTUP_TIMEOUT_MS,timings={startedAt:performance.now()},motionQuery=matchMedia('(prefers-reduced-motion: reduce)');let ambientSettings=initialAtmosphereSettings(motionQuery.matches),renderer,audio,observer,unbind,ui,frame=0;
  try{
   const canvas=template.cloneNode(false);$('scene')?.remove();document.querySelector('.map-viewport').prepend(canvas);
   if(!webglAvailable())throw Error('WEBGL_UNAVAILABLE');
   const originals=await waitForStartup(loadResources(kit),{signal,deadline});signal.throwIfAborted();timings.loadAndAlphaMs=performance.now()-timings.startedAt;
   const prepared=prepareResources(kit,originals,{factor:1}),prepareEnd=performance.now();timings.preparationMs=prepareEnd-timings.startedAt-timings.loadAndAlphaMs;
   renderer=await createWorkshopRenderer(canvas,kit,prepared,{signal,deadline,backgroundColor:'#171d20',atmosphereFrameRate:atmosphereConfig.frameRate,createAtmosphere:world=>createAtmosphereView(world,atmosphereConfig,{settings:ambientSettings})});signal.throwIfAborted();
+  audio=createWindAudio(atmosphereConfig.audio,{onChange:()=>{if(ui&&!ui.signal.aborted)syncAmbientUI();}});
   let fixture=createFixture(scene,state.fixture),camera,viewport,nodes=[],panelKey='',contextLost=false,menuOpen=false;
   const log=[],counters={commands:0,draws:0},images=Object.fromEntries(kit.assets.map(a=>[a.id,a]));
   ui=new AbortController();const options={signal:ui.signal};
@@ -95,16 +97,20 @@ async function runMount(signal,id){
   unbind=bindControls({canvas,onPan:command((x,y)=>change(panCamera(camera,x,y))),onZoom:command((factor,anchor=center())=>change(zoomCameraAt(camera,factor,anchor))),onPinch:command((a,b,f)=>change(pinchCamera(camera,a,b,f))),onPick:command(p=>{const point=screenToWorld(camera,p),selected=pickCharacter(fixture.characters,point),locality=pickLocality(scene,point);if(selected)select(selected);else if(locality)selectLocality(locality);else clearSelection();}),onReset:command(reset),onSelect:command(()=>state.selectedLocality?selectLocality(state.selectedLocality):select(state.selected||fixture.characters[0].id)),onClear:command(clearSelection)});
   const ambientKinds=['snow','wind','smoke','lights'];
   function syncAmbientUI(){
-   const active=ambientSettings.enabled&&ambientKinds.some(k=>ambientSettings[k]);$('ambient-enabled').setAttribute('aria-pressed',String(active));$('ambient-enabled').textContent=active?'Efectos: activados':'Efectos: desactivados';
+   const visual=ambientSettings.enabled&&ambientKinds.some(k=>ambientSettings[k]),sound=audio.inspect(),active=visual||sound.enabled;$('ambient-enabled').setAttribute('aria-pressed',String(active));$('ambient-enabled').textContent=active?'Ambientación: activada':'Ambientación: desactivada';
+   $('ambient-audio').setAttribute('aria-pressed',String(sound.enabled));$('ambient-audio').textContent=sound.enabled?'Ventisca: sonido activado':'Ventisca: sonido desactivado';$('ambient-volume').value=String(Math.round(sound.volume*100));$('ambient-volume-value').value=Math.round(sound.volume*100)+'%';
+   $('ambient-audio-status').textContent=sound.error||(sound.enabled?(sound.paused?'Sonido en pausa.':sound.state==='running'?'Sonido de ventisca activo.':'Audio suspendido por el navegador; desactivá y volvé a activar el sonido.'):'Sin sonido. Se activa solo con este botón.');
    for(const button of document.querySelectorAll('[data-ambient]'))button.setAttribute('aria-pressed',String(ambientSettings.enabled&&ambientSettings[button.dataset.ambient]));
    $('ambient-intensity').value=ambientSettings.intensity;$('ambient-reduced').hidden=!motionQuery.matches;
-   $('ambient-status').textContent=active?(document.hidden?'En pausa: pestaña oculta.':ambientSettings.intensity==='low'?'Intensidad baja.':'Intensidad normal.'):'Sin efectos animados.';
+   $('ambient-status').textContent=visual?(document.hidden?'En pausa: pestaña oculta.':ambientSettings.intensity==='low'?'Intensidad baja.':'Intensidad normal.'):'Sin efectos animados.';
   }
   function setAmbient(patch){ambientSettings={...ambientSettings,...patch};renderer.setAtmosphere(patch);syncAmbientUI();}
-  listen('#ambient-enabled','click',()=>{const on=!(ambientSettings.enabled&&ambientKinds.some(k=>ambientSettings[k]));setAmbient({enabled:on,snow:on,wind:on,smoke:on,lights:on});});
+  listen('#ambient-enabled','click',()=>{const on=!(ambientSettings.enabled&&ambientKinds.some(k=>ambientSettings[k])||audio.inspect().enabled);if(!on)audio.setEnabled(false);setAmbient({enabled:on,snow:on,wind:on,smoke:on,lights:on});});
   listen('[data-ambient]','click',e=>{const kind=e.currentTarget.dataset.ambient;setAmbient(ambientSettings.enabled?{[kind]:!ambientSettings[kind]}:{enabled:true,snow:false,wind:false,smoke:false,lights:false,[kind]:true});});
   listen('#ambient-intensity','change',e=>setAmbient({intensity:e.target.value}));
-  const visibility=()=>{renderer.pauseAtmosphere(document.hidden||contextLost);syncAmbientUI();};document.addEventListener('visibilitychange',visibility,options);
+  listen('#ambient-audio','click',()=>audio.setEnabled(!audio.inspect().enabled));
+  listen('#ambient-volume','input',e=>audio.setVolume(Number(e.target.value)/100));
+  const visibility=()=>{renderer.pauseAtmosphere(document.hidden||contextLost);audio.setPaused(document.hidden||contextLost);syncAmbientUI();};document.addEventListener('visibilitychange',visibility,options);
   motionQuery.addEventListener('change',e=>{if(e.matches)setAmbient({enabled:false,snow:false,wind:false,smoke:false,lights:false});syncAmbientUI();},options);
   $('atmosphere-controls').open=false;visibility();
   listen('#locality','change',e=>{const id=e.target.value;if(id!=='general')selectLocality(id);resize();change(focusLocality(scene,id,viewport),id);});
@@ -124,13 +130,13 @@ async function runMount(signal,id){
    $('dialog-title').textContent=titles[kind];$('dialog-content').textContent=text[kind];closeMenu();$('info-dialog').showModal();
   });
   listen('#close-dialog','click',()=>$('info-dialog').close());
-  canvas.addEventListener('webglcontextlost',()=>{contextLost=true;renderer.pauseAtmosphere(true);controls().forEach(el=>el.disabled=true);$('retry-load').hidden=false;feedback('Se perdió el contexto gráfico; reiniciá si no se recupera.');},options);
-  canvas.addEventListener('webglcontextrestored',()=>{contextLost=false;renderer.pauseAtmosphere(document.hidden);controls().forEach(el=>el.disabled=false);$('retry-load').hidden=true;feedback('Contexto gráfico recuperado.');schedule();},options);
+  canvas.addEventListener('webglcontextlost',()=>{contextLost=true;renderer.pauseAtmosphere(true);audio.setPaused(true);controls().forEach(el=>el.disabled=true);$('retry-load').hidden=false;feedback('Se perdió el contexto gráfico; reiniciá si no se recupera.');},options);
+  canvas.addEventListener('webglcontextrestored',()=>{contextLost=false;renderer.pauseAtmosphere(document.hidden);audio.setPaused(document.hidden);controls().forEach(el=>el.disabled=false);$('retry-load').hidden=true;feedback('Contexto gráfico recuperado.');schedule();},options);
   resize();if(frame)cancelAnimationFrame(frame);render();await waitForStartup(renderer.nextFrame(),{signal,deadline});signal.throwIfAborted();
   timings.readyMs=performance.now()-timings.startedAt;
-  current={inspect:()=>({state:structuredClone(state),fixture:structuredClone(fixture),counts:sceneCounts(fixture),locality:localityDetails(scene,fixture,state.selectedLocality),turn:structuredClone(sampleTurn),camera:{...camera},viewport:{...viewport},nodes:structuredClone(nodes),counters:{...counters},timings:{...timings},renderer:renderer.inspect(),contextLost}),worldAt:p=>renderer.worldAt(p),pixels:()=>renderer.pixels(),destroy(){ui.abort();observer.disconnect();unbind();if(frame)cancelAnimationFrame(frame);$('info-dialog').close();$('floating-menu').hidden=true;return {...renderer.destroy(),disposed:true};}};
+  current={inspect:()=>({state:structuredClone(state),fixture:structuredClone(fixture),counts:sceneCounts(fixture),locality:localityDetails(scene,fixture,state.selectedLocality),turn:structuredClone(sampleTurn),camera:{...camera},viewport:{...viewport},nodes:structuredClone(nodes),counters:{...counters},timings:{...timings},renderer:renderer.inspect(),audio:audio.inspect(),contextLost}),worldAt:p=>renderer.worldAt(p),pixels:()=>renderer.pixels(),async destroy(){ui.abort();observer.disconnect();unbind();if(frame)cancelAnimationFrame(frame);$('info-dialog').close();$('floating-menu').hidden=true;const graphics=renderer.destroy(),audioRelease=await audio.destroy();return {...graphics,audioRelease,disposed:true};}};
   document.body.dataset.state='ready';$('loading').hidden=true;controls().forEach(el=>el.disabled=false);feedback('Seleccioná un edificio o un retrato.');
- }catch(error){ui?.abort();observer?.disconnect();unbind?.();if(frame)cancelAnimationFrame(frame);const cleanup=renderer?.destroy();if(signal.aborted||id!==generation)return;lastError={message:error.message,cleanupErrors:error.cleanupErrors||cleanup?.cleanupErrors||[]};document.body.dataset.state='error';$('loading').setAttribute('role','alert');$('loading').textContent=error.message==='WEBGL_UNAVAILABLE'?'Este navegador no ofrece WebGL. Podés abrir la referencia Canvas.':'No se pudo cargar la maqueta. '+error.message;const link=document.createElement('a');link.href='../hospital/';link.textContent='Abrir referencia Canvas';$('loading').append(link);$('loading').hidden=false;$('retry-load').hidden=false;
+ }catch(error){ui?.abort();observer?.disconnect();unbind?.();if(frame)cancelAnimationFrame(frame);const cleanup=renderer?.destroy();await audio?.destroy();if(signal.aborted||id!==generation)return;lastError={message:error.message,cleanupErrors:error.cleanupErrors||cleanup?.cleanupErrors||[]};document.body.dataset.state='error';$('loading').setAttribute('role','alert');$('loading').textContent=error.message==='WEBGL_UNAVAILABLE'?'Este navegador no ofrece WebGL. Podés abrir la referencia Canvas.':'No se pudo cargar la maqueta. '+error.message;const link=document.createElement('a');link.href='../hospital/';link.textContent='Abrir referencia Canvas';$('loading').append(link);$('loading').hidden=false;$('retry-load').hidden=false;
  }finally{if(id===generation)$('restart-mockup').disabled=$('retry-load').disabled=false;}
 }
 export function worldAt(point){return current?.worldAt(point);}

@@ -2,6 +2,8 @@
 
 03/11/2026, America/Montevideo. [PR19 en borrador](https://github.com/LeviEdition/invierno-en-la-colonia/pull/19), rama `experiment/h3-3-taller-visual`. **Pendiente de revisión visual del creador; H3.3 abierto, sin H3.4 ni merge.**
 
+> **Revisión posterior del creador:** luces y viento todavía insuficientes; humo solicitado más negro y sonido de ventisca autorizado. El [informe82](82-h3-3-luces-viento-y-ventisca.md) registra la nueva pasada. Esta evidencia y sus métricas se conservan como historia, no como aceptación visual.
+
 ## Motivo y base
 
 El creador describe los efectos de80 como «prácticamente imperceptibles» y pide mucha más presencia. Esa observación sustituye la calibración inicial sutil, sin ampliar el alcance a reglas, arte, capacidades exteriores o motor. Se conserva80 como evidencia histórica.

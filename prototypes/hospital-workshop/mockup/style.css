@@ -7,7 +7,7 @@ button{cursor:pointer;background:linear-gradient(175deg,#2d3028,#1d2321);box-sha
 button:hover{border-color:#a28b60}
 button[aria-pressed=true]{border-color:var(--amber);color:#f0ce8c;background:#403a29}
 button:disabled,select:disabled{opacity:.45;cursor:wait}
-button:focus-visible,select:focus-visible,a:focus-visible,summary:focus-visible,canvas:focus-visible{outline:3px solid var(--amber);outline-offset:-3px}
+button:focus-visible,select:focus-visible,a:focus-visible,summary:focus-visible,canvas:focus-visible,input:focus-visible{outline:3px solid var(--amber);outline-offset:-3px}
 a{color:#d1bd94;text-underline-offset:3px}
 select{max-width:100%;font-size:14px;width:100%}
 [hidden]{display:none!important}
@@ -127,3 +127,5 @@ dialog a{display:inline-block;min-height:44px;padding:10px 0;font-size:13px}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
 
 #ambient-enabled{width:100%;margin-bottom:6px}.ambient-toggles{display:grid;grid-template-columns:1fr 1fr;gap:6px}#ambient-status{margin:6px 0 10px}
+
+#ambient-volume{display:block;width:100%;min-height:44px;margin:0;accent-color:var(--amber)}
