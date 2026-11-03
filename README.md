@@ -16,7 +16,8 @@ Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos un
 - [Tablero operativo — próxima tarea](docs/18-tablero-operativo.md)
 - [H3.1 — Auditoría de identidad visual](docs/74-h3-1-auditoria-identidad-visual.md)
 - [Plan propuesto H3.1–H3.6](docs/75-plan-hito-3-identidad-visual.md)
-- [H3.3 — Luces asincrónicas y ventisca opcional, revisión pendiente](docs/82-h3-3-luces-viento-y-ventisca.md)
+- [H3.4.1 — Mapa de consulta de una partida real](docs/83-h3-4-1-estado-real-consulta.md)
+- [H3.3 — Luces asincrónicas y ventisca opcional, evidencia histórica](docs/82-h3-3-luces-viento-y-ventisca.md)
 - [H3.3 — Localidades seleccionables y revisión de interfaz](docs/79-h3-3-localidades-capacidades-e-interfaz.md)
 - [Decisión vigente — D1/D2 cerradas y referencia preservada](docs/62-hitos-referencia-fiel-y-juego-propio.md)
 - [Hoja de ruta del singleplayer — bloques SP-00 a SP-08, acuerdos y pendientes](docs/63-hoja-de-ruta-planificacion-singleplayer.md)
@@ -26,7 +27,23 @@ Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos un
 
 El [PR15](https://github.com/LeviEdition/invierno-en-la-colonia/pull/15) se integró mediante merge convencional `6b8bfcadfeb99d16a10b6f4576f3b061584ee1f9`, preservando historia yoráculo57872ee. [Informe71](docs/71-integracion-main-y-cierre-d1-d2.md) registra la validación posterior:467/467,40/40 contra cada referencia, partidas Chromium yoffline aprobados. SP-03 permanece conceptual ysin cambios respecto del head aprobado.
 
-**Referencia cerrada:** D1/D2 y V9.9 modular preservadas. Esta rama incluye la **maqueta visual H3.3 del mapa continuo**, con el kit recibido y datos de demostración, dependiente del experimento Phaser4.2.1. H3.3 queda abierto para revisión visual; no conecta el motor ni autoriza H3.4. Main, referencia/tag/release, reglas y SP-03 permanecen intactos. [Informe79](docs/79-h3-3-localidades-capacidades-e-interfaz.md); el [informe78](docs/78-h3-3-maqueta-mapa-interactivo.md) registra la entrega anterior; el [informe77](docs/77-h3-3-taller-visual-y-kit-piloto.md) conserva la historia del taller.
+**Referencia cerrada:** D1/D2 y V9.9 modular preservadas. El creador aceptó H3.3 como dirección visual, incluida la ambientación. Esta rama añade **H3.4.1: consulta del estado real**, con la interfaz V9.9 conservada para preparación y acciones. Retratos/posiciones siguen siendo provisionales. La maqueta independiente mantiene su ruta y datos de demostración. No se modifican reglas, main, referencia/tag/release o SP-03. No hay acciones desde el nuevo mapa. [Informe83](docs/83-h3-4-1-estado-real-consulta.md).
+
+## H3.4.1 desde VS Code
+
+En la carpeta con `package.json` y `package-lock.json`, Node22+, PowerShell:
+
+```powershell
+git fetch origin
+git switch experiment/h3-4-1-estado-real
+git pull --ff-only
+npm.cmd ci
+npm.cmd run dev:state-map
+```
+
+Abrir **http://127.0.0.1:8775/prototypes/state-map/**. Completar la preparación en V9.9 y pulsar **Ver mapa**. Los pases/diálogos se resuelven en la interfaz original; sus acciones siguen disponibles allí. El mapa muestra datos reales, permite consultar y configurar ambientación, sin consumir recursos ni ejecutar reglas. [Guía completa, Windows, capacidades y red local](prototypes/state-map/README.md). Ctrl+C detiene el servidor. No requiere Python.
+
+La maqueta H3.3 conservada también se abre en http://127.0.0.1:8775/prototypes/hospital-workshop/ con este servidor. La sección siguiente conserva las instrucciones para su rama/servidor independiente.
 
 ## Maqueta H3.3 desde VS Code
 

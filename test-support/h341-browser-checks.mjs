@@ -1,0 +1,39 @@
+import assert from 'node:assert/strict';
+import {installLifecycleProbe} from './h32-lifecycle-probe.mjs';
+export function stateMapChecks({origin='http://127.0.0.1:8775',modulePath='/dist/state-map-qa/map.mjs'}={}){
+const api=p=>p.evaluate(()=>window.h341Viewer.inspect()),view=async p=>(await api(p)).view,frames=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))),host=p=>p.frames().find(f=>f.url().endsWith('/reference-host.html'));
+const raw=p=>host(p).evaluate(()=>h341Test.snapshot()),rng=p=>host(p).evaluate(()=>window.h341RandomCalls),sleep=(p,n=70)=>p.waitForTimeout(n);
+async function instrument(context){
+ await context.addInitScript(()=>{if(window.top===window)return;window.h341RandomValue=.5;window.h341RandomCalls=0;Math.random=()=>{window.h341RandomCalls++;return window.h341RandomValue;};});
+ const probe=installLifecycleProbe.toString().replaceAll('/dist/hospital-phaser/game.mjs',modulePath).replace('x.target instanceof HTMLCanvasElement','(x.target instanceof HTMLCanvasElement||x.target instanceof MediaQueryList)');await context.addInitScript({content:'('+probe+')();'});
+}
+async function load(p){await p.goto(origin+'/dist/state-map-qa/index.html');await p.evaluate(async path=>window.h341Viewer=await import(path),modulePath);await p.waitForFunction(()=>window.h341Viewer.inspect().projection?.blocked==='setup');}
+async function settle(p){
+ const f=host(p);for(let i=0;i<30;i++){
+  await sleep(p,50);
+  if(await f.locator('#passScreen').isVisible()){await f.locator('[data-command="confirmPass"]').click();continue;}
+  if(await f.locator('#deathBackdrop').isVisible()){await f.locator('[data-command="deathContinue"]').click();continue;}
+  if(await f.locator('#backdrop').isVisible()){
+   const choices=f.locator('#modalContent button[data-command]:enabled'),data=await choices.evaluateAll(list=>list.map(b=>({command:b.dataset.command,args:b.dataset.args,text:b.textContent})));
+   const index=data.findIndex(x=>['crossChoose','chooseLeader','chooseBite','chooseLoot','dismissRecruit','crossAiContinue','cancelHeal','cancelAttract','cancelTransfer'].includes(x.command));
+   if(index>=0){await choices.nth(index).click();continue;}
+   const close=f.locator('[data-command="hide"]:visible');if(await close.count()){await close.first().click();continue;}
+   throw Error('Diálogo sin resolución de prueba: '+JSON.stringify(data));
+  }
+  if(!(await api(p)).projection?.blocked)return;
+ }throw Error('La preparación/decisión no terminó');
+}
+async function dispatch(p,name,...args){await host(p).evaluate(({name,args})=>{const result=h341Test.dispatch(name,...args);if(result?.then)window.h341PendingTurn=result;},{name,args});}
+async function sync(p){const g=await raw(p);await p.waitForFunction(expected=>{const p=window.h341Viewer.inspect().projection;return p&&!p.blocked&&p.last===expected.last&&p.round===expected.round&&p.food===expected.food&&p.turn===expected.turn;},{last:g.last,round:g.round,food:g.food,turn:g.turn});return g;}
+async function correspondence(p){const g=await sync(p),state=(await api(p)).projection;assert.equal(state.morale,g.morale);assert.equal(state.food,g.food);assert.equal(state.round,g.round);const chars=[...g.humans,...g.bots].filter(c=>!c.dead);assert.equal(state.characters.length,chars.length);for(const c of state.characters){const real=chars.find(x=>x.id===c.id);assert.ok(real);assert.equal(c.name,real.name);assert.equal(c.locationId,'place-'+real.loc);assert.equal(c.wounds,real.wounds);assert.equal(c.frost,real.frost);}for(const l of state.locations){assert.equal(l.zombies,g.zones[l.engineIndex].z);assert.equal(l.barricades,g.zones[l.engineIndex].b);}assert.equal(state.dice.ownerId,g.turn);assert.deepEqual(state.dice.available,g.turn==='ai'?g.botDice:g.dice);for(const key of ['items','botItems','decks','crossCard','crossRemaining','contributions'])assert.ok(!JSON.stringify(state).includes('"'+key+'"'));return {game:g,projection:state};}
+async function begin(p,mode='local'){
+ await load(p);const f=host(p);await f.locator('#setupScreen button').filter({hasText:mode==='local'?'2 JUGADORES LOCALES':'1 JUGADOR + IA'}).click();await settle(p);
+ // Elección inicial desde el menú real, sin confirmarla desde el mapa.
+ await f.locator('#floatingActions').click();await f.locator(`[data-command="menuGo"][data-args='["group"]']`).click();await f.locator(`[data-command="chooseLeader"][data-args='["h1"]']`).click();await settle(p);await correspondence(p);
+}
+async function openMap(p){await p.locator('#map-mode').click();await p.waitForFunction(()=>window.h341Viewer.inspect().view!==null);await frames(p);assert.equal((await api(p)).mode,'map');}
+async function panel(p){if(!await p.locator('#panel-content').isVisible())await p.locator('#panel-toggle').click();await frames(p);}
+async function ambient(p){await panel(p);await p.locator('#atmosphere-controls').evaluate(el=>el.open=true);}
+async function pick(p,point,touch=false){const a=await view(p),b=await p.locator('#scene').boundingBox(),x=b.x+a.camera.x+point.x*a.camera.zoom,y=b.y+a.camera.y+point.y*a.camera.zoom;assert.ok(x>b.x&&x<b.x+b.width&&y>b.y&&y<b.y+b.height);if(touch)await p.touchscreen.tap(x,y);else await p.mouse.click(x,y);await frames(p);}
+ return {api,view,frames,host,raw,rng,sleep,instrument,load,settle,dispatch,sync,correspondence,begin,openMap,panel,ambient,pick};
+}

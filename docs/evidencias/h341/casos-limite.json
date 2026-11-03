@@ -1,0 +1,96 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "records": [
+    {
+      "name": "overflow-real",
+      "errors": [],
+      "consoleErrors": [],
+      "counts": {
+        "actual": 3,
+        "engineCapacity": 4,
+        "drawn": 2,
+        "overflow": 1,
+        "listed": 3
+      },
+      "passed": true
+    },
+    {
+      "name": "death-and-succession",
+      "errors": [],
+      "consoleErrors": [],
+      "actualDeath": true,
+      "successorChosenInOriginalUI": true,
+      "staleSelectionCleared": true,
+      "passed": true
+    },
+    {
+      "name": "effects-rng-equivalence",
+      "errors": [],
+      "consoleErrors": [],
+      "sameState": true,
+      "sameRngSequence": true,
+      "rngCalls": 301,
+      "passed": true
+    },
+    {
+      "name": "ai-real-state",
+      "errors": [],
+      "consoleErrors": [],
+      "round": 2,
+      "ended": false,
+      "originalAccelerationControl": true,
+      "passed": true
+    },
+    {
+      "name": "viewer-restoration",
+      "errors": [],
+      "consoleErrors": [],
+      "controlledLifecycle": {
+        "syntheticEvents": true,
+        "sameGame": true,
+        "oneViewer": true,
+        "newChannelOnly": true
+      },
+      "passed": true
+    },
+    {
+      "name": "navigation-attempt",
+      "errors": [],
+      "consoleErrors": [],
+      "persisted": true,
+      "sameDocument": true,
+      "sameGame": true,
+      "childInspectedViaSameOriginDOM": true,
+      "passed": true
+    },
+    {
+      "name": "resource-failure",
+      "errors": [],
+      "consoleErrors": [
+        "Failed to load resource: net::ERR_FAILED"
+      ],
+      "recoveredWithoutNewGame": true,
+      "intentionalNetworkFailure": true,
+      "passed": true
+    },
+    {
+      "name": "product-without-debug",
+      "errors": [],
+      "consoleErrors": [],
+      "publicCharacters": 6,
+      "engineGlobalsAbsent": true,
+      "passed": true
+    },
+    {
+      "name": "original-reference-interface",
+      "errors": [],
+      "consoleErrors": [],
+      "originalSites": 7,
+      "defaultFactory": true,
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "passed": true
+}
