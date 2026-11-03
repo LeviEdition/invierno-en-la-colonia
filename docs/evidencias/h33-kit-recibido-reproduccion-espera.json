@@ -1,0 +1,15 @@
+{
+  "browser": "143.0.7499.4",
+  "playwright": "1.57.0",
+  "injectedDecodeDelayMs": 400,
+  "oldWaitElapsedMs": 38,
+  "oldWaitValue": false,
+  "prematureState": "loading",
+  "prematureStarts": 2,
+  "prematureAppNull": true,
+  "eventualState": "ready",
+  "eventualAppPresent": true,
+  "eventualStarts": 2,
+  "expectedStarts": 2,
+  "eventualProfile": "three-quarter"
+}

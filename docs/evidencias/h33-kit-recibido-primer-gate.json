@@ -1,0 +1,966 @@
+{
+  "browser": "154.0.8037.57",
+  "upload": "d9f73be0c30c2218658e50cbf5fb9bec362697ce",
+  "physicalMobile": false,
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "readyWallMs": 968,
+      "timings": {
+        "requestedAt": 189.6000000089407,
+        "startedAt": 191.6000000089407,
+        "loadAndAlphaMs": 186.8999999910593,
+        "derivationSubmitMs": 1.5,
+        "rendererAndFirstFrameMs": 442.80000001192093,
+        "readyMs": 631.2000000029802,
+        "totalMountMs": 633.2000000029802
+      },
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "occlusion": [
+        {
+          "pose": "delante",
+          "visible": 1380,
+          "total": 1380,
+          "ratio": 1
+        },
+        {
+          "pose": "detras",
+          "visible": 0,
+          "total": 1387,
+          "ratio": 0
+        },
+        {
+          "pose": "esquina",
+          "visible": 735,
+          "total": 1397,
+          "ratio": 0.5261274158911954
+        }
+      ],
+      "profiles": [
+        {
+          "id": "three-quarter",
+          "textures": {
+            "hospital": {
+              "width": 941,
+              "height": 941,
+              "potWidth": 1024,
+              "potHeight": 1024,
+              "rgbaBase": 4194304,
+              "rgbaWithMips": 5592404,
+              "auxiliaryRgba": 4194304,
+              "derivedRgba": 3541924,
+              "factor": 0.75,
+              "minFilter": 9987,
+              "sourceWidth": 1024,
+              "sourceHeight": 1024
+            },
+            "ground": {
+              "width": 1152,
+              "height": 768,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 3538944,
+              "factor": 0.75,
+              "minFilter": 9987,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 984,
+              "height": 900,
+              "potWidth": 1024,
+              "potHeight": 1024,
+              "rgbaBase": 4194304,
+              "rgbaWithMips": 5592404,
+              "auxiliaryRgba": 4194304,
+              "derivedRgba": 3542400,
+              "factor": 0.75,
+              "minFilter": 9987,
+              "sourceWidth": 1024,
+              "sourceHeight": 1024
+            },
+            "barricade-marker": {
+              "width": 1152,
+              "height": 768,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 3538944,
+              "factor": 0.75,
+              "minFilter": 9987,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          },
+          "timings": {
+            "requestedAt": 2949.6000000089407,
+            "startedAt": 2961.800000011921,
+            "loadAndAlphaMs": 34.19999998807907,
+            "derivationSubmitMs": 7.200000002980232,
+            "rendererAndFirstFrameMs": 185.79999999701977,
+            "readyMs": 227.19999998807907,
+            "totalMountMs": 239.3999999910593
+          }
+        },
+        {
+          "id": "half",
+          "textures": {
+            "hospital": {
+              "width": 627,
+              "height": 627,
+              "potWidth": 1024,
+              "potHeight": 1024,
+              "rgbaBase": 4194304,
+              "rgbaWithMips": 5592404,
+              "auxiliaryRgba": 4194304,
+              "derivedRgba": 1572516,
+              "factor": 0.5,
+              "minFilter": 9987,
+              "sourceWidth": 1024,
+              "sourceHeight": 1024
+            },
+            "ground": {
+              "width": 768,
+              "height": 512,
+              "potWidth": 1024,
+              "potHeight": 512,
+              "rgbaBase": 2097152,
+              "rgbaWithMips": 2796204,
+              "auxiliaryRgba": 2097152,
+              "derivedRgba": 1572864,
+              "factor": 0.5,
+              "minFilter": 9987,
+              "sourceWidth": 1024,
+              "sourceHeight": 512
+            },
+            "zombie": {
+              "width": 656,
+              "height": 600,
+              "potWidth": 1024,
+              "potHeight": 1024,
+              "rgbaBase": 4194304,
+              "rgbaWithMips": 5592404,
+              "auxiliaryRgba": 4194304,
+              "derivedRgba": 1574400,
+              "factor": 0.5,
+              "minFilter": 9987,
+              "sourceWidth": 1024,
+              "sourceHeight": 1024
+            },
+            "barricade-marker": {
+              "width": 768,
+              "height": 512,
+              "potWidth": 1024,
+              "potHeight": 512,
+              "rgbaBase": 2097152,
+              "rgbaWithMips": 2796204,
+              "auxiliaryRgba": 2097152,
+              "derivedRgba": 1572864,
+              "factor": 0.5,
+              "minFilter": 9987,
+              "sourceWidth": 1024,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          },
+          "timings": {
+            "requestedAt": 3319.2000000029802,
+            "startedAt": 3326.5,
+            "loadAndAlphaMs": 30.80000001192093,
+            "derivationSubmitMs": 2.7999999970197678,
+            "rendererAndFirstFrameMs": 141.70000000298023,
+            "readyMs": 175.30000001192093,
+            "totalMountMs": 182.6000000089407
+          }
+        },
+        {
+          "id": "h32",
+          "textures": {
+            "hospital": {
+              "width": 1254,
+              "height": 1254,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "ground": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          },
+          "timings": {
+            "requestedAt": 3628.300000011921,
+            "startedAt": 3636.4000000059605,
+            "loadAndAlphaMs": 34.900000005960464,
+            "derivationSubmitMs": 0.7999999970197678,
+            "rendererAndFirstFrameMs": 266.09999999403954,
+            "readyMs": 301.79999999701977,
+            "totalMountMs": 309.8999999910593
+          }
+        }
+      ],
+      "errors": [],
+      "network": [
+        {
+          "file": "/assets/prototipo-hospital/hospital.png",
+          "transferSize": 2392225,
+          "encodedBodySize": 2391925,
+          "duration": 19.700000002980232
+        },
+        {
+          "file": "/kit_arte_h33/assets/zombi.png",
+          "transferSize": 933178,
+          "encodedBodySize": 932878,
+          "duration": 9.900000005960464
+        },
+        {
+          "file": "/kit_arte_h33/assets/barricada.png",
+          "transferSize": 2103814,
+          "encodedBodySize": 2103514,
+          "duration": 32.70000000298023
+        },
+        {
+          "file": "/assets/prototipo-hospital/suelo-nevado.png",
+          "transferSize": 3270842,
+          "encodedBodySize": 3270542,
+          "duration": 65.40000000596046
+        },
+        {
+          "file": "/kit_arte_h33/assets/retrato-superviviente-02.png",
+          "transferSize": 2526033,
+          "encodedBodySize": 2525733,
+          "duration": 38.099999994039536
+        },
+        {
+          "file": "/kit_arte_h33/assets/retrato-superviviente-04.png",
+          "transferSize": 2670674,
+          "encodedBodySize": 2670374,
+          "duration": 46.20000000298023
+        },
+        {
+          "file": "/kit_arte_h33/assets/retrato-mara.png",
+          "transferSize": 2932720,
+          "encodedBodySize": 2932420,
+          "duration": 48.70000000298023
+        },
+        {
+          "file": "/kit_arte_h33/assets/retrato-superviviente-03.png",
+          "transferSize": 2798878,
+          "encodedBodySize": 2798578,
+          "duration": 47.5
+        }
+      ],
+      "exports": [
+        {
+          "id": "hospital",
+          "profile": "h32",
+          "factor": 1,
+          "width": 1254,
+          "height": 1254,
+          "contentExtent": {
+            "width": 1254,
+            "height": 1254
+          },
+          "pivot": {
+            "x": 630,
+            "y": 1148
+          },
+          "canonicalPivot": {
+            "x": 630,
+            "y": 1148
+          },
+          "representationScale": 0.65,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "normalizedAlphaCoverage": 0.6222797196888773,
+          "sourceAlphaCoverage": 0.6222797196888773,
+          "pngBytes": 2638884,
+          "sha256": "9620db045b9440d12916b7359d7ab416d4c5bfd6cc306c869e579d82f193c93d",
+          "sourceSha256": "fc85ae8199e1d94b7f4636bed4b8f293c0e15ce64b8235dbbf63b2b3e0e76159",
+          "sourceProvenance": {
+            "manifest": "assets/prototipo-hospital/manifest.json",
+            "record": "hospital.png",
+            "uploadCommit": "ed3578f31d27fbdb1e09184de0073e911765b1e1",
+            "auditedCommit": "ba1d93a4ae73a91a6f07660584e2374b53043a67"
+          },
+          "referenceSnapshot": "d9f73be0c30c2218658e50cbf5fb9bec362697ce",
+          "storage": "QA-export-not-runtime-network",
+          "artApproved": false
+        },
+        {
+          "id": "ground",
+          "profile": "h32",
+          "factor": 1,
+          "width": 1536,
+          "height": 1024,
+          "contentExtent": {
+            "width": 1536,
+            "height": 1024
+          },
+          "pivot": {
+            "x": 0,
+            "y": 0
+          },
+          "canonicalPivot": {
+            "x": 0,
+            "y": 0
+          },
+          "representationScale": 1,
+          "alphaRange": [
+            255,
+            255
+          ],
+          "normalizedAlphaCoverage": 1,
+          "sourceAlphaCoverage": 1,
+          "pngBytes": 4029048,
+          "sha256": "66946047fe9593a2b158c45e8b8a621b6bad6f592b157c68340309bb8027175d",
+          "sourceSha256": "71487b23b4be9eba5c96e6e6c5d9feffaff025542339392c55f773384d12687a",
+          "sourceProvenance": {
+            "manifest": "assets/prototipo-hospital/manifest.json",
+            "record": "suelo-nevado.png",
+            "uploadCommit": "ed3578f31d27fbdb1e09184de0073e911765b1e1",
+            "auditedCommit": "ba1d93a4ae73a91a6f07660584e2374b53043a67"
+          },
+          "referenceSnapshot": "d9f73be0c30c2218658e50cbf5fb9bec362697ce",
+          "storage": "QA-export-not-runtime-network",
+          "artApproved": false
+        },
+        {
+          "id": "zombie",
+          "profile": "h32",
+          "factor": 1,
+          "width": 1312,
+          "height": 1199,
+          "contentExtent": {
+            "width": 1312,
+            "height": 1199
+          },
+          "pivot": {
+            "x": 718,
+            "y": 1090
+          },
+          "canonicalPivot": {
+            "x": 718,
+            "y": 1090
+          },
+          "representationScale": 0.095,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "normalizedAlphaCoverage": 0.21751640036392514,
+          "sourceAlphaCoverage": 0.21751640036392514,
+          "pngBytes": 1017031,
+          "sha256": "bf2de825db10cbb4896d106a28e10aded27907f0d0be088e4e1a0fd7c8f81f13",
+          "sourceSha256": "0ca216bd601616d5c99232a1b737a250bce9f5598dba91f739277a287bb6c908",
+          "sourceProvenance": {
+            "manifest": "kit_arte_h33/manifest.json",
+            "record": "assets/zombi.png",
+            "uploadCommit": "d9f73be0c30c2218658e50cbf5fb9bec362697ce",
+            "source": "AI-generated-artwork-provided-by-creator"
+          },
+          "referenceSnapshot": "d9f73be0c30c2218658e50cbf5fb9bec362697ce",
+          "storage": "QA-export-not-runtime-network",
+          "artApproved": false
+        },
+        {
+          "id": "barricade-marker",
+          "profile": "h32",
+          "factor": 1,
+          "width": 1536,
+          "height": 1024,
+          "contentExtent": {
+            "width": 1536,
+            "height": 1024
+          },
+          "pivot": {
+            "x": 752,
+            "y": 810
+          },
+          "canonicalPivot": {
+            "x": 752,
+            "y": 810
+          },
+          "representationScale": 0.07,
+          "alphaRange": [
+            0,
+            254
+          ],
+          "normalizedAlphaCoverage": 0.35864007987228097,
+          "sourceAlphaCoverage": 0.35864007987228097,
+          "pngBytes": 1639840,
+          "sha256": "5d8cacbbde1f30e7e78af1df9c1b6218c4058ed706bce4e9a3a88ff875e76212",
+          "sourceSha256": "f21bd73b55822bff3059591e8b49de8536b7123db78773983034b1bbf1761377",
+          "sourceProvenance": {
+            "manifest": "kit_arte_h33/manifest.json",
+            "record": "assets/barricada.png",
+            "uploadCommit": "d9f73be0c30c2218658e50cbf5fb9bec362697ce",
+            "source": "AI-generated-artwork-provided-by-creator"
+          },
+          "referenceSnapshot": "d9f73be0c30c2218658e50cbf5fb9bec362697ce",
+          "storage": "QA-export-not-runtime-network",
+          "artApproved": false
+        },
+        {
+          "id": "survivor-portrait-1",
+          "profile": "h32",
+          "factor": 0.3062200956937799,
+          "width": 384,
+          "height": 384,
+          "contentExtent": {
+            "width": 384,
+            "height": 384
+          },
+          "pivot": {
+            "x": 192,
+            "y": 192
+          },
+          "canonicalPivot": {
+            "x": 627,
+            "y": 627
+          },
+          "representationScale": 0.16666666666666669,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "normalizedAlphaCoverage": 0.7852641186683007,
+          "sourceAlphaCoverage": 1,
+          "pngBytes": 288985,
+          "sha256": "27927ecf9021e83b13a4572f3f8bc04c6e93a0e9b2b8a44ebe9dee893daa7e85",
+          "sourceSha256": "7be85fb5c438ec5b666b1834668dd29db0d969276af1c3c1b93eced254955408",
+          "sourceProvenance": {
+            "manifest": "kit_arte_h33/manifest.json",
+            "record": "assets/retrato-mara.png",
+            "uploadCommit": "d9f73be0c30c2218658e50cbf5fb9bec362697ce",
+            "source": "AI-generated-artwork-provided-by-creator"
+          },
+          "referenceSnapshot": "d9f73be0c30c2218658e50cbf5fb9bec362697ce",
+          "storage": "QA-export-not-runtime-network",
+          "artApproved": false
+        },
+        {
+          "id": "survivor-portrait-2",
+          "profile": "h32",
+          "factor": 0.3062200956937799,
+          "width": 384,
+          "height": 384,
+          "contentExtent": {
+            "width": 384,
+            "height": 384
+          },
+          "pivot": {
+            "x": 192,
+            "y": 192
+          },
+          "canonicalPivot": {
+            "x": 627,
+            "y": 627
+          },
+          "representationScale": 0.16666666666666669,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "normalizedAlphaCoverage": 0.7852641186683007,
+          "sourceAlphaCoverage": 1,
+          "pngBytes": 264157,
+          "sha256": "0533cc7db73c910731bbfaeed98e6f01ad3452da11ffc83a4e86ad1ac768652b",
+          "sourceSha256": "399010b98ab86625d02d785f8b6d1ebbf405d92945548854f1e447d0e2d4f1f1",
+          "sourceProvenance": {
+            "manifest": "kit_arte_h33/manifest.json",
+            "record": "assets/retrato-superviviente-02.png",
+            "uploadCommit": "d9f73be0c30c2218658e50cbf5fb9bec362697ce",
+            "source": "AI-generated-artwork-provided-by-creator"
+          },
+          "referenceSnapshot": "d9f73be0c30c2218658e50cbf5fb9bec362697ce",
+          "storage": "QA-export-not-runtime-network",
+          "artApproved": false
+        },
+        {
+          "id": "survivor-portrait-3",
+          "profile": "h32",
+          "factor": 0.3062200956937799,
+          "width": 384,
+          "height": 384,
+          "contentExtent": {
+            "width": 384,
+            "height": 384
+          },
+          "pivot": {
+            "x": 192,
+            "y": 192
+          },
+          "canonicalPivot": {
+            "x": 627,
+            "y": 627
+          },
+          "representationScale": 0.16666666666666669,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "normalizedAlphaCoverage": 0.7852641186683007,
+          "sourceAlphaCoverage": 1,
+          "pngBytes": 283994,
+          "sha256": "9be5a9c09ed38643790b09cdcb80c0f4db139107236cea319c65b06b3eda04b2",
+          "sourceSha256": "24e669f61621f6a590c06a26df90074b36ddd640dfaece6f712522919a4b7a07",
+          "sourceProvenance": {
+            "manifest": "kit_arte_h33/manifest.json",
+            "record": "assets/retrato-superviviente-03.png",
+            "uploadCommit": "d9f73be0c30c2218658e50cbf5fb9bec362697ce",
+            "source": "AI-generated-artwork-provided-by-creator"
+          },
+          "referenceSnapshot": "d9f73be0c30c2218658e50cbf5fb9bec362697ce",
+          "storage": "QA-export-not-runtime-network",
+          "artApproved": false
+        },
+        {
+          "id": "survivor-portrait-4",
+          "profile": "h32",
+          "factor": 0.3062200956937799,
+          "width": 384,
+          "height": 384,
+          "contentExtent": {
+            "width": 384,
+            "height": 384
+          },
+          "pivot": {
+            "x": 192,
+            "y": 192
+          },
+          "canonicalPivot": {
+            "x": 627,
+            "y": 627
+          },
+          "representationScale": 0.16666666666666669,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "normalizedAlphaCoverage": 0.7852641186683007,
+          "sourceAlphaCoverage": 1,
+          "pngBytes": 270529,
+          "sha256": "d206f80dcebb629c89deb3bad1cb4290307c7f00d0468a9fcaf84c1693edc727",
+          "sourceSha256": "a867ee635a66997ca9768b6c18afa1d701cb729decc245f64383d01c4b2e63e3",
+          "sourceProvenance": {
+            "manifest": "kit_arte_h33/manifest.json",
+            "record": "assets/retrato-superviviente-04.png",
+            "uploadCommit": "d9f73be0c30c2218658e50cbf5fb9bec362697ce",
+            "source": "AI-generated-artwork-provided-by-creator"
+          },
+          "referenceSnapshot": "d9f73be0c30c2218658e50cbf5fb9bec362697ce",
+          "storage": "QA-export-not-runtime-network",
+          "artApproved": false
+        }
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "file": "1365-access-a3-initial.png",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "resource": "access-a3",
+      "zoom": "initial",
+      "camera": {
+        "x": -129.73941666666656,
+        "y": -123.86758333333336,
+        "zoom": 0.6083333333333333,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "zoomRatio": 1,
+      "panel": {
+        "width": 192,
+        "height": 160,
+        "unit": "physical-pixel-no-resize"
+      },
+      "order": [
+        "h32",
+        "three-quarter",
+        "half"
+      ],
+      "portraitRasterLimit": 384
+    },
+    {
+      "file": "1365-access-a3-max.png",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "resource": "access-a3",
+      "zoom": "max",
+      "camera": {
+        "x": -2020.4576666666662,
+        "y": -1333.9703333333334,
+        "zoom": 2.433333333333333,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "zoomRatio": 4,
+      "panel": {
+        "width": 192,
+        "height": 160,
+        "unit": "physical-pixel-no-resize"
+      },
+      "order": [
+        "h32",
+        "three-quarter",
+        "half"
+      ],
+      "portraitRasterLimit": 384
+    },
+    {
+      "file": "1365-access-a2-initial.png",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "resource": "access-a2",
+      "zoom": "initial",
+      "camera": {
+        "x": -60.59320833333334,
+        "y": -164.86924999999997,
+        "zoom": 0.6083333333333333,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "zoomRatio": 1,
+      "panel": {
+        "width": 192,
+        "height": 160,
+        "unit": "physical-pixel-no-resize"
+      },
+      "order": [
+        "h32",
+        "three-quarter",
+        "half"
+      ],
+      "portraitRasterLimit": 384
+    },
+    {
+      "file": "1365-access-a2-max.png",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "resource": "access-a2",
+      "zoom": "max",
+      "camera": {
+        "x": -1743.8728333333333,
+        "y": -1497.9769999999999,
+        "zoom": 2.433333333333333,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "zoomRatio": 4,
+      "panel": {
+        "width": 192,
+        "height": 160,
+        "unit": "physical-pixel-no-resize"
+      },
+      "order": [
+        "h32",
+        "three-quarter",
+        "half"
+      ],
+      "portraitRasterLimit": 384
+    },
+    {
+      "file": "1365-s1-initial.png",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "resource": "s1",
+      "zoom": "initial",
+      "camera": {
+        "x": 184.16666666666669,
+        "y": -140.24999999999994,
+        "zoom": 0.6083333333333333,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "zoomRatio": 1,
+      "panel": {
+        "width": 192,
+        "height": 160,
+        "unit": "physical-pixel-no-resize"
+      },
+      "order": [
+        "h32",
+        "three-quarter",
+        "half"
+      ],
+      "portraitRasterLimit": 384
+    },
+    {
+      "file": "1365-s1-max.png",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "resource": "s1",
+      "zoom": "max",
+      "camera": {
+        "x": -764.8333333333333,
+        "y": -1399.4999999999998,
+        "zoom": 2.433333333333333,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "zoomRatio": 4,
+      "panel": {
+        "width": 192,
+        "height": 160,
+        "unit": "physical-pixel-no-resize"
+      },
+      "order": [
+        "h32",
+        "three-quarter",
+        "half"
+      ],
+      "portraitRasterLimit": 384
+    }
+  ],
+  "failures": [
+    "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n    Buffer: 9,\n    Framebuffer: 0,\n+   Program: 2,\n-   Program: 3,\n    Renderbuffer: 0,\n+   Shader: 4,\n-   Shader: 6,\n    Texture: 14\n  }\n\n    at file:///tmp/invierno-h33/scripts/check-h33-uploaded-browser.mjs:81:347"
+  ],
+  "passed": false
+}

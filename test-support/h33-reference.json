@@ -1,0 +1,115 @@
+{
+  "sourceCommit": "4fc7c66c1af1d053458519b5c6367a8b9224e8a0",
+  "files": [
+    {
+      "path": "assets/prototipo-hospital/README.md",
+      "bytes": 1403,
+      "sha256": "716aabf9e55e2c9afe35d21056b911b30a3e114b8d105fddcba686b5d7a48944"
+    },
+    {
+      "path": "assets/prototipo-hospital/hospital.png",
+      "bytes": 2391925,
+      "sha256": "fc85ae8199e1d94b7f4636bed4b8f293c0e15ce64b8235dbbf63b2b3e0e76159"
+    },
+    {
+      "path": "assets/prototipo-hospital/manifest.json",
+      "bytes": 1461,
+      "sha256": "41ec113e8af3ba1caab4b1e33027b2dbed539a5610c52149048638740541cdc4"
+    },
+    {
+      "path": "assets/prototipo-hospital/suelo-nevado.png",
+      "bytes": 3270542,
+      "sha256": "71487b23b4be9eba5c96e6e6c5d9feffaff025542339392c55f773384d12687a"
+    },
+    {
+      "path": "assets/prototipo-hospital/zombi.png",
+      "bytes": 816224,
+      "sha256": "4f569398e24f4a1358348b5a1e770f3e41913386323f1478d0102d8df2349f82"
+    },
+    {
+      "path": "prototypes/hospital-phaser/dispose-game.mjs",
+      "bytes": 2012,
+      "sha256": "f1e7a3ee871d07200d212b2b6602fa95aee72932157c5ca5d0338ec02137309a"
+    },
+    {
+      "path": "prototypes/hospital-phaser/game.mjs",
+      "bytes": 1442,
+      "sha256": "6eff4c76c0bcee3937819c1df8b274f1bf05c07f61ee0e7258e04688db131d8b"
+    },
+    {
+      "path": "prototypes/hospital-phaser/index.html",
+      "bytes": 3550,
+      "sha256": "41c34d15a3dcc71ca191d1300b07e223e5d161ce4d29039a1dfba269947de616"
+    },
+    {
+      "path": "prototypes/hospital-phaser/main.mjs",
+      "bytes": 9468,
+      "sha256": "3b1b1f7ea63f914877e829123955964b475b92f2175f873f0754a08362a8ebef"
+    },
+    {
+      "path": "prototypes/hospital-phaser/renderer.mjs",
+      "bytes": 7332,
+      "sha256": "8f3af3be3e62eff8f84d66273ddc62c2747c4b9023fdbd46d7e6e1818dedcce8"
+    },
+    {
+      "path": "prototypes/hospital-phaser/startup.mjs",
+      "bytes": 953,
+      "sha256": "e58e0e41b299b84baf20a5e97f8f2ad1022ec0d60025dc70308d0a42fba018d4"
+    },
+    {
+      "path": "prototypes/hospital-phaser/style.css",
+      "bytes": 300,
+      "sha256": "778985e4851de3aba3ee93057bf40704d91cfcd3aece98d468c878e58f61ebd0"
+    },
+    {
+      "path": "prototypes/hospital-phaser/texture-quality.mjs",
+      "bytes": 1036,
+      "sha256": "aea3b4aee75ee46afc0733d050181de101a8dee7299c4056a0dfa64305c02b0d"
+    },
+    {
+      "path": "prototypes/hospital/camera.mjs",
+      "bytes": 1418,
+      "sha256": "883e48205f9f1ce1fafc55c8684bfa3ebadcc504167dc6af059a770f81016993"
+    },
+    {
+      "path": "prototypes/hospital/controls.mjs",
+      "bytes": 3263,
+      "sha256": "8f48470042cd1c33705b6bcd85215a5278551208a47dea7d8ef538fb89fe8432"
+    },
+    {
+      "path": "prototypes/hospital/index.html",
+      "bytes": 3268,
+      "sha256": "6807fc4aff70fdc7bbe80fcb2bfd433a4cff88d0dccd7434825ff41bbd0d6563"
+    },
+    {
+      "path": "prototypes/hospital/main.mjs",
+      "bytes": 4036,
+      "sha256": "0d3a9973cc7c75300846e7bfb5f40a2e2a72463a8cb2de76dcaeeb60f62e0da8"
+    },
+    {
+      "path": "prototypes/hospital/renderer.mjs",
+      "bytes": 2915,
+      "sha256": "ea0514e42324ddc75d5c0542d70df865e2efeafc3b09cc67bfd8bb605781e710"
+    },
+    {
+      "path": "prototypes/hospital/scene.mjs",
+      "bytes": 1470,
+      "sha256": "98c19ea58271229d892f0e967f95205f07bfe91e70395fee552c8dacc482f161"
+    },
+    {
+      "path": "prototypes/hospital/style.css",
+      "bytes": 3789,
+      "sha256": "ac5a73a3eb92130d2891c41d58aa056e82c0698d7daac10b02cbc1d22ad642f7"
+    },
+    {
+      "path": "scripts/build-hospital-phaser.mjs",
+      "bytes": 1558,
+      "sha256": "c52bcd63c18c74091d7c7c5e12c9abfecc8fd4a10dc66d9ff11037a273068c2b"
+    },
+    {
+      "path": "scripts/serve-hospital.mjs",
+      "bytes": 2681,
+      "sha256": "90de54b6a790f7cb8385fc6053acdd8caf57b71b1bfeb2034e00b199c096348a"
+    }
+  ]
+}

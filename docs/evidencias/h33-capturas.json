@@ -1,0 +1,173 @@
+{
+  "method": "UI nativa; recortes 192×160 físicos sin reescalar, columnas 100/75/50%. Excluye PNG derivados QA, que permanecen en artifacts; no cambia originales.",
+  "files": [
+    {
+      "file": "h33-1365-interfaz.png",
+      "width": 1365,
+      "height": 2197,
+      "bytes": 1070500,
+      "sha256": "130ef1aed7b3673a55deeb383508a5ab09f25f5700a7ef327267cd9025bd104d"
+    },
+    {
+      "file": "h33-1365-mixto-guias.png",
+      "width": 1003,
+      "height": 561,
+      "bytes": 864716,
+      "sha256": "9a58345fc94bb1fae42c6beca96cd38cd2aa917beac2cabcb8d8880964c6a6f4"
+    },
+    {
+      "file": "h33-320-interfaz.png",
+      "width": 640,
+      "height": 1280,
+      "bytes": 579021,
+      "sha256": "f3b219645450fa81b51219d300200efe124ecdaef7d057e2122f1cd610091a31"
+    },
+    {
+      "file": "h33-320-mixto-guias.png",
+      "width": 584,
+      "height": 744,
+      "bytes": 512289,
+      "sha256": "1b6aeae01466ed31a24a6f29b9224fce33fcba3fa8939cc530d5f1aebe6bef5e"
+    },
+    {
+      "file": "h33-393-interfaz.png",
+      "width": 786,
+      "height": 1704,
+      "bytes": 915757,
+      "sha256": "4089ec1f54601d580c19d124b81893b9e14fcf152d98dbd48b480828f3d42223"
+    },
+    {
+      "file": "h33-393-mixto-guias.png",
+      "width": 730,
+      "height": 990,
+      "bytes": 820203,
+      "sha256": "9094068dea386eb80ba2a82f00c6ebee1f0cb0229324d0837b365921351d4487"
+    },
+    {
+      "file": "h33-1365-ground-initial.png",
+      "width": 576,
+      "height": 192,
+      "bytes": 201200,
+      "sha256": "2135169356247ad2d9657e34b6d288e2736828d4274dab2d552a996eb2300723"
+    },
+    {
+      "file": "h33-1365-ground-max.png",
+      "width": 576,
+      "height": 192,
+      "bytes": 114154,
+      "sha256": "b7f79647d6d3008b2a51bc482b873622c2c89681465073f4a566cbbe35567756"
+    },
+    {
+      "file": "h33-1365-ground-min.png",
+      "width": 576,
+      "height": 192,
+      "bytes": 221191,
+      "sha256": "d65b29395bc6d1e9742bc12b2174ae9f2f0aaa901b5e26b6059deaa863bb6a3b"
+    },
+    {
+      "file": "h33-1365-hospital-initial.png",
+      "width": 576,
+      "height": 192,
+      "bytes": 235117,
+      "sha256": "08feb7e466b3a289d94b7d79fd8257f96f90b05831a1db3d837824ae0082b688"
+    },
+    {
+      "file": "h33-1365-hospital-max.png",
+      "width": 576,
+      "height": 192,
+      "bytes": 185267,
+      "sha256": "c28992cfd57206915d60cbd8de3f2d0057d4a0dc882327f6b6cdd6c1518ec9fd"
+    },
+    {
+      "file": "h33-1365-hospital-min.png",
+      "width": 576,
+      "height": 192,
+      "bytes": 246722,
+      "sha256": "c3d3caf47488dda58a73ea5434a2c547024a306c02c494bd38b436b8e3dd215b"
+    },
+    {
+      "file": "h33-1365-zombie-initial.png",
+      "width": 576,
+      "height": 192,
+      "bytes": 224477,
+      "sha256": "9c215105eb062a98139c76e3d29b496341cfaa80f72a8677fcdfa8f017976c74"
+    },
+    {
+      "file": "h33-1365-zombie-max.png",
+      "width": 576,
+      "height": 192,
+      "bytes": 207470,
+      "sha256": "fc6c89e6afd7c8d2abcf50b6747e16859597be022c4e7bd8eeefa07b11bab8c1"
+    },
+    {
+      "file": "h33-1365-zombie-min.png",
+      "width": 576,
+      "height": 192,
+      "bytes": 229748,
+      "sha256": "b3cb79a1857517f2a382ac84e98af515a44116f45dfc209c99ff95db4f62cad8"
+    },
+    {
+      "file": "h33-393-ground-initial.png",
+      "width": 576,
+      "height": 192,
+      "bytes": 201641,
+      "sha256": "5dbe1032c1dbbe19a29bc706200ce6ca0969c1bcd5cc90c2da8632268fde9731"
+    },
+    {
+      "file": "h33-393-ground-max.png",
+      "width": 576,
+      "height": 192,
+      "bytes": 114351,
+      "sha256": "7c0f38103196bd27b6df3f51a7df1e8a73cf59dc5ff628c2fae61bfcbd6d9032"
+    },
+    {
+      "file": "h33-393-ground-min.png",
+      "width": 576,
+      "height": 192,
+      "bytes": 221259,
+      "sha256": "9050060c9fab847e5b576b7591369fab9eb0ec4852eaa87a1bfb9a25d555717c"
+    },
+    {
+      "file": "h33-393-hospital-initial.png",
+      "width": 576,
+      "height": 192,
+      "bytes": 235552,
+      "sha256": "66fe78b228430d8e477f306ade01399a8adbc46be69d8ae28a4767dc33cb6ea1"
+    },
+    {
+      "file": "h33-393-hospital-max.png",
+      "width": 576,
+      "height": 192,
+      "bytes": 185212,
+      "sha256": "64404bce2295c8fbaf263715d94e1afe24ebca550c7925d1309b9b8037ae85b6"
+    },
+    {
+      "file": "h33-393-hospital-min.png",
+      "width": 576,
+      "height": 192,
+      "bytes": 247189,
+      "sha256": "161c1fba4b4852f954ce2cd02127f11c6d685328f899bd7a78c3597c506e4254"
+    },
+    {
+      "file": "h33-393-zombie-initial.png",
+      "width": 576,
+      "height": 192,
+      "bytes": 224520,
+      "sha256": "705987410607dc88303c5cb5737381662950cba5e6a1b8f6a5362855410dd272"
+    },
+    {
+      "file": "h33-393-zombie-max.png",
+      "width": 576,
+      "height": 192,
+      "bytes": 207960,
+      "sha256": "67ac195c196441449145836deb5b7345bdd3a5444fddfec8729157fce727bd9d"
+    },
+    {
+      "file": "h33-393-zombie-min.png",
+      "width": 576,
+      "height": 192,
+      "bytes": 229899,
+      "sha256": "2590969a1211389e70f6438768213e295d1b71f2428ad10228ee99e42e1f7e40"
+    }
+  ]
+}

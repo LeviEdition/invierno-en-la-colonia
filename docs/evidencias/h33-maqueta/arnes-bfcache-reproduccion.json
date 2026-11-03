@@ -1,0 +1,7 @@
+{
+  "url": "http://127.0.0.1:8772/prototypes/hospital-workshop/",
+  "state": "ready",
+  "persisted": true,
+  "sameDocument": true,
+  "defaultLoadWait": "TimeoutError"
+}

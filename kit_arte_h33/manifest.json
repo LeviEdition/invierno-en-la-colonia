@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "date": "2026-10-30",
+  "files": [
+    {
+      "file": "assets/barricada.png",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        254
+      ],
+      "bytes": 2103514,
+      "sha256": "f21bd73b55822bff3059591e8b49de8536b7123db78773983034b1bbf1761377",
+      "role": "prototype_asset"
+    },
+    {
+      "file": "assets/mapa-prototipo.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "alpha_range": null,
+      "bytes": 4032838,
+      "sha256": "9db490bc0e93532849fde1bcfc07827206d44b30c30eb4629186f925bb10408f",
+      "role": "prototype_asset"
+    },
+    {
+      "file": "assets/retrato-mara.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "alpha_range": null,
+      "bytes": 2932420,
+      "sha256": "7be85fb5c438ec5b666b1834668dd29db0d969276af1c3c1b93eced254955408",
+      "role": "prototype_asset"
+    },
+    {
+      "file": "assets/retrato-superviviente-02.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "alpha_range": null,
+      "bytes": 2525733,
+      "sha256": "399010b98ab86625d02d785f8b6d1ebbf405d92945548854f1e447d0e2d4f1f1",
+      "role": "prototype_asset"
+    },
+    {
+      "file": "assets/retrato-superviviente-03.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "alpha_range": null,
+      "bytes": 2798578,
+      "sha256": "24e669f61621f6a590c06a26df90074b36ddd640dfaece6f712522919a4b7a07",
+      "role": "prototype_asset"
+    },
+    {
+      "file": "assets/retrato-superviviente-04.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "alpha_range": null,
+      "bytes": 2670374,
+      "sha256": "a867ee635a66997ca9768b6c18afa1d701cb729decc245f64383d01c4b2e63e3",
+      "role": "prototype_asset"
+    },
+    {
+      "file": "assets/zombi.png",
+      "width": 1312,
+      "height": 1199,
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "bytes": 932878,
+      "sha256": "0ca216bd601616d5c99232a1b737a250bce9f5598dba91f739277a287bb6c908",
+      "role": "prototype_asset"
+    },
+    {
+      "file": "referencias/boceto-hospital-cercano.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "alpha_range": [
+        255,
+        255
+      ],
+      "bytes": 3987864,
+      "sha256": "adf626124f0f562782f8d89637724922605db4f50776801dfa2d04bce3c656f9",
+      "role": "reference_only"
+    },
+    {
+      "file": "referencias/boceto-vista-general.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "alpha_range": [
+        255,
+        255
+      ],
+      "bytes": 4002443,
+      "sha256": "3c51a4cf03309d9a6f5c23cbc429b9a1512b08fec2d80b010001ed7f30b7d2f7",
+      "role": "reference_only"
+    }
+  ],
+  "note": "Original PNG bytes preserved. No integration, anchor, scale or zoom quality validation yet."
+}

@@ -16,6 +16,8 @@ Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos un
 - [Tablero operativo — próxima tarea](docs/18-tablero-operativo.md)
 - [H3.1 — Auditoría de identidad visual](docs/74-h3-1-auditoria-identidad-visual.md)
 - [Plan propuesto H3.1–H3.6](docs/75-plan-hito-3-identidad-visual.md)
+- [H3.3 — Luces asincrónicas y ventisca opcional, revisión pendiente](docs/82-h3-3-luces-viento-y-ventisca.md)
+- [H3.3 — Localidades seleccionables y revisión de interfaz](docs/79-h3-3-localidades-capacidades-e-interfaz.md)
 - [Decisión vigente — D1/D2 cerradas y referencia preservada](docs/62-hitos-referencia-fiel-y-juego-propio.md)
 - [Hoja de ruta del singleplayer — bloques SP-00 a SP-08, acuerdos y pendientes](docs/63-hoja-de-ruta-planificacion-singleplayer.md)
 - [Dirección de producto](docs/51-rumbo-fidelidad-e-identidad.md)
@@ -24,7 +26,31 @@ Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos un
 
 El [PR15](https://github.com/LeviEdition/invierno-en-la-colonia/pull/15) se integró mediante merge convencional `6b8bfcadfeb99d16a10b6f4576f3b061584ee1f9`, preservando historia yoráculo57872ee. [Informe71](docs/71-integracion-main-y-cierre-d1-d2.md) registra la validación posterior:467/467,40/40 contra cada referencia, partidas Chromium yoffline aprobados. SP-03 permanece conceptual ysin cambios respecto del head aprobado.
 
-**Referencia cerrada:** D1/D2 y V9.9 modular preservadas. H3.1 fue aceptada con la dirección de tablero ilustrado por capas y mapa continuo de siete localidades. Esta rama contiene **H3.2, experimento técnico del hospital con Phaser4.2.1**, pendiente de revisión, incluida la nitidez observada por el creador. PR16/17 no están fusionados. SP-03/SP-04 y reglas permanecen intactos; H3.3 no comenzó.
+**Referencia cerrada:** D1/D2 y V9.9 modular preservadas. Esta rama incluye la **maqueta visual H3.3 del mapa continuo**, con el kit recibido y datos de demostración, dependiente del experimento Phaser4.2.1. H3.3 queda abierto para revisión visual; no conecta el motor ni autoriza H3.4. Main, referencia/tag/release, reglas y SP-03 permanecen intactos. [Informe79](docs/79-h3-3-localidades-capacidades-e-interfaz.md); el [informe78](docs/78-h3-3-maqueta-mapa-interactivo.md) registra la entrega anterior; el [informe77](docs/77-h3-3-taller-visual-y-kit-piloto.md) conserva la historia del taller.
+
+## Maqueta H3.3 desde VS Code
+
+Node22+, carpeta que contiene **package.json y package-lock.json**, conservar cualquier trabajo local. PowerShell:
+
+```powershell
+git fetch origin
+git switch experiment/h3-3-taller-visual
+git pull --ff-only
+npm.cmd ci
+npm.cmd run dev:workshop
+```
+
+Mantener terminal abierta y abrir **http://127.0.0.1:8772/prototypes/hospital-workshop/**. La entrada carga directamente `mapa-prototipo.png` con las siete localidades; no hace falta elegir un kit. No requiere Python ni recursos externos. `npm.cmd` evita el bloqueo de npm.ps1 sin cambiar políticas.
+
+- Usar «Hospital cercano» para ver cuatro retratos y dos zombis/dos barricadas sobre el terreno. Arrastre/rueda o pinza; Restablecer y tecla0 vuelven a la vista general.
+- Seleccionar un edificio abre su localidad (ocupación, capacidad y espacios); sus retratos abren al superviviente y tienen prioridad sobre el edificio. Seleccionar una ficha circular actualiza el expediente. En móvil se abre el panel inferior; «×» lo cierra para disponer de más mapa.
+- «Composición y selección por teclado» contiene el selector accesible y las composiciones: hospital mixto, un zombi por localidad y máximo33 fichas/36 espacios. Elegir máximo y centrar Colonia muestra sus12 fichas.
+- «Ambientación» permite apagar todo, elegir nieve/viento/humo/luces y baja/normal. Inicia en **Normal**, con copos, estelas, humo y luces reforzados; Baja conserva una alternativa más discreta. Con movimiento reducido inicia apagado. El hospital no tiene humo; la salida confirmada está en la chimenea oeste de colonia. El botón «Ventisca: sonido» inicia audio procedural opcional, apagado por defecto, con volumen propio. El control general apaga también el sonido. [Evidencia/video, muestra sonora y límites](docs/82-h3-3-luces-viento-y-ventisca.md).
+- Dados del grupo/turno y acciones muestran feedback sin consumir ni resolver reglas. Objetivo/crisis y menú son paneles de demostración. «Depuración» activa etiquetas técnicas, apagadas por defecto.
+
+El taller anterior sigue en **`/prototypes/hospital-workshop/tecnico.html`** (su kit opcional: `tecnico.html?kit=uploaded`). Referencias Canvas y Phaser H3.2: `/prototypes/hospital/` y `/prototypes/hospital-phaser/`, en el mismo puerto8772. Los originales siguen en `kit_arte_h33/`, sin edición ni duplicación. [Guía Windows/VSCode/LAN](prototypes/hospital-workshop/README.md) · [Escena de muestra y coordenadas](prototypes/hospital-workshop/mockup/scene.json).
+
+Sin doble clic/file://, guardados, editor o motor. El mapa es el prototipo aprobado: al ampliar no se reemplaza por otro hospital y puede perder nitidez. No equivale a arte final, aprobación H3.3 o prueba en teléfono físico.
 
 ## Probar H3.2 desde VS Code, sin Python
 
@@ -64,7 +90,7 @@ Se reutilizan sin cambios los PNG, pivotes, controles y cámara del [commit audi
 
 **Revisión de nitidez:** Phaser usa mipmaps trilineales con texturas auxiliares generadas en memoria; conserva los PNG y sus frames/pivotes. Las comparativas Canvas/antes/después del informe76 incluyen hospital, suelo y zombi al mismo DPR/zoom. Hay diferencias residuales de rasterización y un costo adicional de memoria/carga; la aprobación visual sigue pendiente del creador. No equivale a una adopción definitiva del renderizador.
 
-La escena es independiente del juego. Cambiar renderer no aprueba proporciones, encaje con el suelo ni calidad artística: corresponde a H3.3. El mapa continuo es el objetivo acordado, todavía no construido.
+La escena es independiente del juego. Cambiar renderer no aprueba proporciones, encaje con el suelo ni calidad artística: corresponde a H3.3. El mapa continuo se implementa después en la maqueta H3.3 independiente; este apartado describe la referencia H3.2.
 
 ## Descargar la referencia y jugar offline
 
@@ -82,7 +108,7 @@ La validación cubre Node y Chromium automatizado; no certifica equivalencia reg
 
 ## Desarrollo y construcción
 
-Requiere Node22 o posterior. Ejecutar `npm ci`, `npm run build`, `npm run check:build` y `npm test`. El lockfile fija esbuild0.28.2 y, solo para H3.2, Phaser4.2.1. El HTML V9.9 conserva su distribución sin dependencias externas. Editar módulos `src/` y la plantilla, nunca el HTML generado a mano. `npm run build` empaqueta módulos reales en una IIFE y la inserta en un único HTML autocontenido. La salida conserva la apertura offline.
+Requiere Node22 o posterior. Ejecutar `npm ci`, `npm run build`, `npm run check:build` y `npm test`. El lockfile fija esbuild0.28.2 y, para los experimentos visuales H3.2/H3.3, Phaser4.2.1. El HTML V9.9 conserva su distribución sin dependencias externas. Editar módulos `src/` y la plantilla, nunca el HTML generado a mano. `npm run build` empaqueta módulos reales en una IIFE y la inserta en un único HTML autocontenido. La salida conserva la apertura offline.
 
 El motor se importa desde `src/application/reference-engine.mjs`, admite reloj/RNG y efectos inyectados, y expone `start`, `dispatch` y `snapshot`. Un motor local funciona sin DOM ni cliente IA. La aplicación conecta vista y agente de referencia por capacidades explícitas; el estado mutable no se publica en window. El paquete de reglas V9.9 sigue representando dos grupos: no existe un nuevo modo singleplayer.
 

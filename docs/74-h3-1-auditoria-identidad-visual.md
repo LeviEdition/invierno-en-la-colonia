@@ -1,5 +1,9 @@
 # 74 — H3.1: auditoría y planificación de identidad visual
 
+**Acuerdo03/11/2026:** H3.3 queda autorizado para ejecutar el paquete completo: maqueta principal del mapa continuo, ocupación e interfaz con datos de muestra. Las limitaciones históricas al hospital y propuestas pendientes de este informe no bloquean ese encargo. No autoriza H3.4, motor, reglas o aprobación artística automática. [Maqueta implementada, pruebas y revisión pendiente:78](78-h3-3-maqueta-mapa-interactivo.md).
+
+**Actualización30/10:** autorizada la preparación técnica de H3.3 mientras llega la maqueta, según [informe77](77-h3-3-taller-visual-y-kit-piloto.md). No acepta visualmente H3.2 ni fija perspectiva/arte. Las restricciones de inicio de H3.3 que siguen pertenecen a los checkpoints históricos anteriores.
+
 **29/10/2026, Montevideo. H3.1 aceptada por el creador con las precisiones registradas debajo.** Este encargo inicia H3 «Identidad Visual y Experiencia Jugable». Este informe no implementa producto. La autorización posterior de H3.2 se registra en el bloque de acuerdos. [Plan incremental H3.1–H3.6](75-plan-hito-3-identidad-visual.md) · [evidencia](evidencias/h31-auditoria.json).
 
 ## Acuerdos posteriores del creador — H3.1 aceptada con precisiones

@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-30",
+  "timezone": "America/Montevideo",
+  "implementationCommit": "21a805ec84868440a24608edeb088624c1d74f81",
+  "baseCommit": "4fc7c66c1af1d053458519b5c6367a8b9224e8a0",
+  "baselineTests": 483,
+  "tests": 491,
+  "failures": 0,
+  "commands": [
+    {
+      "command": "npm ci --cache /tmp/h33-npm-cache",
+      "passed": true
+    },
+    {
+      "command": "npm run check:build",
+      "passed": true
+    },
+    {
+      "command": "npm test",
+      "passed": true
+    },
+    {
+      "command": "npm run build:hospital && npm run check:hospital-build",
+      "passed": true
+    },
+    {
+      "command": "npm run build:workshop && npm run check:workshop-build",
+      "passed": true
+    },
+    {
+      "command": "node scripts/check-workshop-kit.mjs",
+      "passed": true
+    }
+  ],
+  "browserGates": [
+    {
+      "file": "h33-browser.json",
+      "passed": true
+    },
+    {
+      "file": "h33-texturas.json",
+      "passed": true
+    },
+    {
+      "file": "h33-referencia-canvas.json",
+      "passed": true
+    },
+    {
+      "file": "h33-referencia-phaser.json",
+      "passed": true
+    }
+  ],
+  "protectedFiles": 22,
+  "referenceProductSha256": "43b8883ad4821e4b50c40791615c5ef6c0b3030476409b4e1c6da4dbd872d692",
+  "scope": {
+    "mainChanged": false,
+    "referenceTagReleaseChanged": false,
+    "canvasChanged": false,
+    "h32Changed": false,
+    "originalArtChanged": false,
+    "engineConnected": false,
+    "newRules": false,
+    "h34Started": false
+  },
+  "pending": [
+    "Maqueta",
+    "Aprobación artística H3.3",
+    "Aceptación visual H3.2",
+    "Pruebas físicas",
+    "Presupuesto total con hardware objetivo"
+  ]
+}

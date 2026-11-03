@@ -1,0 +1,1348 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "conditions": {
+    "particleSeed": 211969,
+    "platform": "linux",
+    "architecture": "x64",
+    "cpu": "AMD EPYC 9V74 80-Core Processor",
+    "availableParallelism": 4,
+    "node": "v24.19.0",
+    "playwright": "1.57.0",
+    "softwareRenderingExpected": true,
+    "throttling": "Sin throttling de red/CPU aplicado",
+    "method": "Mismo documento/semilla/configuración/DPR/cámara, recursos calientes; tres ventanas de reposo de1s por apagado/baja/normal, más recorrido idéntico. Performance.getMetrics TaskDuration/ScriptDuration/heap; no VRAM ni teléfono."
+  },
+  "build": {
+    "phaser": "4.2.1",
+    "esbuild": "0.28.2",
+    "rawBytes": 1441598,
+    "gzip9Bytes": 386867,
+    "sha256": "265c882ad84347168be8df5a1d9ce421d5a1845b1d3948fe0bd683e6401454a7",
+    "inputs": [
+      "prototypes/hospital-workshop/kit.json",
+      "prototypes/hospital-workshop/uploaded-kit.json",
+      "prototypes/hospital-workshop/kit.mjs",
+      "prototypes/hospital-workshop/resources.mjs",
+      "node_modules/phaser/dist/phaser.esm.js",
+      "prototypes/hospital-phaser/game.mjs",
+      "prototypes/hospital-phaser/dispose-game.mjs",
+      "prototypes/hospital-phaser/startup.mjs",
+      "prototypes/hospital-phaser/texture-quality.mjs",
+      "prototypes/hospital-workshop/renderer.mjs",
+      "prototypes/hospital/camera.mjs",
+      "prototypes/hospital/controls.mjs",
+      "prototypes/hospital/scene.mjs",
+      "prototypes/hospital-phaser/renderer.mjs",
+      "prototypes/hospital-workshop/main.mjs"
+    ],
+    "profiles": [
+      {
+        "id": "h32",
+        "factor": 1,
+        "textures": [
+          {
+            "id": "hospital",
+            "width": 1254,
+            "height": 1254,
+            "potWidth": 2048,
+            "potHeight": 2048,
+            "rgbaBase": 16777216,
+            "rgbaWithMips": 22369620,
+            "auxiliaryRgba": 16777216,
+            "derivedRgba": 0
+          },
+          {
+            "id": "ground",
+            "width": 1536,
+            "height": 1024,
+            "potWidth": 2048,
+            "potHeight": 1024,
+            "rgbaBase": 8388608,
+            "rgbaWithMips": 11184812,
+            "auxiliaryRgba": 8388608,
+            "derivedRgba": 0
+          },
+          {
+            "id": "zombie",
+            "width": 1175,
+            "height": 1338,
+            "potWidth": 2048,
+            "potHeight": 2048,
+            "rgbaBase": 16777216,
+            "rgbaWithMips": 22369620,
+            "auxiliaryRgba": 16777216,
+            "derivedRgba": 0
+          }
+        ]
+      },
+      {
+        "id": "three-quarter",
+        "factor": 0.75,
+        "textures": [
+          {
+            "id": "hospital",
+            "width": 941,
+            "height": 941,
+            "potWidth": 1024,
+            "potHeight": 1024,
+            "rgbaBase": 4194304,
+            "rgbaWithMips": 5592404,
+            "auxiliaryRgba": 4194304,
+            "derivedRgba": 3541924
+          },
+          {
+            "id": "ground",
+            "width": 1152,
+            "height": 768,
+            "potWidth": 2048,
+            "potHeight": 1024,
+            "rgbaBase": 8388608,
+            "rgbaWithMips": 11184812,
+            "auxiliaryRgba": 8388608,
+            "derivedRgba": 3538944
+          },
+          {
+            "id": "zombie",
+            "width": 882,
+            "height": 1004,
+            "potWidth": 1024,
+            "potHeight": 1024,
+            "rgbaBase": 4194304,
+            "rgbaWithMips": 5592404,
+            "auxiliaryRgba": 4194304,
+            "derivedRgba": 3542112
+          }
+        ]
+      },
+      {
+        "id": "half",
+        "factor": 0.5,
+        "textures": [
+          {
+            "id": "hospital",
+            "width": 627,
+            "height": 627,
+            "potWidth": 1024,
+            "potHeight": 1024,
+            "rgbaBase": 4194304,
+            "rgbaWithMips": 5592404,
+            "auxiliaryRgba": 4194304,
+            "derivedRgba": 1572516
+          },
+          {
+            "id": "ground",
+            "width": 768,
+            "height": 512,
+            "potWidth": 1024,
+            "potHeight": 512,
+            "rgbaBase": 2097152,
+            "rgbaWithMips": 2796204,
+            "auxiliaryRgba": 2097152,
+            "derivedRgba": 1572864
+          },
+          {
+            "id": "zombie",
+            "width": 588,
+            "height": 669,
+            "potWidth": 1024,
+            "potHeight": 1024,
+            "rgbaBase": 4194304,
+            "rgbaWithMips": 5592404,
+            "auxiliaryRgba": 4194304,
+            "derivedRgba": 1573488
+          }
+        ]
+      }
+    ],
+    "mockup": {
+      "rawBytes": 1454193,
+      "gzip9Bytes": 392791,
+      "sha256": "b439405b73525830b6880426235a97211ca59c2c3c88a9b0f8b3fb8a2ef4f95f",
+      "inputs": [
+        "prototypes/hospital-workshop/mockup/atmosphere.json",
+        "prototypes/hospital-workshop/mockup/atmosphere-model.mjs",
+        "prototypes/hospital-workshop/mockup/atmosphere-view.mjs",
+        "prototypes/hospital-workshop/mockup/scene.json",
+        "prototypes/hospital-workshop/uploaded-kit.json",
+        "kit_arte_h33/manifest.json",
+        "prototypes/hospital-workshop/mockup/model.mjs",
+        "prototypes/hospital-workshop/mockup/assets.mjs",
+        "prototypes/hospital/camera.mjs",
+        "prototypes/hospital-workshop/mockup/camera.mjs",
+        "prototypes/hospital/controls.mjs",
+        "prototypes/hospital-workshop/kit.mjs",
+        "prototypes/hospital-workshop/resources.mjs",
+        "node_modules/phaser/dist/phaser.esm.js",
+        "prototypes/hospital-phaser/game.mjs",
+        "prototypes/hospital-phaser/dispose-game.mjs",
+        "prototypes/hospital-phaser/startup.mjs",
+        "prototypes/hospital-phaser/texture-quality.mjs",
+        "prototypes/hospital-workshop/renderer.mjs",
+        "prototypes/hospital/scene.mjs",
+        "prototypes/hospital-phaser/renderer.mjs",
+        "prototypes/hospital-workshop/mockup/main.mjs"
+      ],
+      "resourceBytes": 17996335,
+      "textures": [
+        {
+          "id": "map",
+          "width": 1448,
+          "height": 1086,
+          "potWidth": 2048,
+          "potHeight": 2048,
+          "rgbaBase": 16777216,
+          "rgbaWithMips": 22369620,
+          "auxiliaryRgba": 16777216,
+          "derivedRgba": 0
+        },
+        {
+          "id": "zombie",
+          "width": 1312,
+          "height": 1199,
+          "potWidth": 2048,
+          "potHeight": 2048,
+          "rgbaBase": 16777216,
+          "rgbaWithMips": 22369620,
+          "auxiliaryRgba": 16777216,
+          "derivedRgba": 0
+        },
+        {
+          "id": "barricade-marker",
+          "width": 1536,
+          "height": 1024,
+          "potWidth": 2048,
+          "potHeight": 1024,
+          "rgbaBase": 8388608,
+          "rgbaWithMips": 11184812,
+          "auxiliaryRgba": 8388608,
+          "derivedRgba": 0
+        },
+        {
+          "id": "survivor-portrait-1",
+          "width": 384,
+          "height": 384,
+          "potWidth": 512,
+          "potHeight": 512,
+          "rgbaBase": 1048576,
+          "rgbaWithMips": 1398100,
+          "auxiliaryRgba": 1048576,
+          "derivedRgba": 589824
+        },
+        {
+          "id": "survivor-portrait-2",
+          "width": 384,
+          "height": 384,
+          "potWidth": 512,
+          "potHeight": 512,
+          "rgbaBase": 1048576,
+          "rgbaWithMips": 1398100,
+          "auxiliaryRgba": 1048576,
+          "derivedRgba": 589824
+        },
+        {
+          "id": "survivor-portrait-3",
+          "width": 384,
+          "height": 384,
+          "potWidth": 512,
+          "potHeight": 512,
+          "rgbaBase": 1048576,
+          "rgbaWithMips": 1398100,
+          "auxiliaryRgba": 1048576,
+          "derivedRgba": 589824
+        },
+        {
+          "id": "survivor-portrait-4",
+          "width": 384,
+          "height": 384,
+          "potWidth": 512,
+          "potHeight": 512,
+          "rgbaBase": 1048576,
+          "rgbaWithMips": 1398100,
+          "auxiliaryRgba": 1048576,
+          "derivedRgba": 589824
+        }
+      ]
+    }
+  },
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "seed": 211969,
+      "initial": {
+        "enabled": true,
+        "snow": true,
+        "wind": true,
+        "smoke": true,
+        "lights": true,
+        "intensity": "normal"
+      },
+      "errors": [],
+      "generalVisibility": {
+        "changed": 3699,
+        "strong": 2062,
+        "maxChannel": 184
+      },
+      "localities": [
+        {
+          "id": "escuela",
+          "counts": {
+            "characters": 1
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "biblioteca",
+          "counts": {
+            "characters": 1
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "hospital",
+          "counts": {
+            "characters": 4
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "colonia",
+          "counts": {
+            "characters": 3
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "gasolinera",
+          "counts": {
+            "characters": 1
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "comisaria",
+          "counts": {
+            "characters": 1
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "supermercado",
+          "counts": {
+            "characters": 1
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        }
+      ],
+      "independent": [
+        {
+          "kind": "snow",
+          "pool": 120,
+          "visible": 96,
+          "pixels": {
+            "changed": 1292,
+            "strong": 972,
+            "maxChannel": 193
+          }
+        },
+        {
+          "kind": "wind",
+          "pool": 120,
+          "visible": 6,
+          "pixels": {
+            "changed": 5653,
+            "strong": 1847,
+            "maxChannel": 30
+          }
+        },
+        {
+          "kind": "smoke",
+          "pool": 120,
+          "visible": 18,
+          "pixels": {
+            "changed": 3513,
+            "strong": 1826,
+            "maxChannel": 55
+          }
+        },
+        {
+          "kind": "lights",
+          "pool": 120,
+          "visible": 0,
+          "pixels": {
+            "changed": 934,
+            "strong": 398,
+            "maxChannel": 90
+          }
+        }
+      ],
+      "outsideSamples": 108,
+      "visibility": {
+        "realTabHidden": false,
+        "controlledOverride": true,
+        "noCatchUp": true
+      },
+      "restarts": 5,
+      "pool": 120,
+      "objects": 125,
+      "performance": [
+        {
+          "mode": "off",
+          "navigation": false,
+          "elapsedMs": 1002.6999999992549,
+          "metricElapsedMs": 1006.7120000021532,
+          "renders": 0,
+          "steps": 0,
+          "taskMs": 3.0189999999999664,
+          "scriptMs": 0.018000000000000654,
+          "heapBytes": 9178104,
+          "pool": 120,
+          "visible": 0,
+          "limit": 0,
+          "seed": 211969,
+          "renderedFps": 0,
+          "taskMsPerSecond": 2.998871573988896
+        },
+        {
+          "mode": "off",
+          "navigation": false,
+          "elapsedMs": 1003.1999999992549,
+          "metricElapsedMs": 1010.5770000009215,
+          "renders": 0,
+          "steps": 0,
+          "taskMs": 3.043000000000018,
+          "scriptMs": 0.021000000000000185,
+          "heapBytes": 9179580,
+          "pool": 120,
+          "visible": 0,
+          "limit": 0,
+          "seed": 211969,
+          "renderedFps": 0,
+          "taskMsPerSecond": 3.0111510552854885
+        },
+        {
+          "mode": "off",
+          "navigation": false,
+          "elapsedMs": 1002.4000000022352,
+          "metricElapsedMs": 1006.7779999990307,
+          "renders": 0,
+          "steps": 0,
+          "taskMs": 6.805000000000005,
+          "scriptMs": 0.015999999999998654,
+          "heapBytes": 9178240,
+          "pool": 120,
+          "visible": 0,
+          "limit": 0,
+          "seed": 211969,
+          "renderedFps": 0,
+          "taskMsPerSecond": 6.759186235700976
+        },
+        {
+          "mode": "low",
+          "navigation": false,
+          "elapsedMs": 1007.3000000007451,
+          "metricElapsedMs": 1044.2079999993439,
+          "renders": 30,
+          "steps": 30,
+          "taskMs": 784.601,
+          "scriptMs": 52.73499999999999,
+          "heapBytes": 9716356,
+          "pool": 120,
+          "visible": 60,
+          "limit": 30,
+          "seed": 211969,
+          "renderedFps": 29.78258711404528,
+          "taskMsPerSecond": 751.3838239129493
+        },
+        {
+          "mode": "low",
+          "navigation": false,
+          "elapsedMs": 1007.6999999992549,
+          "metricElapsedMs": 1041.758999999729,
+          "renders": 31,
+          "steps": 31,
+          "taskMs": 808.487,
+          "scriptMs": 52.494000000000014,
+          "heapBytes": 9709920,
+          "pool": 120,
+          "visible": 60,
+          "limit": 30,
+          "seed": 211969,
+          "renderedFps": 30.763123945641482,
+          "taskMsPerSecond": 776.0787283817182
+        },
+        {
+          "mode": "low",
+          "navigation": false,
+          "elapsedMs": 1020.8000000007451,
+          "metricElapsedMs": 1052.3599999978615,
+          "renders": 31,
+          "steps": 31,
+          "taskMs": 799.417,
+          "scriptMs": 46.027000000000015,
+          "heapBytes": 9697284,
+          "pool": 120,
+          "visible": 60,
+          "limit": 30,
+          "seed": 211969,
+          "renderedFps": 30.368338557971565,
+          "taskMsPerSecond": 759.642137673063
+        },
+        {
+          "mode": "normal",
+          "navigation": false,
+          "elapsedMs": 1010.5999999977648,
+          "metricElapsedMs": 1044.699000001856,
+          "renders": 30,
+          "steps": 30,
+          "taskMs": 900.4449999999995,
+          "scriptMs": 50.9,
+          "heapBytes": 10158504,
+          "pool": 120,
+          "visible": 120,
+          "limit": 30,
+          "seed": 211969,
+          "renderedFps": 29.685335444356177,
+          "taskMsPerSecond": 861.9181218689783
+        },
+        {
+          "mode": "normal",
+          "navigation": false,
+          "elapsedMs": 1020.5,
+          "metricElapsedMs": 1086.6620000015246,
+          "renders": 30,
+          "steps": 30,
+          "taskMs": 992.4180000000007,
+          "scriptMs": 54.58299999999999,
+          "heapBytes": 10199260,
+          "pool": 120,
+          "visible": 120,
+          "limit": 30,
+          "seed": 211969,
+          "renderedFps": 29.39735423811857,
+          "taskMsPerSecond": 913.2720201853091
+        },
+        {
+          "mode": "normal",
+          "navigation": false,
+          "elapsedMs": 1074.300000000745,
+          "metricElapsedMs": 1170.9840000003169,
+          "renders": 31,
+          "steps": 31,
+          "taskMs": 1148.765000000001,
+          "scriptMs": 70.61900000000004,
+          "heapBytes": 10091452,
+          "pool": 120,
+          "visible": 120,
+          "limit": 30,
+          "seed": 211969,
+          "renderedFps": 28.85599925530904,
+          "taskMsPerSecond": 981.0253598680171
+        },
+        {
+          "mode": "off",
+          "navigation": true,
+          "elapsedMs": 1468.7000000029802,
+          "metricElapsedMs": 1474.9179999998887,
+          "renders": 14,
+          "steps": 0,
+          "taskMs": 460.71199999999914,
+          "scriptMs": 36.43600000000002,
+          "heapBytes": 12254636,
+          "pool": 120,
+          "visible": 0,
+          "limit": 0,
+          "seed": 211969,
+          "renderedFps": 9.53223939536433,
+          "taskMsPerSecond": 312.3644839916754
+        },
+        {
+          "mode": "low",
+          "navigation": true,
+          "elapsedMs": 2870.60000000149,
+          "metricElapsedMs": 2935.0610000001325,
+          "renders": 82,
+          "steps": 82,
+          "taskMs": 2836.5869999999995,
+          "scriptMs": 152.455,
+          "heapBytes": 13832480,
+          "pool": 120,
+          "visible": 60,
+          "limit": 30,
+          "seed": 211969,
+          "renderedFps": 28.56545669893313,
+          "taskMsPerSecond": 966.4490789117744
+        },
+        {
+          "mode": "normal",
+          "navigation": true,
+          "elapsedMs": 3447.300000000745,
+          "metricElapsedMs": 3514.7150000011607,
+          "renders": 84,
+          "steps": 84,
+          "taskMs": 3497.9900000000016,
+          "scriptMs": 149.54599999999996,
+          "heapBytes": 13098856,
+          "pool": 120,
+          "visible": 120,
+          "limit": 30,
+          "seed": 211969,
+          "renderedFps": 24.366895831515055,
+          "taskMsPerSecond": 995.2414349382087
+        }
+      ],
+      "disposed": {
+        "listeners": [
+          {
+            "target": "window",
+            "type": "pagehide"
+          },
+          {
+            "target": "window",
+            "type": "pageshow"
+          }
+        ],
+        "resizeTargets": 0,
+        "gl": {
+          "Texture": 0,
+          "Buffer": 0,
+          "Framebuffer": 0,
+          "Renderbuffer": 0,
+          "Program": 0,
+          "Shader": 0
+        },
+        "startupTimers": 0,
+        "activeSceneContexts": 0
+      }
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "seed": 211969,
+      "initial": {
+        "enabled": true,
+        "snow": true,
+        "wind": true,
+        "smoke": true,
+        "lights": true,
+        "intensity": "normal"
+      },
+      "errors": [],
+      "generalVisibility": {
+        "changed": 3299,
+        "strong": 1792,
+        "maxChannel": 192
+      },
+      "localities": [
+        {
+          "id": "escuela",
+          "counts": {
+            "characters": 1
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "biblioteca",
+          "counts": {
+            "characters": 1
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "hospital",
+          "counts": {
+            "characters": 4
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "colonia",
+          "counts": {
+            "characters": 3
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "gasolinera",
+          "counts": {
+            "characters": 1
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "comisaria",
+          "counts": {
+            "characters": 1
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "supermercado",
+          "counts": {
+            "characters": 1
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        }
+      ],
+      "independent": [
+        {
+          "kind": "snow",
+          "pool": 120,
+          "visible": 96,
+          "pixels": {
+            "changed": 1393,
+            "strong": 1065,
+            "maxChannel": 208
+          }
+        },
+        {
+          "kind": "wind",
+          "pool": 120,
+          "visible": 6,
+          "pixels": {
+            "changed": 1619,
+            "strong": 570,
+            "maxChannel": 29
+          }
+        },
+        {
+          "kind": "smoke",
+          "pool": 120,
+          "visible": 18,
+          "pixels": {
+            "changed": 4234,
+            "strong": 1261,
+            "maxChannel": 54
+          }
+        },
+        {
+          "kind": "lights",
+          "pool": 120,
+          "visible": 0,
+          "pixels": {
+            "changed": 485,
+            "strong": 232,
+            "maxChannel": 93
+          }
+        }
+      ],
+      "outsideSamples": 84,
+      "visibility": {
+        "realTabHidden": false,
+        "controlledOverride": true,
+        "noCatchUp": true
+      },
+      "restarts": 5,
+      "pool": 120,
+      "objects": 125,
+      "performance": [
+        {
+          "mode": "off",
+          "navigation": false,
+          "elapsedMs": 1003.0999999977648,
+          "metricElapsedMs": 1006.6460000016377,
+          "renders": 0,
+          "steps": 0,
+          "taskMs": 3.516000000000019,
+          "scriptMs": 0.021000000000000185,
+          "heapBytes": 9240572,
+          "pool": 120,
+          "visible": 0,
+          "limit": 0,
+          "seed": 211969,
+          "renderedFps": 0,
+          "taskMsPerSecond": 3.492786938004322
+        },
+        {
+          "mode": "off",
+          "navigation": false,
+          "elapsedMs": 1003.8000000007451,
+          "metricElapsedMs": 1007.1960000022955,
+          "renders": 0,
+          "steps": 0,
+          "taskMs": 3.3099999999999796,
+          "scriptMs": 0.014000000000000123,
+          "heapBytes": 9241920,
+          "pool": 120,
+          "visible": 0,
+          "limit": 0,
+          "seed": 211969,
+          "renderedFps": 0,
+          "taskMsPerSecond": 3.286351415208595
+        },
+        {
+          "mode": "off",
+          "navigation": false,
+          "elapsedMs": 1003.6000000014901,
+          "metricElapsedMs": 1006.532999999763,
+          "renders": 0,
+          "steps": 0,
+          "taskMs": 6.58000000000003,
+          "scriptMs": 0.024999999999997247,
+          "heapBytes": 9240796,
+          "pool": 120,
+          "visible": 0,
+          "limit": 0,
+          "seed": 211969,
+          "renderedFps": 0,
+          "taskMsPerSecond": 6.537291872200494
+        },
+        {
+          "mode": "low",
+          "navigation": false,
+          "elapsedMs": 1004,
+          "metricElapsedMs": 1038.4829999966314,
+          "renders": 30,
+          "steps": 30,
+          "taskMs": 702.19,
+          "scriptMs": 48.74099999999999,
+          "heapBytes": 9485168,
+          "pool": 120,
+          "visible": 60,
+          "limit": 30,
+          "seed": 211969,
+          "renderedFps": 29.8804780876494,
+          "taskMsPerSecond": 676.1689888060544
+        },
+        {
+          "mode": "low",
+          "navigation": false,
+          "elapsedMs": 1024.300000000745,
+          "metricElapsedMs": 1053.263000001607,
+          "renders": 31,
+          "steps": 31,
+          "taskMs": 760.0679999999998,
+          "scriptMs": 55.341,
+          "heapBytes": 9507944,
+          "pool": 120,
+          "visible": 60,
+          "limit": 30,
+          "seed": 211969,
+          "renderedFps": 30.26457092646437,
+          "taskMsPerSecond": 721.6317292061337
+        },
+        {
+          "mode": "low",
+          "navigation": false,
+          "elapsedMs": 1020.4000000022352,
+          "metricElapsedMs": 1055.5439999989176,
+          "renders": 31,
+          "steps": 31,
+          "taskMs": 753.4000000000001,
+          "scriptMs": 50.57800000000001,
+          "heapBytes": 9468480,
+          "pool": 120,
+          "visible": 60,
+          "limit": 30,
+          "seed": 211969,
+          "renderedFps": 30.38024304187779,
+          "taskMsPerSecond": 713.7551821627262
+        },
+        {
+          "mode": "normal",
+          "navigation": false,
+          "elapsedMs": 1030.199999999255,
+          "metricElapsedMs": 1066.9290000005276,
+          "renders": 31,
+          "steps": 31,
+          "taskMs": 927.4369999999999,
+          "scriptMs": 44.75800000000002,
+          "heapBytes": 9410648,
+          "pool": 120,
+          "visible": 120,
+          "limit": 30,
+          "seed": 211969,
+          "renderedFps": 30.09124441858126,
+          "taskMsPerSecond": 869.2584042607721
+        },
+        {
+          "mode": "normal",
+          "navigation": false,
+          "elapsedMs": 1030.9000000022352,
+          "metricElapsedMs": 1070.3539999994973,
+          "renders": 31,
+          "steps": 31,
+          "taskMs": 888.4319999999999,
+          "scriptMs": 52.518999999999984,
+          "heapBytes": 9547724,
+          "pool": 120,
+          "visible": 120,
+          "limit": 30,
+          "seed": 211969,
+          "renderedFps": 30.07081191185642,
+          "taskMsPerSecond": 830.0356704421314
+        },
+        {
+          "mode": "normal",
+          "navigation": false,
+          "elapsedMs": 1032.0999999977648,
+          "metricElapsedMs": 1101.699999999255,
+          "renders": 33,
+          "steps": 33,
+          "taskMs": 981.198,
+          "scriptMs": 53.345000000000034,
+          "heapBytes": 9518468,
+          "pool": 120,
+          "visible": 120,
+          "limit": 30,
+          "seed": 211969,
+          "renderedFps": 31.97364596460756,
+          "taskMsPerSecond": 890.6217663616807
+        },
+        {
+          "mode": "off",
+          "navigation": true,
+          "elapsedMs": 1510.6000000014901,
+          "metricElapsedMs": 1514.7479999977804,
+          "renders": 14,
+          "steps": 0,
+          "taskMs": 470.69300000000067,
+          "scriptMs": 39.95800000000005,
+          "heapBytes": 11492644,
+          "pool": 120,
+          "visible": 0,
+          "limit": 0,
+          "seed": 211969,
+          "renderedFps": 9.267840593132656,
+          "taskMsPerSecond": 310.74013631355865
+        },
+        {
+          "mode": "low",
+          "navigation": true,
+          "elapsedMs": 2206.699999999255,
+          "metricElapsedMs": 2245.1959999998508,
+          "renders": 62,
+          "steps": 62,
+          "taskMs": 1939.0940000000007,
+          "scriptMs": 107.34100000000002,
+          "heapBytes": 13844228,
+          "pool": 120,
+          "visible": 60,
+          "limit": 30,
+          "seed": 211969,
+          "renderedFps": 28.096252322481956,
+          "taskMsPerSecond": 863.663573247115
+        },
+        {
+          "mode": "normal",
+          "navigation": true,
+          "elapsedMs": 2539.7999999970198,
+          "metricElapsedMs": 2636.9789999989734,
+          "renders": 72,
+          "steps": 72,
+          "taskMs": 2442.0839999999994,
+          "scriptMs": 125.853,
+          "heapBytes": 15408648,
+          "pool": 120,
+          "visible": 120,
+          "limit": 30,
+          "seed": 211969,
+          "renderedFps": 28.348688873172883,
+          "taskMsPerSecond": 926.0915615941386
+        }
+      ],
+      "disposed": {
+        "listeners": [
+          {
+            "target": "window",
+            "type": "pagehide"
+          },
+          {
+            "target": "window",
+            "type": "pageshow"
+          }
+        ],
+        "resizeTargets": 0,
+        "gl": {
+          "Texture": 0,
+          "Buffer": 0,
+          "Framebuffer": 0,
+          "Renderbuffer": 0,
+          "Program": 0,
+          "Shader": 0
+        },
+        "startupTimers": 0,
+        "activeSceneContexts": 0
+      }
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "dpr": 2,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "seed": 211969,
+      "initial": {
+        "enabled": true,
+        "snow": true,
+        "wind": true,
+        "smoke": true,
+        "lights": true,
+        "intensity": "normal"
+      },
+      "errors": [],
+      "generalVisibility": {
+        "changed": 2184,
+        "strong": 1220,
+        "maxChannel": 150
+      },
+      "localities": [
+        {
+          "id": "escuela",
+          "counts": {
+            "characters": 1
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "biblioteca",
+          "counts": {
+            "characters": 1
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "hospital",
+          "counts": {
+            "characters": 4
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "colonia",
+          "counts": {
+            "characters": 3
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "gasolinera",
+          "counts": {
+            "characters": 1
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "comisaria",
+          "counts": {
+            "characters": 1
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "supermercado",
+          "counts": {
+            "characters": 1
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        }
+      ],
+      "independent": [
+        {
+          "kind": "snow",
+          "pool": 120,
+          "visible": 96,
+          "pixels": {
+            "changed": 811,
+            "strong": 657,
+            "maxChannel": 205
+          }
+        },
+        {
+          "kind": "wind",
+          "pool": 120,
+          "visible": 6,
+          "pixels": {
+            "changed": 1070,
+            "strong": 346,
+            "maxChannel": 26
+          }
+        },
+        {
+          "kind": "smoke",
+          "pool": 120,
+          "visible": 18,
+          "pixels": {
+            "changed": 2533,
+            "strong": 647,
+            "maxChannel": 53
+          }
+        },
+        {
+          "kind": "lights",
+          "pool": 120,
+          "visible": 0,
+          "pixels": {
+            "changed": 307,
+            "strong": 148,
+            "maxChannel": 48
+          }
+        }
+      ],
+      "outsideSamples": 68,
+      "visibility": {
+        "realTabHidden": false,
+        "controlledOverride": true,
+        "noCatchUp": true
+      },
+      "restarts": 5,
+      "pool": 120,
+      "objects": 125,
+      "performance": [
+        {
+          "mode": "off",
+          "navigation": false,
+          "elapsedMs": 1003,
+          "metricElapsedMs": 1007.5449999967532,
+          "renders": 0,
+          "steps": 0,
+          "taskMs": 3.6690000000000333,
+          "scriptMs": 0.019999999999999185,
+          "heapBytes": 9245732,
+          "pool": 120,
+          "visible": 0,
+          "limit": 0,
+          "seed": 211969,
+          "renderedFps": 0,
+          "taskMsPerSecond": 3.641524696179185
+        },
+        {
+          "mode": "off",
+          "navigation": false,
+          "elapsedMs": 1002.9000000022352,
+          "metricElapsedMs": 1006.5290000020468,
+          "renders": 0,
+          "steps": 0,
+          "taskMs": 2.927000000000013,
+          "scriptMs": 0.019000000000005124,
+          "heapBytes": 9247240,
+          "pool": 120,
+          "visible": 0,
+          "limit": 0,
+          "seed": 211969,
+          "renderedFps": 0,
+          "taskMsPerSecond": 2.908013579334585
+        },
+        {
+          "mode": "off",
+          "navigation": false,
+          "elapsedMs": 1003.6999999992549,
+          "metricElapsedMs": 1006.7899999994552,
+          "renders": 0,
+          "steps": 0,
+          "taskMs": 6.34800000000002,
+          "scriptMs": 0.030000000000002247,
+          "heapBytes": 9245936,
+          "pool": 120,
+          "visible": 0,
+          "limit": 0,
+          "seed": 211969,
+          "renderedFps": 0,
+          "taskMsPerSecond": 6.30518777501113
+        },
+        {
+          "mode": "low",
+          "navigation": false,
+          "elapsedMs": 1026.6000000014901,
+          "metricElapsedMs": 1056.7099999971106,
+          "renders": 31,
+          "steps": 31,
+          "taskMs": 623.503,
+          "scriptMs": 55.15999999999999,
+          "heapBytes": 9415752,
+          "pool": 120,
+          "visible": 60,
+          "limit": 30,
+          "seed": 211969,
+          "renderedFps": 30.196766023723946,
+          "taskMsPerSecond": 590.0417333059258
+        },
+        {
+          "mode": "low",
+          "navigation": false,
+          "elapsedMs": 1024.0999999977648,
+          "metricElapsedMs": 1056.282999998075,
+          "renders": 31,
+          "steps": 31,
+          "taskMs": 619.4569999999999,
+          "scriptMs": 63.43899999999999,
+          "heapBytes": 9418444,
+          "pool": 120,
+          "visible": 60,
+          "limit": 30,
+          "seed": 211969,
+          "renderedFps": 30.27048139836701,
+          "taskMsPerSecond": 586.4498434615807
+        },
+        {
+          "mode": "low",
+          "navigation": false,
+          "elapsedMs": 1002.6999999992549,
+          "metricElapsedMs": 1025.724999999511,
+          "renders": 30,
+          "steps": 30,
+          "taskMs": 549.9899999999998,
+          "scriptMs": 48.21600000000004,
+          "heapBytes": 9509792,
+          "pool": 120,
+          "visible": 60,
+          "limit": 30,
+          "seed": 211969,
+          "renderedFps": 29.919218111122262,
+          "taskMsPerSecond": 536.1963489241872
+        },
+        {
+          "mode": "normal",
+          "navigation": false,
+          "elapsedMs": 1018.1000000014901,
+          "metricElapsedMs": 1048.9830000005895,
+          "renders": 31,
+          "steps": 31,
+          "taskMs": 675.9280000000003,
+          "scriptMs": 52.479,
+          "heapBytes": 9407988,
+          "pool": 120,
+          "visible": 120,
+          "limit": 30,
+          "seed": 211969,
+          "renderedFps": 30.44887535601083,
+          "taskMsPerSecond": 644.365065973062
+        },
+        {
+          "mode": "normal",
+          "navigation": false,
+          "elapsedMs": 1020.3000000007451,
+          "metricElapsedMs": 1048.758999997517,
+          "renders": 31,
+          "steps": 31,
+          "taskMs": 693.4310000000004,
+          "scriptMs": 50.18100000000003,
+          "heapBytes": 9520060,
+          "pool": 120,
+          "visible": 120,
+          "limit": 30,
+          "seed": 211969,
+          "renderedFps": 30.383220621363677,
+          "taskMsPerSecond": 661.1919420969375
+        },
+        {
+          "mode": "normal",
+          "navigation": false,
+          "elapsedMs": 1003.3999999985099,
+          "metricElapsedMs": 1027.7549999991606,
+          "renders": 30,
+          "steps": 30,
+          "taskMs": 702.0419999999996,
+          "scriptMs": 48.19500000000004,
+          "heapBytes": 9908248,
+          "pool": 120,
+          "visible": 120,
+          "limit": 30,
+          "seed": 211969,
+          "renderedFps": 29.898345624919823,
+          "taskMsPerSecond": 683.0830304893412
+        },
+        {
+          "mode": "off",
+          "navigation": true,
+          "elapsedMs": 1292.300000000745,
+          "metricElapsedMs": 1295.9069999997155,
+          "renders": 14,
+          "steps": 0,
+          "taskMs": 276.7240000000006,
+          "scriptMs": 36.53899999999999,
+          "heapBytes": 11420332,
+          "pool": 120,
+          "visible": 0,
+          "limit": 0,
+          "seed": 211969,
+          "renderedFps": 10.83339781783791,
+          "taskMsPerSecond": 213.5369281901104
+        },
+        {
+          "mode": "low",
+          "navigation": true,
+          "elapsedMs": 1492.5,
+          "metricElapsedMs": 1525.1190000017232,
+          "renders": 45,
+          "steps": 45,
+          "taskMs": 944.541,
+          "scriptMs": 85.6349999999999,
+          "heapBytes": 13086428,
+          "pool": 120,
+          "visible": 60,
+          "limit": 30,
+          "seed": 211969,
+          "renderedFps": 30.150753768844222,
+          "taskMsPerSecond": 619.3228200546533
+        },
+        {
+          "mode": "normal",
+          "navigation": true,
+          "elapsedMs": 1823.7000000029802,
+          "metricElapsedMs": 1856.2099999981,
+          "renders": 55,
+          "steps": 55,
+          "taskMs": 1312.313999999999,
+          "scriptMs": 99.60300000000011,
+          "heapBytes": 12683112,
+          "pool": 120,
+          "visible": 120,
+          "limit": 30,
+          "seed": 211969,
+          "renderedFps": 30.15846904639476,
+          "taskMsPerSecond": 706.9857397607717
+        }
+      ],
+      "disposed": {
+        "listeners": [
+          {
+            "target": "window",
+            "type": "pagehide"
+          },
+          {
+            "target": "window",
+            "type": "pageshow"
+          }
+        ],
+        "resizeTargets": 0,
+        "gl": {
+          "Texture": 0,
+          "Buffer": 0,
+          "Framebuffer": 0,
+          "Renderbuffer": 0,
+          "Program": 0,
+          "Shader": 0
+        },
+        "startupTimers": 0,
+        "activeSceneContexts": 0
+      }
+    }
+  ],
+  "failures": [
+    "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\ntrue !== false\n\n    at file:///workspace/invierno-en-la-colonia/scripts/check-h33-atmosphere-browser.mjs:84:505"
+  ],
+  "passed": false
+}

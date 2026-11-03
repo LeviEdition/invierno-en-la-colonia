@@ -1,0 +1,1208 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "build": {
+    "phaser": "4.2.1",
+    "esbuild": "0.28.2",
+    "rawBytes": 1441598,
+    "gzip9Bytes": 386867,
+    "sha256": "265c882ad84347168be8df5a1d9ce421d5a1845b1d3948fe0bd683e6401454a7",
+    "inputs": [
+      "prototypes/hospital-workshop/kit.json",
+      "prototypes/hospital-workshop/uploaded-kit.json",
+      "prototypes/hospital-workshop/kit.mjs",
+      "prototypes/hospital-workshop/resources.mjs",
+      "node_modules/phaser/dist/phaser.esm.js",
+      "prototypes/hospital-phaser/game.mjs",
+      "prototypes/hospital-phaser/dispose-game.mjs",
+      "prototypes/hospital-phaser/startup.mjs",
+      "prototypes/hospital-phaser/texture-quality.mjs",
+      "prototypes/hospital-workshop/renderer.mjs",
+      "prototypes/hospital/camera.mjs",
+      "prototypes/hospital/controls.mjs",
+      "prototypes/hospital/scene.mjs",
+      "prototypes/hospital-phaser/renderer.mjs",
+      "prototypes/hospital-workshop/main.mjs"
+    ],
+    "profiles": [
+      {
+        "id": "h32",
+        "factor": 1,
+        "textures": [
+          {
+            "id": "hospital",
+            "width": 1254,
+            "height": 1254,
+            "potWidth": 2048,
+            "potHeight": 2048,
+            "rgbaBase": 16777216,
+            "rgbaWithMips": 22369620,
+            "auxiliaryRgba": 16777216,
+            "derivedRgba": 0
+          },
+          {
+            "id": "ground",
+            "width": 1536,
+            "height": 1024,
+            "potWidth": 2048,
+            "potHeight": 1024,
+            "rgbaBase": 8388608,
+            "rgbaWithMips": 11184812,
+            "auxiliaryRgba": 8388608,
+            "derivedRgba": 0
+          },
+          {
+            "id": "zombie",
+            "width": 1175,
+            "height": 1338,
+            "potWidth": 2048,
+            "potHeight": 2048,
+            "rgbaBase": 16777216,
+            "rgbaWithMips": 22369620,
+            "auxiliaryRgba": 16777216,
+            "derivedRgba": 0
+          }
+        ]
+      },
+      {
+        "id": "three-quarter",
+        "factor": 0.75,
+        "textures": [
+          {
+            "id": "hospital",
+            "width": 941,
+            "height": 941,
+            "potWidth": 1024,
+            "potHeight": 1024,
+            "rgbaBase": 4194304,
+            "rgbaWithMips": 5592404,
+            "auxiliaryRgba": 4194304,
+            "derivedRgba": 3541924
+          },
+          {
+            "id": "ground",
+            "width": 1152,
+            "height": 768,
+            "potWidth": 2048,
+            "potHeight": 1024,
+            "rgbaBase": 8388608,
+            "rgbaWithMips": 11184812,
+            "auxiliaryRgba": 8388608,
+            "derivedRgba": 3538944
+          },
+          {
+            "id": "zombie",
+            "width": 882,
+            "height": 1004,
+            "potWidth": 1024,
+            "potHeight": 1024,
+            "rgbaBase": 4194304,
+            "rgbaWithMips": 5592404,
+            "auxiliaryRgba": 4194304,
+            "derivedRgba": 3542112
+          }
+        ]
+      },
+      {
+        "id": "half",
+        "factor": 0.5,
+        "textures": [
+          {
+            "id": "hospital",
+            "width": 627,
+            "height": 627,
+            "potWidth": 1024,
+            "potHeight": 1024,
+            "rgbaBase": 4194304,
+            "rgbaWithMips": 5592404,
+            "auxiliaryRgba": 4194304,
+            "derivedRgba": 1572516
+          },
+          {
+            "id": "ground",
+            "width": 768,
+            "height": 512,
+            "potWidth": 1024,
+            "potHeight": 512,
+            "rgbaBase": 2097152,
+            "rgbaWithMips": 2796204,
+            "auxiliaryRgba": 2097152,
+            "derivedRgba": 1572864
+          },
+          {
+            "id": "zombie",
+            "width": 588,
+            "height": 669,
+            "potWidth": 1024,
+            "potHeight": 1024,
+            "rgbaBase": 4194304,
+            "rgbaWithMips": 5592404,
+            "auxiliaryRgba": 4194304,
+            "derivedRgba": 1573488
+          }
+        ]
+      }
+    ],
+    "mockup": {
+      "rawBytes": 1453352,
+      "gzip9Bytes": 392538,
+      "sha256": "85c0013b9c96928282f1480e9019a7ab82d5fc96de3d08c660bd0cbfd1353f40",
+      "inputs": [
+        "prototypes/hospital-workshop/mockup/atmosphere.json",
+        "prototypes/hospital-workshop/mockup/atmosphere-model.mjs",
+        "prototypes/hospital-workshop/mockup/atmosphere-view.mjs",
+        "prototypes/hospital-workshop/mockup/scene.json",
+        "prototypes/hospital-workshop/uploaded-kit.json",
+        "kit_arte_h33/manifest.json",
+        "prototypes/hospital-workshop/mockup/model.mjs",
+        "prototypes/hospital-workshop/mockup/assets.mjs",
+        "prototypes/hospital/camera.mjs",
+        "prototypes/hospital-workshop/mockup/camera.mjs",
+        "prototypes/hospital/controls.mjs",
+        "prototypes/hospital-workshop/kit.mjs",
+        "prototypes/hospital-workshop/resources.mjs",
+        "node_modules/phaser/dist/phaser.esm.js",
+        "prototypes/hospital-phaser/game.mjs",
+        "prototypes/hospital-phaser/dispose-game.mjs",
+        "prototypes/hospital-phaser/startup.mjs",
+        "prototypes/hospital-phaser/texture-quality.mjs",
+        "prototypes/hospital-workshop/renderer.mjs",
+        "prototypes/hospital/scene.mjs",
+        "prototypes/hospital-phaser/renderer.mjs",
+        "prototypes/hospital-workshop/mockup/main.mjs"
+      ],
+      "resourceBytes": 17996335,
+      "textures": [
+        {
+          "id": "map",
+          "width": 1448,
+          "height": 1086,
+          "potWidth": 2048,
+          "potHeight": 2048,
+          "rgbaBase": 16777216,
+          "rgbaWithMips": 22369620,
+          "auxiliaryRgba": 16777216,
+          "derivedRgba": 0
+        },
+        {
+          "id": "zombie",
+          "width": 1312,
+          "height": 1199,
+          "potWidth": 2048,
+          "potHeight": 2048,
+          "rgbaBase": 16777216,
+          "rgbaWithMips": 22369620,
+          "auxiliaryRgba": 16777216,
+          "derivedRgba": 0
+        },
+        {
+          "id": "barricade-marker",
+          "width": 1536,
+          "height": 1024,
+          "potWidth": 2048,
+          "potHeight": 1024,
+          "rgbaBase": 8388608,
+          "rgbaWithMips": 11184812,
+          "auxiliaryRgba": 8388608,
+          "derivedRgba": 0
+        },
+        {
+          "id": "survivor-portrait-1",
+          "width": 384,
+          "height": 384,
+          "potWidth": 512,
+          "potHeight": 512,
+          "rgbaBase": 1048576,
+          "rgbaWithMips": 1398100,
+          "auxiliaryRgba": 1048576,
+          "derivedRgba": 589824
+        },
+        {
+          "id": "survivor-portrait-2",
+          "width": 384,
+          "height": 384,
+          "potWidth": 512,
+          "potHeight": 512,
+          "rgbaBase": 1048576,
+          "rgbaWithMips": 1398100,
+          "auxiliaryRgba": 1048576,
+          "derivedRgba": 589824
+        },
+        {
+          "id": "survivor-portrait-3",
+          "width": 384,
+          "height": 384,
+          "potWidth": 512,
+          "potHeight": 512,
+          "rgbaBase": 1048576,
+          "rgbaWithMips": 1398100,
+          "auxiliaryRgba": 1048576,
+          "derivedRgba": 589824
+        },
+        {
+          "id": "survivor-portrait-4",
+          "width": 384,
+          "height": 384,
+          "potWidth": 512,
+          "potHeight": 512,
+          "rgbaBase": 1048576,
+          "rgbaWithMips": 1398100,
+          "auxiliaryRgba": 1048576,
+          "derivedRgba": 589824
+        }
+      ]
+    }
+  },
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "timings": {
+        "startedAt": 318,
+        "loadAndAlphaMs": 188.10000000149012,
+        "preparationMs": 1.5999999977648258,
+        "readyMs": 661.3000000007451
+      },
+      "generalCamera": {
+        "x": 117.16666666666669,
+        "y": 12,
+        "zoom": 0.5460405156537753,
+        "minZoom": 0.5460405156537753,
+        "maxZoom": 2.7302025782688766
+      },
+      "initialCounts": {
+        "characters": 12,
+        "accesses": 36,
+        "zombies": 8,
+        "barricades": 2,
+        "empty": 26
+      },
+      "checks": [
+        "Mapa único, recursos del kit,36 espacios, hospital4S/2Z/2B, selección circular por clic/tap y panel; dados del turno A al seleccionar grupo B; interfaz fija al pan/zoom",
+        "Acciones responden sin mutar datos/dados; diálogos, historia, máximos33/36 y colonia12, depuración oculta, teclado, resize sin overflow"
+      ],
+      "errors": [],
+      "resources": [
+        "/kit_arte_h33/assets/mapa-prototipo.png",
+        "/kit_arte_h33/assets/zombi.png",
+        "/kit_arte_h33/assets/barricada.png",
+        "/kit_arte_h33/assets/retrato-mara.png",
+        "/kit_arte_h33/assets/retrato-superviviente-02.png",
+        "/kit_arte_h33/assets/retrato-superviviente-03.png",
+        "/kit_arte_h33/assets/retrato-superviviente-04.png"
+      ],
+      "initialInterface": [
+        {
+          "label": "Objetivo",
+          "x": 1193,
+          "y": 11,
+          "width": 78,
+          "height": 44,
+          "right": 1271,
+          "bottom": 55,
+          "clip": {
+            "left": 0,
+            "top": 0,
+            "right": 1365,
+            "bottom": 768
+          }
+        },
+        {
+          "label": "Crisis",
+          "x": 1279,
+          "y": 11,
+          "width": 72,
+          "height": 44,
+          "right": 1351,
+          "bottom": 55,
+          "clip": {
+            "left": 0,
+            "top": 0,
+            "right": 1365,
+            "bottom": 768
+          }
+        },
+        {
+          "label": "Seleccionar y centrar localidad",
+          "x": 8,
+          "y": 74,
+          "width": 235,
+          "height": 44,
+          "right": 243,
+          "bottom": 118,
+          "clip": {
+            "left": 0,
+            "top": 0,
+            "right": 1365,
+            "bottom": 768
+          }
+        },
+        {
+          "label": "Alejar mapa",
+          "x": 249,
+          "y": 74,
+          "width": 44,
+          "height": 44,
+          "right": 293,
+          "bottom": 118,
+          "clip": {
+            "left": 0,
+            "top": 0,
+            "right": 1365,
+            "bottom": 768
+          }
+        },
+        {
+          "label": "Acercar mapa",
+          "x": 345,
+          "y": 74,
+          "width": 44,
+          "height": 44,
+          "right": 389,
+          "bottom": 118,
+          "clip": {
+            "left": 0,
+            "top": 0,
+            "right": 1365,
+            "bottom": 768
+          }
+        },
+        {
+          "label": "reset-view",
+          "x": 395,
+          "y": 74,
+          "width": 96,
+          "height": 44,
+          "right": 491,
+          "bottom": 118,
+          "clip": {
+            "left": 0,
+            "top": 0,
+            "right": 1365,
+            "bottom": 768
+          }
+        },
+        {
+          "label": "Dado 1, valor 2, reserva del grupo A",
+          "x": 1049,
+          "y": 358.796875,
+          "width": 44,
+          "height": 44,
+          "right": 1093,
+          "bottom": 402.796875,
+          "clip": {
+            "left": 1028,
+            "top": 116,
+            "right": 1365,
+            "bottom": 768
+          }
+        },
+        {
+          "label": "Dado 2, valor 3, reserva del grupo A",
+          "x": 1132.671875,
+          "y": 358.796875,
+          "width": 44,
+          "height": 44,
+          "right": 1176.671875,
+          "bottom": 402.796875,
+          "clip": {
+            "left": 1028,
+            "top": 116,
+            "right": 1365,
+            "bottom": 768
+          }
+        },
+        {
+          "label": "Dado 3, valor 5, reserva del grupo A",
+          "x": 1216.328125,
+          "y": 358.796875,
+          "width": 44,
+          "height": 44,
+          "right": 1260.328125,
+          "bottom": 402.796875,
+          "clip": {
+            "left": 1028,
+            "top": 116,
+            "right": 1365,
+            "bottom": 768
+          }
+        },
+        {
+          "label": "Dado 4, valor 6, reserva del grupo A",
+          "x": 1300,
+          "y": 358.796875,
+          "width": 44,
+          "height": 44,
+          "right": 1344,
+          "bottom": 402.796875,
+          "clip": {
+            "left": 1028,
+            "top": 116,
+            "right": 1365,
+            "bottom": 768
+          }
+        },
+        {
+          "label": "Buscar",
+          "x": 1040,
+          "y": 441.796875,
+          "width": 153.5,
+          "height": 44,
+          "right": 1193.5,
+          "bottom": 485.796875,
+          "clip": {
+            "left": 1028,
+            "top": 116,
+            "right": 1365,
+            "bottom": 768
+          }
+        },
+        {
+          "label": "Atacar",
+          "x": 1199.5,
+          "y": 441.796875,
+          "width": 153.5,
+          "height": 44,
+          "right": 1353,
+          "bottom": 485.796875,
+          "clip": {
+            "left": 1028,
+            "top": 116,
+            "right": 1365,
+            "bottom": 768
+          }
+        },
+        {
+          "label": "Construir barricada",
+          "x": 1040,
+          "y": 491.796875,
+          "width": 153.5,
+          "height": 44,
+          "right": 1193.5,
+          "bottom": 535.796875,
+          "clip": {
+            "left": 1028,
+            "top": 116,
+            "right": 1365,
+            "bottom": 768
+          }
+        },
+        {
+          "label": "Moverse",
+          "x": 1199.5,
+          "y": 491.796875,
+          "width": 153.5,
+          "height": 44,
+          "right": 1353,
+          "bottom": 535.796875,
+          "clip": {
+            "left": 1028,
+            "top": 116,
+            "right": 1365,
+            "bottom": 768
+          }
+        }
+      ],
+      "localities": [
+        {
+          "id": "escuela",
+          "counts": {
+            "characters": 1
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "biblioteca",
+          "counts": {
+            "characters": 1
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "hospital",
+          "counts": {
+            "characters": 4
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "colonia",
+          "counts": {
+            "characters": 3
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "gasolinera",
+          "counts": {
+            "characters": 1
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "comisaria",
+          "counts": {
+            "characters": 1
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "supermercado",
+          "counts": {
+            "characters": 1
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        }
+      ],
+      "hospitalCamera": {
+        "x": 0,
+        "y": -369.2439024390244,
+        "zoom": 1.4268292682926829,
+        "minZoom": 0.5460405156537753,
+        "maxZoom": 2.7302025782688766
+      },
+      "readableName": {
+        "text": "Superviviente 02",
+        "words": [
+          {
+            "word": "Superviviente",
+            "fragments": 1
+          },
+          {
+            "word": "02",
+            "fragments": 1
+          }
+        ],
+        "overflow": false
+      },
+      "fullLocalities": [
+        {
+          "id": "gasolinera",
+          "count": 2,
+          "exterior": 4
+        },
+        {
+          "id": "biblioteca",
+          "count": 3,
+          "exterior": 4
+        },
+        {
+          "id": "colonia",
+          "count": 12,
+          "exterior": 12
+        }
+      ],
+      "maximumCounts": {
+        "characters": 33,
+        "accesses": 36,
+        "zombies": 18,
+        "barricades": 18,
+        "empty": 0
+      },
+      "idleDraws": 0,
+      "disposed": {
+        "listeners": [
+          {
+            "target": "window",
+            "type": "pagehide"
+          },
+          {
+            "target": "window",
+            "type": "pageshow"
+          }
+        ],
+        "resizeTargets": 0,
+        "gl": {
+          "Texture": 0,
+          "Buffer": 0,
+          "Framebuffer": 0,
+          "Renderbuffer": 0,
+          "Program": 0,
+          "Shader": 0
+        },
+        "startupTimers": 0,
+        "activeSceneContexts": 0
+      },
+      "cleanup": {
+        "cleanupErrors": [],
+        "atmosphereRelease": {
+          "objectsReleased": 121,
+          "textureReleased": true
+        },
+        "sourcesReleased": true,
+        "auxiliaryCanvasesReleased": 7,
+        "derivedCanvasesReleased": 4,
+        "disposed": true
+      }
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "timings": {
+        "startedAt": 210.89999999850988,
+        "loadAndAlphaMs": 171.90000000223517,
+        "preparationMs": 1.5999999977648258,
+        "readyMs": 604.9000000022352
+      },
+      "generalCamera": {
+        "x": 12,
+        "y": 184.625,
+        "zoom": 0.2548342541436464,
+        "minZoom": 0.2548342541436464,
+        "maxZoom": 1.274171270718232
+      },
+      "initialCounts": {
+        "characters": 12,
+        "accesses": 36,
+        "zombies": 8,
+        "barricades": 2,
+        "empty": 26
+      },
+      "checks": [
+        "Mapa único, recursos del kit,36 espacios, hospital4S/2Z/2B, selección circular por clic/tap y panel; dados del turno A al seleccionar grupo B; interfaz fija al pan/zoom",
+        "Arrastre de un dedo y pinza CDP anclada, tap de ficha y botón sin duplicar; panel inferior cerrable; emulación, no móvil físico",
+        "Acciones responden sin mutar datos/dados; diálogos, historia, máximos33/36 y colonia12, depuración oculta, teclado, resize sin overflow"
+      ],
+      "errors": [],
+      "resources": [
+        "/kit_arte_h33/assets/mapa-prototipo.png",
+        "/kit_arte_h33/assets/zombi.png",
+        "/kit_arte_h33/assets/barricada.png",
+        "/kit_arte_h33/assets/retrato-superviviente-02.png",
+        "/kit_arte_h33/assets/retrato-mara.png",
+        "/kit_arte_h33/assets/retrato-superviviente-04.png",
+        "/kit_arte_h33/assets/retrato-superviviente-03.png"
+      ],
+      "initialInterface": [
+        {
+          "label": "Objetivo",
+          "x": 259,
+          "y": 28.6875,
+          "width": 61,
+          "height": 44,
+          "right": 320,
+          "bottom": 72.6875,
+          "clip": {
+            "left": 0,
+            "top": 0,
+            "right": 393,
+            "bottom": 852
+          }
+        },
+        {
+          "label": "Crisis",
+          "x": 324,
+          "y": 28.6875,
+          "width": 61,
+          "height": 44,
+          "right": 385,
+          "bottom": 72.6875,
+          "clip": {
+            "left": 0,
+            "top": 0,
+            "right": 393,
+            "bottom": 852
+          }
+        },
+        {
+          "label": "Seleccionar y centrar localidad",
+          "x": 4,
+          "y": 83.6875,
+          "width": 179,
+          "height": 44,
+          "right": 183,
+          "bottom": 127.6875,
+          "clip": {
+            "left": 0,
+            "top": 0,
+            "right": 393,
+            "bottom": 852
+          }
+        },
+        {
+          "label": "Alejar mapa",
+          "x": 186,
+          "y": 83.6875,
+          "width": 44,
+          "height": 44,
+          "right": 230,
+          "bottom": 127.6875,
+          "clip": {
+            "left": 0,
+            "top": 0,
+            "right": 393,
+            "bottom": 852
+          }
+        },
+        {
+          "label": "Acercar mapa",
+          "x": 266,
+          "y": 83.6875,
+          "width": 44,
+          "height": 44,
+          "right": 310,
+          "bottom": 127.6875,
+          "clip": {
+            "left": 0,
+            "top": 0,
+            "right": 393,
+            "bottom": 852
+          }
+        },
+        {
+          "label": "reset-view",
+          "x": 313,
+          "y": 83.6875,
+          "width": 76,
+          "height": 44,
+          "right": 389,
+          "bottom": 127.6875,
+          "clip": {
+            "left": 0,
+            "top": 0,
+            "right": 393,
+            "bottom": 852
+          }
+        }
+      ],
+      "localities": [
+        {
+          "id": "escuela",
+          "counts": {
+            "characters": 1
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "biblioteca",
+          "counts": {
+            "characters": 1
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "hospital",
+          "counts": {
+            "characters": 4
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "colonia",
+          "counts": {
+            "characters": 3
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "gasolinera",
+          "counts": {
+            "characters": 1
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "comisaria",
+          "counts": {
+            "characters": 1
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "supermercado",
+          "counts": {
+            "characters": 1
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        }
+      ],
+      "hospitalCamera": {
+        "x": -22.182692307692292,
+        "y": -143.75961538461536,
+        "zoom": 0.6942307692307692,
+        "minZoom": 0.2548342541436464,
+        "maxZoom": 1.274171270718232
+      },
+      "readableName": {
+        "text": "Superviviente 02",
+        "words": [
+          {
+            "word": "Superviviente",
+            "fragments": 1
+          },
+          {
+            "word": "02",
+            "fragments": 1
+          }
+        ],
+        "overflow": false
+      },
+      "mobileMapHeightWithPanel": 371.5625,
+      "fullLocalities": [
+        {
+          "id": "gasolinera",
+          "count": 2,
+          "exterior": 4
+        },
+        {
+          "id": "biblioteca",
+          "count": 3,
+          "exterior": 4
+        },
+        {
+          "id": "colonia",
+          "count": 12,
+          "exterior": 12
+        }
+      ],
+      "maximumCounts": {
+        "characters": 33,
+        "accesses": 36,
+        "zombies": 18,
+        "barricades": 18,
+        "empty": 0
+      },
+      "idleDraws": 0,
+      "disposed": {
+        "listeners": [
+          {
+            "target": "window",
+            "type": "pagehide"
+          },
+          {
+            "target": "window",
+            "type": "pageshow"
+          }
+        ],
+        "resizeTargets": 0,
+        "gl": {
+          "Texture": 0,
+          "Buffer": 0,
+          "Framebuffer": 0,
+          "Renderbuffer": 0,
+          "Program": 0,
+          "Shader": 0
+        },
+        "startupTimers": 0,
+        "activeSceneContexts": 0
+      },
+      "cleanup": {
+        "cleanupErrors": [],
+        "atmosphereRelease": {
+          "objectsReleased": 121,
+          "textureReleased": true
+        },
+        "sourcesReleased": true,
+        "auxiliaryCanvasesReleased": 7,
+        "derivedCanvasesReleased": 4,
+        "disposed": true
+      }
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "dpr": 2,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "timings": {
+        "startedAt": 213.30000000074506,
+        "loadAndAlphaMs": 219.19999999925494,
+        "preparationMs": 1.9000000022351742,
+        "readyMs": 663.5
+      },
+      "generalCamera": {
+        "x": 12,
+        "y": 107,
+        "zoom": 0.20441988950276244,
+        "minZoom": 0.20441988950276244,
+        "maxZoom": 1.022099447513812
+      },
+      "initialCounts": {
+        "characters": 12,
+        "accesses": 36,
+        "zombies": 8,
+        "barricades": 2,
+        "empty": 26
+      },
+      "checks": [
+        "Mapa único, recursos del kit,36 espacios, hospital4S/2Z/2B, selección circular por clic/tap y panel; dados del turno A al seleccionar grupo B; interfaz fija al pan/zoom",
+        "Arrastre de un dedo y pinza CDP anclada, tap de ficha y botón sin duplicar; panel inferior cerrable; emulación, no móvil físico",
+        "Acciones responden sin mutar datos/dados; diálogos, historia, máximos33/36 y colonia12, depuración oculta, teclado, resize sin overflow"
+      ],
+      "errors": [],
+      "resources": [
+        "/kit_arte_h33/assets/mapa-prototipo.png",
+        "/kit_arte_h33/assets/zombi.png",
+        "/kit_arte_h33/assets/barricada.png",
+        "/kit_arte_h33/assets/retrato-superviviente-02.png",
+        "/kit_arte_h33/assets/retrato-mara.png",
+        "/kit_arte_h33/assets/retrato-superviviente-03.png",
+        "/kit_arte_h33/assets/retrato-superviviente-04.png"
+      ],
+      "initialInterface": [
+        {
+          "label": "Objetivo",
+          "x": 186,
+          "y": 27,
+          "width": 61,
+          "height": 44,
+          "right": 247,
+          "bottom": 71,
+          "clip": {
+            "left": 0,
+            "top": 0,
+            "right": 320,
+            "bottom": 640
+          }
+        },
+        {
+          "label": "Crisis",
+          "x": 251,
+          "y": 27,
+          "width": 61,
+          "height": 44,
+          "right": 312,
+          "bottom": 71,
+          "clip": {
+            "left": 0,
+            "top": 0,
+            "right": 320,
+            "bottom": 640
+          }
+        },
+        {
+          "label": "Seleccionar y centrar localidad",
+          "x": 4,
+          "y": 82,
+          "width": 106,
+          "height": 44,
+          "right": 110,
+          "bottom": 126,
+          "clip": {
+            "left": 0,
+            "top": 0,
+            "right": 320,
+            "bottom": 640
+          }
+        },
+        {
+          "label": "Alejar mapa",
+          "x": 113,
+          "y": 82,
+          "width": 44,
+          "height": 44,
+          "right": 157,
+          "bottom": 126,
+          "clip": {
+            "left": 0,
+            "top": 0,
+            "right": 320,
+            "bottom": 640
+          }
+        },
+        {
+          "label": "Acercar mapa",
+          "x": 193,
+          "y": 82,
+          "width": 44,
+          "height": 44,
+          "right": 237,
+          "bottom": 126,
+          "clip": {
+            "left": 0,
+            "top": 0,
+            "right": 320,
+            "bottom": 640
+          }
+        },
+        {
+          "label": "reset-view",
+          "x": 240,
+          "y": 82,
+          "width": 76,
+          "height": 44,
+          "right": 316,
+          "bottom": 126,
+          "clip": {
+            "left": 0,
+            "top": 0,
+            "right": 320,
+            "bottom": 640
+          }
+        }
+      ],
+      "localities": [
+        {
+          "id": "escuela",
+          "counts": {
+            "characters": 1
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "biblioteca",
+          "counts": {
+            "characters": 1
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "hospital",
+          "counts": {
+            "characters": 4
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "colonia",
+          "counts": {
+            "characters": 3
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "gasolinera",
+          "counts": {
+            "characters": 1
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "comisaria",
+          "counts": {
+            "characters": 1
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        },
+        {
+          "id": "supermercado",
+          "counts": {
+            "characters": 1
+          },
+          "selection": "edificio, retrato prioritario, lista de ocupantes, selector HTML y drag sin selección"
+        }
+      ],
+      "hospitalCamera": {
+        "x": -1.3414634146341484,
+        "y": -122.29268292682929,
+        "zoom": 0.5121951219512195,
+        "minZoom": 0.2007366482504604,
+        "maxZoom": 1.003683241252302
+      },
+      "readableName": {
+        "text": "Superviviente 02",
+        "words": [
+          {
+            "word": "Superviviente",
+            "fragments": 1
+          },
+          {
+            "word": "02",
+            "fragments": 1
+          }
+        ],
+        "overflow": false
+      },
+      "mobileMapHeightWithPanel": 241.8125,
+      "fullLocalities": [
+        {
+          "id": "gasolinera",
+          "count": 2,
+          "exterior": 4
+        },
+        {
+          "id": "biblioteca",
+          "count": 3,
+          "exterior": 4
+        },
+        {
+          "id": "colonia",
+          "count": 12,
+          "exterior": 12
+        }
+      ],
+      "maximumCounts": {
+        "characters": 33,
+        "accesses": 36,
+        "zombies": 18,
+        "barricades": 18,
+        "empty": 0
+      },
+      "idleDraws": 0,
+      "disposed": {
+        "listeners": [
+          {
+            "target": "window",
+            "type": "pagehide"
+          },
+          {
+            "target": "window",
+            "type": "pageshow"
+          }
+        ],
+        "resizeTargets": 0,
+        "gl": {
+          "Texture": 0,
+          "Buffer": 0,
+          "Framebuffer": 0,
+          "Renderbuffer": 0,
+          "Program": 0,
+          "Shader": 0
+        },
+        "startupTimers": 0,
+        "activeSceneContexts": 0
+      },
+      "cleanup": {
+        "cleanupErrors": [],
+        "atmosphereRelease": {
+          "objectsReleased": 121,
+          "textureReleased": true
+        },
+        "sourcesReleased": true,
+        "auxiliaryCanvasesReleased": 7,
+        "derivedCanvasesReleased": 4,
+        "disposed": true
+      }
+    }
+  ],
+  "failures": [],
+  "resourceRecovery": true,
+  "webglFallback": "Aviso y enlace Canvas, sin fallback silencioso",
+  "cancelDuringLoad": {
+    "passed": true,
+    "syntheticEvents": true,
+    "note": "Carrera controlada durante PNG; no es prueba de bfcache"
+  },
+  "navigationAttempt": {
+    "beforeLeaving": "http://127.0.0.1:8772/prototypes/hospital-workshop/",
+    "history": 2,
+    "afterBack": "http://127.0.0.1:8772/prototypes/hospital-workshop/"
+  },
+  "navigation": {
+    "persisted": true,
+    "sameDocument": true,
+    "fixture": "hospital"
+  },
+  "passed": true
+}

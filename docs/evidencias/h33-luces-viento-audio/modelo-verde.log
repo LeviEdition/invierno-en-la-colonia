@@ -1,0 +1,19 @@
+✔ H3.3 ambiente: límites, emisores documentados y calles configuradas fuera de edificios (2.444786ms)
+✔ H3.3 ambiente: movimiento reducido inicia apagado y admite habilitación explícita (2.459528ms)
+✔ H3.3 ambiente: RNG propio, semilla reproducible y objetos reutilizados sin crecimiento (121.476567ms)
+✔ H3.3 ambiente: tiempo transcurrido, pausa y delta limitado sin ráfaga al reanudar (2.471125ms)
+✔ H3.3 ambiente: controles independientes, baja/normal y apagado sin cambios tardíos (1.350981ms)
+✔ H3.3 ambiente: partículas enteras dentro del mapa, estelas dentro de su zona y luces lentas (51.787633ms)
+✔ H3.3 ambiente: las cuatro luces varían claramente y no titilan al unísono (12.289106ms)
+✔ H3.3 ambiente: cruzar una zona corta no reinicia la fase de una estela (0.582676ms)
+✔ H3.3 audio: inicia sin contexto ni sonido y activa solo expresamente (9.745551ms)
+✔ H3.3 audio: pausa independiente, silencio inmediato y reanudación de la misma instancia (0.588384ms)
+✔ H3.3 audio: fallo recuperable y resume tardío después de destruir no publica estado (0.604029ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 274.19003

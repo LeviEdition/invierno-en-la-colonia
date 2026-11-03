@@ -1,0 +1,36 @@
+✔ H3.3 ambiente: límites, emisores documentados y calles configuradas fuera de edificios (1.706826ms)
+✔ H3.3 ambiente: movimiento reducido inicia apagado y admite habilitación explícita (5.606529ms)
+✔ H3.3 ambiente: RNG propio, semilla reproducible y objetos reutilizados sin crecimiento (123.284539ms)
+✔ H3.3 ambiente: tiempo transcurrido, pausa y delta limitado sin ráfaga al reanudar (2.524075ms)
+✔ H3.3 ambiente: controles independientes, baja/normal y apagado sin cambios tardíos (1.464351ms)
+✔ H3.3 ambiente: partículas enteras dentro del mapa, estelas dentro de su zona y luces lentas (59.340468ms)
+✔ H3.3 ambiente: las cuatro luces varían claramente y no titilan al unísono (10.587287ms)
+✖ H3.3 ambiente: cruzar una zona corta no reinicia la fase de una estela (1.594718ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 7
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 290.034015
+
+✖ failing tests:
+
+test at tests/h33-atmosphere.test.mjs:46:1
+✖ H3.3 ambiente: cruzar una zona corta no reinicia la fase de una estela (1.594718ms)
+  AssertionError [ERR_ASSERTION]: La estela pierde su fase antes de alcanzar contraste
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/h33-atmosphere.test.mjs:47:202)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
