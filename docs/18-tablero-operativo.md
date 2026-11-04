@@ -1,5 +1,49 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## H3.4.2 — corrección de desfase de fichas durante pan/zoom ·04/11/2026
+
+**Observación del creador confirmada:** video con retratos desplazándose a saltos respecto del techo. Base74b40e0, mismo PR22 draft/H3.4.1, árbol inicial limpio. El DOM actualizaba su cámara por RAF antes del cuadro de Phaser; una prueba temporal reprodujo **30 actualizaciones sin nuevo cuadro del mapa**. Las comprobaciones anteriores cubrían alineación en reposo, no esta fase del gesto. [Informe86](86-h3-4-2-sincronizacion-camara-fichas.md), conservando85 como historia.
+
+**Arreglo acotado:** publicar la cámara de fichas/etiquetas/destinos mediante POST_RENDER público y conservar la última presentada mientras se espera; clics usan esa cámara visible. Sin elevar FPS, partículas ni bucles;0 escrituras de fichas en reposo. Solo cambia map-view de H3.4.2, nuevo gate y documentación/workflow. Motor, arte, adaptador y prototipos anteriores intactos; main/tag/release preservados.
+
+**Validación:**555/555 y builds/checks; cámara **9 combinaciones**1365/393/320×apagado/Suave/Tormenta con **0 desfases**, selección/RNG/partida conservados. Experiencia5/5, recuperación5/5 y regresión H3.4.2 **3+9** aprobadas; videos/capturas/rojo y trazas conservados. CI del nuevo head/run/artifact se comprueba y registra en PR22; el CI de74b40 finalmente cerró success, resolviendo la reserva global anterior; se conserva como evidencia histórica, no como CI del arreglo. [Evidencias](evidencias/h342-camara/README.md).
+
+**Reservas:** emulación/SwiftShader; no teléfono físico ni garantía60FPS. La corrección elimina el adelanto relativo detectado, no certifica toda GPU. Reiniciar servidor y recargar tras actualizar para reconstruir el bundle. **Única siguiente tarea: revisión del creador del arreglo en PR22.** Sin merge ni otras acciones. Bloques siguientes históricos.
+
+---
+
+## H3.4.2 — revisión de experiencia del movimiento ·04/11/2026
+
+**Encargo vigente:** continuar el mismo PR22 draft contra H3.4.1 desde1141b89; selección/destinos, continuidad, recorrido de1,5s, exposición real y consecuencias diferidas. La revisión independiente de esta base confirmó545 pruebas y Chromium3 tamaños, posterior a la reserva histórica de83/84. **No habilita otras acciones ni merge.** [Informe85](85-h3-4-2-experiencia-movimiento.md).
+
+**Implementación3713aa4:** todos los destinos legales resaltados, propuesta diferenciada, cancelar vuelve a elegir y salida/Escape; rival sin sección de acciones, scroll por identidad; controles superpuestos y cámara estable. Motor ejecuta una sola vez y devuelve exposición estructurada; ficha por ID recorre1500ms, muestra dado/resultado y después consecuencias. Decisiones esperan **Continuar en V9.9**; interrupciones recuperan estado real sin repetir acción/RNG. Habilidades sin tirada y daño evitado diferenciados. Identidad/ambientación/reglas y referencias anteriores preservadas.
+
+**Reproducción:** confirmados saltos de alto563→475→531px/cámara y cambio inmediato a V9.9 ante encrucijada; Phaser no se recreaba. **No se confirmó un cuadro blanco global** en los videos25FPS: no se declara una causa única del pestañeo informado. Evidencia anterior/posterior y límites de detección conservados.
+
+**Validación propia:** **555/555**,10 nuevas; instalación/builds/checks y oráculo **40/40**; Chromium **5 recorridos +5 recuperaciones**,1365/393/320, y regresiones H3.4.2 **3+9** / H3.4.1 **3+9**. Videos/trazas por cuadro, una ficha por actor, cámara/área estables y decisiones sin auto-confirmación. Corregidos toque interceptado, capas del menú y guía móvil reaparecida. [Evidencias y comandos](evidencias/h342-experiencia/README.md). CI del head documental final/run/artifact se comprueba y registra en el PR22 antes de entregar; el de1141 es histórico.
+
+**Probar:** `npm.cmd ci` → `npm.cmd run dev:movement-map` → **http://127.0.0.1:8776/prototypes/movement-map/**. Preparar V9.9 → Ver mapa → superviviente propio → Moverse → edificio iluminado → confirmar. [Guía](../prototypes/movement-map/README.md). Sin Python.
+
+**Reservas:** revisión visual pendiente, grabación25FPS/SwiftShader, visibilidad y reconexión controladas, sin teléfono físico/VRAM medida; interpolación de ficha sin caminos, sin persistencia. Arte/capacidades visuales/mapa horizontal aplazados. Main826199d9, tag/release y PR anteriores intactos. **Única siguiente tarea: revisión del creador de H3.4.2.** PR22 permanece draft, sin merge ni avance. Bloques siguientes históricos.
+
+---
+
+## H3.4.2 — movimiento desde el mapa autorizado ·04/11/2026
+
+**Decisión del creador:** H3.4.1 aprobado como integración de consulta. Se autoriza H3.4.2: movimiento por ID con confirmación, identidad sin retratos compartidos, bordes azul/rojo, dados/iconos y Suave/Tormenta. Nueva rama `experiment/h3-4-2-movimiento-mapa` desde064f47cc/PR21, nuevo PR draft contra H3.4.1; sin merge ni otras acciones. Main/referencia/tag/release y prototipos anteriores intactos. [Informe84](84-h3-4-2-movimiento-mapa.md).
+
+**Línea base recuperada propia:**528/528 y builds; Chromium3 tamaños +9 casos H3.4.1 con JSON final aprobado en esta ejecución. La revisión independiente anterior de Chromium no tuvo resultado recuperable; no se cita como aprobada independientemente.
+
+**Entrega técnica para revisión:** entrada independiente `/prototypes/movement-map/`; motor único con consulta pura y consecuencias compartidas por ID; intención acotada, revisión de partida, confirmación, deduplicación y recuperación sin reenvío. Decisiones/muerte/sucesión/propagación se resuelven en V9.9; otras acciones deshabilitadas. Cuatro retratos explícitos únicos e iniciales, bordes azul/rojo con halo estático, dados con puntos/valores extra fieles y SVG aprobados. Tormenta inicial salvo movimiento reducido, audio apagado; pool fijo158. No cambian capacidades reales ni arte original.
+
+**Validación local:** **545/545**,17 nuevas; oráculo **40/40**, builds/checks, Chromium1365/393/320 +**9 casos dirigidos**, cero errores normales/desbordamiento. Movimiento equivalente a V9.9/RNG, cancelación pura, datos obsoletos/propiedad/capacidad real, doble confirmación y reconexión, herida/muerte/sucesión/mordedura, J2 y producto sin QA. Se corrigieron planificador que tapaba mapa y segunda desconexión que perdía unknown, con rojo→verde conservado. Video8s/secuencia inspeccionada; Tormenta medida≈30 renders/s con más coste que Suave en **SwiftShader**, no teléfono. Apagado0 renders continuos. [Informe84 y evidencia](84-h3-4-2-movimiento-mapa.md).
+
+**Inicio:** `npm.cmd ci` → `npm.cmd run dev:movement-map` → **http://127.0.0.1:8776/prototypes/movement-map/**. Preparar V9.9 → Ver mapa → superviviente propio → Moverse → destino → revisar/confirmar o cancelar. [Guía Windows/VSCode/LAN](../prototypes/movement-map/README.md). Rutas anteriores disponibles con el mismo servidor; sin Python.
+
+**CI y reservas:** el workflow nuevo comprueba el head exacto, suite/oráculo, regresiones H3.4.1, H3.4.2 y coste/video; resultados finales/artifacts comprobados se enlazan en el nuevo PR draft antes de entregar. Sin teléfono físico/VRAM medida, sin garantía de rendimiento móvil; pausa con visibilidad controlada diferenciada. Arte, nitidez, capacidades visuales y mapa horizontal aplazados. **Única siguiente tarea: revisión del creador de H3.4.2.** No merge ni otras acciones. Bloques inferiores históricos.
+
+---
+
 ## H3.4.1 — integración de consulta autorizada ·03/11/2026
 
 **Decisión posterior del creador:** H3.3 aceptada como dirección visual, incluida ambientación; detalles artísticos y pruebas físicas no bloquean H3.4.1. Se autoriza nueva rama/PR contra H3.3, **sin acciones desde el mapa ni merge**. La maqueta permanece independiente. [Informe83](83-h3-4-1-estado-real-consulta.md).

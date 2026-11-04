@@ -1,0 +1,69 @@
+{
+  "browser": "154.0.8037.57",
+  "records": [
+    {
+      "name": "death-identity",
+      "errors": [],
+      "actualDeath": true,
+      "identitiesStable": true,
+      "passed": true
+    },
+    {
+      "name": "leader-succession",
+      "errors": [],
+      "resolvedInOriginalUI": true,
+      "passed": true
+    },
+    {
+      "name": "bite-decision",
+      "errors": [],
+      "realBiteChoiceDisplayed": true,
+      "resolvedOnlyThroughOriginalUI": true,
+      "passed": true
+    },
+    {
+      "name": "stale-turn",
+      "errors": [],
+      "staleRejected": true,
+      "passed": true
+    },
+    {
+      "name": "duplicate-after-reconnection",
+      "errors": [],
+      "syntheticLifecycle": true,
+      "executedOnce": true,
+      "passed": true
+    },
+    {
+      "name": "lost-reply-resync",
+      "errors": [],
+      "replyIntentionallyDropped": true,
+      "noAutomaticResend": true,
+      "passed": true
+    },
+    {
+      "name": "reduced-motion-pause-off",
+      "errors": [],
+      "controlledVisibilityEvent": true,
+      "offHasNoContinuousRendering": true,
+      "reducedInitiallyOff": true,
+      "passed": true
+    },
+    {
+      "name": "jugador2-movement",
+      "errors": [],
+      "currentOwnerAllowed": true,
+      "secondMoveDisabled": true,
+      "passed": true
+    },
+    {
+      "name": "product-only-entry",
+      "errors": [],
+      "actualProductMovesWithoutQA": true,
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "physicalMobile": false,
+  "passed": true
+}

@@ -1,0 +1,171 @@
+{
+  "implementationCommit": "3713aa4cf437d70351f46e21cb61be1a2453b1d3",
+  "initialCommit": "1141b893aff88c8e1137c727e50c55b76e178a58",
+  "records": [
+    {
+      "file": "antes/blank/after.png",
+      "bytes": 1237695,
+      "sha256": "b23dba719eceaaee8835d999e74efa18d34c2db4ca727231d8e39aa5754f74a3"
+    },
+    {
+      "file": "antes/blank/contact-sheet.png",
+      "bytes": 1289925,
+      "sha256": "bdb362694ed6fe9f0a90226a383c94942d1a45a19f9491754f41849e1b489dea"
+    },
+    {
+      "file": "antes/blank/movimiento.webm",
+      "bytes": 733666,
+      "sha256": "6b1240258f40f36902ff7b3a21743aecb26d51018c4eb60b0b9895fa1089f437"
+    },
+    {
+      "file": "antes/decision/after.png",
+      "bytes": 128833,
+      "sha256": "ca480c48dbe01e5274f2e15df613b71c0a0080d75d8a8f567554f4a5681256df"
+    },
+    {
+      "file": "antes/decision/contact-sheet.png",
+      "bytes": 472556,
+      "sha256": "5c9e822de9546d7c184a63b67539ade58cbe9cb1a5e188924e1ebf23b83ac79f"
+    },
+    {
+      "file": "antes/decision/movimiento.webm",
+      "bytes": 525624,
+      "sha256": "eda2a45d01f23f004d770f9ce18c7def6fc9b75bd68e725d785268805c3b2cc0"
+    },
+    {
+      "file": "antes/wound/after.png",
+      "bytes": 1237572,
+      "sha256": "f4b49dc2ab429ab37984afebacaa7217422137789886bc7ee8efa20032bf22c5"
+    },
+    {
+      "file": "antes/wound/contact-sheet.png",
+      "bytes": 1316038,
+      "sha256": "59d64db9ca1f318855ed9249bd8ece9f99d5ce9a774f7372520e7bcc72ad2a6e"
+    },
+    {
+      "file": "antes/wound/movimiento.webm",
+      "bytes": 741881,
+      "sha256": "04c2729098872579c8843a6a944585af7ec4fc2b570efedad9849709f5158e19"
+    },
+    {
+      "file": "despues/blank/after.png",
+      "bytes": 1057035,
+      "sha256": "cba21b7e9ba8362b788d3d4edd524ccbae2110066da7bb36c2de87f6f25f87db"
+    },
+    {
+      "file": "despues/blank/confirm.png",
+      "bytes": 1019115,
+      "sha256": "1f67b0dba30a0bc0fe5dccdeee5367a4b455026da4d6ef2b77ab7b51ee82871a"
+    },
+    {
+      "file": "despues/blank/cuadros-1.png",
+      "bytes": 1467589,
+      "sha256": "7d372f1f7704523886c1808744b832cf1a2b370e25494bb1a18c1c58521afe42"
+    },
+    {
+      "file": "despues/blank/cuadros-3.png",
+      "bytes": 1230243,
+      "sha256": "682148bfbd8180c3eb5dd6cdeb6ef8a8fbbf60348bd01a101632aa8acd93fe92"
+    },
+    {
+      "file": "despues/blank/exposure.png",
+      "bytes": 1011698,
+      "sha256": "f4558c21542bfd76f19c815a040a7aa5560f3a5c64ee74de2aef27a6ebf9d773"
+    },
+    {
+      "file": "despues/blank/movimiento.webm",
+      "bytes": 1139568,
+      "sha256": "b2f44c390c69dd795b052d0dda56cfbf26cf57d56b88a977c2d49c7ebb2d801b"
+    },
+    {
+      "file": "despues/blank/travel.png",
+      "bytes": 1035189,
+      "sha256": "e957a33390a48e8d9c6a5b142bc09181e3b304e22c125a7278a2b871867885a3"
+    },
+    {
+      "file": "despues/death/awaiting.png",
+      "bytes": 946203,
+      "sha256": "566aaf1d4aadbe36001b4b52b5f9c329a1da88e632420bbd9945e4f0ebe1c1cd"
+    },
+    {
+      "file": "despues/death/cuadros-3.png",
+      "bytes": 1387682,
+      "sha256": "563a7f4af44ae15bc2969d729c89b41ede20f91cd4d3af0fc128ce79d30914ff"
+    },
+    {
+      "file": "despues/death/movimiento.webm",
+      "bytes": 1102070,
+      "sha256": "d6129131e0bd0e25a20ca88ff01b58ce1189d1cd66a325099ca782fde1f1a679"
+    },
+    {
+      "file": "despues/death/reveal.png",
+      "bytes": 1012074,
+      "sha256": "7d4e4b43601dd5e95f28130416b2e23d0b64284bb4a775d8472731e59a786289"
+    },
+    {
+      "file": "despues/decision/awaiting.png",
+      "bytes": 992527,
+      "sha256": "9f0afc5d0407a5cc6d18cdef48b1c7980f7799ba014a2cdba845591c5a93b2e9"
+    },
+    {
+      "file": "despues/decision/movimiento.webm",
+      "bytes": 1174726,
+      "sha256": "e12b92135d8e4166b5f82f1fbd26ff8d45940ef719b612e7b6c33ccc6fa6eefb"
+    },
+    {
+      "file": "despues/decision/reveal.png",
+      "bytes": 1011453,
+      "sha256": "f2c3762d346c3ff7d2309ef3bbf7f408da1f561a6cd3c61b9b1846c3fe736f36"
+    },
+    {
+      "file": "despues/frost/after.png",
+      "bytes": 694087,
+      "sha256": "cdd247fac867b13cd1e727f8a1c914b80665b6c26ab3d89c5770b6002fc3317e"
+    },
+    {
+      "file": "despues/frost/confirm.png",
+      "bytes": 647023,
+      "sha256": "ae9b7ddc43ab6294ad480dceffcda1d0094f5a560d2ca20e8c1a5c26b204de4e"
+    },
+    {
+      "file": "despues/frost/exposure.png",
+      "bytes": 618800,
+      "sha256": "c933bafe6ee1c45f7c27602e3a1b83c7225427a6cded5c020f0a1acff7c819c5"
+    },
+    {
+      "file": "despues/frost/movimiento.webm",
+      "bytes": 819217,
+      "sha256": "089cb17fc5a1fe3b0ffaddb4c8ead7295aae2cbcc6854083bfeff2aba80834c9"
+    },
+    {
+      "file": "despues/frost/travel.png",
+      "bytes": 690721,
+      "sha256": "2f2e2f3a852b92844e35fdcee0f43f7c367825a5eececd2e9749c0b9798c24f4"
+    },
+    {
+      "file": "despues/wound/after.png",
+      "bytes": 1023697,
+      "sha256": "b95251d3126d94b7dab3d055b64b1839db4f90d8ba7d6f5c2c4397463f6a564e"
+    },
+    {
+      "file": "despues/wound/confirm.png",
+      "bytes": 1038734,
+      "sha256": "7749d3445eddd5f99539ec530e74692c3ac33e8ce452867991515eb23f991771"
+    },
+    {
+      "file": "despues/wound/exposure.png",
+      "bytes": 1022564,
+      "sha256": "24b9e0e7064de3e7da46a47a380cf0ca559512c855a78a8740a7200b45835a49"
+    },
+    {
+      "file": "despues/wound/movimiento.webm",
+      "bytes": 1249664,
+      "sha256": "81e42741a3dee27a59514761f1f0e1b41a1c56417902fd420b57c24dfb7cf93f"
+    },
+    {
+      "file": "despues/wound/travel.png",
+      "bytes": 1021314,
+      "sha256": "59e679e83f4146d824804b56e56efc5c5133eda50db3710e280569b42be4953a"
+    }
+  ]
+}

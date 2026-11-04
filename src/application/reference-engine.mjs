@@ -418,7 +418,9 @@ function replaceLastSurvivors(env=null){
 }
 let ItemEngine=createItemEngine(c);
 const itemEngine=new ItemEngine();
+let movementGeneration=0;
 function create(){
+ movementGeneration++;
  view.resetToasts();deathDirector.reset();skipAI=false;aiRunning=false;selected=0;target=0;picked=0;opened='';profileId='';pendingHeal=null;pendingLoot=null;pendingBite=null;pendingAttract=null;pendingTransfer=null;aiCrossChoice=null;settleDecisionWaiters();resetLeaderRequests();pendingRecruitInfo=null;selectionBySide.human=0;selectionBySide.ai=0;closeStatInfo();
  const objective=objectives[random(objectives.length)];
  game=stateFactory({gameMode,objective,places,catalog});
@@ -491,12 +493,14 @@ function chooseBite(option){
 }
 function expose(p,reason){
  if(!p||p.dead)return;
+ const before={wounds:p.wounds,frost:p.frost};
  const d=die();message('🎲 Exposición de '+p.name+' ('+reason+'): '+(d===1?'MORDEDURA':d===2?'CONGELACIÓN':d===3?'HERIDA':'BLANCO')+'.');
- if(d<4&&p.skill==='resilient'&&!p.skillUsed){p.skillUsed=true;message('★ '+p.name+' evitó la exposición gracias a su habilidad.');return;}
+ if(d<4&&p.skill==='resilient'&&!p.skillUsed){p.skillUsed=true;message('★ '+p.name+' evitó la exposición gracias a su habilidad.');return {rolled:true,value:d,effect:'avoided',ability:'resilient',wounds:0,frost:0,fatal:false};}
  if(d===1){
   const coLocated=alive().filter(x=>x.id!==p.id&&x.loc===p.loc).sort((a,b)=>a.influence-b.influence).map(x=>x.id);
   game.biteResolving=true;pendingBite={victims:coLocated,target:null};kill(p,'mordedura');biteNext();
  }else if(d===2||d===3){if(d===2)p.frost++;else p.wounds++;message((d===2?'❄ Congelación de ':'♥ Herida de ')+p.name+'.');if(p.frost+p.wounds>=3)kill(p,'tres daños acumulados');}
+ return {rolled:true,value:d,effect:d===1?'bite':d===2?'frost':d===3?'wound':'none',ability:null,wounds:p.wounds-before.wounds,frost:p.frost-before.frost,fatal:!!p.dead};
 }
 function drawItem(loc){return game.decks[loc]&&game.decks[loc].length?game.decks[loc].shift():null;}
 function stashLoot(it,p,side){
@@ -586,9 +590,31 @@ function doMove(){
  if(p.moved)return messageAndPaint('El superviviente ya se movió durante este turno.');
  if(p.loc===target)return messageAndPaint('Elegí otro destino.');
  if(!accessible(target))return messageAndPaint('No hay espacios disponibles en el destino.');
- confirmStartingLeader();p.loc=target;p.moved=true;message('→ '+p.name+' se movió a '+places[target]+'.');
- if(p.skill==='silent'&&!p.skillUsed){p.skillUsed=true;message('★ '+p.name+' evitó la exposición.');}else expose(p,'movimiento');
+ executeMovement(p,target);
+}
+// Consecuencias únicas para ambos consumidores. No depende de selected/target.
+function executeMovement(p,destination){
+ const from=p.loc,actorBefore={id:p.id,name:p.name,location:p.loc,wounds:p.wounds,frost:p.frost,dead:!!p.dead};
+ confirmStartingLeader();p.loc=destination;p.moved=true;message('→ '+p.name+' se movió a '+places[destination]+'.');
+ let exposure;
+ if(p.skill==='silent'&&!p.skillUsed){p.skillUsed=true;message('★ '+p.name+' evitó la exposición.');exposure={rolled:false,value:null,effect:'avoided',ability:'silent',wounds:0,frost:0,fatal:false};}else exposure=expose(p,'movimiento');
  if(!pendingBite)crossAction('move',p);verify();paint();
+ return {actorId:p.id,from,destination,exposure,actorBefore,actorAfter:{id:p.id,name:p.name,location:p.loc,wounds:p.wounds,frost:p.frost,dead:!!p.dead}};
+}
+// Consulta pura: no llama playable/decisionKind/paint ni sincroniza líderes.
+function movementOptions(actorId){
+ const p=game&&all().find(p=>p.id===actorId);
+ const leaderDecision=pendingLeaderSides.length>0&&(!game||game.mode!=='local'||pendingLeaderSides.includes(controls.side));
+ const reason=!game?'no-game':game.ended?'ended':!controls.interactive?'turn':deathWaiting()||pendingBite||pendingLoot||pendingHeal||pendingAttract||pendingTransfer||leaderDecision||game.crossPending||opened?'decision':!p?'missing':p.dead?'dead':ownerOf(p)!==controls.side?'ownership':p.moved?'already-moved':null;
+ return {gameGeneration:movementGeneration,round:game?.round,turn:game?.turn,actorId,origin:p?.loc??null,allowed:!reason,reason,destinations:reason?[]:places.map((_,i)=>i).filter(i=>i!==p.loc&&accessible(i))};
+}
+function moveById(request){
+ const info=movementOptions(request?.actorId),reject=reason=>({ok:false,reason,actorId:request?.actorId});
+ if(!request||request.gameGeneration!==info.gameGeneration||request.round!==info.round||request.turn!==info.turn||request.origin!==info.origin)return reject('stale');
+ if(!info.allowed)return reject(info.reason);
+ if(!Number.isInteger(request.destination)||!info.destinations.includes(request.destination))return reject('destination');
+ const p=all().find(p=>p.id===request.actorId),resolution=executeMovement(p,request.destination);
+ return {ok:true,actorId:p.id,from:info.origin,destination:request.destination,location:p.loc,dead:!!p.dead,resolution};
 }
 function barricade(){
  if(!playable()||game.ended)return;
@@ -801,6 +827,7 @@ const automationActions=Object.freeze({
  barricade(id,d){const p=actor(id),n=(p.skill==='guard'?2:1)+(itemEngine.has(p,'repairkit')?1:0);for(let j=0;j<n&&openAccess(p.loc);j++)game.zones[p.loc].b++;message('▥ IA '+p.name+' colocó barricadas con dado '+d+'.');},
 });
 return Object.freeze({
+ movementOptions,moveById,
  snapshot:()=>game===undefined?null:JSON.parse(JSON.stringify(game)),
  dispatch(name,...args){if(!commands.has(name))throw TypeError('Comando desconocido: '+name);return c[name](...args);},
  connectPresentation(factory){const result=factory(capabilities(readOnlyContext(c),viewCapabilities));effects=result;view=new Proxy(result,{get:(target,key)=>target[key]||noop});return result;},

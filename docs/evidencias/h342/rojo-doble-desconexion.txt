@@ -1,0 +1,37 @@
+✔ H342 protocolo: ejecución única, respuesta identificada y reenvío no repite el motor (7.687523ms)
+✔ H342 protocolo: no expone dispatcher, rechaza datos, revisiones y partidas ajenas sin cambios (9.517914ms)
+✔ H342 cliente: cancelar es local, doble confirmación no duplica y conexión interrumpida no reenvía (1.256208ms)
+✔ H342 cliente: una actualización invalidante borra intención, nunca confirma otro actor (0.706652ms)
+✔ H342 receptor: decisión privada no publicada y selección ajena al intent no eluden validación (2.712366ms)
+✖ H342: una segunda desconexión no borra un resultado desconocido antes de consultar (4.01888ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 5
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 88.475311
+
+✖ failing tests:
+
+test at tests/h342-protocol.test.mjs:12:1
+✖ H342: una segunda desconexión no borra un resultado desconocido antes de consultar (4.01888ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'idle' !== 'unknown'
+  
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/h342-protocol.test.mjs:12:240)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'idle',
+    expected: 'unknown',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

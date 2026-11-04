@@ -1,0 +1,5925 @@
+{
+  "method": "Every decoded25fps frame analyzed in map ROI; contact sheets include EVERY movement-window frame (not temporally subsampled). Approximate video/page-clock alignment. Texture check alone cannot rule out token flicker; supplemented by RAF mode/camera/identity/image traces and visual review. Not physical display/mobile evidence.",
+  "records": [
+    {
+      "case": "blank",
+      "video": "/tmp/h342-experience-final-ui/blank/a9ca134bfadf231374d5af0bcdc3627d.webm",
+      "fps": 25.0,
+      "width": 1364,
+      "height": 768,
+      "sampledRAF": 91,
+      "rangeSecondsApprox": [
+        4.313100000008941,
+        7.970700000002981
+      ],
+      "frames": [
+        {
+          "index": 1,
+          "timeSeconds": 0.0,
+          "textureStdDev": 0.0
+        },
+        {
+          "index": 2,
+          "timeSeconds": 0.04,
+          "textureStdDev": 1.484
+        },
+        {
+          "index": 3,
+          "timeSeconds": 0.08,
+          "textureStdDev": 0.922
+        },
+        {
+          "index": 4,
+          "timeSeconds": 0.12,
+          "textureStdDev": 0.922
+        },
+        {
+          "index": 5,
+          "timeSeconds": 0.16,
+          "textureStdDev": 0.922
+        },
+        {
+          "index": 6,
+          "timeSeconds": 0.2,
+          "textureStdDev": 0.45
+        },
+        {
+          "index": 7,
+          "timeSeconds": 0.24,
+          "textureStdDev": 0.45
+        },
+        {
+          "index": 8,
+          "timeSeconds": 0.28,
+          "textureStdDev": 0.45
+        },
+        {
+          "index": 9,
+          "timeSeconds": 0.32,
+          "textureStdDev": 0.45
+        },
+        {
+          "index": 10,
+          "timeSeconds": 0.36,
+          "textureStdDev": 0.45
+        },
+        {
+          "index": 11,
+          "timeSeconds": 0.4,
+          "textureStdDev": 40.359
+        },
+        {
+          "index": 12,
+          "timeSeconds": 0.44,
+          "textureStdDev": 40.222
+        },
+        {
+          "index": 13,
+          "timeSeconds": 0.48,
+          "textureStdDev": 40.306
+        },
+        {
+          "index": 14,
+          "timeSeconds": 0.52,
+          "textureStdDev": 40.425
+        },
+        {
+          "index": 15,
+          "timeSeconds": 0.56,
+          "textureStdDev": 40.4
+        },
+        {
+          "index": 16,
+          "timeSeconds": 0.6,
+          "textureStdDev": 36.809
+        },
+        {
+          "index": 17,
+          "timeSeconds": 0.64,
+          "textureStdDev": 36.678
+        },
+        {
+          "index": 18,
+          "timeSeconds": 0.68,
+          "textureStdDev": 36.869
+        },
+        {
+          "index": 19,
+          "timeSeconds": 0.72,
+          "textureStdDev": 36.889
+        },
+        {
+          "index": 20,
+          "timeSeconds": 0.76,
+          "textureStdDev": 36.678
+        },
+        {
+          "index": 21,
+          "timeSeconds": 0.8,
+          "textureStdDev": 36.702
+        },
+        {
+          "index": 22,
+          "timeSeconds": 0.84,
+          "textureStdDev": 36.8
+        },
+        {
+          "index": 23,
+          "timeSeconds": 0.88,
+          "textureStdDev": 7.538
+        },
+        {
+          "index": 24,
+          "timeSeconds": 0.92,
+          "textureStdDev": 7.273
+        },
+        {
+          "index": 25,
+          "timeSeconds": 0.96,
+          "textureStdDev": 7.325
+        },
+        {
+          "index": 26,
+          "timeSeconds": 1.0,
+          "textureStdDev": 7.363
+        },
+        {
+          "index": 27,
+          "timeSeconds": 1.04,
+          "textureStdDev": 7.433
+        },
+        {
+          "index": 28,
+          "timeSeconds": 1.08,
+          "textureStdDev": 7.466
+        },
+        {
+          "index": 29,
+          "timeSeconds": 1.12,
+          "textureStdDev": 7.622
+        },
+        {
+          "index": 30,
+          "timeSeconds": 1.16,
+          "textureStdDev": 7.646
+        },
+        {
+          "index": 31,
+          "timeSeconds": 1.2,
+          "textureStdDev": 7.673
+        },
+        {
+          "index": 32,
+          "timeSeconds": 1.24,
+          "textureStdDev": 7.695
+        },
+        {
+          "index": 33,
+          "timeSeconds": 1.28,
+          "textureStdDev": 7.711
+        },
+        {
+          "index": 34,
+          "timeSeconds": 1.32,
+          "textureStdDev": 7.707
+        },
+        {
+          "index": 35,
+          "timeSeconds": 1.36,
+          "textureStdDev": 7.724
+        },
+        {
+          "index": 36,
+          "timeSeconds": 1.4,
+          "textureStdDev": 7.729
+        },
+        {
+          "index": 37,
+          "timeSeconds": 1.44,
+          "textureStdDev": 7.729
+        },
+        {
+          "index": 38,
+          "timeSeconds": 1.48,
+          "textureStdDev": 0.0
+        },
+        {
+          "index": 39,
+          "timeSeconds": 1.52,
+          "textureStdDev": 0.0
+        },
+        {
+          "index": 40,
+          "timeSeconds": 1.56,
+          "textureStdDev": 0.0
+        },
+        {
+          "index": 41,
+          "timeSeconds": 1.6,
+          "textureStdDev": 0.0
+        },
+        {
+          "index": 42,
+          "timeSeconds": 1.64,
+          "textureStdDev": 58.833
+        },
+        {
+          "index": 43,
+          "timeSeconds": 1.68,
+          "textureStdDev": 58.586
+        },
+        {
+          "index": 44,
+          "timeSeconds": 1.72,
+          "textureStdDev": 58.579
+        },
+        {
+          "index": 45,
+          "timeSeconds": 1.76,
+          "textureStdDev": 58.578
+        },
+        {
+          "index": 46,
+          "timeSeconds": 1.8,
+          "textureStdDev": 58.571
+        },
+        {
+          "index": 47,
+          "timeSeconds": 1.84,
+          "textureStdDev": 58.585
+        },
+        {
+          "index": 48,
+          "timeSeconds": 1.88,
+          "textureStdDev": 58.582
+        },
+        {
+          "index": 49,
+          "timeSeconds": 1.92,
+          "textureStdDev": 58.581
+        },
+        {
+          "index": 50,
+          "timeSeconds": 1.96,
+          "textureStdDev": 58.573
+        },
+        {
+          "index": 51,
+          "timeSeconds": 2.0,
+          "textureStdDev": 58.588
+        },
+        {
+          "index": 52,
+          "timeSeconds": 2.04,
+          "textureStdDev": 58.547
+        },
+        {
+          "index": 53,
+          "timeSeconds": 2.08,
+          "textureStdDev": 58.82
+        },
+        {
+          "index": 54,
+          "timeSeconds": 2.12,
+          "textureStdDev": 58.801
+        },
+        {
+          "index": 55,
+          "timeSeconds": 2.16,
+          "textureStdDev": 58.813
+        },
+        {
+          "index": 56,
+          "timeSeconds": 2.2,
+          "textureStdDev": 58.832
+        },
+        {
+          "index": 57,
+          "timeSeconds": 2.24,
+          "textureStdDev": 58.877
+        },
+        {
+          "index": 58,
+          "timeSeconds": 2.28,
+          "textureStdDev": 58.901
+        },
+        {
+          "index": 59,
+          "timeSeconds": 2.32,
+          "textureStdDev": 58.893
+        },
+        {
+          "index": 60,
+          "timeSeconds": 2.36,
+          "textureStdDev": 58.915
+        },
+        {
+          "index": 61,
+          "timeSeconds": 2.4,
+          "textureStdDev": 58.917
+        },
+        {
+          "index": 62,
+          "timeSeconds": 2.44,
+          "textureStdDev": 58.918
+        },
+        {
+          "index": 63,
+          "timeSeconds": 2.48,
+          "textureStdDev": 58.932
+        },
+        {
+          "index": 64,
+          "timeSeconds": 2.52,
+          "textureStdDev": 58.927
+        },
+        {
+          "index": 65,
+          "timeSeconds": 2.56,
+          "textureStdDev": 58.927
+        },
+        {
+          "index": 66,
+          "timeSeconds": 2.6,
+          "textureStdDev": 58.935
+        },
+        {
+          "index": 67,
+          "timeSeconds": 2.64,
+          "textureStdDev": 58.947
+        },
+        {
+          "index": 68,
+          "timeSeconds": 2.68,
+          "textureStdDev": 58.981
+        },
+        {
+          "index": 69,
+          "timeSeconds": 2.72,
+          "textureStdDev": 58.955
+        },
+        {
+          "index": 70,
+          "timeSeconds": 2.76,
+          "textureStdDev": 58.938
+        },
+        {
+          "index": 71,
+          "timeSeconds": 2.8,
+          "textureStdDev": 57.763
+        },
+        {
+          "index": 72,
+          "timeSeconds": 2.84,
+          "textureStdDev": 57.755
+        },
+        {
+          "index": 73,
+          "timeSeconds": 2.88,
+          "textureStdDev": 57.742
+        },
+        {
+          "index": 74,
+          "timeSeconds": 2.92,
+          "textureStdDev": 57.744
+        },
+        {
+          "index": 75,
+          "timeSeconds": 2.96,
+          "textureStdDev": 57.82
+        },
+        {
+          "index": 76,
+          "timeSeconds": 3.0,
+          "textureStdDev": 57.818
+        },
+        {
+          "index": 77,
+          "timeSeconds": 3.04,
+          "textureStdDev": 57.753
+        },
+        {
+          "index": 78,
+          "timeSeconds": 3.08,
+          "textureStdDev": 57.762
+        },
+        {
+          "index": 79,
+          "timeSeconds": 3.12,
+          "textureStdDev": 57.822
+        },
+        {
+          "index": 80,
+          "timeSeconds": 3.16,
+          "textureStdDev": 57.82
+        },
+        {
+          "index": 81,
+          "timeSeconds": 3.2,
+          "textureStdDev": 58.955
+        },
+        {
+          "index": 82,
+          "timeSeconds": 3.24,
+          "textureStdDev": 58.954
+        },
+        {
+          "index": 83,
+          "timeSeconds": 3.28,
+          "textureStdDev": 58.952
+        },
+        {
+          "index": 84,
+          "timeSeconds": 3.32,
+          "textureStdDev": 58.943
+        },
+        {
+          "index": 85,
+          "timeSeconds": 3.36,
+          "textureStdDev": 58.949
+        },
+        {
+          "index": 86,
+          "timeSeconds": 3.4,
+          "textureStdDev": 58.951
+        },
+        {
+          "index": 87,
+          "timeSeconds": 3.44,
+          "textureStdDev": 57.786
+        },
+        {
+          "index": 88,
+          "timeSeconds": 3.48,
+          "textureStdDev": 57.786
+        },
+        {
+          "index": 89,
+          "timeSeconds": 3.52,
+          "textureStdDev": 57.784
+        },
+        {
+          "index": 90,
+          "timeSeconds": 3.56,
+          "textureStdDev": 57.788
+        },
+        {
+          "index": 91,
+          "timeSeconds": 3.6,
+          "textureStdDev": 57.791
+        },
+        {
+          "index": 92,
+          "timeSeconds": 3.64,
+          "textureStdDev": 57.792
+        },
+        {
+          "index": 93,
+          "timeSeconds": 3.68,
+          "textureStdDev": 57.782
+        },
+        {
+          "index": 94,
+          "timeSeconds": 3.72,
+          "textureStdDev": 57.783
+        },
+        {
+          "index": 95,
+          "timeSeconds": 3.76,
+          "textureStdDev": 57.807
+        },
+        {
+          "index": 96,
+          "timeSeconds": 3.8,
+          "textureStdDev": 57.802
+        },
+        {
+          "index": 97,
+          "timeSeconds": 3.84,
+          "textureStdDev": 57.864
+        },
+        {
+          "index": 98,
+          "timeSeconds": 3.88,
+          "textureStdDev": 57.863
+        },
+        {
+          "index": 99,
+          "timeSeconds": 3.92,
+          "textureStdDev": 57.879
+        },
+        {
+          "index": 100,
+          "timeSeconds": 3.96,
+          "textureStdDev": 57.88
+        },
+        {
+          "index": 101,
+          "timeSeconds": 4.0,
+          "textureStdDev": 57.888
+        },
+        {
+          "index": 102,
+          "timeSeconds": 4.04,
+          "textureStdDev": 57.896
+        },
+        {
+          "index": 103,
+          "timeSeconds": 4.08,
+          "textureStdDev": 57.95
+        },
+        {
+          "index": 104,
+          "timeSeconds": 4.12,
+          "textureStdDev": 57.951
+        },
+        {
+          "index": 105,
+          "timeSeconds": 4.16,
+          "textureStdDev": 57.941
+        },
+        {
+          "index": 106,
+          "timeSeconds": 4.2,
+          "textureStdDev": 57.929
+        },
+        {
+          "index": 107,
+          "timeSeconds": 4.24,
+          "textureStdDev": 57.926
+        },
+        {
+          "index": 108,
+          "timeSeconds": 4.28,
+          "textureStdDev": 59.006
+        },
+        {
+          "index": 109,
+          "timeSeconds": 4.32,
+          "textureStdDev": 59.006
+        },
+        {
+          "index": 110,
+          "timeSeconds": 4.36,
+          "textureStdDev": 58.991
+        },
+        {
+          "index": 111,
+          "timeSeconds": 4.4,
+          "textureStdDev": 58.986
+        },
+        {
+          "index": 112,
+          "timeSeconds": 4.44,
+          "textureStdDev": 58.997
+        },
+        {
+          "index": 113,
+          "timeSeconds": 4.48,
+          "textureStdDev": 58.966
+        },
+        {
+          "index": 114,
+          "timeSeconds": 4.52,
+          "textureStdDev": 58.95
+        },
+        {
+          "index": 115,
+          "timeSeconds": 4.56,
+          "textureStdDev": 58.95
+        },
+        {
+          "index": 116,
+          "timeSeconds": 4.6,
+          "textureStdDev": 58.986
+        },
+        {
+          "index": 117,
+          "timeSeconds": 4.64,
+          "textureStdDev": 58.968
+        },
+        {
+          "index": 118,
+          "timeSeconds": 4.68,
+          "textureStdDev": 58.99
+        },
+        {
+          "index": 119,
+          "timeSeconds": 4.72,
+          "textureStdDev": 58.977
+        },
+        {
+          "index": 120,
+          "timeSeconds": 4.76,
+          "textureStdDev": 59.013
+        },
+        {
+          "index": 121,
+          "timeSeconds": 4.8,
+          "textureStdDev": 58.985
+        },
+        {
+          "index": 122,
+          "timeSeconds": 4.84,
+          "textureStdDev": 58.999
+        },
+        {
+          "index": 123,
+          "timeSeconds": 4.88,
+          "textureStdDev": 58.978
+        },
+        {
+          "index": 124,
+          "timeSeconds": 4.92,
+          "textureStdDev": 58.997
+        },
+        {
+          "index": 125,
+          "timeSeconds": 4.96,
+          "textureStdDev": 58.979
+        },
+        {
+          "index": 126,
+          "timeSeconds": 5.0,
+          "textureStdDev": 59.032
+        },
+        {
+          "index": 127,
+          "timeSeconds": 5.04,
+          "textureStdDev": 59.03
+        },
+        {
+          "index": 128,
+          "timeSeconds": 5.08,
+          "textureStdDev": 59.041
+        },
+        {
+          "index": 129,
+          "timeSeconds": 5.12,
+          "textureStdDev": 56.917
+        },
+        {
+          "index": 130,
+          "timeSeconds": 5.16,
+          "textureStdDev": 58.906
+        },
+        {
+          "index": 131,
+          "timeSeconds": 5.2,
+          "textureStdDev": 58.906
+        },
+        {
+          "index": 132,
+          "timeSeconds": 5.24,
+          "textureStdDev": 58.906
+        },
+        {
+          "index": 133,
+          "timeSeconds": 5.28,
+          "textureStdDev": 58.894
+        },
+        {
+          "index": 134,
+          "timeSeconds": 5.32,
+          "textureStdDev": 58.882
+        },
+        {
+          "index": 135,
+          "timeSeconds": 5.36,
+          "textureStdDev": 58.892
+        },
+        {
+          "index": 136,
+          "timeSeconds": 5.4,
+          "textureStdDev": 59.059
+        },
+        {
+          "index": 137,
+          "timeSeconds": 5.44,
+          "textureStdDev": 59.059
+        },
+        {
+          "index": 138,
+          "timeSeconds": 5.48,
+          "textureStdDev": 59.055
+        },
+        {
+          "index": 139,
+          "timeSeconds": 5.52,
+          "textureStdDev": 59.051
+        },
+        {
+          "index": 140,
+          "timeSeconds": 5.56,
+          "textureStdDev": 59.025
+        },
+        {
+          "index": 141,
+          "timeSeconds": 5.6,
+          "textureStdDev": 59.006
+        },
+        {
+          "index": 142,
+          "timeSeconds": 5.64,
+          "textureStdDev": 59.006
+        },
+        {
+          "index": 143,
+          "timeSeconds": 5.68,
+          "textureStdDev": 59.032
+        },
+        {
+          "index": 144,
+          "timeSeconds": 5.72,
+          "textureStdDev": 59.022
+        },
+        {
+          "index": 145,
+          "timeSeconds": 5.76,
+          "textureStdDev": 59.026
+        },
+        {
+          "index": 146,
+          "timeSeconds": 5.8,
+          "textureStdDev": 59.023
+        },
+        {
+          "index": 147,
+          "timeSeconds": 5.84,
+          "textureStdDev": 59.034
+        },
+        {
+          "index": 148,
+          "timeSeconds": 5.88,
+          "textureStdDev": 59.014
+        },
+        {
+          "index": 149,
+          "timeSeconds": 5.92,
+          "textureStdDev": 59.035
+        },
+        {
+          "index": 150,
+          "timeSeconds": 5.96,
+          "textureStdDev": 59.032
+        },
+        {
+          "index": 151,
+          "timeSeconds": 6.0,
+          "textureStdDev": 59.019
+        },
+        {
+          "index": 152,
+          "timeSeconds": 6.04,
+          "textureStdDev": 59.001
+        },
+        {
+          "index": 153,
+          "timeSeconds": 6.08,
+          "textureStdDev": 58.999
+        },
+        {
+          "index": 154,
+          "timeSeconds": 6.12,
+          "textureStdDev": 59.017
+        },
+        {
+          "index": 155,
+          "timeSeconds": 6.16,
+          "textureStdDev": 59.022
+        },
+        {
+          "index": 156,
+          "timeSeconds": 6.2,
+          "textureStdDev": 59.019
+        },
+        {
+          "index": 157,
+          "timeSeconds": 6.24,
+          "textureStdDev": 59.031
+        },
+        {
+          "index": 158,
+          "timeSeconds": 6.28,
+          "textureStdDev": 59.008
+        },
+        {
+          "index": 159,
+          "timeSeconds": 6.32,
+          "textureStdDev": 59.028
+        },
+        {
+          "index": 160,
+          "timeSeconds": 6.36,
+          "textureStdDev": 59.0
+        },
+        {
+          "index": 161,
+          "timeSeconds": 6.4,
+          "textureStdDev": 59.023
+        },
+        {
+          "index": 162,
+          "timeSeconds": 6.44,
+          "textureStdDev": 59.01
+        },
+        {
+          "index": 163,
+          "timeSeconds": 6.48,
+          "textureStdDev": 58.981
+        },
+        {
+          "index": 164,
+          "timeSeconds": 6.52,
+          "textureStdDev": 59.02
+        },
+        {
+          "index": 165,
+          "timeSeconds": 6.56,
+          "textureStdDev": 58.996
+        },
+        {
+          "index": 166,
+          "timeSeconds": 6.6,
+          "textureStdDev": 59.027
+        },
+        {
+          "index": 167,
+          "timeSeconds": 6.64,
+          "textureStdDev": 59.028
+        },
+        {
+          "index": 168,
+          "timeSeconds": 6.68,
+          "textureStdDev": 59.024
+        },
+        {
+          "index": 169,
+          "timeSeconds": 6.72,
+          "textureStdDev": 59.024
+        },
+        {
+          "index": 170,
+          "timeSeconds": 6.76,
+          "textureStdDev": 59.024
+        },
+        {
+          "index": 171,
+          "timeSeconds": 6.8,
+          "textureStdDev": 59.029
+        },
+        {
+          "index": 172,
+          "timeSeconds": 6.84,
+          "textureStdDev": 59.029
+        },
+        {
+          "index": 173,
+          "timeSeconds": 6.88,
+          "textureStdDev": 59.03
+        },
+        {
+          "index": 174,
+          "timeSeconds": 6.92,
+          "textureStdDev": 59.038
+        },
+        {
+          "index": 175,
+          "timeSeconds": 6.96,
+          "textureStdDev": 59.028
+        },
+        {
+          "index": 176,
+          "timeSeconds": 7.0,
+          "textureStdDev": 59.021
+        },
+        {
+          "index": 177,
+          "timeSeconds": 7.04,
+          "textureStdDev": 59.096
+        },
+        {
+          "index": 178,
+          "timeSeconds": 7.08,
+          "textureStdDev": 59.098
+        },
+        {
+          "index": 179,
+          "timeSeconds": 7.12,
+          "textureStdDev": 59.087
+        },
+        {
+          "index": 180,
+          "timeSeconds": 7.16,
+          "textureStdDev": 59.086
+        },
+        {
+          "index": 181,
+          "timeSeconds": 7.2,
+          "textureStdDev": 59.089
+        },
+        {
+          "index": 182,
+          "timeSeconds": 7.24,
+          "textureStdDev": 59.089
+        },
+        {
+          "index": 183,
+          "timeSeconds": 7.28,
+          "textureStdDev": 59.098
+        },
+        {
+          "index": 184,
+          "timeSeconds": 7.32,
+          "textureStdDev": 59.099
+        },
+        {
+          "index": 185,
+          "timeSeconds": 7.36,
+          "textureStdDev": 59.098
+        },
+        {
+          "index": 186,
+          "timeSeconds": 7.4,
+          "textureStdDev": 59.099
+        },
+        {
+          "index": 187,
+          "timeSeconds": 7.44,
+          "textureStdDev": 59.097
+        },
+        {
+          "index": 188,
+          "timeSeconds": 7.48,
+          "textureStdDev": 59.092
+        },
+        {
+          "index": 189,
+          "timeSeconds": 7.52,
+          "textureStdDev": 59.091
+        },
+        {
+          "index": 190,
+          "timeSeconds": 7.56,
+          "textureStdDev": 59.096
+        },
+        {
+          "index": 191,
+          "timeSeconds": 7.6,
+          "textureStdDev": 59.104
+        },
+        {
+          "index": 192,
+          "timeSeconds": 7.64,
+          "textureStdDev": 59.094
+        },
+        {
+          "index": 193,
+          "timeSeconds": 7.68,
+          "textureStdDev": 59.094
+        },
+        {
+          "index": 194,
+          "timeSeconds": 7.72,
+          "textureStdDev": 59.093
+        },
+        {
+          "index": 195,
+          "timeSeconds": 7.76,
+          "textureStdDev": 59.112
+        },
+        {
+          "index": 196,
+          "timeSeconds": 7.8,
+          "textureStdDev": 59.101
+        },
+        {
+          "index": 197,
+          "timeSeconds": 7.84,
+          "textureStdDev": 59.113
+        },
+        {
+          "index": 198,
+          "timeSeconds": 7.88,
+          "textureStdDev": 59.118
+        },
+        {
+          "index": 199,
+          "timeSeconds": 7.92,
+          "textureStdDev": 59.136
+        },
+        {
+          "index": 200,
+          "timeSeconds": 7.96,
+          "textureStdDev": 59.116
+        },
+        {
+          "index": 201,
+          "timeSeconds": 8.0,
+          "textureStdDev": 59.118
+        },
+        {
+          "index": 202,
+          "timeSeconds": 8.04,
+          "textureStdDev": 59.1
+        },
+        {
+          "index": 203,
+          "timeSeconds": 8.08,
+          "textureStdDev": 59.12
+        },
+        {
+          "index": 204,
+          "timeSeconds": 8.12,
+          "textureStdDev": 59.142
+        },
+        {
+          "index": 205,
+          "timeSeconds": 8.16,
+          "textureStdDev": 59.146
+        },
+        {
+          "index": 206,
+          "timeSeconds": 8.2,
+          "textureStdDev": 59.146
+        },
+        {
+          "index": 207,
+          "timeSeconds": 8.24,
+          "textureStdDev": 59.141
+        },
+        {
+          "index": 208,
+          "timeSeconds": 8.28,
+          "textureStdDev": 59.141
+        },
+        {
+          "index": 209,
+          "timeSeconds": 8.32,
+          "textureStdDev": 59.136
+        },
+        {
+          "index": 210,
+          "timeSeconds": 8.36,
+          "textureStdDev": 59.136
+        },
+        {
+          "index": 211,
+          "timeSeconds": 8.4,
+          "textureStdDev": 59.135
+        },
+        {
+          "index": 212,
+          "timeSeconds": 8.44,
+          "textureStdDev": 59.136
+        },
+        {
+          "index": 213,
+          "timeSeconds": 8.48,
+          "textureStdDev": 59.153
+        },
+        {
+          "index": 214,
+          "timeSeconds": 8.52,
+          "textureStdDev": 59.156
+        },
+        {
+          "index": 215,
+          "timeSeconds": 8.56,
+          "textureStdDev": 59.149
+        },
+        {
+          "index": 216,
+          "timeSeconds": 8.6,
+          "textureStdDev": 59.148
+        },
+        {
+          "index": 217,
+          "timeSeconds": 8.64,
+          "textureStdDev": 59.147
+        },
+        {
+          "index": 218,
+          "timeSeconds": 8.68,
+          "textureStdDev": 59.147
+        },
+        {
+          "index": 219,
+          "timeSeconds": 8.72,
+          "textureStdDev": 59.151
+        },
+        {
+          "index": 220,
+          "timeSeconds": 8.76,
+          "textureStdDev": 59.186
+        },
+        {
+          "index": 221,
+          "timeSeconds": 8.8,
+          "textureStdDev": 59.171
+        },
+        {
+          "index": 222,
+          "timeSeconds": 8.84,
+          "textureStdDev": 59.169
+        },
+        {
+          "index": 223,
+          "timeSeconds": 8.88,
+          "textureStdDev": 59.169
+        },
+        {
+          "index": 224,
+          "timeSeconds": 8.92,
+          "textureStdDev": 59.169
+        },
+        {
+          "index": 225,
+          "timeSeconds": 8.96,
+          "textureStdDev": 59.169
+        },
+        {
+          "index": 226,
+          "timeSeconds": 9.0,
+          "textureStdDev": 59.162
+        },
+        {
+          "index": 227,
+          "timeSeconds": 9.04,
+          "textureStdDev": 59.162
+        },
+        {
+          "index": 228,
+          "timeSeconds": 9.08,
+          "textureStdDev": 59.162
+        },
+        {
+          "index": 229,
+          "timeSeconds": 9.12,
+          "textureStdDev": 59.162
+        },
+        {
+          "index": 230,
+          "timeSeconds": 9.16,
+          "textureStdDev": 59.158
+        },
+        {
+          "index": 231,
+          "timeSeconds": 9.2,
+          "textureStdDev": 59.214
+        },
+        {
+          "index": 232,
+          "timeSeconds": 9.24,
+          "textureStdDev": 59.213
+        },
+        {
+          "index": 233,
+          "timeSeconds": 9.28,
+          "textureStdDev": 59.213
+        },
+        {
+          "index": 234,
+          "timeSeconds": 9.32,
+          "textureStdDev": 59.213
+        },
+        {
+          "index": 235,
+          "timeSeconds": 9.36,
+          "textureStdDev": 59.213
+        },
+        {
+          "index": 236,
+          "timeSeconds": 9.4,
+          "textureStdDev": 59.213
+        },
+        {
+          "index": 237,
+          "timeSeconds": 9.44,
+          "textureStdDev": 59.213
+        },
+        {
+          "index": 238,
+          "timeSeconds": 9.48,
+          "textureStdDev": 59.213
+        },
+        {
+          "index": 239,
+          "timeSeconds": 9.52,
+          "textureStdDev": 59.213
+        },
+        {
+          "index": 240,
+          "timeSeconds": 9.56,
+          "textureStdDev": 59.212
+        }
+      ],
+      "lowTextureDuringSequenceApprox": [],
+      "movementWindowFrames": 97
+    },
+    {
+      "case": "wound",
+      "video": "/tmp/h342-experience-final-ui/wound/30104e59a2e80ce61ba22315dde09dbf.webm",
+      "fps": 25.0,
+      "width": 392,
+      "height": 852,
+      "sampledRAF": 108,
+      "rangeSecondsApprox": [
+        5.349,
+        9.526
+      ],
+      "frames": [
+        {
+          "index": 1,
+          "timeSeconds": 0.0,
+          "textureStdDev": 0.0
+        },
+        {
+          "index": 2,
+          "timeSeconds": 0.04,
+          "textureStdDev": 0.525
+        },
+        {
+          "index": 3,
+          "timeSeconds": 0.08,
+          "textureStdDev": 0.798
+        },
+        {
+          "index": 4,
+          "timeSeconds": 0.12,
+          "textureStdDev": 0.604
+        },
+        {
+          "index": 5,
+          "timeSeconds": 0.16,
+          "textureStdDev": 0.872
+        },
+        {
+          "index": 6,
+          "timeSeconds": 0.2,
+          "textureStdDev": 0.707
+        },
+        {
+          "index": 7,
+          "timeSeconds": 0.24,
+          "textureStdDev": 0.603
+        },
+        {
+          "index": 8,
+          "timeSeconds": 0.28,
+          "textureStdDev": 0.55
+        },
+        {
+          "index": 9,
+          "timeSeconds": 0.32,
+          "textureStdDev": 0.156
+        },
+        {
+          "index": 10,
+          "timeSeconds": 0.36,
+          "textureStdDev": 41.953
+        },
+        {
+          "index": 11,
+          "timeSeconds": 0.4,
+          "textureStdDev": 41.94
+        },
+        {
+          "index": 12,
+          "timeSeconds": 0.44,
+          "textureStdDev": 41.942
+        },
+        {
+          "index": 13,
+          "timeSeconds": 0.48,
+          "textureStdDev": 41.942
+        },
+        {
+          "index": 14,
+          "timeSeconds": 0.52,
+          "textureStdDev": 38.655
+        },
+        {
+          "index": 15,
+          "timeSeconds": 0.56,
+          "textureStdDev": 38.599
+        },
+        {
+          "index": 16,
+          "timeSeconds": 0.6,
+          "textureStdDev": 38.722
+        },
+        {
+          "index": 17,
+          "timeSeconds": 0.64,
+          "textureStdDev": 38.742
+        },
+        {
+          "index": 18,
+          "timeSeconds": 0.68,
+          "textureStdDev": 38.756
+        },
+        {
+          "index": 19,
+          "timeSeconds": 0.72,
+          "textureStdDev": 38.78
+        },
+        {
+          "index": 20,
+          "timeSeconds": 0.76,
+          "textureStdDev": 38.779
+        },
+        {
+          "index": 21,
+          "timeSeconds": 0.8,
+          "textureStdDev": 38.82
+        },
+        {
+          "index": 22,
+          "timeSeconds": 0.84,
+          "textureStdDev": 38.888
+        },
+        {
+          "index": 23,
+          "timeSeconds": 0.88,
+          "textureStdDev": 38.906
+        },
+        {
+          "index": 24,
+          "timeSeconds": 0.92,
+          "textureStdDev": 17.418
+        },
+        {
+          "index": 25,
+          "timeSeconds": 0.96,
+          "textureStdDev": 17.397
+        },
+        {
+          "index": 26,
+          "timeSeconds": 1.0,
+          "textureStdDev": 17.394
+        },
+        {
+          "index": 27,
+          "timeSeconds": 1.04,
+          "textureStdDev": 17.394
+        },
+        {
+          "index": 28,
+          "timeSeconds": 1.08,
+          "textureStdDev": 17.448
+        },
+        {
+          "index": 29,
+          "timeSeconds": 1.12,
+          "textureStdDev": 17.449
+        },
+        {
+          "index": 30,
+          "timeSeconds": 1.16,
+          "textureStdDev": 17.502
+        },
+        {
+          "index": 31,
+          "timeSeconds": 1.2,
+          "textureStdDev": 17.501
+        },
+        {
+          "index": 32,
+          "timeSeconds": 1.24,
+          "textureStdDev": 17.496
+        },
+        {
+          "index": 33,
+          "timeSeconds": 1.28,
+          "textureStdDev": 1.258
+        },
+        {
+          "index": 34,
+          "timeSeconds": 1.32,
+          "textureStdDev": 4.786
+        },
+        {
+          "index": 35,
+          "timeSeconds": 1.36,
+          "textureStdDev": 4.876
+        },
+        {
+          "index": 36,
+          "timeSeconds": 1.4,
+          "textureStdDev": 56.972
+        },
+        {
+          "index": 37,
+          "timeSeconds": 1.44,
+          "textureStdDev": 56.974
+        },
+        {
+          "index": 38,
+          "timeSeconds": 1.48,
+          "textureStdDev": 56.976
+        },
+        {
+          "index": 39,
+          "timeSeconds": 1.52,
+          "textureStdDev": 56.984
+        },
+        {
+          "index": 40,
+          "timeSeconds": 1.56,
+          "textureStdDev": 57.033
+        },
+        {
+          "index": 41,
+          "timeSeconds": 1.6,
+          "textureStdDev": 43.585
+        },
+        {
+          "index": 42,
+          "timeSeconds": 1.64,
+          "textureStdDev": 43.574
+        },
+        {
+          "index": 43,
+          "timeSeconds": 1.68,
+          "textureStdDev": 43.577
+        },
+        {
+          "index": 44,
+          "timeSeconds": 1.72,
+          "textureStdDev": 43.589
+        },
+        {
+          "index": 45,
+          "timeSeconds": 1.76,
+          "textureStdDev": 44.009
+        },
+        {
+          "index": 46,
+          "timeSeconds": 1.8,
+          "textureStdDev": 43.997
+        },
+        {
+          "index": 47,
+          "timeSeconds": 1.84,
+          "textureStdDev": 43.996
+        },
+        {
+          "index": 48,
+          "timeSeconds": 1.88,
+          "textureStdDev": 44.017
+        },
+        {
+          "index": 49,
+          "timeSeconds": 1.92,
+          "textureStdDev": 44.018
+        },
+        {
+          "index": 50,
+          "timeSeconds": 1.96,
+          "textureStdDev": 44.0
+        },
+        {
+          "index": 51,
+          "timeSeconds": 2.0,
+          "textureStdDev": 43.988
+        },
+        {
+          "index": 52,
+          "timeSeconds": 2.04,
+          "textureStdDev": 44.0
+        },
+        {
+          "index": 53,
+          "timeSeconds": 2.08,
+          "textureStdDev": 44.007
+        },
+        {
+          "index": 54,
+          "timeSeconds": 2.12,
+          "textureStdDev": 43.894
+        },
+        {
+          "index": 55,
+          "timeSeconds": 2.16,
+          "textureStdDev": 43.875
+        },
+        {
+          "index": 56,
+          "timeSeconds": 2.2,
+          "textureStdDev": 43.846
+        },
+        {
+          "index": 57,
+          "timeSeconds": 2.24,
+          "textureStdDev": 43.859
+        },
+        {
+          "index": 58,
+          "timeSeconds": 2.28,
+          "textureStdDev": 43.857
+        },
+        {
+          "index": 59,
+          "timeSeconds": 2.32,
+          "textureStdDev": 43.858
+        },
+        {
+          "index": 60,
+          "timeSeconds": 2.36,
+          "textureStdDev": 43.815
+        },
+        {
+          "index": 61,
+          "timeSeconds": 2.4,
+          "textureStdDev": 43.836
+        },
+        {
+          "index": 62,
+          "timeSeconds": 2.44,
+          "textureStdDev": 43.842
+        },
+        {
+          "index": 63,
+          "timeSeconds": 2.48,
+          "textureStdDev": 43.841
+        },
+        {
+          "index": 64,
+          "timeSeconds": 2.52,
+          "textureStdDev": 43.837
+        },
+        {
+          "index": 65,
+          "timeSeconds": 2.56,
+          "textureStdDev": 43.971
+        },
+        {
+          "index": 66,
+          "timeSeconds": 2.6,
+          "textureStdDev": 43.983
+        },
+        {
+          "index": 67,
+          "timeSeconds": 2.64,
+          "textureStdDev": 43.983
+        },
+        {
+          "index": 68,
+          "timeSeconds": 2.68,
+          "textureStdDev": 43.981
+        },
+        {
+          "index": 69,
+          "timeSeconds": 2.72,
+          "textureStdDev": 43.989
+        },
+        {
+          "index": 70,
+          "timeSeconds": 2.76,
+          "textureStdDev": 44.01
+        },
+        {
+          "index": 71,
+          "timeSeconds": 2.8,
+          "textureStdDev": 45.773
+        },
+        {
+          "index": 72,
+          "timeSeconds": 2.84,
+          "textureStdDev": 57.018
+        },
+        {
+          "index": 73,
+          "timeSeconds": 2.88,
+          "textureStdDev": 57.035
+        },
+        {
+          "index": 74,
+          "timeSeconds": 2.92,
+          "textureStdDev": 57.057
+        },
+        {
+          "index": 75,
+          "timeSeconds": 2.96,
+          "textureStdDev": 57.06
+        },
+        {
+          "index": 76,
+          "timeSeconds": 3.0,
+          "textureStdDev": 57.614
+        },
+        {
+          "index": 77,
+          "timeSeconds": 3.04,
+          "textureStdDev": 57.583
+        },
+        {
+          "index": 78,
+          "timeSeconds": 3.08,
+          "textureStdDev": 57.607
+        },
+        {
+          "index": 79,
+          "timeSeconds": 3.12,
+          "textureStdDev": 57.615
+        },
+        {
+          "index": 80,
+          "timeSeconds": 3.16,
+          "textureStdDev": 57.151
+        },
+        {
+          "index": 81,
+          "timeSeconds": 3.2,
+          "textureStdDev": 57.131
+        },
+        {
+          "index": 82,
+          "timeSeconds": 3.24,
+          "textureStdDev": 57.121
+        },
+        {
+          "index": 83,
+          "timeSeconds": 3.28,
+          "textureStdDev": 56.274
+        },
+        {
+          "index": 84,
+          "timeSeconds": 3.32,
+          "textureStdDev": 57.627
+        },
+        {
+          "index": 85,
+          "timeSeconds": 3.36,
+          "textureStdDev": 57.624
+        },
+        {
+          "index": 86,
+          "timeSeconds": 3.4,
+          "textureStdDev": 57.653
+        },
+        {
+          "index": 87,
+          "timeSeconds": 3.44,
+          "textureStdDev": 46.462
+        },
+        {
+          "index": 88,
+          "timeSeconds": 3.48,
+          "textureStdDev": 46.451
+        },
+        {
+          "index": 89,
+          "timeSeconds": 3.52,
+          "textureStdDev": 46.454
+        },
+        {
+          "index": 90,
+          "timeSeconds": 3.56,
+          "textureStdDev": 46.458
+        },
+        {
+          "index": 91,
+          "timeSeconds": 3.6,
+          "textureStdDev": 46.45
+        },
+        {
+          "index": 92,
+          "timeSeconds": 3.64,
+          "textureStdDev": 46.451
+        },
+        {
+          "index": 93,
+          "timeSeconds": 3.68,
+          "textureStdDev": 57.057
+        },
+        {
+          "index": 94,
+          "timeSeconds": 3.72,
+          "textureStdDev": 57.054
+        },
+        {
+          "index": 95,
+          "timeSeconds": 3.76,
+          "textureStdDev": 57.067
+        },
+        {
+          "index": 96,
+          "timeSeconds": 3.8,
+          "textureStdDev": 57.061
+        },
+        {
+          "index": 97,
+          "timeSeconds": 3.84,
+          "textureStdDev": 57.066
+        },
+        {
+          "index": 98,
+          "timeSeconds": 3.88,
+          "textureStdDev": 57.065
+        },
+        {
+          "index": 99,
+          "timeSeconds": 3.92,
+          "textureStdDev": 57.283
+        },
+        {
+          "index": 100,
+          "timeSeconds": 3.96,
+          "textureStdDev": 57.283
+        },
+        {
+          "index": 101,
+          "timeSeconds": 4.0,
+          "textureStdDev": 57.283
+        },
+        {
+          "index": 102,
+          "timeSeconds": 4.04,
+          "textureStdDev": 57.087
+        },
+        {
+          "index": 103,
+          "timeSeconds": 4.08,
+          "textureStdDev": 57.094
+        },
+        {
+          "index": 104,
+          "timeSeconds": 4.12,
+          "textureStdDev": 57.086
+        },
+        {
+          "index": 105,
+          "timeSeconds": 4.16,
+          "textureStdDev": 57.082
+        },
+        {
+          "index": 106,
+          "timeSeconds": 4.2,
+          "textureStdDev": 57.049
+        },
+        {
+          "index": 107,
+          "timeSeconds": 4.24,
+          "textureStdDev": 57.054
+        },
+        {
+          "index": 108,
+          "timeSeconds": 4.28,
+          "textureStdDev": 57.149
+        },
+        {
+          "index": 109,
+          "timeSeconds": 4.32,
+          "textureStdDev": 57.127
+        },
+        {
+          "index": 110,
+          "timeSeconds": 4.36,
+          "textureStdDev": 57.128
+        },
+        {
+          "index": 111,
+          "timeSeconds": 4.4,
+          "textureStdDev": 57.128
+        },
+        {
+          "index": 112,
+          "timeSeconds": 4.44,
+          "textureStdDev": 57.13
+        },
+        {
+          "index": 113,
+          "timeSeconds": 4.48,
+          "textureStdDev": 57.124
+        },
+        {
+          "index": 114,
+          "timeSeconds": 4.52,
+          "textureStdDev": 57.125
+        },
+        {
+          "index": 115,
+          "timeSeconds": 4.56,
+          "textureStdDev": 57.621
+        },
+        {
+          "index": 116,
+          "timeSeconds": 4.6,
+          "textureStdDev": 57.606
+        },
+        {
+          "index": 117,
+          "timeSeconds": 4.64,
+          "textureStdDev": 57.615
+        },
+        {
+          "index": 118,
+          "timeSeconds": 4.68,
+          "textureStdDev": 57.621
+        },
+        {
+          "index": 119,
+          "timeSeconds": 4.72,
+          "textureStdDev": 57.62
+        },
+        {
+          "index": 120,
+          "timeSeconds": 4.76,
+          "textureStdDev": 57.625
+        },
+        {
+          "index": 121,
+          "timeSeconds": 4.8,
+          "textureStdDev": 57.625
+        },
+        {
+          "index": 122,
+          "timeSeconds": 4.84,
+          "textureStdDev": 57.624
+        },
+        {
+          "index": 123,
+          "timeSeconds": 4.88,
+          "textureStdDev": 57.633
+        },
+        {
+          "index": 124,
+          "timeSeconds": 4.92,
+          "textureStdDev": 57.634
+        },
+        {
+          "index": 125,
+          "timeSeconds": 4.96,
+          "textureStdDev": 57.888
+        },
+        {
+          "index": 126,
+          "timeSeconds": 5.0,
+          "textureStdDev": 57.888
+        },
+        {
+          "index": 127,
+          "timeSeconds": 5.04,
+          "textureStdDev": 57.887
+        },
+        {
+          "index": 128,
+          "timeSeconds": 5.08,
+          "textureStdDev": 57.887
+        },
+        {
+          "index": 129,
+          "timeSeconds": 5.12,
+          "textureStdDev": 57.374
+        },
+        {
+          "index": 130,
+          "timeSeconds": 5.16,
+          "textureStdDev": 57.877
+        },
+        {
+          "index": 131,
+          "timeSeconds": 5.2,
+          "textureStdDev": 57.562
+        },
+        {
+          "index": 132,
+          "timeSeconds": 5.24,
+          "textureStdDev": 57.563
+        },
+        {
+          "index": 133,
+          "timeSeconds": 5.28,
+          "textureStdDev": 57.567
+        },
+        {
+          "index": 134,
+          "timeSeconds": 5.32,
+          "textureStdDev": 57.605
+        },
+        {
+          "index": 135,
+          "timeSeconds": 5.36,
+          "textureStdDev": 57.612
+        },
+        {
+          "index": 136,
+          "timeSeconds": 5.4,
+          "textureStdDev": 57.699
+        },
+        {
+          "index": 137,
+          "timeSeconds": 5.44,
+          "textureStdDev": 57.702
+        },
+        {
+          "index": 138,
+          "timeSeconds": 5.48,
+          "textureStdDev": 57.708
+        },
+        {
+          "index": 139,
+          "timeSeconds": 5.52,
+          "textureStdDev": 57.703
+        },
+        {
+          "index": 140,
+          "timeSeconds": 5.56,
+          "textureStdDev": 57.708
+        },
+        {
+          "index": 141,
+          "timeSeconds": 5.6,
+          "textureStdDev": 57.715
+        },
+        {
+          "index": 142,
+          "timeSeconds": 5.64,
+          "textureStdDev": 57.697
+        },
+        {
+          "index": 143,
+          "timeSeconds": 5.68,
+          "textureStdDev": 57.71
+        },
+        {
+          "index": 144,
+          "timeSeconds": 5.72,
+          "textureStdDev": 57.715
+        },
+        {
+          "index": 145,
+          "timeSeconds": 5.76,
+          "textureStdDev": 57.723
+        },
+        {
+          "index": 146,
+          "timeSeconds": 5.8,
+          "textureStdDev": 57.715
+        },
+        {
+          "index": 147,
+          "timeSeconds": 5.84,
+          "textureStdDev": 57.162
+        },
+        {
+          "index": 148,
+          "timeSeconds": 5.88,
+          "textureStdDev": 57.191
+        },
+        {
+          "index": 149,
+          "timeSeconds": 5.92,
+          "textureStdDev": 57.047
+        },
+        {
+          "index": 150,
+          "timeSeconds": 5.96,
+          "textureStdDev": 57.098
+        },
+        {
+          "index": 151,
+          "timeSeconds": 6.0,
+          "textureStdDev": 57.103
+        },
+        {
+          "index": 152,
+          "timeSeconds": 6.04,
+          "textureStdDev": 57.15
+        },
+        {
+          "index": 153,
+          "timeSeconds": 6.08,
+          "textureStdDev": 57.144
+        },
+        {
+          "index": 154,
+          "timeSeconds": 6.12,
+          "textureStdDev": 57.14
+        },
+        {
+          "index": 155,
+          "timeSeconds": 6.16,
+          "textureStdDev": 57.148
+        },
+        {
+          "index": 156,
+          "timeSeconds": 6.2,
+          "textureStdDev": 57.163
+        },
+        {
+          "index": 157,
+          "timeSeconds": 6.24,
+          "textureStdDev": 57.158
+        },
+        {
+          "index": 158,
+          "timeSeconds": 6.28,
+          "textureStdDev": 57.148
+        },
+        {
+          "index": 159,
+          "timeSeconds": 6.32,
+          "textureStdDev": 57.15
+        },
+        {
+          "index": 160,
+          "timeSeconds": 6.36,
+          "textureStdDev": 57.14
+        },
+        {
+          "index": 161,
+          "timeSeconds": 6.4,
+          "textureStdDev": 57.165
+        },
+        {
+          "index": 162,
+          "timeSeconds": 6.44,
+          "textureStdDev": 57.184
+        },
+        {
+          "index": 163,
+          "timeSeconds": 6.48,
+          "textureStdDev": 57.202
+        },
+        {
+          "index": 164,
+          "timeSeconds": 6.52,
+          "textureStdDev": 57.179
+        },
+        {
+          "index": 165,
+          "timeSeconds": 6.56,
+          "textureStdDev": 57.189
+        },
+        {
+          "index": 166,
+          "timeSeconds": 6.6,
+          "textureStdDev": 57.176
+        },
+        {
+          "index": 167,
+          "timeSeconds": 6.64,
+          "textureStdDev": 57.179
+        },
+        {
+          "index": 168,
+          "timeSeconds": 6.68,
+          "textureStdDev": 57.162
+        },
+        {
+          "index": 169,
+          "timeSeconds": 6.72,
+          "textureStdDev": 57.147
+        },
+        {
+          "index": 170,
+          "timeSeconds": 6.76,
+          "textureStdDev": 57.146
+        },
+        {
+          "index": 171,
+          "timeSeconds": 6.8,
+          "textureStdDev": 57.132
+        },
+        {
+          "index": 172,
+          "timeSeconds": 6.84,
+          "textureStdDev": 57.211
+        },
+        {
+          "index": 173,
+          "timeSeconds": 6.88,
+          "textureStdDev": 57.163
+        },
+        {
+          "index": 174,
+          "timeSeconds": 6.92,
+          "textureStdDev": 57.162
+        },
+        {
+          "index": 175,
+          "timeSeconds": 6.96,
+          "textureStdDev": 57.172
+        },
+        {
+          "index": 176,
+          "timeSeconds": 7.0,
+          "textureStdDev": 57.172
+        },
+        {
+          "index": 177,
+          "timeSeconds": 7.04,
+          "textureStdDev": 57.128
+        },
+        {
+          "index": 178,
+          "timeSeconds": 7.08,
+          "textureStdDev": 56.98
+        },
+        {
+          "index": 179,
+          "timeSeconds": 7.12,
+          "textureStdDev": 56.982
+        },
+        {
+          "index": 180,
+          "timeSeconds": 7.16,
+          "textureStdDev": 56.989
+        },
+        {
+          "index": 181,
+          "timeSeconds": 7.2,
+          "textureStdDev": 56.991
+        },
+        {
+          "index": 182,
+          "timeSeconds": 7.24,
+          "textureStdDev": 57.009
+        },
+        {
+          "index": 183,
+          "timeSeconds": 7.28,
+          "textureStdDev": 57.012
+        },
+        {
+          "index": 184,
+          "timeSeconds": 7.32,
+          "textureStdDev": 56.997
+        },
+        {
+          "index": 185,
+          "timeSeconds": 7.36,
+          "textureStdDev": 57.004
+        },
+        {
+          "index": 186,
+          "timeSeconds": 7.4,
+          "textureStdDev": 57.021
+        },
+        {
+          "index": 187,
+          "timeSeconds": 7.44,
+          "textureStdDev": 57.442
+        },
+        {
+          "index": 188,
+          "timeSeconds": 7.48,
+          "textureStdDev": 57.442
+        },
+        {
+          "index": 189,
+          "timeSeconds": 7.52,
+          "textureStdDev": 57.438
+        },
+        {
+          "index": 190,
+          "timeSeconds": 7.56,
+          "textureStdDev": 57.439
+        },
+        {
+          "index": 191,
+          "timeSeconds": 7.6,
+          "textureStdDev": 57.426
+        },
+        {
+          "index": 192,
+          "timeSeconds": 7.64,
+          "textureStdDev": 57.422
+        },
+        {
+          "index": 193,
+          "timeSeconds": 7.68,
+          "textureStdDev": 57.425
+        },
+        {
+          "index": 194,
+          "timeSeconds": 7.72,
+          "textureStdDev": 57.432
+        },
+        {
+          "index": 195,
+          "timeSeconds": 7.76,
+          "textureStdDev": 57.431
+        },
+        {
+          "index": 196,
+          "timeSeconds": 7.8,
+          "textureStdDev": 57.431
+        },
+        {
+          "index": 197,
+          "timeSeconds": 7.84,
+          "textureStdDev": 57.425
+        },
+        {
+          "index": 198,
+          "timeSeconds": 7.88,
+          "textureStdDev": 57.463
+        },
+        {
+          "index": 199,
+          "timeSeconds": 7.92,
+          "textureStdDev": 57.467
+        },
+        {
+          "index": 200,
+          "timeSeconds": 7.96,
+          "textureStdDev": 57.45
+        },
+        {
+          "index": 201,
+          "timeSeconds": 8.0,
+          "textureStdDev": 57.442
+        },
+        {
+          "index": 202,
+          "timeSeconds": 8.04,
+          "textureStdDev": 57.448
+        },
+        {
+          "index": 203,
+          "timeSeconds": 8.08,
+          "textureStdDev": 57.447
+        },
+        {
+          "index": 204,
+          "timeSeconds": 8.12,
+          "textureStdDev": 57.449
+        },
+        {
+          "index": 205,
+          "timeSeconds": 8.16,
+          "textureStdDev": 57.443
+        },
+        {
+          "index": 206,
+          "timeSeconds": 8.2,
+          "textureStdDev": 57.445
+        },
+        {
+          "index": 207,
+          "timeSeconds": 8.24,
+          "textureStdDev": 57.6
+        },
+        {
+          "index": 208,
+          "timeSeconds": 8.28,
+          "textureStdDev": 57.604
+        },
+        {
+          "index": 209,
+          "timeSeconds": 8.32,
+          "textureStdDev": 57.601
+        },
+        {
+          "index": 210,
+          "timeSeconds": 8.36,
+          "textureStdDev": 57.601
+        },
+        {
+          "index": 211,
+          "timeSeconds": 8.4,
+          "textureStdDev": 57.602
+        },
+        {
+          "index": 212,
+          "timeSeconds": 8.44,
+          "textureStdDev": 57.602
+        },
+        {
+          "index": 213,
+          "timeSeconds": 8.48,
+          "textureStdDev": 57.601
+        },
+        {
+          "index": 214,
+          "timeSeconds": 8.52,
+          "textureStdDev": 57.6
+        },
+        {
+          "index": 215,
+          "timeSeconds": 8.56,
+          "textureStdDev": 57.458
+        },
+        {
+          "index": 216,
+          "timeSeconds": 8.6,
+          "textureStdDev": 57.454
+        },
+        {
+          "index": 217,
+          "timeSeconds": 8.64,
+          "textureStdDev": 57.466
+        },
+        {
+          "index": 218,
+          "timeSeconds": 8.68,
+          "textureStdDev": 57.454
+        },
+        {
+          "index": 219,
+          "timeSeconds": 8.72,
+          "textureStdDev": 57.462
+        },
+        {
+          "index": 220,
+          "timeSeconds": 8.76,
+          "textureStdDev": 57.459
+        },
+        {
+          "index": 221,
+          "timeSeconds": 8.8,
+          "textureStdDev": 57.459
+        },
+        {
+          "index": 222,
+          "timeSeconds": 8.84,
+          "textureStdDev": 57.449
+        },
+        {
+          "index": 223,
+          "timeSeconds": 8.88,
+          "textureStdDev": 57.45
+        },
+        {
+          "index": 224,
+          "timeSeconds": 8.92,
+          "textureStdDev": 57.451
+        },
+        {
+          "index": 225,
+          "timeSeconds": 8.96,
+          "textureStdDev": 57.446
+        },
+        {
+          "index": 226,
+          "timeSeconds": 9.0,
+          "textureStdDev": 57.448
+        },
+        {
+          "index": 227,
+          "timeSeconds": 9.04,
+          "textureStdDev": 57.454
+        },
+        {
+          "index": 228,
+          "timeSeconds": 9.08,
+          "textureStdDev": 57.619
+        },
+        {
+          "index": 229,
+          "timeSeconds": 9.12,
+          "textureStdDev": 57.63
+        },
+        {
+          "index": 230,
+          "timeSeconds": 9.16,
+          "textureStdDev": 57.618
+        },
+        {
+          "index": 231,
+          "timeSeconds": 9.2,
+          "textureStdDev": 57.627
+        },
+        {
+          "index": 232,
+          "timeSeconds": 9.24,
+          "textureStdDev": 57.621
+        },
+        {
+          "index": 233,
+          "timeSeconds": 9.28,
+          "textureStdDev": 57.087
+        },
+        {
+          "index": 234,
+          "timeSeconds": 9.32,
+          "textureStdDev": 57.052
+        },
+        {
+          "index": 235,
+          "timeSeconds": 9.36,
+          "textureStdDev": 57.042
+        },
+        {
+          "index": 236,
+          "timeSeconds": 9.4,
+          "textureStdDev": 57.053
+        },
+        {
+          "index": 237,
+          "timeSeconds": 9.44,
+          "textureStdDev": 57.072
+        },
+        {
+          "index": 238,
+          "timeSeconds": 9.48,
+          "textureStdDev": 57.054
+        },
+        {
+          "index": 239,
+          "timeSeconds": 9.52,
+          "textureStdDev": 57.059
+        },
+        {
+          "index": 240,
+          "timeSeconds": 9.56,
+          "textureStdDev": 57.074
+        },
+        {
+          "index": 241,
+          "timeSeconds": 9.6,
+          "textureStdDev": 57.074
+        },
+        {
+          "index": 242,
+          "timeSeconds": 9.64,
+          "textureStdDev": 57.076
+        },
+        {
+          "index": 243,
+          "timeSeconds": 9.68,
+          "textureStdDev": 57.085
+        },
+        {
+          "index": 244,
+          "timeSeconds": 9.72,
+          "textureStdDev": 57.085
+        },
+        {
+          "index": 245,
+          "timeSeconds": 9.76,
+          "textureStdDev": 57.069
+        },
+        {
+          "index": 246,
+          "timeSeconds": 9.8,
+          "textureStdDev": 57.067
+        },
+        {
+          "index": 247,
+          "timeSeconds": 9.84,
+          "textureStdDev": 57.06
+        },
+        {
+          "index": 248,
+          "timeSeconds": 9.88,
+          "textureStdDev": 57.083
+        },
+        {
+          "index": 249,
+          "timeSeconds": 9.92,
+          "textureStdDev": 57.073
+        },
+        {
+          "index": 250,
+          "timeSeconds": 9.96,
+          "textureStdDev": 57.279
+        },
+        {
+          "index": 251,
+          "timeSeconds": 10.0,
+          "textureStdDev": 57.323
+        },
+        {
+          "index": 252,
+          "timeSeconds": 10.04,
+          "textureStdDev": 57.323
+        },
+        {
+          "index": 253,
+          "timeSeconds": 10.08,
+          "textureStdDev": 57.323
+        },
+        {
+          "index": 254,
+          "timeSeconds": 10.12,
+          "textureStdDev": 57.334
+        },
+        {
+          "index": 255,
+          "timeSeconds": 10.16,
+          "textureStdDev": 57.33
+        },
+        {
+          "index": 256,
+          "timeSeconds": 10.2,
+          "textureStdDev": 57.084
+        },
+        {
+          "index": 257,
+          "timeSeconds": 10.24,
+          "textureStdDev": 55.681
+        },
+        {
+          "index": 258,
+          "timeSeconds": 10.28,
+          "textureStdDev": 56.966
+        },
+        {
+          "index": 259,
+          "timeSeconds": 10.32,
+          "textureStdDev": 56.966
+        },
+        {
+          "index": 260,
+          "timeSeconds": 10.36,
+          "textureStdDev": 56.966
+        },
+        {
+          "index": 261,
+          "timeSeconds": 10.4,
+          "textureStdDev": 56.965
+        },
+        {
+          "index": 262,
+          "timeSeconds": 10.44,
+          "textureStdDev": 56.942
+        },
+        {
+          "index": 263,
+          "timeSeconds": 10.48,
+          "textureStdDev": 56.992
+        },
+        {
+          "index": 264,
+          "timeSeconds": 10.52,
+          "textureStdDev": 57.045
+        },
+        {
+          "index": 265,
+          "timeSeconds": 10.56,
+          "textureStdDev": 57.047
+        },
+        {
+          "index": 266,
+          "timeSeconds": 10.6,
+          "textureStdDev": 57.044
+        },
+        {
+          "index": 267,
+          "timeSeconds": 10.64,
+          "textureStdDev": 57.046
+        },
+        {
+          "index": 268,
+          "timeSeconds": 10.68,
+          "textureStdDev": 57.066
+        },
+        {
+          "index": 269,
+          "timeSeconds": 10.72,
+          "textureStdDev": 57.033
+        },
+        {
+          "index": 270,
+          "timeSeconds": 10.76,
+          "textureStdDev": 57.05
+        },
+        {
+          "index": 271,
+          "timeSeconds": 10.8,
+          "textureStdDev": 57.031
+        },
+        {
+          "index": 272,
+          "timeSeconds": 10.84,
+          "textureStdDev": 57.048
+        },
+        {
+          "index": 273,
+          "timeSeconds": 10.88,
+          "textureStdDev": 57.053
+        },
+        {
+          "index": 274,
+          "timeSeconds": 10.92,
+          "textureStdDev": 57.053
+        },
+        {
+          "index": 275,
+          "timeSeconds": 10.96,
+          "textureStdDev": 57.053
+        },
+        {
+          "index": 276,
+          "timeSeconds": 11.0,
+          "textureStdDev": 57.048
+        },
+        {
+          "index": 277,
+          "timeSeconds": 11.04,
+          "textureStdDev": 57.048
+        },
+        {
+          "index": 278,
+          "timeSeconds": 11.08,
+          "textureStdDev": 57.048
+        },
+        {
+          "index": 279,
+          "timeSeconds": 11.12,
+          "textureStdDev": 57.048
+        },
+        {
+          "index": 280,
+          "timeSeconds": 11.16,
+          "textureStdDev": 57.048
+        },
+        {
+          "index": 281,
+          "timeSeconds": 11.2,
+          "textureStdDev": 57.048
+        },
+        {
+          "index": 282,
+          "timeSeconds": 11.24,
+          "textureStdDev": 57.048
+        }
+      ],
+      "lowTextureDuringSequenceApprox": [],
+      "movementWindowFrames": 111
+    },
+    {
+      "case": "frost",
+      "video": "/tmp/h342-experience-final-ui/frost/58f9390bb235df269e3746e81d79d7da.webm",
+      "fps": 25.0,
+      "width": 320,
+      "height": 640,
+      "sampledRAF": 215,
+      "rangeSecondsApprox": [
+        3.525800000011921,
+        7.174200000002981
+      ],
+      "frames": [
+        {
+          "index": 1,
+          "timeSeconds": 0.0,
+          "textureStdDev": 0.0
+        },
+        {
+          "index": 2,
+          "timeSeconds": 0.04,
+          "textureStdDev": 0.29
+        },
+        {
+          "index": 3,
+          "timeSeconds": 0.08,
+          "textureStdDev": 0.35
+        },
+        {
+          "index": 4,
+          "timeSeconds": 0.12,
+          "textureStdDev": 0.354
+        },
+        {
+          "index": 5,
+          "timeSeconds": 0.16,
+          "textureStdDev": 0.423
+        },
+        {
+          "index": 6,
+          "timeSeconds": 0.2,
+          "textureStdDev": 0.476
+        },
+        {
+          "index": 7,
+          "timeSeconds": 0.24,
+          "textureStdDev": 0.059
+        },
+        {
+          "index": 8,
+          "timeSeconds": 0.28,
+          "textureStdDev": 42.197
+        },
+        {
+          "index": 9,
+          "timeSeconds": 0.32,
+          "textureStdDev": 42.202
+        },
+        {
+          "index": 10,
+          "timeSeconds": 0.36,
+          "textureStdDev": 42.191
+        },
+        {
+          "index": 11,
+          "timeSeconds": 0.4,
+          "textureStdDev": 42.191
+        },
+        {
+          "index": 12,
+          "timeSeconds": 0.44,
+          "textureStdDev": 41.273
+        },
+        {
+          "index": 13,
+          "timeSeconds": 0.48,
+          "textureStdDev": 41.244
+        },
+        {
+          "index": 14,
+          "timeSeconds": 0.52,
+          "textureStdDev": 41.244
+        },
+        {
+          "index": 15,
+          "timeSeconds": 0.56,
+          "textureStdDev": 41.497
+        },
+        {
+          "index": 16,
+          "timeSeconds": 0.6,
+          "textureStdDev": 41.507
+        },
+        {
+          "index": 17,
+          "timeSeconds": 0.64,
+          "textureStdDev": 20.799
+        },
+        {
+          "index": 18,
+          "timeSeconds": 0.68,
+          "textureStdDev": 20.774
+        },
+        {
+          "index": 19,
+          "timeSeconds": 0.72,
+          "textureStdDev": 20.876
+        },
+        {
+          "index": 20,
+          "timeSeconds": 0.76,
+          "textureStdDev": 20.877
+        },
+        {
+          "index": 21,
+          "timeSeconds": 0.8,
+          "textureStdDev": 21.103
+        },
+        {
+          "index": 22,
+          "timeSeconds": 0.84,
+          "textureStdDev": 21.774
+        },
+        {
+          "index": 23,
+          "timeSeconds": 0.88,
+          "textureStdDev": 21.838
+        },
+        {
+          "index": 24,
+          "timeSeconds": 0.92,
+          "textureStdDev": 21.886
+        },
+        {
+          "index": 25,
+          "timeSeconds": 0.96,
+          "textureStdDev": 21.862
+        },
+        {
+          "index": 26,
+          "timeSeconds": 1.0,
+          "textureStdDev": 21.775
+        },
+        {
+          "index": 27,
+          "timeSeconds": 1.04,
+          "textureStdDev": 21.772
+        },
+        {
+          "index": 28,
+          "timeSeconds": 1.08,
+          "textureStdDev": 21.779
+        },
+        {
+          "index": 29,
+          "timeSeconds": 1.12,
+          "textureStdDev": 21.769
+        },
+        {
+          "index": 30,
+          "timeSeconds": 1.16,
+          "textureStdDev": 21.78
+        },
+        {
+          "index": 31,
+          "timeSeconds": 1.2,
+          "textureStdDev": 1.484
+        },
+        {
+          "index": 32,
+          "timeSeconds": 1.24,
+          "textureStdDev": 6.292
+        },
+        {
+          "index": 33,
+          "timeSeconds": 1.28,
+          "textureStdDev": 6.307
+        },
+        {
+          "index": 34,
+          "timeSeconds": 1.32,
+          "textureStdDev": 59.284
+        },
+        {
+          "index": 35,
+          "timeSeconds": 1.36,
+          "textureStdDev": 59.299
+        },
+        {
+          "index": 36,
+          "timeSeconds": 1.4,
+          "textureStdDev": 59.327
+        },
+        {
+          "index": 37,
+          "timeSeconds": 1.44,
+          "textureStdDev": 45.287
+        },
+        {
+          "index": 38,
+          "timeSeconds": 1.48,
+          "textureStdDev": 45.269
+        },
+        {
+          "index": 39,
+          "timeSeconds": 1.52,
+          "textureStdDev": 45.252
+        },
+        {
+          "index": 40,
+          "timeSeconds": 1.56,
+          "textureStdDev": 44.856
+        },
+        {
+          "index": 41,
+          "timeSeconds": 1.6,
+          "textureStdDev": 44.824
+        },
+        {
+          "index": 42,
+          "timeSeconds": 1.64,
+          "textureStdDev": 44.866
+        },
+        {
+          "index": 43,
+          "timeSeconds": 1.68,
+          "textureStdDev": 44.869
+        },
+        {
+          "index": 44,
+          "timeSeconds": 1.72,
+          "textureStdDev": 44.887
+        },
+        {
+          "index": 45,
+          "timeSeconds": 1.76,
+          "textureStdDev": 44.054
+        },
+        {
+          "index": 46,
+          "timeSeconds": 1.8,
+          "textureStdDev": 43.98
+        },
+        {
+          "index": 47,
+          "timeSeconds": 1.84,
+          "textureStdDev": 43.964
+        },
+        {
+          "index": 48,
+          "timeSeconds": 1.88,
+          "textureStdDev": 43.989
+        },
+        {
+          "index": 49,
+          "timeSeconds": 1.92,
+          "textureStdDev": 44.5
+        },
+        {
+          "index": 50,
+          "timeSeconds": 1.96,
+          "textureStdDev": 44.523
+        },
+        {
+          "index": 51,
+          "timeSeconds": 2.0,
+          "textureStdDev": 44.555
+        },
+        {
+          "index": 52,
+          "timeSeconds": 2.04,
+          "textureStdDev": 44.858
+        },
+        {
+          "index": 53,
+          "timeSeconds": 2.08,
+          "textureStdDev": 44.865
+        },
+        {
+          "index": 54,
+          "timeSeconds": 2.12,
+          "textureStdDev": 44.87
+        },
+        {
+          "index": 55,
+          "timeSeconds": 2.16,
+          "textureStdDev": 44.873
+        },
+        {
+          "index": 56,
+          "timeSeconds": 2.2,
+          "textureStdDev": 44.872
+        },
+        {
+          "index": 57,
+          "timeSeconds": 2.24,
+          "textureStdDev": 44.885
+        },
+        {
+          "index": 58,
+          "timeSeconds": 2.28,
+          "textureStdDev": 58.476
+        },
+        {
+          "index": 59,
+          "timeSeconds": 2.32,
+          "textureStdDev": 58.503
+        },
+        {
+          "index": 60,
+          "timeSeconds": 2.36,
+          "textureStdDev": 59.362
+        },
+        {
+          "index": 61,
+          "timeSeconds": 2.4,
+          "textureStdDev": 59.381
+        },
+        {
+          "index": 62,
+          "timeSeconds": 2.44,
+          "textureStdDev": 58.659
+        },
+        {
+          "index": 63,
+          "timeSeconds": 2.48,
+          "textureStdDev": 58.64
+        },
+        {
+          "index": 64,
+          "timeSeconds": 2.52,
+          "textureStdDev": 58.693
+        },
+        {
+          "index": 65,
+          "timeSeconds": 2.56,
+          "textureStdDev": 59.507
+        },
+        {
+          "index": 66,
+          "timeSeconds": 2.6,
+          "textureStdDev": 58.671
+        },
+        {
+          "index": 67,
+          "timeSeconds": 2.64,
+          "textureStdDev": 58.678
+        },
+        {
+          "index": 68,
+          "timeSeconds": 2.68,
+          "textureStdDev": 58.704
+        },
+        {
+          "index": 69,
+          "timeSeconds": 2.72,
+          "textureStdDev": 44.275
+        },
+        {
+          "index": 70,
+          "timeSeconds": 2.76,
+          "textureStdDev": 44.279
+        },
+        {
+          "index": 71,
+          "timeSeconds": 2.8,
+          "textureStdDev": 44.293
+        },
+        {
+          "index": 72,
+          "timeSeconds": 2.84,
+          "textureStdDev": 44.297
+        },
+        {
+          "index": 73,
+          "timeSeconds": 2.88,
+          "textureStdDev": 58.708
+        },
+        {
+          "index": 74,
+          "timeSeconds": 2.92,
+          "textureStdDev": 58.712
+        },
+        {
+          "index": 75,
+          "timeSeconds": 2.96,
+          "textureStdDev": 58.716
+        },
+        {
+          "index": 76,
+          "timeSeconds": 3.0,
+          "textureStdDev": 57.978
+        },
+        {
+          "index": 77,
+          "timeSeconds": 3.04,
+          "textureStdDev": 57.975
+        },
+        {
+          "index": 78,
+          "timeSeconds": 3.08,
+          "textureStdDev": 58.707
+        },
+        {
+          "index": 79,
+          "timeSeconds": 3.12,
+          "textureStdDev": 58.7
+        },
+        {
+          "index": 80,
+          "timeSeconds": 3.16,
+          "textureStdDev": 58.69
+        },
+        {
+          "index": 81,
+          "timeSeconds": 3.2,
+          "textureStdDev": 59.437
+        },
+        {
+          "index": 82,
+          "timeSeconds": 3.24,
+          "textureStdDev": 59.446
+        },
+        {
+          "index": 83,
+          "timeSeconds": 3.28,
+          "textureStdDev": 59.481
+        },
+        {
+          "index": 84,
+          "timeSeconds": 3.32,
+          "textureStdDev": 59.559
+        },
+        {
+          "index": 85,
+          "timeSeconds": 3.36,
+          "textureStdDev": 58.809
+        },
+        {
+          "index": 86,
+          "timeSeconds": 3.4,
+          "textureStdDev": 58.832
+        },
+        {
+          "index": 87,
+          "timeSeconds": 3.44,
+          "textureStdDev": 59.497
+        },
+        {
+          "index": 88,
+          "timeSeconds": 3.48,
+          "textureStdDev": 59.496
+        },
+        {
+          "index": 89,
+          "timeSeconds": 3.52,
+          "textureStdDev": 59.49
+        },
+        {
+          "index": 90,
+          "timeSeconds": 3.56,
+          "textureStdDev": 59.425
+        },
+        {
+          "index": 91,
+          "timeSeconds": 3.6,
+          "textureStdDev": 59.068
+        },
+        {
+          "index": 92,
+          "timeSeconds": 3.64,
+          "textureStdDev": 59.087
+        },
+        {
+          "index": 93,
+          "timeSeconds": 3.68,
+          "textureStdDev": 59.105
+        },
+        {
+          "index": 94,
+          "timeSeconds": 3.72,
+          "textureStdDev": 59.202
+        },
+        {
+          "index": 95,
+          "timeSeconds": 3.76,
+          "textureStdDev": 59.217
+        },
+        {
+          "index": 96,
+          "timeSeconds": 3.8,
+          "textureStdDev": 59.197
+        },
+        {
+          "index": 97,
+          "timeSeconds": 3.84,
+          "textureStdDev": 59.188
+        },
+        {
+          "index": 98,
+          "timeSeconds": 3.88,
+          "textureStdDev": 59.195
+        },
+        {
+          "index": 99,
+          "timeSeconds": 3.92,
+          "textureStdDev": 59.19
+        },
+        {
+          "index": 100,
+          "timeSeconds": 3.96,
+          "textureStdDev": 59.181
+        },
+        {
+          "index": 101,
+          "timeSeconds": 4.0,
+          "textureStdDev": 59.182
+        },
+        {
+          "index": 102,
+          "timeSeconds": 4.04,
+          "textureStdDev": 59.19
+        },
+        {
+          "index": 103,
+          "timeSeconds": 4.08,
+          "textureStdDev": 59.224
+        },
+        {
+          "index": 104,
+          "timeSeconds": 4.12,
+          "textureStdDev": 59.223
+        },
+        {
+          "index": 105,
+          "timeSeconds": 4.16,
+          "textureStdDev": 59.246
+        },
+        {
+          "index": 106,
+          "timeSeconds": 4.2,
+          "textureStdDev": 59.252
+        },
+        {
+          "index": 107,
+          "timeSeconds": 4.24,
+          "textureStdDev": 59.257
+        },
+        {
+          "index": 108,
+          "timeSeconds": 4.28,
+          "textureStdDev": 59.257
+        },
+        {
+          "index": 109,
+          "timeSeconds": 4.32,
+          "textureStdDev": 59.257
+        },
+        {
+          "index": 110,
+          "timeSeconds": 4.36,
+          "textureStdDev": 59.257
+        },
+        {
+          "index": 111,
+          "timeSeconds": 4.4,
+          "textureStdDev": 59.257
+        },
+        {
+          "index": 112,
+          "timeSeconds": 4.44,
+          "textureStdDev": 59.259
+        },
+        {
+          "index": 113,
+          "timeSeconds": 4.48,
+          "textureStdDev": 59.269
+        },
+        {
+          "index": 114,
+          "timeSeconds": 4.52,
+          "textureStdDev": 59.296
+        },
+        {
+          "index": 115,
+          "timeSeconds": 4.56,
+          "textureStdDev": 59.222
+        },
+        {
+          "index": 116,
+          "timeSeconds": 4.6,
+          "textureStdDev": 59.206
+        },
+        {
+          "index": 117,
+          "timeSeconds": 4.64,
+          "textureStdDev": 59.184
+        },
+        {
+          "index": 118,
+          "timeSeconds": 4.68,
+          "textureStdDev": 59.195
+        },
+        {
+          "index": 119,
+          "timeSeconds": 4.72,
+          "textureStdDev": 59.191
+        },
+        {
+          "index": 120,
+          "timeSeconds": 4.76,
+          "textureStdDev": 59.167
+        },
+        {
+          "index": 121,
+          "timeSeconds": 4.8,
+          "textureStdDev": 59.178
+        },
+        {
+          "index": 122,
+          "timeSeconds": 4.84,
+          "textureStdDev": 59.169
+        },
+        {
+          "index": 123,
+          "timeSeconds": 4.88,
+          "textureStdDev": 59.18
+        },
+        {
+          "index": 124,
+          "timeSeconds": 4.92,
+          "textureStdDev": 59.182
+        },
+        {
+          "index": 125,
+          "timeSeconds": 4.96,
+          "textureStdDev": 59.236
+        },
+        {
+          "index": 126,
+          "timeSeconds": 5.0,
+          "textureStdDev": 59.215
+        },
+        {
+          "index": 127,
+          "timeSeconds": 5.04,
+          "textureStdDev": 59.211
+        },
+        {
+          "index": 128,
+          "timeSeconds": 5.08,
+          "textureStdDev": 59.213
+        },
+        {
+          "index": 129,
+          "timeSeconds": 5.12,
+          "textureStdDev": 58.821
+        },
+        {
+          "index": 130,
+          "timeSeconds": 5.16,
+          "textureStdDev": 58.128
+        },
+        {
+          "index": 131,
+          "timeSeconds": 5.2,
+          "textureStdDev": 58.151
+        },
+        {
+          "index": 132,
+          "timeSeconds": 5.24,
+          "textureStdDev": 58.149
+        },
+        {
+          "index": 133,
+          "timeSeconds": 5.28,
+          "textureStdDev": 58.141
+        },
+        {
+          "index": 134,
+          "timeSeconds": 5.32,
+          "textureStdDev": 58.132
+        },
+        {
+          "index": 135,
+          "timeSeconds": 5.36,
+          "textureStdDev": 58.14
+        },
+        {
+          "index": 136,
+          "timeSeconds": 5.4,
+          "textureStdDev": 58.187
+        },
+        {
+          "index": 137,
+          "timeSeconds": 5.44,
+          "textureStdDev": 58.189
+        },
+        {
+          "index": 138,
+          "timeSeconds": 5.48,
+          "textureStdDev": 58.149
+        },
+        {
+          "index": 139,
+          "timeSeconds": 5.52,
+          "textureStdDev": 58.147
+        },
+        {
+          "index": 140,
+          "timeSeconds": 5.56,
+          "textureStdDev": 58.172
+        },
+        {
+          "index": 141,
+          "timeSeconds": 5.6,
+          "textureStdDev": 58.177
+        },
+        {
+          "index": 142,
+          "timeSeconds": 5.64,
+          "textureStdDev": 58.168
+        },
+        {
+          "index": 143,
+          "timeSeconds": 5.68,
+          "textureStdDev": 58.17
+        },
+        {
+          "index": 144,
+          "timeSeconds": 5.72,
+          "textureStdDev": 58.167
+        },
+        {
+          "index": 145,
+          "timeSeconds": 5.76,
+          "textureStdDev": 58.169
+        },
+        {
+          "index": 146,
+          "timeSeconds": 5.8,
+          "textureStdDev": 58.176
+        },
+        {
+          "index": 147,
+          "timeSeconds": 5.84,
+          "textureStdDev": 58.176
+        },
+        {
+          "index": 148,
+          "timeSeconds": 5.88,
+          "textureStdDev": 58.182
+        },
+        {
+          "index": 149,
+          "timeSeconds": 5.92,
+          "textureStdDev": 58.178
+        },
+        {
+          "index": 150,
+          "timeSeconds": 5.96,
+          "textureStdDev": 58.175
+        },
+        {
+          "index": 151,
+          "timeSeconds": 6.0,
+          "textureStdDev": 58.173
+        },
+        {
+          "index": 152,
+          "timeSeconds": 6.04,
+          "textureStdDev": 58.181
+        },
+        {
+          "index": 153,
+          "timeSeconds": 6.08,
+          "textureStdDev": 58.18
+        },
+        {
+          "index": 154,
+          "timeSeconds": 6.12,
+          "textureStdDev": 58.185
+        },
+        {
+          "index": 155,
+          "timeSeconds": 6.16,
+          "textureStdDev": 58.188
+        },
+        {
+          "index": 156,
+          "timeSeconds": 6.2,
+          "textureStdDev": 58.186
+        },
+        {
+          "index": 157,
+          "timeSeconds": 6.24,
+          "textureStdDev": 58.212
+        },
+        {
+          "index": 158,
+          "timeSeconds": 6.28,
+          "textureStdDev": 58.204
+        },
+        {
+          "index": 159,
+          "timeSeconds": 6.32,
+          "textureStdDev": 58.212
+        },
+        {
+          "index": 160,
+          "timeSeconds": 6.36,
+          "textureStdDev": 58.209
+        },
+        {
+          "index": 161,
+          "timeSeconds": 6.4,
+          "textureStdDev": 58.203
+        },
+        {
+          "index": 162,
+          "timeSeconds": 6.44,
+          "textureStdDev": 58.206
+        },
+        {
+          "index": 163,
+          "timeSeconds": 6.48,
+          "textureStdDev": 58.205
+        },
+        {
+          "index": 164,
+          "timeSeconds": 6.52,
+          "textureStdDev": 58.209
+        },
+        {
+          "index": 165,
+          "timeSeconds": 6.56,
+          "textureStdDev": 58.204
+        },
+        {
+          "index": 166,
+          "timeSeconds": 6.6,
+          "textureStdDev": 58.2
+        },
+        {
+          "index": 167,
+          "timeSeconds": 6.64,
+          "textureStdDev": 58.205
+        },
+        {
+          "index": 168,
+          "timeSeconds": 6.68,
+          "textureStdDev": 58.215
+        },
+        {
+          "index": 169,
+          "timeSeconds": 6.72,
+          "textureStdDev": 58.207
+        },
+        {
+          "index": 170,
+          "timeSeconds": 6.76,
+          "textureStdDev": 58.195
+        },
+        {
+          "index": 171,
+          "timeSeconds": 6.8,
+          "textureStdDev": 58.494
+        },
+        {
+          "index": 172,
+          "timeSeconds": 6.84,
+          "textureStdDev": 58.501
+        },
+        {
+          "index": 173,
+          "timeSeconds": 6.88,
+          "textureStdDev": 58.493
+        },
+        {
+          "index": 174,
+          "timeSeconds": 6.92,
+          "textureStdDev": 58.491
+        },
+        {
+          "index": 175,
+          "timeSeconds": 6.96,
+          "textureStdDev": 58.488
+        },
+        {
+          "index": 176,
+          "timeSeconds": 7.0,
+          "textureStdDev": 59.345
+        },
+        {
+          "index": 177,
+          "timeSeconds": 7.04,
+          "textureStdDev": 59.375
+        },
+        {
+          "index": 178,
+          "timeSeconds": 7.08,
+          "textureStdDev": 59.379
+        },
+        {
+          "index": 179,
+          "timeSeconds": 7.12,
+          "textureStdDev": 59.411
+        },
+        {
+          "index": 180,
+          "timeSeconds": 7.16,
+          "textureStdDev": 59.407
+        },
+        {
+          "index": 181,
+          "timeSeconds": 7.2,
+          "textureStdDev": 59.401
+        },
+        {
+          "index": 182,
+          "timeSeconds": 7.24,
+          "textureStdDev": 59.404
+        },
+        {
+          "index": 183,
+          "timeSeconds": 7.28,
+          "textureStdDev": 59.4
+        },
+        {
+          "index": 184,
+          "timeSeconds": 7.32,
+          "textureStdDev": 59.4
+        },
+        {
+          "index": 185,
+          "timeSeconds": 7.36,
+          "textureStdDev": 59.383
+        },
+        {
+          "index": 186,
+          "timeSeconds": 7.4,
+          "textureStdDev": 59.384
+        },
+        {
+          "index": 187,
+          "timeSeconds": 7.44,
+          "textureStdDev": 59.384
+        },
+        {
+          "index": 188,
+          "timeSeconds": 7.48,
+          "textureStdDev": 59.383
+        },
+        {
+          "index": 189,
+          "timeSeconds": 7.52,
+          "textureStdDev": 59.397
+        },
+        {
+          "index": 190,
+          "timeSeconds": 7.56,
+          "textureStdDev": 59.395
+        },
+        {
+          "index": 191,
+          "timeSeconds": 7.6,
+          "textureStdDev": 59.395
+        },
+        {
+          "index": 192,
+          "timeSeconds": 7.64,
+          "textureStdDev": 59.395
+        },
+        {
+          "index": 193,
+          "timeSeconds": 7.68,
+          "textureStdDev": 59.395
+        },
+        {
+          "index": 194,
+          "timeSeconds": 7.72,
+          "textureStdDev": 59.395
+        },
+        {
+          "index": 195,
+          "timeSeconds": 7.76,
+          "textureStdDev": 59.395
+        },
+        {
+          "index": 196,
+          "timeSeconds": 7.8,
+          "textureStdDev": 59.395
+        },
+        {
+          "index": 197,
+          "timeSeconds": 7.84,
+          "textureStdDev": 59.395
+        },
+        {
+          "index": 198,
+          "timeSeconds": 7.88,
+          "textureStdDev": 59.395
+        },
+        {
+          "index": 199,
+          "timeSeconds": 7.92,
+          "textureStdDev": 59.395
+        },
+        {
+          "index": 200,
+          "timeSeconds": 7.96,
+          "textureStdDev": 59.449
+        },
+        {
+          "index": 201,
+          "timeSeconds": 8.0,
+          "textureStdDev": 59.449
+        },
+        {
+          "index": 202,
+          "timeSeconds": 8.04,
+          "textureStdDev": 59.449
+        },
+        {
+          "index": 203,
+          "timeSeconds": 8.08,
+          "textureStdDev": 59.449
+        },
+        {
+          "index": 204,
+          "timeSeconds": 8.12,
+          "textureStdDev": 59.449
+        },
+        {
+          "index": 205,
+          "timeSeconds": 8.16,
+          "textureStdDev": 59.449
+        },
+        {
+          "index": 206,
+          "timeSeconds": 8.2,
+          "textureStdDev": 59.449
+        },
+        {
+          "index": 207,
+          "timeSeconds": 8.24,
+          "textureStdDev": 59.449
+        },
+        {
+          "index": 208,
+          "timeSeconds": 8.28,
+          "textureStdDev": 59.449
+        },
+        {
+          "index": 209,
+          "timeSeconds": 8.32,
+          "textureStdDev": 59.449
+        },
+        {
+          "index": 210,
+          "timeSeconds": 8.36,
+          "textureStdDev": 59.449
+        },
+        {
+          "index": 211,
+          "timeSeconds": 8.4,
+          "textureStdDev": 59.449
+        },
+        {
+          "index": 212,
+          "timeSeconds": 8.44,
+          "textureStdDev": 59.449
+        },
+        {
+          "index": 213,
+          "timeSeconds": 8.48,
+          "textureStdDev": 59.449
+        }
+      ],
+      "lowTextureDuringSequenceApprox": [],
+      "movementWindowFrames": 97
+    },
+    {
+      "case": "decision",
+      "video": "/tmp/h342-experience-final-ui/decision/347d7a456f77ef5557a810372fc23efe.webm",
+      "fps": 25.0,
+      "width": 1364,
+      "height": 768,
+      "sampledRAF": 135,
+      "rangeSecondsApprox": [
+        2.0925,
+        6.22979999999702
+      ],
+      "frames": [
+        {
+          "index": 1,
+          "timeSeconds": 0.0,
+          "textureStdDev": 0.0
+        },
+        {
+          "index": 2,
+          "timeSeconds": 0.04,
+          "textureStdDev": 1.484
+        },
+        {
+          "index": 3,
+          "timeSeconds": 0.08,
+          "textureStdDev": 0.922
+        },
+        {
+          "index": 4,
+          "timeSeconds": 0.12,
+          "textureStdDev": 0.922
+        },
+        {
+          "index": 5,
+          "timeSeconds": 0.16,
+          "textureStdDev": 0.922
+        },
+        {
+          "index": 6,
+          "timeSeconds": 0.2,
+          "textureStdDev": 0.45
+        },
+        {
+          "index": 7,
+          "timeSeconds": 0.24,
+          "textureStdDev": 0.45
+        },
+        {
+          "index": 8,
+          "timeSeconds": 0.28,
+          "textureStdDev": 0.45
+        },
+        {
+          "index": 9,
+          "timeSeconds": 0.32,
+          "textureStdDev": 0.45
+        },
+        {
+          "index": 10,
+          "timeSeconds": 0.36,
+          "textureStdDev": 40.82
+        },
+        {
+          "index": 11,
+          "timeSeconds": 0.4,
+          "textureStdDev": 40.41
+        },
+        {
+          "index": 12,
+          "timeSeconds": 0.44,
+          "textureStdDev": 40.467
+        },
+        {
+          "index": 13,
+          "timeSeconds": 0.48,
+          "textureStdDev": 40.435
+        },
+        {
+          "index": 14,
+          "timeSeconds": 0.52,
+          "textureStdDev": 40.645
+        },
+        {
+          "index": 15,
+          "timeSeconds": 0.56,
+          "textureStdDev": 36.776
+        },
+        {
+          "index": 16,
+          "timeSeconds": 0.6,
+          "textureStdDev": 36.61
+        },
+        {
+          "index": 17,
+          "timeSeconds": 0.64,
+          "textureStdDev": 36.712
+        },
+        {
+          "index": 18,
+          "timeSeconds": 0.68,
+          "textureStdDev": 36.631
+        },
+        {
+          "index": 19,
+          "timeSeconds": 0.72,
+          "textureStdDev": 36.598
+        },
+        {
+          "index": 20,
+          "timeSeconds": 0.76,
+          "textureStdDev": 36.698
+        },
+        {
+          "index": 21,
+          "timeSeconds": 0.8,
+          "textureStdDev": 36.804
+        },
+        {
+          "index": 22,
+          "timeSeconds": 0.84,
+          "textureStdDev": 36.786
+        },
+        {
+          "index": 23,
+          "timeSeconds": 0.88,
+          "textureStdDev": 36.968
+        },
+        {
+          "index": 24,
+          "timeSeconds": 0.92,
+          "textureStdDev": 36.968
+        },
+        {
+          "index": 25,
+          "timeSeconds": 0.96,
+          "textureStdDev": 36.991
+        },
+        {
+          "index": 26,
+          "timeSeconds": 1.0,
+          "textureStdDev": 36.987
+        },
+        {
+          "index": 27,
+          "timeSeconds": 1.04,
+          "textureStdDev": 7.734
+        },
+        {
+          "index": 28,
+          "timeSeconds": 1.08,
+          "textureStdDev": 7.527
+        },
+        {
+          "index": 29,
+          "timeSeconds": 1.12,
+          "textureStdDev": 7.518
+        },
+        {
+          "index": 30,
+          "timeSeconds": 1.16,
+          "textureStdDev": 7.594
+        },
+        {
+          "index": 31,
+          "timeSeconds": 1.2,
+          "textureStdDev": 7.649
+        },
+        {
+          "index": 32,
+          "timeSeconds": 1.24,
+          "textureStdDev": 7.69
+        },
+        {
+          "index": 33,
+          "timeSeconds": 1.28,
+          "textureStdDev": 7.69
+        },
+        {
+          "index": 34,
+          "timeSeconds": 1.32,
+          "textureStdDev": 7.702
+        },
+        {
+          "index": 35,
+          "timeSeconds": 1.36,
+          "textureStdDev": 7.714
+        },
+        {
+          "index": 36,
+          "timeSeconds": 1.4,
+          "textureStdDev": 0.0
+        },
+        {
+          "index": 37,
+          "timeSeconds": 1.44,
+          "textureStdDev": 0.0
+        },
+        {
+          "index": 38,
+          "timeSeconds": 1.48,
+          "textureStdDev": 0.0
+        },
+        {
+          "index": 39,
+          "timeSeconds": 1.52,
+          "textureStdDev": 0.0
+        },
+        {
+          "index": 40,
+          "timeSeconds": 1.56,
+          "textureStdDev": 58.77
+        },
+        {
+          "index": 41,
+          "timeSeconds": 1.6,
+          "textureStdDev": 58.488
+        },
+        {
+          "index": 42,
+          "timeSeconds": 1.64,
+          "textureStdDev": 58.494
+        },
+        {
+          "index": 43,
+          "timeSeconds": 1.68,
+          "textureStdDev": 58.5
+        },
+        {
+          "index": 44,
+          "timeSeconds": 1.72,
+          "textureStdDev": 58.475
+        },
+        {
+          "index": 45,
+          "timeSeconds": 1.76,
+          "textureStdDev": 58.473
+        },
+        {
+          "index": 46,
+          "timeSeconds": 1.8,
+          "textureStdDev": 58.466
+        },
+        {
+          "index": 47,
+          "timeSeconds": 1.84,
+          "textureStdDev": 58.475
+        },
+        {
+          "index": 48,
+          "timeSeconds": 1.88,
+          "textureStdDev": 58.476
+        },
+        {
+          "index": 49,
+          "timeSeconds": 1.92,
+          "textureStdDev": 57.338
+        },
+        {
+          "index": 50,
+          "timeSeconds": 1.96,
+          "textureStdDev": 57.401
+        },
+        {
+          "index": 51,
+          "timeSeconds": 2.0,
+          "textureStdDev": 57.43
+        },
+        {
+          "index": 52,
+          "timeSeconds": 2.04,
+          "textureStdDev": 57.498
+        },
+        {
+          "index": 53,
+          "timeSeconds": 2.08,
+          "textureStdDev": 57.483
+        },
+        {
+          "index": 54,
+          "timeSeconds": 2.12,
+          "textureStdDev": 58.529
+        },
+        {
+          "index": 55,
+          "timeSeconds": 2.16,
+          "textureStdDev": 58.547
+        },
+        {
+          "index": 56,
+          "timeSeconds": 2.2,
+          "textureStdDev": 58.816
+        },
+        {
+          "index": 57,
+          "timeSeconds": 2.24,
+          "textureStdDev": 58.821
+        },
+        {
+          "index": 58,
+          "timeSeconds": 2.28,
+          "textureStdDev": 58.828
+        },
+        {
+          "index": 59,
+          "timeSeconds": 2.32,
+          "textureStdDev": 58.823
+        },
+        {
+          "index": 60,
+          "timeSeconds": 2.36,
+          "textureStdDev": 58.814
+        },
+        {
+          "index": 61,
+          "timeSeconds": 2.4,
+          "textureStdDev": 58.827
+        },
+        {
+          "index": 62,
+          "timeSeconds": 2.44,
+          "textureStdDev": 58.845
+        },
+        {
+          "index": 63,
+          "timeSeconds": 2.48,
+          "textureStdDev": 58.806
+        },
+        {
+          "index": 64,
+          "timeSeconds": 2.52,
+          "textureStdDev": 58.823
+        },
+        {
+          "index": 65,
+          "timeSeconds": 2.56,
+          "textureStdDev": 58.861
+        },
+        {
+          "index": 66,
+          "timeSeconds": 2.6,
+          "textureStdDev": 58.866
+        },
+        {
+          "index": 67,
+          "timeSeconds": 2.64,
+          "textureStdDev": 58.865
+        },
+        {
+          "index": 68,
+          "timeSeconds": 2.68,
+          "textureStdDev": 58.896
+        },
+        {
+          "index": 69,
+          "timeSeconds": 2.72,
+          "textureStdDev": 58.861
+        },
+        {
+          "index": 70,
+          "timeSeconds": 2.76,
+          "textureStdDev": 58.866
+        },
+        {
+          "index": 71,
+          "timeSeconds": 2.8,
+          "textureStdDev": 58.871
+        },
+        {
+          "index": 72,
+          "timeSeconds": 2.84,
+          "textureStdDev": 58.902
+        },
+        {
+          "index": 73,
+          "timeSeconds": 2.88,
+          "textureStdDev": 58.902
+        },
+        {
+          "index": 74,
+          "timeSeconds": 2.92,
+          "textureStdDev": 58.915
+        },
+        {
+          "index": 75,
+          "timeSeconds": 2.96,
+          "textureStdDev": 58.939
+        },
+        {
+          "index": 76,
+          "timeSeconds": 3.0,
+          "textureStdDev": 58.943
+        },
+        {
+          "index": 77,
+          "timeSeconds": 3.04,
+          "textureStdDev": 59.13
+        },
+        {
+          "index": 78,
+          "timeSeconds": 3.08,
+          "textureStdDev": 59.104
+        },
+        {
+          "index": 79,
+          "timeSeconds": 3.12,
+          "textureStdDev": 59.101
+        },
+        {
+          "index": 80,
+          "timeSeconds": 3.16,
+          "textureStdDev": 59.105
+        },
+        {
+          "index": 81,
+          "timeSeconds": 3.2,
+          "textureStdDev": 59.098
+        },
+        {
+          "index": 82,
+          "timeSeconds": 3.24,
+          "textureStdDev": 59.098
+        },
+        {
+          "index": 83,
+          "timeSeconds": 3.28,
+          "textureStdDev": 59.066
+        },
+        {
+          "index": 84,
+          "timeSeconds": 3.32,
+          "textureStdDev": 59.071
+        },
+        {
+          "index": 85,
+          "timeSeconds": 3.36,
+          "textureStdDev": 59.064
+        },
+        {
+          "index": 86,
+          "timeSeconds": 3.4,
+          "textureStdDev": 59.061
+        },
+        {
+          "index": 87,
+          "timeSeconds": 3.44,
+          "textureStdDev": 59.078
+        },
+        {
+          "index": 88,
+          "timeSeconds": 3.48,
+          "textureStdDev": 59.069
+        },
+        {
+          "index": 89,
+          "timeSeconds": 3.52,
+          "textureStdDev": 59.077
+        },
+        {
+          "index": 90,
+          "timeSeconds": 3.56,
+          "textureStdDev": 59.082
+        },
+        {
+          "index": 91,
+          "timeSeconds": 3.6,
+          "textureStdDev": 59.092
+        },
+        {
+          "index": 92,
+          "timeSeconds": 3.64,
+          "textureStdDev": 59.087
+        },
+        {
+          "index": 93,
+          "timeSeconds": 3.68,
+          "textureStdDev": 59.09
+        },
+        {
+          "index": 94,
+          "timeSeconds": 3.72,
+          "textureStdDev": 59.055
+        },
+        {
+          "index": 95,
+          "timeSeconds": 3.76,
+          "textureStdDev": 59.057
+        },
+        {
+          "index": 96,
+          "timeSeconds": 3.8,
+          "textureStdDev": 59.061
+        },
+        {
+          "index": 97,
+          "timeSeconds": 3.84,
+          "textureStdDev": 59.062
+        },
+        {
+          "index": 98,
+          "timeSeconds": 3.88,
+          "textureStdDev": 59.078
+        },
+        {
+          "index": 99,
+          "timeSeconds": 3.92,
+          "textureStdDev": 59.05
+        },
+        {
+          "index": 100,
+          "timeSeconds": 3.96,
+          "textureStdDev": 59.061
+        },
+        {
+          "index": 101,
+          "timeSeconds": 4.0,
+          "textureStdDev": 59.057
+        },
+        {
+          "index": 102,
+          "timeSeconds": 4.04,
+          "textureStdDev": 59.086
+        },
+        {
+          "index": 103,
+          "timeSeconds": 4.08,
+          "textureStdDev": 59.086
+        },
+        {
+          "index": 104,
+          "timeSeconds": 4.12,
+          "textureStdDev": 59.095
+        },
+        {
+          "index": 105,
+          "timeSeconds": 4.16,
+          "textureStdDev": 59.105
+        },
+        {
+          "index": 106,
+          "timeSeconds": 4.2,
+          "textureStdDev": 59.106
+        },
+        {
+          "index": 107,
+          "timeSeconds": 4.24,
+          "textureStdDev": 59.105
+        },
+        {
+          "index": 108,
+          "timeSeconds": 4.28,
+          "textureStdDev": 59.112
+        },
+        {
+          "index": 109,
+          "timeSeconds": 4.32,
+          "textureStdDev": 59.101
+        },
+        {
+          "index": 110,
+          "timeSeconds": 4.36,
+          "textureStdDev": 59.152
+        },
+        {
+          "index": 111,
+          "timeSeconds": 4.4,
+          "textureStdDev": 59.137
+        },
+        {
+          "index": 112,
+          "timeSeconds": 4.44,
+          "textureStdDev": 59.123
+        },
+        {
+          "index": 113,
+          "timeSeconds": 4.48,
+          "textureStdDev": 59.096
+        },
+        {
+          "index": 114,
+          "timeSeconds": 4.52,
+          "textureStdDev": 59.101
+        },
+        {
+          "index": 115,
+          "timeSeconds": 4.56,
+          "textureStdDev": 59.1
+        },
+        {
+          "index": 116,
+          "timeSeconds": 4.6,
+          "textureStdDev": 59.087
+        },
+        {
+          "index": 117,
+          "timeSeconds": 4.64,
+          "textureStdDev": 59.109
+        },
+        {
+          "index": 118,
+          "timeSeconds": 4.68,
+          "textureStdDev": 59.116
+        },
+        {
+          "index": 119,
+          "timeSeconds": 4.72,
+          "textureStdDev": 59.121
+        },
+        {
+          "index": 120,
+          "timeSeconds": 4.76,
+          "textureStdDev": 59.11
+        },
+        {
+          "index": 121,
+          "timeSeconds": 4.8,
+          "textureStdDev": 59.197
+        },
+        {
+          "index": 122,
+          "timeSeconds": 4.84,
+          "textureStdDev": 59.191
+        },
+        {
+          "index": 123,
+          "timeSeconds": 4.88,
+          "textureStdDev": 59.182
+        },
+        {
+          "index": 124,
+          "timeSeconds": 4.92,
+          "textureStdDev": 59.178
+        },
+        {
+          "index": 125,
+          "timeSeconds": 4.96,
+          "textureStdDev": 59.158
+        },
+        {
+          "index": 126,
+          "timeSeconds": 5.0,
+          "textureStdDev": 59.169
+        },
+        {
+          "index": 127,
+          "timeSeconds": 5.04,
+          "textureStdDev": 59.186
+        },
+        {
+          "index": 128,
+          "timeSeconds": 5.08,
+          "textureStdDev": 59.183
+        },
+        {
+          "index": 129,
+          "timeSeconds": 5.12,
+          "textureStdDev": 56.804
+        },
+        {
+          "index": 130,
+          "timeSeconds": 5.16,
+          "textureStdDev": 58.85
+        },
+        {
+          "index": 131,
+          "timeSeconds": 5.2,
+          "textureStdDev": 58.808
+        },
+        {
+          "index": 132,
+          "timeSeconds": 5.24,
+          "textureStdDev": 58.821
+        },
+        {
+          "index": 133,
+          "timeSeconds": 5.28,
+          "textureStdDev": 58.822
+        },
+        {
+          "index": 134,
+          "timeSeconds": 5.32,
+          "textureStdDev": 58.838
+        },
+        {
+          "index": 135,
+          "timeSeconds": 5.36,
+          "textureStdDev": 58.851
+        },
+        {
+          "index": 136,
+          "timeSeconds": 5.4,
+          "textureStdDev": 59.168
+        },
+        {
+          "index": 137,
+          "timeSeconds": 5.44,
+          "textureStdDev": 59.125
+        },
+        {
+          "index": 138,
+          "timeSeconds": 5.48,
+          "textureStdDev": 59.119
+        },
+        {
+          "index": 139,
+          "timeSeconds": 5.52,
+          "textureStdDev": 59.115
+        },
+        {
+          "index": 140,
+          "timeSeconds": 5.56,
+          "textureStdDev": 59.108
+        },
+        {
+          "index": 141,
+          "timeSeconds": 5.6,
+          "textureStdDev": 59.104
+        },
+        {
+          "index": 142,
+          "timeSeconds": 5.64,
+          "textureStdDev": 61.391
+        },
+        {
+          "index": 143,
+          "timeSeconds": 5.68,
+          "textureStdDev": 61.381
+        },
+        {
+          "index": 144,
+          "timeSeconds": 5.72,
+          "textureStdDev": 61.394
+        },
+        {
+          "index": 145,
+          "timeSeconds": 5.76,
+          "textureStdDev": 61.439
+        },
+        {
+          "index": 146,
+          "timeSeconds": 5.8,
+          "textureStdDev": 61.439
+        },
+        {
+          "index": 147,
+          "timeSeconds": 5.84,
+          "textureStdDev": 61.435
+        },
+        {
+          "index": 148,
+          "timeSeconds": 5.88,
+          "textureStdDev": 61.451
+        },
+        {
+          "index": 149,
+          "timeSeconds": 5.92,
+          "textureStdDev": 61.45
+        },
+        {
+          "index": 150,
+          "timeSeconds": 5.96,
+          "textureStdDev": 61.472
+        },
+        {
+          "index": 151,
+          "timeSeconds": 6.0,
+          "textureStdDev": 61.472
+        },
+        {
+          "index": 152,
+          "timeSeconds": 6.04,
+          "textureStdDev": 61.476
+        },
+        {
+          "index": 153,
+          "timeSeconds": 6.08,
+          "textureStdDev": 61.477
+        },
+        {
+          "index": 154,
+          "timeSeconds": 6.12,
+          "textureStdDev": 61.433
+        },
+        {
+          "index": 155,
+          "timeSeconds": 6.16,
+          "textureStdDev": 61.449
+        },
+        {
+          "index": 156,
+          "timeSeconds": 6.2,
+          "textureStdDev": 61.454
+        },
+        {
+          "index": 157,
+          "timeSeconds": 6.24,
+          "textureStdDev": 61.448
+        },
+        {
+          "index": 158,
+          "timeSeconds": 6.28,
+          "textureStdDev": 61.448
+        },
+        {
+          "index": 159,
+          "timeSeconds": 6.32,
+          "textureStdDev": 61.448
+        },
+        {
+          "index": 160,
+          "timeSeconds": 6.36,
+          "textureStdDev": 61.446
+        },
+        {
+          "index": 161,
+          "timeSeconds": 6.4,
+          "textureStdDev": 61.462
+        },
+        {
+          "index": 162,
+          "timeSeconds": 6.44,
+          "textureStdDev": 61.443
+        },
+        {
+          "index": 163,
+          "timeSeconds": 6.48,
+          "textureStdDev": 61.444
+        },
+        {
+          "index": 164,
+          "timeSeconds": 6.52,
+          "textureStdDev": 61.44
+        },
+        {
+          "index": 165,
+          "timeSeconds": 6.56,
+          "textureStdDev": 61.464
+        },
+        {
+          "index": 166,
+          "timeSeconds": 6.6,
+          "textureStdDev": 61.455
+        },
+        {
+          "index": 167,
+          "timeSeconds": 6.64,
+          "textureStdDev": 61.444
+        },
+        {
+          "index": 168,
+          "timeSeconds": 6.68,
+          "textureStdDev": 61.482
+        },
+        {
+          "index": 169,
+          "timeSeconds": 6.72,
+          "textureStdDev": 61.462
+        },
+        {
+          "index": 170,
+          "timeSeconds": 6.76,
+          "textureStdDev": 61.461
+        },
+        {
+          "index": 171,
+          "timeSeconds": 6.8,
+          "textureStdDev": 61.461
+        },
+        {
+          "index": 172,
+          "timeSeconds": 6.84,
+          "textureStdDev": 61.461
+        },
+        {
+          "index": 173,
+          "timeSeconds": 6.88,
+          "textureStdDev": 61.461
+        },
+        {
+          "index": 174,
+          "timeSeconds": 6.92,
+          "textureStdDev": 61.46
+        },
+        {
+          "index": 175,
+          "timeSeconds": 6.96,
+          "textureStdDev": 61.459
+        },
+        {
+          "index": 176,
+          "timeSeconds": 7.0,
+          "textureStdDev": 23.956
+        },
+        {
+          "index": 177,
+          "timeSeconds": 7.04,
+          "textureStdDev": 24.087
+        },
+        {
+          "index": 178,
+          "timeSeconds": 7.08,
+          "textureStdDev": 24.072
+        },
+        {
+          "index": 179,
+          "timeSeconds": 7.12,
+          "textureStdDev": 24.074
+        },
+        {
+          "index": 180,
+          "timeSeconds": 7.16,
+          "textureStdDev": 24.074
+        },
+        {
+          "index": 181,
+          "timeSeconds": 7.2,
+          "textureStdDev": 34.083
+        },
+        {
+          "index": 182,
+          "timeSeconds": 7.24,
+          "textureStdDev": 34.076
+        },
+        {
+          "index": 183,
+          "timeSeconds": 7.28,
+          "textureStdDev": 34.069
+        },
+        {
+          "index": 184,
+          "timeSeconds": 7.32,
+          "textureStdDev": 33.97
+        },
+        {
+          "index": 185,
+          "timeSeconds": 7.36,
+          "textureStdDev": 33.998
+        },
+        {
+          "index": 186,
+          "timeSeconds": 7.4,
+          "textureStdDev": 34.023
+        },
+        {
+          "index": 187,
+          "timeSeconds": 7.44,
+          "textureStdDev": 58.326
+        },
+        {
+          "index": 188,
+          "timeSeconds": 7.48,
+          "textureStdDev": 58.022
+        },
+        {
+          "index": 189,
+          "timeSeconds": 7.52,
+          "textureStdDev": 58.023
+        },
+        {
+          "index": 190,
+          "timeSeconds": 7.56,
+          "textureStdDev": 58.023
+        },
+        {
+          "index": 191,
+          "timeSeconds": 7.6,
+          "textureStdDev": 58.017
+        },
+        {
+          "index": 192,
+          "timeSeconds": 7.64,
+          "textureStdDev": 58.047
+        },
+        {
+          "index": 193,
+          "timeSeconds": 7.68,
+          "textureStdDev": 58.99
+        },
+        {
+          "index": 194,
+          "timeSeconds": 7.72,
+          "textureStdDev": 58.99
+        },
+        {
+          "index": 195,
+          "timeSeconds": 7.76,
+          "textureStdDev": 58.99
+        },
+        {
+          "index": 196,
+          "timeSeconds": 7.8,
+          "textureStdDev": 58.99
+        },
+        {
+          "index": 197,
+          "timeSeconds": 7.84,
+          "textureStdDev": 58.99
+        },
+        {
+          "index": 198,
+          "timeSeconds": 7.88,
+          "textureStdDev": 58.99
+        },
+        {
+          "index": 199,
+          "timeSeconds": 7.92,
+          "textureStdDev": 58.989
+        },
+        {
+          "index": 200,
+          "timeSeconds": 7.96,
+          "textureStdDev": 58.989
+        },
+        {
+          "index": 201,
+          "timeSeconds": 8.0,
+          "textureStdDev": 58.989
+        },
+        {
+          "index": 202,
+          "timeSeconds": 8.04,
+          "textureStdDev": 58.989
+        },
+        {
+          "index": 203,
+          "timeSeconds": 8.08,
+          "textureStdDev": 58.988
+        },
+        {
+          "index": 204,
+          "timeSeconds": 8.12,
+          "textureStdDev": 58.988
+        },
+        {
+          "index": 205,
+          "timeSeconds": 8.16,
+          "textureStdDev": 58.988
+        },
+        {
+          "index": 206,
+          "timeSeconds": 8.2,
+          "textureStdDev": 58.988
+        },
+        {
+          "index": 207,
+          "timeSeconds": 8.24,
+          "textureStdDev": 58.988
+        },
+        {
+          "index": 208,
+          "timeSeconds": 8.28,
+          "textureStdDev": 58.988
+        },
+        {
+          "index": 209,
+          "timeSeconds": 8.32,
+          "textureStdDev": 58.988
+        },
+        {
+          "index": 210,
+          "timeSeconds": 8.36,
+          "textureStdDev": 58.988
+        },
+        {
+          "index": 211,
+          "timeSeconds": 8.4,
+          "textureStdDev": 58.988
+        },
+        {
+          "index": 212,
+          "timeSeconds": 8.44,
+          "textureStdDev": 58.988
+        }
+      ],
+      "lowTextureDuringSequenceApprox": [],
+      "movementWindowFrames": 110
+    },
+    {
+      "case": "death",
+      "video": "/tmp/h342-experience-final-ui/death/3e8962941cf6fd9c230a563edcfba243.webm",
+      "fps": 25.0,
+      "width": 1364,
+      "height": 768,
+      "sampledRAF": 140,
+      "rangeSecondsApprox": [
+        1.9007000000029803,
+        6.067400000005961
+      ],
+      "frames": [
+        {
+          "index": 1,
+          "timeSeconds": 0.0,
+          "textureStdDev": 0.0
+        },
+        {
+          "index": 2,
+          "timeSeconds": 0.04,
+          "textureStdDev": 1.484
+        },
+        {
+          "index": 3,
+          "timeSeconds": 0.08,
+          "textureStdDev": 0.877
+        },
+        {
+          "index": 4,
+          "timeSeconds": 0.12,
+          "textureStdDev": 0.877
+        },
+        {
+          "index": 5,
+          "timeSeconds": 0.16,
+          "textureStdDev": 0.877
+        },
+        {
+          "index": 6,
+          "timeSeconds": 0.2,
+          "textureStdDev": 0.877
+        },
+        {
+          "index": 7,
+          "timeSeconds": 0.24,
+          "textureStdDev": 0.877
+        },
+        {
+          "index": 8,
+          "timeSeconds": 0.28,
+          "textureStdDev": 40.49
+        },
+        {
+          "index": 9,
+          "timeSeconds": 0.32,
+          "textureStdDev": 40.402
+        },
+        {
+          "index": 10,
+          "timeSeconds": 0.36,
+          "textureStdDev": 40.383
+        },
+        {
+          "index": 11,
+          "timeSeconds": 0.4,
+          "textureStdDev": 40.686
+        },
+        {
+          "index": 12,
+          "timeSeconds": 0.44,
+          "textureStdDev": 40.749
+        },
+        {
+          "index": 13,
+          "timeSeconds": 0.48,
+          "textureStdDev": 40.93
+        },
+        {
+          "index": 14,
+          "timeSeconds": 0.52,
+          "textureStdDev": 36.991
+        },
+        {
+          "index": 15,
+          "timeSeconds": 0.56,
+          "textureStdDev": 37.07
+        },
+        {
+          "index": 16,
+          "timeSeconds": 0.6,
+          "textureStdDev": 37.081
+        },
+        {
+          "index": 17,
+          "timeSeconds": 0.64,
+          "textureStdDev": 37.166
+        },
+        {
+          "index": 18,
+          "timeSeconds": 0.68,
+          "textureStdDev": 37.346
+        },
+        {
+          "index": 19,
+          "timeSeconds": 0.72,
+          "textureStdDev": 7.44
+        },
+        {
+          "index": 20,
+          "timeSeconds": 0.76,
+          "textureStdDev": 7.438
+        },
+        {
+          "index": 21,
+          "timeSeconds": 0.8,
+          "textureStdDev": 7.441
+        },
+        {
+          "index": 22,
+          "timeSeconds": 0.84,
+          "textureStdDev": 7.495
+        },
+        {
+          "index": 23,
+          "timeSeconds": 0.88,
+          "textureStdDev": 7.534
+        },
+        {
+          "index": 24,
+          "timeSeconds": 0.92,
+          "textureStdDev": 7.744
+        },
+        {
+          "index": 25,
+          "timeSeconds": 0.96,
+          "textureStdDev": 7.756
+        },
+        {
+          "index": 26,
+          "timeSeconds": 1.0,
+          "textureStdDev": 7.763
+        },
+        {
+          "index": 27,
+          "timeSeconds": 1.04,
+          "textureStdDev": 7.756
+        },
+        {
+          "index": 28,
+          "timeSeconds": 1.08,
+          "textureStdDev": 7.798
+        },
+        {
+          "index": 29,
+          "timeSeconds": 1.12,
+          "textureStdDev": 7.836
+        },
+        {
+          "index": 30,
+          "timeSeconds": 1.16,
+          "textureStdDev": 7.849
+        },
+        {
+          "index": 31,
+          "timeSeconds": 1.2,
+          "textureStdDev": 7.839
+        },
+        {
+          "index": 32,
+          "timeSeconds": 1.24,
+          "textureStdDev": 7.788
+        },
+        {
+          "index": 33,
+          "timeSeconds": 1.28,
+          "textureStdDev": 0.0
+        },
+        {
+          "index": 34,
+          "timeSeconds": 1.32,
+          "textureStdDev": 0.0
+        },
+        {
+          "index": 35,
+          "timeSeconds": 1.36,
+          "textureStdDev": 0.0
+        },
+        {
+          "index": 36,
+          "timeSeconds": 1.4,
+          "textureStdDev": 0.0
+        },
+        {
+          "index": 37,
+          "timeSeconds": 1.44,
+          "textureStdDev": 58.775
+        },
+        {
+          "index": 38,
+          "timeSeconds": 1.48,
+          "textureStdDev": 58.557
+        },
+        {
+          "index": 39,
+          "timeSeconds": 1.52,
+          "textureStdDev": 58.56
+        },
+        {
+          "index": 40,
+          "timeSeconds": 1.56,
+          "textureStdDev": 58.559
+        },
+        {
+          "index": 41,
+          "timeSeconds": 1.6,
+          "textureStdDev": 58.555
+        },
+        {
+          "index": 42,
+          "timeSeconds": 1.64,
+          "textureStdDev": 58.565
+        },
+        {
+          "index": 43,
+          "timeSeconds": 1.68,
+          "textureStdDev": 58.567
+        },
+        {
+          "index": 44,
+          "timeSeconds": 1.72,
+          "textureStdDev": 58.556
+        },
+        {
+          "index": 45,
+          "timeSeconds": 1.76,
+          "textureStdDev": 58.562
+        },
+        {
+          "index": 46,
+          "timeSeconds": 1.8,
+          "textureStdDev": 57.429
+        },
+        {
+          "index": 47,
+          "timeSeconds": 1.84,
+          "textureStdDev": 57.573
+        },
+        {
+          "index": 48,
+          "timeSeconds": 1.88,
+          "textureStdDev": 58.654
+        },
+        {
+          "index": 49,
+          "timeSeconds": 1.92,
+          "textureStdDev": 58.672
+        },
+        {
+          "index": 50,
+          "timeSeconds": 1.96,
+          "textureStdDev": 58.634
+        },
+        {
+          "index": 51,
+          "timeSeconds": 2.0,
+          "textureStdDev": 58.624
+        },
+        {
+          "index": 52,
+          "timeSeconds": 2.04,
+          "textureStdDev": 58.837
+        },
+        {
+          "index": 53,
+          "timeSeconds": 2.08,
+          "textureStdDev": 58.839
+        },
+        {
+          "index": 54,
+          "timeSeconds": 2.12,
+          "textureStdDev": 58.839
+        },
+        {
+          "index": 55,
+          "timeSeconds": 2.16,
+          "textureStdDev": 58.826
+        },
+        {
+          "index": 56,
+          "timeSeconds": 2.2,
+          "textureStdDev": 58.842
+        },
+        {
+          "index": 57,
+          "timeSeconds": 2.24,
+          "textureStdDev": 58.842
+        },
+        {
+          "index": 58,
+          "timeSeconds": 2.28,
+          "textureStdDev": 58.83
+        },
+        {
+          "index": 59,
+          "timeSeconds": 2.32,
+          "textureStdDev": 58.844
+        },
+        {
+          "index": 60,
+          "timeSeconds": 2.36,
+          "textureStdDev": 58.844
+        },
+        {
+          "index": 61,
+          "timeSeconds": 2.4,
+          "textureStdDev": 58.866
+        },
+        {
+          "index": 62,
+          "timeSeconds": 2.44,
+          "textureStdDev": 58.857
+        },
+        {
+          "index": 63,
+          "timeSeconds": 2.48,
+          "textureStdDev": 58.915
+        },
+        {
+          "index": 64,
+          "timeSeconds": 2.52,
+          "textureStdDev": 58.915
+        },
+        {
+          "index": 65,
+          "timeSeconds": 2.56,
+          "textureStdDev": 58.906
+        },
+        {
+          "index": 66,
+          "timeSeconds": 2.6,
+          "textureStdDev": 58.924
+        },
+        {
+          "index": 67,
+          "timeSeconds": 2.64,
+          "textureStdDev": 58.911
+        },
+        {
+          "index": 68,
+          "timeSeconds": 2.68,
+          "textureStdDev": 58.883
+        },
+        {
+          "index": 69,
+          "timeSeconds": 2.72,
+          "textureStdDev": 58.888
+        },
+        {
+          "index": 70,
+          "timeSeconds": 2.76,
+          "textureStdDev": 58.893
+        },
+        {
+          "index": 71,
+          "timeSeconds": 2.8,
+          "textureStdDev": 58.896
+        },
+        {
+          "index": 72,
+          "timeSeconds": 2.84,
+          "textureStdDev": 58.881
+        },
+        {
+          "index": 73,
+          "timeSeconds": 2.88,
+          "textureStdDev": 58.912
+        },
+        {
+          "index": 74,
+          "timeSeconds": 2.92,
+          "textureStdDev": 58.937
+        },
+        {
+          "index": 75,
+          "timeSeconds": 2.96,
+          "textureStdDev": 58.932
+        },
+        {
+          "index": 76,
+          "timeSeconds": 3.0,
+          "textureStdDev": 58.923
+        },
+        {
+          "index": 77,
+          "timeSeconds": 3.04,
+          "textureStdDev": 58.88
+        },
+        {
+          "index": 78,
+          "timeSeconds": 3.08,
+          "textureStdDev": 58.881
+        },
+        {
+          "index": 79,
+          "timeSeconds": 3.12,
+          "textureStdDev": 58.862
+        },
+        {
+          "index": 80,
+          "timeSeconds": 3.16,
+          "textureStdDev": 58.961
+        },
+        {
+          "index": 81,
+          "timeSeconds": 3.2,
+          "textureStdDev": 58.955
+        },
+        {
+          "index": 82,
+          "timeSeconds": 3.24,
+          "textureStdDev": 58.949
+        },
+        {
+          "index": 83,
+          "timeSeconds": 3.28,
+          "textureStdDev": 58.961
+        },
+        {
+          "index": 84,
+          "timeSeconds": 3.32,
+          "textureStdDev": 58.968
+        },
+        {
+          "index": 85,
+          "timeSeconds": 3.36,
+          "textureStdDev": 59.0
+        },
+        {
+          "index": 86,
+          "timeSeconds": 3.4,
+          "textureStdDev": 59.002
+        },
+        {
+          "index": 87,
+          "timeSeconds": 3.44,
+          "textureStdDev": 59.002
+        },
+        {
+          "index": 88,
+          "timeSeconds": 3.48,
+          "textureStdDev": 58.98
+        },
+        {
+          "index": 89,
+          "timeSeconds": 3.52,
+          "textureStdDev": 58.98
+        },
+        {
+          "index": 90,
+          "timeSeconds": 3.56,
+          "textureStdDev": 59.0
+        },
+        {
+          "index": 91,
+          "timeSeconds": 3.6,
+          "textureStdDev": 59.007
+        },
+        {
+          "index": 92,
+          "timeSeconds": 3.64,
+          "textureStdDev": 58.989
+        },
+        {
+          "index": 93,
+          "timeSeconds": 3.68,
+          "textureStdDev": 58.992
+        },
+        {
+          "index": 94,
+          "timeSeconds": 3.72,
+          "textureStdDev": 59.038
+        },
+        {
+          "index": 95,
+          "timeSeconds": 3.76,
+          "textureStdDev": 59.022
+        },
+        {
+          "index": 96,
+          "timeSeconds": 3.8,
+          "textureStdDev": 59.032
+        },
+        {
+          "index": 97,
+          "timeSeconds": 3.84,
+          "textureStdDev": 59.012
+        },
+        {
+          "index": 98,
+          "timeSeconds": 3.88,
+          "textureStdDev": 59.028
+        },
+        {
+          "index": 99,
+          "timeSeconds": 3.92,
+          "textureStdDev": 59.028
+        },
+        {
+          "index": 100,
+          "timeSeconds": 3.96,
+          "textureStdDev": 59.076
+        },
+        {
+          "index": 101,
+          "timeSeconds": 4.0,
+          "textureStdDev": 59.052
+        },
+        {
+          "index": 102,
+          "timeSeconds": 4.04,
+          "textureStdDev": 59.044
+        },
+        {
+          "index": 103,
+          "timeSeconds": 4.08,
+          "textureStdDev": 59.044
+        },
+        {
+          "index": 104,
+          "timeSeconds": 4.12,
+          "textureStdDev": 59.048
+        },
+        {
+          "index": 105,
+          "timeSeconds": 4.16,
+          "textureStdDev": 59.069
+        },
+        {
+          "index": 106,
+          "timeSeconds": 4.2,
+          "textureStdDev": 59.079
+        },
+        {
+          "index": 107,
+          "timeSeconds": 4.24,
+          "textureStdDev": 59.159
+        },
+        {
+          "index": 108,
+          "timeSeconds": 4.28,
+          "textureStdDev": 59.122
+        },
+        {
+          "index": 109,
+          "timeSeconds": 4.32,
+          "textureStdDev": 59.128
+        },
+        {
+          "index": 110,
+          "timeSeconds": 4.36,
+          "textureStdDev": 59.114
+        },
+        {
+          "index": 111,
+          "timeSeconds": 4.4,
+          "textureStdDev": 59.123
+        },
+        {
+          "index": 112,
+          "timeSeconds": 4.44,
+          "textureStdDev": 59.123
+        },
+        {
+          "index": 113,
+          "timeSeconds": 4.48,
+          "textureStdDev": 59.077
+        },
+        {
+          "index": 114,
+          "timeSeconds": 4.52,
+          "textureStdDev": 59.085
+        },
+        {
+          "index": 115,
+          "timeSeconds": 4.56,
+          "textureStdDev": 59.103
+        },
+        {
+          "index": 116,
+          "timeSeconds": 4.6,
+          "textureStdDev": 59.099
+        },
+        {
+          "index": 117,
+          "timeSeconds": 4.64,
+          "textureStdDev": 59.152
+        },
+        {
+          "index": 118,
+          "timeSeconds": 4.68,
+          "textureStdDev": 59.158
+        },
+        {
+          "index": 119,
+          "timeSeconds": 4.72,
+          "textureStdDev": 59.133
+        },
+        {
+          "index": 120,
+          "timeSeconds": 4.76,
+          "textureStdDev": 59.127
+        },
+        {
+          "index": 121,
+          "timeSeconds": 4.8,
+          "textureStdDev": 59.116
+        },
+        {
+          "index": 122,
+          "timeSeconds": 4.84,
+          "textureStdDev": 59.142
+        },
+        {
+          "index": 123,
+          "timeSeconds": 4.88,
+          "textureStdDev": 59.115
+        },
+        {
+          "index": 124,
+          "timeSeconds": 4.92,
+          "textureStdDev": 59.121
+        },
+        {
+          "index": 125,
+          "timeSeconds": 4.96,
+          "textureStdDev": 59.142
+        },
+        {
+          "index": 126,
+          "timeSeconds": 5.0,
+          "textureStdDev": 59.109
+        },
+        {
+          "index": 127,
+          "timeSeconds": 5.04,
+          "textureStdDev": 59.126
+        },
+        {
+          "index": 128,
+          "timeSeconds": 5.08,
+          "textureStdDev": 59.123
+        },
+        {
+          "index": 129,
+          "timeSeconds": 5.12,
+          "textureStdDev": 56.902
+        },
+        {
+          "index": 130,
+          "timeSeconds": 5.16,
+          "textureStdDev": 58.871
+        },
+        {
+          "index": 131,
+          "timeSeconds": 5.2,
+          "textureStdDev": 58.83
+        },
+        {
+          "index": 132,
+          "timeSeconds": 5.24,
+          "textureStdDev": 58.839
+        },
+        {
+          "index": 133,
+          "timeSeconds": 5.28,
+          "textureStdDev": 58.833
+        },
+        {
+          "index": 134,
+          "timeSeconds": 5.32,
+          "textureStdDev": 58.849
+        },
+        {
+          "index": 135,
+          "timeSeconds": 5.36,
+          "textureStdDev": 58.856
+        },
+        {
+          "index": 136,
+          "timeSeconds": 5.4,
+          "textureStdDev": 61.242
+        },
+        {
+          "index": 137,
+          "timeSeconds": 5.44,
+          "textureStdDev": 61.236
+        },
+        {
+          "index": 138,
+          "timeSeconds": 5.48,
+          "textureStdDev": 61.237
+        },
+        {
+          "index": 139,
+          "timeSeconds": 5.52,
+          "textureStdDev": 61.247
+        },
+        {
+          "index": 140,
+          "timeSeconds": 5.56,
+          "textureStdDev": 61.255
+        },
+        {
+          "index": 141,
+          "timeSeconds": 5.6,
+          "textureStdDev": 61.283
+        },
+        {
+          "index": 142,
+          "timeSeconds": 5.64,
+          "textureStdDev": 61.272
+        },
+        {
+          "index": 143,
+          "timeSeconds": 5.68,
+          "textureStdDev": 61.286
+        },
+        {
+          "index": 144,
+          "timeSeconds": 5.72,
+          "textureStdDev": 61.283
+        },
+        {
+          "index": 145,
+          "timeSeconds": 5.76,
+          "textureStdDev": 61.285
+        },
+        {
+          "index": 146,
+          "timeSeconds": 5.8,
+          "textureStdDev": 61.295
+        },
+        {
+          "index": 147,
+          "timeSeconds": 5.84,
+          "textureStdDev": 61.312
+        },
+        {
+          "index": 148,
+          "timeSeconds": 5.88,
+          "textureStdDev": 61.323
+        },
+        {
+          "index": 149,
+          "timeSeconds": 5.92,
+          "textureStdDev": 61.424
+        },
+        {
+          "index": 150,
+          "timeSeconds": 5.96,
+          "textureStdDev": 61.424
+        },
+        {
+          "index": 151,
+          "timeSeconds": 6.0,
+          "textureStdDev": 61.418
+        },
+        {
+          "index": 152,
+          "timeSeconds": 6.04,
+          "textureStdDev": 61.388
+        },
+        {
+          "index": 153,
+          "timeSeconds": 6.08,
+          "textureStdDev": 61.376
+        },
+        {
+          "index": 154,
+          "timeSeconds": 6.12,
+          "textureStdDev": 61.389
+        },
+        {
+          "index": 155,
+          "timeSeconds": 6.16,
+          "textureStdDev": 61.397
+        },
+        {
+          "index": 156,
+          "timeSeconds": 6.2,
+          "textureStdDev": 61.399
+        },
+        {
+          "index": 157,
+          "timeSeconds": 6.24,
+          "textureStdDev": 61.376
+        },
+        {
+          "index": 158,
+          "timeSeconds": 6.28,
+          "textureStdDev": 61.385
+        },
+        {
+          "index": 159,
+          "timeSeconds": 6.32,
+          "textureStdDev": 61.393
+        },
+        {
+          "index": 160,
+          "timeSeconds": 6.36,
+          "textureStdDev": 61.413
+        },
+        {
+          "index": 161,
+          "timeSeconds": 6.4,
+          "textureStdDev": 61.374
+        },
+        {
+          "index": 162,
+          "timeSeconds": 6.44,
+          "textureStdDev": 61.39
+        },
+        {
+          "index": 163,
+          "timeSeconds": 6.48,
+          "textureStdDev": 61.365
+        },
+        {
+          "index": 164,
+          "timeSeconds": 6.52,
+          "textureStdDev": 61.376
+        },
+        {
+          "index": 165,
+          "timeSeconds": 6.56,
+          "textureStdDev": 61.382
+        },
+        {
+          "index": 166,
+          "timeSeconds": 6.6,
+          "textureStdDev": 61.398
+        },
+        {
+          "index": 167,
+          "timeSeconds": 6.64,
+          "textureStdDev": 61.397
+        },
+        {
+          "index": 168,
+          "timeSeconds": 6.68,
+          "textureStdDev": 61.397
+        },
+        {
+          "index": 169,
+          "timeSeconds": 6.72,
+          "textureStdDev": 61.397
+        },
+        {
+          "index": 170,
+          "timeSeconds": 6.76,
+          "textureStdDev": 61.397
+        },
+        {
+          "index": 171,
+          "timeSeconds": 6.8,
+          "textureStdDev": 61.397
+        },
+        {
+          "index": 172,
+          "timeSeconds": 6.84,
+          "textureStdDev": 20.073
+        },
+        {
+          "index": 173,
+          "timeSeconds": 6.88,
+          "textureStdDev": 20.665
+        },
+        {
+          "index": 174,
+          "timeSeconds": 6.92,
+          "textureStdDev": 20.654
+        },
+        {
+          "index": 175,
+          "timeSeconds": 6.96,
+          "textureStdDev": 21.926
+        },
+        {
+          "index": 176,
+          "timeSeconds": 7.0,
+          "textureStdDev": 21.977
+        },
+        {
+          "index": 177,
+          "timeSeconds": 7.04,
+          "textureStdDev": 23.826
+        },
+        {
+          "index": 178,
+          "timeSeconds": 7.08,
+          "textureStdDev": 25.629
+        },
+        {
+          "index": 179,
+          "timeSeconds": 7.12,
+          "textureStdDev": 25.644
+        },
+        {
+          "index": 180,
+          "timeSeconds": 7.16,
+          "textureStdDev": 25.65
+        },
+        {
+          "index": 181,
+          "timeSeconds": 7.2,
+          "textureStdDev": 25.659
+        },
+        {
+          "index": 182,
+          "timeSeconds": 7.24,
+          "textureStdDev": 26.136
+        },
+        {
+          "index": 183,
+          "timeSeconds": 7.28,
+          "textureStdDev": 26.172
+        },
+        {
+          "index": 184,
+          "timeSeconds": 7.32,
+          "textureStdDev": 26.177
+        },
+        {
+          "index": 185,
+          "timeSeconds": 7.36,
+          "textureStdDev": 26.194
+        },
+        {
+          "index": 186,
+          "timeSeconds": 7.4,
+          "textureStdDev": 26.194
+        },
+        {
+          "index": 187,
+          "timeSeconds": 7.44,
+          "textureStdDev": 24.24
+        },
+        {
+          "index": 188,
+          "timeSeconds": 7.48,
+          "textureStdDev": 24.417
+        },
+        {
+          "index": 189,
+          "timeSeconds": 7.52,
+          "textureStdDev": 24.989
+        },
+        {
+          "index": 190,
+          "timeSeconds": 7.56,
+          "textureStdDev": 25.337
+        },
+        {
+          "index": 191,
+          "timeSeconds": 7.6,
+          "textureStdDev": 25.414
+        },
+        {
+          "index": 192,
+          "timeSeconds": 7.64,
+          "textureStdDev": 36.279
+        },
+        {
+          "index": 193,
+          "timeSeconds": 7.68,
+          "textureStdDev": 36.249
+        },
+        {
+          "index": 194,
+          "timeSeconds": 7.72,
+          "textureStdDev": 36.168
+        },
+        {
+          "index": 195,
+          "timeSeconds": 7.76,
+          "textureStdDev": 58.937
+        },
+        {
+          "index": 196,
+          "timeSeconds": 7.8,
+          "textureStdDev": 59.066
+        },
+        {
+          "index": 197,
+          "timeSeconds": 7.84,
+          "textureStdDev": 58.972
+        },
+        {
+          "index": 198,
+          "timeSeconds": 7.88,
+          "textureStdDev": 58.977
+        },
+        {
+          "index": 199,
+          "timeSeconds": 7.92,
+          "textureStdDev": 59.002
+        },
+        {
+          "index": 200,
+          "timeSeconds": 7.96,
+          "textureStdDev": 59.023
+        },
+        {
+          "index": 201,
+          "timeSeconds": 8.0,
+          "textureStdDev": 59.018
+        },
+        {
+          "index": 202,
+          "timeSeconds": 8.04,
+          "textureStdDev": 59.016
+        },
+        {
+          "index": 203,
+          "timeSeconds": 8.08,
+          "textureStdDev": 59.017
+        },
+        {
+          "index": 204,
+          "timeSeconds": 8.12,
+          "textureStdDev": 59.07
+        },
+        {
+          "index": 205,
+          "timeSeconds": 8.16,
+          "textureStdDev": 59.067
+        },
+        {
+          "index": 206,
+          "timeSeconds": 8.2,
+          "textureStdDev": 59.067
+        },
+        {
+          "index": 207,
+          "timeSeconds": 8.24,
+          "textureStdDev": 59.067
+        },
+        {
+          "index": 208,
+          "timeSeconds": 8.28,
+          "textureStdDev": 59.067
+        },
+        {
+          "index": 209,
+          "timeSeconds": 8.32,
+          "textureStdDev": 59.067
+        },
+        {
+          "index": 210,
+          "timeSeconds": 8.36,
+          "textureStdDev": 59.067
+        },
+        {
+          "index": 211,
+          "timeSeconds": 8.4,
+          "textureStdDev": 59.067
+        },
+        {
+          "index": 212,
+          "timeSeconds": 8.44,
+          "textureStdDev": 59.061
+        },
+        {
+          "index": 213,
+          "timeSeconds": 8.48,
+          "textureStdDev": 59.061
+        },
+        {
+          "index": 214,
+          "timeSeconds": 8.52,
+          "textureStdDev": 59.061
+        },
+        {
+          "index": 215,
+          "timeSeconds": 8.56,
+          "textureStdDev": 59.038
+        },
+        {
+          "index": 216,
+          "timeSeconds": 8.6,
+          "textureStdDev": 59.037
+        },
+        {
+          "index": 217,
+          "timeSeconds": 8.64,
+          "textureStdDev": 59.037
+        },
+        {
+          "index": 218,
+          "timeSeconds": 8.68,
+          "textureStdDev": 59.037
+        },
+        {
+          "index": 219,
+          "timeSeconds": 8.72,
+          "textureStdDev": 59.037
+        },
+        {
+          "index": 220,
+          "timeSeconds": 8.76,
+          "textureStdDev": 59.037
+        },
+        {
+          "index": 221,
+          "timeSeconds": 8.8,
+          "textureStdDev": 59.037
+        }
+      ],
+      "lowTextureDuringSequenceApprox": [],
+      "movementWindowFrames": 111
+    }
+  ]
+}

@@ -2327,9 +2327,9 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
           hand.splice(0, hand.length), ruleMessage(env, "⚠ " + (side === "human" ? "Perdiste" : "La IA perdió") + " su último superviviente. Se descartaron " + discarded + " cartas de su mano."), recruit(side, !0, env) || (g.noReplacement = !0);
         }
     }
-    let ItemEngine = createItemEngine(c), itemEngine = new ItemEngine();
+    let ItemEngine = createItemEngine(c), itemEngine = new ItemEngine(), movementGeneration = 0;
     function create() {
-      view.resetToasts(), deathDirector.reset(), skipAI = !1, aiRunning = !1, selected = 0, target = 0, picked = 0, opened = "", profileId = "", pendingHeal = null, pendingLoot = null, pendingBite = null, pendingAttract = null, pendingTransfer = null, aiCrossChoice = null, settleDecisionWaiters(), resetLeaderRequests(), pendingRecruitInfo = null, selectionBySide.human = 0, selectionBySide.ai = 0, closeStatInfo();
+      movementGeneration++, view.resetToasts(), deathDirector.reset(), skipAI = !1, aiRunning = !1, selected = 0, target = 0, picked = 0, opened = "", profileId = "", pendingHeal = null, pendingLoot = null, pendingBite = null, pendingAttract = null, pendingTransfer = null, aiCrossChoice = null, settleDecisionWaiters(), resetLeaderRequests(), pendingRecruitInfo = null, selectionBySide.human = 0, selectionBySide.ai = 0, closeStatInfo();
       let objective = objectives[random(objectives.length)];
       game = stateFactory({ gameMode, objective, places, catalog }), all().forEach(addCharacter);
       for (let loc = 1; loc < places.length; loc++) game.decks[loc] = catalog.deck(loc);
@@ -2409,15 +2409,14 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
     }
     function expose(p, reason) {
       if (!p || p.dead) return;
-      let d = die();
-      if (message("🎲 Exposición de " + p.name + " (" + reason + "): " + (d === 1 ? "MORDEDURA" : d === 2 ? "CONGELACIÓN" : d === 3 ? "HERIDA" : "BLANCO") + "."), d < 4 && p.skill === "resilient" && !p.skillUsed) {
-        p.skillUsed = !0, message("★ " + p.name + " evitó la exposición gracias a su habilidad.");
-        return;
-      }
+      let before = { wounds: p.wounds, frost: p.frost }, d = die();
+      if (message("🎲 Exposición de " + p.name + " (" + reason + "): " + (d === 1 ? "MORDEDURA" : d === 2 ? "CONGELACIÓN" : d === 3 ? "HERIDA" : "BLANCO") + "."), d < 4 && p.skill === "resilient" && !p.skillUsed)
+        return p.skillUsed = !0, message("★ " + p.name + " evitó la exposición gracias a su habilidad."), { rolled: !0, value: d, effect: "avoided", ability: "resilient", wounds: 0, frost: 0, fatal: !1 };
       if (d === 1) {
         let coLocated = alive().filter((x) => x.id !== p.id && x.loc === p.loc).sort((a, b) => a.influence - b.influence).map((x) => x.id);
         game.biteResolving = !0, pendingBite = { victims: coLocated, target: null }, kill(p, "mordedura"), biteNext();
       } else (d === 2 || d === 3) && (d === 2 ? p.frost++ : p.wounds++, message((d === 2 ? "❄ Congelación de " : "♥ Herida de ") + p.name + "."), p.frost + p.wounds >= 3 && kill(p, "tres daños acumulados"));
+      return { rolled: !0, value: d, effect: d === 1 ? "bite" : d === 2 ? "frost" : d === 3 ? "wound" : "none", ability: null, wounds: p.wounds - before.wounds, frost: p.frost - before.frost, fatal: !!p.dead };
     }
     function drawItem(loc) {
       return game.decks[loc] && game.decks[loc].length ? game.decks[loc].shift() : null;
@@ -2505,8 +2504,26 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         if (p.moved) return messageAndPaint("El superviviente ya se movió durante este turno.");
         if (p.loc === target) return messageAndPaint("Elegí otro destino.");
         if (!accessible(target)) return messageAndPaint("No hay espacios disponibles en el destino.");
-        confirmStartingLeader(), p.loc = target, p.moved = !0, message("→ " + p.name + " se movió a " + places[target] + "."), p.skill === "silent" && !p.skillUsed ? (p.skillUsed = !0, message("★ " + p.name + " evitó la exposición.")) : expose(p, "movimiento"), pendingBite || crossAction("move", p), verify(), paint();
+        executeMovement(p, target);
       }
+    }
+    function executeMovement(p, destination2) {
+      let from = p.loc, actorBefore = { id: p.id, name: p.name, location: p.loc, wounds: p.wounds, frost: p.frost, dead: !!p.dead };
+      confirmStartingLeader(), p.loc = destination2, p.moved = !0, message("→ " + p.name + " se movió a " + places[destination2] + ".");
+      let exposure;
+      return p.skill === "silent" && !p.skillUsed ? (p.skillUsed = !0, message("★ " + p.name + " evitó la exposición."), exposure = { rolled: !1, value: null, effect: "avoided", ability: "silent", wounds: 0, frost: 0, fatal: !1 }) : exposure = expose(p, "movimiento"), pendingBite || crossAction("move", p), verify(), paint(), { actorId: p.id, from, destination: destination2, exposure, actorBefore, actorAfter: { id: p.id, name: p.name, location: p.loc, wounds: p.wounds, frost: p.frost, dead: !!p.dead } };
+    }
+    function movementOptions(actorId) {
+      let p = game && all().find((p2) => p2.id === actorId), leaderDecision = pendingLeaderSides.length > 0 && (!game || game.mode !== "local" || pendingLeaderSides.includes(controls.side)), reason = game ? game.ended ? "ended" : controls.interactive ? deathWaiting() || pendingBite || pendingLoot || pendingHeal || pendingAttract || pendingTransfer || leaderDecision || game.crossPending || opened ? "decision" : p ? p.dead ? "dead" : ownerOf(p) !== controls.side ? "ownership" : p.moved ? "already-moved" : null : "missing" : "turn" : "no-game";
+      return { gameGeneration: movementGeneration, round: game?.round, turn: game?.turn, actorId, origin: p?.loc ?? null, allowed: !reason, reason, destinations: reason ? [] : places.map((_, i) => i).filter((i) => i !== p.loc && accessible(i)) };
+    }
+    function moveById(request) {
+      let info = movementOptions(request?.actorId), reject = (reason) => ({ ok: !1, reason, actorId: request?.actorId });
+      if (!request || request.gameGeneration !== info.gameGeneration || request.round !== info.round || request.turn !== info.turn || request.origin !== info.origin) return reject("stale");
+      if (!info.allowed) return reject(info.reason);
+      if (!Number.isInteger(request.destination) || !info.destinations.includes(request.destination)) return reject("destination");
+      let p = all().find((p2) => p2.id === request.actorId), resolution = executeMovement(p, request.destination);
+      return { ok: !0, actorId: p.id, from: info.origin, destination: request.destination, location: p.loc, dead: !!p.dead, resolution };
     }
     function barricade() {
       if (!playable() || game.ended) return;
@@ -2751,6 +2768,8 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       }
     });
     return Object.freeze({
+      movementOptions,
+      moveById,
       snapshot: () => game === void 0 ? null : JSON.parse(JSON.stringify(game)),
       dispatch(name, ...args) {
         if (!commands.has(name)) throw TypeError("Comando desconocido: " + name);

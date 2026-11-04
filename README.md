@@ -16,6 +16,9 @@ Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos un
 - [Tablero operativo — próxima tarea](docs/18-tablero-operativo.md)
 - [H3.1 — Auditoría de identidad visual](docs/74-h3-1-auditoria-identidad-visual.md)
 - [Plan propuesto H3.1–H3.6](docs/75-plan-hito-3-identidad-visual.md)
+- [H3.4.2 — Movimiento desde el mapa](docs/84-h3-4-2-movimiento-mapa.md)
+- [H3.4.2 — Continuidad, recorrido y exposición visible](docs/85-h3-4-2-experiencia-movimiento.md)
+- [H3.4.2 — Corrección de fichas al desplazar el mapa](docs/86-h3-4-2-sincronizacion-camara-fichas.md)
 - [H3.4.1 — Mapa de consulta de una partida real](docs/83-h3-4-1-estado-real-consulta.md)
 - [H3.3 — Luces asincrónicas y ventisca opcional, evidencia histórica](docs/82-h3-3-luces-viento-y-ventisca.md)
 - [H3.3 — Localidades seleccionables y revisión de interfaz](docs/79-h3-3-localidades-capacidades-e-interfaz.md)
@@ -27,7 +30,23 @@ Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos un
 
 El [PR15](https://github.com/LeviEdition/invierno-en-la-colonia/pull/15) se integró mediante merge convencional `6b8bfcadfeb99d16a10b6f4576f3b061584ee1f9`, preservando historia yoráculo57872ee. [Informe71](docs/71-integracion-main-y-cierre-d1-d2.md) registra la validación posterior:467/467,40/40 contra cada referencia, partidas Chromium yoffline aprobados. SP-03 permanece conceptual ysin cambios respecto del head aprobado.
 
-**Referencia cerrada:** D1/D2 y V9.9 modular preservadas. El creador aceptó H3.3 como dirección visual, incluida la ambientación. Esta rama añade **H3.4.1: consulta del estado real**, con la interfaz V9.9 conservada para preparación y acciones. Retratos/posiciones siguen siendo provisionales. La maqueta independiente mantiene su ruta y datos de demostración. No se modifican reglas, main, referencia/tag/release o SP-03. No hay acciones desde el nuevo mapa. [Informe83](docs/83-h3-4-1-estado-real-consulta.md).
+**Referencia cerrada:** D1/D2 y V9.9 modular preservadas. El creador aprobó H3.4.1 como integración de consulta y autorizó **H3.4.2: movimiento desde el mapa**. Esta rama añade una entrada experimental propia; conserva consulta, maqueta y prototipos anteriores. El motor mantiene reglas y consecuencias, con validación/ejecución por ID. Solo se habilita Moverse; sin merge, cambios en main/referencia/SP-03 o nuevas mecánicas. [Informe84](docs/84-h3-4-2-movimiento-mapa.md).
+
+## H3.4.2 desde VS Code
+
+En la carpeta con package.json y package-lock.json, Node22+, PowerShell:
+
+```powershell
+git fetch origin
+git switch experiment/h3-4-2-movimiento-mapa
+git pull --ff-only
+npm.cmd ci
+npm.cmd run dev:movement-map
+```
+
+Abrir **http://127.0.0.1:8776/prototypes/movement-map/**. Preparar en V9.9 → Ver mapa → seleccionar superviviente propio → Moverse → elegir destino → revisar y confirmar/cancelar. Se iluminan los destinos legales. Tras aceptar: recorrido de1,5s, dado real y consecuencias; las decisiones esperan «Continuar en V9.9». Cancelar la confirmación vuelve a elegir; Salir/Escape permite abandonar sin mutaciones. Los dados siguen perteneciendo al turno. Nuevos bordes azul/rojo, retratos únicos o iniciales y perfiles Suave/Tormenta; sonido apagado al inicio. [Guía Windows, teclado, red local y reservas](prototypes/movement-map/README.md). Ctrl+C detiene el servidor; sin Python.
+
+La consulta anterior sigue en `/prototypes/state-map/` y H3.3 en `/prototypes/hospital-workshop/`, también con el servidor8776. Los apartados siguientes conservan sus instrucciones independientes.
 
 ## H3.4.1 desde VS Code
 
