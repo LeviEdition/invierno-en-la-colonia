@@ -1,0 +1,47 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "records": [
+    {
+      "name": "blank",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "errors": [],
+      "targetHit": {
+        "id": "scene",
+        "tag": "CANVAS",
+        "html": "<canvas id=\"scene\" tabindex=\"0\" role=\"img\" aria-label=\"Mapa de localidades, supervivientes y destino de movimiento\" aria-describedby=\"map-instructions\" width=\"1025\" height=\"563\" st"
+      },
+      "stages": [
+        "travel",
+        "roll",
+        "reveal",
+        "consequence"
+      ],
+      "frameCount": 41,
+      "cameraStable": true,
+      "oneActorPerFrame": true,
+      "rngStableDuringPresentation": true,
+      "video": "/tmp/h343/movement-fixed/blank/e0500d4c80873b2d3a8919be7cfca3fe.webm"
+    },
+    {
+      "name": "wound",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "errors": [],
+      "targetHit": {
+        "id": "scene",
+        "tag": "CANVAS",
+        "html": "<canvas id=\"scene\" tabindex=\"0\" role=\"img\" aria-label=\"Mapa de localidades, supervivientes y destino de movimiento\" aria-describedby=\"map-instructions\" width=\"786\" height=\"1300\" st"
+      }
+    }
+  ],
+  "failures": [
+    "page.waitForFunction: Timeout 30000ms exceeded.\n    at /workspace/invierno-en-la-colonia/scripts/check-h343-movement-browser.mjs:18:242"
+  ],
+  "passed": false
+}

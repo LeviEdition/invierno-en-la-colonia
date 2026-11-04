@@ -16,6 +16,7 @@ Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos un
 - [Tablero operativo — próxima tarea](docs/18-tablero-operativo.md)
 - [H3.1 — Auditoría de identidad visual](docs/74-h3-1-auditoria-identidad-visual.md)
 - [Plan propuesto H3.1–H3.6](docs/75-plan-hito-3-identidad-visual.md)
+- [H3.4.3 — Buscar desde el mapa](docs/87-h3-4-3-busqueda-mapa.md)
 - [H3.4.2 — Movimiento desde el mapa](docs/84-h3-4-2-movimiento-mapa.md)
 - [H3.4.2 — Continuidad, recorrido y exposición visible](docs/85-h3-4-2-experiencia-movimiento.md)
 - [H3.4.2 — Corrección de fichas al desplazar el mapa](docs/86-h3-4-2-sincronizacion-camara-fichas.md)
@@ -30,7 +31,25 @@ Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos un
 
 El [PR15](https://github.com/LeviEdition/invierno-en-la-colonia/pull/15) se integró mediante merge convencional `6b8bfcadfeb99d16a10b6f4576f3b061584ee1f9`, preservando historia yoráculo57872ee. [Informe71](docs/71-integracion-main-y-cierre-d1-d2.md) registra la validación posterior:467/467,40/40 contra cada referencia, partidas Chromium yoffline aprobados. SP-03 permanece conceptual ysin cambios respecto del head aprobado.
 
-**Referencia cerrada:** D1/D2 y V9.9 modular preservadas. El creador aprobó H3.4.1 como integración de consulta y autorizó **H3.4.2: movimiento desde el mapa**. Esta rama añade una entrada experimental propia; conserva consulta, maqueta y prototipos anteriores. El motor mantiene reglas y consecuencias, con validación/ejecución por ID. Solo se habilita Moverse; sin merge, cambios en main/referencia/SP-03 o nuevas mecánicas. [Informe84](docs/84-h3-4-2-movimiento-mapa.md).
+**Referencia cerrada:** D1/D2 y V9.9 modular preservadas. El creador aceptó H3.4.1 y los ajustes de H3.4.2 y autorizó **H3.4.3: Buscar desde el mapa**. La nueva entrada permite Moverse y Buscar; el motor conserva las reglas y consecuencias. Se preservan las entradas anteriores. Sin merge, cambios en main/referencia/SP-03 ni nuevas mecánicas. [Informe87](docs/87-h3-4-3-busqueda-mapa.md).
+
+## H3.4.3 — Buscar desde el mapa
+
+El creador aceptó los ajustes de H3.4.2 y autorizó **Buscar** además de Moverse. Entrada independiente, motor único: dado real elegido por índice, requisito efectivo, hallazgo, elección de una carta, ruido y mano privada del turno. Encrucijadas y decisiones generales continúan en V9.9 mediante un botón explícito. Sin combate, inventario accionable, merge ni cambios en main/referencia. [Informe87](docs/87-h3-4-3-busqueda-mapa.md).
+
+En VS Code, carpeta con package.json y package-lock.json, Node22+, PowerShell:
+
+```powershell
+git fetch origin
+git switch experiment/h3-4-3-busqueda-mapa
+git pull --ff-only
+npm.cmd ci
+npm.cmd run dev:search-map
+```
+
+Abrir **http://127.0.0.1:8777/prototypes/search-map/**. Preparar en V9.9 → Ver mapa → seleccionar propio → Moverse fuera de colonia → Buscar → elegir dado → confirmar → conservar una carta o revelar otra con +1 ruido cuando esté permitido → Continuar. Escape cancela antes de confirmar. La presentación no vuelve a tirar el dado. [Guía Windows, revisión manual, red local y límites](prototypes/search-map/README.md). Ctrl+C detiene el servidor; reiniciarlo y recargar tras actualizar. Sin Python. Las rutas anteriores permanecen disponibles.
+
+La entrega requiere revisión del creador. No se da por aprobada H3.4.3 ni se avanza a otra acción.
 
 ## H3.4.2 desde VS Code
 

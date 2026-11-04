@@ -1,0 +1,67 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "records": [
+    {
+      "kind": "reference",
+      "errors": [],
+      "recoveryNoDraw": true,
+      "passed": true
+    },
+    {
+      "kind": "hidden",
+      "errors": [],
+      "controlledVisibility": true,
+      "recoveryNoDraw": true,
+      "passed": true
+    },
+    {
+      "kind": "reconnect",
+      "errors": [],
+      "controlledLifecycle": true,
+      "recoveryNoDraw": true,
+      "passed": true
+    },
+    {
+      "kind": "lost-reply",
+      "errors": [],
+      "noResend": true,
+      "passed": true
+    },
+    {
+      "kind": "stale",
+      "errors": [],
+      "noFakeDiscovery": true,
+      "passed": true
+    },
+    {
+      "kind": "scout",
+      "errors": [],
+      "skillActual": true,
+      "recoveryNoDraw": true,
+      "passed": true
+    },
+    {
+      "kind": "reduced",
+      "errors": [],
+      "reducedAndSilent": true,
+      "recoveryNoDraw": true,
+      "passed": true
+    },
+    {
+      "kind": "general",
+      "errors": [],
+      "deliberateNative": true,
+      "recoveryNoDraw": true,
+      "passed": true
+    },
+    {
+      "kind": "player-two",
+      "errors": [],
+      "ownDieAndHand": true,
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

@@ -1,0 +1,241 @@
+{
+  "baseCommit": "c8d4e59321bac099306c99f53d18caba3fcd9e9d",
+  "implementationCommit": "4138153963bba8201a2f0635f42990f1b20f240f",
+  "records": [
+    {
+      "file": "1365/busqueda-normal-y-ruido.webm",
+      "bytes": 2481762,
+      "sha256": "3f0f6b316482fd2bbc7f0fc5033c86898ad9ffda2b2031e01d2833df8137cd46"
+    },
+    {
+      "file": "1365/carta-conservada.png",
+      "bytes": 980485,
+      "sha256": "4db2543cad2e059f4ec6d59e5d7b3acc8ebb2dbab61837d9a58177d7bd5939ef"
+    },
+    {
+      "file": "1365/dado-confirmar.png",
+      "bytes": 977503,
+      "sha256": "95890604ba1c6c71841ca4a0c8fea6cad2425c90d3dc11c1339f46b524d2052d"
+    },
+    {
+      "file": "1365/frames.json",
+      "bytes": 86355,
+      "sha256": "05aa0dcbacca2f39ca7d4424b572e24f88aeb77720aa64fdc1e2c61f140a22f2"
+    },
+    {
+      "file": "1365/hallazgo.png",
+      "bytes": 955828,
+      "sha256": "49dcc12fd39bc192bb14a1c8290fca66aaf198f4a835317342148a1e6c6e0d45"
+    },
+    {
+      "file": "1365/ruido-eleccion.png",
+      "bytes": 907474,
+      "sha256": "fdca2ac96720487c0202d628909a895a88419025569c095fca45d718b68cb27d"
+    },
+    {
+      "file": "320/busqueda-normal-y-ruido.webm",
+      "bytes": 1306308,
+      "sha256": "26962d5e30ab0b65f962982087b2969d732cff2298e4de2c4f4e6208b40184e7"
+    },
+    {
+      "file": "320/frames.json",
+      "bytes": 86184,
+      "sha256": "a33c9b0d5d4d8c3780b7a67da804e739d22d1592124ba07c2abdc658e1b672f2"
+    },
+    {
+      "file": "320/hallazgo.png",
+      "bytes": 359283,
+      "sha256": "4bb4a9e5ae783bc2d55583afa6a7c4d8ae73c42d334b9972fd98b67828194443"
+    },
+    {
+      "file": "320/ruido-eleccion.png",
+      "bytes": 347865,
+      "sha256": "b54f18f6113a91689e972a50df882b28cab2d9d48fa86b2391951e9ae75a14d7"
+    },
+    {
+      "file": "393/busqueda-normal-y-ruido.webm",
+      "bytes": 2274063,
+      "sha256": "f7abed708a77bcbc46c2bb33145c7c95e1626f2d75a8b5f5d1fd52bfd90b5443"
+    },
+    {
+      "file": "393/frames.json",
+      "bytes": 97350,
+      "sha256": "bcc63c28d17ea59783fcf94fd244f421b003c818d2d81480ab1d0675aaa3a55b"
+    },
+    {
+      "file": "393/hallazgo.png",
+      "bytes": 751922,
+      "sha256": "f6049c2cdab64609c0d740d819832048a6e5bd8eb05f31754130e6d9653cbc33"
+    },
+    {
+      "file": "393/ruido-eleccion.png",
+      "bytes": 513009,
+      "sha256": "6e3ae3a41dae66ffecf2da3ae1036bd75844e487f0fc712c0ece60dfc84955c6"
+    },
+    {
+      "file": "README.md",
+      "bytes": 5578,
+      "sha256": "37be1e643591a34951a3e7c2947fa37bd48880532afd58cd4e4f748d4cf6a222"
+    },
+    {
+      "file": "arnes-inicial.txt",
+      "bytes": 342,
+      "sha256": "27355aa45407e895c5525dc935a0be2f8f30a9d34b755f87b411973ff593e9da"
+    },
+    {
+      "file": "build-qa.json",
+      "bytes": 2914,
+      "sha256": "ab7b6bfe5cadfd7b92fd6f11d88e73b8379a93644c844a0db2b83a89336dfd29"
+    },
+    {
+      "file": "build.json",
+      "bytes": 2915,
+      "sha256": "5091609c11dd293d296636fc4e5ca187aa23015d06ce78af6417e7889ce5be6c"
+    },
+    {
+      "file": "busqueda.json",
+      "bytes": 1218,
+      "sha256": "bf54cf49389dc2f4c55bc18fec534daa8084706241f73686bdee2dc8afae17c9"
+    },
+    {
+      "file": "camara.json",
+      "bytes": 2943,
+      "sha256": "f70ec49008b9257e7bbf13ec47956a682e0433871c3dfa8bdb7ee129a6b85983"
+    },
+    {
+      "file": "h341-limites.json",
+      "bytes": 2123,
+      "sha256": "b8961694a89e87f5ae4b229716e5b0c4c448f09f7b7b0ac78f6921d0417700ed"
+    },
+    {
+      "file": "h341.json",
+      "bytes": 17419,
+      "sha256": "3309aaf1160c224edba749d6633e40c7443afcd03aa24346c2abc3e3e6094c7c"
+    },
+    {
+      "file": "h342-limites.json",
+      "bytes": 1496,
+      "sha256": "32e4fa364433d768676b7f0755030023eeac730d48ab4bc8f1a9ff189a6c44b5"
+    },
+    {
+      "file": "h342.json",
+      "bytes": 2084,
+      "sha256": "c81387a93c8dcb15a0f337ca1f0679054177fb669599825941194d31b51f1b9e"
+    },
+    {
+      "file": "linea-base-camara.json",
+      "bytes": 2951,
+      "sha256": "ca3462ee354e3e7dfbfe5ab54a35646482ca8b1bf6819960c764d953d3d48df1"
+    },
+    {
+      "file": "linea-base-check.txt",
+      "bytes": 125,
+      "sha256": "86e73c08796ad6d9c5656d310e04c5fa5753551cffd4756394886fdc14896ad7"
+    },
+    {
+      "file": "linea-base-experiencia.json",
+      "bytes": 2733,
+      "sha256": "e626f0006a1a36d3de21244e7d2bac873da298b94cf03e309e7bc028a90745c2"
+    },
+    {
+      "file": "linea-base-limites.json",
+      "bytes": 1496,
+      "sha256": "32e4fa364433d768676b7f0755030023eeac730d48ab4bc8f1a9ff189a6c44b5"
+    },
+    {
+      "file": "linea-base-movimiento.json",
+      "bytes": 2084,
+      "sha256": "c81387a93c8dcb15a0f337ca1f0679054177fb669599825941194d31b51f1b9e"
+    },
+    {
+      "file": "linea-base-recuperacion.json",
+      "bytes": 789,
+      "sha256": "79eb51f44f7f97dcf48f056d5443dac898dfe3372110557914826b7aa0a41539"
+    },
+    {
+      "file": "linea-base-suite.txt",
+      "bytes": 49419,
+      "sha256": "1f0090ec4aeeeec394bb233425e3b03a3c694149eefa197666a9e1778fd84258"
+    },
+    {
+      "file": "motor-dirigido.txt",
+      "bytes": 997,
+      "sha256": "cc2f9b6f3991664a94f14f63bbbced698c2cfb7a2090e45137fe81ba9f0ac2da"
+    },
+    {
+      "file": "oraculo.json",
+      "bytes": 10997,
+      "sha256": "8583e388005c7c0be04c118e7ea5ca077cbef43ec8894007925391b614638189"
+    },
+    {
+      "file": "recuperacion-privacidad.json",
+      "bytes": 1257,
+      "sha256": "0eaf6ceedccd857ad99e42784e72250037b422d205f535fe230d47f620567c73"
+    },
+    {
+      "file": "regresion-movimiento.json",
+      "bytes": 2728,
+      "sha256": "250f093c2f68564d3d68f27b8dc950acba81ecb1ad01976bfe7643e826f75ae3"
+    },
+    {
+      "file": "regresion-muerte-antes.json",
+      "bytes": 2721,
+      "sha256": "b8acbf45bc7ca42bb614859bfee1d8230d2eac1dfe2b313c3aa08077eae496df"
+    },
+    {
+      "file": "regresion-muerte-antes.txt",
+      "bytes": 253,
+      "sha256": "593b95588ee139236cf1f79c992779acd41621a8099c7710febaf5dcc2905fcb"
+    },
+    {
+      "file": "regresion-muerte-antes.webm",
+      "bytes": 1310720,
+      "sha256": "304cf7f78278b84098a422749b6eabb7a005dfbad8ba5bfa4ec57e80445818ed"
+    },
+    {
+      "file": "reinicios.json",
+      "bytes": 284,
+      "sha256": "5ae3b000423327f0a387b0405feaac7c59e71f03a21391510413cf50726e74c9"
+    },
+    {
+      "file": "rojo-controlador.txt",
+      "bytes": 1471,
+      "sha256": "86457a58ff02dbcff0f99e304e854e6eb455eaa11e912f1a879eab8dc51c3908"
+    },
+    {
+      "file": "rojo-motor.txt",
+      "bytes": 4352,
+      "sha256": "366c5b11d956c1275f95536acb909dc84e524afd2b25f5bb2d070a122f1f15ac"
+    },
+    {
+      "file": "rojo-protocolo.txt",
+      "bytes": 1456,
+      "sha256": "2e00567120bd0ab741fe08a180ffbf86513dbbf7e3bb79d787b06015931bc03f"
+    },
+    {
+      "file": "secuencia-busqueda.jpg",
+      "bytes": 346962,
+      "sha256": "af0ebbbcce75ffd1dd3d468e7c2545240199fb769f276aa5d8e3256d6b4aa4b6"
+    },
+    {
+      "file": "secuencia-ruido.jpg",
+      "bytes": 338288,
+      "sha256": "452ac01be427665943388b2c9c15b9b0ab030c1e752206276d88b3f68b06fc8d"
+    },
+    {
+      "file": "suite.txt",
+      "bytes": 51499,
+      "sha256": "184dcf234b8a1b6000c12bedd563816ec9e549c123c6b0e8a6d6244beb032a37"
+    },
+    {
+      "file": "timeout-concurrente.json",
+      "bytes": 1416,
+      "sha256": "10f647af76c22c0fe081eb35b205eb213dfec9522389d18cfcc2b767dbe62b3d"
+    },
+    {
+      "file": "timeout-concurrente.txt",
+      "bytes": 253,
+      "sha256": "5dccd55ffa5fafce5993708de254439d234af68cb594a5fb545a16b5a6462948"
+    }
+  ]
+}
