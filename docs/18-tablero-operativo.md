@@ -6,7 +6,7 @@
 
 **Arreglo acotado:** publicar la cámara de fichas/etiquetas/destinos mediante POST_RENDER público y conservar la última presentada mientras se espera; clics usan esa cámara visible. Sin elevar FPS, partículas ni bucles;0 escrituras de fichas en reposo. Solo cambia map-view de H3.4.2, nuevo gate y documentación/workflow. Motor, arte, adaptador y prototipos anteriores intactos; main/tag/release preservados.
 
-**Validación:**555/555 y builds/checks; cámara **9 combinaciones**1365/393/320×apagado/Suave/Tormenta con **0 desfases**, selección/RNG/partida conservados. Experiencia5/5, recuperación5/5 y regresión H3.4.2 **3+9** aprobadas; videos/capturas/rojo y trazas conservados. CI del nuevo head/run/artifact se comprueba y registra en PR22; el CI de74b40 sigue como evidencia histórica con reserva global de GitHub. [Evidencias](evidencias/h342-camara/README.md).
+**Validación:**555/555 y builds/checks; cámara **9 combinaciones**1365/393/320×apagado/Suave/Tormenta con **0 desfases**, selección/RNG/partida conservados. Experiencia5/5, recuperación5/5 y regresión H3.4.2 **3+9** aprobadas; videos/capturas/rojo y trazas conservados. CI del nuevo head/run/artifact se comprueba y registra en PR22; el CI de74b40 finalmente cerró success, resolviendo la reserva global anterior; se conserva como evidencia histórica, no como CI del arreglo. [Evidencias](evidencias/h342-camara/README.md).
 
 **Reservas:** emulación/SwiftShader; no teléfono físico ni garantía60FPS. La corrección elimina el adelanto relativo detectado, no certifica toda GPU. Reiniciar servidor y recargar tras actualizar para reconstruir el bundle. **Única siguiente tarea: revisión del creador del arreglo en PR22.** Sin merge ni otras acciones. Bloques siguientes históricos.
 

@@ -4,7 +4,7 @@
 
 ## Estado inicial y problema confirmado
 
-HEAD/remote **`74b40e0b1094f63d6f0d9f638bb60157cbd80864`**, árbol limpio y PR22 abierto/draft. Leídos instrucciones, README, tablero, protocolo15, informe85 y código de cámara/renderizado. Sin AGENTS.md aplicable. No se descarta trabajo ni se cambia main. La reserva global del CI de74b40 sigue documentada en el PR: los pasos/artifact están aprobados/verificados, pero la API de GitHub aún lo marca `in_progress`; no se declara verde retroactivamente.
+HEAD/remote **`74b40e0b1094f63d6f0d9f638bb60157cbd80864`**, árbol limpio y PR22 abierto/draft. Leídos instrucciones, README, tablero, protocolo15, informe85 y código de cámara/renderizado. Sin AGENTS.md aplicable. No se descarta trabajo ni se cambia main. Al iniciar, la API del CI de74b40 todavía indicaba `in_progress` pese a sus pasos/artifact aprobados. Durante esta corrección el [run41876510858](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41876510858) finalmente cerró **success**, comprobado de nuevo. Queda resuelta aquella reserva externa; su resultado es histórico y no se atribuye al nuevo código.
 
 El creador aportó `20261104-1736-30.3794952.mp4`:970×422,30FPS,146 cuadros,≈4,87s. Muestra **movimiento relativo de los retratos respecto del techo** durante el arrastre. Se conserva el archivo original y su hash en la evidencia. Un rastreo auxiliar de la ficha S respecto de una chimenea, contrastado visualmente en recortes alineados, detectó variaciones de hasta≈11px de la grabación. Es una medición orientativa por plantillas en video comprimido, no precisión subpíxel ni una medida de rendimiento físico.
 
