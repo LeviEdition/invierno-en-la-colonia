@@ -43,6 +43,8 @@ jobs:
           H341_ORIGIN=http://127.0.0.1:8776 H341_EDGE_OUTPUT_DIR=/tmp/h342-h341-edge node scripts/check-h341-edge-browser.mjs
           node scripts/check-h342-browser.mjs
           node scripts/check-h342-edge-browser.mjs
+          node scripts/check-h342-experience-browser.mjs
+          node scripts/check-h342-experience-recovery.mjs
           # Benchmark secuencial, sin otras pruebas/recording concurrentes.
           node scripts/measure-h342-storm.mjs
       - uses: actions/upload-artifact@v4
@@ -52,6 +54,8 @@ jobs:
           path: |
             /tmp/h342-browser/
             /tmp/h342-edge/
+            /tmp/h342-experience/
+            /tmp/h342-experience-recovery/
             /tmp/h342-performance/
             /tmp/h342-h341-regression/
             /tmp/h342-h341-edge/

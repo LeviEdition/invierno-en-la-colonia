@@ -493,12 +493,14 @@ function chooseBite(option){
 }
 function expose(p,reason){
  if(!p||p.dead)return;
+ const before={wounds:p.wounds,frost:p.frost};
  const d=die();message('🎲 Exposición de '+p.name+' ('+reason+'): '+(d===1?'MORDEDURA':d===2?'CONGELACIÓN':d===3?'HERIDA':'BLANCO')+'.');
- if(d<4&&p.skill==='resilient'&&!p.skillUsed){p.skillUsed=true;message('★ '+p.name+' evitó la exposición gracias a su habilidad.');return;}
+ if(d<4&&p.skill==='resilient'&&!p.skillUsed){p.skillUsed=true;message('★ '+p.name+' evitó la exposición gracias a su habilidad.');return {rolled:true,value:d,effect:'avoided',ability:'resilient',wounds:0,frost:0,fatal:false};}
  if(d===1){
   const coLocated=alive().filter(x=>x.id!==p.id&&x.loc===p.loc).sort((a,b)=>a.influence-b.influence).map(x=>x.id);
   game.biteResolving=true;pendingBite={victims:coLocated,target:null};kill(p,'mordedura');biteNext();
  }else if(d===2||d===3){if(d===2)p.frost++;else p.wounds++;message((d===2?'❄ Congelación de ':'♥ Herida de ')+p.name+'.');if(p.frost+p.wounds>=3)kill(p,'tres daños acumulados');}
+ return {rolled:true,value:d,effect:d===1?'bite':d===2?'frost':d===3?'wound':'none',ability:null,wounds:p.wounds-before.wounds,frost:p.frost-before.frost,fatal:!!p.dead};
 }
 function drawItem(loc){return game.decks[loc]&&game.decks[loc].length?game.decks[loc].shift():null;}
 function stashLoot(it,p,side){
@@ -592,9 +594,12 @@ function doMove(){
 }
 // Consecuencias únicas para ambos consumidores. No depende de selected/target.
 function executeMovement(p,destination){
+ const from=p.loc,actorBefore={id:p.id,name:p.name,location:p.loc,wounds:p.wounds,frost:p.frost,dead:!!p.dead};
  confirmStartingLeader();p.loc=destination;p.moved=true;message('→ '+p.name+' se movió a '+places[destination]+'.');
- if(p.skill==='silent'&&!p.skillUsed){p.skillUsed=true;message('★ '+p.name+' evitó la exposición.');}else expose(p,'movimiento');
+ let exposure;
+ if(p.skill==='silent'&&!p.skillUsed){p.skillUsed=true;message('★ '+p.name+' evitó la exposición.');exposure={rolled:false,value:null,effect:'avoided',ability:'silent',wounds:0,frost:0,fatal:false};}else exposure=expose(p,'movimiento');
  if(!pendingBite)crossAction('move',p);verify();paint();
+ return {actorId:p.id,from,destination,exposure,actorBefore,actorAfter:{id:p.id,name:p.name,location:p.loc,wounds:p.wounds,frost:p.frost,dead:!!p.dead}};
 }
 // Consulta pura: no llama playable/decisionKind/paint ni sincroniza líderes.
 function movementOptions(actorId){
@@ -608,8 +613,8 @@ function moveById(request){
  if(!request||request.gameGeneration!==info.gameGeneration||request.round!==info.round||request.turn!==info.turn||request.origin!==info.origin)return reject('stale');
  if(!info.allowed)return reject(info.reason);
  if(!Number.isInteger(request.destination)||!info.destinations.includes(request.destination))return reject('destination');
- const p=all().find(p=>p.id===request.actorId);executeMovement(p,request.destination);
- return {ok:true,actorId:p.id,from:info.origin,destination:request.destination,location:p.loc,dead:!!p.dead};
+ const p=all().find(p=>p.id===request.actorId),resolution=executeMovement(p,request.destination);
+ return {ok:true,actorId:p.id,from:info.origin,destination:request.destination,location:p.loc,dead:!!p.dead,resolution};
 }
 function barricade(){
  if(!playable()||game.ended)return;

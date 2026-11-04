@@ -10,7 +10,7 @@ async function instrument(context){
 async function load(p){await p.goto(origin+'/dist/movement-map-qa/index.html');await p.evaluate(async path=>window.h342Viewer=await import(path),modulePath);await p.waitForFunction(()=>window.h342Viewer.inspect().projection?.blocked==='setup');}
 async function settle(p){
  const f=host(p);for(let i=0;i<30;i++){
-  await sleep(p,50);
+  await sleep(p,50);const phase=(await api(p)).movement.phase;if(phase==='presenting')await p.waitForFunction(()=>window.h342Viewer.inspect().movement.phase!=='presenting');if((await api(p)).movement.phase==='awaiting-decision')await p.locator('#resolve-decision').click();
   if(await f.locator('#passScreen').isVisible()){await f.locator('[data-command="confirmPass"]').click();continue;}
   if(await f.locator('#deathBackdrop').isVisible()){await f.locator('[data-command="deathContinue"]').click();continue;}
   if(await f.locator('#backdrop').isVisible()){

@@ -2,7 +2,7 @@ import {uniqueToken} from './nonce.mjs';
 // Frontera acotada: admite una intención de movimiento, nunca dispatch arbitrario.
 const keys=['type','requestId','session','revision','actorId','destination'];
 const token=x=>typeof x==='string'&&/^[a-zA-Z0-9_-]{1,80}$/.test(x);
-export function createMovementBroker(engine,{session=uniqueToken()}={}){
+export function createMovementBroker(engine,{session=uniqueToken(),presentationState=()=>null}={}){
  let revision=0,signature=null,base=null,current=null;const completed=new Map();
  function refresh(){
   const game=engine.snapshot(),stamp=JSON.stringify([game,base?.blocked,engine.movementOptions('').gameGeneration]);
@@ -21,7 +21,7 @@ export function createMovementBroker(engine,{session=uniqueToken()}={}){
   else{
    const info=engine.movementOptions(request.actorId),name=base.characters.find(c=>c.id===request.actorId)?.name;
    const execution=engine.moveById({...info,actorId:request.actorId,destination:request.destination});
-   result=answer(execution.ok,execution.reason||null,{...execution,name,requestId:request.requestId,type:'move-result'});refresh();
+   result=answer(execution.ok,execution.reason||null,{...execution,name,epoch:base.epoch,presentation:execution.ok?presentationState():null,requestId:request.requestId,type:'move-result'});refresh();
   }
   completed.set(request.requestId,{fingerprint,result});if(completed.size>128)completed.delete(completed.keys().next().value);
   return result;
