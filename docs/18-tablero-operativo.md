@@ -1,5 +1,15 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## H3.4.2 — movimiento desde el mapa autorizado ·04/11/2026
+
+**Decisión del creador:** H3.4.1 aprobado como integración de consulta. Se autoriza H3.4.2: movimiento por ID con confirmación, identidad sin retratos compartidos, bordes azul/rojo, dados/iconos y Suave/Tormenta. Nueva rama `experiment/h3-4-2-movimiento-mapa` desde064f47cc/PR21, nuevo PR draft contra H3.4.1; sin merge ni otras acciones. Main/referencia/tag/release y prototipos anteriores intactos. [Informe84](84-h3-4-2-movimiento-mapa.md).
+
+**Línea base recuperada propia:**528/528 y builds; Chromium3 tamaños +9 casos H3.4.1 con JSON final aprobado en esta ejecución. La revisión independiente anterior de Chromium no tuvo resultado recuperable; no se cita como aprobada independientemente.
+
+**En validación:** entrada independiente `/prototypes/movement-map/`, motor único con consulta pura y consecuencias compartidas por ID; canal con un único comando admitido, revisión de partida, deduplicación y recuperación sin reenvío automático. Rutas anteriores conservadas. Asignación explícita de cuatro retratos únicos y marcadores con iniciales; Tormenta inicial salvo movimiento reducido, audio apagado. Capacidades reales prevalecen sobre dibujo; no distancias/rutas/caminata. Resultados finales y reservas se agregan en84 y en el nuevo PR antes de la entrega. **Única siguiente tarea tras completar las pruebas: revisión del creador de H3.4.2**, sin habilitar otras acciones.
+
+---
+
 ## H3.4.1 — integración de consulta autorizada ·03/11/2026
 
 **Decisión posterior del creador:** H3.3 aceptada como dirección visual, incluida ambientación; detalles artísticos y pruebas físicas no bloquean H3.4.1. Se autoriza nueva rama/PR contra H3.3, **sin acciones desde el mapa ni merge**. La maqueta permanece independiente. [Informe83](83-h3-4-1-estado-real-consulta.md).
