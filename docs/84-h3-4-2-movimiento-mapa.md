@@ -78,3 +78,80 @@ Humo en chimenea de colonia(738,310); hospital continúa omitido por falta de sa
 ## Resultados
 
 La evidencia final, capturas, mediciones y revisión crítica se registra a continuación antes de entregar. El CI se verifica sobre el head exacto del nuevo PR draft y se enlaza en su descripción, sin referencias circulares al SHA de este documento. No se atribuye a H3.4.2 un CI de la base.
+
+### Validación local final
+
+Node24.19.0, Chromium154.0.8037.57, Playwright1.57 externo, Linux/AMD EPYC9V74,5 procesadores lógicos. GPU informada: **ANGLE/Vulkan SwiftShader**, renderizado por software.1365×768/DPR1;393×852 y320×640/DPR2 con tacto emulado. **No hay prueba en teléfono físico.**
+
+| Comprobación | Resultado y evidencia |
+| --- | --- |
+| Línea base H3.4.1 propia antes de programar |528/528; builds y [Chromium3 tamaños](evidencias/h342/base-h341-chromium.json) +[9 casos](evidencias/h342/base-h341-casos.json), aprobados. No sustituye el resultado independiente no recuperable. |
+| Instalación/build | `npm ci --cache /tmp/h342-npm-cache`, check:build, build/check:movement-map, pruebas de build/servidor y diff --check aprobados. Misma dependencia/lockfile. Caché en `/tmp` por permisos del entorno; no es requisito del usuario de Windows. |
+| Suite | **545/545**,0 fallos/omitidas/canceladas.17 pruebas nuevas: motor5, protocolo6, build2, identidad/dados/tormenta/nonce4. Reproducción roja previa a implementar las interfaces, conservada en evidencia. |
+| Oráculo57872ee independiente | **40/40** partidas equivalentes frente al motor histórico; ambas suites sin omitidas, excluyendo únicamente metadatos de fuente como ya hacía el comparador. [JSON](evidencias/h342/oraculo.json). El motor entregado es el mismo que se comparó; CI vuelve a ejecutar el oráculo sobre el head final. |
+| Equivalencia específica de movimiento | Mismos estados/RNG con `doMove` y `moveById`, incluso si el activo del motor es otro. Exposición en blanco, congelación, herida y muerte. Consulta/rechazos sin cambios de estado o RNG. |
+| Capacidades y rechazo | Personaje ajeno/muerto/ya movido, destino inválido/igual, partida/turno/origen obsoletos, decisiones privadas aún no publicadas. Gasolinera real con3 permite el cuarto; con4 rechaza, independientemente de sus2 fichas visuales. |
+| Nueva vista, tres tamaños | **3/3**, ratón, teclado y tacto emulado; cancelación con botón/Escape/foco restaurado, destino por edificio/selector, pan/zoom/pinza con Tormenta, doble confirmación→una ejecución y sin mover anticipadamente. Herida real, dados por turno, identidad4 únicas+iniciales, bordes/halo, cero errores normales/desbordamiento. [JSON](evidencias/h342/chromium.json). |
+| Casos dirigidos Chromium | **9/9**: muerte Mara/identidad Bruno; muerte de líder/sucesión; mordedura con decisión de propagación; turno obsoleto; solicitud repetida tras reconectar; respuesta perdida y consulta sin reenvío; movimiento reducido/pausa/apagado; movimiento propio J2 y bloqueo de segundo movimiento; producto sin QA, confirmación por Enter y `randomUUID` ausente. [JSON](evidencias/h342/casos-limite.json). |
+| Limpieza/reinicio | Tres reinicios por tamaño, una instancia/contexto; misma partida/RNG/conexión al host. Al desmontar:0 contextos/objetos GL vivos y0 ResizeObserver targets. Solicitud repetida tras reconexión no modifica snapshot/RNG. |
+| Efectos y azar | Misma partida y secuencia aleatoria con Tormenta activa y vista V9.9/efectos apagados. Cambiar perfiles, cancelar, seleccionar, pan/zoom/audio no mutan el juego. Pool permanece158; apagado0 renders continuos. |
+| Privacidad/producto | Bundle de mapa sin `src/`; host con motor real sin Phaser; producto sin `h342Test`, `moveMessage`, `h342DropReply` o testBindings. QA no servido por defecto ni por LAN. Rutas anteriores conservadas. |
+
+Las pruebas de pausa de esta nueva escena usan un cambio **controlado** de `document.hidden` y `visibilitychange`; headless no certifica el cambio nativo de visibilidad ni el consumo de un teléfono. La reconexión de solicitudes se prueba con eventos de ciclo de vida controlados sobre canales reales. El CI conserva además el gate previo de Atrás de H3.4.1, que registra explícitamente si hubo bfcache real: no se confunden estos casos.
+
+### Coste medido de Suave/Tormenta
+
+Pruebas **secuenciales**, misma cámara/partida/DPR/tamaño,700ms de calentamiento y dos ventanas de2s por perfil. Contador POST_RENDER y reloj se capturan juntos al comenzar/terminar; la grabación se realiza aparte. TaskDuration de CDP mide tareas del proceso renderer, **no GPU, CPU total ni VRAM**. Ventanas cortas y ruido de instrumentación; no prueba de rendimiento sostenido en móvil.
+
+| Viewport | Apagado renders/s | Suave renders/s | Tormenta renders/s | Tareas renderer Suave ms/s | Tareas renderer Tormenta ms/s |
+| --- | ---: | ---: | ---: | ---: | ---: |
+|1365×768/DPR1|0|29,76|29,87|755,6|880,2|
+|393×852/DPR2 emulado|0|29,49|30,55|903,6|955,5|
+|320×640/DPR2 emulado|0|30,00|29,98|457,5|582,2|
+
+[Mediciones completas](evidencias/h342/rendimiento.json) · [Resumen calculado](evidencias/h342/resumen-mediciones.json). Tormenta cuesta más en este entorno, aunque ambas se acercan al límite nominal30FPS. El coste por software es considerable; no se promete que un teléfono mantenga ese rendimiento. Suave/apagado se mantienen como opciones reales. Ambas reservan158 partículas y193 objetos de escena en esta partida de prueba; visibles76–77 en Suave y156–158 en Tormenta al medir. La estimación de33.792bytes corresponde solo a las texturas procedurales base, **no al kit completo**, que mantiene el coste ya registrado en H3.3.
+
+La grabación inicial no encontró el FFmpeg de Playwright; se instaló como herramienta externa en una caché temporal. No se añadió al producto, al lockfile ni a los comandos normales del usuario.
+
+### Capturas y secuencia temporal inspeccionadas
+
+- [Vista general, Tormenta](evidencias/h342/1365-general.png).
+- [Nombre/origen/destino y confirmación, escritorio](evidencias/h342/1365-confirmar-hospital.png).
+- [393 emulado](evidencias/h342/393-confirmar-hospital.png) · [320 emulado](evidencias/h342/320-confirmar-hospital.png).
+- [Herida real tras movimiento](evidencias/h342/1365-herida-real.png).
+- [Mara fallecida, Bruno con su identidad propia](evidencias/h342/mara-fallecida-bruno-estable.png).
+- [Tormenta instante0](evidencias/h342/tormenta-tiempo-0.png) · [instante posterior](evidencias/h342/tormenta-tiempo-2.png).
+- [Video corto de8s, grabación real recortada](evidencias/h342/tormenta-8s.webm). Sirve para la revisión de movimiento; capturas y código de trayectorias no sustituyen la evaluación perceptual del creador.
+
+### Segunda revisión crítica propia
+
+Se revisaron selección frente a identidad, autoridad/consultas impuras, secuencia de exposición y decisiones, revisión de partida, repetición/desconexión, privacidad, límites de partículas, foco, geometría móvil y recursos. **No equivale a una revisión humana independiente ni a aprobación visual final.**
+
+Defectos nuevos confirmados durante esta entrega:
+
+1. El planificador heredaba la fila1fr del taller y reducía el mapa a una franja. [Antes](evidencias/h342/antes-planificador.png), [prueba roja](evidencias/h342/rojo-planificador.txt). Se pasó el sector a una columna flex y se exige≥160px de canvas durante la confirmación; en móvil se contrae la ficha y cancelar recupera panel/foco.
+2. Una segunda desconexión pasaba de resultado desconocido a idle antes de consultar. [Prueba roja](evidencias/h342/rojo-doble-desconexion.txt). Se mantiene unknown, bloqueando cancelar/nueva intención hasta recibir el estado actualizado. Caso real de respuesta perdida probado sin duplicar el movimiento.
+
+Ajustes de prueba, sin cambiar reglas: el arnés esperaba confirmación de muerte antes de elegir propagación de mordedura, pero el flujo real muestra primero esa decisión; se corrigió el arnés. También esperaba idle al reconectar con una encrucijada pendiente: ahora resuelve esa decisión por el UI original antes de exigir consulta completa. La contracción de la ficha exigió recuperar foco al cancelar, comprobado con teclado. [Registro de verificaciones](evidencias/h342/verificaciones.json), [rojo de API](evidencias/h342/rojo-engine.txt), [rojo del protocolo](evidencias/h342/rojo-protocolo.txt).
+
+### Commits, preservación y CI
+
+Primer commit acotado de motor/prueba/registro: **`83d04152725c66f471642b0c017ae89592c88571`**. La implementación visual/protocolo está en el commit posterior `5f2c7ef`; el head completo entregado y sus runs/artifacts se registran en el nuevo PR draft contra H3.4.1. La documentación posterior es evidencia de esta implementación, no una modificación de la referencia estable.
+
+Fuentes de H3.4.1, H3.3, H3.2 y Canvas, PNG originales, reglas/datos/IA/turnos/SP-03 y lockfile sin cambios. Único ajuste al motor: consulta/ejecución acotada y extracción compartida ya descritas. Bundles anteriores reconstruidos con hashes idénticos:
+
+```text
+H3.3 mapa  2fabef6fc8fc4e4bbd88729454c7dfee105838dfd203b0badc5767655d7d5d72
+Taller     265c882ad84347168be8df5a1d9ce421d5a1845b1d3948fe0bd683e6401454a7
+H3.2       7e7b90ab465bc4b7113ffb20c4c0780a9c0e9d0db1d0cfab83659b46632f5e54
+```
+
+El workflow nuevo `h3-4-2-movement-map.yml` usa checkout del **head exacto**, Node22, instalación reproducible, suite y oráculo; reconstruye/checkea todas las entradas; ejecuta los dos gates H3.4.1 contra el motor entregado, los dos nuevos H3.4.2 y la medición/video secuencial. Artifacts y logs se descargan/verifican antes de informar CI aprobado; su evidencia final queda enlazada en la descripción del PR. El CI histórico de los siete gates visuales H3.3 sobre064f47cc se conserva como evidencia de esas fuentes/bundles intactos, **no como validación del nuevo movimiento**.
+
+## Resultado y reservas
+
+Entrega H3.4.2 para revisión: movimiento identificado y confirmado desde el mapa, consecuencias reales y decisiones en V9.9, identidad sin retratos repetidos, perfiles de ventisca y presentación recuperada. Cancelar y explorar no cambian la partida. Rechazos, conexiones y respuestas desconocidas se tratan sin reenvíos automáticos.
+
+Pendiente: revisión del creador del flujo y la intensidad artística de Tormenta, teléfono físico, nitidez al ampliar y coste en GPU real. No se adoptó un nuevo renderer ni se fijaron capacidades artísticas, mapa horizontal o arte definitivo. No hay persistencia añadida; recargar todo el documento conserva el comportamiento de inicialización anterior, no un guardado de la partida.
+
+**Única siguiente tarea:** revisión del creador de H3.4.2 y de su video. Se detiene esta entrega; no buscar/atacar/construir/finalizar turnos desde el mapa, no merge y no avance automático.
