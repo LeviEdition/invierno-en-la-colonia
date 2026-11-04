@@ -18,12 +18,12 @@ Abrir **http://127.0.0.1:8776/prototypes/movement-map/**. No requiere Python. Ma
 
 1. Preparar la partida en V9.9. Elegir líder desde Grupos si se desea, conservando su flujo original; resolver allí los pases y decisiones.
 2. Pulsar **Ver mapa**, seleccionar un superviviente propio y **Moverse**.
-3. Elegir el edificio en el mapa o una localidad en el selector de destino. Solo se ofrecen como permitidos los destinos que consulta el motor; las posiciones del dibujo no establecen capacidad.
-4. Revisar **nombre, origen y destino**. Confirmar o cancelar. Escape cancela y devuelve el foco a Moverse. En móvil la ficha se contrae durante la elección para dejar mapa utilizable y se recupera al cancelar.
-5. El motor resuelve el movimiento; la ficha no se adelanta. Puede haber herida, muerte u otras consecuencias. Si aparece un diálogo, el programa vuelve a V9.9 indicando qué resolver. Confirmarlo allí y pulsar Ver mapa para continuar.
-6. Fuera de Moverse, seleccionar un edificio sigue consultando la localidad. Las otras tres acciones permanecen deshabilitadas.
+3. Se iluminan simultáneamente los edificios legales. Tocá uno para proponerlo; el contorno y relleno más intensos distinguen ese destino. El selector secundario «Elegir destino por teclado» ofrece la misma consulta del motor; las posiciones del dibujo no establecen capacidad.
+4. Revisar **nombre, origen y destino**. «Elegir otro destino» o Escape vuelve a la elección; «Salir de Mover» o un segundo Escape sale sin modificar la partida. En móvil la ficha se contrae durante la elección para dejar mapa utilizable y se recupera al salir.
+5. El motor resuelve una sola vez. Tras aceptar: recorrido de **1,5 segundos** → animación del dado → resultado real visible → consecuencia. Una habilidad que evita tirar se explica sin inventar un dado. Si hay una decisión pendiente, el mapa espera: pulsá **Continuar en V9.9**, resolvela allí y después Ver mapa. Ninguna decisión se confirma automáticamente. Movimiento reducido usa una transición breve.
+6. Fuera de Moverse, seleccionar un edificio sigue consultando la localidad. Un rival muestra su información sin sección de acciones. Para un personaje propio, Moverse explica sus restricciones reales; las otras tres acciones permanecen deshabilitadas.
 
-Mientras resuelve, no se admiten confirmaciones repetidas. Si se interrumpe la conexión no se reenvía la acción: se consulta el estado actual. El mensaje puede indicar resultado desconocido hasta recuperar esa consulta. **Reiniciar visor** conserva la partida, limpia la elección visual y no repite movimientos. Recargar toda la página no añade persistencia/guardados.
+Mientras resuelve, no se admiten confirmaciones repetidas. Si se interrumpe la conexión no se reenvía la acción: se consulta el estado actual. El mensaje puede indicar resultado desconocido hasta recuperar esa consulta. **Reiniciar visor** conserva la partida, limpia la elección visual y no repite movimientos. Cambiar de vista, ocultar la pestaña o reconectar durante la presentación recupera el estado real sin repetir animación, movimiento ni tirada. Recargar toda la página no añade persistencia/guardados.
 
 ## Identidad y ambientación
 
@@ -77,3 +77,5 @@ Se usan esbuild0.28.2 y Phaser4.2.1 existentes, sin nuevas dependencias. Reinici
 El QA separado (`node scripts/serve-movement-map.mjs --qa`) solo admite loopback y añade artefactos de prueba; el servidor normal no los sirve. No hay parámetro URL que habilite un dispatcher del motor en producto. Los scripts Chromium y el workflow `h3-4-2-movement-map.yml` documentan la instalación externa de Playwright y sus recorridos.
 
 Pendientes: revisión visual del creador, teléfono físico, nitidez del mapa al ampliar, proporciones/arte/capacidades visuales definitivas y mapa más horizontal. No hay navegación por calles, distancias, colisiones ni animación de caminata. No avanzar a otras acciones sin autorización.
+
+La revisión de continuidad, los videos anteriores/posteriores, la estructura de exposición y sus reservas están en [informe85](../../docs/85-h3-4-2-experiencia-movimiento.md). La interpolación es de una ficha de tablero, no representa caminos ni movimiento físico.

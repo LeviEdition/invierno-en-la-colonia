@@ -1,5 +1,21 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## H3.4.2 — revisión de experiencia del movimiento ·04/11/2026
+
+**Encargo vigente:** continuar el mismo PR22 draft contra H3.4.1 desde1141b89; selección/destinos, continuidad, recorrido de1,5s, exposición real y consecuencias diferidas. La revisión independiente de esta base confirmó545 pruebas y Chromium3 tamaños, posterior a la reserva histórica de83/84. **No habilita otras acciones ni merge.** [Informe85](85-h3-4-2-experiencia-movimiento.md).
+
+**Implementación3713aa4:** todos los destinos legales resaltados, propuesta diferenciada, cancelar vuelve a elegir y salida/Escape; rival sin sección de acciones, scroll por identidad; controles superpuestos y cámara estable. Motor ejecuta una sola vez y devuelve exposición estructurada; ficha por ID recorre1500ms, muestra dado/resultado y después consecuencias. Decisiones esperan **Continuar en V9.9**; interrupciones recuperan estado real sin repetir acción/RNG. Habilidades sin tirada y daño evitado diferenciados. Identidad/ambientación/reglas y referencias anteriores preservadas.
+
+**Reproducción:** confirmados saltos de alto563→475→531px/cámara y cambio inmediato a V9.9 ante encrucijada; Phaser no se recreaba. **No se confirmó un cuadro blanco global** en los videos25FPS: no se declara una causa única del pestañeo informado. Evidencia anterior/posterior y límites de detección conservados.
+
+**Validación propia:** **555/555**,10 nuevas; instalación/builds/checks y oráculo **40/40**; Chromium **5 recorridos +5 recuperaciones**,1365/393/320, y regresiones H3.4.2 **3+9** / H3.4.1 **3+9**. Videos/trazas por cuadro, una ficha por actor, cámara/área estables y decisiones sin auto-confirmación. Corregidos toque interceptado, capas del menú y guía móvil reaparecida. [Evidencias y comandos](evidencias/h342-experiencia/README.md). CI del head documental final/run/artifact se comprueba y registra en el PR22 antes de entregar; el de1141 es histórico.
+
+**Probar:** `npm.cmd ci` → `npm.cmd run dev:movement-map` → **http://127.0.0.1:8776/prototypes/movement-map/**. Preparar V9.9 → Ver mapa → superviviente propio → Moverse → edificio iluminado → confirmar. [Guía](../prototypes/movement-map/README.md). Sin Python.
+
+**Reservas:** revisión visual pendiente, grabación25FPS/SwiftShader, visibilidad y reconexión controladas, sin teléfono físico/VRAM medida; interpolación de ficha sin caminos, sin persistencia. Arte/capacidades visuales/mapa horizontal aplazados. Main826199d9, tag/release y PR anteriores intactos. **Única siguiente tarea: revisión del creador de H3.4.2.** PR22 permanece draft, sin merge ni avance. Bloques siguientes históricos.
+
+---
+
 ## H3.4.2 — movimiento desde el mapa autorizado ·04/11/2026
 
 **Decisión del creador:** H3.4.1 aprobado como integración de consulta. Se autoriza H3.4.2: movimiento por ID con confirmación, identidad sin retratos compartidos, bordes azul/rojo, dados/iconos y Suave/Tormenta. Nueva rama `experiment/h3-4-2-movimiento-mapa` desde064f47cc/PR21, nuevo PR draft contra H3.4.1; sin merge ni otras acciones. Main/referencia/tag/release y prototipos anteriores intactos. [Informe84](84-h3-4-2-movimiento-mapa.md).

@@ -17,6 +17,7 @@ Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos un
 - [H3.1 — Auditoría de identidad visual](docs/74-h3-1-auditoria-identidad-visual.md)
 - [Plan propuesto H3.1–H3.6](docs/75-plan-hito-3-identidad-visual.md)
 - [H3.4.2 — Movimiento desde el mapa](docs/84-h3-4-2-movimiento-mapa.md)
+- [H3.4.2 — Continuidad, recorrido y exposición visible](docs/85-h3-4-2-experiencia-movimiento.md)
 - [H3.4.1 — Mapa de consulta de una partida real](docs/83-h3-4-1-estado-real-consulta.md)
 - [H3.3 — Luces asincrónicas y ventisca opcional, evidencia histórica](docs/82-h3-3-luces-viento-y-ventisca.md)
 - [H3.3 — Localidades seleccionables y revisión de interfaz](docs/79-h3-3-localidades-capacidades-e-interfaz.md)
@@ -42,7 +43,7 @@ npm.cmd ci
 npm.cmd run dev:movement-map
 ```
 
-Abrir **http://127.0.0.1:8776/prototypes/movement-map/**. Preparar en V9.9 → Ver mapa → seleccionar superviviente propio → Moverse → elegir destino → revisar y confirmar/cancelar. Las consecuencias y decisiones son las reales del motor; las que requieren diálogo se resuelven en V9.9. Los dados siguen perteneciendo al turno. Nuevos bordes azul/rojo, retratos únicos o iniciales y perfiles Suave/Tormenta; sonido apagado al inicio. [Guía Windows, teclado, red local y reservas](prototypes/movement-map/README.md). Ctrl+C detiene el servidor; sin Python.
+Abrir **http://127.0.0.1:8776/prototypes/movement-map/**. Preparar en V9.9 → Ver mapa → seleccionar superviviente propio → Moverse → elegir destino → revisar y confirmar/cancelar. Se iluminan los destinos legales. Tras aceptar: recorrido de1,5s, dado real y consecuencias; las decisiones esperan «Continuar en V9.9». Cancelar la confirmación vuelve a elegir; Salir/Escape permite abandonar sin mutaciones. Los dados siguen perteneciendo al turno. Nuevos bordes azul/rojo, retratos únicos o iniciales y perfiles Suave/Tormenta; sonido apagado al inicio. [Guía Windows, teclado, red local y reservas](prototypes/movement-map/README.md). Ctrl+C detiene el servidor; sin Python.
 
 La consulta anterior sigue en `/prototypes/state-map/` y H3.3 en `/prototypes/hospital-workshop/`, también con el servidor8776. Los apartados siguientes conservan sus instrucciones independientes.
 

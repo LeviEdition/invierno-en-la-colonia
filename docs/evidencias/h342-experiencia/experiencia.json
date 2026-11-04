@@ -1,0 +1,94 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "records": [
+    {
+      "name": "blank",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "errors": [],
+      "targetHit": {
+        "id": "scene",
+        "tag": "CANVAS",
+        "html": "<canvas id=\"scene\" tabindex=\"0\" role=\"img\" aria-label=\"Mapa de localidades, supervivientes y destino de movimiento\" aria-describedby=\"map-instructions\" width=\"1025\" height=\"563\" st"
+      },
+      "stages": [
+        "travel",
+        "roll",
+        "reveal",
+        "consequence"
+      ],
+      "frameCount": 91,
+      "cameraStable": true,
+      "oneActorPerFrame": true,
+      "rngStableDuringPresentation": true,
+      "video": "/tmp/h342-experience-final-ui/blank/a9ca134bfadf231374d5af0bcdc3627d.webm"
+    },
+    {
+      "name": "wound",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "errors": [],
+      "targetHit": {
+        "id": "scene",
+        "tag": "CANVAS",
+        "html": "<canvas id=\"scene\" tabindex=\"0\" role=\"img\" aria-label=\"Mapa de localidades, supervivientes y destino de movimiento\" aria-describedby=\"map-instructions\" width=\"786\" height=\"1300\" st"
+      },
+      "stages": [
+        "travel",
+        "roll",
+        "reveal",
+        "consequence"
+      ],
+      "frameCount": 108,
+      "cameraStable": true,
+      "oneActorPerFrame": true,
+      "rngStableDuringPresentation": true,
+      "video": "/tmp/h342-experience-final-ui/wound/30104e59a2e80ce61ba22315dde09dbf.webm"
+    },
+    {
+      "name": "frost",
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "errors": [],
+      "targetHit": {
+        "id": "scene",
+        "tag": "CANVAS",
+        "html": "<canvas id=\"scene\" tabindex=\"0\" role=\"img\" aria-label=\"Mapa de localidades, supervivientes y destino de movimiento\" aria-describedby=\"map-instructions\" width=\"640\" height=\"876\" sty"
+      },
+      "stages": [
+        "travel",
+        "roll",
+        "reveal",
+        "consequence"
+      ],
+      "frameCount": 215,
+      "cameraStable": true,
+      "oneActorPerFrame": true,
+      "rngStableDuringPresentation": true,
+      "video": "/tmp/h342-experience-final-ui/frost/58f9390bb235df269e3746e81d79d7da.webm"
+    },
+    {
+      "name": "decision",
+      "errors": [],
+      "waitedForPlayer": true,
+      "noEarlyDeath": true,
+      "video": "/tmp/h342-experience-final-ui/decision/347d7a456f77ef5557a810372fc23efe.webm"
+    },
+    {
+      "name": "death",
+      "errors": [],
+      "waitedForPlayer": true,
+      "noEarlyDeath": true,
+      "video": "/tmp/h342-experience-final-ui/death/3e8962941cf6fd9c230a563edcfba243.webm"
+    }
+  ],
+  "failures": [],
+  "passed": true
+}
