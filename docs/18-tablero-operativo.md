@@ -1,5 +1,17 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## H3.4.2 — corrección de desfase de fichas durante pan/zoom ·04/11/2026
+
+**Observación del creador confirmada:** video con retratos desplazándose a saltos respecto del techo. Base74b40e0, mismo PR22 draft/H3.4.1, árbol inicial limpio. El DOM actualizaba su cámara por RAF antes del cuadro de Phaser; una prueba temporal reprodujo **30 actualizaciones sin nuevo cuadro del mapa**. Las comprobaciones anteriores cubrían alineación en reposo, no esta fase del gesto. [Informe86](86-h3-4-2-sincronizacion-camara-fichas.md), conservando85 como historia.
+
+**Arreglo acotado:** publicar la cámara de fichas/etiquetas/destinos mediante POST_RENDER público y conservar la última presentada mientras se espera; clics usan esa cámara visible. Sin elevar FPS, partículas ni bucles;0 escrituras de fichas en reposo. Solo cambia map-view de H3.4.2, nuevo gate y documentación/workflow. Motor, arte, adaptador y prototipos anteriores intactos; main/tag/release preservados.
+
+**Validación:**555/555 y builds/checks; cámara **9 combinaciones**1365/393/320×apagado/Suave/Tormenta con **0 desfases**, selección/RNG/partida conservados. Experiencia5/5, recuperación5/5 y regresión H3.4.2 **3+9** aprobadas; videos/capturas/rojo y trazas conservados. CI del nuevo head/run/artifact se comprueba y registra en PR22; el CI de74b40 sigue como evidencia histórica con reserva global de GitHub. [Evidencias](evidencias/h342-camara/README.md).
+
+**Reservas:** emulación/SwiftShader; no teléfono físico ni garantía60FPS. La corrección elimina el adelanto relativo detectado, no certifica toda GPU. Reiniciar servidor y recargar tras actualizar para reconstruir el bundle. **Única siguiente tarea: revisión del creador del arreglo en PR22.** Sin merge ni otras acciones. Bloques siguientes históricos.
+
+---
+
 ## H3.4.2 — revisión de experiencia del movimiento ·04/11/2026
 
 **Encargo vigente:** continuar el mismo PR22 draft contra H3.4.1 desde1141b89; selección/destinos, continuidad, recorrido de1,5s, exposición real y consecuencias diferidas. La revisión independiente de esta base confirmó545 pruebas y Chromium3 tamaños, posterior a la reserva histórica de83/84. **No habilita otras acciones ni merge.** [Informe85](85-h3-4-2-experiencia-movimiento.md).

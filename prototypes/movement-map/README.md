@@ -79,3 +79,5 @@ El QA separado (`node scripts/serve-movement-map.mjs --qa`) solo admite loopback
 Pendientes: revisión visual del creador, teléfono físico, nitidez del mapa al ampliar, proporciones/arte/capacidades visuales definitivas y mapa más horizontal. No hay navegación por calles, distancias, colisiones ni animación de caminata. No avanzar a otras acciones sin autorización.
 
 La revisión de continuidad, los videos anteriores/posteriores, la estructura de exposición y sus reservas están en [informe85](../../docs/85-h3-4-2-experiencia-movimiento.md). La interpolación es de una ficha de tablero, no representa caminos ni movimiento físico.
+
+Corrección de pan/zoom: [informe86](../../docs/86-h3-4-2-sincronizacion-camara-fichas.md). Tras actualizar, detener el servidor con Ctrl+C, ejecutar `git pull --ff-only` desde esta rama, volver a iniciar `npm.cmd run dev:movement-map` y recargar con Ctrl+Shift+R. Esto recompila el bundle: dejar el servidor anterior abierto conserva su construcción anterior. La cámara de las fichas ahora se publica junto al cuadro de Phaser; no se aumenta el límite de FPS.

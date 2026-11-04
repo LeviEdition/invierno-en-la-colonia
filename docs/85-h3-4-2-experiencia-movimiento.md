@@ -2,6 +2,8 @@
 
 04/11/2026, fecha de proyecto en America/Montevideo. Continuación autorizada del **PR [#22](https://github.com/LeviEdition/invierno-en-la-colonia/pull/22)**, rama `experiment/h3-4-2-movimiento-mapa`, base `experiment/h3-4-1-estado-real`. **No es H3.4.3 ni una integración aprobada.** Este informe actualiza el comportamiento de84; conserva ese informe y sus evidencias como historia.
 
+**Actualización posterior:** el creador detectó un desfase de fichas durante el arrastre, confirmado y corregido en [86](86-h3-4-2-sincronizacion-camara-fichas.md). Los resultados de este informe se conservan como historia; no demostraban sincronía de capas durante todos los cuadros del pan.
+
 ## Base y autorización comprobadas
 
 Árbol inicial limpio; HEAD y remoto coincidían en **`1141b893aff88c8e1137c727e50c55b76e178a58`**. PR22 abierto/draft y base H3.4.1 **`064f47cc6516932c0baac839e34669f98e2fda34`**. No había AGENTS.md aplicable. Releídos instrucciones, README, tablero, protocolo15, informe84 y contratos existentes. Se conserva todo el trabajo posterior de la rama; no se retrocede a otro commit.

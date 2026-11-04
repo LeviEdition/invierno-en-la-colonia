@@ -1,0 +1,129 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "method": "RAF + POST_RENDER count and DOM positions during real input; video separately inspectable",
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "errors": [],
+      "profiles": [
+        {
+          "profile": "off",
+          "samples": 247,
+          "movingSamples": 93,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 0
+          }
+        },
+        {
+          "profile": "soft",
+          "samples": 287,
+          "movingSamples": 93,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 11
+          }
+        },
+        {
+          "profile": "storm",
+          "samples": 286,
+          "movingSamples": 93,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 10
+          }
+        }
+      ],
+      "video": "/tmp/h342-stutter/delivery/1365/e231f92e80a358c270f5c1be13c17d86.webm"
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "errors": [],
+      "profiles": [
+        {
+          "profile": "off",
+          "samples": 187,
+          "movingSamples": 70,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 0
+          }
+        },
+        {
+          "profile": "soft",
+          "samples": 188,
+          "movingSamples": 70,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 10
+          }
+        },
+        {
+          "profile": "storm",
+          "samples": 188,
+          "movingSamples": 70,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 8
+          }
+        }
+      ],
+      "video": "/tmp/h342-stutter/delivery/393/fb7b4cb4aaecccf77de9a10ad46b981e.webm"
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "errors": [],
+      "profiles": [
+        {
+          "profile": "off",
+          "samples": 180,
+          "movingSamples": 68,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 0
+          }
+        },
+        {
+          "profile": "soft",
+          "samples": 198,
+          "movingSamples": 68,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 12
+          }
+        },
+        {
+          "profile": "storm",
+          "samples": 185,
+          "movingSamples": 68,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 9
+          }
+        }
+      ],
+      "video": "/tmp/h342-stutter/delivery/320/f06f770d546eee72e7698560bf7fc76f.webm"
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

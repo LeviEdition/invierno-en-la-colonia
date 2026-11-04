@@ -18,6 +18,7 @@ Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos un
 - [Plan propuesto H3.1–H3.6](docs/75-plan-hito-3-identidad-visual.md)
 - [H3.4.2 — Movimiento desde el mapa](docs/84-h3-4-2-movimiento-mapa.md)
 - [H3.4.2 — Continuidad, recorrido y exposición visible](docs/85-h3-4-2-experiencia-movimiento.md)
+- [H3.4.2 — Corrección de fichas al desplazar el mapa](docs/86-h3-4-2-sincronizacion-camara-fichas.md)
 - [H3.4.1 — Mapa de consulta de una partida real](docs/83-h3-4-1-estado-real-consulta.md)
 - [H3.3 — Luces asincrónicas y ventisca opcional, evidencia histórica](docs/82-h3-3-luces-viento-y-ventisca.md)
 - [H3.3 — Localidades seleccionables y revisión de interfaz](docs/79-h3-3-localidades-capacidades-e-interfaz.md)
