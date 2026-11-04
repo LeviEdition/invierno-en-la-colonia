@@ -1,0 +1,78 @@
+name: H3.4.3 — Buscar desde el mapa
+on:
+  pull_request:
+    branches: [experiment/h3-4-2-movimiento-mapa]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  search:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - run: npm run check:build && npm test
+      - name: Oráculo histórico57872ee — cuarenta partidas por variante
+        run: npm run test:poc
+      - name: Chromium y grabación externos al producto
+        run: |
+          npm install --no-save --package-lock=false playwright@1.57.0
+          npx playwright install --with-deps chromium ffmpeg
+      - name: Buscar, privacidad, continuidad y regresiones
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/serve-search-map.mjs --qa > /tmp/h343-server.log 2>&1 &
+          SEARCH_PID=$!
+          trap 'kill "$SEARCH_PID"' EXIT
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:8777/prototypes/search-map/ -o /dev/null && break; sleep 1; done
+          export CHROMIUM_PATH="$(node --input-type=module -e "import {chromium} from 'playwright';console.log(chromium.executablePath())")"
+          export H341_ORIGIN=http://127.0.0.1:8777
+          export H342_ORIGIN=http://127.0.0.1:8777
+          git rev-parse HEAD
+          npm run check:search-map-build
+          npm run check:movement-map-build
+          npm run check:state-map-build
+          npm run check:workshop-build
+          npm run check:hospital-build
+          node scripts/check-h341-browser.mjs
+          node scripts/check-h341-edge-browser.mjs
+          node scripts/check-h342-browser.mjs
+          node scripts/check-h342-edge-browser.mjs
+          node scripts/check-h342-experience-browser.mjs
+          node scripts/check-h342-experience-recovery.mjs
+          node scripts/check-h342-camera-browser.mjs
+          node scripts/check-h343-browser.mjs
+          node scripts/check-h343-edge-browser.mjs
+          node scripts/check-h343-movement-browser.mjs
+          node scripts/check-h343-camera-browser.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: h343-search-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            /tmp/h343-browser/
+            /tmp/h343-edge/
+            /tmp/h343-experience/
+            /tmp/h343-camera/
+            /tmp/h343-server.log
+            /tmp/h342-browser/
+            /tmp/h342-edge/
+            /tmp/h342-experience/
+            /tmp/h342-experience-recovery/
+            /tmp/h342-camera/
+            /tmp/h341-browser/
+            /tmp/h341-edge/
+            /tmp/d1d2-regressions/
+            dist/search-map/build.json
+            dist/movement-map/build.json
+            dist/state-map/build.json
+            dist/hospital-workshop/build.json
+            dist/hospital-phaser/build.json

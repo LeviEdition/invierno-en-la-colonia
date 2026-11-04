@@ -418,9 +418,9 @@ function replaceLastSurvivors(env=null){
 }
 let ItemEngine=createItemEngine(c);
 const itemEngine=new ItemEngine();
-let movementGeneration=0;
+let movementGeneration=0,searchSerial=0,searchOperation=null;
 function create(){
- movementGeneration++;
+ movementGeneration++;searchOperation=null;searchSerial=0;
  view.resetToasts();deathDirector.reset();skipAI=false;aiRunning=false;selected=0;target=0;picked=0;opened='';profileId='';pendingHeal=null;pendingLoot=null;pendingBite=null;pendingAttract=null;pendingTransfer=null;aiCrossChoice=null;settleDecisionWaiters();resetLeaderRequests();pendingRecruitInfo=null;selectionBySide.human=0;selectionBySide.ai=0;closeStatInfo();
  const objective=objectives[random(objectives.length)];
  game=stateFactory({gameMode,objective,places,catalog});
@@ -553,14 +553,16 @@ function chooseLoot(i){
  if(!pendingLoot||game.ended||!canResolve('lootChoice')||!Number.isInteger(i)||i<0||i>=pendingLoot.items.length)return;
  const {items,actorId,loc}=pendingLoot,p=all().find(x=>x.id===actorId);pendingLoot=null;
  if(!p||p.dead)return;
- const chosen=items[i];game.decks[loc].push(...items.filter((_,j)=>j!==i));stashLoot(chosen,p,controls.side);
+ const chosen=items[i],handBefore=controls.hand().length;
+ game.decks[loc].push(...items.filter((_,j)=>j!==i));stashLoot(chosen,p,controls.side);
+ if(searchOperation?.pending===items){searchOperation.status='result';searchOperation.result={card:searchCard(chosen),returned:items.length-1,handDelta:controls.hand().length-handBefore,noise:game.zones[loc].noise};}
  message('⌕ '+p.name+' eligió '+itemTitle(chosen)+'; las demás cartas regresaron al fondo del mazo.');
  opened='';view.closeBackdrop();crossAction('search',p);verify();paint();if(pendingRecruitInfo&&!game.crossPending)show('recruitSuccess');
 }
-function consume(min){
+function consume(min,dieIndex=picked){
  if(game.ended||!playable()||pendingLoot||pendingBite||leaderChoiceReady()||game.crossPending)return null;
  if(!actionDice().length)return messageAndPaint('No quedan dados de acción.'),null;
- const dice=actionDice(),i=Math.max(0,Math.min(picked,dice.length-1)),value=dice[i];
+ const dice=actionDice(),i=Math.max(0,Math.min(dieIndex,dice.length-1)),value=dice[i];
  if(value<min)return messageAndPaint('Necesitás un dado de '+min+' o más (seleccionado: '+value+').'),null;
  dice.splice(i,1);picked=Math.min(i,dice.length-1);confirmStartingLeader();message('🎲 Dado utilizado: '+value+' (mínimo '+min+').');return value;
 }
@@ -574,8 +576,7 @@ function search(noise=false){
  if(!playable()||game.ended||pendingLoot||pendingBite||leaderChoiceReady())return;
  const p=person();if(!p||p.dead||p.loc===0)return messageAndPaint('Elegí un superviviente vivo que esté fuera de la colonia.');
  if(!game.decks[p.loc].length)return messageAndPaint('No quedan cartas en esta localidad.');
- if(consume(effectiveSearch(p))===null)return;
- beginSearch(p,controls.side);paint();
+ executeSearch(p,picked);
 }
 function attack(){
  if(!playable()||game.ended||pendingBite||leaderChoiceReady())return;
@@ -602,10 +603,12 @@ function executeMovement(p,destination){
  return {actorId:p.id,from,destination,exposure,actorBefore,actorAfter:{id:p.id,name:p.name,location:p.loc,wounds:p.wounds,frost:p.frost,dead:!!p.dead}};
 }
 // Consulta pura: no llama playable/decisionKind/paint ni sincroniza líderes.
-function movementOptions(actorId){
- const p=game&&all().find(p=>p.id===actorId);
+function actionBlockReason(p){
  const leaderDecision=pendingLeaderSides.length>0&&(!game||game.mode!=='local'||pendingLeaderSides.includes(controls.side));
- const reason=!game?'no-game':game.ended?'ended':!controls.interactive?'turn':deathWaiting()||pendingBite||pendingLoot||pendingHeal||pendingAttract||pendingTransfer||leaderDecision||game.crossPending||opened?'decision':!p?'missing':p.dead?'dead':ownerOf(p)!==controls.side?'ownership':p.moved?'already-moved':null;
+ return !game?'no-game':game.ended?'ended':!controls.interactive?'turn':deathWaiting()||pendingBite||pendingLoot||pendingHeal||pendingAttract||pendingTransfer||leaderDecision||game.crossPending||opened?'decision':!p?'missing':p.dead?'dead':ownerOf(p)!==controls.side?'ownership':null;
+}
+function movementOptions(actorId){
+ const p=game&&all().find(p=>p.id===actorId),reason=actionBlockReason(p)||(p.moved?'already-moved':null);
  return {gameGeneration:movementGeneration,round:game?.round,turn:game?.turn,actorId,origin:p?.loc??null,allowed:!reason,reason,destinations:reason?[]:places.map((_,i)=>i).filter(i=>i!==p.loc&&accessible(i))};
 }
 function moveById(request){
@@ -616,6 +619,69 @@ function moveById(request){
  const p=all().find(p=>p.id===request.actorId),resolution=executeMovement(p,request.destination);
  return {ok:true,actorId:p.id,from:info.origin,destination:request.destination,location:p.loc,dead:!!p.dead,resolution};
 }
+
+// H3.4.3: metadatos efímeros y consultas puras; ninguna carta futura sale del motor.
+function searchCard(it,index){
+ const d=catalog.resolve(it);return {index,id:d?.id||null,name:d?.name||'Objeto desconocido',kind:d?.kind||null,description:d?.desc||'',icon:d?.icon||''};
+}
+function searchOptions(actorId){
+ const p=game&&all().find(x=>x.id===actorId),dice=game?controls.dice():[],requirement=p?effectiveSearch(p):null;
+ const base=actionBlockReason(p),reason=base||(p.loc===0?'colony':!game.decks[p.loc]?.length?'deck-empty':!dice.length?'no-dice':!dice.some(d=>d>=requirement)?'insufficient':null);
+ return {gameGeneration:movementGeneration,round:game?.round,turn:game?.turn,actorId,origin:p?.loc??null,requirement,diceVersion:JSON.stringify(dice),allowed:!reason,reason,dice:base?[]:dice.map((value,index)=>({index,value,allowed:!reason&&value>=requirement}))};
+}
+function executeSearch(p,dieIndex){
+ const value=consume(effectiveSearch(p),dieIndex);if(value===null)return;
+ searchOperation={operationId:'search_'+movementGeneration+'_'+(++searchSerial),gameGeneration:movementGeneration,round:game.round,ownerId:controls.side,actorId:p.id,name:p.name,origin:p.loc,dieIndex,dieValue:value,status:'empty',noiseBefore:game.zones[p.loc].noise,result:null,pending:null};
+ beginSearch(p,controls.side);
+ if(pendingLoot?.actorId===p.id){searchOperation.status='choice';searchOperation.pending=pendingLoot.items;}
+ paint();
+ return searchOperation.operationId;
+}
+function searchById(request){
+ const info=searchOptions(request?.actorId),reject=reason=>({ok:false,reason});
+ if(!request||request.gameGeneration!==info.gameGeneration||request.round!==info.round||request.turn!==info.turn||request.origin!==info.origin||request.diceVersion!==info.diceVersion||request.requirement!==info.requirement)return reject('stale');
+ if(!info.allowed)return reject(info.reason);
+ const die=info.dice.find(d=>d.index===request.dieIndex);
+ if(!die||die.value!==request.dieValue||!die.allowed)return reject('die');
+ const operationId=executeSearch(all().find(p=>p.id===request.actorId),request.dieIndex);
+ return {ok:true,operationId};
+}
+function searchSnapshot(){
+ if(!game||!controls.interactive||deathWaiting())return null;
+ const own=searchOperation&&searchOperation.gameGeneration===movementGeneration&&searchOperation.ownerId===controls.side&&searchOperation.round===game.round?searchOperation:null;
+ const general=!!(pendingBite||pendingHeal||pendingAttract||pendingTransfer||pendingLeaderSides.includes(controls.side)||game.crossPending||(opened&&!['lootChoice','recruitSuccess'].includes(opened)));
+ const operation=own?{
+  operationId:own.operationId,gameGeneration:own.gameGeneration,round:own.round,ownerId:own.ownerId,actorId:own.actorId,name:own.name,origin:own.origin,dieIndex:own.dieIndex,dieValue:own.dieValue,status:own.status,
+  noise:game.zones[own.origin].noise,noiseBefore:own.noiseBefore,step:own.status+'_'+(pendingLoot?.items===own.pending?pendingLoot.items.length:0)+'_'+game.zones[own.origin].noise,
+  cards:own.status==='choice'&&pendingLoot?.items===own.pending?pendingLoot.items.map(searchCard):[],
+  canNoise:own.status==='choice'&&pendingLoot?.items===own.pending&&!general&&game.zones[own.origin].noise<4&&game.decks[own.origin].length>0,
+  result:own.result?structuredClone(own.result):null,
+  recruit:own.status==='result'&&pendingRecruitInfo?.side===controls.side?{...pendingRecruitInfo}:null,
+  generalDecision:general,
+ }:null;
+ return {gameGeneration:movementGeneration,round:game.round,ownerId:controls.side,hand:controls.hand().map(searchCard),operation};
+}
+function searchDecisionAllowed(request){
+ const op=searchSnapshot()?.operation,p=op&&all().find(p=>p.id===op.actorId);
+ return !!p&&!p.dead&&p.loc===op.origin&&ownerOf(p)===op.ownerId&&request?.operationId===op.operationId&&request.gameGeneration===op.gameGeneration&&request.round===op.round&&request.ownerId===op.ownerId&&request.step===op.step&&op.status==='choice'&&!op.generalDecision&&pendingLoot?.items===searchOperation.pending;
+}
+function addSearchNoise(request){
+ if(!searchDecisionAllowed(request))return {ok:false,reason:'stale'};
+ if(!searchSnapshot().operation.canNoise)return {ok:false,reason:'noise'};
+ addNoiseSearch();return {ok:true,operationId:request.operationId};
+}
+function chooseSearchCard(request){
+ if(!searchDecisionAllowed(request))return {ok:false,reason:'stale'};
+ if(!Number.isInteger(request.index)||request.index<0||request.index>=pendingLoot.items.length)return {ok:false,reason:'card'};
+ chooseLoot(request.index);return {ok:true,operationId:request.operationId};
+}
+function dismissSearchResult(operationId){
+ const op=searchSnapshot()?.operation;
+ if(!op||op.operationId!==operationId||op.status==='choice'||op.generalDecision)return {ok:false,reason:'stale'};
+ if(opened==='recruitSuccess'&&pendingRecruitInfo?.side===controls.side)dismissRecruit();
+ searchOperation=null;return {ok:true};
+}
+
 function barricade(){
  if(!playable()||game.ended)return;
  const p=person();if(!p||p.dead||!openAccess(p.loc))return messageAndPaint('No hay acceso libre para colocar una barricada.');
@@ -827,7 +893,7 @@ const automationActions=Object.freeze({
  barricade(id,d){const p=actor(id),n=(p.skill==='guard'?2:1)+(itemEngine.has(p,'repairkit')?1:0);for(let j=0;j<n&&openAccess(p.loc);j++)game.zones[p.loc].b++;message('▥ IA '+p.name+' colocó barricadas con dado '+d+'.');},
 });
 return Object.freeze({
- movementOptions,moveById,
+ movementOptions,moveById,searchOptions,searchById,searchSnapshot,addSearchNoise,chooseSearchCard,dismissSearchResult,
  snapshot:()=>game===undefined?null:JSON.parse(JSON.stringify(game)),
  dispatch(name,...args){if(!commands.has(name))throw TypeError('Comando desconocido: '+name);return c[name](...args);},
  connectPresentation(factory){const result=factory(capabilities(readOnlyContext(c),viewCapabilities));effects=result;view=new Proxy(result,{get:(target,key)=>target[key]||noop});return result;},

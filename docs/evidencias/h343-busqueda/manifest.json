@@ -1,0 +1,262 @@
+{
+  "baseCommit": "c8d4e59321bac099306c99f53d18caba3fcd9e9d",
+  "implementationCommit": "4138153963bba8201a2f0635f42990f1b20f240f",
+  "qualityAdjustment": "foco visible al desplazar cinco cartas; commit posterior a1de1db9",
+  "records": [
+    {
+      "file": "1365/busqueda-normal-y-ruido.webm",
+      "bytes": 2617384,
+      "sha256": "679e2aff37e20d43e79a51446d08b17df5c2d842549f9e8af212304587bd2806"
+    },
+    {
+      "file": "1365/carta-conservada.png",
+      "bytes": 980456,
+      "sha256": "f21f16c76d2c47fc4919fd306136cf33060d600e2073104926acd7399cb9f740"
+    },
+    {
+      "file": "1365/dado-confirmar.png",
+      "bytes": 977409,
+      "sha256": "e5874de34c62f1f4a5bd1593a9c563452d54ba5cd58cc3b5f0049585c4059024"
+    },
+    {
+      "file": "1365/frames.json",
+      "bytes": 85955,
+      "sha256": "8a31204ebf2eef22ae28a68e01bc80b948a05aacedfe1f38b1c0418331192f53"
+    },
+    {
+      "file": "1365/hallazgo.png",
+      "bytes": 955533,
+      "sha256": "8196fa2e475c54fc1aacc19e946f60ae02cae6686acf940403cf85f68c05ec54"
+    },
+    {
+      "file": "1365/ruido-eleccion.png",
+      "bytes": 907396,
+      "sha256": "21c972800b7bb7e4bf01e223c6dbed1623c626eee49c73eaf3aa702e02d14b82"
+    },
+    {
+      "file": "320/busqueda-normal-y-ruido.webm",
+      "bytes": 1332905,
+      "sha256": "df24b6579b1f8a921e80dd39631746f311922845a573882322aa3a9417e629be"
+    },
+    {
+      "file": "320/frames.json",
+      "bytes": 92134,
+      "sha256": "4c5e1f805ea7f512e910e6b417de8d08c4a8c3773179552cf661f18b675555b3"
+    },
+    {
+      "file": "320/hallazgo.png",
+      "bytes": 359175,
+      "sha256": "ce1fecd590ffe79c5f1d9e30d8f7f254c69b4878aede3546fec1042a66a1e8ba"
+    },
+    {
+      "file": "320/ruido-eleccion.png",
+      "bytes": 347842,
+      "sha256": "ff8ab566faec4d26e49792c5318f15b14922a65ee687e6dd74bd158093aa01d7"
+    },
+    {
+      "file": "393/busqueda-normal-y-ruido.webm",
+      "bytes": 2370197,
+      "sha256": "30c4f0169584a8b5ed0fdf457e866bb531d82de2a41893386fc57dc85abbcff4"
+    },
+    {
+      "file": "393/frames.json",
+      "bytes": 96588,
+      "sha256": "6fb6e679eb099f328206193a2674b0c417672183a802e42297ab6f7f1be7ac17"
+    },
+    {
+      "file": "393/hallazgo.png",
+      "bytes": 751984,
+      "sha256": "95825a8e48f50873f0d64d51de24806a044dbdad2ca573b8da5525e1ac22e691"
+    },
+    {
+      "file": "393/ruido-eleccion.png",
+      "bytes": 512938,
+      "sha256": "96d4cb434b53ff216357dee4625f2babea8ecd9801c94a8ea4ce7d29d87052c5"
+    },
+    {
+      "file": "README.md",
+      "bytes": 5993,
+      "sha256": "189b10f67b2711724f59fb1d910fe1451b06d3e45a01971ef19c89647d51ad74"
+    },
+    {
+      "file": "arnes-inicial.txt",
+      "bytes": 342,
+      "sha256": "27355aa45407e895c5525dc935a0be2f8f30a9d34b755f87b411973ff593e9da"
+    },
+    {
+      "file": "build-qa.json",
+      "bytes": 2914,
+      "sha256": "6344f9e3a04ab971448dace38b62aece31844856d52557c389b8deada618565a"
+    },
+    {
+      "file": "build.json",
+      "bytes": 2915,
+      "sha256": "f106e23658ee7ff7d731bed11157b1aaba0860c8a25f9bb22c590a52d86d6898"
+    },
+    {
+      "file": "busqueda.json",
+      "bytes": 1236,
+      "sha256": "e8e19e2809d6760031aff96a484593f6047399de501f43cb6a97eb35301bdf68"
+    },
+    {
+      "file": "camara.json",
+      "bytes": 2943,
+      "sha256": "f70ec49008b9257e7bbf13ec47956a682e0433871c3dfa8bdb7ee129a6b85983"
+    },
+    {
+      "file": "foco-rojo.json",
+      "bytes": 841,
+      "sha256": "d420c0855ba28747dadf5bf9e051146d72d5c01d3d34fa5bd3a7b629f9df6aeb"
+    },
+    {
+      "file": "foco-rojo.txt",
+      "bytes": 425,
+      "sha256": "85ac7dbc8568f9578325a33c66bfa243dd49402b69c1e0fa363f84563ed6f79c"
+    },
+    {
+      "file": "foco-ruido320.png",
+      "bytes": 372843,
+      "sha256": "9f3192bd9f93747b64a3a9413620fdca6ecb1bcb75c5c3adf5f6dfa04202c4ee"
+    },
+    {
+      "file": "foco-verde.json",
+      "bytes": 1136,
+      "sha256": "8b19250cdbbef4bbcf42026386535551033826255e2997a348b4a2c6987efc26"
+    },
+    {
+      "file": "h341-limites.json",
+      "bytes": 2123,
+      "sha256": "b8961694a89e87f5ae4b229716e5b0c4c448f09f7b7b0ac78f6921d0417700ed"
+    },
+    {
+      "file": "h341.json",
+      "bytes": 17419,
+      "sha256": "3309aaf1160c224edba749d6633e40c7443afcd03aa24346c2abc3e3e6094c7c"
+    },
+    {
+      "file": "h342-limites.json",
+      "bytes": 1496,
+      "sha256": "32e4fa364433d768676b7f0755030023eeac730d48ab4bc8f1a9ff189a6c44b5"
+    },
+    {
+      "file": "h342.json",
+      "bytes": 2084,
+      "sha256": "c81387a93c8dcb15a0f337ca1f0679054177fb669599825941194d31b51f1b9e"
+    },
+    {
+      "file": "linea-base-camara.json",
+      "bytes": 2951,
+      "sha256": "ca3462ee354e3e7dfbfe5ab54a35646482ca8b1bf6819960c764d953d3d48df1"
+    },
+    {
+      "file": "linea-base-check.txt",
+      "bytes": 125,
+      "sha256": "86e73c08796ad6d9c5656d310e04c5fa5753551cffd4756394886fdc14896ad7"
+    },
+    {
+      "file": "linea-base-experiencia.json",
+      "bytes": 2733,
+      "sha256": "e626f0006a1a36d3de21244e7d2bac873da298b94cf03e309e7bc028a90745c2"
+    },
+    {
+      "file": "linea-base-limites.json",
+      "bytes": 1496,
+      "sha256": "32e4fa364433d768676b7f0755030023eeac730d48ab4bc8f1a9ff189a6c44b5"
+    },
+    {
+      "file": "linea-base-movimiento.json",
+      "bytes": 2084,
+      "sha256": "c81387a93c8dcb15a0f337ca1f0679054177fb669599825941194d31b51f1b9e"
+    },
+    {
+      "file": "linea-base-recuperacion.json",
+      "bytes": 789,
+      "sha256": "79eb51f44f7f97dcf48f056d5443dac898dfe3372110557914826b7aa0a41539"
+    },
+    {
+      "file": "linea-base-suite.txt",
+      "bytes": 49419,
+      "sha256": "1f0090ec4aeeeec394bb233425e3b03a3c694149eefa197666a9e1778fd84258"
+    },
+    {
+      "file": "motor-dirigido.txt",
+      "bytes": 997,
+      "sha256": "cc2f9b6f3991664a94f14f63bbbced698c2cfb7a2090e45137fe81ba9f0ac2da"
+    },
+    {
+      "file": "oraculo.json",
+      "bytes": 10997,
+      "sha256": "8583e388005c7c0be04c118e7ea5ca077cbef43ec8894007925391b614638189"
+    },
+    {
+      "file": "recuperacion-privacidad.json",
+      "bytes": 1257,
+      "sha256": "0eaf6ceedccd857ad99e42784e72250037b422d205f535fe230d47f620567c73"
+    },
+    {
+      "file": "regresion-movimiento.json",
+      "bytes": 2728,
+      "sha256": "250f093c2f68564d3d68f27b8dc950acba81ecb1ad01976bfe7643e826f75ae3"
+    },
+    {
+      "file": "regresion-muerte-antes.json",
+      "bytes": 2721,
+      "sha256": "b8acbf45bc7ca42bb614859bfee1d8230d2eac1dfe2b313c3aa08077eae496df"
+    },
+    {
+      "file": "regresion-muerte-antes.txt",
+      "bytes": 253,
+      "sha256": "593b95588ee139236cf1f79c992779acd41621a8099c7710febaf5dcc2905fcb"
+    },
+    {
+      "file": "regresion-muerte-antes.webm",
+      "bytes": 1310720,
+      "sha256": "304cf7f78278b84098a422749b6eabb7a005dfbad8ba5bfa4ec57e80445818ed"
+    },
+    {
+      "file": "reinicios.json",
+      "bytes": 284,
+      "sha256": "5ae3b000423327f0a387b0405feaac7c59e71f03a21391510413cf50726e74c9"
+    },
+    {
+      "file": "rojo-controlador.txt",
+      "bytes": 1471,
+      "sha256": "86457a58ff02dbcff0f99e304e854e6eb455eaa11e912f1a879eab8dc51c3908"
+    },
+    {
+      "file": "rojo-motor.txt",
+      "bytes": 4352,
+      "sha256": "366c5b11d956c1275f95536acb909dc84e524afd2b25f5bb2d070a122f1f15ac"
+    },
+    {
+      "file": "rojo-protocolo.txt",
+      "bytes": 1456,
+      "sha256": "2e00567120bd0ab741fe08a180ffbf86513dbbf7e3bb79d787b06015931bc03f"
+    },
+    {
+      "file": "secuencia-busqueda.jpg",
+      "bytes": 347426,
+      "sha256": "7e48b9841fd44b92a38dd11d58b62cff7a18116c37f6cfb7e41fe7004aab0e66"
+    },
+    {
+      "file": "secuencia-ruido.jpg",
+      "bytes": 337171,
+      "sha256": "b947ca761a032409385fbfd6580de1e873c2748772db429f0f5f85947ec75973"
+    },
+    {
+      "file": "suite.txt",
+      "bytes": 51265,
+      "sha256": "2338e53eb26c55943ede36c6d2eb40baf211c6bd3039581f0b8fae98360e03b6"
+    },
+    {
+      "file": "timeout-concurrente.json",
+      "bytes": 1416,
+      "sha256": "10f647af76c22c0fe081eb35b205eb213dfec9522389d18cfcc2b767dbe62b3d"
+    },
+    {
+      "file": "timeout-concurrente.txt",
+      "bytes": 253,
+      "sha256": "5dccd55ffa5fafce5993708de254439d234af68cb594a5fb545a16b5a6462948"
+    }
+  ]
+}

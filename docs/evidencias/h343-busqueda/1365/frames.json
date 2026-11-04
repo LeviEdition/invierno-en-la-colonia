@@ -1,0 +1,4454 @@
+[
+  {
+    "time": 10545.3,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 10578.6,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 10628.5,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 10678.6,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 10712,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 10761.9,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 10795.2,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 10828.6,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 10878.6,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 10911.9,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 10945.2,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 10978.6,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 11011.9,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 11061.9,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 11095.2,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 11145.2,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 11195.3,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 11228.6,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 11278.5,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 11328.5,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 11361.9,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 11411.9,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 11445.2,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 11478.5,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 11561.9,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 11595.2,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 11661.9,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 11695.2,
+    "mode": "map",
+    "phase": "sending",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 11745.2,
+    "mode": "map",
+    "phase": "sending",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 11795.2,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 11828.6,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 11878.5,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 11911.8,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 11945.2,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 11995.2,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 12045.2,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 12078.5,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 12111.8,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 12178.5,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 12211.9,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 12245.2,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 12295.2,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 12328.5,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 12361.8,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 12411.8,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 12445.1,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 12478.6,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 12528.5,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 12578.5,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 12661.9,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 12711.8,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 12745.1,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 12778.5,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 12828.5,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 12878.5,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 12911.8,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 12945.1,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 12978.5,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 13011.8,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 13061.8,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 13095.1,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 13145.1,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 13195.2,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 13245.2,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 13278.5,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 13345.1,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 13395.1,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 13445.1,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 13478.4,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 13511.8,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 13545.1,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 13578.5,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 13611.8,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 13661.8,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 13695.1,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 13745.1,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 13778.4,
+    "mode": "map",
+    "phase": "sending",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 13828.4,
+    "mode": "map",
+    "phase": "sending",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 13861.8,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 13895.1,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 13945.1,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 13978.4,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 14011.8,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 14045.1,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 14095.1,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 14128.4,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 14178.4,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 14228.4,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 14261.8,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 14295.1,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 14328.5,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 14361.8,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 14411.8,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 14461.8,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 14495.1,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 14545.1,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 14578.4,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 14628.4,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 14678.4,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 14711.8,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 14761.7,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 14778.4,
+    "mode": "map",
+    "phase": "sending",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 14828.4,
+    "mode": "map",
+    "phase": "sending",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 14878.5,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 14928.4,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 14978.4,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 15011.7,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 15045,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 15095,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 15128.4,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 15161.8,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 15195.1,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 15245,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 15295.1,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 15345.1,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 15395.1,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 15445,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 15495,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 15545,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 15578.4,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 15611.7,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 15661.8,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 15695,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 15728.4,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 15778.4,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 15811.7,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 15845,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 15878.4,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 15928.4,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 15961.7,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 15995,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 16028.4,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 16078.4,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 16128.4,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 16161.7,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 16195.1,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 16245,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 16295.1,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 16345,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 16378.4,
+    "mode": "map",
+    "phase": "sending",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 16495,
+    "mode": "map",
+    "phase": "sending",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 16545,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 16595,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 16645,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 16661.7,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 16711.7,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 16778.4,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 16828.3,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 16861.6,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 16911.7,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 16961.7,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 17011.7,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 17061.6,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 17095,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 17144.9,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 17178.4,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 17211.6,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 17261.6,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 17295,
+    "mode": "map",
+    "phase": "presenting",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 17328.3,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 17395,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 17428.3,
+    "mode": "map",
+    "phase": "sending",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 17461.7,
+    "mode": "map",
+    "phase": "sending",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 1,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 17528.3,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 2,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 17561.6,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 2,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 17611.7,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 2,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 17661.6,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 2,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 17694.9,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 2,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 17745,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 2,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 17795,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 2,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 17845,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 2,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 17878.3,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 2,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 17928.3,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 2,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 17978.3,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 2,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 18011.7,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 2,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 18061.6,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 2,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 18144.9,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 2,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 18178.2,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 2,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 18228.2,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 2,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 18278.2,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 2,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 18328.3,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 2,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 18378.3,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 2,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 18428.2,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 2,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 18478.2,
+    "mode": "map",
+    "phase": "choice",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 2,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 18511.6,
+    "mode": "map",
+    "phase": "sending",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 2,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 18578.3,
+    "mode": "map",
+    "phase": "sending",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 2,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 18611.6,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 18661.6,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 18711.6,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 18744.9,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 18778.3,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 18828.3,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 18878.3,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 18911.6,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 18978.3,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 19028.2,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 19078.2,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 19111.6,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 19161.5,
+    "mode": "map",
+    "phase": "sending",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 19228.2,
+    "mode": "map",
+    "phase": "sending",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 19278.3,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 19328.2,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 19361.6,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 19394.9,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 19444.9,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 19494.9,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 19578.3,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 19628.2,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 19678.2,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 19744.9,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 19778.2,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 19844.8,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 153.16666666666669,
+      "y": 12,
+      "zoom": 0.496316758747698,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "rect": {
+      "width": 1025,
+      "height": 563
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  }
+]

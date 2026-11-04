@@ -1,0 +1,16 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "records": [
+    {
+      "kind": "restart",
+      "errors": [],
+      "threeRestarts": true,
+      "listenersStable": true,
+      "recoveryNoDraw": true,
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "passed": true
+}
