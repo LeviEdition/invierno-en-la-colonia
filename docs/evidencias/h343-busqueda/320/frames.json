@@ -1,6 +1,6 @@
 [
   {
-    "time": 6787.4,
+    "time": 6843.5,
     "mode": "map",
     "phase": "idle",
     "movement": "idle",
@@ -21,7 +21,7 @@
     "actorNodes": 1
   },
   {
-    "time": 6804.1,
+    "time": 6860.2,
     "mode": "map",
     "phase": "idle",
     "movement": "idle",
@@ -42,7 +42,7 @@
     "actorNodes": 1
   },
   {
-    "time": 6820.8,
+    "time": 6876.8,
     "mode": "map",
     "phase": "idle",
     "movement": "idle",
@@ -63,7 +63,49 @@
     "actorNodes": 1
   },
   {
-    "time": 6837.4,
+    "time": 6893.5,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 12,
+      "y": 108,
+      "zoom": 0.20441988950276244,
+      "minZoom": 0.20441988950276244,
+      "maxZoom": 1.022099447513812
+    },
+    "rect": {
+      "width": 320,
+      "height": 437.75
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 6910.1,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 12,
+      "y": 108,
+      "zoom": 0.20441988950276244,
+      "minZoom": 0.20441988950276244,
+      "maxZoom": 1.022099447513812
+    },
+    "rect": {
+      "width": 320,
+      "height": 437.75
+    },
+    "cards": 0,
+    "handCount": 7,
+    "actorNodes": 1
+  },
+  {
+    "time": 6926.8,
     "mode": "map",
     "phase": "picking",
     "movement": "idle",
@@ -84,7 +126,7 @@
     "actorNodes": 1
   },
   {
-    "time": 6854.1,
+    "time": 6943.5,
     "mode": "map",
     "phase": "picking",
     "movement": "idle",
@@ -105,7 +147,7 @@
     "actorNodes": 1
   },
   {
-    "time": 6870.8,
+    "time": 6960.1,
     "mode": "map",
     "phase": "picking",
     "movement": "idle",
@@ -126,7 +168,7 @@
     "actorNodes": 1
   },
   {
-    "time": 6887.4,
+    "time": 6976.9,
     "mode": "map",
     "phase": "picking",
     "movement": "idle",
@@ -147,7 +189,7 @@
     "actorNodes": 1
   },
   {
-    "time": 6904,
+    "time": 6993.4,
     "mode": "map",
     "phase": "picking",
     "movement": "idle",
@@ -168,7 +210,7 @@
     "actorNodes": 1
   },
   {
-    "time": 6920.7,
+    "time": 7010.1,
     "mode": "map",
     "phase": "picking",
     "movement": "idle",
@@ -189,7 +231,7 @@
     "actorNodes": 1
   },
   {
-    "time": 6937.4,
+    "time": 7026.8,
     "mode": "map",
     "phase": "picking",
     "movement": "idle",
@@ -210,7 +252,7 @@
     "actorNodes": 1
   },
   {
-    "time": 6954.1,
+    "time": 7043.5,
     "mode": "map",
     "phase": "picking",
     "movement": "idle",
@@ -231,7 +273,7 @@
     "actorNodes": 1
   },
   {
-    "time": 6970.7,
+    "time": 7060.1,
     "mode": "map",
     "phase": "picking",
     "movement": "idle",
@@ -252,7 +294,7 @@
     "actorNodes": 1
   },
   {
-    "time": 6987.4,
+    "time": 7076.8,
     "mode": "map",
     "phase": "picking",
     "movement": "idle",
@@ -273,7 +315,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7004.1,
+    "time": 7093.4,
     "mode": "map",
     "phase": "picking",
     "movement": "idle",
@@ -294,7 +336,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7020.7,
+    "time": 7110.2,
     "mode": "map",
     "phase": "picking",
     "movement": "idle",
@@ -315,7 +357,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7037.4,
+    "time": 7126.8,
     "mode": "map",
     "phase": "picking",
     "movement": "idle",
@@ -336,7 +378,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7054.1,
+    "time": 7143.4,
     "mode": "map",
     "phase": "picking",
     "movement": "idle",
@@ -357,7 +399,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7070.8,
+    "time": 7160.2,
     "mode": "map",
     "phase": "picking",
     "movement": "idle",
@@ -378,7 +420,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7087.4,
+    "time": 7176.8,
     "mode": "map",
     "phase": "picking",
     "movement": "idle",
@@ -399,49 +441,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7104.1,
-    "mode": "map",
-    "phase": "sending",
-    "movement": "idle",
-    "starts": 1,
-    "camera": {
-      "x": 12,
-      "y": 108,
-      "zoom": 0.20441988950276244,
-      "minZoom": 0.20441988950276244,
-      "maxZoom": 1.022099447513812
-    },
-    "rect": {
-      "width": 320,
-      "height": 437.75
-    },
-    "cards": 0,
-    "handCount": 7,
-    "actorNodes": 1
-  },
-  {
-    "time": 7137.4,
-    "mode": "map",
-    "phase": "sending",
-    "movement": "idle",
-    "starts": 1,
-    "camera": {
-      "x": 12,
-      "y": 108,
-      "zoom": 0.20441988950276244,
-      "minZoom": 0.20441988950276244,
-      "maxZoom": 1.022099447513812
-    },
-    "rect": {
-      "width": 320,
-      "height": 437.75
-    },
-    "cards": 0,
-    "handCount": 7,
-    "actorNodes": 1
-  },
-  {
-    "time": 7154.1,
+    "time": 7193.5,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -462,7 +462,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7170.8,
+    "time": 7210.1,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -483,7 +483,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7204,
+    "time": 7226.8,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -504,7 +504,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7220.7,
+    "time": 7243.4,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -525,7 +525,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7237.4,
+    "time": 7260.2,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -546,7 +546,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7254,
+    "time": 7276.8,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -567,7 +567,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7270.8,
+    "time": 7293.5,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -588,7 +588,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7287.4,
+    "time": 7310.1,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -609,7 +609,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7304,
+    "time": 7326.8,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -630,7 +630,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7320.7,
+    "time": 7360.1,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -651,7 +651,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7337.4,
+    "time": 7376.8,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -672,7 +672,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7354.1,
+    "time": 7393.5,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -693,7 +693,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7370.7,
+    "time": 7426.8,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -714,7 +714,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7387.4,
+    "time": 7443.5,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -735,7 +735,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7404.1,
+    "time": 7460.1,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -756,7 +756,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7420.7,
+    "time": 7476.8,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -777,7 +777,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7437.4,
+    "time": 7493.4,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -798,7 +798,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7454,
+    "time": 7510.1,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -819,7 +819,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7470.7,
+    "time": 7526.8,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -840,7 +840,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7487.4,
+    "time": 7543.4,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -861,7 +861,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7504.1,
+    "time": 7560.1,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -882,7 +882,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7520.7,
+    "time": 7576.8,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -903,7 +903,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7537.4,
+    "time": 7593.5,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -924,7 +924,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7554,
+    "time": 7610.2,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -945,7 +945,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7570.7,
+    "time": 7626.7,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -966,7 +966,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7587.4,
+    "time": 7643.4,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -987,7 +987,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7604,
+    "time": 7660.1,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -1008,7 +1008,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7620.7,
+    "time": 7676.8,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -1029,7 +1029,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7637.4,
+    "time": 7693.4,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -1050,7 +1050,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7654,
+    "time": 7710.1,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -1071,7 +1071,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7670.7,
+    "time": 7726.8,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -1092,7 +1092,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7687.4,
+    "time": 7743.5,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -1113,7 +1113,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7704.1,
+    "time": 7760.1,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -1134,7 +1134,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7720.7,
+    "time": 7776.7,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -1155,7 +1155,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7737.3,
+    "time": 7793.4,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -1176,7 +1176,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7754,
+    "time": 7810.1,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -1197,7 +1197,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7770.7,
+    "time": 7826.7,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -1218,7 +1218,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7787.4,
+    "time": 7843.4,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -1239,7 +1239,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7804,
+    "time": 7860.1,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -1260,7 +1260,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7820.7,
+    "time": 7876.7,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -1281,7 +1281,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7837.4,
+    "time": 7893.4,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -1302,7 +1302,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7854.1,
+    "time": 7910.1,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -1323,7 +1323,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7870.7,
+    "time": 7926.8,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -1344,7 +1344,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7887.4,
+    "time": 7943.4,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -1365,7 +1365,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7904.1,
+    "time": 7960.1,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -1386,7 +1386,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7920.7,
+    "time": 7976.8,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -1407,7 +1407,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7937.4,
+    "time": 7993.4,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -1428,7 +1428,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7954,
+    "time": 8026.8,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -1449,7 +1449,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7970.7,
+    "time": 8043.4,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -1470,7 +1470,7 @@
     "actorNodes": 1
   },
   {
-    "time": 7987.4,
+    "time": 8060.1,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -1491,7 +1491,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8004.1,
+    "time": 8076.8,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -1512,7 +1512,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8020.7,
+    "time": 8093.5,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -1533,7 +1533,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8037.4,
+    "time": 8110.1,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -1554,7 +1554,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8054.1,
+    "time": 8126.7,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -1575,7 +1575,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8070.7,
+    "time": 8160.1,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -1596,7 +1596,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8087.4,
+    "time": 8176.7,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -1617,7 +1617,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8104,
+    "time": 8193.4,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -1638,7 +1638,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8137.4,
+    "time": 8210.1,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -1659,7 +1659,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8154,
+    "time": 8226.7,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -1680,7 +1680,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8170.7,
+    "time": 8243.4,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -1701,7 +1701,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8204,
+    "time": 8260.1,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -1722,7 +1722,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8220.7,
+    "time": 8276.7,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -1743,7 +1743,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8237.4,
+    "time": 8293.5,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -1764,7 +1764,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8254,
+    "time": 8326.8,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -1785,7 +1785,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8270.7,
+    "time": 8343.4,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -1806,7 +1806,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8287.3,
+    "time": 8360.1,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -1827,7 +1827,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8304,
+    "time": 8393.4,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -1848,7 +1848,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8320.7,
+    "time": 8410.1,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -1869,7 +1869,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8337.3,
+    "time": 8426.7,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -1890,7 +1890,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8354,
+    "time": 8443.4,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -1911,49 +1911,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8370.7,
-    "mode": "map",
-    "phase": "choice",
-    "movement": "idle",
-    "starts": 1,
-    "camera": {
-      "x": 12,
-      "y": 108,
-      "zoom": 0.20441988950276244,
-      "minZoom": 0.20441988950276244,
-      "maxZoom": 1.022099447513812
-    },
-    "rect": {
-      "width": 320,
-      "height": 437.75
-    },
-    "cards": 1,
-    "handCount": 7,
-    "actorNodes": 1
-  },
-  {
-    "time": 8387.4,
-    "mode": "map",
-    "phase": "choice",
-    "movement": "idle",
-    "starts": 1,
-    "camera": {
-      "x": 12,
-      "y": 108,
-      "zoom": 0.20441988950276244,
-      "minZoom": 0.20441988950276244,
-      "maxZoom": 1.022099447513812
-    },
-    "rect": {
-      "width": 320,
-      "height": 437.75
-    },
-    "cards": 1,
-    "handCount": 7,
-    "actorNodes": 1
-  },
-  {
-    "time": 8404,
+    "time": 8460.1,
     "mode": "map",
     "phase": "sending",
     "movement": "idle",
@@ -1974,7 +1932,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8420.7,
+    "time": 8493.4,
     "mode": "map",
     "phase": "sending",
     "movement": "idle",
@@ -1995,7 +1953,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8437.3,
+    "time": 8510,
     "mode": "map",
     "phase": "result",
     "movement": "idle",
@@ -2016,7 +1974,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8454.1,
+    "time": 8526.7,
     "mode": "map",
     "phase": "result",
     "movement": "idle",
@@ -2037,7 +1995,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8470.7,
+    "time": 8543.4,
     "mode": "map",
     "phase": "result",
     "movement": "idle",
@@ -2058,7 +2016,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8487.4,
+    "time": 8560,
     "mode": "map",
     "phase": "result",
     "movement": "idle",
@@ -2079,7 +2037,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8504,
+    "time": 8576.7,
     "mode": "map",
     "phase": "result",
     "movement": "idle",
@@ -2100,7 +2058,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8520.7,
+    "time": 8593.4,
     "mode": "map",
     "phase": "result",
     "movement": "idle",
@@ -2121,7 +2079,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8537.4,
+    "time": 8610,
     "mode": "map",
     "phase": "result",
     "movement": "idle",
@@ -2142,7 +2100,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8554,
+    "time": 8626.7,
     "mode": "map",
     "phase": "result",
     "movement": "idle",
@@ -2163,7 +2121,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8570.6,
+    "time": 8643.4,
     "mode": "map",
     "phase": "result",
     "movement": "idle",
@@ -2184,7 +2142,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8587.4,
+    "time": 8660,
     "mode": "map",
     "phase": "result",
     "movement": "idle",
@@ -2205,7 +2163,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8604,
+    "time": 8676.7,
     "mode": "map",
     "phase": "result",
     "movement": "idle",
@@ -2226,7 +2184,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8620.7,
+    "time": 8693.4,
     "mode": "map",
     "phase": "result",
     "movement": "idle",
@@ -2247,7 +2205,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8637.3,
+    "time": 8710.1,
     "mode": "map",
     "phase": "result",
     "movement": "idle",
@@ -2268,7 +2226,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8654,
+    "time": 8726.7,
     "mode": "map",
     "phase": "result",
     "movement": "idle",
@@ -2289,7 +2247,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8670.6,
+    "time": 8743.4,
     "mode": "map",
     "phase": "result",
     "movement": "idle",
@@ -2310,7 +2268,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8687.4,
+    "time": 8760.1,
     "mode": "map",
     "phase": "result",
     "movement": "idle",
@@ -2331,7 +2289,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8704,
+    "time": 8776.7,
     "mode": "map",
     "phase": "result",
     "movement": "idle",
@@ -2352,7 +2310,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8720.7,
+    "time": 8793.4,
     "mode": "map",
     "phase": "result",
     "movement": "idle",
@@ -2373,7 +2331,196 @@
     "actorNodes": 1
   },
   {
-    "time": 8737.3,
+    "time": 8810,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 12,
+      "y": 108,
+      "zoom": 0.20441988950276244,
+      "minZoom": 0.20441988950276244,
+      "maxZoom": 1.022099447513812
+    },
+    "rect": {
+      "width": 320,
+      "height": 437.75
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 8826.8,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 12,
+      "y": 108,
+      "zoom": 0.20441988950276244,
+      "minZoom": 0.20441988950276244,
+      "maxZoom": 1.022099447513812
+    },
+    "rect": {
+      "width": 320,
+      "height": 437.75
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 8843.4,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 12,
+      "y": 108,
+      "zoom": 0.20441988950276244,
+      "minZoom": 0.20441988950276244,
+      "maxZoom": 1.022099447513812
+    },
+    "rect": {
+      "width": 320,
+      "height": 437.75
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 8860.1,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 12,
+      "y": 108,
+      "zoom": 0.20441988950276244,
+      "minZoom": 0.20441988950276244,
+      "maxZoom": 1.022099447513812
+    },
+    "rect": {
+      "width": 320,
+      "height": 437.75
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 8876.7,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 12,
+      "y": 108,
+      "zoom": 0.20441988950276244,
+      "minZoom": 0.20441988950276244,
+      "maxZoom": 1.022099447513812
+    },
+    "rect": {
+      "width": 320,
+      "height": 437.75
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 8893.4,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 12,
+      "y": 108,
+      "zoom": 0.20441988950276244,
+      "minZoom": 0.20441988950276244,
+      "maxZoom": 1.022099447513812
+    },
+    "rect": {
+      "width": 320,
+      "height": 437.75
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 8910.1,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 12,
+      "y": 108,
+      "zoom": 0.20441988950276244,
+      "minZoom": 0.20441988950276244,
+      "maxZoom": 1.022099447513812
+    },
+    "rect": {
+      "width": 320,
+      "height": 437.75
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 8926.7,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 12,
+      "y": 108,
+      "zoom": 0.20441988950276244,
+      "minZoom": 0.20441988950276244,
+      "maxZoom": 1.022099447513812
+    },
+    "rect": {
+      "width": 320,
+      "height": 437.75
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 8943.4,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 12,
+      "y": 108,
+      "zoom": 0.20441988950276244,
+      "minZoom": 0.20441988950276244,
+      "maxZoom": 1.022099447513812
+    },
+    "rect": {
+      "width": 320,
+      "height": 437.75
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 8960,
     "mode": "map",
     "phase": "sending",
     "movement": "idle",
@@ -2394,7 +2541,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8754,
+    "time": 8976.7,
     "mode": "map",
     "phase": "sending",
     "movement": "idle",
@@ -2415,7 +2562,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8770.6,
+    "time": 8993.4,
     "mode": "map",
     "phase": "idle",
     "movement": "idle",
@@ -2436,7 +2583,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8787.3,
+    "time": 9010.1,
     "mode": "map",
     "phase": "idle",
     "movement": "idle",
@@ -2457,7 +2604,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8804,
+    "time": 9026.7,
     "mode": "map",
     "phase": "idle",
     "movement": "idle",
@@ -2478,7 +2625,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8820.7,
+    "time": 9043.4,
     "mode": "map",
     "phase": "idle",
     "movement": "idle",
@@ -2499,7 +2646,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8837.4,
+    "time": 9060.1,
     "mode": "map",
     "phase": "idle",
     "movement": "idle",
@@ -2520,7 +2667,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8854,
+    "time": 9076.7,
     "mode": "map",
     "phase": "idle",
     "movement": "idle",
@@ -2541,7 +2688,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8870.7,
+    "time": 9093.4,
     "mode": "map",
     "phase": "idle",
     "movement": "idle",
@@ -2562,7 +2709,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8887.3,
+    "time": 9110,
     "mode": "map",
     "phase": "idle",
     "movement": "idle",
@@ -2583,7 +2730,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8904,
+    "time": 9126.7,
     "mode": "map",
     "phase": "idle",
     "movement": "idle",
@@ -2604,7 +2751,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8920.7,
+    "time": 9143.4,
     "mode": "map",
     "phase": "idle",
     "movement": "idle",
@@ -2625,7 +2772,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8937.3,
+    "time": 9160.1,
     "mode": "map",
     "phase": "picking",
     "movement": "idle",
@@ -2646,7 +2793,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8954,
+    "time": 9176.7,
     "mode": "map",
     "phase": "picking",
     "movement": "idle",
@@ -2667,7 +2814,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8970.6,
+    "time": 9193.4,
     "mode": "map",
     "phase": "picking",
     "movement": "idle",
@@ -2688,7 +2835,7 @@
     "actorNodes": 1
   },
   {
-    "time": 8987.3,
+    "time": 9226.7,
     "mode": "map",
     "phase": "picking",
     "movement": "idle",
@@ -2709,7 +2856,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9004,
+    "time": 9243.4,
     "mode": "map",
     "phase": "picking",
     "movement": "idle",
@@ -2730,7 +2877,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9020.7,
+    "time": 9260,
     "mode": "map",
     "phase": "picking",
     "movement": "idle",
@@ -2751,7 +2898,70 @@
     "actorNodes": 1
   },
   {
-    "time": 9037.3,
+    "time": 9276.7,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 12,
+      "y": 108,
+      "zoom": 0.20441988950276244,
+      "minZoom": 0.20441988950276244,
+      "maxZoom": 1.022099447513812
+    },
+    "rect": {
+      "width": 320,
+      "height": 437.75
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 9293.4,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 12,
+      "y": 108,
+      "zoom": 0.20441988950276244,
+      "minZoom": 0.20441988950276244,
+      "maxZoom": 1.022099447513812
+    },
+    "rect": {
+      "width": 320,
+      "height": 437.75
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 9310,
+    "mode": "map",
+    "phase": "picking",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 12,
+      "y": 108,
+      "zoom": 0.20441988950276244,
+      "minZoom": 0.20441988950276244,
+      "maxZoom": 1.022099447513812
+    },
+    "rect": {
+      "width": 320,
+      "height": 437.75
+    },
+    "cards": 0,
+    "handCount": 8,
+    "actorNodes": 1
+  },
+  {
+    "time": 9326.7,
     "mode": "map",
     "phase": "sending",
     "movement": "idle",
@@ -2772,7 +2982,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9054,
+    "time": 9343.3,
     "mode": "map",
     "phase": "sending",
     "movement": "idle",
@@ -2793,7 +3003,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9070.7,
+    "time": 9360,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -2814,7 +3024,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9087.3,
+    "time": 9376.8,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -2835,7 +3045,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9104,
+    "time": 9393.4,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -2856,7 +3066,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9120.6,
+    "time": 9410,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -2877,7 +3087,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9137.4,
+    "time": 9426.7,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -2898,7 +3108,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9154,
+    "time": 9443.3,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -2919,7 +3129,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9170.7,
+    "time": 9460.1,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -2940,7 +3150,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9187.3,
+    "time": 9476.7,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -2961,7 +3171,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9204,
+    "time": 9493.4,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -2982,7 +3192,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9220.6,
+    "time": 9510,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3003,7 +3213,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9237.3,
+    "time": 9526.7,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3024,7 +3234,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9254,
+    "time": 9543.4,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3045,7 +3255,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9270.7,
+    "time": 9560,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3066,7 +3276,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9287.3,
+    "time": 9576.7,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3087,7 +3297,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9304,
+    "time": 9593.3,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3108,7 +3318,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9320.7,
+    "time": 9610,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3129,7 +3339,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9337.3,
+    "time": 9626.7,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3150,7 +3360,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9353.9,
+    "time": 9643.4,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3171,7 +3381,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9370.6,
+    "time": 9660,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3192,7 +3402,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9387.3,
+    "time": 9676.7,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3213,7 +3423,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9404,
+    "time": 9693.3,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3234,7 +3444,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9420.6,
+    "time": 9710,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3255,7 +3465,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9437.3,
+    "time": 9726.6,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3276,7 +3486,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9454,
+    "time": 9743.4,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3297,7 +3507,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9470.6,
+    "time": 9760,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3318,7 +3528,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9487.3,
+    "time": 9776.7,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3339,7 +3549,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9504,
+    "time": 9793.3,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3360,7 +3570,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9520.6,
+    "time": 9810.1,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3381,7 +3591,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9537.3,
+    "time": 9826.7,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3402,7 +3612,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9554,
+    "time": 9843.3,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3423,7 +3633,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9570.6,
+    "time": 9860.1,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3444,7 +3654,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9587.3,
+    "time": 9876.7,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3465,7 +3675,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9604,
+    "time": 9893.3,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3486,7 +3696,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9620.7,
+    "time": 9910,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3507,7 +3717,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9637.3,
+    "time": 9926.7,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3528,7 +3738,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9654,
+    "time": 9943.3,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3549,7 +3759,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9670.6,
+    "time": 9960.1,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3570,7 +3780,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9687.3,
+    "time": 9976.7,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3591,7 +3801,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9704,
+    "time": 9993.4,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3612,7 +3822,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9720.7,
+    "time": 10010,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3633,7 +3843,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9737.3,
+    "time": 10026.6,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3654,7 +3864,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9753.9,
+    "time": 10043.3,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3675,7 +3885,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9770.6,
+    "time": 10060,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3696,7 +3906,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9787.3,
+    "time": 10076.6,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3717,7 +3927,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9804,
+    "time": 10093.4,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3738,7 +3948,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9820.6,
+    "time": 10110,
     "mode": "map",
     "phase": "presenting",
     "movement": "idle",
@@ -3759,7 +3969,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9837.3,
+    "time": 10126.7,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -3780,7 +3990,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9854,
+    "time": 10143.4,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -3801,7 +4011,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9870.7,
+    "time": 10160,
     "mode": "map",
     "phase": "sending",
     "movement": "idle",
@@ -3822,7 +4032,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9887.2,
+    "time": 10176.7,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -3843,7 +4053,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9903.9,
+    "time": 10193.4,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -3864,7 +4074,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9937.2,
+    "time": 10210,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -3885,7 +4095,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9953.9,
+    "time": 10226.7,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -3906,7 +4116,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9970.7,
+    "time": 10243.4,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -3927,7 +4137,7 @@
     "actorNodes": 1
   },
   {
-    "time": 9987.3,
+    "time": 10260,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -3948,7 +4158,7 @@
     "actorNodes": 1
   },
   {
-    "time": 10003.9,
+    "time": 10276.6,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -3969,7 +4179,7 @@
     "actorNodes": 1
   },
   {
-    "time": 10020.7,
+    "time": 10293.3,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -3990,7 +4200,7 @@
     "actorNodes": 1
   },
   {
-    "time": 10037.2,
+    "time": 10310,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -4011,7 +4221,7 @@
     "actorNodes": 1
   },
   {
-    "time": 10054,
+    "time": 10326.7,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -4032,7 +4242,7 @@
     "actorNodes": 1
   },
   {
-    "time": 10070.6,
+    "time": 10343.3,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -4053,7 +4263,7 @@
     "actorNodes": 1
   },
   {
-    "time": 10087.3,
+    "time": 10360,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -4074,7 +4284,7 @@
     "actorNodes": 1
   },
   {
-    "time": 10103.9,
+    "time": 10376.7,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -4095,7 +4305,7 @@
     "actorNodes": 1
   },
   {
-    "time": 10120.6,
+    "time": 10393.3,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -4116,7 +4326,7 @@
     "actorNodes": 1
   },
   {
-    "time": 10137.3,
+    "time": 10410,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -4137,7 +4347,7 @@
     "actorNodes": 1
   },
   {
-    "time": 10154,
+    "time": 10426.7,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -4158,7 +4368,7 @@
     "actorNodes": 1
   },
   {
-    "time": 10170.6,
+    "time": 10443.4,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -4179,7 +4389,7 @@
     "actorNodes": 1
   },
   {
-    "time": 10187.3,
+    "time": 10460,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -4200,7 +4410,7 @@
     "actorNodes": 1
   },
   {
-    "time": 10204,
+    "time": 10476.7,
     "mode": "map",
     "phase": "choice",
     "movement": "idle",
@@ -4221,70 +4431,7 @@
     "actorNodes": 1
   },
   {
-    "time": 10220.6,
-    "mode": "map",
-    "phase": "choice",
-    "movement": "idle",
-    "starts": 1,
-    "camera": {
-      "x": 12,
-      "y": 108,
-      "zoom": 0.20441988950276244,
-      "minZoom": 0.20441988950276244,
-      "maxZoom": 1.022099447513812
-    },
-    "rect": {
-      "width": 320,
-      "height": 437.75
-    },
-    "cards": 2,
-    "handCount": 8,
-    "actorNodes": 1
-  },
-  {
-    "time": 10237.3,
-    "mode": "map",
-    "phase": "choice",
-    "movement": "idle",
-    "starts": 1,
-    "camera": {
-      "x": 12,
-      "y": 108,
-      "zoom": 0.20441988950276244,
-      "minZoom": 0.20441988950276244,
-      "maxZoom": 1.022099447513812
-    },
-    "rect": {
-      "width": 320,
-      "height": 437.75
-    },
-    "cards": 2,
-    "handCount": 8,
-    "actorNodes": 1
-  },
-  {
-    "time": 10254,
-    "mode": "map",
-    "phase": "choice",
-    "movement": "idle",
-    "starts": 1,
-    "camera": {
-      "x": 12,
-      "y": 108,
-      "zoom": 0.20441988950276244,
-      "minZoom": 0.20441988950276244,
-      "maxZoom": 1.022099447513812
-    },
-    "rect": {
-      "width": 320,
-      "height": 437.75
-    },
-    "cards": 2,
-    "handCount": 8,
-    "actorNodes": 1
-  },
-  {
-    "time": 10270.6,
+    "time": 10493.3,
     "mode": "map",
     "phase": "sending",
     "movement": "idle",
@@ -4305,7 +4452,7 @@
     "actorNodes": 1
   },
   {
-    "time": 10287.2,
+    "time": 10510,
     "mode": "map",
     "phase": "sending",
     "movement": "idle",
@@ -4326,7 +4473,7 @@
     "actorNodes": 1
   },
   {
-    "time": 10303.9,
+    "time": 10526.7,
     "mode": "map",
     "phase": "result",
     "movement": "idle",
@@ -4347,7 +4494,7 @@
     "actorNodes": 1
   },
   {
-    "time": 10320.6,
+    "time": 10543.4,
     "mode": "map",
     "phase": "result",
     "movement": "idle",
@@ -4368,7 +4515,7 @@
     "actorNodes": 1
   },
   {
-    "time": 10337.3,
+    "time": 10560,
     "mode": "map",
     "phase": "result",
     "movement": "idle",
@@ -4389,7 +4536,7 @@
     "actorNodes": 1
   },
   {
-    "time": 10353.9,
+    "time": 10576.7,
     "mode": "map",
     "phase": "result",
     "movement": "idle",
@@ -4410,7 +4557,91 @@
     "actorNodes": 1
   },
   {
-    "time": 10370.7,
+    "time": 10593.3,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 12,
+      "y": 108,
+      "zoom": 0.20441988950276244,
+      "minZoom": 0.20441988950276244,
+      "maxZoom": 1.022099447513812
+    },
+    "rect": {
+      "width": 320,
+      "height": 437.75
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 10609.9,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 12,
+      "y": 108,
+      "zoom": 0.20441988950276244,
+      "minZoom": 0.20441988950276244,
+      "maxZoom": 1.022099447513812
+    },
+    "rect": {
+      "width": 320,
+      "height": 437.75
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 10626.7,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 12,
+      "y": 108,
+      "zoom": 0.20441988950276244,
+      "minZoom": 0.20441988950276244,
+      "maxZoom": 1.022099447513812
+    },
+    "rect": {
+      "width": 320,
+      "height": 437.75
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 10643.3,
+    "mode": "map",
+    "phase": "result",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 12,
+      "y": 108,
+      "zoom": 0.20441988950276244,
+      "minZoom": 0.20441988950276244,
+      "maxZoom": 1.022099447513812
+    },
+    "rect": {
+      "width": 320,
+      "height": 437.75
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 10660,
     "mode": "map",
     "phase": "sending",
     "movement": "idle",
@@ -4431,7 +4662,7 @@
     "actorNodes": 1
   },
   {
-    "time": 10387.3,
+    "time": 10676.7,
     "mode": "map",
     "phase": "sending",
     "movement": "idle",
@@ -4452,7 +4683,7 @@
     "actorNodes": 1
   },
   {
-    "time": 10403.9,
+    "time": 10693.3,
     "mode": "map",
     "phase": "idle",
     "movement": "idle",
@@ -4473,7 +4704,7 @@
     "actorNodes": 1
   },
   {
-    "time": 10420.6,
+    "time": 10710,
     "mode": "map",
     "phase": "idle",
     "movement": "idle",
@@ -4494,7 +4725,7 @@
     "actorNodes": 1
   },
   {
-    "time": 10437.3,
+    "time": 10726.6,
     "mode": "map",
     "phase": "idle",
     "movement": "idle",
@@ -4515,7 +4746,7 @@
     "actorNodes": 1
   },
   {
-    "time": 10454,
+    "time": 10743.3,
     "mode": "map",
     "phase": "idle",
     "movement": "idle",
@@ -4536,7 +4767,7 @@
     "actorNodes": 1
   },
   {
-    "time": 10470.6,
+    "time": 10760,
     "mode": "map",
     "phase": "idle",
     "movement": "idle",
@@ -4557,7 +4788,91 @@
     "actorNodes": 1
   },
   {
-    "time": 10487.3,
+    "time": 10776.7,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 12,
+      "y": 108,
+      "zoom": 0.20441988950276244,
+      "minZoom": 0.20441988950276244,
+      "maxZoom": 1.022099447513812
+    },
+    "rect": {
+      "width": 320,
+      "height": 437.75
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 10793.3,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 12,
+      "y": 108,
+      "zoom": 0.20441988950276244,
+      "minZoom": 0.20441988950276244,
+      "maxZoom": 1.022099447513812
+    },
+    "rect": {
+      "width": 320,
+      "height": 437.75
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 10810,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 12,
+      "y": 108,
+      "zoom": 0.20441988950276244,
+      "minZoom": 0.20441988950276244,
+      "maxZoom": 1.022099447513812
+    },
+    "rect": {
+      "width": 320,
+      "height": 437.75
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 10826.7,
+    "mode": "map",
+    "phase": "idle",
+    "movement": "idle",
+    "starts": 1,
+    "camera": {
+      "x": 12,
+      "y": 108,
+      "zoom": 0.20441988950276244,
+      "minZoom": 0.20441988950276244,
+      "maxZoom": 1.022099447513812
+    },
+    "rect": {
+      "width": 320,
+      "height": 437.75
+    },
+    "cards": 0,
+    "handCount": 9,
+    "actorNodes": 1
+  },
+  {
+    "time": 10843.3,
     "mode": "map",
     "phase": "idle",
     "movement": "idle",

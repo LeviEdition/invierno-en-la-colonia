@@ -1,81 +1,82 @@
 {
   "baseCommit": "c8d4e59321bac099306c99f53d18caba3fcd9e9d",
   "implementationCommit": "4138153963bba8201a2f0635f42990f1b20f240f",
+  "qualityAdjustment": "foco visible al desplazar cinco cartas; commit posterior a1de1db9",
   "records": [
     {
       "file": "1365/busqueda-normal-y-ruido.webm",
-      "bytes": 2481762,
-      "sha256": "3f0f6b316482fd2bbc7f0fc5033c86898ad9ffda2b2031e01d2833df8137cd46"
+      "bytes": 2617384,
+      "sha256": "679e2aff37e20d43e79a51446d08b17df5c2d842549f9e8af212304587bd2806"
     },
     {
       "file": "1365/carta-conservada.png",
-      "bytes": 980485,
-      "sha256": "4db2543cad2e059f4ec6d59e5d7b3acc8ebb2dbab61837d9a58177d7bd5939ef"
+      "bytes": 980456,
+      "sha256": "f21f16c76d2c47fc4919fd306136cf33060d600e2073104926acd7399cb9f740"
     },
     {
       "file": "1365/dado-confirmar.png",
-      "bytes": 977503,
-      "sha256": "95890604ba1c6c71841ca4a0c8fea6cad2425c90d3dc11c1339f46b524d2052d"
+      "bytes": 977409,
+      "sha256": "e5874de34c62f1f4a5bd1593a9c563452d54ba5cd58cc3b5f0049585c4059024"
     },
     {
       "file": "1365/frames.json",
-      "bytes": 86355,
-      "sha256": "05aa0dcbacca2f39ca7d4424b572e24f88aeb77720aa64fdc1e2c61f140a22f2"
+      "bytes": 85955,
+      "sha256": "8a31204ebf2eef22ae28a68e01bc80b948a05aacedfe1f38b1c0418331192f53"
     },
     {
       "file": "1365/hallazgo.png",
-      "bytes": 955828,
-      "sha256": "49dcc12fd39bc192bb14a1c8290fca66aaf198f4a835317342148a1e6c6e0d45"
+      "bytes": 955533,
+      "sha256": "8196fa2e475c54fc1aacc19e946f60ae02cae6686acf940403cf85f68c05ec54"
     },
     {
       "file": "1365/ruido-eleccion.png",
-      "bytes": 907474,
-      "sha256": "fdca2ac96720487c0202d628909a895a88419025569c095fca45d718b68cb27d"
+      "bytes": 907396,
+      "sha256": "21c972800b7bb7e4bf01e223c6dbed1623c626eee49c73eaf3aa702e02d14b82"
     },
     {
       "file": "320/busqueda-normal-y-ruido.webm",
-      "bytes": 1306308,
-      "sha256": "26962d5e30ab0b65f962982087b2969d732cff2298e4de2c4f4e6208b40184e7"
+      "bytes": 1332905,
+      "sha256": "df24b6579b1f8a921e80dd39631746f311922845a573882322aa3a9417e629be"
     },
     {
       "file": "320/frames.json",
-      "bytes": 86184,
-      "sha256": "a33c9b0d5d4d8c3780b7a67da804e739d22d1592124ba07c2abdc658e1b672f2"
+      "bytes": 92134,
+      "sha256": "4c5e1f805ea7f512e910e6b417de8d08c4a8c3773179552cf661f18b675555b3"
     },
     {
       "file": "320/hallazgo.png",
-      "bytes": 359283,
-      "sha256": "4bb4a9e5ae783bc2d55583afa6a7c4d8ae73c42d334b9972fd98b67828194443"
+      "bytes": 359175,
+      "sha256": "ce1fecd590ffe79c5f1d9e30d8f7f254c69b4878aede3546fec1042a66a1e8ba"
     },
     {
       "file": "320/ruido-eleccion.png",
-      "bytes": 347865,
-      "sha256": "b54f18f6113a91689e972a50df882b28cab2d9d48fa86b2391951e9ae75a14d7"
+      "bytes": 347842,
+      "sha256": "ff8ab566faec4d26e49792c5318f15b14922a65ee687e6dd74bd158093aa01d7"
     },
     {
       "file": "393/busqueda-normal-y-ruido.webm",
-      "bytes": 2274063,
-      "sha256": "f7abed708a77bcbc46c2bb33145c7c95e1626f2d75a8b5f5d1fd52bfd90b5443"
+      "bytes": 2370197,
+      "sha256": "30c4f0169584a8b5ed0fdf457e866bb531d82de2a41893386fc57dc85abbcff4"
     },
     {
       "file": "393/frames.json",
-      "bytes": 97350,
-      "sha256": "bcc63c28d17ea59783fcf94fd244f421b003c818d2d81480ab1d0675aaa3a55b"
+      "bytes": 96588,
+      "sha256": "6fb6e679eb099f328206193a2674b0c417672183a802e42297ab6f7f1be7ac17"
     },
     {
       "file": "393/hallazgo.png",
-      "bytes": 751922,
-      "sha256": "f6049c2cdab64609c0d740d819832048a6e5bd8eb05f31754130e6d9653cbc33"
+      "bytes": 751984,
+      "sha256": "95825a8e48f50873f0d64d51de24806a044dbdad2ca573b8da5525e1ac22e691"
     },
     {
       "file": "393/ruido-eleccion.png",
-      "bytes": 513009,
-      "sha256": "6e3ae3a41dae66ffecf2da3ae1036bd75844e487f0fc712c0ece60dfc84955c6"
+      "bytes": 512938,
+      "sha256": "96d4cb434b53ff216357dee4625f2babea8ecd9801c94a8ea4ce7d29d87052c5"
     },
     {
       "file": "README.md",
-      "bytes": 5578,
-      "sha256": "37be1e643591a34951a3e7c2947fa37bd48880532afd58cd4e4f748d4cf6a222"
+      "bytes": 5993,
+      "sha256": "189b10f67b2711724f59fb1d910fe1451b06d3e45a01971ef19c89647d51ad74"
     },
     {
       "file": "arnes-inicial.txt",
@@ -85,22 +86,42 @@
     {
       "file": "build-qa.json",
       "bytes": 2914,
-      "sha256": "ab7b6bfe5cadfd7b92fd6f11d88e73b8379a93644c844a0db2b83a89336dfd29"
+      "sha256": "6344f9e3a04ab971448dace38b62aece31844856d52557c389b8deada618565a"
     },
     {
       "file": "build.json",
       "bytes": 2915,
-      "sha256": "5091609c11dd293d296636fc4e5ca187aa23015d06ce78af6417e7889ce5be6c"
+      "sha256": "f106e23658ee7ff7d731bed11157b1aaba0860c8a25f9bb22c590a52d86d6898"
     },
     {
       "file": "busqueda.json",
-      "bytes": 1218,
-      "sha256": "bf54cf49389dc2f4c55bc18fec534daa8084706241f73686bdee2dc8afae17c9"
+      "bytes": 1236,
+      "sha256": "e8e19e2809d6760031aff96a484593f6047399de501f43cb6a97eb35301bdf68"
     },
     {
       "file": "camara.json",
       "bytes": 2943,
       "sha256": "f70ec49008b9257e7bbf13ec47956a682e0433871c3dfa8bdb7ee129a6b85983"
+    },
+    {
+      "file": "foco-rojo.json",
+      "bytes": 841,
+      "sha256": "d420c0855ba28747dadf5bf9e051146d72d5c01d3d34fa5bd3a7b629f9df6aeb"
+    },
+    {
+      "file": "foco-rojo.txt",
+      "bytes": 425,
+      "sha256": "85ac7dbc8568f9578325a33c66bfa243dd49402b69c1e0fa363f84563ed6f79c"
+    },
+    {
+      "file": "foco-ruido320.png",
+      "bytes": 372843,
+      "sha256": "9f3192bd9f93747b64a3a9413620fdca6ecb1bcb75c5c3adf5f6dfa04202c4ee"
+    },
+    {
+      "file": "foco-verde.json",
+      "bytes": 1136,
+      "sha256": "8b19250cdbbef4bbcf42026386535551033826255e2997a348b4a2c6987efc26"
     },
     {
       "file": "h341-limites.json",
@@ -214,18 +235,18 @@
     },
     {
       "file": "secuencia-busqueda.jpg",
-      "bytes": 346962,
-      "sha256": "af0ebbbcce75ffd1dd3d468e7c2545240199fb769f276aa5d8e3256d6b4aa4b6"
+      "bytes": 347426,
+      "sha256": "7e48b9841fd44b92a38dd11d58b62cff7a18116c37f6cfb7e41fe7004aab0e66"
     },
     {
       "file": "secuencia-ruido.jpg",
-      "bytes": 338288,
-      "sha256": "452ac01be427665943388b2c9c15b9b0ab030c1e752206276d88b3f68b06fc8d"
+      "bytes": 337171,
+      "sha256": "b947ca761a032409385fbfd6580de1e873c2748772db429f0f5f85947ec75973"
     },
     {
       "file": "suite.txt",
-      "bytes": 51499,
-      "sha256": "184dcf234b8a1b6000c12bedd563816ec9e549c123c6b0e8a6d6244beb032a37"
+      "bytes": 51265,
+      "sha256": "2338e53eb26c55943ede36c6d2eb40baf211c6bd3039581f0b8fae98360e03b6"
     },
     {
       "file": "timeout-concurrente.json",

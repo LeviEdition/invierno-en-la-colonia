@@ -11,9 +11,16 @@ function diceButton(d,selected){
 }
 export function mountSearchPanel({controller,getContext,onCancel,onNative,signal}){
  let oldPhase='idle',cardsKey='',diceKey='',handKey='',focusVersion=0;
+ function focusInPanel(target){
+  if(!target)return;target.focus({preventScroll:true});
+  const panel=$('search-panel'),bounds=panel.getBoundingClientRect(),r=target.getBoundingClientRect();
+  // Mover solo el scroll del panel; conservar encuadre y geometría del mapa.
+  if(r.top<bounds.top+8)panel.scrollTop+=r.top-bounds.top-8;
+  else if(r.bottom>bounds.bottom-8)panel.scrollTop+=r.bottom-bounds.bottom+8;
+ }
  const on=(id,type,fn)=>$(id).addEventListener(type,fn,{signal});
  on('search-action','click',()=>{if(getContext().movementPhase==='idle')controller.begin(getContext().selected);});
- on('search-dice','click',event=>{const button=event.target.closest('[data-die]');if(button&&!button.disabled&&controller.chooseDie(Number(button.dataset.die)))$('confirm-search').focus({preventScroll:true});});
+ on('search-dice','click',event=>{const button=event.target.closest('[data-die]');if(button&&!button.disabled&&controller.chooseDie(Number(button.dataset.die)))focusInPanel($('confirm-search'));});
  on('confirm-search','click',()=>controller.confirm());on('cancel-search','click',()=>{if(controller.cancel())onCancel();});
  on('search-cards','click',event=>{const button=event.target.closest('[data-card]');if(button&&!button.disabled)controller.choose(Number(button.dataset.card));});
  on('search-noise','click',()=>controller.noise());on('search-continue','click',()=>controller.dismiss());on('search-native','click',onNative);
@@ -51,7 +58,7 @@ export function mountSearchPanel({controller,getContext,onCancel,onNative,signal
   $('own-hand').hidden=!visible;$('own-hand-title').textContent=visible?'Mano de '+(p?.players.find(x=>x.id===s.ownerId)?.label||'jugador activo')+' · '+hand.length+' cartas':'Mano del turno';
   if(nextHandKey!==handKey){handKey=nextHandKey;$('own-hand-cards').replaceChildren(...hand.map(c=>el('li',c.name+' · '+c.kind)));}
   if(s.phase!==oldPhase){oldPhase=s.phase;const version=++focusVersion;
-   if(visible)requestAnimationFrame(()=>{if(signal.aborted||version!==focusVersion||!getContext().active)return;const target=picking?'#search-dice button:not(:disabled)':s.phase==='choice'?'#search-cards button':s.phase==='result'?(op?.generalDecision?'#search-native':'#search-continue'):null;if(target)document.querySelector(target)?.focus({preventScroll:true});});
+   if(visible)requestAnimationFrame(()=>{if(signal.aborted||version!==focusVersion||!getContext().active)return;const target=picking?'#search-dice button:not(:disabled)':s.phase==='choice'?'#search-cards button':s.phase==='result'?(op?.generalDecision?'#search-native':'#search-continue'):null;if(target)focusInPanel(document.querySelector(target));});
   }
  }
  return {render};

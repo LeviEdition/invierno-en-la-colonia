@@ -7,7 +7,7 @@
 - [Línea base555](linea-base-suite.txt), check reproducible y cinco JSON `linea-base-*.json`: pruebas propias de c8d4 antes de modificar. No son la revisión independiente histórica545/1141b89.
 - [Suite576/576](suite.txt), [oráculo40/40](oraculo.json). [Rojos motor](rojo-motor.txt), [broker](rojo-protocolo.txt), [controlador](rojo-controlador.txt): el contrato nuevo todavía no existía; no implican errores de reglas anteriores. [Motor dirigido](motor-dirigido.txt),9 casos.
 - [Búsqueda3 tamaños](busqueda.json): normal+ruido, un consumo/robo por solicitud, cancelar puro, dados repetidos, mapa/cámara/selección estables, J1/J2 privado y ausencia de errores/desbordamiento.
-- [Recuperación/privacidad9 casos](recuperacion-privacidad.json) y [tres reinicios](reinicios.json): referencia, visibilidad/reconexión controladas, respuesta perdida sin reenvío, obsoleto, explorador, movimiento reducido/audiooff, encrucijada deliberada, búsqueda J2; operación/RNG sin duplicados, listeners estables. No se declara bfcache real nuevo.
+- [Recuperación/privacidad9 casos](recuperacion-privacidad.json) y [tres reinicios](reinicios.json) y [foco visible tras cuatro ruidos](foco-verde.json): referencia, visibilidad/reconexión controladas, respuesta perdida sin reenvío, obsoleto, explorador, movimiento reducido/audiooff, encrucijada deliberada, búsqueda J2; operación/RNG sin duplicados, listeners estables y foco visible con cinco cartas en320px. No se declara bfcache real nuevo.
 - [Movimiento5](regresion-movimiento.json) y [cámara9](camara.json) en **la entrada nueva**:1500ms/exposición/muerte/decisión, POST_RENDER, pan/zoom/pinza y reposo. No basta con probar solo el prototipo anterior.
 - Regresiones de entradas conservadas: [H3.4.1](h341.json)/[bordes9](h341-limites.json), [H3.4.2](h342.json)/[bordes9](h342-limites.json). CI conserva además los demás gates anteriores, en ejecución secuencial.
 - [Build producto](build.json) y [QA](build-qa.json). Sin motor en visor, sin Phaser en host; QA separado y solo loopback. Ningún PNG original cambia.
@@ -31,6 +31,8 @@ Cada video contiene **una búsqueda normal completa y una segunda con ruido**, a
 - [Video rojo: muerte](regresion-muerte-antes.webm), [resultado](regresion-muerte-antes.json), [error](regresion-muerte-antes.txt): en la primera integración la barrera por muerte cortaba la exposición aceptada. Se corrigió limpiar lo privado sin interrumpir esa secuencia. El gate de movimiento final comprueba los cinco casos y no se debilita.
 - [Timeout de otra repetición concurrente](timeout-concurrente.json)/[log](timeout-concurrente.txt): perdió la ventana corta `reveal` con varios Chromium activos. Repetición secuencial aprobada. No se etiqueta como un segundo defecto funcional reproducido.
 - [Primer arnés](arnes-inicial.txt): semilla del recorrido normal disparó una encrucijada de movimiento; se esperaba `idle` indebidamente. Se separó el caso normal de los casos de decisión, sin cambiar reglas.
+
+- [Foco rojo](foco-rojo.json)/[log](foco-rojo.txt) y [verde](foco-verde.json)/[captura320](foco-ruido320.png): tras varios ruidos, el botón enfocado quedaba fuera del área visible. Se ajusta solo el scroll interno al enfocar, sin desplazar cámara/escenario. Comprobado con cuatro incrementos táctiles y cinco cartas.
 
 ## Entorno, reproducción y reservas
 

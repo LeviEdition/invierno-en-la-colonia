@@ -14,8 +14,8 @@
       "oneDrawPerCommand": true,
       "cameraStable": true,
       "privacyPass": true,
-      "frames": 213,
-      "video": "/tmp/h343/browser-final/1365/1057299753a45bb16a65bf66cd8c8f3f.webm"
+      "frames": 212,
+      "video": "/tmp/h343/browser-focus-final/1365/021603584afe42da1e090c997531c386.webm"
     },
     {
       "viewport": {
@@ -29,8 +29,8 @@
       "oneDrawPerCommand": true,
       "cameraStable": true,
       "privacyPass": true,
-      "frames": 245,
-      "video": "/tmp/h343/browser-final/393/49f66b5fba344716eaa780ae357d383e.webm"
+      "frames": 243,
+      "video": "/tmp/h343/browser-focus-final/393/30ae92e74ab241be49e0b31aa03f2cd9.webm"
     },
     {
       "viewport": {
@@ -44,8 +44,8 @@
       "oneDrawPerCommand": true,
       "cameraStable": true,
       "privacyPass": true,
-      "frames": 218,
-      "video": "/tmp/h343/browser-final/320/b1ee0dca6763ef1db35fea99e8176a63.webm"
+      "frames": 233,
+      "video": "/tmp/h343/browser-focus-final/320/3e4f0859942a0bfd42a56afbb0879288.webm"
     }
   ],
   "failures": [],

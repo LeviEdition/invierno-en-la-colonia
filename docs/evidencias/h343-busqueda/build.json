@@ -3,9 +3,9 @@
   "esbuild": "0.28.2",
   "qa": false,
   "map": {
-    "rawBytes": 1489504,
-    "gzip9Bytes": 403670,
-    "sha256": "ab67612cbf4a92a675f2a8dfd5698dd7b2a2e86a2216a0d244063e334fbb73fd",
+    "rawBytes": 1489694,
+    "gzip9Bytes": 403755,
+    "sha256": "b5db7dd48671fcc455b40c501e47cba9fa03d1e50f080aa4f590237736f2c9ed",
     "inputs": [
       "node_modules/phaser/dist/phaser.esm.js",
       "prototypes/hospital-workshop/mockup/scene.json",
