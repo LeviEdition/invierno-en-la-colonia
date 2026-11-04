@@ -23,7 +23,10 @@
     "dev:workshop": "node scripts/serve-workshop.mjs",
     "build:state-map": "node scripts/build-state-map.mjs",
     "check:state-map-build": "node scripts/build-state-map.mjs --check",
-    "dev:state-map": "node scripts/serve-state-map.mjs"
+    "dev:state-map": "node scripts/serve-state-map.mjs",
+    "build:movement-map": "node scripts/build-movement-map.mjs",
+    "check:movement-map-build": "node scripts/build-movement-map.mjs --check",
+    "dev:movement-map": "node scripts/serve-movement-map.mjs"
   },
   "devDependencies": {
     "esbuild": "0.28.2",

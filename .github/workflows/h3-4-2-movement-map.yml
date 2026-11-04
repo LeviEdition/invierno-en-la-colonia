@@ -1,0 +1,63 @@
+name: H3.4.2 — Movimiento desde el mapa
+on:
+  pull_request:
+    branches: [experiment/h3-4-1-estado-real]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  movement:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - run: npm run check:build && npm test
+      - name: Oráculo57872ee, cuarenta partidas por variante
+        run: npm run test:poc
+      - name: Chromium y grabación externos al producto
+        run: |
+          npm install --no-save --package-lock=false playwright@1.57.0
+          npx playwright install --with-deps chromium ffmpeg
+      - name: Partida real, movimiento y regresiones H3.4.1
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/serve-movement-map.mjs --qa > /tmp/h342-server.log 2>&1 &
+          MOVEMENT_PID=$!
+          trap 'kill "$MOVEMENT_PID"' EXIT
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:8776/prototypes/movement-map/ -o /dev/null && break; sleep 1; done
+          export CHROMIUM_PATH="$(node --input-type=module -e "import {chromium} from 'playwright';console.log(chromium.executablePath())")"
+          git rev-parse HEAD
+          npm run check:movement-map-build
+          npm run check:state-map-build
+          npm run check:workshop-build
+          npm run check:hospital-build
+          H341_ORIGIN=http://127.0.0.1:8776 H341_OUTPUT_DIR=/tmp/h342-h341-regression node scripts/check-h341-browser.mjs
+          H341_ORIGIN=http://127.0.0.1:8776 H341_EDGE_OUTPUT_DIR=/tmp/h342-h341-edge node scripts/check-h341-edge-browser.mjs
+          node scripts/check-h342-browser.mjs
+          node scripts/check-h342-edge-browser.mjs
+          # Benchmark secuencial, sin otras pruebas/recording concurrentes.
+          node scripts/measure-h342-storm.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: h342-movement-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            /tmp/h342-browser/
+            /tmp/h342-edge/
+            /tmp/h342-performance/
+            /tmp/h342-h341-regression/
+            /tmp/h342-h341-edge/
+            /tmp/h342-server.log
+            /tmp/d1d2-regressions/
+            dist/movement-map/build.json
+            dist/state-map/build.json
+            dist/hospital-workshop/build.json
+            dist/hospital-phaser/build.json
