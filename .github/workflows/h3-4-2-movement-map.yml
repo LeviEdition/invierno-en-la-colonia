@@ -45,6 +45,7 @@ jobs:
           node scripts/check-h342-edge-browser.mjs
           node scripts/check-h342-experience-browser.mjs
           node scripts/check-h342-experience-recovery.mjs
+          node scripts/check-h342-camera-browser.mjs
           # Benchmark secuencial, sin otras pruebas/recording concurrentes.
           node scripts/measure-h342-storm.mjs
       - uses: actions/upload-artifact@v4
@@ -56,6 +57,7 @@ jobs:
             /tmp/h342-edge/
             /tmp/h342-experience/
             /tmp/h342-experience-recovery/
+            /tmp/h342-camera/
             /tmp/h342-performance/
             /tmp/h342-h341-regression/
             /tmp/h342-h341-edge/
