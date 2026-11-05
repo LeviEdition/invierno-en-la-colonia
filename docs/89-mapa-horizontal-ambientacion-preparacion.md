@@ -1,5 +1,7 @@
 # 89 — Mapa horizontal y ambientación: preparación y dependencia de originales
 
+**Actualización05/11/2026: bloqueo resuelto.** El creador subió los tres originales en `4f05c8f349c1973e0b786cf37d562a5685e6fca9`. Se preservó ese commit y se continuó en la misma rama/PR25. [Informe90](90-mapa-horizontal-ambientacion.md). El texto siguiente registra el checkpoint previo; sus estados de archivos ausentes no describen la entrega actual.
+
 05/11/2026, America/Montevideo. **Encargo autorizado, implementación pendiente por acceso a los tres originales.** No se pide nueva aprobación del alcance. La aceptación manual de búsqueda, ataque y barricadas continúa pendiente.
 
 ## Estado comprobado

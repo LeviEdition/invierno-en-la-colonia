@@ -1,0 +1,227 @@
+{
+  "baseCommit": "694b64504ca39bb00627fb4cf9964b9521ec211f",
+  "originalUploadCommit": "4f05c8f349c1973e0b786cf37d562a5685e6fca9",
+  "runtimeCodeCommit": "4f821d65983fd1ce4fb2883e178c66c46ce868d4",
+  "records": [
+    {
+      "file": "740x360/comisaria.png",
+      "bytes": 813718,
+      "sha256": "1962b74018bbcb2e7477bc5999859e4b67e5e9e72546f728c25adff045400785"
+    },
+    {
+      "file": "740x360/general.png",
+      "bytes": 956225,
+      "sha256": "66bafac314aca65096576905fd4bc7f1e3b035647ddc70be9c8cce7c3f1f3b2c"
+    },
+    {
+      "file": "740x360/hospital.png",
+      "bytes": 847205,
+      "sha256": "d27682f754841915497d3dba73d0298a7c4d2d2aacb19b6ac93f9c506261a1e2"
+    },
+    {
+      "file": "852x393/comisaria.png",
+      "bytes": 988084,
+      "sha256": "ac201cda055d80abbdff1b6addde4e2605cca873616d4a0b8ea5e2759b6a882e"
+    },
+    {
+      "file": "852x393/general.png",
+      "bytes": 1205589,
+      "sha256": "d1b750077ca9bd516f094fb50c6a65b95224f26a367570131005918e13cff104"
+    },
+    {
+      "file": "852x393/hospital.png",
+      "bytes": 1028551,
+      "sha256": "8b31ad2c31cb1859f4a5361bdcbc9369f295abc561285f5bd87ec5068d2b89e5"
+    },
+    {
+      "file": "README.md",
+      "bytes": 4820,
+      "sha256": "f90f7230635f25c62d8e877ab6af5d633ebddd2a0bd3aa10ed6ceba0c67b4d75"
+    },
+    {
+      "file": "accesos-verde.log",
+      "bytes": 1358,
+      "sha256": "c4f55df8e72f73f1b53ae8a04ee7bc9840e25dcf466f66d69376a81fc6e1ce82"
+    },
+    {
+      "file": "acciones.json",
+      "bytes": 1392,
+      "sha256": "3b1ac06ce7408b87bcb7867e2e0d15c023c3ba5e71a6ff3d046e2f5a6d94b9d0"
+    },
+    {
+      "file": "base-605.log",
+      "bytes": 54237,
+      "sha256": "77abd9a335d1896e8f39c80b01e80cc696bd11b2a563a817337f8ef61125a1e0"
+    },
+    {
+      "file": "bordes.json",
+      "bytes": 1804,
+      "sha256": "b9f14960d459576dc6cec1adb608468eda88097aaf61eb1bc148592689b3f94e"
+    },
+    {
+      "file": "camara.json",
+      "bytes": 2982,
+      "sha256": "d6f7311954229b4e57eae2270ec96867b8c79578ce0dfcf92a679296d7f7231e"
+    },
+    {
+      "file": "escena.json",
+      "bytes": 91721,
+      "sha256": "c7da55862038f65208cc9c4f6b6f14d657094ecd6cc9f85c689c34e7964750af"
+    },
+    {
+      "file": "malla-densa-diagnostico.json",
+      "bytes": 74523,
+      "sha256": "b6636ea190c94076dcdd4f4741b3d50ddb9d868517166c5c2e0fdf79e24c5601"
+    },
+    {
+      "file": "medicion-resumen.json",
+      "bytes": 7623,
+      "sha256": "2493eb0699763a1394d4fdd28e94da959366b5b05adfe753037a6546d2574f73"
+    },
+    {
+      "file": "movimiento.json",
+      "bytes": 2791,
+      "sha256": "341d32aa647cda2bdf0bbc587cca2c84d0bbf5fdd43581aa9b80c52ab3a98b79"
+    },
+    {
+      "file": "oraculo-40.log",
+      "bytes": 678,
+      "sha256": "6e7b54ccdf060486b9a42309f5531e68c97f39615eace3dafe8ad0d99a418c65"
+    },
+    {
+      "file": "originales.json",
+      "bytes": 996,
+      "sha256": "f1a8340c8dcd11968d9204488a2e5aee184f63a45e637e681939ee0577175bcf"
+    },
+    {
+      "file": "pc/biblioteca.png",
+      "bytes": 906187,
+      "sha256": "369e71472c9af571771c52f42a6f9ecf7535e576d3c3ade68877c02ede9c9595"
+    },
+    {
+      "file": "pc/capacidad-maxima.png",
+      "bytes": 1113230,
+      "sha256": "d0f214497e34888871fe5580ce18b30fae8281826dfe5ab5a5dd163703da552d"
+    },
+    {
+      "file": "pc/colonia.png",
+      "bytes": 887467,
+      "sha256": "807fd00823f720a6c79433c13d21fd2a7365c81cb0df8b70fcd31471ffba7572"
+    },
+    {
+      "file": "pc/colonia12.png",
+      "bytes": 881264,
+      "sha256": "bc122a0184d2cbf00108ec399908e1c48b266f1c5d0d9fe1b8e21dea3a28e292"
+    },
+    {
+      "file": "pc/comisaria.png",
+      "bytes": 881933,
+      "sha256": "0b7fc8b29772f36e9840dedb30f8d31b1b8aec7631b2b6edebf0bfc8cace412c"
+    },
+    {
+      "file": "pc/escuela.png",
+      "bytes": 890214,
+      "sha256": "f48ef43e6a6ece4afde85591cfca5b94b012c77ed415b633ca55f3f49e6d47e3"
+    },
+    {
+      "file": "pc/gasolinera.png",
+      "bytes": 876365,
+      "sha256": "d20b43e8b55a8e2d00778b049cf6bae2d0c99c109535f91871fce731a59f6b1c"
+    },
+    {
+      "file": "pc/general.png",
+      "bytes": 1027772,
+      "sha256": "410ed8f59dffac5535d74bde15592a6bfeaf26d3abe1692a6bb27c0f1d3f84dd"
+    },
+    {
+      "file": "pc/hospital.png",
+      "bytes": 891422,
+      "sha256": "ebf86f33bf490b744c76572ef3c459ea15de93de9276a9b87abcb02affdc08d9"
+    },
+    {
+      "file": "pc/supermercado.png",
+      "bytes": 879705,
+      "sha256": "c14d689b0fb1d5f5bd0317b0308f4f5f2710033cab323226358b7e7e00b622fb"
+    },
+    {
+      "file": "producto-sin-qa.json",
+      "bytes": 143,
+      "sha256": "ee9a2e4f25dc8748e873128dd072838496b94bae0c3e89e77116c3d6ffb3432f"
+    },
+    {
+      "file": "rojos/accesos-recortados.log",
+      "bytes": 3932,
+      "sha256": "00b1718b2d130b22210f6f4f361fc1170eba0570fb0d225709797defe6c3b9a6"
+    },
+    {
+      "file": "rojos/arnes-pausa.json",
+      "bytes": 24828,
+      "sha256": "7d8322d5e25c8c32474dde555c8cd8133cb4c19fa2becefe0b4c4967d323b360"
+    },
+    {
+      "file": "rojos/arnes-punto-anterior.json",
+      "bytes": 766,
+      "sha256": "4f1661525388f3fab520277cdc9b5a3dd3d3a8482d5234065e7ae66c2014cea0"
+    },
+    {
+      "file": "rojos/arnes-shaders.json",
+      "bytes": 24975,
+      "sha256": "753359e860357869c599afd2b5374b4e7209be9a5b07031f7aab2958947b85f8"
+    },
+    {
+      "file": "rojos/camera-zoom-sin-limitar.log",
+      "bytes": 1503,
+      "sha256": "3b83d2bf28a0a9d9982f2344f39b001461610d60cd44622138181ef8dd2f7618"
+    },
+    {
+      "file": "rojos/contratos-ausentes.log",
+      "bytes": 1426,
+      "sha256": "3dd2e13b31ccd596df6ba69041096a7652ec63f33f61d9bfdbf34fd102b55b2f"
+    },
+    {
+      "file": "rojos/luces-fuente-sin-apagar.json",
+      "bytes": 465,
+      "sha256": "ce0e96374dd5d47aeb2d79bf56b256ecd2c3d7819070df8f2c31bf235a2b1f5b"
+    },
+    {
+      "file": "rojos/mascara-dura-hospital.png",
+      "bytes": 878496,
+      "sha256": "e9a536a2d2752a23c8dc801e6de51d93e7cd1f5b89c1fa9dc40dba03aa91f8fa"
+    },
+    {
+      "file": "rojos/panel-intercepta-hospital.json",
+      "bytes": 1360,
+      "sha256": "d149d0dd517e17cf40a567c705a922f558bca07798544bc42702421d8589726f"
+    },
+    {
+      "file": "rojos/panel-intercepta-hospital.png",
+      "bytes": 887084,
+      "sha256": "011a9cee21368bba2c421263984b12d0de9ec6e8481fa66f8d1e52086a9225f1"
+    },
+    {
+      "file": "secuencia-temporal.jpg",
+      "bytes": 113601,
+      "sha256": "d813c4e02ef07b417d166688358395fa022c9a62795cf26beb0e9aad1d14a233"
+    },
+    {
+      "file": "suite-618.log",
+      "bytes": 55527,
+      "sha256": "1b93b57570ba95ed5d6920e7f784822cca8dc1fe738861d643df5d2f23bca9ff"
+    },
+    {
+      "file": "video-formato.json",
+      "bytes": 248,
+      "sha256": "702e0899831c886dd7bceed5f83811595e6b7c57757a6e07d9fa60a7a3cadcfb"
+    },
+    {
+      "file": "video.json",
+      "bytes": 35443,
+      "sha256": "21453ef56fdf9cac39c8e4cde841d95d4f8f4d2c56ab34abf647c6e75ef83788"
+    },
+    {
+      "file": "viento-luces-y-movimiento.webm",
+      "bytes": 2541743,
+      "sha256": "de7eb78a2c9d3dc189ebf16067071268d773f5579070a6aa146fca420fb2f460"
+    }
+  ]
+}

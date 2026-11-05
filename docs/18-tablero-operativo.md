@@ -1,5 +1,17 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## Mapa horizontal y ambientación — originales recibidos, entrega experimental ·05/11/2026
+
+**Encargo autorizado:** escenario horizontal sobre H3.4.4, sin aceptar retrospectivamente búsqueda/ataque/barricadas ni modificar reglas/capacidades/main. Misma rama **`experiment/mapa-horizontal-ambientacion-h3`**, [PR25 draft](https://github.com/LeviEdition/invierno-en-la-colonia/pull/25) contra H3.4.4/694b645. El creador subió los tres originales en **4f05c8f**; bloqueo89 resuelto por avance rápido, sin sobrescribir su trabajo. Main826199d9 y referencia preservadas. [Informe90](90-mapa-horizontal-ambientacion.md). Bloques inferiores históricos.
+
+**Implementación5b3a661:** nueva entrada independiente, siete localidades/IDs,36 apoyos y36 accesos según capacidad real. Selección, llegada, cámara con cobertura y centrado, dossier reservado en PC/plegable en móvil. Ocho grupos de vegetación con bases fijas y viento compartido; máscaras del mismo fondo restituyen fachadas, tres luces acoplan fuente/mancha y retiran su brillo fijo al apagar. Humo en949,306 de colonia, tormenta reutilizada/pool132, sonido apagado y reducido respetado. Originales1672×941/RGB/RGBA con alfa/hashes comprobados; sin regeneración, dependencias o motor duplicado.
+
+**Validación propia:** línea base605/605, entrega **618/618** y oráculo **40/40**; siete builds/checks. Recorrido de cuatro acciones en1365×768,852×393,740×360; batería de escena comprueba siete centros, máximos sintéticos36+36, pausa/reinicio/sin acumulación/reducido. Medición y regresiones finales se documentan en90/evidencia; CI/run/artifact del head exacto se verifican y registran en PR25 antes de entregar. Sin prueba física móvil ni VRAM medida/garantía60FPS.
+
+**Inicio:** `npm.cmd ci` → **`npm.cmd run dev:horizontal-map`** → **http://127.0.0.1:8779/prototypes/horizontal-map/**. [Guía Windows/VSCode/LAN](../prototypes/horizontal-map/README.md). Mapa anterior en `/prototypes/action-map/`, sin reemplazar PNG ni referencia. Persisten reservas de encaje/contorno de capas generadas, detalle al ampliar, rendimiento físico y aceptación visual. **Única siguiente tarea: revisión del creador del mapa y las cuatro acciones.** Sin merge, cierre de etapa o nuevas mecánicas.
+
+---
+
 ## Mapa horizontal y ambientación — autorizado, originales pendientes ·05/11/2026
 
 **Encargo vigente:** nuevo escenario horizontal con siete localidades, vegetación anclada y luces coherentes, reutilizando tormenta y las cuatro acciones reales. No acepta retrospectivamente la revisión manual H3.4.3/H3.4.4 ni autoriza modificar reglas/capacidades/main o fusionar. Base remota limpia **694b64504ca39bb00627fb4cf9964b9521ec211f**, PR24 abierto/draft y CI42021660345 success. Rama nueva **`experiment/mapa-horizontal-ambientacion-h3`**, PR preparatorio draft contra H3.4.4. [Informe89](89-mapa-horizontal-ambientacion-preparacion.md). Bloques siguientes históricos.
