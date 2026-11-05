@@ -1,5 +1,17 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## Mapa horizontal y ambientación — autorizado, originales pendientes ·05/11/2026
+
+**Encargo vigente:** nuevo escenario horizontal con siete localidades, vegetación anclada y luces coherentes, reutilizando tormenta y las cuatro acciones reales. No acepta retrospectivamente la revisión manual H3.4.3/H3.4.4 ni autoriza modificar reglas/capacidades/main o fusionar. Base remota limpia **694b64504ca39bb00627fb4cf9964b9521ec211f**, PR24 abierto/draft y CI42021660345 success. Rama nueva **`experiment/mapa-horizontal-ambientacion-h3`**, PR preparatorio draft contra H3.4.4. [Informe89](89-mapa-horizontal-ambientacion-preparacion.md). Bloques siguientes históricos.
+
+**Comprobado:** encargo leído, sin AGENTS.md aplicable, Git/instrucciones/escena/cámara/emisores revisados. Se ven las tres imágenes en el chat, pero **no hay binarios accesibles** en los adjuntos montados ni en el árbol remoto del head. El mapa del repositorio sigue siendo el anterior1448×1086/RGB. No se verifican alfa, dimensiones originales ni encaje a partir de previsualizaciones. No se sustituyó ni regeneró arte.
+
+**Preparación:** rutas sugeridas y guía de recepción en [`assets/mapa-horizontal/README.md`](../assets/mapa-horizontal/README.md); originales aún ausentes: `mapa-completo.png`, `fondo-sin-vegetacion.png`, `vegetacion.png`. No hace falta ZIP; se pueden subir individualmente a la rama nueva o indicar dónde están. Documentados acoplamientos actuales y secuencia de integración/validación. Solo documentación, sin cambios de producto ni nueva ejecución de npm/Chromium; el CI anterior corresponde a694b645. Main826199d9/referencia/PR24 intactos.
+
+**Única siguiente tarea:** obtener los tres originales y continuar el encargo ya autorizado. Implementación, pruebas gráficas/rendimiento/CI nuevo y aceptación manual **pendientes**, sin declarar entrega funcional ni cierre.
+
+---
+
 ## H3.4.4 — Ataque y barricadas, entrega para revisión ·05/11/2026
 
 **Autorización vigente:** integrar ataque/construcción sobre H3.4.3, **sin marcar aceptada su validación manual**. Base limpia/remota **4357df8d60d45bf13ed966add489e79c0f27ad45**, PR23 draft/CI41924037076 success. Rama nueva `experiment/h3-4-4-ataque-barricadas-mapa`, PR nuevo draft contra H3.4.3. Main826199d9, tag/release de referencia, arte, mapa y reglas intactos. [Informe88](88-h3-4-4-ataque-barricadas-mapa.md). Los bloques siguientes son historia.
