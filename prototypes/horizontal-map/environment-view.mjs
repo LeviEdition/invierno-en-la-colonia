@@ -1,7 +1,7 @@
 import {createAtmosphereView} from '../movement-map/storm-view.mjs';
 import {addIllustratedTexture} from '../hospital-phaser/texture-quality.mjs';
 import config from './environment.json';import sceneConfig from './scene.json';
-import {vegetationOffset,lightLevel,staticVegetationRects} from './environment-model.mjs';
+import {vegetationOffset,lightLevel,staticVegetationRects,polygonInterior,unlitColor} from './environment-model.mjs';
 
 // Todo es presentación. Mesh2D es la API pública 2D de Phaser4.2.1:
 // no modelos3D, shader propio, motor nuevo o coordenadas del juego.
@@ -27,9 +27,9 @@ export function createHorizontalEnvironment(scene,atmosphere,options){
  }
  const lights=config.lights.map(l=>{const p=[...l.polygon,...l.spill],left=Math.floor(Math.min(...p.map(p=>p[0])))-2,top=Math.floor(Math.min(...p.map(p=>p[1])))-2,w=Math.ceil(Math.max(...p.map(p=>p[0])))-left+2,h=Math.ceil(Math.max(...p.map(p=>p[1])))-top+2;
   const original=canvasTexture(l.id+'-source',w,h,ctx=>{for(const polygon of [l.polygon,l.spill]){ctx.save();path(ctx,polygon,left,top);ctx.clip();ctx.drawImage(source,bf.cutX+left,bf.cutY+top,w,h,0,0,w,h);ctx.restore();}});
-  const dark=canvasTexture(l.id+'-unlit',w,h,ctx=>{const frame=scene.textures.get(original).get('original');ctx.drawImage(scene.textures.get(original).getSourceImage(),frame.cutX,frame.cutY,w,h,0,0,w,h);const d=ctx.getImageData(0,0,w,h);for(let i=0;i<d.data.length;i+=4){const warmth=Math.max(0,Math.min(1,(d.data[i]-d.data[i+2]-4)/45));d.data[i]*=1-.8*warmth;d.data[i+1]*=1-.75*warmth;d.data[i+2]*=1-.35*warmth;}ctx.putImageData(d,0,0);});
+  const dark=canvasTexture(l.id+'-unlit',w,h,ctx=>{const frame=scene.textures.get(original).get('original');ctx.drawImage(scene.textures.get(original).getSourceImage(),frame.cutX,frame.cutY,w,h,0,0,w,h);const d=ctx.getImageData(0,0,w,h);for(let i=0;i<d.data.length;i+=4){const x=left+(i/4)%w,y=top+Math.floor(i/4/w),core=polygonInterior(x,y,l.polygon),edge=core||polygonInterior(x,y,l.spill),color=unlitColor([d.data[i],d.data[i+1],d.data[i+2]],!!core,edge);for(let j=0;j<3;j++)d.data[i+j]=color[j];}ctx.putImageData(d,0,0);});
   sprite(dark,left,top,.65);const lit=sprite(original,left,top,.7);
-  const spill=canvasTexture(l.id+'-spill',w,h,ctx=>{path(ctx,l.spill,left,top);ctx.clip();const g=ctx.createLinearGradient(0,l.polygon[2][1]-top,0,h);g.addColorStop(0,'rgba(255,192,103,.26)');g.addColorStop(1,'rgba(255,192,103,0)');ctx.fillStyle=g;ctx.fillRect(0,0,w,h);});const ground=sprite(spill,left,top,.8);
+  const spill=canvasTexture(l.id+'-spill',w,h,ctx=>{path(ctx,l.spill,left,top);ctx.clip();const g=ctx.createLinearGradient(0,l.polygon[2][1]-top,0,h);g.addColorStop(0,'rgba(255,192,103,.26)');g.addColorStop(1,'rgba(255,192,103,0)');ctx.fillStyle=g;ctx.fillRect(0,0,w,h);const d=ctx.getImageData(0,0,w,h);for(let i=0;i<d.data.length;i+=4)d.data[i+3]*=Math.min(1,polygonInterior(left+(i/4)%w,top+Math.floor(i/4/w),l.spill)/5);ctx.putImageData(d,0,0);});const ground=sprite(spill,left,top,.8);
   return {...l,lit,ground,level:1};
  });
  let disposed=false,updates=0,lastClock=weather.visualClock();
