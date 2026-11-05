@@ -259,7 +259,7 @@ const {places,icons,em,capacity,zcap,objectives,roster}=createReferenceData();
 
 
 
-function special(){const p=person();if(!p||p.dead||!playable()||game.ended)return;if(p.skillUsed)return messageAndPaint('Ya usaste esta habilidad en la ronda.');if(p.skill==='builder'){const z=game.zones[p.loc];if(z.z+z.b>=zcap[p.loc])return messageAndPaint('No hay accesos libres.');z.b++;p.skillUsed=true;message('★ '+p.name+' construyó una barricada.');paint();}else if(p.skill==='medic'||p.skill==='nurse'){if(pendingLoot)return;const targets=alive().filter(x=>x.loc===p.loc&&(p.skill==='medic'?x.wounds:x.frost));if(!targets.length)return messageAndPaint('No hay nadie que necesite ese tratamiento aquí.');pendingHeal={actor:p.id,targets:targets.map(x=>x.id)};show('healTarget');}else return messageAndPaint('La habilidad de este personaje es automática.');}
+function special(){const p=person();if(!p||p.dead||!playable()||game.ended)return;if(p.skillUsed)return messageAndPaint('Ya usaste esta habilidad en la ronda.');if(p.skill==='builder'){const z=game.zones[p.loc];if(z.z+z.b>=zcap[p.loc])return messageAndPaint('No hay accesos libres.');executeBuilder(p);}else if(p.skill==='medic'||p.skill==='nurse'){if(pendingLoot)return;const targets=alive().filter(x=>x.loc===p.loc&&(p.skill==='medic'?x.wounds:x.frost));if(!targets.length)return messageAndPaint('No hay nadie que necesite ese tratamiento aquí.');pendingHeal={actor:p.id,targets:targets.map(x=>x.id)};show('healTarget');}else return messageAndPaint('La habilidad de este personaje es automática.');}
 function chooseHeal(id){if(!pendingHeal||!pendingHeal.targets.includes(id))return;const p=all().find(x=>x.id===pendingHeal.actor),t=all().find(x=>x.id===id);if(!p||!t||p.dead||t.dead||p.skillUsed||p.loc!==t.loc||!canResolve('healTarget'))return;const key=p.skill==='medic'?'wounds':'frost';if(!t[key])return; t[key]--;p.skillUsed=true;pendingHeal=null;message('✚ '+p.name+' atendió a '+t.name+' con '+p.skillName+'.');hide();paint();}
 const random=n=>Math.floor(Math.random()*n),die=()=>random(6)+1;
 let game,selected=0,target=0,picked=0,opened='',profileId='',skipAI=false,aiRunning=false,pendingHeal=null,pendingLoot=null;
@@ -418,9 +418,9 @@ function replaceLastSurvivors(env=null){
 }
 let ItemEngine=createItemEngine(c);
 const itemEngine=new ItemEngine();
-let movementGeneration=0,searchSerial=0,searchOperation=null;
+let movementGeneration=0,searchSerial=0,searchOperation=null,actionSerial=0,actionOperation=null;
 function create(){
- movementGeneration++;searchOperation=null;searchSerial=0;
+ movementGeneration++;searchOperation=null;searchSerial=0;actionOperation=null;actionSerial=0;
  view.resetToasts();deathDirector.reset();skipAI=false;aiRunning=false;selected=0;target=0;picked=0;opened='';profileId='';pendingHeal=null;pendingLoot=null;pendingBite=null;pendingAttract=null;pendingTransfer=null;aiCrossChoice=null;settleDecisionWaiters();resetLeaderRequests();pendingRecruitInfo=null;selectionBySide.human=0;selectionBySide.ai=0;closeStatInfo();
  const objective=objectives[random(objectives.length)];
  game=stateFactory({gameMode,objective,places,catalog});
@@ -581,9 +581,7 @@ function search(noise=false){
 function attack(){
  if(!playable()||game.ended||pendingBite||leaderChoiceReady())return;
  const p=person();if(!p||p.dead||!game.zones[p.loc].z)return messageAndPaint('No hay zombis que atacar con este superviviente.');
- if(consume(effectiveAttack(p))===null)return;
- itemEngine.attack(p,controls.side);
- if(!pendingBite)crossAction('attack',p);verify();paint();
+ executeAttack(p,picked);
 }
 function doMove(){
  if(!playable()||game.ended||pendingBite||leaderChoiceReady())return;
@@ -595,6 +593,7 @@ function doMove(){
 }
 // Consecuencias únicas para ambos consumidores. No depende de selected/target.
 function executeMovement(p,destination){
+ actionOperation=null;
  const from=p.loc,actorBefore={id:p.id,name:p.name,location:p.loc,wounds:p.wounds,frost:p.frost,dead:!!p.dead};
  confirmStartingLeader();p.loc=destination;p.moved=true;message('→ '+p.name+' se movió a '+places[destination]+'.');
  let exposure;
@@ -631,6 +630,7 @@ function searchOptions(actorId){
 }
 function executeSearch(p,dieIndex){
  const value=consume(effectiveSearch(p),dieIndex);if(value===null)return;
+ actionOperation=null;
  searchOperation={operationId:'search_'+movementGeneration+'_'+(++searchSerial),gameGeneration:movementGeneration,round:game.round,ownerId:controls.side,actorId:p.id,name:p.name,origin:p.loc,dieIndex,dieValue:value,status:'empty',noiseBefore:game.zones[p.loc].noise,result:null,pending:null};
  beginSearch(p,controls.side);
  if(pendingLoot?.actorId===p.id){searchOperation.status='choice';searchOperation.pending=pendingLoot.items;}
@@ -685,9 +685,59 @@ function dismissSearchResult(operationId){
 function barricade(){
  if(!playable()||game.ended)return;
  const p=person();if(!p||p.dead||!openAccess(p.loc))return messageAndPaint('No hay acceso libre para colocar una barricada.');
- if(consume(1)===null)return;
- let n=0;const max=(p.skill==='guard'?2:1)+(itemEngine.has(p,'repairkit')?1:0);for(let i=0;i<max&&openAccess(p.loc);i++){game.zones[p.loc].b++;n++;}
- message('▥ '+p.name+' construyó '+n+' barricada(s).');crossAction('barricade',p);paint();
+ executeBarricade(p,picked);
+}
+const actorState=p=>({id:p.id,name:p.name,location:p.loc,wounds:p.wounds,frost:p.frost,dead:!!p.dead});
+const barricadeLimit=p=>(p.skill==='guard'?2:1)+(itemEngine.has(p,'repairkit')?1:0);
+function rememberAction(kind,p,dieIndex,dieValue,resolution){
+ actionOperation={operationId:'action_'+movementGeneration+'_'+(++actionSerial),gameGeneration:movementGeneration,round:game.round,ownerId:controls.side,kind,actorId:p.id,name:p.name,origin:p.loc,dieIndex,dieValue,resolution};
+ return actionOperation;
+}
+function executeAttack(p,dieIndex){
+ const value=consume(effectiveAttack(p),dieIndex);if(value===null)return;
+ searchOperation=null;
+ const actorBefore=actorState(p),before={...game.zones[p.loc]};let result;
+ itemEngine.attack(p,controls.side,r=>{result=r;});
+ if(!pendingBite)crossAction('attack',p);verify();
+ const op=rememberAction('attack',p,dieIndex,value,{...result,actorBefore,actorAfter:actorState(p),zoneBefore:before,zoneAfter:{...game.zones[p.loc]}});paint();return op;
+}
+function executeBuilder(p){
+ searchOperation=null;const actorBefore=actorState(p),before={...game.zones[p.loc]};
+ game.zones[p.loc].b++;p.skillUsed=true;message('★ '+p.name+' construyó una barricada.');
+ const op=rememberAction('barricade',p,null,null,{built:1,method:'ability',exposure:null,actorBefore,actorAfter:actorState(p),zoneBefore:before,zoneAfter:{...game.zones[p.loc]}});paint();return op;
+}
+function executeBarricade(p,dieIndex){
+ const value=consume(1,dieIndex);if(value===null)return;
+ searchOperation=null;
+ const actorBefore=actorState(p),before={...game.zones[p.loc]};let n=0;
+ for(let i=0;i<barricadeLimit(p)&&openAccess(p.loc);i++){game.zones[p.loc].b++;n++;}
+ message('▥ '+p.name+' construyó '+n+' barricada(s).');crossAction('barricade',p);
+ const op=rememberAction('barricade',p,dieIndex,value,{built:n,exposure:null,actorBefore,actorAfter:actorState(p),zoneBefore:before,zoneAfter:{...game.zones[p.loc]}});paint();return op;
+}
+// Objetivo agregado de la localidad actual: el motor no identifica zombis/accesos individuales.
+function actionOptions(actorId,kind){
+ const p=game&&all().find(x=>x.id===actorId),base=actionBlockReason(p),valid=['attack','barricade','barricade-ability'].includes(kind),dice=game?controls.dice():[],requirement=p&&valid?(kind==='attack'?effectiveAttack(p):kind==='barricade-ability'?null:1):null;
+ const reason=!valid?'invalid':base||(kind==='barricade-ability'&&p.skill!=='builder'?'ability':kind==='barricade-ability'&&p.skillUsed?'skill-used':kind==='attack'&&!game.zones[p.loc].z?'no-target':kind.startsWith('barricade')&&!openAccess(p.loc)?'full':kind==='barricade-ability'?null:!dice.length?'no-dice':!dice.some(d=>d>=requirement)?'insufficient':null);
+ return {gameGeneration:movementGeneration,round:game?.round,turn:game?.turn,actorId,kind,origin:p?.loc??null,requirement,cost:kind==='barricade-ability'?0:1,diceVersion:JSON.stringify(dice),allowed:!reason,reason,dice:base||!valid||kind==='barricade-ability'?[]:dice.map((value,index)=>({index,value,allowed:!reason&&value>=requirement})),targets:!base&&valid?[p.loc]:[],zombies:!base&&valid?game.zones[p.loc].z:null,buildCount:!base&&kind.startsWith('barricade')?Math.min(kind==='barricade-ability'?1:barricadeLimit(p),zcap[p.loc]-game.zones[p.loc].z-game.zones[p.loc].b):null};
+}
+function actById(request){
+ const q=actionOptions(request?.actorId,request?.kind),reject=reason=>({ok:false,reason});
+ if(!request||request.gameGeneration!==q.gameGeneration||request.round!==q.round||request.turn!==q.turn||request.origin!==q.origin||request.diceVersion!==q.diceVersion||request.requirement!==q.requirement)return reject('stale');
+ if(!q.allowed)return reject(q.reason);
+ if(request.target!==q.origin)return reject('target');
+ const die=q.dice.find(d=>d.index===request.dieIndex);if(q.cost!==0&&(!die?.allowed||die.value!==request.dieValue))return reject('die');if(q.cost===0&&(request.dieIndex!=null||request.dieValue!=null))return reject('die');
+ const p=all().find(x=>x.id===request.actorId),op=request.kind==='attack'?executeAttack(p,request.dieIndex):request.kind==='barricade-ability'?executeBuilder(p):executeBarricade(p,request.dieIndex);
+ return {ok:true,...structuredClone(op)};
+}
+function actionSnapshot(){
+ if(!game||passScreenActive)return null;
+ const op=actionOperation&&actionOperation.gameGeneration===movementGeneration&&actionOperation.round===game.round&&actionOperation.ownerId===game.turn?structuredClone(actionOperation):null;
+ if(op)op.generalDecision=!!(game.ended||deathWaiting()||pendingBite||pendingLoot||pendingHeal||pendingAttract||pendingTransfer||pendingLeaderSides.includes(controls.side)||game.crossPending||opened);
+ return {gameGeneration:movementGeneration,round:game.round,ownerId:game.turn,operation:op};
+}
+function dismissAction(operationId){
+ const op=actionSnapshot()?.operation;if(!op||op.operationId!==operationId||op.generalDecision)return {ok:false,reason:'stale'};
+ actionOperation=null;return {ok:true};
 }
 function clean(){
  if(!playable()||game.ended)return;
@@ -893,7 +943,7 @@ const automationActions=Object.freeze({
  barricade(id,d){const p=actor(id),n=(p.skill==='guard'?2:1)+(itemEngine.has(p,'repairkit')?1:0);for(let j=0;j<n&&openAccess(p.loc);j++)game.zones[p.loc].b++;message('▥ IA '+p.name+' colocó barricadas con dado '+d+'.');},
 });
 return Object.freeze({
- movementOptions,moveById,searchOptions,searchById,searchSnapshot,addSearchNoise,chooseSearchCard,dismissSearchResult,
+ movementOptions,moveById,searchOptions,searchById,searchSnapshot,addSearchNoise,chooseSearchCard,dismissSearchResult,actionOptions,actById,actionSnapshot,dismissAction,
  snapshot:()=>game===undefined?null:JSON.parse(JSON.stringify(game)),
  dispatch(name,...args){if(!commands.has(name))throw TypeError('Comando desconocido: '+name);return c[name](...args);},
  connectPresentation(factory){const result=factory(capabilities(readOnlyContext(c),viewCapabilities));effects=result;view=new Proxy(result,{get:(target,key)=>target[key]||noop});return result;},

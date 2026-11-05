@@ -438,22 +438,22 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         let d = ctx.catalog.resolve(it);
         return !p || p.dead || !d || d.effect !== "equip" ? !1 : ctx.equipmentOf(p).some((x) => ctx.kind(x) === d.kind) ? (ctx.message("⚠ " + p.name + " ya lleva un objeto de " + d.kind + ". Transferilo antes de equipar otro."), !1) : (p.equipment.push(it), ctx.message("🎒 " + p.name + " equipó " + d.name + ": " + d.desc), !0);
       }
-      attack(p, side) {
+      attack(p, side, onResolved) {
         let z = ctx.game.zones[p.loc];
         if (!z.z) return !1;
         let shotgun = this.has(p, "shotgun"), count = ctx.Math.min(z.z, shotgun ? 2 : 1);
         z.z -= count, ctx.message("⚔ " + p.name + " eliminó " + count + " zombi" + (count > 1 ? "s" : "") + " en " + ctx.places[p.loc] + (shotgun ? " con escopeta" : "") + ".");
-        let safe = !1;
+        let safe = !1, exposure;
         for (let id of ["pistol", "rifle"]) {
           let it = this.equipped(p, id);
           if (it && !it.usedRound && (id === "pistol" || p.loc !== 0)) {
-            it.usedRound = 1, safe = !0, ctx.message("🔫 " + ctx.catalog.resolve(it).name + ": ataque sin exposición.");
+            it.usedRound = 1, safe = !0, exposure = { rolled: !1, value: null, effect: "avoided", ability: id, wounds: 0, frost: 0, fatal: !1 }, ctx.message("🔫 " + ctx.catalog.resolve(it).name + ": ataque sin exposición.");
             break;
           }
         }
-        safe || ctx.expose(p, "ataque " + (side === "ai" ? "IA" : ""));
+        safe || (exposure = ctx.expose(p, "ataque " + (side === "ai" ? "IA" : "")));
         let axe = this.equipped(p, "hatchet");
-        return axe && !axe.usedRound && p.loc === 0 && ctx.openAccess(0) && !p.dead && (axe.usedRound = 1, z.b++, ctx.message("🪓 " + p.name + " reforzó una barricada después del combate.")), !0;
+        return axe && !axe.usedRound && p.loc === 0 && ctx.openAccess(0) && !p.dead && (axe.usedRound = 1, z.b++, ctx.message("🪓 " + p.name + " reforzó una barricada después del combate.")), onResolved?.({ killed: count, exposure }), !0;
       }
       moveWithFuel(p, dest, side, i) {
         let hand = side === "ai" ? ctx.game.botItems : ctx.game.items;
@@ -2023,7 +2023,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         if (p.skill === "builder") {
           let z = game.zones[p.loc];
           if (z.z + z.b >= zcap[p.loc]) return messageAndPaint("No hay accesos libres.");
-          z.b++, p.skillUsed = !0, message("★ " + p.name + " construyó una barricada."), paint();
+          executeBuilder(p);
         } else if (p.skill === "medic" || p.skill === "nurse") {
           if (pendingLoot) return;
           let targets = alive().filter((x) => x.loc === p.loc && (p.skill === "medic" ? x.wounds : x.frost));
@@ -2327,9 +2327,9 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
           hand.splice(0, hand.length), ruleMessage(env, "⚠ " + (side === "human" ? "Perdiste" : "La IA perdió") + " su último superviviente. Se descartaron " + discarded + " cartas de su mano."), recruit(side, !0, env) || (g.noReplacement = !0);
         }
     }
-    let ItemEngine = createItemEngine(c), itemEngine = new ItemEngine(), movementGeneration = 0, searchSerial = 0, searchOperation = null;
+    let ItemEngine = createItemEngine(c), itemEngine = new ItemEngine(), movementGeneration = 0, searchSerial = 0, searchOperation = null, actionSerial = 0, actionOperation = null;
     function create() {
-      movementGeneration++, searchOperation = null, searchSerial = 0, view.resetToasts(), deathDirector.reset(), skipAI = !1, aiRunning = !1, selected = 0, target = 0, picked = 0, opened = "", profileId = "", pendingHeal = null, pendingLoot = null, pendingBite = null, pendingAttract = null, pendingTransfer = null, aiCrossChoice = null, settleDecisionWaiters(), resetLeaderRequests(), pendingRecruitInfo = null, selectionBySide.human = 0, selectionBySide.ai = 0, closeStatInfo();
+      movementGeneration++, searchOperation = null, searchSerial = 0, actionOperation = null, actionSerial = 0, view.resetToasts(), deathDirector.reset(), skipAI = !1, aiRunning = !1, selected = 0, target = 0, picked = 0, opened = "", profileId = "", pendingHeal = null, pendingLoot = null, pendingBite = null, pendingAttract = null, pendingTransfer = null, aiCrossChoice = null, settleDecisionWaiters(), resetLeaderRequests(), pendingRecruitInfo = null, selectionBySide.human = 0, selectionBySide.ai = 0, closeStatInfo();
       let objective = objectives[random(objectives.length)];
       game = stateFactory({ gameMode, objective, places, catalog }), all().forEach(addCharacter);
       for (let loc = 1; loc < places.length; loc++) game.decks[loc] = catalog.deck(loc);
@@ -2495,7 +2495,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       if (!playable() || game.ended || pendingBite || leaderChoiceReady()) return;
       let p = person();
       if (!p || p.dead || !game.zones[p.loc].z) return messageAndPaint("No hay zombis que atacar con este superviviente.");
-      consume(effectiveAttack(p)) !== null && (itemEngine.attack(p, controls.side), pendingBite || crossAction("attack", p), verify(), paint());
+      executeAttack(p, picked);
     }
     function doMove() {
       if (!playable() || game.ended || pendingBite || leaderChoiceReady()) return;
@@ -2508,6 +2508,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       }
     }
     function executeMovement(p, destination2) {
+      actionOperation = null;
       let from = p.loc, actorBefore = { id: p.id, name: p.name, location: p.loc, wounds: p.wounds, frost: p.frost, dead: !!p.dead };
       confirmStartingLeader(), p.loc = destination2, p.moved = !0, message("→ " + p.name + " se movió a " + places[destination2] + ".");
       let exposure;
@@ -2540,7 +2541,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
     function executeSearch(p, dieIndex) {
       let value = consume(effectiveSearch(p), dieIndex);
       if (value !== null)
-        return searchOperation = { operationId: "search_" + movementGeneration + "_" + ++searchSerial, gameGeneration: movementGeneration, round: game.round, ownerId: controls.side, actorId: p.id, name: p.name, origin: p.loc, dieIndex, dieValue: value, status: "empty", noiseBefore: game.zones[p.loc].noise, result: null, pending: null }, beginSearch(p, controls.side), pendingLoot?.actorId === p.id && (searchOperation.status = "choice", searchOperation.pending = pendingLoot.items), paint(), searchOperation.operationId;
+        return actionOperation = null, searchOperation = { operationId: "search_" + movementGeneration + "_" + ++searchSerial, gameGeneration: movementGeneration, round: game.round, ownerId: controls.side, actorId: p.id, name: p.name, origin: p.loc, dieIndex, dieValue: value, status: "empty", noiseBefore: game.zones[p.loc].noise, result: null, pending: null }, beginSearch(p, controls.side), pendingLoot?.actorId === p.id && (searchOperation.status = "choice", searchOperation.pending = pendingLoot.items), paint(), searchOperation.operationId;
     }
     function searchById(request) {
       let info = searchOptions(request?.actorId), reject = (reason) => ({ ok: !1, reason });
@@ -2591,11 +2592,63 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       if (!playable() || game.ended) return;
       let p = person();
       if (!p || p.dead || !openAccess(p.loc)) return messageAndPaint("No hay acceso libre para colocar una barricada.");
-      if (consume(1) === null) return;
-      let n = 0, max = (p.skill === "guard" ? 2 : 1) + (itemEngine.has(p, "repairkit") ? 1 : 0);
-      for (let i = 0; i < max && openAccess(p.loc); i++)
+      executeBarricade(p, picked);
+    }
+    let actorState = (p) => ({ id: p.id, name: p.name, location: p.loc, wounds: p.wounds, frost: p.frost, dead: !!p.dead }), barricadeLimit = (p) => (p.skill === "guard" ? 2 : 1) + (itemEngine.has(p, "repairkit") ? 1 : 0);
+    function rememberAction(kind2, p, dieIndex, dieValue, resolution) {
+      return actionOperation = { operationId: "action_" + movementGeneration + "_" + ++actionSerial, gameGeneration: movementGeneration, round: game.round, ownerId: controls.side, kind: kind2, actorId: p.id, name: p.name, origin: p.loc, dieIndex, dieValue, resolution }, actionOperation;
+    }
+    function executeAttack(p, dieIndex) {
+      let value = consume(effectiveAttack(p), dieIndex);
+      if (value === null) return;
+      searchOperation = null;
+      let actorBefore = actorState(p), before = { ...game.zones[p.loc] }, result;
+      itemEngine.attack(p, controls.side, (r) => {
+        result = r;
+      }), pendingBite || crossAction("attack", p), verify();
+      let op = rememberAction("attack", p, dieIndex, value, { ...result, actorBefore, actorAfter: actorState(p), zoneBefore: before, zoneAfter: { ...game.zones[p.loc] } });
+      return paint(), op;
+    }
+    function executeBuilder(p) {
+      searchOperation = null;
+      let actorBefore = actorState(p), before = { ...game.zones[p.loc] };
+      game.zones[p.loc].b++, p.skillUsed = !0, message("★ " + p.name + " construyó una barricada.");
+      let op = rememberAction("barricade", p, null, null, { built: 1, method: "ability", exposure: null, actorBefore, actorAfter: actorState(p), zoneBefore: before, zoneAfter: { ...game.zones[p.loc] } });
+      return paint(), op;
+    }
+    function executeBarricade(p, dieIndex) {
+      let value = consume(1, dieIndex);
+      if (value === null) return;
+      searchOperation = null;
+      let actorBefore = actorState(p), before = { ...game.zones[p.loc] }, n = 0;
+      for (let i = 0; i < barricadeLimit(p) && openAccess(p.loc); i++)
         game.zones[p.loc].b++, n++;
-      message("▥ " + p.name + " construyó " + n + " barricada(s)."), crossAction("barricade", p), paint();
+      message("▥ " + p.name + " construyó " + n + " barricada(s)."), crossAction("barricade", p);
+      let op = rememberAction("barricade", p, dieIndex, value, { built: n, exposure: null, actorBefore, actorAfter: actorState(p), zoneBefore: before, zoneAfter: { ...game.zones[p.loc] } });
+      return paint(), op;
+    }
+    function actionOptions(actorId, kind2) {
+      let p = game && all().find((x) => x.id === actorId), base = actionBlockReason(p), valid = ["attack", "barricade", "barricade-ability"].includes(kind2), dice = game ? controls.dice() : [], requirement = p && valid ? kind2 === "attack" ? effectiveAttack(p) : kind2 === "barricade-ability" ? null : 1 : null, reason = valid ? base || (kind2 === "barricade-ability" && p.skill !== "builder" ? "ability" : kind2 === "barricade-ability" && p.skillUsed ? "skill-used" : kind2 === "attack" && !game.zones[p.loc].z ? "no-target" : kind2.startsWith("barricade") && !openAccess(p.loc) ? "full" : kind2 === "barricade-ability" ? null : dice.length ? dice.some((d) => d >= requirement) ? null : "insufficient" : "no-dice") : "invalid";
+      return { gameGeneration: movementGeneration, round: game?.round, turn: game?.turn, actorId, kind: kind2, origin: p?.loc ?? null, requirement, cost: kind2 === "barricade-ability" ? 0 : 1, diceVersion: JSON.stringify(dice), allowed: !reason, reason, dice: base || !valid || kind2 === "barricade-ability" ? [] : dice.map((value, index) => ({ index, value, allowed: !reason && value >= requirement })), targets: !base && valid ? [p.loc] : [], zombies: !base && valid ? game.zones[p.loc].z : null, buildCount: !base && kind2.startsWith("barricade") ? Math.min(kind2 === "barricade-ability" ? 1 : barricadeLimit(p), zcap[p.loc] - game.zones[p.loc].z - game.zones[p.loc].b) : null };
+    }
+    function actById(request) {
+      let q = actionOptions(request?.actorId, request?.kind), reject = (reason) => ({ ok: !1, reason });
+      if (!request || request.gameGeneration !== q.gameGeneration || request.round !== q.round || request.turn !== q.turn || request.origin !== q.origin || request.diceVersion !== q.diceVersion || request.requirement !== q.requirement) return reject("stale");
+      if (!q.allowed) return reject(q.reason);
+      if (request.target !== q.origin) return reject("target");
+      let die2 = q.dice.find((d) => d.index === request.dieIndex);
+      if (q.cost !== 0 && (!die2?.allowed || die2.value !== request.dieValue) || q.cost === 0 && (request.dieIndex != null || request.dieValue != null)) return reject("die");
+      let p = all().find((x) => x.id === request.actorId), op = request.kind === "attack" ? executeAttack(p, request.dieIndex) : request.kind === "barricade-ability" ? executeBuilder(p) : executeBarricade(p, request.dieIndex);
+      return { ok: !0, ...structuredClone(op) };
+    }
+    function actionSnapshot() {
+      if (!game || passScreenActive) return null;
+      let op = actionOperation && actionOperation.gameGeneration === movementGeneration && actionOperation.round === game.round && actionOperation.ownerId === game.turn ? structuredClone(actionOperation) : null;
+      return op && (op.generalDecision = !!(game.ended || deathWaiting() || pendingBite || pendingLoot || pendingHeal || pendingAttract || pendingTransfer || pendingLeaderSides.includes(controls.side) || game.crossPending || opened)), { gameGeneration: movementGeneration, round: game.round, ownerId: game.turn, operation: op };
+    }
+    function dismissAction(operationId) {
+      let op = actionSnapshot()?.operation;
+      return !op || op.operationId !== operationId || op.generalDecision ? { ok: !1, reason: "stale" } : (actionOperation = null, { ok: !0 });
     }
     function clean() {
       if (!playable() || game.ended) return;
@@ -2838,6 +2891,10 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       addSearchNoise,
       chooseSearchCard,
       dismissSearchResult,
+      actionOptions,
+      actById,
+      actionSnapshot,
+      dismissAction,
       snapshot: () => game === void 0 ? null : JSON.parse(JSON.stringify(game)),
       dispatch(name, ...args) {
         if (!commands.has(name)) throw TypeError("Comando desconocido: " + name);

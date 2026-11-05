@@ -29,7 +29,10 @@
     "dev:movement-map": "node scripts/serve-movement-map.mjs",
     "build:search-map": "node scripts/build-search-map.mjs",
     "check:search-map-build": "node scripts/build-search-map.mjs --check",
-    "dev:search-map": "node scripts/serve-search-map.mjs"
+    "dev:search-map": "node scripts/serve-search-map.mjs",
+    "build:action-map": "node scripts/build-action-map.mjs",
+    "check:action-map-build": "node scripts/build-action-map.mjs --check",
+    "dev:action-map": "node scripts/serve-action-map.mjs"
   },
   "devDependencies": {
     "esbuild": "0.28.2",
