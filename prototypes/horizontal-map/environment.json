@@ -1,0 +1,260 @@
+{
+  "groups": [
+    {
+      "id": "arbol-oeste",
+      "rect": [
+        172,
+        270,
+        115,
+        201
+      ],
+      "anchor": {
+        "x": 222,
+        "y": 471
+      },
+      "amplitude": 2.7,
+      "phase": 0.2
+    },
+    {
+      "id": "arbusto-sur-hospital",
+      "rect": [
+        347,
+        534,
+        82,
+        72
+      ],
+      "anchor": {
+        "x": 385,
+        "y": 606
+      },
+      "amplitude": 1.8,
+      "phase": 1.7
+    },
+    {
+      "id": "arbusto-centro-sur",
+      "rect": [
+        756,
+        610,
+        125,
+        137
+      ],
+      "anchor": {
+        "x": 825,
+        "y": 747
+      },
+      "amplitude": 2.2,
+      "phase": 3.1
+    },
+    {
+      "id": "arbol-este",
+      "rect": [
+        1050,
+        538,
+        68,
+        108
+      ],
+      "anchor": {
+        "x": 1080,
+        "y": 646
+      },
+      "amplitude": 2.4,
+      "phase": 0.8
+    },
+    {
+      "id": "arbusto-sur-este",
+      "rect": [
+        1276,
+        735,
+        116,
+        91
+      ],
+      "anchor": {
+        "x": 1330,
+        "y": 826
+      },
+      "amplitude": 1.7,
+      "phase": 2.2
+    },
+    {
+      "id": "pino-borde-este",
+      "rect": [
+        1518,
+        480,
+        154,
+        154
+      ],
+      "anchor": {
+        "x": 1600,
+        "y": 634
+      },
+      "amplitude": 2.8,
+      "phase": 4.1
+    },
+    {
+      "id": "grupo-suroeste",
+      "rect": [
+        0,
+        568,
+        128,
+        167
+      ],
+      "anchor": {
+        "x": 65,
+        "y": 735
+      },
+      "amplitude": 2.6,
+      "phase": 2.8
+    },
+    {
+      "id": "arbusto-sur-oeste",
+      "rect": [
+        229,
+        722,
+        130,
+        89
+      ],
+      "anchor": {
+        "x": 270,
+        "y": 811
+      },
+      "amplitude": 1.8,
+      "phase": 5.1
+    }
+  ],
+  "lights": [
+    {
+      "id": "colonia-oeste",
+      "polygon": [
+        [
+          728,
+          389
+        ],
+        [
+          746,
+          389
+        ],
+        [
+          746,
+          410
+        ],
+        [
+          728,
+          410
+        ]
+      ],
+      "spill": [
+        [
+          730,
+          411
+        ],
+        [
+          744,
+          410
+        ],
+        [
+          776,
+          455
+        ],
+        [
+          700,
+          454
+        ]
+      ],
+      "period": 6.3,
+      "phase": 0.3,
+      "base": 0.58,
+      "variation": 0.24
+    },
+    {
+      "id": "colonia-este",
+      "polygon": [
+        [
+          895,
+          390
+        ],
+        [
+          909,
+          390
+        ],
+        [
+          909,
+          410
+        ],
+        [
+          895,
+          410
+        ]
+      ],
+      "spill": [
+        [
+          895,
+          411
+        ],
+        [
+          908,
+          411
+        ],
+        [
+          936,
+          450
+        ],
+        [
+          870,
+          450
+        ]
+      ],
+      "period": 8.7,
+      "phase": 2.4,
+      "base": 0.55,
+      "variation": 0.27
+    },
+    {
+      "id": "hospital-entrada",
+      "polygon": [
+        [
+          381,
+          432
+        ],
+        [
+          409,
+          431
+        ],
+        [
+          409,
+          452
+        ],
+        [
+          381,
+          454
+        ]
+      ],
+      "spill": [
+        [
+          381,
+          453
+        ],
+        [
+          409,
+          452
+        ],
+        [
+          441,
+          484
+        ],
+        [
+          363,
+          486
+        ]
+      ],
+      "period": 7.9,
+      "phase": 4.2,
+      "base": 0.57,
+      "variation": 0.22
+    }
+  ],
+  "omissions": [
+    "Cables sin separación ni extremos verificables: estáticos.",
+    "Bosques y vegetación no incluida en los ocho grupos: estáticos.",
+    "Las luces restantes del fondo permanecen estáticas; no se ilumina cada localidad."
+  ]
+}

@@ -1,0 +1,6 @@
+@import url('../action-map/style.css');
+/* Escritorio reserva el dossier; en móvil se pliega al centrar una localidad. */
+#map-app .layout{grid-template-columns:minmax(0,1fr) 310px}
+#map-app .map-viewport{background:#383746}
+@media(max-width:950px){#map-app .layout,body[data-panel-open=false] #map-app .layout{grid-template-columns:1fr}#map-app #dossier{max-height:46%;width:min(290px,calc(100% - 8px))}body[data-panel-open=false] #map-app #dossier{width:auto}#map-app .panel-content{max-height:calc(45dvh - 46px)}}
+@media(max-width:600px) and (orientation:portrait){#view-feedback::before{content:'Para ver más terreno, girá el teléfono. '}}

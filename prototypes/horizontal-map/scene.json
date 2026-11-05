@@ -1,0 +1,750 @@
+{
+  "version": 1,
+  "status": "horizontal-presentation-not-rules",
+  "bounds": {
+    "x": 0,
+    "y": 0,
+    "width": 1672,
+    "height": 941
+  },
+  "actorScale": {
+    "zombie": 0.025,
+    "barricade": 0.024
+  },
+  "zones": [
+    {
+      "id": "escuela",
+      "name": "Escuela",
+      "portraitDiameter": 36,
+      "buildingBounds": {
+        "x": 350,
+        "y": 145,
+        "width": 295,
+        "height": 150
+      },
+      "center": {
+        "x": 490,
+        "y": 230
+      },
+      "focus": {
+        "x": 270,
+        "y": 85,
+        "width": 440,
+        "height": 290
+      },
+      "portraits": [
+        [
+          395,
+          186
+        ],
+        [
+          447,
+          186
+        ],
+        [
+          499,
+          186
+        ],
+        [
+          551,
+          186
+        ]
+      ],
+      "accesses": [
+        {
+          "x": 355,
+          "y": 320,
+          "side": "front"
+        },
+        {
+          "x": 430,
+          "y": 330,
+          "side": "front"
+        },
+        {
+          "x": 505,
+          "y": 334,
+          "side": "front"
+        },
+        {
+          "x": 580,
+          "y": 325,
+          "side": "front"
+        }
+      ],
+      "survivorCapacity": 4,
+      "exteriorCapacity": 4,
+      "selectionPolygon": [
+        [
+          350,
+          155
+        ],
+        [
+          615,
+          155
+        ],
+        [
+          644,
+          225
+        ],
+        [
+          630,
+          280
+        ],
+        [
+          355,
+          295
+        ]
+      ],
+      "contourWidth": 60,
+      "contourHeight": 18
+    },
+    {
+      "id": "biblioteca",
+      "name": "Biblioteca",
+      "portraitDiameter": 36,
+      "buildingBounds": {
+        "x": 1048,
+        "y": 145,
+        "width": 245,
+        "height": 145
+      },
+      "center": {
+        "x": 1165,
+        "y": 230
+      },
+      "focus": {
+        "x": 945,
+        "y": 85,
+        "width": 440,
+        "height": 290
+      },
+      "portraits": [
+        [
+          1080,
+          177
+        ],
+        [
+          1130,
+          177
+        ],
+        [
+          1180,
+          177
+        ],
+        [
+          1230,
+          177
+        ]
+      ],
+      "accesses": [
+        {
+          "x": 1038,
+          "y": 315,
+          "side": "front"
+        },
+        {
+          "x": 1105,
+          "y": 325,
+          "side": "front"
+        },
+        {
+          "x": 1175,
+          "y": 325,
+          "side": "front"
+        },
+        {
+          "x": 1225,
+          "y": 310,
+          "side": "front"
+        }
+      ],
+      "survivorCapacity": 4,
+      "exteriorCapacity": 4,
+      "selectionPolygon": [
+        [
+          1070,
+          160
+        ],
+        [
+          1220,
+          145
+        ],
+        [
+          1284,
+          188
+        ],
+        [
+          1285,
+          265
+        ],
+        [
+          1180,
+          290
+        ],
+        [
+          1050,
+          263
+        ]
+      ],
+      "contourWidth": 60,
+      "contourHeight": 18
+    },
+    {
+      "id": "hospital",
+      "name": "Hospital",
+      "portraitDiameter": 36,
+      "buildingBounds": {
+        "x": 218,
+        "y": 330,
+        "width": 280,
+        "height": 160
+      },
+      "center": {
+        "x": 362,
+        "y": 415
+      },
+      "focus": {
+        "x": 142,
+        "y": 270,
+        "width": 440,
+        "height": 290
+      },
+      "portraits": [
+        [
+          279,
+          363
+        ],
+        [
+          327,
+          363
+        ],
+        [
+          375,
+          363
+        ],
+        [
+          423,
+          363
+        ]
+      ],
+      "accesses": [
+        {
+          "x": 310,
+          "y": 517,
+          "side": "front"
+        },
+        {
+          "x": 395,
+          "y": 527,
+          "side": "front"
+        },
+        {
+          "x": 514,
+          "y": 422,
+          "side": "side"
+        },
+        {
+          "x": 515,
+          "y": 487,
+          "side": "side"
+        }
+      ],
+      "survivorCapacity": 4,
+      "exteriorCapacity": 4,
+      "selectionPolygon": [
+        [
+          235,
+          335
+        ],
+        [
+          423,
+          338
+        ],
+        [
+          493,
+          382
+        ],
+        [
+          492,
+          452
+        ],
+        [
+          421,
+          480
+        ],
+        [
+          257,
+          468
+        ],
+        [
+          220,
+          418
+        ]
+      ],
+      "contourWidth": 60,
+      "contourHeight": 18
+    },
+    {
+      "id": "colonia",
+      "name": "Colonia",
+      "portraitDiameter": 36,
+      "buildingBounds": {
+        "x": 545,
+        "y": 305,
+        "width": 590,
+        "height": 249
+      },
+      "center": {
+        "x": 825,
+        "y": 430
+      },
+      "focus": {
+        "x": 605,
+        "y": 285,
+        "width": 440,
+        "height": 290
+      },
+      "portraits": [
+        [
+          690,
+          359
+        ],
+        [
+          742,
+          359
+        ],
+        [
+          794,
+          359
+        ],
+        [
+          846,
+          359
+        ],
+        [
+          898,
+          359
+        ],
+        [
+          950,
+          359
+        ],
+        [
+          690,
+          399
+        ],
+        [
+          742,
+          399
+        ],
+        [
+          794,
+          399
+        ],
+        [
+          846,
+          399
+        ],
+        [
+          898,
+          399
+        ],
+        [
+          950,
+          399
+        ]
+      ],
+      "accesses": [
+        {
+          "x": 640,
+          "y": 485,
+          "side": "front"
+        },
+        {
+          "x": 670,
+          "y": 485,
+          "side": "front"
+        },
+        {
+          "x": 700,
+          "y": 485,
+          "side": "front"
+        },
+        {
+          "x": 730,
+          "y": 485,
+          "side": "front"
+        },
+        {
+          "x": 760,
+          "y": 485,
+          "side": "front"
+        },
+        {
+          "x": 790,
+          "y": 485,
+          "side": "front"
+        },
+        {
+          "x": 820,
+          "y": 485,
+          "side": "front"
+        },
+        {
+          "x": 850,
+          "y": 485,
+          "side": "front"
+        },
+        {
+          "x": 880,
+          "y": 485,
+          "side": "front"
+        },
+        {
+          "x": 910,
+          "y": 485,
+          "side": "front"
+        },
+        {
+          "x": 940,
+          "y": 485,
+          "side": "front"
+        },
+        {
+          "x": 970,
+          "y": 485,
+          "side": "front"
+        }
+      ],
+      "survivorCapacity": 12,
+      "exteriorCapacity": 12,
+      "selectionPolygon": [
+        [
+          606,
+          340
+        ],
+        [
+          850,
+          306
+        ],
+        [
+          1025,
+          338
+        ],
+        [
+          1130,
+          424
+        ],
+        [
+          1095,
+          505
+        ],
+        [
+          938,
+          549
+        ],
+        [
+          681,
+          543
+        ],
+        [
+          540,
+          483
+        ],
+        [
+          555,
+          395
+        ]
+      ],
+      "contourWidth": 30,
+      "contourHeight": 14
+    },
+    {
+      "id": "supermercado",
+      "name": "Supermercado",
+      "portraitDiameter": 36,
+      "buildingBounds": {
+        "x": 1150,
+        "y": 340,
+        "width": 355,
+        "height": 160
+      },
+      "center": {
+        "x": 1320,
+        "y": 433
+      },
+      "focus": {
+        "x": 1100,
+        "y": 288,
+        "width": 440,
+        "height": 290
+      },
+      "portraits": [
+        [
+          1200,
+          383
+        ],
+        [
+          1258,
+          383
+        ],
+        [
+          1316,
+          383
+        ],
+        [
+          1374,
+          383
+        ]
+      ],
+      "accesses": [
+        {
+          "x": 1160,
+          "y": 527,
+          "side": "front"
+        },
+        {
+          "x": 1235,
+          "y": 535,
+          "side": "front"
+        },
+        {
+          "x": 1310,
+          "y": 535,
+          "side": "front"
+        },
+        {
+          "x": 1385,
+          "y": 522,
+          "side": "front"
+        }
+      ],
+      "survivorCapacity": 4,
+      "exteriorCapacity": 4,
+      "selectionPolygon": [
+        [
+          1160,
+          360
+        ],
+        [
+          1330,
+          342
+        ],
+        [
+          1490,
+          375
+        ],
+        [
+          1501,
+          463
+        ],
+        [
+          1410,
+          500
+        ],
+        [
+          1155,
+          475
+        ]
+      ],
+      "contourWidth": 60,
+      "contourHeight": 18
+    },
+    {
+      "id": "gasolinera",
+      "name": "Gasolinera",
+      "portraitDiameter": 36,
+      "buildingBounds": {
+        "x": 235,
+        "y": 598,
+        "width": 295,
+        "height": 132
+      },
+      "center": {
+        "x": 388,
+        "y": 679
+      },
+      "focus": {
+        "x": 168,
+        "y": 534,
+        "width": 440,
+        "height": 290
+      },
+      "portraits": [
+        [
+          282,
+          625
+        ],
+        [
+          336,
+          625
+        ],
+        [
+          390,
+          625
+        ],
+        [
+          444,
+          625
+        ]
+      ],
+      "accesses": [
+        {
+          "x": 265,
+          "y": 756,
+          "side": "front"
+        },
+        {
+          "x": 345,
+          "y": 720,
+          "side": "front"
+        },
+        {
+          "x": 435,
+          "y": 740,
+          "side": "front"
+        },
+        {
+          "x": 515,
+          "y": 750,
+          "side": "front"
+        }
+      ],
+      "survivorCapacity": 4,
+      "exteriorCapacity": 4,
+      "selectionPolygon": [
+        [
+          241,
+          615
+        ],
+        [
+          496,
+          596
+        ],
+        [
+          531,
+          644
+        ],
+        [
+          520,
+          711
+        ],
+        [
+          347,
+          730
+        ],
+        [
+          239,
+          705
+        ]
+      ],
+      "contourWidth": 60,
+      "contourHeight": 18
+    },
+    {
+      "id": "comisaria",
+      "name": "Comisaría",
+      "portraitDiameter": 36,
+      "buildingBounds": {
+        "x": 1130,
+        "y": 586,
+        "width": 340,
+        "height": 150
+      },
+      "center": {
+        "x": 1300,
+        "y": 680
+      },
+      "focus": {
+        "x": 1080,
+        "y": 535,
+        "width": 440,
+        "height": 290
+      },
+      "portraits": [
+        [
+          1185,
+          647
+        ],
+        [
+          1242,
+          647
+        ],
+        [
+          1299,
+          647
+        ],
+        [
+          1356,
+          647
+        ]
+      ],
+      "accesses": [
+        {
+          "x": 1200,
+          "y": 770,
+          "side": "front"
+        },
+        {
+          "x": 1277,
+          "y": 759,
+          "side": "front"
+        },
+        {
+          "x": 1480,
+          "y": 623,
+          "side": "side"
+        },
+        {
+          "x": 1500,
+          "y": 737,
+          "side": "side"
+        }
+      ],
+      "survivorCapacity": 4,
+      "exteriorCapacity": 4,
+      "selectionPolygon": [
+        [
+          1145,
+          618
+        ],
+        [
+          1235,
+          612
+        ],
+        [
+          1252,
+          586
+        ],
+        [
+          1355,
+          603
+        ],
+        [
+          1370,
+          633
+        ],
+        [
+          1455,
+          629
+        ],
+        [
+          1472,
+          696
+        ],
+        [
+          1385,
+          735
+        ],
+        [
+          1135,
+          705
+        ]
+      ],
+      "contourWidth": 60,
+      "contourHeight": 18
+    }
+  ],
+  "closePanelOnFocus": true
+}

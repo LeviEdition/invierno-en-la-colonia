@@ -30,6 +30,8 @@ export function createAtmosphereView(scene,config,{settings,seed=crypto.getRando
   isAnimating(){return !disposed&&model.isAnimating();},
   setSettings(patch){if(!disposed){model.setSettings(patch);paint();}},
   setPaused(value){model.setPaused(value);},
+  // Consulta visual sin copiar el pool: permite compartir el viento con el entorno.
+  visualClock(){return model.clock();},
   inspect(){return {...model.snapshot(),objects:images.length+halos.length+2,textureBytes:(64*64+16*16+128*32)*4,interactiveObjects:[...images,...halos].filter(i=>i.input?.enabled).length,disposed};},
   destroy(){if(disposed)return;disposed=true;for(const image of [...images,...halos])image.destroy();glow.destroy();shade.destroy();for(const key of [softKey,snowKey,windKey])scene.textures.remove(key);for(const c of canvases)c.width=c.height=1;return {objectsReleased:images.length+halos.length+2,textureReleased:[softKey,snowKey,windKey].every(key=>!scene.textures.exists(key))};}
  };

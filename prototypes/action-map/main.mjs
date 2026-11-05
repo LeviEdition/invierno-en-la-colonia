@@ -18,7 +18,8 @@ function send(request){
 const movement=createMovementController({send,onChange:()=>{viewer?.updateMovement();$('movement-result').textContent=['idle','unknown'].includes(movement.inspect().phase)?movement.inspect().message:'';}});
 const search=createSearchController({send,onChange:()=>viewer?.updateSearch()});
 const action=createActionController({send,onChange:()=>viewer?.updateActions()});
-const hostPath=__ACTION_MAP_QA__?'/dist/action-map-qa/reference-host.html':'/dist/action-map/reference-host.html';
+const variant=typeof __ACTION_MAP_VARIANT__==='undefined'?'action-map':__ACTION_MAP_VARIANT__;
+const hostPath='/dist/'+variant+(__ACTION_MAP_QA__?'-qa':'')+'/reference-host.html';
 function status(text){$('connection-status').textContent=text;}
 function validProjection(p){return p?.schema===1&&Number.isInteger(p.epoch)&&Array.isArray(p.characters)&&Array.isArray(p.locations)&&Array.isArray(p.players)&&p.dice&&typeof p.movement?.session==='string'&&Number.isSafeInteger(p.movement.revision)&&typeof p.search?.session==='string'&&Number.isSafeInteger(p.search.revision)&&p.search.options&&typeof p.search.options==='object'&&typeof p.action?.session==='string'&&Number.isSafeInteger(p.action.revision);}
 function stopSearchClock(){clearTimeout(searchTimer);searchTimer=0;}

@@ -7,7 +7,7 @@ async function instrument(context){
  await context.addInitScript(()=>{if(window.top===window)return;window.h344RandomValue=.8;window.h344RandomCalls=0;Math.random=()=>{window.h344RandomCalls++;return window.h344RandomValue;};});
  const probe=installLifecycleProbe.toString().replaceAll('/dist/hospital-phaser/game.mjs',modulePath).replace('x.target instanceof HTMLCanvasElement','(x.target instanceof HTMLCanvasElement||x.target instanceof MediaQueryList)');await context.addInitScript({content:'('+probe+')();'});
 }
-async function load(p){await p.goto(origin+'/dist/action-map-qa/index.html');await p.evaluate(async path=>window.h344Viewer=await import(path),modulePath);await p.waitForFunction(()=>window.h344Viewer.inspect().projection?.blocked==='setup');}
+async function load(p){await p.goto(origin+modulePath.replace(/\/map\.mjs$/,'/index.html'));await p.evaluate(async path=>window.h344Viewer=await import(path),modulePath);await p.waitForFunction(()=>window.h344Viewer.inspect().projection?.blocked==='setup');}
 async function settle(p){
  const f=host(p);for(let i=0;i<30;i++){
   await sleep(p,50);if((await api(p)).search.phase==='choice')return;const phase=(await api(p)).movement.phase;if(phase==='presenting')await p.waitForFunction(()=>window.h344Viewer.inspect().movement.phase!=='presenting');if((await api(p)).movement.phase==='awaiting-decision')await p.locator('#resolve-decision').click();

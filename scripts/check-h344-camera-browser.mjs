@@ -10,7 +10,7 @@ const out=process.env.H344_CAMERA_DIR||'/tmp/h344-camera';
 const origin=process.env.H344_ORIGIN||'http://127.0.0.1:8778';
 await mkdir(out,{recursive:true});
 const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',args:['--no-sandbox']});
-const t=actionMapChecks({origin});
+const t=actionMapChecks({origin,modulePath:process.env.H344_MODULE_PATH||'/dist/action-map-qa/map.mjs'});
 const evidence={browser:browser.version(),physicalMobile:false,method:'RAF + POST_RENDER count and DOM positions during real input; video separately inspectable',records:[],failures:[]};
 
 async function startTrace(p){

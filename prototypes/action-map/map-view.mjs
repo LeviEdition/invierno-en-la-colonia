@@ -1,15 +1,9 @@
 import Phaser from 'phaser';
-import scene from '../hospital-workshop/mockup/scene.json';
-import uploaded from '../hospital-workshop/uploaded-kit.json';
-import manifest from '../../kit_arte_h33/manifest.json';
-import atmosphere from '../movement-map/storm.json';
-import {makeMockupKit} from '../hospital-workshop/mockup/assets.mjs';
+import {scene,kit,atmosphere,camera as cameraFunctions,createAtmosphereView} from './scene-configuration.mjs';
 import {loadResources,prepareResources} from '../hospital-workshop/resources.mjs';
 import {createWorkshopRenderer} from '../hospital-workshop/renderer.mjs';
-import {createAtmosphereView} from '../movement-map/storm-view.mjs';
 import {initialAtmosphereSettings} from '../movement-map/storm-model.mjs';
 import {createWindAudio} from '../hospital-workshop/mockup/atmosphere-audio.mjs';
-import {fitMapCamera,constrainCamera,focusLocality} from '../hospital-workshop/mockup/camera.mjs';
 import {panCamera,zoomCameraAt,pinchCamera,screenToWorld} from '../hospital/camera.mjs';
 import {bindControls} from '../hospital/controls.mjs';
 import {pickCharacter,pickLocality} from '../hospital-workshop/mockup/model.mjs';
@@ -23,7 +17,7 @@ import {mountSearchPanel} from '../search-map/search-panel.mjs';
 import {mountActionPanel} from './action-panel.mjs';
 import {actionSummary,actionExposureText} from './action-presentation.mjs';
 import {movementMessages} from '../movement-map/movement-controller.mjs';
-const kit=makeMockupKit(scene,uploaded,manifest),$=id=>document.getElementById(id),value=x=>x===null||x===undefined?'—':String(x);
+const {fitMapCamera,constrainCamera,focusLocality}=cameraFunctions,$=id=>document.getElementById(id),value=x=>x===null||x===undefined?'—':String(x);
 const reason={setup:'Completá la preparación en V9.9.',handover:'Confirmá el pase en V9.9.',death:'Confirmá el fallecimiento en V9.9.',decision:'Resolvé el diálogo en V9.9.',waiting:'Esperando la partida.'};
 // El renderer elimina su canvas al destruirse: cada montaje parte de esta plantilla.
 const canvasTemplate=$('scene').cloneNode(false);
@@ -50,7 +44,7 @@ export async function createSearchMapView({signal,movement,search,action,onSearc
  const reset=()=>{if(viewport)change(fitMapCamera(scene.bounds,viewport));};
  function selectCharacter(id){if(search.inspect().busy||action.inspect().busy)return;if(['sending','unknown','presenting','awaiting-decision'].includes(movement.inspect().phase))return;if(['choosing','confirming'].includes(movement.inspect().phase))movement.cancel();selected=projection?.characters.some(c=>c.id===id)?id:null;selectedLocation=null;commands++;panel(true);updateUI();schedule();}
  function selectLocality(id){sceneDirty=true;if(search.inspect().busy||action.inspect().busy)return;if(['sending','presenting','awaiting-decision'].includes(movement.inspect().phase))return;selected=null;selectedLocation=projection?.locations.some(l=>l.id===id)?id:null;commands++;panel(true);updateUI();schedule();}
- function focus(id){const loc=layout.locations.find(l=>l.id===id);if(viewport)change(focusLocality(scene,loc?.visualId||'general',viewport));if(loc){if(['choosing','confirming'].includes(movement.inspect().phase))movement.choose(loc.engineIndex);else selectLocality(id);}}
+ function focus(id){const loc=layout.locations.find(l=>l.id===id);if(viewport)change(focusLocality(scene,loc?.visualId||'general',viewport));if(loc){if(['choosing','confirming'].includes(movement.inspect().phase))movement.choose(loc.engineIndex);else{selectLocality(id);if(scene.closePanelOnFocus&&matchMedia('(max-width:950px)').matches)panel(false);}}}
  function playerName(id){return projection?.players.find(p=>p.id===id)?.label||'—';}
  // Phaser puede dibujar a30FPS mientras el DOM recibe RAF más frecuentes.
  // Publicar la misma cámara DESPUÉS de su cuadro evita que las fichas adelanten
@@ -63,7 +57,7 @@ export async function createSearchMapView({signal,movement,search,action,onSearc
   };
   events.on(Phaser.Core.Events.POST_RENDER,onFrame);
   ui.signal.addEventListener('abort',()=>events.off(Phaser.Core.Events.POST_RENDER,onFrame),{once:true});
-  return createAtmosphereView(world,atmosphere,{settings});
+  return createAtmosphereView(world,atmosphere,{settings,kit});
  }
  function labels(camera,viewport){
   const alive=new Set(layout.characters.map(c=>c.id));for(const [id,node]of actors)if(!alive.has(id)){node.remove();actors.delete(id);}

@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';import {mkdir,writeFile} from 'node:fs/promises';import {resolve} from 'node:path';
 import {actionMapChecks} from '../test-support/h344-browser-checks.mjs';
 const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright'),origin=process.env.H344_ORIGIN||'http://127.0.0.1:8778',out=process.env.H344_MOVEMENT_DIR||'/tmp/h344-experience';await mkdir(out,{recursive:true});
-const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',args:['--no-sandbox']}),t=actionMapChecks({origin}),evidence={browser:browser.version(),physicalMobile:false,records:[],failures:[]};
+const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',args:['--no-sandbox']}),t=actionMapChecks({origin,modulePath:process.env.H344_MODULE_PATH||'/dist/action-map-qa/map.mjs'}),evidence={browser:browser.version(),physicalMobile:false,records:[],failures:[]};
 async function begin(p,initial=.8){await t.load(p);await t.host(p).evaluate(v=>window.h344RandomValue=v,initial);await t.host(p).locator('#setupScreen button').filter({hasText:'2 JUGADORES LOCALES'}).click();await t.settle(p);await t.dispatch(p,'chooseLeader','h1');await t.sync(p);await t.openMap(p);}
 async function actor(p,id){await t.panel(p);await p.locator('.demo-controls').last().evaluate(el=>el.open=true);await p.selectOption('#survivor-select',id);await t.frames(p);}
 async function choose(p,dest){await p.locator('#keyboard-destinations').evaluate(el=>el.open=true);await p.selectOption('#move-destination',String(dest));}
