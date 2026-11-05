@@ -50,6 +50,8 @@ jobs:
           export H344_OUTPUT_DIR=/tmp/horizontal-actions
           export H344_EDGE_DIR=/tmp/horizontal-edge
           export H344_MOVEMENT_DIR=/tmp/horizontal-experience
+          export H344_MOVEMENT_VIEWPORTS=1365x768,852x393,740x360
+          export H344_PICK_POINT='{"x":362,"y":415}'
           export H344_CAMERA_DIR=/tmp/horizontal-camera
           node scripts/check-h344-browser.mjs
           node scripts/check-h344-edge-browser.mjs
