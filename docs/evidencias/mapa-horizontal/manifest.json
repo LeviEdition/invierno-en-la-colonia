@@ -36,10 +36,10 @@
     {
       "file": "README.md",
       "bytes": 4820,
-      "sha256": "f90f7230635f25c62d8e877ab6af5d633ebddd2a0bd3aa10ed6ceba0c67b4d75"
+      "sha256": "ac9f52857e7a95c0c9b07fa1e2965aa99f8f339b28b28c88bd4d747229f4427c"
     },
     {
-      "file": "accesos-verde.log",
+      "file": "accesos-verde.txt",
       "bytes": 1358,
       "sha256": "c4f55df8e72f73f1b53ae8a04ee7bc9840e25dcf466f66d69376a81fc6e1ce82"
     },
@@ -49,7 +49,7 @@
       "sha256": "3b1ac06ce7408b87bcb7867e2e0d15c023c3ba5e71a6ff3d046e2f5a6d94b9d0"
     },
     {
-      "file": "base-605.log",
+      "file": "base-605.txt",
       "bytes": 54237,
       "sha256": "77abd9a335d1896e8f39c80b01e80cc696bd11b2a563a817337f8ef61125a1e0"
     },
@@ -84,7 +84,7 @@
       "sha256": "341d32aa647cda2bdf0bbc587cca2c84d0bbf5fdd43581aa9b80c52ab3a98b79"
     },
     {
-      "file": "oraculo-40.log",
+      "file": "oraculo-40.txt",
       "bytes": 678,
       "sha256": "6e7b54ccdf060486b9a42309f5531e68c97f39615eace3dafe8ad0d99a418c65"
     },
@@ -149,7 +149,7 @@
       "sha256": "ee9a2e4f25dc8748e873128dd072838496b94bae0c3e89e77116c3d6ffb3432f"
     },
     {
-      "file": "rojos/accesos-recortados.log",
+      "file": "rojos/accesos-recortados.txt",
       "bytes": 3932,
       "sha256": "00b1718b2d130b22210f6f4f361fc1170eba0570fb0d225709797defe6c3b9a6"
     },
@@ -169,12 +169,12 @@
       "sha256": "753359e860357869c599afd2b5374b4e7209be9a5b07031f7aab2958947b85f8"
     },
     {
-      "file": "rojos/camera-zoom-sin-limitar.log",
+      "file": "rojos/camera-zoom-sin-limitar.txt",
       "bytes": 1503,
       "sha256": "3b83d2bf28a0a9d9982f2344f39b001461610d60cd44622138181ef8dd2f7618"
     },
     {
-      "file": "rojos/contratos-ausentes.log",
+      "file": "rojos/contratos-ausentes.txt",
       "bytes": 1426,
       "sha256": "3dd2e13b31ccd596df6ba69041096a7652ec63f33f61d9bfdbf34fd102b55b2f"
     },
@@ -204,7 +204,7 @@
       "sha256": "d813c4e02ef07b417d166688358395fa022c9a62795cf26beb0e9aad1d14a233"
     },
     {
-      "file": "suite-618.log",
+      "file": "suite-618.txt",
       "bytes": 55527,
       "sha256": "1b93b57570ba95ed5d6920e7f784822cca8dc1fe738861d643df5d2f23bca9ff"
     },

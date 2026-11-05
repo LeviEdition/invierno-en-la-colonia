@@ -12,7 +12,7 @@
 
 ## Resultados ejecutados
 
-[Base605](base-605.log), [suite618](suite-618.log), [oráculo40](oraculo-40.log). [Acciones](acciones.json) en1365×768,852×393,740×360: cancelar, doble clic, dados, ataque/exposición, construir, mover, buscar/ruido/Inventario y cámara estable. [Bordes13](bordes.json): muerte/decisiones, constructor, equipo/J2, ocupación, perdido/obsoleto/tardío, reducido, reconstrucción y atribución nativa. [Movimiento5](movimiento.json), [cámara9](camara.json), [escena3](escena.json): siete localidades, accesos completos, máximos, tacto/teclado/pinza, pausa controlada/reinicio sin acumulación y ausencia de errores. [Producto normal sin QA](producto-sin-qa.json), [originales](originales.json).
+[Base605](base-605.txt), [suite618](suite-618.txt), [oráculo40](oraculo-40.txt). [Acciones](acciones.json) en1365×768,852×393,740×360: cancelar, doble clic, dados, ataque/exposición, construir, mover, buscar/ruido/Inventario y cámara estable. [Bordes13](bordes.json): muerte/decisiones, constructor, equipo/J2, ocupación, perdido/obsoleto/tardío, reducido, reconstrucción y atribución nativa. [Movimiento5](movimiento.json), [cámara9](camara.json), [escena3](escena.json): siete localidades, accesos completos, máximos, tacto/teclado/pinza, pausa controlada/reinicio sin acumulación y ausencia de errores. [Producto normal sin QA](producto-sin-qa.json), [originales](originales.json).
 
 Las huellas32×38 de los36 accesos se compararon con el alfa de vegetación original: cobertura máxima de píxeles alfa>32 **0,329%**, menor del1% admitido para ruido residual; no es una prueba de colisiones/reglas. Se inspeccionó la representación máxima, no solo el conteo.
 
