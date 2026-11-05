@@ -4,10 +4,11 @@ import {resolve} from 'node:path';import {pathToFileURL,fileURLToPath} from 'nod
 import {createHash} from 'node:crypto';import {gzipSync} from 'node:zlib';
 import {buildGame} from './build-game.mjs';
 const root=fileURLToPath(new URL('../',import.meta.url)),digest=bytes=>createHash('sha256').update(bytes).digest('hex');
+export const isActionMapView=importer=>importer.replaceAll('\\','/').endsWith('/action-map/map-view.mjs');
 export async function buildActionMap({qa=false,check=false,write=true,variant='action-map'}={}){
  if(!['action-map','horizontal-map'].includes(variant))throw Error('Variante no admitida');
  const directory='dist/'+variant+(qa?'-qa':''),out=resolve(root,directory);
- const plugins=variant==='horizontal-map'?[{name:'horizontal-scene',setup(b){b.onResolve({filter:/^\.\/scene-configuration\.mjs$/},args=>args.importer.endsWith('/action-map/map-view.mjs')?{path:resolve(root,'prototypes/horizontal-map/scene-configuration.mjs')}:undefined);}}]:[];
+ const plugins=variant==='horizontal-map'?[{name:'horizontal-scene',setup(b){b.onResolve({filter:/^\.\/scene-configuration\.mjs$/},args=>isActionMapView(args.importer)?{path:resolve(root,'prototypes/horizontal-map/scene-configuration.mjs')}:undefined);}}]:[];
  const mapped=await build({absWorkingDir:root,entryPoints:['prototypes/action-map/main.mjs'],outfile:directory+'/map.mjs',bundle:true,format:'esm',platform:'browser',target:'es2022',minify:true,legalComments:'eof',write:false,metafile:true,plugins,define:{__ACTION_MAP_QA__:String(qa),__ACTION_MAP_VARIANT__:JSON.stringify(variant)}});
  const javascript=mapped.outputFiles[0].text,mapBytes=mapped.outputFiles[0].contents,mapInputs=Object.keys(mapped.metafile.inputs).map(p=>p.replaceAll('\\','/'));
  if(mapInputs.some(p=>p.startsWith('src/')))throw Error('El visor no puede importar el motor');
