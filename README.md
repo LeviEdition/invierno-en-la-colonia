@@ -16,6 +16,7 @@ Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos un
 - [Tablero operativo — próxima tarea](docs/18-tablero-operativo.md)
 - [H3.1 — Auditoría de identidad visual](docs/74-h3-1-auditoria-identidad-visual.md)
 - [Plan propuesto H3.1–H3.6](docs/75-plan-hito-3-identidad-visual.md)
+- [H3.4.4 — Ataque y barricadas desde el mapa](docs/88-h3-4-4-ataque-barricadas-mapa.md)
 - [H3.4.3 — Buscar desde el mapa](docs/87-h3-4-3-busqueda-mapa.md)
 - [H3.4.2 — Movimiento desde el mapa](docs/84-h3-4-2-movimiento-mapa.md)
 - [H3.4.2 — Continuidad, recorrido y exposición visible](docs/85-h3-4-2-experiencia-movimiento.md)
@@ -31,7 +32,23 @@ Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos un
 
 El [PR15](https://github.com/LeviEdition/invierno-en-la-colonia/pull/15) se integró mediante merge convencional `6b8bfcadfeb99d16a10b6f4576f3b061584ee1f9`, preservando historia yoráculo57872ee. [Informe71](docs/71-integracion-main-y-cierre-d1-d2.md) registra la validación posterior:467/467,40/40 contra cada referencia, partidas Chromium yoffline aprobados. SP-03 permanece conceptual ysin cambios respecto del head aprobado.
 
-**Referencia cerrada:** D1/D2 y V9.9 modular preservadas. El creador aceptó H3.4.1 y los ajustes de H3.4.2 y autorizó **H3.4.3: Buscar desde el mapa**. La nueva entrada permite Moverse y Buscar; el motor conserva las reglas y consecuencias. Se preservan las entradas anteriores. Sin merge, cambios en main/referencia/SP-03 ni nuevas mecánicas. [Informe87](docs/87-h3-4-3-busqueda-mapa.md).
+**Referencia cerrada:** D1/D2 y V9.9 modular preservadas. H3.4.3 tiene revisión técnica favorable y **validación manual pendiente**. El creador autorizó **H3.4.4: ataque y construcción de barricadas desde el mapa**, conservando búsqueda y movimiento. La nueva entrada reutiliza el motor V9.9; no modifica reglas ni arte. Sin merge ni cambios en main/referencia/SP-03. [Informe88](docs/88-h3-4-4-ataque-barricadas-mapa.md).
+
+## H3.4.4 — Las cuatro acciones desde VS Code
+
+Node22+, terminal en la carpeta con package.json y package-lock.json:
+
+```powershell
+git fetch origin
+git switch experiment/h3-4-4-ataque-barricadas-mapa
+git pull --ff-only
+npm.cmd ci
+npm.cmd run dev:action-map
+```
+
+Abrir **http://127.0.0.1:8778/prototypes/action-map/**. Preparar en V9.9 → Ver mapa → seleccionar propio → Atacar/Construir → revisar objetivo, dado o habilidad gratuita → confirmar/cancelar. Se conservan Moverse y Buscar. Inventario del jugador separado del equipo del superviviente; decisiones pendientes esperan Continuar en V9.9. [Guía Windows, celular en LAN y lista de revisión de ambas etapas](prototypes/action-map/README.md). Ctrl+C detiene el servidor; reiniciarlo y recargar tras actualizar. Sin Python.
+
+**H3.4.3 y H3.4.4 esperan revisión manual del creador.** Las entradas siguientes se conservan como historia y rutas de comparación; no incluyen las cuatro acciones nuevas.
 
 ## H3.4.3 — Buscar desde el mapa
 

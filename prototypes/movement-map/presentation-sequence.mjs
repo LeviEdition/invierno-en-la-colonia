@@ -1,8 +1,8 @@
 // Reloj exclusivamente visual: nunca ejecuta comandos ni tira dados.
 export const sequenceDurations=Object.freeze({travel:1500,roll:550,reveal:1100,consequence:200});
-export function createPresentationSequence(response,{reduced=false}={}){
+export function createPresentationSequence(response,{reduced=false,introDuration=1500,resultDuration=1100}={}){
  const exposure=response.resolution?.exposure;if(!exposure)throw TypeError('Falta la exposición estructurada');
- const duration={travel:reduced?100:1500,roll:exposure.rolled?(reduced?80:550):0,reveal:reduced?450:1100,consequence:reduced?80:200};let elapsed=0,interrupted=false;
+ const duration={travel:reduced?100:introDuration,roll:exposure.rolled?(reduced?80:550):0,reveal:resultDuration?(reduced?450:resultDuration):0,consequence:reduced?80:200};let elapsed=0,interrupted=false;
  function inspect(){let offset=0;for(const stage of ['travel','roll','reveal','consequence']){if(duration[stage]&&elapsed<offset+duration[stage])return {stage,progress:(elapsed-offset)/duration[stage],elapsed,exposure,reduced};offset+=duration[stage];}return {stage:interrupted?'interrupted':'done',progress:1,elapsed,exposure,reduced};}
  return {inspect,advance(ms){if(!interrupted&&Number.isFinite(ms)&&ms>=0)elapsed+=ms;return inspect();},interrupt(){interrupted=true;elapsed=Object.values(duration).reduce((a,b)=>a+b,0);return inspect();}};
 }

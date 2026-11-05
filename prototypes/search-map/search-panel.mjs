@@ -9,7 +9,7 @@ function diceButton(d,selected){
  drawing.setAttribute('aria-hidden','true');for(const position of face.pips||[]){const pip=el('span',undefined,'pip');pip.style.gridRow=Math.ceil(position/3);pip.style.gridColumn=(position-1)%3+1;drawing.append(pip);}
  button.append(drawing,el('small','Dado '+(d.index+1)));return button;
 }
-export function mountSearchPanel({controller,getContext,onCancel,onNative,signal}){
+export function mountSearchPanel({controller,getContext,onCancel,onNative,signal,inventoryLabel='Mano'}){
  let oldPhase='idle',cardsKey='',diceKey='',handKey='',focusVersion=0;
  function focusInPanel(target){
   if(!target)return;target.focus({preventScroll:true});
@@ -20,7 +20,7 @@ export function mountSearchPanel({controller,getContext,onCancel,onNative,signal
  }
  const on=(id,type,fn)=>$(id).addEventListener(type,fn,{signal});
  on('search-action','click',()=>{if(getContext().movementPhase==='idle')controller.begin(getContext().selected);});
- on('search-dice','click',event=>{const button=event.target.closest('[data-die]');if(button&&!button.disabled&&controller.chooseDie(Number(button.dataset.die)))focusInPanel($('confirm-search'));});
+ on('search-dice','click',event=>{const button=event.target.closest('[data-die]');if(button&&!button.disabled){focusVersion++;if(controller.chooseDie(Number(button.dataset.die)))focusInPanel($('confirm-search'));}});
  on('confirm-search','click',()=>controller.confirm());on('cancel-search','click',()=>{if(controller.cancel())onCancel();});
  on('search-cards','click',event=>{const button=event.target.closest('[data-card]');if(button&&!button.disabled)controller.choose(Number(button.dataset.card));});
  on('search-noise','click',()=>controller.noise());on('search-continue','click',()=>controller.dismiss());on('search-native','click',onNative);
@@ -52,10 +52,10 @@ export function mountSearchPanel({controller,getContext,onCancel,onNative,signal
   $('search-native').hidden=!op?.generalDecision;$('search-native').disabled=busy;
   const result=op?.result;$('search-kept-card').hidden=!result;
   $('search-kept-card').replaceChildren(...(result?[el('small',result.card.kind),el('h3',result.card.name),el('p',result.card.description)]:[]));
-  $('search-outcome').textContent=result?op.name+' conservó '+result.card.name+' · '+(result.handDelta>0?'añadida a la mano':'consecuencia automática resuelta por el motor')+' · ruido '+result.noise+'.':op?.status==='empty'?'No se añadió ninguna recompensa.':'';
+  $('search-outcome').textContent=result?op.name+' conservó '+result.card.name+' · '+(result.handDelta>0?(inventoryLabel==='Inventario'?'añadida al inventario':'añadida a la mano'):(inventoryLabel==='Inventario'?'se aplicó el efecto de la carta':'consecuencia automática resuelta por el motor'))+' · ruido '+result.noise+'.':op?.status==='empty'?'No se añadió ninguna recompensa.':'';
   $('search-recruit').textContent=op?.recruit?(op.recruit.queued?'El rescate espera una plaza en la colonia.':op.recruit.name+' se incorporó a la colonia.')+' '+op.recruit.skill:'';
   const hand=visible?s.hand:[],nextHandKey=JSON.stringify([visible?s.ownerId:null,hand]);
-  $('own-hand').hidden=!visible;$('own-hand-title').textContent=visible?'Mano de '+(p?.players.find(x=>x.id===s.ownerId)?.label||'jugador activo')+' · '+hand.length+' cartas':'Mano del turno';
+  $('own-hand').hidden=!visible;$('own-hand-title').textContent=visible?inventoryLabel+' de '+(p?.players.find(x=>x.id===s.ownerId)?.label||'jugador activo')+' · '+hand.length+' cartas':inventoryLabel+' del turno';
   if(nextHandKey!==handKey){handKey=nextHandKey;$('own-hand-cards').replaceChildren(...hand.map(c=>el('li',c.name+' · '+c.kind)));}
   if(s.phase!==oldPhase){oldPhase=s.phase;const version=++focusVersion;
    if(visible)requestAnimationFrame(()=>{if(signal.aborted||version!==focusVersion||!getContext().active)return;const target=picking?'#search-dice button:not(:disabled)':s.phase==='choice'?'#search-cards button':s.phase==='result'?(op?.generalDecision?'#search-native':'#search-continue'):null;if(target)focusInPanel(document.querySelector(target));});

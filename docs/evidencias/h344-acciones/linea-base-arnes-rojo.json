@@ -1,0 +1,34 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "records": [
+    {
+      "kind": "reference",
+      "errors": [],
+      "recoveryNoDraw": true,
+      "passed": true
+    },
+    {
+      "kind": "hidden",
+      "errors": [],
+      "controlledVisibility": true,
+      "recoveryNoDraw": true,
+      "passed": true
+    },
+    {
+      "kind": "reconnect",
+      "errors": [],
+      "controlledLifecycle": true,
+      "recoveryNoDraw": true,
+      "passed": true
+    },
+    {
+      "kind": "lost-reply",
+      "errors": []
+    }
+  ],
+  "failures": [
+    "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  {\n    biteResolving: false,\n    botDice: [\n      5,\n      5,\n...\n        {\n-         cardId: 'bandage',\n-         kind: 'medicina'\n-       },\n-       {\n          cardId: 'crowbar',\n          kind: 'herramienta'\n        },\n        {\n          cardId: 'bandage',\n...\n      5,\n-     5\n    ],\n    ended: false,\n    food: 6,\n    goal: 9,\n    helpless: 0,\n...\n    ],\n+   last: '⌕ Mara encontró ✚ Vendas.',\n-   last: '🎲 Exposición de Mara (movimiento): BLANCO.',\n    leaderChosen: true,\n    leaders: {\n      ai: 'a1',\n      human: 'h0'\n    },\n    localLeaderChosen: false,\n    log: [\n+     'R1 · ⌕ Mara encontró ✚ Vendas.',\n+     'R1 · 🎲 Dado utilizado: 5 (mínimo 3).',\n      'R1 · 🎲 Exposición de Mara (movimiento): BLANCO.',\n      'R1 · → Mara se movió a Hospital.',\n      'R1 · ⚠ Crisis: aportar 2 combustible.',\n      'R1 · Objetivo: Última esperanza · Recuperar 9 muestras antes de que termine la ronda 10.'\n    ],\n\n    at file:///workspace/invierno-en-la-colonia/scripts/check-h343-edge-browser.mjs:26:320"
+  ],
+  "passed": false
+}

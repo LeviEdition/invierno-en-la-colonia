@@ -1,0 +1,14 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "records": [
+    {
+      "kind": "native-result",
+      "errors": []
+    }
+  ],
+  "failures": [
+    "AssertionError [ERR_ASSERTION]: El título debe identificar al actor real, aunque la selección visual sea otra\n    at file:///workspace/invierno-en-la-colonia/scripts/check-h344-edge-browser.mjs:11:257"
+  ],
+  "passed": false
+}

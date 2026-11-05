@@ -1,5 +1,19 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## H3.4.4 — Ataque y barricadas, entrega para revisión ·05/11/2026
+
+**Autorización vigente:** integrar ataque/construcción sobre H3.4.3, **sin marcar aceptada su validación manual**. Base limpia/remota **4357df8d60d45bf13ed966add489e79c0f27ad45**, PR23 draft/CI41924037076 success. Rama nueva `experiment/h3-4-4-ataque-barricadas-mapa`, PR nuevo draft contra H3.4.3. Main826199d9, tag/release de referencia, arte, mapa y reglas intactos. [Informe88](88-h3-4-4-ataque-barricadas-mapa.md). Los bloques siguientes son historia.
+
+**Implementaciónb8b9214 + ajuste1419077:** consulta pura por ID/dado versionado, ataque agregado de la localidad, equipo/habilidades/exposición originales y barricadas con coste1+ o habilidad gratuita de constructor. Ejecución compartida con V9.9, resultados estructurados, revisión común y deduplicación; sin dispatcher genérico ni reenvío ante resultado incierto. Bajas antes de exposición; daño/muerte después de revelar; decisiones esperan Continuar en V9.9. Inventario de grupo separado del equipo. Aparición discreta, controles y ficha móvil horizontal plegable; cámara/selección y búsqueda/movimiento conservados.
+
+**Validación propia:** base576/576 y Chromium3+11 (carrera del arnés de respuesta perdida corregida y documentada). Entrega **605/605**,29 nuevas; oráculo **40/40** y seis builds/checks. Chromium **1365×768,852×393,740×360,393×852,320×640**, ataque/herida/construcción/mover/buscar/ruido, sin parpadeo detectado; bordes **13 casos únicos** combinando las ejecuciones dirigidas, movimiento5/cámara9 y regresión H3.4.3 **3+11**. Se corrigieron bloqueo del panel al buscar, carrera de foco y atribución del resultado recuperado al actor equivocado. [Capturas, video, trazas y rojos](evidencias/h344-acciones/README.md). El nuevo CI exacto repite las15 baterías Chromium previas/nuevas, suite/oráculo/seis builds; run global y artifact se verifican y registran en la descripción del PR antes de entregar.
+
+**Inicio:** `npm.cmd ci` → **`npm.cmd run dev:action-map`** → **http://127.0.0.1:8778/prototypes/action-map/**. [Guía Windows/VSCode/LAN y pruebas manuales para ambas etapas](../prototypes/action-map/README.md). Detener el servidor previo con Ctrl+C, reiniciar y recargar tras actualizar. La ruta8777 de búsqueda anterior se conserva, pero no es la nueva entrega.
+
+**Reservas:** H3.4.3/H3.4.4 sin aceptación manual; móvil emulado/SwiftShader, no teléfono físico ni garantía60FPS/VRAM. Reconexión/visibilidad controladas; no certificación nueva de bfcache. Inventario accionable, otras habilidades manuales/turnos, arte/capacidades/mapa horizontal siguen pendientes; no guardados nuevos. **Única siguiente tarea: revisión manual del creador de ambas etapas en el nuevo PR draft.** Sin merge ni otra implementación.
+
+---
+
 ## H3.4.3 — Buscar desde el mapa, entrega para revisión ·04/11/2026
 
 **Decisión vigente:** el creador aceptó los ajustes de H3.4.2 y autorizó únicamente Buscar, conservando Moverse. Rama `experiment/h3-4-3-busqueda-mapa` desde **c8d4e59321bac099306c99f53d18caba3fcd9e9d**, [PR23 draft](https://github.com/LeviEdition/invierno-en-la-colonia/pull/23) contra H3.4.2. Sin merge ni cambios en main/referencia/tag/release/arte/reglas. [Informe87](87-h3-4-3-busqueda-mapa.md). Los bloques inferiores se conservan como historia.

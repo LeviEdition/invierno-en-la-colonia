@@ -5,15 +5,15 @@ class ItemEngine {
  equipped(p,id){return ctx.equipmentOf(p).find(it=>ctx.catalog.resolve(it)?.id===id);}
  useFlashlight(p){const it=this.equipped(p,'flashlight');if(!it||it.usedRound)return false;it.usedRound=1;return true;}
  equip(p,it){const d=ctx.catalog.resolve(it);if(!p||p.dead||!d||d.effect!=='equip')return false;if(ctx.equipmentOf(p).some(x=>ctx.kind(x)===d.kind)){ctx.message('⚠ '+p.name+' ya lleva un objeto de '+d.kind+'. Transferilo antes de equipar otro.');return false;}p.equipment.push(it);ctx.message('🎒 '+p.name+' equipó '+d.name+': '+d.desc);return true;}
- attack(p,side){
+ attack(p,side,onResolved){
   const z=ctx.game.zones[p.loc];if(!z.z)return false;
   const shotgun=this.has(p,'shotgun'),count=ctx.Math.min(z.z,shotgun?2:1);z.z-=count;
   ctx.message('⚔ '+p.name+' eliminó '+count+' zombi'+(count>1?'s':'')+' en '+ctx.places[p.loc]+(shotgun?' con escopeta':'')+'.');
-  let safe=false;
-  for(const id of ['pistol','rifle']){const it=this.equipped(p,id);if(it&&!it.usedRound&&(id==='pistol'||p.loc!==0)){it.usedRound=1;safe=true;ctx.message('🔫 '+ctx.catalog.resolve(it).name+': ataque sin exposición.');break;}}
-  if(!safe)ctx.expose(p,'ataque '+(side==='ai'?'IA':''));
+  let safe=false,exposure;
+  for(const id of ['pistol','rifle']){const it=this.equipped(p,id);if(it&&!it.usedRound&&(id==='pistol'||p.loc!==0)){it.usedRound=1;safe=true;exposure={rolled:false,value:null,effect:'avoided',ability:id,wounds:0,frost:0,fatal:false};ctx.message('🔫 '+ctx.catalog.resolve(it).name+': ataque sin exposición.');break;}}
+  if(!safe)exposure=ctx.expose(p,'ataque '+(side==='ai'?'IA':''));
   const axe=this.equipped(p,'hatchet');if(axe&&!axe.usedRound&&p.loc===0&&ctx.openAccess(0)&&!p.dead){axe.usedRound=1;z.b++;ctx.message('🪓 '+p.name+' reforzó una barricada después del combate.');}
-  return true;
+  onResolved?.({killed:count,exposure});return true;
  }
  moveWithFuel(p,dest,side,i){
   const hand=side==='ai'?ctx.game.botItems:ctx.game.items;

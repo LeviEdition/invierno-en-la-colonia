@@ -1,0 +1,257 @@
+{
+  "baseCommit": "4357df8d60d45bf13ed966add489e79c0f27ad45",
+  "implementationCommit": "b8b9214a00786acab29c7933618a3c8ef7e9637a",
+  "qualityCommit": "1419077d507eac9a0052e655ee03c680f23165de",
+  "records": [
+    {
+      "file": "1365x768/ataque-confirmar.png",
+      "bytes": 1166375,
+      "sha256": "a7e751744463fa83c8b7d03d0f582b93e07a4cc43e888b1cb007b274cba7db82"
+    },
+    {
+      "file": "1365x768/barricada.png",
+      "bytes": 1250730,
+      "sha256": "2bea346bda3d6cd78c1b67c24c052e46e181023eb775edf38be84abbcdbde1e8"
+    },
+    {
+      "file": "1365x768/exposicion.png",
+      "bytes": 1269574,
+      "sha256": "c9979f5695f628f1b8e58bed970af43bd508edda11ec25e1e3d5d13648185756"
+    },
+    {
+      "file": "1365x768/frames.json",
+      "bytes": 187288,
+      "sha256": "0dede490f37fdaf8518c7f7793741511ab39177ab8c09b2ccbe3d3f2af51d2fe"
+    },
+    {
+      "file": "320x640/barricada.png",
+      "bytes": 946531,
+      "sha256": "a8ee225a61ccb29d30ffe26cc0f6b825bb4f0bb1ce0e5ca5847c450839d7b94d"
+    },
+    {
+      "file": "320x640/frames.json",
+      "bytes": 220463,
+      "sha256": "c25b067a52955b4085a2609b191e6a38a1c2b599f4c6fb61916bcd2b71b0bf4e"
+    },
+    {
+      "file": "393x852/barricada.png",
+      "bytes": 1648980,
+      "sha256": "c8b28c9ad39393fd64ba08ae859dc1e0ef74d7066fafb88f445a6a80670e1c54"
+    },
+    {
+      "file": "393x852/frames.json",
+      "bytes": 196621,
+      "sha256": "17789d915fd26b1682521c08f8bb037078edbcb1c3b7d3e3832e38b5a526b21f"
+    },
+    {
+      "file": "740x360/ataque-confirmar.png",
+      "bytes": 938769,
+      "sha256": "748e2e86532e749116d958faf1377a69f823444e1bda733799d6d3e58800a127"
+    },
+    {
+      "file": "740x360/barricada.png",
+      "bytes": 983705,
+      "sha256": "d4e1f8b79fd1c14f14bb33c763ccd9d62757828906cb53ab7d5a5b9e36bd543c"
+    },
+    {
+      "file": "740x360/exposicion.png",
+      "bytes": 999929,
+      "sha256": "188941b65282c5951f8adc7037854646b853165dd9d171a2991e8dec79184785"
+    },
+    {
+      "file": "740x360/frames.json",
+      "bytes": 220265,
+      "sha256": "1397c66e7891d700082329d902c34dd00005f9ca5e52a1116995611e94bc29fe"
+    },
+    {
+      "file": "740x360/recorrido-completo.webm",
+      "bytes": 1964560,
+      "sha256": "dff3dc6196deb9c4d55bff3f20da3423dd4bc4a7520c75b3e16a6993cb46229c"
+    },
+    {
+      "file": "852x393/barricada.png",
+      "bytes": 1335467,
+      "sha256": "9fedbea03981ef1e42873f762f6d975a1ab00a1f57e79fcf03d093d760bfddac"
+    },
+    {
+      "file": "852x393/frames.json",
+      "bytes": 201378,
+      "sha256": "b3f63a9870d658ba61a6d22c6edb131ceb7161856a467c9eef5bda897241faaf"
+    },
+    {
+      "file": "README.md",
+      "bytes": 6222,
+      "sha256": "40d1965a92d69f643eaa36c389100d2e4a39fee2eada64a89b10db983381c13a"
+    },
+    {
+      "file": "actor-rojo.json",
+      "bytes": 392,
+      "sha256": "2af9e0de8309cc8a8c651ad70c10843cbc12a495e476c0af14585fc64c68289b"
+    },
+    {
+      "file": "actor-rojo.txt",
+      "bytes": 419,
+      "sha256": "bafc54e93e0f280f008f1fb603f248a5064dcaed58c93b540590c25081e7e9f2"
+    },
+    {
+      "file": "actor-verde.json",
+      "bytes": 244,
+      "sha256": "24f1eba66526815939d73fb70c0e7975f1eeab354b9de076839f334f02f58850"
+    },
+    {
+      "file": "ataque-exposicion-barricada.webm",
+      "bytes": 1009088,
+      "sha256": "cdcdac129024b514fbc521b2495373442df76ee40d80e060bf5a031cd08abf44"
+    },
+    {
+      "file": "bordes11.json",
+      "bytes": 1552,
+      "sha256": "ce6d54ce9cdfedc4fffa7c5950188c9c751df53bfbca6dad3fa8bdec67812635"
+    },
+    {
+      "file": "build-qa.json",
+      "bytes": 3119,
+      "sha256": "d659639c319105077b51b1eaf2da4e283239015c32ba8eef3de80120b3e37638"
+    },
+    {
+      "file": "build.json",
+      "bytes": 3120,
+      "sha256": "1199c3829ea029d16fde62146cabc433e15ba9e7a3f0cab62f5837af240cba4d"
+    },
+    {
+      "file": "camara.json",
+      "bytes": 2963,
+      "sha256": "bdfcbeef981be7a04a3ee92c57118fbd36a65272e901de15005ab2b63eecc044"
+    },
+    {
+      "file": "foco-rojo.json",
+      "bytes": 438,
+      "sha256": "99b0b24eef9d3372a1791b53b6b8f791ada8508099975b948bc17055f8a68270"
+    },
+    {
+      "file": "foco-rojo.txt",
+      "bytes": 434,
+      "sha256": "fa8476773ea94a4643ac269bd55163649ff1319eaf9e0ac53d308bac64ddb16b"
+    },
+    {
+      "file": "habilidad-usada.png",
+      "bytes": 616682,
+      "sha256": "86f4f763b8b52a603710342423a27df85e8c75a54fccff8ce922ba7c7a09780a"
+    },
+    {
+      "file": "hospital-lleno.png",
+      "bytes": 639036,
+      "sha256": "c07c893da900c650b18e96fd1ea6ff87e61dfadaca15dc05788924f9c658d12e"
+    },
+    {
+      "file": "linea-base-arnes-rojo.json",
+      "bytes": 1789,
+      "sha256": "00d9dbcb13b09153fac55d5ed0006ab28ef802838d78dd8f16dfaeb73f524b55"
+    },
+    {
+      "file": "linea-base-arnes-rojo.txt",
+      "bytes": 24072,
+      "sha256": "f2118ed75839cf91f5f1c888906c84f239bd6694151b30831656a0f147e37ea1"
+    },
+    {
+      "file": "linea-base-bordes.json",
+      "bytes": 2447,
+      "sha256": "39e4aac8a5a9f9e9eb606a2685b1a7fb3b237e298da590ef9d8ec0b927131037"
+    },
+    {
+      "file": "linea-base-busqueda.json",
+      "bytes": 1215,
+      "sha256": "c2111abdd0a7125d61d3a7e05acb8d81af73bf6f8eed234ac26e51f0823ebbc0"
+    },
+    {
+      "file": "linea-base-check.txt",
+      "bytes": 125,
+      "sha256": "86e73c08796ad6d9c5656d310e04c5fa5753551cffd4756394886fdc14896ad7"
+    },
+    {
+      "file": "linea-base-suite.txt",
+      "bytes": 51300,
+      "sha256": "bfc41af4769f88d2f181308642db0351bdf7622f9431ab1cbecf548990549992"
+    },
+    {
+      "file": "motor-protocolo-controlador.txt",
+      "bytes": 3089,
+      "sha256": "3cb65dfe9e2933e774283273b4f765ca9ffa98e3c7266e010d132dbe7e8e4083"
+    },
+    {
+      "file": "movimiento-reducido-reconstruccion.json",
+      "bytes": 512,
+      "sha256": "170fb9f0a65bfa70ba7066f284693ef96b8f030a13c00b10c914065692c170ef"
+    },
+    {
+      "file": "movimiento.json",
+      "bytes": 2743,
+      "sha256": "194adae59d2bd25ae411012fa9f2b485b09f00f4618abac38509e8aef80b7f59"
+    },
+    {
+      "file": "muerte-y-decision.webm",
+      "bytes": 995953,
+      "sha256": "e514935151f09a0dc3f636d03a276965b4106e2c42178bb11a6fe7c0bca2717e"
+    },
+    {
+      "file": "oraculo.json",
+      "bytes": 10997,
+      "sha256": "1702ce81b2d0c360137253871a995bba0642cbf16431f282d1139a342cf450e2"
+    },
+    {
+      "file": "panel-bloqueado-rojo.json",
+      "bytes": 467,
+      "sha256": "66dad3304616042be48f835c56bb1633ae25479b06dfd1074952c35b091668ff"
+    },
+    {
+      "file": "panel-bloqueado-rojo.txt",
+      "bytes": 244,
+      "sha256": "2925805c4a311cbae8e3d11c420554f26987b9e4649db8f541c58157c379067c"
+    },
+    {
+      "file": "recorrido.json",
+      "bytes": 2197,
+      "sha256": "3e613bf1d29d103d3068a872201f85ff9b3c40d6af2c37eacbfcc9afa7ef011b"
+    },
+    {
+      "file": "regresion-busqueda-bordes.json",
+      "bytes": 2447,
+      "sha256": "39e4aac8a5a9f9e9eb606a2685b1a7fb3b237e298da590ef9d8ec0b927131037"
+    },
+    {
+      "file": "regresion-busqueda.json",
+      "bytes": 1230,
+      "sha256": "d2507b2d5fb8a5edd90a0e443d87bf532a2fd9a2a8fe91389076d1fd5227911d"
+    },
+    {
+      "file": "rojo-constructor.txt",
+      "bytes": 3325,
+      "sha256": "d983394539aa2dc5c94c6bf955797cb66db15700ed5297a5165b32ddb12785ba"
+    },
+    {
+      "file": "rojo-controlador.txt",
+      "bytes": 1471,
+      "sha256": "a569b3aedfec32c93d12dd0ea7b65c58764a7c7b1738a4437576cb08c354518c"
+    },
+    {
+      "file": "rojo-motor.txt",
+      "bytes": 7596,
+      "sha256": "31ae5253ffa58a8bd7187583bc4560c5299f1431c1b401b365644d96c5339be3"
+    },
+    {
+      "file": "rojo-protocolo.txt",
+      "bytes": 1456,
+      "sha256": "923c548f856a93fd59c5948df9718dd568cab53c7238831d5d9902c975f4e7f5"
+    },
+    {
+      "file": "secuencia-accion.jpg",
+      "bytes": 653609,
+      "sha256": "da6c5dc4d39f53a5228718fd803177c8e3d1bd23b3dcc822ebbe532ae5527aed"
+    },
+    {
+      "file": "suite.txt",
+      "bytes": 54320,
+      "sha256": "93d6e2084ee0fe46b0f39619b6a069661428972a917ea470f62e7d98bbd42663"
+    }
+  ]
+}
