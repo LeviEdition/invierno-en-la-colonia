@@ -1,0 +1,17 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "errors": []
+    }
+  ],
+  "failures": [
+    "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ ''\n- 'confirm-action'\n\n    at file:///workspace/invierno-en-la-colonia/scripts/check-h344-browser.mjs:8:193"
+  ],
+  "passed": false
+}

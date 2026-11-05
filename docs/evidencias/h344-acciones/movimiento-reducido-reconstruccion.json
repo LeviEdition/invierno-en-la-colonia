@@ -1,0 +1,28 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "records": [
+    {
+      "kind": "reduced",
+      "errors": [],
+      "reducedAndSilent": true,
+      "passed": true
+    },
+    {
+      "kind": "restart",
+      "errors": [],
+      "restarted": true,
+      "recoveredNoRepeat": true,
+      "passed": true
+    },
+    {
+      "kind": "reconnect",
+      "errors": [],
+      "controlledLifecycle": true,
+      "recoveredNoRepeat": true,
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

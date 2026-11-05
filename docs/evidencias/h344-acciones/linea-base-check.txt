@@ -1,0 +1,5 @@
+
+> invierno-en-la-colonia@0.9.9 check:build
+> node scripts/build-game.mjs --check
+
+Build reproducible: un HTML autocontenido

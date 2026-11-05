@@ -1,0 +1,80 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "records": [
+    {
+      "kind": "builder",
+      "errors": [],
+      "freeAbilityOnce": true,
+      "passed": true
+    },
+    {
+      "kind": "death",
+      "errors": [],
+      "deliberateNative": true,
+      "noEarlyDeath": true,
+      "passed": true,
+      "video": "/tmp/h344/edges-final/death/e7c48559f6555bef8720470523825152.webm"
+    },
+    {
+      "kind": "general",
+      "errors": [],
+      "deliberateNative": true,
+      "noEarlyDeath": true,
+      "passed": true
+    },
+    {
+      "kind": "pistol",
+      "errors": [],
+      "weaponOncePerRound": true,
+      "passed": true
+    },
+    {
+      "kind": "full",
+      "errors": [],
+      "sharedCapacity": true,
+      "passed": true
+    },
+    {
+      "kind": "j2",
+      "errors": [],
+      "ownDiceAndTools": true,
+      "passed": true
+    },
+    {
+      "kind": "lost-reply",
+      "errors": [],
+      "noResend": true,
+      "passed": true
+    },
+    {
+      "kind": "stale",
+      "errors": [],
+      "noFakeAttack": true,
+      "passed": true
+    },
+    {
+      "kind": "restart",
+      "errors": [],
+      "restarted": true,
+      "recoveredNoRepeat": true,
+      "passed": true
+    },
+    {
+      "kind": "hidden",
+      "errors": [],
+      "controlledVisibility": true,
+      "recoveredNoRepeat": true,
+      "passed": true
+    },
+    {
+      "kind": "reconnect",
+      "errors": [],
+      "controlledLifecycle": true,
+      "recoveredNoRepeat": true,
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

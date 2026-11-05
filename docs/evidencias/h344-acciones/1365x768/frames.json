@@ -1,0 +1,9362 @@
+{
+  "sourceSha256": "620cf6f0f831220372f10f67c0c48e36bb21df519d56474928e8b7578920a50e",
+  "method": "Campos reducidos de traza original, sin remuestreo",
+  "records": [
+    {
+      "time": 3971,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "travel",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 3,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 4021,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "travel",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 3,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 4037.6,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "travel",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 3,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 4087.6,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "travel",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 3,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 4104.3,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "travel",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 3,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 4154.3,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "travel",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 3,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 4171,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "travel",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 3,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 4220.9,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "travel",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 3,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 4237.6,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "travel",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 3,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 4287.6,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "travel",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 3,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 4304.3,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "travel",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 3,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 4354.2,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "travel",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 3,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 4370.9,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "travel",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 3,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 4437.6,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "travel",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 3,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 4471,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "travel",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 3,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 4520.9,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "travel",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 3,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 4554.3,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "travel",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 3,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 4670.9,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "roll",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 4687.6,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "roll",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 4737.6,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "roll",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 4770.9,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "roll",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 4820.9,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "roll",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 4837.5,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "roll",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 4887.6,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "roll",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 4904.2,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "roll",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 4954.3,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "roll",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 4970.9,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "roll",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5020.9,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "roll",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5037.5,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "roll",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5070.9,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "roll",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5087.6,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "roll",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5137.5,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5154.2,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5204.3,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5220.9,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5254.2,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5287.5,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5320.9,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5337.5,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5370.9,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5387.5,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5420.9,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5437.5,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5487.5,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5504.3,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5554.3,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5587.6,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5620.9,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5654.2,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5687.5,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5704.2,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5737.5,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5754.2,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5787.5,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5804.2,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5837.5,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5887.6,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5904.2,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5937.5,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5970.9,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 5987.5,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 6020.8,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 6070.9,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 6104.2,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 6154.2,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 6187.6,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "reveal",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 0,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 6220.9,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "consequence",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 6270.8,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "consequence",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 6304.1,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "consequence",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 6354.2,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "consequence",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 6387.6,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "attack",
+      "stage": "consequence",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 6437.5,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "attack",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 6504.2,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "attack",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 6554.2,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "attack",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 6620.9,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "attack",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 6670.9,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "attack",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 6720.9,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "attack",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 6787.5,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "attack",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 6820.9,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "attack",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 6854.2,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "attack",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 6904.2,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "attack",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 6937.5,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "attack",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 6987.5,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "attack",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 7020.8,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "attack",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 7070.8,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "attack",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 7104.1,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "attack",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 7154.1,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "attack",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 7204.2,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "attack",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 7237.5,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "attack",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 7287.5,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "attack",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 7337.5,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "attack",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 7387.5,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "attack",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 7437.5,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "attack",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 7470.8,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "attack",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 7520.8,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "attack",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 7570.8,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "attack",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 7604.1,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "attack",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 7637.5,
+      "mode": "map",
+      "starts": 1,
+      "phase": "sending",
+      "kind": "attack",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 7687.4,
+      "mode": "map",
+      "starts": 1,
+      "phase": "sending",
+      "kind": "attack",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 7737.5,
+      "mode": "map",
+      "starts": 1,
+      "phase": "idle",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 7787.4,
+      "mode": "map",
+      "starts": 1,
+      "phase": "idle",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 7820.8,
+      "mode": "map",
+      "starts": 1,
+      "phase": "idle",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 7870.8,
+      "mode": "map",
+      "starts": 1,
+      "phase": "idle",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 7904.2,
+      "mode": "map",
+      "starts": 1,
+      "phase": "idle",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 7937.4,
+      "mode": "map",
+      "starts": 1,
+      "phase": "idle",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 7987.5,
+      "mode": "map",
+      "starts": 1,
+      "phase": "idle",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 8037.4,
+      "mode": "map",
+      "starts": 1,
+      "phase": "idle",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 8087.5,
+      "mode": "map",
+      "starts": 1,
+      "phase": "idle",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 8120.8,
+      "mode": "map",
+      "starts": 1,
+      "phase": "idle",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 8170.8,
+      "mode": "map",
+      "starts": 1,
+      "phase": "idle",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 8204.2,
+      "mode": "map",
+      "starts": 1,
+      "phase": "idle",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 8270.7,
+      "mode": "map",
+      "starts": 1,
+      "phase": "idle",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 8304.1,
+      "mode": "map",
+      "starts": 1,
+      "phase": "idle",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 8354.1,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 8404.1,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 8437.4,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 8470.7,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 8520.7,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 8570.7,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 8604.1,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 8654.1,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 8704.1,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 8737.4,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 8787.5,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 8820.8,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 8870.7,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 8904.1,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 8920.7,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 8970.8,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 9004.1,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 9054.1,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 9087.4,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 9120.7,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 9170.7,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 9204.1,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 9254.1,
+      "mode": "map",
+      "starts": 1,
+      "phase": "idle",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 9287.4,
+      "mode": "map",
+      "starts": 1,
+      "phase": "idle",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 9337.4,
+      "mode": "map",
+      "starts": 1,
+      "phase": "idle",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 9370.7,
+      "mode": "map",
+      "starts": 1,
+      "phase": "idle",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 9420.7,
+      "mode": "map",
+      "starts": 1,
+      "phase": "idle",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 9470.8,
+      "mode": "map",
+      "starts": 1,
+      "phase": "idle",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 9504.1,
+      "mode": "map",
+      "starts": 1,
+      "phase": "idle",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 9554.1,
+      "mode": "map",
+      "starts": 1,
+      "phase": "idle",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 9604,
+      "mode": "map",
+      "starts": 1,
+      "phase": "idle",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 9637.3,
+      "mode": "map",
+      "starts": 1,
+      "phase": "idle",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 9687.4,
+      "mode": "map",
+      "starts": 1,
+      "phase": "idle",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 9720.7,
+      "mode": "map",
+      "starts": 1,
+      "phase": "idle",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 9770.7,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 9820.7,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 9870.7,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 9904,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 9954.1,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 9987.4,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 10037.4,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 10087.4,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 10137.4,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 10170.7,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 10220.7,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 10270.7,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 10304,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 10337.3,
+      "mode": "map",
+      "starts": 1,
+      "phase": "picking",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 10387.3,
+      "mode": "map",
+      "starts": 1,
+      "phase": "sending",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 10420.7,
+      "mode": "map",
+      "starts": 1,
+      "phase": "sending",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 10470.7,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "barricade",
+      "stage": "travel",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 10520.7,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "barricade",
+      "stage": "travel",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 10570.7,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "barricade",
+      "stage": "travel",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 10604,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "barricade",
+      "stage": "travel",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 10637.3,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "barricade",
+      "stage": "travel",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 10687.3,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "barricade",
+      "stage": "travel",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 0
+      }
+    },
+    {
+      "time": 10737.3,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "barricade",
+      "stage": "travel",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 0.06741258741258338
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 10804,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "barricade",
+      "stage": "travel",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 0.2072727272727232
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 10837.3,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "barricade",
+      "stage": "travel",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 0.3938461538461518
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 10870.6,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "barricade",
+      "stage": "travel",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 0.4869930069930029
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 10920.7,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "barricade",
+      "stage": "travel",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 0.5801398601398592
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 10970.6,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "barricade",
+      "stage": "travel",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 0.7202797202797203
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 11020.7,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "barricade",
+      "stage": "travel",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 0.8598601398601388
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 11070.7,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "barricade",
+      "stage": "consequence",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 11104,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "barricade",
+      "stage": "consequence",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 11154,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "barricade",
+      "stage": "consequence",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 11187.3,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "barricade",
+      "stage": "consequence",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 11220.6,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "barricade",
+      "stage": "consequence",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 11270.7,
+      "mode": "map",
+      "starts": 1,
+      "phase": "presenting",
+      "kind": "barricade",
+      "stage": "consequence",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 11320.6,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "barricade",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 11354,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "barricade",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 11387.3,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "barricade",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 11420.7,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "barricade",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 11487.4,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "barricade",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 11537.3,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "barricade",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 11570.6,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "barricade",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 11604,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "barricade",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 11637.3,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "barricade",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 11687.3,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "barricade",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 11720.6,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "barricade",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 11770.7,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "barricade",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 11820.6,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "barricade",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 11853.9,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "barricade",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 11887.2,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "barricade",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 11920.6,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "barricade",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 11970.6,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "barricade",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 12020.6,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "barricade",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 12070.6,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "barricade",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 12104,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "barricade",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 12137.3,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "barricade",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 12187.3,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "barricade",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 12237.3,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "barricade",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 12287.3,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "barricade",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 12320.6,
+      "mode": "map",
+      "starts": 1,
+      "phase": "result",
+      "kind": "barricade",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 12354,
+      "mode": "map",
+      "starts": 1,
+      "phase": "sending",
+      "kind": "barricade",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 12403.9,
+      "mode": "map",
+      "starts": 1,
+      "phase": "sending",
+      "kind": "barricade",
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 12437.2,
+      "mode": "map",
+      "starts": 1,
+      "phase": "idle",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 12487.2,
+      "mode": "map",
+      "starts": 1,
+      "phase": "idle",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    },
+    {
+      "time": 12520.6,
+      "mode": "map",
+      "starts": 1,
+      "phase": "idle",
+      "kind": null,
+      "stage": null,
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -319.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.496316758747698,
+        "maxZoom": 2.4815837937384897
+      },
+      "rect": {
+        "width": 1025,
+        "height": 563
+      },
+      "actorNodes": 1,
+      "spriteAlpha": [
+        {
+          "id": "place-0-access-0",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-1",
+          "alpha": 1
+        },
+        {
+          "id": "place-0-access-2",
+          "alpha": 1
+        }
+      ],
+      "hero": {
+        "id": "h0",
+        "position": {
+          "x": 775,
+          "y": 375
+        },
+        "wounds": 1,
+        "frost": 0
+      },
+      "home": {
+        "zombies": 2,
+        "barricades": 1
+      }
+    }
+  ]
+}
