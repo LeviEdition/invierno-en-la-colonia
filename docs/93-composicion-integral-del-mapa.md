@@ -74,6 +74,16 @@ Corrección mínima compartida por el visor de acciones y horizontal: `advanceFr
 
 Tres regresiones unitarias cubren pausas largas, movimiento reducido, ataque, barricada sin tirada y finalización/interrupción. Una compuerta Chromium adicional conserva las cuatro fases en normal y reducido con RAF demorado500ms, cámara fija, una sola ejecución y estado/RNG ya resueltos intactos. La compuerta original y su aserción de las cuatro fases permanecen. [Rojo/verde y trazas](evidencias/mapa-integral/README.md#reloj-visual-fotogramas-lentos). Se repiten movimiento y acciones localmente; CI vuelve a ejecutar la batería completa sobre el nuevo head, registrado en PR25 sin atribuirle el verde de un SHA anterior.
 
+## Segundo hallazgo: atributos de fichas y reposo real
+
+[CI42304676153](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/42304676153), head **c746862aacbc70aea8669593e7022f55862843f2**, aprobó suite641, oráculo/construcciones, las cuatro compuertas H3.4.4, acciones horizontales4 tamaños, bordes13 y movimiento6 con sus cuatro fases. Quedó **rojo después**, en cámara393×852/Suave:18 escrituras de fichas durante la ventana de reposo. Se conservan resultado, hash y acceso al artifact; no se reutiliza como verde final.
+
+Reproducción dirigida local: retirar el señalamiento de una localidad presenta un cuadro sin cambiar cámara ni fichas, pero producía24 mutaciones de `class` y `aria-label` con valores anteriores/nuevos idénticos. También se reasignaba `hidden` de la insignia pequeña. Se evitan esas tres asignaciones cuando su valor no cambia; no se cachea identidad ni se suprime el cambio de posición, borde, etiqueta o selección legítimo. No añade listeners, memoria persistente ni otro bucle.
+
+La medición anterior esperaba200ms después de seleccionar/cerrar ficha, aunque un cuadro pendiente podía tardar más en software. `inspect().renderPending` permite esperar la presentación efectiva de solicitudes antes de medir reposo. El helper de navegador espera también ese cuadro al leer una vista estable, sin esperar el final de una secuencia que se está midiendo. Se mantiene la exigencia **0 escrituras y0 cuadros con efectos apagados**, además de0 desfases durante el gesto. Una comprobación adicional fuerza un cambio de contorno con fichas/cámara idénticas y exige0 mutaciones, en los tres tamaños de la compuerta. El rojo dirigido guarda los valores iguales; el verde distingue ese caso de un movimiento legítimo. [Evidencia](evidencias/mapa-integral/README.md#fichas-sin-mutaciones-redundantes).
+
+El CI ejecuta primero las cinco compuertas específicas del mapa para detectar estos fallos antes; conserva después todas las regresiones de acciones y sus mismos escenarios. Quince resultadosJSON totales, sin omitir comprobaciones ni aumentar tolerancias. El SHA/run/artifact definitivos se registran en PR25 al concluir.
+
 ## Pruebas realizadas
 
 - `npm ci`, línea base629/629 recuperada, composición638/638 y entrega **641/641**: nueve pruebas de composición y tres de reloj visual. `npm run check:build`, siete builds/checks y oráculo57872ee **40/40**.
@@ -103,6 +113,6 @@ Linux/AMD EPYC9V74, Node24.19.0, Chromium154.0.8037.57, Playwright1.57 externo, 
 
 [Guía Windows/VSCode/LAN](../prototypes/horizontal-map/README.md). En la carpeta del repositorio, rama actualizada: Ctrl+C al servidor anterior, `npm.cmd ci`, `npm.cmd run dev:horizontal-map`. Abrir **http://127.0.0.1:8779/prototypes/horizontal-map/** y Ctrl+Shift+R. Node22+, sin Python; preparar V9.9 y pulsar Ver mapa. Inventario, cuatro acciones, consultas y acceso explícito a V9.9 se conservan.
 
-[Índice de evidencia](evidencias/mapa-integral/README.md): antes/después por localidad, generales escritorio/móvil, máximos aislados y video a velocidad normal. El commit, run y artifact finales se verifican y registran en PR25, evitando SHA circular documental. El CI de edacdf05 es historia y no respalda el nuevo head. Para revertir, deshacer primero el commit posterior de reloj visual identificado en PR25 y después04126c6; conserva la historia y vuelve a edacdf05.
+[Índice de evidencia](evidencias/mapa-integral/README.md): antes/después por localidad, generales escritorio/móvil, máximos aislados y video a velocidad normal. El commit, run y artifact finales se verifican y registran en PR25, evitando SHA circular documental. El CI de edacdf05 es historia y no respalda el nuevo head. Para revertir, deshacer primero el commit de atributos/reposo identificado en PR25, despuésc746862 y finalmente04126c6; conserva la historia y vuelve a edacdf05.
 
 **Única siguiente tarea: revisión visual del creador de esta pasada integral.** No se declara aprobada la dirección artística, la experiencia manual ni cerrada la etapa. Sin merge ni avance automático.

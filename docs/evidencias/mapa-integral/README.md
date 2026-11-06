@@ -60,6 +60,16 @@ El límite100/50ms por render dilata la presentación en cuadros muy lentos; no 
 
 [Movimiento final6 casos](reloj-visual/movimiento-final.json):1365×768,852×393,740×360,1920×1080 y decisiones/muerte; [traza verde](reloj-visual/movimiento-verde-frames.json)/[video](reloj-visual/movimiento-verde.webm). [Acciones finales3 tamaños](reloj-visual/acciones-final.json): búsqueda/inventario, ataque/exposición y construcción, cámara/selección conservadas. Repetidos después de corregir; las compuertas de composición, ambiente y coste se conservan y se repiten sobre el head final en CI. Una invocación local inicial de grabación no arrancó por faltar `PLAYWRIGHT_BROWSERS_PATH`; se apuntó a la instalación externa existente antes de repetir, sin añadir dependencias al producto.
 
+## Fichas sin mutaciones redundantes
+
+El segundo CI, [42304676153/c746862](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/42304676153), aprueba movimiento6 y las compuertas precedentes, después registra18 escrituras en reposo393×852/Suave. [Metadatos/digest del artifact](fichas-idle/ci-rojo.json), [resultado de cámara](fichas-idle/ci-camara-rojo.json) y [movimiento aprobado de ese mismo run](fichas-idle/ci-movimiento-verde.json). Este run sigue siendo rojo.
+
+[Reproducción local](fichas-idle/reproduccion-rojo.json): al retirar el hover aparecen24 mutaciones con valores iguales de clase/etiqueta, sin cambiar marcado o cámara. Se evitan asignaciones idénticas de clase, `hidden` y nombre accesible. La QA usa `renderPending` para comenzar a medir reposo después del último cuadro solicitado; no un retraso fijo200ms. Mantiene0 escrituras,0 cuadros ociosos con efectos apagados y0 desfases en los gestos. El caso de redraw sin mover fichas agrega cobertura en cada tamaño, con espera máxima15s para ese cuadro.
+
+[Cámara final](fichas-idle/camara-verde.json), [suite641](fichas-idle/suite.txt), [oráculo40](fichas-idle/oraculo.txt), [check](fichas-idle/check-build.txt), [siete builds/checks](fichas-idle/compilaciones.txt), [acciones](fichas-idle/acciones-verde.json) y [confort](fichas-idle/confort-verde.json) conservan la repetición tras el ajuste. El CI reordena las mismas15 compuertas para comprobar primero las específicas del mapa; no omite escenarios.
+
+La comparación local de coste de la sección siguiente corresponde a la composición04126c6, con presentación de acciones inactiva. Los dos ajustes posteriores no cambian geometría, texturas, partículas o efectos. El CI final mide/graba de nuevo su propio head; sus condiciones no se mezclan con la comparación local anterior.
+
 ## Medición controlada
 
 [Datos](medicion.json), [resumen](medicion-resumen.json). Base edacdf05 desde checkout separado y candidata secuencialmente, canvas1055×563/DPR1, misma partida y **vista general mediante Restablecer**,500ms de calentamiento y dos muestras1500ms por perfil. El enfoque por localidad cambió; no se usa para comparar costes con cámaras distintas. Este ensayo no se compara directamente con la tabla de92, que usaba otro encuadre.

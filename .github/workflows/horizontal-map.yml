@@ -41,6 +41,13 @@ jobs:
           npm run check:workshop-build
           npm run check:hospital-build
           export H344_ORIGIN=http://127.0.0.1:8779
+          # Primero las compuertas específicas de esta revisión, sin omitir
+          # después las regresiones de la referencia de acciones.
+          H344_MODULE_PATH=/dist/horizontal-map-qa/map.mjs H344_CAMERA_DIR=/tmp/horizontal-camera node scripts/check-h344-camera-browser.mjs
+          node scripts/check-horizontal-map-browser.mjs
+          node scripts/check-horizontal-map-comfort-browser.mjs
+          node scripts/check-horizontal-composition-browser.mjs
+          H344_MODULE_PATH=/dist/horizontal-map-qa/map.mjs node scripts/check-h344-presentation-stalls-browser.mjs
           node scripts/check-h344-browser.mjs
           node scripts/check-h344-edge-browser.mjs
           node scripts/check-h344-movement-browser.mjs
@@ -52,15 +59,9 @@ jobs:
           export H344_MOVEMENT_DIR=/tmp/horizontal-experience
           export H344_MOVEMENT_VIEWPORTS=1365x768,852x393,740x360,1920x1080
           export H344_PICK_POINT='{"x":362,"y":415}'
-          export H344_CAMERA_DIR=/tmp/horizontal-camera
           node scripts/check-h344-browser.mjs
           node scripts/check-h344-edge-browser.mjs
           node scripts/check-h344-movement-browser.mjs
-          node scripts/check-h344-camera-browser.mjs
-          node scripts/check-horizontal-map-browser.mjs
-          node scripts/check-h344-presentation-stalls-browser.mjs
-          node scripts/check-horizontal-map-comfort-browser.mjs
-          node scripts/check-horizontal-composition-browser.mjs
           node scripts/measure-horizontal-map.mjs
           node scripts/record-horizontal-map.mjs
           node scripts/record-horizontal-comfort.mjs

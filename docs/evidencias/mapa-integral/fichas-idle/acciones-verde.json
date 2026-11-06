@@ -1,0 +1,56 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "errors": [],
+      "barricadeFade": true,
+      "cancelPure": true,
+      "oneExecution": true,
+      "exposureOrder": true,
+      "barricadeCount": true,
+      "cameraStable": true,
+      "moveAndSearch": true,
+      "frames": 168,
+      "video": "/tmp/mapa-integral/cierre-idle/acciones/1365x768/cb0038779b349dc89273a32ed17acdf0.webm"
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "errors": [],
+      "barricadeFade": true,
+      "cancelPure": true,
+      "oneExecution": true,
+      "exposureOrder": true,
+      "barricadeCount": true,
+      "cameraStable": true,
+      "moveAndSearch": true,
+      "frames": 172,
+      "video": "/tmp/mapa-integral/cierre-idle/acciones/852x393/122fc6c2bf73ac449bbe6d30994d0efa.webm"
+    },
+    {
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "errors": [],
+      "barricadeFade": true,
+      "cancelPure": true,
+      "oneExecution": true,
+      "exposureOrder": true,
+      "barricadeCount": true,
+      "cameraStable": true,
+      "moveAndSearch": true,
+      "frames": 133,
+      "video": "/tmp/mapa-integral/cierre-idle/acciones/1920x1080/d7c2a2495013167599a7eeb6c9492db2.webm"
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

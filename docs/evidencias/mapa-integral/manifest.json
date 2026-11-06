@@ -266,6 +266,81 @@
       "sha256": "7aeb7a9717d4e0fdbff00d91518e92196e7629ecef20547101c201bfbe42eb04"
     },
     {
+      "file": "fichas-idle/acciones-verde.json",
+      "bytes": 1408,
+      "sha256": "f259d7b91ca7185a9dadd59879116d0b0b62c1a706c6be2b562a9676f60545c5"
+    },
+    {
+      "file": "fichas-idle/atributos-identicos-rojo.json",
+      "bytes": 3469,
+      "sha256": "b4bf7e8554f91021a29be84111009509671def2b0036832434e9c55375d2315b"
+    },
+    {
+      "file": "fichas-idle/atributos-verde-1365.json",
+      "bytes": 94,
+      "sha256": "ad42cc9fd910b7dd06721f9c446dccf169feb2417fbd9f0148d29ed429fee682"
+    },
+    {
+      "file": "fichas-idle/atributos-verde-320.json",
+      "bytes": 94,
+      "sha256": "ad42cc9fd910b7dd06721f9c446dccf169feb2417fbd9f0148d29ed429fee682"
+    },
+    {
+      "file": "fichas-idle/atributos-verde-393.json",
+      "bytes": 94,
+      "sha256": "ad42cc9fd910b7dd06721f9c446dccf169feb2417fbd9f0148d29ed429fee682"
+    },
+    {
+      "file": "fichas-idle/camara-verde.json",
+      "bytes": 3438,
+      "sha256": "6d37c64c9e35fff80821ca22440f4f5bbf6c26d84096c5a7972f8ab29a84bf81"
+    },
+    {
+      "file": "fichas-idle/check-build.txt",
+      "bytes": 125,
+      "sha256": "86e73c08796ad6d9c5656d310e04c5fa5753551cffd4756394886fdc14896ad7"
+    },
+    {
+      "file": "fichas-idle/ci-camara-rojo.json",
+      "bytes": 1962,
+      "sha256": "1f7f5e36382cc897674d55afdf15dc80575fa8b4e7557c7431c849944b44d068"
+    },
+    {
+      "file": "fichas-idle/ci-movimiento-verde.json",
+      "bytes": 3680,
+      "sha256": "06b359cb8cfcf739c4d17180f3dcc5c03af8d2cd8d002e6dbb9fcfddf4b21512"
+    },
+    {
+      "file": "fichas-idle/ci-rojo.json",
+      "bytes": 743,
+      "sha256": "93dcf230e884c3215b49d65e1a2073190c83ba74ebe0bb554342fa3a884922ca"
+    },
+    {
+      "file": "fichas-idle/compilaciones.txt",
+      "bytes": 32518,
+      "sha256": "143cb7ab59dcdfdd003575041d46112ce47d9e0c5eae6770e7cc78e4d056e95d"
+    },
+    {
+      "file": "fichas-idle/confort-verde.json",
+      "bytes": 463352,
+      "sha256": "305c47f4f08628537dd6345c07c3dc81800b9ee5ccc829e1e00d3ad95554c426"
+    },
+    {
+      "file": "fichas-idle/oraculo.txt",
+      "bytes": 678,
+      "sha256": "00e7f1144eb48b903efc5143933f771d2babd2fd14f22899a808f0dfbc5d114c"
+    },
+    {
+      "file": "fichas-idle/reproduccion-rojo.json",
+      "bytes": 4948,
+      "sha256": "1b5af05e659432bcbf92db8d332bde13bb4f85fd41fd5b4fc9d8b25f05c5323f"
+    },
+    {
+      "file": "fichas-idle/suite.txt",
+      "bytes": 57982,
+      "sha256": "6b09114c44f136409a538f38429d7da07e91e04f44078859788da07e233925e5"
+    },
+    {
       "file": "horizontal-map-build.json",
       "bytes": 3600,
       "sha256": "17d53ed7ff16395965310834b8e01da5d1a0f6a771775ad101dc70163900a3f8"

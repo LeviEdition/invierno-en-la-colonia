@@ -1,0 +1,19 @@
+{
+  "head": "c746862aacbc70aea8669593e7022f55862843f2",
+  "run": 42304676153,
+  "url": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/42304676153",
+  "conclusion": "failure",
+  "artifactId": 13546168701,
+  "bytes": 237489474,
+  "sha256": "c6ac3cdd42feda9dd4d536f4634a9e6d3eecf0fae2add6e91429b49e08d0ddc4",
+  "digestMatchesApi": true,
+  "zipCrcValid": true,
+  "passedBeforeFailure": [
+    "641 pruebas",
+    "oraculo40",
+    "siete builds/checks",
+    "H344 acciones/bordes/movimiento/camara",
+    "horizontal acciones4/bordes13/movimiento6"
+  ],
+  "failure": "18 escrituras en reposo393x852/Suave. Reproduccion local adicional:24 asignaciones identicas de clase/aria-label al retirar hover, sin mover camara ni fichas."
+}

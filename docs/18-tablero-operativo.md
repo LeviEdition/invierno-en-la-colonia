@@ -8,6 +8,8 @@
 
 **Validación:** línea base629/629 →638 de composición →641/641 con tres regresiones del reloj visual, oráculo40/40 y siete builds/checks. Composición3 tamaños/12 proyecciones máximas, acciones3, bordes13, movimiento6 finales, cámara9, escena6 y confort3 aprobados. El primer CI04126c6/42300586160 quedó rojo: fotogramas lentos omitían la consecuencia visual. Reproducido antes de corregir; límite100/50ms por cuadro conserva fases, sin tocar motor/azar. Chromium dirigido normal/reducido y regresiones originales se conservan. Resultados y CI del nuevo SHA exacto en93/evidencia/PR25; los verdes anteriores son historia. Sin teléfono físico ni aceptación manual/artística. Pendientes de arte: señal de biblioteca, detalles de supermercado, huellas/suministros y capas de calles; sin parches.
 
+**Segundo CI rojo conservado:** c746862/42304676153 pasa movimiento6 y las regresiones precedentes, luego registra18 escrituras en reposo móvil. Reproducción local:24 asignaciones idénticas al retirar el señalamiento; se evitan escrituras redundantes de clase/insignia/etiqueta. La QA espera presentación efectiva mediante `renderPending`, conserva0 escrituras/cuadros ociosos y añade el caso de contorno sin cambios en fichas. Quince compuertas y641 pruebas se mantienen; resultados del nuevo head en93/PR25, sin atribuirle verdes anteriores.
+
 **Inicio:** actualizar rama, Ctrl+C al servidor anterior, `npm.cmd run dev:horizontal-map` → **http://127.0.0.1:8779/prototypes/horizontal-map/**, Ctrl+Shift+R. [Guía](../prototypes/horizontal-map/README.md). **Única siguiente tarea: revisión visual del creador de la pasada integral.** Sin merge ni cierre de etapa.
 
 ---
