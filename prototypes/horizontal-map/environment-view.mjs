@@ -1,28 +1,31 @@
 import {createAtmosphereView} from '../movement-map/storm-view.mjs';
 import {addIllustratedTexture} from '../hospital-phaser/texture-quality.mjs';
+import Phaser from 'phaser';
 import config from './environment.json';import sceneConfig from './scene.json';
-import {vegetationOffset,lightLevel,staticVegetationRects,polygonInterior,unlitColor} from './environment-model.mjs';
+import {vegetationOffset,lightLevel,polygonInterior,unlitColor} from './environment-model.mjs';
+import {vegetationGeometry} from './vegetation-geometry.mjs';
 
 // Todo es presentación. Mesh2D es la API pública 2D de Phaser4.2.1:
 // no modelos3D, shader propio, motor nuevo o coordenadas del juego.
 export function createHorizontalEnvironment(scene,atmosphere,options){
  const weather=createAtmosphereView(scene,atmosphere,options),objects=[],surfaces=[],keys=[];
  const vegetation=scene.textures.get('h33-vegetation'),vf=vegetation.get('original'),base=scene.textures.get('h33-map'),bf=base.get('original'),source=base.getSourceImage();
- const meshes=[],affected=[];
- function addMesh(rects,group){const vertices=[],indices=[],anchor=group?.anchor||{x:0,y:0};
-  for(const [x,y,w,h]of rects){const X=group?Array.from({length:3},(_,i)=>x+w*i/2):[x,x+w],Y=group?[...new Set([...Array.from({length:5},(_,i)=>y+h*i/4),group.anchor.y-12])].sort((a,b)=>a-b):[y,y+h],offset=vertices.length/4;
-   for(const y of Y)for(const x of X){const i=vertices.length;vertices.push(x-anchor.x,y-anchor.y,vf.u0+(vf.u1-vf.u0)*x/1672,vf.v0+(vf.v1-vf.v0)*y/941);if(group)affected.push({i,x,y,base:x-anchor.x,vertices,group});}
-   for(let j=0;j<Y.length-1;j++)for(let i=0;i<X.length-1;i++){const a=offset+j*X.length+i,b=a+X.length,c=a+1,d=b+1;indices.push(a,b,c,0,b,c,d,0);}
-  }
-  const mesh=scene.add.mesh2d(anchor.x,anchor.y,vegetation,vertices,indices).setOrigin(0,0).setDepth(.2);mesh.indicesOrdered=indices;mesh.setUseOrderedIndices(true);objects.push(mesh);meshes.push({vertices,indices});
+ const meshes=[],affected=[],geometry=vegetationGeometry(sceneConfig.bounds,config.groups,Phaser.Geom.Polygon.Earcut);
+ function addMesh(spec,group){const vertices=[],indices=[],anchor=group?.anchor||{x:0,y:0};
+  for(let n=0;n<spec.points.length;n+=2){const x=spec.points[n],y=spec.points[n+1],i=vertices.length;vertices.push(x-anchor.x,y-anchor.y,vf.u0+(vf.u1-vf.u0)*x/1672,vf.v0+(vf.v1-vf.v0)*y/941);if(group)affected.push({i,x,y,base:x-anchor.x,vertices,group});}
+  for(let n=0;n<spec.indices.length;n+=3)indices.push(...spec.indices.slice(n,n+3),0);
+  const mesh=scene.add.mesh2d(anchor.x,anchor.y,vegetation,vertices,indices).setOrigin(0,0).setDepth(group?.depth??.2);
+  // Earcut devuelve triángulos arbitrarios. El batch de quads necesita parejas
+  // que compartan arista; no se puede declarar ordenada la lista de entrada.
+  mesh.buildOrderedIndices(1).setUseOrderedIndices(true);objects.push(mesh);meshes.push({vertices,indices,ordered:mesh.indicesOrdered});
  }
- addMesh(staticVegetationRects(sceneConfig.bounds,config.groups));for(const g of config.groups)addMesh([g.rect],g);
+ addMesh(geometry.static);for(const spec of geometry.dynamic)addMesh(spec,spec.group);
  function canvasTexture(key,w,h,paint){const c=document.createElement('canvas');c.width=w;c.height=h;paint(c.getContext('2d'),c);addIllustratedTexture(scene.textures,key,c);surfaces.push(c,scene.textures.get(key).getSourceImage());keys.push(key);return key;}
  function sprite(key,x,y,depth){const o=scene.add.image(x,y,key,'original').setOrigin(0,0).setDepth(depth);objects.push(o);return o;}
  function path(ctx,poly,ox,oy){ctx.beginPath();poly.forEach(([x,y],i)=>i?ctx.lineTo(x-ox,y-oy):ctx.moveTo(x-ox,y-oy));ctx.closePath();}
  // El fondo generativo y la vegetación no encajan exactamente. Restituir los
  // polígonos del edificio desde el MISMO fondo evita árboles sobre fachadas.
- for(const z of sceneConfig.zones){const p=z.selectionPolygon,left=Math.floor(Math.min(...p.map(p=>p[0]))),top=Math.floor(Math.min(...p.map(p=>p[1]))),w=Math.ceil(Math.max(...p.map(p=>p[0])))-left,h=Math.ceil(Math.max(...p.map(p=>p[1])))-top;
+ for(const z of sceneConfig.zones){const p=z.occlusionPolygon||z.selectionPolygon,left=Math.floor(Math.min(...p.map(p=>p[0]))),top=Math.floor(Math.min(...p.map(p=>p[1]))),w=Math.ceil(Math.max(...p.map(p=>p[0])))-left,h=Math.ceil(Math.max(...p.map(p=>p[1])))-top;
   const key=canvasTexture('horizontal-building-'+z.id,w,h,ctx=>{path(ctx,p,left,top);ctx.clip();ctx.drawImage(source,bf.cutX+left,bf.cutY+top,w,h,0,0,w,h);});sprite(key,left,top,.5);
  }
  const lights=config.lights.map(l=>{const p=[...l.polygon,...l.spill],left=Math.floor(Math.min(...p.map(p=>p[0])))-2,top=Math.floor(Math.min(...p.map(p=>p[1])))-2,w=Math.ceil(Math.max(...p.map(p=>p[0])))-left+2,h=Math.ceil(Math.max(...p.map(p=>p[1])))-top+2;
@@ -38,5 +41,5 @@ export function createHorizontalEnvironment(scene,atmosphere,options){
   for(const l of lights){l.level=enabled&&c.settings.lights?lightLevel(l,c.elapsed):0;l.lit.setAlpha(l.level);l.ground.setAlpha(enabled&&c.settings.lights?l.level:0);}updates++;
  }
  paint();
- return {step(delta){weather.step(delta);if(!disposed&&weather.isAnimating())paint();},isAnimating:()=>weather.isAnimating(),setSettings(p){weather.setSettings(p);paint();},setPaused(v){weather.setPaused(v);},inspect(){const w=weather.inspect();return {...w,environment:{updates,groups:config.groups.map(g=>({id:g.id,anchor:g.anchor,crownOffset:vegetationOffset(g,g.anchor.x,g.rect[1]+g.rect[3]*.35,lastClock.elapsed,lastWind),baseOffset:vegetationOffset(g,g.anchor.x,g.anchor.y,lastClock.elapsed,lastWind)})),dynamicVertices:affected.length,maxVertexOffset:Math.max(0,...affected.map(v=>Math.abs(v.vertices[v.i]-v.base))),meshVertices:meshes.reduce((n,m)=>n+m.vertices.length/4,0),triangles:meshes.reduce((n,m)=>n+m.indices.length/4,0),interactiveObjects:objects.filter(o=>o.input?.enabled).length,lights:lights.map(l=>({id:l.id,sourceAlpha:l.lit.alpha,spillAlpha:l.ground.alpha,level:l.level})),runtimeTextureBytes:surfaces.reduce((n,c)=>n+c.width*c.height*4,0)}};},destroy(){if(disposed)return;disposed=true;objects.forEach(o=>o.destroy());keys.forEach(k=>scene.textures.remove(k));surfaces.forEach(c=>{c.width=c.height=1;});return {...weather.destroy(),environmentObjectsReleased:objects.length,environmentTexturesReleased:keys.every(k=>!scene.textures.exists(k))};}};
+ return {step(delta){weather.step(delta);if(!disposed&&weather.isAnimating())paint();},isAnimating:()=>weather.isAnimating(),setSettings(p){weather.setSettings(p);paint();},setPaused(v){weather.setPaused(v);},inspect(){const w=weather.inspect();return {...w,environment:{updates,quadTopologyValid:meshes.every(m=>m.ordered.every((_,i,a)=>i%8!==0||(a[i+1]===a[i+4]&&a[i+2]===a[i+5]&&a[i+3]===a[i+7]))),partitionError:Phaser.Geom.Polygon.Earcut.deviation(geometry.sourcePoints,geometry.holes,2,geometry.static.indices),groups:config.groups.map(g=>({id:g.id,kind:g.kind,frequency:g.frequency,anchor:g.anchor,tipOffset:vegetationOffset(g,g.anchor.x,g.rect[1],lastClock.elapsed,lastWind),fixedOffset:vegetationOffset(g,g.anchor.x,g.bendFromY,lastClock.elapsed,lastWind),crownOffset:vegetationOffset(g,g.anchor.x,g.rect[1]+g.rect[3]*.35,lastClock.elapsed,lastWind),baseOffset:vegetationOffset(g,g.anchor.x,g.anchor.y,lastClock.elapsed,lastWind)})),dynamicVertices:affected.length,maxVertexOffset:Math.max(0,...affected.map(v=>Math.abs(v.vertices[v.i]-v.base))),meshVertices:meshes.reduce((n,m)=>n+m.vertices.length/4,0),triangles:meshes.reduce((n,m)=>n+m.indices.length/4,0),interactiveObjects:objects.filter(o=>o.input?.enabled).length,lights:lights.map(l=>({id:l.id,sourceAlpha:l.lit.alpha,spillAlpha:l.ground.alpha,level:l.level})),runtimeTextureBytes:surfaces.reduce((n,c)=>n+c.width*c.height*4,0)}};},destroy(){if(disposed)return;disposed=true;objects.forEach(o=>o.destroy());keys.forEach(k=>scene.textures.remove(k));surfaces.forEach(c=>{c.width=c.height=1;});return {...weather.destroy(),environmentObjectsReleased:objects.length,environmentTexturesReleased:keys.every(k=>!scene.textures.exists(k))};}};
 }

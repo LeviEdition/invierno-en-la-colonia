@@ -34,7 +34,7 @@ function displayState(){
 }
 function showReference(){
  stopSearchClock();search.interrupt();stopAction();if(movementPresenting()){stopMovement();if(state)viewer?.setState(state);}
- mode='reference';$('map-app').hidden=true;frame.hidden=false;$('reference-mode').setAttribute('aria-pressed','true');$('map-mode').setAttribute('aria-pressed','false');viewer?.setActive(false);focusReference();
+ mode='reference';document.body.dataset.presentation=mode;$('map-app').hidden=true;frame.hidden=false;$('reference-mode').setAttribute('aria-pressed','true');$('map-mode').setAttribute('aria-pressed','false');viewer?.setActive(false);focusReference();
 }
 function applyAuthority(){
  if(!state)return;
@@ -65,7 +65,7 @@ function mountViewer(){
 }
 function showMap(){
  if(!state||state.blocked&&!ownedSearch(state)&&!ownedAction(state)){showReference();return;}
- mode='map';frame.hidden=true;$('map-app').hidden=false;$('reference-mode').setAttribute('aria-pressed','false');$('map-mode').setAttribute('aria-pressed','true');
+ mode='map';document.body.dataset.presentation=mode;frame.hidden=true;$('map-app').hidden=false;$('reference-mode').setAttribute('aria-pressed','false');$('map-mode').setAttribute('aria-pressed','true');
  if(viewer){viewer.setState(displayState());viewer.setActive(true);}else void mountViewer();
 }
 function acceptState(next){
@@ -120,7 +120,7 @@ function receive(event){
 }
 function connect(){disconnect();if(!pageActive)return;const channel=new MessageChannel();port=channel.port1;port.onmessage=receive;port.start();frame.contentWindow.postMessage({protocol,type:'connect'},location.origin,[channel.port2]);focusReference();}
 frame.addEventListener('load',()=>{stopSearchClock();stopMovement();stopAction();search.update(null);action.update(null);state=null;lastPublic=null;$('map-mode').disabled=true;showReference();status('Conectando con la partida…');connect();},{signal:lifetime.signal});
-$('reference-mode').addEventListener('click',showReference,{signal:lifetime.signal});$('map-mode').addEventListener('click',showMap,{signal:lifetime.signal});$('resolve-decision').addEventListener('click',showReference,{signal:lifetime.signal});
+$('reference-mode').addEventListener('click',showReference,{signal:lifetime.signal});$('return-reference')?.addEventListener('click',showReference,{signal:lifetime.signal});$('map-mode').addEventListener('click',showMap,{signal:lifetime.signal});$('resolve-decision').addEventListener('click',showReference,{signal:lifetime.signal});
 for(const id of ['restart-view','retry-view'])$(id).addEventListener('click',()=>{if(mode==='map')void mountViewer();},{signal:lifetime.signal});
 document.addEventListener('visibilitychange',()=>{if(document.hidden){stopAction();interruptSearch();if(movementPresenting()){stopMovement();applyAuthority();}}},{signal:lifetime.signal});
 export function inspect(){return {mode,connected:!!port,starts,generation,projection:state?structuredClone(state):null,movement:movement.inspect(),search:search.inspect(),action:action.inspect(),view:viewer?.inspect()||null,lastDisposal,lastError};}

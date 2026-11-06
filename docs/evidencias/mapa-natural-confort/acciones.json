@@ -1,0 +1,56 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "errors": [],
+      "barricadeFade": true,
+      "cancelPure": true,
+      "oneExecution": true,
+      "exposureOrder": true,
+      "barricadeCount": true,
+      "cameraStable": true,
+      "moveAndSearch": true,
+      "frames": 128,
+      "video": "/tmp/mapa-natural/final/acciones/1365x768/638ae810f652c614cde320467b8aaa47.webm"
+    },
+    {
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "errors": [],
+      "barricadeFade": true,
+      "cancelPure": true,
+      "oneExecution": true,
+      "exposureOrder": true,
+      "barricadeCount": true,
+      "cameraStable": true,
+      "moveAndSearch": true,
+      "frames": 93,
+      "video": "/tmp/mapa-natural/final/acciones/1920x1080/f3b49055f8eec9a84cfd74c6a767aa09.webm"
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "errors": [],
+      "barricadeFade": true,
+      "cancelPure": true,
+      "oneExecution": true,
+      "exposureOrder": true,
+      "barricadeCount": true,
+      "cameraStable": true,
+      "moveAndSearch": true,
+      "frames": 169,
+      "video": "/tmp/mapa-natural/final/acciones/852x393/4033661a15594e509c3030b540d26e2a.webm"
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

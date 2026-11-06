@@ -1,5 +1,7 @@
 # 91 — Revisión visual del mapa horizontal: copas, accesos, contornos y luces
 
+> Historia conservada. La revisión posterior de vegetación, panel, interfaz y lectura se registra en [informe92](92-vegetacion-natural-y-confort-del-mapa.md), sin sustituir esta evidencia.
+
 06/11/2026, UTC (05/11 en Montevideo). Entrega experimental para revisión del creador en [PR25](https://github.com/LeviEdition/invierno-en-la-colonia/pull/25), conservado en borrador contra H3.4.4. No aceptación manual, merge ni cierre de etapa.
 
 ## Base y alcance

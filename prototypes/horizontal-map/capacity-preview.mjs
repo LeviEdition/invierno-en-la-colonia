@@ -8,5 +8,5 @@ export async function mountCapacity(projection){
  const send=()=>{throw Error('La escena QA de capacidad no ejecuta comandos');},movement=createMovementController({send}),search=createSearchController({send}),action=createActionController({send});
  movement.update(projection);search.update(projection);action.update(projection);
  const view=await createSearchMapView({movement,search,action,onSearchNative:()=>{}});
- view.setState(projection);view.setActive(true);document.getElementById('map-app').hidden=false;document.getElementById('reference-frame').hidden=true;return view;
+ document.body.dataset.presentation='map';const badge=document.createElement('div');badge.className='qa-notice';badge.textContent='QA · Ocupación máxima sintética · No es una partida';document.querySelector('.map-viewport').append(badge);view.setState(projection);view.setActive(true);document.getElementById('map-app').hidden=false;document.getElementById('reference-frame').hidden=true;return {...view,async destroy(){badge.remove();return view.destroy();}};
 }

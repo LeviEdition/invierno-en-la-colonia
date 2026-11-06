@@ -1,5 +1,17 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## Mapa horizontal — vegetación natural y confort, seis ajustes ·06/11/2026 UTC
+
+**Solicitud vigente:** raíces fijas y copas libres; recuperar310px al cerrar ficha; móvil horizontal compacto; jerarquía de casillas; contornos/oclusiones separados; muestreo y límite de los PNG. Misma rama `experiment/mapa-horizontal-ambientacion-h3` desde **64bbe2c53b93a1efb61f5bbe474c25edaa2f50fa**, [PR25 draft](https://github.com/LeviEdition/invierno-en-la-colonia/pull/25) contra H3.4.4. [Informe92](92-vegetacion-natural-y-confort-del-mapa.md). Bloques inferiores históricos; sin main/referencia/reglas/capacidades/arte nuevo.
+
+**Implementado:** seis árboles y dos arbustos con siluetas complementarias y puntas libres, velocidades/fases distintas, viento compartido y sombras inferiores fijas. Panel/canvas/cámara se actualizan juntos sin reiniciar; foco/zoom solicitado conservados, con límite de cobertura explícito. Barras852×393:146→99px; mapa226→294px. Vacías ajenas tenues/discontinuas y selección continua; sprites ocupados visibles. Biblioteca incluye cabina, trazo constante1,3px, clic y oclusión independientes. Zoom nativo; fuentes mayores quedan pendientes artísticos, sin falso detalle.
+
+**Comprobaciones:** base623/623 → **629/629**, oráculo40/40, siete builds/checks. Resultados Chromium finales, video temporal, coste y CI exacto se registran en92/evidencia/PR25. Los verdes anteriores son historia. No teléfono físico ni aceptación artística; el mayor número de vértices tiene coste medido en software, sin garantía30FPS.
+
+**Inicio:** actualizar rama, Ctrl+C al servidor previo, `npm.cmd run dev:horizontal-map` → **http://127.0.0.1:8779/prototypes/horizontal-map/**, Ctrl+Shift+R. [Guía Windows/VSCode/LAN](../prototypes/horizontal-map/README.md). **Única siguiente tarea: revisión visual del creador de estos seis ajustes.** Sin merge ni avance automático.
+
+---
+
 ## Mapa horizontal — cuatro ajustes visuales para revisión ·06/11/2026 UTC
 
 **Solicitud vigente:** copas más visibles, accesos ordenados y fuera de colonia, contornos ajustados al arte y titileos breves e independientes. Misma rama `experiment/mapa-horizontal-ambientacion-h3` y [PR25 draft](https://github.com/LeviEdition/invierno-en-la-colonia/pull/25), desde8113b557, sin cambios de reglas/capacidades/main/referencia ni arte nuevo. [Informe91](91-ajustes-visuales-mapa-horizontal.md); apartados inferiores históricos.

@@ -1,0 +1,108 @@
+[
+  {
+    "variant": "baseline",
+    "camera": {
+      "zoom": 1.388157894736842,
+      "x": -617.7302631578946,
+      "y": -315.4078947368421,
+      "minZoom": 0.6309808612440191,
+      "maxZoom": 1.5
+    },
+    "viewport": {
+      "width": 1055,
+      "height": 563,
+      "dpr": 1
+    },
+    "profiles": [
+      {
+        "profile": "off",
+        "rendersPerSecond": 0.0,
+        "taskSeconds": 0.0031439999999999246,
+        "heapBytesRange": [
+          11024344,
+          11186008
+        ],
+        "vertices": 256,
+        "triangles": 216,
+        "auxiliaryRgbaBytes": 6344200
+      },
+      {
+        "profile": "soft",
+        "rendersPerSecond": 14.444699780074883,
+        "taskSeconds": 2.842909,
+        "heapBytesRange": [
+          12089988,
+          12837472
+        ],
+        "vertices": 256,
+        "triangles": 216,
+        "auxiliaryRgbaBytes": 6344200
+      },
+      {
+        "profile": "storm",
+        "rendersPerSecond": 13.654540134568293,
+        "taskSeconds": 3.074605,
+        "heapBytesRange": [
+          12032668,
+          14056616
+        ],
+        "vertices": 256,
+        "triangles": 216,
+        "auxiliaryRgbaBytes": 6344200
+      }
+    ]
+  },
+  {
+    "variant": "candidate",
+    "camera": {
+      "zoom": 1.388157894736842,
+      "x": -617.7302631578946,
+      "y": -315.4078947368421,
+      "minZoom": 0.6309808612440191,
+      "maxZoom": 1.5
+    },
+    "viewport": {
+      "width": 1055,
+      "height": 563,
+      "dpr": 1
+    },
+    "profiles": [
+      {
+        "profile": "off",
+        "rendersPerSecond": 0.0,
+        "taskSeconds": 0.003542000000000045,
+        "heapBytesRange": [
+          12026308,
+          12201888
+        ],
+        "vertices": 522,
+        "triangles": 416,
+        "auxiliaryRgbaBytes": 5790524
+      },
+      {
+        "profile": "soft",
+        "rendersPerSecond": 10.642071656697645,
+        "taskSeconds": 2.867368,
+        "heapBytesRange": [
+          10214528,
+          11579940
+        ],
+        "vertices": 522,
+        "triangles": 416,
+        "auxiliaryRgbaBytes": 5790524
+      },
+      {
+        "profile": "storm",
+        "rendersPerSecond": 10.984750581482158,
+        "taskSeconds": 3.09358,
+        "heapBytesRange": [
+          10368956,
+          12501072
+        ],
+        "vertices": 522,
+        "triangles": 416,
+        "auxiliaryRgbaBytes": 5790524
+      }
+    ]
+  }
+]
