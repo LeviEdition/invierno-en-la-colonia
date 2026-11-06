@@ -16,6 +16,7 @@ Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos un
 - [Tablero operativo — próxima tarea](docs/18-tablero-operativo.md)
 - [H3.1 — Auditoría de identidad visual](docs/74-h3-1-auditoria-identidad-visual.md)
 - [Plan propuesto H3.1–H3.6](docs/75-plan-hito-3-identidad-visual.md)
+- [Mapa horizontal — composición integral y evidencia](docs/93-composicion-integral-del-mapa.md)
 - [Mapa horizontal y ambientación — entrega experimental](docs/90-mapa-horizontal-ambientacion.md)
 - [H3.4.4 — Ataque y barricadas desde el mapa](docs/88-h3-4-4-ataque-barricadas-mapa.md)
 - [H3.4.3 — Buscar desde el mapa](docs/87-h3-4-3-busqueda-mapa.md)

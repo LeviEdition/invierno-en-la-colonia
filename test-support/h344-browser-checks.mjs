@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {installLifecycleProbe} from './h32-lifecycle-probe.mjs';
 export function actionMapChecks({origin='http://127.0.0.1:8778',modulePath='/dist/action-map-qa/map.mjs'}={}){
-const api=p=>p.evaluate(()=>window.h344Viewer.inspect()),view=async p=>(await api(p)).view,frames=async p=>{await p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));await p.waitForFunction(()=>{const v=window.h344Viewer?.inspect().view,panel=v?.panel;return !v?.active||!panel||panel.requestedOpen===panel.presentedOpen;});},host=p=>p.frames().find(f=>f.url().endsWith('/reference-host.html'));
+const api=p=>p.evaluate(()=>window.h344Viewer.inspect()),view=async p=>(await api(p)).view,frames=async p=>{await p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));await p.waitForFunction(()=>{const v=window.h344Viewer?.inspect().view||window.capacityView?.inspect(),panel=v?.panel;return !v?.active||!panel||panel.requestedOpen===panel.presentedOpen;});},host=p=>p.frames().find(f=>f.url().endsWith('/reference-host.html'));
 const raw=p=>host(p).evaluate(()=>h344Test.snapshot()),rng=p=>host(p).evaluate(()=>window.h344RandomCalls),sleep=(p,n=70)=>p.waitForTimeout(n);
 async function instrument(context){
  await context.addInitScript(()=>{if(window.top===window)return;window.h344RandomValue=.8;window.h344RandomCalls=0;Math.random=()=>{window.h344RandomCalls++;return window.h344RandomValue;};});

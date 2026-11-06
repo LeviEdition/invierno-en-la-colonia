@@ -1,5 +1,7 @@
 # 92 — Vegetación natural, espacio útil y lectura del mapa
 
+> Historia conservada. La pasada integral posterior, apoyos completos, fichas y luces se registra en [informe93](93-composicion-integral-del-mapa.md).
+
 06/11/2026, UTC. Entrega experimental para revisión del creador en [PR25](https://github.com/LeviEdition/invierno-en-la-colonia/pull/25), en borrador contra H3.4.4. No aceptación artística/manual, merge ni cierre de etapa.
 
 ## Base comprobada y alcance

@@ -1,5 +1,17 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## Mapa horizontal — pasada integral de composición ·06/11/2026 UTC
+
+**Encargo vigente:** conservar los ajustes de92 y revisar apoyos completos, fichas máximas, enfoque, señalamiento y luces. Misma rama `experiment/mapa-horizontal-ambientacion-h3` desde **edacdf05c67967a49609e45d21dad6e9e0dcc4e0**, [PR25 draft](https://github.com/LeviEdition/invierno-en-la-colonia/pull/25) contra H3.4.4. [Informe93](93-composicion-integral-del-mapa.md). Bloques inferiores históricos; sin reglas/capacidades/IA/main/referencia/arte nuevo.
+
+**Implementado:**36 accesos recolocados manualmente conservando índices, doce fuera del cerco, cuatro por exterior; cuerpos completos y elipses contrastados con sólidos, vegetación y vecinos. Fichas compactas sin tapar fachadas/portón; asignación explícita de cuatro retratos e iniciales conservada, sin compactar identidad tras muerte. Enfoque incluye silueta, fichas y exteriores; panel310px y barras99px conservados. Señalamiento tenue, selección y destino diferenciados. Tres luces con manchas menores y titileo contenido; sin aclarado global. Vegetación de92 sin nuevos meshes ni partículas.
+
+**Validación:** línea base629/629 →638/638, oráculo40/40 y siete builds/checks. Composición3 tamaños/12 proyecciones máximas, acciones3, bordes13, movimiento5, cámara9, escena6 y confort3 aprobados. Resultados finales de suite, oráculo, construcciones, Chromium, máximos, video y medición en93/evidencia/PR25. CI se comprueba sobre el nuevo SHA exacto; el de edacdf05 es historia. Sin teléfono físico ni aceptación manual/artística. Pendientes de arte concretos: señal de biblioteca, detalles de supermercado, huellas/suministros y capas de calles; no se sustituyen por parches.
+
+**Inicio:** actualizar rama, Ctrl+C al servidor anterior, `npm.cmd run dev:horizontal-map` → **http://127.0.0.1:8779/prototypes/horizontal-map/**, Ctrl+Shift+R. [Guía](../prototypes/horizontal-map/README.md). **Única siguiente tarea: revisión visual del creador de la pasada integral.** Sin merge ni cierre de etapa.
+
+---
+
 ## Mapa horizontal — vegetación natural y confort, seis ajustes ·06/11/2026 UTC
 
 **Solicitud vigente:** raíces fijas y copas libres; recuperar310px al cerrar ficha; móvil horizontal compacto; jerarquía de casillas; contornos/oclusiones separados; muestreo y límite de los PNG. Misma rama `experiment/mapa-horizontal-ambientacion-h3` desde **64bbe2c53b93a1efb61f5bbe474c25edaa2f50fa**, [PR25 draft](https://github.com/LeviEdition/invierno-en-la-colonia/pull/25) contra H3.4.4. [Informe92](92-vegetacion-natural-y-confort-del-mapa.md). Bloques inferiores históricos; sin main/referencia/reglas/capacidades/arte nuevo.

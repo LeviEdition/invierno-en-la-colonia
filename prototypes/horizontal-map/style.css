@@ -28,3 +28,10 @@ body[data-panel-open=false] #map-app #panel-toggle{font-size:14px;min-width:56px
 body[data-presentation=map] #movement-result:not(:empty){display:block;position:fixed;z-index:45;left:80px;right:85px;bottom:56px;width:max-content;max-width:calc(100% - 170px);margin:0;padding:5px 8px;background:#202825ed;border:1px solid #81765d;font:12px/1.35 system-ui,sans-serif;pointer-events:none}
 #map-app #dossier .panel-heading{flex:0 0 auto}
 #map-app #dossier .panel-content{min-height:0;flex:1 1 auto;overflow:auto}
+
+/* Fichas de tablero compactas: la insignia queda dentro de la ficha. */
+#map-app .actor-marker>.group-badge{top:auto;bottom:0;transform:translate(-50%,10%);padding:0 2px;line-height:11px;font-size:8px}
+#map-app .actor-selected.owner-human{box-shadow:0 0 0 1px #101820,0 0 6px 2px #65afff99}
+#map-app .actor-selected.owner-ai{box-shadow:0 0 0 1px #101820,0 0 6px 2px #ff929699}
+#map-app .destination-legal{fill:#d2bb6a0a;stroke:#b9b3a2;stroke-width:1.2;stroke-dasharray:5 4}
+#map-app .destination-chosen{fill:#e9bf5e16;stroke:#ffe5a0;stroke-width:2.3;stroke-dasharray:none}

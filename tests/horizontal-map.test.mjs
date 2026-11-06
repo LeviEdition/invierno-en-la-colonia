@@ -14,11 +14,11 @@ test('Horizontal: bases inmóviles y copas libres con viento y apagado exacto',(
 test('Horizontal: luz irregular acotada; distintas fases y un nivel para fuente y suelo',()=>{const a={period:6,phase:0,base:.55,variation:.25},b={...a,phase:2};for(let t=0;t<40;t+=.1){const n=lightLevel(a,t);assert.ok(n>=.3-1e-9&&n<=.8+1e-9);}assert.notEqual(lightLevel(a,2),lightLevel(b,2));});
 
 const environment=JSON.parse(readFileSync(new URL('../prototypes/horizontal-map/environment.json',import.meta.url)));
-test('Horizontal: doce accesos alrededor del cerco, con filas regulares y contornos completos fuera',async()=>{
+test('Horizontal: doce accesos alrededor del cerco, orden manual y contornos completos fuera',async()=>{
  const {polygonInterior}=await import('../prototypes/horizontal-map/environment-model.mjs');
  const colony=scene.zones.find(z=>z.id==='colonia');assert.equal(colony.accesses.length,12);
  for(const a of colony.accesses)for(let i=0;i<24;i++){const t=i*Math.PI/12;assert.equal(polygonInterior(a.x+15*Math.cos(t),a.y+7*Math.sin(t),colony.outlinePolygon||colony.selectionPolygon),0,'acceso dentro del cerco');}
- for(const z of scene.zones){const groups=Object.groupBy(z.accesses,a=>a.row);assert.ok(!groups.undefined,z.id+' fila identificada');for(const row of Object.values(groups)){if(row.length<3)continue;const dx=row[1].x-row[0].x,dy=row[1].y-row[0].y;for(let i=2;i<row.length;i++){assert.equal(row[i].x-row[i-1].x,dx);assert.equal(row[i].y-row[i-1].y,dy);}}}
+ for(const z of scene.zones){assert.ok(z.accesses.every(a=>a.row&&Number.isFinite(a.rotation||0)),z.id+' orden lógico etiquetado y perspectiva explícita');for(let i=0;i<z.accesses.length;i++)for(let j=i+1;j<z.accesses.length;j++)assert.ok(Math.hypot(z.accesses[i].x-z.accesses[j].x,z.accesses[i].y-z.accesses[j].y)>=34,z.id+' apoyos suficientemente separados');}
 });
 test('Horizontal: contorno detallado del arte separado de la región de clic',()=>{for(const z of scene.zones){assert.ok(z.outlinePolygon?.length>=18,z.id);assert.notDeepEqual(z.outlinePolygon,z.selectionPolygon);assert.ok(z.outlinePolygon.every(p=>p.every(Number.isFinite)));}});
 test('Horizontal: salientes del contorno también se pueden seleccionar sin perder el área de clic previa',async()=>{const {pickLocality,pointInPolygon}=await import('../prototypes/hospital-workshop/mockup/model.mjs');const hospital=scene.zones.find(z=>z.id==='hospital'),penthouse={x:345,y:334};assert.equal(pointInPolygon(penthouse,hospital.selectionPolygon),false);assert.equal(pickLocality(scene,penthouse),'hospital');for(const z of scene.zones)assert.equal(pickLocality(scene,z.center),z.id);assert.equal(pickLocality(scene,{x:10,y:900}),null);});
