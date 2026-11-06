@@ -1,5 +1,7 @@
 # 90 — Escenario horizontal y ambientación sobre H3.4.4
 
+> Historia de la primera entrega hasta8113b557. La solicitud posterior de copas, accesos exteriores, marcos y titileos se registra en [informe91](91-ajustes-visuales-mapa-horizontal.md), que actualiza esos apartados. La fila dentro del patio y la variación lenta descritas aquí ya no son la presentación vigente.
+
 05/11/2026, America/Montevideo. Entrega experimental **para revisión del creador**, no aprobación de arte ni aceptación manual de H3.4.3/H3.4.4. PR25 draft contra `experiment/h3-4-4-ataque-barricadas-mapa`, rama `experiment/mapa-horizontal-ambientacion-h3`. Sin merge, cambios en main/tag/release, reglas/capacidades/IA/balance/narrativa/guardados o editor de encrucijadas.
 
 ## Base y originales

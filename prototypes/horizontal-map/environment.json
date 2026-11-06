@@ -12,7 +12,7 @@
         "x": 222,
         "y": 471
       },
-      "amplitude": 2.7,
+      "amplitude": 24,
       "phase": 0.2
     },
     {
@@ -27,7 +27,7 @@
         "x": 385,
         "y": 606
       },
-      "amplitude": 1.8,
+      "amplitude": 16,
       "phase": 1.7
     },
     {
@@ -42,7 +42,7 @@
         "x": 825,
         "y": 747
       },
-      "amplitude": 2.2,
+      "amplitude": 20,
       "phase": 3.1
     },
     {
@@ -57,7 +57,7 @@
         "x": 1080,
         "y": 646
       },
-      "amplitude": 2.4,
+      "amplitude": 20,
       "phase": 0.8
     },
     {
@@ -72,7 +72,7 @@
         "x": 1330,
         "y": 826
       },
-      "amplitude": 1.7,
+      "amplitude": 15,
       "phase": 2.2
     },
     {
@@ -87,7 +87,7 @@
         "x": 1600,
         "y": 634
       },
-      "amplitude": 2.8,
+      "amplitude": 26,
       "phase": 4.1
     },
     {
@@ -102,7 +102,7 @@
         "x": 65,
         "y": 735
       },
-      "amplitude": 2.6,
+      "amplitude": 24,
       "phase": 2.8
     },
     {
@@ -117,7 +117,7 @@
         "x": 270,
         "y": 811
       },
-      "amplitude": 1.8,
+      "amplitude": 16,
       "phase": 5.1
     }
   ],
@@ -162,8 +162,14 @@
       ],
       "period": 6.3,
       "phase": 0.3,
-      "base": 0.58,
-      "variation": 0.24
+      "base": 0.79,
+      "variation": 0.045,
+      "flicker": {
+        "seed": 157,
+        "duration": 0.82,
+        "dips": 3,
+        "depth": 0.96
+      }
     },
     {
       "id": "colonia-este",
@@ -205,8 +211,14 @@
       ],
       "period": 8.7,
       "phase": 2.4,
-      "base": 0.55,
-      "variation": 0.27
+      "base": 0.79,
+      "variation": 0.045,
+      "flicker": {
+        "seed": 389,
+        "duration": 0.82,
+        "dips": 3,
+        "depth": 0.96
+      }
     },
     {
       "id": "hospital-entrada",
@@ -252,8 +264,14 @@
       ],
       "period": 7.9,
       "phase": 4.2,
-      "base": 0.57,
-      "variation": 0.22
+      "base": 0.79,
+      "variation": 0.045,
+      "flicker": {
+        "seed": 811,
+        "duration": 0.82,
+        "dips": 3,
+        "depth": 0.96
+      }
     }
   ],
   "omissions": [

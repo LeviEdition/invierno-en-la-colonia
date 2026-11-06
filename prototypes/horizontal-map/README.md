@@ -44,7 +44,7 @@ Abrir en el teléfono la URL LAN que imprime Node. PC activa; permitir Node en r
 3. **Moverse:** elegir destino, cancelar primero y después confirmar. Se conserva1500ms y la exposición real; las calles no crean caminos/costes.
 4. **Buscar:** dado, confirmar, elegir una carta o ruido cuando sea legal e Inventario del jugador; separado del equipo individual.
 5. **Atacar/Construir:** elegir dado/coste real y confirmar; exposición/bajas o barricadas según el motor. Constructor puede ofrecer la habilidad existente sin dado. No aparecen otras acciones. Muerte/encrucijadas no soportadas esperan Continuar en V9.9 explícito; resolver y volver.
-6. Ambientación: apagar todo, activar individualmente, comparar Suave/Tormenta, observar copas y bases, humo de la chimenea de colonia y las tres luces locales. **Viento controla también el movimiento de vegetación.** Sonido empieza apagado; movimiento reducido desactiva animaciones al iniciar. Luces apagadas retira tanto fuente animada como iluminación cercana; las otras ventanas del arte siguen estáticas.
+6. Ambientación: apagar todo, activar individualmente, comparar Suave/Tormenta, observar el balanceo ampliado de las copas y sus bases fijas, humo de la chimenea de colonia y las tres luces locales. **Viento controla también el movimiento de vegetación.** Sonido empieza apagado; movimiento reducido desactiva animaciones al iniciar. Luces apagadas retira tanto fuente animada como iluminación cercana; las otras ventanas del arte siguen estáticas.
 7. Menú → Referencia completa del arte permite comparar el original. Revisar diferencias de encaje y nitidez, sin dar por aceptada la recomposición. Las capturas de capacidad máxima están marcadas **sintéticas/QA**, no son una preparación real de partida.
 
 ## Resolución y límites
@@ -53,7 +53,11 @@ Los tres originales miden **1672×941**. Cámara fija, sin rotación; mínimo qu
 
 Para nitidez nativa orientar la revisión hasta≈1 CSS por píxel a DPR1; a DPR2 el mismo tamaño necesita el doble de muestras físicas. El máximo ayuda a leer fichas y controles, **no recupera** detalle de puertas, ventanas, rostros pintados o vegetación. El arte es provisional y esas zonas requerirían fuentes mayores para primeros planos nítidos; no se ampliaron los PNG fingiendo recuperarlo.
 
-Hay ocho grupos de vegetación animados; el resto/cables/edificios/postes/cercos permanece fijo. Las tres capas generadas no encajan perfectamente: se protege la silueta de edificios con recortes del mismo fondo y se conservan reservas de borde/color de la vegetación. No se rediseñó el mapa ni se ocultó el problema con nieve.
+Hay ocho grupos de vegetación animados; el resto/cables/edificios/postes/cercos permanece fijo. Los doce accesos de colonia se distribuyen fuera del cerco en cuatro tramos ordenados. En horizontal el centrado incluye el perímetro; en vertical estrecho se recorren los extremos con arrastre. Los contornos de las siete localidades siguen los salientes del arte, sin reducir el área de clic.
+
+Las tres luces animadas alternan varios segundos estables con episodios de tres titileos rápidos e independientes (≈0,70–0,94s). Observar hospital y colonia15–20s con Luces activado. Desactivar Luces retira fuente y mancha; apagar toda la ambientación detiene también el render continuo. Movimiento reducido comienza sin animaciones.
+
+Las tres capas generadas no encajan perfectamente: se protege la silueta de edificios con recortes del mismo fondo y se conservan reservas de borde/color de la vegetación. No se rediseñó el mapa ni se ocultó el problema con nieve.
 
 El servidor conserva **http://127.0.0.1:8779/prototypes/action-map/** para comparar H3.4.4 y las entradas previas. No reemplaza sus recursos ni main/referencia. No hay guardados nuevos: recargar la página completa puede reiniciar la partida; reiniciar solo el visor conserva el host real.
 
@@ -69,4 +73,4 @@ npm.cmd run test:poc
 
 El visor no importa el motor; usa el mismo host, controladores y contrato de H3.4.4. QA se construye con `node scripts/serve-horizontal-map.mjs --qa`, exclusivamente loopback. La biblioteca/página de capacidad sintética y las herramientas del motor no se sirven en producto.
 
-Datos editables: `scene.json` (localidades/fichas/accesos), `environment.json` (grupos/pivotes/luces), `atmosphere.json` (nieve/viento/humo). Originales y hashes en `assets/mapa-horizontal/manifest.json`. [Informe90](../../docs/90-mapa-horizontal-ambientacion.md) y descripción del PR25 registran resultados, evidencia y CI exacto. No son una aceptación manual del creador.
+Datos editables: `scene.json` (localidades/fichas/accesos), `environment.json` (grupos/pivotes/luces), `atmosphere.json` (nieve/viento/humo). Originales y hashes en `assets/mapa-horizontal/manifest.json`. [Informe91](../../docs/91-ajustes-visuales-mapa-horizontal.md), [historia90](../../docs/90-mapa-horizontal-ambientacion.md) y descripción del PR25 registran resultados, evidencia y CI exacto. No son una aceptación manual del creador.

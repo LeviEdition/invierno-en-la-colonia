@@ -1,5 +1,17 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## Mapa horizontal — cuatro ajustes visuales para revisión ·06/11/2026 UTC
+
+**Solicitud vigente:** copas más visibles, accesos ordenados y fuera de colonia, contornos ajustados al arte y titileos breves e independientes. Misma rama `experiment/mapa-horizontal-ambientacion-h3` y [PR25 draft](https://github.com/LeviEdition/invierno-en-la-colonia/pull/25), desde8113b557, sin cambios de reglas/capacidades/main/referencia ni arte nuevo. [Informe91](91-ajustes-visuales-mapa-horizontal.md); apartados inferiores históricos.
+
+**Implementado:** ocho grupos con balanceo ampliado y bases fijas; filas regulares de36 accesos, doce fuera del cerco en cuatro tramos; marco detallado separado del clic y la máscara de restauración, con salientes seleccionables. Tres luces con tramos estables y episodios rápidos de≈0,70–0,94s, independientes del azar del motor. Apagado/reducido/pausa y recursos existentes conservados. Colonia horizontal incluye el perímetro; en vertical se recorre con pan, sin comprimir capacidades.
+
+**Comprobaciones:** base618/618 →623/623; oráculo40/40 y siete builds/checks. Resultados finales de Chromium, secuencia temporal, coste y CI exacto se registran en91, evidencia y PR25. No se atribuye al ajuste el CI antiguo. Sin dispositivo móvil físico ni aceptación visual; máscaras de capas generadas y detalle del PNG siguen siendo reservas técnicas.
+
+**Inicio:** actualizar rama, detener servidor previo, `npm.cmd run dev:horizontal-map` → **http://127.0.0.1:8779/prototypes/horizontal-map/**, Ctrl+Shift+R. [Guía](../prototypes/horizontal-map/README.md). **Única siguiente tarea: revisión visual del creador de los cuatro ajustes.** Sin merge ni cierre de etapa.
+
+---
+
 ## Mapa horizontal y ambientación — originales recibidos, entrega experimental ·05/11/2026
 
 **Encargo autorizado:** escenario horizontal sobre H3.4.4, sin aceptar retrospectivamente búsqueda/ataque/barricadas ni modificar reglas/capacidades/main. Misma rama **`experiment/mapa-horizontal-ambientacion-h3`**, [PR25 draft](https://github.com/LeviEdition/invierno-en-la-colonia/pull/25) contra H3.4.4/694b645. El creador subió los tres originales en **4f05c8f**; bloqueo89 resuelto por avance rápido, sin sobrescribir su trabajo. Main826199d9 y referencia preservadas. [Informe90](90-mapa-horizontal-ambientacion.md). Bloques inferiores históricos.
