@@ -18,7 +18,8 @@ function send(request){
 const movement=createMovementController({send,onChange:()=>{viewer?.updateMovement();$('movement-result').textContent=['idle','unknown'].includes(movement.inspect().phase)?movement.inspect().message:'';}});
 const search=createSearchController({send,onChange:()=>viewer?.updateSearch()});
 const action=createActionController({send,onChange:()=>viewer?.updateActions()});
-const hostPath=__ACTION_MAP_QA__?'/dist/action-map-qa/reference-host.html':'/dist/action-map/reference-host.html';
+const variant=typeof __ACTION_MAP_VARIANT__==='undefined'?'action-map':__ACTION_MAP_VARIANT__;
+const hostPath='/dist/'+variant+(__ACTION_MAP_QA__?'-qa':'')+'/reference-host.html';
 function status(text){$('connection-status').textContent=text;}
 function validProjection(p){return p?.schema===1&&Number.isInteger(p.epoch)&&Array.isArray(p.characters)&&Array.isArray(p.locations)&&Array.isArray(p.players)&&p.dice&&typeof p.movement?.session==='string'&&Number.isSafeInteger(p.movement.revision)&&typeof p.search?.session==='string'&&Number.isSafeInteger(p.search.revision)&&p.search.options&&typeof p.search.options==='object'&&typeof p.action?.session==='string'&&Number.isSafeInteger(p.action.revision);}
 function stopSearchClock(){clearTimeout(searchTimer);searchTimer=0;}
@@ -33,7 +34,7 @@ function displayState(){
 }
 function showReference(){
  stopSearchClock();search.interrupt();stopAction();if(movementPresenting()){stopMovement();if(state)viewer?.setState(state);}
- mode='reference';$('map-app').hidden=true;frame.hidden=false;$('reference-mode').setAttribute('aria-pressed','true');$('map-mode').setAttribute('aria-pressed','false');viewer?.setActive(false);focusReference();
+ mode='reference';document.body.dataset.presentation=mode;$('map-app').hidden=true;frame.hidden=false;$('reference-mode').setAttribute('aria-pressed','true');$('map-mode').setAttribute('aria-pressed','false');viewer?.setActive(false);focusReference();
 }
 function applyAuthority(){
  if(!state)return;
@@ -64,7 +65,7 @@ function mountViewer(){
 }
 function showMap(){
  if(!state||state.blocked&&!ownedSearch(state)&&!ownedAction(state)){showReference();return;}
- mode='map';frame.hidden=true;$('map-app').hidden=false;$('reference-mode').setAttribute('aria-pressed','false');$('map-mode').setAttribute('aria-pressed','true');
+ mode='map';document.body.dataset.presentation=mode;frame.hidden=true;$('map-app').hidden=false;$('reference-mode').setAttribute('aria-pressed','false');$('map-mode').setAttribute('aria-pressed','true');
  if(viewer){viewer.setState(displayState());viewer.setActive(true);}else void mountViewer();
 }
 function acceptState(next){
@@ -119,7 +120,7 @@ function receive(event){
 }
 function connect(){disconnect();if(!pageActive)return;const channel=new MessageChannel();port=channel.port1;port.onmessage=receive;port.start();frame.contentWindow.postMessage({protocol,type:'connect'},location.origin,[channel.port2]);focusReference();}
 frame.addEventListener('load',()=>{stopSearchClock();stopMovement();stopAction();search.update(null);action.update(null);state=null;lastPublic=null;$('map-mode').disabled=true;showReference();status('Conectando con la partida…');connect();},{signal:lifetime.signal});
-$('reference-mode').addEventListener('click',showReference,{signal:lifetime.signal});$('map-mode').addEventListener('click',showMap,{signal:lifetime.signal});$('resolve-decision').addEventListener('click',showReference,{signal:lifetime.signal});
+$('reference-mode').addEventListener('click',showReference,{signal:lifetime.signal});$('return-reference')?.addEventListener('click',showReference,{signal:lifetime.signal});$('map-mode').addEventListener('click',showMap,{signal:lifetime.signal});$('resolve-decision').addEventListener('click',showReference,{signal:lifetime.signal});
 for(const id of ['restart-view','retry-view'])$(id).addEventListener('click',()=>{if(mode==='map')void mountViewer();},{signal:lifetime.signal});
 document.addEventListener('visibilitychange',()=>{if(document.hidden){stopAction();interruptSearch();if(movementPresenting()){stopMovement();applyAuthority();}}},{signal:lifetime.signal});
 export function inspect(){return {mode,connected:!!port,starts,generation,projection:state?structuredClone(state):null,movement:movement.inspect(),search:search.inspect(),action:action.inspect(),view:viewer?.inspect()||null,lastDisposal,lastError};}

@@ -10,7 +10,7 @@ const out=process.env.H344_CAMERA_DIR||'/tmp/h344-camera';
 const origin=process.env.H344_ORIGIN||'http://127.0.0.1:8778';
 await mkdir(out,{recursive:true});
 const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',args:['--no-sandbox']});
-const t=actionMapChecks({origin});
+const t=actionMapChecks({origin,modulePath:process.env.H344_MODULE_PATH||'/dist/action-map-qa/map.mjs'});
 const evidence={browser:browser.version(),physicalMobile:false,method:'RAF + POST_RENDER count and DOM positions during real input; video separately inspectable',records:[],failures:[]};
 
 async function startTrace(p){
@@ -74,6 +74,28 @@ try{
   await t.begin(p);await t.openMap(p);await p.selectOption('#locality','place-0');await t.frames(p);
   await t.panel(p);await p.locator('.demo-controls').last().evaluate(el=>el.open=true);await p.selectOption('#survivor-select','h0');
   const game=await t.raw(p),rng=await t.rng(p);
+  if((process.env.H344_MODULE_PATH||'').includes('/horizontal-map-qa/')){
+   // El hover solo modifica el contorno del mapa. Presentar ese cuadro no
+   // necesita reescribir atributos idénticos de las fichas.
+   await p.waitForFunction(()=>!h344Viewer.inspect().view.renderPending);
+   await p.evaluate(()=>{
+    const v=h344Viewer.inspect().view,canvas=document.querySelector('#scene'),r=canvas.getBoundingClientRect(),point=v.layout.locations.find(l=>l.id==='place-0').badgePosition;
+    canvas.dispatchEvent(new PointerEvent('pointermove',{clientX:r.x+v.camera.x+point.x*v.camera.zoom,clientY:r.y+v.camera.y+point.y*v.camera.zoom,buttons:0}));
+   });
+   await p.waitForFunction(()=>h344Viewer.inspect().view.pointedLocality==='colonia'&&!h344Viewer.inspect().view.renderPending);
+   row.markerRedraw=await p.evaluate(async()=>{
+    const container=document.querySelector('#actor-markers'),before=container.innerHTML,camera=h344Viewer.inspect().view.camera,records=[];
+    const observer=new MutationObserver(list=>records.push(...list.map(r=>({actor:r.target.closest('[data-actor-id]')?.dataset.actorId,attribute:r.attributeName,old:r.oldValue,next:r.target.getAttribute(r.attributeName)}))));
+    observer.observe(container,{subtree:true,attributes:true,attributeOldValue:true,childList:true});
+    const start=h344Viewer.inspect().view.renderer.renderEvents;
+    document.querySelector('#scene').dispatchEvent(new PointerEvent('pointerleave'));
+    await new Promise((resolve,reject)=>{const deadline=performance.now()+15000,poll=()=>{if(!h344Viewer.inspect().view.renderPending)resolve();else if(performance.now()>deadline)reject(Error('El cuadro de contorno no terminó'));else setTimeout(poll,25);};setTimeout(poll,25);});
+    observer.disconnect();return {writes:records.length,records,frames:h344Viewer.inspect().view.renderer.renderEvents-start,sameMarkup:before===container.innerHTML,sameCamera:JSON.stringify(camera)===JSON.stringify(h344Viewer.inspect().view.camera)};
+   });
+   await writeFile(resolve(dir,'diagnostic-redraw.json'),JSON.stringify(row.markerRedraw,null,2)+'\n');
+   assert.ok(row.markerRedraw.frames>=1);assert.ok(row.markerRedraw.sameCamera&&row.markerRedraw.sameMarkup);
+   assert.equal(row.markerRedraw.writes,0,'Un cambio de contorno no reescribe fichas idénticas');
+  }
   for(const profile of process.env.H344_CAMERA_BASELINE?['storm']:['off','soft','storm']){
    await p.selectOption('#locality','place-0');await t.panel(p);
    await p.locator('.demo-controls').last().evaluate(el=>el.open=true);await p.selectOption('#survivor-select','h0');
@@ -93,7 +115,9 @@ try{
    await p.mouse.click(marker.x+marker.width/2,marker.y+marker.height/2);
    assert.equal((await t.view(p)).selected,'h0','Clic sobre la ficha visible tras el gesto');
    if(touch)await p.locator('#panel-toggle').click();
-   await p.waitForTimeout(200);
+   // Medir reposo después de presentar la selección/panel, no200ms después
+   // de solicitarlo: en software ese cuadro puede tardar más.
+   await p.waitForFunction(()=>!h344Viewer.inspect().view.renderPending);
    result.idle=await p.evaluate(()=>new Promise(resolve=>{
     let writes=0;const observer=new MutationObserver(records=>writes+=records.length);
     observer.observe(document.querySelector('#actor-markers'),{subtree:true,attributes:true,childList:true});

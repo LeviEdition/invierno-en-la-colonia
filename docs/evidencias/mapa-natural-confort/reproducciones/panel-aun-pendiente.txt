@@ -1,0 +1,27 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.selectOption: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('#survivor-select')[22m
+[2m    - locator resolved to <select id="survivor-select">…</select>[22m
+[2m  - attempting select option action[22m
+[2m    2 × waiting for element to be visible and enabled[22m
+[2m      - element is not visible[22m
+[2m    - retrying select option action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible and enabled[22m
+[2m      - element is not visible[22m
+[2m    - retrying select option action[22m
+[2m      - waiting 100ms[22m
+[2m    35 × waiting for element to be visible and enabled[22m
+[2m       - element is not visible[22m
+[2m     - retrying select option action[22m
+[2m       - waiting 500ms[22m
+
+    at /workspace/invierno-en-la-colonia/scripts/check-h344-camera-browser.mjs:79:80 {
+  name: 'TimeoutError'
+}
+
+Node.js v24.19.0

@@ -1,0 +1,23 @@
+{
+  "sourceFile": "adaa2f56e14492e7b81d49aa37e121a4.webm",
+  "sourceSha256": "87ea998df3137835f1eef1f16e4ce8a52de437fcf6f3fb4a33647bca3b5ce14d",
+  "sourceSeconds": 91.2,
+  "viewport": [
+    1365,
+    768
+  ],
+  "segmentsSeconds": [
+    [
+      10,
+      43
+    ],
+    [
+      67,
+      91.2
+    ]
+  ],
+  "outputSeconds": 57.2,
+  "speed": 1,
+  "frameInterpolation": false,
+  "method": "FFmpeg trim/concat, VP9 CRF30, sin audio ni aceleraci\u00f3n. Original completo en artifact; recortes temporales no son una prueba f\u00edsica de FPS."
+}

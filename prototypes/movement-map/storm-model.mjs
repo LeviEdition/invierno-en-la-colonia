@@ -5,7 +5,7 @@ const tau=Math.PI*2;
 export function initialAtmosphereSettings(reduced=false){return {enabled:!reduced,snow:true,wind:true,smoke:true,lights:true,intensity:'storm'};}
 export function validateAtmosphere(c){
  const require=(ok,label)=>{if(!ok)throw TypeError('Ambientación: '+label);};
- require(c.version===1&&c.bounds.width===1448&&c.bounds.height===1086,'mapa');
+ require(c.version===1&&Number.isFinite(c.bounds.width)&&Number.isFinite(c.bounds.height)&&c.bounds.width>0&&c.bounds.height>0,'mapa');
  require(c.frameRate>=15&&c.frameRate<=60&&c.maxDelta>0&&c.maxDelta<=.1,'tiempo');
  for(const type of ['snow','smoke','wind'])require(Number.isInteger(c.limits[type])&&c.limits[type]>=0&&c.limits[type]<=128,'pool '+type);
  require(Object.values(c.limits).reduce((a,b)=>a+b,0)<=160,'límite total');
@@ -76,5 +76,5 @@ export function createAtmosphereModel(raw,{seed=1,settings=initialAtmosphereSett
   const next={...options,...patch};if(!config.intensities[next.intensity]||['enabled',...kinds].some(k=>typeof next[k]!=='boolean'))throw TypeError('Opciones de ambientación inválidas');options=next;paint();
  }
  setSettings(options);paint();
- return {particles,lights,step,setSettings,isAnimating:running,setPaused(value){paused=!!value;},snapshot(){return {seed:seed>>>0,settings:{...options},paused,elapsed,steps,poolSize:particles.length,visibleParticles:particles.reduce((n,p)=>n+(p.alpha>0),0),wind:wind(),particles:particles.map(p=>({...p})),lights:lights.map(l=>({...l}))};}};
+ return {particles,lights,step,setSettings,isAnimating:running,setPaused(value){paused=!!value;},clock(){return {elapsed,wind:wind(),settings:options,paused};},snapshot(){return {seed:seed>>>0,settings:{...options},paused,elapsed,steps,poolSize:particles.length,visibleParticles:particles.reduce((n,p)=>n+(p.alpha>0),0),wind:wind(),particles:particles.map(p=>({...p})),lights:lights.map(l=>({...l}))};}};
 }

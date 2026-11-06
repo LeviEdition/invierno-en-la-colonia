@@ -1,0 +1,26 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "records": [
+    {
+      "kind": "native-result",
+      "errors": [],
+      "actualActorInRecoveredResult": true,
+      "passed": true
+    },
+    {
+      "kind": "reduced",
+      "errors": [],
+      "reducedAndSilent": true,
+      "passed": true
+    },
+    {
+      "kind": "builder",
+      "errors": []
+    }
+  ],
+  "failures": [
+    "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'cancel-action'\n- 'barricade-action'\n\n    at file:///workspace/invierno-en-la-colonia/scripts/check-h344-edge-browser.mjs:15:996"
+  ],
+  "passed": false
+}

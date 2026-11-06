@@ -1,0 +1,37 @@
+@import url('../action-map/style.css');
+#map-app .layout{position:relative;grid-template-columns:minmax(0,1fr) 310px}
+#map-app .map-viewport{background:#383746}
+body[data-presentation=map] #shell-nav{display:none}
+body[data-presentation=map] #movement-result:empty{display:none}
+body[data-panel-open=false] #map-app .layout{grid-template-columns:minmax(0,1fr)}
+body[data-panel-open=false] #map-app #dossier{position:absolute;z-index:16;right:8px;bottom:38px;width:auto;max-height:50px}
+body[data-panel-open=false] #map-app #panel-toggle{font-size:14px;min-width:56px;min-height:44px}
+#reset-view svg{display:none;width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.6}
+#move-planner{left:50%;transform:translateX(-50%);top:4px;width:min(260px,calc(100% - 16px));max-height:calc(100% - 8px);overflow:auto;padding:7px;font-size:12px}
+#keyboard-destinations summary{min-height:44px;display:flex;align-items:center}
+@media(max-width:950px){#map-app .layout,body[data-panel-open=false] #map-app .layout{grid-template-columns:1fr}#map-app #dossier{max-height:46%;width:min(290px,calc(100% - 8px))}body[data-panel-open=false] #map-app #dossier{width:auto;bottom:4px;right:4px}#map-app .panel-content{max-height:calc(45dvh - 46px)}}
+@media(max-height:500px) and (orientation:landscape){
+ #map-app .topbar{display:flex;min-height:48px;gap:8px;padding:2px 6px}
+ #map-app .stats{flex:1;gap:12px;min-width:0}#map-app .stats div{display:block}#map-app .stats dt{font-size:10px}#map-app .stats dd{font-size:14px;margin:0;line-height:18px}
+ #map-app .mission{gap:4px}#map-app .mission button{min-height:44px;min-width:60px;font-size:12px;padding:5px}
+ #map-app #map-panel{grid-template-rows:48px minmax(0,1fr) 0;min-height:0}
+ #map-app .map-tools{grid-template-columns:minmax(110px,1fr) 44px 40px 44px 44px;gap:4px;padding:2px 6px}
+ #map-app .map-tools button,#map-app .map-tools select{min-height:44px}
+ #reset-view{display:grid;place-items:center}#reset-view svg{display:block}#reset-view .reset-label{display:none}
+ #map-app .feedback{height:0;min-height:0;margin:0;padding:0;border:0;clip-path:inset(50%);overflow:hidden}
+ #map-app #action-shortcuts{right:80px}
+}
+@media(max-width:600px) and (orientation:portrait){#view-feedback::before{content:'Para ver más terreno, girá el teléfono. '}}
+
+.qa-notice{position:absolute;z-index:60;top:3px;left:50%;transform:translateX(-50%);font:11px system-ui,sans-serif;max-width:90%;padding:3px 6px;color:#e8dfc8;background:#202725ed;border:1px solid #8c8067;pointer-events:none}
+/* El resultado breve no cambia la altura del tablero al llegar una respuesta. */
+body[data-presentation=map] #movement-result:not(:empty){display:block;position:fixed;z-index:45;left:80px;right:85px;bottom:56px;width:max-content;max-width:calc(100% - 170px);margin:0;padding:5px 8px;background:#202825ed;border:1px solid #81765d;font:12px/1.35 system-ui,sans-serif;pointer-events:none}
+#map-app #dossier .panel-heading{flex:0 0 auto}
+#map-app #dossier .panel-content{min-height:0;flex:1 1 auto;overflow:auto}
+
+/* Fichas de tablero compactas: la insignia queda dentro de la ficha. */
+#map-app .actor-marker>.group-badge{top:auto;bottom:0;transform:translate(-50%,10%);padding:0 2px;line-height:11px;font-size:8px}
+#map-app .actor-selected.owner-human{box-shadow:0 0 0 1px #101820,0 0 6px 2px #65afff99}
+#map-app .actor-selected.owner-ai{box-shadow:0 0 0 1px #101820,0 0 6px 2px #ff929699}
+#map-app .destination-legal{fill:#d2bb6a0a;stroke:#b9b3a2;stroke-width:1.2;stroke-dasharray:5 4}
+#map-app .destination-chosen{fill:#e9bf5e16;stroke:#ffe5a0;stroke-width:2.3;stroke-dasharray:none}

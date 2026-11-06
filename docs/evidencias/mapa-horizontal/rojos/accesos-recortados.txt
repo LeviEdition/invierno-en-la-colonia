@@ -1,0 +1,77 @@
+✔ Horizontal: cámara cubierta y siete centros visibles {"width":930,"height":550} (5.355805ms)
+✖ Horizontal: cámara cubierta y siete centros visibles {"width":852,"height":250} (0.789586ms)
+✖ Horizontal: cámara cubierta y siete centros visibles {"width":740,"height":220} (0.250316ms)
+✖ Horizontal: cámara cubierta y siete centros visibles {"width":393,"height":650} (0.223646ms)
+✔ Horizontal: 36 apoyos y36 accesos distintos, capacidades del motor conservadas (0.284638ms)
+✔ Horizontal: bases y bordes inmóviles, copas con viento y apagado exacto (0.234973ms)
+✔ Horizontal: luz irregular acotada; distintas fases y un nivel para fuente y suelo (0.595434ms)
+✔ Horizontal: originales conservan dimensiones, alfa declarado y SHA-256 (14.986151ms)
+✔ Horizontal: construcción del visor sin motor y host idéntico a H344 (835.65617ms)
+✔ Horizontal: servidor publica originales y nueva entrada; QA/fuentes inaccesibles (98.947355ms)
+✔ Horizontal: partición estática sin duplicaciones ni huecos en grupos móviles (1.119882ms)
+✔ Horizontal: selección de configuración admite separadores Windows y POSIX (0.185539ms)
+✔ Horizontal: atenuación local conserva el borde y evita una mancha azul de suelo (0.883437ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 10
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1031.467164
+
+✖ failing tests:
+
+test at tests/horizontal-map.test.mjs:6:117
+✖ Horizontal: cámara cubierta y siete centros visibles {"width":852,"height":250} (0.789586ms)
+  AssertionError [ERR_ASSERTION]: hospital acceso vertical
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/horizontal-map.test.mjs:9:375)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/horizontal-map.test.mjs:6:117
+✖ Horizontal: cámara cubierta y siete centros visibles {"width":740,"height":220} (0.250316ms)
+  AssertionError [ERR_ASSERTION]: hospital acceso vertical
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/horizontal-map.test.mjs:9:375)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/horizontal-map.test.mjs:6:117
+✖ Horizontal: cámara cubierta y siete centros visibles {"width":393,"height":650} (0.223646ms)
+  AssertionError [ERR_ASSERTION]: escuela acceso horizontal
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/horizontal-map.test.mjs:9:275)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

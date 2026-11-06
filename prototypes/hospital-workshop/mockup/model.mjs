@@ -54,7 +54,7 @@ export function pointInPolygon(point,polygon){
  }
  return inside;
 }
-export function pickLocality(scene,point){return scene.zones.find(z=>pointInPolygon(point,z.selectionPolygon))?.id||null;}
+export function pickLocality(scene,point){return scene.zones.find(z=>pointInPolygon(point,z.selectionPolygon)||(z.outlinePolygon&&pointInPolygon(point,z.outlinePolygon)))?.id||null;}
 export function localityDetails(scene,fixture,id){
  const zone=scene.zones.find(z=>z.id===id);if(!zone)return null;
  const slots=fixture.accesses.filter(a=>a.zoneId===id);

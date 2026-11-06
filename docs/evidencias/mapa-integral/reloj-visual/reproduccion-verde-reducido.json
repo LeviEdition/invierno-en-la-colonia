@@ -1,0 +1,3854 @@
+[
+  {
+    "time": 2184.699999988079,
+    "phase": "confirming",
+    "stage": null,
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 2219.300000011921,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 2234.5,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 2259.5,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 2284.5,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 2309.5,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 2334.600000023842,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 2359.699999988079,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 2384.800000011921,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 2409.800000011921,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 2434.899999976158,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 2459.699999988079,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 2484.899999976158,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 2509.800000011921,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 2535,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 2559.899999976158,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 2585,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 2610,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 2635,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 2659.600000023842,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 2684.5,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 2709.399999976158,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 2793.600000023842,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 2809.600000023842,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 2834.600000023842,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 2859.600000023842,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 2884.5,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 2909.600000023842,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 2936.5,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 2959.600000023842,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 2984.800000011921,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3009.899999976158,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3035,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3059.600000023842,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3084.600000023842,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3109.600000023842,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3137,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3160.399999976158,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3184.800000011921,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3209.800000011921,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3234.699999988079,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3259.600000023842,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3285.100000023842,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3309.600000023842,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3334.399999976158,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3359.399999976158,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3384.399999976158,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3409.5,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3434.399999976158,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3459.5,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3484.600000023842,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3509.5,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3534.5,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3559.5,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3584.899999976158,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3609.399999976158,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3634.300000011921,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3660,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3684.399999976158,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3709.600000023842,
+    "phase": "presenting",
+    "stage": "travel",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3734.399999976158,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3759.399999976158,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3784.600000023842,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3809.5,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3834.300000011921,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3859.399999976158,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3884.399999976158,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3909.399999976158,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3934.399999976158,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3959.5,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 3984.399999976158,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4009.5,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4034.699999988079,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4060.199999988079,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4084.399999976158,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4109.5,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4134.399999976158,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4159.600000023842,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4184.399999976158,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4209.600000023842,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4234.399999976158,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4259.699999988079,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4284.5,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4309.399999976158,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4334.5,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4359.5,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4384.5,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4409.5,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4434.399999976158,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4459.399999976158,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4484.399999976158,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4509.800000011921,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4534.5,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4559.399999976158,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4584.5,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4609.399999976158,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4634.5,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4659.399999976158,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4684.600000023842,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4709.399999976158,
+    "phase": "presenting",
+    "stage": "roll",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4734.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4759.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4784.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4809.699999988079,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4834.600000023842,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4859.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4884.699999988079,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4909.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4934.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4959.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 4984.699999988079,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5009.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5034.600000023842,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5059.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5084.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5109.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5138.600000023842,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5159.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5184.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5209.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5235,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5259.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5287.199999988079,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5309.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5334.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5359.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5384.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5409.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5434.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5459.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5484.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5509.199999988079,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5534.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5559.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5584.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5609.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5634.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5659.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5684.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5709.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5734.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5759.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5784.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5809.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5834.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5859.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5884.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5909.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5934.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5959.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 5984.600000023842,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6009.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6034.600000023842,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6059.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6084.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6109.600000023842,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6134.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6159.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6184.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6209.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6234.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6259.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6284.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6309.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6334.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6359.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6384.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6409.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6434.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6459.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6484.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6509.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6534.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6559.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6584.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6609.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6634.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6659.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6684.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6709.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6734.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6759.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6784.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6809.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6834.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6859.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6884.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6909.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6934.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6959.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 6984.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7009.899999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7034.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7059.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7084.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7109.600000023842,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7134.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7159.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7184.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7209.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7234.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7259.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7284.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7309.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7334.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7359.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7384.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7409.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7434.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7459.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7484.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7509.199999988079,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7534.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7559.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7584.800000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7609.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7634.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7659.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7684.600000023842,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7709.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7734.800000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7759.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7784.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7809.699999988079,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7834.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7859.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7884.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7909.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7934.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7959.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 7984.600000023842,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8009.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8034.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8059.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8084.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8109.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8134.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8159.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8184.600000023842,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8209.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8234.699999988079,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8259.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8284.699999988079,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8309.800000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8334.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8359.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8384.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8409.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8434.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8459.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8484.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8509.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8534.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8559.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8584.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8609.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8634.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8659.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8684.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8709.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8734.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8759.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8784.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8809.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8834.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8859.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8884.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8909.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8934.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8959.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 8984.800000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9009.600000023842,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9034.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9059.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9084.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9109.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9134.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9159.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9184.300000011921,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9209.5,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9234.399999976158,
+    "phase": "presenting",
+    "stage": "reveal",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9320.5,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9334.300000011921,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9359.5,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9384.399999976158,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9409.399999976158,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9434.300000011921,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9459.399999976158,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9484.300000011921,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9509.300000011921,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9534.199999988079,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9559.399999976158,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9584.300000011921,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9609.300000011921,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9634.399999976158,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9659.300000011921,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9684.199999988079,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9709.399999976158,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9734.399999976158,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9759.300000011921,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9784.300000011921,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9809.399999976158,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9834.300000011921,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9859.300000011921,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9884.300000011921,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9909.300000011921,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9934.300000011921,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9959.399999976158,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 9984.600000023842,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 10009.399999976158,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 10034.300000011921,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 10059.300000011921,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 10084.300000011921,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 10109.300000011921,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 10134.399999976158,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 10159.5,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 10184.399999976158,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 10209.399999976158,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 10234.399999976158,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 10259.5,
+    "phase": "presenting",
+    "stage": "consequence",
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  },
+  {
+    "time": 10345.699999988079,
+    "phase": "idle",
+    "stage": null,
+    "camera": {
+      "zoom": 0.6567481402763018,
+      "x": -21.541445270988334,
+      "y": 0,
+      "minZoom": 0.6567481402763018,
+      "maxZoom": 1.5
+    }
+  }
+]

@@ -1,0 +1,129 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "method": "RAF + POST_RENDER count and DOM positions during real input; video separately inspectable",
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "errors": [],
+      "profiles": [
+        {
+          "profile": "off",
+          "samples": 227,
+          "movingSamples": 84,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 0
+          }
+        },
+        {
+          "profile": "soft",
+          "samples": 281,
+          "movingSamples": 84,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 5
+          }
+        },
+        {
+          "profile": "storm",
+          "samples": 283,
+          "movingSamples": 84,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 5
+          }
+        }
+      ],
+      "video": "/tmp/mapa-integral/entrega/camara/1365/70ba550a23a2208b42f39e8e74971475.webm"
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "errors": [],
+      "profiles": [
+        {
+          "profile": "off",
+          "samples": 186,
+          "movingSamples": 82,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 0
+          }
+        },
+        {
+          "profile": "soft",
+          "samples": 187,
+          "movingSamples": 82,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 5
+          }
+        },
+        {
+          "profile": "storm",
+          "samples": 187,
+          "movingSamples": 82,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 5
+          }
+        }
+      ],
+      "video": "/tmp/mapa-integral/entrega/camara/393/356408cc0b79de4b8403d7aed8699225.webm"
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "errors": [],
+      "profiles": [
+        {
+          "profile": "off",
+          "samples": 181,
+          "movingSamples": 82,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 0
+          }
+        },
+        {
+          "profile": "soft",
+          "samples": 188,
+          "movingSamples": 82,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 7
+          }
+        },
+        {
+          "profile": "storm",
+          "samples": 188,
+          "movingSamples": 82,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 5
+          }
+        }
+      ],
+      "video": "/tmp/mapa-integral/entrega/camara/320/bab93bf7100293028e5119d7c79dcd23.webm"
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

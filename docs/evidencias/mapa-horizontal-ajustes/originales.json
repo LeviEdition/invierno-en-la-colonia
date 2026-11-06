@@ -1,0 +1,23 @@
+{
+  "sourceCommit": "4f05c8f349c1973e0b786cf37d562a5685e6fca9",
+  "files": [
+    {
+      "file": "assets/mapa-horizontal/Mapa nevado sin vegetación-1.png",
+      "sha256": "20dfb9774e2044fbd68919a13d73ceb7f8836ec90a20edadc857aba19ad44fba",
+      "matchOriginal": true,
+      "bytes": 2300098
+    },
+    {
+      "file": "assets/mapa-horizontal/Árboles y arbustos nevados aislados-2.png",
+      "sha256": "e0423d46d734d07b225e70bbeec84ec3bb06e9d547b179623ab77273de9a4daf",
+      "matchOriginal": true,
+      "bytes": 1951656
+    },
+    {
+      "file": "assets/mapa-horizontal/Patio nevado con portón colonial.png",
+      "sha256": "9210918870edf44e9088a9c2a057c21c13f0103cbf3fd3c632ed68e47b1c6f4c",
+      "matchOriginal": true,
+      "bytes": 2576151
+    }
+  ]
+}

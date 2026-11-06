@@ -1,0 +1,519 @@
+{
+  "files": [
+    {
+      "file": "acciones.json",
+      "bytes": 1396,
+      "sha256": "423ced2f11d6e0841c70acb283da5c17d809692ef79e015761b5ee8eaa9a80eb"
+    },
+    {
+      "file": "action-map-build.json",
+      "bytes": 3231,
+      "sha256": "1d3a67d1fa0e02d1a680aada3f90cd776833da45c4bc6a939bb5dade94683df7"
+    },
+    {
+      "file": "antes/biblioteca.png",
+      "bytes": 1100830,
+      "sha256": "086961b7c07798198b0b7446d0d48164029cc99f2f502a8b30fc306323b0f957"
+    },
+    {
+      "file": "antes/colonia.png",
+      "bytes": 1054603,
+      "sha256": "50a7201a4af95f4a17e439a0c9f6287123998ad8155654f12febc5c0bfe35450"
+    },
+    {
+      "file": "antes/comisaria.png",
+      "bytes": 1054649,
+      "sha256": "c119517046f02269387fb2aab97281530681a6d8dae57cdc7df5c1950ec1bdc1"
+    },
+    {
+      "file": "antes/escuela.png",
+      "bytes": 1091043,
+      "sha256": "911f62f4e77f11e7fdc9a93a8ab88304d95a3e8aab2e87a8133ac7facb6bd584"
+    },
+    {
+      "file": "antes/gasolinera.png",
+      "bytes": 1055838,
+      "sha256": "2d78e4b0ed12555ce32b06f488585b39f85ed93ebb6ee416b851042a87176f02"
+    },
+    {
+      "file": "antes/general-1920x1080.png",
+      "bytes": 2531466,
+      "sha256": "4b059a56249471c2390b3cb14646215cef50589ce921266a27575a87f1b9d1bc"
+    },
+    {
+      "file": "antes/general-852x393.png",
+      "bytes": 1488905,
+      "sha256": "7c6ce9f41ce26d186a18247ee705c8c4515f98aeae3125108c328dd522c8f652"
+    },
+    {
+      "file": "antes/general.png",
+      "bytes": 1312003,
+      "sha256": "15ef2f44cd8e0a1521bee6795abb3d47d42ef0c43a8b1aec086f61c078a4d28f"
+    },
+    {
+      "file": "antes/hospital.png",
+      "bytes": 1076561,
+      "sha256": "c4c98fc28339076c882a3e886733dcb55f34fdcf5c207d3c2d3e3961aa7d9580"
+    },
+    {
+      "file": "antes/supermercado.png",
+      "bytes": 1062672,
+      "sha256": "b588c855180aa66c956db9159bd8ba09df9d88e294422aaf1ed7a99f475c72bb"
+    },
+    {
+      "file": "antes.json",
+      "bytes": 8849,
+      "sha256": "46973a1582161763627cbd70dee8312728b11930f65a630851f75fb19aa8cd0b"
+    },
+    {
+      "file": "base-629.txt",
+      "bytes": 56737,
+      "sha256": "fd8d1097ac0c691cbf860954c41231927ba8989fd709a76b6ea39de208228c09"
+    },
+    {
+      "file": "bordes.json",
+      "bytes": 1804,
+      "sha256": "13f60274318ee110d40ea5bdf8053240a44eb9adfe6f5970d1dfb747497207bf"
+    },
+    {
+      "file": "camara.json",
+      "bytes": 2982,
+      "sha256": "7ccd1e761c1e22563da9c65d7cddfa80abc53b055bd845d5c1adf1cd61188ad0"
+    },
+    {
+      "file": "check-build.txt",
+      "bytes": 125,
+      "sha256": "86e73c08796ad6d9c5656d310e04c5fa5753551cffd4756394886fdc14896ad7"
+    },
+    {
+      "file": "compilaciones.txt",
+      "bytes": 34797,
+      "sha256": "34c30e421f4386b7f5eda5440f2a64ff0228e7c6e8c097e866c3c493113a6d65"
+    },
+    {
+      "file": "composicion.json",
+      "bytes": 21511,
+      "sha256": "a21ed56a72c1a5c92c2a66d0adddf78d072e455dcb6468d8b85706c7468e086d"
+    },
+    {
+      "file": "confort.json",
+      "bytes": 339148,
+      "sha256": "c69ef88e03d9ffd565cbbadb2240b651ba70948b0db596519e109d54cca2251f"
+    },
+    {
+      "file": "despues/barricades-colonia.png",
+      "bytes": 1100667,
+      "sha256": "7b10247bfd8940c4bb79e3153f1f4450cf9a281f1cdd0692b4a230d21aa7c190"
+    },
+    {
+      "file": "despues/barricades-hospital.png",
+      "bytes": 1100603,
+      "sha256": "2c250389a4778a60b1c27cd5d6a61083a06921f832dc1f032a3fce376540dce1"
+    },
+    {
+      "file": "despues/biblioteca.png",
+      "bytes": 1091340,
+      "sha256": "a5852263f19b7f742c8ca96c411b95fd5982594ea28386a6e76ef8800cf7774c"
+    },
+    {
+      "file": "despues/colonia.png",
+      "bytes": 1072861,
+      "sha256": "38d052da5030e7a23c7432278b256471327fe7e1ad96f39ce51aa5e268a5bfc6"
+    },
+    {
+      "file": "despues/comisaria.png",
+      "bytes": 1052962,
+      "sha256": "25abe050fbfd0870a0cc57c15bfab811382fea0a6c73b506562291bc51d59b34"
+    },
+    {
+      "file": "despues/empty-colonia.png",
+      "bytes": 1071998,
+      "sha256": "6d8656719ae5a93a14977c0f07deedf5f6ee3e47f63ef79ab275bb677fd9b2c5"
+    },
+    {
+      "file": "despues/empty-hospital.png",
+      "bytes": 1076821,
+      "sha256": "1f27b35f7d0545094a90535d6254678505b6f02065e091d73a99eebd52dddca3"
+    },
+    {
+      "file": "despues/escuela.png",
+      "bytes": 1075418,
+      "sha256": "caf50660cd6d22451cdedbe9e71fcbcfd368541f15dfd4fcb0b5916d85b32cff"
+    },
+    {
+      "file": "despues/gasolinera.png",
+      "bytes": 1059258,
+      "sha256": "b8a65d24a32824fb080d7bab1bdf5db3af237998a73c08949e4aba8d74c096e7"
+    },
+    {
+      "file": "despues/general-1920x1080.png",
+      "bytes": 2531639,
+      "sha256": "a11b31a32ad2262368b24da9391a96a0108da2e6a56bab49c4353f99e428af99"
+    },
+    {
+      "file": "despues/general-852x393.png",
+      "bytes": 1489760,
+      "sha256": "6f59075f6675b02a978c5a42094a1fa481b3cb3c55d1597aa1291833cd403753"
+    },
+    {
+      "file": "despues/general.png",
+      "bytes": 1312538,
+      "sha256": "248975746edb23a1a4d38d249a007caba5e864c27cb4f3959ca1d0bd0b5d1abb"
+    },
+    {
+      "file": "despues/hospital.png",
+      "bytes": 1073822,
+      "sha256": "2dfd0e41097d3ead3d0969f85a43aa2a4915da2df41da619513cdaa5aaca6270"
+    },
+    {
+      "file": "despues/luces-0.png",
+      "bytes": 965033,
+      "sha256": "361086d83b630d42e7c867552ba8473517fa13dce0e4010e86690c143694b75d"
+    },
+    {
+      "file": "despues/luces-2.png",
+      "bytes": 1081356,
+      "sha256": "7a5159c461aedf0d86ad4c21acd934abed860a818bdfd6d87ceb7893f4240d13"
+    },
+    {
+      "file": "despues/mixto-biblioteca.png",
+      "bytes": 1096776,
+      "sha256": "ff3f52d52f8a68173c816c0fbed60abf5fe34ba52d501d196d00e898bff151f5"
+    },
+    {
+      "file": "despues/mixto-colonia-1920x1080.png",
+      "bytes": 2291931,
+      "sha256": "5205f912f462ae6b6f604536dc5a45c44551bf6b1de96fb465c8ee78db5b4416"
+    },
+    {
+      "file": "despues/mixto-colonia-852x393.png",
+      "bytes": 1226144,
+      "sha256": "c97642d2a63cc5a659f048ff39cae1376d4b12b967dc52857bbafcc5b7bc8e6c"
+    },
+    {
+      "file": "despues/mixto-colonia.png",
+      "bytes": 1103072,
+      "sha256": "3a132ed4068df25848d64aa13a246502752875453e46a718d0aa64ea60dd51b5"
+    },
+    {
+      "file": "despues/mixto-comisaria-1920x1080.png",
+      "bytes": 2213475,
+      "sha256": "0e30f9492b8edc12326c826783d0ffa1f7627cd31ecdf1ee40a7a7ba13b9d6b3"
+    },
+    {
+      "file": "despues/mixto-comisaria-852x393.png",
+      "bytes": 1095903,
+      "sha256": "6667c7e35ac896cfe381cd52080902135220cafba5ca123298f533e1f3584d43"
+    },
+    {
+      "file": "despues/mixto-comisaria.png",
+      "bytes": 1074494,
+      "sha256": "5ab5d51ec4bf91671bf9b2b9a530f8b2c2205c54db064eac48554c1484085d55"
+    },
+    {
+      "file": "despues/mixto-escuela.png",
+      "bytes": 1086258,
+      "sha256": "41e22ac4c32bb1b8d08624e4f6f4bb38d0098383d8389a3df965c927acee6f9f"
+    },
+    {
+      "file": "despues/mixto-gasolinera.png",
+      "bytes": 1077625,
+      "sha256": "900816bb40361abff82d0297646ce84eb8dd4d486a93c8c87ac55f90dc562339"
+    },
+    {
+      "file": "despues/mixto-hospital-1920x1080.png",
+      "bytes": 2251853,
+      "sha256": "7cb7c00a290cb11422ed9cc974a125f566a0e99be42542b6e09ff44e57bbb1d5"
+    },
+    {
+      "file": "despues/mixto-hospital-852x393.png",
+      "bytes": 1133083,
+      "sha256": "1db6860843a2b9e62e4f060022d675196801423d8a971a5cafdc2f198f391fde"
+    },
+    {
+      "file": "despues/mixto-hospital.png",
+      "bytes": 1099529,
+      "sha256": "21c42724cad0c1f33a163b747882f9fd5c1a823a594b9035772fe9ff759770cd"
+    },
+    {
+      "file": "despues/mixto-supermercado.png",
+      "bytes": 1105243,
+      "sha256": "52a578e0a18356d373b9f633150065de3cf284b5e2a10edcc152431d43180223"
+    },
+    {
+      "file": "despues/senalar-biblioteca.png",
+      "bytes": 1308580,
+      "sha256": "a284cf750047177b747efbda532079f0b7d25a1840e672a2432f552d1c80cbdb"
+    },
+    {
+      "file": "despues/supermercado.png",
+      "bytes": 1081279,
+      "sha256": "c6c1d660ab6b708acad8f842aec2190c89e2a4a6d48935aeec3e9f5d2d4f6167"
+    },
+    {
+      "file": "despues/zombies-colonia.png",
+      "bytes": 1102159,
+      "sha256": "6e27af398a915610ef58d635f6ee9743cc3f7ae7d804234f8de176f476dbeafc"
+    },
+    {
+      "file": "despues/zombies-hospital.png",
+      "bytes": 1098765,
+      "sha256": "c19b1cae0b3ad497ef65cb1e689ebcb0281a3485af5905d79d42664a87290e6a"
+    },
+    {
+      "file": "escena.json",
+      "bytes": 210891,
+      "sha256": "7aeb7a9717d4e0fdbff00d91518e92196e7629ecef20547101c201bfbe42eb04"
+    },
+    {
+      "file": "fichas-idle/acciones-verde.json",
+      "bytes": 1408,
+      "sha256": "f259d7b91ca7185a9dadd59879116d0b0b62c1a706c6be2b562a9676f60545c5"
+    },
+    {
+      "file": "fichas-idle/atributos-identicos-rojo.json",
+      "bytes": 3469,
+      "sha256": "b4bf7e8554f91021a29be84111009509671def2b0036832434e9c55375d2315b"
+    },
+    {
+      "file": "fichas-idle/atributos-verde-1365.json",
+      "bytes": 94,
+      "sha256": "ad42cc9fd910b7dd06721f9c446dccf169feb2417fbd9f0148d29ed429fee682"
+    },
+    {
+      "file": "fichas-idle/atributos-verde-320.json",
+      "bytes": 94,
+      "sha256": "ad42cc9fd910b7dd06721f9c446dccf169feb2417fbd9f0148d29ed429fee682"
+    },
+    {
+      "file": "fichas-idle/atributos-verde-393.json",
+      "bytes": 94,
+      "sha256": "ad42cc9fd910b7dd06721f9c446dccf169feb2417fbd9f0148d29ed429fee682"
+    },
+    {
+      "file": "fichas-idle/camara-verde.json",
+      "bytes": 3438,
+      "sha256": "6d37c64c9e35fff80821ca22440f4f5bbf6c26d84096c5a7972f8ab29a84bf81"
+    },
+    {
+      "file": "fichas-idle/check-build.txt",
+      "bytes": 125,
+      "sha256": "86e73c08796ad6d9c5656d310e04c5fa5753551cffd4756394886fdc14896ad7"
+    },
+    {
+      "file": "fichas-idle/ci-camara-rojo.json",
+      "bytes": 1962,
+      "sha256": "1f7f5e36382cc897674d55afdf15dc80575fa8b4e7557c7431c849944b44d068"
+    },
+    {
+      "file": "fichas-idle/ci-movimiento-verde.json",
+      "bytes": 3680,
+      "sha256": "06b359cb8cfcf739c4d17180f3dcc5c03af8d2cd8d002e6dbb9fcfddf4b21512"
+    },
+    {
+      "file": "fichas-idle/ci-rojo.json",
+      "bytes": 743,
+      "sha256": "93dcf230e884c3215b49d65e1a2073190c83ba74ebe0bb554342fa3a884922ca"
+    },
+    {
+      "file": "fichas-idle/compilaciones.txt",
+      "bytes": 32518,
+      "sha256": "143cb7ab59dcdfdd003575041d46112ce47d9e0c5eae6770e7cc78e4d056e95d"
+    },
+    {
+      "file": "fichas-idle/confort-verde.json",
+      "bytes": 463352,
+      "sha256": "305c47f4f08628537dd6345c07c3dc81800b9ee5ccc829e1e00d3ad95554c426"
+    },
+    {
+      "file": "fichas-idle/oraculo.txt",
+      "bytes": 678,
+      "sha256": "00e7f1144eb48b903efc5143933f771d2babd2fd14f22899a808f0dfbc5d114c"
+    },
+    {
+      "file": "fichas-idle/reproduccion-rojo.json",
+      "bytes": 4948,
+      "sha256": "1b5af05e659432bcbf92db8d332bde13bb4f85fd41fd5b4fc9d8b25f05c5323f"
+    },
+    {
+      "file": "fichas-idle/suite.txt",
+      "bytes": 57982,
+      "sha256": "6b09114c44f136409a538f38429d7da07e91e04f44078859788da07e233925e5"
+    },
+    {
+      "file": "horizontal-map-build.json",
+      "bytes": 3600,
+      "sha256": "17d53ed7ff16395965310834b8e01da5d1a0f6a771775ad101dc70163900a3f8"
+    },
+    {
+      "file": "luces-tormenta.webm",
+      "bytes": 4310406,
+      "sha256": "2ce465e51cec50af90c2e032003ec8e46b552e2725470248b0ba4b4e8cdad66c"
+    },
+    {
+      "file": "luces.json",
+      "bytes": 572214,
+      "sha256": "bdbe19334e099b9edc54d15e94cbc080a0e98bc2227483f08d89b3b8f6f39048"
+    },
+    {
+      "file": "medicion-resumen.json",
+      "bytes": 1500,
+      "sha256": "2544aca9b307e7a5de57f6f3dc1230f57ab7ae8a16ecf1f00dcfa58e95aa5c70"
+    },
+    {
+      "file": "medicion.json",
+      "bytes": 53963,
+      "sha256": "003674da0f568d9dcacf31b59b06d654d8acaf71b3281bec9c0945b3474245a6"
+    },
+    {
+      "file": "movimiento.json",
+      "bytes": 2922,
+      "sha256": "b31338509f44d66e7302b50e17eb9b1122922248e3eca871aeb874dab14ea810"
+    },
+    {
+      "file": "npm-ci.txt",
+      "bytes": 24,
+      "sha256": "90d5b21e74911b61eb1c1f9acf226df543dc0a72ecfcafbb553a8cba57019ca4"
+    },
+    {
+      "file": "oraculo.txt",
+      "bytes": 678,
+      "sha256": "6e881f5dc41c93810ee3bcdc19dfa37847b87540e2ebc0c2440dbde1f06c72e6"
+    },
+    {
+      "file": "reloj-visual/acciones-final.json",
+      "bytes": 1411,
+      "sha256": "9adb6801207182664d9b57966f5e430875416eabb5c570a0be58e1892a98af21"
+    },
+    {
+      "file": "reloj-visual/check-build.txt",
+      "bytes": 125,
+      "sha256": "86e73c08796ad6d9c5656d310e04c5fa5753551cffd4756394886fdc14896ad7"
+    },
+    {
+      "file": "reloj-visual/ci-rojo-frames.json",
+      "bytes": 36167,
+      "sha256": "6f4dc6fd1e790ea0edfd01fec676ee824e1baf72c9170ac8cf56b3fe696495e8"
+    },
+    {
+      "file": "reloj-visual/ci-rojo-resultados.json",
+      "bytes": 885,
+      "sha256": "d0467ab5245ebdf7b8f14e1999221c74a9b4f3c56510bc533ed01524e98fd630"
+    },
+    {
+      "file": "reloj-visual/ci-rojo.json",
+      "bytes": 561,
+      "sha256": "f141e180bcedcb9278998e99df22065756600f33c5a5f2eabc8e14220d6042c4"
+    },
+    {
+      "file": "reloj-visual/ci-rojo.webm",
+      "bytes": 1572864,
+      "sha256": "3db53bacb7bba859581c9ddc8267e4222b21dab8327b2cf88301c2dd0ba0a997"
+    },
+    {
+      "file": "reloj-visual/compilaciones.txt",
+      "bytes": 32518,
+      "sha256": "9af4779125a462322410afc50bf554065895c5924b3ef15e5f4dedc513e7f17b"
+    },
+    {
+      "file": "reloj-visual/movimiento-final.json",
+      "bytes": 3777,
+      "sha256": "7d70230ce0ac287432e8370b378356899d8ef60949107425ccc5a21ca1ba7e07"
+    },
+    {
+      "file": "reloj-visual/movimiento-verde-frames.json",
+      "bytes": 56397,
+      "sha256": "e3c206fb85319790a28143013a6cd270a70f5a694f10de5540616fa588678dd2"
+    },
+    {
+      "file": "reloj-visual/movimiento-verde.webm",
+      "bytes": 1531128,
+      "sha256": "28768a4ce008baece8dad72c6fe07d71795558a096a64f57a124f8cfaa317cd2"
+    },
+    {
+      "file": "reloj-visual/oraculo.txt",
+      "bytes": 678,
+      "sha256": "00e7f1144eb48b903efc5143933f771d2babd2fd14f22899a808f0dfbc5d114c"
+    },
+    {
+      "file": "reloj-visual/reproduccion-rojo-traza.json",
+      "bytes": 39587,
+      "sha256": "ec6bf481a7355d01e849d9c14dc657d4893d518488578aeaa3bed49dcbcbe3b8"
+    },
+    {
+      "file": "reloj-visual/reproduccion-rojo.json",
+      "bytes": 673,
+      "sha256": "034802ebefacf452f3438eb6f7c8f80d776d5fc400b5f0bd3ee5b07096d8609b"
+    },
+    {
+      "file": "reloj-visual/reproduccion-verde-normal.json",
+      "bytes": 159658,
+      "sha256": "d37a40a64e0ce93e198c7319eea6ed44e4ee59efc5080acdfd99331cb6ddcb30"
+    },
+    {
+      "file": "reloj-visual/reproduccion-verde-reducido.json",
+      "bytes": 79602,
+      "sha256": "22d363331e66fd86a08aac7fcac1f49bee5e20f5796914528b279ccb278cc6ed"
+    },
+    {
+      "file": "reloj-visual/reproduccion-verde.json",
+      "bytes": 666,
+      "sha256": "008312f8cbb301c2e8da902af349f929500e40e691a6cb89f0285cc68cef70aa"
+    },
+    {
+      "file": "reloj-visual/suite-641.txt",
+      "bytes": 57802,
+      "sha256": "7aaab4f2f486e5d5223d5652c5e566057187ff9aef79c68141b0564b616f2700"
+    },
+    {
+      "file": "reloj-visual/unitarias-rojo.txt",
+      "bytes": 2797,
+      "sha256": "52f8fa5cbc2bdefa2ac06d0f35d68ff7a12f2bcb7b3c50bbb620b2d3b04461a2"
+    },
+    {
+      "file": "reloj-visual/unitarias-verde.txt",
+      "bytes": 417,
+      "sha256": "b0cb8311053340579f4579c9289730b1f0f6e53699d810c4681a1aadc71983a7"
+    },
+    {
+      "file": "reproducciones/casilla-sobre-garaje.png",
+      "bytes": 1106335,
+      "sha256": "e71538e7ae7a41785b28c6b5e57f914f4cb1ff532bd9ac1b7acd1d5be624e872"
+    },
+    {
+      "file": "reproducciones/expectativas-anteriores.txt",
+      "bytes": 4773,
+      "sha256": "dcd336630cb901b766949c61c65052f28307576a0cecb681f050cede5be2d917"
+    },
+    {
+      "file": "reproducciones/proximidad-fichas-vecinas.png",
+      "bytes": 1107956,
+      "sha256": "3e9139e98bf0f4409df26477cd3ed83a55fb5f9948041536cf9f8b59a908f2b1"
+    },
+    {
+      "file": "secuencia-viento.jpg",
+      "bytes": 41167,
+      "sha256": "998932a9ddb935d276e05917ff1b2ff498e127931dfb78ba4daad910b14d3d22"
+    },
+    {
+      "file": "suite.txt",
+      "bytes": 57437,
+      "sha256": "52304f5bdf428bce657d16036869ed0c7ecaa6a8457e233884127883f6eb1848"
+    },
+    {
+      "file": "vegetacion-camara.webm",
+      "bytes": 6227777,
+      "sha256": "87a0f181d7ebd9fbd57b2d932e12b696aa1b004ebc3fa3dc0461fe2dc5a4bcb3"
+    },
+    {
+      "file": "video-metadatos.json",
+      "bytes": 476,
+      "sha256": "98cb484d7c8e2ed1b3ab3594b390da7612c6846470858b7584a93887c76c9334"
+    },
+    {
+      "file": "video.json",
+      "bytes": 217301,
+      "sha256": "0b76cc183234eab6dcd9f910e65780adf9dae0e68c1371a78e82c795d78d1fe4"
+    }
+  ]
+}

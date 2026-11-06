@@ -1,5 +1,67 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## Mapa horizontal — pasada integral de composición ·06/11/2026 UTC
+
+**Encargo vigente:** conservar los ajustes de92 y revisar apoyos completos, fichas máximas, enfoque, señalamiento y luces. Misma rama `experiment/mapa-horizontal-ambientacion-h3` desde **edacdf05c67967a49609e45d21dad6e9e0dcc4e0**, [PR25 draft](https://github.com/LeviEdition/invierno-en-la-colonia/pull/25) contra H3.4.4. [Informe93](93-composicion-integral-del-mapa.md). Bloques inferiores históricos; sin reglas/capacidades/IA/main/referencia/arte nuevo.
+
+**Implementado:**36 accesos recolocados manualmente conservando índices, doce fuera del cerco, cuatro por exterior; cuerpos completos y elipses contrastados con sólidos, vegetación y vecinos. Fichas compactas sin tapar fachadas/portón; asignación explícita de cuatro retratos e iniciales conservada, sin compactar identidad tras muerte. Enfoque incluye silueta, fichas y exteriores; panel310px y barras99px conservados. Señalamiento tenue, selección y destino diferenciados. Tres luces con manchas menores y titileo contenido; sin aclarado global. Vegetación de92 sin nuevos meshes ni partículas.
+
+**Validación:** línea base629/629 →638 de composición →641/641 con tres regresiones del reloj visual, oráculo40/40 y siete builds/checks. Composición3 tamaños/12 proyecciones máximas, acciones3, bordes13, movimiento6 finales, cámara9, escena6 y confort3 aprobados. El primer CI04126c6/42300586160 quedó rojo: fotogramas lentos omitían la consecuencia visual. Reproducido antes de corregir; límite100/50ms por cuadro conserva fases, sin tocar motor/azar. Chromium dirigido normal/reducido y regresiones originales se conservan. Resultados y CI del nuevo SHA exacto en93/evidencia/PR25; los verdes anteriores son historia. Sin teléfono físico ni aceptación manual/artística. Pendientes de arte: señal de biblioteca, detalles de supermercado, huellas/suministros y capas de calles; sin parches.
+
+**Segundo CI rojo conservado:** c746862/42304676153 pasa movimiento6 y las regresiones precedentes, luego registra18 escrituras en reposo móvil. Reproducción local:24 asignaciones idénticas al retirar el señalamiento; se evitan escrituras redundantes de clase/insignia/etiqueta. La QA espera presentación efectiva mediante `renderPending`, conserva0 escrituras/cuadros ociosos y añade el caso de contorno sin cambios en fichas. Quince compuertas y641 pruebas se mantienen; resultados del nuevo head en93/PR25, sin atribuirle verdes anteriores.
+
+**Inicio:** actualizar rama, Ctrl+C al servidor anterior, `npm.cmd run dev:horizontal-map` → **http://127.0.0.1:8779/prototypes/horizontal-map/**, Ctrl+Shift+R. [Guía](../prototypes/horizontal-map/README.md). **Única siguiente tarea: revisión visual del creador de la pasada integral.** Sin merge ni cierre de etapa.
+
+---
+
+## Mapa horizontal — vegetación natural y confort, seis ajustes ·06/11/2026 UTC
+
+**Solicitud vigente:** raíces fijas y copas libres; recuperar310px al cerrar ficha; móvil horizontal compacto; jerarquía de casillas; contornos/oclusiones separados; muestreo y límite de los PNG. Misma rama `experiment/mapa-horizontal-ambientacion-h3` desde **64bbe2c53b93a1efb61f5bbe474c25edaa2f50fa**, [PR25 draft](https://github.com/LeviEdition/invierno-en-la-colonia/pull/25) contra H3.4.4. [Informe92](92-vegetacion-natural-y-confort-del-mapa.md). Bloques inferiores históricos; sin main/referencia/reglas/capacidades/arte nuevo.
+
+**Implementado:** seis árboles y dos arbustos con siluetas complementarias y puntas libres, velocidades/fases distintas, viento compartido y sombras inferiores fijas. Panel/canvas/cámara se actualizan juntos sin reiniciar; foco/zoom solicitado conservados, con límite de cobertura explícito. Barras852×393:146→99px; mapa226→294px. Vacías ajenas tenues/discontinuas y selección continua; sprites ocupados visibles. Biblioteca incluye cabina, trazo constante1,3px, clic y oclusión independientes. Zoom nativo; fuentes mayores quedan pendientes artísticos, sin falso detalle.
+
+**Comprobaciones:** base623/623 → **629/629**, oráculo40/40, siete builds/checks. Resultados Chromium finales, video temporal, coste y CI exacto se registran en92/evidencia/PR25. Los verdes anteriores son historia. No teléfono físico ni aceptación artística; el mayor número de vértices tiene coste medido en software, sin garantía30FPS.
+
+**Inicio:** actualizar rama, Ctrl+C al servidor previo, `npm.cmd run dev:horizontal-map` → **http://127.0.0.1:8779/prototypes/horizontal-map/**, Ctrl+Shift+R. [Guía Windows/VSCode/LAN](../prototypes/horizontal-map/README.md). **Única siguiente tarea: revisión visual del creador de estos seis ajustes.** Sin merge ni avance automático.
+
+---
+
+## Mapa horizontal — cuatro ajustes visuales para revisión ·06/11/2026 UTC
+
+**Solicitud vigente:** copas más visibles, accesos ordenados y fuera de colonia, contornos ajustados al arte y titileos breves e independientes. Misma rama `experiment/mapa-horizontal-ambientacion-h3` y [PR25 draft](https://github.com/LeviEdition/invierno-en-la-colonia/pull/25), desde8113b557, sin cambios de reglas/capacidades/main/referencia ni arte nuevo. [Informe91](91-ajustes-visuales-mapa-horizontal.md); apartados inferiores históricos.
+
+**Implementado:** ocho grupos con balanceo ampliado y bases fijas; filas regulares de36 accesos, doce fuera del cerco en cuatro tramos; marco detallado separado del clic y la máscara de restauración, con salientes seleccionables. Tres luces con tramos estables y episodios rápidos de≈0,70–0,94s, independientes del azar del motor. Apagado/reducido/pausa y recursos existentes conservados. Colonia horizontal incluye el perímetro; en vertical se recorre con pan, sin comprimir capacidades.
+
+**Comprobaciones:** base618/618 →623/623; oráculo40/40 y siete builds/checks. Resultados finales de Chromium, secuencia temporal, coste y CI exacto se registran en91, evidencia y PR25. No se atribuye al ajuste el CI antiguo. Sin dispositivo móvil físico ni aceptación visual; máscaras de capas generadas y detalle del PNG siguen siendo reservas técnicas.
+
+**Inicio:** actualizar rama, detener servidor previo, `npm.cmd run dev:horizontal-map` → **http://127.0.0.1:8779/prototypes/horizontal-map/**, Ctrl+Shift+R. [Guía](../prototypes/horizontal-map/README.md). **Única siguiente tarea: revisión visual del creador de los cuatro ajustes.** Sin merge ni cierre de etapa.
+
+---
+
+## Mapa horizontal y ambientación — originales recibidos, entrega experimental ·05/11/2026
+
+**Encargo autorizado:** escenario horizontal sobre H3.4.4, sin aceptar retrospectivamente búsqueda/ataque/barricadas ni modificar reglas/capacidades/main. Misma rama **`experiment/mapa-horizontal-ambientacion-h3`**, [PR25 draft](https://github.com/LeviEdition/invierno-en-la-colonia/pull/25) contra H3.4.4/694b645. El creador subió los tres originales en **4f05c8f**; bloqueo89 resuelto por avance rápido, sin sobrescribir su trabajo. Main826199d9 y referencia preservadas. [Informe90](90-mapa-horizontal-ambientacion.md). Bloques inferiores históricos.
+
+**Implementación5b3a661:** nueva entrada independiente, siete localidades/IDs,36 apoyos y36 accesos según capacidad real. Selección, llegada, cámara con cobertura y centrado, dossier reservado en PC/plegable en móvil. Ocho grupos de vegetación con bases fijas y viento compartido; máscaras del mismo fondo restituyen fachadas, tres luces acoplan fuente/mancha y retiran su brillo fijo al apagar. Humo en949,306 de colonia, tormenta reutilizada/pool132, sonido apagado y reducido respetado. Originales1672×941/RGB/RGBA con alfa/hashes comprobados; sin regeneración, dependencias o motor duplicado.
+
+**Validación propia:** línea base605/605, entrega **618/618** y oráculo **40/40**; siete builds/checks. Recorrido de cuatro acciones en1365×768,852×393,740×360; batería de escena comprueba siete centros, máximos sintéticos36+36, pausa/reinicio/sin acumulación/reducido. Medición y regresiones finales se documentan en90/evidencia; CI/run/artifact del head exacto se verifican y registran en PR25 antes de entregar. Sin prueba física móvil ni VRAM medida/garantía60FPS.
+
+**Inicio:** `npm.cmd ci` → **`npm.cmd run dev:horizontal-map`** → **http://127.0.0.1:8779/prototypes/horizontal-map/**. [Guía Windows/VSCode/LAN](../prototypes/horizontal-map/README.md). Mapa anterior en `/prototypes/action-map/`, sin reemplazar PNG ni referencia. Persisten reservas de encaje/contorno de capas generadas, detalle al ampliar, rendimiento físico y aceptación visual. **Única siguiente tarea: revisión del creador del mapa y las cuatro acciones.** Sin merge, cierre de etapa o nuevas mecánicas.
+
+---
+
+## Mapa horizontal y ambientación — autorizado, originales pendientes ·05/11/2026
+
+**Encargo vigente:** nuevo escenario horizontal con siete localidades, vegetación anclada y luces coherentes, reutilizando tormenta y las cuatro acciones reales. No acepta retrospectivamente la revisión manual H3.4.3/H3.4.4 ni autoriza modificar reglas/capacidades/main o fusionar. Base remota limpia **694b64504ca39bb00627fb4cf9964b9521ec211f**, PR24 abierto/draft y CI42021660345 success. Rama nueva **`experiment/mapa-horizontal-ambientacion-h3`**, PR preparatorio draft contra H3.4.4. [Informe89](89-mapa-horizontal-ambientacion-preparacion.md). Bloques siguientes históricos.
+
+**Comprobado:** encargo leído, sin AGENTS.md aplicable, Git/instrucciones/escena/cámara/emisores revisados. Se ven las tres imágenes en el chat, pero **no hay binarios accesibles** en los adjuntos montados ni en el árbol remoto del head. El mapa del repositorio sigue siendo el anterior1448×1086/RGB. No se verifican alfa, dimensiones originales ni encaje a partir de previsualizaciones. No se sustituyó ni regeneró arte.
+
+**Preparación:** rutas sugeridas y guía de recepción en [`assets/mapa-horizontal/README.md`](../assets/mapa-horizontal/README.md); originales aún ausentes: `mapa-completo.png`, `fondo-sin-vegetacion.png`, `vegetacion.png`. No hace falta ZIP; se pueden subir individualmente a la rama nueva o indicar dónde están. Documentados acoplamientos actuales y secuencia de integración/validación. Solo documentación, sin cambios de producto ni nueva ejecución de npm/Chromium; el CI anterior corresponde a694b645. Main826199d9/referencia/PR24 intactos.
+
+**Única siguiente tarea:** obtener los tres originales y continuar el encargo ya autorizado. Implementación, pruebas gráficas/rendimiento/CI nuevo y aceptación manual **pendientes**, sin declarar entrega funcional ni cierre.
+
+---
+
 ## H3.4.4 — Ataque y barricadas, entrega para revisión ·05/11/2026
 
 **Autorización vigente:** integrar ataque/construcción sobre H3.4.3, **sin marcar aceptada su validación manual**. Base limpia/remota **4357df8d60d45bf13ed966add489e79c0f27ad45**, PR23 draft/CI41924037076 success. Rama nueva `experiment/h3-4-4-ataque-barricadas-mapa`, PR nuevo draft contra H3.4.3. Main826199d9, tag/release de referencia, arte, mapa y reglas intactos. [Informe88](88-h3-4-4-ataque-barricadas-mapa.md). Los bloques siguientes son historia.

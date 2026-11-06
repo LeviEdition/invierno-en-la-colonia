@@ -1,0 +1,20 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ 'cancel-action'
+- 'barricade-action'
+
+    at file:///workspace/invierno-en-la-colonia/scripts/check-h344-edge-browser.mjs:15:996 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'cancel-action',
+  expected: 'barricade-action',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

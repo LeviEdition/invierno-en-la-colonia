@@ -1,0 +1,171 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "method": "RAF + POST_RENDER count and DOM positions during real input; video separately inspectable",
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "errors": [],
+      "profiles": [],
+      "markerRedraw": {
+        "writes": 24,
+        "records": [
+          {
+            "actor": "h0",
+            "attribute": "class",
+            "old": "actor-marker owner-human actor-selected",
+            "next": "actor-marker owner-human actor-selected"
+          },
+          {
+            "actor": "h0",
+            "attribute": "aria-label",
+            "old": "Mara, Jugador 1, seleccionado",
+            "next": "Mara, Jugador 1, seleccionado"
+          },
+          {
+            "actor": "h1",
+            "attribute": "class",
+            "old": "actor-marker owner-human",
+            "next": "actor-marker owner-human"
+          },
+          {
+            "actor": "h1",
+            "attribute": "aria-label",
+            "old": "Leo, Jugador 1",
+            "next": "Leo, Jugador 1"
+          },
+          {
+            "actor": "h2",
+            "attribute": "class",
+            "old": "actor-marker owner-human",
+            "next": "actor-marker owner-human"
+          },
+          {
+            "actor": "h2",
+            "attribute": "aria-label",
+            "old": "Iris, Jugador 1",
+            "next": "Iris, Jugador 1"
+          },
+          {
+            "actor": "a0",
+            "attribute": "class",
+            "old": "actor-marker owner-ai",
+            "next": "actor-marker owner-ai"
+          },
+          {
+            "actor": "a0",
+            "attribute": "aria-label",
+            "old": "Ada, Jugador 2",
+            "next": "Ada, Jugador 2"
+          },
+          {
+            "actor": "a1",
+            "attribute": "class",
+            "old": "actor-marker owner-ai",
+            "next": "actor-marker owner-ai"
+          },
+          {
+            "actor": "a1",
+            "attribute": "aria-label",
+            "old": "Bruno, Jugador 2",
+            "next": "Bruno, Jugador 2"
+          },
+          {
+            "actor": "a2",
+            "attribute": "class",
+            "old": "actor-marker owner-ai",
+            "next": "actor-marker owner-ai"
+          },
+          {
+            "actor": "a2",
+            "attribute": "aria-label",
+            "old": "Sol, Jugador 2",
+            "next": "Sol, Jugador 2"
+          },
+          {
+            "actor": "h0",
+            "attribute": "class",
+            "old": "actor-marker owner-human actor-selected",
+            "next": "actor-marker owner-human actor-selected"
+          },
+          {
+            "actor": "h0",
+            "attribute": "aria-label",
+            "old": "Mara, Jugador 1, seleccionado",
+            "next": "Mara, Jugador 1, seleccionado"
+          },
+          {
+            "actor": "h1",
+            "attribute": "class",
+            "old": "actor-marker owner-human",
+            "next": "actor-marker owner-human"
+          },
+          {
+            "actor": "h1",
+            "attribute": "aria-label",
+            "old": "Leo, Jugador 1",
+            "next": "Leo, Jugador 1"
+          },
+          {
+            "actor": "h2",
+            "attribute": "class",
+            "old": "actor-marker owner-human",
+            "next": "actor-marker owner-human"
+          },
+          {
+            "actor": "h2",
+            "attribute": "aria-label",
+            "old": "Iris, Jugador 1",
+            "next": "Iris, Jugador 1"
+          },
+          {
+            "actor": "a0",
+            "attribute": "class",
+            "old": "actor-marker owner-ai",
+            "next": "actor-marker owner-ai"
+          },
+          {
+            "actor": "a0",
+            "attribute": "aria-label",
+            "old": "Ada, Jugador 2",
+            "next": "Ada, Jugador 2"
+          },
+          {
+            "actor": "a1",
+            "attribute": "class",
+            "old": "actor-marker owner-ai",
+            "next": "actor-marker owner-ai"
+          },
+          {
+            "actor": "a1",
+            "attribute": "aria-label",
+            "old": "Bruno, Jugador 2",
+            "next": "Bruno, Jugador 2"
+          },
+          {
+            "actor": "a2",
+            "attribute": "class",
+            "old": "actor-marker owner-ai",
+            "next": "actor-marker owner-ai"
+          },
+          {
+            "actor": "a2",
+            "attribute": "aria-label",
+            "old": "Sol, Jugador 2",
+            "next": "Sol, Jugador 2"
+          }
+        ],
+        "frames": 1,
+        "sameMarkup": true,
+        "sameCamera": true
+      }
+    }
+  ],
+  "failures": [
+    "AssertionError [ERR_ASSERTION]: Un cambio de contorno no reescribe fichas idénticas\n\n24 !== 0\n\n    at file:///workspace/invierno-en-la-colonia/scripts/check-h344-camera-browser.mjs:97:11"
+  ],
+  "passed": false
+}
