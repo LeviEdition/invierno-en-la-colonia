@@ -306,6 +306,101 @@
       "sha256": "6e881f5dc41c93810ee3bcdc19dfa37847b87540e2ebc0c2440dbde1f06c72e6"
     },
     {
+      "file": "reloj-visual/acciones-final.json",
+      "bytes": 1411,
+      "sha256": "9adb6801207182664d9b57966f5e430875416eabb5c570a0be58e1892a98af21"
+    },
+    {
+      "file": "reloj-visual/check-build.txt",
+      "bytes": 125,
+      "sha256": "86e73c08796ad6d9c5656d310e04c5fa5753551cffd4756394886fdc14896ad7"
+    },
+    {
+      "file": "reloj-visual/ci-rojo-frames.json",
+      "bytes": 36167,
+      "sha256": "6f4dc6fd1e790ea0edfd01fec676ee824e1baf72c9170ac8cf56b3fe696495e8"
+    },
+    {
+      "file": "reloj-visual/ci-rojo-resultados.json",
+      "bytes": 885,
+      "sha256": "d0467ab5245ebdf7b8f14e1999221c74a9b4f3c56510bc533ed01524e98fd630"
+    },
+    {
+      "file": "reloj-visual/ci-rojo.json",
+      "bytes": 561,
+      "sha256": "f141e180bcedcb9278998e99df22065756600f33c5a5f2eabc8e14220d6042c4"
+    },
+    {
+      "file": "reloj-visual/ci-rojo.webm",
+      "bytes": 1572864,
+      "sha256": "3db53bacb7bba859581c9ddc8267e4222b21dab8327b2cf88301c2dd0ba0a997"
+    },
+    {
+      "file": "reloj-visual/compilaciones.txt",
+      "bytes": 32518,
+      "sha256": "9af4779125a462322410afc50bf554065895c5924b3ef15e5f4dedc513e7f17b"
+    },
+    {
+      "file": "reloj-visual/movimiento-final.json",
+      "bytes": 3777,
+      "sha256": "7d70230ce0ac287432e8370b378356899d8ef60949107425ccc5a21ca1ba7e07"
+    },
+    {
+      "file": "reloj-visual/movimiento-verde-frames.json",
+      "bytes": 56397,
+      "sha256": "e3c206fb85319790a28143013a6cd270a70f5a694f10de5540616fa588678dd2"
+    },
+    {
+      "file": "reloj-visual/movimiento-verde.webm",
+      "bytes": 1531128,
+      "sha256": "28768a4ce008baece8dad72c6fe07d71795558a096a64f57a124f8cfaa317cd2"
+    },
+    {
+      "file": "reloj-visual/oraculo.txt",
+      "bytes": 678,
+      "sha256": "00e7f1144eb48b903efc5143933f771d2babd2fd14f22899a808f0dfbc5d114c"
+    },
+    {
+      "file": "reloj-visual/reproduccion-rojo-traza.json",
+      "bytes": 39587,
+      "sha256": "ec6bf481a7355d01e849d9c14dc657d4893d518488578aeaa3bed49dcbcbe3b8"
+    },
+    {
+      "file": "reloj-visual/reproduccion-rojo.json",
+      "bytes": 673,
+      "sha256": "034802ebefacf452f3438eb6f7c8f80d776d5fc400b5f0bd3ee5b07096d8609b"
+    },
+    {
+      "file": "reloj-visual/reproduccion-verde-normal.json",
+      "bytes": 159658,
+      "sha256": "d37a40a64e0ce93e198c7319eea6ed44e4ee59efc5080acdfd99331cb6ddcb30"
+    },
+    {
+      "file": "reloj-visual/reproduccion-verde-reducido.json",
+      "bytes": 79602,
+      "sha256": "22d363331e66fd86a08aac7fcac1f49bee5e20f5796914528b279ccb278cc6ed"
+    },
+    {
+      "file": "reloj-visual/reproduccion-verde.json",
+      "bytes": 666,
+      "sha256": "008312f8cbb301c2e8da902af349f929500e40e691a6cb89f0285cc68cef70aa"
+    },
+    {
+      "file": "reloj-visual/suite-641.txt",
+      "bytes": 57802,
+      "sha256": "7aaab4f2f486e5d5223d5652c5e566057187ff9aef79c68141b0564b616f2700"
+    },
+    {
+      "file": "reloj-visual/unitarias-rojo.txt",
+      "bytes": 2797,
+      "sha256": "52f8fa5cbc2bdefa2ac06d0f35d68ff7a12f2bcb7b3c50bbb620b2d3b04461a2"
+    },
+    {
+      "file": "reloj-visual/unitarias-verde.txt",
+      "bytes": 417,
+      "sha256": "b0cb8311053340579f4579c9289730b1f0f6e53699d810c4681a1aadc71983a7"
+    },
+    {
       "file": "reproducciones/casilla-sobre-garaje.png",
       "bytes": 1106335,
       "sha256": "e71538e7ae7a41785b28c6b5e57f914f4cb1ff532bd9ac1b7acd1d5be624e872"

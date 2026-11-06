@@ -48,6 +48,18 @@ Una batería preliminar se detuvo al finalizar su caso en curso para repetir com
 
 El source de obstáculos solo sirve para QA: edificios, vehículos, cercos, postes, garajes, casas y parada. No es navegación/colisión del juego. Se contrastan72 cuerpos alternativos, elipses y círculos de fichas, también entre localidades. La compuerta anterior32×38/<1% de alfa fuerte se conserva y las elipses usan96 muestras con alfa máximo≤32.
 
+## Reloj visual: fotogramas lentos
+
+El [primer CI](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/42300586160) de04126c6 fue rojo. [Metadatos y hash del artifact](reloj-visual/ci-rojo.json), [resultado](reloj-visual/ci-rojo-resultados.json), [traza](reloj-visual/ci-rojo-frames.json) y [video](reloj-visual/ci-rojo.webm) conservan la omisión de la fase de consecuencias. Las capturas de composición y mediciones anteriores corresponden a esa entrega; el arreglo posterior solo cambia el avance del reloj de presentación. No se usa el rojo como evidencia de aceptación.
+
+[Reproducción local roja](reloj-visual/reproduccion-rojo.json)/[traza](reloj-visual/reproduccion-rojo-traza.json): RAF del visor demorado500ms, host sin ralentizar y sondeo independiente25ms. Confirma viaje/tirada/revelación sin consecuencia, sin errores de consola. [Verde normal/reducido](reloj-visual/reproduccion-verde.json) conserva las cuatro fases, cámara, una ejecución y estado/azar resueltos; [traza normal](reloj-visual/reproduccion-verde-normal.json)/[reducida](reloj-visual/reproduccion-verde-reducido.json). Es una inyección artificial de latencia, no una medición de rendimiento.
+
+[Tres pruebas antes](reloj-visual/unitarias-rojo.txt)/[después](reloj-visual/unitarias-verde.txt), [suite641](reloj-visual/suite-641.txt), [check](reloj-visual/check-build.txt), [oráculo40](reloj-visual/oraculo.txt), [siete construcciones y checks](reloj-visual/compilaciones.txt). El archivo `suite.txt` de638 y las evidencias anteriores se conservan como historia. La compuerta original no se relaja; se añade `check-h344-presentation-stalls-browser.mjs` al CI. El artifact final conserva15 resultadosJSON y se verifica por SHA/digest/CRC en PR25.
+
+El límite100/50ms por render dilata la presentación en cuadros muy lentos; no cambia resultados ni mejora por sí solo los FPS. `advance` sigue permitiendo la finalización expresa de accesibilidad y los prototipos anteriores. Sin nueva aprobación artística ni teléfono físico.
+
+[Movimiento final6 casos](reloj-visual/movimiento-final.json):1365×768,852×393,740×360,1920×1080 y decisiones/muerte; [traza verde](reloj-visual/movimiento-verde-frames.json)/[video](reloj-visual/movimiento-verde.webm). [Acciones finales3 tamaños](reloj-visual/acciones-final.json): búsqueda/inventario, ataque/exposición y construcción, cámara/selección conservadas. Repetidos después de corregir; las compuertas de composición, ambiente y coste se conservan y se repiten sobre el head final en CI. Una invocación local inicial de grabación no arrancó por faltar `PLAYWRIGHT_BROWSERS_PATH`; se apuntó a la instalación externa existente antes de repetir, sin añadir dependencias al producto.
+
 ## Medición controlada
 
 [Datos](medicion.json), [resumen](medicion-resumen.json). Base edacdf05 desde checkout separado y candidata secuencialmente, canvas1055×563/DPR1, misma partida y **vista general mediante Restablecer**,500ms de calentamiento y dos muestras1500ms por perfil. El enfoque por localidad cambió; no se usa para comparar costes con cámaras distintas. Este ensayo no se compara directamente con la tabla de92, que usaba otro encuadre.

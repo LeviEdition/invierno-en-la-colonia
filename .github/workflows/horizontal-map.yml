@@ -58,6 +58,7 @@ jobs:
           node scripts/check-h344-movement-browser.mjs
           node scripts/check-h344-camera-browser.mjs
           node scripts/check-horizontal-map-browser.mjs
+          node scripts/check-h344-presentation-stalls-browser.mjs
           node scripts/check-horizontal-map-comfort-browser.mjs
           node scripts/check-horizontal-composition-browser.mjs
           node scripts/measure-horizontal-map.mjs

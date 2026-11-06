@@ -1,0 +1,832 @@
+
+> invierno-en-la-colonia@0.9.9 build:horizontal-map
+> node scripts/build-horizontal-map.mjs
+
+{
+  "phaser": "4.2.1",
+  "esbuild": "0.28.2",
+  "qa": false,
+  "map": {
+    "rawBytes": 1530895,
+    "gzip9Bytes": 417023,
+    "sha256": "c75c757074486480ee4a766d9a4fb15c7e0200ec90218d0b99453407e492f805",
+    "inputs": [
+      "node_modules/phaser/dist/phaser.esm.js",
+      "prototypes/horizontal-map/scene.json",
+      "prototypes/horizontal-map/atmosphere.json",
+      "assets/mapa-horizontal/manifest.json",
+      "prototypes/hospital-workshop/uploaded-kit.json",
+      "kit_arte_h33/manifest.json",
+      "prototypes/hospital-workshop/mockup/scene.json",
+      "prototypes/hospital-workshop/mockup/assets.mjs",
+      "prototypes/horizontal-map/presentation.mjs",
+      "prototypes/horizontal-map/camera.mjs",
+      "prototypes/movement-map/storm-model.mjs",
+      "prototypes/movement-map/storm-view.mjs",
+      "prototypes/hospital-phaser/texture-quality.mjs",
+      "prototypes/horizontal-map/environment.json",
+      "prototypes/horizontal-map/environment-model.mjs",
+      "prototypes/horizontal-map/vegetation-geometry.mjs",
+      "prototypes/horizontal-map/environment-view.mjs",
+      "prototypes/horizontal-map/scene-configuration.mjs",
+      "prototypes/hospital-workshop/kit.mjs",
+      "prototypes/hospital-workshop/resources.mjs",
+      "prototypes/hospital-phaser/game.mjs",
+      "prototypes/hospital-phaser/dispose-game.mjs",
+      "prototypes/hospital-phaser/startup.mjs",
+      "prototypes/hospital-workshop/slot-contours.mjs",
+      "prototypes/hospital-workshop/renderer.mjs",
+      "prototypes/hospital-workshop/mockup/atmosphere-audio.mjs",
+      "prototypes/hospital/camera.mjs",
+      "prototypes/hospital/controls.mjs",
+      "prototypes/hospital-workshop/mockup/model.mjs",
+      "prototypes/hospital/scene.mjs",
+      "prototypes/hospital-phaser/renderer.mjs",
+      "prototypes/state-map/layout.mjs",
+      "prototypes/movement-map/layout.mjs",
+      "prototypes/movement-map/dice.mjs",
+      "prototypes/movement-map/presentation-sequence.mjs",
+      "prototypes/movement-map/stable-layout.mjs",
+      "prototypes/movement-map/nonce.mjs",
+      "prototypes/search-map/search-controller.mjs",
+      "prototypes/search-map/search-panel.mjs",
+      "prototypes/action-map/action-controller.mjs",
+      "prototypes/action-map/action-presentation.mjs",
+      "prototypes/action-map/action-panel.mjs",
+      "prototypes/movement-map/movement-controller.mjs",
+      "prototypes/action-map/map-view.mjs",
+      "prototypes/action-map/main.mjs"
+    ]
+  },
+  "host": {
+    "rawBytes": 260486,
+    "sha256": "e4962a6b898582e84d90d1ab9074ee3182db4582e037b7652f3d25c831b38a9c",
+    "inputs": [
+      "src/application/reference-contracts.mjs",
+      "src/domain/reference-data.mjs",
+      "src/domain/reference-state.mjs",
+      "src/domain/reference-items.mjs",
+      "src/domain/reference-crisis.mjs",
+      "src/application/death-director.mjs",
+      "src/application/read-only-context.mjs",
+      "src/item-catalog.mjs",
+      "src/domain/reference-rules.mjs",
+      "src/application/reference-turns.mjs",
+      "src/application/reference-engine.mjs",
+      "src/presentation/commands.mjs",
+      "src/presentation/reference-view.mjs",
+      "src/agents/reference-agent.mjs",
+      "src/application/create-application.mjs",
+      "prototypes/state-map/projection.mjs",
+      "prototypes/state-map/reference-observer.mjs",
+      "prototypes/movement-map/nonce.mjs",
+      "prototypes/movement-map/movement-broker.mjs",
+      "prototypes/search-map/search-broker.mjs",
+      "prototypes/action-map/action-broker.mjs",
+      "prototypes/action-map/reference-host.mjs"
+    ]
+  }
+}
+
+> invierno-en-la-colonia@0.9.9 check:horizontal-map-build
+> node scripts/build-horizontal-map.mjs --check
+
+{
+  "phaser": "4.2.1",
+  "esbuild": "0.28.2",
+  "qa": false,
+  "map": {
+    "rawBytes": 1530895,
+    "gzip9Bytes": 417023,
+    "sha256": "c75c757074486480ee4a766d9a4fb15c7e0200ec90218d0b99453407e492f805",
+    "inputs": [
+      "node_modules/phaser/dist/phaser.esm.js",
+      "prototypes/horizontal-map/scene.json",
+      "prototypes/horizontal-map/atmosphere.json",
+      "assets/mapa-horizontal/manifest.json",
+      "prototypes/hospital-workshop/uploaded-kit.json",
+      "kit_arte_h33/manifest.json",
+      "prototypes/hospital-workshop/mockup/scene.json",
+      "prototypes/hospital-workshop/mockup/assets.mjs",
+      "prototypes/horizontal-map/presentation.mjs",
+      "prototypes/horizontal-map/camera.mjs",
+      "prototypes/movement-map/storm-model.mjs",
+      "prototypes/movement-map/storm-view.mjs",
+      "prototypes/hospital-phaser/texture-quality.mjs",
+      "prototypes/horizontal-map/environment.json",
+      "prototypes/horizontal-map/environment-model.mjs",
+      "prototypes/horizontal-map/vegetation-geometry.mjs",
+      "prototypes/horizontal-map/environment-view.mjs",
+      "prototypes/horizontal-map/scene-configuration.mjs",
+      "prototypes/hospital-workshop/kit.mjs",
+      "prototypes/hospital-workshop/resources.mjs",
+      "prototypes/hospital-phaser/game.mjs",
+      "prototypes/hospital-phaser/dispose-game.mjs",
+      "prototypes/hospital-phaser/startup.mjs",
+      "prototypes/hospital-workshop/slot-contours.mjs",
+      "prototypes/hospital-workshop/renderer.mjs",
+      "prototypes/hospital-workshop/mockup/atmosphere-audio.mjs",
+      "prototypes/hospital/camera.mjs",
+      "prototypes/hospital/controls.mjs",
+      "prototypes/hospital-workshop/mockup/model.mjs",
+      "prototypes/hospital/scene.mjs",
+      "prototypes/hospital-phaser/renderer.mjs",
+      "prototypes/state-map/layout.mjs",
+      "prototypes/movement-map/layout.mjs",
+      "prototypes/movement-map/dice.mjs",
+      "prototypes/movement-map/presentation-sequence.mjs",
+      "prototypes/movement-map/stable-layout.mjs",
+      "prototypes/movement-map/nonce.mjs",
+      "prototypes/search-map/search-controller.mjs",
+      "prototypes/search-map/search-panel.mjs",
+      "prototypes/action-map/action-controller.mjs",
+      "prototypes/action-map/action-presentation.mjs",
+      "prototypes/action-map/action-panel.mjs",
+      "prototypes/movement-map/movement-controller.mjs",
+      "prototypes/action-map/map-view.mjs",
+      "prototypes/action-map/main.mjs"
+    ]
+  },
+  "host": {
+    "rawBytes": 260486,
+    "sha256": "e4962a6b898582e84d90d1ab9074ee3182db4582e037b7652f3d25c831b38a9c",
+    "inputs": [
+      "src/application/reference-contracts.mjs",
+      "src/domain/reference-data.mjs",
+      "src/domain/reference-state.mjs",
+      "src/domain/reference-items.mjs",
+      "src/domain/reference-crisis.mjs",
+      "src/application/death-director.mjs",
+      "src/application/read-only-context.mjs",
+      "src/item-catalog.mjs",
+      "src/domain/reference-rules.mjs",
+      "src/application/reference-turns.mjs",
+      "src/application/reference-engine.mjs",
+      "src/presentation/commands.mjs",
+      "src/presentation/reference-view.mjs",
+      "src/agents/reference-agent.mjs",
+      "src/application/create-application.mjs",
+      "prototypes/state-map/projection.mjs",
+      "prototypes/state-map/reference-observer.mjs",
+      "prototypes/movement-map/nonce.mjs",
+      "prototypes/movement-map/movement-broker.mjs",
+      "prototypes/search-map/search-broker.mjs",
+      "prototypes/action-map/action-broker.mjs",
+      "prototypes/action-map/reference-host.mjs"
+    ]
+  }
+}
+
+> invierno-en-la-colonia@0.9.9 build:action-map
+> node scripts/build-action-map.mjs
+
+{
+  "phaser": "4.2.1",
+  "esbuild": "0.28.2",
+  "qa": false,
+  "map": {
+    "rawBytes": 1508338,
+    "gzip9Bytes": 409303,
+    "sha256": "8737d40bab9d50d152d08deef3071698cfd5145a8964c22ab493196f2d17d2e8",
+    "inputs": [
+      "node_modules/phaser/dist/phaser.esm.js",
+      "prototypes/hospital-workshop/mockup/scene.json",
+      "prototypes/hospital-workshop/uploaded-kit.json",
+      "kit_arte_h33/manifest.json",
+      "prototypes/movement-map/storm.json",
+      "prototypes/hospital-workshop/mockup/assets.mjs",
+      "prototypes/hospital/camera.mjs",
+      "prototypes/hospital-workshop/mockup/camera.mjs",
+      "prototypes/movement-map/storm-model.mjs",
+      "prototypes/movement-map/storm-view.mjs",
+      "prototypes/action-map/scene-configuration.mjs",
+      "prototypes/hospital-workshop/kit.mjs",
+      "prototypes/hospital-workshop/resources.mjs",
+      "prototypes/hospital-phaser/game.mjs",
+      "prototypes/hospital-phaser/dispose-game.mjs",
+      "prototypes/hospital-phaser/startup.mjs",
+      "prototypes/hospital-phaser/texture-quality.mjs",
+      "prototypes/hospital-workshop/slot-contours.mjs",
+      "prototypes/hospital-workshop/renderer.mjs",
+      "prototypes/hospital-workshop/mockup/atmosphere-audio.mjs",
+      "prototypes/hospital/controls.mjs",
+      "prototypes/hospital-workshop/mockup/model.mjs",
+      "prototypes/hospital/scene.mjs",
+      "prototypes/hospital-phaser/renderer.mjs",
+      "prototypes/state-map/layout.mjs",
+      "prototypes/movement-map/layout.mjs",
+      "prototypes/movement-map/dice.mjs",
+      "prototypes/movement-map/presentation-sequence.mjs",
+      "prototypes/movement-map/stable-layout.mjs",
+      "prototypes/movement-map/nonce.mjs",
+      "prototypes/search-map/search-controller.mjs",
+      "prototypes/search-map/search-panel.mjs",
+      "prototypes/action-map/action-controller.mjs",
+      "prototypes/action-map/action-presentation.mjs",
+      "prototypes/action-map/action-panel.mjs",
+      "prototypes/movement-map/movement-controller.mjs",
+      "prototypes/action-map/map-view.mjs",
+      "prototypes/action-map/main.mjs"
+    ]
+  },
+  "host": {
+    "rawBytes": 260486,
+    "sha256": "e4962a6b898582e84d90d1ab9074ee3182db4582e037b7652f3d25c831b38a9c",
+    "inputs": [
+      "src/application/reference-contracts.mjs",
+      "src/domain/reference-data.mjs",
+      "src/domain/reference-state.mjs",
+      "src/domain/reference-items.mjs",
+      "src/domain/reference-crisis.mjs",
+      "src/application/death-director.mjs",
+      "src/application/read-only-context.mjs",
+      "src/item-catalog.mjs",
+      "src/domain/reference-rules.mjs",
+      "src/application/reference-turns.mjs",
+      "src/application/reference-engine.mjs",
+      "src/presentation/commands.mjs",
+      "src/presentation/reference-view.mjs",
+      "src/agents/reference-agent.mjs",
+      "src/application/create-application.mjs",
+      "prototypes/state-map/projection.mjs",
+      "prototypes/state-map/reference-observer.mjs",
+      "prototypes/movement-map/nonce.mjs",
+      "prototypes/movement-map/movement-broker.mjs",
+      "prototypes/search-map/search-broker.mjs",
+      "prototypes/action-map/action-broker.mjs",
+      "prototypes/action-map/reference-host.mjs"
+    ]
+  }
+}
+
+> invierno-en-la-colonia@0.9.9 check:action-map-build
+> node scripts/build-action-map.mjs --check
+
+{
+  "phaser": "4.2.1",
+  "esbuild": "0.28.2",
+  "qa": false,
+  "map": {
+    "rawBytes": 1508338,
+    "gzip9Bytes": 409303,
+    "sha256": "8737d40bab9d50d152d08deef3071698cfd5145a8964c22ab493196f2d17d2e8",
+    "inputs": [
+      "node_modules/phaser/dist/phaser.esm.js",
+      "prototypes/hospital-workshop/mockup/scene.json",
+      "prototypes/hospital-workshop/uploaded-kit.json",
+      "kit_arte_h33/manifest.json",
+      "prototypes/movement-map/storm.json",
+      "prototypes/hospital-workshop/mockup/assets.mjs",
+      "prototypes/hospital/camera.mjs",
+      "prototypes/hospital-workshop/mockup/camera.mjs",
+      "prototypes/movement-map/storm-model.mjs",
+      "prototypes/movement-map/storm-view.mjs",
+      "prototypes/action-map/scene-configuration.mjs",
+      "prototypes/hospital-workshop/kit.mjs",
+      "prototypes/hospital-workshop/resources.mjs",
+      "prototypes/hospital-phaser/game.mjs",
+      "prototypes/hospital-phaser/dispose-game.mjs",
+      "prototypes/hospital-phaser/startup.mjs",
+      "prototypes/hospital-phaser/texture-quality.mjs",
+      "prototypes/hospital-workshop/slot-contours.mjs",
+      "prototypes/hospital-workshop/renderer.mjs",
+      "prototypes/hospital-workshop/mockup/atmosphere-audio.mjs",
+      "prototypes/hospital/controls.mjs",
+      "prototypes/hospital-workshop/mockup/model.mjs",
+      "prototypes/hospital/scene.mjs",
+      "prototypes/hospital-phaser/renderer.mjs",
+      "prototypes/state-map/layout.mjs",
+      "prototypes/movement-map/layout.mjs",
+      "prototypes/movement-map/dice.mjs",
+      "prototypes/movement-map/presentation-sequence.mjs",
+      "prototypes/movement-map/stable-layout.mjs",
+      "prototypes/movement-map/nonce.mjs",
+      "prototypes/search-map/search-controller.mjs",
+      "prototypes/search-map/search-panel.mjs",
+      "prototypes/action-map/action-controller.mjs",
+      "prototypes/action-map/action-presentation.mjs",
+      "prototypes/action-map/action-panel.mjs",
+      "prototypes/movement-map/movement-controller.mjs",
+      "prototypes/action-map/map-view.mjs",
+      "prototypes/action-map/main.mjs"
+    ]
+  },
+  "host": {
+    "rawBytes": 260486,
+    "sha256": "e4962a6b898582e84d90d1ab9074ee3182db4582e037b7652f3d25c831b38a9c",
+    "inputs": [
+      "src/application/reference-contracts.mjs",
+      "src/domain/reference-data.mjs",
+      "src/domain/reference-state.mjs",
+      "src/domain/reference-items.mjs",
+      "src/domain/reference-crisis.mjs",
+      "src/application/death-director.mjs",
+      "src/application/read-only-context.mjs",
+      "src/item-catalog.mjs",
+      "src/domain/reference-rules.mjs",
+      "src/application/reference-turns.mjs",
+      "src/application/reference-engine.mjs",
+      "src/presentation/commands.mjs",
+      "src/presentation/reference-view.mjs",
+      "src/agents/reference-agent.mjs",
+      "src/application/create-application.mjs",
+      "prototypes/state-map/projection.mjs",
+      "prototypes/state-map/reference-observer.mjs",
+      "prototypes/movement-map/nonce.mjs",
+      "prototypes/movement-map/movement-broker.mjs",
+      "prototypes/search-map/search-broker.mjs",
+      "prototypes/action-map/action-broker.mjs",
+      "prototypes/action-map/reference-host.mjs"
+    ]
+  }
+}
+
+> invierno-en-la-colonia@0.9.9 build:search-map
+> node scripts/build-search-map.mjs
+
+{
+  "phaser": "4.2.1",
+  "esbuild": "0.28.2",
+  "qa": false,
+  "map": {
+    "rawBytes": 1491374,
+    "gzip9Bytes": 404411,
+    "sha256": "6d0bb36d16aec94db32cbafa5cd7ebb8b414052b923bceb03103cdf34b9b6172",
+    "inputs": [
+      "node_modules/phaser/dist/phaser.esm.js",
+      "prototypes/hospital-workshop/mockup/scene.json",
+      "prototypes/hospital-workshop/uploaded-kit.json",
+      "kit_arte_h33/manifest.json",
+      "prototypes/movement-map/storm.json",
+      "prototypes/hospital-workshop/mockup/assets.mjs",
+      "prototypes/hospital-workshop/kit.mjs",
+      "prototypes/hospital-workshop/resources.mjs",
+      "prototypes/hospital-phaser/game.mjs",
+      "prototypes/hospital-phaser/dispose-game.mjs",
+      "prototypes/hospital-phaser/startup.mjs",
+      "prototypes/hospital-phaser/texture-quality.mjs",
+      "prototypes/hospital-workshop/slot-contours.mjs",
+      "prototypes/hospital-workshop/renderer.mjs",
+      "prototypes/movement-map/storm-model.mjs",
+      "prototypes/movement-map/storm-view.mjs",
+      "prototypes/hospital-workshop/mockup/atmosphere-audio.mjs",
+      "prototypes/hospital/camera.mjs",
+      "prototypes/hospital-workshop/mockup/camera.mjs",
+      "prototypes/hospital/controls.mjs",
+      "prototypes/hospital-workshop/mockup/model.mjs",
+      "prototypes/hospital/scene.mjs",
+      "prototypes/hospital-phaser/renderer.mjs",
+      "prototypes/state-map/layout.mjs",
+      "prototypes/movement-map/layout.mjs",
+      "prototypes/movement-map/dice.mjs",
+      "prototypes/movement-map/presentation-sequence.mjs",
+      "prototypes/movement-map/stable-layout.mjs",
+      "prototypes/movement-map/nonce.mjs",
+      "prototypes/search-map/search-controller.mjs",
+      "prototypes/search-map/search-panel.mjs",
+      "prototypes/movement-map/movement-controller.mjs",
+      "prototypes/search-map/map-view.mjs",
+      "prototypes/search-map/main.mjs"
+    ]
+  },
+  "host": {
+    "rawBytes": 255767,
+    "sha256": "7239567fb5f4e765b2e61b97ea8ba0beb822e7a8e6bbd0a966c3645a7f8cb2ab",
+    "inputs": [
+      "src/application/reference-contracts.mjs",
+      "src/domain/reference-data.mjs",
+      "src/domain/reference-state.mjs",
+      "src/domain/reference-items.mjs",
+      "src/domain/reference-crisis.mjs",
+      "src/application/death-director.mjs",
+      "src/application/read-only-context.mjs",
+      "src/item-catalog.mjs",
+      "src/domain/reference-rules.mjs",
+      "src/application/reference-turns.mjs",
+      "src/application/reference-engine.mjs",
+      "src/presentation/commands.mjs",
+      "src/presentation/reference-view.mjs",
+      "src/agents/reference-agent.mjs",
+      "src/application/create-application.mjs",
+      "prototypes/state-map/projection.mjs",
+      "prototypes/state-map/reference-observer.mjs",
+      "prototypes/movement-map/nonce.mjs",
+      "prototypes/movement-map/movement-broker.mjs",
+      "prototypes/search-map/search-broker.mjs",
+      "prototypes/search-map/reference-host.mjs"
+    ]
+  }
+}
+
+> invierno-en-la-colonia@0.9.9 check:search-map-build
+> node scripts/build-search-map.mjs --check
+
+{
+  "phaser": "4.2.1",
+  "esbuild": "0.28.2",
+  "qa": false,
+  "map": {
+    "rawBytes": 1491374,
+    "gzip9Bytes": 404411,
+    "sha256": "6d0bb36d16aec94db32cbafa5cd7ebb8b414052b923bceb03103cdf34b9b6172",
+    "inputs": [
+      "node_modules/phaser/dist/phaser.esm.js",
+      "prototypes/hospital-workshop/mockup/scene.json",
+      "prototypes/hospital-workshop/uploaded-kit.json",
+      "kit_arte_h33/manifest.json",
+      "prototypes/movement-map/storm.json",
+      "prototypes/hospital-workshop/mockup/assets.mjs",
+      "prototypes/hospital-workshop/kit.mjs",
+      "prototypes/hospital-workshop/resources.mjs",
+      "prototypes/hospital-phaser/game.mjs",
+      "prototypes/hospital-phaser/dispose-game.mjs",
+      "prototypes/hospital-phaser/startup.mjs",
+      "prototypes/hospital-phaser/texture-quality.mjs",
+      "prototypes/hospital-workshop/slot-contours.mjs",
+      "prototypes/hospital-workshop/renderer.mjs",
+      "prototypes/movement-map/storm-model.mjs",
+      "prototypes/movement-map/storm-view.mjs",
+      "prototypes/hospital-workshop/mockup/atmosphere-audio.mjs",
+      "prototypes/hospital/camera.mjs",
+      "prototypes/hospital-workshop/mockup/camera.mjs",
+      "prototypes/hospital/controls.mjs",
+      "prototypes/hospital-workshop/mockup/model.mjs",
+      "prototypes/hospital/scene.mjs",
+      "prototypes/hospital-phaser/renderer.mjs",
+      "prototypes/state-map/layout.mjs",
+      "prototypes/movement-map/layout.mjs",
+      "prototypes/movement-map/dice.mjs",
+      "prototypes/movement-map/presentation-sequence.mjs",
+      "prototypes/movement-map/stable-layout.mjs",
+      "prototypes/movement-map/nonce.mjs",
+      "prototypes/search-map/search-controller.mjs",
+      "prototypes/search-map/search-panel.mjs",
+      "prototypes/movement-map/movement-controller.mjs",
+      "prototypes/search-map/map-view.mjs",
+      "prototypes/search-map/main.mjs"
+    ]
+  },
+  "host": {
+    "rawBytes": 255767,
+    "sha256": "7239567fb5f4e765b2e61b97ea8ba0beb822e7a8e6bbd0a966c3645a7f8cb2ab",
+    "inputs": [
+      "src/application/reference-contracts.mjs",
+      "src/domain/reference-data.mjs",
+      "src/domain/reference-state.mjs",
+      "src/domain/reference-items.mjs",
+      "src/domain/reference-crisis.mjs",
+      "src/application/death-director.mjs",
+      "src/application/read-only-context.mjs",
+      "src/item-catalog.mjs",
+      "src/domain/reference-rules.mjs",
+      "src/application/reference-turns.mjs",
+      "src/application/reference-engine.mjs",
+      "src/presentation/commands.mjs",
+      "src/presentation/reference-view.mjs",
+      "src/agents/reference-agent.mjs",
+      "src/application/create-application.mjs",
+      "prototypes/state-map/projection.mjs",
+      "prototypes/state-map/reference-observer.mjs",
+      "prototypes/movement-map/nonce.mjs",
+      "prototypes/movement-map/movement-broker.mjs",
+      "prototypes/search-map/search-broker.mjs",
+      "prototypes/search-map/reference-host.mjs"
+    ]
+  }
+}
+
+> invierno-en-la-colonia@0.9.9 build:movement-map
+> node scripts/build-movement-map.mjs
+
+{
+  "phaser": "4.2.1",
+  "esbuild": "0.28.2",
+  "qa": false,
+  "map": {
+    "rawBytes": 1479266,
+    "gzip9Bytes": 400671,
+    "sha256": "45b0a3861a483630f6077e2b5f7aee0cd3f911dd0d1f03d32404b45888fb9870",
+    "inputs": [
+      "node_modules/phaser/dist/phaser.esm.js",
+      "prototypes/hospital-workshop/mockup/scene.json",
+      "prototypes/hospital-workshop/uploaded-kit.json",
+      "kit_arte_h33/manifest.json",
+      "prototypes/movement-map/storm.json",
+      "prototypes/hospital-workshop/mockup/assets.mjs",
+      "prototypes/hospital-workshop/kit.mjs",
+      "prototypes/hospital-workshop/resources.mjs",
+      "prototypes/hospital-phaser/game.mjs",
+      "prototypes/hospital-phaser/dispose-game.mjs",
+      "prototypes/hospital-phaser/startup.mjs",
+      "prototypes/hospital-phaser/texture-quality.mjs",
+      "prototypes/hospital-workshop/slot-contours.mjs",
+      "prototypes/hospital-workshop/renderer.mjs",
+      "prototypes/movement-map/storm-model.mjs",
+      "prototypes/movement-map/storm-view.mjs",
+      "prototypes/hospital-workshop/mockup/atmosphere-audio.mjs",
+      "prototypes/hospital/camera.mjs",
+      "prototypes/hospital-workshop/mockup/camera.mjs",
+      "prototypes/hospital/controls.mjs",
+      "prototypes/hospital-workshop/mockup/model.mjs",
+      "prototypes/hospital/scene.mjs",
+      "prototypes/hospital-phaser/renderer.mjs",
+      "prototypes/state-map/layout.mjs",
+      "prototypes/movement-map/layout.mjs",
+      "prototypes/movement-map/dice.mjs",
+      "prototypes/movement-map/presentation-sequence.mjs",
+      "prototypes/movement-map/stable-layout.mjs",
+      "prototypes/movement-map/nonce.mjs",
+      "prototypes/movement-map/movement-controller.mjs",
+      "prototypes/movement-map/map-view.mjs",
+      "prototypes/movement-map/main.mjs"
+    ]
+  },
+  "host": {
+    "rawBytes": 250776,
+    "sha256": "a7cd721e297518e8e5a78f0e81b5b68d2c7bbea6a37cd78aa7cfb0556b5cb54a",
+    "inputs": [
+      "src/application/reference-contracts.mjs",
+      "src/domain/reference-data.mjs",
+      "src/domain/reference-state.mjs",
+      "src/domain/reference-items.mjs",
+      "src/domain/reference-crisis.mjs",
+      "src/application/death-director.mjs",
+      "src/application/read-only-context.mjs",
+      "src/item-catalog.mjs",
+      "src/domain/reference-rules.mjs",
+      "src/application/reference-turns.mjs",
+      "src/application/reference-engine.mjs",
+      "src/presentation/commands.mjs",
+      "src/presentation/reference-view.mjs",
+      "src/agents/reference-agent.mjs",
+      "src/application/create-application.mjs",
+      "prototypes/state-map/projection.mjs",
+      "prototypes/state-map/reference-observer.mjs",
+      "prototypes/movement-map/nonce.mjs",
+      "prototypes/movement-map/movement-broker.mjs",
+      "prototypes/movement-map/reference-host.mjs"
+    ]
+  }
+}
+
+> invierno-en-la-colonia@0.9.9 check:movement-map-build
+> node scripts/build-movement-map.mjs --check
+
+{
+  "phaser": "4.2.1",
+  "esbuild": "0.28.2",
+  "qa": false,
+  "map": {
+    "rawBytes": 1479266,
+    "gzip9Bytes": 400671,
+    "sha256": "45b0a3861a483630f6077e2b5f7aee0cd3f911dd0d1f03d32404b45888fb9870",
+    "inputs": [
+      "node_modules/phaser/dist/phaser.esm.js",
+      "prototypes/hospital-workshop/mockup/scene.json",
+      "prototypes/hospital-workshop/uploaded-kit.json",
+      "kit_arte_h33/manifest.json",
+      "prototypes/movement-map/storm.json",
+      "prototypes/hospital-workshop/mockup/assets.mjs",
+      "prototypes/hospital-workshop/kit.mjs",
+      "prototypes/hospital-workshop/resources.mjs",
+      "prototypes/hospital-phaser/game.mjs",
+      "prototypes/hospital-phaser/dispose-game.mjs",
+      "prototypes/hospital-phaser/startup.mjs",
+      "prototypes/hospital-phaser/texture-quality.mjs",
+      "prototypes/hospital-workshop/slot-contours.mjs",
+      "prototypes/hospital-workshop/renderer.mjs",
+      "prototypes/movement-map/storm-model.mjs",
+      "prototypes/movement-map/storm-view.mjs",
+      "prototypes/hospital-workshop/mockup/atmosphere-audio.mjs",
+      "prototypes/hospital/camera.mjs",
+      "prototypes/hospital-workshop/mockup/camera.mjs",
+      "prototypes/hospital/controls.mjs",
+      "prototypes/hospital-workshop/mockup/model.mjs",
+      "prototypes/hospital/scene.mjs",
+      "prototypes/hospital-phaser/renderer.mjs",
+      "prototypes/state-map/layout.mjs",
+      "prototypes/movement-map/layout.mjs",
+      "prototypes/movement-map/dice.mjs",
+      "prototypes/movement-map/presentation-sequence.mjs",
+      "prototypes/movement-map/stable-layout.mjs",
+      "prototypes/movement-map/nonce.mjs",
+      "prototypes/movement-map/movement-controller.mjs",
+      "prototypes/movement-map/map-view.mjs",
+      "prototypes/movement-map/main.mjs"
+    ]
+  },
+  "host": {
+    "rawBytes": 250776,
+    "sha256": "a7cd721e297518e8e5a78f0e81b5b68d2c7bbea6a37cd78aa7cfb0556b5cb54a",
+    "inputs": [
+      "src/application/reference-contracts.mjs",
+      "src/domain/reference-data.mjs",
+      "src/domain/reference-state.mjs",
+      "src/domain/reference-items.mjs",
+      "src/domain/reference-crisis.mjs",
+      "src/application/death-director.mjs",
+      "src/application/read-only-context.mjs",
+      "src/item-catalog.mjs",
+      "src/domain/reference-rules.mjs",
+      "src/application/reference-turns.mjs",
+      "src/application/reference-engine.mjs",
+      "src/presentation/commands.mjs",
+      "src/presentation/reference-view.mjs",
+      "src/agents/reference-agent.mjs",
+      "src/application/create-application.mjs",
+      "prototypes/state-map/projection.mjs",
+      "prototypes/state-map/reference-observer.mjs",
+      "prototypes/movement-map/nonce.mjs",
+      "prototypes/movement-map/movement-broker.mjs",
+      "prototypes/movement-map/reference-host.mjs"
+    ]
+  }
+}
+
+> invierno-en-la-colonia@0.9.9 build:state-map
+> node scripts/build-state-map.mjs
+
+{
+  "phaser": "4.2.1",
+  "esbuild": "0.28.2",
+  "qa": false,
+  "map": {
+    "rawBytes": 1461403,
+    "gzip9Bytes": 395482,
+    "sha256": "f359183d6d73172c02ed601070c579b26875a4e37e0259f7592ead990e0ba0f4",
+    "inputs": [
+      "prototypes/hospital-workshop/mockup/scene.json",
+      "prototypes/hospital-workshop/uploaded-kit.json",
+      "kit_arte_h33/manifest.json",
+      "prototypes/hospital-workshop/mockup/atmosphere.json",
+      "prototypes/hospital-workshop/mockup/assets.mjs",
+      "prototypes/hospital-workshop/kit.mjs",
+      "prototypes/hospital-workshop/resources.mjs",
+      "node_modules/phaser/dist/phaser.esm.js",
+      "prototypes/hospital-phaser/game.mjs",
+      "prototypes/hospital-phaser/dispose-game.mjs",
+      "prototypes/hospital-phaser/startup.mjs",
+      "prototypes/hospital-phaser/texture-quality.mjs",
+      "prototypes/hospital-workshop/slot-contours.mjs",
+      "prototypes/hospital-workshop/renderer.mjs",
+      "prototypes/hospital-workshop/mockup/atmosphere-model.mjs",
+      "prototypes/hospital-workshop/mockup/atmosphere-view.mjs",
+      "prototypes/hospital-workshop/mockup/atmosphere-audio.mjs",
+      "prototypes/hospital/camera.mjs",
+      "prototypes/hospital-workshop/mockup/camera.mjs",
+      "prototypes/hospital/controls.mjs",
+      "prototypes/hospital-workshop/mockup/model.mjs",
+      "prototypes/hospital/scene.mjs",
+      "prototypes/hospital-phaser/renderer.mjs",
+      "prototypes/state-map/layout.mjs",
+      "prototypes/state-map/map-view.mjs",
+      "prototypes/state-map/main.mjs"
+    ]
+  },
+  "host": {
+    "rawBytes": 247645,
+    "sha256": "5b537ccb07b3a59580ceb78fefc283cfba2a574fc93eedf05a74fcc814258717",
+    "inputs": [
+      "src/application/reference-contracts.mjs",
+      "src/domain/reference-data.mjs",
+      "src/domain/reference-state.mjs",
+      "src/domain/reference-items.mjs",
+      "src/domain/reference-crisis.mjs",
+      "src/application/death-director.mjs",
+      "src/application/read-only-context.mjs",
+      "src/item-catalog.mjs",
+      "src/domain/reference-rules.mjs",
+      "src/application/reference-turns.mjs",
+      "src/application/reference-engine.mjs",
+      "src/presentation/commands.mjs",
+      "src/presentation/reference-view.mjs",
+      "src/agents/reference-agent.mjs",
+      "src/application/create-application.mjs",
+      "prototypes/state-map/projection.mjs",
+      "prototypes/state-map/reference-observer.mjs",
+      "prototypes/state-map/reference-host.mjs"
+    ]
+  }
+}
+
+> invierno-en-la-colonia@0.9.9 check:state-map-build
+> node scripts/build-state-map.mjs --check
+
+{
+  "phaser": "4.2.1",
+  "esbuild": "0.28.2",
+  "qa": false,
+  "map": {
+    "rawBytes": 1461403,
+    "gzip9Bytes": 395482,
+    "sha256": "f359183d6d73172c02ed601070c579b26875a4e37e0259f7592ead990e0ba0f4",
+    "inputs": [
+      "prototypes/hospital-workshop/mockup/scene.json",
+      "prototypes/hospital-workshop/uploaded-kit.json",
+      "kit_arte_h33/manifest.json",
+      "prototypes/hospital-workshop/mockup/atmosphere.json",
+      "prototypes/hospital-workshop/mockup/assets.mjs",
+      "prototypes/hospital-workshop/kit.mjs",
+      "prototypes/hospital-workshop/resources.mjs",
+      "node_modules/phaser/dist/phaser.esm.js",
+      "prototypes/hospital-phaser/game.mjs",
+      "prototypes/hospital-phaser/dispose-game.mjs",
+      "prototypes/hospital-phaser/startup.mjs",
+      "prototypes/hospital-phaser/texture-quality.mjs",
+      "prototypes/hospital-workshop/slot-contours.mjs",
+      "prototypes/hospital-workshop/renderer.mjs",
+      "prototypes/hospital-workshop/mockup/atmosphere-model.mjs",
+      "prototypes/hospital-workshop/mockup/atmosphere-view.mjs",
+      "prototypes/hospital-workshop/mockup/atmosphere-audio.mjs",
+      "prototypes/hospital/camera.mjs",
+      "prototypes/hospital-workshop/mockup/camera.mjs",
+      "prototypes/hospital/controls.mjs",
+      "prototypes/hospital-workshop/mockup/model.mjs",
+      "prototypes/hospital/scene.mjs",
+      "prototypes/hospital-phaser/renderer.mjs",
+      "prototypes/state-map/layout.mjs",
+      "prototypes/state-map/map-view.mjs",
+      "prototypes/state-map/main.mjs"
+    ]
+  },
+  "host": {
+    "rawBytes": 247645,
+    "sha256": "5b537ccb07b3a59580ceb78fefc283cfba2a574fc93eedf05a74fcc814258717",
+    "inputs": [
+      "src/application/reference-contracts.mjs",
+      "src/domain/reference-data.mjs",
+      "src/domain/reference-state.mjs",
+      "src/domain/reference-items.mjs",
+      "src/domain/reference-crisis.mjs",
+      "src/application/death-director.mjs",
+      "src/application/read-only-context.mjs",
+      "src/item-catalog.mjs",
+      "src/domain/reference-rules.mjs",
+      "src/application/reference-turns.mjs",
+      "src/application/reference-engine.mjs",
+      "src/presentation/commands.mjs",
+      "src/presentation/reference-view.mjs",
+      "src/agents/reference-agent.mjs",
+      "src/application/create-application.mjs",
+      "prototypes/state-map/projection.mjs",
+      "prototypes/state-map/reference-observer.mjs",
+      "prototypes/state-map/reference-host.mjs"
+    ]
+  }
+}
+
+> invierno-en-la-colonia@0.9.9 build:workshop
+> node scripts/build-workshop.mjs
+
+{
+  "phaser": "4.2.1",
+  "technical": {
+    "rawBytes": 1442789,
+    "sha256": "def4b7d41b9b729e3306cfa28a1331aa7272cd52e7228f1fb573b8853a5c4e0e"
+  },
+  "mockup": {
+    "rawBytes": 1460212,
+    "gzip9Bytes": 394973,
+    "sha256": "f5edb1ed2e62ef22bc184800db7ecc5d16dbe5312d2c8fb00cdf94b8ff84c236"
+  }
+}
+
+> invierno-en-la-colonia@0.9.9 check:workshop-build
+> node scripts/build-workshop.mjs --check
+
+{
+  "phaser": "4.2.1",
+  "technical": {
+    "rawBytes": 1442789,
+    "sha256": "def4b7d41b9b729e3306cfa28a1331aa7272cd52e7228f1fb573b8853a5c4e0e"
+  },
+  "mockup": {
+    "rawBytes": 1460212,
+    "gzip9Bytes": 394973,
+    "sha256": "f5edb1ed2e62ef22bc184800db7ecc5d16dbe5312d2c8fb00cdf94b8ff84c236"
+  }
+}
+
+> invierno-en-la-colonia@0.9.9 build:hospital
+> node scripts/build-hospital-phaser.mjs
+
+{
+  "phaser": "4.2.1",
+  "esbuild": "0.28.2",
+  "rawBytes": 1412823,
+  "gzip9Bytes": 378382,
+  "sha256": "7e7b90ab465bc4b7113ffb20c4c0780a9c0e9d0db1d0cfab83659b46632f5e54",
+  "inputs": 11
+}
+
+> invierno-en-la-colonia@0.9.9 check:hospital-build
+> node scripts/build-hospital-phaser.mjs --check
+
+{
+  "phaser": "4.2.1",
+  "esbuild": "0.28.2",
+  "rawBytes": 1412823,
+  "gzip9Bytes": 378382,
+  "sha256": "7e7b90ab465bc4b7113ffb20c4c0780a9c0e9d0db1d0cfab83659b46632f5e54",
+  "inputs": 11
+}
