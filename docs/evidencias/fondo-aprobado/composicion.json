@@ -1,0 +1,476 @@
+{
+  "browser": "154.0.8037.57",
+  "baseline": false,
+  "physicalMobile": false,
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "errors": [],
+      "focus": [
+        {
+          "id": "escuela",
+          "camera": {
+            "zoom": 1.5,
+            "x": 0,
+            "y": 0,
+            "minZoom": 0.8168761220825853,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1365,
+            "height": 618,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "biblioteca",
+          "camera": {
+            "zoom": 1.5,
+            "x": -1141.5,
+            "y": 0,
+            "minZoom": 0.8168761220825853,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1365,
+            "height": 618,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "hospital",
+          "camera": {
+            "zoom": 1.5,
+            "x": 0,
+            "y": -262.5,
+            "minZoom": 0.8168761220825853,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1365,
+            "height": 618,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "colonia",
+          "camera": {
+            "zoom": 1.5,
+            "x": -564.75,
+            "y": -315.75,
+            "minZoom": 0.8168761220825853,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1365,
+            "height": 618,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "supermercado",
+          "camera": {
+            "zoom": 1.5,
+            "x": -1141.5,
+            "y": -304.5,
+            "minZoom": 0.8168761220825853,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1365,
+            "height": 618,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "gasolinera",
+          "camera": {
+            "zoom": 1.5,
+            "x": 0,
+            "y": -644.25,
+            "minZoom": 0.8168761220825853,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1365,
+            "height": 618,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "comisaria",
+          "camera": {
+            "zoom": 1.5,
+            "x": -1141.5,
+            "y": -668.25,
+            "minZoom": 0.8168761220825853,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1365,
+            "height": 618,
+            "dpr": 1
+          }
+        }
+      ],
+      "cases": [
+        {
+          "mode": "empty",
+          "characters": 36,
+          "zombies": 0,
+          "barricades": 0
+        },
+        {
+          "mode": "zombies",
+          "characters": 36,
+          "zombies": 33,
+          "barricades": 0
+        },
+        {
+          "mode": "barricades",
+          "characters": 36,
+          "zombies": 0,
+          "barricades": 33
+        },
+        {
+          "mode": "mixed",
+          "characters": 36,
+          "zombies": 17,
+          "barricades": 16
+        }
+      ],
+      "overview": {
+        "zoom": 0.8168761220825853,
+        "x": 0,
+        "y": -30.003590664272906,
+        "minZoom": 0.8168761220825853,
+        "maxZoom": 1.5
+      },
+      "hoverAndSelection": true,
+      "ellipseAlpha": {
+        "notApplicable": "Vegetación integrada en el fondo RGB aprobado; comprobación mediante obstáculos manuales y capturas, sin reutilizar alfa de otro arte."
+      },
+      "volumes": {
+        "count": 66,
+        "solidOverlaps": 0,
+        "neighborOverlaps": 0
+      }
+    },
+    {
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "errors": [],
+      "focus": [
+        {
+          "id": "escuela",
+          "camera": {
+            "zoom": 1.5,
+            "x": 0,
+            "y": 0,
+            "minZoom": 1.1490125673249552,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1920,
+            "height": 930,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "biblioteca",
+          "camera": {
+            "zoom": 1.5,
+            "x": -586.5,
+            "y": 0,
+            "minZoom": 1.1490125673249552,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1920,
+            "height": 930,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "hospital",
+          "camera": {
+            "zoom": 1.5,
+            "x": 0,
+            "y": -106.5,
+            "minZoom": 1.1490125673249552,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1920,
+            "height": 930,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "colonia",
+          "camera": {
+            "zoom": 1.5,
+            "x": -287.25,
+            "y": -159.75,
+            "minZoom": 1.1490125673249552,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1920,
+            "height": 930,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "supermercado",
+          "camera": {
+            "zoom": 1.5,
+            "x": -586.5,
+            "y": -148.5,
+            "minZoom": 1.1490125673249552,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1920,
+            "height": 930,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "gasolinera",
+          "camera": {
+            "zoom": 1.5,
+            "x": 0,
+            "y": -481.5,
+            "minZoom": 1.1490125673249552,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1920,
+            "height": 930,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "comisaria",
+          "camera": {
+            "zoom": 1.5,
+            "x": -586.5,
+            "y": -481.5,
+            "minZoom": 1.1490125673249552,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1920,
+            "height": 930,
+            "dpr": 1
+          }
+        }
+      ],
+      "cases": [
+        {
+          "mode": "empty",
+          "characters": 36,
+          "zombies": 0,
+          "barricades": 0
+        },
+        {
+          "mode": "zombies",
+          "characters": 36,
+          "zombies": 33,
+          "barricades": 0
+        },
+        {
+          "mode": "barricades",
+          "characters": 36,
+          "zombies": 0,
+          "barricades": 33
+        },
+        {
+          "mode": "mixed",
+          "characters": 36,
+          "zombies": 17,
+          "barricades": 16
+        }
+      ],
+      "overview": {
+        "zoom": 1.1490125673249552,
+        "x": 0,
+        "y": -11.840215439856365,
+        "minZoom": 1.1490125673249552,
+        "maxZoom": 1.5
+      },
+      "hoverAndSelection": true,
+      "ellipseAlpha": {
+        "notApplicable": "Vegetación integrada en el fondo RGB aprobado; comprobación mediante obstáculos manuales y capturas, sin reutilizar alfa de otro arte."
+      },
+      "volumes": {
+        "count": 66,
+        "solidOverlaps": 0,
+        "neighborOverlaps": 0
+      }
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "errors": [],
+      "focus": [
+        {
+          "id": "escuela",
+          "camera": {
+            "zoom": 1.2352941176470589,
+            "x": -59.470588235294144,
+            "y": -45.70588235294119,
+            "minZoom": 0.5098743267504489,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 852,
+            "height": 294,
+            "dpr": 2
+          }
+        },
+        {
+          "id": "biblioteca",
+          "camera": {
+            "zoom": 1.176,
+            "x": -1053.9959999999999,
+            "y": -51.744,
+            "minZoom": 0.5098743267504489,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 852,
+            "height": 294,
+            "dpr": 2
+          }
+        },
+        {
+          "id": "hospital",
+          "camera": {
+            "zoom": 1.0352112676056338,
+            "x": 0,
+            "y": -247.41549295774644,
+            "minZoom": 0.5098743267504489,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 852,
+            "height": 294,
+            "dpr": 2
+          }
+        },
+        {
+          "id": "colonia",
+          "camera": {
+            "zoom": 0.7716535433070866,
+            "x": -215.6299212598425,
+            "y": -174.39370078740154,
+            "minZoom": 0.5098743267504489,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 852,
+            "height": 294,
+            "dpr": 2
+          }
+        },
+        {
+          "id": "supermercado",
+          "camera": {
+            "zoom": 1.0808823529411764,
+            "x": -954.1544117647059,
+            "y": -295.08088235294116,
+            "minZoom": 0.5098743267504489,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 852,
+            "height": 294,
+            "dpr": 2
+          }
+        },
+        {
+          "id": "gasolinera",
+          "camera": {
+            "zoom": 1.1902834008097165,
+            "x": 0,
+            "y": -609.4251012145749,
+            "minZoom": 0.5098743267504489,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 852,
+            "height": 294,
+            "dpr": 2
+          }
+        },
+        {
+          "id": "comisaria",
+          "camera": {
+            "zoom": 1.1902834008097165,
+            "x": -1119.582995951417,
+            "y": -628.4696356275304,
+            "minZoom": 0.5098743267504489,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 852,
+            "height": 294,
+            "dpr": 2
+          }
+        }
+      ],
+      "cases": [
+        {
+          "mode": "empty",
+          "characters": 36,
+          "zombies": 0,
+          "barricades": 0
+        },
+        {
+          "mode": "zombies",
+          "characters": 36,
+          "zombies": 33,
+          "barricades": 0
+        },
+        {
+          "mode": "barricades",
+          "characters": 36,
+          "zombies": 0,
+          "barricades": 33
+        },
+        {
+          "mode": "mixed",
+          "characters": 36,
+          "zombies": 17,
+          "barricades": 16
+        }
+      ],
+      "overview": {
+        "zoom": 0.5098743267504489,
+        "x": 0,
+        "y": -64.59784560143629,
+        "minZoom": 0.5098743267504489,
+        "maxZoom": 1.5
+      },
+      "hoverAndSelection": true,
+      "ellipseAlpha": {
+        "notApplicable": "Vegetación integrada en el fondo RGB aprobado; comprobación mediante obstáculos manuales y capturas, sin reutilizar alfa de otro arte."
+      },
+      "volumes": {
+        "count": 66,
+        "solidOverlaps": 0,
+        "neighborOverlaps": 0
+      }
+    }
+  ],
+  "passed": true
+}

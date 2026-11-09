@@ -7,9 +7,9 @@ export function boundsIntersectPolygon(b,poly){
 export const overlaps=(a,b,gap=0)=>a.x<b.x+b.width+gap&&a.x+a.width+gap>b.x&&a.y<b.y+b.height+gap&&a.y+a.height+gap>b.y;
 export function exteriorVolumes(scene,assets){return scene.zones.flatMap(z=>z.accesses.flatMap((p,i)=>['zombie','barricade-marker'].map(id=>({locality:z.id,index:i,asset:id,...spriteBounds(assets.find(a=>a.id===id),p,scene.actorScale[id==='zombie'?'zombie':'barricade'])}))));}
 // Solo proyección sintética; no ejecuta comandos ni modifica el host real.
-export function capacityProjection(projection,mode){
+export function capacityProjection(projection,mode,scene){
  const p=structuredClone(projection),original=p.characters,ids=['h0','h1','a1','a0'];let n=0;p.characters=[];
- for(const loc of p.locations){const capacity=loc.capacity;loc.survivors=loc.occupied=capacity;loc.available=loc.helpless=0;const count=loc.exteriorCapacity;loc.zombies=mode==='zombies'?count:mode==='mixed'?count/2:0;loc.barricades=mode==='barricades'?count:mode==='mixed'?count/2:0;loc.exteriorAvailable=count-loc.zombies-loc.barricades;
+ for(const loc of p.locations){const capacity=loc.capacity;loc.survivors=loc.occupied=capacity;loc.available=loc.helpless=0;const zone=scene?.zones.find(z=>z.id===['colonia','supermercado','hospital','comisaria','gasolinera','escuela','biblioteca'][loc.engineIndex]);const count=zone?.exteriorCapacity??loc.exteriorCapacity;loc.zombies=mode==='zombies'?count:mode==='mixed'?Math.ceil(count/2):0;loc.barricades=mode==='barricades'?count:mode==='mixed'?Math.floor(count/2):0;loc.exteriorAvailable=count-loc.zombies-loc.barricades;
   for(let i=0;i<capacity;i++,n++){const source=n<4?original.find(c=>c.id===ids[n]):null;p.characters.push({...source||original[0],id:source?.id||'qa-'+n,name:source?.name||(String.fromCharCode(65+Math.floor(n/26))+' '+String.fromCharCode(65+n%26)+' (muestra)'),playerId:source?.playerId||(n%2?'ai':'human'),locationId:loc.id});}}
  p.movement.options={};p.search.options={};p.search.private=null;p.action.options={};p.action.operation=null;return p;
 }

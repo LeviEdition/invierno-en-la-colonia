@@ -9,7 +9,7 @@ import {vegetationGeometry} from './vegetation-geometry.mjs';
 // no modelos3D, shader propio, motor nuevo o coordenadas del juego.
 export function createHorizontalEnvironment(scene,atmosphere,options){
  const weather=createAtmosphereView(scene,atmosphere,options),objects=[],surfaces=[],keys=[];
- const vegetation=scene.textures.get('h33-vegetation'),vf=vegetation.get('original'),base=scene.textures.get('h33-map'),bf=base.get('original'),source=base.getSourceImage();
+ const vegetation=config.groups.length?scene.textures.get('h33-vegetation'):null,vf=vegetation?.get('original'),base=scene.textures.get('h33-map'),bf=base.get('original'),source=base.getSourceImage();
  const meshes=[],affected=[],geometry=vegetationGeometry(sceneConfig.bounds,config.groups,Phaser.Geom.Polygon.Earcut);
  function addMesh(spec,group){const vertices=[],indices=[],anchor=group?.anchor||{x:0,y:0};
   for(let n=0;n<spec.points.length;n+=2){const x=spec.points[n],y=spec.points[n+1],i=vertices.length;vertices.push(x-anchor.x,y-anchor.y,vf.u0+(vf.u1-vf.u0)*x/1672,vf.v0+(vf.v1-vf.v0)*y/941);if(group)affected.push({i,x,y,base:x-anchor.x,vertices,group});}
@@ -19,13 +19,13 @@ export function createHorizontalEnvironment(scene,atmosphere,options){
   // que compartan arista; no se puede declarar ordenada la lista de entrada.
   mesh.buildOrderedIndices(1).setUseOrderedIndices(true);objects.push(mesh);meshes.push({vertices,indices,ordered:mesh.indicesOrdered});
  }
- addMesh(geometry.static);for(const spec of geometry.dynamic)addMesh(spec,spec.group);
+ if(vegetation){addMesh(geometry.static);for(const spec of geometry.dynamic)addMesh(spec,spec.group);}
  function canvasTexture(key,w,h,paint){const c=document.createElement('canvas');c.width=w;c.height=h;paint(c.getContext('2d'),c);addIllustratedTexture(scene.textures,key,c);surfaces.push(c,scene.textures.get(key).getSourceImage());keys.push(key);return key;}
  function sprite(key,x,y,depth){const o=scene.add.image(x,y,key,'original').setOrigin(0,0).setDepth(depth);objects.push(o);return o;}
  function path(ctx,poly,ox,oy){ctx.beginPath();poly.forEach(([x,y],i)=>i?ctx.lineTo(x-ox,y-oy):ctx.moveTo(x-ox,y-oy));ctx.closePath();}
  // El fondo generativo y la vegetación no encajan exactamente. Restituir los
  // polígonos del edificio desde el MISMO fondo evita árboles sobre fachadas.
- for(const z of sceneConfig.zones){const p=z.occlusionPolygon||z.selectionPolygon,left=Math.floor(Math.min(...p.map(p=>p[0]))),top=Math.floor(Math.min(...p.map(p=>p[1]))),w=Math.ceil(Math.max(...p.map(p=>p[0])))-left,h=Math.ceil(Math.max(...p.map(p=>p[1])))-top;
+ for(const z of vegetation?sceneConfig.zones:[]){const p=z.occlusionPolygon||z.selectionPolygon,left=Math.floor(Math.min(...p.map(p=>p[0]))),top=Math.floor(Math.min(...p.map(p=>p[1]))),w=Math.ceil(Math.max(...p.map(p=>p[0])))-left,h=Math.ceil(Math.max(...p.map(p=>p[1])))-top;
   const key=canvasTexture('horizontal-building-'+z.id,w,h,ctx=>{path(ctx,p,left,top);ctx.clip();ctx.drawImage(source,bf.cutX+left,bf.cutY+top,w,h,0,0,w,h);});sprite(key,left,top,.5);
  }
  const lights=config.lights.map(l=>{const p=[...l.polygon,...l.spill],left=Math.floor(Math.min(...p.map(p=>p[0])))-2,top=Math.floor(Math.min(...p.map(p=>p[1])))-2,w=Math.ceil(Math.max(...p.map(p=>p[0])))-left+2,h=Math.ceil(Math.max(...p.map(p=>p[1])))-top+2;

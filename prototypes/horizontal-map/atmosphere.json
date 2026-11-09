@@ -3,7 +3,7 @@
   "bounds": {
     "x": 0,
     "y": 0,
-    "width": 1672,
+    "width": 1671,
     "height": 941
   },
   "frameRate": 30,
@@ -73,33 +73,33 @@
   "windZones": [
     {
       "id": "calle-sur",
-      "x": 570,
-      "y": 805,
-      "width": 440,
-      "height": 30
+      "x": 550,
+      "y": 815,
+      "width": 410,
+      "height": 25
     },
     {
       "id": "hospital-colonia",
-      "x": 365,
-      "y": 540,
-      "width": 190,
+      "x": 447,
+      "y": 547,
+      "width": 130,
       "height": 20
     },
     {
       "id": "biblioteca-calle",
-      "x": 955,
-      "y": 285,
-      "width": 270,
-      "height": 23
+      "x": 1170,
+      "y": 282,
+      "width": 220,
+      "height": 22
     }
   ],
   "smokeEmitters": [
     {
       "id": "colonia-chimenea",
       "locality": "colonia",
-      "x": 949,
-      "y": 306,
-      "source": "Boca del conducto de ladrillo alto de la colonia; fondo1672x941",
+      "x": 972,
+      "y": 280,
+      "source": "Boca de chimenea de la colonia en nuevo mapa.png, 1671x941",
       "life": [
         10,
         16

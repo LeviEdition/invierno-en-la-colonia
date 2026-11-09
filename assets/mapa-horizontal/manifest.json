@@ -44,7 +44,21 @@
       "sha256": "9210918870edf44e9088a9c2a057c21c13f0103cbf3fd3c632ed68e47b1c6f4c",
       "alphaExtrema": null,
       "visibleBounds": null
+    },
+    {
+      "file": "assets/mapa-horizontal/nuevo mapa.png",
+      "dimensions": [
+        1671,
+        941
+      ],
+      "mode": "RGB",
+      "bytes": 2961716,
+      "sha256": "0c5268c189068b5eb7bf51a1fbc871a87782b75e02dc86fe6d21aeeb272e4222",
+      "alphaExtrema": null,
+      "visibleBounds": null
     }
   ],
-  "derivatives": "runtime-only; no original pixels overwritten"
+  "derivatives": "runtime-only; previous originals preserved; approved background contains vegetation",
+  "activeMap": "assets/mapa-horizontal/nuevo mapa.png",
+  "activeMapCommit": "dd13820a08ca1d4f495b3d54961b4fbe05589c4b"
 }

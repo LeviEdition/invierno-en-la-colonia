@@ -58,7 +58,7 @@ jobs:
           export H344_EDGE_DIR=/tmp/horizontal-edge
           export H344_MOVEMENT_DIR=/tmp/horizontal-experience
           export H344_MOVEMENT_VIEWPORTS=1365x768,852x393,740x360,1920x1080
-          export H344_PICK_POINT='{"x":362,"y":415}'
+          export H344_PICK_POINT='{"x":320,"y":430}'
           node scripts/check-h344-browser.mjs
           node scripts/check-h344-edge-browser.mjs
           node scripts/check-h344-movement-browser.mjs

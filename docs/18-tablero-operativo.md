@@ -1,5 +1,16 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## Fondo aprobado y casillas confirmadas ·09/11/2026
+
+**Encargo vigente:** integrar `nuevo mapa.png` subido en dd13820/76c210b, conservar el original y redistribuir casillas manualmente. Misma rama/PR25 draft desde89f2c45; [informe94](94-integracion-fondo-aprobado.md). Colonia12(4+4+2+2), escuela4, gasolinera2, biblioteca3, hospital/supermercado/comisaría4:33 exteriores. Confirmación expresa del creador; no deducida de capacidades de supervivientes. Motor aún12/4: discrepancia visible y excedentes completos, sin cambiar reglas/resultados.
+
+**Implementado:** originalRGB1671×941 sin alterar, manifiesto/kit nuevos, sin capa antigua de vegetación ni manchas de luces incompatibles; humo reubicado. Nuevos contornos, clic, apoyos/fichas y enfoques; vista general móvil corregida tras fallo reproducido.66 volúmenes alternativos, elipses y fichas fuera de obstáculos importantes. Dos regresiones nuevas,643/643 y oráculo40/40 locales. Chromium y evidencia final en94/PR25; no atribuir el CI anterior al nuevo trabajo.
+
+**Pendientes separados:** reconciliar capacidades del motor requiere decisión de reglas; las luces pintadas permanecen estáticas. Vista general móvil recorta márgenes por cobertura, enfoques completos; no teléfono físico ni aceptación artística. **Siguiente tarea al concluir verificación: revisión visual del creador.** Sin main, fusión, publicación ni cierre de etapa. Los bloques siguientes conservan historia.
+
+---
+
+
 ## Mapa horizontal — pasada integral de composición ·06/11/2026 UTC
 
 **Encargo vigente:** conservar los ajustes de92 y revisar apoyos completos, fichas máximas, enfoque, señalamiento y luces. Misma rama `experiment/mapa-horizontal-ambientacion-h3` desde **edacdf05c67967a49609e45d21dad6e9e0dcc4e0**, [PR25 draft](https://github.com/LeviEdition/invierno-en-la-colonia/pull/25) contra H3.4.4. [Informe93](93-composicion-integral-del-mapa.md). Bloques inferiores históricos; sin reglas/capacidades/IA/main/referencia/arte nuevo.

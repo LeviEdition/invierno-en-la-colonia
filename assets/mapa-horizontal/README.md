@@ -17,3 +17,7 @@ El encaje **no es exacto**: hay vegetación sobre algunas fachadas y píxeles de
 Configuración de presentación: [`scene.json`](../../prototypes/horizontal-map/scene.json), [`environment.json`](../../prototypes/horizontal-map/environment.json) y [`atmosphere.json`](../../prototypes/horizontal-map/atmosphere.json). Las bases usan coordenadas del PNG; cambiar tamaño exige recalcular anclajes y polígonos, no cambiar reglas. No se reemplazó `kit_arte_h33/assets/mapa-prototipo.png`.
 
 [Preparación histórica](../../docs/89-mapa-horizontal-ambientacion-preparacion.md) · [Entrega y reservas](../../docs/90-mapa-horizontal-ambientacion.md) · [Inicio local](../../prototypes/horizontal-map/README.md).
+
+## Fondo aprobado — 09/11/2026
+
+Activo: `nuevo mapa.png`, RGB1671×941, subido por el creador en dd13820. Se conserva íntegro; manifiesto con SHA/bytes. Los originales anteriores se mantienen para revertir. Este fondo incorpora vegetación: no superponer la capa aislada anterior. Véase `docs/94-integracion-fondo-aprobado.md`.
