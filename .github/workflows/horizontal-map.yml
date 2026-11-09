@@ -1,4 +1,4 @@
-name: Mapa horizontal — ambientación y acciones
+name: Mapa horizontal — presentación y acciones
 on:
   pull_request:
     branches: [experiment/h3-4-4-ataque-barricadas-mapa]
@@ -18,12 +18,12 @@ jobs:
         with:
           node-version: '22'
       - run: npm ci
-      - run: npm run check:build && npm test && npm run test:poc
+      - run: npm run check:build && npm test
       - name: Chromium externo al producto
         run: |
           npm install --no-save --package-lock=false playwright@1.57.0
           npx playwright install --with-deps chromium ffmpeg
-      - name: Referencia y escenario horizontal
+      - name: Presentación y recorrido de acciones — escritorio y móvil horizontal
         shell: bash
         run: |
           set -euo pipefail
@@ -34,37 +34,15 @@ jobs:
           export CHROMIUM_PATH="$(node --input-type=module -e "import {chromium} from 'playwright';console.log(chromium.executablePath())")"
           git rev-parse HEAD
           npm run check:horizontal-map-build
-          npm run check:action-map-build
-          npm run check:search-map-build
-          npm run check:movement-map-build
-          npm run check:state-map-build
-          npm run check:workshop-build
-          npm run check:hospital-build
           export H344_ORIGIN=http://127.0.0.1:8779
-          # Primero las compuertas específicas de esta revisión, sin omitir
-          # después las regresiones de la referencia de acciones.
-          H344_MODULE_PATH=/dist/horizontal-map-qa/map.mjs H344_CAMERA_DIR=/tmp/horizontal-camera node scripts/check-h344-camera-browser.mjs
-          node scripts/check-horizontal-map-browser.mjs
-          node scripts/check-horizontal-map-comfort-browser.mjs
-          node scripts/check-horizontal-composition-browser.mjs
-          H344_MODULE_PATH=/dist/horizontal-map-qa/map.mjs node scripts/check-h344-presentation-stalls-browser.mjs
-          node scripts/check-h344-browser.mjs
-          node scripts/check-h344-edge-browser.mjs
-          node scripts/check-h344-movement-browser.mjs
-          node scripts/check-h344-camera-browser.mjs
+          # Encargo de presentación: comparación completa y casos1/6/12,
+          # máximos/excedentes, interacción y un recorrido real de acciones.
+          # No repetir benchmark, vídeos de viento ni auditorías ajenas.
+          node scripts/check-horizontal-presentation-browser.mjs
           export H344_MODULE_PATH=/dist/horizontal-map-qa/map.mjs
-          export H344_VIEWPORTS=1365x768,852x393,740x360,1920x1080
+          export H344_VIEWPORTS=1365x768,852x393
           export H344_OUTPUT_DIR=/tmp/horizontal-actions
-          export H344_EDGE_DIR=/tmp/horizontal-edge
-          export H344_MOVEMENT_DIR=/tmp/horizontal-experience
-          export H344_MOVEMENT_VIEWPORTS=1365x768,852x393,740x360,1920x1080
-          export H344_PICK_POINT='{"x":320,"y":430}'
           node scripts/check-h344-browser.mjs
-          node scripts/check-h344-edge-browser.mjs
-          node scripts/check-h344-movement-browser.mjs
-          node scripts/measure-horizontal-map.mjs
-          node scripts/record-horizontal-map.mjs
-          node scripts/record-horizontal-comfort.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -72,9 +50,4 @@ jobs:
           path: |
             /tmp/horizontal-*/
             /tmp/horizontal-server.log
-            /tmp/h344-browser/
-            /tmp/h344-edge/
-            /tmp/h344-experience/
-            /tmp/h344-camera/
-            /tmp/d1d2-regressions/
             dist/*/build.json

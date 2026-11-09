@@ -43,7 +43,12 @@ export function sceneNodes(scene,fixture){
  for(const a of fixture.accesses)if(a.occupant!=='empty')nodes.push({id:a.id,assetId:a.occupant==='zombie'?'zombie':'barricade-marker',position:{...a.position},depth:3,role:a.occupant,multiplier:1,visible:true,...(a.occupant==='zombie'?{shadow:{width:19,height:5,dx:0,dy:0}}:{})});
  return nodes;
 }
-export function pickCharacter(characters,point){return [...characters].reverse().find(c=>Math.hypot(point.x-c.position.x,point.y-c.position.y)<=c.diameter/2)?.id||null;}
+export function pickCharacter(characters,point,{zoom=1,minSize=0}={}){
+ if(!minSize)return [...characters].reverse().find(c=>Math.hypot(point.x-c.position.x,point.y-c.position.y)<=c.diameter/2)?.id||null;
+ let nearest=null,distance=Infinity;
+ for(const c of [...characters].reverse()){const d=Math.hypot(point.x-c.position.x,point.y-c.position.y);if(d<=Math.max(c.diameter/2,minSize/(2*zoom))&&d<distance){nearest=c.id;distance=d;}}
+ return nearest;
+}
 
 // Polígonos de selección del arte compuesto; no son colisiones ni reglas.
 export function pointInPolygon(point,polygon){
@@ -61,6 +66,15 @@ export function pickLocality(scene,point,zoom=1){
  // El área mínima de44px CSS no cambia capacidades ni el objetivo agregado.
  if(scene.selectExteriorAccesses){let nearest=null,distance=Infinity;for(const z of scene.zones)for(const a of z.accesses){const rx=Math.max(16,22/zoom),ry=Math.max(20,22/zoom),d=((point.x-a.x)/rx)**2+((point.y-(a.y-10))/ry)**2;if(d<=1&&d<distance){nearest=z.id;distance=d;}}return nearest;}
  return null;
+}
+// El margen táctil de una ficha no debe capturar el cuerpo de una casilla
+// cercana. Priorizar lo dibujado; usar el margen solo sobre terreno libre.
+export function pickMapTarget(scene,characters,point,zoom=1){
+ const characterId=pickCharacter(characters,point);
+ if(characterId)return {characterId,localityId:null};
+ const localityId=pickLocality(scene,point,zoom);
+ if(localityId)return {characterId:null,localityId};
+ return {characterId:pickCharacter(characters,point,{zoom,minSize:scene.minPickSize||0}),localityId:null};
 }
 export function localityDetails(scene,fixture,id){
  const zone=scene.zones.find(z=>z.id===id);if(!zone)return null;

@@ -1,5 +1,12 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## Pertenencia y vista general completa ·09/11/2026
+
+Encargo desde5f3e319, remoto limpio y CI42622337005 success verificados. Misma rama/PR25 draft. Colonia1/6/12 centrada en una o dos filas con rótulo; cuatro posteriores distribuidas por el ancho. Supermercado en dos pares; gasolinera/comisaría fuera de los dos arbustos señalados; siluetas revisadas sobre ampliaciones. Vista general completa con márgenes y controles44px; enfoque/pan/zoom/panel conservados. Obstáculos previos intactos.650/650,42 dirigidas y Chromium1365/852 aprobados, con máximos,66 clics/taps y recorrido de acciones. [Comparación y límites](evidencias/pertenencia-y-vista-general/README.md), incluido un agotamiento de espera conservado y repetición final aprobada sin ampliar el límite. CI del nuevo head en PR25. **Siguiente tarea: aceptación visual del creador**, sin reglas/main/fusión/publicación. Bloques siguientes históricos.
+
+---
+
+
 ## Legibilidad y perímetros ·09/11/2026
 
 Revisión del creador tras94: fichas demasiado pequeñas/dentro del patio, casillas alejadas, vacías poco visibles y marcos imprecisos. [Informe95](95-legibilidad-fichas-y-perimetros.md). Misma rama/PR25 draft desdee442f90, cuyo CI42618164383 success se verificó. Fichas42px/colonia36px por encima de localidades; accesos acercados con cuerpos completos fuera de sólidos, cuatro traseros de colonia junto al cerco sin tocar techo; vacías con contraste mínimo mayor solo en este mapa; marcos de aleros/chimeneas/esquinas revisados. Mantiene33 accesos/IDs,36 apoyos de supervivientes y motor intacto. 644/644, oráculo40/40, siete builds/checks, composición3 tamaños/84 capturas/21 clics y confort3 aprobados localmente. CI del nuevo head en95/PR25. **Siguiente tarea al verificar: revisión visual del creador**, sin main/fusión/publicación. Bloques inferiores históricos.

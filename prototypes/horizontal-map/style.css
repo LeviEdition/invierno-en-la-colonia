@@ -23,7 +23,8 @@ body[data-panel-open=false] #map-app #panel-toggle{font-size:14px;min-width:56px
 }
 @media(max-width:600px) and (orientation:portrait){#view-feedback::before{content:'Para ver más terreno, girá el teléfono. '}}
 
-.qa-notice{position:absolute;z-index:60;top:3px;left:50%;transform:translateX(-50%);font:11px system-ui,sans-serif;max-width:90%;padding:3px 6px;color:#e8dfc8;background:#202725ed;border:1px solid #8c8067;pointer-events:none}
+.qa-notice{position:static;flex:none;min-height:22px;padding:3px 8px;text-align:center;font:11px/16px system-ui,sans-serif;color:#e8dfc8;background:#202725;border-bottom:1px solid #8c8067;pointer-events:none}
+.locality-group-label{position:absolute;transform:translate(-50%,-50%);padding:2px 7px;border:1px solid #8b826c99;border-radius:3px;background:#171d20ed;color:#e8dfc8;font:11px/14px system-ui,sans-serif;white-space:nowrap;pointer-events:none}
 /* El resultado breve no cambia la altura del tablero al llegar una respuesta. */
 body[data-presentation=map] #movement-result:not(:empty){display:block;position:fixed;z-index:45;left:80px;right:85px;bottom:56px;width:max-content;max-width:calc(100% - 170px);margin:0;padding:5px 8px;background:#202825ed;border:1px solid #81765d;font:12px/1.35 system-ui,sans-serif;pointer-events:none}
 #map-app #dossier .panel-heading{flex:0 0 auto}
