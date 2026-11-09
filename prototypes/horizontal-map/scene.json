@@ -2277,5 +2277,6 @@
   "fitPresentation": true,
   "hoverOutline": true,
   "artwork": "nuevo mapa.png",
-  "capacityPolicy": "confirmed-visual-capacities; reference engine unchanged; explicit overflow"
+  "capacityPolicy": "confirmed-visual-capacities; reference engine unchanged; explicit overflow",
+  "selectExteriorAccesses": true
 }

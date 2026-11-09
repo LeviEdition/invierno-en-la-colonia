@@ -141,13 +141,28 @@
   },
   {
     "file": "README.md",
-    "bytes": 2426,
-    "sha256": "947c5960b1b6efb7bbfe2238f0ac4a8d664c4d302db04c926993f7623769f145"
+    "bytes": 2832,
+    "sha256": "47bbc373220adec95dc29c3b1edcd99f24d06bfcb512634c12ceed37f8d83606"
   },
   {
     "file": "acciones.json",
     "bytes": 1029,
     "sha256": "7a14170ce789a62ef3d9f398b24c33f9b820af30992f97b0934d37d2d34c8f8f"
+  },
+  {
+    "file": "bordes.json",
+    "bytes": 1835,
+    "sha256": "acb67e5a7ed99c293a5ac77e2d4244e2c393b5ec0acce2601ed0f486842b1352"
+  },
+  {
+    "file": "camara.json",
+    "bytes": 3534,
+    "sha256": "c49c257d13bd891bd65682743ea932103b2cf6332f105cd7533782c2a52957a7"
+  },
+  {
+    "file": "casillas-seleccionables-verde.txt",
+    "bytes": 483,
+    "sha256": "e1c23f8eade1d0b02c7c72718b24d7e12da696902b70fb0deedc1d0a7307419b"
   },
   {
     "file": "check-build.txt",
@@ -165,6 +180,21 @@
     "sha256": "74da2f8ac1606fc36e161520595d9b79ab33cce3cc6e6997f72f3ff5661c7e57"
   },
   {
+    "file": "escena.json",
+    "bytes": 104289,
+    "sha256": "a87bc0fde81946c688e0cfe6d989b28fe2da3202a2e851c1dd8607984e890825"
+  },
+  {
+    "file": "excedentes.json",
+    "bytes": 541,
+    "sha256": "2ff9eb5b1fa74851ad30493ec1f6698fd02fd85fcb4c0229f1bb5d9f058c4526"
+  },
+  {
+    "file": "movimiento.json",
+    "bytes": 2254,
+    "sha256": "f6ab0b3b8cb8b292be3d9ea68a3ea30305cbfd413558039db4b3dd06b5f88bc4"
+  },
+  {
     "file": "oraculo-40.txt",
     "bytes": 886,
     "sha256": "83ce6f52eda4ec5edb54516eb3bdb77f7df50facbc7a4fa739f99eb5ac6d389b"
@@ -173,6 +203,11 @@
     "file": "reproducciones/camara-y-ancla-rojo.txt",
     "bytes": 60157,
     "sha256": "fb5b7591ed4258b3b5358756c1149ce2ec666267e619a4fac069f5a6efe7f034"
+  },
+  {
+    "file": "reproducciones/casilla-no-seleccionable-rojo.txt",
+    "bytes": 1174,
+    "sha256": "1b0715b1ba64f9bc62ae9724c3904d3ca4c40132f96e88ca8ac89841be319392"
   },
   {
     "file": "reproducciones/centro-escuela-rojo.json",
@@ -193,5 +228,10 @@
     "file": "suite-643.txt",
     "bytes": 58548,
     "sha256": "54665e2a67e3f4c27b3471885fa62c74453e6c27634abb03aa190bc70fa3c6a1"
+  },
+  {
+    "file": "suite-644.txt",
+    "bytes": 58734,
+    "sha256": "92f4b645045451266012724750e829343cc672ab7709c0f749f2fc5910c7b75e"
   }
 ]

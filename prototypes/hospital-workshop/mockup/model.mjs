@@ -54,7 +54,14 @@ export function pointInPolygon(point,polygon){
  }
  return inside;
 }
-export function pickLocality(scene,point){return scene.zones.find(z=>pointInPolygon(point,z.selectionPolygon)||(z.outlinePolygon&&pointInPolygon(point,z.outlinePolygon)))?.id||null;}
+export function pickLocality(scene,point,zoom=1){
+ const building=scene.zones.find(z=>pointInPolygon(point,z.selectionPolygon)||(z.outlinePolygon&&pointInPolygon(point,z.outlinePolygon)));
+ if(building)return building.id;
+ // Opt-in del nuevo mapa: consultar la localidad desde sus apoyos/cuerpos.
+ // El área mínima de44px CSS no cambia capacidades ni el objetivo agregado.
+ if(scene.selectExteriorAccesses){let nearest=null,distance=Infinity;for(const z of scene.zones)for(const a of z.accesses){const rx=Math.max(16,22/zoom),ry=Math.max(20,22/zoom),d=((point.x-a.x)/rx)**2+((point.y-(a.y-10))/ry)**2;if(d<=1&&d<distance){nearest=z.id;distance=d;}}return nearest;}
+ return null;
+}
 export function localityDetails(scene,fixture,id){
  const zone=scene.zones.find(z=>z.id===id);if(!zone)return null;
  const slots=fixture.accesses.filter(a=>a.zoneId===id);

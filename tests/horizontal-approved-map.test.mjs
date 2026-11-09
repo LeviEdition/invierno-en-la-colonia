@@ -19,3 +19,9 @@ test('Mapa aprobado QA: capacidad impar reparte actores enteros y conserva las 3
  assert.ok(p.locations.every(l=>Number.isInteger(l.zombies)&&Number.isInteger(l.barricades)));
  assert.equal(layout.nodes.filter(n=>n.role==='zombie').length,17);assert.equal(layout.nodes.filter(n=>n.role==='barricade').length,16);assert.ok(layout.locations.every(l=>l.externalOverflow===0));
 });
+test('Mapa aprobado: tocar cada apoyo o cuerpo selecciona su localidad sin añadir reglas de objetivos individuales',async()=>{
+ const {pickLocality}=await import('../prototypes/hospital-workshop/mockup/model.mjs');
+ const enabled={...scene,selectExteriorAccesses:true};
+ for(const zoom of [.51,.77,1.5])for(const z of scene.zones)for(const a of z.accesses){assert.equal(pickLocality(enabled,a,zoom),z.id,z.id+' apoyo');assert.equal(pickLocality(enabled,{x:a.x,y:a.y-24},zoom),z.id,z.id+' cuerpo');}
+ assert.equal(pickLocality({...scene,selectExteriorAccesses:false},scene.zones.find(z=>z.id==='colonia').accesses[0]),null);
+});
