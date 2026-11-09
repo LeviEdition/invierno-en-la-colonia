@@ -91,7 +91,7 @@ export async function createSearchMapView({signal,movement,search,action,onSearc
   const zones=new Set(),add=index=>{const z=layout.locations.find(l=>l.engineIndex===index);if(z)zones.add(z.visualId);},hero=layout.characters.find(c=>c.id===selected),chosen=layout.locations.find(l=>l.id===(hero?.locationId||selectedLocation));if(chosen)zones.add(chosen.visualId);
   const m=movement.inspect();if(m.intent&&m.phase!=='idle'){add(m.intent.origin);add(m.intent.destination);}
   const a=action.inspect();if(a.phase!=='idle'){const op=a.intent||a.operation;if(op){add(op.origin);add(op.target);}}
-  return {zones:[...zones]};
+  return {zones:[...zones],visibleEmpty:!!scene.visibleEmptySlots};
  }
  function render(time=performance.now()){
   frame=0;if(disposed||!active||!viewport||!camera)return;draws++;

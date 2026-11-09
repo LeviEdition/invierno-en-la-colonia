@@ -1,5 +1,12 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## Legibilidad y perímetros ·09/11/2026
+
+Revisión del creador tras94: fichas demasiado pequeñas/dentro del patio, casillas alejadas, vacías poco visibles y marcos imprecisos. [Informe95](95-legibilidad-fichas-y-perimetros.md). Misma rama/PR25 draft desdee442f90, cuyo CI42618164383 success se verificó. Fichas42px/colonia36px por encima de localidades; accesos acercados con cuerpos completos fuera de sólidos, cuatro traseros de colonia junto al cerco sin tocar techo; vacías con contraste mínimo mayor solo en este mapa; marcos de aleros/chimeneas/esquinas revisados. Mantiene33 accesos/IDs,36 apoyos de supervivientes y motor intacto. 644/644, oráculo40/40, siete builds/checks, composición3 tamaños/84 capturas/21 clics y confort3 aprobados localmente. CI del nuevo head en95/PR25. **Siguiente tarea al verificar: revisión visual del creador**, sin main/fusión/publicación. Bloques inferiores históricos.
+
+---
+
+
 ## Fondo aprobado y casillas confirmadas ·09/11/2026
 
 **Encargo vigente:** integrar `nuevo mapa.png` subido en dd13820/76c210b, conservar el original y redistribuir casillas manualmente. Misma rama/PR25 draft desde89f2c45; [informe94](94-integracion-fondo-aprobado.md). Colonia12(4+4+2+2), escuela4, gasolinera2, biblioteca3, hospital/supermercado/comisaría4:33 exteriores. Confirmación expresa del creador; no deducida de capacidades de supervivientes. Motor aún12/4: discrepancia visible y excedentes completos, sin cambiar reglas/resultados.
