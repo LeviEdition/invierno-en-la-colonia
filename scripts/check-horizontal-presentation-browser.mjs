@@ -4,6 +4,7 @@ import {resolve} from 'node:path';
 import {actionMapChecks} from '../test-support/h344-browser-checks.mjs';
 import {capacityProjection,exteriorVolumes,boundsIntersectPolygon,overlaps} from '../test-support/horizontal-composition.mjs';
 import {localityFrame} from '../prototypes/horizontal-map/presentation.mjs';
+import {pointInPolygon} from '../prototypes/hospital-workshop/mockup/model.mjs';
 
 const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
 const baseline=process.env.PRESENTATION_BASELINE==='1';
@@ -90,8 +91,9 @@ try{
     const loc=v.layout.locations.find(l=>l.visualId===z.id);await focus(q,loc.id);
     const view=await qaView(q),f=localityFrame(z,0),c=view.camera,w=view.viewport;
     if(!baseline)for(const [x,y]of [[f.x,f.y],[f.x+f.width,f.y+f.height]])assert.ok(c.x+x*c.zoom>=-1&&c.x+x*c.zoom<=w.width+1&&c.y+y*c.zoom>=-1&&c.y+y*c.zoom<=w.height+1,'foco completo '+z.id);
+    if(!baseline&&scene.portraitsOnLocality){for(const c of view.layout.characters.filter(c=>c.locationId===loc.id))assert.equal(pointInPolygon(c.position,z.outlinePolygon),true,'ficha sobre '+z.id);}
     await q.screenshot({path:resolve(dir,'max-'+mode+'-'+z.id+'.png')});
-    if(!baseline&&mode==='zombies'){for(const [index,a]of z.accesses.entries()){await closePanel(q);await tapWorld(q,a,touch);const view=await qaView(q);assert.equal(view.selectedLocation,loc.id,'casilla '+z.id+':'+index);const styles=view.renderer.slotStyles,selected=styles.filter(a=>a.zoneId===z.id),others=styles.filter(a=>a.zoneId!==z.id);assert.ok(selected.every(a=>a.width>=1.4&&a.alpha>=.85));assert.ok(others.every(a=>a.width<selected[0].width),'selección con énfasis frente a vecinos');r.picking.push({locality:z.id,index});}}
+    if(!baseline&&mode==='zombies'){for(const [index,a]of z.accesses.entries()){await closePanel(q);await tapWorld(q,a,touch);const view=await qaView(q);assert.equal(view.selectedLocation,loc.id,'casilla '+z.id+':'+index);const styles=view.renderer.slotStyles,selected=styles.filter(a=>a.zoneId===z.id),others=styles.filter(a=>a.zoneId!==z.id);assert.ok(selected.every(a=>a.width>=1.4&&a.alpha>=.85));assert.ok(others.every(a=>a.width<selected[0].width),'selección con énfasis frente a vecinos');r.picking.push({locality:z.id,index});}if(scene.portraitsOnLocality){await closePanel(q);const c=(await qaView(q)).layout.characters.find(c=>c.locationId===loc.id);await tapWorld(q,c.position,touch);assert.equal((await qaView(q)).selected,c.id,'ficha superpuesta seleccionable '+z.id);r.overlayPicking??=[];r.overlayPicking.push(z.id);}}
    }
   }
   // Capacidad del motor intacta: aquí se fuerzan4, aunque el dibujo tenga2/3.

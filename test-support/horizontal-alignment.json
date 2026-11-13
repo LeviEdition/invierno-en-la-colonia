@@ -1,0 +1,206 @@
+{
+  "source": "nuevo mapa.png; cantos de fachada, sin reglas ni navegación",
+  "groups": [
+    {
+      "id": "escuela-frente",
+      "locality": "escuela",
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "edge": [
+        [
+          304,
+          217
+        ],
+        [
+          540,
+          209
+        ]
+      ],
+      "start": [
+        307,
+        250.3
+      ]
+    },
+    {
+      "id": "biblioteca-frente",
+      "locality": "biblioteca",
+      "indices": [
+        0,
+        1,
+        2
+      ],
+      "edge": [
+        [
+          1137,
+          217
+        ],
+        [
+          1337,
+          227
+        ]
+      ],
+      "start": [
+        1170,
+        259
+      ]
+    },
+    {
+      "id": "hospital-frente",
+      "locality": "hospital",
+      "indices": [
+        0,
+        1,
+        2
+      ],
+      "edge": [
+        [
+          189,
+          457
+        ],
+        [
+          438,
+          439
+        ]
+      ],
+      "start": [
+        320,
+        492
+      ]
+    },
+    {
+      "id": "hospital-lateral",
+      "locality": "hospital",
+      "indices": [
+        3
+      ],
+      "edge": [
+        [
+          379,
+          447
+        ],
+        [
+          438,
+          439
+        ]
+      ],
+      "start": [
+        461,
+        426
+      ]
+    },
+    {
+      "id": "supermercado-par1",
+      "locality": "supermercado",
+      "indices": [
+        0,
+        1
+      ],
+      "edge": [
+        [
+          1240,
+          454
+        ],
+        [
+          1440,
+          474
+        ]
+      ],
+      "start": [
+        1240,
+        484
+      ]
+    },
+    {
+      "id": "supermercado-par2",
+      "locality": "supermercado",
+      "indices": [
+        2,
+        3
+      ],
+      "edge": [
+        [
+          1240,
+          454
+        ],
+        [
+          1440,
+          474
+        ]
+      ],
+      "start": [
+        1375,
+        497.5
+      ]
+    },
+    {
+      "id": "gasolinera-frente",
+      "locality": "gasolinera",
+      "indices": [
+        0,
+        1
+      ],
+      "edge": [
+        [
+          227,
+          694
+        ],
+        [
+          341,
+          697
+        ]
+      ],
+      "start": [
+        266,
+        725
+      ]
+    },
+    {
+      "id": "comisaria-oeste",
+      "locality": "comisaria",
+      "indices": [
+        0,
+        1
+      ],
+      "edge": [
+        [
+          1143,
+          696
+        ],
+        [
+          1263,
+          704
+        ]
+      ],
+      "start": [
+        1170,
+        728
+      ]
+    },
+    {
+      "id": "comisaria-este",
+      "locality": "comisaria",
+      "indices": [
+        2,
+        3
+      ],
+      "edge": [
+        [
+          1354,
+          709
+        ],
+        [
+          1420,
+          708
+        ]
+      ],
+      "start": [
+        1348,
+        738
+      ]
+    }
+  ]
+}

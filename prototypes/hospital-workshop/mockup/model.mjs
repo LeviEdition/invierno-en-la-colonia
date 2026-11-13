@@ -68,13 +68,15 @@ export function pickLocality(scene,point,zoom=1){
  return null;
 }
 // El margen táctil de una ficha no debe capturar el cuerpo de una casilla
-// cercana. Priorizar lo dibujado; usar el margen solo sobre terreno libre.
+// cercana. Priorizar lo dibujado; en el propio edificio la ficha superpuesta
+// conserva también su margen táctil.
 export function pickMapTarget(scene,characters,point,zoom=1){
  const characterId=pickCharacter(characters,point);
  if(characterId)return {characterId,localityId:null};
  const localityId=pickLocality(scene,point,zoom);
- if(localityId)return {characterId:null,localityId};
- return {characterId:pickCharacter(characters,point,{zoom,minSize:scene.minPickSize||0}),localityId:null};
+ const expanded=pickCharacter(characters,point,{zoom,minSize:scene.minPickSize||0});
+ if(localityId){const zone=scene.zones.find(z=>z.id===localityId),c=characters.find(c=>c.id===expanded);if(scene.portraitsOnLocality&&c&&pointInPolygon(point,zone.outlinePolygon)&&pointInPolygon(c.position,zone.outlinePolygon))return {characterId:expanded,localityId:null};return {characterId:null,localityId};}
+ return {characterId:expanded,localityId:null};
 }
 export function localityDetails(scene,fixture,id){
  const zone=scene.zones.find(z=>z.id===id);if(!zone)return null;

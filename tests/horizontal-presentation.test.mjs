@@ -58,3 +58,17 @@ test('Presentación: objetivos de fichas conservan44px CSS en vista general; en 
  assert.equal(pickCharacter([a],{x:835,y:228-20/.29}),null,'prototipos sin opt-in conservan su comportamiento');
  for(const n of [1,6,12]){const layout=createStableLayout(scene).project(state(n));for(const z of scene.zones)for(const a of z.accesses)assert.equal(pickMapTarget(scene,layout.characters,a,.29).localityId,z.id,'el margen táctil no captura la casilla');}
 });
+
+test('Presentación: todas las fichas quedan sobre su edificio o recinto, incluyendo colonia1/6/12',async()=>{
+ const {pointInPolygon}=await import('../prototypes/hospital-workshop/mockup/model.mjs');
+ for(const n of [1,6,12]){const p=state(n),view=createStableLayout(scene).project(p);
+  for(const loc of view.locations){const z=scene.zones.find(z=>z.id===loc.visualId);for(const c of loc.drawnCharacters)assert.equal(pointInPolygon(c.position,z.outlinePolygon),true,z.id+' ficha fuera de localidad');}
+  if(n===1){const c=view.characters.find(c=>c.locationId==='place-0');assert.equal(pickMapTarget(scene,view.characters,{x:c.position.x,y:c.position.y-20/.29},.29).characterId,c.id,'44px sobre el propio edificio');}
+ }
+});
+test('Presentación: filas y ejes de casillas paralelos a su propia fachada, incluido lateral',()=>{
+ const guides=json('test-support/horizontal-alignment.json').groups;
+ for(const g of guides){const z=scene.zones.find(z=>z.id===g.locality),[[x1,y1],[x2,y2]]=g.edge,dx=x2-x1,dy=y2-y1,angle=Math.atan2(dy,dx),first=z.accesses[g.indices[0]];
+  for(const i of g.indices){const a=z.accesses[i];assert.ok(Math.abs(Math.sin(a.rotation-angle))<.001,g.id+' eje');assert.ok(Math.abs((a.x-first.x)*dy-(a.y-first.y)*dx)/Math.hypot(dx,dy)<.2,g.id+' fila');}
+ }
+});

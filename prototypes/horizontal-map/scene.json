@@ -34,50 +34,50 @@
       },
       "portraits": [
         [
-          302,
-          64
+          283,
+          145
         ],
         [
-          358,
-          64
+          350,
+          147
         ],
         [
-          414,
-          64
+          417,
+          147
         ],
         [
-          470,
-          64
+          484,
+          145
         ]
       ],
       "accesses": [
         {
-          "x": 286,
-          "y": 247,
+          "x": 307,
+          "y": 250.3,
           "side": "front",
           "row": "front",
-          "rotation": 0.03
+          "rotation": -0.033885329904117606
         },
         {
-          "x": 354,
-          "y": 247,
+          "x": 368,
+          "y": 248.2322,
           "side": "front",
           "row": "front",
-          "rotation": 0.03
+          "rotation": -0.033885329904117606
         },
         {
-          "x": 422,
-          "y": 247,
+          "x": 429,
+          "y": 246.1644,
           "side": "front",
           "row": "front",
-          "rotation": 0.03
+          "rotation": -0.033885329904117606
         },
         {
           "x": 490,
-          "y": 247,
+          "y": 244.0966,
           "side": "front",
           "row": "front",
-          "rotation": 0.03
+          "rotation": -0.033885329904117606
         }
       ],
       "survivorCapacity": 4,
@@ -409,43 +409,43 @@
       },
       "portraits": [
         [
-          1175,
-          87
+          1162,
+          171
         ],
         [
-          1230,
-          68
+          1208,
+          171
         ],
         [
-          1285,
-          68
+          1303,
+          171
         ],
         [
-          1340,
-          80
+          1349,
+          171
         ]
       ],
       "accesses": [
         {
           "x": 1170,
-          "y": 252,
+          "y": 259.0,
           "side": "front",
           "row": "front",
-          "rotation": 0.03
+          "rotation": 0.04995839572194276
         },
         {
           "x": 1230,
-          "y": 262,
+          "y": 262.0,
           "side": "front",
           "row": "front",
-          "rotation": 0.03
+          "rotation": 0.04995839572194276
         },
         {
           "x": 1332,
-          "y": 264,
+          "y": 267.1,
           "side": "front",
           "row": "front",
-          "rotation": 0.03
+          "rotation": 0.04995839572194276
         }
       ],
       "survivorCapacity": 4,
@@ -729,50 +729,50 @@
       },
       "portraits": [
         [
-          140,
-          286
+          174,
+          359
         ],
         [
-          190,
-          283
+          222,
+          356
         ],
         [
-          345,
-          291
+          368,
+          369
         ],
         [
-          395,
-          299
+          414,
+          368
         ]
       ],
       "accesses": [
         {
           "x": 198,
-          "y": 490,
+          "y": 500.8193,
           "side": "front",
           "row": "front",
-          "rotation": 0.03
+          "rotation": -0.07216362895965758
         },
         {
           "x": 259,
-          "y": 490,
+          "y": 496.4096,
           "side": "front",
           "row": "front",
-          "rotation": 0.03
+          "rotation": -0.07216362895965758
         },
         {
           "x": 320,
-          "y": 492,
+          "y": 492.0,
           "side": "front",
           "row": "front",
-          "rotation": 0.03
+          "rotation": -0.07216362895965758
         },
         {
           "x": 461,
           "y": 426,
-          "side": "front",
-          "row": "front",
-          "rotation": 0.03
+          "side": "side",
+          "row": "lateral",
+          "rotation": -0.1347712844777311
         }
       ],
       "survivorCapacity": 4,
@@ -1232,52 +1232,52 @@
       },
       "portraits": [
         [
-          725,
-          206
+          609.5,
+          477
         ],
         [
-          769,
-          206
+          650.5,
+          477
         ],
         [
-          813,
-          206
+          691.5,
+          477
         ],
         [
-          857,
-          206
+          732.5,
+          477
         ],
         [
-          901,
-          206
+          773.5,
+          477
         ],
         [
-          945,
-          206
+          814.5,
+          477
         ],
         [
-          725,
-          250
+          855.5,
+          477
         ],
         [
-          769,
-          250
+          896.5,
+          477
         ],
         [
-          813,
-          250
+          937.5,
+          477
         ],
         [
-          857,
-          250
+          978.5,
+          477
         ],
         [
-          901,
-          250
+          1019.5,
+          477
         ],
         [
-          945,
-          250
+          1060.5,
+          477
         ]
       ],
       "accesses": [
@@ -1713,15 +1713,16 @@
         ]
       ],
       "portraitGroup": {
-        "columns": 6,
+        "columns": 12,
         "center": {
           "x": 835,
-          "y": 228
+          "y": 477
         },
         "labelPosition": {
           "x": 835,
-          "y": 154
-        }
+          "y": 360
+        },
+        "onLocality": true
       }
     },
     {
@@ -1746,50 +1747,50 @@
       },
       "portraits": [
         [
-          1350,
-          307
+          1302,
+          378
         ],
         [
-          1406,
-          289
+          1366,
+          381
         ],
         [
-          1462,
-          289
+          1430,
+          384
         ],
         [
-          1518,
-          299
+          1494,
+          387
         ]
       ],
       "accesses": [
         {
           "x": 1240,
-          "y": 484,
+          "y": 484.0,
           "side": "front",
           "row": "front",
-          "rotation": 0.03
+          "rotation": 0.09966865249116202
         },
         {
           "x": 1288,
-          "y": 492,
+          "y": 488.8,
           "side": "front",
           "row": "front",
-          "rotation": 0.03
+          "rotation": 0.09966865249116202
         },
         {
           "x": 1375,
-          "y": 503,
+          "y": 497.5,
           "side": "front",
           "row": "front",
-          "rotation": 0.03
+          "rotation": 0.09966865249116202
         },
         {
           "x": 1421,
-          "y": 508,
+          "y": 502.1,
           "side": "front",
           "row": "front",
-          "rotation": 0.03
+          "rotation": 0.09966865249116202
         }
       ],
       "survivorCapacity": 4,
@@ -2218,35 +2219,35 @@
       "portraits": [
         [
           226,
-          557
+          632
         ],
         [
-          282,
-          544
+          274,
+          633
         ],
         [
-          338,
-          535
+          370,
+          612
         ],
         [
-          394,
-          535
+          418,
+          615
         ]
       ],
       "accesses": [
         {
           "x": 266,
-          "y": 725,
+          "y": 725.0,
           "side": "front",
           "row": "front",
-          "rotation": 0.03
+          "rotation": 0.026309717252922193
         },
         {
           "x": 316,
-          "y": 727,
+          "y": 726.3158,
           "side": "front",
           "row": "front",
-          "rotation": 0.03
+          "rotation": 0.026309717252922193
         }
       ],
       "survivorCapacity": 4,
@@ -2466,50 +2467,50 @@
       },
       "portraits": [
         [
-          1167,
-          563
+          1170,
+          641
         ],
         [
-          1223,
-          550
+          1220,
+          641
         ],
         [
-          1387,
-          555
+          1380,
+          641
         ],
         [
-          1443,
-          567
+          1430,
+          641
         ]
       ],
       "accesses": [
         {
           "x": 1170,
-          "y": 728,
+          "y": 728.0,
           "side": "front",
           "row": "front",
-          "rotation": 0.03
+          "rotation": 0.06656816377582381
         },
         {
           "x": 1230,
-          "y": 733,
+          "y": 732.0,
           "side": "front",
           "row": "front",
-          "rotation": 0.03
+          "rotation": 0.06656816377582381
         },
         {
           "x": 1348,
-          "y": 736,
+          "y": 738.0,
           "side": "front",
           "row": "front",
-          "rotation": 0.03
+          "rotation": -0.015150355874769811
         },
         {
           "x": 1388,
-          "y": 738,
+          "y": 737.3939,
           "side": "front",
           "row": "front",
-          "rotation": 0.03
+          "rotation": -0.015150355874769811
         }
       ],
       "survivorCapacity": 4,
@@ -2815,5 +2816,6 @@
   "capacityPolicy": "confirmed-visual-capacities; reference engine unchanged; explicit overflow",
   "selectExteriorAccesses": true,
   "visibleEmptySlots": true,
-  "minPickSize": 44
+  "minPickSize": 44,
+  "portraitsOnLocality": true
 }
