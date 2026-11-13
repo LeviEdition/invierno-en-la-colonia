@@ -2,9 +2,10 @@ import assert from 'node:assert/strict';import {mkdir,writeFile} from 'node:fs/p
 const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
 const out=resolve(process.env.CYCLE_DIR||'/tmp/horizontal-cycle'),t=actionMapChecks({origin:process.env.H344_ORIGIN||'http://127.0.0.1:8779',modulePath:'/dist/horizontal-map-qa/map.mjs'});await mkdir(out,{recursive:true});
 const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',args:['--no-sandbox']});const result={passed:false,controlled:true,physicalMobile:false,records:[]};let lastPage,lastDir;
-try{for(const [width,height]of (process.env.CYCLE_VIEWPORTS||'1365x768,852x393').split(',').map(s=>s.split('x').map(Number)))for(const scenario of (process.env.CYCLE_SCENARIOS||'local,ai,death,time').split(',')){
+try{for(const [width,height]of (process.env.CYCLE_VIEWPORTS||'1365x768,852x393').split(',').map(s=>s.split('x').map(Number)))for(const scenario of (process.env.CYCLE_SCENARIOS||'local,ai,death,time,bite').split(',')){
  const dir=resolve(out,width+'x'+height,scenario);lastDir=dir;await mkdir(dir,{recursive:true});const context=await browser.newContext({viewport:{width,height},hasTouch:width<950,isMobile:width<950,deviceScaleFactor:width<950?2:1,recordVideo:{dir,size:{width,height}}});await t.instrument(context);const p=await context.newPage();lastPage=p;const errors=[];p.on('pageerror',e=>errors.push(e.message));
- await t.begin(p,scenario==='ai'?'ai':'local');let g=await t.raw(p);g.crossResolved=true;g.crossPending=false;g.crossRemaining=[0,0];g.food=100;g.waste=scenario==='local'?10:0;g.crisis={type:'comida',need:2,given:scenario==='local'?0:2,contributions:scenario==='local'?[]:['comida','comida'],fail:'moral'};for(const z of g.zones){z.z=0;z.b=0;z.noise=0;}if(scenario==='time')g.max=1;if(scenario==='death'){g.leaders.human='h0';g.humans[0].loc=4;g.zones[4].z=2;}if(scenario==='ai'){g.botItems=[];g.botDice=[5];for(const b of g.bots){b.moved=true;b.skillUsed=true;}}
+ const aiMode=['ai','bite'].includes(scenario);await t.begin(p,aiMode?'ai':'local');let g=await t.raw(p);g.crossResolved=true;g.crossPending=false;g.crossRemaining=[0,0];g.food=100;g.waste=scenario==='local'?10:0;g.crisis={type:'comida',need:2,given:scenario==='local'?0:2,contributions:scenario==='local'?[]:['comida','comida'],fail:'moral'};for(const z of g.zones){z.z=0;z.b=0;z.noise=0;}if(scenario==='time')g.max=1;if(scenario==='death'){g.leaders.human='h0';g.humans[0].loc=4;g.zones[4].z=2;}if(aiMode){g.botItems=[];g.botDice=[5];for(const b of g.bots){b.moved=true;b.skillUsed=true;}}
+ if(scenario==='bite'){g.humans[0].influence=1;g.zones[0].z=1;}
  await t.host(p).evaluate(g=>h344Test.fixture(g),g);await t.openMap(p);await p.evaluate(text=>{const b=document.createElement('div');b.className='qa-notice';b.textContent=text;document.body.prepend(b);},'QA · Escenario controlado · '+scenario+' · cartas/recursos preparados en motor real');
  await t.frames(p);await p.waitForFunction(()=>{const v=h344Viewer.inspect().view,b=document.querySelector('#scene').getBoundingClientRect();return Math.abs(v.viewport.width-b.width)<1&&Math.abs(v.viewport.height-b.height)<1;});
  const api=()=>t.api(p);const raw=()=>t.raw(p);const phases=[];
@@ -20,12 +21,16 @@ try{for(const [width,height]of (process.env.CYCLE_VIEWPORTS||'1365x768,852x393')
   const cancel=await raw();await p.locator('#finish-turn').click();await p.locator('#cycle-cancel').click();assert.deepEqual(await raw(),cancel);
  }
  const camera=(await t.view(p)).camera;result.cameraBefore={scenario,width,camera,viewport:(await t.view(p)).viewport};
- if(scenario!=='ai'){
+ if(!aiMode){
   if(scenario==='local'&&width===1365)await t.host(p).evaluate(()=>h344DropReply=true);
   await finish();await p.waitForFunction(()=>h344Viewer.inspect().projection.cycle?.decision?.kind==='handover');const after=await raw(),rng=await t.rng(p);await p.waitForFunction(()=>!document.querySelector('#cycle-pass')?.disabled);assert.deepEqual(await raw(),after);assert.equal(await t.rng(p),rng);if(scenario==='local'&&width===1365)await t.host(p).evaluate(()=>h344DropReply=false);
   await p.screenshot({path:resolve(dir,'pase.png')});await pass();await p.waitForFunction(()=>!document.querySelector('#cycle-dialog').open);assert.equal((await api()).mode,'map');assert.equal((await api()).projection.turn,'ai');await finish();
  }else{
+  if(scenario==='bite')await t.host(p).evaluate(()=>h344RandomValue=0);
   await finish();await p.locator('#cycle-speed').waitFor();await p.locator('#cycle-speed').click();
+ }
+ if(scenario==='bite'){
+  await p.locator('#cycle-native').waitFor();assert.equal((await api()).projection.cycle.decision.kind,'biteChoice');await p.screenshot({path:resolve(dir,'bite-retorno.png')});await p.locator('#cycle-native').click();assert.equal((await api()).mode,'reference');await t.host(p).evaluate(()=>h344RandomValue=.8);await t.host(p).locator('[data-command="chooseBite"]').filter({hasText:'Arriesgar'}).click();await t.openMap(p);await p.locator('#cycle-death').waitFor();await p.screenshot({path:resolve(dir,'bite-fallecimiento.png')});await p.locator('#cycle-death').click();
  }
  if(scenario==='death'){await p.locator('#cycle-death').waitFor();assert.match(await p.locator('#cycle-dialog').textContent(),/Mara/);await p.screenshot({path:resolve(dir,'fallecimiento.png')});await p.locator('#cycle-death').click();}
  await p.locator('#cycle-all').waitFor();
@@ -38,7 +43,7 @@ try{for(const [width,height]of (process.env.CYCLE_VIEWPORTS||'1365x768,852x393')
  if(scenario==='time'){
   await p.locator('#cycle-close-final').waitFor();assert.match(await p.locator('#cycle-dialog').textContent(),/agotaron las rondas/);await p.screenshot({path:resolve(dir,'fin-partida.png')});await p.locator('#cycle-close-final').click();assert.equal(await p.locator('#finish-turn').isDisabled(),true);assert.equal((await raw()).ended,true);
  }else{
-  if(scenario!=='ai')await pass();
+  if(!aiMode)await pass();
   if(scenario==='death'){await p.locator('#cycle-leader-h1').waitFor();assert.equal((await raw()).leaders.human,null);await p.screenshot({path:resolve(dir,'sucesion.png')});await p.locator('#cycle-leader-h1').click();}
   await p.waitForFunction(()=>!document.querySelector('#cycle-dialog').open);assert.equal((await raw()).round,2);assert.equal((await api()).projection.round,2);assert.equal((await api()).projection.dice.ownerId,'human');assert.equal((await api()).mode,'map');
   for(const k of ['zoom','x','y'])assert.ok(Math.abs((await t.view(p)).camera[k]-camera[k])<.01,'cámara '+k+' '+scenario);

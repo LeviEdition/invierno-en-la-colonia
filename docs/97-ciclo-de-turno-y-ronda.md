@@ -59,10 +59,12 @@ Reconstruir el visor conserva cámara/zoom y recupera el recibo pendiente; recon
 
 ## Validación de entrega
 
-[Capturas, vídeos y resultados](evidencias/ciclo-turno-ronda/README.md). Suite683/683 y17 dirigidas del ciclo: dos de aportes, cinco de cierre/protocolo, cinco de colonia y cinco de nueva ronda/IA/final. Comparaciones con el motor sin instrumentación y capacidades33 equivalentes en estado, orden y consumo de azar. Arte, posiciones, capacidades y HTML estable conservados.
+[Capturas, vídeos y resultados](evidencias/ciclo-turno-ronda/README.md). Suite684/684 y18 dirigidas del ciclo: dos de aportes, cinco de cierre/protocolo, cinco de colonia y seis de nueva ronda/IA/final. Comparaciones con el motor sin instrumentación y capacidades33 equivalentes en estado, orden y consumo de azar. Arte, posiciones, capacidades y HTML estable conservados.
 
-Ocho recorridos Chromium1365×768/852×393: local completo (aportar→actuar→ambos cierres→colonia→nueva ronda), IA real, muerte/sucesión y derrota por tiempo. En escritorio se añade respuesta de cierre perdida, reconstrucción del visor y reconexión durante la revisión, con mismo resultado/cámara/azar y sin reenvío. Inventario y acciones anteriores pasan en ambos tamaños. Escenarios preparados mediante QA sobre el motor real, rotulados; móvil con tacto/DPR2 emulado, sin teléfono físico.
+Diez recorridos Chromium1365×768/852×393: local completo (aportar→actuar→ambos cierres→colonia→nueva ronda), IA real, muerte/sucesión, derrota por tiempo y mordedura con retorno explícito a V9. En escritorio se añade respuesta de cierre perdida, reconstrucción del visor y reconexión durante la revisión, con mismo resultado/cámara/azar y sin reenvío. Inventario y acciones anteriores pasan en ambos tamaños. Escenarios preparados mediante QA sobre el motor real, rotulados; móvil con tacto/DPR2 emulado, sin teléfono físico.
 
 Se corrigieron dos regresiones detectadas por los recorridos: sincronizar todos los controladores tras confirmar un estado, y delegar al panel de búsqueda/acción las decisiones que ya tenía integradas. El chequeo de cámara espera que el cartel QA haya terminado su cambio de tamaño antes de fijar la línea base. No se aumentaron esperas ni se retiraron aserciones.
 
 Commits revisables A/B/C:cc383e8,c1f63a3,1de6bba; D, SHA exacto final y CI se registran en PR25. La aceptación manual sigue pendiente del creador. Sin main, fusión, publicación, narrativa nueva, beneficios de líder o balance adicional.
+
+Corrección final de D: una mordedura puede retener fallecimientos sin abrir. La consulta ahora ofrece primero resolver la mordedura en V9, conservando la prioridad de un fallecimiento ya abierto. Regresión roja/verde y dos recorridos adicionales muestran decisión manual en V9, regreso al mapa, confirmación de muertes y nueva ronda, sin cambiar ninguna regla.

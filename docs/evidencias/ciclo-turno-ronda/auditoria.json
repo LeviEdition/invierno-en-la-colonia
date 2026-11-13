@@ -46,7 +46,7 @@
     4
   ],
   "tests": {
-    "passed": 683,
+    "passed": 684,
     "failed": 0,
     "skipped": 0
   },
@@ -113,8 +113,8 @@
       ]
     },
     "host": {
-      "rawBytes": 286110,
-      "sha256": "d8e5a15e0dc6b3618dd729678a702a4c402fc9bf9a5ecc66dfd53c82c5f380b2",
+      "rawBytes": 286156,
+      "sha256": "54ea6734e354d756299550186bc2a881ac84b1e562ea8c9b5bf3ccaec9eea1a9",
       "inputs": [
         "src/application/reference-contracts.mjs",
         "src/domain/reference-data.mjs",

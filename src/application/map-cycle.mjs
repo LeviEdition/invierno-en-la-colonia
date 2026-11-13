@@ -8,8 +8,9 @@ export function createMapCycle(context,{generation,clear}){
  function decision(){
   const g=context().game;if(!g)return null;
   if(context().passScreenActive)return {kind:'handover',side:g.turn,label:context().controls.display(g.turn)};
-  if(context().deathDirector.active||context().deathDirector.pending.length)return {kind:'death',ready:context().deathDirector.active,entries:clone(deathEntries)};
+  if(context().deathDirector.active)return {kind:'death',ready:true,entries:clone(deathEntries)};
   if(context().pendingBite)return {kind:'biteChoice',native:true};
+  if(context().deathDirector.pending.length)return {kind:'death',ready:false,entries:clone(deathEntries)};
   const leader=context().pendingLeader&&(!context().controls.local||context().pendingLeaderSide===context().controls.side);
   if(leader)return {kind:'leaderChoice',side:context().pendingLeaderSide,choices:context().ownerGroup(context().pendingLeaderSide).filter(p=>!p.dead).map(p=>({id:p.id,name:p.name,influence:p.influence}))};
   for(const [kind,value]of [['lootChoice',context().pendingLoot],['healTarget',context().pendingHeal],['attractTarget',context().pendingAttract],['transferTarget',context().pendingTransfer],['crossroads',g.crossPending]])if(value)return {kind,native:true};

@@ -1,0 +1,26 @@
+✔ Ciclo C: orden estructurado de colonia equivale al motor sin instrumentación; no serializa cartas (17.624042ms)
+✔ Ciclo C: alimentación insuficiente, residuos y crisis superada/excepcional/fallida equivalentes (35.667067ms)
+✔ Ciclo C: derrota interrumpe en alimentación, residuos o crisis sin olas ni RNG posteriores (7.012667ms)
+✔ Ciclo C: saturación gasolinera/biblioteca y muertes conservan orden y consecuencias (3.613511ms)
+✔ Ciclo C: ruido registra dados reales una vez y limpia sus fichas, sin azar de presentación (7.31255ms)
+✔ Ciclo A: acceso a crisis muestra solo copias legales propias y permite aportar extras admitidas por V9 (6.340472ms)
+✔ Ciclo A: revisar y cancelar aportación no cambia cartas ni aportes (1.745428ms)
+✔ Ciclo B: terminar con dados equivale a V9; pase oculta manos y comandos salientes (40.492118ms)
+✔ Ciclo B: decisión bloquea fin sin cambios; confirmación/cancelación es pura (14.175866ms)
+✔ Ciclo B: obsolescencia, doble confirmación y recuperación no reenvían cierre (11.582743ms)
+✔ Ciclo B: partida nueva invalida cierre anterior (10.085791ms)
+✔ Ciclo B/D: las decisiones de búsqueda ya integradas conservan su panel y no se redirigen al ciclo (21.018502ms)
+✔ Ciclo D: ronda nueva reinicia usos/dados; revisión y pase no reejecutan ni revelan la mano entrante (39.438026ms)
+✔ Ciclo D: tiempo y victoria conservan causa y detienen nuevas rondas (13.874857ms)
+✔ Ciclo D: IA real equivalente, una ejecución; abrir/consultar no vuelve a invocarla (21.435265ms)
+✔ Ciclo D: muerte y sucesión obligatorias conservan elección humana y reglas de V9 (5.520361ms)
+✔ Ciclo D: reiniciar durante la IA invalida el trabajo y el diario anteriores (2.431975ms)
+✔ Ciclo D: mordedura pendiente precede a fallecimientos que V9 mantiene en espera (1.52859ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 876.997867

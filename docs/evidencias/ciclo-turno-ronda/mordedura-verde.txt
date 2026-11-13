@@ -1,0 +1,14 @@
+✔ Ciclo D: ronda nueva reinicia usos/dados; revisión y pase no reejecutan ni revelan la mano entrante (41.069907ms)
+✔ Ciclo D: tiempo y victoria conservan causa y detienen nuevas rondas (12.933712ms)
+✔ Ciclo D: IA real equivalente, una ejecución; abrir/consultar no vuelve a invocarla (22.614477ms)
+✔ Ciclo D: muerte y sucesión obligatorias conservan elección humana y reglas de V9 (8.142403ms)
+✔ Ciclo D: reiniciar durante la IA invalida el trabajo y el diario anteriores (2.494038ms)
+✔ Ciclo D: mordedura pendiente precede a fallecimientos que V9 mantiene en espera (1.611865ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 308.717951
