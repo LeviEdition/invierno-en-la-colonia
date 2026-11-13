@@ -5,6 +5,7 @@ class CrisisManager {
  static add(item,source){
   if(!this.canContribute(item)){ctx.message('⚠ Solo se aceptan objetos del tipo '+ctx.game.crisis.type+'; máximo '+(ctx.game.crisis.need+2)+' cartas.');return false;}
   ctx.game.crisis.contributions.push(ctx.kind(item));ctx.game.crisis.given=ctx.game.crisis.contributions.length;
+  if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)ctx.mapCycle?.event('contribution',{given:ctx.game.crisis.given});
   ctx.message('📦 '+source+' aportó '+ctx.itemTitle(item)+' a la crisis ('+ctx.game.crisis.given+'/'+ctx.game.crisis.need+').');return true;
  }
  static fromHand(index){

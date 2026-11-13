@@ -21,3 +21,11 @@ Resumen persistente público de objetivo y crisis, acceso Aportar a crisis y acc
 Botón principal fuera de herramientas, confirmación con dados restantes y cancelación pura. Puente de comandos acotado al motor original, sin ejecutar IA desde renders. Identidad de solicitud, revisión de estado y generación deduplican cierres y recuperan estado tras respuesta perdida. El pase nativo mantiene ocultas manos/dados; comandos salientes se bloquean. Muertes y sucesión disponen de confirmación/elección sobre las operaciones originales; mordeduras, encrucijadas y decisiones de acciones conservan retorno explícito a V9.9. La opción de acortar pausas usa `skipAutomation` existente.
 
 Verificación del bloque: cuatro pruebas de equivalencia, privacidad, dados restantes, cancelación, obsolescencia/doble confirmación/recuperación y partida nueva. Chromium escritorio: terminar/cancelar/pasar dentro del mapa, sin consumir al cancelar ni salir de la vista al confirmar pase. Referencia HTML reproducible. Las consecuencias detalladas de colonia y nueva ronda se completan en C/D.
+
+## C — fase de colonia estructurada
+
+Observación opcional de las cinco fases directamente en las ramas del motor. Cada paso conserva contadores públicos anteriores/posteriores y eventos ordenados: llegadas, barricada interceptora, desbordamiento, muerte y dado real de ruido. Crisis registra su resultado al resolver, sin exponer el contenido de cartas antes de ese momento. El diario no serializa manos, mazos ni cartas aportadas. No consume azar ni llama a `paint` para obtener datos.
+
+La revisión muestra qué se resolvió, por qué y qué cambió. Siguiente paso/Ver todos solo recorren los datos; la última confirmación reconoce el recibo, sin ejecutar efectos. Resultados y diario sobreviven a reconstruir/reconectar el visor mientras el host siga vivo. El Registro del mapa presenta este diario público; el Registro original sigue disponible en V9.
+
+Cinco regresiones adicionales comparan con el motor sin instrumentación y las mismas capacidades: estados/azar iguales con hambre, residuos, crisis válida/excepcional y los cuatro fallos; derrota que corta pasos; saturación y muertes ordenadas en gasolinera/biblioteca; dados de ruido sin repetición. Las nueve pruebas B/C y el HTML estable pasan.

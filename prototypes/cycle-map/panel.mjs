@@ -1,3 +1,4 @@
+import {describeCycleStep} from './presentation.mjs';
 import {cycleMessages} from './controller.mjs';
 const el=(tag,text)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;return n;};
 export function mountCyclePanel({controller,getContext,onNative,signal}){
@@ -16,7 +17,9 @@ export function mountCyclePanel({controller,getContext,onNative,signal}){
    dialog.append(el('h3','Fallecimientos pendientes'));for(const d of c.decision.entries)dialog.append(el('p',d.name+' · '+d.loc+' · '+d.reason));dialog.append(button('Confirmar fallecimientos','cycle-death',()=>controller.resolve('death'),busy||!c.decision.ready));
   }else if(c.review){
    const op=c.operation;dialog.append(el('h3','Resultado del ciclo'),el('p','Los efectos ya están aplicados. Continuar solo revisa la presentación.'));
-   if(op.steps.length)dialog.append(el('pre',JSON.stringify(op.steps[s.index],null,2)));else dialog.append(el('p','El motor resolvió el ciclo.'));
+   const shown=s.index>=op.steps.length?op.steps:[op.steps[s.index]];
+   for(const step of shown){const info=describeCycleStep(step),section=el('section');section.className='cycle-step';section.append(el('h3',info.title),el('p',info.explanation));const list=el('ul');for(const change of info.changes)list.append(el('li',change));if(!info.changes.length)list.append(el('li','Sin cambios en los contadores mostrados.'));section.append(list);if(info.events.length){const detail=el('details');detail.append(el('summary','Detalle de efectos y tiradas'));const events=el('ol');for(const text of info.events)events.append(el('li',text));detail.append(events);section.append(detail);}dialog.append(section);}
+   if(s.index<op.steps.length)dialog.append(button('Ver todos los pasos','cycle-all',()=>controller.all(),busy));
    dialog.append(button(s.index<op.steps.length-1?'Siguiente paso':'Finalizar revisión','cycle-next',()=>controller.next(),busy));
   }else if(c.decision?.kind==='handover')dialog.append(el('h3','Pasar dispositivo a '+c.decision.label),el('p','Las manos y los dados están ocultos. Entregá el dispositivo antes de confirmar.'),button('Soy '+c.decision.label+' · continuar','cycle-pass',()=>controller.resolve('pass'),busy));
   else if(c.decision?.kind==='leaderChoice'){

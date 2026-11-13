@@ -1,3 +1,4 @@
+import {describeCycleStep} from '../cycle-map/presentation.mjs';
 import {mountCyclePanel} from '../cycle-map/panel.mjs';
 import {mountInventoryPanel} from '../inventory-map/panel.mjs';
 import Phaser from 'phaser';
@@ -184,7 +185,7 @@ export async function createSearchMapView({signal,movement,search,action,invento
   const titles={objetivo:'Objetivo',crisis:'Crisis',registro:'Registro',equipo:'Equipo del superviviente',ayuda:'Ayuda'};$('dialog-title').textContent=titles[kind];
   if(kind==='objetivo'){const o=projection?.objective;add(o?.name||'Objetivo no disponible.');if(o?.description)add(o.description);if(o)add('Muestras: '+value(o.samples)+'/'+value(o.goal)+' · Ronda '+value(projection.round)+'/'+value(projection.maxRounds));}
   if(kind==='crisis'){const c=projection?.crisis;if(c){add('Requisito: '+value(c.need)+' '+value(c.type)+' · Cartas entregadas: '+value(c.given));add('Efecto de fallo: '+({moral:'pérdida de moral',food:'pérdida de comida',zombie:'llegada de zombis',wound:'heridas'}[c.failure]||'información no disponible'));}else add('Crisis no disponible.');}
-  if(kind==='registro')add('Consultá el registro completo desde V9.9.');
+  if(kind==='registro'){const entries=projection?.cycle?.journal||[];if(!entries.length)add('Todavía no hay resultados públicos del ciclo.');for(const entry of entries){const info=describeCycleStep(entry);add('Ronda '+entry.round+' · '+info.title);add(info.explanation);for(const change of info.changes)add(change);}}
   if(kind==='equipo'){const c=projection?.characters.find(c=>c.id===selected);if(!c)add('Seleccioná un superviviente para consultar su equipo público. La mano del turno está en el panel lateral.');else{add(c.name);for(const e of c.equipment)add((e.name||'Objeto sin nombre')+(e.description?' — '+e.description:''));if(!c.equipment.length)add('Sin equipo equipado.');}}
   if(kind==='ayuda'&&scene.slotHierarchy)add('Seleccioná una localidad o acercá la cámara para destacar sus espacios. El trazo continuo y el grosor distinguen la selección; zombis y barricadas permanecen visibles.');
   if(kind==='ayuda')add('Arrastrá para desplazar y usá rueda o pinza para acercar. Con teclado: flechas, +, − y0. Seleccioná un superviviente propio para moverse, buscar, atacar o construir. Revisá el coste y confirmá; Escape cancela antes de ejecutar. Los dados y el inventario pertenecen al grupo del turno; el equipo pertenece a cada superviviente. Otras acciones y decisiones continúan en V9.9. Las listas incluyen a todos los supervivientes.');

@@ -18,7 +18,7 @@ const application=createApplication({createPresentation:(c,environment)=>{
  });return view;
 }});
 broker=createCycleBroker(application.engine,{readPublic:()=>projectVisibleState(context,{gate:{},renderedPlayable:true,epoch:raw?.epoch||1})});
-application.engine.subscribeCycle?.(()=>queueMicrotask(()=>{if(raw)send({type:'state',state:broker.snapshot()});}));
+let cycleQueued=false;application.engine.subscribeCycle?.(()=>{if(cycleQueued)return;cycleQueued=true;queueMicrotask(()=>{cycleQueued=false;if(raw)send({type:'state',state:broker.snapshot()});});});
 const commands=new Set(['move','search','search-noise','search-choose','search-dismiss','attack','barricade','barricade-ability','action-dismiss','inventory-use','inventory-dismiss','cycle-finish','cycle-pass','cycle-death','cycle-leader','cycle-ack','cycle-speed']);
 window.addEventListener('message',event=>{
  if(event.source!==window.parent||event.origin!==location.origin||event.data?.protocol!==protocol||event.data.type!=='connect'||event.ports.length!==1)return;

@@ -17,9 +17,10 @@ export function createCycleController({send,onChange=()=>{},requestId=uniqueToke
  function cancel(){if(phase!=='confirming')return false;phase='closed';message='Cierre cancelado sin cambios.';notify();return true;}
  function resolve(kind,target){if(['sending','unknown'].includes(phase))return false;return submit(kind,target?{target}:{});}
  function next(){const op=meta()?.operation;if(op&&index<op.steps.length-1){index++;notify();return true;}return op&&op.status==='resolved'?submit('ack',{operationId:op.id}):false;}
+ function all(){if(!meta()?.review)return false;index=meta().operation.steps.length;notify();return true;}
  function result(r){if(r?.requestId!==pending||typeof r.ok!=='boolean')return false;pending=null;if(r.state)state=r.state;phase=r.ok?'showing':'closed';message=r.ok?'':cycleMessages[r.reason]||'Revisá el estado actual.';if(!meta()?.managed&&!meta()?.operation?.review)phase='closed';notify();return true;}
  function disconnect(){if(phase==='sending'){phase='unknown';message='Consultando el estado antes de permitir otro cierre.';}else if(phase==='confirming'){phase='closed';}notify();}
  function hide(){if(meta()?.processing||meta()?.review||meta()?.decision)return false;hiddenFinal=meta()?.outcome?meta().generation:null;phase='closed';notify();return true;}
  function show(){phase='showing';hiddenFinal=null;notify();}
- return {inspect,update,begin,confirm,cancel,resolve,next,result,disconnect,hide,show};
+ return {inspect,update,begin,confirm,cancel,resolve,next,result,disconnect,hide,show,all};
 }

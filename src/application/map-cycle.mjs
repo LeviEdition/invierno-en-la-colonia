@@ -1,8 +1,8 @@
 // Diario público del ciclo; nunca contiene manos, mazos ni cartas aportadas.
 export function createMapCycle(context,{generation,clear}){
- let stampGeneration=-1,serial=0,operation=null,journal=[],deathEntries=[],listener=()=>{},busy=false;
+ let stampGeneration=-1,serial=0,operation=null,journal=[],deathEntries=[],listener=()=>{},busy=false,pendingStep=null;
  const clone=x=>structuredClone(x);
- function sync(){if(stampGeneration!==generation()){stampGeneration=generation();operation=null;journal=[];deathEntries=[];busy=false;}}
+ function sync(){if(stampGeneration!==generation()){stampGeneration=generation();operation=null;journal=[];deathEntries=[];busy=false;pendingStep=null;}}
  const publish=()=>listener();
  function facts(){const g=context().game;if(!g)return null;return {round:g.round,turn:g.turn,food:g.food,morale:g.morale,waste:g.waste,hunger:g.hunger,samples:g.samples,helpless:g.helpless,ended:g.ended,locations:g.zones.map((z,i)=>({index:i,name:z.name,zombies:z.z,barricades:z.b,noise:z.noise})),people:context().all().map(p=>({id:p.id,name:p.name,location:p.loc,dead:!!p.dead,wounds:p.wounds,frost:p.frost}))};}
  function decision(){
@@ -35,5 +35,9 @@ export function createMapCycle(context,{generation,clear}){
   return {ok:false,reason:'invalid'};
  }
  const api={cycleSnapshot,cycleExecute,subscribeCycle(fn){listener=fn||(()=>{});return ()=>{listener=()=>{};};}};
- return {api,deaths(entries){sync();deathEntries=clone(entries);},facts};
+ function before(kind,meta={}){sync();pendingStep={kind,meta:clone(meta),before:facts(),events:[]};if(operation?.status==='processing')operation.stage=kind;publish();}
+ function after(){if(!pendingStep)return;const step={...pendingStep,after:facts()};pendingStep=null;if(operation?.status==='processing')operation.steps.push(step);journal.push({round:step.before.round,...step});if(journal.length>80)journal.shift();publish();}
+ function annotate(meta){if(pendingStep)Object.assign(pendingStep.meta,clone(meta));}
+ function event(type,data){sync();if(pendingStep)pendingStep.events.push({type,...clone(data)});else{journal.push({kind:type,round:context().game?.round,meta:clone(data)});if(journal.length>80)journal.shift();publish();}}
+ return {api,deaths(entries){sync();deathEntries=clone(entries);},facts,before,after,annotate,event,startColony(){sync();if(operation?.status==='processing'){operation.colony=true;operation.stage='colony';}publish();}};
 }

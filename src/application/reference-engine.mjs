@@ -435,7 +435,7 @@ const deathDirector=new DeathDirector();
 function kill(p,reason,env=null){
  const g=env?env.game:game;
  if(!p||p.dead)return;
- p.dead=true;if(env)env.deaths++;g.morale=Math.max(0,g.morale-1);
+ p.dead=true;if(!env&&typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.event('death',{id:p.id,name:p.name,reason});if(env)env.deaths++;g.morale=Math.max(0,g.morale-1);
  if(!env&&ownerOf(p)===controls.side&&person()===p){const next=controls.group().findIndex(x=>!x.dead);if(next>=0){selected=next;selectionBySide[controls.side]=next;target=controls.group()[next].loc;}}
  const equipment=[...equipmentOf(p)];p.equipment=[];
  if(equipment.length){if(p.loc===0){(ownerOf(p)==='human'?g.items:g.botItems).push(...equipment);ruleMessage(env,'🎒 Los objetos de '+p.name+' regresan a la mano.');}
@@ -837,8 +837,9 @@ function crossAiContinue(){
 const waitForAiCross=()=>game.crossPending&&game.crossOwner==='ai'?new Promise(resolve=>aiCrossWaiters.push(resolve)):Promise.resolve();
 function addZombie(i,env=null){
  const g=env?env.game:game;
- const z=g.zones[i];if(openAccess(i,g)){z.z++;return;}
- if(z.b>0){z.b--;ruleMessage(env,'▥ Una barricada bloqueó un zombi en '+places[i]+'.');return;}
+ const z=g.zones[i];if(openAccess(i,g)){z.z++;if(!env&&typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.event('zombie',{location:i,result:'added'});return;}
+ if(z.b>0){z.b--;if(!env&&typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.event('zombie',{location:i,result:'barricade'});ruleMessage(env,'▥ Una barricada bloqueó un zombi en '+places[i]+'.');return;}
+ if(!env&&typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.event('zombie',{location:i,result:'overflow'});
  const victims=alive(g).filter(p=>p.loc===i).sort((a,b)=>a.influence-b.influence);
  if(victims.length){kill(victims[0],'desbordamiento en '+places[i],env);}
  else if(i===0&&g.helpless>0){g.helpless--;if(env)env.deaths++;g.morale=Math.max(0,g.morale-1);ruleMessage(env,'☠ Murió un superviviente indefenso durante el desbordamiento.');}
@@ -846,6 +847,7 @@ function addZombie(i,env=null){
 }
 function resolveCrisis(){
  const c=game.crisis;const points=c.contributions.filter(it=>it===c.type).length;
+ if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)resolveCrisis.onResult({valid:points,success:points>=c.need});
  if(points>=c.need){message('✓ Crisis superada: '+points+' aportes válidos de '+c.need+'.');if(points>=c.need+2){game.morale++;message('✓ Aporte excepcional: +1 moral.');}}
  else{
   message('⚠ Crisis fallida ('+points+'/'+c.need+').');
@@ -856,27 +858,36 @@ function resolveCrisis(){
  }
  c.contributions=[];c.given=0;
 }
+if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)resolveCrisis.onResult=result=>c.mapCycle.annotate(result);
 function colony(){
  if(game.ended)return;
+ if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.startColony();
  message('⌂ Fase de colonia: alimentación → residuos → crisis → zombis.');
  const need=feedingNeed(game);
- if(game.food>=need){game.food-=need;message('🥫 Alimentación: '+need+' comida(s), quedan '+game.food+'.');}
- else{game.hunger++;game.morale=Math.max(0,game.morale-game.hunger);message('⚠ HAMBRE acumulada: '+game.hunger+' ficha(s), -'+game.hunger+' moral. La comida existente permanece.');}
- verify();if(game.ended)return;
- if(game.waste>=10){const loss=Math.floor(game.waste/10);game.morale=Math.max(0,game.morale-loss);message('♻ Basura: '+game.waste+' cartas, -'+loss+' moral.');}
- verify();if(game.ended)return;
+ if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.before('feeding',{need});
+ if(game.food>=need){game.food-=need;if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.annotate({sufficient:true});message('🥫 Alimentación: '+need+' comida(s), quedan '+game.food+'.');}
+ else{game.hunger++;game.morale=Math.max(0,game.morale-game.hunger);if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.annotate({sufficient:false});message('⚠ HAMBRE acumulada: '+game.hunger+' ficha(s), -'+game.hunger+' moral. La comida existente permanece.');}
+ verify();if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.after();if(game.ended)return;
+ if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.before('waste',{loss:0});
+ if(game.waste>=10){const loss=Math.floor(game.waste/10);if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.annotate({loss});game.morale=Math.max(0,game.morale-loss);message('♻ Basura: '+game.waste+' cartas, -'+loss+' moral.');}
+ verify();if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.after();if(game.ended)return;
+ if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.before('crisis',{type:game.crisis.type,required:game.crisis.need,given:game.crisis.given,failure:game.crisis.fail});
  resolveCrisis();
- verify();if(game.ended)return;
+ verify();if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.after();if(game.ended)return;
  const inhabitants=alive().filter(p=>p.loc===0).length+game.helpless;
+ if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.before('population',{inhabitants,arrivals:[]});
  for(let i=0;i<places.length;i++){
   const arriving=i===0?Math.ceil(inhabitants/2):alive().filter(p=>p.loc===i).length;
-  for(let j=0;j<arriving;j++){addZombie(i);verify();if(game.ended)return;}
+  if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.event('arrival',{location:i,count:arriving});
+  for(let j=0;j<arriving;j++){addZombie(i);verify();if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__&&game.ended)c.mapCycle.after();if(game.ended)return;}
  }
+ if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.after();
+ if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.before('noise');
  for(const [i,z] of game.zones.entries()){
-  const n=z.noise;z.noise=0;
-  for(let j=0;j<n;j++){const d=die();message('🔊 '+places[i]+': ruido '+(j+1)+'/'+n+' → dado '+d+(d<=3?', llega un zombi.':', sin aparición.'));if(d<=3)addZombie(i);verify();if(game.ended)return;}
+  const n=z.noise;if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.event('noise-cleared',{location:i,count:n});z.noise=0;
+  for(let j=0;j<n;j++){const d=die();if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.event('noise-roll',{location:i,index:j+1,count:n,value:d});message('🔊 '+places[i]+': ruido '+(j+1)+'/'+n+' → dado '+d+(d<=3?', llega un zombi.':', sin aparición.'));if(d<=3)addZombie(i);verify();if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__&&game.ended)c.mapCycle.after();if(game.ended)return;}
  }
- verify();
+ verify();if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.after();
 }
 function showSetup(){
  if(aiRunning)return;
