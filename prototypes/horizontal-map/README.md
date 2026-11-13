@@ -1,6 +1,6 @@
 # Mapa horizontal — partida real y ambientación
 
-Entrada independiente sobre H3.4.4. **Revisión visual pendiente**, igual que la aceptación manual de búsqueda, ataque y barricadas. No modifica reglas ni adopta arte definitivo.
+Interfaz de partida sobre el motor V9 y las capacidades experimentales aceptadas. Preparación, acciones, decisiones, ciclo y final se realizan desde el mapa. **Aceptación manual pendiente.** No cambia reglas, IA ni arte. [Matriz de paridad y guía de revisión](../../docs/98-paridad-funcional-del-mapa.md).
 
 ## Windows, VS Code y PowerShell
 
@@ -14,7 +14,7 @@ npm.cmd ci
 npm.cmd run dev:horizontal-map
 ```
 
-Abrir **http://127.0.0.1:8779/prototypes/horizontal-map/**. Primero preparar la partida/líder en V9.9 y pulsar **Ver mapa**. Esta entrada reúne movimiento, búsqueda, ataque y construcción.
+Abrir **http://127.0.0.1:8779/prototypes/horizontal-map/**. Elegí **dos jugadores locales** o **humano + IA** en el diálogo inicial. Los grupos y la preparación son los originales; el objetivo se sortea. Menú → Grupos y líderes permite elegir el líder en su ventana legal. No hace falta abrir V9.
 
 Mantener la terminal abierta. **Ctrl+C** detiene el servidor. Tras actualizar: detener, volver a iniciar y recargar con Ctrl+Shift+R. `npm.cmd` evita el bloqueo de npm.ps1 de PowerShell. Si Git no reconoce la rama nueva después del fetch:
 
@@ -39,11 +39,11 @@ Abrir en el teléfono la URL LAN que imprime Node. PC activa; permitir Node en r
 
 ## Qué revisar
 
-1. Arrastrar, rueda/pinza y botones de zoom/restablecer. Con foco en el mapa: flechas, más/menos y0. Seleccionar las siete localidades desde el dibujo o los selectores; Centrar localidad encuadra el sector. En móvil pliega la ficha para liberar el mapa; se puede reabrir con Ficha. El enfoque incluye edificio, fichas y espacios exteriores con margen. Señalar una localidad con el puntero usa un trazo tenue; seleccionar y proponer destino tienen énfasis propio. En escritorio cerrar Ficha libera310px para el mapa; reabrir conserva localidad y zoom solicitado, limitado únicamente por la cobertura del fondo. La navegación de desarrollo y Volver a V9.9 están en Menú durante el mapa.
+1. Arrastrar, rueda/pinza y botones de zoom/restablecer. Con foco en el mapa: flechas, más/menos y0. Seleccionar las siete localidades desde el dibujo o los selectores; Centrar localidad encuadra el sector. En móvil pliega la ficha para liberar el mapa; se puede reabrir con Ficha. El enfoque incluye edificio, fichas y espacios exteriores con margen. Señalar una localidad con el puntero usa un trazo tenue; seleccionar y proponer destino tienen énfasis propio. En escritorio cerrar Ficha libera310px para el mapa; reabrir conserva localidad y zoom solicitado, limitado únicamente por la cobertura del fondo. Inventario, Grupos y líderes, Encrucijadas, Registro, Ayuda y Nueva partida están en Menú. La referencia estable es una comparación independiente.
 2. Seleccionar propios y rivales: azul/J1, rojo/J2 y halo del seleccionado, identidad estable. Revisar particularmente hospital y comisaría, sus accesos y el espacio de los paneles.
 3. **Moverse:** elegir destino, cancelar primero y después confirmar. Recorrido nominal1500ms visuales y exposición real; bajo carga la presentación puede tardar más para conservar sus fases. Las calles no crean caminos/costes.
 4. **Buscar:** dado, confirmar, elegir una carta o ruido cuando sea legal e Inventario del jugador; separado del equipo individual.
-5. **Atacar/Construir:** elegir dado/coste real y confirmar; exposición/bajas o barricadas según el motor. Constructor puede ofrecer la habilidad existente sin dado. No aparecen otras acciones. Muerte/encrucijadas no soportadas esperan Continuar en V9.9 explícito; resolver y volver.
+5. **Atacar/Construir:** elegir dado/coste real y confirmar; exposición/bajas o barricadas según el motor. Constructor puede ofrecer la habilidad existente sin dado. La ficha también ofrece limpiar, atraer y tratar cuando corresponde; Mejorar dado permite elegir su identidad y confirmar comida. Las habilidades automáticas son informativas. Mordeduras, encrucijadas, fallecimientos y sucesión usan diálogos propios del mapa.
 6. Ambientación: apagar todo, activar individualmente, comparar Suave/Tormenta, observar seis árboles y dos arbustos con raíces fijas y puntas libres (ubicaciones en el informe92), humo de la chimenea de colonia y las tres luces locales. **Viento controla también el movimiento de vegetación.** Sonido empieza apagado; movimiento reducido desactiva animaciones al iniciar. Luces apagadas retira tanto fuente animada como iluminación cercana; las otras ventanas del arte siguen estáticas.
 7. Menú → Referencia completa del arte permite comparar el original. Revisar diferencias de encaje y nitidez, sin dar por aceptada la recomposición. Las capturas de capacidad máxima están marcadas **sintéticas/QA**, no son una preparación real de partida.
 
@@ -53,9 +53,9 @@ Los tres originales miden **1672×941**. Cámara fija, sin rotación; mínimo qu
 
 Para nitidez nativa orientar la revisión hasta≈1 CSS por píxel a DPR1; a DPR2 el mismo tamaño necesita el doble de muestras físicas. El máximo ayuda a leer fichas y controles, **no recupera** detalle de puertas, ventanas, rostros pintados o vegetación. El arte es provisional y esas zonas requerirían fuentes mayores para primeros planos nítidos; no se ampliaron los PNG fingiendo recuperarlo.
 
-Hay seis árboles y dos arbustos animados con máscaras de silueta; el resto/cables/edificios/postes/cercos permanece fijo. Sus bases y sombras inferiores quedan ancladas. Los pinos que se cruzan con otras plantas se conservan estáticos. Los doce accesos de colonia se distribuyen fuera del cerco; el frente y su esquina evitan el garaje pequeño. Escuela usa el patio; hospital/comisaría conservan dos delanteros y dos laterales; biblioteca, supermercado y gasolinera ajustan apoyos y ángulos al terreno. Se comprueban cuerpos completos y elipses, sin cambiar índices ni capacidades. Las fichas se agrupan sin tapar fachadas/entradas; colonia usa dos filas de seis en el patio. Hay cuatro retratos por ID y el resto conserva iniciales. En horizontal el centrado incluye el perímetro; en vertical estrecho se recorren los extremos con arrastre. Los contornos de las siete localidades siguen los salientes del arte, sin reducir el área de clic.
+Hay seis árboles y dos arbustos animados con máscaras de silueta; el resto/cables/edificios/postes/cercos permanece fijo. Sus bases y sombras inferiores quedan ancladas. Los pinos que se cruzan con otras plantas se conservan estáticos. Los doce accesos de colonia se distribuyen fuera del cerco; el frente y su esquina evitan el garaje pequeño. Escuela usa el patio; hospital/comisaría conservan dos delanteros y dos laterales; biblioteca, supermercado y gasolinera ajustan apoyos y ángulos al terreno. Se comprueban cuerpos completos y elipses, sin cambiar índices ni capacidades. Las fichas se superponen a su propia localidad según la composición aprobada; colonia usa dos filas de seis en el patio. Hay cuatro retratos por ID y el resto conserva iniciales. En horizontal el centrado incluye el perímetro; en vertical estrecho se recorren los extremos con arrastre. Los contornos de las siete localidades siguen los salientes del arte, sin reducir el área de clic.
 
-Las casillas vacías ajenas quedan tenues y discontinuas, más legibles al acercarse. La localidad seleccionada y el contexto de una acción usan línea continua más gruesa; los sprites ocupados permanecen visibles. No cambia ninguna capacidad ni posición legal. En852×393 las barras ocupan99px y el mapa294px de alto.
+Las casillas vacías permanecen visibles; las ajenas quedan tenues y discontinuas, más legibles al acercarse. La localidad seleccionada y el contexto de una acción usan línea continua más gruesa; los sprites ocupados permanecen visibles. No cambia ninguna capacidad ni posición legal. Las barras muestran objetivo/crisis y control de turno; el área restante del mapa responde al tamaño de pantalla.
 
 Para futuros originales, el máximo1,5CSS/fuente requiere aproximadamente2508×1412 a DPR1,5016×2823 a DPR2 o7524×4235 a DPR3 para no ampliar muestras físicas. Es una necesidad artística pendiente, sujeta a presupuesto de memoria/GPU; no se han regenerado los PNG ni se garantiza nitidez al ampliar el material actual.
 
@@ -63,7 +63,7 @@ Las tres luces animadas alternan varios segundos estables con episodios de tres 
 
 Las tres capas generadas no encajan perfectamente: se protege la silueta de edificios con recortes del mismo fondo y se conservan reservas de borde/color de la vegetación. No se rediseñó el mapa ni se ocultó el problema con nieve.
 
-El servidor conserva **http://127.0.0.1:8779/prototypes/action-map/** para comparar H3.4.4 y las entradas previas. No reemplaza sus recursos ni main/referencia. No hay guardados nuevos: recargar la página completa puede reiniciar la partida; reiniciar solo el visor conserva el host real.
+El servidor conserva **http://127.0.0.1:8779/prototypes/action-map/** para comparar H3.4.4 y las entradas previas. No reemplaza sus recursos ni main/referencia. No hay guardados nuevos: recargar la página completa pierde la instancia y vuelve a preparación; reiniciar solo el visor o reconectar conserva el motor y sus recibos. No se repite una operación para recuperar su resultado.
 
 ## Construcción y QA
 
@@ -75,6 +75,6 @@ npm.cmd test
 npm.cmd run test:poc
 ```
 
-El visor no importa el motor; usa el mismo host, controladores y contrato de H3.4.4. QA se construye con `node scripts/serve-horizontal-map.mjs --qa`, exclusivamente loopback. La biblioteca/página de capacidad sintética y las herramientas del motor no se sirven en producto.
+El visor no importa el motor. El host horizontal es mínimo, sin tablero ni controles DOM de V9; mantiene una instancia del motor y el protocolo de mensajes, con comandos acotados y recibos. Los prototipos anteriores conservan sus interfaces históricas. QA se construye con `node scripts/serve-horizontal-map.mjs --qa`, exclusivamente loopback. La biblioteca/página de capacidad sintética y las herramientas del motor no se sirven en producto.
 
-Datos editables: `scene.json` (localidades/fichas/accesos), `environment.json` (grupos/pivotes/luces), `atmosphere.json` (nieve/viento/humo). Originales y hashes en `assets/mapa-horizontal/manifest.json`. [Informe93](../../docs/93-composicion-integral-del-mapa.md), [historia92](../../docs/92-vegetacion-natural-y-confort-del-mapa.md), [historia91](../../docs/91-ajustes-visuales-mapa-horizontal.md), [historia90](../../docs/90-mapa-horizontal-ambientacion.md) y descripción del PR25 registran resultados, evidencia y CI exacto. No son una aceptación manual del creador.
+Datos editables: `scene.json` (localidades/fichas/accesos), `environment.json` (grupos/pivotes/luces), `atmosphere.json` (nieve/viento/humo). Originales y hashes en `assets/mapa-horizontal/manifest.json`. [Informe98](../../docs/98-paridad-funcional-del-mapa.md), [informe93](../../docs/93-composicion-integral-del-mapa.md), [historia92](../../docs/92-vegetacion-natural-y-confort-del-mapa.md), [historia91](../../docs/91-ajustes-visuales-mapa-horizontal.md), [historia90](../../docs/90-mapa-horizontal-ambientacion.md) y descripción del PR25 registran resultados, evidencia y CI exacto. No son una aceptación manual del creador.

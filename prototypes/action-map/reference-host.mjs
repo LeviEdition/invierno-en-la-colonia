@@ -1,5 +1,6 @@
 import {createApplication} from '../../src/application/create-application.mjs';
 import {createUi} from '../../src/presentation/reference-view.mjs';
+import {createMapHostEffects} from '../play-map/host-effects.mjs';
 import {observeReferenceView} from '../state-map/reference-observer.mjs';
 import {projectVisibleState} from '../state-map/projection.mjs';
 import {createPlayBroker} from '../play-map/broker.mjs';
@@ -11,7 +12,7 @@ function send(message){
  if(port){port.postMessage({protocol,...message});sent++;}
 }
 const application=createApplication({createPresentation:(c,environment)=>{
- context=c;view=observeReferenceView(c,tracked=>createUi(tracked,environment),{
+ context=c;view=observeReferenceView(c,tracked=>__MAP_EXTENSION__?createMapHostEffects(tracked):createUi(tracked,environment),{
   onState:state=>{raw=state;send({type:'state',state:broker.project(state)});},
   onError:error=>send({type:'error',message:error.message}),
   onDispose:()=>{disconnect();lifetime.abort();},

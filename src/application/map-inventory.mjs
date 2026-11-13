@@ -1,7 +1,7 @@
 // Extensión compilada solo en el host horizontal. La ejecución usa V9.9.
 export function createMapInventory(c,{generation,block,clear,canRecruit,canContribute,contribute,visible}){
  const refs=new WeakMap();let serial=0,receipt=null,after=null;
- const scope=()=>visible()?`${generation()}/${c.game.round}/${c.controls.side}`:null;
+ const scope=()=>c.game?.ended&&receipt?.generation===generation()?receipt.scope:visible()?`${generation()}/${c.game.round}/${c.controls.side}`:null;
  const stamp=()=>JSON.stringify(c.game);
  function uid(it,source,owner,index){if(it&&typeof it==='object'){if(!refs.has(it))refs.set(it,'card_'+(++serial));return refs.get(it);}return `legacy_${generation()}_${c.controls.side}_${source}_${owner||'hand'}_${index}`;}
  function entries(){if(!scope())return [];const hand=c.controls.hand().map((it,index)=>({it,index,source:'hand',owner:null})),equipped=c.controls.group().filter(p=>!p.dead).flatMap(p=>c.equipmentOf(p).map((it,index)=>({it,index,source:'equipment',owner:p.id})));return [...hand,...equipped].map(e=>({...e,uid:uid(e.it,e.source,e.owner,e.index),d:c.catalog.resolve(e.it)})).filter(e=>e.d);}
@@ -38,12 +38,13 @@ export function createMapInventory(c,{generation,block,clear,canRecruit,canContr
  }
  function inventorySnapshot(){
   const s=scope();if(!s)return null;if(receipt&&(receipt.scope!==s||after!==stamp()))receipt=null;
+  if(c.game.ended)return {scope:s,ownerId:receipt?.ownerId||null,receipt,hand:[],equipment:[],actors:[],recipients:[],options:[]};
   return {scope:s,ownerId:c.controls.side,receipt,hand:entries().filter(e=>e.source==='hand').map(e=>({uid:e.uid,name:e.d.name,description:e.d.desc,kind:e.d.kind,effect:e.d.effect,requiresActor:needsActor(e),quantity:1})),equipment:entries().filter(e=>e.source==='equipment').map(e=>({uid:e.uid,ownerId:e.owner,name:e.d.name,description:e.d.desc,kind:e.d.kind,effect:e.d.effect,usedRound:e.it?.usedRound||0})),actors:c.controls.group().filter(p=>!p.dead).map(p=>({id:p.id,name:p.name,location:p.loc})),recipients:c.alive().map(p=>({id:p.id,name:p.name,location:p.loc,player:c.controls.display(c.ownerOf(p))})),options:entries().flatMap(e=>{
    const actors=needsActor(e)?c.controls.group().filter(p=>!p.dead):[null];return actors.flatMap(p=>e.source==='equipment'?c.alive().filter(t=>t.id!==p?.id).map(t=>option({cardId:e.uid,actorId:p?.id,targetId:t.id})):e.d.effect==='move'?c.places.map((_,i)=>option({cardId:e.uid,actorId:p?.id,destination:i})):[option({cardId:e.uid,actorId:p?.id})]);
   }).concat(entries().map(e=>option({mode:'contribute',cardId:e.uid,actorId:e.owner})))};
  }
  function inventoryExecute(request){
-  const q=option(request);if(!q.allowed)return {ok:false,reason:q.reason};const e=entries().find(e=>e.uid===q.cardId),p=c.all().find(p=>p.id===q.actorId),before=stamp(),s=scope();let ok=false;
+  const q=option(request);if(!q.allowed)return {ok:false,reason:q.reason};const e=entries().find(e=>e.uid===q.cardId),p=c.all().find(p=>p.id===q.actorId),before=stamp(),s=scope(),ownerId=c.controls.side;let ok=false;
   clear();
   if(q.mode==='contribute'){ok=contribute(e);}else if(e.source==='equipment'){
    const profile=c.profileId;try{c.profileId=p.id;c.startTransfer(e.index);c.chooseTransfer(q.targetId);ok=!c.equipmentOf(p).includes(e.it);}finally{c.profileId=profile;}
@@ -52,7 +53,7 @@ export function createMapInventory(c,{generation,block,clear,canRecruit,canContr
    if(ok&&e.d.effect!=='equip'){c.confirmStartingLeader();c.verify();}c.paint();
   }
   if(!ok)return {ok:false,reason:'unavailable'};
-  receipt={id:'inventory_'+generation()+'_'+(++serial),scope:s,summary:q.summary,cardName:e.d.name,generalDecision:!!block(c.controls.group().find(p=>!p.dead)),changed:stamp()!==before};after=stamp();c.view.draw();return {ok:true,receipt:{...receipt}};
+  receipt={id:'inventory_'+generation()+'_'+(++serial),scope:s,generation:generation(),ownerId,summary:q.summary,cardName:e.d.name,generalDecision:!!block(c.controls.group().find(p=>!p.dead)),changed:stamp()!==before};after=stamp();c.view.draw();return {ok:true,receipt:{...receipt}};
  }
  function dismissInventory(id){if(!receipt||receipt.id!==id||receipt.scope!==scope()||receipt.generalDecision)return {ok:false,reason:'stale'};receipt=null;return {ok:true};}
  return {inventorySnapshot,inventoryExecute,dismissInventory};

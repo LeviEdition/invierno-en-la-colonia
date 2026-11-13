@@ -5,7 +5,7 @@ export function createInventoryBroker(engine,{session=uniqueToken(),readPublic}=
  const previous=createActionBroker(engine,{session,readPublic});if(!engine.inventorySnapshot)return previous;
  let revision=0,stamp=null;const completed=new Map();
  function snapshot(){const p=previous.snapshot(),s=engine.inventorySnapshot(),key=JSON.stringify([p.action.revision,s]);if(key!==stamp){stamp=key;revision++;}
-  const privateState=!p.blocked?s:null,receipt=!['setup','handover','waiting'].includes(p.blocked)?s?.receipt||null:null;
+  const privateState=!p.blocked?s:null,receipt=!['setup','handover','waiting'].includes(p.blocked)||s?.receipt&&engine.snapshot()?.ended?s?.receipt||null:null;
   return {...p,movement:{...p.movement,revision},search:{...p.search,revision},action:{...p.action,revision},inventory:{session,revision,scope:s?.scope||null,private:privateState,receipt,presentation:receipt?{...readPublic(),log:[],last:null}:null}};
  }
  function project(p){previous.project(p);return snapshot();}

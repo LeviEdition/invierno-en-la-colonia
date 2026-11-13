@@ -35,7 +35,7 @@ function stopAction(){if(actionPresenting())viewer?.stopPresentation();action.in
 function stopMovement(){presentationContext=null;viewer?.stopPresentation();movement.interruptPresentation();}
 function focusReference(){requestAnimationFrame(()=>{if(mode==='reference'&&port)port.postMessage({protocol,type:'focus'});});}
 function controllerState(p){return preferCycleFinal&&p?.cycle?.outcome?{...p,search:{...p.search,private:null,options:{}},action:{...p.action,operation:null,options:{}},inventory:{...p.inventory,private:null,receipt:null,presentation:null}}:p;}
-function showDecision(){if(state?.play){stopMovement();stopAction();stopSearchClock();search.interrupt();inventory.close();applyAuthority();play.open('decision');return;}if(state?.cycle?.outcome){preferCycleFinal=true;search.update(null);action.update(null);inventory.update(null);cycle.show();applyAuthority();return;}showReference();}
+function showDecision(){if(state?.cycle?.outcome){preferCycleFinal=true;search.update(null);action.update(null);inventory.update(null);play.close();cycle.show();applyAuthority();return;}if(state?.play){stopMovement();stopAction();stopSearchClock();search.interrupt();inventory.close();applyAuthority();play.open('decision');return;}showReference();}
 function displayState(){
  if(preferCycleFinal&&state?.cycle?.outcome)return controllerState(state);
  if(ownedInventory(state)&&state.blocked&&state.inventory.presentation)return {...state.inventory.presentation,blocked:state.blocked,movement:state.movement,search:state.search,action:state.action,inventory:state.inventory};
@@ -75,11 +75,11 @@ function mountViewer(){
    const created=await createSearchMapView({signal:current.signal,movement,search,action,inventory,cycle,play,onRecover:()=>connect(),onSearchNative:showDecision});
    if(!pageActive||id!==generation||current.signal.aborted){await created.destroy();return;}
    viewer=created;if(state)viewer.setState(displayState());viewer.setActive(mode==='map'&&(!state?.blocked||!!ownedSearch(state)||!!ownedAction(state)||!!ownedInventory(state)||managedCycle(state)));if(retainedView?.epoch===state?.epoch){created.restoreView?.({...retainedView,selected:retainedView.turn===state.turn?retainedView.selected:null});retainedView=null;}document.body.dataset.viewState='ready';
-  }catch(error){if(current.signal.aborted||id!==generation)return;lastError=error.message;document.body.dataset.viewState='error';$('loading').hidden=false;$('loading').setAttribute('role','alert');$('loading').textContent=error.message==='WEBGL_UNAVAILABLE'?'Este navegador no ofrece WebGL. La interfaz V9.9 sigue disponible.':'No se pudo cargar el visor. '+error.message;$('retry-view').hidden=false;status('Podés continuar usando V9.9.');}
+  }catch(error){if(current.signal.aborted||id!==generation)return;lastError=error.message;document.body.dataset.viewState='error';$('loading').hidden=false;$('loading').setAttribute('role','alert');$('loading').textContent=error.message==='WEBGL_UNAVAILABLE'?variant==='horizontal-map'?'Este navegador no ofrece WebGL para mostrar el mapa. Probá otro navegador compatible.':'Este navegador no ofrece WebGL. La interfaz V9.9 sigue disponible.':'No se pudo cargar el visor. '+error.message;$('retry-view').hidden=false;status(variant==='horizontal-map'?'Reintentar visor conserva la partida del motor.':'Podés continuar usando V9.9.');}
  });return serial;
 }
 function showMap(){
- if(variant==='horizontal-map'){mode='map';document.body.dataset.presentation=mode;frame.hidden=true;$('map-app').hidden=false;if(viewer){viewer.setState(displayState());viewer.setActive(true);}else if(!attempt||attempt.signal.aborted)void mountViewer();return;}
+ if(variant==='horizontal-map'){mode='map';document.body.dataset.presentation=mode;frame.hidden=true;$('map-app').hidden=false;if(viewer){if(state)viewer.setState(displayState());viewer.setActive(!!state);}else if(state&&(!attempt||attempt.signal.aborted))void mountViewer();return;}
  if(!state||state.blocked&&!ownedSearch(state)&&!ownedAction(state)&&!ownedInventory(state)&&!managedCycle(state)){showReference();return;}
  mode='map';document.body.dataset.presentation=mode;frame.hidden=true;$('map-app').hidden=false;$('reference-mode').setAttribute('aria-pressed','false');$('map-mode').setAttribute('aria-pressed','true');
  if(viewer){viewer.setState(displayState());viewer.setActive(true);}else void mountViewer();
@@ -101,7 +101,7 @@ function acceptState(next){
 }
 function receive(event){
  const message=event.data;if(message?.protocol!==protocol)return;
- if(message.type==='play-result'){if(message.requestId!==play.inspect().pending)return;clearTimeout(requestTimer);if(!play.result(message))return;if(message.state&&validProjection(message.state))state=message.state;applyAuthority();return;}
+ if(message.type==='play-result'){if(message.requestId!==play.inspect().pending)return;clearTimeout(requestTimer);if(!play.result(message))return;if(message.state&&validProjection(message.state))acceptState(message.state);else applyAuthority();return;}
  if(message.type==='cycle-result'){
   if(message.requestId!==cycle.inspect().pending)return;clearTimeout(requestTimer);if(!cycle.result(message))return;if(message.state&&validProjection(message.state))state=message.state;applyAuthority();return;
  }

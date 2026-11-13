@@ -24,7 +24,7 @@ export function createMapCycle(context,{generation,clear}){
    const q=availability();if(!q.allowed||operation?.review)return {ok:false,reason:operation?.review?'review':q.reason};
    const game=context().game,gen=generation();clear();busy=true;operation={id:'cycle_'+gen+'_'+(++serial),requestId:r.requestId,generation:gen,round:game.round,owner:game.turn,mode:game.mode,status:'processing',review:false,colony:false,steps:[],before:facts()};publish();
    const active=operation;
-   Promise.resolve(context().finishTurn()).then(()=>{if(context().game!==game||generation()!==gen)return;busy=false;active.status='resolved';active.review=active.colony||game.ended;active.after=facts();publish();},()=>{if(context().game!==game||generation()!==gen)return;busy=false;active.status='unknown';active.error='No se confirmó el cierre. Consultá el estado en V9.9 antes de continuar.';publish();});
+   Promise.resolve(context().finishTurn()).then(()=>{if(context().game!==game||generation()!==gen)return;busy=false;active.status='resolved';active.review=active.colony||game.ended;active.after=facts();publish();},()=>{if(context().game!==game||generation()!==gen)return;busy=false;active.status='unknown';active.error='No se confirmó el cierre. Consultá el estado de la misma partida. Si no puede determinarse el resultado, repetir el cierre seguirá bloqueado.';publish();});
    return {ok:true,operationId:active.id};
   }
   const d=decision();

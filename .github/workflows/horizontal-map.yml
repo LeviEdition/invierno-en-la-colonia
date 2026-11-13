@@ -42,6 +42,7 @@ jobs:
           node scripts/check-map-capacities-browser.mjs
           node scripts/check-map-inventory-browser.mjs
           node scripts/check-map-cycle-browser.mjs
+          node scripts/check-map-migration-browser.mjs
           export H344_MODULE_PATH=/dist/horizontal-map-qa/map.mjs
           export H344_VIEWPORTS=1365x768,852x393
           export H344_OUTPUT_DIR=/tmp/horizontal-actions

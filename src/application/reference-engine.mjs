@@ -69,7 +69,7 @@ let applyFrost=(...args)=>turns["applyFrost"](...args);
 let finishTurn=(...args)=>turns["finishTurn"](...args);
 let botContributeTools=(...args)=>agent["botContributeTools"](...args);
 let botTurn=(...args)=>agent["botTurn"](...args);
-const c={...(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__?{mapPlay:createMapPlay(()=>c,{generation:()=>movementGeneration,clear:()=>{searchOperation=null;actionOperation=null;}}),mapCycle:createMapCycle(()=>c,{generation:()=>movementGeneration,clear:()=>{searchOperation=null;actionOperation=null;}})}:{}),get crossroadsView(){return crossroadsView;},get pickActionDie(){return pickActionDie;},get skipAutomation(){return skipAutomation;},get deathContinue(){return deathContinue;},get view(){return view;},get queueMicrotask(){return fn=>queueMicrotask(fn); },get Math(){return Math;},get toastQueue(){return view.toastQueue;},get toastBusy(){return view.toastBusy;},get places(){return places;},
+const c={...(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__?{mapPlay:createMapPlay(()=>c,{block:actionBlockReason,generation:()=>movementGeneration,hasSearch:()=>!!searchOperation,clear:()=>{searchOperation=null;actionOperation=null;}}),mapCycle:createMapCycle(()=>c,{generation:()=>movementGeneration,clear:()=>{searchOperation=null;actionOperation=null;}})}:{}),get crossroadsView(){return crossroadsView;},get pickActionDie(){return pickActionDie;},get skipAutomation(){return skipAutomation;},get deathContinue(){return deathContinue;},get view(){return view;},get queueMicrotask(){return fn=>queueMicrotask(fn); },get Math(){return Math;},get toastQueue(){return view.toastQueue;},get toastBusy(){return view.toastBusy;},get places(){return places;},
 get icons(){return icons;},
 get em(){return em;},
 get capacity(){return capacity;},
@@ -263,7 +263,7 @@ const {places,icons,em,capacity,zcap,objectives,roster}=createReferenceData();
 
 
 function special(){const p=person();if(!p||p.dead||!playable()||game.ended)return;if(p.skillUsed)return messageAndPaint('Ya usaste esta habilidad en la ronda.');if(p.skill==='builder'){const z=game.zones[p.loc];if(z.z+z.b>=zcap[p.loc])return messageAndPaint('No hay accesos libres.');executeBuilder(p);}else if(p.skill==='medic'||p.skill==='nurse'){if(pendingLoot)return;const targets=alive().filter(x=>x.loc===p.loc&&(p.skill==='medic'?x.wounds:x.frost));if(!targets.length)return messageAndPaint('No hay nadie que necesite ese tratamiento aquí.');pendingHeal={actor:p.id,targets:targets.map(x=>x.id)};show('healTarget');}else return messageAndPaint('La habilidad de este personaje es automática.');}
-function chooseHeal(id){if(!pendingHeal||!pendingHeal.targets.includes(id))return;const p=all().find(x=>x.id===pendingHeal.actor),t=all().find(x=>x.id===id);if(!p||!t||p.dead||t.dead||p.skillUsed||p.loc!==t.loc||!canResolve('healTarget'))return;const key=p.skill==='medic'?'wounds':'frost';if(!t[key])return; t[key]--;p.skillUsed=true;pendingHeal=null;message('✚ '+p.name+' atendió a '+t.name+' con '+p.skillName+'.');hide();paint();}
+function chooseHeal(id){if(!pendingHeal||!pendingHeal.targets.includes(id))return;const p=all().find(x=>x.id===pendingHeal.actor),t=all().find(x=>x.id===id);if(!p||!t||p.dead||t.dead||p.skillUsed||p.loc!==t.loc||!canResolve('healTarget'))return;const key=p.skill==='medic'?'wounds':'frost';if(!t[key])return; t[key]--;p.skillUsed=true;pendingHeal=null;if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('treatment',{actor:p.id,name:p.name,target:t.name,skill:p.skillName});message('✚ '+p.name+' atendió a '+t.name+' con '+p.skillName+'.');hide();paint();}
 const random=n=>Math.floor(Math.random()*n),die=()=>random(6)+1;
 let game,selected=0,target=0,picked=0,opened='',profileId='',skipAI=false,aiRunning=false,pendingHeal=null,pendingLoot=null;
 let gameMode='ai',passScreenActive=false;
@@ -359,6 +359,7 @@ function chooseLeader(id){
  const group=ownerGroup(side).filter(p=>!p.dead),p=group.find(x=>x.id===id);
  if(!p||(!succession&&!canPickStartingLeader()))return;
  game.leaders[side]=p.id;
+ if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('leader',{name:p.name,side});
  if(side==='human')game.leaderChosen=true;
  else game.localLeaderChosen=true;
  if(succession)clearLeaderRequest(side);
@@ -374,6 +375,7 @@ function reviewLeader(side,env=null){
  if((side==='ai'&&g.mode!=='local')||group.length===1){
   const next=group.slice().sort((a,b)=>b.influence-a.influence)[0];g.leaders[side]=next.id;
   if(!env)clearLeaderRequest(side);
+  if(!env&&typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('leader',{name:next.name,side,automatic:true});
   if(side==='human')g.leaderChosen=true;else if(g.mode==='local')g.localLeaderChosen=true;
   ruleMessage(env,'♛ '+next.name+' es el nuevo líder de '+(side==='ai'?'la IA':'tu grupo')+' (influencia '+next.influence+').');
  }else if(!env)requestLeader(side);
@@ -403,7 +405,7 @@ function recruit(side,emergency=false,env=null){
  if(loc<0){ruleMessage(env,'⚠ Ninguna localidad tiene espacio para recibir al superviviente.');return false;}
  const r=available[env?env.random(available.length):random(available.length)],group=side==='ai'?g.bots:g.humans;
  const p=addCharacter({id:(side==='ai'?'a':'h')+g.nextId++,name:r.name,loc,wounds:0,frost:0,dead:false,moved:false});group.push(p);
- ruleMessage(env,'👥 '+(side==='ai'?'La IA incorporó':'Incorporaste a')+' '+p.name+' ('+p.job+')'+(emergency?' como reemplazo.':'.'));
+ if(!env&&typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('recruit',{name:p.name,side,location:p.loc,emergency});ruleMessage(env,'👥 '+(side==='ai'?'La IA incorporó':'Incorporaste a')+' '+p.name+' ('+p.job+')'+(emergency?' como reemplazo.':'.'));
  if(!groupLeader(side,g))reviewLeader(side,env);
  if(!env&&side===controls.side&&(selected>=controls.group().length||!person()||person().dead)){selected=controls.group().indexOf(p);selectionBySide[side]=selected;target=p.loc;}
  return true;
@@ -414,7 +416,7 @@ function replaceLastSurvivors(env=null){
  for(const [side,group] of [['human',g.humans],['ai',g.bots]]){
   if(group.some(p=>!p.dead))continue;
   const hand=side==='human'?g.items:g.botItems;
-  const discarded=hand.length;hand.splice(0,hand.length); // La mano se descarta, no se añade a basura.
+  const discarded=hand.length;hand.splice(0,hand.length);if(!env&&typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('replacement-discard',{side,count:discarded}); // La mano se descarta, no se añade a basura.
   ruleMessage(env,'⚠ '+(side==='human'?'Perdiste':'La IA perdió')+' su último superviviente. Se descartaron '+discarded+' cartas de su mano.');
   if(!recruit(side,true,env))g.noReplacement=true;
  }
@@ -436,9 +438,10 @@ const deathDirector=new DeathDirector();
 function kill(p,reason,env=null){
  const g=env?env.game:game;
  if(!p||p.dead)return;
- p.dead=true;if(!env&&typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.event('death',{id:p.id,name:p.name,reason});if(env)env.deaths++;g.morale=Math.max(0,g.morale-1);
+ p.dead=true;if(!env&&typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('death',{actor:p.id,name:p.name,reason});if(!env&&typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.event('death',{id:p.id,name:p.name,reason});if(env)env.deaths++;g.morale=Math.max(0,g.morale-1);
  if(!env&&ownerOf(p)===controls.side&&person()===p){const next=controls.group().findIndex(x=>!x.dead);if(next>=0){selected=next;selectionBySide[controls.side]=next;target=controls.group()[next].loc;}}
  const equipment=[...equipmentOf(p)];p.equipment=[];
+ if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__&&!env&&equipment.length)c.mapPlay.event('death-equipment',{name:p.name,location:p.loc,cards:equipment.map(itemTitle),destination:p.loc===0?'hand':'deck'});
  if(equipment.length){if(p.loc===0){(ownerOf(p)==='human'?g.items:g.botItems).push(...equipment);ruleMessage(env,'🎒 Los objetos de '+p.name+' regresan a la mano.');}
  else {const deck=[...(g.decks[p.loc]||[]),...equipment];g.decks[p.loc]=env?deck:mix(deck);ruleMessage(env,'🎒 El equipamiento de '+p.name+' se mezcló con el mazo de '+places[p.loc]+'.');}}
  ruleMessage(env,'☠ '+p.name+' murió por '+reason+'. Moral -1.');if(!env)deathDirector.record(p,reason);
@@ -452,7 +455,7 @@ function verify(env=null){
  replaceLastSurvivors(env);
  const result=gameOutcome(g);
  if(result){
-  g.ended=true;g.turn='end';
+  g.ended=true;g.turn='end';if(!env&&typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('end',{reason:result});
   ruleMessage(env,result==='morale'?'☠ Derrota: la moral llegó a cero.':result==='survivors'?'☠ Derrota: no hay supervivientes disponibles para continuar.':'🏆 ¡Victoria! Se completó el objetivo general.');
   if(!env)cancelPendingDecisions();
  }
@@ -468,8 +471,8 @@ function biteNext(){
   const remaining=pendingBite.victims.map(id=>all().find(x=>x.id===id)).filter(Boolean);
   const highValueNext=remaining.some(x=>x.influence>=t.influence+5);
   const risk=remaining.length===0||!highValueNext;
-  if(!risk){kill(t,'sacrificio estratégico para detener la mordedura');message('🤖 La IA sacrificó a '+t.name+' para proteger a otro superviviente de alta influencia.');break;}
-  const d=die();message('🤖 ☣ '+t.name+' arriesga la exposición: '+d+(d>=4?' · ¡sobrevivió!':' · murió; el contagio continúa.'));
+  if(!risk){if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('bite-sacrifice',{name:t.name,actor:t.id,automated:true});kill(t,'sacrificio estratégico para detener la mordedura');message('🤖 La IA sacrificó a '+t.name+' para proteger a otro superviviente de alta influencia.');break;}
+  const d=die();if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('bite-roll',{name:t.name,actor:t.id,value:d,survived:d>=4,automated:true});message('🤖 ☣ '+t.name+' arriesga la exposición: '+d+(d>=4?' · ¡sobrevivió!':' · murió; el contagio continúa.'));
   if(d>=4){pendingBite.victims=[];break;}
   kill(t,'propagación de mordedura');
  }
@@ -497,8 +500,8 @@ function chooseBite(option){
 function expose(p,reason){
  if(!p||p.dead)return;
  const before={wounds:p.wounds,frost:p.frost};
- const d=die();message('🎲 Exposición de '+p.name+' ('+reason+'): '+(d===1?'MORDEDURA':d===2?'CONGELACIÓN':d===3?'HERIDA':'BLANCO')+'.');
- if(d<4&&p.skill==='resilient'&&!p.skillUsed){p.skillUsed=true;message('★ '+p.name+' evitó la exposición gracias a su habilidad.');return {rolled:true,value:d,effect:'avoided',ability:'resilient',wounds:0,frost:0,fatal:false};}
+ const d=die();if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('exposure',{actor:p.id,name:p.name,reason,value:d});message('🎲 Exposición de '+p.name+' ('+reason+'): '+(d===1?'MORDEDURA':d===2?'CONGELACIÓN':d===3?'HERIDA':'BLANCO')+'.');
+ if(d<4&&p.skill==='resilient'&&!p.skillUsed){p.skillUsed=true;if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('ability',{name:p.name,skill:p.skillName,effect:'Evitó la exposición.',value:d});message('★ '+p.name+' evitó la exposición gracias a su habilidad.');return {rolled:true,value:d,effect:'avoided',ability:'resilient',wounds:0,frost:0,fatal:false};}
  if(d===1){
   const coLocated=alive().filter(x=>x.id!==p.id&&x.loc===p.loc).sort((a,b)=>a.influence-b.influence).map(x=>x.id);
   game.biteResolving=true;pendingBite={victims:coLocated,target:null};kill(p,'mordedura');biteNext();
@@ -513,7 +516,7 @@ function stashLoot(it,p,side){
    if(side==='human'||game.mode==='local')pendingRecruitInfo={side,name:recruited.name,job:recruited.job,skill:recruited.skillDesc,queued:false};
    message('🏠 '+recruited.name+' llegó directamente a la colonia tras el rescate.');
   }else{
-   game.rescueQueue.push({side,origin:p.loc});
+   game.rescueQueue.push({side,origin:p.loc});if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('rescue-wait',{side,location:p.loc});
    if(side==='human'||game.mode==='local')pendingRecruitInfo={side,name:'Rescate pendiente',job:'Colonia completa',skill:'Esta persona llegará cuando quede un espacio libre en la colonia.',queued:true};
    message('👥 La colonia está llena. Un superviviente espera una plaza (rescate pendiente).');
   }
@@ -527,9 +530,9 @@ function stashLoot(it,p,side){
 }
 function beginSearch(p,side){
  const first=drawItem(p.loc);if(!first){message('⌕ El mazo de '+places[p.loc]+' se agotó.');return;}
- const cards=[first]; if(p.skill==='scout'){const next=drawItem(p.loc);if(next)cards.push(next);}if(itemEngine.useFlashlight(p)){const extra=drawItem(p.loc);if(extra){cards.push(extra);message('🔦 '+p.name+' reveló otra carta sin generar ruido.');}}
+ if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('search',{actor:p.id,name:p.name,location:p.loc});const cards=[first]; if(p.skill==='scout'){const next=drawItem(p.loc);if(next)cards.push(next);}if(itemEngine.useFlashlight(p)){const extra=drawItem(p.loc);if(extra){cards.push(extra);message('🔦 '+p.name+' reveló otra carta sin generar ruido.');}}
  if(side==='human'||game.mode==='local'){
-  pendingLoot={items:cards,actorId:p.id,loc:p.loc};message('⌕ '+p.name+' encontró '+cards.map(itemTitle).join(' y ')+'.');show('lootChoice');
+  pendingLoot={items:cards,actorId:p.id,loc:p.loc};if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__){c.mapPlay.event('findings',{actor:p.id,name:p.name,cards:cards.map(itemTitle)},side);}message('⌕ '+p.name+' encontró '+cards.map(itemTitle).join(' y ')+'.');show('lootChoice');
  }else{
   // C7-R1: priorizar una herramienta revelada solo cuando ella completa
   // la crisis con los recursos que ya posee la IA y aportó el humano.
@@ -550,7 +553,7 @@ function beginSearch(p,side){
 function addNoiseSearch(){
  if(!pendingLoot||game.ended||!canResolve('lootChoice'))return;
  const loc=pendingLoot.loc,z=game.zones[loc];if(z.noise>=4||!game.decks[loc].length)return;
- z.noise++;const newCard=drawItem(loc);pendingLoot.items.push(newCard);message('🔊 Ruido en '+places[loc]+': se reveló '+itemTitle(newCard)+'.');paint();
+ z.noise++;const newCard=drawItem(loc);pendingLoot.items.push(newCard);if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__){c.mapPlay.event('noise',{location:loc,count:z.noise});c.mapPlay.event('findings',{cards:[itemTitle(newCard)]},controls.side);}message('🔊 Ruido en '+places[loc]+': se reveló '+itemTitle(newCard)+'.');paint();
 }
 function chooseLoot(i){
  if(!pendingLoot||game.ended||!canResolve('lootChoice')||!Number.isInteger(i)||i<0||i>=pendingLoot.items.length)return;
@@ -559,7 +562,7 @@ function chooseLoot(i){
  const chosen=items[i],handBefore=controls.hand().length;
  game.decks[loc].push(...items.filter((_,j)=>j!==i));stashLoot(chosen,p,controls.side);
  if(searchOperation?.pending===items){searchOperation.status='result';searchOperation.result={card:searchCard(chosen),returned:items.length-1,handDelta:controls.hand().length-handBefore,noise:game.zones[loc].noise};}
- message('⌕ '+p.name+' eligió '+itemTitle(chosen)+'; las demás cartas regresaron al fondo del mazo.');
+ if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__){c.mapPlay.event('kept',{actor:p.id,name:p.name,summary:p.name+' conservó una carta; las demás regresaron al fondo.'});c.mapPlay.event('kept-card',{actor:p.id,name:p.name,card:itemTitle(chosen)},controls.side);}message('⌕ '+p.name+' eligió '+itemTitle(chosen)+'; las demás cartas regresaron al fondo del mazo.');
  opened='';view.closeBackdrop();crossAction('search',p);verify();paint();if(pendingRecruitInfo&&!game.crossPending)show('recruitSuccess');
 }
 function consume(min,dieIndex=picked){
@@ -567,7 +570,7 @@ function consume(min,dieIndex=picked){
  if(!actionDice().length)return messageAndPaint('No quedan dados de acción.'),null;
  const dice=actionDice(),i=Math.max(0,Math.min(dieIndex,dice.length-1)),value=dice[i];
  if(value<min)return messageAndPaint('Necesitás un dado de '+min+' o más (seleccionado: '+value+').'),null;
- dice.splice(i,1);if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.invalidateDice();picked=Math.min(i,dice.length-1);confirmStartingLeader();message('🎲 Dado utilizado: '+value+' (mínimo '+min+').');return value;
+ dice.splice(i,1);if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__){c.mapPlay.invalidateDice();c.mapPlay.event('die',{value,minimum:min});}picked=Math.min(i,dice.length-1);confirmStartingLeader();message('🎲 Dado utilizado: '+value+' (mínimo '+min+').');return value;
 }
 function boostDie(){
  if(game.ended||!playable()||!actionDice().length||game.food<1)return messageAndPaint('Necesitás comida de la reserva y un dado disponible.');
@@ -598,9 +601,9 @@ function doMove(){
 function executeMovement(p,destination){
  actionOperation=null;
  const from=p.loc,actorBefore={id:p.id,name:p.name,location:p.loc,wounds:p.wounds,frost:p.frost,dead:!!p.dead};
- confirmStartingLeader();p.loc=destination;p.moved=true;message('→ '+p.name+' se movió a '+places[destination]+'.');
+ confirmStartingLeader();p.loc=destination;p.moved=true;if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('move',{actor:p.id,name:p.name,from,destination});message('→ '+p.name+' se movió a '+places[destination]+'.');
  let exposure;
- if(p.skill==='silent'&&!p.skillUsed){p.skillUsed=true;message('★ '+p.name+' evitó la exposición.');exposure={rolled:false,value:null,effect:'avoided',ability:'silent',wounds:0,frost:0,fatal:false};}else exposure=expose(p,'movimiento');
+ if(p.skill==='silent'&&!p.skillUsed){p.skillUsed=true;if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('ability',{name:p.name,skill:p.skillName,effect:'Movimiento sin exposición.'});message('★ '+p.name+' evitó la exposición.');exposure={rolled:false,value:null,effect:'avoided',ability:'silent',wounds:0,frost:0,fatal:false};}else exposure=expose(p,'movimiento');
  if(!pendingBite)crossAction('move',p);verify();paint();
  return {actorId:p.id,from,destination,exposure,actorBefore,actorAfter:{id:p.id,name:p.name,location:p.loc,wounds:p.wounds,frost:p.frost,dead:!!p.dead}};
 }
@@ -706,7 +709,7 @@ function executeAttack(p,dieIndex){
 }
 function executeBuilder(p){
  searchOperation=null;const actorBefore=actorState(p),before={...game.zones[p.loc]};
- game.zones[p.loc].b++;p.skillUsed=true;message('★ '+p.name+' construyó una barricada.');
+ game.zones[p.loc].b++;p.skillUsed=true;if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('build',{actor:p.id,name:p.name,count:1,method:'ability'});message('★ '+p.name+' construyó una barricada.');
  const op=rememberAction('barricade',p,null,null,{built:1,method:'ability',exposure:null,actorBefore,actorAfter:actorState(p),zoneBefore:before,zoneAfter:{...game.zones[p.loc]}});paint();return op;
 }
 function executeBarricade(p,dieIndex){
@@ -714,7 +717,7 @@ function executeBarricade(p,dieIndex){
  searchOperation=null;
  const actorBefore=actorState(p),before={...game.zones[p.loc]};let n=0;
  for(let i=0;i<barricadeLimit(p)&&openAccess(p.loc);i++){game.zones[p.loc].b++;n++;}
- message('▥ '+p.name+' construyó '+n+' barricada(s).');crossAction('barricade',p);
+ if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('build',{actor:p.id,name:p.name,count:n,method:'die',value});message('▥ '+p.name+' construyó '+n+' barricada(s).');crossAction('barricade',p);
  const op=rememberAction('barricade',p,dieIndex,value,{built:n,exposure:null,actorBefore,actorAfter:actorState(p),zoneBefore:before,zoneAfter:{...game.zones[p.loc]}});paint();return op;
 }
 // Objetivo agregado de la localidad actual: el motor no identifica zombis/accesos individuales.
@@ -746,7 +749,7 @@ function clean(){
  if(!playable()||game.ended)return;
  const p=person();if(!p||p.dead||p.loc!==0||!game.waste)return messageAndPaint('Se necesita un superviviente en la colonia y residuos para limpiar.');
  if(consume(1)===null)return;
- const n=Math.min(3,game.waste);game.waste-=n;message('♻ '+p.name+' retiró '+n+' cartas del montón de residuos.');paint();
+ const n=Math.min(3,game.waste);game.waste-=n;if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('clean-result',{actor:p.id,name:p.name,count:n});message('♻ '+p.name+' retiró '+n+' cartas del montón de residuos.');paint();
 }
 function attract(){
  if(!playable()||game.ended)return;
@@ -761,7 +764,7 @@ function chooseAttract(src){
  const dst=pendingAttract.loc;
  if(!Number.isInteger(src)||src===dst||!game.zones[src].z||!openAccess(dst))return;
  game.zones[src].z--;game.zones[dst].z++;pendingAttract.left--;
- message('🔊 Atraíste 1 zombi de '+places[src]+' a '+places[dst]+'.');
+ if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('attracted',{from:src,destination:dst});message('🔊 Atraíste 1 zombi de '+places[src]+' a '+places[dst]+'.');
  if(!pendingAttract.left||!openAccess(dst)||!game.zones.some((z,i)=>i!==dst&&z.z)){pendingAttract=null;hide();}
  paint();
 }
@@ -801,9 +804,9 @@ function chooseTransfer(id){
  // pueden cambiar mientras el diálogo está abierto o por invocación directa.
  if(!p||p.dead||ownerOf(p)!==controls.side||it!==transfer.itemRef||!canReceiveTransfer(p,t,it))return;
  p.equipment.splice(transfer.itemIndex,1);
- t.equipment.push(it);pendingTransfer=null;message('🎒 '+p.name+' entregó '+itemTitle(it)+' a '+t.name+'.');hide();paint();
+ t.equipment.push(it);pendingTransfer=null;if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('transfer',{name:p.name,target:t.name,item:itemTitle(it)});message('🎒 '+p.name+' entregó '+itemTitle(it)+' a '+t.name+'.');hide();paint();
 }
-function gainSample(p){const bonus=p&&p.skill==='researcher'&&!p.bonusUsed?2:1;game.samples+=bonus;if(bonus===2){p.bonusUsed=true;message('◈ '+p.name+' duplicó la muestra mediante investigación.');}}
+function gainSample(p){const bonus=p&&p.skill==='researcher'&&!p.bonusUsed?2:1;game.samples+=bonus;if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('sample',{name:p?.name||null,count:bonus,total:game.samples});if(bonus===2){p.bonusUsed=true;message('◈ '+p.name+' duplicó la muestra mediante investigación.');}}
 function crossDraw(side='human'){
  if(!game.crossRemaining.length)game.crossRemaining=mix(crossroadsDeck.map((_,i)=>i));
  game.crossCard=game.crossRemaining.pop();game.crossOwner=side;game.crossActorId=null;game.crossResolved=false;game.crossPending=false;
@@ -944,17 +947,17 @@ const actor=id=>all().find(p=>p.id===id);
 const automationActions=Object.freeze({
  contributeHand(i){if(!CrisisManager.add(game.botItems[i],'La IA'))return false;game.botItems.splice(i,1);return true;},
  contributeEquipment(id,j){const p=actor(id);if(!CrisisManager.add(p.equipment[j],p.name))return false;p.equipment.splice(j,1);return true;},
- treat(id,targetId){const p=actor(id),t=actor(targetId);if(p.skill==='medic')t.wounds--;else t.frost--;p.skillUsed=true;message('★ '+p.name+' atendió a '+t.name+'.');},
- buildFree(id){const p=actor(id);game.zones[p.loc].b++;p.skillUsed=true;message('★ '+p.name+' construyó una barricada sin dado.');},
+ treat(id,targetId){const p=actor(id),t=actor(targetId);if(p.skill==='medic')t.wounds--;else t.frost--;p.skillUsed=true;if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('treatment',{name:p.name,target:t.name,skill:p.skillName});message('★ '+p.name+' atendió a '+t.name+'.');},
+ buildFree(id){const p=actor(id);game.zones[p.loc].b++;p.skillUsed=true;if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('build',{actor:p.id,name:p.name,count:1,method:'ability'});message('★ '+p.name+' construyó una barricada sin dado.');},
  useItem(i,id){return itemEngine.use(i,actor(id),'ai');},
  moveWithFuel(id,dest,i){return itemEngine.moveWithFuel(actor(id),dest,'ai',i);},
- move(id,dest){const p=actor(id);p.loc=dest;p.moved=true;message('🤖 '+p.name+' se movió a '+places[dest]+'.');},
+ move(id,dest){const p=actor(id);p.loc=dest;p.moved=true;if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('move',{name:p.name,destination:dest});message('🤖 '+p.name+' se movió a '+places[dest]+'.');},
  exposeMove(id){const p=actor(id);if(p.skill==='silent'&&!p.skillUsed)p.skillUsed=true;else expose(p,'movimiento IA');},
  spendDie(i){return game.botDice.splice(i,1)[0];},
  search(id,d){const p=actor(id);beginSearch(p,'ai');message('🎲 IA '+p.name+' usó dado '+d+' para buscar.');crossAction('search',p);},
  attack(id,d){const p=actor(id);message('🎲 IA '+p.name+' gastó dado '+d+' al combatir.');return itemEngine.attack(p,'ai');},
- clean(d){const n=Math.min(3,game.waste);game.waste-=n;message('♻ IA limpió '+n+' residuos con dado '+d+'.');},
- barricade(id,d){const p=actor(id),n=(p.skill==='guard'?2:1)+(itemEngine.has(p,'repairkit')?1:0);for(let j=0;j<n&&openAccess(p.loc);j++)game.zones[p.loc].b++;message('▥ IA '+p.name+' colocó barricadas con dado '+d+'.');},
+ clean(d){const n=Math.min(3,game.waste);game.waste-=n;if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('clean-result',{name:'IA',count:n,value:d});message('♻ IA limpió '+n+' residuos con dado '+d+'.');},
+ barricade(id,d){const p=actor(id),n=(p.skill==='guard'?2:1)+(itemEngine.has(p,'repairkit')?1:0);for(let j=0;j<n&&openAccess(p.loc);j++)game.zones[p.loc].b++;if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('build',{name:p.name,method:'die',count:n,value:d});message('▥ IA '+p.name+' colocó barricadas con dado '+d+'.');},
 });
 return Object.freeze({
  ...(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__?{...c.mapCycle.api,...c.mapPlay.api}:{}),

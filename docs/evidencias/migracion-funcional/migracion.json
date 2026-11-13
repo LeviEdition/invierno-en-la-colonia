@@ -1,0 +1,287 @@
+{
+  "passed": true,
+  "controlled": true,
+  "physicalMobile": false,
+  "reducedMotion": true,
+  "browser": "154.0.8037.57",
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "scenario": "normal",
+      "errors": [],
+      "steps": [
+        "preparacion",
+        "rondas-sin-fixture"
+      ],
+      "noStateFixture": true,
+      "noV9": true,
+      "round": 3,
+      "starts": 1,
+      "video": "/tmp/horizontal-migration-verified/1365x768/normal/page@c7a736f85102c146dd2ea4eadde06b2f.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "scenario": "local",
+      "errors": [],
+      "steps": [
+        "preparacion",
+        "limpieza",
+        "tratamiento",
+        "atraccion-parcial",
+        "transferencia-local",
+        "ronda-2",
+        "ronda-3",
+        "otra-partida"
+      ],
+      "lostReplyReconnectRebuild": true,
+      "noV9": true,
+      "round": 1,
+      "starts": 2,
+      "video": "/tmp/horizontal-migration-verified/1365x768/local/page@cae90a6285bf82f022169ab9159a74bf.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "scenario": "ai",
+      "errors": [],
+      "steps": [
+        "preparacion",
+        "ia-ronda-2"
+      ],
+      "noV9": true,
+      "round": 2,
+      "starts": 1,
+      "video": "/tmp/horizontal-migration-verified/1365x768/ai/page@b4200255d0c1bd0d8ff3587c4642a5a4.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "scenario": "interruptions",
+      "errors": [],
+      "steps": [
+        "preparacion",
+        "mordedura",
+        "propagacion-tirada-real",
+        "fallecimientos",
+        "sucesion"
+      ],
+      "noV9": true,
+      "round": 1,
+      "starts": 1,
+      "video": "/tmp/horizontal-migration-final-decisions/1365x768/interruptions/page@a336b0a4ac80d84e3805117fc377825d.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "scenario": "cross",
+      "errors": [],
+      "steps": [
+        "preparacion",
+        "encrucijada"
+      ],
+      "noV9": true,
+      "round": 1,
+      "starts": 1,
+      "video": "/tmp/horizontal-migration-verified/1365x768/cross/page@0bbcfda2c60e63cc25f35bd0378faceb.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "scenario": "victory",
+      "errors": [],
+      "steps": [
+        "preparacion",
+        "victoria",
+        "otra-tras-final"
+      ],
+      "secondFinal": true,
+      "noV9": true,
+      "round": 1,
+      "starts": 1,
+      "video": "/tmp/horizontal-migration-verified/1365x768/victory/page@43088ff8a484f79562ade7044193b9be.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "scenario": "defeat",
+      "errors": [],
+      "steps": [
+        "preparacion",
+        "derrota"
+      ],
+      "noV9": true,
+      "round": 2,
+      "starts": 1,
+      "video": "/tmp/horizontal-migration-verified/1365x768/defeat/page@3b4fbebcb421e76edbf3e48c80f336a7.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "scenario": "normal",
+      "errors": [],
+      "steps": [
+        "preparacion",
+        "rondas-sin-fixture"
+      ],
+      "noStateFixture": true,
+      "noV9": true,
+      "round": 3,
+      "starts": 1,
+      "video": "/tmp/horizontal-migration-verified/852x393/normal/page@c29c7d8e3fcd961b0013b0ad7c94b5e3.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "scenario": "local",
+      "errors": [],
+      "steps": [
+        "preparacion",
+        "limpieza",
+        "tratamiento",
+        "atraccion-parcial",
+        "transferencia-local",
+        "ronda-2",
+        "ronda-3",
+        "otra-partida"
+      ],
+      "noV9": true,
+      "round": 1,
+      "starts": 1,
+      "video": "/tmp/horizontal-migration-verified/852x393/local/page@84aa7b54913d32a09224149f764a61cc.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "scenario": "ai",
+      "errors": [],
+      "steps": [
+        "preparacion",
+        "ia-ronda-2"
+      ],
+      "noV9": true,
+      "round": 2,
+      "starts": 1,
+      "video": "/tmp/horizontal-migration-verified/852x393/ai/page@081aa3acc677d6df81b54bc5cd42f98a.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "scenario": "interruptions",
+      "errors": [],
+      "steps": [
+        "preparacion",
+        "mordedura",
+        "propagacion-tirada-real",
+        "fallecimientos",
+        "sucesion"
+      ],
+      "noV9": true,
+      "round": 1,
+      "starts": 1,
+      "video": "/tmp/horizontal-migration-final-decisions/852x393/interruptions/page@939d1d1cda882f54dcdc9f9872411b09.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "scenario": "cross",
+      "errors": [],
+      "steps": [
+        "preparacion",
+        "encrucijada"
+      ],
+      "noV9": true,
+      "round": 1,
+      "starts": 1,
+      "video": "/tmp/horizontal-migration-verified/852x393/cross/page@4bf8ce671fec17fa5f433bf4416ceac6.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "scenario": "victory",
+      "errors": [],
+      "steps": [
+        "preparacion",
+        "victoria",
+        "otra-tras-final"
+      ],
+      "secondFinal": true,
+      "noV9": true,
+      "round": 1,
+      "starts": 1,
+      "video": "/tmp/horizontal-migration-verified/852x393/victory/page@95311a04a0857d2dd759a514b67d07fe.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "scenario": "defeat",
+      "errors": [],
+      "steps": [
+        "preparacion",
+        "derrota"
+      ],
+      "noV9": true,
+      "round": 2,
+      "starts": 1,
+      "video": "/tmp/horizontal-migration-verified/852x393/defeat/page@2389a53f05b0fc122485fa3b906c195e.webm",
+      "passed": true
+    }
+  ],
+  "guardDetectsReturn": true,
+  "guardDetectsNavigation": true,
+  "sourceBatches": [
+    {
+      "path": "/tmp/horizontal-migration-verified/resultados.json",
+      "cases": 14,
+      "passed": true
+    },
+    {
+      "path": "/tmp/horizontal-migration-final-decisions/resultados.json",
+      "cases": 2,
+      "passed": true,
+      "purpose": "Panel ligado a revisión de autoridad y sonda de navegación V9"
+    }
+  ]
+}

@@ -30,7 +30,7 @@ try{for(const [width,height]of (process.env.CYCLE_VIEWPORTS||'1365x768,852x393')
   await finish();await p.locator('#cycle-speed').waitFor();await p.locator('#cycle-speed').click();
  }
  if(scenario==='bite'){
-  await p.locator('#cycle-native').waitFor();assert.equal((await api()).projection.cycle.decision.kind,'biteChoice');await p.screenshot({path:resolve(dir,'bite-retorno.png')});await p.locator('#cycle-native').click();assert.equal((await api()).mode,'reference');await t.host(p).evaluate(()=>h344RandomValue=.8);await t.host(p).locator('[data-command="chooseBite"]').filter({hasText:'Arriesgar'}).click();await t.openMap(p);await p.locator('#cycle-death').waitFor();await p.screenshot({path:resolve(dir,'bite-fallecimiento.png')});await p.locator('#cycle-death').click();
+  await p.locator('#play-bite-risk').waitFor();assert.equal((await api()).projection.play.decision.kind,'bite');await p.screenshot({path:resolve(dir,'bite-mapa.png')});assert.equal((await api()).mode,'map');await t.host(p).evaluate(()=>h344RandomValue=.8);await p.locator('#play-bite-risk').click();await p.locator('#play-ack').click();await p.locator('#cycle-death').waitFor();await p.screenshot({path:resolve(dir,'bite-fallecimiento.png')});await p.locator('#cycle-death').click();
  }
  if(scenario==='death'){await p.locator('#cycle-death').waitFor();assert.match(await p.locator('#cycle-dialog').textContent(),/Mara/);await p.screenshot({path:resolve(dir,'fallecimiento.png')});await p.locator('#cycle-death').click();}
  await p.locator('#cycle-all').waitFor();

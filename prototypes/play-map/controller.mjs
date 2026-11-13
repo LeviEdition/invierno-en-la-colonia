@@ -1,7 +1,7 @@
 import {uniqueToken} from '../movement-map/nonce.mjs';
 export function createPlayController({send,onChange=()=>{},requestId=uniqueToken}={}){
  let state=null,pending=null,phase='closed',message='',page=null,intent=null,revision=null;
- const inspect=()=>({phase,pending,message,page,intent}),notify=()=>onChange(inspect());
+ const inspect=()=>({phase,pending,message,page,intent,revision:state?.play?.revision??null}),notify=()=>onChange(inspect());
  function update(s){const old=state?.play;state=s;const p=s?.play;if(!p){phase='closed';page=null;intent=null;pending=null;notify();return;}
   if(old&&(old.generation!==p.generation||old.session!==p.session||s.cycle?.decision?.kind==='handover')){phase='closed';pending=null;page=null;intent=null;message='';}
   if(intent&&revision!==p.revision){intent=null;message='El estado cambió. Revisá la selección antes de confirmar.';}

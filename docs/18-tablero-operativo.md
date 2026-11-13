@@ -1,5 +1,11 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## Migración funcional a la interfaz del mapa ·13/11/2026
+
+Encargo desde31ffaf6, remoto/local y CI43486325893 success verificados. Misma rama/PR25 en borrador. Seis bloques revisables A–F, [matriz98 y guía manual](98-paridad-funcional-del-mapa.md): preparación y otra partida, mordeduras/cadenas/encrucijadas, limpieza/atracción/tratamiento/mejora de dados, transferencias locales y líderes iniciales, registro por audiencia y ayuda. Operaciones originales del motor V9; host horizontal mínimo sin montar el tablero ni los controles de la pantalla anterior. Sin retornos jugables obligatorios a V9. Registro público/privado explícito, recibos y bloqueo seguro ante resultado desconocido; recargar toda la aplicación pierde la instancia, sin guardado nuevo.719/719 y35 dirigidas locales; [evidencia y recorridos sin V9](evidencias/migracion-funcional/README.md), CI del SHA exacto en PR25. Capacidades33, plazas, arte, geometría, IA y referencia estable conservados. **Siguiente tarea al verificar CI: revisión manual del creador.** Sin main/fusión/publicación ni nuevas reglas/balance/narrativa. Bloques siguientes históricos.
+
+---
+
 ## Ciclo de turno y ronda desde el mapa ·13/11/2026
 
 Encargo desde303bf26, remoto/local y CI43452381777 success verificados. Misma rama/PR25 draft, cuatro bloques revisables A/B/C/D. [Informe97 y tabla de flujos](97-ciclo-de-turno-y-ronda.md). Aportes desde crisis/inventario, terminar turno con confirmación, pase privado, IA original, cinco fases de colonia con resultados estructurados, revisión sin ejecutar efectos, nueva ronda y final con causa. Muertes/sucesión integradas; mordeduras/encrucijadas y otras decisiones nativas pendientes retornan explícitamente a V9. **No se declara integración de todo caso obligatorio.** Conserva33 accesos, plazas, arte/distribución y HTML estable. Suite684/684,18 dirigidas y diez recorridos escritorio/móvil emulado; regresiones de inventario/acciones aprobadas. [Capturas, vídeos y límites de recuperación](evidencias/ciclo-turno-ronda/README.md). CI exacto en PR25. **Siguiente tarea: revisión manual del creador; después, integrar decisiones restantes con su autorización.** Sin main/fusión/publicación ni balance nuevo. Bloques siguientes históricos.
