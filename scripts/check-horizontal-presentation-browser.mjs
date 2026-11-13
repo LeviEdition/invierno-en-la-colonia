@@ -96,8 +96,9 @@ try{
     if(!baseline&&mode==='zombies'){for(const [index,a]of z.accesses.entries()){await closePanel(q);await tapWorld(q,a,touch);const view=await qaView(q);assert.equal(view.selectedLocation,loc.id,'casilla '+z.id+':'+index);const styles=view.renderer.slotStyles,selected=styles.filter(a=>a.zoneId===z.id),others=styles.filter(a=>a.zoneId!==z.id);assert.ok(selected.every(a=>a.width>=1.4&&a.alpha>=.85));assert.ok(others.every(a=>a.width<selected[0].width),'selección con énfasis frente a vecinos');r.picking.push({locality:z.id,index});}if(scene.portraitsOnLocality){await closePanel(q);const c=(await qaView(q)).layout.characters.find(c=>c.locationId===loc.id);await tapWorld(q,c.position,touch);assert.equal((await qaView(q)).selected,c.id,'ficha superpuesta seleccionable '+z.id);r.overlayPicking??=[];r.overlayPicking.push(z.id);}}
    }
   }
-  // Capacidad del motor intacta: aquí se fuerzan4, aunque el dibujo tenga2/3.
-  await setQa(q,capacityProjection(projection,'zombies'),'excedentes: gasolinera4 / biblioteca4; motor intacto');
+  // Estado anterior incompatible simulado: se conservan los conteos y excedentes.
+  const legacy=capacityProjection(projection,'zombies');for(const loc of legacy.locations)loc.zombies=loc.engineIndex?4:12;
+  await setQa(q,legacy,'QA · estado anterior incompatible: gasolinera4 / biblioteca4');
   for(const [index,extra]of [[4,2],[6,1]]){
    await focus(q,'place-'+index);const loc=(await qaView(q)).layout.locations.find(l=>l.engineIndex===index);assert.equal(loc.zombies,4);assert.equal(loc.externalOverflow,extra);
    await q.locator('#panel-toggle').click();await t.frames(q);

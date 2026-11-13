@@ -81,7 +81,6 @@
         }
       ],
       "survivorCapacity": 4,
-      "exteriorCapacity": 4,
       "selectionPolygon": [
         [
           241,
@@ -449,7 +448,6 @@
         }
       ],
       "survivorCapacity": 4,
-      "exteriorCapacity": 3,
       "selectionPolygon": [
         [
           1135,
@@ -776,7 +774,6 @@
         }
       ],
       "survivorCapacity": 4,
-      "exteriorCapacity": 4,
       "selectionPolygon": [
         [
           111,
@@ -1367,7 +1364,6 @@
         }
       ],
       "survivorCapacity": 12,
-      "exteriorCapacity": 12,
       "selectionPolygon": [
         [
           700,
@@ -1794,7 +1790,6 @@
         }
       ],
       "survivorCapacity": 4,
-      "exteriorCapacity": 4,
       "selectionPolygon": [
         [
           1208,
@@ -2251,7 +2246,6 @@
         }
       ],
       "survivorCapacity": 4,
-      "exteriorCapacity": 2,
       "selectionPolygon": [
         [
           180,
@@ -2514,7 +2508,6 @@
         }
       ],
       "survivorCapacity": 4,
-      "exteriorCapacity": 4,
       "selectionPolygon": [
         [
           1140,

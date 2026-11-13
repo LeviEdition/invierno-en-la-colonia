@@ -3,13 +3,13 @@ import {build} from 'esbuild';
 import {readFile,writeFile} from 'node:fs/promises';
 import {resolve} from 'node:path';import {fileURLToPath,pathToFileURL} from 'node:url';
 const root=fileURLToPath(new URL('../',import.meta.url));
-export async function buildGame({template,entryPoint='src/main.mjs',workingDir=root,test=false}={}){
+export async function buildGame({template,entryPoint='src/main.mjs',workingDir=root,test=false,plugins=[]}={}){
  template??=await readFile(resolve(workingDir,'src/invierno.template.html'),'utf8');
  const marker='/* __GAME_BUNDLE__ */';
  if(template.split(marker).length!==2)throw Error('Debe existir exactamente un marcador de aplicación');
  const result=await build({absWorkingDir:workingDir,entryPoints:[entryPoint],outfile:'game.js',bundle:true,
   format:'iife',platform:'browser',target:'es2022',write:false,sourcemap:false,minify:false,minifySyntax:true,
-  charset:'utf8',legalComments:'none',metafile:true,define:{__GAME_TEST__:String(test)}});
+  charset:'utf8',legalComments:'none',metafile:true,plugins,define:{__GAME_TEST__:String(test)}});
  if(result.outputFiles.length!==1)throw Error('Se requiere un único bundle');
  const embedded=result.outputFiles[0].text.replaceAll('</script','<\\/script');
  const html=template.replace(marker,()=>embedded);

@@ -1,5 +1,11 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## Capacidades exteriores e inventario autorizado ·13/11/2026
+
+Distribución visual de de4d1c8 **aceptada por el creador**. Encargo nuevo:33 accesos compartidos y después inventario accionable; dos commits revisables, misma rama/PR25 draft. [Informe96](96-capacidades-e-inventario.md). Bloque1 verificado: motor/presentación comparten capacidades12/4/4/4/2/4/3, plazas12/4 intactas,655/655 y Chromium escritorio/móvil saturados aprobados. Referencia estable y geometría aceptada preservadas. **Siguiente tarea autorizada: implementar y verificar inventario**, sin cierre de turnos, nuevas reglas/main/fusión/publicación. Bloques siguientes históricos.
+
+---
+
 ## Fichas sobre la localidad y casillas paralelas ·13/11/2026
 
 Corrección solicitada sobre449b436, remoto sin avances y CI42696632195 success verificados. Misma rama/PR25 draft. **Fichas superpuestas a su propio edificio o recinto**: colonia1/6/12 centrada dentro del patio; resto sobre la estructura, con entradas, emblemas, vehículos y surtidores libres. Diámetros36/42 conservados. Filas y ejes de elipses exteriores paralelos al zócalo correspondiente, incluido el ala lateral del hospital; mantienen índices, capacidades y escala. Margen táctil de fichas funciona también sobre el edificio propio sin capturar las casillas exteriores. Obstáculos originales y arte intactos; la antigua exclusión de la fachada propia se sustituye expresamente por esta nueva composición y protecciones de detalles.652/652,35 dirigidas, HTML reproducible y Chromium1365/852 aprobados: máximos,66 clics/taps de casillas,14 de fichas superpuestas y recorrido de acciones. [Comparación y resultados](evidencias/fichas-sobre-localidad/README.md). CI del nuevo head se registra en PR25. **Siguiente tarea: revisión visual del creador**, sin reglas/main/fusión/publicación. Bloques siguientes históricos.

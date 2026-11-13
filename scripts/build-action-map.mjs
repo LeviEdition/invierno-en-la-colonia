@@ -12,7 +12,7 @@ export async function buildActionMap({qa=false,check=false,write=true,variant='a
  const mapped=await build({absWorkingDir:root,entryPoints:['prototypes/action-map/main.mjs'],outfile:directory+'/map.mjs',bundle:true,format:'esm',platform:'browser',target:'es2022',minify:true,legalComments:'eof',write:false,metafile:true,plugins,define:{__ACTION_MAP_QA__:String(qa),__ACTION_MAP_VARIANT__:JSON.stringify(variant)}});
  const javascript=mapped.outputFiles[0].text,mapBytes=mapped.outputFiles[0].contents,mapInputs=Object.keys(mapped.metafile.inputs).map(p=>p.replaceAll('\\','/'));
  if(mapInputs.some(p=>p.startsWith('src/')))throw Error('El visor no puede importar el motor');
- const host=await buildGame({entryPoint:'prototypes/action-map/reference-host.mjs',test:qa}),hostInputs=Object.keys(host.metafile.inputs).map(p=>p.replaceAll('\\','/'));
+ const host=await buildGame({entryPoint:'prototypes/action-map/reference-host.mjs',test:qa,plugins:variant==='horizontal-map'?[horizontalRulesPlugin(root)]:[]}),hostInputs=Object.keys(host.metafile.inputs).map(p=>p.replaceAll('\\','/'));
  if(!hostInputs.includes('src/application/reference-engine.mjs')||hostInputs.some(p=>p.includes('node_modules/phaser')))throw Error('El host debe usar el motor real sin otro renderer');
  if(!qa&&(/h344Test|h344DropReply|searchMessage|testBindings|__GAME_TEST__/.test(host.html)||/h344Test|__ACTION_MAP_QA__/.test(javascript)))throw Error('Instrumentación QA en producto');
  const files=[['map.mjs',mapBytes],['reference-host.html',Buffer.from(host.html)]];
@@ -21,4 +21,5 @@ export async function buildActionMap({qa=false,check=false,write=true,variant='a
  const info={phaser:'4.2.1',esbuild:'0.28.2',qa,map:{rawBytes:mapBytes.length,gzip9Bytes:gzipSync(mapBytes,{level:9}).length,sha256:digest(mapBytes),inputs:mapInputs},host:{rawBytes:Buffer.byteLength(host.html),sha256:digest(host.html),inputs:hostInputs}};
  if(write&&!check)await writeFile(resolve(out,'build.json'),JSON.stringify(info,null,2)+'\n');return {...info,html:host.html,javascript};
 }
+export function horizontalRulesPlugin(root){return {name:'horizontal-rules',setup(b){b.onResolve({filter:/reference-data\.mjs$/},args=>args.importer.replaceAll('\\','/').endsWith('/src/application/reference-engine.mjs')?{path:resolve(root,'prototypes/horizontal-map/reference-data.mjs')}:undefined);}};}
 if(process.argv[1]&&pathToFileURL(resolve(process.argv[1])).href===import.meta.url){const {html,javascript,...info}=await buildActionMap({qa:process.argv.includes('--qa'),check:process.argv.includes('--check')});console.log(JSON.stringify(info,null,2));}
