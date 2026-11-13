@@ -13,7 +13,7 @@ export function createMapInventory(c,{generation,block,clear,canRecruit,canContr
   let summary='',waste=0;
   if(!reason){const d=e.d;
    if(mode==='contribute'){if(!canContribute(e.it))reason='crisis';if(e.source==='equipment'&&actorId!==e.owner)reason='ownership';summary='Aportar '+d.name+' a la crisis de '+c.game.crisis.type+'. '+(e.source==='equipment'?'Se retira del equipo actual. ':'')+'Consume esta carta, sin dado ni residuos.';}else if(e.source==='equipment'){
-    const t=c.all().find(p=>p.id===targetId);if(actorId!==e.owner||!t||c.ownerOf(t)!==c.controls.side||!c.canReceiveTransfer(p,t,e.it))reason='transfer';
+    const t=c.all().find(p=>p.id===targetId);if(actorId!==e.owner||!t||!c.canReceiveTransfer(p,t,e.it))reason='transfer';
     summary='Transferir '+d.name+' de '+p?.name+' a '+t?.name+'. Sin dado ni residuos.';
    }else if(d.effect==='equip'){
     if(c.equipmentOf(p).some(it=>c.kind(it)===d.kind))reason='equipment-kind';
@@ -38,8 +38,8 @@ export function createMapInventory(c,{generation,block,clear,canRecruit,canContr
  }
  function inventorySnapshot(){
   const s=scope();if(!s)return null;if(receipt&&(receipt.scope!==s||after!==stamp()))receipt=null;
-  return {scope:s,ownerId:c.controls.side,receipt,hand:entries().filter(e=>e.source==='hand').map(e=>({uid:e.uid,name:e.d.name,description:e.d.desc,kind:e.d.kind,effect:e.d.effect,requiresActor:needsActor(e),quantity:1})),equipment:entries().filter(e=>e.source==='equipment').map(e=>({uid:e.uid,ownerId:e.owner,name:e.d.name,description:e.d.desc,kind:e.d.kind,effect:e.d.effect,usedRound:e.it?.usedRound||0})),actors:c.controls.group().filter(p=>!p.dead).map(p=>({id:p.id,name:p.name,location:p.loc})),options:entries().flatMap(e=>{
-   const actors=needsActor(e)?c.controls.group().filter(p=>!p.dead):[null];return actors.flatMap(p=>e.source==='equipment'?c.controls.group().filter(t=>!t.dead&&t.id!==p?.id).map(t=>option({cardId:e.uid,actorId:p?.id,targetId:t.id})):e.d.effect==='move'?c.places.map((_,i)=>option({cardId:e.uid,actorId:p?.id,destination:i})):[option({cardId:e.uid,actorId:p?.id})]);
+  return {scope:s,ownerId:c.controls.side,receipt,hand:entries().filter(e=>e.source==='hand').map(e=>({uid:e.uid,name:e.d.name,description:e.d.desc,kind:e.d.kind,effect:e.d.effect,requiresActor:needsActor(e),quantity:1})),equipment:entries().filter(e=>e.source==='equipment').map(e=>({uid:e.uid,ownerId:e.owner,name:e.d.name,description:e.d.desc,kind:e.d.kind,effect:e.d.effect,usedRound:e.it?.usedRound||0})),actors:c.controls.group().filter(p=>!p.dead).map(p=>({id:p.id,name:p.name,location:p.loc})),recipients:c.alive().map(p=>({id:p.id,name:p.name,location:p.loc,player:c.controls.display(c.ownerOf(p))})),options:entries().flatMap(e=>{
+   const actors=needsActor(e)?c.controls.group().filter(p=>!p.dead):[null];return actors.flatMap(p=>e.source==='equipment'?c.alive().filter(t=>t.id!==p?.id).map(t=>option({cardId:e.uid,actorId:p?.id,targetId:t.id})):e.d.effect==='move'?c.places.map((_,i)=>option({cardId:e.uid,actorId:p?.id,destination:i})):[option({cardId:e.uid,actorId:p?.id})]);
   }).concat(entries().map(e=>option({mode:'contribute',cardId:e.uid,actorId:e.owner})))};
  }
  function inventoryExecute(request){

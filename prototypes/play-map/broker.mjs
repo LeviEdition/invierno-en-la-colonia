@@ -1,7 +1,7 @@
 import {createCycleBroker} from '../cycle-map/broker.mjs';
 import {uniqueToken} from '../movement-map/nonce.mjs';
 const token=x=>typeof x==='string'&&/^[a-zA-Z0-9_-]{1,80}$/.test(x);
-const fields={bite:['option'],cross:['index'],'cross-ai':[],recruit:[],ack:['receiptId'],heal:['target'],'heal-cancel':[],'attract-choose':['source'],'attract-end':[],clean:['actorId','dieId','dieIndex','dieValue'],attract:['actorId','dieId','dieIndex','dieValue'],special:['actorId','dieId','dieIndex','dieValue'],boost:['actorId','dieId','dieIndex','dieValue']};
+const fields={bite:['option'],cross:['index'],'cross-ai':[],recruit:[],ack:['receiptId'],'starting-leader':['target'],heal:['target'],'heal-cancel':[],'attract-choose':['source'],'attract-end':[],clean:['actorId','dieId','dieIndex','dieValue'],attract:['actorId','dieId','dieIndex','dieValue'],special:['actorId','dieId','dieIndex','dieValue'],boost:['actorId','dieId','dieIndex','dieValue']};
 export function createPlayBroker(engine,{session=uniqueToken(),readPublic}={}){
  const previous=createCycleBroker(engine,{session,readPublic});if(!engine.playSnapshot)return previous;
  let revision=0,stamp=null,unknown=null;const completed=new Map();
