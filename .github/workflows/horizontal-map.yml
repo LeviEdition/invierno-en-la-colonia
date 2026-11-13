@@ -39,6 +39,8 @@ jobs:
           # máximos/excedentes, interacción y un recorrido real de acciones.
           # No repetir benchmark, vídeos de viento ni auditorías ajenas.
           node scripts/check-horizontal-presentation-browser.mjs
+          node scripts/check-map-capacities-browser.mjs
+          node scripts/check-map-inventory-browser.mjs
           export H344_MODULE_PATH=/dist/horizontal-map-qa/map.mjs
           export H344_VIEWPORTS=1365x768,852x393
           export H344_OUTPUT_DIR=/tmp/horizontal-actions

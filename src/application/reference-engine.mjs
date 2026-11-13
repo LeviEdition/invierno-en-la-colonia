@@ -8,6 +8,7 @@ import {readOnlyContext} from './read-only-context.mjs';
 import {ItemCatalog} from '../item-catalog.mjs';
 import {createRules} from '../domain/reference-rules.mjs';
 import {createTurns} from './reference-turns.mjs';
+import {createMapInventory} from './map-inventory.mjs';
 const noop=()=>{};
 export function createEngine({Math=globalThis.Math,queueMicrotask=globalThis.queueMicrotask||((f)=>Promise.resolve().then(f)),setTimeout=globalThis.setTimeout,stateFactory=createReferenceState,rulesFactory=createRules,turnsFactory=createTurns,effects={},automation=null}={}){
 let view=new Proxy(effects,{get:(target,key)=>target[key]||noop});
@@ -943,6 +944,7 @@ const automationActions=Object.freeze({
  barricade(id,d){const p=actor(id),n=(p.skill==='guard'?2:1)+(itemEngine.has(p,'repairkit')?1:0);for(let j=0;j<n&&openAccess(p.loc);j++)game.zones[p.loc].b++;message('▥ IA '+p.name+' colocó barricadas con dado '+d+'.');},
 });
 return Object.freeze({
+ ...(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__?createMapInventory(c,{visible:()=>!!game&&!passScreenActive&&!aiRunning&&(game.turn==='human'||controls.local),canContribute:it=>CrisisManager.canContribute(it),contribute:e=>e.source==='hand'?CrisisManager.fromHand(e.index):CrisisManager.fromEquipment(e.owner,e.index),generation:()=>movementGeneration,block:actionBlockReason,clear:()=>{searchOperation=null;actionOperation=null;},canRecruit:()=>accessible(0)&&roster.some(r=>!all().some(p=>p.name===r.name))}):{}),
  movementOptions,moveById,searchOptions,searchById,searchSnapshot,addSearchNoise,chooseSearchCard,dismissSearchResult,actionOptions,actById,actionSnapshot,dismissAction,
  snapshot:()=>game===undefined?null:JSON.parse(JSON.stringify(game)),
  dispatch(name,...args){if(!commands.has(name))throw TypeError('Comando desconocido: '+name);return c[name](...args);},

@@ -2,7 +2,7 @@
 
 ## Capacidades exteriores e inventario autorizado ·13/11/2026
 
-Distribución visual de de4d1c8 **aceptada por el creador**. Encargo nuevo:33 accesos compartidos y después inventario accionable; dos commits revisables, misma rama/PR25 draft. [Informe96](96-capacidades-e-inventario.md). Bloque1 verificado: motor/presentación comparten capacidades12/4/4/4/2/4/3, plazas12/4 intactas,655/655 y Chromium escritorio/móvil saturados aprobados. Referencia estable y geometría aceptada preservadas. **Siguiente tarea autorizada: implementar y verificar inventario**, sin cierre de turnos, nuevas reglas/main/fusión/publicación. Bloques siguientes históricos.
+Distribución visual de de4d1c8 **aceptada por el creador**. Encargo nuevo completado en dos commits revisables, misma rama/PR25 draft. [Informe96 y tabla de operaciones](96-capacidades-e-inventario.md). Bloque1/c1f2666: motor/presentación comparten33 accesos12/4/4/4/2/4/3; plazas12/4 intactas,655/655 y Chromium saturados antes de inventario. Bloque2: usar/equipar/transferir dentro del grupo/aportar a crisis desde el mapa mediante operaciones originales; confirmación, privacidad, revisión/deduplicación y recuperación. Retirar/sustituir directamente no existen; intercambio entre jugadores y decisiones generales siguen en V9.9. Entrega666/666 y Chromium escritorio/móvil: buscar→inventario→usar/equipar→buscar con modificador, cancelación/inválido, cámara y selección estables. [Capturas y vídeo](evidencias/capacidades-e-inventario/README.md). Referencia estable y geometría aceptada idénticas; CI del SHA exacto se registra en PR25. **Siguiente tarea: revisión manual del creador**, sin cierre de turnos, nuevas reglas/main/fusión/publicación. Bloques siguientes históricos.
 
 ---
 
