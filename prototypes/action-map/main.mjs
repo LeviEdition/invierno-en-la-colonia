@@ -1,3 +1,4 @@
+import {createCycleController} from '../cycle-map/controller.mjs';
 import {createInventoryController} from '../inventory-map/controller.mjs';
 import {createSearchMapView} from './map-view.mjs';
 import {createMovementController} from '../movement-map/movement-controller.mjs';
@@ -14,13 +15,15 @@ const ownedSearch=p=>p?.search.private?.operation&&!['setup','handover','death',
 const hardBarrier=p=>!p||['setup','handover','death','waiting'].includes(p.blocked);
 function send(request){
  if(!port)throw Error('Sin conexión');port.postMessage({protocol,...request});clearTimeout(requestTimer);
- requestTimer=setTimeout(()=>{if(request.type==='move')movement.disconnect();else if(request.type.startsWith('search'))search.disconnect();else if(request.type.startsWith('inventory'))inventory.disconnect();else action.disconnect();port?.postMessage({protocol,type:'snapshot'});},8000);
+ requestTimer=setTimeout(()=>{if(request.type==='move')movement.disconnect();else if(request.type.startsWith('search'))search.disconnect();else if(request.type.startsWith('cycle'))cycle.disconnect();else if(request.type.startsWith('inventory'))inventory.disconnect();else action.disconnect();port?.postMessage({protocol,type:'snapshot'});},8000);
 }
 const movement=createMovementController({send,onChange:()=>{viewer?.updateMovement();$('movement-result').textContent=['idle','unknown'].includes(movement.inspect().phase)?movement.inspect().message:'';}});
 const search=createSearchController({send,onChange:()=>viewer?.updateSearch()});
 const action=createActionController({send,onChange:()=>viewer?.updateActions()});
 const inventory=createInventoryController({send,onChange:()=>viewer?.updateActions()});
 const ownedInventory=p=>p?.inventory?.receipt&&!['setup','handover','waiting'].includes(p.blocked);
+const cycle=createCycleController({send,onChange:()=>viewer?.updateActions()});
+const managedCycle=p=>!!p?.cycle?.managed;
 const variant=typeof __ACTION_MAP_VARIANT__==='undefined'?'action-map':__ACTION_MAP_VARIANT__;
 const hostPath='/dist/'+variant+(__ACTION_MAP_QA__?'-qa':'')+'/reference-host.html';
 function status(text){$('connection-status').textContent=text;}
@@ -42,17 +45,17 @@ function showReference(){
 }
 function applyAuthority(){
  if(!state)return;
- inventory.update(state);
+ inventory.update(state);cycle.update(state);
  if(actionPresenting())return;
  movement.update(state);if(!state.blocked)movement.acknowledge();
- const available=!state.blocked||!!ownedSearch(state)||!!ownedAction(state)||!!ownedInventory(state);$('map-mode').disabled=!available;
+ const available=!state.blocked||!!ownedSearch(state)||!!ownedAction(state)||!!ownedInventory(state)||managedCycle(state);$('map-mode').disabled=!available;
  if(!state.blocked&&search.inspect().phase!=='presenting'&&!actionPresenting())lastPublic={...state,search:{...state.search,private:null}};
  if(viewer)viewer.setState(displayState());
  if(!available){showReference();status(({setup:'Completá la preparación en V9.9.',handover:'Confirmá el pase de dispositivo en V9.9.',death:'Confirmá el fallecimiento en V9.9.',decision:'Resolvé la decisión abierta en V9.9.',waiting:'Esperando partida.'})[state.blocked]||'Esperando partida.');}
  else{status('');if(mode==='map'&&!viewer&&(!attempt||attempt.signal.aborted))void mountViewer();}
 }
 function interruptSearch(){stopSearchClock();search.interrupt();if(state)applyAuthority();}
-function disconnect(){clearTimeout(requestTimer);stopSearchClock();viewer?.stopPresentation();movement.disconnect();search.disconnect();action.disconnect();inventory.disconnect();if(port){port.onmessage=null;port.close();port=null;}}
+function disconnect(){clearTimeout(requestTimer);stopSearchClock();viewer?.stopPresentation();movement.disconnect();search.disconnect();action.disconnect();inventory.disconnect();cycle.disconnect();if(port){port.onmessage=null;port.close();port=null;}}
 async function clearViewer(){const previous=viewer;viewer=null;if(previous)lastDisposal=await previous.destroy();}
 function mountViewer(){
  const id=++generation;attempt?.abort();attempt=new AbortController();const current=attempt;
@@ -62,21 +65,21 @@ function mountViewer(){
   await clearViewer();if(!pageActive||id!==generation||current.signal.aborted)return;
   starts++;lastError=null;document.body.dataset.viewState='loading';$('loading').hidden=false;$('loading').setAttribute('role','status');$('loading').textContent='Preparando el mapa…';$('retry-view').hidden=true;
   try{
-   const created=await createSearchMapView({signal:current.signal,movement,search,action,inventory,onSearchNative:showReference});
+   const created=await createSearchMapView({signal:current.signal,movement,search,action,inventory,cycle,onSearchNative:showReference});
    if(!pageActive||id!==generation||current.signal.aborted){await created.destroy();return;}
-   viewer=created;if(state)viewer.setState(displayState());viewer.setActive(mode==='map'&&(!state?.blocked||!!ownedSearch(state)||!!ownedAction(state)||!!ownedInventory(state)));document.body.dataset.viewState='ready';
+   viewer=created;if(state)viewer.setState(displayState());viewer.setActive(mode==='map'&&(!state?.blocked||!!ownedSearch(state)||!!ownedAction(state)||!!ownedInventory(state)||managedCycle(state)));document.body.dataset.viewState='ready';
   }catch(error){if(current.signal.aborted||id!==generation)return;lastError=error.message;document.body.dataset.viewState='error';$('loading').hidden=false;$('loading').setAttribute('role','alert');$('loading').textContent=error.message==='WEBGL_UNAVAILABLE'?'Este navegador no ofrece WebGL. La interfaz V9.9 sigue disponible.':'No se pudo cargar el visor. '+error.message;$('retry-view').hidden=false;status('Podés continuar usando V9.9.');}
  });return serial;
 }
 function showMap(){
- if(!state||state.blocked&&!ownedSearch(state)&&!ownedAction(state)&&!ownedInventory(state)){showReference();return;}
+ if(!state||state.blocked&&!ownedSearch(state)&&!ownedAction(state)&&!ownedInventory(state)&&!managedCycle(state)){showReference();return;}
  mode='map';document.body.dataset.presentation=mode;frame.hidden=true;$('map-app').hidden=false;$('reference-mode').setAttribute('aria-pressed','false');$('map-mode').setAttribute('aria-pressed','true');
  if(viewer){viewer.setState(displayState());viewer.setActive(true);}else void mountViewer();
 }
 function acceptState(next){
  const previous=state,changedGame=previous&&(next.epoch!==previous.epoch||next.movement.session!==previous.movement.session);
  state=next;if(changedGame){lastPublic=null;stopMovement();stopSearchClock();stopAction();}
- search.update(state);action.update(state);inventory.update(state);
+ search.update(state);action.update(state);inventory.update(state);cycle.update(state);
  // Redactar la búsqueda inmediatamente; la muerte del movimiento conserva su
  // revelación ya aceptada hasta «Continuar», como en H3.4.2.
  if(hardBarrier(state)){lastPublic=null;stopSearchClock();}
@@ -90,6 +93,9 @@ function acceptState(next){
 }
 function receive(event){
  const message=event.data;if(message?.protocol!==protocol)return;
+ if(message.type==='cycle-result'){
+  if(message.requestId!==cycle.inspect().pending)return;clearTimeout(requestTimer);if(!cycle.result(message))return;if(message.state&&validProjection(message.state))state=message.state;applyAuthority();return;
+ }
  if(message.type==='inventory-result'){
   if(message.requestId!==inventory.inspect().pending)return;clearTimeout(requestTimer);if(!inventory.result(message))return;if(message.state&&validProjection(message.state))state=message.state;applyAuthority();return;
  }
@@ -123,18 +129,18 @@ function receive(event){
    viewer.startPresentation(message,()=>{movement.finishPresentation(movementSummary(message,message.presentation.locations),!!state?.blocked);if(state?.blocked){$('map-mode').disabled=true;status('Hay una decisión pendiente. Continuá cuando estés listo.');viewer.updateMovement();$('resolve-decision').focus({preventScroll:true});}else applyAuthority();});
   }else{movement.interruptPresentation();applyAuthority();}return;
  }
- if(message.type==='error'){stopSearchClock();stopMovement();stopAction();search.update(null);action.update(null);inventory.update(null);state=null;lastPublic=null;$('map-mode').disabled=true;status('La consulta no pudo actualizarse: '+message.message);showReference();void disposeViewer();return;}
+ if(message.type==='error'){stopSearchClock();stopMovement();stopAction();search.update(null);action.update(null);inventory.update(null);cycle.update(null);state=null;lastPublic=null;$('map-mode').disabled=true;status('La consulta no pudo actualizarse: '+message.message);showReference();void disposeViewer();return;}
  if(message.type==='state'&&validProjection(message.state))acceptState(message.state);
 }
 function connect(){disconnect();if(!pageActive)return;const channel=new MessageChannel();port=channel.port1;port.onmessage=receive;port.start();frame.contentWindow.postMessage({protocol,type:'connect'},location.origin,[channel.port2]);focusReference();}
-frame.addEventListener('load',()=>{stopSearchClock();stopMovement();stopAction();search.update(null);action.update(null);inventory.update(null);state=null;lastPublic=null;$('map-mode').disabled=true;showReference();status('Conectando con la partida…');connect();},{signal:lifetime.signal});
+frame.addEventListener('load',()=>{stopSearchClock();stopMovement();stopAction();search.update(null);action.update(null);inventory.update(null);cycle.update(null);state=null;lastPublic=null;$('map-mode').disabled=true;showReference();status('Conectando con la partida…');connect();},{signal:lifetime.signal});
 $('reference-mode').addEventListener('click',showReference,{signal:lifetime.signal});$('return-reference')?.addEventListener('click',showReference,{signal:lifetime.signal});$('map-mode').addEventListener('click',showMap,{signal:lifetime.signal});$('resolve-decision').addEventListener('click',showReference,{signal:lifetime.signal});
 for(const id of ['restart-view','retry-view'])$(id).addEventListener('click',()=>{if(mode==='map')void mountViewer();},{signal:lifetime.signal});
 document.addEventListener('visibilitychange',()=>{if(document.hidden){stopAction();interruptSearch();if(movementPresenting()){stopMovement();applyAuthority();}}},{signal:lifetime.signal});
-export function inspect(){return {mode,connected:!!port,starts,generation,projection:state?structuredClone(state):null,movement:movement.inspect(),search:search.inspect(),action:action.inspect(),inventory:inventory.inspect(),view:viewer?.inspect()||null,lastDisposal,lastError};}
+export function inspect(){return {mode,connected:!!port,starts,generation,projection:state?structuredClone(state):null,movement:movement.inspect(),search:search.inspect(),action:action.inspect(),inventory:inventory.inspect(),cycle:cycle.inspect(),view:viewer?.inspect()||null,lastDisposal,lastError};}
 export function worldAt(point){return viewer?.worldAt(point);}
 export function disposeViewer(){stopSearchClock();stopMovement();stopAction();search.interrupt();attempt?.abort();generation++;serial=serial.catch(()=>{}).then(clearViewer);return serial;}
-window.addEventListener('pagehide',event=>{pageActive=false;disconnect();search.update(null);action.update(null);inventory.update(null);lastPublic=null;if(state){state={...state,inventory:null,blocked:'waiting',characters:[],players:[],locations:[],dice:{ownerId:null,available:null,used:null},movement:{...state.movement,options:{}},search:{...state.search,private:null,options:{}},action:{...state.action,ownerId:null,operation:null,presentation:null,options:{}}};viewer?.setState(state);}void disposeViewer();if(!event.persisted)lifetime.abort();});
-window.addEventListener('pageshow',event=>{pageActive=true;if(event.persisted){connect();if(mode==='map'&&state&&(!state.blocked||ownedSearch(state)||ownedAction(state)||ownedInventory(state)))void mountViewer();}});
+window.addEventListener('pagehide',event=>{pageActive=false;disconnect();search.update(null);action.update(null);inventory.update(null);cycle.update(null);lastPublic=null;if(state){state={...state,inventory:null,cycle:null,blocked:'waiting',characters:[],players:[],locations:[],dice:{ownerId:null,available:null,used:null},movement:{...state.movement,options:{}},search:{...state.search,private:null,options:{}},action:{...state.action,ownerId:null,operation:null,presentation:null,options:{}}};viewer?.setState(state);}void disposeViewer();if(!event.persisted)lifetime.abort();});
+window.addEventListener('pageshow',event=>{pageActive=true;if(event.persisted){connect();if(mode==='map'&&state&&(!state.blocked||ownedSearch(state)||ownedAction(state)||ownedInventory(state)||managedCycle(state)))void mountViewer();}});
 matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',event=>{if(event.matches&&actionPresenting()){stopAction();applyAuthority();}if(event.matches&&search.inspect().phase==='presenting'){stopSearchClock();search.finishPresentation();applyAuthority();}},{signal:lifetime.signal});
 frame.src=hostPath;

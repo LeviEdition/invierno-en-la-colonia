@@ -6,6 +6,7 @@ class DeathDirector {
  open(){if(this.active||!this.pending.length||ctx.pendingBite)return;
   this.active=true;
   const entries=this.pending.splice(0);
+  if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)ctx.mapCycle?.deaths(entries);
   ctx.view.openDeath(entries);
   ctx.syncHandoverAccessibility();
  }

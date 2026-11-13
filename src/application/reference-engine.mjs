@@ -9,6 +9,7 @@ import {ItemCatalog} from '../item-catalog.mjs';
 import {createRules} from '../domain/reference-rules.mjs';
 import {createTurns} from './reference-turns.mjs';
 import {createMapInventory} from './map-inventory.mjs';
+import {createMapCycle} from './map-cycle.mjs';
 const noop=()=>{};
 export function createEngine({Math=globalThis.Math,queueMicrotask=globalThis.queueMicrotask||((f)=>Promise.resolve().then(f)),setTimeout=globalThis.setTimeout,stateFactory=createReferenceState,rulesFactory=createRules,turnsFactory=createTurns,effects={},automation=null}={}){
 let view=new Proxy(effects,{get:(target,key)=>target[key]||noop});
@@ -67,7 +68,7 @@ let applyFrost=(...args)=>turns["applyFrost"](...args);
 let finishTurn=(...args)=>turns["finishTurn"](...args);
 let botContributeTools=(...args)=>agent["botContributeTools"](...args);
 let botTurn=(...args)=>agent["botTurn"](...args);
-const c={get crossroadsView(){return crossroadsView;},get pickActionDie(){return pickActionDie;},get skipAutomation(){return skipAutomation;},get deathContinue(){return deathContinue;},get view(){return view;},get queueMicrotask(){return fn=>queueMicrotask(fn); },get Math(){return Math;},get toastQueue(){return view.toastQueue;},get toastBusy(){return view.toastBusy;},get places(){return places;},
+const c={...(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__?{mapCycle:createMapCycle(()=>c,{generation:()=>movementGeneration,clear:()=>{searchOperation=null;actionOperation=null;}})}:{}),get crossroadsView(){return crossroadsView;},get pickActionDie(){return pickActionDie;},get skipAutomation(){return skipAutomation;},get deathContinue(){return deathContinue;},get view(){return view;},get queueMicrotask(){return fn=>queueMicrotask(fn); },get Math(){return Math;},get toastQueue(){return view.toastQueue;},get toastBusy(){return view.toastBusy;},get places(){return places;},
 get icons(){return icons;},
 get em(){return em;},
 get capacity(){return capacity;},
@@ -944,6 +945,7 @@ const automationActions=Object.freeze({
  barricade(id,d){const p=actor(id),n=(p.skill==='guard'?2:1)+(itemEngine.has(p,'repairkit')?1:0);for(let j=0;j<n&&openAccess(p.loc);j++)game.zones[p.loc].b++;message('▥ IA '+p.name+' colocó barricadas con dado '+d+'.');},
 });
 return Object.freeze({
+ ...(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__?c.mapCycle.api:{}),
  ...(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__?createMapInventory(c,{visible:()=>!!game&&!passScreenActive&&!aiRunning&&(game.turn==='human'||controls.local),canContribute:it=>CrisisManager.canContribute(it),contribute:e=>e.source==='hand'?CrisisManager.fromHand(e.index):CrisisManager.fromEquipment(e.owner,e.index),generation:()=>movementGeneration,block:actionBlockReason,clear:()=>{searchOperation=null;actionOperation=null;},canRecruit:()=>accessible(0)&&roster.some(r=>!all().some(p=>p.name===r.name))}):{}),
  movementOptions,moveById,searchOptions,searchById,searchSnapshot,addSearchNoise,chooseSearchCard,dismissSearchResult,actionOptions,actById,actionSnapshot,dismissAction,
  snapshot:()=>game===undefined?null:JSON.parse(JSON.stringify(game)),

@@ -15,3 +15,9 @@ Nueva ronda: jugador humano, revisiones de líderes, reinicio de movimiento/habi
 ## A — aportaciones y dependencias de interfaz
 
 Resumen persistente público de objetivo y crisis, acceso Aportar a crisis y acceso por inventario. Vista de aportación filtrada por consultas legales del motor, revisión/cancelación y advertencia de entrega definitiva. Inventario/Registro/herramientas permanecen en el desplegable V9; inventario contextual conservado. No se exponen tipos de aportes ni manos rivales. Pruebas dirigidas de extras legales y cancelación, junto a las once regresiones de inventario existentes.
+
+## B — terminar turno, pase e IA
+
+Botón principal fuera de herramientas, confirmación con dados restantes y cancelación pura. Puente de comandos acotado al motor original, sin ejecutar IA desde renders. Identidad de solicitud, revisión de estado y generación deduplican cierres y recuperan estado tras respuesta perdida. El pase nativo mantiene ocultas manos/dados; comandos salientes se bloquean. Muertes y sucesión disponen de confirmación/elección sobre las operaciones originales; mordeduras, encrucijadas y decisiones de acciones conservan retorno explícito a V9.9. La opción de acortar pausas usa `skipAutomation` existente.
+
+Verificación del bloque: cuatro pruebas de equivalencia, privacidad, dados restantes, cancelación, obsolescencia/doble confirmación/recuperación y partida nueva. Chromium escritorio: terminar/cancelar/pasar dentro del mapa, sin consumir al cancelar ni salir de la vista al confirmar pase. Referencia HTML reproducible. Las consecuencias detalladas de colonia y nueva ronda se completan en C/D.
