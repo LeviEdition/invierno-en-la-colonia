@@ -4,7 +4,7 @@ export function createMapCycle(context,{generation,clear}){
  const clone=x=>structuredClone(x);
  function sync(){if(stampGeneration!==generation()){stampGeneration=generation();operation=null;journal=[];deathEntries=[];busy=false;pendingStep=null;}}
  const publish=()=>listener();
- function facts(){const g=context().game;if(!g)return null;return {round:g.round,turn:g.turn,food:g.food,morale:g.morale,waste:g.waste,hunger:g.hunger,samples:g.samples,helpless:g.helpless,ended:g.ended,locations:g.zones.map((z,i)=>({index:i,name:z.name,zombies:z.z,barricades:z.b,noise:z.noise})),people:context().all().map(p=>({id:p.id,name:p.name,location:p.loc,dead:!!p.dead,wounds:p.wounds,frost:p.frost}))};}
+ function facts(){const g=context().game;if(!g)return null;return {round:g.round,turn:g.turn,food:g.food,morale:g.morale,waste:g.waste,hunger:g.hunger,samples:g.samples,helpless:g.helpless,ended:g.ended,locations:g.zones.map((z,i)=>({index:i,name:z.name,zombies:z.z,barricades:z.b,noise:z.noise})),people:context().all().map(p=>({id:p.id,name:p.name,location:p.loc,dead:!!p.dead,wounds:p.wounds,frost:p.frost,moved:!!p.moved,skillUsed:!!p.skillUsed,equipmentUsed:context().equipmentOf(p).filter(e=>e?.usedRound).length}))};}
  function decision(){
   const g=context().game;if(!g)return null;
   if(context().passScreenActive)return {kind:'handover',side:g.turn,label:context().controls.display(g.turn)};
@@ -15,7 +15,7 @@ export function createMapCycle(context,{generation,clear}){
   for(const [kind,value]of [['lootChoice',context().pendingLoot],['healTarget',context().pendingHeal],['attractTarget',context().pendingAttract],['transferTarget',context().pendingTransfer],['crossroads',g.crossPending]])if(value)return {kind,native:true};
   return null;
  }
- function availability(){const g=context().game,d=decision();const reason=!g?'no-game':g.ended?'ended':context().aiRunning||busy?'processing':d?.kind||null;return {allowed:!reason,reason,diceRemaining:!reason?context().controls.dice().length:null};}
+ function availability(){const g=context().game,d=decision();const reason=!g?'no-game':g.ended?'ended':operation?.status==='unknown'?'recovery':context().aiRunning||busy?'processing':d?.kind||null;return {allowed:!reason,reason,diceRemaining:!reason?context().controls.dice().length:null};}
  function outcome(){if(!context().game?.ended)return null;const reason=context().gameOutcome(context().game)||(context().game.round>context().game.max?'time':'ended');return {reason,label:{victory:'Victoria: objetivo general completado.',morale:'Derrota: la moral llegó a cero.',survivors:'Derrota: no hay supervivientes disponibles.',time:'Derrota: se agotaron las rondas.',ended:'Partida finalizada.'}[reason]};}
  function cycleSnapshot(){sync();if(!context().game)return null;return {generation:generation(),round:context().game.round,turn:context().game.turn,mode:context().game.mode,processing:busy||context().aiRunning,operation:operation?clone(operation):null,review:!!operation?.review,decision:decision(),finish:availability(),outcome:outcome(),journal:clone(journal)};}
  function cycleExecute(r){

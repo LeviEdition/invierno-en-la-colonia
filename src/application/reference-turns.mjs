@@ -2,6 +2,7 @@
 export function createTurns(ctx,{Math=globalThis.Math,setTimeout=globalThis.setTimeout}={}){
 function newRound(){
  if(ctx.game.ended)return;
+ if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)ctx.mapCycle?.before('round',{number:ctx.game.round});
  ctx.game.turn='human';ctx.selected=ctx.selectionBySide.human;ctx.game.crossPending=false;ctx.game.crossResolved=false;ctx.game.noReplacement=false;
  ctx.reviewLeader('human');ctx.reviewLeader('ai');
  ctx.all().forEach(p=>{p.moved=false;p.skillUsed=false;for(const eq of ctx.equipmentOf(p))if(eq&&typeof eq==='object')eq.usedRound=0;});
@@ -14,6 +15,7 @@ function newRound(){
  ctx.applyFrost('human');ctx.replaceLastSurvivors();ctx.verify();
  if(!ctx.game.ended)ctx.crossTrigger('round',null);
  ctx.paint();
+ if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)ctx.mapCycle?.after();
 }
 function applyFrost(side){
  const group=side==='human'?ctx.game.humans:ctx.game.bots;
@@ -56,7 +58,8 @@ async function finishTurn(){
  }
  ctx.aiRunning=true;ctx.skipAI=false;ctx.game.turn='ai';ctx.paint();
  try{
-  await ctx.botTurn();if(ctx.game!==turnGame||ctx.game.ended)return;
+  if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)ctx.mapCycle?.before('ai');
+  await ctx.botTurn();if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__&&ctx.game===turnGame)ctx.mapCycle?.after();if(ctx.game!==turnGame||ctx.game.ended)return;
   if(!ctx.game.ended){ctx.message('⌂ Resolviendo fase de colonia.');await ctx.pause();if(ctx.game!==turnGame||ctx.game.ended)return;ctx.colony();await ctx.pause();if(ctx.game!==turnGame||ctx.game.ended)return;}
   if(!ctx.game.ended){ctx.game.round++;if(ctx.game.round>ctx.game.max){ctx.game.ended=true;ctx.game.turn='end';ctx.cancelPendingDecisions();ctx.message('☠ Derrota: se agotaron las rondas.');}else ctx.newRound();}
  }finally{if(ctx.game===turnGame){ctx.aiRunning=false;ctx.skipAI=false;ctx.paint();}}

@@ -29,3 +29,40 @@ Observación opcional de las cinco fases directamente en las ramas del motor. Ca
 La revisión muestra qué se resolvió, por qué y qué cambió. Siguiente paso/Ver todos solo recorren los datos; la última confirmación reconoce el recibo, sin ejecutar efectos. Resultados y diario sobreviven a reconstruir/reconectar el visor mientras el host siga vivo. El Registro del mapa presenta este diario público; el Registro original sigue disponible en V9.
 
 Cinco regresiones adicionales comparan con el motor sin instrumentación y las mismas capacidades: estados/azar iguales con hambre, residuos, crisis válida/excepcional y los cuatro fallos; derrota que corta pasos; saturación y muertes ordenadas en gasolinera/biblioteca; dados de ruido sin repetición. Las nueve pruebas B/C y el HTML estable pasan.
+
+## D — nueva ronda, final y continuidad
+
+El inicio de ronda se observa después de aplicar la operación original completa, incluidos los usos reiniciados y la congelación. La actuación de IA tiene su propio paso público antes de colonia. No se serializan sus cartas ni valores de dados privados. Mientras se resuelve/revisa el ciclo, las acciones y los dados permanecen bloqueados y la ronda siguiente no aparece disponible. En local aún debe completarse el pase; cualquier sucesión u otra decisión mantiene el bloqueo después del pase.
+
+Victoria, derrota por moral/supervivientes y tiempo conservan los puntos de verificación originales. El final presenta la causa y permite consultar mapa/Registro; no prepara otra ronda ni reinicia. Para tiempo, V9 incrementa internamente el contador para detectar el límite, pero no ejecuta `newRound`; la cabecera muestra la última ronda como finalizada. Esta versión solo tiene objetivo general público, sin resultados individuales secretos que trasladar.
+
+Resumen y Registro usan exclusivamente datos públicos estructurados. Los paneles de búsqueda/acciones ya integrados conservan sus decisiones propias: no se redirigen al ciclo ni se ocultan sus cartas de elección al abrirse un `lootChoice`. Los resultados finales de una acción pueden continuar al final de partida del mapa. Los diálogos evitan clics al fondo, gestionan foco y tienen desplazamiento interno/controles44px. No hay animaciones largas nuevas; Ver todos y acortar las pausas nativas de IA permiten un avance ágil, sin alterar efectos o azar. Se conserva movimiento reducido.
+
+## Flujos y límites
+
+| Flujo | Estado |
+|---|---|
+|Aportar, actuar, terminar ambos turnos locales, revisar colonia y nueva ronda|Integrado desde una partida preparada|
+|Humano→IA original→colonia→nueva ronda|Integrado; no hay automatismo en el renderer|
+|Pase de dispositivo y privacidad|Integrado; manos/dados ocultos hasta confirmar|
+|Fallecimientos y sucesión durante el ciclo|Integrados con confirmación/elección del jugador y operaciones nativas|
+|Victoria/derrota y consulta del estado final|Integrados, sin reinicio ni ronda automática posterior|
+|Buscar, elegir carta/ruido, inventario, ataque y construcción existentes|Conservados en sus paneles del mapa|
+|Mordeduras y encrucijadas obligatorias|Retorno explícito a sus componentes originales en V9; no se elige automáticamente|
+|Decisiones nativas de tratamiento, atracción o transferencia pendientes|Retorno explícito a V9; cierre bloqueado hasta resolverlas|
+|Preparación de partida e intercambios entre jugadores|Permanecen en V9|
+|Registro público del ciclo|Integrado; el Registro heredado completo sigue en V9 para no filtrar cartas privadas|
+
+**No se declara integrado todo caso obligatorio.** El siguiente pendiente recomendado es trasladar mordeduras y encrucijadas reutilizando sus decisiones originales y privacidad; no crear narrativa nueva.
+
+Reconstruir el visor conserva cámara/zoom y recupera el recibo pendiente; reconectar el puerto consulta la misma instancia del motor y no repite comandos. Las solicitudes se deduplican por identidad/generación y se revalida la revisión. El índice de revisión es visual: si se pierde, puede volver al primer paso sin repetir efectos. Una partida nueva invalida trabajos/resultados anteriores, incluso una IA suspendida. **Recargar toda la aplicación/host crea otra instancia y requiere preparación:** no hay guardado persistente nuevo. Un fallo interno de cierre sin resultado confirmado bloquea nuevos cierres del mapa y ofrece consultar V9.
+
+## Validación de entrega
+
+[Capturas, vídeos y resultados](evidencias/ciclo-turno-ronda/README.md). Suite683/683 y17 dirigidas del ciclo: dos de aportes, cinco de cierre/protocolo, cinco de colonia y cinco de nueva ronda/IA/final. Comparaciones con el motor sin instrumentación y capacidades33 equivalentes en estado, orden y consumo de azar. Arte, posiciones, capacidades y HTML estable conservados.
+
+Ocho recorridos Chromium1365×768/852×393: local completo (aportar→actuar→ambos cierres→colonia→nueva ronda), IA real, muerte/sucesión y derrota por tiempo. En escritorio se añade respuesta de cierre perdida, reconstrucción del visor y reconexión durante la revisión, con mismo resultado/cámara/azar y sin reenvío. Inventario y acciones anteriores pasan en ambos tamaños. Escenarios preparados mediante QA sobre el motor real, rotulados; móvil con tacto/DPR2 emulado, sin teléfono físico.
+
+Se corrigieron dos regresiones detectadas por los recorridos: sincronizar todos los controladores tras confirmar un estado, y delegar al panel de búsqueda/acción las decisiones que ya tenía integradas. El chequeo de cámara espera que el cartel QA haya terminado su cambio de tamaño antes de fijar la línea base. No se aumentaron esperas ni se retiraron aserciones.
+
+Commits revisables A/B/C:cc383e8,c1f63a3,1de6bba; D, SHA exacto final y CI se registran en PR25. La aceptación manual sigue pendiente del creador. Sin main, fusión, publicación, narrativa nueva, beneficios de líder o balance adicional.

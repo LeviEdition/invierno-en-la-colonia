@@ -6,7 +6,7 @@ import {movementSummary} from '../movement-map/presentation-sequence.mjs';
 import {createActionController} from './action-controller.mjs';
 import {createSearchController} from '../search-map/search-controller.mjs';
 const protocol='iec-action-map/v1',$=id=>document.getElementById(id),frame=$('reference-frame'),lifetime=new AbortController();
-let port=null,state=null,lastPublic=null,viewer=null,attempt=null,serial=Promise.resolve(),generation=0,starts=0,lastDisposal=null,lastError=null,mode='reference',pageActive=true;
+let port=null,state=null,lastPublic=null,viewer=null,attempt=null,serial=Promise.resolve(),generation=0,starts=0,lastDisposal=null,lastError=null,mode='reference',pageActive=true,preferCycleFinal=false,retainedView=null;
 let requestTimer=0,searchTimer=0,presentationContext=null;
 const actionPresenting=()=>action.inspect().phase==='presenting';
 const ownedAction=p=>p?.action.operation&&!['setup','handover','waiting'].includes(p.blocked);
@@ -32,7 +32,10 @@ function stopSearchClock(){clearTimeout(searchTimer);searchTimer=0;}
 function stopAction(){if(actionPresenting())viewer?.stopPresentation();action.interrupt();}
 function stopMovement(){presentationContext=null;viewer?.stopPresentation();movement.interruptPresentation();}
 function focusReference(){requestAnimationFrame(()=>{if(mode==='reference'&&port)port.postMessage({protocol,type:'focus'});});}
+function controllerState(p){return preferCycleFinal&&p?.cycle?.outcome?{...p,search:{...p.search,private:null,options:{}},action:{...p.action,operation:null,options:{}},inventory:{...p.inventory,private:null,receipt:null,presentation:null}}:p;}
+function showDecision(){if(state?.cycle?.outcome){preferCycleFinal=true;search.update(null);action.update(null);inventory.update(null);cycle.show();applyAuthority();return;}showReference();}
 function displayState(){
+ if(preferCycleFinal&&state?.cycle?.outcome)return controllerState(state);
  if(ownedInventory(state)&&state.blocked&&state.inventory.presentation)return {...state.inventory.presentation,blocked:state.blocked,movement:state.movement,search:state.search,action:state.action,inventory:state.inventory};
  if(ownedAction(state)&&state.blocked&&state.action.presentation)return {...state.action.presentation,blocked:state.blocked,movement:state.movement,search:state.search,action:state.action};
  if(search.inspect().phase==='presenting'&&lastPublic)return {...lastPublic,search:state.search};
@@ -45,7 +48,7 @@ function showReference(){
 }
 function applyAuthority(){
  if(!state)return;
- inventory.update(state);cycle.update(state);
+ search.update(controllerState(state));action.update(controllerState(state));inventory.update(controllerState(state));cycle.update(state);
  if(actionPresenting())return;
  movement.update(state);if(!state.blocked)movement.acknowledge();
  const available=!state.blocked||!!ownedSearch(state)||!!ownedAction(state)||!!ownedInventory(state)||managedCycle(state);$('map-mode').disabled=!available;
@@ -56,7 +59,7 @@ function applyAuthority(){
 }
 function interruptSearch(){stopSearchClock();search.interrupt();if(state)applyAuthority();}
 function disconnect(){clearTimeout(requestTimer);stopSearchClock();viewer?.stopPresentation();movement.disconnect();search.disconnect();action.disconnect();inventory.disconnect();cycle.disconnect();if(port){port.onmessage=null;port.close();port=null;}}
-async function clearViewer(){const previous=viewer;viewer=null;if(previous)lastDisposal=await previous.destroy();}
+async function clearViewer(){const previous=viewer;viewer=null;if(previous){const v=previous.inspect();retainedView={...v,epoch:state?.epoch,turn:state?.turn};lastDisposal=await previous.destroy();}}
 function mountViewer(){
  const id=++generation;attempt?.abort();attempt=new AbortController();const current=attempt;
  interruptSearch();stopAction();if(movementPresenting()){stopMovement();applyAuthority();}
@@ -65,9 +68,9 @@ function mountViewer(){
   await clearViewer();if(!pageActive||id!==generation||current.signal.aborted)return;
   starts++;lastError=null;document.body.dataset.viewState='loading';$('loading').hidden=false;$('loading').setAttribute('role','status');$('loading').textContent='Preparando el mapa…';$('retry-view').hidden=true;
   try{
-   const created=await createSearchMapView({signal:current.signal,movement,search,action,inventory,cycle,onSearchNative:showReference});
+   const created=await createSearchMapView({signal:current.signal,movement,search,action,inventory,cycle,onSearchNative:showDecision});
    if(!pageActive||id!==generation||current.signal.aborted){await created.destroy();return;}
-   viewer=created;if(state)viewer.setState(displayState());viewer.setActive(mode==='map'&&(!state?.blocked||!!ownedSearch(state)||!!ownedAction(state)||!!ownedInventory(state)||managedCycle(state)));document.body.dataset.viewState='ready';
+   viewer=created;if(state)viewer.setState(displayState());viewer.setActive(mode==='map'&&(!state?.blocked||!!ownedSearch(state)||!!ownedAction(state)||!!ownedInventory(state)||managedCycle(state)));if(retainedView?.epoch===state?.epoch){created.restoreView?.({...retainedView,selected:retainedView.turn===state.turn?retainedView.selected:null});retainedView=null;}document.body.dataset.viewState='ready';
   }catch(error){if(current.signal.aborted||id!==generation)return;lastError=error.message;document.body.dataset.viewState='error';$('loading').hidden=false;$('loading').setAttribute('role','alert');$('loading').textContent=error.message==='WEBGL_UNAVAILABLE'?'Este navegador no ofrece WebGL. La interfaz V9.9 sigue disponible.':'No se pudo cargar el visor. '+error.message;$('retry-view').hidden=false;status('Podés continuar usando V9.9.');}
  });return serial;
 }
@@ -78,8 +81,8 @@ function showMap(){
 }
 function acceptState(next){
  const previous=state,changedGame=previous&&(next.epoch!==previous.epoch||next.movement.session!==previous.movement.session);
- state=next;if(changedGame){lastPublic=null;stopMovement();stopSearchClock();stopAction();}
- search.update(state);action.update(state);inventory.update(state);cycle.update(state);
+ state=next;if(changedGame){preferCycleFinal=false;lastPublic=null;stopMovement();stopSearchClock();stopAction();}
+ search.update(controllerState(state));action.update(controllerState(state));inventory.update(controllerState(state));cycle.update(state);
  // Redactar la búsqueda inmediatamente; la muerte del movimiento conserva su
  // revelación ya aceptada hasta «Continuar», como en H3.4.2.
  if(hardBarrier(state)){lastPublic=null;stopSearchClock();}
@@ -134,7 +137,8 @@ function receive(event){
 }
 function connect(){disconnect();if(!pageActive)return;const channel=new MessageChannel();port=channel.port1;port.onmessage=receive;port.start();frame.contentWindow.postMessage({protocol,type:'connect'},location.origin,[channel.port2]);focusReference();}
 frame.addEventListener('load',()=>{stopSearchClock();stopMovement();stopAction();search.update(null);action.update(null);inventory.update(null);cycle.update(null);state=null;lastPublic=null;$('map-mode').disabled=true;showReference();status('Conectando con la partida…');connect();},{signal:lifetime.signal});
-$('reference-mode').addEventListener('click',showReference,{signal:lifetime.signal});$('return-reference')?.addEventListener('click',showReference,{signal:lifetime.signal});$('map-mode').addEventListener('click',showMap,{signal:lifetime.signal});$('resolve-decision').addEventListener('click',showReference,{signal:lifetime.signal});
+$('reconnect-source')?.addEventListener('click',()=>connect(),{signal:lifetime.signal});
+$('reference-mode').addEventListener('click',showReference,{signal:lifetime.signal});$('return-reference')?.addEventListener('click',showReference,{signal:lifetime.signal});$('map-mode').addEventListener('click',showMap,{signal:lifetime.signal});$('resolve-decision').addEventListener('click',showDecision,{signal:lifetime.signal});
 for(const id of ['restart-view','retry-view'])$(id).addEventListener('click',()=>{if(mode==='map')void mountViewer();},{signal:lifetime.signal});
 document.addEventListener('visibilitychange',()=>{if(document.hidden){stopAction();interruptSearch();if(movementPresenting()){stopMovement();applyAuthority();}}},{signal:lifetime.signal});
 export function inspect(){return {mode,connected:!!port,starts,generation,projection:state?structuredClone(state):null,movement:movement.inspect(),search:search.inspect(),action:action.inspect(),inventory:inventory.inspect(),cycle:cycle.inspect(),view:viewer?.inspect()||null,lastDisposal,lastError};}

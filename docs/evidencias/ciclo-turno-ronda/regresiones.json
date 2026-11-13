@@ -1,0 +1,18 @@
+{
+  "afterContribution": {
+    "actionPhase": "idle",
+    "message": "La partida cambió; revisá la acción y los dados.",
+    "fix": "Todos los controladores se sincronizan con el estado confirmado."
+  },
+  "searchChoice": {
+    "searchPhase": "idle",
+    "cyclePhase": "showing",
+    "fix": "Las decisiones ya integradas permanecen en su panel de búsqueda/acción."
+  },
+  "cameraFixture": {
+    "fix": "Esperar el tamaño efectivo después del cartel QA antes de fijar la línea base.",
+    "noProductCameraToleranceChange": true
+  },
+  "noTimeoutIncrease": true,
+  "assertionsRetained": true
+}

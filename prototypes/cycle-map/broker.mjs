@@ -5,10 +5,11 @@ export function createCycleBroker(engine,{session=uniqueToken(),readPublic}={}){
  const previous=createInventoryBroker(engine,{session,readPublic});if(!engine.cycleSnapshot)return previous;
  let revision=0,stamp=null,rawBlocked='waiting';const completed=new Map();
  function snapshot(){const base=previous.snapshot(),s=engine.cycleSnapshot(),visible=s&&!['setup','waiting'].includes(rawBlocked),key=JSON.stringify([base.action.revision,visible?s:null]);if(key!==stamp){stamp=key;revision++;}
-  const managed=!!visible&&(s.processing||s.review||!!s.decision||!!s.outcome),barrier=managed;
+  const ownsCycle=!!visible&&(s.processing||s.review||s.operation?.status==='unknown'),delegated=!!(base.search.private?.operation||base.action.operation||base.inventory.receipt);
+  const managed=!!visible&&(ownsCycle||!!s.outcome||!!s.decision&&!delegated),barrier=managed;
   const p=managed?{...readPublic(),blocked:rawBlocked,log:[],last:null}:base;
   const cycle=visible?{...s,session,revision,managed,barrier}:null;
-  return {...p,epoch:base.epoch,movement:{...base.movement,revision,...(barrier?{options:{}}:{})},search:{...base.search,revision,...(barrier?{private:null,options:{}}:{})},action:{...base.action,revision,...(barrier?{options:{}}:{})},inventory:{...base.inventory,revision,...(barrier?{private:null}:{})},dice:barrier?{ownerId:null,available:null,used:null}:p.dice,cycle};
+  return {...p,round:s?.operation?.colony&&(s.processing||s.review)?s.operation.round:p.round,epoch:base.epoch,movement:{...base.movement,revision,...(barrier?{options:{}}:{})},search:{...base.search,revision,...(barrier?{private:null,options:{}}:{})},action:{...base.action,revision,...(barrier?{options:{}}:{})},inventory:{...base.inventory,revision,...(barrier?{private:null}:{})},dice:barrier?{ownerId:null,available:null,used:null}:p.dice,cycle};
  }
  function project(p){rawBlocked=p.blocked;previous.project(p);return snapshot();}
  function handle(r){

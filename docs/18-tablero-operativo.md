@@ -1,5 +1,11 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## Ciclo de turno y ronda desde el mapa ·13/11/2026
+
+Encargo desde303bf26, remoto/local y CI43452381777 success verificados. Misma rama/PR25 draft, cuatro bloques revisables A/B/C/D. [Informe97 y tabla de flujos](97-ciclo-de-turno-y-ronda.md). Aportes desde crisis/inventario, terminar turno con confirmación, pase privado, IA original, cinco fases de colonia con resultados estructurados, revisión sin ejecutar efectos, nueva ronda y final con causa. Muertes/sucesión integradas; mordeduras/encrucijadas y otras decisiones nativas pendientes retornan explícitamente a V9. **No se declara integración de todo caso obligatorio.** Conserva33 accesos, plazas, arte/distribución y HTML estable. Suite683/683,17 dirigidas y ocho recorridos escritorio/móvil emulado; regresiones de inventario/acciones aprobadas. [Capturas, vídeos y límites de recuperación](evidencias/ciclo-turno-ronda/README.md). CI exacto en PR25. **Siguiente tarea: revisión manual del creador; después, integrar decisiones restantes con su autorización.** Sin main/fusión/publicación ni balance nuevo. Bloques siguientes históricos.
+
+---
+
 ## Capacidades exteriores e inventario autorizado ·13/11/2026
 
 Distribución visual de de4d1c8 **aceptada por el creador**. Encargo nuevo completado en dos commits revisables, misma rama/PR25 draft. [Informe96 y tabla de operaciones](96-capacidades-e-inventario.md). Bloque1/c1f2666: motor/presentación comparten33 accesos12/4/4/4/2/4/3; plazas12/4 intactas,655/655 y Chromium saturados antes de inventario. Bloque2: usar/equipar/transferir dentro del grupo/aportar a crisis desde el mapa mediante operaciones originales; confirmación, privacidad, revisión/deduplicación y recuperación. Retirar/sustituir directamente no existen; intercambio entre jugadores y decisiones generales siguen en V9.9. Entrega666/666 y Chromium escritorio/móvil: buscar→inventario→usar/equipar→buscar con modificador, cancelación/inválido, cámara y selección estables. [Capturas y vídeo](evidencias/capacidades-e-inventario/README.md). Referencia estable y geometría aceptada idénticas; CI del SHA exacto se registra en PR25. **Siguiente tarea: revisión manual del creador**, sin cierre de turnos, nuevas reglas/main/fusión/publicación. Bloques siguientes históricos.

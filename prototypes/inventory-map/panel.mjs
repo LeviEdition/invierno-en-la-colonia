@@ -4,9 +4,10 @@ const el=(tag,text)=>{const n=document.createElement(tag);if(text!==undefined)n.
 export function mountInventoryPanel({controller,getContext,onNative,signal}){
  const dialog=document.getElementById('inventory-dialog');if(!dialog||!controller)return {render(){}};
  let key='',lastStep='';
- const open=()=>{const {selected}=getContext();controller.open(selected);};
+ const closeTools=()=>{const menu=document.getElementById('floating-menu');if(menu)menu.hidden=true;document.getElementById('menu-toggle')?.setAttribute('aria-expanded','false');};
+ const open=()=>{const {selected}=getContext();if(controller.open(selected))closeTools();};
  for(const id of ['inventory-open','character-inventory','hand-inventory','menu-inventory'])document.getElementById(id)?.addEventListener('click',open,{signal});
- document.getElementById('crisis-contribute')?.addEventListener('click',()=>controller.open(null,'crisis'),{signal});
+ document.getElementById('crisis-contribute')?.addEventListener('click',()=>{if(controller.open(null,'crisis'))closeTools();},{signal});
  const close=()=>controller.close();dialog.addEventListener('cancel',e=>{e.preventDefault();close();},{signal});
  function button(text,id,fn,disabled=false){const b=el('button',text);b.type='button';b.id=id;b.disabled=disabled;b.addEventListener('click',fn,{signal});return b;}
  function select(id,label,items,value,fn,disabled=false){const wrap=el('label',label),s=el('select');s.id=id;s.disabled=disabled;s.append(new Option('Elegir…',''),...items.map(x=>new Option(x.name,String(x.id))));s.value=value??'';s.addEventListener('change',()=>fn(s.value),{signal});wrap.htmlFor=id;wrap.append(s);return wrap;}
@@ -17,7 +18,7 @@ export function mountInventoryPanel({controller,getContext,onNative,signal}){
   const next=JSON.stringify([s,inv]);if(key===next)return;key=next;const focusId=document.activeElement?.id,step=s.phase+'/'+(s.intent?.cardId||''),scroll=step===lastStep?dialog.scrollTop:0;lastStep=step;dialog.replaceChildren();
   const header=el('div');header.className='inventory-heading';header.append(el('h2','Inventario · '+(p.players.find(x=>x.id===own?.ownerId)?.label||'Jugador activo')),button('Cerrar','inventory-close',close,busy));dialog.append(header);
   const status=el('p',s.message);status.id='inventory-status';status.setAttribute('role','status');dialog.append(status);
-  if(inv?.receipt){dialog.append(el('h3','Resultado'),el('p',inv.receipt.summary));if(inv.receipt.generalDecision){dialog.append(el('p','Hay una decisión pendiente que continúa en V9.9. No se resuelve automáticamente.'),button('Continuar en V9.9','inventory-native',onNative));}else dialog.append(button('Continuar en inventario','inventory-continue',()=>controller.dismiss(),busy));}
+  if(inv?.receipt){dialog.append(el('h3','Resultado'),el('p',inv.receipt.summary));if(inv.receipt.generalDecision){dialog.append(el('p',p.cycle?.outcome?'El motor finalizó la partida. Consultá el resultado en el mapa.':'Hay una decisión pendiente que continúa en V9.9. No se resuelve automáticamente.'),button(p.cycle?.outcome?'Ver resultado final':'Continuar en V9.9','inventory-native',onNative));}else dialog.append(button('Continuar en inventario','inventory-continue',()=>controller.dismiss(),busy));}
   else if(own){
    const contribution=s.purpose==='crisis',shown=contribution?contributionCards(own):own;
    if(s.phase==='picking'){

@@ -1,0 +1,106 @@
+
+> invierno-en-la-colonia@0.9.9 check:horizontal-map-build
+> node scripts/build-horizontal-map.mjs --check
+
+{
+  "phaser": "4.2.1",
+  "esbuild": "0.28.2",
+  "qa": false,
+  "map": {
+    "rawBytes": 1556012,
+    "gzip9Bytes": 425553,
+    "sha256": "d6534f170d83d01a81e133d6e568eff4f1694bdaf62a941ff3e9e80b7944b82a",
+    "inputs": [
+      "prototypes/movement-map/nonce.mjs",
+      "prototypes/cycle-map/controller.mjs",
+      "prototypes/inventory-map/controller.mjs",
+      "prototypes/cycle-map/presentation.mjs",
+      "prototypes/cycle-map/panel.mjs",
+      "prototypes/inventory-map/panel.mjs",
+      "node_modules/phaser/dist/phaser.esm.js",
+      "prototypes/horizontal-map/scene.json",
+      "prototypes/horizontal-map/atmosphere.json",
+      "config/horizontal-capacities.json",
+      "assets/mapa-horizontal/manifest.json",
+      "prototypes/hospital-workshop/uploaded-kit.json",
+      "kit_arte_h33/manifest.json",
+      "prototypes/hospital-workshop/mockup/scene.json",
+      "prototypes/hospital-workshop/mockup/assets.mjs",
+      "prototypes/horizontal-map/presentation.mjs",
+      "prototypes/horizontal-map/camera.mjs",
+      "prototypes/movement-map/storm-model.mjs",
+      "prototypes/movement-map/storm-view.mjs",
+      "prototypes/hospital-phaser/texture-quality.mjs",
+      "prototypes/horizontal-map/environment.json",
+      "prototypes/horizontal-map/environment-model.mjs",
+      "prototypes/horizontal-map/vegetation-geometry.mjs",
+      "prototypes/horizontal-map/environment-view.mjs",
+      "prototypes/horizontal-map/scene-configuration.mjs",
+      "prototypes/hospital-workshop/kit.mjs",
+      "prototypes/hospital-workshop/resources.mjs",
+      "prototypes/hospital-phaser/game.mjs",
+      "prototypes/hospital-phaser/dispose-game.mjs",
+      "prototypes/hospital-phaser/startup.mjs",
+      "prototypes/hospital-workshop/slot-contours.mjs",
+      "prototypes/hospital-workshop/renderer.mjs",
+      "prototypes/hospital-workshop/mockup/atmosphere-audio.mjs",
+      "prototypes/hospital/camera.mjs",
+      "prototypes/hospital/controls.mjs",
+      "prototypes/hospital-workshop/mockup/model.mjs",
+      "prototypes/hospital/scene.mjs",
+      "prototypes/hospital-phaser/renderer.mjs",
+      "prototypes/state-map/layout.mjs",
+      "prototypes/movement-map/layout.mjs",
+      "prototypes/movement-map/dice.mjs",
+      "prototypes/movement-map/presentation-sequence.mjs",
+      "prototypes/movement-map/stable-layout.mjs",
+      "prototypes/search-map/search-controller.mjs",
+      "prototypes/search-map/search-panel.mjs",
+      "prototypes/action-map/action-controller.mjs",
+      "prototypes/action-map/action-presentation.mjs",
+      "prototypes/action-map/action-panel.mjs",
+      "prototypes/movement-map/movement-controller.mjs",
+      "prototypes/action-map/map-view.mjs",
+      "prototypes/action-map/main.mjs"
+    ]
+  },
+  "host": {
+    "rawBytes": 286110,
+    "sha256": "d8e5a15e0dc6b3618dd729678a702a4c402fc9bf9a5ecc66dfd53c82c5f380b2",
+    "inputs": [
+      "src/application/reference-contracts.mjs",
+      "src/domain/reference-data.mjs",
+      "config/horizontal-capacities.json",
+      "prototypes/horizontal-map/reference-data.mjs",
+      "src/domain/reference-state.mjs",
+      "src/domain/reference-items.mjs",
+      "src/domain/reference-crisis.mjs",
+      "src/application/death-director.mjs",
+      "src/application/read-only-context.mjs",
+      "src/item-catalog.mjs",
+      "src/domain/reference-rules.mjs",
+      "src/application/reference-turns.mjs",
+      "src/application/map-inventory.mjs",
+      "src/application/map-cycle.mjs",
+      "src/application/reference-engine.mjs",
+      "src/presentation/commands.mjs",
+      "src/presentation/reference-view.mjs",
+      "src/agents/reference-agent.mjs",
+      "src/application/create-application.mjs",
+      "prototypes/state-map/projection.mjs",
+      "prototypes/state-map/reference-observer.mjs",
+      "prototypes/movement-map/nonce.mjs",
+      "prototypes/movement-map/movement-broker.mjs",
+      "prototypes/search-map/search-broker.mjs",
+      "prototypes/action-map/action-broker.mjs",
+      "prototypes/inventory-map/broker.mjs",
+      "prototypes/cycle-map/broker.mjs",
+      "prototypes/action-map/reference-host.mjs"
+    ]
+  }
+}
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice
