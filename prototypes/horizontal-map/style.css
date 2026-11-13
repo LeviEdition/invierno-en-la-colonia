@@ -48,3 +48,5 @@ body[data-presentation=map] #movement-result:not(:empty){display:block;position:
 #cycle-status{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;line-height:1.2;max-height:3.6em}
 
 @media(max-width:650px){#public-summaries{grid-template-columns:minmax(0,1fr)}#public-summaries>div{justify-content:space-between}#turn-cycle-controls{justify-content:space-between}#cycle-status{max-width:65%}}
+
+#play-dialog{width:min(700px,calc(100vw - 24px));max-height:calc(100dvh - 24px);overflow:auto;overscroll-behavior:contain;box-sizing:border-box;background:#252d29;color:#e9e2cf;border:1px solid #a28d64;padding:16px}#play-dialog::backdrop{background:#000a}#play-dialog button,#play-dialog select{min-height:44px;max-width:100%;padding:8px 14px;margin:4px;font:inherit}#play-dialog button{background:#343d36;color:#f3eddb;border:1px solid #a28d64}#play-dialog button:disabled{opacity:.5}#play-dialog p{line-height:1.45}#play-dialog h2{font-size:21px}#play-dialog h3{font-size:18px}#play-dialog button:focus-visible{outline:3px solid #ffe4a3;outline-offset:2px}

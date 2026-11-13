@@ -31,9 +31,13 @@ export function createMapPlay(context,{generation,clear}){
   return {kind,actorId,allowed:!reason,reason,summary,targets,dice:available};
  }
  function snapshot(){sync();const x=c(),g=x.game;if(!g)return {generation:gen,setup:true,decision:null,receipt:null,events:[]};const audience=setup||x.passScreenActive?null:x.controls.side;
-  return {generation:gen,setup,decision:decision(),receipt:audience&&receipt?.owner===audience?clone(receipt):null,events:events.filter(e=>e.audience==='public'||e.audience===audience).map(clone),groups:audience?['human','ai'].map(side=>({side,label:x.controls.display(side),leaderId:g.leaders[side],members:x.ownerGroup(side).filter(p=>!p.dead).map(publicPerson),rescues:g.rescueQueue.filter(r=>r.side===side).length,canChoose:side===audience&&x.canPickStartingLeader()&&!x.mapCycle.api.cycleSnapshot()?.review&&!receipt})):[],options:audience?Object.fromEntries(x.controls.group().filter(p=>!p.dead).map(p=>[p.id,Object.fromEntries(['clean','attract','special'].map(k=>[k,option(k,p.id)]))])):{},boost:audience?option('boost'):null};
+  return {generation:gen,setup,preparation:setup?{modes:['local','ai'],groups:['human','ai'].map(side=>({side,members:x.ownerGroup(side).map(p=>({name:p.name,job:p.job,skill:p.skillDesc}))}))}:null,decision:decision(),receipt:audience&&receipt?.owner===audience?clone(receipt):null,events:events.filter(e=>e.audience==='public'||e.audience===audience).map(clone),groups:audience?['human','ai'].map(side=>({side,label:x.controls.display(side),leaderId:g.leaders[side],members:x.ownerGroup(side).filter(p=>!p.dead).map(publicPerson),rescues:g.rescueQueue.filter(r=>r.side===side).length,canChoose:side===audience&&x.canPickStartingLeader()&&!x.mapCycle.api.cycleSnapshot()?.review&&!receipt})):[],options:audience?Object.fromEntries(x.controls.group().filter(p=>!p.dead).map(p=>[p.id,Object.fromEntries(['clean','attract','special'].map(k=>[k,option(k,p.id)]))])):{},boost:audience?option('boost'):null};
  }
  function execute(r){sync();const x=c(),d=decision();
+  if(r.kind==='start'){
+   if(!['local','ai'].includes(r.mode)||typeof r.confirmed!=='boolean'||!setup&&!x.game.ended&&!r.confirmed)return {ok:false,reason:'confirmation'};
+   x.startGame(r.mode);sync();event('start',{mode:r.mode,summary:'Partida iniciada. Objetivo: '+x.game.objective.name+'. '+x.game.objective.description});return {ok:true};
+  }
   if(r.kind==='ack'){if(!receipt||receipt.id!==r.receiptId||receipt.owner!==x.controls.side||x.passScreenActive)return {ok:false,reason:'stale'};receipt=null;return {ok:true};}
   if(r.kind==='bite'){
    if(d?.kind!=='bite'||!['sacrifice','risk'].includes(r.option))return {ok:false,reason:'decision'};

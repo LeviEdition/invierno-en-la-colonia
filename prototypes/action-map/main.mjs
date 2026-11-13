@@ -7,7 +7,7 @@ import {movementSummary} from '../movement-map/presentation-sequence.mjs';
 import {createActionController} from './action-controller.mjs';
 import {createSearchController} from '../search-map/search-controller.mjs';
 const protocol='iec-action-map/v1',$=id=>document.getElementById(id),frame=$('reference-frame'),lifetime=new AbortController();
-let port=null,state=null,lastPublic=null,viewer=null,attempt=null,serial=Promise.resolve(),generation=0,starts=0,lastDisposal=null,lastError=null,mode='reference',pageActive=true,preferCycleFinal=false,retainedView=null;
+let port=null,state=null,lastPublic=null,viewer=null,attempt=null,serial=Promise.resolve(),generation=0,starts=0,lastDisposal=null,lastError=null,mode=__ACTION_MAP_VARIANT__==='horizontal-map'?'map':'reference',pageActive=true,preferCycleFinal=false,retainedView=null;
 let requestTimer=0,searchTimer=0,presentationContext=null;
 const actionPresenting=()=>action.inspect().phase==='presenting';
 const ownedAction=p=>p?.action.operation&&!['setup','handover','waiting'].includes(p.blocked);
@@ -45,6 +45,7 @@ function displayState(){
  return state;
 }
 function showReference(){
+ if(variant==='horizontal-map'){showMap();return;}
  inventory.close();stopSearchClock();search.interrupt();stopAction();if(movementPresenting()){stopMovement();if(state)viewer?.setState(state);}
  mode='reference';document.body.dataset.presentation=mode;$('map-app').hidden=true;frame.hidden=false;$('reference-mode').setAttribute('aria-pressed','true');$('map-mode').setAttribute('aria-pressed','false');viewer?.setActive(false);focusReference();
 }
@@ -56,6 +57,7 @@ function applyAuthority(){
  const available=!state.blocked||!!ownedSearch(state)||!!ownedAction(state)||!!ownedInventory(state)||managedCycle(state);$('map-mode').disabled=!available;
  if(!state.blocked&&search.inspect().phase!=='presenting'&&!actionPresenting())lastPublic={...state,search:{...state.search,private:null}};
  if(viewer)viewer.setState(displayState());
+ if(variant==='horizontal-map'){status('');showMap();return;}
  if(!available){showReference();status(({setup:'Completá la preparación en V9.9.',handover:'Confirmá el pase de dispositivo en V9.9.',death:'Confirmá el fallecimiento en V9.9.',decision:'Resolvé la decisión abierta en V9.9.',waiting:'Esperando partida.'})[state.blocked]||'Esperando partida.');}
  else{status('');if(mode==='map'&&!viewer&&(!attempt||attempt.signal.aborted))void mountViewer();}
 }
@@ -77,6 +79,7 @@ function mountViewer(){
  });return serial;
 }
 function showMap(){
+ if(variant==='horizontal-map'){mode='map';document.body.dataset.presentation=mode;frame.hidden=true;$('map-app').hidden=false;if(viewer){viewer.setState(displayState());viewer.setActive(true);}else if(!attempt||attempt.signal.aborted)void mountViewer();return;}
  if(!state||state.blocked&&!ownedSearch(state)&&!ownedAction(state)&&!ownedInventory(state)&&!managedCycle(state)){showReference();return;}
  mode='map';document.body.dataset.presentation=mode;frame.hidden=true;$('map-app').hidden=false;$('reference-mode').setAttribute('aria-pressed','false');$('map-mode').setAttribute('aria-pressed','true');
  if(viewer){viewer.setState(displayState());viewer.setActive(true);}else void mountViewer();

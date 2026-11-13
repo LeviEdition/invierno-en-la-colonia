@@ -4,6 +4,7 @@ export function mountPlayPanel({controller,getContext,onRecover,signal}){
  const button=(text,id,fn,disabled=false)=>{const b=el('button',text);b.id=id;b.type='button';b.disabled=disabled;b.addEventListener('click',fn,{signal});return b;};
  dialog.addEventListener('cancel',e=>{e.preventDefault();controller.close();},{signal});
  document.getElementById('menu-groups')?.addEventListener('click',()=>controller.open('groups'),{signal});
+ for(const id of ['menu-new-game','final-new-game'])document.getElementById(id)?.addEventListener('click',()=>controller.open('new-game'),{signal});
  for(const kind of ['clean','attract','special','boost'])document.getElementById(kind+'-action')?.addEventListener('click',()=>{const {selected}=getContext();controller.open('action',{kind,actorId:kind==='boost'?null:selected,dieId:null,dieIndex:null,dieValue:null});},{signal});
  function render(){const {projection:p,active,selected,executing}=getContext(),s=controller.inspect(),v=p?.play,busy=s.phase==='sending',d=v?.decision;
   for(const kind of ['clean','attract','special','boost']){const b=document.getElementById(kind+'-action'),q=kind==='boost'?v?.boost:v?.options?.[selected]?.[kind];if(b){b.disabled=!active||!q?.allowed||executing||v?.managed;b.title=q?.summary||'Seleccioná un superviviente propio.';if(kind==='special')b.textContent=q?.reason==='automatic'?'Habilidad automática':q?.reason==='builder'?'Constructor: usar Construir':'Usar habilidad de tratamiento';}}
@@ -11,7 +12,12 @@ export function mountPlayPanel({controller,getContext,onRecover,signal}){
   const next=JSON.stringify([s,v]);if(key===next)return;key=next;const focus=document.activeElement?.id,scroll=dialog.scrollTop;dialog.replaceChildren();document.getElementById('floating-menu').hidden=true;document.getElementById('menu-toggle').setAttribute('aria-expanded','false');
   dialog.append(el('h2','Decisión de la partida'));const status=el('p',s.message);status.setAttribute('role','status');dialog.append(status);
   if(s.phase==='unknown'||v.unknown)dialog.append(el('p','Consultá el estado de la misma partida antes de repetir. Si no existe un resultado determinable, la operación seguirá bloqueada.'),button('Consultar estado','play-recover',onRecover));
-  else if(d?.kind==='bite'){
+  else if(v.setup||s.page==='new-game'){
+   dialog.append(el('h3',v.setup?'Preparar partida':'Comenzar otra partida'),el('p','Elegí el modo. Los grupos iniciales son los existentes; el objetivo se sortea al comenzar. Podés elegir tu líder desde Grupos y líderes antes de tu primera acción con coste.'));
+   if(!v.setup)dialog.append(el('p','Confirmar abandona la partida actual y sus operaciones pendientes. No hay guardado persistente.'));
+   for(const group of v.preparation?.groups||[])dialog.append(el('p',(group.side==='human'?'Grupo 1: ':'Grupo 2: ')+group.members.map(p=>p.name+' ('+p.job+')').join(', ')));
+   dialog.append(button(v.setup?'Iniciar · dos jugadores locales':'Confirmar nueva · dos jugadores locales','play-start-local',()=>controller.submit('start',{mode:'local',confirmed:!v.setup}),busy),button(v.setup?'Iniciar · humano + IA':'Confirmar nueva · humano + IA','play-start-ai',()=>controller.submit('start',{mode:'ai',confirmed:!v.setup}),busy));if(!v.setup)dialog.append(button('Cancelar y conservar partida','play-close',()=>controller.close(),busy));
+  }else if(d?.kind==='bite'){
    dialog.append(el('h3','Propagación de mordedura · '+d.target.name),el('p','Influencia '+d.target.influence+'. Sacrificar: muere y termina la propagación. Arriesgar: 4–6 lo salva; 1–3 lo mata y continúa la cadena por influencia.'),button('Sacrificar y detener contagio','play-bite-sacrifice',()=>controller.submit('bite',{option:'sacrifice'}),busy),button('Arriesgar tirada','play-bite-risk',()=>controller.submit('bite',{option:'risk'}),busy));
   }else if(d?.kind==='heal'){
    dialog.append(el('h3',d.actor.name+' · '+d.skill),el('p','Elegí un paciente en su localidad. No consume carta ni dado. El uso queda gastado al aplicar el tratamiento.'));for(const t of d.patients)dialog.append(button('Atender a '+t.name+' · heridas '+t.wounds+' · congelación '+t.frost,'play-heal-'+t.id,()=>controller.submit('heal',{target:t.id}),busy));dialog.append(button('Cancelar sin usar habilidad','play-heal-cancel',()=>controller.submit('heal-cancel'),busy));
