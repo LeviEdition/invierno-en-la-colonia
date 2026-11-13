@@ -567,12 +567,12 @@ function consume(min,dieIndex=picked){
  if(!actionDice().length)return messageAndPaint('No quedan dados de acción.'),null;
  const dice=actionDice(),i=Math.max(0,Math.min(dieIndex,dice.length-1)),value=dice[i];
  if(value<min)return messageAndPaint('Necesitás un dado de '+min+' o más (seleccionado: '+value+').'),null;
- dice.splice(i,1);picked=Math.min(i,dice.length-1);confirmStartingLeader();message('🎲 Dado utilizado: '+value+' (mínimo '+min+').');return value;
+ dice.splice(i,1);if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.invalidateDice();picked=Math.min(i,dice.length-1);confirmStartingLeader();message('🎲 Dado utilizado: '+value+' (mínimo '+min+').');return value;
 }
 function boostDie(){
  if(game.ended||!playable()||!actionDice().length||game.food<1)return messageAndPaint('Necesitás comida de la reserva y un dado disponible.');
  const i=Math.max(0,Math.min(picked,actionDice().length-1));if(actionDice()[i]>=6)return messageAndPaint('El dado ya tiene valor 6.');
- game.food--;actionDice()[i]++;message('🥫 Gastaste una comida para mejorar el dado a '+actionDice()[i]+'.');paint();
+ game.food--;actionDice()[i]++;if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.invalidateDice();message('🥫 Gastaste una comida para mejorar el dado a '+actionDice()[i]+'.');paint();
 }
 function pickFloatingDie(i){if(!playable()||game.ended)return;picked=i;paint();}
 function search(noise=false){
