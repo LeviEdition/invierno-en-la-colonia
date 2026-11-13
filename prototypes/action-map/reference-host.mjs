@@ -2,12 +2,12 @@ import {createApplication} from '../../src/application/create-application.mjs';
 import {createUi} from '../../src/presentation/reference-view.mjs';
 import {observeReferenceView} from '../state-map/reference-observer.mjs';
 import {projectVisibleState} from '../state-map/projection.mjs';
-import {createCycleBroker} from '../cycle-map/broker.mjs';
+import {createPlayBroker} from '../play-map/broker.mjs';
 const protocol='iec-action-map/v1',lifetime=new AbortController();
 let broker,context,view,raw=null,port=null,connections=0,sent=0;
 function disconnect(){if(port){port.onmessage=null;port.close();port=null;}}
 function send(message){
- if(__GAME_TEST__&&globalThis.h344DropReply&&['search-result','move-result','action-result','inventory-result','cycle-result'].includes(message.type))return;
+ if(__GAME_TEST__&&globalThis.h344DropReply&&['search-result','move-result','action-result','inventory-result','cycle-result','play-result'].includes(message.type))return;
  if(port){port.postMessage({protocol,...message});sent++;}
 }
 const application=createApplication({createPresentation:(c,environment)=>{
@@ -17,9 +17,9 @@ const application=createApplication({createPresentation:(c,environment)=>{
   onDispose:()=>{disconnect();lifetime.abort();},
  });return view;
 }});
-broker=createCycleBroker(application.engine,{readPublic:()=>projectVisibleState(context,{gate:{},renderedPlayable:true,epoch:raw?.epoch||1})});
+broker=createPlayBroker(application.engine,{readPublic:()=>projectVisibleState(context,{gate:{},renderedPlayable:true,epoch:raw?.epoch||1})});
 let cycleQueued=false;application.engine.subscribeCycle?.(()=>{if(cycleQueued)return;cycleQueued=true;queueMicrotask(()=>{cycleQueued=false;if(raw)send({type:'state',state:broker.snapshot()});});});
-const commands=new Set(['move','search','search-noise','search-choose','search-dismiss','attack','barricade','barricade-ability','action-dismiss','inventory-use','inventory-dismiss','cycle-finish','cycle-pass','cycle-death','cycle-leader','cycle-ack','cycle-speed']);
+const commands=new Set(['move','search','search-noise','search-choose','search-dismiss','attack','barricade','barricade-ability','action-dismiss','inventory-use','inventory-dismiss','cycle-finish','cycle-pass','cycle-death','cycle-leader','cycle-ack','cycle-speed','play-command']);
 window.addEventListener('message',event=>{
  if(event.source!==window.parent||event.origin!==location.origin||event.data?.protocol!==protocol||event.data.type!=='connect'||event.ports.length!==1)return;
  disconnect();port=event.ports[0];connections++;

@@ -1,3 +1,4 @@
+import {mountPlayPanel} from '../play-map/panel.mjs';
 import {describeCycleStep} from '../cycle-map/presentation.mjs';
 import {mountCyclePanel} from '../cycle-map/panel.mjs';
 import {mountInventoryPanel} from '../inventory-map/panel.mjs';
@@ -25,12 +26,13 @@ const reason={setup:'Completá la preparación en V9.9.',handover:'Confirmá el 
 // El renderer elimina su canvas al destruirse: cada montaje parte de esta plantilla.
 const canvasTemplate=$('scene').cloneNode(false);
 const element=(tag,text,className)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(className)el.className=className;return el;};
-export async function createSearchMapView({signal,movement,search,action,inventory,cycle,onSearchNative}={}){
+export async function createSearchMapView({signal,movement,search,action,inventory,cycle,play,onRecover,onSearchNative}={}){
  const ui=new AbortController(),options={signal:ui.signal},motion=matchMedia('(prefers-reduced-motion: reduce)'),deadline=performance.now()+STARTUP_TIMEOUT_MS;
  let renderer,audio,observer,unbind,frame=0,disposed=false,active=false,contextLost=false,projection=null,layout={nodes:[],characters:[],locations:[],unmappedCharacterIds:[]},camera,viewport,selected=null,selectedLocation=null,infoKind=null,epoch,lastMovementPhase='idle',commands=0,draws=0;
  const stableLayout=createStableLayout(scene),actors=new Map();let sequence=null,sequenceResponse=null,sequenceFrom=null,sequenceTo=null,sequenceLast=null,sequenceCallback=null,sequenceApplied=false,hoveredLocation=null;let pointedLocality=null;let sceneDirty=true,lastPanelActor=null;
  let panelFocusTarget=null,panelTarget=document.body.dataset.panelOpen!=='false',resizeAnchor=null,resizeZoom=null,submittedCamera=null,submittedViewport=null,displayCamera=null,displayViewport=null,lastSearchPhase='idle',lastActionPhase='idle',impactApplied=false;
- const cyclePanel=mountCyclePanel({controller:cycle,getContext:()=>({projection,active,competing:!!$('inventory-dialog')?.open||!$('search-panel').hidden||!$('action-panel').hidden||['presenting','awaiting-decision'].includes(movement.inspect().phase),executing:[movement,search,action,inventory].some(c=>['sending','unknown','presenting','awaiting-decision'].includes(c.inspect().phase))}),onNative:onSearchNative,signal:ui.signal});
+ const playPanel=mountPlayPanel({controller:play,getContext:()=>({projection,active}),onRecover,signal:ui.signal});
+ const cyclePanel=mountCyclePanel({controller:cycle,getContext:()=>({projection,active,competing:!!projection?.play?.managed||!!$('inventory-dialog')?.open||!$('search-panel').hidden||!$('action-panel').hidden||['presenting','awaiting-decision'].includes(movement.inspect().phase),executing:[movement,search,action,inventory].some(c=>['sending','unknown','presenting','awaiting-decision'].includes(c.inspect().phase))}),onNative:onSearchNative,signal:ui.signal});
  const inventoryPanel=mountInventoryPanel({controller:inventory,getContext:()=>({projection,selected,active,searchBusy:search.inspect().busy,actionBusy:action.inspect().busy,movementPhase:movement.inspect().phase}),onNative:onSearchNative,signal:ui.signal});
  const searchPanel=mountSearchPanel({inventoryLabel:'Inventario',controller:search,getContext:()=>({projection,selected,active,movementPhase:movement.inspect().phase}),onCancel:()=>{panel(true);focusPanelControl('search-action');},onNative:onSearchNative,signal:ui.signal});
  const actionPanel=mountActionPanel({controller:action,getContext:()=>({projection,selected,active,movementPhase:movement.inspect().phase,searchBusy:search.inspect().busy,targetOnRight:camera&&viewport?(camera.x+(layout.characters.find(c=>c.id===selected)?.position.x||0)*camera.zoom)>viewport.width/2:false}),onCancel:kind=>{panel(true);focusPanelControl(kind+'-action');},onNative:onSearchNative,signal:ui.signal});
@@ -145,7 +147,7 @@ export async function createSearchMapView({signal,movement,search,action,invento
   if(m.phase==='awaiting-decision'){$('move-sequence').hidden=false;$('sequence-status').textContent=m.message;$('resolve-decision').hidden=false;}
   else if(!sequence){$('move-sequence').hidden=true;$('resolve-decision').hidden=true;}
   inventoryPanel.render();searchPanel.render();if(action.inspect().busy)$('search-action').disabled=true;
-  actionPanel.render();cyclePanel.render();if(inventory?.inspect().busy)for(const id of ['search-action','attack-action','barricade-action','move-action'])$(id).disabled=true;const show=active&&projection?.characters.find(c=>c.id===selected)?.playerId===projection?.turn;
+  actionPanel.render();cyclePanel.render();playPanel.render();if(inventory?.inspect().busy)for(const id of ['search-action','attack-action','barricade-action','move-action'])$(id).disabled=true;const show=active&&projection?.characters.find(c=>c.id===selected)?.playerId===projection?.turn;
   $('action-shortcuts').hidden=!show||action.inspect().busy||search.inspect().busy||movement.inspect().phase!=='idle';for(const b of document.querySelectorAll('[data-shortcut]'))b.disabled=$(b.dataset.shortcut).disabled;
   schedule();
  }
@@ -212,7 +214,7 @@ export async function createSearchMapView({signal,movement,search,action,invento
    setActive(value){active=!!value;if(!active){pointedLocality=null;infoKind=null;$('info-dialog').close();$('floating-menu').hidden=true;$('menu-toggle').setAttribute('aria-expanded','false');}if(!active&&frame){cancelAnimationFrame(frame);frame=0;}pause();updateMovement();if(active){resize();schedule();}},
    inspect(){return {active,selected,selectedLocation,epoch,pointedLocality,renderPending:!!frame||submittedCamera!==displayCamera,panel:{requestedOpen:panelTarget,presentedOpen:!$('panel-content').hidden},camera:camera?{...camera}:null,viewport:viewport?{...viewport}:null,commands,draws,layout:structuredClone(layout),renderer:renderer.inspect(),audio:audio.inspect(),contextLost,presentation:sequence?.inspect()||null,action:action.inspect(),movement:movement.inspect()};},
    worldAt:point=>renderer.worldAt(point),
-   async destroy(){if(disposed)return;disposed=true;active=false;cyclePanel.render();inventoryPanel.render();searchPanel.render();actionPanel.render();stopPresentation();ui.abort();observer.disconnect();unbind();if(frame)cancelAnimationFrame(frame);$('info-dialog').close();const graphics=renderer.destroy(),audioRelease=await audio.destroy();$('map-labels').replaceChildren();$('actor-markers').replaceChildren();actors.clear();return {...graphics,audioRelease,disposed:true};}
+   async destroy(){if(disposed)return;disposed=true;active=false;playPanel.render();cyclePanel.render();inventoryPanel.render();searchPanel.render();actionPanel.render();stopPresentation();ui.abort();observer.disconnect();unbind();if(frame)cancelAnimationFrame(frame);$('info-dialog').close();const graphics=renderer.destroy(),audioRelease=await audio.destroy();$('map-labels').replaceChildren();$('actor-markers').replaceChildren();actors.clear();return {...graphics,audioRelease,disposed:true};}
   };
  }catch(error){disposed=true;ui.abort();observer?.disconnect();unbind?.();if(frame)cancelAnimationFrame(frame);const cleanup=renderer?.destroy();await audio?.destroy();if(cleanup?.cleanupErrors?.length)error.cleanupErrors=cleanup.cleanupErrors;throw error;}
 }
