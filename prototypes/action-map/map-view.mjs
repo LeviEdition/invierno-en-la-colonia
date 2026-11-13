@@ -107,6 +107,7 @@ export async function createSearchMapView({signal,movement,search,action,invento
  }
  function updateUI(){
   const p=projection;if(!p)return;
+  if($('public-objective')){const o=p.objective,c=p.crisis;$('public-objective').textContent=o?o.name+' · Muestras '+value(o.samples)+'/'+value(o.goal):'Objetivo no disponible.';$('public-crisis').textContent=c?'Crisis: '+value(c.need)+' '+c.type+' · Cartas entregadas: '+value(c.given):'Crisis no disponible.';}
   $('round').textContent=value(p.round);$('morale').textContent=value(p.morale);$('food').textContent=value(p.food);$('turn').textContent=p.blocked?'—':p.ended?'Finalizada':playerName(p.turn)+(p.automationRunning?' · automático':'');
   const previous=$('locality').value;$('locality').replaceChildren(new Option('Vista general','general'),...p.locations.map(l=>new Option(l.name,l.id)));$('locality').value=[...$('locality').options].some(o=>o.value===previous)?previous:'general';
   $('locality-select').replaceChildren(new Option('Elegir localidad',''),...p.locations.map(l=>new Option(l.name+' · '+l.survivors+' supervivientes',l.id)));$('locality-select').value=selectedLocation||'';
@@ -180,7 +181,7 @@ export async function createSearchMapView({signal,movement,search,action,invento
   infoKind=kind;const content=$('dialog-content');content.replaceChildren();const add=text=>content.append(element('p',text));
   const titles={objetivo:'Objetivo',crisis:'Crisis',registro:'Registro',equipo:'Equipo del superviviente',ayuda:'Ayuda'};$('dialog-title').textContent=titles[kind];
   if(kind==='objetivo'){const o=projection?.objective;add(o?.name||'Objetivo no disponible.');if(o?.description)add(o.description);if(o)add('Muestras: '+value(o.samples)+'/'+value(o.goal)+' · Ronda '+value(projection.round)+'/'+value(projection.maxRounds));}
-  if(kind==='crisis'){const c=projection?.crisis;if(c){add('Tipo: '+value(c.type)+' · Aportes: '+value(c.given)+'/'+value(c.need));add('Efecto de fallo: '+({moral:'pérdida de moral',food:'pérdida de comida',zombie:'llegada de zombis',wound:'heridas'}[c.failure]||'información no disponible'));}else add('Crisis no disponible.');}
+  if(kind==='crisis'){const c=projection?.crisis;if(c){add('Requisito: '+value(c.need)+' '+value(c.type)+' · Cartas entregadas: '+value(c.given));add('Efecto de fallo: '+({moral:'pérdida de moral',food:'pérdida de comida',zombie:'llegada de zombis',wound:'heridas'}[c.failure]||'información no disponible'));}else add('Crisis no disponible.');}
   if(kind==='registro')add('Consultá el registro completo desde V9.9.');
   if(kind==='equipo'){const c=projection?.characters.find(c=>c.id===selected);if(!c)add('Seleccioná un superviviente para consultar su equipo público. La mano del turno está en el panel lateral.');else{add(c.name);for(const e of c.equipment)add((e.name||'Objeto sin nombre')+(e.description?' — '+e.description:''));if(!c.equipment.length)add('Sin equipo equipado.');}}
   if(kind==='ayuda'&&scene.slotHierarchy)add('Seleccioná una localidad o acercá la cámara para destacar sus espacios. El trazo continuo y el grosor distinguen la selección; zombis y barricadas permanecen visibles.');
