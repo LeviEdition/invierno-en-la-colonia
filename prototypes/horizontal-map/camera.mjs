@@ -1,0 +1,15 @@
+import {localityFrame} from './presentation.mjs';
+// Cámara de presentación, sin distancias ni legalidad del motor.
+export function constrainCamera(camera,b,viewport){
+ const minZoom=Math.min(viewport.width/b.width,viewport.height/b.height),maxZoom=Math.max(minZoom,1.5),zoom=Math.max(minZoom,Math.min(maxZoom,camera.zoom));
+ // Cuando el mapa cabe en un eje, centrarlo con margen de interfaz. Al
+ // acercarse se conserva el pan hasta el borde real, sin estirar el fondo.
+ const axis=(position,size,available)=>size<=available?(available-size)/2:Math.max(available-size,Math.min(0,position));
+ return {...camera,minZoom,maxZoom,zoom,x:axis(camera.x,b.width*zoom,viewport.width),y:axis(camera.y,b.height*zoom,viewport.height)};
+}
+export function fitMapCamera(b,v){const zoom=Math.min(v.width/b.width,v.height/b.height);return constrainCamera({overview:true,zoom,x:(v.width-b.width*zoom)/2,y:(v.height-b.height*zoom)/2},b,v);}
+// Conservar el ancla deseada incluso cuando el borde del mapa obliga a limitar
+// un resize. Así abrir/cerrar el panel es reversible y no acumula desplazamiento.
+export function resizeMapCamera(camera,anchor,b,v,preferredZoom=camera.zoom){if(camera.overview)return fitMapCamera(b,v);const base=fitMapCamera(b,v),zoom=Math.max(base.minZoom,Math.min(base.maxZoom,preferredZoom));return constrainCamera({...base,overview:false,zoom,x:v.width/2-anchor.x*zoom,y:v.height/2-anchor.y*zoom},b,v);}
+export function focusAnchor(scene,id){const z=scene.zones.find(z=>z.id===id);if(!z)return null;const b=scene.fitPresentation?localityFrame(z):null;return b?{x:b.x+b.width/2,y:b.y+b.height/2}:z.center;}
+export function focusLocality(scene,id,v){const z=scene.zones.find(z=>z.id===id);if(!z)return fitMapCamera(scene.bounds,v);const frame=scene.fitPresentation?localityFrame(z):z.focus,anchor=focusAnchor(scene,id),base=fitMapCamera(scene.bounds,v),zoom=Math.min(base.maxZoom,Math.max(base.minZoom,Math.min(v.width/frame.width,v.height/frame.height)));return constrainCamera({overview:false,zoom,x:v.width/2-anchor.x*zoom,y:v.height/2-anchor.y*zoom},scene.bounds,v);}

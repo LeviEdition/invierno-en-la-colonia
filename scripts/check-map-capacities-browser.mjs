@@ -1,0 +1,10 @@
+const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
+import {actionMapChecks} from '../test-support/h344-browser-checks.mjs';
+import {mkdir,writeFile} from 'node:fs/promises';import assert from 'node:assert/strict';
+const t=actionMapChecks({origin:process.env.H344_ORIGIN||'http://127.0.0.1:8779',modulePath:'/dist/horizontal-map-qa/map.mjs'}),out=process.env.CAPACITIES_DIR||'/tmp/horizontal-capacities';await mkdir(out,{recursive:true});
+const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',args:['--no-sandbox']});const records=[];
+try{for(const [width,height]of [[1365,768],[852,393]]){const context=await browser.newContext({viewport:{width,height},hasTouch:width<950,isMobile:width<950,deviceScaleFactor:width<950?2:1});await t.instrument(context);const p=await context.newPage();await t.begin(p);await t.openMap(p);
+for(const [i,cap]of [[4,2],[6,3]]){const g=await t.raw(p);g.humans[0].loc=i;g.zones[i].z=cap-1;g.zones[i].b=1;await t.host(p).evaluate(g=>h344Test.fixture(g),g);await p.waitForFunction(({i,cap})=>h344Viewer.inspect().projection.locations[i].exteriorCapacity===cap&&h344Viewer.inspect().projection.locations[i].barricades===1,{i,cap});await p.selectOption('#locality','place-'+i);await t.panel(p);await t.frames(p);if(width<950)await p.locator('#panel-content').evaluate(panel=>{const text=document.getElementById('locality-exterior');panel.scrollTop+=text.getBoundingClientRect().top-panel.getBoundingClientRect().top-6;});const l=(await t.api(p)).projection.locations[i];assert.equal(l.exteriorAvailable,0);assert.equal(l.zombies+l.barricades,cap);await p.screenshot({path:out+'/'+width+'-'+i+'.png'});records.push({width,height,i,cap,z:l.zombies,b:l.barricades,free:l.exteriorAvailable});}
+await context.close();}}finally{await browser.close();}await writeFile(out+'/resultados.json',JSON.stringify({passed:true,controlled:true,physicalMobile:false,records},null,2));
+
+console.log(JSON.stringify({passed:true,out}));

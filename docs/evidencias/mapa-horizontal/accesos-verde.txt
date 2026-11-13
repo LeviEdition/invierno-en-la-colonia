@@ -1,0 +1,21 @@
+✔ Horizontal: cámara cubierta y siete centros visibles {"width":930,"height":550} (2.301265ms)
+✔ Horizontal: cámara cubierta y siete centros visibles {"width":852,"height":250} (0.168123ms)
+✔ Horizontal: cámara cubierta y siete centros visibles {"width":740,"height":220} (0.240402ms)
+✔ Horizontal: cámara cubierta y siete centros visibles {"width":393,"height":650} (0.216276ms)
+✔ Horizontal: 36 apoyos y36 accesos distintos, capacidades del motor conservadas (0.224438ms)
+✔ Horizontal: bases y bordes inmóviles, copas con viento y apagado exacto (0.227393ms)
+✔ Horizontal: luz irregular acotada; distintas fases y un nivel para fuente y suelo (1.688873ms)
+✔ Horizontal: originales conservan dimensiones, alfa declarado y SHA-256 (13.451945ms)
+✔ Horizontal: construcción del visor sin motor y host idéntico a H344 (822.1082ms)
+✔ Horizontal: servidor publica originales y nueva entrada; QA/fuentes inaccesibles (94.363824ms)
+✔ Horizontal: partición estática sin duplicaciones ni huecos en grupos móviles (1.737426ms)
+✔ Horizontal: selección de configuración admite separadores Windows y POSIX (0.264889ms)
+✔ Horizontal: atenuación local conserva el borde y evita una mancha azul de suelo (1.147458ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1010.158789

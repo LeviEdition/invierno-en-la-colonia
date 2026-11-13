@@ -1,0 +1,62 @@
+{
+  "base": "449b43660818d04705f78aa39d31041831e9984b",
+  "baseCi": {
+    "run": 42696632195,
+    "conclusion": "success"
+  },
+  "main": "826199d96645b95869509995772c914290d63ac7",
+  "kept": [
+    {
+      "file": "assets/mapa-horizontal/nuevo mapa.png",
+      "sha256": "0c5268c189068b5eb7bf51a1fbc871a87782b75e02dc86fe6d21aeeb272e4222",
+      "identicalToBase": true
+    },
+    {
+      "file": "test-support/horizontal-obstacles.json",
+      "sha256": "62d0c93db1a5d2a33623c0f1f406ca221a1cb466d0f8469e3c89b78f74162faa",
+      "identicalToBase": true
+    },
+    {
+      "file": "package-lock.json",
+      "sha256": "7bf47301f41bc1e70fa51a171b23db98e7ce30684ea7f38228099aaf2237442c",
+      "identicalToBase": true
+    }
+  ],
+  "engineAndAssetsUnchanged": true,
+  "mapSha256": "715ebf62dd5a686fbf3a9b5ba24b9a65afe694c0b59ee897a1f864622f7fff55",
+  "hostSha256": "e4962a6b898582e84d90d1ab9074ee3182db4582e037b7652f3d25c831b38a9c",
+  "tests": {
+    "full": {
+      "passed": 652,
+      "failed": 0,
+      "skipped": 0
+    },
+    "directed": {
+      "command": "node --test tests/horizontal-presentation.test.mjs tests/horizontal-composition.test.mjs tests/horizontal-map.test.mjs",
+      "passed": 35,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "visualSlots": 33,
+  "engineSlots": 36,
+  "pickChecks": {
+    "exterior": 66,
+    "overlaidPortrait": 14
+  },
+  "viewports": [
+    [
+      1365,
+      768
+    ],
+    [
+      852,
+      393
+    ]
+  ],
+  "physicalMobile": false,
+  "portraits": "on own building/compound; specific entrance/emblem/pump exclusions replace own-building exclusion",
+  "unchangedActorObstacleThresholds": true,
+  "rowGuides": "test-support/horizontal-alignment.json",
+  "protectedPortraitDetails": "test-support/horizontal-portrait-protected.json"
+}

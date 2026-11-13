@@ -1,0 +1,30 @@
+✖ Presentación: los arbustos pintados conocidos detectan las posiciones descartadas de gasolinera y comisaría (7.383319ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 104.820035
+
+✖ failing tests:
+
+test at tests/horizontal-presentation.test.mjs:45:1
+✖ Presentación: los arbustos pintados conocidos detectan las posiciones descartadas de gasolinera y comisaría (7.383319ms)
+  AssertionError [ERR_ASSERTION]: gasolinera invade vegetación
+
+  true !== false
+
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/horizontal-presentation.test.mjs:50:80)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

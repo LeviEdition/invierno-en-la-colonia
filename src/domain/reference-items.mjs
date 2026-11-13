@@ -3,16 +3,16 @@ export function createItemEngine(ctx){
 class ItemEngine {
  has(p,id){return !!p&&ctx.equipmentOf(p).some(it=>ctx.catalog.resolve(it)?.id===id);}
  equipped(p,id){return ctx.equipmentOf(p).find(it=>ctx.catalog.resolve(it)?.id===id);}
- useFlashlight(p){const it=this.equipped(p,'flashlight');if(!it||it.usedRound)return false;it.usedRound=1;return true;}
- equip(p,it){const d=ctx.catalog.resolve(it);if(!p||p.dead||!d||d.effect!=='equip')return false;if(ctx.equipmentOf(p).some(x=>ctx.kind(x)===d.kind)){ctx.message('⚠ '+p.name+' ya lleva un objeto de '+d.kind+'. Transferilo antes de equipar otro.');return false;}p.equipment.push(it);ctx.message('🎒 '+p.name+' equipó '+d.name+': '+d.desc);return true;}
+ useFlashlight(p){const it=this.equipped(p,'flashlight');if(!it||it.usedRound)return false;it.usedRound=1;if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)ctx.mapPlay.event('equipment-use',{name:p.name,item:ctx.catalog.resolve(it).name,effect:'Reveló otra carta sin generar ruido.'});return true;}
+ equip(p,it){const d=ctx.catalog.resolve(it);if(!p||p.dead||!d||d.effect!=='equip')return false;if(ctx.equipmentOf(p).some(x=>ctx.kind(x)===d.kind)){ctx.message('⚠ '+p.name+' ya lleva un objeto de '+d.kind+'. Transferilo antes de equipar otro.');return false;}p.equipment.push(it);if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)ctx.mapPlay.event('item',{name:p.name,item:d.name,effect:d.desc});ctx.message('🎒 '+p.name+' equipó '+d.name+': '+d.desc);return true;}
  attack(p,side,onResolved){
   const z=ctx.game.zones[p.loc];if(!z.z)return false;
   const shotgun=this.has(p,'shotgun'),count=ctx.Math.min(z.z,shotgun?2:1);z.z-=count;
-  ctx.message('⚔ '+p.name+' eliminó '+count+' zombi'+(count>1?'s':'')+' en '+ctx.places[p.loc]+(shotgun?' con escopeta':'')+'.');
+  if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)ctx.mapPlay.event('attack',{name:p.name,count,location:p.loc});ctx.message('⚔ '+p.name+' eliminó '+count+' zombi'+(count>1?'s':'')+' en '+ctx.places[p.loc]+(shotgun?' con escopeta':'')+'.');
   let safe=false,exposure;
-  for(const id of ['pistol','rifle']){const it=this.equipped(p,id);if(it&&!it.usedRound&&(id==='pistol'||p.loc!==0)){it.usedRound=1;safe=true;exposure={rolled:false,value:null,effect:'avoided',ability:id,wounds:0,frost:0,fatal:false};ctx.message('🔫 '+ctx.catalog.resolve(it).name+': ataque sin exposición.');break;}}
+  for(const id of ['pistol','rifle']){const it=this.equipped(p,id);if(it&&!it.usedRound&&(id==='pistol'||p.loc!==0)){it.usedRound=1;if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)ctx.mapPlay.event('equipment-use',{name:p.name,item:ctx.catalog.resolve(it).name,effect:'Ataque sin exposición.'});safe=true;exposure={rolled:false,value:null,effect:'avoided',ability:id,wounds:0,frost:0,fatal:false};ctx.message('🔫 '+ctx.catalog.resolve(it).name+': ataque sin exposición.');break;}}
   if(!safe)exposure=ctx.expose(p,'ataque '+(side==='ai'?'IA':''));
-  const axe=this.equipped(p,'hatchet');if(axe&&!axe.usedRound&&p.loc===0&&ctx.openAccess(0)&&!p.dead){axe.usedRound=1;z.b++;ctx.message('🪓 '+p.name+' reforzó una barricada después del combate.');}
+  const axe=this.equipped(p,'hatchet');if(axe&&!axe.usedRound&&p.loc===0&&ctx.openAccess(0)&&!p.dead){axe.usedRound=1;z.b++;if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)ctx.mapPlay.event('equipment-use',{name:p.name,item:ctx.catalog.resolve(axe).name,effect:'Construyó una barricada después del combate.'});ctx.message('🪓 '+p.name+' reforzó una barricada después del combate.');}
   onResolved?.({killed:count,exposure});return true;
  }
  moveWithFuel(p,dest,side,i){
@@ -25,7 +25,7 @@ class ItemEngine {
   }
   if(!ctx.accessible(dest)||dest===p.loc||!hand[i]||ctx.kind(hand[i])!=='combustible')return false;
   const old=p.loc;p.loc=dest;p.moved=true;hand.splice(i,1);ctx.addWaste();
-  ctx.message('⛽ '+p.name+' se movió de '+ctx.places[old]+' a '+ctx.places[dest]+' sin exposición.');
+  if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)ctx.mapPlay.event('fuel',{name:p.name,item:'Combustible',from:old,destination:dest});ctx.message('⛽ '+p.name+' se movió de '+ctx.places[old]+' a '+ctx.places[dest]+' sin exposición.');
   if(ctx.controls.interactive&&side===ctx.controls.side)ctx.crossAction('move',p);return true;
  }
  use(i,p,side='human'){
@@ -51,7 +51,7 @@ class ItemEngine {
    ctx.gainSample(p);ctx.message('📖 Notas de laboratorio utilizadas por '+p.name+'.');
   }else if(d.effect==='rescue'){if(!ctx.recruit(side)){return false;}}
   else return false;
-  hand.splice(i,1);
+  if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)ctx.mapPlay.event('item',{name:p?.name||null,item:d.name,effect:d.desc});hand.splice(i,1);
   if(!['sample','rescue'].includes(d.effect))ctx.addWaste();
   return true;
  }

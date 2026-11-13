@@ -16,6 +16,8 @@ Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos un
 - [Tablero operativo — próxima tarea](docs/18-tablero-operativo.md)
 - [H3.1 — Auditoría de identidad visual](docs/74-h3-1-auditoria-identidad-visual.md)
 - [Plan propuesto H3.1–H3.6](docs/75-plan-hito-3-identidad-visual.md)
+- [Mapa horizontal — composición integral y evidencia](docs/93-composicion-integral-del-mapa.md)
+- [Mapa horizontal y ambientación — entrega experimental](docs/90-mapa-horizontal-ambientacion.md)
 - [H3.4.4 — Ataque y barricadas desde el mapa](docs/88-h3-4-4-ataque-barricadas-mapa.md)
 - [H3.4.3 — Buscar desde el mapa](docs/87-h3-4-3-busqueda-mapa.md)
 - [H3.4.2 — Movimiento desde el mapa](docs/84-h3-4-2-movimiento-mapa.md)
@@ -34,7 +36,21 @@ El [PR15](https://github.com/LeviEdition/invierno-en-la-colonia/pull/15) se inte
 
 **Referencia cerrada:** D1/D2 y V9.9 modular preservadas. H3.4.3 tiene revisión técnica favorable y **validación manual pendiente**. El creador autorizó **H3.4.4: ataque y construcción de barricadas desde el mapa**, conservando búsqueda y movimiento. La nueva entrada reutiliza el motor V9.9; no modifica reglas ni arte. Sin merge ni cambios en main/referencia/SP-03. [Informe88](docs/88-h3-4-4-ataque-barricadas-mapa.md).
 
-## H3.4.4 — Las cuatro acciones desde VS Code
+## Mapa horizontal y ambientación — versión experimental actual
+
+Rama independiente sobre H3.4.4, PR25 en borrador. Reutiliza las cuatro acciones del motor con nuevo escenario, vegetación anclada y luces locales; no modifica reglas ni la referencia estable. **La revisión visual y la aceptación manual de búsqueda/ataque/barricadas siguen pendientes.**
+
+```powershell
+git fetch origin
+git switch experiment/mapa-horizontal-ambientacion-h3
+git pull --ff-only
+npm.cmd ci
+npm.cmd run dev:horizontal-map
+```
+
+Abrir **http://127.0.0.1:8779/prototypes/horizontal-map/**. Preparar en V9.9 y pulsar Ver mapa. Ctrl+C detiene el servidor; reiniciar y recargar tras actualizar. En móvil se prioriza horizontal. [Guía Windows/VSCode/LAN y pruebas manuales](prototypes/horizontal-map/README.md), [originales y configuración](assets/mapa-horizontal/README.md). No requiere Python. Las entradas siguientes se conservan para comparación.
+
+## H3.4.4 — Las cuatro acciones sobre el mapa anterior
 
 Node22+, terminal en la carpeta con package.json y package-lock.json:
 

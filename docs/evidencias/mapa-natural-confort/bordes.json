@@ -1,0 +1,92 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "records": [
+    {
+      "kind": "native-result",
+      "errors": [],
+      "actualActorInRecoveredResult": true,
+      "passed": true
+    },
+    {
+      "kind": "reduced",
+      "errors": [],
+      "reducedAndSilent": true,
+      "passed": true
+    },
+    {
+      "kind": "builder",
+      "errors": [],
+      "freeAbilityOnce": true,
+      "passed": true
+    },
+    {
+      "kind": "death",
+      "errors": [],
+      "deliberateNative": true,
+      "noEarlyDeath": true,
+      "passed": true,
+      "video": "/tmp/mapa-natural/final/bordes/death/0d78afea3e5aa0aaed556588c6b53d47.webm"
+    },
+    {
+      "kind": "general",
+      "errors": [],
+      "deliberateNative": true,
+      "noEarlyDeath": true,
+      "passed": true
+    },
+    {
+      "kind": "pistol",
+      "errors": [],
+      "weaponOncePerRound": true,
+      "passed": true
+    },
+    {
+      "kind": "full",
+      "errors": [],
+      "sharedCapacity": true,
+      "passed": true
+    },
+    {
+      "kind": "j2",
+      "errors": [],
+      "ownDiceAndTools": true,
+      "passed": true
+    },
+    {
+      "kind": "lost-reply",
+      "errors": [],
+      "noResend": true,
+      "passed": true
+    },
+    {
+      "kind": "stale",
+      "errors": [],
+      "noFakeAttack": true,
+      "passed": true
+    },
+    {
+      "kind": "restart",
+      "errors": [],
+      "restarted": true,
+      "recoveredNoRepeat": true,
+      "passed": true
+    },
+    {
+      "kind": "hidden",
+      "errors": [],
+      "controlledVisibility": true,
+      "recoveredNoRepeat": true,
+      "passed": true
+    },
+    {
+      "kind": "reconnect",
+      "errors": [],
+      "controlledLifecycle": true,
+      "recoveredNoRepeat": true,
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

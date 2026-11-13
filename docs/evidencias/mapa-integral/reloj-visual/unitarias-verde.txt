@@ -1,0 +1,11 @@
+✔ Presentación: fotogramas de 500ms y pausas largas conservan todas las fases (1.569028ms)
+✔ Presentación: reducido conserva fases breves y permite finalización expresa e interrupción (0.221744ms)
+✔ Presentación: ataque y barricada no inventan fases ausentes con un render lento (0.288234ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 55.115481

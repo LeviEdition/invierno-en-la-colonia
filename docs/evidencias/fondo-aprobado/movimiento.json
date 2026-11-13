@@ -1,0 +1,72 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "records": [
+    {
+      "name": "blank",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "errors": [],
+      "targetHit": {
+        "id": "scene",
+        "tag": "CANVAS",
+        "html": "<canvas id=\"scene\" tabindex=\"0\" role=\"img\" aria-label=\"Mapa de localidades, supervivientes y destino de movimiento\" aria-describedby=\"map-instructions\" width=\"1055\" height=\"618\" st"
+      },
+      "exposureCheckpointStage": "reveal",
+      "stages": [
+        "travel",
+        "roll",
+        "reveal",
+        "consequence"
+      ],
+      "frameCount": 49,
+      "cameraStable": true,
+      "oneActorPerFrame": true,
+      "rngStableDuringPresentation": true,
+      "video": "/workspace/invierno-en-la-colonia/work/mapa-aprobado/movimiento/blank/page@0f9f009a1cf3de9ec18566a87d990599.webm"
+    },
+    {
+      "name": "wound",
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "errors": [],
+      "targetHit": {
+        "id": "scene",
+        "tag": "CANVAS",
+        "html": "<canvas id=\"scene\" tabindex=\"0\" role=\"img\" aria-label=\"Mapa de localidades, supervivientes y destino de movimiento\" aria-describedby=\"map-instructions\" width=\"1704\" height=\"588\" st"
+      },
+      "exposureCheckpointStage": "reveal",
+      "stages": [
+        "travel",
+        "roll",
+        "reveal",
+        "consequence"
+      ],
+      "frameCount": 57,
+      "cameraStable": true,
+      "oneActorPerFrame": true,
+      "rngStableDuringPresentation": true,
+      "video": "/workspace/invierno-en-la-colonia/work/mapa-aprobado/movimiento/wound/page@a7c628cf39b3003db45e9ce7a17f50fa.webm"
+    },
+    {
+      "name": "decision",
+      "errors": [],
+      "waitedForPlayer": true,
+      "noEarlyDeath": true,
+      "video": "/workspace/invierno-en-la-colonia/work/mapa-aprobado/movimiento/decision/page@b6f10f7480679743770c7ba7ed754ee1.webm"
+    },
+    {
+      "name": "death",
+      "errors": [],
+      "waitedForPlayer": true,
+      "noEarlyDeath": true,
+      "video": "/workspace/invierno-en-la-colonia/work/mapa-aprobado/movimiento/death/page@2bdd1503f945f09682e73e9180bcf964.webm"
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

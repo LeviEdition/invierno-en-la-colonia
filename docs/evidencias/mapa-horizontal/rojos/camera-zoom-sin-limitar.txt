@@ -1,0 +1,33 @@
+✖ Horizontal: cámara cubierta y siete centros visibles {"width":930,"height":550} (3.426822ms)
+✔ Horizontal: cámara cubierta y siete centros visibles {"width":852,"height":250} (0.356276ms)
+✔ Horizontal: cámara cubierta y siete centros visibles {"width":740,"height":220} (0.147632ms)
+✔ Horizontal: cámara cubierta y siete centros visibles {"width":393,"height":650} (0.101262ms)
+✔ Horizontal: 36 apoyos y36 accesos distintos, capacidades del motor conservadas (0.23903ms)
+✔ Horizontal: bases y bordes inmóviles, copas con viento y apagado exacto (0.252369ms)
+✔ Horizontal: luz irregular acotada; distintas fases y un nivel para fuente y suelo (0.420853ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 6
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 81.122211
+
+✖ failing tests:
+
+test at tests/horizontal-map.test.mjs:6:117
+✖ Horizontal: cámara cubierta y siete centros visibles {"width":930,"height":550} (3.426822ms)
+  AssertionError [ERR_ASSERTION]: hospital
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/horizontal-map.test.mjs:9:187)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

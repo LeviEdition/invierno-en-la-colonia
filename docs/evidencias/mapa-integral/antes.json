@@ -1,0 +1,395 @@
+{
+  "browser": "154.0.8037.57",
+  "baseline": true,
+  "physicalMobile": false,
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "errors": [],
+      "focus": [
+        {
+          "id": "escuela",
+          "camera": {
+            "zoom": 1.5,
+            "x": -52.5,
+            "y": -36,
+            "minZoom": 0.8163875598086124,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1365,
+            "height": 618,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "biblioteca",
+          "camera": {
+            "zoom": 1.5,
+            "x": -1065,
+            "y": -36,
+            "minZoom": 0.8163875598086124,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1365,
+            "height": 618,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "hospital",
+          "camera": {
+            "zoom": 1.5,
+            "x": 0,
+            "y": -313.5,
+            "minZoom": 0.8163875598086124,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1365,
+            "height": 618,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "colonia",
+          "camera": {
+            "zoom": 1.5,
+            "x": -555,
+            "y": -336,
+            "minZoom": 0.8163875598086124,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1365,
+            "height": 618,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "supermercado",
+          "camera": {
+            "zoom": 1.5,
+            "x": -1143,
+            "y": -340.5,
+            "minZoom": 0.8163875598086124,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1365,
+            "height": 618,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "gasolinera",
+          "camera": {
+            "zoom": 1.5,
+            "x": 0,
+            "y": -709.5,
+            "minZoom": 0.8163875598086124,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1365,
+            "height": 618,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "comisaria",
+          "camera": {
+            "zoom": 1.5,
+            "x": -1143,
+            "y": -711,
+            "minZoom": 0.8163875598086124,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1365,
+            "height": 618,
+            "dpr": 1
+          }
+        }
+      ],
+      "cases": [
+        {
+          "mode": "mixed",
+          "characters": 36,
+          "zombies": 18,
+          "barricades": 18
+        }
+      ],
+      "overview": {
+        "zoom": 0.8163875598086124,
+        "x": 0,
+        "y": -75.11034688995215,
+        "minZoom": 0.8163875598086124,
+        "maxZoom": 1.5
+      }
+    },
+    {
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "errors": [],
+      "focus": [
+        {
+          "id": "escuela",
+          "camera": {
+            "zoom": 1.5,
+            "x": 0,
+            "y": 0,
+            "minZoom": 1.1483253588516746,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1920,
+            "height": 930,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "biblioteca",
+          "camera": {
+            "zoom": 1.5,
+            "x": -588,
+            "y": 0,
+            "minZoom": 1.1483253588516746,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1920,
+            "height": 930,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "hospital",
+          "camera": {
+            "zoom": 1.5,
+            "x": 0,
+            "y": -157.5,
+            "minZoom": 1.1483253588516746,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1920,
+            "height": 930,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "colonia",
+          "camera": {
+            "zoom": 1.5,
+            "x": -277.5,
+            "y": -180,
+            "minZoom": 1.1483253588516746,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1920,
+            "height": 930,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "supermercado",
+          "camera": {
+            "zoom": 1.5,
+            "x": -588,
+            "y": -184.5,
+            "minZoom": 1.1483253588516746,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1920,
+            "height": 930,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "gasolinera",
+          "camera": {
+            "zoom": 1.5,
+            "x": 0,
+            "y": -481.5,
+            "minZoom": 1.1483253588516746,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1920,
+            "height": 930,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "comisaria",
+          "camera": {
+            "zoom": 1.5,
+            "x": -588,
+            "y": -481.5,
+            "minZoom": 1.1483253588516746,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1920,
+            "height": 930,
+            "dpr": 1
+          }
+        }
+      ],
+      "cases": [
+        {
+          "mode": "mixed",
+          "characters": 36,
+          "zombies": 18,
+          "barricades": 18
+        }
+      ],
+      "overview": {
+        "zoom": 1.1483253588516746,
+        "x": 0,
+        "y": -75.28708133971293,
+        "minZoom": 1.1483253588516746,
+        "maxZoom": 1.5
+      }
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "errors": [],
+      "focus": [
+        {
+          "id": "escuela",
+          "camera": {
+            "zoom": 1.013793103448276,
+            "x": -70.75862068965517,
+            "y": -86.17241379310346,
+            "minZoom": 0.5095693779904307,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 852,
+            "height": 294,
+            "dpr": 2
+          }
+        },
+        {
+          "id": "biblioteca",
+          "camera": {
+            "zoom": 1.013793103448276,
+            "x": -755.0689655172414,
+            "y": -86.17241379310346,
+            "minZoom": 0.5095693779904307,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 852,
+            "height": 294,
+            "dpr": 2
+          }
+        },
+        {
+          "id": "hospital",
+          "camera": {
+            "zoom": 1.013793103448276,
+            "x": 0,
+            "y": -273.7241379310345,
+            "minZoom": 0.5095693779904307,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 852,
+            "height": 294,
+            "dpr": 2
+          }
+        },
+        {
+          "id": "colonia",
+          "camera": {
+            "zoom": 0.7736842105263158,
+            "x": -212.28947368421052,
+            "y": -185.68421052631578,
+            "minZoom": 0.5095693779904307,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 852,
+            "height": 294,
+            "dpr": 2
+          }
+        },
+        {
+          "id": "supermercado",
+          "camera": {
+            "zoom": 1.013793103448276,
+            "x": -843.0620689655173,
+            "y": -291.97241379310344,
+            "minZoom": 0.5095693779904307,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 852,
+            "height": 294,
+            "dpr": 2
+          }
+        },
+        {
+          "id": "gasolinera",
+          "camera": {
+            "zoom": 1.013793103448276,
+            "x": 0,
+            "y": -541.3655172413793,
+            "minZoom": 0.5095693779904307,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 852,
+            "height": 294,
+            "dpr": 2
+          }
+        },
+        {
+          "id": "comisaria",
+          "camera": {
+            "zoom": 1.013793103448276,
+            "x": -843.0620689655173,
+            "y": -542.3793103448276,
+            "minZoom": 0.5095693779904307,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 852,
+            "height": 294,
+            "dpr": 2
+          }
+        }
+      ],
+      "cases": [
+        {
+          "mode": "mixed",
+          "characters": 36,
+          "zombies": 18,
+          "barricades": 18
+        }
+      ],
+      "overview": {
+        "zoom": 0.5095693779904307,
+        "x": -5.684341886080802e-14,
+        "y": -92.75239234449762,
+        "minZoom": 0.5095693779904307,
+        "maxZoom": 1.5
+      }
+    }
+  ],
+  "passed": true
+}

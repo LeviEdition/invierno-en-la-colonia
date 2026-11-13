@@ -1,0 +1,406 @@
+{
+  "passed": true,
+  "controlled": true,
+  "physicalMobile": false,
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "scenario": "local",
+      "phases": [
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise",
+        "round"
+      ],
+      "round": 2,
+      "outcome": null,
+      "cameraBefore": {
+        "overview": true,
+        "zoom": 0.5738575982996812,
+        "x": 48.04197662061637,
+        "y": 0,
+        "minZoom": 0.5738575982996812,
+        "maxZoom": 1.5
+      },
+      "cameraAfter": {
+        "overview": true,
+        "zoom": 0.5738575982996812,
+        "x": 48.04197662061637,
+        "y": 0,
+        "minZoom": 0.5738575982996812,
+        "maxZoom": 1.5
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/workspace/invierno-en-la-colonia/work/ciclo/entrega/1365x768/local/page@dd4b0fbe9026c0e976ca7943e6823175.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "scenario": "ai",
+      "phases": [
+        "ai",
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise",
+        "round"
+      ],
+      "round": 2,
+      "outcome": null,
+      "cameraBefore": {
+        "overview": true,
+        "zoom": 0.5738575982996812,
+        "x": 48.04197662061637,
+        "y": 0,
+        "minZoom": 0.5738575982996812,
+        "maxZoom": 1.5
+      },
+      "cameraAfter": {
+        "overview": true,
+        "zoom": 0.5738575982996812,
+        "x": 48.04197662061637,
+        "y": 0,
+        "minZoom": 0.5738575982996812,
+        "maxZoom": 1.5
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/workspace/invierno-en-la-colonia/work/ciclo/entrega/1365x768/ai/page@317ffbe372002a949a21388112298f6f.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "scenario": "death",
+      "phases": [
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise",
+        "round"
+      ],
+      "round": 2,
+      "outcome": null,
+      "cameraBefore": {
+        "overview": true,
+        "zoom": 0.5738575982996812,
+        "x": 48.04197662061637,
+        "y": 0,
+        "minZoom": 0.5738575982996812,
+        "maxZoom": 1.5
+      },
+      "cameraAfter": {
+        "overview": true,
+        "zoom": 0.5738575982996812,
+        "x": 48.04197662061637,
+        "y": 0,
+        "minZoom": 0.5738575982996812,
+        "maxZoom": 1.5
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/workspace/invierno-en-la-colonia/work/ciclo/entrega/1365x768/death/page@0a4c81daa8362bc72344499884b6cf5d.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "scenario": "time",
+      "phases": [
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise"
+      ],
+      "round": 2,
+      "outcome": {
+        "reason": "time",
+        "label": "Derrota: se agotaron las rondas."
+      },
+      "cameraBefore": {
+        "overview": true,
+        "zoom": 0.5738575982996812,
+        "x": 48.04197662061637,
+        "y": 0,
+        "minZoom": 0.5738575982996812,
+        "maxZoom": 1.5
+      },
+      "cameraAfter": {
+        "overview": true,
+        "zoom": 0.5738575982996812,
+        "x": 48.04197662061637,
+        "y": 0,
+        "minZoom": 0.5738575982996812,
+        "maxZoom": 1.5
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/workspace/invierno-en-la-colonia/work/ciclo/entrega/1365x768/time/page@d499cc7d382919f09aa73aaffeef5ea5.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "scenario": "local",
+      "phases": [
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise",
+        "round"
+      ],
+      "round": 2,
+      "outcome": null,
+      "cameraBefore": {
+        "overview": true,
+        "zoom": 0.2359192348565356,
+        "x": 228.8894792773645,
+        "y": 0,
+        "minZoom": 0.2359192348565356,
+        "maxZoom": 1.5
+      },
+      "cameraAfter": {
+        "overview": true,
+        "zoom": 0.2359192348565356,
+        "x": 228.8894792773645,
+        "y": 0,
+        "minZoom": 0.2359192348565356,
+        "maxZoom": 1.5
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/workspace/invierno-en-la-colonia/work/ciclo/entrega/852x393/local/page@9fb48ae08dddb5b32a27e9b9e007314a.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "scenario": "ai",
+      "phases": [
+        "ai",
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise",
+        "round"
+      ],
+      "round": 2,
+      "outcome": null,
+      "cameraBefore": {
+        "overview": true,
+        "zoom": 0.2359192348565356,
+        "x": 228.8894792773645,
+        "y": 0,
+        "minZoom": 0.2359192348565356,
+        "maxZoom": 1.5
+      },
+      "cameraAfter": {
+        "overview": true,
+        "zoom": 0.2359192348565356,
+        "x": 228.8894792773645,
+        "y": 0,
+        "minZoom": 0.2359192348565356,
+        "maxZoom": 1.5
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/workspace/invierno-en-la-colonia/work/ciclo/entrega/852x393/ai/page@133bfc278109dc01f8b14a3fe031c7da.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "scenario": "death",
+      "phases": [
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise",
+        "round"
+      ],
+      "round": 2,
+      "outcome": null,
+      "cameraBefore": {
+        "overview": true,
+        "zoom": 0.2359192348565356,
+        "x": 228.8894792773645,
+        "y": 0,
+        "minZoom": 0.2359192348565356,
+        "maxZoom": 1.5
+      },
+      "cameraAfter": {
+        "overview": true,
+        "zoom": 0.2359192348565356,
+        "x": 228.8894792773645,
+        "y": 0,
+        "minZoom": 0.2359192348565356,
+        "maxZoom": 1.5
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/workspace/invierno-en-la-colonia/work/ciclo/entrega/852x393/death/page@cc7a5220611f655809a846a2893af193.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "scenario": "time",
+      "phases": [
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise"
+      ],
+      "round": 2,
+      "outcome": {
+        "reason": "time",
+        "label": "Derrota: se agotaron las rondas."
+      },
+      "cameraBefore": {
+        "overview": true,
+        "zoom": 0.2359192348565356,
+        "x": 228.8894792773645,
+        "y": 0,
+        "minZoom": 0.2359192348565356,
+        "maxZoom": 1.5
+      },
+      "cameraAfter": {
+        "overview": true,
+        "zoom": 0.2359192348565356,
+        "x": 228.8894792773645,
+        "y": 0,
+        "minZoom": 0.2359192348565356,
+        "maxZoom": 1.5
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/workspace/invierno-en-la-colonia/work/ciclo/entrega/852x393/time/page@7ac6327dbefe0d2bc477d3a7bed4da67.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "scenario": "bite",
+      "phases": [
+        "ai",
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise",
+        "round"
+      ],
+      "round": 2,
+      "outcome": null,
+      "cameraBefore": {
+        "overview": true,
+        "zoom": 0.5738575982996812,
+        "x": 48.04197662061637,
+        "y": 0,
+        "minZoom": 0.5738575982996812,
+        "maxZoom": 1.5
+      },
+      "cameraAfter": {
+        "overview": true,
+        "zoom": 0.5738575982996812,
+        "x": 48.04197662061637,
+        "y": 0,
+        "minZoom": 0.5738575982996812,
+        "maxZoom": 1.5
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/workspace/invierno-en-la-colonia/work/ciclo/bite-browser/1365x768/bite/page@195471ef670d47e8babf5c96591d4e8a.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "scenario": "bite",
+      "phases": [
+        "ai",
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise",
+        "round"
+      ],
+      "round": 2,
+      "outcome": null,
+      "cameraBefore": {
+        "overview": true,
+        "zoom": 0.2359192348565356,
+        "x": 228.8894792773645,
+        "y": 0,
+        "minZoom": 0.2359192348565356,
+        "maxZoom": 1.5
+      },
+      "cameraAfter": {
+        "overview": true,
+        "zoom": 0.2359192348565356,
+        "x": 228.8894792773645,
+        "y": 0,
+        "minZoom": 0.2359192348565356,
+        "maxZoom": 1.5
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/workspace/invierno-en-la-colonia/work/ciclo/bite-browser/852x393/bite/page@c19fc2899ccac989d7a3d7c701644b14.webm",
+      "passed": true
+    }
+  ],
+  "cameraBefore": {
+    "scenario": "time",
+    "width": 852,
+    "camera": {
+      "overview": true,
+      "zoom": 0.2359192348565356,
+      "x": 228.8894792773645,
+      "y": 0,
+      "minZoom": 0.2359192348565356,
+      "maxZoom": 1.5
+    },
+    "viewport": {
+      "width": 852,
+      "height": 222,
+      "dpr": 2
+    }
+  },
+  "runs": [
+    "Ocho recorridos generales",
+    "Dos recorridos de mordedura después de corregir prioridad"
+  ]
+}

@@ -32,7 +32,10 @@
     "dev:search-map": "node scripts/serve-search-map.mjs",
     "build:action-map": "node scripts/build-action-map.mjs",
     "check:action-map-build": "node scripts/build-action-map.mjs --check",
-    "dev:action-map": "node scripts/serve-action-map.mjs"
+    "dev:action-map": "node scripts/serve-action-map.mjs",
+    "build:horizontal-map": "node scripts/build-horizontal-map.mjs",
+    "check:horizontal-map-build": "node scripts/build-horizontal-map.mjs --check",
+    "dev:horizontal-map": "node scripts/serve-horizontal-map.mjs"
   },
   "devDependencies": {
     "esbuild": "0.28.2",

@@ -1,0 +1,1596 @@
+{
+  "browser": "154.0.8037.57",
+  "node": "v24.19.0",
+  "cpu": "AMD EPYC 9V74 80-Core Processor",
+  "physicalMobile": false,
+  "method": "Aislado y secuencial. Contextos nuevos. QA fuerza el mismo canvas1055×563, DPR1, cámara y partida. Calentamiento500ms,2 muestras1500ms por perfil. POST_RENDER y CDP TaskDuration/heap; no VRAM. No mide la ganancia de superficie de la interfaz normal.",
+  "records": [
+    {
+      "variant": "baseline",
+      "camera": {
+        "zoom": 1.388157894736842,
+        "x": -617.7302631578946,
+        "y": -315.4078947368421,
+        "minZoom": 0.6309808612440191,
+        "maxZoom": 1.5
+      },
+      "viewport": {
+        "width": 1055,
+        "height": 563,
+        "dpr": 1
+      },
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "profiles": [
+        {
+          "profile": "off",
+          "samples": [
+            {
+              "seconds": 1.504199999988079,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "taskSeconds": 0.001882999999999968,
+              "heapBytes": 11024344
+            },
+            {
+              "seconds": 1.503800000011921,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "taskSeconds": 0.0012609999999999566,
+              "heapBytes": 11186008
+            }
+          ],
+          "geometry": {
+            "updates": 21,
+            "groups": [
+              {
+                "id": "arbol-oeste",
+                "anchor": {
+                  "x": 222,
+                  "y": 471
+                },
+                "crownOffset": 0,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbusto-sur-hospital",
+                "anchor": {
+                  "x": 385,
+                  "y": 606
+                },
+                "crownOffset": 0,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbusto-centro-sur",
+                "anchor": {
+                  "x": 825,
+                  "y": 747
+                },
+                "crownOffset": 0,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-este",
+                "anchor": {
+                  "x": 1080,
+                  "y": 646
+                },
+                "crownOffset": 0,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbusto-sur-este",
+                "anchor": {
+                  "x": 1330,
+                  "y": 826
+                },
+                "crownOffset": 0,
+                "baseOffset": 0
+              },
+              {
+                "id": "pino-borde-este",
+                "anchor": {
+                  "x": 1600,
+                  "y": 634
+                },
+                "crownOffset": 0,
+                "baseOffset": 0
+              },
+              {
+                "id": "grupo-suroeste",
+                "anchor": {
+                  "x": 65,
+                  "y": 735
+                },
+                "crownOffset": 0,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbusto-sur-oeste",
+                "anchor": {
+                  "x": 270,
+                  "y": 811
+                },
+                "crownOffset": 0,
+                "baseOffset": 0
+              }
+            ],
+            "dynamicVertices": 144,
+            "maxVertexOffset": 0,
+            "meshVertices": 256,
+            "triangles": 216,
+            "interactiveObjects": 0,
+            "lights": [
+              {
+                "id": "colonia-oeste",
+                "sourceAlpha": 0,
+                "spillAlpha": 0,
+                "level": 0
+              },
+              {
+                "id": "colonia-este",
+                "sourceAlpha": 0,
+                "spillAlpha": 0,
+                "level": 0
+              },
+              {
+                "id": "hospital-entrada",
+                "sourceAlpha": 0,
+                "spillAlpha": 0,
+                "level": 0
+              }
+            ],
+            "runtimeTextureBytes": 6344200
+          },
+          "textures": {
+            "map": {
+              "width": 1672,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "vegetation": {
+              "width": 1672,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          }
+        },
+        {
+          "profile": "soft",
+          "samples": [
+            {
+              "seconds": 1.5302999999821185,
+              "renderEvents": 22,
+              "rendersPerSecond": 14.376266091784009,
+              "taskSeconds": 1.3421910000000001,
+              "heapBytes": 12089988
+            },
+            {
+              "seconds": 1.515800000011921,
+              "renderEvents": 22,
+              "rendersPerSecond": 14.513788098579615,
+              "taskSeconds": 1.500718,
+              "heapBytes": 12837472
+            }
+          ],
+          "geometry": {
+            "updates": 76,
+            "groups": [
+              {
+                "id": "arbol-oeste",
+                "anchor": {
+                  "x": 222,
+                  "y": 471
+                },
+                "crownOffset": 2.1182345025411604,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbusto-sur-hospital",
+                "anchor": {
+                  "x": 385,
+                  "y": 606
+                },
+                "crownOffset": 0.6645543505616264,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbusto-centro-sur",
+                "anchor": {
+                  "x": 825,
+                  "y": 747
+                },
+                "crownOffset": 1.2104306196482202,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-este",
+                "anchor": {
+                  "x": 1080,
+                  "y": 646
+                },
+                "crownOffset": 1.2928676281694973,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbusto-sur-este",
+                "anchor": {
+                  "x": 1330,
+                  "y": 826
+                },
+                "crownOffset": 0.6192683443115884,
+                "baseOffset": 0
+              },
+              {
+                "id": "pino-borde-este",
+                "anchor": {
+                  "x": 1600,
+                  "y": 634
+                },
+                "crownOffset": 2.550886329218503,
+                "baseOffset": 0
+              },
+              {
+                "id": "grupo-suroeste",
+                "anchor": {
+                  "x": 65,
+                  "y": 735
+                },
+                "crownOffset": 1.2892267347841593,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbusto-sur-oeste",
+                "anchor": {
+                  "x": 270,
+                  "y": 811
+                },
+                "crownOffset": 1.2793089811660323,
+                "baseOffset": 0
+              }
+            ],
+            "dynamicVertices": 144,
+            "maxVertexOffset": 2.4031777870733837,
+            "meshVertices": 256,
+            "triangles": 216,
+            "interactiveObjects": 0,
+            "lights": [
+              {
+                "id": "colonia-oeste",
+                "sourceAlpha": 0.7803869857200791,
+                "spillAlpha": 0.7803869857200791,
+                "level": 0.7803869857200791
+              },
+              {
+                "id": "colonia-este",
+                "sourceAlpha": 0.7554697248476832,
+                "spillAlpha": 0.7554697248476832,
+                "level": 0.7554697248476832
+              },
+              {
+                "id": "hospital-entrada",
+                "sourceAlpha": 0.8029320696056834,
+                "spillAlpha": 0.8029320696056834,
+                "level": 0.8029320696056834
+              }
+            ],
+            "runtimeTextureBytes": 6344200
+          },
+          "textures": {
+            "map": {
+              "width": 1672,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "vegetation": {
+              "width": 1672,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          }
+        },
+        {
+          "profile": "storm",
+          "samples": [
+            {
+              "seconds": 1.5177000000178813,
+              "renderEvents": 21,
+              "rendersPerSecond": 13.836726625652357,
+              "taskSeconds": 1.5166430000000002,
+              "heapBytes": 14056616
+            },
+            {
+              "seconds": 1.5581999999880791,
+              "renderEvents": 21,
+              "rendersPerSecond": 13.477088948890167,
+              "taskSeconds": 1.5579619999999998,
+              "heapBytes": 12032668
+            }
+          ],
+          "geometry": {
+            "updates": 135,
+            "groups": [
+              {
+                "id": "arbol-oeste",
+                "anchor": {
+                  "x": 222,
+                  "y": 471
+                },
+                "crownOffset": 2.06552789837494,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbusto-sur-hospital",
+                "anchor": {
+                  "x": 385,
+                  "y": 606
+                },
+                "crownOffset": 2.668821958067918,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbusto-centro-sur",
+                "anchor": {
+                  "x": 825,
+                  "y": 747
+                },
+                "crownOffset": 4.283291458684418,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-este",
+                "anchor": {
+                  "x": 1080,
+                  "y": 646
+                },
+                "crownOffset": 2.2398888707115883,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbusto-sur-este",
+                "anchor": {
+                  "x": 1330,
+                  "y": 826
+                },
+                "crownOffset": 2.97583471227903,
+                "baseOffset": 0
+              },
+              {
+                "id": "pino-borde-este",
+                "anchor": {
+                  "x": 1600,
+                  "y": 634
+                },
+                "crownOffset": 4.50251329916994,
+                "baseOffset": 0
+              },
+              {
+                "id": "grupo-suroeste",
+                "anchor": {
+                  "x": 65,
+                  "y": 735
+                },
+                "crownOffset": 5.380224328347286,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbusto-sur-oeste",
+                "anchor": {
+                  "x": 270,
+                  "y": 811
+                },
+                "crownOffset": 1.1541962317052992,
+                "baseOffset": 0
+              }
+            ],
+            "dynamicVertices": 144,
+            "maxVertexOffset": 5.011319320148686,
+            "meshVertices": 256,
+            "triangles": 216,
+            "interactiveObjects": 0,
+            "lights": [
+              {
+                "id": "colonia-oeste",
+                "sourceAlpha": 0.7884444141243914,
+                "spillAlpha": 0.7884444141243914,
+                "level": 0.7884444141243914
+              },
+              {
+                "id": "colonia-este",
+                "sourceAlpha": 0.8199902956933941,
+                "spillAlpha": 0.8199902956933941,
+                "level": 0.8199902956933941
+              },
+              {
+                "id": "hospital-entrada",
+                "sourceAlpha": 0.7877317808999846,
+                "spillAlpha": 0.7877317808999846,
+                "level": 0.7877317808999846
+              }
+            ],
+            "runtimeTextureBytes": 6344200
+          },
+          "textures": {
+            "map": {
+              "width": 1672,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "vegetation": {
+              "width": 1672,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variant": "candidate",
+      "camera": {
+        "zoom": 1.388157894736842,
+        "x": -617.7302631578946,
+        "y": -315.4078947368421,
+        "minZoom": 0.6309808612440191,
+        "maxZoom": 1.5
+      },
+      "viewport": {
+        "width": 1055,
+        "height": 563,
+        "dpr": 1
+      },
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "profiles": [
+        {
+          "profile": "off",
+          "samples": [
+            {
+              "seconds": 1.5032999999821186,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "taskSeconds": 0.0020580000000000043,
+              "heapBytes": 12026308
+            },
+            {
+              "seconds": 1.5068000000119208,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "taskSeconds": 0.0014840000000000408,
+              "heapBytes": 12201888
+            }
+          ],
+          "geometry": {
+            "updates": 18,
+            "quadTopologyValid": true,
+            "partitionError": 1.5478923127567706e-16,
+            "groups": [
+              {
+                "id": "arbol-oeste",
+                "kind": "tree",
+                "frequency": 0.86,
+                "anchor": {
+                  "x": 222,
+                  "y": 456
+                },
+                "tipOffset": 0,
+                "fixedOffset": 0,
+                "crownOffset": 0,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-noroeste",
+                "kind": "tree",
+                "frequency": 1.12,
+                "anchor": {
+                  "x": 161,
+                  "y": 153
+                },
+                "tipOffset": 0,
+                "fixedOffset": 0,
+                "crownOffset": 0,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-norte",
+                "kind": "tree",
+                "frequency": 0.94,
+                "anchor": {
+                  "x": 780,
+                  "y": 148
+                },
+                "tipOffset": 0,
+                "fixedOffset": 0,
+                "crownOffset": 0,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-noreste",
+                "kind": "tree",
+                "frequency": 1.04,
+                "anchor": {
+                  "x": 1322,
+                  "y": 351
+                },
+                "tipOffset": 0,
+                "fixedOffset": 0,
+                "crownOffset": 0,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-sureste",
+                "kind": "tree",
+                "frequency": 0.78,
+                "anchor": {
+                  "x": 1430,
+                  "y": 594
+                },
+                "tipOffset": 0,
+                "fixedOffset": 0,
+                "crownOffset": 0,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbusto-sur-oeste",
+                "kind": "shrub",
+                "frequency": 1.3,
+                "anchor": {
+                  "x": 434,
+                  "y": 799
+                },
+                "tipOffset": 0,
+                "fixedOffset": 0,
+                "crownOffset": 0,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-sur-este",
+                "kind": "tree",
+                "frequency": 0.98,
+                "anchor": {
+                  "x": 1003,
+                  "y": 875
+                },
+                "tipOffset": 0,
+                "fixedOffset": 0,
+                "crownOffset": 0,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbusto-centro-este",
+                "kind": "shrub",
+                "frequency": 1.25,
+                "anchor": {
+                  "x": 1078,
+                  "y": 620
+                },
+                "tipOffset": 0,
+                "fixedOffset": 0,
+                "crownOffset": 0,
+                "baseOffset": 0
+              }
+            ],
+            "dynamicVertices": 363,
+            "maxVertexOffset": 0,
+            "meshVertices": 522,
+            "triangles": 416,
+            "interactiveObjects": 0,
+            "lights": [
+              {
+                "id": "colonia-oeste",
+                "sourceAlpha": 0,
+                "spillAlpha": 0,
+                "level": 0
+              },
+              {
+                "id": "colonia-este",
+                "sourceAlpha": 0,
+                "spillAlpha": 0,
+                "level": 0
+              },
+              {
+                "id": "hospital-entrada",
+                "sourceAlpha": 0,
+                "spillAlpha": 0,
+                "level": 0
+              }
+            ],
+            "runtimeTextureBytes": 5790524
+          },
+          "textures": {
+            "map": {
+              "width": 1672,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "vegetation": {
+              "width": 1672,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          }
+        },
+        {
+          "profile": "soft",
+          "samples": [
+            {
+              "seconds": 1.516,
+              "renderEvents": 16,
+              "rendersPerSecond": 10.554089709762533,
+              "taskSeconds": 1.4108569999999998,
+              "heapBytes": 10214528
+            },
+            {
+              "seconds": 1.5848999999761582,
+              "renderEvents": 17,
+              "rendersPerSecond": 10.726228784311775,
+              "taskSeconds": 1.456511,
+              "heapBytes": 11579940
+            }
+          ],
+          "geometry": {
+            "updates": 60,
+            "quadTopologyValid": true,
+            "partitionError": 1.5478923127567706e-16,
+            "groups": [
+              {
+                "id": "arbol-oeste",
+                "kind": "tree",
+                "frequency": 0.86,
+                "anchor": {
+                  "x": 222,
+                  "y": 456
+                },
+                "tipOffset": 2.3534863685169114,
+                "fixedOffset": 0,
+                "crownOffset": 0.8537467135921624,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-noroeste",
+                "kind": "tree",
+                "frequency": 1.12,
+                "anchor": {
+                  "x": 161,
+                  "y": 153
+                },
+                "tipOffset": 0.9948403317995136,
+                "fixedOffset": 0,
+                "crownOffset": 0.286662388842695,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-norte",
+                "kind": "tree",
+                "frequency": 0.94,
+                "anchor": {
+                  "x": 780,
+                  "y": 148
+                },
+                "tipOffset": 1.0093771699551966,
+                "fixedOffset": 0,
+                "crownOffset": 0.29138552838732473,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-noreste",
+                "kind": "tree",
+                "frequency": 1.04,
+                "anchor": {
+                  "x": 1322,
+                  "y": 351
+                },
+                "tipOffset": 1.4274738934691997,
+                "fixedOffset": 0,
+                "crownOffset": 0.46975219562047177,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-sureste",
+                "kind": "tree",
+                "frequency": 0.78,
+                "anchor": {
+                  "x": 1430,
+                  "y": 594
+                },
+                "tipOffset": 1.1990814423050824,
+                "fixedOffset": 0,
+                "crownOffset": 0.255831231080466,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbusto-sur-oeste",
+                "kind": "shrub",
+                "frequency": 1.3,
+                "anchor": {
+                  "x": 434,
+                  "y": 799
+                },
+                "tipOffset": 0.5791849979982613,
+                "fixedOffset": 0,
+                "crownOffset": 0.07524792529724675,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-sur-este",
+                "kind": "tree",
+                "frequency": 0.98,
+                "anchor": {
+                  "x": 1003,
+                  "y": 875
+                },
+                "tipOffset": 0.9622144182757029,
+                "fixedOffset": 0,
+                "crownOffset": 0.2630152531956761,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbusto-centro-este",
+                "kind": "shrub",
+                "frequency": 1.25,
+                "anchor": {
+                  "x": 1078,
+                  "y": 620
+                },
+                "tipOffset": 0.6946219230750832,
+                "fixedOffset": 0,
+                "crownOffset": 0.17499386102735884,
+                "baseOffset": 0
+              }
+            ],
+            "dynamicVertices": 363,
+            "maxVertexOffset": 2.3534863685169114,
+            "meshVertices": 522,
+            "triangles": 416,
+            "interactiveObjects": 0,
+            "lights": [
+              {
+                "id": "colonia-oeste",
+                "sourceAlpha": 0.8133119802968989,
+                "spillAlpha": 0.8133119802968989,
+                "level": 0.8133119802968989
+              },
+              {
+                "id": "colonia-este",
+                "sourceAlpha": 0.7561197800999422,
+                "spillAlpha": 0.7561197800999422,
+                "level": 0.7561197800999422
+              },
+              {
+                "id": "hospital-entrada",
+                "sourceAlpha": 0.7842943055710869,
+                "spillAlpha": 0.7842943055710869,
+                "level": 0.7842943055710869
+              }
+            ],
+            "runtimeTextureBytes": 5790524
+          },
+          "textures": {
+            "map": {
+              "width": 1672,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "vegetation": {
+              "width": 1672,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          }
+        },
+        {
+          "profile": "storm",
+          "samples": [
+            {
+              "seconds": 1.553100000023842,
+              "renderEvents": 17,
+              "rendersPerSecond": 10.94585023484581,
+              "taskSeconds": 1.5530629999999999,
+              "heapBytes": 10368956
+            },
+            {
+              "seconds": 1.5420999999940395,
+              "renderEvents": 17,
+              "rendersPerSecond": 11.023928409354587,
+              "taskSeconds": 1.5405170000000004,
+              "heapBytes": 12501072
+            }
+          ],
+          "geometry": {
+            "updates": 105,
+            "quadTopologyValid": true,
+            "partitionError": 1.5478923127567706e-16,
+            "groups": [
+              {
+                "id": "arbol-oeste",
+                "kind": "tree",
+                "frequency": 0.86,
+                "anchor": {
+                  "x": 222,
+                  "y": 456
+                },
+                "tipOffset": 3.7573054928072396,
+                "fixedOffset": 0,
+                "crownOffset": 1.3629937523145295,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-noroeste",
+                "kind": "tree",
+                "frequency": 1.12,
+                "anchor": {
+                  "x": 161,
+                  "y": 153
+                },
+                "tipOffset": 4.544828012879026,
+                "fixedOffset": 0,
+                "crownOffset": 1.3095882961384149,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-norte",
+                "kind": "tree",
+                "frequency": 0.94,
+                "anchor": {
+                  "x": 780,
+                  "y": 148
+                },
+                "tipOffset": 4.651444052441501,
+                "fixedOffset": 0,
+                "crownOffset": 1.3427720809703934,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-noreste",
+                "kind": "tree",
+                "frequency": 1.04,
+                "anchor": {
+                  "x": 1322,
+                  "y": 351
+                },
+                "tipOffset": 3.30523267619294,
+                "fixedOffset": 0,
+                "crownOffset": 1.0876838545220389,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-sureste",
+                "kind": "tree",
+                "frequency": 0.78,
+                "anchor": {
+                  "x": 1430,
+                  "y": 594
+                },
+                "tipOffset": 3.7416927232125508,
+                "fixedOffset": 0,
+                "crownOffset": 0.7983126265919953,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbusto-sur-oeste",
+                "kind": "shrub",
+                "frequency": 1.3,
+                "anchor": {
+                  "x": 434,
+                  "y": 799
+                },
+                "tipOffset": 0.991066584611631,
+                "fixedOffset": 0,
+                "crownOffset": 0.12875973062354315,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-sur-este",
+                "kind": "tree",
+                "frequency": 0.98,
+                "anchor": {
+                  "x": 1003,
+                  "y": 875
+                },
+                "tipOffset": 4.592118179818773,
+                "fixedOffset": 0,
+                "crownOffset": 1.2552265927732467,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbusto-centro-este",
+                "kind": "shrub",
+                "frequency": 1.25,
+                "anchor": {
+                  "x": 1078,
+                  "y": 620
+                },
+                "tipOffset": 0.9906383056638465,
+                "fixedOffset": 0,
+                "crownOffset": 0.24956831368390164,
+                "baseOffset": 0
+              }
+            ],
+            "dynamicVertices": 363,
+            "maxVertexOffset": 4.6514440524415015,
+            "meshVertices": 522,
+            "triangles": 416,
+            "interactiveObjects": 0,
+            "lights": [
+              {
+                "id": "colonia-oeste",
+                "sourceAlpha": 0.755524567928121,
+                "spillAlpha": 0.755524567928121,
+                "level": 0.755524567928121
+              },
+              {
+                "id": "colonia-este",
+                "sourceAlpha": 0.7772921837922321,
+                "spillAlpha": 0.7772921837922321,
+                "level": 0.7772921837922321
+              },
+              {
+                "id": "hospital-entrada",
+                "sourceAlpha": 0.813722412932485,
+                "spillAlpha": 0.813722412932485,
+                "level": 0.813722412932485
+              }
+            ],
+            "runtimeTextureBytes": 5790524
+          },
+          "textures": {
+            "map": {
+              "width": 1672,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "vegetation": {
+              "width": 1672,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "passed": true
+}

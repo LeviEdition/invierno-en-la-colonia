@@ -1,0 +1,156 @@
+[
+  {
+    "file": "1365x768/normal/recorrido.mp4",
+    "seconds": 7.6,
+    "sourceSeconds": 7.6,
+    "dimensions": {
+      "width": 1364,
+      "height": 768
+    },
+    "sha256": "f00a121d1c1f155fa7810312bf39db0e606a9db57df7131960f812a82473d6ad",
+    "sourceSha256": "329cc1d96c72667b84c84c4bde955b15843880e04ccc72fb6dd17bf39008cee8"
+  },
+  {
+    "file": "1365x768/local/recorrido.mp4",
+    "seconds": 24.16,
+    "sourceSeconds": 24.16,
+    "dimensions": {
+      "width": 1364,
+      "height": 768
+    },
+    "sha256": "0b655030e412b6047ac955bcc187e398f64080dd3af1f7d451b88a6af5b095d8",
+    "sourceSha256": "767d1cd831c4e49b848347308399f8d143fe61e89b975b5c5731b1efd360b5dc"
+  },
+  {
+    "file": "1365x768/ai/recorrido.mp4",
+    "seconds": 6.52,
+    "sourceSeconds": 6.52,
+    "dimensions": {
+      "width": 1364,
+      "height": 768
+    },
+    "sha256": "b49bd886789c18b2496ea0bf770c677de9fb1ea0ed2f4d87989fe5fb21b02b71",
+    "sourceSha256": "f62b1e594c6326b7938937ff80674e204529407e1727368bdc4572b78d407246"
+  },
+  {
+    "file": "1365x768/interruptions/recorrido.mp4",
+    "seconds": 8.2,
+    "sourceSeconds": 8.2,
+    "dimensions": {
+      "width": 1364,
+      "height": 768
+    },
+    "sha256": "89aa3edceb7325b9c8dce5bf50d10371f4049628d7eebaf516bb3157cc2e7b85",
+    "sourceSha256": "c6195095c9eed901699815b6620cf61701b1e1ac64c869406b84bcf2eca88e05"
+  },
+  {
+    "file": "1365x768/cross/recorrido.mp4",
+    "seconds": 3.28,
+    "sourceSeconds": 3.28,
+    "dimensions": {
+      "width": 1364,
+      "height": 768
+    },
+    "sha256": "79457053fe54bea1c7042725116d98a52b52a70ca4f4b386774357ffdea19f7e",
+    "sourceSha256": "6df3ed3570f33f573571de73f60f49b23a9e51b9718273846b21ee48cb7cf75e"
+  },
+  {
+    "file": "1365x768/victory/recorrido.mp4",
+    "seconds": 5.56,
+    "sourceSeconds": 5.56,
+    "dimensions": {
+      "width": 1364,
+      "height": 768
+    },
+    "sha256": "db565eb88cc99389c23ec173f30b5ee3026c70ffc234f1e0bb5319b928db9b4e",
+    "sourceSha256": "71790e935b64d2d234bfc8194ea5a1df2e4c25cdc463d523a15cbc20b65c7765"
+  },
+  {
+    "file": "1365x768/defeat/recorrido.mp4",
+    "seconds": 4.84,
+    "sourceSeconds": 4.84,
+    "dimensions": {
+      "width": 1364,
+      "height": 768
+    },
+    "sha256": "e9f260d73ec9bace7430bb4dd9614d83ebc4e302f9e5d07ce4550e9d82c60f79",
+    "sourceSha256": "c233444d4a93173e4a02c98befa63608ebbe591f8af6db428594a630f10d7a52"
+  },
+  {
+    "file": "852x393/normal/recorrido.mp4",
+    "seconds": 5.24,
+    "sourceSeconds": 5.24,
+    "dimensions": {
+      "width": 852,
+      "height": 392
+    },
+    "sha256": "b749044e419d3f7745c99589f29d7dab69bf6b75f03a269600df494eba7dfdc9",
+    "sourceSha256": "a3a574f3d104a8395256d6e1b97fb760b8be02b2eeb2ff3ff3fe80918f59b94e"
+  },
+  {
+    "file": "852x393/local/recorrido.mp4",
+    "seconds": 11.56,
+    "sourceSeconds": 11.56,
+    "dimensions": {
+      "width": 852,
+      "height": 392
+    },
+    "sha256": "7a8415f97bfaac3429345f8169c477be41362f23c295e7ea661391bc279b48c5",
+    "sourceSha256": "1e867271f1696fb1d5863a5bdb9a4ad5ef1c5de1347739436257b89e68e22e00"
+  },
+  {
+    "file": "852x393/ai/recorrido.mp4",
+    "seconds": 5.64,
+    "sourceSeconds": 5.64,
+    "dimensions": {
+      "width": 852,
+      "height": 392
+    },
+    "sha256": "3d7760b36f3829dcfd5838d08716b8e66a4d78d91eeffb821b3b34754ab46a5f",
+    "sourceSha256": "ad3ec6b2ce64c898dc12fa21a7194b9b2cbadf81c7cbd849f3b51eb7a1cfd00d"
+  },
+  {
+    "file": "852x393/interruptions/recorrido.mp4",
+    "seconds": 5.96,
+    "sourceSeconds": 5.96,
+    "dimensions": {
+      "width": 852,
+      "height": 392
+    },
+    "sha256": "bdf37ef99a4c45b7689bd6aedb129ffb12664062e4024ca390895ccc2d1a6eba",
+    "sourceSha256": "3017afc81e95648579872b3965a250df08548a3aeccc9eb05dcf7b1932f255a9"
+  },
+  {
+    "file": "852x393/cross/recorrido.mp4",
+    "seconds": 2.84,
+    "sourceSeconds": 2.84,
+    "dimensions": {
+      "width": 852,
+      "height": 392
+    },
+    "sha256": "57d4ad57c62f76008ca9bc2ac96dc1b602e77dc4123d884e912eb148f13951b5",
+    "sourceSha256": "bb4adbaa5cdd7fb6d62144350d5d931d310206b18aa5501c59baeffd46ac1bf3"
+  },
+  {
+    "file": "852x393/victory/recorrido.mp4",
+    "seconds": 4.6,
+    "sourceSeconds": 4.6,
+    "dimensions": {
+      "width": 852,
+      "height": 392
+    },
+    "sha256": "dedbee6098ad34287c2fc61a2847465f465bbbf3c2a49359df37266eb6abb787",
+    "sourceSha256": "32a6a212eb38ce0d3c20ebb6394f5bed9e51f0add595bf36cd980fa1843e97e2"
+  },
+  {
+    "file": "852x393/defeat/recorrido.mp4",
+    "seconds": 4.04,
+    "sourceSeconds": 4.04,
+    "dimensions": {
+      "width": 852,
+      "height": 392
+    },
+    "sha256": "eb3cc466b844a1a6840248de040456c82792f78e0ae0afbcce8727ac4f52228c",
+    "sourceSha256": "0c8e6dac7a7fbdb05de17ca321b11d90450b81b4e51ebe462ae3cb91e692dfdf"
+  }
+]

@@ -1,0 +1,237 @@
+[
+  {
+    "file": "1365x768/biblioteca.png",
+    "bytes": 1189026,
+    "sha256": "5f07508d876a4a41cedd820d1ef03ad633ab05ccab96286eaae2fc0c9b5ca39c"
+  },
+  {
+    "file": "1365x768/colonia.png",
+    "bytes": 1135878,
+    "sha256": "fb79d3db897d76150425899d6e8b91ece88a6d4ff009e369ae3912fdbbc1c4fa"
+  },
+  {
+    "file": "1365x768/comisaria.png",
+    "bytes": 1147717,
+    "sha256": "1b435952b0b3c07bbe5dec474c8fe8cffb14aa0dade9b6baccdcbaa9385cd7f9"
+  },
+  {
+    "file": "1365x768/escuela.png",
+    "bytes": 1182674,
+    "sha256": "f699285cad751a8efc1abeaa0196ece4f5f369588eb77501e2f7fdd9706e6826"
+  },
+  {
+    "file": "1365x768/gasolinera.png",
+    "bytes": 1151797,
+    "sha256": "3e618b2af3363384b096915e3cec38bda234ff21acf276d07d6b2a6b92fafd52"
+  },
+  {
+    "file": "1365x768/general.png",
+    "bytes": 1449027,
+    "sha256": "d9a0607963a59d370526825f323895ba6889d5c2f386cb9865134a71b4008cb2"
+  },
+  {
+    "file": "1365x768/hospital.png",
+    "bytes": 1148337,
+    "sha256": "8ee46ba2a89535aa2cd1e399e90dcef6e5401a829602eb1c05233298179c76eb"
+  },
+  {
+    "file": "1365x768/max-barricades-colonia.png",
+    "bytes": 1153465,
+    "sha256": "d9d820520f25eb5d3924ea5f0ed2fd1e1e9eb1dd4d7a69ff068062ab977da276"
+  },
+  {
+    "file": "1365x768/max-barricades-escuela.png",
+    "bytes": 1192350,
+    "sha256": "ea2e285d0a1879c319b57390cc52712926eccb0f39da73b0968206ba6224581a"
+  },
+  {
+    "file": "1365x768/max-mixed-colonia.png",
+    "bytes": 1153030,
+    "sha256": "9fac95a87b873b8ecc6a961573f9e930fc394802588cad205838c41e1c611d02"
+  },
+  {
+    "file": "1365x768/max-mixed-escuela.png",
+    "bytes": 1193525,
+    "sha256": "a5b7497e313f4173845d81282c9997a4a947fc556a8c42990e6e61bd06dbf154"
+  },
+  {
+    "file": "1365x768/max-zombies-colonia.png",
+    "bytes": 1155598,
+    "sha256": "8783395025f49a4bfbbef69f5e1db9562c0d2c0c3fb34bfc67f953ce5ad28a79"
+  },
+  {
+    "file": "1365x768/max-zombies-escuela.png",
+    "bytes": 1194503,
+    "sha256": "5f585ae099a526b82ec39fb0ff44ab2e53ae9bd7e1e385ff04d2a6d98a6a966c"
+  },
+  {
+    "file": "1365x768/supermercado.png",
+    "bytes": 1139099,
+    "sha256": "604d33d43e1378fb7ac03563b6db7c6e3d683a9782d1600bd144783aea6368a8"
+  },
+  {
+    "file": "852x393/biblioteca.png",
+    "bytes": 1133991,
+    "sha256": "4e73a6092f4ecaaee5d12b88ff49177f31f2b189f7f47e0c350074f4d501e384"
+  },
+  {
+    "file": "852x393/colonia.png",
+    "bytes": 1314700,
+    "sha256": "b68f10836273d6d91cfc8c039b29b7f78a6f1a81f19a2f7fa17970d979ec59c5"
+  },
+  {
+    "file": "852x393/comisaria.png",
+    "bytes": 1096951,
+    "sha256": "37e3012ae1826d844e73f7c757528ef0a7fc0962c004a247ad0158eac4bfc924"
+  },
+  {
+    "file": "852x393/escuela.png",
+    "bytes": 1107925,
+    "sha256": "78b755d35961028af70c5531720a4b04cab15198524bbe2837ce1a3ccbb75fe7"
+  },
+  {
+    "file": "852x393/gasolinera.png",
+    "bytes": 1093686,
+    "sha256": "b111fc254ec28d6b507b19f7469bfb943ae5a9ac24ef1b2142b359b55551bebe"
+  },
+  {
+    "file": "852x393/general.png",
+    "bytes": 1614173,
+    "sha256": "5113a8260731c43668b4fb869afde62a2f5089e955ca82fffef69266fe9069d3"
+  },
+  {
+    "file": "852x393/hospital.png",
+    "bytes": 1189980,
+    "sha256": "436127c32b535d7dd279fb9144016799f0357f5adf5fd0d06f7668be32cbba04"
+  },
+  {
+    "file": "852x393/max-barricades-colonia.png",
+    "bytes": 1340077,
+    "sha256": "00ead46fd3aaebf046be28854382001c2ff52a4e60faa358a222b0ac890617df"
+  },
+  {
+    "file": "852x393/max-barricades-escuela.png",
+    "bytes": 1111607,
+    "sha256": "7276e0040a11f492b6e5ad31b8d49aa5797b02424ef5b7024a8b409d76ca5157"
+  },
+  {
+    "file": "852x393/max-mixed-colonia.png",
+    "bytes": 1335820,
+    "sha256": "f05ec62c790268f908f3104c667f0f96477c1b45dba842d741bc490f8afdbfca"
+  },
+  {
+    "file": "852x393/max-mixed-escuela.png",
+    "bytes": 1115688,
+    "sha256": "84720e53dfa94a232a7d175e436316f22ca9f659ab4902c0535b49f403ef8b0a"
+  },
+  {
+    "file": "852x393/max-zombies-colonia.png",
+    "bytes": 1342697,
+    "sha256": "3be77f14e4f56ee45bd717ff936cb4f14d43009d25c0d9f256f66a3c6f90dcad"
+  },
+  {
+    "file": "852x393/max-zombies-escuela.png",
+    "bytes": 1117248,
+    "sha256": "1969cacd643760e2ff69a254323b0bd9f2c9b2ebb7aa5c92ea13eeb98a85eeb1"
+  },
+  {
+    "file": "852x393/supermercado.png",
+    "bytes": 1144395,
+    "sha256": "8bd93ba86fc7b1d9c1b208c9fbc879ad1b908d52f2022e32f3ea776c38a9d49b"
+  },
+  {
+    "file": "README.md",
+    "bytes": 2832,
+    "sha256": "47bbc373220adec95dc29c3b1edcd99f24d06bfcb512634c12ceed37f8d83606"
+  },
+  {
+    "file": "acciones.json",
+    "bytes": 1029,
+    "sha256": "7a14170ce789a62ef3d9f398b24c33f9b820af30992f97b0934d37d2d34c8f8f"
+  },
+  {
+    "file": "bordes.json",
+    "bytes": 1835,
+    "sha256": "acb67e5a7ed99c293a5ac77e2d4244e2c393b5ec0acce2601ed0f486842b1352"
+  },
+  {
+    "file": "camara.json",
+    "bytes": 3534,
+    "sha256": "c49c257d13bd891bd65682743ea932103b2cf6332f105cd7533782c2a52957a7"
+  },
+  {
+    "file": "casillas-seleccionables-verde.txt",
+    "bytes": 483,
+    "sha256": "e1c23f8eade1d0b02c7c72718b24d7e12da696902b70fb0deedc1d0a7307419b"
+  },
+  {
+    "file": "check-build.txt",
+    "bytes": 333,
+    "sha256": "8f6ce918aa29438c0055dd725574013238bfd8b6ee047cc7c017c0ec8f6423d0"
+  },
+  {
+    "file": "composicion.json",
+    "bytes": 11008,
+    "sha256": "a1b7ab3ea6a4b37e9a9c111c3f24c152935d6301b6aa9a954df788086555d21d"
+  },
+  {
+    "file": "confort.json",
+    "bytes": 748349,
+    "sha256": "74da2f8ac1606fc36e161520595d9b79ab33cce3cc6e6997f72f3ff5661c7e57"
+  },
+  {
+    "file": "escena.json",
+    "bytes": 104289,
+    "sha256": "a87bc0fde81946c688e0cfe6d989b28fe2da3202a2e851c1dd8607984e890825"
+  },
+  {
+    "file": "excedentes.json",
+    "bytes": 541,
+    "sha256": "2ff9eb5b1fa74851ad30493ec1f6698fd02fd85fcb4c0229f1bb5d9f058c4526"
+  },
+  {
+    "file": "movimiento.json",
+    "bytes": 2254,
+    "sha256": "f6ab0b3b8cb8b292be3d9ea68a3ea30305cbfd413558039db4b3dd06b5f88bc4"
+  },
+  {
+    "file": "oraculo-40.txt",
+    "bytes": 886,
+    "sha256": "83ce6f52eda4ec5edb54516eb3bdb77f7df50facbc7a4fa739f99eb5ac6d389b"
+  },
+  {
+    "file": "reproducciones/camara-y-ancla-rojo.txt",
+    "bytes": 60157,
+    "sha256": "fb5b7591ed4258b3b5358756c1149ce2ec666267e619a4fac069f5a6efe7f034"
+  },
+  {
+    "file": "reproducciones/casilla-no-seleccionable-rojo.txt",
+    "bytes": 1174,
+    "sha256": "1b0715b1ba64f9bc62ae9724c3904d3ca4c40132f96e88ca8ac89841be319392"
+  },
+  {
+    "file": "reproducciones/centro-escuela-rojo.json",
+    "bytes": 7738,
+    "sha256": "0685054b3a17be0cf88728f5a46d1fa6042d6f29385e083d65ac35581bfff53b"
+  },
+  {
+    "file": "reproducciones/centro-escuela-rojo.txt",
+    "bytes": 398,
+    "sha256": "a965aa9b7dfda7d53179f9fa9394b9ad10c5a3af4167d5c775238d86a995fcfd"
+  },
+  {
+    "file": "reproducciones/reset-antes-del-resize-rojo.txt",
+    "bytes": 810,
+    "sha256": "342829dc78601bf67fe7ee69f6f676ec23f73ce40a5b46f58dca90c246e1f8f6"
+  },
+  {
+    "file": "suite-643.txt",
+    "bytes": 58548,
+    "sha256": "54665e2a67e3f4c27b3471885fa62c74453e6c27634abb03aa190bc70fa3c6a1"
+  },
+  {
+    "file": "suite-644.txt",
+    "bytes": 58734,
+    "sha256": "92f4b645045451266012724750e829343cc672ab7709c0f749f2fc5910c7b75e"
+  }
+]

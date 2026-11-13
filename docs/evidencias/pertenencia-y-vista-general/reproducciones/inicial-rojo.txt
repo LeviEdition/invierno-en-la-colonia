@@ -1,0 +1,102 @@
+✖ Presentación: vista general contiene zonas completas y grupos máximos, también al abrir/cerrar ficha (3.914675ms)
+✖ Presentación: colonia1/6/12 centrada y sin reducir fichas ni tocar cuerpos posteriores (3.893657ms)
+✖ Presentación: cuatro apoyos posteriores repartidos por el ancho, no concentración3+1 (6.392338ms)
+✔ Presentación: pertenencia conserva identidad y orden; llegada coincide con destino y solo cambia con ocupación (3.105686ms)
+✖ Presentación: los arbustos pintados conocidos detectan las posiciones descartadas de gasolinera y comisaría (0.715815ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 1
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 114.158268
+
+✖ failing tests:
+
+test at tests/horizontal-presentation.test.mjs:13:1
+✖ Presentación: vista general contiene zonas completas y grupos máximos, también al abrir/cerrar ficha (3.914675ms)
+  AssertionError [ERR_ASSERTION]: restaura exactamente la vista general
+  + actual - expected
+
+    {
+      maxZoom: 1.5,
+      minZoom: 0.8168761220825853,
+      x: 0,
+  +   y: -75.34021543985637,
+  -   y: -30.003590664272906,
+      zoom: 0.8168761220825853
+    }
+
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/horizontal-presentation.test.mjs:18:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: { zoom: 0.8168761220825853, x: 0, y: -75.34021543985637, minZoom: 0.8168761220825853, maxZoom: 1.5 },
+    expected: { zoom: 0.8168761220825853, x: 0, y: -30.003590664272906, minZoom: 0.8168761220825853, maxZoom: 1.5 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/horizontal-presentation.test.mjs:21:1
+✖ Presentación: colonia1/6/12 centrada y sin reducir fichas ni tocar cuerpos posteriores (3.893657ms)
+  AssertionError [ERR_ASSERTION]: ocupación1 centrada
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/horizontal-presentation.test.mjs:24:48)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/horizontal-presentation.test.mjs:29:1
+✖ Presentación: cuatro apoyos posteriores repartidos por el ancho, no concentración3+1 (6.392338ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+    assert.ok(xs[i]-xs[i-1]>=100&&xs[i]-xs[i-1]<=190)
+
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/horizontal-presentation.test.mjs:31:37)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/horizontal-presentation.test.mjs:45:1
+✖ Presentación: los arbustos pintados conocidos detectan las posiciones descartadas de gasolinera y comisaría (0.715815ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== 2
+
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/horizontal-presentation.test.mjs:46:152)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

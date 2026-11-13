@@ -1,0 +1,56 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "errors": [],
+      "barricadeFade": true,
+      "cancelPure": true,
+      "oneExecution": true,
+      "exposureOrder": true,
+      "barricadeCount": true,
+      "cameraStable": true,
+      "moveAndSearch": true,
+      "frames": 185,
+      "video": "/tmp/mapa-integral/entrega/acciones/1365x768/957aa59748076f78238b787ad7caa72e.webm"
+    },
+    {
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "errors": [],
+      "barricadeFade": true,
+      "cancelPure": true,
+      "oneExecution": true,
+      "exposureOrder": true,
+      "barricadeCount": true,
+      "cameraStable": true,
+      "moveAndSearch": true,
+      "frames": 156,
+      "video": "/tmp/mapa-integral/entrega/acciones/1920x1080/0b2bf8be1024240a914946cc48ddfd6f.webm"
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "errors": [],
+      "barricadeFade": true,
+      "cancelPure": true,
+      "oneExecution": true,
+      "exposureOrder": true,
+      "barricadeCount": true,
+      "cameraStable": true,
+      "moveAndSearch": true,
+      "frames": 182,
+      "video": "/tmp/mapa-integral/entrega/acciones/852x393/f22a6d80bc2f32d3c717adef7b36b689.webm"
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

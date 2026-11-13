@@ -1,0 +1,57 @@
+name: Mapa horizontal — presentación y acciones
+on:
+  pull_request:
+    branches: [experiment/h3-4-4-ataque-barricadas-mapa]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  horizontal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - run: npm run check:build && npm test
+      - name: Chromium externo al producto
+        run: |
+          npm install --no-save --package-lock=false playwright@1.57.0
+          npx playwright install --with-deps chromium ffmpeg
+      - name: Presentación y recorrido de acciones — escritorio y móvil horizontal
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/serve-horizontal-map.mjs --qa > /tmp/horizontal-server.log 2>&1 &
+          PREVIEW_PID=$!
+          trap 'kill "$PREVIEW_PID"' EXIT
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:8779/prototypes/horizontal-map/ -o /dev/null && break; sleep 1; done
+          export CHROMIUM_PATH="$(node --input-type=module -e "import {chromium} from 'playwright';console.log(chromium.executablePath())")"
+          git rev-parse HEAD
+          npm run check:horizontal-map-build
+          export H344_ORIGIN=http://127.0.0.1:8779
+          # Encargo de presentación: comparación completa y casos1/6/12,
+          # máximos/excedentes, interacción y un recorrido real de acciones.
+          # No repetir benchmark, vídeos de viento ni auditorías ajenas.
+          node scripts/check-horizontal-presentation-browser.mjs
+          node scripts/check-map-capacities-browser.mjs
+          node scripts/check-map-inventory-browser.mjs
+          node scripts/check-map-cycle-browser.mjs
+          node scripts/check-map-migration-browser.mjs
+          export H344_MODULE_PATH=/dist/horizontal-map-qa/map.mjs
+          export H344_VIEWPORTS=1365x768,852x393
+          export H344_OUTPUT_DIR=/tmp/horizontal-actions
+          node scripts/check-h344-browser.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: horizontal-map-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            /tmp/horizontal-*/
+            /tmp/horizontal-server.log
+            dist/*/build.json

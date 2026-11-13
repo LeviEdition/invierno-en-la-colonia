@@ -1,0 +1,38 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
+  {
+    maxZoom: 1.5,
+    minZoom: 0.8168761220825853,
+    x: 0,
++   y: -30.003590664272906,
+-   y: -75.34021543985637,
+    zoom: 0.8168761220825853
+  }
+
+    at file:///workspace/invierno-en-la-colonia/scripts/check-horizontal-map-browser.mjs:13:809 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: {
+    zoom: 0.8168761220825853,
+    x: 0,
+    y: -30.003590664272906,
+    minZoom: 0.8168761220825853,
+    maxZoom: 1.5
+  },
+  expected: {
+    zoom: 0.8168761220825853,
+    x: 0,
+    y: -75.34021543985637,
+    minZoom: 0.8168761220825853,
+    maxZoom: 1.5
+  },
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

@@ -1,0 +1,128 @@
+[
+  {
+    "viewport": {
+      "width": 1365,
+      "height": 768
+    },
+    "open": true,
+    "rect": {
+      "x": 0,
+      "y": 180,
+      "width": 1055,
+      "height": 563
+    },
+    "camera": {
+      "zoom": 1.388157894736842,
+      "x": -617.7302631578946,
+      "y": -315.4078947368421,
+      "minZoom": 0.6309808612440191,
+      "maxZoom": 1.5
+    },
+    "starts": 1
+  },
+  {
+    "viewport": {
+      "width": 1365,
+      "height": 768
+    },
+    "open": false,
+    "rect": {
+      "x": 0,
+      "y": 180,
+      "width": 1055,
+      "height": 563
+    },
+    "camera": {
+      "zoom": 1.388157894736842,
+      "x": -617.7302631578946,
+      "y": -315.4078947368421,
+      "minZoom": 0.6309808612440191,
+      "maxZoom": 1.5
+    },
+    "starts": 1
+  },
+  {
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "open": true,
+    "rect": {
+      "x": 0,
+      "y": 180,
+      "width": 1610,
+      "height": 875
+    },
+    "camera": {
+      "zoom": 1.5,
+      "x": -432.5,
+      "y": -207.5,
+      "minZoom": 0.9629186602870813,
+      "maxZoom": 1.5
+    },
+    "starts": 1
+  },
+  {
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "open": false,
+    "rect": {
+      "x": 0,
+      "y": 180,
+      "width": 1610,
+      "height": 875
+    },
+    "camera": {
+      "zoom": 1.5,
+      "x": -432.5,
+      "y": -207.5,
+      "minZoom": 0.9629186602870813,
+      "maxZoom": 1.5
+    },
+    "starts": 1
+  },
+  {
+    "viewport": {
+      "width": 852,
+      "height": 393
+    },
+    "open": false,
+    "rect": {
+      "x": 0,
+      "y": 146,
+      "width": 852,
+      "height": 226
+    },
+    "camera": {
+      "zoom": 0.5947368421052631,
+      "x": -64.65789473684208,
+      "y": -142.73684210526315,
+      "minZoom": 0.5095693779904307,
+      "maxZoom": 1.5
+    },
+    "starts": 1
+  },
+  {
+    "viewport": {
+      "width": 852,
+      "height": 393
+    },
+    "open": true,
+    "rect": {
+      "x": 0,
+      "y": 146,
+      "width": 852,
+      "height": 226
+    },
+    "camera": {
+      "zoom": 0.5947368421052631,
+      "x": -64.65789473684208,
+      "y": -142.73684210526315,
+      "minZoom": 0.5095693779904307,
+      "maxZoom": 1.5
+    },
+    "starts": 1
+  }
+]
