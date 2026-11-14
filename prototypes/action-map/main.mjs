@@ -20,14 +20,15 @@ function send(request){
  if(!port)throw Error('Sin conexión');port.postMessage({protocol,...request});clearTimeout(requestTimer);
  requestTimer=setTimeout(()=>{if(request.type==='move')movement.disconnect();else if(request.type.startsWith('search'))search.disconnect();else if(request.type==='play-command')play.disconnect();else if(request.type.startsWith('cycle'))cycle.disconnect();else if(request.type.startsWith('inventory'))inventory.disconnect();else action.disconnect();port?.postMessage({protocol,type:'snapshot'});},8000);
 }
-const movement=createMovementController({send,onChange:()=>{viewer?.updateMovement();const m=movement.inspect();if(unified&&m.phase==='choosing')movementNoticeEnabled=true;$('movement-result').textContent=['idle','unknown'].includes(m.phase)&&(!unified||movementNoticeEnabled)?m.message:'';}});
-const search=createSearchController({selectOnly:unified,send,onChange:()=>viewer?.updateSearch()});
-const action=createActionController({selectOnly:unified,send,onChange:()=>viewer?.updateActions()});
-const inventory=createInventoryController({selectOnly:unified,send,onChange:()=>viewer?.updateActions()});
+const movement=createMovementController({send,onChange:()=>{viewer?.updateMovement();const m=movement.inspect();if(unified&&m.phase==='choosing'){clearPreviousResult();movementNoticeEnabled=true;}$('movement-result').textContent=['idle','unknown'].includes(m.phase)&&(!unified||movementNoticeEnabled)?m.message:'';}});
+const search=createSearchController({selectOnly:unified,send,onChange:()=>{if(search.inspect().phase==='picking')clearPreviousResult();viewer?.updateSearch();}});
+const action=createActionController({selectOnly:unified,send,onChange:()=>{if(action.inspect().phase==='picking')clearPreviousResult();viewer?.updateActions();}});
+const inventory=createInventoryController({selectOnly:unified,send,onChange:()=>{if(inventory.inspect().phase==='picking')clearPreviousResult();viewer?.updateActions();}});
 const ownedInventory=p=>p?.inventory?.receipt&&!['setup','handover','waiting'].includes(p.blocked);
-const cycle=createCycleController({send,onChange:()=>viewer?.updateActions()});
-const play=createPlayController({send,onChange:()=>viewer?.updateActions()});
+const cycle=createCycleController({send,onChange:()=>{if(cycle.inspect().phase==='confirming')clearPreviousResult();viewer?.updateActions();}});
+const play=createPlayController({send,onChange:()=>{if(play.inspect().intent)clearPreviousResult();viewer?.updateActions();}});
 const routine=createRoutineResults({action,search,inventory,play,onNotice:n=>{if(n){movementNoticeEnabled=false;$('movement-result').textContent='';}viewer?.setNotice?.(n);}});
+function clearPreviousResult(){if(!unified)return;movementNoticeEnabled=false;if($('movement-result').textContent)$('movement-result').textContent='';if(routine.inspect())routine.clear();}
 const managedCycle=p=>!!p?.cycle?.managed||!!p?.play?.managed;
 const variant=typeof __ACTION_MAP_VARIANT__==='undefined'?'action-map':__ACTION_MAP_VARIANT__;
 const hostPath='/dist/'+variant+(__ACTION_MAP_QA__?'-qa':'')+'/reference-host.html';
