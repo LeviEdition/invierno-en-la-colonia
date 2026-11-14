@@ -3,9 +3,9 @@
   "esbuild": "0.28.2",
   "qa": false,
   "map": {
-    "rawBytes": 1593056,
-    "gzip9Bytes": 437204,
-    "sha256": "b43c247ebd1f5115a44f5338b3266194d92aeac7a3bdd107979af1a0751dec51",
+    "rawBytes": 1594330,
+    "gzip9Bytes": 437598,
+    "sha256": "1ecae1ade73942d83c09def12ae0c02212b4240e2c82c59298a8848a862c2d7f",
     "inputs": [
       "prototypes/movement-map/presentation-sequence.mjs",
       "prototypes/action-map/action-presentation.mjs",

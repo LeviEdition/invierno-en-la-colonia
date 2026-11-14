@@ -1,0 +1,20 @@
+{
+  "sha": "13ec9a0576f0ebfb64da422fe3dbc06272ea53fa",
+  "run": 43636416649,
+  "job": 132574088255,
+  "conclusion": "failure",
+  "artifact": 14129894203,
+  "size": 23398227,
+  "sha256": "708d9f08d8bb7adb1341833fe9cc1853299ee86c362c2ea906256c413f7c4eb5",
+  "oldFocus": {
+    "zoom": 1.5,
+    "viewportWidth": 1025,
+    "colonyRight": 1026.25
+  },
+  "newFocus": {
+    "zoom": 1.4137931034482758,
+    "viewportWidth": 1025,
+    "colonyRight": 996.7241379310344
+  },
+  "sourceFix": "1cda12a070cc9b27da30476cf568b9562c319c52"
+}
