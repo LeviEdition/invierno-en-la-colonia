@@ -1,7 +1,7 @@
 import {localityFrame} from './presentation.mjs';
 // Cámara de presentación, sin distancias ni legalidad del motor.
 export function constrainCamera(camera,b,viewport){
- const minZoom=Math.min(viewport.width/b.width,viewport.height/b.height),maxZoom=Math.max(minZoom,1.5),zoom=Math.max(minZoom,Math.min(maxZoom,camera.zoom));
+ const minZoom=Math.min(viewport.width/b.width,viewport.height/b.height,camera.retainedMin??Infinity),maxZoom=Math.max(minZoom,1.5),zoom=Math.max(minZoom,Math.min(maxZoom,camera.zoom));
  // Cuando el mapa cabe en un eje, centrarlo con margen de interfaz. Al
  // acercarse se conserva el pan hasta el borde real, sin estirar el fondo.
  const axis=(position,size,available)=>size<=available?(available-size)/2:Math.max(available-size,Math.min(0,position));

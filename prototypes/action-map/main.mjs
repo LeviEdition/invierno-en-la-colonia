@@ -1,3 +1,4 @@
+import {createRoutineResults} from '../experience-map/routine-results.mjs';
 import {createPlayController} from '../play-map/controller.mjs';
 import {createCycleController} from '../cycle-map/controller.mjs';
 import {createInventoryController} from '../inventory-map/controller.mjs';
@@ -6,6 +7,7 @@ import {createMovementController} from '../movement-map/movement-controller.mjs'
 import {movementSummary} from '../movement-map/presentation-sequence.mjs';
 import {createActionController} from './action-controller.mjs';
 import {createSearchController} from '../search-map/search-controller.mjs';
+const unified=document.body.dataset.experience==='unified';
 const protocol='iec-action-map/v1',$=id=>document.getElementById(id),frame=$('reference-frame'),lifetime=new AbortController();
 let port=null,state=null,lastPublic=null,viewer=null,attempt=null,serial=Promise.resolve(),generation=0,starts=0,lastDisposal=null,lastError=null,mode=__ACTION_MAP_VARIANT__==='horizontal-map'?'map':'reference',pageActive=true,preferCycleFinal=false,retainedView=null;
 let requestTimer=0,searchTimer=0,presentationContext=null;
@@ -19,16 +21,17 @@ function send(request){
  requestTimer=setTimeout(()=>{if(request.type==='move')movement.disconnect();else if(request.type.startsWith('search'))search.disconnect();else if(request.type==='play-command')play.disconnect();else if(request.type.startsWith('cycle'))cycle.disconnect();else if(request.type.startsWith('inventory'))inventory.disconnect();else action.disconnect();port?.postMessage({protocol,type:'snapshot'});},8000);
 }
 const movement=createMovementController({send,onChange:()=>{viewer?.updateMovement();$('movement-result').textContent=['idle','unknown'].includes(movement.inspect().phase)?movement.inspect().message:'';}});
-const search=createSearchController({send,onChange:()=>viewer?.updateSearch()});
-const action=createActionController({send,onChange:()=>viewer?.updateActions()});
-const inventory=createInventoryController({send,onChange:()=>viewer?.updateActions()});
+const search=createSearchController({selectOnly:unified,send,onChange:()=>viewer?.updateSearch()});
+const action=createActionController({selectOnly:unified,send,onChange:()=>viewer?.updateActions()});
+const inventory=createInventoryController({selectOnly:unified,send,onChange:()=>viewer?.updateActions()});
 const ownedInventory=p=>p?.inventory?.receipt&&!['setup','handover','waiting'].includes(p.blocked);
 const cycle=createCycleController({send,onChange:()=>viewer?.updateActions()});
 const play=createPlayController({send,onChange:()=>viewer?.updateActions()});
+const routine=createRoutineResults({action,search,inventory,play,onNotice:n=>viewer?.setNotice?.(n)});
 const managedCycle=p=>!!p?.cycle?.managed||!!p?.play?.managed;
 const variant=typeof __ACTION_MAP_VARIANT__==='undefined'?'action-map':__ACTION_MAP_VARIANT__;
 const hostPath='/dist/'+variant+(__ACTION_MAP_QA__?'-qa':'')+'/reference-host.html';
-function status(text){$('connection-status').textContent=text;}
+function status(text){$('connection-status').textContent=text;if(unified){$('connection-banner').hidden=!text;$('connection-message').textContent=text;$('recover-connection').hidden=!text||text.startsWith('Conectando')||text.startsWith('Hay una decisión');}}
 function validProjection(p){return p?.schema===1&&Number.isInteger(p.epoch)&&Array.isArray(p.characters)&&Array.isArray(p.locations)&&Array.isArray(p.players)&&p.dice&&typeof p.movement?.session==='string'&&Number.isSafeInteger(p.movement.revision)&&typeof p.search?.session==='string'&&Number.isSafeInteger(p.search.revision)&&p.search.options&&typeof p.search.options==='object'&&typeof p.action?.session==='string'&&Number.isSafeInteger(p.action.revision);}
 function stopSearchClock(){clearTimeout(searchTimer);searchTimer=0;}
 function stopAction(){if(actionPresenting())viewer?.stopPresentation();action.interrupt();}
@@ -57,7 +60,7 @@ function applyAuthority(){
  const available=!state.blocked||!!ownedSearch(state)||!!ownedAction(state)||!!ownedInventory(state)||managedCycle(state);$('map-mode').disabled=!available;
  if(!state.blocked&&search.inspect().phase!=='presenting'&&!actionPresenting())lastPublic={...state,search:{...state.search,private:null}};
  if(viewer)viewer.setState(displayState());
- if(variant==='horizontal-map'){status('');showMap();return;}
+ if(variant==='horizontal-map'){status('');showMap();if(unified)routine.update(state);return;}
  if(!available){showReference();status(({setup:'Completá la preparación en V9.9.',handover:'Confirmá el pase de dispositivo en V9.9.',death:'Confirmá el fallecimiento en V9.9.',decision:'Resolvé la decisión abierta en V9.9.',waiting:'Esperando partida.'})[state.blocked]||'Esperando partida.');}
  else{status('');if(mode==='map'&&!viewer&&(!attempt||attempt.signal.aborted))void mountViewer();}
 }
@@ -74,8 +77,8 @@ function mountViewer(){
   try{
    const created=await createSearchMapView({signal:current.signal,movement,search,action,inventory,cycle,play,onRecover:()=>connect(),onSearchNative:showDecision});
    if(!pageActive||id!==generation||current.signal.aborted){await created.destroy();return;}
-   viewer=created;if(state)viewer.setState(displayState());viewer.setActive(mode==='map'&&(!state?.blocked||!!ownedSearch(state)||!!ownedAction(state)||!!ownedInventory(state)||managedCycle(state)));if(retainedView?.epoch===state?.epoch){created.restoreView?.({...retainedView,selected:retainedView.turn===state.turn?retainedView.selected:null});retainedView=null;}document.body.dataset.viewState='ready';
-  }catch(error){if(current.signal.aborted||id!==generation)return;lastError=error.message;document.body.dataset.viewState='error';$('loading').hidden=false;$('loading').setAttribute('role','alert');$('loading').textContent=error.message==='WEBGL_UNAVAILABLE'?variant==='horizontal-map'?'Este navegador no ofrece WebGL para mostrar el mapa. Probá otro navegador compatible.':'Este navegador no ofrece WebGL. La interfaz V9.9 sigue disponible.':'No se pudo cargar el visor. '+error.message;$('retry-view').hidden=false;status(variant==='horizontal-map'?'Reintentar visor conserva la partida del motor.':'Podés continuar usando V9.9.');}
+   viewer=created;viewer.setNotice?.(routine.inspect());if(state)viewer.setState(displayState());viewer.setActive(mode==='map'&&(!state?.blocked||!!ownedSearch(state)||!!ownedAction(state)||!!ownedInventory(state)||managedCycle(state)));if(retainedView?.epoch===state?.epoch){created.restoreView?.({...retainedView,selected:retainedView.turn===state.turn?retainedView.selected:null});retainedView=null;}document.body.dataset.viewState='ready';
+  }catch(error){if(current.signal.aborted||id!==generation)return;lastError=error.message;document.body.dataset.viewState='error';$('loading').hidden=false;$('loading').setAttribute('role','alert');$('loading').textContent=error.message==='WEBGL_UNAVAILABLE'?variant==='horizontal-map'?'Este navegador no ofrece WebGL para mostrar el mapa. Probá otro navegador compatible.':'Este navegador no ofrece WebGL. La interfaz V9.9 sigue disponible.':'No se pudo cargar el mapa. '+error.message;$('retry-view').hidden=false;status(variant==='horizontal-map'?'Reintentar el mapa conserva la partida.':'Podés continuar usando V9.9.');}
  });return serial;
 }
 function showMap(){
@@ -143,6 +146,7 @@ function receive(event){
 }
 function connect(){disconnect();if(!pageActive)return;const channel=new MessageChannel();port=channel.port1;port.onmessage=receive;port.start();frame.contentWindow.postMessage({protocol,type:'connect'},location.origin,[channel.port2]);focusReference();}
 frame.addEventListener('load',()=>{stopSearchClock();stopMovement();stopAction();search.update(null);action.update(null);inventory.update(null);cycle.update(null);play.update(null);state=null;lastPublic=null;$('map-mode').disabled=true;showReference();status('Conectando con la partida…');connect();},{signal:lifetime.signal});
+$('recover-connection')?.addEventListener('click',()=>connect(),{signal:lifetime.signal});
 $('reconnect-source')?.addEventListener('click',()=>connect(),{signal:lifetime.signal});
 $('reference-mode').addEventListener('click',showReference,{signal:lifetime.signal});$('return-reference')?.addEventListener('click',showReference,{signal:lifetime.signal});$('map-mode').addEventListener('click',showMap,{signal:lifetime.signal});$('resolve-decision').addEventListener('click',showDecision,{signal:lifetime.signal});
 for(const id of ['restart-view','retry-view'])$(id).addEventListener('click',()=>{if(mode==='map')void mountViewer();},{signal:lifetime.signal});

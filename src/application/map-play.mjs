@@ -3,7 +3,7 @@ export function createMapPlay(context,{generation,clear,hasSearch,block}){
  let gen=-1,serial=0,receipt=null,events=[],setup=true,dieEpoch=0,dieStamp='',lastReceipt=null;
  const clone=x=>structuredClone(x),c=()=>context(),viewer=()=>c().game.mode==='local'?c().controls.side:'human';
  function sync(){if(gen!==generation()){gen=generation();receipt=null;events=[];lastReceipt=null;}}
- function event(type,data={},audience='public'){sync();events.push({id:'event_'+gen+'_'+(++serial),round:c().game?.round,type,audience,...clone(data)});if(events.length>200)events.shift();}
+ function event(type,data={},audience='public'){sync();events.push({id:'event_'+gen+'_'+(++serial),round:c().game?.round,order:c().mapCycle.nextOrder(),type,audience,...clone(data)});if(events.length>200)events.shift();}
  function person(id){return c().all().find(p=>p.id===id);}
  const publicPerson=p=>p?{id:p.id,name:p.name,influence:p.influence,location:p.loc,wounds:p.wounds,frost:p.frost}:null;
  function decision(){
@@ -30,7 +30,7 @@ export function createMapPlay(context,{generation,clear,hasSearch,block}){
    else reason='invalid';
   }
   const available=usesDie&&!reason?dice().map(d=>({...d,allowed:kind==='boost'?d.value<6:d.value>=1})):[];if(!reason&&usesDie&&!available.some(d=>d.allowed))reason='dice';
-  return {kind,actorId,allowed:!reason,reason,summary,targets,dice:available};
+  return {kind,actorId,allowed:!reason,reason,summary,targets,dice:available,maximum:kind==='clean'?x.Math.min(3,g?.waste||0):kind==='attract'?2:null};
  }
  function snapshot(){sync();const x=c(),g=x.game;if(!g)return {generation:gen,setup:true,decision:null,receipt:null,events:[]};const publicVisible=!setup&&!x.passScreenActive,audience=!publicVisible||g.ended?null:viewer();
   return {generation:gen,setup,crossStatus:publicVisible?{count:x.crossroadsDeck.length,state:g.crossPending?'activada':g.crossResolved?'resuelta':'oculta'}:null,lootLegend:publicVisible?x.places.map((name,index)=>({index,name,types:index?x.catalog.legend(index).map(([kind,total])=>({kind,total})):[]})):[],lastReceipt:publicVisible&&lastReceipt&&(g.ended||lastReceipt.owner===audience)?clone(lastReceipt):null,statistics:publicVisible?{hunger:g.hunger,waste:g.waste,helpless:g.helpless,rescues:g.rescueQueue.length}:null,preparation:setup?{modes:['local','ai'],groups:['human','ai'].map(side=>({side,members:x.ownerGroup(side).map(p=>({name:p.name,job:p.job,skill:p.skillDesc}))}))}:null,decision:decision(),receipt:publicVisible&&receipt&&(g.ended||receipt.owner===audience)?clone(receipt):null,events:events.filter(e=>e.audience==='public'||e.audience===audience).map(clone),groups:publicVisible?['human','ai'].map(side=>({side,label:x.controls.display(side),leaderId:g.leaders[side],members:x.ownerGroup(side).filter(p=>!p.dead).map(publicPerson),rescues:g.rescueQueue.filter(r=>r.side===side).length,canChoose:side===audience&&!setup&&!block(x.controls.group().find(p=>!p.dead))&&g.round===1&&!(side==='human'?g.leaderChosen:g.localLeaderChosen)&&!x.mapCycle.api.cycleSnapshot()?.review&&!receipt})):[],options:audience===x.controls.side&&!x.aiRunning?Object.fromEntries(x.controls.group().filter(p=>!p.dead).map(p=>[p.id,Object.fromEntries(['clean','attract','special'].map(k=>[k,option(k,p.id)]))])):{},boost:audience===x.controls.side&&!x.aiRunning?option('boost'):null};
@@ -38,12 +38,12 @@ export function createMapPlay(context,{generation,clear,hasSearch,block}){
  function execute(r){sync();const x=c(),d=decision();
   if(r.kind==='start'){
    if(!['local','ai'].includes(r.mode)||typeof r.confirmed!=='boolean'||!setup&&!x.game.ended&&!r.confirmed)return {ok:false,reason:'confirmation'};
-   x.startGame(r.mode);sync();event('start',{mode:r.mode,summary:'Partida iniciada. Objetivo: '+x.game.objective.name+'. '+x.game.objective.description});return {ok:true};
+   x.startGame(r.mode);sync();if(!decision())x.hide();event('start',{mode:r.mode,summary:'Partida iniciada. Objetivo: '+x.game.objective.name+'. '+x.game.objective.description});return {ok:true};
   }
   if(r.kind==='ack'){if(!receipt||receipt.id!==r.receiptId||receipt.owner!==viewer()||x.passScreenActive)return {ok:false,reason:'stale'};receipt=null;return {ok:true};}
   if(r.kind==='bite'){
    if(d?.kind!=='bite'||!['sacrifice','risk'].includes(r.option))return {ok:false,reason:'decision'};
-   const name=d.target.name;clear();x.chooseBite(r.option);receipt={id:'play_'+gen+'_'+(++serial),owner:viewer(),type:'bite',summary:r.option==='risk'?name+': se ejecutó la tirada original; revisá el resultado real.':name+': sacrificio; la propagación termina.'};return {ok:true};
+   const name=d.target.name,beforeEvents=new Set(events.map(e=>e.id));clear();x.chooseBite(r.option);receipt={id:'play_'+gen+'_'+(++serial),owner:viewer(),type:'bite',result:{targetName:name,option:r.option,roll:events.find(e=>!beforeEvents.has(e.id)&&e.type==='bite-roll'&&e.name===name)||null},summary:r.option==='risk'?name+': se ejecutó la tirada original; revisá el resultado real.':name+': sacrificio; la propagación termina.'};return {ok:true};
   }
   if(r.kind==='cross'){
    if(d?.kind!=='cross'||d.automated||!Number.isInteger(r.index)||!d.allowed[r.index]||x.game.crossOwner!==x.controls.side||!x.canResolve('crossroads'))return {ok:false,reason:'target'};
@@ -59,8 +59,9 @@ export function createMapPlay(context,{generation,clear,hasSearch,block}){
   if(['heal','heal-cancel','attract-choose','attract-end'].includes(r.kind)){
    const healing=r.kind.startsWith('heal');if(d?.kind!==(healing?'heal':'attract')||!x.canResolve(healing?'healTarget':'attractTarget'))return {ok:false,reason:'decision'};
    if(r.kind==='heal'&&!d.patients.some(p=>p.id===r.target)||r.kind==='attract-choose'&&!d.sources.some(s=>s.index===r.source))return {ok:false,reason:'target'};
+   const patient=healing&&r.target?person(r.target):null,beforePatient=patient?{wounds:patient.wounds,frost:patient.frost}:null;
    if(r.kind==='heal')x.chooseHeal(r.target);else if(r.kind==='heal-cancel')x.cancelHeal();else if(r.kind==='attract-choose')x.chooseAttract(r.source);else x.cancelAttract();
-   if(!decision())receipt={id:'play_'+gen+'_'+(++serial),owner:viewer(),type:r.kind,summary:r.kind==='attract-end'?'Atracción terminada. El dado ya gastado no se devuelve.':r.kind==='heal-cancel'?'Tratamiento cancelado sin gastar la habilidad.':'Operación original completada.'};return {ok:true};
+   if(!decision())receipt={id:'play_'+gen+'_'+(++serial),owner:viewer(),type:r.kind,result:healing?{targetName:patient?.name,woundsHealed:patient?beforePatient.wounds-patient.wounds:0,frostHealed:patient?beforePatient.frost-patient.frost:0}:{attracted:r.kind==='attract-end'?2-d.left:3-d.left},summary:r.kind==='attract-end'?'Atracción terminada. El dado ya gastado no se devuelve.':r.kind==='heal-cancel'?'Tratamiento cancelado sin gastar la habilidad.':'Operación original completada.'};return {ok:true};
   }
   if(['clean','attract','special','boost'].includes(r.kind)){
    const q=option(r.kind,r.actorId);if(!q.allowed)return {ok:false,reason:q.reason};

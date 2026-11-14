@@ -1,3 +1,4 @@
+import {unified} from '../experience-map/surfaces.mjs';
 import {searchMessages} from './search-controller.mjs';
 import {dieFace} from '../movement-map/dice.mjs';
 const $=id=>document.getElementById(id);
@@ -38,6 +39,7 @@ export function mountSearchPanel({controller,getContext,onCancel,onNative,signal
   $('search-message').textContent=!visible?'':busy?s.message:choice?'Elegí una carta para conservar. Las demás vuelven al fondo del mazo.':op?.status==='empty'?'El motor no encontró una carta.':s.message;
   $('search-requirement').textContent=picking?site(s.intent.origin)+' · Requisito efectivo '+s.intent.requirement+'+ (incluye habilidad y equipo).':'';
   $('search-confirmation').textContent=picking&&s.intent.dieIndex!==null?`¿Buscar con ${actor?.name} en ${site(s.intent.origin)} usando el dado ${s.intent.dieIndex+1}, valor ${s.intent.dieValue}?`:'';
+  if(unified())$('confirm-search').textContent=s.intent?.dieValue?'Buscar · gastar dado '+s.intent.dieValue:'Buscar · elegí un dado';
   $('confirm-search').disabled=!picking||s.intent.dieIndex===null;
   const nextDiceKey=picking?JSON.stringify([s.intent.actorId,q?.dice,s.intent.dieIndex]):'';
   if(nextDiceKey!==diceKey){diceKey=nextDiceKey;$('search-dice').replaceChildren(...(picking?(q?.dice||[]).map(d=>diceButton(d,s.intent.dieIndex)):[]));}
@@ -54,7 +56,7 @@ export function mountSearchPanel({controller,getContext,onCancel,onNative,signal
   $('search-kept-card').replaceChildren(...(result?[el('small',result.card.kind),el('h3',result.card.name),el('p',result.card.description)]:[]));
   $('search-outcome').textContent=result?op.name+' conservó '+result.card.name+' · '+(result.handDelta>0?(inventoryLabel==='Inventario'?'añadida al inventario':'añadida a la mano'):(inventoryLabel==='Inventario'?'se aplicó el efecto de la carta':'consecuencia automática resuelta por el motor'))+' · ruido '+result.noise+'.':op?.status==='empty'?'No se añadió ninguna recompensa.':'';
   $('search-recruit').textContent=op?.recruit?(op.recruit.queued?'El rescate espera una plaza en la colonia.':op.recruit.name+' se incorporó a la colonia.')+' '+op.recruit.skill:'';
-  const hand=visible?s.hand:[],nextHandKey=JSON.stringify([visible?s.ownerId:null,hand]);
+  const hand=visible&&!unified()?s.hand:[],nextHandKey=JSON.stringify([visible?s.ownerId:null,hand]);
   $('own-hand').hidden=!visible;$('own-hand-title').textContent=visible?inventoryLabel+' de '+(p?.players.find(x=>x.id===s.ownerId)?.label||'jugador activo')+' · '+hand.length+' cartas':inventoryLabel+' del turno';
   if(nextHandKey!==handKey){handKey=nextHandKey;$('own-hand-cards').replaceChildren(...hand.map(c=>el('li',c.name+' · '+c.kind)));}
   if(s.phase!==oldPhase){oldPhase=s.phase;const version=++focusVersion;

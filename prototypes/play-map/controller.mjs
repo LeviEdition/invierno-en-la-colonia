@@ -6,7 +6,7 @@ export function createPlayController({send,onChange=()=>{},requestId=uniqueToken
   if(old&&(old.generation!==p.generation||old.session!==p.session||s.cycle?.decision?.kind==='handover')){phase='closed';pending=null;page=null;intent=null;message='';}
   if(intent&&revision!==p.revision){intent=null;message='El estado cambió. Revisá la selección antes de confirmar.';}
   if(p.unknown){phase='unknown';message='No se pudo determinar el resultado. La repetición está bloqueada. Reconectá para consultar el estado; no se reinicia la partida.';}
-  else if(phase==='unknown'){pending=null;phase='open';message='Estado recuperado sin repetir la operación.';}
+  else if(phase==='unknown'){pending=null;phase=p.managed?'open':'closed';if(!p.managed){page=null;intent=null;}message='Estado recuperado sin repetir la operación.';}
   if(p.managed&&phase!=='sending'&&phase!=='unknown')phase='open';notify();
  }
  function open(next,args=null){if(!state?.play||pending||phase==='unknown')return false;page=next;intent=args;revision=state.play.revision;phase='open';message='';notify();return true;}

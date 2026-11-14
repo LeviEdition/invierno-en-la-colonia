@@ -102,7 +102,7 @@ try{
   for(const [index,extra]of [[4,2],[6,1]]){
    await focus(q,'place-'+index);const loc=(await qaView(q)).layout.locations.find(l=>l.engineIndex===index);assert.equal(loc.zombies,4);assert.equal(loc.externalOverflow,extra);
    await q.locator('#panel-toggle').click();await t.frames(q);
-   assert.ok((await q.locator('#locality-overflow').textContent()).includes('Excedente exterior: '+extra));
+   assert.match(await q.locator('#locality-exterior').textContent(),/Zombis: 4/);assert.ok((await q.locator('#map-labels').textContent()).includes('+'+extra+' exteriores'));
    await q.screenshot({path:resolve(dir,'excedente-'+index+'.png')});await closePanel(q);
   }
   if(!baseline){
@@ -118,11 +118,11 @@ try{
     if(id==='general')await general(page);else{await page.selectOption('#locality',id);await closePanel(page);}
     const before=(await t.view(page)).camera;
     await page.locator('#panel-toggle').click();await t.frames(page);
-    if(id==='general')assert.ok(complete(await t.view(page)).every(z=>z.inside),'general completa con ficha abierta');
+    if(id==='general'){const opened=await t.view(page);assert.ok(Math.abs(opened.camera.zoom-before.zoom)<1e-8,'abrir ficha conserva zoom elegido');}
     await page.locator('#panel-toggle').click();await t.frames(page);
     const after=(await t.view(page)).camera;
     for(const key of ['x','y','zoom'])assert.ok(Math.abs(before[key]-after[key])<1e-6,'panel reversible '+key);
-    r.panel.push(id);
+    r.panel.push(id);if(id==='general'){await page.locator('#panel-toggle').click();await t.frames(page);await page.locator('#reset-view').click();await t.frames(page);assert.ok(complete(await t.view(page)).every(z=>z.inside),'restablecer encuadra general con ficha abierta');await closePanel(page);}
    }
    await page.locator('#zoom-in').click();await page.locator('#zoom-in').click();await page.locator('#zoom-in').click();await t.frames(page);
    const before=(await t.view(page)).camera,box=await page.locator('#scene').boundingBox();

@@ -1,7 +1,7 @@
 import {uniqueToken} from '../movement-map/nonce.mjs';
 export const searchMessages={colony:'Buscar requiere estar fuera de la colonia.','deck-empty':'No quedan cartas en esta localidad.','no-dice':'No quedan dados disponibles.',insufficient:'Ningún dado alcanza el requisito efectivo.',ownership:'El superviviente pertenece al otro grupo.',dead:'El superviviente falleció.',missing:'El superviviente no está disponible.',decision:'Hay una decisión pendiente en V9.9.',turn:'No es posible buscar durante esta fase.',ended:'La partida terminó.',stale:'La partida cambió. Revisá los dados y la búsqueda actual.',die:'Ese dado ya no es válido.',noise:'No se puede revelar otra carta con ruido.','search-pending':'Primero completá la búsqueda pendiente.','request-reused':'La solicitud ya se utilizó con otros datos.'};
 const scope=p=>p?.search?.private?`${p.search.private.gameGeneration}/${p.search.private.round}/${p.search.private.ownerId}`:null;
-export function createSearchController({send,requestId=uniqueToken,onChange=()=>{}}={}){
+export function createSearchController({selectOnly=false,send,requestId=uniqueToken,onChange=()=>{}}={}){
  let state=null,phase='idle',intent=null,pending=null,action=null,message='',operation=null,hand=[],ownerId=null,presentedId=null;
  function inspect(){return {phase,intent:intent?{...intent}:null,pending,action,message,operation,hand,ownerId,busy:phase!=='idle'};}
  const notify=()=>onChange(inspect());
@@ -22,7 +22,7 @@ export function createSearchController({send,requestId=uniqueToken,onChange=()=>
  function begin(actorId){
   if(phase!=='idle')return false;const q=state?.search.options[actorId];
   if(!q?.allowed){message=searchMessages[q?.reason]||'Elegí un superviviente propio disponible.';notify();return false;}
-  intent={actorId,origin:q.origin,requirement:q.requirement,dieIndex:null,dieValue:null,revision:state.search.revision,session:state.search.session};phase='picking';message='Elegí un dado disponible que alcance el requisito.';notify();return true;
+  intent={actorId,origin:q.origin,requirement:q.requirement,dieIndex:null,dieValue:null,revision:state.search.revision,session:state.search.session};if(selectOnly&&q.dice.filter(d=>d.allowed).length===1){const d=q.dice.find(d=>d.allowed);intent.dieIndex=d.index;intent.dieValue=d.value;}phase='picking';message='Elegí un dado disponible que alcance el requisito.';notify();return true;
  }
  function chooseDie(index){if(phase!=='picking')return false;const die=state.search.options[intent.actorId]?.dice.find(d=>d.index===index&&d.allowed);if(!die)return false;intent.dieIndex=index;intent.dieValue=die.value;notify();return true;}
  function submit(type,fields){pending=requestId();action=type;phase='sending';message='Resolviendo la búsqueda…';const request={type,requestId:pending,session:state.search.session,revision:state.search.revision,...fields};notify();try{send(request);}catch{disconnect();}return true;}

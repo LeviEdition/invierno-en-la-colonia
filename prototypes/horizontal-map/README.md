@@ -1,6 +1,6 @@
 # Mapa horizontal — partida real y ambientación
 
-Interfaz de partida sobre el motor V9 y las capacidades experimentales aceptadas. Preparación, acciones, decisiones, ciclo y final se realizan desde el mapa. **Aceptación manual pendiente.** No cambia reglas, IA ni arte. [Matriz de paridad y guía de revisión](../../docs/98-paridad-funcional-del-mapa.md).
+Interfaz de partida sobre el motor V9 y las capacidades experimentales aceptadas. Preparación, acciones, decisiones, ciclo y final se realizan desde el mapa. **Aceptación manual pendiente.** No cambia reglas, IA ni arte. [Experiencia unificada y guía de revisión](../../docs/99-experiencia-unificada-del-mapa.md).
 
 ## Windows, VS Code y PowerShell
 
@@ -14,7 +14,7 @@ npm.cmd ci
 npm.cmd run dev:horizontal-map
 ```
 
-Abrir **http://127.0.0.1:8779/prototypes/horizontal-map/**. Elegí **dos jugadores locales** o **humano + IA** en el diálogo inicial. Los grupos y la preparación son los originales; el objetivo se sortea. Menú → Grupos y líderes permite elegir el líder en su ventana legal. No hace falta abrir V9.
+Abrir **http://127.0.0.1:8779/prototypes/horizontal-map/**. Elegí **Dos jugadores en este dispositivo** o **Jugar con IA** en el diálogo inicial. Los grupos y la preparación son los originales; el objetivo se sortea. Menú → Grupos y líderes permite elegir el líder en su ventana legal. No hace falta abrir V9.
 
 Mantener la terminal abierta. **Ctrl+C** detiene el servidor. Tras actualizar: detener, volver a iniciar y recargar con Ctrl+Shift+R. `npm.cmd` evita el bloqueo de npm.ps1 de PowerShell. Si Git no reconoce la rama nueva después del fetch:
 
@@ -39,7 +39,7 @@ Abrir en el teléfono la URL LAN que imprime Node. PC activa; permitir Node en r
 
 ## Qué revisar
 
-1. Arrastrar, rueda/pinza y botones de zoom/restablecer. Con foco en el mapa: flechas, más/menos y0. Seleccionar las siete localidades desde el dibujo o los selectores; Centrar localidad encuadra el sector. En móvil pliega la ficha para liberar el mapa; se puede reabrir con Ficha. El enfoque incluye edificio, fichas y espacios exteriores con margen. Señalar una localidad con el puntero usa un trazo tenue; seleccionar y proponer destino tienen énfasis propio. En escritorio cerrar Ficha libera310px para el mapa; reabrir conserva localidad y zoom solicitado, limitado únicamente por la cobertura del fondo. Inventario, Grupos y líderes, Encrucijadas, Registro, Ayuda y Nueva partida están en Menú. La referencia estable es una comparación independiente.
+1. Arrastrar, rueda/pinza y botones de zoom/restablecer. Con foco en el mapa: flechas, más/menos y0. Seleccionar las siete localidades desde el dibujo o los selectores; Centrar localidad encuadra el sector. En móvil pliega la ficha para liberar el mapa; se puede reabrir con Ficha. El enfoque incluye edificio, fichas y espacios exteriores con margen. Señalar una localidad con el puntero usa un trazo tenue; seleccionar y proponer destino tienen énfasis propio. En escritorio cerrar Ficha libera340px para el mapa; reabrir conserva localidad y zoom real elegido. Inventario, Grupo y líderes, Registro, Ajustes, Ayuda y Nueva partida están en Menú. Encrucijadas está explicado en Ayuda. Ambientación, audio y movimiento reducido están en Ajustes. Las herramientas de desarrollo se muestran únicamente agregando `?dev=1` a la dirección.
 2. Seleccionar propios y rivales: azul/J1, rojo/J2 y halo del seleccionado, identidad estable. Revisar particularmente hospital y comisaría, sus accesos y el espacio de los paneles.
 3. **Moverse:** elegir destino, cancelar primero y después confirmar. Recorrido nominal1500ms visuales y exposición real; bajo carga la presentación puede tardar más para conservar sus fases. Las calles no crean caminos/costes.
 4. **Buscar:** dado, confirmar, elegir una carta o ruido cuando sea legal e Inventario del jugador; separado del equipo individual.

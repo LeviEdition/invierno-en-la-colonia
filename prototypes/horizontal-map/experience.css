@@ -1,0 +1,125 @@
+/* Una superficie contextual; la geometría y el arte del tablero son compartidos. */
+body[data-experience=unified]{font:14px/1.4 system-ui,sans-serif}
+body[data-experience=unified] button,body[data-experience=unified] select,body[data-experience=unified] input{font:inherit}
+body[data-experience=unified] button,body[data-experience=unified] select,body[data-experience=unified] summary{min-height:44px;box-sizing:border-box}
+body[data-experience=unified] button:focus-visible,body[data-experience=unified] select:focus-visible,body[data-experience=unified] summary:focus-visible{outline:3px solid #ffe4a3;outline-offset:2px}
+#map-app .topbar{min-height:42px;padding:2px 12px;gap:22px;border-bottom-width:1px}
+#map-app .brand h1{font-size:18px;margin:0}
+#map-app .stats{gap:18px;flex:1;justify-content:flex-end}
+#map-app .stats div{display:flex;gap:5px;align-items:baseline}
+#map-app .stats dt{font-size:13px}#map-app .stats dd{font-size:16px;line-height:1.3}
+#map-app #public-summaries{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr) auto;padding:3px 10px;gap:10px;font-size:14px}
+#map-app #public-summaries>div{min-width:0;gap:6px}
+#map-app #public-summaries button{font-size:14px;white-space:normal;padding:4px 8px;margin:0;text-align:left}
+#map-app #public-summaries p{margin:0;line-height:1.35;overflow-wrap:normal}
+#map-app #objective-details,#map-app #crisis-details{border:1px solid transparent;background:transparent;color:#f0e7d4;flex:1;min-width:0}
+#map-app #objective-details:hover,#map-app #crisis-details:hover{border-color:#a28d64;background:#313833}
+#crisis-consequence{display:block;font-size:13px;color:#d3c8ae}
+#map-app #turn-cycle-controls{display:flex;gap:6px;font-size:13px}
+#map-app #cycle-status{display:none}#map-app #finish-turn{background:#4b4934;border:1px solid #c4ad73}
+#map-app .layout{grid-template-columns:minmax(0,1fr) 340px}
+#map-app #map-panel{display:flex;position:relative;min-height:0;grid-template-rows:none}
+#map-app .map-viewport{height:100%;min-height:0;flex:1}
+#map-app .map-tools{position:absolute;z-index:24;left:8px;top:8px;display:flex;gap:4px;padding:3px;border:1px solid #80765f;border-radius:5px;background:#202825ed;max-width:calc(100% - 100px);box-sizing:border-box}
+#map-app .map-tools select{width:160px;font-size:14px;min-width:0}
+#map-app .map-tools button{width:44px;padding:4px;flex-shrink:0}
+#map-app #zoom-value{font-size:13px;min-width:38px;text-align:center}
+#map-app #reset-view svg{display:block}#map-app #reset-view .reset-label{display:none}
+#map-app .feedback{position:absolute;bottom:0;left:0;right:0;z-index:3;pointer-events:none;background:#182123dd;padding:3px 8px;margin:0;font-size:13px;height:auto;clip-path:none;min-height:0}
+#map-app .feedback::before{content:none}
+#map-app #dossier{display:flex;flex-direction:column;min-width:0;min-height:0;max-height:none;width:auto;background:#222b29;border-left:1px solid #867858}
+#map-app .panel-heading{display:flex;align-items:center;gap:6px;padding:3px 8px;flex:none}
+#map-app .panel-heading h2{font:600 18px/1.2 system-ui;flex:1;margin:0;min-width:0}
+#map-app .panel-heading button{min-width:44px;font-size:14px}
+#map-app #panel-content{max-height:none;padding:10px;overscroll-behavior:contain}
+#map-app #panel-content p{font-size:14px;line-height:1.4}
+#map-app #panel-content h2{font:600 19px/1.3 system-ui;margin:0 0 10px}
+#map-app #panel-content h3{font:600 16px/1.3 system-ui;margin:12px 0 6px}
+#character-navigation{display:flex;gap:7px;align-items:center;margin-bottom:10px;font-size:13px}
+#character-navigation select{flex:1;min-width:0;width:100%}
+#context-default .identity{gap:10px}#character-name,#locality-name{display:none}
+#context-default #character-identity{font-size:13px}#context-default .portrait-row>img,#context-default .portrait-initials{width:64px;height:64px}
+#context-default .attributes{margin:8px 0}#context-default .attributes dd{font:600 16px system-ui}
+#context-default #character-inventory{width:100%;margin-bottom:8px}
+#context-default .dice-section{padding-block:8px;border-block:1px solid #5a6156;margin:10px 0}
+#context-default #dice-owner{font-size:14px;margin:0 0 8px}#context-default #dice-status{margin:4px 0;font-size:13px}
+#context-default .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px 8px}
+#context-default .actions button{width:100%;font-size:14px;padding:7px;min-height:48px;white-space:normal}
+#context-default .actions svg{height:18px;width:18px;flex-shrink:0}
+#context-default .actions .action-control p{font-size:13px;margin:3px 0 0;color:#c8c5b6}
+#context-default #attack-availability,#context-default #barricade-availability,#context-default #actions-status{display:none}
+#context-workspace>[data-context-active=false]{display:none!important}
+#context-workspace #action-panel,#context-workspace #search-panel,#context-workspace #move-planner,#context-workspace dialog[data-surface=context]{position:static;transform:none;width:100%;max-width:none;max-height:none;padding:0;margin:0;border:0;border-radius:0;background:transparent;color:inherit;box-shadow:none;overflow:visible;font:inherit}
+#context-workspace button,#context-workspace select{max-width:100%;white-space:normal}
+#context-workspace dialog button{margin:4px 0;padding:8px 10px}
+#context-workspace #move-planner p{display:block}#context-workspace #move-planner select{min-width:0}
+#context-workspace #move-confirmation{flex-wrap:wrap}
+#context-workspace .search-dice{margin:10px 0;gap:8px}
+#context-result{padding:10px;margin-bottom:10px;border:1px solid #a28d64;border-left-width:4px;background:#343d30;font-size:14px}
+#context-workspace .inventory-heading{align-items:flex-start;gap:5px}
+#context-workspace .inventory-heading h2{font-size:17px;flex:1}
+#context-workspace .inventory-cards{grid-template-columns:1fr;gap:0}
+#context-workspace #inventory-dialog article{padding:10px;margin:8px 0}
+#context-workspace #inventory-dialog label{margin:10px 0}
+#context-workspace #inventory-status:empty,#context-workspace #play-dialog [role=status]:empty{display:none}
+#context-workspace .demo-controls{font-size:14px}
+#settings-panel label{display:block;margin:10px 0}
+#settings-panel input[type=checkbox]{min-width:24px;min-height:24px;vertical-align:middle}
+#connection-banner{position:fixed;z-index:60;top:6px;left:50%;transform:translateX(-50%);max-width:calc(100% - 20px);padding:8px;background:#323b32;border:1px solid #d8c28c}
+#connection-banner button{margin-left:8px}
+#development-tools{position:fixed;z-index:70;bottom:0;left:0;background:#202825;padding:6px;border:1px solid #a28d64}
+#development-tools nav{display:flex;flex-direction:column}
+body[data-panel-open=false] #map-app #dossier{bottom:30px;width:auto}
+dialog[data-surface=exclusive]{font:14px/1.45 system-ui;color:#e9e2cf;background:#252d29;border:1px solid #a28d64;max-width:calc(100vw - 24px);max-height:calc(100dvh - 24px)}
+dialog[data-surface=exclusive] button{font:inherit;min-height:44px;padding:8px 12px;max-width:100%;margin:4px}
+dialog[data-surface=exclusive]::backdrop{background:#071014b8}
+@media(max-width:950px){
+ #map-app .topbar{min-height:36px;padding:2px 8px;gap:8px}#map-app .brand{display:none}
+ #map-app .stats{justify-content:space-between;gap:8px}#map-app .stats div{display:flex;gap:4px}#map-app .stats dt{font-size:13px}#map-app .stats dd{font-size:15px}
+ #map-app #public-summaries{grid-template-columns:minmax(0,1fr) minmax(0,1.5fr) auto;gap:4px;padding:2px 5px;font-size:14px}
+ #map-app #public-summaries button{font-size:14px;padding:3px 5px}
+ #map-app .layout,body[data-panel-open=false] #map-app .layout{grid-template-columns:1fr}
+ #map-app #dossier{position:absolute;z-index:26;bottom:27px;right:5px;width:310px;max-width:calc(100% - 10px);max-height:46%;border:1px solid #8a7c60;box-shadow:0 4px 20px #0005}
+ #map-app #panel-content{max-height:none;min-height:0;padding:8px}
+ body[data-sheet-expanded=true] #map-app #dossier{max-height:calc(100% - 20px)}
+ body[data-panel-open=false] #map-app #dossier{bottom:27px;right:5px;width:auto;max-height:50px}
+ #map-app .map-tools{left:5px;top:5px;max-width:calc(100% - 90px)}
+ #map-app .map-tools select{width:126px}#map-app .map-tools #zoom-value{display:none}
+ #map-app .floating-menu{z-index:40;max-height:calc(100% - 62px);overflow:auto;max-width:calc(100vw - 12px)}
+ #map-app .menu-toggle{top:5px;right:5px}
+}
+@media(max-width:600px){
+ #map-app .topbar{min-height:60px}
+ #map-app .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:3px 12px}#map-app .stats div{justify-content:space-between}
+ #map-app #public-summaries{grid-template-columns:minmax(0,1fr) auto;gap:2px 4px}
+ #map-app #objective-details{grid-column:1/-1;min-height:44px}
+ #map-app #crisis-details{min-height:62px}#map-app #crisis-contribute{max-width:78px}
+ #map-app .map-tools select{width:122px}#map-app .map-tools{gap:2px;padding:2px}
+ #map-app #dossier{width:calc(100% - 10px);max-height:40%}
+ body[data-sheet-expanded=true] #map-app #dossier{max-height:calc(100% - 67px)}
+}
+@media(prefers-reduced-motion:reduce){body[data-experience=unified] *{scroll-behavior:auto}}
+
+#map-app .menu-toggle{left:auto;bottom:auto;top:8px;right:8px;min-width:76px}
+#map-app .floating-menu{bottom:auto;top:60px;left:auto;right:8px;width:220px;z-index:40}
+#map-app .floating-menu button{text-align:left;font-size:14px;min-height:44px}
+#map-app .floating-menu hr{width:100%;margin:3px 0;border:0;border-top:1px solid #80765f}
+#map-app #context-default .identity{margin:4px 0;min-height:0}
+#map-app #context-default .identity p{margin:1px 0}
+#map-app #context-default #character-identity,#map-app #context-default #character-state{margin:6px 0}
+#map-app #context-default .attributes{margin:5px 0;padding:3px 0}
+#map-app #context-default .attributes div{padding:2px;min-height:0}
+#map-app #context-default .skill-details{margin:5px 0;padding:0}
+#map-app #context-default .skill-details summary{display:flex;align-items:center;font-size:14px;cursor:pointer}
+#map-app #context-default .skill-details summary::before{content:'▸';margin-right:6px}
+#map-app #context-default .skill-details[open] summary::before{content:'▾'}
+#map-app #context-default .dice-section{padding:6px 0;background:transparent;border-inline:0}
+#map-app #context-default #dice-owner{font-size:14px;margin:0 0 5px}
+#map-app #context-default .dice-pool{gap:8px;justify-content:flex-start}
+#map-app #context-default .dice-section #boost-action{font-size:14px;padding:4px 8px}
+#map-app #context-default #dice-status{display:none}
+#map-app #context-default .actions-section{padding:0;border:0}
+#map-app .menu-toggle{z-index:50}#map-app .floating-menu{z-index:51}
+@media(max-width:950px){body[data-sheet-expanded=true] #map-app #dossier{max-height:calc(100% - 90px)}}
+body[data-panel-open=false] #panel-expand{display:none}
+#map-app #final-new-game{display:none}
