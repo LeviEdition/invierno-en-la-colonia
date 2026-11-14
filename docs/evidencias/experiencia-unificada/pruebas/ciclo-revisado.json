@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "controlled": true,
+  "physicalMobile": false,
+  "records": [
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "scenario": "local",
+      "phases": [
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise",
+        "round"
+      ],
+      "round": 2,
+      "outcome": null,
+      "cameraBefore": {
+        "overview": false,
+        "zoom": 0.32624867162592985,
+        "x": 153.41923485653558,
+        "y": -11.5,
+        "minZoom": 0.3018065887353879,
+        "maxZoom": 1.5,
+        "retainedMin": 0.32624867162592985
+      },
+      "cameraAfter": {
+        "overview": false,
+        "zoom": 0.32624867162592985,
+        "x": 153.41923485653558,
+        "y": -11.5,
+        "minZoom": 0.3018065887353879,
+        "maxZoom": 1.5,
+        "retainedMin": 0.32624867162592985
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/workspace/ux-work/cycle-reviewed/852x393/local/page@b83ac17aaef427ad84fd28b921d72c1f.webm",
+      "passed": true
+    }
+  ],
+  "cameraBefore": {
+    "scenario": "local",
+    "width": 852,
+    "camera": {
+      "overview": false,
+      "zoom": 0.32624867162592985,
+      "x": 153.41923485653558,
+      "y": -11.5,
+      "minZoom": 0.3018065887353879,
+      "maxZoom": 1.5,
+      "retainedMin": 0.32624867162592985
+    },
+    "viewport": {
+      "width": 852,
+      "height": 284,
+      "dpr": 2
+    }
+  }
+}

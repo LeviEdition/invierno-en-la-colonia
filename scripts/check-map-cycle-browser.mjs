@@ -20,7 +20,7 @@ try{for(const [width,height]of (process.env.CYCLE_VIEWPORTS||'1365x768,852x393')
   await t.panel(p);await p.locator('#survivor-select').evaluate(el=>{const d=el.closest('details');if(d)d.open=true;});await p.selectOption('#survivor-select','h0');await p.locator('#barricade-action').click();await p.locator('[data-action-die="0"]').click();await p.locator('#confirm-action').click();await t.actionDone(p);
   const cancel=await raw();await p.locator('#finish-turn').click();await p.locator('#cycle-cancel').click();assert.deepEqual(await raw(),cancel);
  }
- const camera=(await t.view(p)).camera;result.cameraBefore={scenario,width,camera,viewport:(await t.view(p)).viewport};
+ const viewBefore=await t.view(p),camera=viewBefore.camera;result.cameraBefore={scenario,width,camera,viewport:viewBefore.viewport};
  if(!aiMode){
   if(scenario==='local'&&width===1365)await t.host(p).evaluate(()=>h344DropReply=true);
   await finish();await p.waitForFunction(()=>h344Viewer.inspect().projection.cycle?.decision?.kind==='handover');const after=await raw(),rng=await t.rng(p);await p.waitForFunction(()=>!document.querySelector('#cycle-pass')?.disabled);assert.deepEqual(await raw(),after);assert.equal(await t.rng(p),rng);if(scenario==='local'&&width===1365)await t.host(p).evaluate(()=>h344DropReply=false);
@@ -46,7 +46,7 @@ try{for(const [width,height]of (process.env.CYCLE_VIEWPORTS||'1365x768,852x393')
   if(!aiMode)await pass();
   if(scenario==='death'){await p.locator('#cycle-leader-h1').waitFor();assert.equal((await raw()).leaders.human,null);await p.screenshot({path:resolve(dir,'sucesion.png')});await p.locator('#cycle-leader-h1').click();}
   await p.waitForFunction(()=>!document.querySelector('#cycle-dialog').open);assert.equal((await raw()).round,2);assert.equal((await api()).projection.round,2);assert.equal((await api()).projection.dice.ownerId,'human');assert.equal((await api()).mode,'map');
-  for(const k of ['zoom','x','y'])assert.ok(Math.abs((await t.view(p)).camera[k]-camera[k])<.01,'cámara '+k+' '+scenario);
+  await t.frames(p);const afterView=await t.view(p);assert.ok(Math.abs(afterView.camera.zoom-camera.zoom)<.01,'zoom conservado '+scenario);for(const [axis,size]of [['x','width'],['y','height']]){const shift=(afterView.viewport[size]-viewBefore.viewport[size])/2;assert.ok(Math.abs(afterView.camera[axis]-camera[axis]-shift)<.01,'cámara '+axis+' ajusta solo el cambio de viewport '+scenario);const beforeWorld=(viewBefore.viewport[size]/2-camera[axis])/camera.zoom,afterWorld=(afterView.viewport[size]/2-afterView.camera[axis])/afterView.camera.zoom;assert.ok(Math.abs(beforeWorld-afterWorld)<.01,'ancla del mundo conservada '+axis+' '+scenario);}
   await p.screenshot({path:resolve(dir,'nueva-ronda.png')});
  }
  assert.equal(errors.length,0,JSON.stringify(errors));const s=await api();assert.equal(s.projection.locations.reduce((n,l)=>n+l.exteriorCapacity,0),33);assert.equal(s.projection.locations[4].capacity,4);assert.equal(s.projection.locations[6].capacity,4);

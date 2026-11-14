@@ -1,6 +1,6 @@
 # Experiencia unificada · comparación y pruebas
 
-[Informe y tabla de accesos](../../99-experiencia-unificada-del-mapa.md). Auditoría previa enef99f3c; implementación enc2014569ec3e288345727a87376c0ebd36f1b453. El SHA final y su ejecución exacta de Actions se registran enPR25. Sin merge ni publicación del juego.
+[Informe y tabla de accesos](../../99-experiencia-unificada-del-mapa.md). Auditoría previa enef99f3c; implementación enc2014569ec3e288345727a87376c0ebd36f1b453, con cierre visual968e5cb/838ce09. Vídeos y capturas normales repetidos sobre838ce09. El SHA final y su ejecución exacta de Actions se registran enPR25. Sin merge ni publicación del juego.
 
 ## Espacio del mapa
 
@@ -40,10 +40,10 @@ Botones efectivamente pulsados; no se cuentan cambios de selector, scroll ni tie
 |Buscar/conservar|5 →4|5 →4|
 |Registro y volver|3 →3|3 →3|
 |Terminar turno y confirmar|2 →2|2 →2|
-|Revisar colonia completa, sin expandir detalles|5 avances, o2 con Ver todos →1 cierre|Igual|
+|Revisar colonia y nueva ronda local, sin expandir detalles|6 pulsaciones (5 avances y cierre), o2 con Ver todos →1 cierre|Igual|
 |Mordedura/encrucijada/pase/sucesión|Se conserva cada elección real|Igual|
 
-Se elimina el reconocimiento rutinario adicional, no la confirmación de coste. El pase privado y la confirmación de fallecimientos se conservan. El auto recorrido hasta derrota mezcla decisiones, consultas opcionales y pulsaciones durante transiciones; **no mide una sola fase de colonia**: registra42→46 en escritorio,41→43 en horizontal y41→41 en vertical. No se usa esa cifra para atribuir una mejora de pasos de colonia. Se conservan las trazas completas para revisión.
+Se elimina el reconocimiento rutinario adicional, no la confirmación de coste. El pase privado y la confirmación de fallecimientos se conservan. El auto recorrido hasta derrota mezcla decisiones, consultas opcionales y pulsaciones durante transiciones; **no mide una sola fase de colonia**: registra42→48 en escritorio y41→48 en ambos móviles. Antes se detenía al primer aviso de final; ahora también confirma los fallecimientos pendientes y comprueba Registro tras el final. No se usa esa cifra para atribuir una mejora de pasos de colonia. Se conservan las trazas completas para revisión.
 
 ## Vídeo y decisiones
 

@@ -38,7 +38,7 @@
       },
       "final": {
         "reason": "morale",
-        "label": "Derrota: la moral llegó a cero."
+        "label": "Derrota: la moral lleg\u00f3 a cero."
       },
       "clicks": [
         {
@@ -49,7 +49,7 @@
         {
           "step": "preparacion",
           "id": "panel-toggle",
-          "text": "×"
+          "text": "\u00d7"
         },
         {
           "step": "preparacion",
@@ -59,12 +59,12 @@
         {
           "step": "preparacion",
           "id": "objective-details",
-          "text": "Objetivo: 0/9 muestras · límite R10"
+          "text": "Objetivo: 0/9 muestras \u00b7 l\u00edmite R10"
         },
         {
           "step": "preparacion",
           "id": "menu-toggle",
-          "text": "Menú ▾"
+          "text": "Men\u00fa \u25be"
         },
         {
           "step": "preparacion",
@@ -84,7 +84,7 @@
         {
           "step": "ataque",
           "id": "confirm-action",
-          "text": "Atacar · gastar dado 5"
+          "text": "Atacar \u00b7 gastar dado 5"
         },
         {
           "step": "tratamiento",
@@ -99,7 +99,7 @@
         {
           "step": "tratamiento",
           "id": "play-heal-h0",
-          "text": "Atender a Mara · heridas 1 · congelación 0"
+          "text": "Atender a Mara \u00b7 heridas 1 \u00b7 congelaci\u00f3n 0"
         },
         {
           "step": "usar",
@@ -114,7 +114,7 @@
         {
           "step": "usar",
           "id": "inventory-confirm",
-          "text": "Usar Ración de comida"
+          "text": "Usar Raci\u00f3n de comida"
         },
         {
           "step": "usar",
@@ -164,7 +164,7 @@
         {
           "step": "aportar",
           "id": "inventory-confirm",
-          "text": "Aportar Bidón de combustible"
+          "text": "Aportar Bid\u00f3n de combustible"
         },
         {
           "step": "aportar",
@@ -184,7 +184,7 @@
         {
           "step": "limpiar",
           "id": "play-confirm",
-          "text": "Limpiar hasta 1 residuos · dado 5"
+          "text": "Limpiar hasta 1 residuos \u00b7 dado 5"
         },
         {
           "step": "atraer",
@@ -199,32 +199,32 @@
         {
           "step": "atraer",
           "id": "play-confirm",
-          "text": "Atraer hasta 2 zombis · dado 5"
+          "text": "Atraer hasta 2 zombis \u00b7 dado 5"
         },
         {
           "step": "atraer",
           "id": "play-attract-1",
-          "text": "Atraer desde Supermercado · 1 zombis"
+          "text": "Atraer desde Supermercado \u00b7 1 zombis"
         },
         {
           "step": "atraer",
           "id": "play-attract-end",
-          "text": "Terminar atracción · no devuelve el dado"
+          "text": "Terminar atracci\u00f3n \u00b7 no devuelve el dado"
         },
         {
           "step": "mejorar",
           "id": "boost-action",
-          "text": "Mejorar dado · 1 comida"
+          "text": "Mejorar dado \u00b7 1 comida"
         },
         {
           "step": "mejorar",
           "id": "play-die-0",
-          "text": "Dado 5 · seleccionado"
+          "text": "Dado 5 \u00b7 seleccionado"
         },
         {
           "step": "mejorar",
           "id": "play-confirm",
-          "text": "Mejorar dado · gastar 1 comida · dado 5"
+          "text": "Mejorar dado \u00b7 gastar 1 comida \u00b7 dado 5"
         },
         {
           "step": "mover",
@@ -249,7 +249,7 @@
         {
           "step": "buscar",
           "id": "confirm-search",
-          "text": "Buscar · gastar dado 6"
+          "text": "Buscar \u00b7 gastar dado 6"
         },
         {
           "step": "buscar",
@@ -259,7 +259,7 @@
         {
           "step": "registro",
           "id": "menu-toggle",
-          "text": "Menú ▾"
+          "text": "Men\u00fa \u25be"
         },
         {
           "step": "registro",
@@ -269,7 +269,7 @@
         {
           "step": "registro",
           "id": "close-dialog",
-          "text": "×"
+          "text": "\u00d7"
         },
         {
           "step": "colonia-final",
@@ -284,57 +284,7 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 2 · continuar"
-        },
-        {
-          "step": "colonia-final",
-          "id": "finish-turn",
-          "text": "Terminar turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-confirm",
-          "text": "Confirmar fin de turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-all",
-          "text": "Expandir todos los detalles"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-next",
-          "text": "Cerrar resumen de colonia"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-pass",
-          "text": "Soy Jugador 1 · continuar"
-        },
-        {
-          "step": "colonia-final",
-          "id": "finish-turn",
-          "text": "Terminar turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "finish-turn",
-          "text": "Terminar turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-confirm",
-          "text": "Confirmar fin de turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-pass",
-          "text": "Soy Jugador 2 · continuar"
-        },
-        {
-          "step": "colonia-final",
-          "id": "finish-turn",
-          "text": "Terminar turno"
+          "text": "Soy Jugador 2 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
@@ -359,7 +309,7 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 1 · continuar"
+          "text": "Soy Jugador 1 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
@@ -374,67 +324,52 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 2 · continuar"
+          "text": "Soy Jugador 2 \u00b7 continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 \u00b7 continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
           "id": "play-cross-0",
-          "text": "Organizar una guardia — Colocá una barricada en la colonia y ganá una moral si hay un acceso libre."
-        },
-        {
-          "step": "colonia-final",
-          "id": "finish-turn",
-          "text": "Terminar turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "finish-turn",
-          "text": "Terminar turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-confirm",
-          "text": "Confirmar fin de turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-death",
-          "text": "Confirmar fallecimientos"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-all",
-          "text": "Expandir todos los detalles"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-next",
-          "text": "Cerrar resumen de colonia"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-pass",
-          "text": "Soy Jugador 1 · continuar"
-        },
-        {
-          "step": "colonia-final",
-          "id": "finish-turn",
-          "text": "Terminar turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "finish-turn",
-          "text": "Terminar turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-confirm",
-          "text": "Confirmar fin de turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-pass",
-          "text": "Soy Jugador 2 · continuar"
+          "text": "Organizar una guardia \u2014 Coloc\u00e1 una barricada en la colonia y gan\u00e1 una moral si hay un acceso libre."
         },
         {
           "step": "colonia-final",
@@ -464,12 +399,57 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 1 · continuar"
+          "text": "Soy Jugador 1 \u00b7 continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 \u00b7 continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-death",
+          "text": "Confirmar fallecimientos"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
           "id": "cycle-leader-h1",
-          "text": "Leo · influencia 58"
+          "text": "Leo \u00b7 influencia 58"
         },
         {
           "step": "colonia-final",
@@ -484,12 +464,7 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 2 · continuar"
-        },
-        {
-          "step": "colonia-final",
-          "id": "finish-turn",
-          "text": "Terminar turno"
+          "text": "Soy Jugador 2 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
@@ -500,9 +475,44 @@
           "step": "colonia-final",
           "id": "cycle-confirm",
           "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-death",
+          "text": "Confirmar fallecimientos"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-close-final",
+          "text": "Consultar mapa y Registro"
+        },
+        {
+          "step": "colonia-final",
+          "id": "menu-toggle",
+          "text": "Men\u00fa \u25be"
+        },
+        {
+          "step": "colonia-final",
+          "id": "",
+          "text": "Registro"
+        },
+        {
+          "step": "colonia-final",
+          "id": "close-dialog",
+          "text": "\u00d7"
         }
       ],
-      "video": "/workspace/ux-work/experience-final/normal/1365x768/page@ffc4858a1e6b4d682789b89b4d3ded62.webm"
+      "video": "/workspace/ux-work/video-final/normal/1365x768/page@1c18a383b3fb809ee772136d99fcaf1d.webm"
     },
     {
       "motion": "normal",
@@ -539,7 +549,7 @@
       },
       "final": {
         "reason": "morale",
-        "label": "Derrota: la moral llegó a cero."
+        "label": "Derrota: la moral lleg\u00f3 a cero."
       },
       "clicks": [
         {
@@ -555,7 +565,7 @@
         {
           "step": "preparacion",
           "id": "panel-toggle",
-          "text": "×"
+          "text": "\u00d7"
         },
         {
           "step": "preparacion",
@@ -565,12 +575,12 @@
         {
           "step": "preparacion",
           "id": "objective-details",
-          "text": "Objetivo: 0/9 muestras · límite R10"
+          "text": "Objetivo: 0/9 muestras \u00b7 l\u00edmite R10"
         },
         {
           "step": "preparacion",
           "id": "menu-toggle",
-          "text": "Menú ▾"
+          "text": "Men\u00fa \u25be"
         },
         {
           "step": "preparacion",
@@ -590,7 +600,7 @@
         {
           "step": "ataque",
           "id": "confirm-action",
-          "text": "Atacar · gastar dado 5"
+          "text": "Atacar \u00b7 gastar dado 5"
         },
         {
           "step": "tratamiento",
@@ -605,7 +615,7 @@
         {
           "step": "tratamiento",
           "id": "play-heal-h0",
-          "text": "Atender a Mara · heridas 1 · congelación 0"
+          "text": "Atender a Mara \u00b7 heridas 1 \u00b7 congelaci\u00f3n 0"
         },
         {
           "step": "usar",
@@ -620,7 +630,7 @@
         {
           "step": "usar",
           "id": "inventory-confirm",
-          "text": "Usar Ración de comida"
+          "text": "Usar Raci\u00f3n de comida"
         },
         {
           "step": "usar",
@@ -670,7 +680,7 @@
         {
           "step": "aportar",
           "id": "inventory-confirm",
-          "text": "Aportar Bidón de combustible"
+          "text": "Aportar Bid\u00f3n de combustible"
         },
         {
           "step": "aportar",
@@ -690,7 +700,7 @@
         {
           "step": "limpiar",
           "id": "play-confirm",
-          "text": "Limpiar hasta 1 residuos · dado 5"
+          "text": "Limpiar hasta 1 residuos \u00b7 dado 5"
         },
         {
           "step": "atraer",
@@ -705,32 +715,32 @@
         {
           "step": "atraer",
           "id": "play-confirm",
-          "text": "Atraer hasta 2 zombis · dado 5"
+          "text": "Atraer hasta 2 zombis \u00b7 dado 5"
         },
         {
           "step": "atraer",
           "id": "play-attract-1",
-          "text": "Atraer desde Supermercado · 1 zombis"
+          "text": "Atraer desde Supermercado \u00b7 1 zombis"
         },
         {
           "step": "atraer",
           "id": "play-attract-end",
-          "text": "Terminar atracción · no devuelve el dado"
+          "text": "Terminar atracci\u00f3n \u00b7 no devuelve el dado"
         },
         {
           "step": "mejorar",
           "id": "boost-action",
-          "text": "Mejorar dado · 1 comida"
+          "text": "Mejorar dado \u00b7 1 comida"
         },
         {
           "step": "mejorar",
           "id": "play-die-0",
-          "text": "Dado 5 · seleccionado"
+          "text": "Dado 5 \u00b7 seleccionado"
         },
         {
           "step": "mejorar",
           "id": "play-confirm",
-          "text": "Mejorar dado · gastar 1 comida · dado 5"
+          "text": "Mejorar dado \u00b7 gastar 1 comida \u00b7 dado 5"
         },
         {
           "step": "mover",
@@ -755,7 +765,7 @@
         {
           "step": "buscar",
           "id": "confirm-search",
-          "text": "Buscar · gastar dado 6"
+          "text": "Buscar \u00b7 gastar dado 6"
         },
         {
           "step": "buscar",
@@ -765,7 +775,7 @@
         {
           "step": "registro",
           "id": "menu-toggle",
-          "text": "Menú ▾"
+          "text": "Men\u00fa \u25be"
         },
         {
           "step": "registro",
@@ -775,7 +785,7 @@
         {
           "step": "registro",
           "id": "close-dialog",
-          "text": "×"
+          "text": "\u00d7"
         },
         {
           "step": "colonia-final",
@@ -790,47 +800,7 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 2 · continuar"
-        },
-        {
-          "step": "colonia-final",
-          "id": "finish-turn",
-          "text": "Terminar turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-confirm",
-          "text": "Confirmar fin de turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-all",
-          "text": "Expandir todos los detalles"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-next",
-          "text": "Cerrar resumen de colonia"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-pass",
-          "text": "Soy Jugador 1 · continuar"
-        },
-        {
-          "step": "colonia-final",
-          "id": "finish-turn",
-          "text": "Terminar turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-confirm",
-          "text": "Confirmar fin de turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-pass",
-          "text": "Soy Jugador 2 · continuar"
+          "text": "Soy Jugador 2 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
@@ -855,7 +825,7 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 1 · continuar"
+          "text": "Soy Jugador 1 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
@@ -870,12 +840,52 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 2 · continuar"
+          "text": "Soy Jugador 2 \u00b7 continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 \u00b7 continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
           "id": "play-cross-0",
-          "text": "Organizar una guardia — Colocá una barricada en la colonia y ganá una moral si hay un acceso libre."
+          "text": "Organizar una guardia \u2014 Coloc\u00e1 una barricada en la colonia y gan\u00e1 una moral si hay un acceso libre."
         },
         {
           "step": "colonia-final",
@@ -905,12 +915,7 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 1 · continuar"
-        },
-        {
-          "step": "colonia-final",
-          "id": "finish-turn",
-          "text": "Terminar turno"
+          "text": "Soy Jugador 1 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
@@ -925,7 +930,7 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 2 · continuar"
+          "text": "Soy Jugador 2 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
@@ -955,12 +960,12 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 1 · continuar"
+          "text": "Soy Jugador 1 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
           "id": "cycle-leader-h1",
-          "text": "Leo · influencia 58"
+          "text": "Leo \u00b7 influencia 58"
         },
         {
           "step": "colonia-final",
@@ -975,7 +980,7 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 2 · continuar"
+          "text": "Soy Jugador 2 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
@@ -991,9 +996,39 @@
           "step": "colonia-final",
           "id": "cycle-death",
           "text": "Confirmar fallecimientos"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-close-final",
+          "text": "Consultar mapa y Registro"
+        },
+        {
+          "step": "colonia-final",
+          "id": "menu-toggle",
+          "text": "Men\u00fa \u25be"
+        },
+        {
+          "step": "colonia-final",
+          "id": "",
+          "text": "Registro"
+        },
+        {
+          "step": "colonia-final",
+          "id": "close-dialog",
+          "text": "\u00d7"
         }
       ],
-      "video": "/workspace/ux-work/experience-final/normal/852x393/page@fab85a9aa5eaef2fd78c9251db2e35e5.webm"
+      "video": "/workspace/ux-work/video-final/normal/852x393/page@85d5e0349205a64c3a6a3bbdfc579382.webm"
     },
     {
       "motion": "normal",
@@ -1030,7 +1065,7 @@
       },
       "final": {
         "reason": "morale",
-        "label": "Derrota: la moral llegó a cero."
+        "label": "Derrota: la moral lleg\u00f3 a cero."
       },
       "clicks": [
         {
@@ -1046,7 +1081,7 @@
         {
           "step": "preparacion",
           "id": "panel-toggle",
-          "text": "×"
+          "text": "\u00d7"
         },
         {
           "step": "preparacion",
@@ -1056,12 +1091,12 @@
         {
           "step": "preparacion",
           "id": "objective-details",
-          "text": "Objetivo: 0/9 muestras · límite R10"
+          "text": "Objetivo: 0/9 muestras \u00b7 l\u00edmite R10"
         },
         {
           "step": "preparacion",
           "id": "menu-toggle",
-          "text": "Menú ▾"
+          "text": "Men\u00fa \u25be"
         },
         {
           "step": "preparacion",
@@ -1081,7 +1116,7 @@
         {
           "step": "ataque",
           "id": "confirm-action",
-          "text": "Atacar · gastar dado 5"
+          "text": "Atacar \u00b7 gastar dado 5"
         },
         {
           "step": "tratamiento",
@@ -1096,7 +1131,7 @@
         {
           "step": "tratamiento",
           "id": "play-heal-h0",
-          "text": "Atender a Mara · heridas 1 · congelación 0"
+          "text": "Atender a Mara \u00b7 heridas 1 \u00b7 congelaci\u00f3n 0"
         },
         {
           "step": "usar",
@@ -1111,7 +1146,7 @@
         {
           "step": "usar",
           "id": "inventory-confirm",
-          "text": "Usar Ración de comida"
+          "text": "Usar Raci\u00f3n de comida"
         },
         {
           "step": "usar",
@@ -1161,7 +1196,7 @@
         {
           "step": "aportar",
           "id": "inventory-confirm",
-          "text": "Aportar Bidón de combustible"
+          "text": "Aportar Bid\u00f3n de combustible"
         },
         {
           "step": "aportar",
@@ -1181,7 +1216,7 @@
         {
           "step": "limpiar",
           "id": "play-confirm",
-          "text": "Limpiar hasta 1 residuos · dado 5"
+          "text": "Limpiar hasta 1 residuos \u00b7 dado 5"
         },
         {
           "step": "atraer",
@@ -1196,32 +1231,32 @@
         {
           "step": "atraer",
           "id": "play-confirm",
-          "text": "Atraer hasta 2 zombis · dado 5"
+          "text": "Atraer hasta 2 zombis \u00b7 dado 5"
         },
         {
           "step": "atraer",
           "id": "play-attract-1",
-          "text": "Atraer desde Supermercado · 1 zombis"
+          "text": "Atraer desde Supermercado \u00b7 1 zombis"
         },
         {
           "step": "atraer",
           "id": "play-attract-end",
-          "text": "Terminar atracción · no devuelve el dado"
+          "text": "Terminar atracci\u00f3n \u00b7 no devuelve el dado"
         },
         {
           "step": "mejorar",
           "id": "boost-action",
-          "text": "Mejorar dado · 1 comida"
+          "text": "Mejorar dado \u00b7 1 comida"
         },
         {
           "step": "mejorar",
           "id": "play-die-0",
-          "text": "Dado 5 · seleccionado"
+          "text": "Dado 5 \u00b7 seleccionado"
         },
         {
           "step": "mejorar",
           "id": "play-confirm",
-          "text": "Mejorar dado · gastar 1 comida · dado 5"
+          "text": "Mejorar dado \u00b7 gastar 1 comida \u00b7 dado 5"
         },
         {
           "step": "mover",
@@ -1246,7 +1281,7 @@
         {
           "step": "buscar",
           "id": "confirm-search",
-          "text": "Buscar · gastar dado 6"
+          "text": "Buscar \u00b7 gastar dado 6"
         },
         {
           "step": "buscar",
@@ -1256,7 +1291,7 @@
         {
           "step": "registro",
           "id": "menu-toggle",
-          "text": "Menú ▾"
+          "text": "Men\u00fa \u25be"
         },
         {
           "step": "registro",
@@ -1266,7 +1301,7 @@
         {
           "step": "registro",
           "id": "close-dialog",
-          "text": "×"
+          "text": "\u00d7"
         },
         {
           "step": "colonia-final",
@@ -1281,47 +1316,7 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 2 · continuar"
-        },
-        {
-          "step": "colonia-final",
-          "id": "finish-turn",
-          "text": "Terminar turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-confirm",
-          "text": "Confirmar fin de turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-all",
-          "text": "Expandir todos los detalles"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-next",
-          "text": "Cerrar resumen de colonia"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-pass",
-          "text": "Soy Jugador 1 · continuar"
-        },
-        {
-          "step": "colonia-final",
-          "id": "finish-turn",
-          "text": "Terminar turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-confirm",
-          "text": "Confirmar fin de turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-pass",
-          "text": "Soy Jugador 2 · continuar"
+          "text": "Soy Jugador 2 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
@@ -1346,7 +1341,7 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 1 · continuar"
+          "text": "Soy Jugador 1 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
@@ -1361,12 +1356,52 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 2 · continuar"
+          "text": "Soy Jugador 2 \u00b7 continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 \u00b7 continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
           "id": "play-cross-0",
-          "text": "Organizar una guardia — Colocá una barricada en la colonia y ganá una moral si hay un acceso libre."
+          "text": "Organizar una guardia \u2014 Coloc\u00e1 una barricada en la colonia y gan\u00e1 una moral si hay un acceso libre."
         },
         {
           "step": "colonia-final",
@@ -1396,7 +1431,7 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 1 · continuar"
+          "text": "Soy Jugador 1 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
@@ -1411,7 +1446,7 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 2 · continuar"
+          "text": "Soy Jugador 2 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
@@ -1441,12 +1476,12 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 1 · continuar"
+          "text": "Soy Jugador 1 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
           "id": "cycle-leader-h1",
-          "text": "Leo · influencia 58"
+          "text": "Leo \u00b7 influencia 58"
         },
         {
           "step": "colonia-final",
@@ -1461,7 +1496,7 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 2 · continuar"
+          "text": "Soy Jugador 2 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
@@ -1472,9 +1507,44 @@
           "step": "colonia-final",
           "id": "cycle-confirm",
           "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-death",
+          "text": "Confirmar fallecimientos"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-close-final",
+          "text": "Consultar mapa y Registro"
+        },
+        {
+          "step": "colonia-final",
+          "id": "menu-toggle",
+          "text": "Men\u00fa \u25be"
+        },
+        {
+          "step": "colonia-final",
+          "id": "",
+          "text": "Registro"
+        },
+        {
+          "step": "colonia-final",
+          "id": "close-dialog",
+          "text": "\u00d7"
         }
       ],
-      "video": "/workspace/ux-work/experience-final/normal/393x852/page@95571abf0183858355fe61fb3a5f0e23.webm"
+      "video": "/workspace/ux-work/video-final/normal/393x852/page@020f77f103dfb3e4d0849c60e1e2083f.webm"
     },
     {
       "motion": "reduced",
@@ -1511,7 +1581,7 @@
       },
       "final": {
         "reason": "morale",
-        "label": "Derrota: la moral llegó a cero."
+        "label": "Derrota: la moral lleg\u00f3 a cero."
       },
       "clicks": [
         {
@@ -1522,7 +1592,7 @@
         {
           "step": "preparacion",
           "id": "panel-toggle",
-          "text": "×"
+          "text": "\u00d7"
         },
         {
           "step": "preparacion",
@@ -1532,12 +1602,12 @@
         {
           "step": "preparacion",
           "id": "objective-details",
-          "text": "Objetivo: 0/9 muestras · límite R10"
+          "text": "Objetivo: 0/9 muestras \u00b7 l\u00edmite R10"
         },
         {
           "step": "preparacion",
           "id": "menu-toggle",
-          "text": "Menú ▾"
+          "text": "Men\u00fa \u25be"
         },
         {
           "step": "preparacion",
@@ -1557,7 +1627,7 @@
         {
           "step": "ataque",
           "id": "confirm-action",
-          "text": "Atacar · gastar dado 5"
+          "text": "Atacar \u00b7 gastar dado 5"
         },
         {
           "step": "tratamiento",
@@ -1572,7 +1642,7 @@
         {
           "step": "tratamiento",
           "id": "play-heal-h0",
-          "text": "Atender a Mara · heridas 1 · congelación 0"
+          "text": "Atender a Mara \u00b7 heridas 1 \u00b7 congelaci\u00f3n 0"
         },
         {
           "step": "usar",
@@ -1587,7 +1657,7 @@
         {
           "step": "usar",
           "id": "inventory-confirm",
-          "text": "Usar Ración de comida"
+          "text": "Usar Raci\u00f3n de comida"
         },
         {
           "step": "usar",
@@ -1637,7 +1707,7 @@
         {
           "step": "aportar",
           "id": "inventory-confirm",
-          "text": "Aportar Bidón de combustible"
+          "text": "Aportar Bid\u00f3n de combustible"
         },
         {
           "step": "aportar",
@@ -1657,7 +1727,7 @@
         {
           "step": "limpiar",
           "id": "play-confirm",
-          "text": "Limpiar hasta 1 residuos · dado 5"
+          "text": "Limpiar hasta 1 residuos \u00b7 dado 5"
         },
         {
           "step": "atraer",
@@ -1672,32 +1742,32 @@
         {
           "step": "atraer",
           "id": "play-confirm",
-          "text": "Atraer hasta 2 zombis · dado 5"
+          "text": "Atraer hasta 2 zombis \u00b7 dado 5"
         },
         {
           "step": "atraer",
           "id": "play-attract-1",
-          "text": "Atraer desde Supermercado · 1 zombis"
+          "text": "Atraer desde Supermercado \u00b7 1 zombis"
         },
         {
           "step": "atraer",
           "id": "play-attract-end",
-          "text": "Terminar atracción · no devuelve el dado"
+          "text": "Terminar atracci\u00f3n \u00b7 no devuelve el dado"
         },
         {
           "step": "mejorar",
           "id": "boost-action",
-          "text": "Mejorar dado · 1 comida"
+          "text": "Mejorar dado \u00b7 1 comida"
         },
         {
           "step": "mejorar",
           "id": "play-die-0",
-          "text": "Dado 5 · seleccionado"
+          "text": "Dado 5 \u00b7 seleccionado"
         },
         {
           "step": "mejorar",
           "id": "play-confirm",
-          "text": "Mejorar dado · gastar 1 comida · dado 5"
+          "text": "Mejorar dado \u00b7 gastar 1 comida \u00b7 dado 5"
         },
         {
           "step": "mover",
@@ -1722,7 +1792,7 @@
         {
           "step": "buscar",
           "id": "confirm-search",
-          "text": "Buscar · gastar dado 6"
+          "text": "Buscar \u00b7 gastar dado 6"
         },
         {
           "step": "buscar",
@@ -1732,7 +1802,7 @@
         {
           "step": "registro",
           "id": "menu-toggle",
-          "text": "Menú ▾"
+          "text": "Men\u00fa \u25be"
         },
         {
           "step": "registro",
@@ -1742,7 +1812,7 @@
         {
           "step": "registro",
           "id": "close-dialog",
-          "text": "×"
+          "text": "\u00d7"
         },
         {
           "step": "colonia-final",
@@ -1757,47 +1827,7 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 2 · continuar"
-        },
-        {
-          "step": "colonia-final",
-          "id": "finish-turn",
-          "text": "Terminar turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-confirm",
-          "text": "Confirmar fin de turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-all",
-          "text": "Expandir todos los detalles"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-next",
-          "text": "Cerrar resumen de colonia"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-pass",
-          "text": "Soy Jugador 1 · continuar"
-        },
-        {
-          "step": "colonia-final",
-          "id": "finish-turn",
-          "text": "Terminar turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-confirm",
-          "text": "Confirmar fin de turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-pass",
-          "text": "Soy Jugador 2 · continuar"
+          "text": "Soy Jugador 2 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
@@ -1822,7 +1852,7 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 1 · continuar"
+          "text": "Soy Jugador 1 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
@@ -1837,12 +1867,52 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 2 · continuar"
+          "text": "Soy Jugador 2 \u00b7 continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 \u00b7 continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
           "id": "play-cross-0",
-          "text": "Organizar una guardia — Colocá una barricada en la colonia y ganá una moral si hay un acceso libre."
+          "text": "Organizar una guardia \u2014 Coloc\u00e1 una barricada en la colonia y gan\u00e1 una moral si hay un acceso libre."
         },
         {
           "step": "colonia-final",
@@ -1872,7 +1942,7 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 1 · continuar"
+          "text": "Soy Jugador 1 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
@@ -1887,7 +1957,7 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 2 · continuar"
+          "text": "Soy Jugador 2 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
@@ -1917,12 +1987,12 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 1 · continuar"
+          "text": "Soy Jugador 1 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
           "id": "cycle-leader-h1",
-          "text": "Leo · influencia 58"
+          "text": "Leo \u00b7 influencia 58"
         },
         {
           "step": "colonia-final",
@@ -1937,7 +2007,7 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 2 · continuar"
+          "text": "Soy Jugador 2 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
@@ -1948,6 +2018,41 @@
           "step": "colonia-final",
           "id": "cycle-confirm",
           "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-death",
+          "text": "Confirmar fallecimientos"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-close-final",
+          "text": "Consultar mapa y Registro"
+        },
+        {
+          "step": "colonia-final",
+          "id": "menu-toggle",
+          "text": "Men\u00fa \u25be"
+        },
+        {
+          "step": "colonia-final",
+          "id": "",
+          "text": "Registro"
+        },
+        {
+          "step": "colonia-final",
+          "id": "close-dialog",
+          "text": "\u00d7"
         }
       ]
     },
@@ -1986,7 +2091,7 @@
       },
       "final": {
         "reason": "morale",
-        "label": "Derrota: la moral llegó a cero."
+        "label": "Derrota: la moral lleg\u00f3 a cero."
       },
       "clicks": [
         {
@@ -2002,7 +2107,7 @@
         {
           "step": "preparacion",
           "id": "panel-toggle",
-          "text": "×"
+          "text": "\u00d7"
         },
         {
           "step": "preparacion",
@@ -2012,12 +2117,12 @@
         {
           "step": "preparacion",
           "id": "objective-details",
-          "text": "Objetivo: 0/9 muestras · límite R10"
+          "text": "Objetivo: 0/9 muestras \u00b7 l\u00edmite R10"
         },
         {
           "step": "preparacion",
           "id": "menu-toggle",
-          "text": "Menú ▾"
+          "text": "Men\u00fa \u25be"
         },
         {
           "step": "preparacion",
@@ -2037,7 +2142,7 @@
         {
           "step": "ataque",
           "id": "confirm-action",
-          "text": "Atacar · gastar dado 5"
+          "text": "Atacar \u00b7 gastar dado 5"
         },
         {
           "step": "tratamiento",
@@ -2052,7 +2157,7 @@
         {
           "step": "tratamiento",
           "id": "play-heal-h0",
-          "text": "Atender a Mara · heridas 1 · congelación 0"
+          "text": "Atender a Mara \u00b7 heridas 1 \u00b7 congelaci\u00f3n 0"
         },
         {
           "step": "usar",
@@ -2067,7 +2172,7 @@
         {
           "step": "usar",
           "id": "inventory-confirm",
-          "text": "Usar Ración de comida"
+          "text": "Usar Raci\u00f3n de comida"
         },
         {
           "step": "usar",
@@ -2117,7 +2222,7 @@
         {
           "step": "aportar",
           "id": "inventory-confirm",
-          "text": "Aportar Bidón de combustible"
+          "text": "Aportar Bid\u00f3n de combustible"
         },
         {
           "step": "aportar",
@@ -2137,7 +2242,7 @@
         {
           "step": "limpiar",
           "id": "play-confirm",
-          "text": "Limpiar hasta 1 residuos · dado 5"
+          "text": "Limpiar hasta 1 residuos \u00b7 dado 5"
         },
         {
           "step": "atraer",
@@ -2152,32 +2257,32 @@
         {
           "step": "atraer",
           "id": "play-confirm",
-          "text": "Atraer hasta 2 zombis · dado 5"
+          "text": "Atraer hasta 2 zombis \u00b7 dado 5"
         },
         {
           "step": "atraer",
           "id": "play-attract-1",
-          "text": "Atraer desde Supermercado · 1 zombis"
+          "text": "Atraer desde Supermercado \u00b7 1 zombis"
         },
         {
           "step": "atraer",
           "id": "play-attract-end",
-          "text": "Terminar atracción · no devuelve el dado"
+          "text": "Terminar atracci\u00f3n \u00b7 no devuelve el dado"
         },
         {
           "step": "mejorar",
           "id": "boost-action",
-          "text": "Mejorar dado · 1 comida"
+          "text": "Mejorar dado \u00b7 1 comida"
         },
         {
           "step": "mejorar",
           "id": "play-die-0",
-          "text": "Dado 5 · seleccionado"
+          "text": "Dado 5 \u00b7 seleccionado"
         },
         {
           "step": "mejorar",
           "id": "play-confirm",
-          "text": "Mejorar dado · gastar 1 comida · dado 5"
+          "text": "Mejorar dado \u00b7 gastar 1 comida \u00b7 dado 5"
         },
         {
           "step": "mover",
@@ -2202,7 +2307,7 @@
         {
           "step": "buscar",
           "id": "confirm-search",
-          "text": "Buscar · gastar dado 6"
+          "text": "Buscar \u00b7 gastar dado 6"
         },
         {
           "step": "buscar",
@@ -2212,7 +2317,7 @@
         {
           "step": "registro",
           "id": "menu-toggle",
-          "text": "Menú ▾"
+          "text": "Men\u00fa \u25be"
         },
         {
           "step": "registro",
@@ -2222,7 +2327,7 @@
         {
           "step": "registro",
           "id": "close-dialog",
-          "text": "×"
+          "text": "\u00d7"
         },
         {
           "step": "colonia-final",
@@ -2237,47 +2342,7 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 2 · continuar"
-        },
-        {
-          "step": "colonia-final",
-          "id": "finish-turn",
-          "text": "Terminar turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-confirm",
-          "text": "Confirmar fin de turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-all",
-          "text": "Expandir todos los detalles"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-next",
-          "text": "Cerrar resumen de colonia"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-pass",
-          "text": "Soy Jugador 1 · continuar"
-        },
-        {
-          "step": "colonia-final",
-          "id": "finish-turn",
-          "text": "Terminar turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-confirm",
-          "text": "Confirmar fin de turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-pass",
-          "text": "Soy Jugador 2 · continuar"
+          "text": "Soy Jugador 2 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
@@ -2302,7 +2367,7 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 1 · continuar"
+          "text": "Soy Jugador 1 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
@@ -2317,12 +2382,52 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 2 · continuar"
+          "text": "Soy Jugador 2 \u00b7 continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 \u00b7 continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
           "id": "play-cross-0",
-          "text": "Organizar una guardia — Colocá una barricada en la colonia y ganá una moral si hay un acceso libre."
+          "text": "Organizar una guardia \u2014 Coloc\u00e1 una barricada en la colonia y gan\u00e1 una moral si hay un acceso libre."
         },
         {
           "step": "colonia-final",
@@ -2352,7 +2457,7 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 1 · continuar"
+          "text": "Soy Jugador 1 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
@@ -2367,7 +2472,7 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 2 · continuar"
+          "text": "Soy Jugador 2 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
@@ -2397,12 +2502,12 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 1 · continuar"
+          "text": "Soy Jugador 1 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
           "id": "cycle-leader-h1",
-          "text": "Leo · influencia 58"
+          "text": "Leo \u00b7 influencia 58"
         },
         {
           "step": "colonia-final",
@@ -2417,7 +2522,7 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 2 · continuar"
+          "text": "Soy Jugador 2 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
@@ -2428,6 +2533,41 @@
           "step": "colonia-final",
           "id": "cycle-confirm",
           "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-death",
+          "text": "Confirmar fallecimientos"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-close-final",
+          "text": "Consultar mapa y Registro"
+        },
+        {
+          "step": "colonia-final",
+          "id": "menu-toggle",
+          "text": "Men\u00fa \u25be"
+        },
+        {
+          "step": "colonia-final",
+          "id": "",
+          "text": "Registro"
+        },
+        {
+          "step": "colonia-final",
+          "id": "close-dialog",
+          "text": "\u00d7"
         }
       ]
     },
@@ -2466,7 +2606,7 @@
       },
       "final": {
         "reason": "morale",
-        "label": "Derrota: la moral llegó a cero."
+        "label": "Derrota: la moral lleg\u00f3 a cero."
       },
       "clicks": [
         {
@@ -2482,7 +2622,7 @@
         {
           "step": "preparacion",
           "id": "panel-toggle",
-          "text": "×"
+          "text": "\u00d7"
         },
         {
           "step": "preparacion",
@@ -2492,12 +2632,12 @@
         {
           "step": "preparacion",
           "id": "objective-details",
-          "text": "Objetivo: 0/9 muestras · límite R10"
+          "text": "Objetivo: 0/9 muestras \u00b7 l\u00edmite R10"
         },
         {
           "step": "preparacion",
           "id": "menu-toggle",
-          "text": "Menú ▾"
+          "text": "Men\u00fa \u25be"
         },
         {
           "step": "preparacion",
@@ -2517,7 +2657,7 @@
         {
           "step": "ataque",
           "id": "confirm-action",
-          "text": "Atacar · gastar dado 5"
+          "text": "Atacar \u00b7 gastar dado 5"
         },
         {
           "step": "tratamiento",
@@ -2532,7 +2672,7 @@
         {
           "step": "tratamiento",
           "id": "play-heal-h0",
-          "text": "Atender a Mara · heridas 1 · congelación 0"
+          "text": "Atender a Mara \u00b7 heridas 1 \u00b7 congelaci\u00f3n 0"
         },
         {
           "step": "usar",
@@ -2547,7 +2687,7 @@
         {
           "step": "usar",
           "id": "inventory-confirm",
-          "text": "Usar Ración de comida"
+          "text": "Usar Raci\u00f3n de comida"
         },
         {
           "step": "usar",
@@ -2597,7 +2737,7 @@
         {
           "step": "aportar",
           "id": "inventory-confirm",
-          "text": "Aportar Bidón de combustible"
+          "text": "Aportar Bid\u00f3n de combustible"
         },
         {
           "step": "aportar",
@@ -2617,7 +2757,7 @@
         {
           "step": "limpiar",
           "id": "play-confirm",
-          "text": "Limpiar hasta 1 residuos · dado 5"
+          "text": "Limpiar hasta 1 residuos \u00b7 dado 5"
         },
         {
           "step": "atraer",
@@ -2632,32 +2772,32 @@
         {
           "step": "atraer",
           "id": "play-confirm",
-          "text": "Atraer hasta 2 zombis · dado 5"
+          "text": "Atraer hasta 2 zombis \u00b7 dado 5"
         },
         {
           "step": "atraer",
           "id": "play-attract-1",
-          "text": "Atraer desde Supermercado · 1 zombis"
+          "text": "Atraer desde Supermercado \u00b7 1 zombis"
         },
         {
           "step": "atraer",
           "id": "play-attract-end",
-          "text": "Terminar atracción · no devuelve el dado"
+          "text": "Terminar atracci\u00f3n \u00b7 no devuelve el dado"
         },
         {
           "step": "mejorar",
           "id": "boost-action",
-          "text": "Mejorar dado · 1 comida"
+          "text": "Mejorar dado \u00b7 1 comida"
         },
         {
           "step": "mejorar",
           "id": "play-die-0",
-          "text": "Dado 5 · seleccionado"
+          "text": "Dado 5 \u00b7 seleccionado"
         },
         {
           "step": "mejorar",
           "id": "play-confirm",
-          "text": "Mejorar dado · gastar 1 comida · dado 5"
+          "text": "Mejorar dado \u00b7 gastar 1 comida \u00b7 dado 5"
         },
         {
           "step": "mover",
@@ -2682,7 +2822,7 @@
         {
           "step": "buscar",
           "id": "confirm-search",
-          "text": "Buscar · gastar dado 6"
+          "text": "Buscar \u00b7 gastar dado 6"
         },
         {
           "step": "buscar",
@@ -2692,7 +2832,7 @@
         {
           "step": "registro",
           "id": "menu-toggle",
-          "text": "Menú ▾"
+          "text": "Men\u00fa \u25be"
         },
         {
           "step": "registro",
@@ -2702,7 +2842,7 @@
         {
           "step": "registro",
           "id": "close-dialog",
-          "text": "×"
+          "text": "\u00d7"
         },
         {
           "step": "colonia-final",
@@ -2717,47 +2857,7 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 2 · continuar"
-        },
-        {
-          "step": "colonia-final",
-          "id": "finish-turn",
-          "text": "Terminar turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-confirm",
-          "text": "Confirmar fin de turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-all",
-          "text": "Expandir todos los detalles"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-next",
-          "text": "Cerrar resumen de colonia"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-pass",
-          "text": "Soy Jugador 1 · continuar"
-        },
-        {
-          "step": "colonia-final",
-          "id": "finish-turn",
-          "text": "Terminar turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-confirm",
-          "text": "Confirmar fin de turno"
-        },
-        {
-          "step": "colonia-final",
-          "id": "cycle-pass",
-          "text": "Soy Jugador 2 · continuar"
+          "text": "Soy Jugador 2 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
@@ -2782,7 +2882,7 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 1 · continuar"
+          "text": "Soy Jugador 1 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
@@ -2797,12 +2897,52 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 2 · continuar"
+          "text": "Soy Jugador 2 \u00b7 continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 \u00b7 continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
           "id": "play-cross-0",
-          "text": "Organizar una guardia — Colocá una barricada en la colonia y ganá una moral si hay un acceso libre."
+          "text": "Organizar una guardia \u2014 Coloc\u00e1 una barricada en la colonia y gan\u00e1 una moral si hay un acceso libre."
         },
         {
           "step": "colonia-final",
@@ -2832,7 +2972,7 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 1 · continuar"
+          "text": "Soy Jugador 1 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
@@ -2847,7 +2987,7 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 2 · continuar"
+          "text": "Soy Jugador 2 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
@@ -2877,12 +3017,12 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 1 · continuar"
+          "text": "Soy Jugador 1 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
           "id": "cycle-leader-h1",
-          "text": "Leo · influencia 58"
+          "text": "Leo \u00b7 influencia 58"
         },
         {
           "step": "colonia-final",
@@ -2897,7 +3037,7 @@
         {
           "step": "colonia-final",
           "id": "cycle-pass",
-          "text": "Soy Jugador 2 · continuar"
+          "text": "Soy Jugador 2 \u00b7 continuar"
         },
         {
           "step": "colonia-final",
@@ -2908,9 +3048,45 @@
           "step": "colonia-final",
           "id": "cycle-confirm",
           "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-death",
+          "text": "Confirmar fallecimientos"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-close-final",
+          "text": "Consultar mapa y Registro"
+        },
+        {
+          "step": "colonia-final",
+          "id": "menu-toggle",
+          "text": "Men\u00fa \u25be"
+        },
+        {
+          "step": "colonia-final",
+          "id": "",
+          "text": "Registro"
+        },
+        {
+          "step": "colonia-final",
+          "id": "close-dialog",
+          "text": "\u00d7"
         }
       ]
     }
   ],
-  "passed": true
+  "passed": true,
+  "normalCodeCommit": "838ce097a7ead95d8c99d3d96b7f2e5bb4696c6d"
 }

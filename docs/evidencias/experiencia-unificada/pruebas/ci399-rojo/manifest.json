@@ -1,0 +1,21 @@
+{
+  "sha": "39934cb05c1093de32a26b4e45707a958a86f119",
+  "run": 43634775072,
+  "job": 132569061584,
+  "conclusion": "failure",
+  "artifact": 14130141595,
+  "size": 120193425,
+  "sha256": "819dd14be45cbc1f97ada179fe34a4dfe8f00321fa129bbf43dbabb912b1cf8b",
+  "beforeViewport": {
+    "width": 852,
+    "height": 284
+  },
+  "afterViewport": {
+    "width": 852,
+    "height": 266
+  },
+  "beforeY": -2.5,
+  "afterY": -11.5,
+  "zoomBoth": 0.3071200850159405,
+  "worldCenterYBoth": 470.5
+}
