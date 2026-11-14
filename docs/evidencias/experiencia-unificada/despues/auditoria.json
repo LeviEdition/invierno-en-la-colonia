@@ -1,0 +1,2916 @@
+{
+  "normal": true,
+  "fixtures": false,
+  "controlledRandom": true,
+  "records": [
+    {
+      "motion": "normal",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "metrics": {
+        "map": {
+          "x": 0,
+          "y": 96.078125,
+          "width": 1025,
+          "height": 672
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1365,
+          "height": 42
+        },
+        "summary": {
+          "x": 0,
+          "y": 42,
+          "width": 1365,
+          "height": 54.078125
+        },
+        "camera": {
+          "x": 8,
+          "y": 104.078125,
+          "width": 354,
+          "height": 52
+        },
+        "overflow": 0
+      },
+      "final": {
+        "reason": "morale",
+        "label": "Derrota: la moral llegó a cero."
+      },
+      "clicks": [
+        {
+          "step": "preparacion",
+          "id": "play-start-local",
+          "text": "Dos jugadores en este dispositivo"
+        },
+        {
+          "step": "preparacion",
+          "id": "panel-toggle",
+          "text": "×"
+        },
+        {
+          "step": "preparacion",
+          "id": "panel-toggle",
+          "text": "Ficha"
+        },
+        {
+          "step": "preparacion",
+          "id": "objective-details",
+          "text": "Objetivo: 0/9 muestras · límite R10"
+        },
+        {
+          "step": "preparacion",
+          "id": "menu-toggle",
+          "text": "Menú ▾"
+        },
+        {
+          "step": "preparacion",
+          "id": "menu-settings",
+          "text": "Ajustes"
+        },
+        {
+          "step": "ataque",
+          "id": "attack-action",
+          "text": "Atacar"
+        },
+        {
+          "step": "ataque",
+          "id": "",
+          "text": "Dado 1"
+        },
+        {
+          "step": "ataque",
+          "id": "confirm-action",
+          "text": "Atacar · gastar dado 5"
+        },
+        {
+          "step": "tratamiento",
+          "id": "special-action",
+          "text": "Usar habilidad de tratamiento"
+        },
+        {
+          "step": "tratamiento",
+          "id": "play-confirm",
+          "text": "Elegir paciente"
+        },
+        {
+          "step": "tratamiento",
+          "id": "play-heal-h0",
+          "text": "Atender a Mara · heridas 1 · congelación 0"
+        },
+        {
+          "step": "usar",
+          "id": "character-inventory",
+          "text": "Inventario y equipo"
+        },
+        {
+          "step": "usar",
+          "id": "inventory-card-card_1",
+          "text": "Usar"
+        },
+        {
+          "step": "usar",
+          "id": "inventory-confirm",
+          "text": "Usar Ración de comida"
+        },
+        {
+          "step": "usar",
+          "id": "inventory-close",
+          "text": "Cerrar"
+        },
+        {
+          "step": "equipar",
+          "id": "character-inventory",
+          "text": "Inventario y equipo"
+        },
+        {
+          "step": "equipar",
+          "id": "inventory-card-card_3",
+          "text": "Equipar"
+        },
+        {
+          "step": "equipar",
+          "id": "inventory-confirm",
+          "text": "Equipar a Mara"
+        },
+        {
+          "step": "transferir",
+          "id": "inventory-equipment-card_3",
+          "text": "Transferir Palanca"
+        },
+        {
+          "step": "transferir",
+          "id": "inventory-confirm",
+          "text": "Entregar a Ada"
+        },
+        {
+          "step": "transferir",
+          "id": "inventory-close",
+          "text": "Cerrar"
+        },
+        {
+          "step": "aportar",
+          "id": "crisis-contribute",
+          "text": "Aportar a crisis"
+        },
+        {
+          "step": "aportar",
+          "id": "inventory-contribute-card_6",
+          "text": "Aportar a la crisis"
+        },
+        {
+          "step": "aportar",
+          "id": "inventory-confirm",
+          "text": "Aportar Bidón de combustible"
+        },
+        {
+          "step": "aportar",
+          "id": "inventory-close",
+          "text": "Cerrar"
+        },
+        {
+          "step": "limpiar",
+          "id": "clean-action",
+          "text": "Limpiar residuos"
+        },
+        {
+          "step": "limpiar",
+          "id": "play-die-0",
+          "text": "Dado 5"
+        },
+        {
+          "step": "limpiar",
+          "id": "play-confirm",
+          "text": "Limpiar hasta 1 residuos · dado 5"
+        },
+        {
+          "step": "atraer",
+          "id": "attract-action",
+          "text": "Atraer zombis"
+        },
+        {
+          "step": "atraer",
+          "id": "play-die-0",
+          "text": "Dado 5"
+        },
+        {
+          "step": "atraer",
+          "id": "play-confirm",
+          "text": "Atraer hasta 2 zombis · dado 5"
+        },
+        {
+          "step": "atraer",
+          "id": "play-attract-1",
+          "text": "Atraer desde Supermercado · 1 zombis"
+        },
+        {
+          "step": "atraer",
+          "id": "play-attract-end",
+          "text": "Terminar atracción · no devuelve el dado"
+        },
+        {
+          "step": "mejorar",
+          "id": "boost-action",
+          "text": "Mejorar dado · 1 comida"
+        },
+        {
+          "step": "mejorar",
+          "id": "play-die-0",
+          "text": "Dado 5 · seleccionado"
+        },
+        {
+          "step": "mejorar",
+          "id": "play-confirm",
+          "text": "Mejorar dado · gastar 1 comida · dado 5"
+        },
+        {
+          "step": "mover",
+          "id": "move-action",
+          "text": "Moverse"
+        },
+        {
+          "step": "mover",
+          "id": "confirm-move",
+          "text": "Confirmar"
+        },
+        {
+          "step": "buscar",
+          "id": "search-action",
+          "text": "Buscar"
+        },
+        {
+          "step": "buscar",
+          "id": "",
+          "text": "Dado 1"
+        },
+        {
+          "step": "buscar",
+          "id": "confirm-search",
+          "text": "Buscar · gastar dado 6"
+        },
+        {
+          "step": "buscar",
+          "id": "",
+          "text": "Conservar Vendas"
+        },
+        {
+          "step": "registro",
+          "id": "menu-toggle",
+          "text": "Menú ▾"
+        },
+        {
+          "step": "registro",
+          "id": "",
+          "text": "Registro"
+        },
+        {
+          "step": "registro",
+          "id": "close-dialog",
+          "text": "×"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "play-cross-0",
+          "text": "Organizar una guardia — Colocá una barricada en la colonia y ganá una moral si hay un acceso libre."
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-death",
+          "text": "Confirmar fallecimientos"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-death",
+          "text": "Confirmar fallecimientos"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-leader-h1",
+          "text": "Leo · influencia 58"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        }
+      ],
+      "video": "/workspace/ux-work/experience-final/normal/1365x768/page@ffc4858a1e6b4d682789b89b4d3ded62.webm"
+    },
+    {
+      "motion": "normal",
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "metrics": {
+        "map": {
+          "x": 0,
+          "y": 86.078125,
+          "width": 852,
+          "height": 307
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 852,
+          "height": 36
+        },
+        "summary": {
+          "x": 0,
+          "y": 36,
+          "width": 852,
+          "height": 50.078125
+        },
+        "camera": {
+          "x": 5,
+          "y": 91.078125,
+          "width": 278,
+          "height": 52
+        },
+        "overflow": 0
+      },
+      "final": {
+        "reason": "morale",
+        "label": "Derrota: la moral llegó a cero."
+      },
+      "clicks": [
+        {
+          "step": "preparacion",
+          "id": "play-start-local",
+          "text": "Dos jugadores en este dispositivo"
+        },
+        {
+          "step": "preparacion",
+          "id": "panel-toggle",
+          "text": "Ficha"
+        },
+        {
+          "step": "preparacion",
+          "id": "panel-toggle",
+          "text": "×"
+        },
+        {
+          "step": "preparacion",
+          "id": "panel-toggle",
+          "text": "Ficha"
+        },
+        {
+          "step": "preparacion",
+          "id": "objective-details",
+          "text": "Objetivo: 0/9 muestras · límite R10"
+        },
+        {
+          "step": "preparacion",
+          "id": "menu-toggle",
+          "text": "Menú ▾"
+        },
+        {
+          "step": "preparacion",
+          "id": "menu-settings",
+          "text": "Ajustes"
+        },
+        {
+          "step": "ataque",
+          "id": "attack-action",
+          "text": "Atacar"
+        },
+        {
+          "step": "ataque",
+          "id": "",
+          "text": "Dado 1"
+        },
+        {
+          "step": "ataque",
+          "id": "confirm-action",
+          "text": "Atacar · gastar dado 5"
+        },
+        {
+          "step": "tratamiento",
+          "id": "special-action",
+          "text": "Usar habilidad de tratamiento"
+        },
+        {
+          "step": "tratamiento",
+          "id": "play-confirm",
+          "text": "Elegir paciente"
+        },
+        {
+          "step": "tratamiento",
+          "id": "play-heal-h0",
+          "text": "Atender a Mara · heridas 1 · congelación 0"
+        },
+        {
+          "step": "usar",
+          "id": "character-inventory",
+          "text": "Inventario y equipo"
+        },
+        {
+          "step": "usar",
+          "id": "inventory-card-card_1",
+          "text": "Usar"
+        },
+        {
+          "step": "usar",
+          "id": "inventory-confirm",
+          "text": "Usar Ración de comida"
+        },
+        {
+          "step": "usar",
+          "id": "inventory-close",
+          "text": "Cerrar"
+        },
+        {
+          "step": "equipar",
+          "id": "character-inventory",
+          "text": "Inventario y equipo"
+        },
+        {
+          "step": "equipar",
+          "id": "inventory-card-card_3",
+          "text": "Equipar"
+        },
+        {
+          "step": "equipar",
+          "id": "inventory-confirm",
+          "text": "Equipar a Mara"
+        },
+        {
+          "step": "transferir",
+          "id": "inventory-equipment-card_3",
+          "text": "Transferir Palanca"
+        },
+        {
+          "step": "transferir",
+          "id": "inventory-confirm",
+          "text": "Entregar a Ada"
+        },
+        {
+          "step": "transferir",
+          "id": "inventory-close",
+          "text": "Cerrar"
+        },
+        {
+          "step": "aportar",
+          "id": "crisis-contribute",
+          "text": "Aportar a crisis"
+        },
+        {
+          "step": "aportar",
+          "id": "inventory-contribute-card_6",
+          "text": "Aportar a la crisis"
+        },
+        {
+          "step": "aportar",
+          "id": "inventory-confirm",
+          "text": "Aportar Bidón de combustible"
+        },
+        {
+          "step": "aportar",
+          "id": "inventory-close",
+          "text": "Cerrar"
+        },
+        {
+          "step": "limpiar",
+          "id": "clean-action",
+          "text": "Limpiar residuos"
+        },
+        {
+          "step": "limpiar",
+          "id": "play-die-0",
+          "text": "Dado 5"
+        },
+        {
+          "step": "limpiar",
+          "id": "play-confirm",
+          "text": "Limpiar hasta 1 residuos · dado 5"
+        },
+        {
+          "step": "atraer",
+          "id": "attract-action",
+          "text": "Atraer zombis"
+        },
+        {
+          "step": "atraer",
+          "id": "play-die-0",
+          "text": "Dado 5"
+        },
+        {
+          "step": "atraer",
+          "id": "play-confirm",
+          "text": "Atraer hasta 2 zombis · dado 5"
+        },
+        {
+          "step": "atraer",
+          "id": "play-attract-1",
+          "text": "Atraer desde Supermercado · 1 zombis"
+        },
+        {
+          "step": "atraer",
+          "id": "play-attract-end",
+          "text": "Terminar atracción · no devuelve el dado"
+        },
+        {
+          "step": "mejorar",
+          "id": "boost-action",
+          "text": "Mejorar dado · 1 comida"
+        },
+        {
+          "step": "mejorar",
+          "id": "play-die-0",
+          "text": "Dado 5 · seleccionado"
+        },
+        {
+          "step": "mejorar",
+          "id": "play-confirm",
+          "text": "Mejorar dado · gastar 1 comida · dado 5"
+        },
+        {
+          "step": "mover",
+          "id": "move-action",
+          "text": "Moverse"
+        },
+        {
+          "step": "mover",
+          "id": "confirm-move",
+          "text": "Confirmar"
+        },
+        {
+          "step": "buscar",
+          "id": "search-action",
+          "text": "Buscar"
+        },
+        {
+          "step": "buscar",
+          "id": "",
+          "text": "Dado 1"
+        },
+        {
+          "step": "buscar",
+          "id": "confirm-search",
+          "text": "Buscar · gastar dado 6"
+        },
+        {
+          "step": "buscar",
+          "id": "",
+          "text": "Conservar Vendas"
+        },
+        {
+          "step": "registro",
+          "id": "menu-toggle",
+          "text": "Menú ▾"
+        },
+        {
+          "step": "registro",
+          "id": "",
+          "text": "Registro"
+        },
+        {
+          "step": "registro",
+          "id": "close-dialog",
+          "text": "×"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "play-cross-0",
+          "text": "Organizar una guardia — Colocá una barricada en la colonia y ganá una moral si hay un acceso libre."
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-death",
+          "text": "Confirmar fallecimientos"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-death",
+          "text": "Confirmar fallecimientos"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-leader-h1",
+          "text": "Leo · influencia 58"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-death",
+          "text": "Confirmar fallecimientos"
+        }
+      ],
+      "video": "/workspace/ux-work/experience-final/normal/852x393/page@fab85a9aa5eaef2fd78c9251db2e35e5.webm"
+    },
+    {
+      "motion": "normal",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "metrics": {
+        "map": {
+          "x": 0,
+          "y": 193.15625,
+          "width": 393,
+          "height": 659
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 60
+        },
+        "summary": {
+          "x": 0,
+          "y": 60,
+          "width": 393,
+          "height": 133.15625
+        },
+        "camera": {
+          "x": 5,
+          "y": 198.15625,
+          "width": 266,
+          "height": 50
+        },
+        "overflow": 0
+      },
+      "final": {
+        "reason": "morale",
+        "label": "Derrota: la moral llegó a cero."
+      },
+      "clicks": [
+        {
+          "step": "preparacion",
+          "id": "play-start-local",
+          "text": "Dos jugadores en este dispositivo"
+        },
+        {
+          "step": "preparacion",
+          "id": "panel-toggle",
+          "text": "Ficha"
+        },
+        {
+          "step": "preparacion",
+          "id": "panel-toggle",
+          "text": "×"
+        },
+        {
+          "step": "preparacion",
+          "id": "panel-toggle",
+          "text": "Ficha"
+        },
+        {
+          "step": "preparacion",
+          "id": "objective-details",
+          "text": "Objetivo: 0/9 muestras · límite R10"
+        },
+        {
+          "step": "preparacion",
+          "id": "menu-toggle",
+          "text": "Menú ▾"
+        },
+        {
+          "step": "preparacion",
+          "id": "menu-settings",
+          "text": "Ajustes"
+        },
+        {
+          "step": "ataque",
+          "id": "attack-action",
+          "text": "Atacar"
+        },
+        {
+          "step": "ataque",
+          "id": "",
+          "text": "Dado 1"
+        },
+        {
+          "step": "ataque",
+          "id": "confirm-action",
+          "text": "Atacar · gastar dado 5"
+        },
+        {
+          "step": "tratamiento",
+          "id": "special-action",
+          "text": "Usar habilidad de tratamiento"
+        },
+        {
+          "step": "tratamiento",
+          "id": "play-confirm",
+          "text": "Elegir paciente"
+        },
+        {
+          "step": "tratamiento",
+          "id": "play-heal-h0",
+          "text": "Atender a Mara · heridas 1 · congelación 0"
+        },
+        {
+          "step": "usar",
+          "id": "character-inventory",
+          "text": "Inventario y equipo"
+        },
+        {
+          "step": "usar",
+          "id": "inventory-card-card_1",
+          "text": "Usar"
+        },
+        {
+          "step": "usar",
+          "id": "inventory-confirm",
+          "text": "Usar Ración de comida"
+        },
+        {
+          "step": "usar",
+          "id": "inventory-close",
+          "text": "Cerrar"
+        },
+        {
+          "step": "equipar",
+          "id": "character-inventory",
+          "text": "Inventario y equipo"
+        },
+        {
+          "step": "equipar",
+          "id": "inventory-card-card_3",
+          "text": "Equipar"
+        },
+        {
+          "step": "equipar",
+          "id": "inventory-confirm",
+          "text": "Equipar a Mara"
+        },
+        {
+          "step": "transferir",
+          "id": "inventory-equipment-card_3",
+          "text": "Transferir Palanca"
+        },
+        {
+          "step": "transferir",
+          "id": "inventory-confirm",
+          "text": "Entregar a Ada"
+        },
+        {
+          "step": "transferir",
+          "id": "inventory-close",
+          "text": "Cerrar"
+        },
+        {
+          "step": "aportar",
+          "id": "crisis-contribute",
+          "text": "Aportar a crisis"
+        },
+        {
+          "step": "aportar",
+          "id": "inventory-contribute-card_6",
+          "text": "Aportar a la crisis"
+        },
+        {
+          "step": "aportar",
+          "id": "inventory-confirm",
+          "text": "Aportar Bidón de combustible"
+        },
+        {
+          "step": "aportar",
+          "id": "inventory-close",
+          "text": "Cerrar"
+        },
+        {
+          "step": "limpiar",
+          "id": "clean-action",
+          "text": "Limpiar residuos"
+        },
+        {
+          "step": "limpiar",
+          "id": "play-die-0",
+          "text": "Dado 5"
+        },
+        {
+          "step": "limpiar",
+          "id": "play-confirm",
+          "text": "Limpiar hasta 1 residuos · dado 5"
+        },
+        {
+          "step": "atraer",
+          "id": "attract-action",
+          "text": "Atraer zombis"
+        },
+        {
+          "step": "atraer",
+          "id": "play-die-0",
+          "text": "Dado 5"
+        },
+        {
+          "step": "atraer",
+          "id": "play-confirm",
+          "text": "Atraer hasta 2 zombis · dado 5"
+        },
+        {
+          "step": "atraer",
+          "id": "play-attract-1",
+          "text": "Atraer desde Supermercado · 1 zombis"
+        },
+        {
+          "step": "atraer",
+          "id": "play-attract-end",
+          "text": "Terminar atracción · no devuelve el dado"
+        },
+        {
+          "step": "mejorar",
+          "id": "boost-action",
+          "text": "Mejorar dado · 1 comida"
+        },
+        {
+          "step": "mejorar",
+          "id": "play-die-0",
+          "text": "Dado 5 · seleccionado"
+        },
+        {
+          "step": "mejorar",
+          "id": "play-confirm",
+          "text": "Mejorar dado · gastar 1 comida · dado 5"
+        },
+        {
+          "step": "mover",
+          "id": "move-action",
+          "text": "Moverse"
+        },
+        {
+          "step": "mover",
+          "id": "confirm-move",
+          "text": "Confirmar"
+        },
+        {
+          "step": "buscar",
+          "id": "search-action",
+          "text": "Buscar"
+        },
+        {
+          "step": "buscar",
+          "id": "",
+          "text": "Dado 1"
+        },
+        {
+          "step": "buscar",
+          "id": "confirm-search",
+          "text": "Buscar · gastar dado 6"
+        },
+        {
+          "step": "buscar",
+          "id": "",
+          "text": "Conservar Vendas"
+        },
+        {
+          "step": "registro",
+          "id": "menu-toggle",
+          "text": "Menú ▾"
+        },
+        {
+          "step": "registro",
+          "id": "",
+          "text": "Registro"
+        },
+        {
+          "step": "registro",
+          "id": "close-dialog",
+          "text": "×"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "play-cross-0",
+          "text": "Organizar una guardia — Colocá una barricada en la colonia y ganá una moral si hay un acceso libre."
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-death",
+          "text": "Confirmar fallecimientos"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-death",
+          "text": "Confirmar fallecimientos"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-leader-h1",
+          "text": "Leo · influencia 58"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        }
+      ],
+      "video": "/workspace/ux-work/experience-final/normal/393x852/page@95571abf0183858355fe61fb3a5f0e23.webm"
+    },
+    {
+      "motion": "reduced",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "metrics": {
+        "map": {
+          "x": 0,
+          "y": 96.078125,
+          "width": 1025,
+          "height": 672
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1365,
+          "height": 42
+        },
+        "summary": {
+          "x": 0,
+          "y": 42,
+          "width": 1365,
+          "height": 54.078125
+        },
+        "camera": {
+          "x": 8,
+          "y": 104.078125,
+          "width": 354,
+          "height": 52
+        },
+        "overflow": 0
+      },
+      "final": {
+        "reason": "morale",
+        "label": "Derrota: la moral llegó a cero."
+      },
+      "clicks": [
+        {
+          "step": "preparacion",
+          "id": "play-start-local",
+          "text": "Dos jugadores en este dispositivo"
+        },
+        {
+          "step": "preparacion",
+          "id": "panel-toggle",
+          "text": "×"
+        },
+        {
+          "step": "preparacion",
+          "id": "panel-toggle",
+          "text": "Ficha"
+        },
+        {
+          "step": "preparacion",
+          "id": "objective-details",
+          "text": "Objetivo: 0/9 muestras · límite R10"
+        },
+        {
+          "step": "preparacion",
+          "id": "menu-toggle",
+          "text": "Menú ▾"
+        },
+        {
+          "step": "preparacion",
+          "id": "menu-settings",
+          "text": "Ajustes"
+        },
+        {
+          "step": "ataque",
+          "id": "attack-action",
+          "text": "Atacar"
+        },
+        {
+          "step": "ataque",
+          "id": "",
+          "text": "Dado 1"
+        },
+        {
+          "step": "ataque",
+          "id": "confirm-action",
+          "text": "Atacar · gastar dado 5"
+        },
+        {
+          "step": "tratamiento",
+          "id": "special-action",
+          "text": "Usar habilidad de tratamiento"
+        },
+        {
+          "step": "tratamiento",
+          "id": "play-confirm",
+          "text": "Elegir paciente"
+        },
+        {
+          "step": "tratamiento",
+          "id": "play-heal-h0",
+          "text": "Atender a Mara · heridas 1 · congelación 0"
+        },
+        {
+          "step": "usar",
+          "id": "character-inventory",
+          "text": "Inventario y equipo"
+        },
+        {
+          "step": "usar",
+          "id": "inventory-card-card_1",
+          "text": "Usar"
+        },
+        {
+          "step": "usar",
+          "id": "inventory-confirm",
+          "text": "Usar Ración de comida"
+        },
+        {
+          "step": "usar",
+          "id": "inventory-close",
+          "text": "Cerrar"
+        },
+        {
+          "step": "equipar",
+          "id": "character-inventory",
+          "text": "Inventario y equipo"
+        },
+        {
+          "step": "equipar",
+          "id": "inventory-card-card_3",
+          "text": "Equipar"
+        },
+        {
+          "step": "equipar",
+          "id": "inventory-confirm",
+          "text": "Equipar a Mara"
+        },
+        {
+          "step": "transferir",
+          "id": "inventory-equipment-card_3",
+          "text": "Transferir Palanca"
+        },
+        {
+          "step": "transferir",
+          "id": "inventory-confirm",
+          "text": "Entregar a Ada"
+        },
+        {
+          "step": "transferir",
+          "id": "inventory-close",
+          "text": "Cerrar"
+        },
+        {
+          "step": "aportar",
+          "id": "crisis-contribute",
+          "text": "Aportar a crisis"
+        },
+        {
+          "step": "aportar",
+          "id": "inventory-contribute-card_6",
+          "text": "Aportar a la crisis"
+        },
+        {
+          "step": "aportar",
+          "id": "inventory-confirm",
+          "text": "Aportar Bidón de combustible"
+        },
+        {
+          "step": "aportar",
+          "id": "inventory-close",
+          "text": "Cerrar"
+        },
+        {
+          "step": "limpiar",
+          "id": "clean-action",
+          "text": "Limpiar residuos"
+        },
+        {
+          "step": "limpiar",
+          "id": "play-die-0",
+          "text": "Dado 5"
+        },
+        {
+          "step": "limpiar",
+          "id": "play-confirm",
+          "text": "Limpiar hasta 1 residuos · dado 5"
+        },
+        {
+          "step": "atraer",
+          "id": "attract-action",
+          "text": "Atraer zombis"
+        },
+        {
+          "step": "atraer",
+          "id": "play-die-0",
+          "text": "Dado 5"
+        },
+        {
+          "step": "atraer",
+          "id": "play-confirm",
+          "text": "Atraer hasta 2 zombis · dado 5"
+        },
+        {
+          "step": "atraer",
+          "id": "play-attract-1",
+          "text": "Atraer desde Supermercado · 1 zombis"
+        },
+        {
+          "step": "atraer",
+          "id": "play-attract-end",
+          "text": "Terminar atracción · no devuelve el dado"
+        },
+        {
+          "step": "mejorar",
+          "id": "boost-action",
+          "text": "Mejorar dado · 1 comida"
+        },
+        {
+          "step": "mejorar",
+          "id": "play-die-0",
+          "text": "Dado 5 · seleccionado"
+        },
+        {
+          "step": "mejorar",
+          "id": "play-confirm",
+          "text": "Mejorar dado · gastar 1 comida · dado 5"
+        },
+        {
+          "step": "mover",
+          "id": "move-action",
+          "text": "Moverse"
+        },
+        {
+          "step": "mover",
+          "id": "confirm-move",
+          "text": "Confirmar"
+        },
+        {
+          "step": "buscar",
+          "id": "search-action",
+          "text": "Buscar"
+        },
+        {
+          "step": "buscar",
+          "id": "",
+          "text": "Dado 1"
+        },
+        {
+          "step": "buscar",
+          "id": "confirm-search",
+          "text": "Buscar · gastar dado 6"
+        },
+        {
+          "step": "buscar",
+          "id": "",
+          "text": "Conservar Vendas"
+        },
+        {
+          "step": "registro",
+          "id": "menu-toggle",
+          "text": "Menú ▾"
+        },
+        {
+          "step": "registro",
+          "id": "",
+          "text": "Registro"
+        },
+        {
+          "step": "registro",
+          "id": "close-dialog",
+          "text": "×"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "play-cross-0",
+          "text": "Organizar una guardia — Colocá una barricada en la colonia y ganá una moral si hay un acceso libre."
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-death",
+          "text": "Confirmar fallecimientos"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-death",
+          "text": "Confirmar fallecimientos"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-leader-h1",
+          "text": "Leo · influencia 58"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        }
+      ]
+    },
+    {
+      "motion": "reduced",
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "metrics": {
+        "map": {
+          "x": 0,
+          "y": 86.078125,
+          "width": 852,
+          "height": 307
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 852,
+          "height": 36
+        },
+        "summary": {
+          "x": 0,
+          "y": 36,
+          "width": 852,
+          "height": 50.078125
+        },
+        "camera": {
+          "x": 5,
+          "y": 91.078125,
+          "width": 278,
+          "height": 52
+        },
+        "overflow": 0
+      },
+      "final": {
+        "reason": "morale",
+        "label": "Derrota: la moral llegó a cero."
+      },
+      "clicks": [
+        {
+          "step": "preparacion",
+          "id": "play-start-local",
+          "text": "Dos jugadores en este dispositivo"
+        },
+        {
+          "step": "preparacion",
+          "id": "panel-toggle",
+          "text": "Ficha"
+        },
+        {
+          "step": "preparacion",
+          "id": "panel-toggle",
+          "text": "×"
+        },
+        {
+          "step": "preparacion",
+          "id": "panel-toggle",
+          "text": "Ficha"
+        },
+        {
+          "step": "preparacion",
+          "id": "objective-details",
+          "text": "Objetivo: 0/9 muestras · límite R10"
+        },
+        {
+          "step": "preparacion",
+          "id": "menu-toggle",
+          "text": "Menú ▾"
+        },
+        {
+          "step": "preparacion",
+          "id": "menu-settings",
+          "text": "Ajustes"
+        },
+        {
+          "step": "ataque",
+          "id": "attack-action",
+          "text": "Atacar"
+        },
+        {
+          "step": "ataque",
+          "id": "",
+          "text": "Dado 1"
+        },
+        {
+          "step": "ataque",
+          "id": "confirm-action",
+          "text": "Atacar · gastar dado 5"
+        },
+        {
+          "step": "tratamiento",
+          "id": "special-action",
+          "text": "Usar habilidad de tratamiento"
+        },
+        {
+          "step": "tratamiento",
+          "id": "play-confirm",
+          "text": "Elegir paciente"
+        },
+        {
+          "step": "tratamiento",
+          "id": "play-heal-h0",
+          "text": "Atender a Mara · heridas 1 · congelación 0"
+        },
+        {
+          "step": "usar",
+          "id": "character-inventory",
+          "text": "Inventario y equipo"
+        },
+        {
+          "step": "usar",
+          "id": "inventory-card-card_1",
+          "text": "Usar"
+        },
+        {
+          "step": "usar",
+          "id": "inventory-confirm",
+          "text": "Usar Ración de comida"
+        },
+        {
+          "step": "usar",
+          "id": "inventory-close",
+          "text": "Cerrar"
+        },
+        {
+          "step": "equipar",
+          "id": "character-inventory",
+          "text": "Inventario y equipo"
+        },
+        {
+          "step": "equipar",
+          "id": "inventory-card-card_3",
+          "text": "Equipar"
+        },
+        {
+          "step": "equipar",
+          "id": "inventory-confirm",
+          "text": "Equipar a Mara"
+        },
+        {
+          "step": "transferir",
+          "id": "inventory-equipment-card_3",
+          "text": "Transferir Palanca"
+        },
+        {
+          "step": "transferir",
+          "id": "inventory-confirm",
+          "text": "Entregar a Ada"
+        },
+        {
+          "step": "transferir",
+          "id": "inventory-close",
+          "text": "Cerrar"
+        },
+        {
+          "step": "aportar",
+          "id": "crisis-contribute",
+          "text": "Aportar a crisis"
+        },
+        {
+          "step": "aportar",
+          "id": "inventory-contribute-card_6",
+          "text": "Aportar a la crisis"
+        },
+        {
+          "step": "aportar",
+          "id": "inventory-confirm",
+          "text": "Aportar Bidón de combustible"
+        },
+        {
+          "step": "aportar",
+          "id": "inventory-close",
+          "text": "Cerrar"
+        },
+        {
+          "step": "limpiar",
+          "id": "clean-action",
+          "text": "Limpiar residuos"
+        },
+        {
+          "step": "limpiar",
+          "id": "play-die-0",
+          "text": "Dado 5"
+        },
+        {
+          "step": "limpiar",
+          "id": "play-confirm",
+          "text": "Limpiar hasta 1 residuos · dado 5"
+        },
+        {
+          "step": "atraer",
+          "id": "attract-action",
+          "text": "Atraer zombis"
+        },
+        {
+          "step": "atraer",
+          "id": "play-die-0",
+          "text": "Dado 5"
+        },
+        {
+          "step": "atraer",
+          "id": "play-confirm",
+          "text": "Atraer hasta 2 zombis · dado 5"
+        },
+        {
+          "step": "atraer",
+          "id": "play-attract-1",
+          "text": "Atraer desde Supermercado · 1 zombis"
+        },
+        {
+          "step": "atraer",
+          "id": "play-attract-end",
+          "text": "Terminar atracción · no devuelve el dado"
+        },
+        {
+          "step": "mejorar",
+          "id": "boost-action",
+          "text": "Mejorar dado · 1 comida"
+        },
+        {
+          "step": "mejorar",
+          "id": "play-die-0",
+          "text": "Dado 5 · seleccionado"
+        },
+        {
+          "step": "mejorar",
+          "id": "play-confirm",
+          "text": "Mejorar dado · gastar 1 comida · dado 5"
+        },
+        {
+          "step": "mover",
+          "id": "move-action",
+          "text": "Moverse"
+        },
+        {
+          "step": "mover",
+          "id": "confirm-move",
+          "text": "Confirmar"
+        },
+        {
+          "step": "buscar",
+          "id": "search-action",
+          "text": "Buscar"
+        },
+        {
+          "step": "buscar",
+          "id": "",
+          "text": "Dado 1"
+        },
+        {
+          "step": "buscar",
+          "id": "confirm-search",
+          "text": "Buscar · gastar dado 6"
+        },
+        {
+          "step": "buscar",
+          "id": "",
+          "text": "Conservar Vendas"
+        },
+        {
+          "step": "registro",
+          "id": "menu-toggle",
+          "text": "Menú ▾"
+        },
+        {
+          "step": "registro",
+          "id": "",
+          "text": "Registro"
+        },
+        {
+          "step": "registro",
+          "id": "close-dialog",
+          "text": "×"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "play-cross-0",
+          "text": "Organizar una guardia — Colocá una barricada en la colonia y ganá una moral si hay un acceso libre."
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-death",
+          "text": "Confirmar fallecimientos"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-death",
+          "text": "Confirmar fallecimientos"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-leader-h1",
+          "text": "Leo · influencia 58"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        }
+      ]
+    },
+    {
+      "motion": "reduced",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "metrics": {
+        "map": {
+          "x": 0,
+          "y": 193.15625,
+          "width": 393,
+          "height": 659
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 60
+        },
+        "summary": {
+          "x": 0,
+          "y": 60,
+          "width": 393,
+          "height": 133.15625
+        },
+        "camera": {
+          "x": 5,
+          "y": 198.15625,
+          "width": 266,
+          "height": 50
+        },
+        "overflow": 0
+      },
+      "final": {
+        "reason": "morale",
+        "label": "Derrota: la moral llegó a cero."
+      },
+      "clicks": [
+        {
+          "step": "preparacion",
+          "id": "play-start-local",
+          "text": "Dos jugadores en este dispositivo"
+        },
+        {
+          "step": "preparacion",
+          "id": "panel-toggle",
+          "text": "Ficha"
+        },
+        {
+          "step": "preparacion",
+          "id": "panel-toggle",
+          "text": "×"
+        },
+        {
+          "step": "preparacion",
+          "id": "panel-toggle",
+          "text": "Ficha"
+        },
+        {
+          "step": "preparacion",
+          "id": "objective-details",
+          "text": "Objetivo: 0/9 muestras · límite R10"
+        },
+        {
+          "step": "preparacion",
+          "id": "menu-toggle",
+          "text": "Menú ▾"
+        },
+        {
+          "step": "preparacion",
+          "id": "menu-settings",
+          "text": "Ajustes"
+        },
+        {
+          "step": "ataque",
+          "id": "attack-action",
+          "text": "Atacar"
+        },
+        {
+          "step": "ataque",
+          "id": "",
+          "text": "Dado 1"
+        },
+        {
+          "step": "ataque",
+          "id": "confirm-action",
+          "text": "Atacar · gastar dado 5"
+        },
+        {
+          "step": "tratamiento",
+          "id": "special-action",
+          "text": "Usar habilidad de tratamiento"
+        },
+        {
+          "step": "tratamiento",
+          "id": "play-confirm",
+          "text": "Elegir paciente"
+        },
+        {
+          "step": "tratamiento",
+          "id": "play-heal-h0",
+          "text": "Atender a Mara · heridas 1 · congelación 0"
+        },
+        {
+          "step": "usar",
+          "id": "character-inventory",
+          "text": "Inventario y equipo"
+        },
+        {
+          "step": "usar",
+          "id": "inventory-card-card_1",
+          "text": "Usar"
+        },
+        {
+          "step": "usar",
+          "id": "inventory-confirm",
+          "text": "Usar Ración de comida"
+        },
+        {
+          "step": "usar",
+          "id": "inventory-close",
+          "text": "Cerrar"
+        },
+        {
+          "step": "equipar",
+          "id": "character-inventory",
+          "text": "Inventario y equipo"
+        },
+        {
+          "step": "equipar",
+          "id": "inventory-card-card_3",
+          "text": "Equipar"
+        },
+        {
+          "step": "equipar",
+          "id": "inventory-confirm",
+          "text": "Equipar a Mara"
+        },
+        {
+          "step": "transferir",
+          "id": "inventory-equipment-card_3",
+          "text": "Transferir Palanca"
+        },
+        {
+          "step": "transferir",
+          "id": "inventory-confirm",
+          "text": "Entregar a Ada"
+        },
+        {
+          "step": "transferir",
+          "id": "inventory-close",
+          "text": "Cerrar"
+        },
+        {
+          "step": "aportar",
+          "id": "crisis-contribute",
+          "text": "Aportar a crisis"
+        },
+        {
+          "step": "aportar",
+          "id": "inventory-contribute-card_6",
+          "text": "Aportar a la crisis"
+        },
+        {
+          "step": "aportar",
+          "id": "inventory-confirm",
+          "text": "Aportar Bidón de combustible"
+        },
+        {
+          "step": "aportar",
+          "id": "inventory-close",
+          "text": "Cerrar"
+        },
+        {
+          "step": "limpiar",
+          "id": "clean-action",
+          "text": "Limpiar residuos"
+        },
+        {
+          "step": "limpiar",
+          "id": "play-die-0",
+          "text": "Dado 5"
+        },
+        {
+          "step": "limpiar",
+          "id": "play-confirm",
+          "text": "Limpiar hasta 1 residuos · dado 5"
+        },
+        {
+          "step": "atraer",
+          "id": "attract-action",
+          "text": "Atraer zombis"
+        },
+        {
+          "step": "atraer",
+          "id": "play-die-0",
+          "text": "Dado 5"
+        },
+        {
+          "step": "atraer",
+          "id": "play-confirm",
+          "text": "Atraer hasta 2 zombis · dado 5"
+        },
+        {
+          "step": "atraer",
+          "id": "play-attract-1",
+          "text": "Atraer desde Supermercado · 1 zombis"
+        },
+        {
+          "step": "atraer",
+          "id": "play-attract-end",
+          "text": "Terminar atracción · no devuelve el dado"
+        },
+        {
+          "step": "mejorar",
+          "id": "boost-action",
+          "text": "Mejorar dado · 1 comida"
+        },
+        {
+          "step": "mejorar",
+          "id": "play-die-0",
+          "text": "Dado 5 · seleccionado"
+        },
+        {
+          "step": "mejorar",
+          "id": "play-confirm",
+          "text": "Mejorar dado · gastar 1 comida · dado 5"
+        },
+        {
+          "step": "mover",
+          "id": "move-action",
+          "text": "Moverse"
+        },
+        {
+          "step": "mover",
+          "id": "confirm-move",
+          "text": "Confirmar"
+        },
+        {
+          "step": "buscar",
+          "id": "search-action",
+          "text": "Buscar"
+        },
+        {
+          "step": "buscar",
+          "id": "",
+          "text": "Dado 1"
+        },
+        {
+          "step": "buscar",
+          "id": "confirm-search",
+          "text": "Buscar · gastar dado 6"
+        },
+        {
+          "step": "buscar",
+          "id": "",
+          "text": "Conservar Vendas"
+        },
+        {
+          "step": "registro",
+          "id": "menu-toggle",
+          "text": "Menú ▾"
+        },
+        {
+          "step": "registro",
+          "id": "",
+          "text": "Registro"
+        },
+        {
+          "step": "registro",
+          "id": "close-dialog",
+          "text": "×"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "play-cross-0",
+          "text": "Organizar una guardia — Colocá una barricada en la colonia y ganá una moral si hay un acceso libre."
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-death",
+          "text": "Confirmar fallecimientos"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-death",
+          "text": "Confirmar fallecimientos"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-all",
+          "text": "Expandir todos los detalles"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-next",
+          "text": "Cerrar resumen de colonia"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 1 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-leader-h1",
+          "text": "Leo · influencia 58"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-pass",
+          "text": "Soy Jugador 2 · continuar"
+        },
+        {
+          "step": "colonia-final",
+          "id": "finish-turn",
+          "text": "Terminar turno"
+        },
+        {
+          "step": "colonia-final",
+          "id": "cycle-confirm",
+          "text": "Confirmar fin de turno"
+        }
+      ]
+    }
+  ],
+  "passed": true
+}

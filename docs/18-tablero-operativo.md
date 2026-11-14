@@ -1,5 +1,11 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## Experiencia unificada del mapa ·14/11/2026
+
+Encargo desdeef99f3c, misma rama/PR25 en borrador. [Auditoría previa, accesos y revisión99](99-experiencia-unificada-del-mapa.md). Cabecera compacta, objetivo/crisis públicos con consecuencia, cámara sobre mapa y un panel contextual para ficha, acciones, inventario y consultas. Ajustes separados; desarrollo solo con `?dev=1`. Resultados rutinarios reconocidos con los comandos existentes, sin repetir efectos ni pedir Continuar; costes, decisiones obligatorias, privacidad, IA y ciclo conservados. Recuperación de reconocimiento perdido vuelve a la ficha. Referencia estable, arte y posiciones/capacidades aprobadas intactos. Evidencia antes/después y CI del SHA exacto en99/PR25. **Única siguiente tarea tras verificar: revisión manual del creador.** Sin main/fusión/publicación ni nuevas reglas/balance/narrativa. Bloques siguientes históricos.
+
+---
+
 ## Migración funcional a la interfaz del mapa ·13/11/2026
 
 Encargo desde31ffaf6, remoto/local y CI43486325893 success verificados. Misma rama/PR25 en borrador. Seis bloques revisables A–F, [matriz98 y guía manual](98-paridad-funcional-del-mapa.md): preparación y otra partida, mordeduras/cadenas/encrucijadas, limpieza/atracción/tratamiento/mejora de dados, transferencias locales y líderes iniciales, registro por audiencia y ayuda. Operaciones originales del motor V9; host horizontal mínimo sin montar el tablero ni los controles de la pantalla anterior. Sin retornos jugables obligatorios a V9. Registro público/privado explícito, recibos y bloqueo seguro ante resultado desconocido; recargar toda la aplicación pierde la instancia, sin guardado nuevo.719/719 y35 dirigidas locales; [evidencia y recorridos sin V9](evidencias/migracion-funcional/README.md), CI del SHA exacto en PR25. Capacidades33, plazas, arte, geometría, IA y referencia estable conservados. **Siguiente tarea al verificar CI: revisión manual del creador.** Sin main/fusión/publicación ni nuevas reglas/balance/narrativa. Bloques siguientes históricos.

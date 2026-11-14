@@ -13,6 +13,7 @@ Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos un
 
 ## Documentación y estado
 
+- [Experiencia unificada del mapa — comparación y revisión](docs/99-experiencia-unificada-del-mapa.md)
 - [Tablero operativo — próxima tarea](docs/18-tablero-operativo.md)
 - [H3.1 — Auditoría de identidad visual](docs/74-h3-1-auditoria-identidad-visual.md)
 - [Plan propuesto H3.1–H3.6](docs/75-plan-hito-3-identidad-visual.md)
@@ -38,7 +39,7 @@ El [PR15](https://github.com/LeviEdition/invierno-en-la-colonia/pull/15) se inte
 
 ## Mapa horizontal y ambientación — versión experimental actual
 
-Rama independiente sobre H3.4.4, PR25 en borrador. Reutiliza las cuatro acciones del motor con nuevo escenario, vegetación anclada y luces locales; no modifica reglas ni la referencia estable. **La revisión visual y la aceptación manual de búsqueda/ataque/barricadas siguen pendientes.**
+Rama independiente sobre H3.4.4, PR25 en borrador. Preparación, inventario, acciones, decisiones y ciclo completo desde el mapa, con un panel contextual y menú de consultas. Conserva motor, arte y referencia estable. **La revisión visual y la aceptación manual de búsqueda/ataque/barricadas siguen pendientes.**
 
 ```powershell
 git fetch origin
@@ -48,7 +49,7 @@ npm.cmd ci
 npm.cmd run dev:horizontal-map
 ```
 
-Abrir **http://127.0.0.1:8779/prototypes/horizontal-map/**. Preparar en V9.9 y pulsar Ver mapa. Ctrl+C detiene el servidor; reiniciar y recargar tras actualizar. En móvil se prioriza horizontal. [Guía Windows/VSCode/LAN y pruebas manuales](prototypes/horizontal-map/README.md), [originales y configuración](assets/mapa-horizontal/README.md). No requiere Python. Las entradas siguientes se conservan para comparación.
+Abrir **http://127.0.0.1:8779/prototypes/horizontal-map/**. Elegir Jugar con IA o Dos jugadores en este dispositivo. Menú ofrece Inventario, Grupo y líderes, Registro, Ajustes, Ayuda y Nueva partida. Ctrl+C detiene el servidor; reiniciar y recargar tras actualizar. En móvil se prioriza horizontal. [Guía Windows/VSCode/LAN y pruebas manuales](prototypes/horizontal-map/README.md), [originales y configuración](assets/mapa-horizontal/README.md). No requiere Python. Las entradas siguientes se conservan para comparación.
 
 ## H3.4.4 — Las cuatro acciones sobre el mapa anterior
 

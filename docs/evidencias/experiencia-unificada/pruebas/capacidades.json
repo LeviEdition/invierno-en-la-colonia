@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "controlled": true,
+  "physicalMobile": false,
+  "records": [
+    {
+      "width": 1365,
+      "height": 768,
+      "i": 4,
+      "cap": 2,
+      "z": 1,
+      "b": 1,
+      "free": 0
+    },
+    {
+      "width": 1365,
+      "height": 768,
+      "i": 6,
+      "cap": 3,
+      "z": 2,
+      "b": 1,
+      "free": 0
+    },
+    {
+      "width": 852,
+      "height": 393,
+      "i": 4,
+      "cap": 2,
+      "z": 1,
+      "b": 1,
+      "free": 0
+    },
+    {
+      "width": 852,
+      "height": 393,
+      "i": 6,
+      "cap": 3,
+      "z": 2,
+      "b": 1,
+      "free": 0
+    }
+  ]
+}

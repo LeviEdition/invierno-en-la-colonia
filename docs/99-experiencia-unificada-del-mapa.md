@@ -18,4 +18,58 @@ Hallazgos observados: Inventario en cabecera/menú/personaje/mano; objetivo/cris
 
 Una cabecera compacta, objetivo/crisis con detalles desde su resumen, cámara sobre el mapa y un solo panel contextual para selección, borradores, inventario y consultas. Menú: Inventario, Grupo y líderes, Registro, Ajustes, Ayuda y Nueva partida separada. Herramientas técnicas en acceso de desarrollo independiente; recuperación solo en el error pertinente. Modales para mordedura/encrucijada/pase/sucesión/abandono/final y confirmación de fallecimientos. Los resultados rutinarios se mantienen en el contexto/Registro y su reconocimiento técnico usa el mismo comando de presentación, sin repetir efectos.
 
-Implementación y verificación en curso. Las comparaciones y el SHA/CI exactos se completarán antes de entregar; no se declara aceptación manual ni se fusiona/publica.
+La aceptación manual corresponde al creador; no se fusiona ni publica.
+
+## Presentación resultante
+
+Cabecera con ronda, jugador/fase, moral, comida, hambre y residuos. Objetivo y crisis son resúmenes pulsables; las cartas entregadas siguen siendo un **conteo público**, no una revelación anticipada de aportes válidos. La consecuencia principal se muestra junto al requisito. Terminar turno conserva su confirmación previa y su posición separada de las acciones del personaje.
+
+Cámara sobre el mapa; seleccionar localidad ocupa un ancho contenido. El panel lateral de340px se recupera al cerrarlo en escritorio. En móvil es una ficha compacta ampliable, con scroll propio; cerrar devuelve terreno. Abrir/cerrar conserva el zoom real elegido; Restablecer encuadra explícitamente el mapa en el espacio disponible. Esto reemplaza el ajuste automático anterior al abrir una ficha en vista general. El arte, coordenadas, capacidades y diámetros fuente son idénticos.
+
+|Acceso anterior|Acceso actual|
+|---|---|
+|Inventario en cabecera, menú, personaje y listado de mano|Menú → Inventario; Inventario y equipo en el personaje propio, preseleccionado|
+|Objetivo/Crisis en botones y resumen repetidos|Pulsar el resumen; Aportar a crisis abre cartas legales|
+|Cuatro acciones flotantes y acciones de ficha|Una cuadrícula en la ficha; todos los formularios usan el mismo panel|
+|Habilidad gratuita de constructor como acción aparte|Construir → Con un dado / Habilidad sin dado|
+|Mejorar dado junto a habilidades|Reserva de dados → Mejorar dado con comida|
+|Ambientación, sonido y controles entre datos de personaje|Menú → Ajustes, con reducción de animaciones de acciones|
+|Equipo y explicación general de encrucijadas en consultas independientes|Equipo en ficha/inventario; encrucijadas en Ayuda y eventos en Registro|
+|Referencia, arte, taller, mapa anterior, reinicio y reconexión|Desarrollo, solo agregando `?dev=1`; error recuperable ofrece su propia recuperación|
+|Resultados rutinarios con Continuar|Confirmación previa; resultado persistente en contexto y registro, sin reconocimiento manual adicional|
+|Pasos obligatorios del resumen de colonia|Todas las fases juntas; detalles desplegables y un cierre del resumen|
+
+Las consultas y formularios son superficies no modales coordinadas. Solo se presenta un contexto activo. Mordedura, encrucijada, pase, fallecimientos, sucesión, abandono y final mantienen atención exclusiva y bloqueos reales. Escape cancela borradores/consultas y devuelve el foco al control de origen; no resuelve una decisión obligatoria. Seleccionar un único recurso/objetivo legal prepara el borrador, nunca envía una acción con coste. Varios dados legales siguen requiriendo elección.
+
+El inventario distingue mano/equipo, omite filas sin equipo, filtra Mano y equipo / Solo mano / Solo equipo y conserva UID individual y uso por ronda. Transferencias muestran receptor, jugador y localidad. Solo aparecen botones de aporte cuando la consulta del motor los permite. Los resultados de curación, comida, equipo y transferencia usan cantidades/nombres estructurados, sin interpretar el texto del registro.
+
+## Reconocimiento y recuperación
+
+El coordinador usa exclusivamente los comandos existentes de reconocimiento de búsqueda/acción/inventario/habilidad. No reenvía el comando que gastó recursos ni ejecuta consecuencias durante una animación o avance del resumen. Espera el resultado conocido y el fin de la presentación; no reconoce decisiones ajenas. Cambiar audiencia, partida o fase privada borra avisos y borradores. La incorporación informativa de un superviviente se reconoce mediante el comando existente y queda en Registro.
+
+Se corrigieron hallazgos reproducidos durante la revisión: restaurar foco dos veces enviaba el foco al menú después de una consulta; el menú móvil podía quedar bajo la ficha ampliada; recuperar una respuesta de reconocimiento perdida podía dejar abierto un formulario vacío; un resultado rutinario no debe intentar reconocerse mientras hay otra decisión pendiente. Una tirada de una cadena de mordedura anterior tampoco debe aparecer en una mordedura nueva. La preparación limpia una presentación anterior sin pendiente real. Estas correcciones no añaden decisiones ni cambian resultados.
+
+Registro mezcla ambos diarios con un orden de presentación compartido, agrupa por ronda y distingue acciones, colonia y eventos importantes. Detalles menores se despliegan; la redacción por audiencia sigue siendo la del adaptador. No se añaden cartas futuras, manos rivales ni datos de aportes a la proyección pública.
+
+## Verificación y revisión manual
+
+Las pruebas conservan equivalencia de estado/azar, doble pulsación, versiones obsoletas, privacidad, decisiones obligatorias, reconocimiento y recuperación sin reenvío. Los cambios de selectores de los arneses corresponden a accesos retirados: abrir Inventario por Menú y esperar el resultado integrado. El estado, los recursos, las tiradas y la cámara siguen comprobándose. La prueba de excedentes comprueba conteo completo y aviso en el mapa, en lugar del párrafo técnico retirado. Vista general completa se comprueba tras Restablecer, con ficha abierta y cerrada; abrir una ficha ahora exige mantener el zoom elegido.
+
+Además de las baterías anteriores de presentación, capacidades, inventario, ciclo, migración y animaciones de acciones, `check-map-experience-browser.mjs` recorre la **compilación normal**, sin fixtures ni hooks QA, en1365×768,852×393 y393×852 con movimiento normal/reducido. Controla únicamente el azar para reproducir la comparación. Verifica menú, ajustes, Escape/foco, consultas sin efectos, zoom, controles44px, ausencia de desplazamiento horizontal, resultados y guardia contra retorno a V9. El flujo usa preparación → acciones → inventario → crisis → colonia → final. Se distingue esta emulación de una prueba en teléfono físico.
+
+Revisión sugerida del creador:
+
+1. Identificar turno, objetivo, necesidad y fallo de crisis sin abrir consultas.
+2. Seleccionar Mara, ampliar/plegar la ficha móvil y encontrar acciones/costes; volver al mapa con el mismo zoom.
+3. Equipar/transferir y aportar desde crisis; comprobar nombres, receptor y resultado sin Continuar.
+4. Cancelar con Escape y verificar foco; probar la alternativa gratuita de Leo y la habilidad automática de Iris.
+5. Resolver mordedura/encrucijada/pase/sucesión; revisar todas las fases de colonia y consultar Registro tras el final.
+
+Límites: Chromium de escritorio y emulación táctil, sin dispositivo físico, TalkBack ni auditoría completa de lector de pantalla. El azar controlado facilita la reproducción y no certifica balance. Hay scroll en fichas largas y en el menú de pantalla baja. No se añade guardado: recargar toda la aplicación pierde la instancia. La aceptación estética y de comodidad sigue siendo manual. No se modifica main, no se fusiona y no se publica el juego. SHA y CI exactos se registran enPR25 al finalizar la comprobación remota.
+
+
+## Comparación y entrega
+
+[Tabla antes/después, pulsaciones, vídeos y pruebas](evidencias/experiencia-unificada/README.md). El mapa gana109px de altura en escritorio,62px en móvil horizontal (25,3%) y83px en vertical; las franjas superiores horizontales bajan148→86,08px sin reducir los controles de44px.729/729 locales, seis baterías de regresión, seis recorridos normales de experiencia y seis de decisiones aprobados. La revisión completa de colonia puede cerrarse con una pulsación; las confirmaciones de coste y decisiones obligatorias se mantienen. El flujo completo automatizado hasta derrota no equivale a medir una revisión de colonia; sus pulsaciones brutas se conservan y no se presentan como ahorro.
+
+Implementación revisable enc2014569ec3e288345727a87376c0ebd36f1b453; documentación/evidencia en el head final del mismo PR25. La comprobación remota final por SHA, ejecución de Actions y artifact se registra en el PR y en la respuesta de entrega. **Siguiente paso: revisión manual del creador.**

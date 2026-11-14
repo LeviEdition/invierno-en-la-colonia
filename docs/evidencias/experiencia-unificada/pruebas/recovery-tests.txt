@@ -1,0 +1,34 @@
+✔ Experiencia: reconoce resultados rutinarios una vez sin reenviar acciones (1.439265ms)
+✔ Experiencia: un microtask obsoleto no reconoce una decisión o audiencia nueva (0.599666ms)
+✔ Experiencia: mordedura, decisión general y operación incierta conservan bloqueo (2.485035ms)
+✔ Experiencia: cantidades de tratamiento y comida proceden de resultados estructurados (0.17847ms)
+✔ Experiencia: único dado se preselecciona sin enviar ni gastar; varios requieren elección (0.915653ms)
+✔ Experiencia: inventario preselecciona solo un receptor legal y conserva confirmación (7.437287ms)
+✔ Experiencia: reconocimiento de limpieza, mejora, curación y equipo conserva estado/azar (28.116382ms)
+✔ Experiencia: decisión ajena impide reconocer inventario y evita reintentos en bucle (0.552925ms)
+✔ Experiencia: recuperar un reconocimiento ya aplicado vuelve a la ficha sin reenviar (0.605154ms)
+✔ Paridad F: registro estructurado conserva información pública y proyecta cartas por audiencia (95.704129ms)
+✔ Paridad F: consultas no ejecutan reglas, no consumen azar y no copian log heredado (251.140374ms)
+✔ Paridad F: respuesta perdida consulta recibo sin reenviar; doble confirmación ejecuta una vez (49.712351ms)
+✔ Paridad F: fallo sin recibo bloquea la repetición y explica el estado desconocido (158.453393ms)
+✔ Paridad F: resultado con recibo permanece recuperable aunque se pierda la respuesta del adaptador (44.55637ms)
+✔ Paridad F: transferencia pendiente usa mismo objeto/receptor y puede cancelarse sin coste (42.578743ms)
+✔ Paridad F: encrucijada de IA muestra su decisión original sin permitir opción humana (13.483041ms)
+✔ Paridad F: durante IA la audiencia humana no recibe cartas ni reserva de dados de IA (5.905583ms)
+✔ Paridad F: consulta no sincroniza ni cambia solicitudes de liderazgo (42.509938ms)
+✔ Paridad F: objeto que gana conserva recibo confirmado hasta abrir el resultado final (66.444261ms)
+✔ Paridad F: sucesión pendiente del otro grupo local no oculta la encrucijada del turno actual (2.66126ms)
+✔ Paridad F: excepción de una operación anterior también bloquea repetición sin volver a V9 (23.026391ms)
+✔ Paridad F: host del mapa sin tablero ni controles DOM de V9, motor real conservado (1974.589594ms)
+✔ Paridad F: segundo jugador gana sin perder recibo ni revelar la mano/registro privado de J1 (10.738167ms)
+✔ Paridad F: botín sin operación previa resuelve ruido y elección con costes y azar originales (2.735093ms)
+✔ Paridad F: recibo de mordedura terminal recupera resultado sin exponer registros privados (7.065367ms)
+✔ Paridad F: comandos desconocidos o heredados del prototipo se rechazan sin excepción ni consumo (82.749122ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4265.239786
