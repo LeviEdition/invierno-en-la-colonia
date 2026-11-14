@@ -64,3 +64,5 @@ Los vídeos se codifican a12FPS para revisión; las acciones se ejecutaron con a
 Chromium/emulación táctil. Sin Android físico, TalkBack, auditoría completa de lector de pantalla ni certificación de balance. Comodidad y composición requieren aceptación manual. La compuerta de Actions repite las baterías sobre el SHA final; el artifact correspondiente conserva sus capturas y resultados.
 
 Cierre posterior de foco y elecciones legales: código1cda12a070cc9b27da30476cf568b9562c319c52, [presentación final](pruebas/presentacion-final.json), [inventario final](pruebas/inventario-final.json), [21 dirigidas](pruebas/elecciones-21.txt) y [constructor/filtros normales](pruebas/consultas-y-constructor.json). Los dos CI rojos se preservan en el informe; la aprobación final corresponde al nuevo SHA y su ejecución completa.
+
+El CI95e656d aprobó729 y siete baterías; el intento posteriorc20b027 detectó lectura prematura de un dado durante `sending`. [Transporte retrasado400ms, una petición y resultado6](pruebas/transporte-revisado.json) aprobado tras exigir el cierre real de la operación. [Rojo preservado](pruebas/cic20-rojo/); bundles de producto/host sin cambios.

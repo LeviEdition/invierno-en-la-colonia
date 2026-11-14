@@ -1,0 +1,6171 @@
+{
+  "passed": false,
+  "controlled": true,
+  "physicalMobile": false,
+  "reducedMotion": true,
+  "browser": "143.0.7499.4",
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "scenario": "normal",
+      "errors": [],
+      "steps": [
+        "preparacion",
+        "rondas-sin-fixture"
+      ],
+      "noStateFixture": true,
+      "noV9": true,
+      "round": 3,
+      "starts": 1,
+      "video": "/tmp/horizontal-migration/1365x768/normal/746920de690f9598c43cc9af7e95715a.webm",
+      "passed": true
+    }
+  ],
+  "guardDetectsReturn": true,
+  "guardDetectsNavigation": true,
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n5 !== 6\n\n    at file:///home/runner/work/invierno-en-la-colonia/invierno-en-la-colonia/scripts/check-map-migration-browser.mjs:26:49",
+  "last": {
+    "mode": "map",
+    "connected": true,
+    "starts": 2,
+    "generation": 2,
+    "projection": {
+      "schema": 1,
+      "epoch": 2,
+      "blocked": null,
+      "mode": "local",
+      "round": 1,
+      "maxRounds": 10,
+      "morale": 9,
+      "food": 100,
+      "ended": false,
+      "turn": "human",
+      "automationRunning": false,
+      "players": [
+        {
+          "id": "human",
+          "label": "Jugador 1",
+          "leaderId": "h1",
+          "initialLeaderConfirmed": true
+        },
+        {
+          "id": "ai",
+          "label": "Jugador 2",
+          "leaderId": "a1",
+          "initialLeaderConfirmed": false
+        }
+      ],
+      "characters": [
+        {
+          "id": "h0",
+          "name": "Mara",
+          "job": "M\u00e9dica",
+          "playerId": "human",
+          "locationId": "place-0",
+          "influence": 76,
+          "attack": 4,
+          "search": 3,
+          "effectiveAttack": 4,
+          "effectiveSearch": 3,
+          "wounds": 0,
+          "frost": 0,
+          "moved": false,
+          "leader": false,
+          "skill": {
+            "id": "medic",
+            "name": "Primeros auxilios",
+            "description": "Una vez por ronda cura 1 herida de un superviviente en su localidad, sin dado.",
+            "used": true
+          },
+          "equipment": []
+        },
+        {
+          "id": "h1",
+          "name": "Leo",
+          "job": "Mec\u00e1nico",
+          "playerId": "human",
+          "locationId": "place-0",
+          "influence": 58,
+          "attack": 3,
+          "search": 4,
+          "effectiveAttack": 3,
+          "effectiveSearch": 4,
+          "wounds": 0,
+          "frost": 0,
+          "moved": false,
+          "leader": true,
+          "skill": {
+            "id": "builder",
+            "name": "Manos h\u00e1biles",
+            "description": "Una vez por ronda construye una barricada sin usar dado.",
+            "used": false
+          },
+          "equipment": []
+        },
+        {
+          "id": "h2",
+          "name": "Iris",
+          "job": "Exploradora",
+          "playerId": "human",
+          "locationId": "place-0",
+          "influence": 67,
+          "attack": 5,
+          "search": 2,
+          "effectiveAttack": 5,
+          "effectiveSearch": 2,
+          "wounds": 0,
+          "frost": 0,
+          "moved": false,
+          "leader": false,
+          "skill": {
+            "id": "scout",
+            "name": "Ojo experto",
+            "description": "Al buscar, roba dos objetos y elige uno.",
+            "used": false
+          },
+          "equipment": []
+        },
+        {
+          "id": "a0",
+          "name": "Ada",
+          "job": "Enfermera",
+          "playerId": "ai",
+          "locationId": "place-0",
+          "influence": 73,
+          "attack": 4,
+          "search": 3,
+          "effectiveAttack": 4,
+          "effectiveSearch": 3,
+          "wounds": 0,
+          "frost": 0,
+          "moved": false,
+          "leader": false,
+          "skill": {
+            "id": "nurse",
+            "name": "Contra el fr\u00edo",
+            "description": "Una vez por ronda elimina una congelaci\u00f3n de un superviviente en su localidad.",
+            "used": false
+          },
+          "equipment": []
+        },
+        {
+          "id": "a1",
+          "name": "Bruno",
+          "job": "Polic\u00eda",
+          "playerId": "ai",
+          "locationId": "place-0",
+          "influence": 80,
+          "attack": 2,
+          "search": 4,
+          "effectiveAttack": 1,
+          "effectiveSearch": 4,
+          "wounds": 0,
+          "frost": 0,
+          "moved": false,
+          "leader": true,
+          "skill": {
+            "id": "fighter",
+            "name": "Punter\u00eda",
+            "description": "Necesita un punto menos en el dado para atacar.",
+            "used": false
+          },
+          "equipment": []
+        },
+        {
+          "id": "a2",
+          "name": "Sol",
+          "job": "Superviviente",
+          "playerId": "ai",
+          "locationId": "place-0",
+          "influence": 45,
+          "attack": 4,
+          "search": 2,
+          "effectiveAttack": 4,
+          "effectiveSearch": 2,
+          "wounds": 0,
+          "frost": 0,
+          "moved": false,
+          "leader": false,
+          "skill": {
+            "id": "resilient",
+            "name": "Resistencia",
+            "description": "Una vez por ronda puede evitar un resultado adverso de exposici\u00f3n.",
+            "used": false
+          },
+          "equipment": []
+        }
+      ],
+      "locations": [
+        {
+          "id": "place-0",
+          "engineIndex": 0,
+          "name": "Colonia",
+          "survivors": 6,
+          "characterIds": [
+            "h0",
+            "h1",
+            "h2",
+            "a0",
+            "a1",
+            "a2"
+          ],
+          "helpless": 0,
+          "occupied": 6,
+          "capacity": 12,
+          "available": 6,
+          "zombies": 0,
+          "barricades": 0,
+          "exteriorCapacity": 12,
+          "exteriorAvailable": 12,
+          "noise": 0
+        },
+        {
+          "id": "place-1",
+          "engineIndex": 1,
+          "name": "Supermercado",
+          "survivors": 0,
+          "characterIds": [],
+          "helpless": 0,
+          "occupied": 0,
+          "capacity": 4,
+          "available": 4,
+          "zombies": 2,
+          "barricades": 0,
+          "exteriorCapacity": 4,
+          "exteriorAvailable": 2,
+          "noise": 0
+        },
+        {
+          "id": "place-2",
+          "engineIndex": 2,
+          "name": "Hospital",
+          "survivors": 0,
+          "characterIds": [],
+          "helpless": 0,
+          "occupied": 0,
+          "capacity": 4,
+          "available": 4,
+          "zombies": 0,
+          "barricades": 0,
+          "exteriorCapacity": 4,
+          "exteriorAvailable": 4,
+          "noise": 0
+        },
+        {
+          "id": "place-3",
+          "engineIndex": 3,
+          "name": "Comisar\u00eda",
+          "survivors": 0,
+          "characterIds": [],
+          "helpless": 0,
+          "occupied": 0,
+          "capacity": 4,
+          "available": 4,
+          "zombies": 0,
+          "barricades": 0,
+          "exteriorCapacity": 4,
+          "exteriorAvailable": 4,
+          "noise": 0
+        },
+        {
+          "id": "place-4",
+          "engineIndex": 4,
+          "name": "Gasolinera",
+          "survivors": 0,
+          "characterIds": [],
+          "helpless": 0,
+          "occupied": 0,
+          "capacity": 4,
+          "available": 4,
+          "zombies": 0,
+          "barricades": 0,
+          "exteriorCapacity": 2,
+          "exteriorAvailable": 2,
+          "noise": 0
+        },
+        {
+          "id": "place-5",
+          "engineIndex": 5,
+          "name": "Escuela",
+          "survivors": 0,
+          "characterIds": [],
+          "helpless": 0,
+          "occupied": 0,
+          "capacity": 4,
+          "available": 4,
+          "zombies": 0,
+          "barricades": 0,
+          "exteriorCapacity": 4,
+          "exteriorAvailable": 4,
+          "noise": 0
+        },
+        {
+          "id": "place-6",
+          "engineIndex": 6,
+          "name": "Biblioteca",
+          "survivors": 0,
+          "characterIds": [],
+          "helpless": 0,
+          "occupied": 0,
+          "capacity": 4,
+          "available": 4,
+          "zombies": 0,
+          "barricades": 0,
+          "exteriorCapacity": 3,
+          "exteriorAvailable": 3,
+          "noise": 0
+        }
+      ],
+      "objective": {
+        "name": "\u00daltima esperanza",
+        "description": "Recuperar 9 muestras antes de que termine la ronda 10.",
+        "samples": 0,
+        "goal": 9
+      },
+      "crisis": {
+        "type": "comida",
+        "need": 2,
+        "given": 2,
+        "failure": "moral"
+      },
+      "log": [],
+      "last": null,
+      "dice": {
+        "ownerId": "human",
+        "available": [
+          5,
+          5,
+          5
+        ],
+        "used": null
+      },
+      "movement": {
+        "session": "3d9433c4ecc510c492e7009b39c86621",
+        "revision": 12,
+        "options": {
+          "h0": {
+            "gameGeneration": 2,
+            "round": 1,
+            "turn": "human",
+            "actorId": "h0",
+            "origin": 0,
+            "allowed": true,
+            "reason": null,
+            "destinations": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          },
+          "h1": {
+            "gameGeneration": 2,
+            "round": 1,
+            "turn": "human",
+            "actorId": "h1",
+            "origin": 0,
+            "allowed": true,
+            "reason": null,
+            "destinations": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          },
+          "h2": {
+            "gameGeneration": 2,
+            "round": 1,
+            "turn": "human",
+            "actorId": "h2",
+            "origin": 0,
+            "allowed": true,
+            "reason": null,
+            "destinations": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          },
+          "a0": {
+            "gameGeneration": 2,
+            "round": 1,
+            "turn": "human",
+            "actorId": "a0",
+            "origin": 0,
+            "allowed": false,
+            "reason": "ownership",
+            "destinations": []
+          },
+          "a1": {
+            "gameGeneration": 2,
+            "round": 1,
+            "turn": "human",
+            "actorId": "a1",
+            "origin": 0,
+            "allowed": false,
+            "reason": "ownership",
+            "destinations": []
+          },
+          "a2": {
+            "gameGeneration": 2,
+            "round": 1,
+            "turn": "human",
+            "actorId": "a2",
+            "origin": 0,
+            "allowed": false,
+            "reason": "ownership",
+            "destinations": []
+          }
+        }
+      },
+      "search": {
+        "session": "3d9433c4ecc510c492e7009b39c86621",
+        "revision": 12,
+        "private": {
+          "gameGeneration": 2,
+          "round": 1,
+          "ownerId": "human",
+          "hand": [
+            {
+              "index": 0,
+              "id": "ration",
+              "name": "Raci\u00f3n de comida",
+              "kind": "comida",
+              "description": "Agrega 1 comida a la reserva.",
+              "icon": "\ud83e\udd6b"
+            },
+            {
+              "index": 1,
+              "id": "bandage",
+              "name": "Vendas",
+              "kind": "medicina",
+              "description": "Cura 1 herida o congelaci\u00f3n al personaje seleccionado.",
+              "icon": "\u271a"
+            },
+            {
+              "index": 2,
+              "id": "crowbar",
+              "name": "Palanca",
+              "kind": "herramienta",
+              "description": "Equipada: reduce en 1 el requisito de b\u00fasqueda.",
+              "icon": "\u26cf\ufe0f"
+            },
+            {
+              "index": 3,
+              "id": "pistol",
+              "name": "Pistola",
+              "kind": "arma",
+              "description": "Equipada: evita la exposici\u00f3n del primer ataque de cada ronda.",
+              "icon": "\ud83d\udd2b"
+            },
+            {
+              "index": 4,
+              "id": "canned",
+              "name": "Caja de conservas",
+              "kind": "comida",
+              "description": "Agrega 2 comidas a la reserva.",
+              "icon": "\ud83e\udd6b"
+            },
+            {
+              "index": 5,
+              "id": "gascan",
+              "name": "Bid\u00f3n de combustible",
+              "kind": "combustible",
+              "description": "Mueve al personaje seleccionado sin tirar exposici\u00f3n.",
+              "icon": "\u26fd"
+            },
+            {
+              "index": 6,
+              "id": "ration",
+              "name": "Raci\u00f3n de comida",
+              "kind": "comida",
+              "description": "Agrega 1 comida a la reserva.",
+              "icon": "\ud83e\udd6b"
+            }
+          ],
+          "operation": null
+        },
+        "options": {
+          "h0": {
+            "gameGeneration": 2,
+            "round": 1,
+            "turn": "human",
+            "actorId": "h0",
+            "origin": 0,
+            "requirement": 3,
+            "diceVersion": "[5,5,5]",
+            "allowed": false,
+            "reason": "colony",
+            "dice": [
+              {
+                "index": 0,
+                "value": 5,
+                "allowed": false
+              },
+              {
+                "index": 1,
+                "value": 5,
+                "allowed": false
+              },
+              {
+                "index": 2,
+                "value": 5,
+                "allowed": false
+              }
+            ]
+          },
+          "h1": {
+            "gameGeneration": 2,
+            "round": 1,
+            "turn": "human",
+            "actorId": "h1",
+            "origin": 0,
+            "requirement": 4,
+            "diceVersion": "[5,5,5]",
+            "allowed": false,
+            "reason": "colony",
+            "dice": [
+              {
+                "index": 0,
+                "value": 5,
+                "allowed": false
+              },
+              {
+                "index": 1,
+                "value": 5,
+                "allowed": false
+              },
+              {
+                "index": 2,
+                "value": 5,
+                "allowed": false
+              }
+            ]
+          },
+          "h2": {
+            "gameGeneration": 2,
+            "round": 1,
+            "turn": "human",
+            "actorId": "h2",
+            "origin": 0,
+            "requirement": 2,
+            "diceVersion": "[5,5,5]",
+            "allowed": false,
+            "reason": "colony",
+            "dice": [
+              {
+                "index": 0,
+                "value": 5,
+                "allowed": false
+              },
+              {
+                "index": 1,
+                "value": 5,
+                "allowed": false
+              },
+              {
+                "index": 2,
+                "value": 5,
+                "allowed": false
+              }
+            ]
+          },
+          "a0": {
+            "gameGeneration": 2,
+            "round": 1,
+            "turn": "human",
+            "actorId": "a0",
+            "origin": 0,
+            "requirement": 3,
+            "diceVersion": "[5,5,5]",
+            "allowed": false,
+            "reason": "ownership",
+            "dice": []
+          },
+          "a1": {
+            "gameGeneration": 2,
+            "round": 1,
+            "turn": "human",
+            "actorId": "a1",
+            "origin": 0,
+            "requirement": 4,
+            "diceVersion": "[5,5,5]",
+            "allowed": false,
+            "reason": "ownership",
+            "dice": []
+          },
+          "a2": {
+            "gameGeneration": 2,
+            "round": 1,
+            "turn": "human",
+            "actorId": "a2",
+            "origin": 0,
+            "requirement": 2,
+            "diceVersion": "[5,5,5]",
+            "allowed": false,
+            "reason": "ownership",
+            "dice": []
+          }
+        }
+      },
+      "action": {
+        "session": "3d9433c4ecc510c492e7009b39c86621",
+        "revision": 12,
+        "gameGeneration": 2,
+        "round": 1,
+        "ownerId": "human",
+        "operation": null,
+        "presentation": null,
+        "options": {
+          "h0": {
+            "attack": {
+              "gameGeneration": 2,
+              "round": 1,
+              "turn": "human",
+              "actorId": "h0",
+              "kind": "attack",
+              "origin": 0,
+              "requirement": 4,
+              "cost": 1,
+              "diceVersion": "[5,5,5]",
+              "allowed": false,
+              "reason": "no-target",
+              "dice": [
+                {
+                  "index": 0,
+                  "value": 5,
+                  "allowed": false
+                },
+                {
+                  "index": 1,
+                  "value": 5,
+                  "allowed": false
+                },
+                {
+                  "index": 2,
+                  "value": 5,
+                  "allowed": false
+                }
+              ],
+              "targets": [
+                0
+              ],
+              "zombies": 0,
+              "buildCount": null
+            },
+            "barricade": {
+              "gameGeneration": 2,
+              "round": 1,
+              "turn": "human",
+              "actorId": "h0",
+              "kind": "barricade",
+              "origin": 0,
+              "requirement": 1,
+              "cost": 1,
+              "diceVersion": "[5,5,5]",
+              "allowed": true,
+              "reason": null,
+              "dice": [
+                {
+                  "index": 0,
+                  "value": 5,
+                  "allowed": true
+                },
+                {
+                  "index": 1,
+                  "value": 5,
+                  "allowed": true
+                },
+                {
+                  "index": 2,
+                  "value": 5,
+                  "allowed": true
+                }
+              ],
+              "targets": [
+                0
+              ],
+              "zombies": 0,
+              "buildCount": 1
+            },
+            "barricade-ability": {
+              "gameGeneration": 2,
+              "round": 1,
+              "turn": "human",
+              "actorId": "h0",
+              "kind": "barricade-ability",
+              "origin": 0,
+              "requirement": null,
+              "cost": 0,
+              "diceVersion": "[5,5,5]",
+              "allowed": false,
+              "reason": "ability",
+              "dice": [],
+              "targets": [
+                0
+              ],
+              "zombies": 0,
+              "buildCount": 1
+            }
+          },
+          "h1": {
+            "attack": {
+              "gameGeneration": 2,
+              "round": 1,
+              "turn": "human",
+              "actorId": "h1",
+              "kind": "attack",
+              "origin": 0,
+              "requirement": 3,
+              "cost": 1,
+              "diceVersion": "[5,5,5]",
+              "allowed": false,
+              "reason": "no-target",
+              "dice": [
+                {
+                  "index": 0,
+                  "value": 5,
+                  "allowed": false
+                },
+                {
+                  "index": 1,
+                  "value": 5,
+                  "allowed": false
+                },
+                {
+                  "index": 2,
+                  "value": 5,
+                  "allowed": false
+                }
+              ],
+              "targets": [
+                0
+              ],
+              "zombies": 0,
+              "buildCount": null
+            },
+            "barricade": {
+              "gameGeneration": 2,
+              "round": 1,
+              "turn": "human",
+              "actorId": "h1",
+              "kind": "barricade",
+              "origin": 0,
+              "requirement": 1,
+              "cost": 1,
+              "diceVersion": "[5,5,5]",
+              "allowed": true,
+              "reason": null,
+              "dice": [
+                {
+                  "index": 0,
+                  "value": 5,
+                  "allowed": true
+                },
+                {
+                  "index": 1,
+                  "value": 5,
+                  "allowed": true
+                },
+                {
+                  "index": 2,
+                  "value": 5,
+                  "allowed": true
+                }
+              ],
+              "targets": [
+                0
+              ],
+              "zombies": 0,
+              "buildCount": 1
+            },
+            "barricade-ability": {
+              "gameGeneration": 2,
+              "round": 1,
+              "turn": "human",
+              "actorId": "h1",
+              "kind": "barricade-ability",
+              "origin": 0,
+              "requirement": null,
+              "cost": 0,
+              "diceVersion": "[5,5,5]",
+              "allowed": true,
+              "reason": null,
+              "dice": [],
+              "targets": [
+                0
+              ],
+              "zombies": 0,
+              "buildCount": 1
+            }
+          },
+          "h2": {
+            "attack": {
+              "gameGeneration": 2,
+              "round": 1,
+              "turn": "human",
+              "actorId": "h2",
+              "kind": "attack",
+              "origin": 0,
+              "requirement": 5,
+              "cost": 1,
+              "diceVersion": "[5,5,5]",
+              "allowed": false,
+              "reason": "no-target",
+              "dice": [
+                {
+                  "index": 0,
+                  "value": 5,
+                  "allowed": false
+                },
+                {
+                  "index": 1,
+                  "value": 5,
+                  "allowed": false
+                },
+                {
+                  "index": 2,
+                  "value": 5,
+                  "allowed": false
+                }
+              ],
+              "targets": [
+                0
+              ],
+              "zombies": 0,
+              "buildCount": null
+            },
+            "barricade": {
+              "gameGeneration": 2,
+              "round": 1,
+              "turn": "human",
+              "actorId": "h2",
+              "kind": "barricade",
+              "origin": 0,
+              "requirement": 1,
+              "cost": 1,
+              "diceVersion": "[5,5,5]",
+              "allowed": true,
+              "reason": null,
+              "dice": [
+                {
+                  "index": 0,
+                  "value": 5,
+                  "allowed": true
+                },
+                {
+                  "index": 1,
+                  "value": 5,
+                  "allowed": true
+                },
+                {
+                  "index": 2,
+                  "value": 5,
+                  "allowed": true
+                }
+              ],
+              "targets": [
+                0
+              ],
+              "zombies": 0,
+              "buildCount": 1
+            },
+            "barricade-ability": {
+              "gameGeneration": 2,
+              "round": 1,
+              "turn": "human",
+              "actorId": "h2",
+              "kind": "barricade-ability",
+              "origin": 0,
+              "requirement": null,
+              "cost": 0,
+              "diceVersion": "[5,5,5]",
+              "allowed": false,
+              "reason": "ability",
+              "dice": [],
+              "targets": [
+                0
+              ],
+              "zombies": 0,
+              "buildCount": 1
+            }
+          },
+          "a0": {
+            "attack": {
+              "gameGeneration": 2,
+              "round": 1,
+              "turn": "human",
+              "actorId": "a0",
+              "kind": "attack",
+              "origin": 0,
+              "requirement": 4,
+              "cost": 1,
+              "diceVersion": "[5,5,5]",
+              "allowed": false,
+              "reason": "ownership",
+              "dice": [],
+              "targets": [],
+              "zombies": null,
+              "buildCount": null
+            },
+            "barricade": {
+              "gameGeneration": 2,
+              "round": 1,
+              "turn": "human",
+              "actorId": "a0",
+              "kind": "barricade",
+              "origin": 0,
+              "requirement": 1,
+              "cost": 1,
+              "diceVersion": "[5,5,5]",
+              "allowed": false,
+              "reason": "ownership",
+              "dice": [],
+              "targets": [],
+              "zombies": null,
+              "buildCount": null
+            },
+            "barricade-ability": {
+              "gameGeneration": 2,
+              "round": 1,
+              "turn": "human",
+              "actorId": "a0",
+              "kind": "barricade-ability",
+              "origin": 0,
+              "requirement": null,
+              "cost": 0,
+              "diceVersion": "[5,5,5]",
+              "allowed": false,
+              "reason": "ownership",
+              "dice": [],
+              "targets": [],
+              "zombies": null,
+              "buildCount": null
+            }
+          },
+          "a1": {
+            "attack": {
+              "gameGeneration": 2,
+              "round": 1,
+              "turn": "human",
+              "actorId": "a1",
+              "kind": "attack",
+              "origin": 0,
+              "requirement": 1,
+              "cost": 1,
+              "diceVersion": "[5,5,5]",
+              "allowed": false,
+              "reason": "ownership",
+              "dice": [],
+              "targets": [],
+              "zombies": null,
+              "buildCount": null
+            },
+            "barricade": {
+              "gameGeneration": 2,
+              "round": 1,
+              "turn": "human",
+              "actorId": "a1",
+              "kind": "barricade",
+              "origin": 0,
+              "requirement": 1,
+              "cost": 1,
+              "diceVersion": "[5,5,5]",
+              "allowed": false,
+              "reason": "ownership",
+              "dice": [],
+              "targets": [],
+              "zombies": null,
+              "buildCount": null
+            },
+            "barricade-ability": {
+              "gameGeneration": 2,
+              "round": 1,
+              "turn": "human",
+              "actorId": "a1",
+              "kind": "barricade-ability",
+              "origin": 0,
+              "requirement": null,
+              "cost": 0,
+              "diceVersion": "[5,5,5]",
+              "allowed": false,
+              "reason": "ownership",
+              "dice": [],
+              "targets": [],
+              "zombies": null,
+              "buildCount": null
+            }
+          },
+          "a2": {
+            "attack": {
+              "gameGeneration": 2,
+              "round": 1,
+              "turn": "human",
+              "actorId": "a2",
+              "kind": "attack",
+              "origin": 0,
+              "requirement": 4,
+              "cost": 1,
+              "diceVersion": "[5,5,5]",
+              "allowed": false,
+              "reason": "ownership",
+              "dice": [],
+              "targets": [],
+              "zombies": null,
+              "buildCount": null
+            },
+            "barricade": {
+              "gameGeneration": 2,
+              "round": 1,
+              "turn": "human",
+              "actorId": "a2",
+              "kind": "barricade",
+              "origin": 0,
+              "requirement": 1,
+              "cost": 1,
+              "diceVersion": "[5,5,5]",
+              "allowed": false,
+              "reason": "ownership",
+              "dice": [],
+              "targets": [],
+              "zombies": null,
+              "buildCount": null
+            },
+            "barricade-ability": {
+              "gameGeneration": 2,
+              "round": 1,
+              "turn": "human",
+              "actorId": "a2",
+              "kind": "barricade-ability",
+              "origin": 0,
+              "requirement": null,
+              "cost": 0,
+              "diceVersion": "[5,5,5]",
+              "allowed": false,
+              "reason": "ownership",
+              "dice": [],
+              "targets": [],
+              "zombies": null,
+              "buildCount": null
+            }
+          }
+        }
+      },
+      "inventory": {
+        "session": "3d9433c4ecc510c492e7009b39c86621",
+        "revision": 12,
+        "scope": "2/1/human",
+        "private": {
+          "scope": "2/1/human",
+          "ownerId": "human",
+          "receipt": null,
+          "hand": [
+            {
+              "uid": "card_8",
+              "name": "Raci\u00f3n de comida",
+              "description": "Agrega 1 comida a la reserva.",
+              "kind": "comida",
+              "effect": "food",
+              "requiresActor": false,
+              "quantity": 1,
+              "usedRound": 0
+            },
+            {
+              "uid": "card_9",
+              "name": "Vendas",
+              "description": "Cura 1 herida o congelaci\u00f3n al personaje seleccionado.",
+              "kind": "medicina",
+              "effect": "heal",
+              "requiresActor": true,
+              "quantity": 1,
+              "usedRound": 0
+            },
+            {
+              "uid": "card_10",
+              "name": "Palanca",
+              "description": "Equipada: reduce en 1 el requisito de b\u00fasqueda.",
+              "kind": "herramienta",
+              "effect": "equip",
+              "requiresActor": true,
+              "quantity": 1,
+              "usedRound": 0
+            },
+            {
+              "uid": "card_11",
+              "name": "Pistola",
+              "description": "Equipada: evita la exposici\u00f3n del primer ataque de cada ronda.",
+              "kind": "arma",
+              "effect": "equip",
+              "requiresActor": true,
+              "quantity": 1,
+              "usedRound": 0
+            },
+            {
+              "uid": "card_12",
+              "name": "Caja de conservas",
+              "description": "Agrega 2 comidas a la reserva.",
+              "kind": "comida",
+              "effect": "food",
+              "requiresActor": false,
+              "quantity": 1,
+              "usedRound": 0
+            },
+            {
+              "uid": "card_13",
+              "name": "Bid\u00f3n de combustible",
+              "description": "Mueve al personaje seleccionado sin tirar exposici\u00f3n.",
+              "kind": "combustible",
+              "effect": "move",
+              "requiresActor": true,
+              "quantity": 1,
+              "usedRound": 0
+            },
+            {
+              "uid": "card_14",
+              "name": "Raci\u00f3n de comida",
+              "description": "Agrega 1 comida a la reserva.",
+              "kind": "comida",
+              "effect": "food",
+              "requiresActor": false,
+              "quantity": 1,
+              "usedRound": 0
+            }
+          ],
+          "equipment": [],
+          "actors": [
+            {
+              "id": "h0",
+              "name": "Mara",
+              "location": 0
+            },
+            {
+              "id": "h1",
+              "name": "Leo",
+              "location": 0
+            },
+            {
+              "id": "h2",
+              "name": "Iris",
+              "location": 0
+            }
+          ],
+          "recipients": [
+            {
+              "id": "h0",
+              "name": "Mara",
+              "location": 0,
+              "player": "Jugador 1"
+            },
+            {
+              "id": "h1",
+              "name": "Leo",
+              "location": 0,
+              "player": "Jugador 1"
+            },
+            {
+              "id": "h2",
+              "name": "Iris",
+              "location": 0,
+              "player": "Jugador 1"
+            },
+            {
+              "id": "a0",
+              "name": "Ada",
+              "location": 0,
+              "player": "Jugador 2"
+            },
+            {
+              "id": "a1",
+              "name": "Bruno",
+              "location": 0,
+              "player": "Jugador 2"
+            },
+            {
+              "id": "a2",
+              "name": "Sol",
+              "location": 0,
+              "player": "Jugador 2"
+            }
+          ],
+          "options": [
+            {
+              "mode": "use",
+              "cardId": "card_8",
+              "actorId": null,
+              "targetId": null,
+              "destination": null,
+              "allowed": true,
+              "reason": null,
+              "summary": "Reserva com\u00fan: +1 comida(s). Consume esta carta; +1 residuo.",
+              "waste": 1
+            },
+            {
+              "mode": "use",
+              "cardId": "card_9",
+              "actorId": "h0",
+              "targetId": null,
+              "destination": null,
+              "allowed": false,
+              "reason": "treatment",
+              "summary": "Mara: curar hasta 0 da\u00f1o(s) (heridas primero). Consume esta carta; +1 residuo.",
+              "waste": 1
+            },
+            {
+              "mode": "use",
+              "cardId": "card_9",
+              "actorId": "h1",
+              "targetId": null,
+              "destination": null,
+              "allowed": false,
+              "reason": "treatment",
+              "summary": "Leo: curar hasta 0 da\u00f1o(s) (heridas primero). Consume esta carta; +1 residuo.",
+              "waste": 1
+            },
+            {
+              "mode": "use",
+              "cardId": "card_9",
+              "actorId": "h2",
+              "targetId": null,
+              "destination": null,
+              "allowed": false,
+              "reason": "treatment",
+              "summary": "Iris: curar hasta 0 da\u00f1o(s) (heridas primero). Consume esta carta; +1 residuo.",
+              "waste": 1
+            },
+            {
+              "mode": "use",
+              "cardId": "card_10",
+              "actorId": "h0",
+              "targetId": null,
+              "destination": null,
+              "allowed": true,
+              "reason": null,
+              "summary": "Equipar Palanca a Mara. Conserva el equipo de otros tipos; sin dado ni residuos. Equipada: reduce en 1 el requisito de b\u00fasqueda.",
+              "waste": 0
+            },
+            {
+              "mode": "use",
+              "cardId": "card_10",
+              "actorId": "h1",
+              "targetId": null,
+              "destination": null,
+              "allowed": true,
+              "reason": null,
+              "summary": "Equipar Palanca a Leo. Conserva el equipo de otros tipos; sin dado ni residuos. Equipada: reduce en 1 el requisito de b\u00fasqueda.",
+              "waste": 0
+            },
+            {
+              "mode": "use",
+              "cardId": "card_10",
+              "actorId": "h2",
+              "targetId": null,
+              "destination": null,
+              "allowed": true,
+              "reason": null,
+              "summary": "Equipar Palanca a Iris. Conserva el equipo de otros tipos; sin dado ni residuos. Equipada: reduce en 1 el requisito de b\u00fasqueda.",
+              "waste": 0
+            },
+            {
+              "mode": "use",
+              "cardId": "card_11",
+              "actorId": "h0",
+              "targetId": null,
+              "destination": null,
+              "allowed": true,
+              "reason": null,
+              "summary": "Equipar Pistola a Mara. Conserva el equipo de otros tipos; sin dado ni residuos. Equipada: evita la exposici\u00f3n del primer ataque de cada ronda.",
+              "waste": 0
+            },
+            {
+              "mode": "use",
+              "cardId": "card_11",
+              "actorId": "h1",
+              "targetId": null,
+              "destination": null,
+              "allowed": true,
+              "reason": null,
+              "summary": "Equipar Pistola a Leo. Conserva el equipo de otros tipos; sin dado ni residuos. Equipada: evita la exposici\u00f3n del primer ataque de cada ronda.",
+              "waste": 0
+            },
+            {
+              "mode": "use",
+              "cardId": "card_11",
+              "actorId": "h2",
+              "targetId": null,
+              "destination": null,
+              "allowed": true,
+              "reason": null,
+              "summary": "Equipar Pistola a Iris. Conserva el equipo de otros tipos; sin dado ni residuos. Equipada: evita la exposici\u00f3n del primer ataque de cada ronda.",
+              "waste": 0
+            },
+            {
+              "mode": "use",
+              "cardId": "card_12",
+              "actorId": null,
+              "targetId": null,
+              "destination": null,
+              "allowed": true,
+              "reason": null,
+              "summary": "Reserva com\u00fan: +2 comida(s). Consume esta carta; +1 residuo.",
+              "waste": 1
+            },
+            {
+              "mode": "use",
+              "cardId": "card_13",
+              "actorId": "h0",
+              "targetId": null,
+              "destination": 0,
+              "allowed": false,
+              "reason": "destination",
+              "summary": "Mover a Mara a Colonia sin exposici\u00f3n. Marca movimiento usado; consume este bid\u00f3n, sin dado. Consume esta carta; +1 residuo.",
+              "waste": 1
+            },
+            {
+              "mode": "use",
+              "cardId": "card_13",
+              "actorId": "h0",
+              "targetId": null,
+              "destination": 1,
+              "allowed": true,
+              "reason": null,
+              "summary": "Mover a Mara a Supermercado sin exposici\u00f3n. Marca movimiento usado; consume este bid\u00f3n, sin dado. Consume esta carta; +1 residuo.",
+              "waste": 1
+            },
+            {
+              "mode": "use",
+              "cardId": "card_13",
+              "actorId": "h0",
+              "targetId": null,
+              "destination": 2,
+              "allowed": true,
+              "reason": null,
+              "summary": "Mover a Mara a Hospital sin exposici\u00f3n. Marca movimiento usado; consume este bid\u00f3n, sin dado. Consume esta carta; +1 residuo.",
+              "waste": 1
+            },
+            {
+              "mode": "use",
+              "cardId": "card_13",
+              "actorId": "h0",
+              "targetId": null,
+              "destination": 3,
+              "allowed": true,
+              "reason": null,
+              "summary": "Mover a Mara a Comisar\u00eda sin exposici\u00f3n. Marca movimiento usado; consume este bid\u00f3n, sin dado. Consume esta carta; +1 residuo.",
+              "waste": 1
+            },
+            {
+              "mode": "use",
+              "cardId": "card_13",
+              "actorId": "h0",
+              "targetId": null,
+              "destination": 4,
+              "allowed": true,
+              "reason": null,
+              "summary": "Mover a Mara a Gasolinera sin exposici\u00f3n. Marca movimiento usado; consume este bid\u00f3n, sin dado. Consume esta carta; +1 residuo.",
+              "waste": 1
+            },
+            {
+              "mode": "use",
+              "cardId": "card_13",
+              "actorId": "h0",
+              "targetId": null,
+              "destination": 5,
+              "allowed": true,
+              "reason": null,
+              "summary": "Mover a Mara a Escuela sin exposici\u00f3n. Marca movimiento usado; consume este bid\u00f3n, sin dado. Consume esta carta; +1 residuo.",
+              "waste": 1
+            },
+            {
+              "mode": "use",
+              "cardId": "card_13",
+              "actorId": "h0",
+              "targetId": null,
+              "destination": 6,
+              "allowed": true,
+              "reason": null,
+              "summary": "Mover a Mara a Biblioteca sin exposici\u00f3n. Marca movimiento usado; consume este bid\u00f3n, sin dado. Consume esta carta; +1 residuo.",
+              "waste": 1
+            },
+            {
+              "mode": "use",
+              "cardId": "card_13",
+              "actorId": "h1",
+              "targetId": null,
+              "destination": 0,
+              "allowed": false,
+              "reason": "destination",
+              "summary": "Mover a Leo a Colonia sin exposici\u00f3n. Marca movimiento usado; consume este bid\u00f3n, sin dado. Consume esta carta; +1 residuo.",
+              "waste": 1
+            },
+            {
+              "mode": "use",
+              "cardId": "card_13",
+              "actorId": "h1",
+              "targetId": null,
+              "destination": 1,
+              "allowed": true,
+              "reason": null,
+              "summary": "Mover a Leo a Supermercado sin exposici\u00f3n. Marca movimiento usado; consume este bid\u00f3n, sin dado. Consume esta carta; +1 residuo.",
+              "waste": 1
+            },
+            {
+              "mode": "use",
+              "cardId": "card_13",
+              "actorId": "h1",
+              "targetId": null,
+              "destination": 2,
+              "allowed": true,
+              "reason": null,
+              "summary": "Mover a Leo a Hospital sin exposici\u00f3n. Marca movimiento usado; consume este bid\u00f3n, sin dado. Consume esta carta; +1 residuo.",
+              "waste": 1
+            },
+            {
+              "mode": "use",
+              "cardId": "card_13",
+              "actorId": "h1",
+              "targetId": null,
+              "destination": 3,
+              "allowed": true,
+              "reason": null,
+              "summary": "Mover a Leo a Comisar\u00eda sin exposici\u00f3n. Marca movimiento usado; consume este bid\u00f3n, sin dado. Consume esta carta; +1 residuo.",
+              "waste": 1
+            },
+            {
+              "mode": "use",
+              "cardId": "card_13",
+              "actorId": "h1",
+              "targetId": null,
+              "destination": 4,
+              "allowed": true,
+              "reason": null,
+              "summary": "Mover a Leo a Gasolinera sin exposici\u00f3n. Marca movimiento usado; consume este bid\u00f3n, sin dado. Consume esta carta; +1 residuo.",
+              "waste": 1
+            },
+            {
+              "mode": "use",
+              "cardId": "card_13",
+              "actorId": "h1",
+              "targetId": null,
+              "destination": 5,
+              "allowed": true,
+              "reason": null,
+              "summary": "Mover a Leo a Escuela sin exposici\u00f3n. Marca movimiento usado; consume este bid\u00f3n, sin dado. Consume esta carta; +1 residuo.",
+              "waste": 1
+            },
+            {
+              "mode": "use",
+              "cardId": "card_13",
+              "actorId": "h1",
+              "targetId": null,
+              "destination": 6,
+              "allowed": true,
+              "reason": null,
+              "summary": "Mover a Leo a Biblioteca sin exposici\u00f3n. Marca movimiento usado; consume este bid\u00f3n, sin dado. Consume esta carta; +1 residuo.",
+              "waste": 1
+            },
+            {
+              "mode": "use",
+              "cardId": "card_13",
+              "actorId": "h2",
+              "targetId": null,
+              "destination": 0,
+              "allowed": false,
+              "reason": "destination",
+              "summary": "Mover a Iris a Colonia sin exposici\u00f3n. Marca movimiento usado; consume este bid\u00f3n, sin dado. Consume esta carta; +1 residuo.",
+              "waste": 1
+            },
+            {
+              "mode": "use",
+              "cardId": "card_13",
+              "actorId": "h2",
+              "targetId": null,
+              "destination": 1,
+              "allowed": true,
+              "reason": null,
+              "summary": "Mover a Iris a Supermercado sin exposici\u00f3n. Marca movimiento usado; consume este bid\u00f3n, sin dado. Consume esta carta; +1 residuo.",
+              "waste": 1
+            },
+            {
+              "mode": "use",
+              "cardId": "card_13",
+              "actorId": "h2",
+              "targetId": null,
+              "destination": 2,
+              "allowed": true,
+              "reason": null,
+              "summary": "Mover a Iris a Hospital sin exposici\u00f3n. Marca movimiento usado; consume este bid\u00f3n, sin dado. Consume esta carta; +1 residuo.",
+              "waste": 1
+            },
+            {
+              "mode": "use",
+              "cardId": "card_13",
+              "actorId": "h2",
+              "targetId": null,
+              "destination": 3,
+              "allowed": true,
+              "reason": null,
+              "summary": "Mover a Iris a Comisar\u00eda sin exposici\u00f3n. Marca movimiento usado; consume este bid\u00f3n, sin dado. Consume esta carta; +1 residuo.",
+              "waste": 1
+            },
+            {
+              "mode": "use",
+              "cardId": "card_13",
+              "actorId": "h2",
+              "targetId": null,
+              "destination": 4,
+              "allowed": true,
+              "reason": null,
+              "summary": "Mover a Iris a Gasolinera sin exposici\u00f3n. Marca movimiento usado; consume este bid\u00f3n, sin dado. Consume esta carta; +1 residuo.",
+              "waste": 1
+            },
+            {
+              "mode": "use",
+              "cardId": "card_13",
+              "actorId": "h2",
+              "targetId": null,
+              "destination": 5,
+              "allowed": true,
+              "reason": null,
+              "summary": "Mover a Iris a Escuela sin exposici\u00f3n. Marca movimiento usado; consume este bid\u00f3n, sin dado. Consume esta carta; +1 residuo.",
+              "waste": 1
+            },
+            {
+              "mode": "use",
+              "cardId": "card_13",
+              "actorId": "h2",
+              "targetId": null,
+              "destination": 6,
+              "allowed": true,
+              "reason": null,
+              "summary": "Mover a Iris a Biblioteca sin exposici\u00f3n. Marca movimiento usado; consume este bid\u00f3n, sin dado. Consume esta carta; +1 residuo.",
+              "waste": 1
+            },
+            {
+              "mode": "use",
+              "cardId": "card_14",
+              "actorId": null,
+              "targetId": null,
+              "destination": null,
+              "allowed": true,
+              "reason": null,
+              "summary": "Reserva com\u00fan: +1 comida(s). Consume esta carta; +1 residuo.",
+              "waste": 1
+            },
+            {
+              "mode": "contribute",
+              "cardId": "card_8",
+              "actorId": null,
+              "targetId": null,
+              "destination": null,
+              "allowed": true,
+              "reason": null,
+              "summary": "Aportar Raci\u00f3n de comida a la crisis de comida. Consume esta carta, sin dado ni residuos.",
+              "waste": 0
+            },
+            {
+              "mode": "contribute",
+              "cardId": "card_9",
+              "actorId": null,
+              "targetId": null,
+              "destination": null,
+              "allowed": false,
+              "reason": "crisis",
+              "summary": "Aportar Vendas a la crisis de comida. Consume esta carta, sin dado ni residuos.",
+              "waste": 0
+            },
+            {
+              "mode": "contribute",
+              "cardId": "card_10",
+              "actorId": null,
+              "targetId": null,
+              "destination": null,
+              "allowed": false,
+              "reason": "crisis",
+              "summary": "Aportar Palanca a la crisis de comida. Consume esta carta, sin dado ni residuos.",
+              "waste": 0
+            },
+            {
+              "mode": "contribute",
+              "cardId": "card_11",
+              "actorId": null,
+              "targetId": null,
+              "destination": null,
+              "allowed": false,
+              "reason": "crisis",
+              "summary": "Aportar Pistola a la crisis de comida. Consume esta carta, sin dado ni residuos.",
+              "waste": 0
+            },
+            {
+              "mode": "contribute",
+              "cardId": "card_12",
+              "actorId": null,
+              "targetId": null,
+              "destination": null,
+              "allowed": true,
+              "reason": null,
+              "summary": "Aportar Caja de conservas a la crisis de comida. Consume esta carta, sin dado ni residuos.",
+              "waste": 0
+            },
+            {
+              "mode": "contribute",
+              "cardId": "card_13",
+              "actorId": null,
+              "targetId": null,
+              "destination": null,
+              "allowed": false,
+              "reason": "crisis",
+              "summary": "Aportar Bid\u00f3n de combustible a la crisis de comida. Consume esta carta, sin dado ni residuos.",
+              "waste": 0
+            },
+            {
+              "mode": "contribute",
+              "cardId": "card_14",
+              "actorId": null,
+              "targetId": null,
+              "destination": null,
+              "allowed": true,
+              "reason": null,
+              "summary": "Aportar Raci\u00f3n de comida a la crisis de comida. Consume esta carta, sin dado ni residuos.",
+              "waste": 0
+            }
+          ]
+        },
+        "receipt": null,
+        "presentation": null
+      },
+      "cycle": {
+        "generation": 2,
+        "round": 1,
+        "turn": "human",
+        "mode": "local",
+        "processing": false,
+        "operation": null,
+        "review": false,
+        "decision": null,
+        "finish": {
+          "allowed": true,
+          "reason": null,
+          "diceRemaining": 3
+        },
+        "outcome": null,
+        "journal": [
+          {
+            "round": 1,
+            "kind": "round",
+            "meta": {
+              "number": 1
+            },
+            "before": {
+              "round": 1,
+              "turn": "human",
+              "food": 6,
+              "morale": 9,
+              "waste": 0,
+              "hunger": 0,
+              "samples": 0,
+              "helpless": 0,
+              "ended": false,
+              "locations": [
+                {
+                  "index": 0,
+                  "name": "Colonia",
+                  "zombies": 3,
+                  "barricades": 0,
+                  "noise": 0
+                },
+                {
+                  "index": 1,
+                  "name": "Supermercado",
+                  "zombies": 1,
+                  "barricades": 0,
+                  "noise": 0
+                },
+                {
+                  "index": 2,
+                  "name": "Hospital",
+                  "zombies": 1,
+                  "barricades": 0,
+                  "noise": 0
+                },
+                {
+                  "index": 3,
+                  "name": "Comisar\u00eda",
+                  "zombies": 1,
+                  "barricades": 0,
+                  "noise": 0
+                },
+                {
+                  "index": 4,
+                  "name": "Gasolinera",
+                  "zombies": 1,
+                  "barricades": 0,
+                  "noise": 0
+                },
+                {
+                  "index": 5,
+                  "name": "Escuela",
+                  "zombies": 1,
+                  "barricades": 0,
+                  "noise": 0
+                },
+                {
+                  "index": 6,
+                  "name": "Biblioteca",
+                  "zombies": 1,
+                  "barricades": 0,
+                  "noise": 0
+                }
+              ],
+              "people": [
+                {
+                  "id": "h0",
+                  "name": "Mara",
+                  "location": 0,
+                  "dead": false,
+                  "wounds": 0,
+                  "frost": 0,
+                  "moved": false,
+                  "skillUsed": false,
+                  "equipmentUsed": 0
+                },
+                {
+                  "id": "h1",
+                  "name": "Leo",
+                  "location": 0,
+                  "dead": false,
+                  "wounds": 0,
+                  "frost": 0,
+                  "moved": false,
+                  "skillUsed": false,
+                  "equipmentUsed": 0
+                },
+                {
+                  "id": "h2",
+                  "name": "Iris",
+                  "location": 0,
+                  "dead": false,
+                  "wounds": 0,
+                  "frost": 0,
+                  "moved": false,
+                  "skillUsed": false,
+                  "equipmentUsed": 0
+                },
+                {
+                  "id": "a0",
+                  "name": "Ada",
+                  "location": 0,
+                  "dead": false,
+                  "wounds": 0,
+                  "frost": 0,
+                  "moved": false,
+                  "skillUsed": false,
+                  "equipmentUsed": 0
+                },
+                {
+                  "id": "a1",
+                  "name": "Bruno",
+                  "location": 0,
+                  "dead": false,
+                  "wounds": 0,
+                  "frost": 0,
+                  "moved": false,
+                  "skillUsed": false,
+                  "equipmentUsed": 0
+                },
+                {
+                  "id": "a2",
+                  "name": "Sol",
+                  "location": 0,
+                  "dead": false,
+                  "wounds": 0,
+                  "frost": 0,
+                  "moved": false,
+                  "skillUsed": false,
+                  "equipmentUsed": 0
+                }
+              ]
+            },
+            "events": [],
+            "order": 2,
+            "after": {
+              "round": 1,
+              "turn": "human",
+              "food": 6,
+              "morale": 9,
+              "waste": 0,
+              "hunger": 0,
+              "samples": 0,
+              "helpless": 0,
+              "ended": false,
+              "locations": [
+                {
+                  "index": 0,
+                  "name": "Colonia",
+                  "zombies": 3,
+                  "barricades": 0,
+                  "noise": 0
+                },
+                {
+                  "index": 1,
+                  "name": "Supermercado",
+                  "zombies": 1,
+                  "barricades": 0,
+                  "noise": 0
+                },
+                {
+                  "index": 2,
+                  "name": "Hospital",
+                  "zombies": 1,
+                  "barricades": 0,
+                  "noise": 0
+                },
+                {
+                  "index": 3,
+                  "name": "Comisar\u00eda",
+                  "zombies": 1,
+                  "barricades": 0,
+                  "noise": 0
+                },
+                {
+                  "index": 4,
+                  "name": "Gasolinera",
+                  "zombies": 1,
+                  "barricades": 0,
+                  "noise": 0
+                },
+                {
+                  "index": 5,
+                  "name": "Escuela",
+                  "zombies": 1,
+                  "barricades": 0,
+                  "noise": 0
+                },
+                {
+                  "index": 6,
+                  "name": "Biblioteca",
+                  "zombies": 1,
+                  "barricades": 0,
+                  "noise": 0
+                }
+              ],
+              "people": [
+                {
+                  "id": "h0",
+                  "name": "Mara",
+                  "location": 0,
+                  "dead": false,
+                  "wounds": 0,
+                  "frost": 0,
+                  "moved": false,
+                  "skillUsed": false,
+                  "equipmentUsed": 0
+                },
+                {
+                  "id": "h1",
+                  "name": "Leo",
+                  "location": 0,
+                  "dead": false,
+                  "wounds": 0,
+                  "frost": 0,
+                  "moved": false,
+                  "skillUsed": false,
+                  "equipmentUsed": 0
+                },
+                {
+                  "id": "h2",
+                  "name": "Iris",
+                  "location": 0,
+                  "dead": false,
+                  "wounds": 0,
+                  "frost": 0,
+                  "moved": false,
+                  "skillUsed": false,
+                  "equipmentUsed": 0
+                },
+                {
+                  "id": "a0",
+                  "name": "Ada",
+                  "location": 0,
+                  "dead": false,
+                  "wounds": 0,
+                  "frost": 0,
+                  "moved": false,
+                  "skillUsed": false,
+                  "equipmentUsed": 0
+                },
+                {
+                  "id": "a1",
+                  "name": "Bruno",
+                  "location": 0,
+                  "dead": false,
+                  "wounds": 0,
+                  "frost": 0,
+                  "moved": false,
+                  "skillUsed": false,
+                  "equipmentUsed": 0
+                },
+                {
+                  "id": "a2",
+                  "name": "Sol",
+                  "location": 0,
+                  "dead": false,
+                  "wounds": 0,
+                  "frost": 0,
+                  "moved": false,
+                  "skillUsed": false,
+                  "equipmentUsed": 0
+                }
+              ]
+            }
+          }
+        ],
+        "session": "3d9433c4ecc510c492e7009b39c86621",
+        "revision": 12,
+        "managed": false,
+        "barrier": false
+      },
+      "play": {
+        "generation": 2,
+        "setup": false,
+        "crossStatus": {
+          "count": 26,
+          "state": "resuelta"
+        },
+        "lootLegend": [
+          {
+            "index": 0,
+            "name": "Colonia",
+            "types": []
+          },
+          {
+            "index": 1,
+            "name": "Supermercado",
+            "types": [
+              {
+                "kind": "comida",
+                "total": 9
+              },
+              {
+                "kind": "medicina",
+                "total": 2
+              },
+              {
+                "kind": "herramienta",
+                "total": 2
+              },
+              {
+                "kind": "superviviente",
+                "total": 2
+              },
+              {
+                "kind": "muestra",
+                "total": 2
+              },
+              {
+                "kind": "combustible",
+                "total": 1
+              },
+              {
+                "kind": "educacion",
+                "total": 1
+              },
+              {
+                "kind": "arma",
+                "total": 1
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "name": "Hospital",
+            "types": [
+              {
+                "kind": "medicina",
+                "total": 11
+              },
+              {
+                "kind": "educacion",
+                "total": 3
+              },
+              {
+                "kind": "superviviente",
+                "total": 2
+              },
+              {
+                "kind": "herramienta",
+                "total": 2
+              },
+              {
+                "kind": "comida",
+                "total": 1
+              },
+              {
+                "kind": "combustible",
+                "total": 1
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "name": "Comisar\u00eda",
+            "types": [
+              {
+                "kind": "arma",
+                "total": 9
+              },
+              {
+                "kind": "combustible",
+                "total": 2
+              },
+              {
+                "kind": "herramienta",
+                "total": 2
+              },
+              {
+                "kind": "superviviente",
+                "total": 2
+              },
+              {
+                "kind": "medicina",
+                "total": 2
+              },
+              {
+                "kind": "muestra",
+                "total": 2
+              },
+              {
+                "kind": "comida",
+                "total": 1
+              }
+            ]
+          },
+          {
+            "index": 4,
+            "name": "Gasolinera",
+            "types": [
+              {
+                "kind": "combustible",
+                "total": 6
+              },
+              {
+                "kind": "herramienta",
+                "total": 5
+              },
+              {
+                "kind": "comida",
+                "total": 2
+              },
+              {
+                "kind": "superviviente",
+                "total": 2
+              },
+              {
+                "kind": "medicina",
+                "total": 2
+              },
+              {
+                "kind": "muestra",
+                "total": 2
+              },
+              {
+                "kind": "arma",
+                "total": 1
+              }
+            ]
+          },
+          {
+            "index": 5,
+            "name": "Escuela",
+            "types": [
+              {
+                "kind": "educacion",
+                "total": 6
+              },
+              {
+                "kind": "comida",
+                "total": 5
+              },
+              {
+                "kind": "medicina",
+                "total": 2
+              },
+              {
+                "kind": "herramienta",
+                "total": 2
+              },
+              {
+                "kind": "superviviente",
+                "total": 2
+              },
+              {
+                "kind": "combustible",
+                "total": 1
+              },
+              {
+                "kind": "muestra",
+                "total": 1
+              },
+              {
+                "kind": "arma",
+                "total": 1
+              }
+            ]
+          },
+          {
+            "index": 6,
+            "name": "Biblioteca",
+            "types": [
+              {
+                "kind": "educacion",
+                "total": 9
+              },
+              {
+                "kind": "muestra",
+                "total": 4
+              },
+              {
+                "kind": "herramienta",
+                "total": 2
+              },
+              {
+                "kind": "superviviente",
+                "total": 2
+              },
+              {
+                "kind": "comida",
+                "total": 1
+              },
+              {
+                "kind": "medicina",
+                "total": 1
+              },
+              {
+                "kind": "combustible",
+                "total": 1
+              }
+            ]
+          }
+        ],
+        "lastReceipt": {
+          "requestId": "b4f1f734d91fd991e6afb80387fa84e9",
+          "generation": 2,
+          "kind": "ack",
+          "owner": "human",
+          "ok": true,
+          "reason": null
+        },
+        "statistics": {
+          "hunger": 0,
+          "waste": 3,
+          "helpless": 0,
+          "rescues": 0
+        },
+        "preparation": null,
+        "decision": null,
+        "receipt": null,
+        "events": [
+          {
+            "id": "event_2_2",
+            "round": 1,
+            "order": 1,
+            "type": "round",
+            "audience": "public",
+            "number": 1
+          },
+          {
+            "id": "event_2_3",
+            "round": 1,
+            "order": 3,
+            "type": "start",
+            "audience": "public",
+            "mode": "local",
+            "summary": "Partida iniciada. Objetivo: \u00daltima esperanza. Recuperar 9 muestras antes de que termine la ronda 10."
+          },
+          {
+            "id": "event_2_4",
+            "round": 1,
+            "order": 4,
+            "type": "leader",
+            "audience": "public",
+            "name": "Leo",
+            "side": "human"
+          },
+          {
+            "id": "event_2_5",
+            "round": 1,
+            "order": 5,
+            "type": "die",
+            "audience": "public",
+            "value": 5,
+            "minimum": 1
+          },
+          {
+            "id": "event_2_6",
+            "round": 1,
+            "order": 6,
+            "type": "clean-result",
+            "audience": "public",
+            "actor": "h0",
+            "name": "Mara",
+            "count": 3
+          },
+          {
+            "id": "event_2_7",
+            "round": 1,
+            "order": 7,
+            "type": "clean",
+            "audience": "public",
+            "actor": "h0",
+            "name": "Mara",
+            "die": 5,
+            "summary": "Retirar hasta 3 residuos en colonia. Consume el dado seleccionado (1+)."
+          },
+          {
+            "id": "event_2_9",
+            "round": 1,
+            "order": 8,
+            "type": "special",
+            "audience": "public",
+            "actor": "h0",
+            "name": "Mara",
+            "die": null,
+            "summary": "Primeros auxilios: Una vez por ronda cura 1 herida de un superviviente en su localidad, sin dado. Sin dado ni carta; una vez por ronda."
+          },
+          {
+            "id": "event_2_10",
+            "round": 1,
+            "order": 9,
+            "type": "treatment",
+            "audience": "public",
+            "actor": "h0",
+            "name": "Mara",
+            "target": "Leo",
+            "skill": "Primeros auxilios"
+          }
+        ],
+        "groups": [
+          {
+            "side": "human",
+            "label": "Jugador 1",
+            "leaderId": "h1",
+            "members": [
+              {
+                "id": "h0",
+                "name": "Mara",
+                "influence": 76,
+                "location": 0,
+                "wounds": 0,
+                "frost": 0
+              },
+              {
+                "id": "h1",
+                "name": "Leo",
+                "influence": 58,
+                "location": 0,
+                "wounds": 0,
+                "frost": 0
+              },
+              {
+                "id": "h2",
+                "name": "Iris",
+                "influence": 67,
+                "location": 0,
+                "wounds": 0,
+                "frost": 0
+              }
+            ],
+            "rescues": 0,
+            "canChoose": false
+          },
+          {
+            "side": "ai",
+            "label": "Jugador 2",
+            "leaderId": "a1",
+            "members": [
+              {
+                "id": "a0",
+                "name": "Ada",
+                "influence": 73,
+                "location": 0,
+                "wounds": 0,
+                "frost": 0
+              },
+              {
+                "id": "a1",
+                "name": "Bruno",
+                "influence": 80,
+                "location": 0,
+                "wounds": 0,
+                "frost": 0
+              },
+              {
+                "id": "a2",
+                "name": "Sol",
+                "influence": 45,
+                "location": 0,
+                "wounds": 0,
+                "frost": 0
+              }
+            ],
+            "rescues": 0,
+            "canChoose": false
+          }
+        ],
+        "options": {
+          "h0": {
+            "clean": {
+              "kind": "clean",
+              "actorId": "h0",
+              "allowed": true,
+              "reason": null,
+              "summary": "Retirar hasta 3 residuos en colonia. Consume el dado seleccionado (1+).",
+              "targets": [],
+              "dice": [
+                {
+                  "index": 0,
+                  "value": 5,
+                  "id": "die_2_3_0",
+                  "allowed": true
+                },
+                {
+                  "index": 1,
+                  "value": 5,
+                  "id": "die_2_3_1",
+                  "allowed": true
+                },
+                {
+                  "index": 2,
+                  "value": 5,
+                  "id": "die_2_3_2",
+                  "allowed": true
+                }
+              ],
+              "maximum": 3
+            },
+            "attract": {
+              "kind": "attract",
+              "actorId": "h0",
+              "allowed": true,
+              "reason": null,
+              "summary": "Atraer hasta dos zombis a Colonia. Consume un dado (1+); terminar despu\u00e9s no lo devuelve.",
+              "targets": [
+                {
+                  "index": 1,
+                  "name": "Supermercado",
+                  "count": 2
+                }
+              ],
+              "dice": [
+                {
+                  "index": 0,
+                  "value": 5,
+                  "id": "die_2_3_0",
+                  "allowed": true
+                },
+                {
+                  "index": 1,
+                  "value": 5,
+                  "id": "die_2_3_1",
+                  "allowed": true
+                },
+                {
+                  "index": 2,
+                  "value": 5,
+                  "id": "die_2_3_2",
+                  "allowed": true
+                }
+              ],
+              "maximum": 2
+            },
+            "special": {
+              "kind": "special",
+              "actorId": "h0",
+              "allowed": false,
+              "reason": "treatment",
+              "summary": "Primeros auxilios: Una vez por ronda cura 1 herida de un superviviente en su localidad, sin dado. Sin dado ni carta; una vez por ronda.",
+              "targets": [],
+              "dice": [],
+              "maximum": null
+            }
+          },
+          "h1": {
+            "clean": {
+              "kind": "clean",
+              "actorId": "h1",
+              "allowed": true,
+              "reason": null,
+              "summary": "Retirar hasta 3 residuos en colonia. Consume el dado seleccionado (1+).",
+              "targets": [],
+              "dice": [
+                {
+                  "index": 0,
+                  "value": 5,
+                  "id": "die_2_3_0",
+                  "allowed": true
+                },
+                {
+                  "index": 1,
+                  "value": 5,
+                  "id": "die_2_3_1",
+                  "allowed": true
+                },
+                {
+                  "index": 2,
+                  "value": 5,
+                  "id": "die_2_3_2",
+                  "allowed": true
+                }
+              ],
+              "maximum": 3
+            },
+            "attract": {
+              "kind": "attract",
+              "actorId": "h1",
+              "allowed": true,
+              "reason": null,
+              "summary": "Atraer hasta dos zombis a Colonia. Consume un dado (1+); terminar despu\u00e9s no lo devuelve.",
+              "targets": [
+                {
+                  "index": 1,
+                  "name": "Supermercado",
+                  "count": 2
+                }
+              ],
+              "dice": [
+                {
+                  "index": 0,
+                  "value": 5,
+                  "id": "die_2_3_0",
+                  "allowed": true
+                },
+                {
+                  "index": 1,
+                  "value": 5,
+                  "id": "die_2_3_1",
+                  "allowed": true
+                },
+                {
+                  "index": 2,
+                  "value": 5,
+                  "id": "die_2_3_2",
+                  "allowed": true
+                }
+              ],
+              "maximum": 2
+            },
+            "special": {
+              "kind": "special",
+              "actorId": "h1",
+              "allowed": false,
+              "reason": "builder",
+              "summary": "Manos h\u00e1biles: Una vez por ronda construye una barricada sin usar dado. Sin dado ni carta; una vez por ronda.",
+              "targets": [],
+              "dice": [],
+              "maximum": null
+            }
+          },
+          "h2": {
+            "clean": {
+              "kind": "clean",
+              "actorId": "h2",
+              "allowed": true,
+              "reason": null,
+              "summary": "Retirar hasta 3 residuos en colonia. Consume el dado seleccionado (1+).",
+              "targets": [],
+              "dice": [
+                {
+                  "index": 0,
+                  "value": 5,
+                  "id": "die_2_3_0",
+                  "allowed": true
+                },
+                {
+                  "index": 1,
+                  "value": 5,
+                  "id": "die_2_3_1",
+                  "allowed": true
+                },
+                {
+                  "index": 2,
+                  "value": 5,
+                  "id": "die_2_3_2",
+                  "allowed": true
+                }
+              ],
+              "maximum": 3
+            },
+            "attract": {
+              "kind": "attract",
+              "actorId": "h2",
+              "allowed": true,
+              "reason": null,
+              "summary": "Atraer hasta dos zombis a Colonia. Consume un dado (1+); terminar despu\u00e9s no lo devuelve.",
+              "targets": [
+                {
+                  "index": 1,
+                  "name": "Supermercado",
+                  "count": 2
+                }
+              ],
+              "dice": [
+                {
+                  "index": 0,
+                  "value": 5,
+                  "id": "die_2_3_0",
+                  "allowed": true
+                },
+                {
+                  "index": 1,
+                  "value": 5,
+                  "id": "die_2_3_1",
+                  "allowed": true
+                },
+                {
+                  "index": 2,
+                  "value": 5,
+                  "id": "die_2_3_2",
+                  "allowed": true
+                }
+              ],
+              "maximum": 2
+            },
+            "special": {
+              "kind": "special",
+              "actorId": "h2",
+              "allowed": false,
+              "reason": "automatic",
+              "summary": "Ojo experto: Al buscar, roba dos objetos y elige uno. Sin dado ni carta; una vez por ronda.",
+              "targets": [],
+              "dice": [],
+              "maximum": null
+            }
+          }
+        },
+        "boost": {
+          "kind": "boost",
+          "actorId": null,
+          "allowed": true,
+          "reason": null,
+          "summary": "Gastar una comida de la reserva para aumentar el dado seleccionado en +1, m\u00e1ximo 6.",
+          "targets": [],
+          "dice": [
+            {
+              "index": 0,
+              "value": 5,
+              "id": "die_2_3_0",
+              "allowed": true
+            },
+            {
+              "index": 1,
+              "value": 5,
+              "id": "die_2_3_1",
+              "allowed": true
+            },
+            {
+              "index": 2,
+              "value": 5,
+              "id": "die_2_3_2",
+              "allowed": true
+            }
+          ],
+          "maximum": null
+        },
+        "session": "3d9433c4ecc510c492e7009b39c86621",
+        "revision": 12,
+        "managed": false,
+        "unknown": null
+      }
+    },
+    "movement": {
+      "phase": "idle",
+      "intent": null,
+      "pending": null,
+      "message": "",
+      "response": null
+    },
+    "search": {
+      "phase": "idle",
+      "intent": null,
+      "pending": null,
+      "action": null,
+      "message": "",
+      "operation": null,
+      "hand": [
+        {
+          "index": 0,
+          "id": "ration",
+          "name": "Raci\u00f3n de comida",
+          "kind": "comida",
+          "description": "Agrega 1 comida a la reserva.",
+          "icon": "\ud83e\udd6b"
+        },
+        {
+          "index": 1,
+          "id": "bandage",
+          "name": "Vendas",
+          "kind": "medicina",
+          "description": "Cura 1 herida o congelaci\u00f3n al personaje seleccionado.",
+          "icon": "\u271a"
+        },
+        {
+          "index": 2,
+          "id": "crowbar",
+          "name": "Palanca",
+          "kind": "herramienta",
+          "description": "Equipada: reduce en 1 el requisito de b\u00fasqueda.",
+          "icon": "\u26cf\ufe0f"
+        },
+        {
+          "index": 3,
+          "id": "pistol",
+          "name": "Pistola",
+          "kind": "arma",
+          "description": "Equipada: evita la exposici\u00f3n del primer ataque de cada ronda.",
+          "icon": "\ud83d\udd2b"
+        },
+        {
+          "index": 4,
+          "id": "canned",
+          "name": "Caja de conservas",
+          "kind": "comida",
+          "description": "Agrega 2 comidas a la reserva.",
+          "icon": "\ud83e\udd6b"
+        },
+        {
+          "index": 5,
+          "id": "gascan",
+          "name": "Bid\u00f3n de combustible",
+          "kind": "combustible",
+          "description": "Mueve al personaje seleccionado sin tirar exposici\u00f3n.",
+          "icon": "\u26fd"
+        },
+        {
+          "index": 6,
+          "id": "ration",
+          "name": "Raci\u00f3n de comida",
+          "kind": "comida",
+          "description": "Agrega 1 comida a la reserva.",
+          "icon": "\ud83e\udd6b"
+        }
+      ],
+      "ownerId": "human",
+      "busy": false
+    },
+    "action": {
+      "phase": "idle",
+      "intent": null,
+      "pending": null,
+      "operation": null,
+      "message": "",
+      "busy": false
+    },
+    "inventory": {
+      "phase": "closed",
+      "intent": null,
+      "pending": null,
+      "message": "",
+      "purpose": "all",
+      "busy": false
+    },
+    "cycle": {
+      "phase": "closed",
+      "pending": null,
+      "message": "",
+      "index": 0
+    },
+    "play": {
+      "phase": "sending",
+      "pending": "f0ce6b9ccf586160a9115bf595259c43",
+      "message": "Confirmando\u2026",
+      "page": "action",
+      "intent": {
+        "kind": "boost",
+        "actorId": null,
+        "dieId": "die_2_3_0",
+        "dieIndex": 0,
+        "dieValue": 5
+      },
+      "revision": 12
+    },
+    "view": {
+      "active": true,
+      "selected": "h0",
+      "selectedLocation": null,
+      "epoch": 2,
+      "pointedLocality": null,
+      "renderPending": false,
+      "panel": {
+        "requestedOpen": true,
+        "presentedOpen": true
+      },
+      "camera": {
+        "overview": true,
+        "zoom": 0.6134051466187912,
+        "x": 0,
+        "y": 35.89287851585874,
+        "minZoom": 0.6134051466187912,
+        "maxZoom": 1.5
+      },
+      "viewport": {
+        "width": 1025,
+        "height": 649,
+        "dpr": 1
+      },
+      "commands": 2,
+      "draws": 12,
+      "layout": {
+        "nodes": [
+          {
+            "id": "map",
+            "assetId": "map",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "depth": 0,
+            "role": "ground",
+            "multiplier": 1,
+            "visible": true
+          },
+          {
+            "id": "person:h0",
+            "assetId": "survivor-portrait-1",
+            "position": {
+              "x": 732.5,
+              "y": 477
+            },
+            "depth": 7,
+            "role": "survivor",
+            "multiplier": 0.8181818181818182,
+            "visible": true
+          },
+          {
+            "id": "person:h1",
+            "assetId": "survivor-portrait-2",
+            "position": {
+              "x": 773.5,
+              "y": 477
+            },
+            "depth": 7,
+            "role": "survivor",
+            "multiplier": 0.8181818181818182,
+            "visible": true
+          },
+          {
+            "id": "person:a0",
+            "assetId": "survivor-portrait-4",
+            "position": {
+              "x": 855.5,
+              "y": 477
+            },
+            "depth": 7,
+            "role": "survivor",
+            "multiplier": 0.8181818181818182,
+            "visible": true
+          },
+          {
+            "id": "person:a1",
+            "assetId": "survivor-portrait-3",
+            "position": {
+              "x": 896.5,
+              "y": 477
+            },
+            "depth": 7,
+            "role": "survivor",
+            "multiplier": 0.8181818181818182,
+            "visible": true
+          },
+          {
+            "id": "place-1-access-0",
+            "assetId": "zombie",
+            "position": {
+              "x": 1240,
+              "y": 484
+            },
+            "depth": 3,
+            "role": "zombie",
+            "multiplier": 1,
+            "visible": true,
+            "shadow": {
+              "width": 19,
+              "height": 5,
+              "dx": 0,
+              "dy": 0
+            }
+          },
+          {
+            "id": "place-1-access-1",
+            "assetId": "zombie",
+            "position": {
+              "x": 1288,
+              "y": 488.8
+            },
+            "depth": 3,
+            "role": "zombie",
+            "multiplier": 1,
+            "visible": true,
+            "shadow": {
+              "width": 19,
+              "height": 5,
+              "dx": 0,
+              "dy": 0
+            }
+          }
+        ],
+        "characters": [
+          {
+            "id": "h0",
+            "name": "Mara",
+            "job": "M\u00e9dica",
+            "playerId": "human",
+            "locationId": "place-0",
+            "influence": 76,
+            "attack": 4,
+            "search": 3,
+            "effectiveAttack": 4,
+            "effectiveSearch": 3,
+            "wounds": 0,
+            "frost": 0,
+            "moved": false,
+            "leader": false,
+            "skill": {
+              "id": "medic",
+              "name": "Primeros auxilios",
+              "description": "Una vez por ronda cura 1 herida de un superviviente en su localidad, sin dado.",
+              "used": true
+            },
+            "equipment": [],
+            "nodeId": "person:h0",
+            "position": {
+              "x": 732.5,
+              "y": 477
+            },
+            "diameter": 36,
+            "portraitId": "survivor-portrait-1",
+            "initials": "M",
+            "presentationSlot": 0
+          },
+          {
+            "id": "h1",
+            "name": "Leo",
+            "job": "Mec\u00e1nico",
+            "playerId": "human",
+            "locationId": "place-0",
+            "influence": 58,
+            "attack": 3,
+            "search": 4,
+            "effectiveAttack": 3,
+            "effectiveSearch": 4,
+            "wounds": 0,
+            "frost": 0,
+            "moved": false,
+            "leader": true,
+            "skill": {
+              "id": "builder",
+              "name": "Manos h\u00e1biles",
+              "description": "Una vez por ronda construye una barricada sin usar dado.",
+              "used": false
+            },
+            "equipment": [],
+            "nodeId": "person:h1",
+            "position": {
+              "x": 773.5,
+              "y": 477
+            },
+            "diameter": 36,
+            "portraitId": "survivor-portrait-2",
+            "initials": "L",
+            "presentationSlot": 1
+          },
+          {
+            "id": "h2",
+            "name": "Iris",
+            "job": "Exploradora",
+            "playerId": "human",
+            "locationId": "place-0",
+            "influence": 67,
+            "attack": 5,
+            "search": 2,
+            "effectiveAttack": 5,
+            "effectiveSearch": 2,
+            "wounds": 0,
+            "frost": 0,
+            "moved": false,
+            "leader": false,
+            "skill": {
+              "id": "scout",
+              "name": "Ojo experto",
+              "description": "Al buscar, roba dos objetos y elige uno.",
+              "used": false
+            },
+            "equipment": [],
+            "nodeId": "person:h2",
+            "position": {
+              "x": 814.5,
+              "y": 477
+            },
+            "diameter": 36,
+            "portraitId": null,
+            "initials": "I",
+            "presentationSlot": 2
+          },
+          {
+            "id": "a0",
+            "name": "Ada",
+            "job": "Enfermera",
+            "playerId": "ai",
+            "locationId": "place-0",
+            "influence": 73,
+            "attack": 4,
+            "search": 3,
+            "effectiveAttack": 4,
+            "effectiveSearch": 3,
+            "wounds": 0,
+            "frost": 0,
+            "moved": false,
+            "leader": false,
+            "skill": {
+              "id": "nurse",
+              "name": "Contra el fr\u00edo",
+              "description": "Una vez por ronda elimina una congelaci\u00f3n de un superviviente en su localidad.",
+              "used": false
+            },
+            "equipment": [],
+            "nodeId": "person:a0",
+            "position": {
+              "x": 855.5,
+              "y": 477
+            },
+            "diameter": 36,
+            "portraitId": "survivor-portrait-4",
+            "initials": "A",
+            "presentationSlot": 3
+          },
+          {
+            "id": "a1",
+            "name": "Bruno",
+            "job": "Polic\u00eda",
+            "playerId": "ai",
+            "locationId": "place-0",
+            "influence": 80,
+            "attack": 2,
+            "search": 4,
+            "effectiveAttack": 1,
+            "effectiveSearch": 4,
+            "wounds": 0,
+            "frost": 0,
+            "moved": false,
+            "leader": true,
+            "skill": {
+              "id": "fighter",
+              "name": "Punter\u00eda",
+              "description": "Necesita un punto menos en el dado para atacar.",
+              "used": false
+            },
+            "equipment": [],
+            "nodeId": "person:a1",
+            "position": {
+              "x": 896.5,
+              "y": 477
+            },
+            "diameter": 36,
+            "portraitId": "survivor-portrait-3",
+            "initials": "B",
+            "presentationSlot": 4
+          },
+          {
+            "id": "a2",
+            "name": "Sol",
+            "job": "Superviviente",
+            "playerId": "ai",
+            "locationId": "place-0",
+            "influence": 45,
+            "attack": 4,
+            "search": 2,
+            "effectiveAttack": 4,
+            "effectiveSearch": 2,
+            "wounds": 0,
+            "frost": 0,
+            "moved": false,
+            "leader": false,
+            "skill": {
+              "id": "resilient",
+              "name": "Resistencia",
+              "description": "Una vez por ronda puede evitar un resultado adverso de exposici\u00f3n.",
+              "used": false
+            },
+            "equipment": [],
+            "nodeId": "person:a2",
+            "position": {
+              "x": 937.5,
+              "y": 477
+            },
+            "diameter": 36,
+            "portraitId": null,
+            "initials": "S",
+            "presentationSlot": 5
+          }
+        ],
+        "locations": [
+          {
+            "id": "place-0",
+            "engineIndex": 0,
+            "name": "Colonia",
+            "survivors": 6,
+            "characterIds": [
+              "h0",
+              "h1",
+              "h2",
+              "a0",
+              "a1",
+              "a2"
+            ],
+            "helpless": 0,
+            "occupied": 6,
+            "capacity": 12,
+            "available": 6,
+            "zombies": 0,
+            "barricades": 0,
+            "exteriorCapacity": 12,
+            "exteriorAvailable": 12,
+            "noise": 0,
+            "visualId": "colonia",
+            "engineCapacity": 12,
+            "visualCapacity": 12,
+            "drawnCharacters": [
+              {
+                "id": "h0",
+                "name": "Mara",
+                "job": "M\u00e9dica",
+                "playerId": "human",
+                "locationId": "place-0",
+                "influence": 76,
+                "attack": 4,
+                "search": 3,
+                "effectiveAttack": 4,
+                "effectiveSearch": 3,
+                "wounds": 0,
+                "frost": 0,
+                "moved": false,
+                "leader": false,
+                "skill": {
+                  "id": "medic",
+                  "name": "Primeros auxilios",
+                  "description": "Una vez por ronda cura 1 herida de un superviviente en su localidad, sin dado.",
+                  "used": true
+                },
+                "equipment": [],
+                "nodeId": "person:h0",
+                "position": {
+                  "x": 732.5,
+                  "y": 477
+                },
+                "diameter": 36,
+                "portraitId": "survivor-portrait-1",
+                "initials": "M",
+                "presentationSlot": 0
+              },
+              {
+                "id": "h1",
+                "name": "Leo",
+                "job": "Mec\u00e1nico",
+                "playerId": "human",
+                "locationId": "place-0",
+                "influence": 58,
+                "attack": 3,
+                "search": 4,
+                "effectiveAttack": 3,
+                "effectiveSearch": 4,
+                "wounds": 0,
+                "frost": 0,
+                "moved": false,
+                "leader": true,
+                "skill": {
+                  "id": "builder",
+                  "name": "Manos h\u00e1biles",
+                  "description": "Una vez por ronda construye una barricada sin usar dado.",
+                  "used": false
+                },
+                "equipment": [],
+                "nodeId": "person:h1",
+                "position": {
+                  "x": 773.5,
+                  "y": 477
+                },
+                "diameter": 36,
+                "portraitId": "survivor-portrait-2",
+                "initials": "L",
+                "presentationSlot": 1
+              },
+              {
+                "id": "h2",
+                "name": "Iris",
+                "job": "Exploradora",
+                "playerId": "human",
+                "locationId": "place-0",
+                "influence": 67,
+                "attack": 5,
+                "search": 2,
+                "effectiveAttack": 5,
+                "effectiveSearch": 2,
+                "wounds": 0,
+                "frost": 0,
+                "moved": false,
+                "leader": false,
+                "skill": {
+                  "id": "scout",
+                  "name": "Ojo experto",
+                  "description": "Al buscar, roba dos objetos y elige uno.",
+                  "used": false
+                },
+                "equipment": [],
+                "nodeId": "person:h2",
+                "position": {
+                  "x": 814.5,
+                  "y": 477
+                },
+                "diameter": 36,
+                "portraitId": null,
+                "initials": "I",
+                "presentationSlot": 2
+              },
+              {
+                "id": "a0",
+                "name": "Ada",
+                "job": "Enfermera",
+                "playerId": "ai",
+                "locationId": "place-0",
+                "influence": 73,
+                "attack": 4,
+                "search": 3,
+                "effectiveAttack": 4,
+                "effectiveSearch": 3,
+                "wounds": 0,
+                "frost": 0,
+                "moved": false,
+                "leader": false,
+                "skill": {
+                  "id": "nurse",
+                  "name": "Contra el fr\u00edo",
+                  "description": "Una vez por ronda elimina una congelaci\u00f3n de un superviviente en su localidad.",
+                  "used": false
+                },
+                "equipment": [],
+                "nodeId": "person:a0",
+                "position": {
+                  "x": 855.5,
+                  "y": 477
+                },
+                "diameter": 36,
+                "portraitId": "survivor-portrait-4",
+                "initials": "A",
+                "presentationSlot": 3
+              },
+              {
+                "id": "a1",
+                "name": "Bruno",
+                "job": "Polic\u00eda",
+                "playerId": "ai",
+                "locationId": "place-0",
+                "influence": 80,
+                "attack": 2,
+                "search": 4,
+                "effectiveAttack": 1,
+                "effectiveSearch": 4,
+                "wounds": 0,
+                "frost": 0,
+                "moved": false,
+                "leader": true,
+                "skill": {
+                  "id": "fighter",
+                  "name": "Punter\u00eda",
+                  "description": "Necesita un punto menos en el dado para atacar.",
+                  "used": false
+                },
+                "equipment": [],
+                "nodeId": "person:a1",
+                "position": {
+                  "x": 896.5,
+                  "y": 477
+                },
+                "diameter": 36,
+                "portraitId": "survivor-portrait-3",
+                "initials": "B",
+                "presentationSlot": 4
+              },
+              {
+                "id": "a2",
+                "name": "Sol",
+                "job": "Superviviente",
+                "playerId": "ai",
+                "locationId": "place-0",
+                "influence": 45,
+                "attack": 4,
+                "search": 2,
+                "effectiveAttack": 4,
+                "effectiveSearch": 2,
+                "wounds": 0,
+                "frost": 0,
+                "moved": false,
+                "leader": false,
+                "skill": {
+                  "id": "resilient",
+                  "name": "Resistencia",
+                  "description": "Una vez por ronda puede evitar un resultado adverso de exposici\u00f3n.",
+                  "used": false
+                },
+                "equipment": [],
+                "nodeId": "person:a2",
+                "position": {
+                  "x": 937.5,
+                  "y": 477
+                },
+                "diameter": 36,
+                "portraitId": null,
+                "initials": "S",
+                "presentationSlot": 5
+              }
+            ],
+            "characterOverflow": [],
+            "accesses": [
+              {
+                "id": "place-0-access-0",
+                "zoneId": "colonia",
+                "position": {
+                  "x": 624,
+                  "y": 315
+                },
+                "side": "back",
+                "width": 30,
+                "height": 13,
+                "rotation": 0,
+                "occupant": "empty"
+              },
+              {
+                "id": "place-0-access-1",
+                "zoneId": "colonia",
+                "position": {
+                  "x": 765,
+                  "y": 302
+                },
+                "side": "back",
+                "width": 30,
+                "height": 13,
+                "rotation": 0,
+                "occupant": "empty"
+              },
+              {
+                "id": "place-0-access-2",
+                "zoneId": "colonia",
+                "position": {
+                  "x": 895,
+                  "y": 301
+                },
+                "side": "back",
+                "width": 30,
+                "height": 13,
+                "rotation": 0,
+                "occupant": "empty"
+              },
+              {
+                "id": "place-0-access-3",
+                "zoneId": "colonia",
+                "position": {
+                  "x": 1045,
+                  "y": 315
+                },
+                "side": "back",
+                "width": 30,
+                "height": 13,
+                "rotation": 0,
+                "occupant": "empty"
+              },
+              {
+                "id": "place-0-access-4",
+                "zoneId": "colonia",
+                "position": {
+                  "x": 516,
+                  "y": 408
+                },
+                "side": "side",
+                "width": 30,
+                "height": 13,
+                "rotation": 0,
+                "occupant": "empty"
+              },
+              {
+                "id": "place-0-access-5",
+                "zoneId": "colonia",
+                "position": {
+                  "x": 503,
+                  "y": 480
+                },
+                "side": "side",
+                "width": 30,
+                "height": 13,
+                "rotation": 0,
+                "occupant": "empty"
+              },
+              {
+                "id": "place-0-access-6",
+                "zoneId": "colonia",
+                "position": {
+                  "x": 1139,
+                  "y": 405
+                },
+                "side": "side",
+                "width": 30,
+                "height": 13,
+                "rotation": 0,
+                "occupant": "empty"
+              },
+              {
+                "id": "place-0-access-7",
+                "zoneId": "colonia",
+                "position": {
+                  "x": 1156,
+                  "y": 480
+                },
+                "side": "side",
+                "width": 30,
+                "height": 13,
+                "rotation": 0,
+                "occupant": "empty"
+              },
+              {
+                "id": "place-0-access-8",
+                "zoneId": "colonia",
+                "position": {
+                  "x": 639,
+                  "y": 570
+                },
+                "side": "front",
+                "width": 30,
+                "height": 13,
+                "rotation": 0,
+                "occupant": "empty"
+              },
+              {
+                "id": "place-0-access-9",
+                "zoneId": "colonia",
+                "position": {
+                  "x": 729,
+                  "y": 579
+                },
+                "side": "front",
+                "width": 30,
+                "height": 13,
+                "rotation": 0,
+                "occupant": "empty"
+              },
+              {
+                "id": "place-0-access-10",
+                "zoneId": "colonia",
+                "position": {
+                  "x": 946,
+                  "y": 579
+                },
+                "side": "front",
+                "width": 30,
+                "height": 13,
+                "rotation": 0,
+                "occupant": "empty"
+              },
+              {
+                "id": "place-0-access-11",
+                "zoneId": "colonia",
+                "position": {
+                  "x": 1037,
+                  "y": 570
+                },
+                "side": "front",
+                "width": 30,
+                "height": 13,
+                "rotation": 0,
+                "occupant": "empty"
+              }
+            ],
+            "externalOverflow": 0,
+            "badgePosition": {
+              "x": 831.5,
+              "y": 426.05
+            }
+          },
+          {
+            "id": "place-1",
+            "engineIndex": 1,
+            "name": "Supermercado",
+            "survivors": 0,
+            "characterIds": [],
+            "helpless": 0,
+            "occupied": 0,
+            "capacity": 4,
+            "available": 4,
+            "zombies": 2,
+            "barricades": 0,
+            "exteriorCapacity": 4,
+            "exteriorAvailable": 2,
+            "noise": 0,
+            "visualId": "supermercado",
+            "engineCapacity": 4,
+            "visualCapacity": 4,
+            "drawnCharacters": [],
+            "characterOverflow": [],
+            "accesses": [
+              {
+                "id": "place-1-access-0",
+                "zoneId": "supermercado",
+                "position": {
+                  "x": 1240,
+                  "y": 484
+                },
+                "side": "front",
+                "width": 30,
+                "height": 13,
+                "rotation": 0.09966865249116202,
+                "occupant": "zombie"
+              },
+              {
+                "id": "place-1-access-1",
+                "zoneId": "supermercado",
+                "position": {
+                  "x": 1288,
+                  "y": 488.8
+                },
+                "side": "front",
+                "width": 30,
+                "height": 13,
+                "rotation": 0.09966865249116202,
+                "occupant": "zombie"
+              },
+              {
+                "id": "place-1-access-2",
+                "zoneId": "supermercado",
+                "position": {
+                  "x": 1375,
+                  "y": 497.5
+                },
+                "side": "front",
+                "width": 30,
+                "height": 13,
+                "rotation": 0.09966865249116202,
+                "occupant": "empty"
+              },
+              {
+                "id": "place-1-access-3",
+                "zoneId": "supermercado",
+                "position": {
+                  "x": 1421,
+                  "y": 502.1
+                },
+                "side": "front",
+                "width": 30,
+                "height": 13,
+                "rotation": 0.09966865249116202,
+                "occupant": "empty"
+              }
+            ],
+            "externalOverflow": 0,
+            "badgePosition": {
+              "x": 1405,
+              "y": 416.05
+            }
+          },
+          {
+            "id": "place-2",
+            "engineIndex": 2,
+            "name": "Hospital",
+            "survivors": 0,
+            "characterIds": [],
+            "helpless": 0,
+            "occupied": 0,
+            "capacity": 4,
+            "available": 4,
+            "zombies": 0,
+            "barricades": 0,
+            "exteriorCapacity": 4,
+            "exteriorAvailable": 4,
+            "noise": 0,
+            "visualId": "hospital",
+            "engineCapacity": 4,
+            "visualCapacity": 4,
+            "drawnCharacters": [],
+            "characterOverflow": [],
+            "accesses": [
+              {
+                "id": "place-2-access-0",
+                "zoneId": "hospital",
+                "position": {
+                  "x": 198,
+                  "y": 500.8193
+                },
+                "side": "front",
+                "width": 30,
+                "height": 13,
+                "rotation": -0.07216362895965758,
+                "occupant": "empty"
+              },
+              {
+                "id": "place-2-access-1",
+                "zoneId": "hospital",
+                "position": {
+                  "x": 259,
+                  "y": 496.4096
+                },
+                "side": "front",
+                "width": 30,
+                "height": 13,
+                "rotation": -0.07216362895965758,
+                "occupant": "empty"
+              },
+              {
+                "id": "place-2-access-2",
+                "zoneId": "hospital",
+                "position": {
+                  "x": 320,
+                  "y": 492
+                },
+                "side": "front",
+                "width": 30,
+                "height": 13,
+                "rotation": -0.07216362895965758,
+                "occupant": "empty"
+              },
+              {
+                "id": "place-2-access-3",
+                "zoneId": "hospital",
+                "position": {
+                  "x": 461,
+                  "y": 426
+                },
+                "side": "side",
+                "width": 30,
+                "height": 13,
+                "rotation": -0.1347712844777311,
+                "occupant": "empty"
+              }
+            ],
+            "externalOverflow": 0,
+            "badgePosition": {
+              "x": 277,
+              "y": 385.95
+            }
+          },
+          {
+            "id": "place-3",
+            "engineIndex": 3,
+            "name": "Comisar\u00eda",
+            "survivors": 0,
+            "characterIds": [],
+            "helpless": 0,
+            "occupied": 0,
+            "capacity": 4,
+            "available": 4,
+            "zombies": 0,
+            "barricades": 0,
+            "exteriorCapacity": 4,
+            "exteriorAvailable": 4,
+            "noise": 0,
+            "visualId": "comisaria",
+            "engineCapacity": 4,
+            "visualCapacity": 4,
+            "drawnCharacters": [],
+            "characterOverflow": [],
+            "accesses": [
+              {
+                "id": "place-3-access-0",
+                "zoneId": "comisaria",
+                "position": {
+                  "x": 1170,
+                  "y": 728
+                },
+                "side": "front",
+                "width": 30,
+                "height": 13,
+                "rotation": 0.06656816377582381,
+                "occupant": "empty"
+              },
+              {
+                "id": "place-3-access-1",
+                "zoneId": "comisaria",
+                "position": {
+                  "x": 1230,
+                  "y": 732
+                },
+                "side": "front",
+                "width": 30,
+                "height": 13,
+                "rotation": 0.06656816377582381,
+                "occupant": "empty"
+              },
+              {
+                "id": "place-3-access-2",
+                "zoneId": "comisaria",
+                "position": {
+                  "x": 1348,
+                  "y": 738
+                },
+                "side": "front",
+                "width": 30,
+                "height": 13,
+                "rotation": -0.015150355874769811,
+                "occupant": "empty"
+              },
+              {
+                "id": "place-3-access-3",
+                "zoneId": "comisaria",
+                "position": {
+                  "x": 1388,
+                  "y": 737.3939
+                },
+                "side": "front",
+                "width": 30,
+                "height": 13,
+                "rotation": -0.015150355874769811,
+                "occupant": "empty"
+              }
+            ],
+            "externalOverflow": 0,
+            "badgePosition": {
+              "x": 1298.5,
+              "y": 645.6
+            }
+          },
+          {
+            "id": "place-4",
+            "engineIndex": 4,
+            "name": "Gasolinera",
+            "survivors": 0,
+            "characterIds": [],
+            "helpless": 0,
+            "occupied": 0,
+            "capacity": 4,
+            "available": 4,
+            "zombies": 0,
+            "barricades": 0,
+            "exteriorCapacity": 2,
+            "exteriorAvailable": 2,
+            "noise": 0,
+            "visualId": "gasolinera",
+            "engineCapacity": 4,
+            "visualCapacity": 4,
+            "drawnCharacters": [],
+            "characterOverflow": [],
+            "accesses": [
+              {
+                "id": "place-4-access-0",
+                "zoneId": "gasolinera",
+                "position": {
+                  "x": 266,
+                  "y": 725
+                },
+                "side": "front",
+                "width": 30,
+                "height": 13,
+                "rotation": 0.026309717252922193,
+                "occupant": "empty"
+              },
+              {
+                "id": "place-4-access-1",
+                "zoneId": "gasolinera",
+                "position": {
+                  "x": 316,
+                  "y": 726.3158
+                },
+                "side": "front",
+                "width": 30,
+                "height": 13,
+                "rotation": 0.026309717252922193,
+                "occupant": "empty"
+              }
+            ],
+            "externalOverflow": 0,
+            "badgePosition": {
+              "x": 330.5,
+              "y": 652.55
+            }
+          },
+          {
+            "id": "place-5",
+            "engineIndex": 5,
+            "name": "Escuela",
+            "survivors": 0,
+            "characterIds": [],
+            "helpless": 0,
+            "occupied": 0,
+            "capacity": 4,
+            "available": 4,
+            "zombies": 0,
+            "barricades": 0,
+            "exteriorCapacity": 4,
+            "exteriorAvailable": 4,
+            "noise": 0,
+            "visualId": "escuela",
+            "engineCapacity": 4,
+            "visualCapacity": 4,
+            "drawnCharacters": [],
+            "characterOverflow": [],
+            "accesses": [
+              {
+                "id": "place-5-access-0",
+                "zoneId": "escuela",
+                "position": {
+                  "x": 307,
+                  "y": 250.3
+                },
+                "side": "front",
+                "width": 30,
+                "height": 13,
+                "rotation": -0.033885329904117606,
+                "occupant": "empty"
+              },
+              {
+                "id": "place-5-access-1",
+                "zoneId": "escuela",
+                "position": {
+                  "x": 368,
+                  "y": 248.2322
+                },
+                "side": "front",
+                "width": 30,
+                "height": 13,
+                "rotation": -0.033885329904117606,
+                "occupant": "empty"
+              },
+              {
+                "id": "place-5-access-2",
+                "zoneId": "escuela",
+                "position": {
+                  "x": 429,
+                  "y": 246.1644
+                },
+                "side": "front",
+                "width": 30,
+                "height": 13,
+                "rotation": -0.033885329904117606,
+                "occupant": "empty"
+              },
+              {
+                "id": "place-5-access-3",
+                "zoneId": "escuela",
+                "position": {
+                  "x": 490,
+                  "y": 244.0966
+                },
+                "side": "front",
+                "width": 30,
+                "height": 13,
+                "rotation": -0.033885329904117606,
+                "occupant": "empty"
+              }
+            ],
+            "externalOverflow": 0,
+            "badgePosition": {
+              "x": 393,
+              "y": 162.75
+            }
+          },
+          {
+            "id": "place-6",
+            "engineIndex": 6,
+            "name": "Biblioteca",
+            "survivors": 0,
+            "characterIds": [],
+            "helpless": 0,
+            "occupied": 0,
+            "capacity": 4,
+            "available": 4,
+            "zombies": 0,
+            "barricades": 0,
+            "exteriorCapacity": 3,
+            "exteriorAvailable": 3,
+            "noise": 0,
+            "visualId": "biblioteca",
+            "engineCapacity": 4,
+            "visualCapacity": 4,
+            "drawnCharacters": [],
+            "characterOverflow": [],
+            "accesses": [
+              {
+                "id": "place-6-access-0",
+                "zoneId": "biblioteca",
+                "position": {
+                  "x": 1170,
+                  "y": 259
+                },
+                "side": "front",
+                "width": 30,
+                "height": 13,
+                "rotation": 0.04995839572194276,
+                "occupant": "empty"
+              },
+              {
+                "id": "place-6-access-1",
+                "zoneId": "biblioteca",
+                "position": {
+                  "x": 1230,
+                  "y": 262
+                },
+                "side": "front",
+                "width": 30,
+                "height": 13,
+                "rotation": 0.04995839572194276,
+                "occupant": "empty"
+              },
+              {
+                "id": "place-6-access-2",
+                "zoneId": "biblioteca",
+                "position": {
+                  "x": 1332,
+                  "y": 267.1
+                },
+                "side": "front",
+                "width": 30,
+                "height": 13,
+                "rotation": 0.04995839572194276,
+                "occupant": "empty"
+              }
+            ],
+            "externalOverflow": 0,
+            "badgePosition": {
+              "x": 1258.5,
+              "y": 178.3
+            }
+          }
+        ],
+        "unmappedCharacterIds": []
+      },
+      "renderer": {
+        "outlines": {
+          "selection": false,
+          "hover": false
+        },
+        "sampling": {
+          "antialias": true,
+          "pixelArt": false,
+          "roundPixels": false,
+          "cssWidth": 1025,
+          "cssHeight": 649,
+          "backingWidth": 1025,
+          "backingHeight": 649
+        },
+        "gpu": {
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+          "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+          "maxTextureSize": 8192
+        },
+        "renderEvents": 21,
+        "loopRunning": false,
+        "frameRateLimit": 0,
+        "atmosphere": {
+          "seed": 3196268134,
+          "settings": {
+            "enabled": false,
+            "snow": true,
+            "wind": true,
+            "smoke": true,
+            "lights": true,
+            "intensity": "storm"
+          },
+          "paused": false,
+          "elapsed": 0,
+          "steps": 0,
+          "poolSize": 132,
+          "visibleParticles": 0,
+          "wind": 70.58266211026424,
+          "particles": [
+            {
+              "type": "snow",
+              "foreground": true,
+              "index": 0,
+              "x": 507.6978905412834,
+              "y": 423.52119642146863,
+              "width": 10.929406779422424,
+              "height": 10.929406779422424,
+              "speed": 37.62112677562982,
+              "opacity": 0.938557823258452,
+              "phase": 2.1392825385503236,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 1,
+              "x": 1296.8132192369085,
+              "y": 8.190330538898706,
+              "width": 7.791636002715677,
+              "height": 7.791636002715677,
+              "speed": 58.47146331798285,
+              "opacity": 0.6602617521304638,
+              "phase": 4.429081017093704,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 2,
+              "x": 1036.0750866536982,
+              "y": 631.9220455521718,
+              "width": 4.622740426333621,
+              "height": 4.622740426333621,
+              "speed": 42.99904625630006,
+              "opacity": 0.7276466337032617,
+              "phase": 6.184738910903455,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 3,
+              "x": 329.6028041217942,
+              "y": 935.7520406444091,
+              "width": 6.992321584606543,
+              "height": 6.992321584606543,
+              "speed": 53.140499335713685,
+              "opacity": 0.7843183421296999,
+              "phase": 1.2803299688708987,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 4,
+              "x": 1489.2124594242778,
+              "y": 150.9206041363068,
+              "width": 5.407407093793154,
+              "height": 5.407407093793154,
+              "speed": 52.29918377008289,
+              "opacity": 0.839318213541992,
+              "phase": 4.447347629582864,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 5,
+              "x": 1584.2074852944352,
+              "y": 468.5206815782003,
+              "width": 8.950265496736392,
+              "height": 8.950265496736392,
+              "speed": 56.66094694053754,
+              "opacity": 0.8293694054940716,
+              "phase": 5.657775049703453,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 6,
+              "x": 1620.6146912807599,
+              "y": 251.71317625162192,
+              "width": 5.4632683678064495,
+              "height": 5.4632683678064495,
+              "speed": 37.460642415098846,
+              "opacity": 0.7677124184323475,
+              "phase": 2.3503739911966273,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 7,
+              "x": 139.88341211294755,
+              "y": 452.7667683905456,
+              "width": 5.979119235184044,
+              "height": 5.979119235184044,
+              "speed": 43.15213967114687,
+              "opacity": 0.7704739036271349,
+              "phase": 4.162226287168788,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 8,
+              "x": 707.9070213641971,
+              "y": 912.1075170377735,
+              "width": 5.648073222022504,
+              "height": 5.648073222022504,
+              "speed": 63.272795437369496,
+              "opacity": 0.9126289112260565,
+              "phase": 4.048648285514841,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 9,
+              "x": 579.3775872637052,
+              "y": 305.35445154015906,
+              "width": 8.198211790062487,
+              "height": 8.198211790062487,
+              "speed": 54.596378423739225,
+              "opacity": 0.6946070921141654,
+              "phase": 2.9033905962036965,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 10,
+              "x": 616.0767581658438,
+              "y": 368.15918693039566,
+              "width": 6.396057606674731,
+              "height": 6.396057606674731,
+              "speed": 42.51193264499307,
+              "opacity": 0.7628986845957115,
+              "phase": 0.6967022141351443,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 11,
+              "x": 1561.4912463161163,
+              "y": 174.2945767387282,
+              "width": 4.037059400929138,
+              "height": 4.037059400929138,
+              "speed": 63.16884693689644,
+              "opacity": 0.9331845970358699,
+              "phase": 2.5060846479590606,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": true,
+              "index": 12,
+              "x": 549.3900522293989,
+              "y": 56.36505851126276,
+              "width": 7.458099897555075,
+              "height": 7.458099897555075,
+              "speed": 39.20076151378453,
+              "opacity": 0.752780316513963,
+              "phase": 5.270622506331742,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 13,
+              "x": 232.59586376789957,
+              "y": 488.948049450526,
+              "width": 7.682527537457645,
+              "height": 7.682527537457645,
+              "speed": 53.11771922279149,
+              "opacity": 0.7712451225379482,
+              "phase": 2.491114787192844,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 14,
+              "x": 233.3898499708157,
+              "y": 354.31890764227137,
+              "width": 7.361769440816715,
+              "height": 7.361769440816715,
+              "speed": 62.51076140906662,
+              "opacity": 0.8301897079218179,
+              "phase": 4.697391942989314,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 15,
+              "x": 358.35919854417443,
+              "y": 448.4002849245444,
+              "width": 5.523231252795085,
+              "height": 5.523231252795085,
+              "speed": 53.30329304328188,
+              "opacity": 0.7856613585492596,
+              "phase": 0.4790674112634677,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 16,
+              "x": 902.8275904438924,
+              "y": 916.4758583270013,
+              "width": 7.196270326152444,
+              "height": 7.196270326152444,
+              "speed": 39.67296050628647,
+              "opacity": 0.7702765994239599,
+              "phase": 0.49025927438663275,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 17,
+              "x": 590.6094910386018,
+              "y": 502.214388061082,
+              "width": 7.26258429326117,
+              "height": 7.26258429326117,
+              "speed": 45.891580139286816,
+              "opacity": 0.8340966428397223,
+              "phase": 0.8125672102515895,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 18,
+              "x": 260.4578971148003,
+              "y": 187.9401487945579,
+              "width": 4.73721258318983,
+              "height": 4.73721258318983,
+              "speed": 51.157837917562574,
+              "opacity": 0.7809147947002202,
+              "phase": 6.204650381667564,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 19,
+              "x": 692.0878041379619,
+              "y": 11.354046099120751,
+              "width": 5.847196945454925,
+              "height": 5.847196945454925,
+              "speed": 61.16673376876861,
+              "opacity": 0.6744876188458875,
+              "phase": 2.8728967271545085,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 20,
+              "x": 1080.43192881695,
+              "y": 513.9243375493679,
+              "width": 4.077710292534903,
+              "height": 4.077710292534903,
+              "speed": 52.367386722471565,
+              "opacity": 0.7323715387145058,
+              "phase": 5.871921866737948,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 21,
+              "x": 441.67041914141737,
+              "y": 485.32672072481364,
+              "width": 6.442769806366414,
+              "height": 6.442769806366414,
+              "speed": 46.685613696463406,
+              "opacity": 0.8963277725270018,
+              "phase": 5.2717674182047745,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 22,
+              "x": 707.3646172201261,
+              "y": 651.3685106260236,
+              "width": 6.6519210590049624,
+              "height": 6.6519210590049624,
+              "speed": 51.11807791981846,
+              "opacity": 0.8463869722792878,
+              "phase": 2.535691780917846,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 23,
+              "x": 481.72133693424985,
+              "y": 138.9088881209027,
+              "width": 5.1505934642627835,
+              "height": 5.1505934642627835,
+              "speed": 37.91999680455774,
+              "opacity": 0.8250263577792794,
+              "phase": 4.33277747542464,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": true,
+              "index": 24,
+              "x": 845.5908448069822,
+              "y": 275.3042359552346,
+              "width": 9.045537056820466,
+              "height": 9.045537056820466,
+              "speed": 54.43788141943514,
+              "opacity": 0.8085628339555114,
+              "phase": 4.4094757175285695,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 25,
+              "x": 222.6786838537082,
+              "y": 190.29015846271068,
+              "width": 7.9355423441156745,
+              "height": 7.9355423441156745,
+              "speed": 55.751737693790346,
+              "opacity": 0.8204103232128546,
+              "phase": 4.98676333745226,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 26,
+              "x": 1098.2145929576363,
+              "y": 628.7427437824663,
+              "width": 6.9172380769159645,
+              "height": 6.9172380769159645,
+              "speed": 44.37842528568581,
+              "opacity": 0.8833817654987797,
+              "phase": 0.9457267171081112,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 27,
+              "x": 1076.9374521549325,
+              "y": 558.124795010779,
+              "width": 8.976727082394063,
+              "height": 8.976727082394063,
+              "speed": 55.722926885355264,
+              "opacity": 0.8406550149200485,
+              "phase": 5.33130493781573,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 28,
+              "x": 558.9154874179512,
+              "y": 176.23921107687056,
+              "width": 7.927270999411121,
+              "height": 7.927270999411121,
+              "speed": 35.96611503511667,
+              "opacity": 0.8444921901915222,
+              "phase": 4.1291824158560555,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 29,
+              "x": 544.6810893465299,
+              "y": 159.81426777038723,
+              "width": 4.046681445091963,
+              "height": 4.046681445091963,
+              "speed": 38.738416677806526,
+              "opacity": 0.9104447861900553,
+              "phase": 1.2999201608810291,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 30,
+              "x": 682.3905780196656,
+              "y": 823.4842674359679,
+              "width": 7.827045632060617,
+              "height": 7.827045632060617,
+              "speed": 52.05170498462394,
+              "opacity": 0.7765394013607875,
+              "phase": 2.8079460288286455,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 31,
+              "x": 1201.95862352103,
+              "y": 579.3455154444091,
+              "width": 4.692368807503954,
+              "height": 4.692368807503954,
+              "speed": 50.14654517173767,
+              "opacity": 0.8084994312142953,
+              "phase": 1.7320398655440732,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 32,
+              "x": 1556.5384530841839,
+              "y": 593.226904785959,
+              "width": 6.382583694998175,
+              "height": 6.382583694998175,
+              "speed": 57.176587206777185,
+              "opacity": 0.7174412470776588,
+              "phase": 0.8316679625374479,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 33,
+              "x": 287.3275340599939,
+              "y": 179.6115246573463,
+              "width": 6.51795070245862,
+              "height": 6.51795070245862,
+              "speed": 63.81317497463897,
+              "opacity": 0.7296435014344752,
+              "phase": 1.361160285995195,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 34,
+              "x": 1582.2510713625234,
+              "y": 178.3092772187665,
+              "width": 8.041365176672116,
+              "height": 8.041365176672116,
+              "speed": 46.75266224425286,
+              "opacity": 0.7170333157060668,
+              "phase": 2.297064460560697,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 35,
+              "x": 1537.0507946396247,
+              "y": 820.9045368591323,
+              "width": 6.178993854904547,
+              "height": 6.178993854904547,
+              "speed": 39.45915289456025,
+              "opacity": 0.8425750664202496,
+              "phase": 4.987407632906895,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": true,
+              "index": 36,
+              "x": 648.85947577958,
+              "y": 252.30243384791538,
+              "width": 7.502454094192944,
+              "height": 7.502454094192944,
+              "speed": 54.86238031415269,
+              "opacity": 0.6842560043325648,
+              "phase": 3.1590832275366894,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 37,
+              "x": 643.8244030096103,
+              "y": 778.7372557534836,
+              "width": 6.271661453414708,
+              "height": 6.271661453414708,
+              "speed": 61.25378319295123,
+              "opacity": 0.7526031091809273,
+              "phase": 3.196158317371568,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 38,
+              "x": 1433.3902666911017,
+              "y": 756.2973868295085,
+              "width": 8.573533955262974,
+              "height": 8.573533955262974,
+              "speed": 37.45970470365137,
+              "opacity": 0.7556478878948838,
+              "phase": 2.5702413270165483,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 39,
+              "x": 697.0707059937995,
+              "y": 470.53514843061566,
+              "width": 4.273767352337018,
+              "height": 4.273767352337018,
+              "speed": 43.855686413589865,
+              "opacity": 0.7783238611882553,
+              "phase": 5.801303816458414,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 40,
+              "x": 980.1746755403001,
+              "y": 875.7915605565067,
+              "width": 4.808238529134542,
+              "height": 4.808238529134542,
+              "speed": 35.676585673354566,
+              "opacity": 0.7348450826248154,
+              "phase": 4.8884327794184,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 41,
+              "x": 213.25225431192666,
+              "y": 913.174353630282,
+              "width": 8.341816592495888,
+              "height": 8.341816592495888,
+              "speed": 44.923792579211295,
+              "opacity": 0.9477857388788834,
+              "phase": 0.6812895309921693,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 42,
+              "x": 111.72145047644153,
+              "y": 685.7771046129055,
+              "width": 7.272750391624868,
+              "height": 7.272750391624868,
+              "speed": 55.68358202232048,
+              "opacity": 0.7798901395872235,
+              "phase": 5.926126881714396,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 43,
+              "x": 389.89555279444903,
+              "y": 14.967204669490457,
+              "width": 6.691484376555309,
+              "height": 6.691484376555309,
+              "speed": 47.26121943909675,
+              "opacity": 0.8203992002177983,
+              "phase": 2.1281349901416156,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 44,
+              "x": 1298.1079361967277,
+              "y": 837.1072769754101,
+              "width": 5.275247486773878,
+              "height": 5.275247486773878,
+              "speed": 57.33652367722243,
+              "opacity": 0.9319306366611272,
+              "phase": 3.3938193540385666,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 45,
+              "x": 1309.6921081964392,
+              "y": 356.7965876888484,
+              "width": 4.743627434130758,
+              "height": 4.743627434130758,
+              "speed": 62.20572558231652,
+              "opacity": 0.8687988532474265,
+              "phase": 0.1457017516227882,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 46,
+              "x": 762.9517407885287,
+              "y": 730.9379241052084,
+              "width": 8.373016532044858,
+              "height": 8.373016532044858,
+              "speed": 57.89123988011852,
+              "opacity": 0.889408419188112,
+              "phase": 2.4777595564253043,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 47,
+              "x": 1442.2250488058198,
+              "y": 605.0606159092858,
+              "width": 8.847003854811192,
+              "height": 8.847003854811192,
+              "speed": 56.08290119096637,
+              "opacity": 0.6992376481881365,
+              "phase": 1.7455663411132176,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": true,
+              "index": 48,
+              "x": 1055.2450901416596,
+              "y": 493.64204577356577,
+              "width": 8.797056538937612,
+              "height": 8.797056538937612,
+              "speed": 54.430670300498605,
+              "opacity": 0.6955829524667934,
+              "phase": 0.00871354530842316,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 49,
+              "x": 1450.7287081629038,
+              "y": 23.747518881689757,
+              "width": 4.858003775356337,
+              "height": 4.858003775356337,
+              "speed": 50.787322509568185,
+              "opacity": 0.7044370807474479,
+              "phase": 5.5492471012387785,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 50,
+              "x": 1661.1046641943976,
+              "y": 857.7045692754909,
+              "width": 7.005499354330823,
+              "height": 7.005499354330823,
+              "speed": 55.21749735577032,
+              "opacity": 0.8082891085185111,
+              "phase": 1.482849862648799,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 51,
+              "x": 266.3699578419328,
+              "y": 455.99498790409416,
+              "width": 7.013799287145957,
+              "height": 7.013799287145957,
+              "speed": 60.49434166634455,
+              "opacity": 0.8926582830958067,
+              "phase": 0.06388322602135646,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 52,
+              "x": 1042.551403314108,
+              "y": 172.58270975621417,
+              "width": 6.003023994620889,
+              "height": 6.003023994620889,
+              "speed": 48.399705903138965,
+              "opacity": 0.7489976183045656,
+              "phase": 5.552326861248859,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 53,
+              "x": 1468.9171880339272,
+              "y": 469.92444880260155,
+              "width": 5.193881300278008,
+              "height": 5.193881300278008,
+              "speed": 41.547059123404324,
+              "opacity": 0.9432792412582784,
+              "phase": 0.8291190720916441,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 54,
+              "x": 274.8198305054102,
+              "y": 728.4193815262988,
+              "width": 5.74602739745751,
+              "height": 5.74602739745751,
+              "speed": 50.32165338983759,
+              "opacity": 0.9493783558020368,
+              "phase": 0.8095108715599579,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 55,
+              "x": 587.7694477066398,
+              "y": 465.0313233928755,
+              "width": 4.044891105499119,
+              "height": 4.044891105499119,
+              "speed": 43.99716146988794,
+              "opacity": 0.7252891732146963,
+              "phase": 5.689906621895265,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 56,
+              "x": 1517.2868305393495,
+              "y": 212.57127928733826,
+              "width": 6.796689900569618,
+              "height": 6.796689900569618,
+              "speed": 54.223702957388014,
+              "opacity": 0.740252518397756,
+              "phase": 0.4218592097979626,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 57,
+              "x": 283.87364106439054,
+              "y": 88.31529781874269,
+              "width": 4.2791285421699286,
+              "height": 4.2791285421699286,
+              "speed": 62.93077941518277,
+              "opacity": 0.7306389138335362,
+              "phase": 2.8228665936443456,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 58,
+              "x": 197.83428498264402,
+              "y": 505.53437563893385,
+              "width": 8.549112763488665,
+              "height": 8.549112763488665,
+              "speed": 44.26135546062142,
+              "opacity": 0.7426929999608547,
+              "phase": 4.165669291200868,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 59,
+              "x": 695.3558724147733,
+              "y": 487.27371097612195,
+              "width": 8.88455732120201,
+              "height": 8.88455732120201,
+              "speed": 48.56371335918084,
+              "opacity": 0.9306972168385982,
+              "phase": 2.515098100251242,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": true,
+              "index": 60,
+              "x": 431.23811337933876,
+              "y": 724.5301219932735,
+              "width": 9.10256036738865,
+              "height": 9.10256036738865,
+              "speed": 35.27102918829769,
+              "opacity": 0.8536583911860361,
+              "phase": 3.985684003188321,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 61,
+              "x": 841.8143700454384,
+              "y": 253.00242328154854,
+              "width": 8.480424288194627,
+              "height": 8.480424288194627,
+              "speed": 49.20399425784126,
+              "opacity": 0.9463560505071654,
+              "phase": 1.8472088344967648,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 62,
+              "x": 196.84284649626352,
+              "y": 223.7808153599035,
+              "width": 6.331776256905869,
+              "height": 6.331776256905869,
+              "speed": 58.54129037586972,
+              "opacity": 0.7656275521032512,
+              "phase": 6.074909967447117,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 63,
+              "x": 499.11628106678836,
+              "y": 780.6271359005477,
+              "width": 7.414266724139452,
+              "height": 7.414266724139452,
+              "speed": 56.29971360322088,
+              "opacity": 0.7962830575415865,
+              "phase": 3.543753667061669,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 64,
+              "x": 39.84800752904266,
+              "y": 471.2445893820841,
+              "width": 8.349561077542603,
+              "height": 8.349561077542603,
+              "speed": 61.9343547266908,
+              "opacity": 0.8089340403676033,
+              "phase": 3.676007121457469,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 65,
+              "x": 248.29854716383852,
+              "y": 27.428264207672328,
+              "width": 7.049337655538693,
+              "height": 7.049337655538693,
+              "speed": 40.98059217678383,
+              "opacity": 0.8213811516296119,
+              "phase": 6.008991447870472,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 66,
+              "x": 1060.2716351004783,
+              "y": 815.4229358194862,
+              "width": 7.912450430216268,
+              "height": 7.912450430216268,
+              "speed": 40.80929436488077,
+              "opacity": 0.8723671313375234,
+              "phase": 2.509199616018555,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 67,
+              "x": 471.7518981064204,
+              "y": 376.35843547130935,
+              "width": 4.250082548009232,
+              "height": 4.250082548009232,
+              "speed": 47.100883221719414,
+              "opacity": 0.7321140723535791,
+              "phase": 1.2098479714356547,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 68,
+              "x": 684.4983084588312,
+              "y": 254.085400339216,
+              "width": 4.074250049656257,
+              "height": 4.074250049656257,
+              "speed": 53.913547303527594,
+              "opacity": 0.9151192936813459,
+              "phase": 5.860508490022138,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 69,
+              "x": 1552.3811633682344,
+              "y": 54.64136298117228,
+              "width": 8.667090306757018,
+              "height": 8.667090306757018,
+              "speed": 50.553268822841346,
+              "opacity": 0.7239779973402619,
+              "phase": 4.544059606276314,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 70,
+              "x": 1576.0036945268512,
+              "y": 533.1682223915122,
+              "width": 4.201217383146286,
+              "height": 4.201217383146286,
+              "speed": 38.3832795615308,
+              "opacity": 0.8041253387462348,
+              "phase": 2.091760670250903,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 71,
+              "x": 170.18011616030708,
+              "y": 186.59877604292706,
+              "width": 7.9916625479236245,
+              "height": 7.9916625479236245,
+              "speed": 37.97025308944285,
+              "opacity": 0.8558922358555718,
+              "phase": 0.7890533476048278,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": true,
+              "index": 72,
+              "x": 641.9206267381087,
+              "y": 120.54975120769814,
+              "width": 10.89808926761616,
+              "height": 10.89808926761616,
+              "speed": 39.43190303398296,
+              "opacity": 0.6513439257163555,
+              "phase": 5.296799432865804,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 73,
+              "x": 1393.1633266266435,
+              "y": 613.6521440204233,
+              "width": 8.413280277512968,
+              "height": 8.413280277512968,
+              "speed": 58.98837245069444,
+              "opacity": 0.828177369851619,
+              "phase": 0.4213421370140914,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 74,
+              "x": 1563.3817982389592,
+              "y": 821.4831606270745,
+              "width": 8.427797384560108,
+              "height": 8.427797384560108,
+              "speed": 36.884930005762726,
+              "opacity": 0.7041142138885335,
+              "phase": 0.7524625962988784,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 75,
+              "x": 999.4772714115679,
+              "y": 765.4342319916468,
+              "width": 4.337862547021359,
+              "height": 4.337862547021359,
+              "speed": 51.16387129528448,
+              "opacity": 0.791521783452481,
+              "phase": 4.042980579534995,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 76,
+              "x": 245.14876224054024,
+              "y": 474.57376354094595,
+              "width": 8.603176282253116,
+              "height": 8.603176282253116,
+              "speed": 64.42423356929794,
+              "opacity": 0.7696334133157506,
+              "phase": 5.337439321977453,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 77,
+              "x": 1618.063399525825,
+              "y": 794.534892442869,
+              "width": 5.182262727525085,
+              "height": 5.182262727525085,
+              "speed": 55.35605731187388,
+              "opacity": 0.8547821701969951,
+              "phase": 3.288028949546444,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 78,
+              "x": 1206.595949378796,
+              "y": 717.4277112558484,
+              "width": 7.4868750791065395,
+              "height": 7.4868750791065395,
+              "speed": 35.27543630916625,
+              "opacity": 0.8819188394583761,
+              "phase": 5.34363751423704,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 79,
+              "x": 1170.1423719171435,
+              "y": 334.2195996986702,
+              "width": 7.936706582317129,
+              "height": 7.936706582317129,
+              "speed": 40.082412159536034,
+              "opacity": 0.8084791844477877,
+              "phase": 4.281193882372366,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 80,
+              "x": 1324.1337012983859,
+              "y": 634.2738083314616,
+              "width": 6.460925505729392,
+              "height": 6.460925505729392,
+              "speed": 58.34641764406115,
+              "opacity": 0.8933143299072981,
+              "phase": 3.6328498546183616,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 81,
+              "x": 478.29580342699774,
+              "y": 919.2727254221682,
+              "width": 8.264310032594949,
+              "height": 8.264310032594949,
+              "speed": 54.83889393508434,
+              "opacity": 0.9256025489186868,
+              "phase": 4.922899104496326,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 82,
+              "x": 455.38694748608395,
+              "y": 414.31093284580857,
+              "width": 6.637869624886662,
+              "height": 6.637869624886662,
+              "speed": 58.7191056413576,
+              "opacity": 0.8714055671589449,
+              "phase": 0.7651437246559182,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 83,
+              "x": 524.6377217753325,
+              "y": 817.6987786330283,
+              "width": 5.158182364888489,
+              "height": 5.158182364888489,
+              "speed": 53.20060810772702,
+              "opacity": 0.6704567066393793,
+              "phase": 5.559339989579518,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": true,
+              "index": 84,
+              "x": 1009.0184918507002,
+              "y": 373.7496815768536,
+              "width": 10.261616782355121,
+              "height": 10.261616782355121,
+              "speed": 47.04333526082337,
+              "opacity": 0.6894697865704075,
+              "phase": 4.629196761540563,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 85,
+              "x": 703.3681444691028,
+              "y": 823.5283901933581,
+              "width": 5.317315835040063,
+              "height": 5.317315835040063,
+              "speed": 44.91850818740204,
+              "opacity": 0.7458458342589438,
+              "phase": 0.1390806355981578,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 86,
+              "x": 1111.7896642286796,
+              "y": 886.5736285720486,
+              "width": 8.633860804606229,
+              "height": 8.633860804606229,
+              "speed": 56.14461179357022,
+              "opacity": 0.654569555586204,
+              "phase": 0.37615054946021786,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 87,
+              "x": 479.2835994316265,
+              "y": 722.5130495296326,
+              "width": 6.755826455540955,
+              "height": 6.755826455540955,
+              "speed": 60.93633108539507,
+              "opacity": 0.7685488292016089,
+              "phase": 1.4162772372888792,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 88,
+              "x": 1324.0054910578765,
+              "y": 121.60873569967225,
+              "width": 4.910228020511568,
+              "height": 4.910228020511568,
+              "speed": 37.91958553250879,
+              "opacity": 0.755634065438062,
+              "phase": 0.3466749606322024,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 89,
+              "x": 1172.6503458183724,
+              "y": 284.54968954157084,
+              "width": 6.784548253985122,
+              "height": 6.784548253985122,
+              "speed": 62.22942868247628,
+              "opacity": 0.8849498810013756,
+              "phase": 1.9926561568701249,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 90,
+              "x": 1025.8743653534912,
+              "y": 658.0672508159187,
+              "width": 5.031089861644432,
+              "height": 5.031089861644432,
+              "speed": 50.474236346781254,
+              "opacity": 0.654845057008788,
+              "phase": 5.346871685250387,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 91,
+              "x": 175.02894204645418,
+              "y": 819.327628303552,
+              "width": 7.1001225707586855,
+              "height": 7.1001225707586855,
+              "speed": 57.04938159324229,
+              "opacity": 0.8419814812019467,
+              "phase": 3.291005866415552,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 92,
+              "x": 664.1372052971274,
+              "y": 227.72557338885963,
+              "width": 8.884769773343578,
+              "height": 8.884769773343578,
+              "speed": 53.65078824572265,
+              "opacity": 0.7165549358353018,
+              "phase": 0.4462992634357253,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 93,
+              "x": 1231.3525983989239,
+              "y": 904.596891117515,
+              "width": 4.713238128228113,
+              "height": 4.713238128228113,
+              "speed": 35.251273817848414,
+              "opacity": 0.8207005824428052,
+              "phase": 4.637790041816608,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 94,
+              "x": 147.8595997178927,
+              "y": 921.2807761011645,
+              "width": 5.770784403197467,
+              "height": 5.770784403197467,
+              "speed": 43.321435933467,
+              "opacity": 0.7368799124844372,
+              "phase": 5.373025013452912,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 95,
+              "x": 1153.368854322005,
+              "y": 5.54626494133845,
+              "width": 6.182553764432669,
+              "height": 6.182553764432669,
+              "speed": 56.43629347439855,
+              "opacity": 0.7354835901642218,
+              "phase": 4.623903637197831,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": true,
+              "index": 96,
+              "x": 992.3925715237856,
+              "y": 632.9417847802397,
+              "width": 13.586365938140078,
+              "height": 13.586365938140078,
+              "speed": 63.95198178477585,
+              "opacity": 0.6851596241351217,
+              "phase": 6.264540233394566,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 97,
+              "x": 1545.506726476131,
+              "y": 631.4687471343204,
+              "width": 6.06825029104948,
+              "height": 6.06825029104948,
+              "speed": 38.45068015623838,
+              "opacity": 0.7193045838270337,
+              "phase": 4.403051573182886,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 98,
+              "x": 1309.1366448481567,
+              "y": 474.4477239281405,
+              "width": 8.333371378015727,
+              "height": 8.333371378015727,
+              "speed": 38.61066530458629,
+              "opacity": 0.666446775593795,
+              "phase": 5.639590894591832,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 99,
+              "x": 1167.9948699655943,
+              "y": 146.2134143076837,
+              "width": 7.037337202113122,
+              "height": 7.037337202113122,
+              "speed": 51.06941080885008,
+              "opacity": 0.9426351263653486,
+              "phase": 0.18016342608414113,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 100,
+              "x": 1655.0111488737166,
+              "y": 441.2998798263725,
+              "width": 5.144590225303546,
+              "height": 5.144590225303546,
+              "speed": 53.8740993430838,
+              "opacity": 0.8437411124352365,
+              "phase": 2.3144239555847728,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 101,
+              "x": 1306.0024854582734,
+              "y": 464.9978562335018,
+              "width": 4.300029275240377,
+              "height": 4.300029275240377,
+              "speed": 50.38546554511413,
+              "opacity": 0.8403736616717652,
+              "phase": 4.272529144399822,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 102,
+              "x": 73.12731837225147,
+              "y": 410.8012955642771,
+              "width": 5.765770099591464,
+              "height": 5.765770099591464,
+              "speed": 53.66288767661899,
+              "opacity": 0.7407627369277179,
+              "phase": 5.779702776254099,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 103,
+              "x": 509.22556351474486,
+              "y": 403.6246517924592,
+              "width": 5.10146997962147,
+              "height": 5.10146997962147,
+              "speed": 64.70574164530262,
+              "opacity": 0.841338423686102,
+              "phase": 4.584705297321065,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 104,
+              "x": 472.47989786043763,
+              "y": 623.3891969204415,
+              "width": 4.039774143369868,
+              "height": 4.039774143369868,
+              "speed": 60.23709947941825,
+              "opacity": 0.6624398058047518,
+              "phase": 0.7027729423424843,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 105,
+              "x": 163.6041076895781,
+              "y": 920.191204141127,
+              "width": 7.9025167434010655,
+              "height": 7.9025167434010655,
+              "speed": 37.53522895509377,
+              "opacity": 0.6998688273597509,
+              "phase": 5.1636758699064895,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 106,
+              "x": 1386.3969864668325,
+              "y": 867.7531441249885,
+              "width": 7.451201883144677,
+              "height": 7.451201883144677,
+              "speed": 54.7853549127467,
+              "opacity": 0.8052591228857636,
+              "phase": 5.083300499823992,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 107,
+              "x": 401.5891833866481,
+              "y": 356.32361167063937,
+              "width": 4.261693079955876,
+              "height": 4.261693079955876,
+              "speed": 51.951451590284705,
+              "opacity": 0.7422713442705572,
+              "phase": 5.881614181776059,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": true,
+              "index": 108,
+              "x": 1380.2611616039649,
+              "y": 220.66154583659954,
+              "width": 13.827530882740392,
+              "height": 13.827530882740392,
+              "speed": 47.99809648422524,
+              "opacity": 0.8561460363212973,
+              "phase": 6.076650323551363,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 109,
+              "x": 1638.4448596481234,
+              "y": 12.195712078362703,
+              "width": 6.461359689477831,
+              "height": 6.461359689477831,
+              "speed": 49.75003637140617,
+              "opacity": 0.8339179257163778,
+              "phase": 3.097827259019725,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 110,
+              "x": 557.9828438437544,
+              "y": 291.76198135782033,
+              "width": 5.941473548067734,
+              "height": 5.941473548067734,
+              "speed": 38.31212436314672,
+              "opacity": 0.8921349575044587,
+              "phase": 5.256968881237738,
+              "alpha": 0
+            },
+            {
+              "type": "snow",
+              "foreground": false,
+              "index": 111,
+              "x": 452.9286967946682,
+              "y": 226.18413697881624,
+              "width": 7.2723055011592805,
+              "height": 7.2723055011592805,
+              "speed": 57.6180697302334,
+              "opacity": 0.9466427850769832,
+              "phase": 0.5122514506090469,
+              "alpha": 0
+            },
+            {
+              "type": "smoke",
+              "index": 0,
+              "emitter": 0,
+              "x": 976.0638029623757,
+              "y": 263.74478815049724,
+              "age": 2.709201974917131,
+              "life": 14.22344001289457,
+              "rise": 9.94049060344696,
+              "size": 14.533939240500331,
+              "opacity": 0.5580891569098457,
+              "phase": 4.553069607544747,
+              "width": 0,
+              "height": 0,
+              "alpha": 0
+            },
+            {
+              "type": "smoke",
+              "index": 1,
+              "emitter": 0,
+              "x": 976.1520207847151,
+              "y": 263.3919168611398,
+              "age": 2.7680138564767,
+              "life": 11.099612176418304,
+              "rise": 7.0695186061784625,
+              "size": 18.131167417392135,
+              "opacity": 0.6688162363227457,
+              "phase": 0.4352583471258152,
+              "width": 0,
+              "height": 0,
+              "alpha": 0
+            },
+            {
+              "type": "smoke",
+              "index": 2,
+              "emitter": 0,
+              "x": 978.8683513856683,
+              "y": 252.52659445732684,
+              "age": 4.5789009237788605,
+              "life": 14.944946002680808,
+              "rise": 7.424585931003094,
+              "size": 15.551369177177548,
+              "opacity": 0.6162892570719123,
+              "phase": 3.847263162661848,
+              "width": 0,
+              "height": 0,
+              "alpha": 0
+            },
+            {
+              "type": "smoke",
+              "index": 3,
+              "emitter": 0,
+              "x": 974.6627058872695,
+              "y": 269.3491764509224,
+              "age": 1.775137258179601,
+              "life": 12.141819816082716,
+              "rise": 10.507902150973678,
+              "size": 15.72889981791377,
+              "opacity": 0.6708148268144577,
+              "phase": 4.630318291593935,
+              "width": 0,
+              "height": 0,
+              "alpha": 0
+            },
+            {
+              "type": "smoke",
+              "index": 4,
+              "emitter": 0,
+              "x": 991.7825588384992,
+              "y": 200.86976464600343,
+              "age": 13.188372558999427,
+              "life": 14.523987750988454,
+              "rise": 7.560522687621415,
+              "size": 17.130448443815112,
+              "opacity": 0.5306823438312858,
+              "phase": 1.2023735879604385,
+              "width": 0,
+              "height": 0,
+              "alpha": 0
+            },
+            {
+              "type": "smoke",
+              "index": 5,
+              "emitter": 0,
+              "x": 980.3786252484277,
+              "y": 246.48549900628888,
+              "age": 5.585750165618521,
+              "life": 12.713579579722136,
+              "rise": 8.812663511373103,
+              "size": 16.13932932727039,
+              "opacity": 0.6750828247889876,
+              "phase": 3.975596109249904,
+              "width": 0,
+              "height": 0,
+              "alpha": 0
+            },
+            {
+              "type": "smoke",
+              "index": 6,
+              "emitter": 0,
+              "x": 978.7343555623482,
+              "y": 253.0625777506071,
+              "age": 4.489570374898816,
+              "life": 12.604521785397083,
+              "rise": 10.921339182183146,
+              "size": 15.891549054533243,
+              "opacity": 0.4886178085533902,
+              "phase": 2.312322563001908,
+              "width": 0,
+              "height": 0,
+              "alpha": 0
+            },
+            {
+              "type": "smoke",
+              "index": 7,
+              "emitter": 0,
+              "x": 972.9196492986604,
+              "y": 276.32140280535833,
+              "age": 0.6130995324402804,
+              "life": 10.486614147666842,
+              "rise": 7.029280297458172,
+              "size": 18.164665585383773,
+              "opacity": 0.5442991779698059,
+              "phase": 2.1991532041067163,
+              "width": 0,
+              "height": 0,
+              "alpha": 0
+            },
+            {
+              "type": "smoke",
+              "index": 8,
+              "emitter": 0,
+              "x": 972.470661444002,
+              "y": 278.11735422399227,
+              "age": 0.3137742960012847,
+              "life": 14.950639766640961,
+              "rise": 10.980251259170473,
+              "size": 12.095578646287322,
+              "opacity": 0.5706413530511781,
+              "phase": 2.956540433239176,
+              "width": 0,
+              "height": 0,
+              "alpha": 0
+            },
+            {
+              "type": "smoke",
+              "index": 9,
+              "emitter": 0,
+              "x": 977.1984498970867,
+              "y": 259.2062004116531,
+              "age": 3.4656332647244747,
+              "life": 11.731101752258837,
+              "rise": 9.203122222796082,
+              "size": 17.730291727930307,
+              "opacity": 0.5609404155518859,
+              "phase": 4.705739632966965,
+              "width": 0,
+              "height": 0,
+              "alpha": 0
+            },
+            {
+              "type": "smoke",
+              "index": 10,
+              "emitter": 0,
+              "x": 974.1560202356688,
+              "y": 271.3759190573248,
+              "age": 1.4373468237792077,
+              "life": 11.825364832300693,
+              "rise": 8.085581648163497,
+              "size": 19.633640920743346,
+              "opacity": 0.6578453430207446,
+              "phase": 5.514076898978685,
+              "width": 0,
+              "height": 0,
+              "alpha": 0
+            },
+            {
+              "type": "smoke",
+              "index": 11,
+              "emitter": 0,
+              "x": 976.2116044423883,
+              "y": 263.1535822304467,
+              "age": 2.807736294925545,
+              "life": 11.499318253714591,
+              "rise": 9.08869107067585,
+              "size": 13.517281275242567,
+              "opacity": 0.5035413396451622,
+              "phase": 2.812230949529935,
+              "width": 0,
+              "height": 0,
+              "alpha": 0
+            },
+            {
+              "type": "wind",
+              "index": 0,
+              "zone": 0,
+              "x": 804.1268469760178,
+              "y": 832.7578688328697,
+              "width": 143.88816192746162,
+              "height": 11.76750195492059,
+              "age": 6.401995905442098,
+              "life": 8.251834033755586,
+              "opacity": 0.8847977275494486,
+              "alpha": 0
+            },
+            {
+              "type": "wind",
+              "index": 1,
+              "zone": 1,
+              "x": 503.96657964455073,
+              "y": 555.7195048102375,
+              "width": 174.32601608335972,
+              "height": 13.293011524248868,
+              "age": 6.009094928990403,
+              "life": 7.156938370782882,
+              "opacity": 0.7743508193292655,
+              "alpha": 0
+            },
+            {
+              "type": "wind",
+              "index": 2,
+              "zone": 2,
+              "x": 1265.0614982929758,
+              "y": 291.5518818776351,
+              "width": 169.79773961007595,
+              "height": 15.462706605438143,
+              "age": 4.769480419655899,
+              "life": 7.741109326481819,
+              "opacity": 0.7501222474151291,
+              "alpha": 0
+            },
+            {
+              "type": "wind",
+              "index": 3,
+              "zone": 0,
+              "x": 634.3188468219822,
+              "y": 826.0786929869644,
+              "width": 118.32156615331769,
+              "height": 15.39789299434051,
+              "age": 1.7804740496532292,
+              "life": 9.398330676369369,
+              "opacity": 0.7442203520680778,
+              "alpha": 0
+            },
+            {
+              "type": "wind",
+              "index": 4,
+              "zone": 1,
+              "x": 509.95688702033584,
+              "y": 552.8103583819969,
+              "width": 137.91093453764915,
+              "height": 10.50014209933579,
+              "age": 3.2801336145366604,
+              "life": 10.076536008156836,
+              "opacity": 0.6837539705215022,
+              "alpha": 0
+            },
+            {
+              "type": "wind",
+              "index": 5,
+              "zone": 2,
+              "x": 1228.6605724139276,
+              "y": 292.1232279634326,
+              "width": 111.19809206575155,
+              "height": 15.331695068627596,
+              "age": 8.593327689891813,
+              "life": 10.205397467827424,
+              "opacity": 0.8412069236859679,
+              "alpha": 0
+            },
+            {
+              "type": "wind",
+              "index": 6,
+              "zone": 0,
+              "x": 873.7282941479318,
+              "y": 830.1678470570015,
+              "width": 121.55616592615843,
+              "height": 10.556502621155232,
+              "age": 1.7101217324041191,
+              "life": 8.650108121102676,
+              "opacity": 0.8279568871133961,
+              "alpha": 0
+            },
+            {
+              "type": "wind",
+              "index": 7,
+              "zone": 1,
+              "x": 508.7385261964838,
+              "y": 561.3718996939598,
+              "width": 113.13856206834316,
+              "height": 11.244477753061801,
+              "age": 6.959280182588511,
+              "life": 8.442421723622829,
+              "opacity": 0.7482425576075912,
+              "alpha": 0
+            }
+          ],
+          "lights": [],
+          "objects": 134,
+          "textureBytes": 33792,
+          "interactiveObjects": 0,
+          "disposed": false,
+          "environment": {
+            "updates": 1,
+            "quadTopologyValid": true,
+            "partitionError": 0,
+            "groups": [],
+            "dynamicVertices": 0,
+            "maxVertexOffset": 0,
+            "meshVertices": 0,
+            "triangles": 0,
+            "interactiveObjects": 0,
+            "lights": [],
+            "runtimeTextureBytes": 0
+          }
+        },
+        "slotStyles": [
+          {
+            "id": "place-0-access-0",
+            "zoneId": "colonia",
+            "occupant": "empty",
+            "alpha": 0.8941756433273489,
+            "width": 1.45,
+            "dash": 4,
+            "solid": true
+          },
+          {
+            "id": "place-0-access-1",
+            "zoneId": "colonia",
+            "occupant": "empty",
+            "alpha": 0.8941756433273489,
+            "width": 1.45,
+            "dash": 4,
+            "solid": true
+          },
+          {
+            "id": "place-0-access-2",
+            "zoneId": "colonia",
+            "occupant": "empty",
+            "alpha": 0.8941756433273489,
+            "width": 1.45,
+            "dash": 4,
+            "solid": true
+          },
+          {
+            "id": "place-0-access-3",
+            "zoneId": "colonia",
+            "occupant": "empty",
+            "alpha": 0.8941756433273489,
+            "width": 1.45,
+            "dash": 4,
+            "solid": true
+          },
+          {
+            "id": "place-0-access-4",
+            "zoneId": "colonia",
+            "occupant": "empty",
+            "alpha": 0.8941756433273489,
+            "width": 1.45,
+            "dash": 4,
+            "solid": true
+          },
+          {
+            "id": "place-0-access-5",
+            "zoneId": "colonia",
+            "occupant": "empty",
+            "alpha": 0.8941756433273489,
+            "width": 1.45,
+            "dash": 4,
+            "solid": true
+          },
+          {
+            "id": "place-0-access-6",
+            "zoneId": "colonia",
+            "occupant": "empty",
+            "alpha": 0.8941756433273489,
+            "width": 1.45,
+            "dash": 4,
+            "solid": true
+          },
+          {
+            "id": "place-0-access-7",
+            "zoneId": "colonia",
+            "occupant": "empty",
+            "alpha": 0.8941756433273489,
+            "width": 1.45,
+            "dash": 4,
+            "solid": true
+          },
+          {
+            "id": "place-0-access-8",
+            "zoneId": "colonia",
+            "occupant": "empty",
+            "alpha": 0.8941756433273489,
+            "width": 1.45,
+            "dash": 4,
+            "solid": true
+          },
+          {
+            "id": "place-0-access-9",
+            "zoneId": "colonia",
+            "occupant": "empty",
+            "alpha": 0.8941756433273489,
+            "width": 1.45,
+            "dash": 4,
+            "solid": true
+          },
+          {
+            "id": "place-0-access-10",
+            "zoneId": "colonia",
+            "occupant": "empty",
+            "alpha": 0.8941756433273489,
+            "width": 1.45,
+            "dash": 4,
+            "solid": true
+          },
+          {
+            "id": "place-0-access-11",
+            "zoneId": "colonia",
+            "occupant": "empty",
+            "alpha": 0.8941756433273489,
+            "width": 1.45,
+            "dash": 4,
+            "solid": true
+          },
+          {
+            "id": "place-1-access-0",
+            "zoneId": "supermercado",
+            "occupant": "zombie",
+            "alpha": 0.5012634649910234,
+            "width": 0.9,
+            "dash": 6,
+            "solid": true
+          },
+          {
+            "id": "place-1-access-1",
+            "zoneId": "supermercado",
+            "occupant": "zombie",
+            "alpha": 0.5012634649910234,
+            "width": 0.9,
+            "dash": 6,
+            "solid": true
+          },
+          {
+            "id": "place-1-access-2",
+            "zoneId": "supermercado",
+            "occupant": "empty",
+            "alpha": 0.5370107719928187,
+            "width": 0.95,
+            "dash": 6,
+            "solid": true
+          },
+          {
+            "id": "place-1-access-3",
+            "zoneId": "supermercado",
+            "occupant": "empty",
+            "alpha": 0.5370107719928187,
+            "width": 0.95,
+            "dash": 6,
+            "solid": true
+          },
+          {
+            "id": "place-2-access-0",
+            "zoneId": "hospital",
+            "occupant": "empty",
+            "alpha": 0.5370107719928187,
+            "width": 0.95,
+            "dash": 6,
+            "solid": true
+          },
+          {
+            "id": "place-2-access-1",
+            "zoneId": "hospital",
+            "occupant": "empty",
+            "alpha": 0.5370107719928187,
+            "width": 0.95,
+            "dash": 6,
+            "solid": true
+          },
+          {
+            "id": "place-2-access-2",
+            "zoneId": "hospital",
+            "occupant": "empty",
+            "alpha": 0.5370107719928187,
+            "width": 0.95,
+            "dash": 6,
+            "solid": true
+          },
+          {
+            "id": "place-2-access-3",
+            "zoneId": "hospital",
+            "occupant": "empty",
+            "alpha": 0.5370107719928187,
+            "width": 0.95,
+            "dash": 6,
+            "solid": true
+          },
+          {
+            "id": "place-3-access-0",
+            "zoneId": "comisaria",
+            "occupant": "empty",
+            "alpha": 0.5370107719928187,
+            "width": 0.95,
+            "dash": 6,
+            "solid": true
+          },
+          {
+            "id": "place-3-access-1",
+            "zoneId": "comisaria",
+            "occupant": "empty",
+            "alpha": 0.5370107719928187,
+            "width": 0.95,
+            "dash": 6,
+            "solid": true
+          },
+          {
+            "id": "place-3-access-2",
+            "zoneId": "comisaria",
+            "occupant": "empty",
+            "alpha": 0.5370107719928187,
+            "width": 0.95,
+            "dash": 6,
+            "solid": true
+          },
+          {
+            "id": "place-3-access-3",
+            "zoneId": "comisaria",
+            "occupant": "empty",
+            "alpha": 0.5370107719928187,
+            "width": 0.95,
+            "dash": 6,
+            "solid": true
+          },
+          {
+            "id": "place-4-access-0",
+            "zoneId": "gasolinera",
+            "occupant": "empty",
+            "alpha": 0.5370107719928187,
+            "width": 0.95,
+            "dash": 6,
+            "solid": true
+          },
+          {
+            "id": "place-4-access-1",
+            "zoneId": "gasolinera",
+            "occupant": "empty",
+            "alpha": 0.5370107719928187,
+            "width": 0.95,
+            "dash": 6,
+            "solid": true
+          },
+          {
+            "id": "place-5-access-0",
+            "zoneId": "escuela",
+            "occupant": "empty",
+            "alpha": 0.5370107719928187,
+            "width": 0.95,
+            "dash": 6,
+            "solid": true
+          },
+          {
+            "id": "place-5-access-1",
+            "zoneId": "escuela",
+            "occupant": "empty",
+            "alpha": 0.5370107719928187,
+            "width": 0.95,
+            "dash": 6,
+            "solid": true
+          },
+          {
+            "id": "place-5-access-2",
+            "zoneId": "escuela",
+            "occupant": "empty",
+            "alpha": 0.5370107719928187,
+            "width": 0.95,
+            "dash": 6,
+            "solid": true
+          },
+          {
+            "id": "place-5-access-3",
+            "zoneId": "escuela",
+            "occupant": "empty",
+            "alpha": 0.5370107719928187,
+            "width": 0.95,
+            "dash": 6,
+            "solid": true
+          },
+          {
+            "id": "place-6-access-0",
+            "zoneId": "biblioteca",
+            "occupant": "empty",
+            "alpha": 0.5370107719928187,
+            "width": 0.95,
+            "dash": 6,
+            "solid": true
+          },
+          {
+            "id": "place-6-access-1",
+            "zoneId": "biblioteca",
+            "occupant": "empty",
+            "alpha": 0.5370107719928187,
+            "width": 0.95,
+            "dash": 6,
+            "solid": true
+          },
+          {
+            "id": "place-6-access-2",
+            "zoneId": "biblioteca",
+            "occupant": "empty",
+            "alpha": 0.5370107719928187,
+            "width": 0.95,
+            "dash": 6,
+            "solid": true
+          }
+        ],
+        "objectCount": 141,
+        "inputPlugins": {
+          "mouse": false,
+          "touch": false,
+          "keyboard": false
+        },
+        "nodes": [
+          {
+            "id": "map",
+            "x": 0,
+            "y": 0,
+            "originX": 0,
+            "originY": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "depth": 0,
+            "visible": true,
+            "alpha": 1,
+            "displayOriginX": 0,
+            "displayOriginY": 0
+          },
+          {
+            "id": "place-1-access-0",
+            "x": 1240,
+            "y": 484,
+            "originX": 0.5472560975609756,
+            "originY": 0.9090909090909091,
+            "scaleX": 0.025,
+            "scaleY": 0.025,
+            "depth": 3,
+            "visible": true,
+            "alpha": 1,
+            "displayOriginX": 718,
+            "displayOriginY": 1090
+          },
+          {
+            "id": "place-1-access-1",
+            "x": 1288,
+            "y": 488.8,
+            "originX": 0.5472560975609756,
+            "originY": 0.9090909090909091,
+            "scaleX": 0.025,
+            "scaleY": 0.025,
+            "depth": 3,
+            "visible": true,
+            "alpha": 1,
+            "displayOriginX": 718,
+            "displayOriginY": 1090
+          }
+        ],
+        "textures": {
+          "map": {
+            "width": 1671,
+            "height": 941,
+            "potWidth": 2048,
+            "potHeight": 1024,
+            "rgbaBase": 8388608,
+            "rgbaWithMips": 11184812,
+            "auxiliaryRgba": 8388608,
+            "derivedRgba": 0,
+            "factor": 1,
+            "minFilter": 9987,
+            "magFilter": 9729,
+            "sourceWidth": 2048,
+            "sourceHeight": 1024
+          },
+          "zombie": {
+            "width": 1312,
+            "height": 1199,
+            "potWidth": 2048,
+            "potHeight": 2048,
+            "rgbaBase": 16777216,
+            "rgbaWithMips": 22369620,
+            "auxiliaryRgba": 16777216,
+            "derivedRgba": 0,
+            "factor": 1,
+            "minFilter": 9987,
+            "magFilter": 9729,
+            "sourceWidth": 2048,
+            "sourceHeight": 2048
+          },
+          "barricade-marker": {
+            "width": 1536,
+            "height": 1024,
+            "potWidth": 2048,
+            "potHeight": 1024,
+            "rgbaBase": 8388608,
+            "rgbaWithMips": 11184812,
+            "auxiliaryRgba": 8388608,
+            "derivedRgba": 0,
+            "factor": 1,
+            "minFilter": 9987,
+            "magFilter": 9729,
+            "sourceWidth": 2048,
+            "sourceHeight": 1024
+          },
+          "survivor-portrait-1": {
+            "width": 384,
+            "height": 384,
+            "potWidth": 512,
+            "potHeight": 512,
+            "rgbaBase": 1048576,
+            "rgbaWithMips": 1398100,
+            "auxiliaryRgba": 1048576,
+            "derivedRgba": 589824,
+            "factor": 0.3062200956937799,
+            "minFilter": 9987,
+            "magFilter": 9729,
+            "sourceWidth": 512,
+            "sourceHeight": 512
+          },
+          "survivor-portrait-2": {
+            "width": 384,
+            "height": 384,
+            "potWidth": 512,
+            "potHeight": 512,
+            "rgbaBase": 1048576,
+            "rgbaWithMips": 1398100,
+            "auxiliaryRgba": 1048576,
+            "derivedRgba": 589824,
+            "factor": 0.3062200956937799,
+            "minFilter": 9987,
+            "magFilter": 9729,
+            "sourceWidth": 512,
+            "sourceHeight": 512
+          },
+          "survivor-portrait-3": {
+            "width": 384,
+            "height": 384,
+            "potWidth": 512,
+            "potHeight": 512,
+            "rgbaBase": 1048576,
+            "rgbaWithMips": 1398100,
+            "auxiliaryRgba": 1048576,
+            "derivedRgba": 589824,
+            "factor": 0.3062200956937799,
+            "minFilter": 9987,
+            "magFilter": 9729,
+            "sourceWidth": 512,
+            "sourceHeight": 512
+          },
+          "survivor-portrait-4": {
+            "width": 384,
+            "height": 384,
+            "potWidth": 512,
+            "potHeight": 512,
+            "rgbaBase": 1048576,
+            "rgbaWithMips": 1398100,
+            "auxiliaryRgba": 1048576,
+            "derivedRgba": 589824,
+            "factor": 0.3062200956937799,
+            "minFilter": 9987,
+            "magFilter": 9729,
+            "sourceWidth": 512,
+            "sourceHeight": 512
+          }
+        }
+      },
+      "audio": {
+        "enabled": false,
+        "paused": false,
+        "volume": 0.4,
+        "state": "not-created",
+        "error": null,
+        "contexts": 0,
+        "nodes": 0,
+        "bufferBytes": 0,
+        "rms": 0,
+        "disposed": false
+      },
+      "contextLost": false,
+      "presentation": null,
+      "action": {
+        "phase": "idle",
+        "intent": null,
+        "pending": null,
+        "operation": null,
+        "message": "",
+        "busy": false
+      },
+      "movement": {
+        "phase": "idle",
+        "intent": null,
+        "pending": null,
+        "message": "",
+        "response": null
+      },
+      "workspace": {
+        "current": "play-dialog",
+        "notice": null
+      }
+    },
+    "lastDisposal": {
+      "cleanupErrors": [],
+      "atmosphereRelease": {
+        "objectsReleased": 134,
+        "textureReleased": true,
+        "environmentObjectsReleased": 0,
+        "environmentTexturesReleased": true
+      },
+      "sourcesReleased": true,
+      "auxiliaryCanvasesReleased": 7,
+      "derivedCanvasesReleased": 4,
+      "audioRelease": {
+        "closedContexts": 0,
+        "nodesReleased": true,
+        "disposed": true
+      },
+      "disposed": true
+    },
+    "lastError": null
+  }
+}

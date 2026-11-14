@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "controlled": true,
+  "physicalMobile": false,
+  "reducedMotion": true,
+  "browser": "154.0.8037.57",
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "scenario": "local",
+      "errors": [],
+      "steps": [
+        "preparacion",
+        "limpieza",
+        "tratamiento",
+        "atraccion-parcial",
+        "transferencia-local",
+        "ronda-2",
+        "ronda-3",
+        "otra-partida"
+      ],
+      "lostReplyReconnectRebuild": true,
+      "delayedBoostTransport": true,
+      "noV9": true,
+      "round": 1,
+      "starts": 2,
+      "video": "/workspace/ux-work/transport-reviewed/1365x768/local/page@903d8b3f1bbfc1448a1389875f52f9f1.webm",
+      "passed": true
+    }
+  ],
+  "guardDetectsReturn": true,
+  "guardDetectsNavigation": true
+}
