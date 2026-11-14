@@ -89,7 +89,7 @@ try{
    await q.screenshot({path:resolve(dir,'max-'+mode+'-general.png')});
    for(const z of scene.zones){
     const loc=v.layout.locations.find(l=>l.visualId===z.id);await focus(q,loc.id);
-    const view=await qaView(q),f=localityFrame(z,0),c=view.camera,w=view.viewport;
+    const view=await qaView(q),f=localityFrame(z,0),c=view.camera,w=view.viewport;r.focusChecks??=[];r.focusChecks.push({id:z.id,mode,camera:c,viewport:w,frame:f});
     if(!baseline)for(const [x,y]of [[f.x,f.y],[f.x+f.width,f.y+f.height]])assert.ok(c.x+x*c.zoom>=-1&&c.x+x*c.zoom<=w.width+1&&c.y+y*c.zoom>=-1&&c.y+y*c.zoom<=w.height+1,'foco completo '+z.id);
     if(!baseline&&scene.portraitsOnLocality){for(const c of view.layout.characters.filter(c=>c.locationId===loc.id))assert.equal(pointInPolygon(c.position,z.outlinePolygon),true,'ficha sobre '+z.id);}
     await q.screenshot({path:resolve(dir,'max-'+mode+'-'+z.id+'.png')});
