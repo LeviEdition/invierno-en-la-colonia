@@ -34,7 +34,7 @@ export function mountCyclePanel({controller,getContext,onNative,onRecover=onNati
   else if(s.phase==='unknown')dialog.append(button('Consultar estado','cycle-native',onRecover));
   else dialog.append(el('p','Estado actualizado.'),button('Volver al mapa','cycle-close',()=>controller.hide(),busy));
   if(p?.play&&(c.outcome||c.processing))dialog.append(button('Nueva partida','cycle-new-game',()=>document.getElementById('final-new-game')?.click()));
-  present(dialog,{exclusive:c.decision?.kind==='death'||!c.review&&(!!c.outcome||['handover','leaderChoice'].includes(c.decision?.kind))});dialog.scrollTop=scroll;
+  present(dialog,{exclusive:c.decision?.kind==='death'||!c.review&&(!!c.outcome||['handover','leaderChoice'].includes(c.decision?.kind))});if(unified()&&dialog.matches(':modal')&&!dialog.contains(document.activeElement))dialog.querySelector('button:not(:disabled)')?.focus({preventScroll:true});dialog.scrollTop=scroll;
  }
  document.addEventListener('visibilitychange',render,{signal});signal.addEventListener('abort',()=>{dialog.close();dialog.replaceChildren();},{once:true});return {render};
 }

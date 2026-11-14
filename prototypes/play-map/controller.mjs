@@ -14,6 +14,6 @@ export function createPlayController({send,onChange=()=>{},requestId=uniqueToken
  function choose(patch){if(!intent||pending)return false;intent={...intent,...patch};revision=state.play.revision;notify();return true;}
  function submit(kind,args={}){if(pending||!state?.play||phase==='unknown')return false;pending=requestId();phase='sending';message='Confirmando…';notify();try{send({type:'play-command',kind,session:state.play.session,revision:state.play.revision,requestId:pending,...args});}catch{disconnect();}return true;}
  function result(r){if(r.requestId!==pending)return false;pending=null;phase='open';message=r.ok?'Operación confirmada.':r.reason==='stale'?'El estado cambió. Revisá antes de confirmar.':r.reason==='unknown'?'Resultado no confirmado. Consultando estado.':'La operación ya no es legal; no se aplicó.';if(r.state)state=r.state;intent=null;if(!state?.play?.managed){phase='closed';page=null;}notify();return true;}
- function disconnect(){if(pending){phase='unknown';message='Consultando estado y recibos antes de permitir otra operación.';}else intent=null;notify();}
+ function disconnect(){if(pending){phase='unknown';message='Consultando el resultado antes de permitir otra operación.';}else intent=null;notify();}
  return {inspect,update,open,close,choose,submit,result,disconnect};
 }

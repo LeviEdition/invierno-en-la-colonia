@@ -16,7 +16,7 @@ export function mountInventoryPanel({controller,getContext,onNative,signal}){
   const {projection:p,active,searchBusy,actionBusy,movementPhase}=getContext(),s=controller.inspect(),inv=p?.inventory,own=inv?.private,visible=active&&!document.hidden&&s.phase!=='closed'&&(own||inv?.receipt),busy=['sending','unknown'].includes(s.phase);
   for(const id of ['inventory-open','character-inventory','hand-inventory','menu-inventory','crisis-contribute']){const b=document.getElementById(id);if(b)b.disabled=!active||!own||searchBusy||actionBusy||movementPhase!=='idle'||busy;}
   if(!visible){if(dialog.open)dialog.close();dialog.replaceChildren();key='';return;}
-  const next=JSON.stringify([s,inv]);if(key===next)return;key=next;const focusId=document.activeElement?.id,step=s.phase+'/'+(s.intent?.cardId||''),scroll=step===lastStep?dialog.scrollTop:0;lastStep=step;dialog.replaceChildren();
+  const next=JSON.stringify([s,inv]);if(key===next)return;key=next;const hadFocus=dialog.contains(document.activeElement),focusId=document.activeElement?.id,step=s.phase+'/'+(s.intent?.cardId||''),scroll=step===lastStep?dialog.scrollTop:0;lastStep=step;dialog.replaceChildren();
   const header=el('div');header.className='inventory-heading';header.append(el('h2','Inventario · '+(p.players.find(x=>x.id===own?.ownerId)?.label||'Jugador activo')),button('Cerrar','inventory-close',close,busy));dialog.append(header);
   const status=el('p',busy?'Resolviendo…':s.message&&s.phase!=='browsing'?s.message:'');status.id='inventory-status';status.setAttribute('role','status');dialog.append(status);
   if(inv?.receipt){dialog.append(el('h3','Resultado'),el('p',inv.receipt.summary));if(inv.receipt.generalDecision){dialog.append(el('p',p.cycle?.outcome?'El motor finalizó la partida. Consultá el resultado en el mapa.':'Hay una decisión pendiente. Abrila para resolverla sin elegir automáticamente.'),button(p.cycle?.outcome?'Ver resultado final':p.play?'Resolver decisión':'Continuar en V9.9','inventory-native',onNative));}else dialog.append(button('Continuar en inventario','inventory-continue',()=>controller.dismiss(),busy));}
@@ -39,7 +39,7 @@ export function mountInventoryPanel({controller,getContext,onNative,signal}){
     dialog.append(el('p','El equipo no vuelve a la mano ni se sustituye directamente. Para cambiar un tipo, transferí primero el anterior a un receptor legal en su localidad. En modo local puede pertenecer al otro jugador; con IA solo al propio grupo. El combustible se usa eligiendo superviviente y destino.'));
    }
   }
-  present(dialog);if(focusId)dialog.querySelector('#'+CSS.escape(focusId))?.focus({preventScroll:true});dialog.scrollTop=scroll;
+  present(dialog);const restored=focusId?dialog.querySelector('#'+CSS.escape(focusId)):null;if(restored&&!restored.disabled)restored.focus({preventScroll:true});else if(unified()&&hadFocus){const target=dialog.querySelector(s.phase==='picking'?'#inventory-actor:not(:disabled),#inventory-target:not(:disabled),#inventory-destination:not(:disabled),#inventory-confirm:enabled,#inventory-cancel':s.phase==='browsing'?'#inventory-filter,#inventory-close':'#inventory-native:enabled,#inventory-continue:enabled')||dialog.querySelector('h2');if(target?.tagName==='H2')target.tabIndex=-1;target?.focus({preventScroll:true});}dialog.scrollTop=scroll;
  }
  document.addEventListener('visibilitychange',render,{signal});signal.addEventListener('abort',()=>{dialog.close();dialog.replaceChildren();},{once:true});return {render};
 }

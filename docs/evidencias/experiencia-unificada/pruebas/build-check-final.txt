@@ -7,9 +7,9 @@
   "esbuild": "0.28.2",
   "qa": false,
   "map": {
-    "rawBytes": 1594330,
-    "gzip9Bytes": 437598,
-    "sha256": "1ecae1ade73942d83c09def12ae0c02212b4240e2c82c59298a8848a862c2d7f",
+    "rawBytes": 1594933,
+    "gzip9Bytes": 437750,
+    "sha256": "c746630b7a098e31531db05f2aada2c30053220dc7c5679f96ba77fbc64d0d37",
     "inputs": [
       "prototypes/movement-map/presentation-sequence.mjs",
       "prototypes/action-map/action-presentation.mjs",
