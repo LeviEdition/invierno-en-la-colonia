@@ -123,3 +123,5 @@ dialog[data-surface=exclusive]::backdrop{background:#071014b8}
 @media(max-width:950px){body[data-sheet-expanded=true] #map-app #dossier{max-height:calc(100% - 90px)}}
 body[data-panel-open=false] #panel-expand{display:none}
 #map-app #final-new-game{display:none}
+#map-app .stats dd{min-width:0;white-space:normal;overflow-wrap:anywhere}
+body[data-context-active=true] #movement-result{display:none!important}

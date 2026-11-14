@@ -13,6 +13,7 @@ export function mountCyclePanel({controller,getContext,onNative,onRecover=onNati
   const visible=active&&!document.hidden&&!competing&&c&&s.phase!=='closed';if(!visible){if(dialog.open)dialog.close();dialog.replaceChildren();key='';if(lastVisible&&active)end.focus({preventScroll:true});lastVisible=false;return;}
   document.getElementById('floating-menu').hidden=true;document.getElementById('menu-toggle').setAttribute('aria-expanded','false');
   lastVisible=true;const next=JSON.stringify([s,c]);if(key===next)return;key=next;const scroll=dialog.scrollTop;dialog.replaceChildren();dialog.append(el('h2',s.phase==='confirming'?'Terminar turno':c.review?'Fase de colonia':c.outcome?(c.outcome.reason==='victory'?'Victoria':'Derrota'):c.decision?.kind==='handover'?'Pase de dispositivo':c.decision?.kind==='leaderChoice'?'Elegir sucesor':c.decision?.kind==='death'?'Fallecimientos':'Fase de colonia'));
+  if(c.outcome&&c.decision)dialog.append(el('p',c.outcome.label));
   if(s.message&&['confirming','unknown'].includes(s.phase))dialog.append(el('p',s.message));
   if(s.phase==='confirming')dialog.append(button('Confirmar fin de turno','cycle-confirm',()=>controller.confirm()),button('Cancelar','cycle-cancel',()=>controller.cancel()));
   else if(c.operation?.status==='unknown')dialog.append(el('p',c.operation.error),button('Consultar estado','cycle-native',onRecover));

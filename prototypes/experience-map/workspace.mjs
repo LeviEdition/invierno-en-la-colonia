@@ -31,7 +31,7 @@ export function mountWorkspace({getContext,panel,signal}){
   const candidates=['info-dialog','settings-panel','inventory-dialog','play-dialog','cycle-dialog','search-panel','action-panel','move-planner'];
   const chosen=candidates.find(id=>{const e=$(id);return e&&(e.tagName==='DIALOG'?e.open&&e.dataset.surface==='context':!e.hidden);})||null;
   for(const el of $('context-workspace').children)el.dataset.contextActive=String(el.id===chosen);
-  $('context-default').hidden=!!chosen;$('character-navigation').hidden=!!chosen;
+  document.body.dataset.contextActive=String(!!chosen);$('context-default').hidden=!!chosen;$('character-navigation').hidden=!!chosen;
   if(chosen&&chosen!==current){opener=opener||$(chosen).dataset.opener||document.activeElement?.id||'menu-toggle';panel(true);document.body.dataset.sheetExpanded='true';$('panel-content').scrollTop=0;}
   if(!chosen&&current)focusBack();current=chosen;
   const titles={'inventory-dialog':'Inventario','play-dialog':play.inspect().page==='groups'?'Grupo y líderes':'Acción','cycle-dialog':'Colonia','settings-panel':'Ajustes','info-dialog':$('dialog-title').textContent,'search-panel':'Buscar','action-panel':$('action-title').textContent,'move-planner':'Moverse'};
