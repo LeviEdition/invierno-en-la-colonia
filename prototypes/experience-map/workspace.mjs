@@ -1,8 +1,8 @@
 import {unified} from './surfaces.mjs';
 const $=id=>document.getElementById(id),visible=e=>!!e&&!e.hidden&&e.getClientRects().length>0;
 export function mountWorkspace({getContext,panel,signal}){
- if(!unified()||!getContext().inventory||!getContext().play||!getContext().cycle)return {render(){},setNotice(){}};
- let current=null,notice=null,opener=null,lastScope=null,lastBarrier=null;
+ if(!unified()||!getContext().inventory||!getContext().play||!getContext().cycle)return {render(){}};
+ let current=null,opener=null,lastScope=null,lastBarrier=null;
  const {action,search,inventory,play,movement,cycle}=getContext();
  function cancelDrafts(){
   const a=action.inspect(),s=search.inspect(),p=play.inspect(),m=movement.inspect();
@@ -27,7 +27,7 @@ export function mountWorkspace({getContext,panel,signal}){
  },{signal});
  const technical=$('development-tools');technical.hidden=!new URLSearchParams(location.search).has('dev');
  function render(){const c=getContext(),p=c.projection;if(!p)return;
-  const scope=p.play?`${p.play.session}/${p.play.generation}/${p.turn}`:null;const barrier=p.cycle?.decision?.kind==='handover'?'handover':p.ended?'ended':null;if(scope!==lastScope||barrier&&barrier!==lastBarrier){notice=null;lastScope=scope;lastBarrier=barrier;closeQueries();}else lastBarrier=barrier;
+  const scope=p.play?`${p.play.session}/${p.play.generation}/${p.turn}`:null;const barrier=p.cycle?.decision?.kind==='handover'?'handover':p.ended?'ended':null;if(scope!==lastScope||barrier&&barrier!==lastBarrier){lastScope=scope;lastBarrier=barrier;closeQueries();}else lastBarrier=barrier;
   const candidates=['info-dialog','settings-panel','inventory-dialog','play-dialog','cycle-dialog','search-panel','action-panel','move-planner'];
   const chosen=candidates.find(id=>{const e=$(id);return e&&(e.tagName==='DIALOG'?e.open&&e.dataset.surface==='context':!e.hidden);})||null;
   for(const el of $('context-workspace').children)el.dataset.contextActive=String(el.id===chosen);
@@ -38,7 +38,6 @@ export function mountWorkspace({getContext,panel,signal}){
   if(chosen)$('panel-title').textContent=titles[chosen]||'Ficha';
   $('panel-expand').hidden=!matchMedia('(max-width:950px)').matches;
   $('panel-expand').textContent=document.body.dataset.sheetExpanded==='true'?'Compactar':'Ampliar';
-  const result=$('context-result');result.hidden=!notice||!!chosen&&!(chosen==='inventory-dialog'&&inventory.inspect().phase==='browsing'&&notice.id.startsWith('inventory_'))||!!p.play?.decision||!!p.cycle?.decision||p.ended;result.textContent=notice?.text||'';
  }
- return {render,rememberOpener(id){opener=id||'menu-toggle';},setNotice(n){notice=n;render();},inspect:()=>({current,notice})};
+ return {render,rememberOpener(id){opener=id||'menu-toggle';},inspect:()=>({current})};
 }

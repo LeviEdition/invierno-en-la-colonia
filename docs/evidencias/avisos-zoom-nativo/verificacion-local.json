@@ -1,0 +1,51 @@
+{
+  "unit": {
+    "tests": 737,
+    "pass": 737,
+    "fail": 0
+  },
+  "batteries": {
+    "presentacion": {
+      "passed": true,
+      "cases": 2,
+      "sha256": "30537d5183819d91ad831815dd86439025457cf3d487ed4c3d62103cc2a3e732"
+    },
+    "capacidades": {
+      "passed": true,
+      "cases": 4,
+      "sha256": "c1d6bd3f5e60640ef127419df52fc7b074c790744116c286130b7772884c02c7"
+    },
+    "inventario": {
+      "passed": true,
+      "cases": 2,
+      "sha256": "8b8f8b4371a4b54c8177d30e29a9b7285abace1b0783db2adb1e49074d2e4b85"
+    },
+    "ciclo": {
+      "passed": true,
+      "cases": 10,
+      "sha256": "a1772a2b1a6fe5cde5c5fe63baadf4558ff2cf380f4aff86375544a9f7f985de"
+    },
+    "migracion": {
+      "passed": true,
+      "cases": 14,
+      "sha256": "94bb03fcfb406ce3c8b5fb432de0c555a74feda0b8cbf9ab7c325071373f0f9e"
+    },
+    "experiencia": {
+      "passed": true,
+      "cases": 6,
+      "sha256": "54f84900bf119d6ccbb060170b6baf83548c86c1f27270141bf914fb9e5d6c92"
+    },
+    "acciones": {
+      "passed": true,
+      "cases": 2,
+      "sha256": "431f670d946fab4eb56059a537b73a032af2bfe4d83f4b0cd38179baeaf19193"
+    },
+    "avisos-camara": {
+      "passed": true,
+      "cases": 4,
+      "attacks": 6
+    }
+  },
+  "stableHtmlSha256": "28ee788a65d64271f3ce28bd2ff73d26dc2644aa798e51bf925f3914317be9ac",
+  "artSha256": "0c5268c189068b5eb7bf51a1fbc871a87782b75e02dc86fe6d21aeeb272e4222"
+}

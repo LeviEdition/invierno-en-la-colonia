@@ -55,7 +55,6 @@ body[data-experience=unified] button:focus-visible,body[data-experience=unified]
 #context-workspace #move-planner p{display:block}#context-workspace #move-planner select{min-width:0}
 #context-workspace #move-confirmation{flex-wrap:wrap}
 #context-workspace .search-dice{margin:10px 0;gap:8px}
-#context-result{padding:10px;margin-bottom:10px;border:1px solid #a28d64;border-left-width:4px;background:#343d30;font-size:14px}
 #context-workspace .inventory-heading{align-items:flex-start;gap:5px}
 #context-workspace .inventory-heading h2{font-size:17px;flex:1}
 #context-workspace .inventory-cards{grid-template-columns:1fr;gap:0}
@@ -125,3 +124,6 @@ body[data-panel-open=false] #panel-expand{display:none}
 #map-app #final-new-game{display:none}
 #map-app .stats dd{min-width:0;white-space:normal;overflow-wrap:anywhere}
 body[data-context-active=true] #movement-result{display:none!important}
+
+#map-notice{position:absolute;z-index:45;top:68px;left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100% - 24px);box-sizing:border-box;padding:10px 14px;border:1px solid #b8a27a;border-radius:6px;background:#222d26f5;color:#fff3d6;box-shadow:0 3px 12px #0008;font:15px/1.4 system-ui;pointer-events:none}
+#zoom-in:disabled{opacity:.45;cursor:default}

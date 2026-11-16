@@ -1,3 +1,4 @@
+import {createMapNotice} from '../experience-map/map-notice.mjs';
 import {createRoutineResults} from '../experience-map/routine-results.mjs';
 import {createPlayController} from '../play-map/controller.mjs';
 import {createCycleController} from '../cycle-map/controller.mjs';
@@ -27,7 +28,9 @@ const inventory=createInventoryController({selectOnly:unified,send,onChange:()=>
 const ownedInventory=p=>p?.inventory?.receipt&&!['setup','handover','waiting'].includes(p.blocked);
 const cycle=createCycleController({send,onChange:()=>{if(cycle.inspect().phase==='confirming')clearPreviousResult();viewer?.updateActions();}});
 const play=createPlayController({send,onChange:()=>{if(play.inspect().intent)clearPreviousResult();viewer?.updateActions();}});
-const routine=createRoutineResults({action,search,inventory,play,onNotice:n=>{if(n){movementNoticeEnabled=false;$('movement-result').textContent='';}viewer?.setNotice?.(n);}});
+const mapNotice=unified?createMapNotice({render:n=>{const el=$('map-notice');el.hidden=!n;el.textContent=n?.text||'';}}):null;
+lifetime.signal.addEventListener('abort',()=>mapNotice?.clear(),{once:true});
+const routine=createRoutineResults({action,search,inventory,play,onNotice:n=>{if(n){movementNoticeEnabled=false;$('movement-result').textContent='';}mapNotice?.show(n);}});
 function clearPreviousResult(){if(!unified)return;movementNoticeEnabled=false;if($('movement-result').textContent)$('movement-result').textContent='';if(routine.inspect())routine.clear();}
 const managedCycle=p=>!!p?.cycle?.managed||!!p?.play?.managed;
 const variant=typeof __ACTION_MAP_VARIANT__==='undefined'?'action-map':__ACTION_MAP_VARIANT__;
@@ -79,7 +82,7 @@ function mountViewer(){
   try{
    const created=await createSearchMapView({signal:current.signal,movement,search,action,inventory,cycle,play,onRecover:()=>connect(),onSearchNative:showDecision});
    if(!pageActive||id!==generation||current.signal.aborted){await created.destroy();return;}
-   viewer=created;viewer.setNotice?.(routine.inspect());if(state)viewer.setState(displayState());viewer.setActive(mode==='map'&&(!state?.blocked||!!ownedSearch(state)||!!ownedAction(state)||!!ownedInventory(state)||managedCycle(state)));if(retainedView?.epoch===state?.epoch){created.restoreView?.({...retainedView,selected:retainedView.turn===state.turn?retainedView.selected:null});retainedView=null;}document.body.dataset.viewState='ready';
+   viewer=created;if(state)viewer.setState(displayState());viewer.setActive(mode==='map'&&(!state?.blocked||!!ownedSearch(state)||!!ownedAction(state)||!!ownedInventory(state)||managedCycle(state)));if(retainedView?.epoch===state?.epoch){created.restoreView?.({...retainedView,selected:retainedView.turn===state.turn?retainedView.selected:null});retainedView=null;}document.body.dataset.viewState='ready';
   }catch(error){if(current.signal.aborted||id!==generation)return;lastError=error.message;document.body.dataset.viewState='error';$('loading').hidden=false;$('loading').setAttribute('role','alert');$('loading').textContent=error.message==='WEBGL_UNAVAILABLE'?variant==='horizontal-map'?'Este navegador no ofrece WebGL para mostrar el mapa. Probá otro navegador compatible.':'Este navegador no ofrece WebGL. La interfaz V9.9 sigue disponible.':'No se pudo cargar el mapa. '+error.message;$('retry-view').hidden=false;status(variant==='horizontal-map'?'Reintentar el mapa conserva la partida.':'Podés continuar usando V9.9.');}
  });return serial;
 }
@@ -118,7 +121,7 @@ function receive(event){
   if(!action.result(message))return;if(message.state&&validProjection(message.state))state=message.state;
   if(actionPresenting()){
    if(mode==='map'&&viewer&&!document.hidden&&message.resolution&&message.presentation){
-    viewer.startActionPresentation(message,()=>{action.finishPresentation();applyAuthority();viewer?.updateActions();});
+    viewer.startActionPresentation(message,()=>{action.finishPresentation();applyAuthority();if(unified)routine.finishAction(message,state);viewer?.updateActions();});
    }else {action.interrupt();applyAuthority();}
   }else applyAuthority();return;
  }
@@ -156,7 +159,7 @@ document.addEventListener('visibilitychange',()=>{if(document.hidden){stopAction
 export function inspect(){return {mode,connected:!!port,starts,generation,projection:state?structuredClone(state):null,movement:movement.inspect(),search:search.inspect(),action:action.inspect(),inventory:inventory.inspect(),cycle:cycle.inspect(),play:play.inspect(),view:viewer?.inspect()||null,lastDisposal,lastError};}
 export function worldAt(point){return viewer?.worldAt(point);}
 export function disposeViewer(){stopSearchClock();stopMovement();stopAction();search.interrupt();attempt?.abort();generation++;serial=serial.catch(()=>{}).then(clearViewer);return serial;}
-window.addEventListener('pagehide',event=>{pageActive=false;disconnect();search.update(null);action.update(null);inventory.update(null);cycle.update(null);play.update(null);lastPublic=null;if(state){state={...state,inventory:null,cycle:null,blocked:'waiting',characters:[],players:[],locations:[],dice:{ownerId:null,available:null,used:null},movement:{...state.movement,options:{}},search:{...state.search,private:null,options:{}},action:{...state.action,ownerId:null,operation:null,presentation:null,options:{}}};viewer?.setState(state);}void disposeViewer();if(!event.persisted)lifetime.abort();});
+window.addEventListener('pagehide',event=>{mapNotice?.clear();pageActive=false;disconnect();search.update(null);action.update(null);inventory.update(null);cycle.update(null);play.update(null);lastPublic=null;if(state){state={...state,inventory:null,cycle:null,blocked:'waiting',characters:[],players:[],locations:[],dice:{ownerId:null,available:null,used:null},movement:{...state.movement,options:{}},search:{...state.search,private:null,options:{}},action:{...state.action,ownerId:null,operation:null,presentation:null,options:{}}};viewer?.setState(state);}void disposeViewer();if(!event.persisted)lifetime.abort();});
 window.addEventListener('pageshow',event=>{pageActive=true;if(event.persisted){connect();if(mode==='map'&&state&&(!state.blocked||ownedSearch(state)||ownedAction(state)||ownedInventory(state)||managedCycle(state)))void mountViewer();}});
 matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',event=>{if(event.matches&&actionPresenting()){stopAction();applyAuthority();}if(event.matches&&search.inspect().phase==='presenting'){stopSearchClock();search.finishPresentation();applyAuthority();}},{signal:lifetime.signal});
 frame.src=hostPath;

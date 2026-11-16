@@ -1,5 +1,11 @@
 # 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
 
+## Avisos de ataque y zoom nativo ·16/11/2026
+
+Encargo desde23b60a9, remoto/local y CI43640126887 verificados, misma rama/PR25 en borrador. [Informe100 y aceptación](100-avisos-y-zoom-nativo.md): aviso temporal sobre el mapa tras la animación, identidad del atacante conservada al consultar otra ficha y Registro sin duplicar acciones. Leo congelación1/Iris0 cubiertos en escritorio y móvil emulado. Máximo derivado del fondo original1671×941:100% nativo, compartido por botones/rueda/pinza/teclado/enfoque; `+` deshabilitado en el límite. Vista general contiene las siete localidades; ventanas mayores centran el fondo nativo. La ficha conserva escala/pan salvo ajuste necesario por bordes. Sustituye los comportamientos históricos de cámara/aviso descritos debajo. Evidencia y CI del SHA exacto en100/PR25. Sin cambios de reglas/costes/capacidades/arte/posiciones/referencia ni main/fusión/publicación. **Siguiente tarea tras verificar: revisión manual del creador.** Bloques siguientes históricos.
+
+---
+
 ## Experiencia unificada del mapa ·14/11/2026
 
 Encargo desdeef99f3c, misma rama/PR25 en borrador. [Auditoría previa, accesos y revisión99](99-experiencia-unificada-del-mapa.md). Cabecera compacta, objetivo/crisis públicos con consecuencia, cámara sobre mapa y un panel contextual para ficha, acciones, inventario y consultas. Ajustes separados; desarrollo solo con `?dev=1`. Resultados rutinarios reconocidos con los comandos existentes, sin repetir efectos ni pedir Continuar; costes, decisiones obligatorias, privacidad, IA y ciclo conservados. Recuperación de reconocimiento perdido vuelve a la ficha; avisos anteriores se retiran al preparar otra acción. El final confirma fallecimientos y muestra la causa. Referencia estable, arte y posiciones/capacidades aprobadas intactos. Evidencia antes/después y CI del SHA exacto en99/PR25. **Única siguiente tarea tras verificar: revisión manual del creador.** Sin main/fusión/publicación ni nuevas reglas/balance/narrativa. Bloques siguientes históricos.

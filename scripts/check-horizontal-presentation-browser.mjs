@@ -113,15 +113,14 @@ try{
    for(let i=0;i<volumes.length;i++)for(let j=i+1;j<volumes.length;j++)if(volumes[i].locality!==volumes[j].locality||volumes[i].index!==volumes[j].index)assert.equal(overlaps(volumes[i],volumes[j],2),false,'cuerpos vecinos');
    for(const z of scene.zones)for(const [x,y]of z.portraits){const radius=z.portraitDiameter/2;for(const a of volumes)assert.equal(overlaps({x:x-radius,y:y-radius,width:radius*2,height:radius*2},a,2),false,'ficha sobre actor');}
    r.volumes=volumes.length;
-   // Foco y vista general: abrir/cerrar mantiene el modo y es reversible.
+   // Abrir/cerrar conserva escala; el pan solo cambia para respetar bordes.
    for(const id of ['place-0','place-2','general']){
     if(id==='general')await general(page);else{await page.selectOption('#locality',id);await closePanel(page);}
-    const before=(await t.view(page)).camera;
-    await page.locator('#panel-toggle').click();await t.frames(page);
-    if(id==='general'){const opened=await t.view(page);assert.ok(Math.abs(opened.camera.zoom-before.zoom)<1e-8,'abrir ficha conserva zoom elegido');}
-    await page.locator('#panel-toggle').click();await t.frames(page);
-    const after=(await t.view(page)).camera;
-    for(const key of ['x','y','zoom'])assert.ok(Math.abs(before[key]-after[key])<1e-6,'panel reversible '+key);
+    for(let toggle=0;toggle<2;toggle++){
+     const before=await t.view(page);await page.locator('#panel-toggle').click();await t.frames(page);const after=await t.view(page);
+     assert.ok(Math.abs(before.camera.zoom-after.camera.zoom)<1e-8,'ficha conserva escala');
+     for(const [axis,size]of [['x','width'],['y','height']]){const extent=scene.bounds[size]*before.camera.zoom,available=after.viewport[size],expected=extent<=available?(available-extent)/2:Math.max(available-extent,Math.min(0,before.camera[axis]));assert.ok(Math.abs(after.camera[axis]-expected)<1e-6,'ficha solo ajusta bordes '+axis);}
+    }
     r.panel.push(id);if(id==='general'){await page.locator('#panel-toggle').click();await t.frames(page);await page.locator('#reset-view').click();await t.frames(page);assert.ok(complete(await t.view(page)).every(z=>z.inside),'restablecer encuadra general con ficha abierta');await closePanel(page);}
    }
    await page.locator('#zoom-in').click();await page.locator('#zoom-in').click();await page.locator('#zoom-in').click();await t.frames(page);

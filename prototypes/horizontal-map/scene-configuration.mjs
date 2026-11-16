@@ -1,7 +1,8 @@
 import geometry from './scene.json';import atmosphere from './atmosphere.json';
 import capacities from '../../config/horizontal-capacities.json';
-const scene={...geometry,zones:geometry.zones.map(z=>{if(z.accesses.length!==capacities[z.id])throw Error('Accesos incompatibles: '+z.id);return {...z,exteriorCapacity:capacities[z.id]};})};
 import originals from '../../assets/mapa-horizontal/manifest.json';
+const mapSource=originals.files.find(r=>r.file===originals.activeMap);
+const scene={...geometry,bounds:{...geometry.bounds,sourceWidth:mapSource.dimensions[0],sourceHeight:mapSource.dimensions[1]},zones:geometry.zones.map(z=>{if(z.accesses.length!==capacities[z.id])throw Error('Accesos incompatibles: '+z.id);return {...z,exteriorCapacity:capacities[z.id]};})};
 import uploaded from '../hospital-workshop/uploaded-kit.json';
 import oldManifest from '../../kit_arte_h33/manifest.json';
 import oldScene from '../hospital-workshop/mockup/scene.json';

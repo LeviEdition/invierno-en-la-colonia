@@ -16,7 +16,7 @@ test('Presentación: vista general contiene zonas completas y grupos máximos, t
   const c=fitMapCamera(scene.bounds,viewport);
   for(const z of scene.zones){const b=localityFrame(z,0);assert.ok(c.x+b.x*c.zoom>=-1&&c.y+b.y*c.zoom>=-1&&c.x+(b.x+b.width)*c.zoom<=viewport.width+1&&c.y+(b.y+b.height)*c.zoom<=viewport.height+1,z.id+' completa');}
   const small={...viewport,width:viewport.width-310},open=resizeMapCamera(c,{x:835.5,y:470.5},scene.bounds,small),closed=resizeMapCamera(open,{x:835.5,y:470.5},scene.bounds,viewport);
-  assert.deepEqual(closed,c,'restaura exactamente la vista general');
+  for(const key of ['x','y','zoom'])assert.equal(closed[key],c[key],'recupera encuadre y escala '+key);
  }
 });
 test('Presentación: colonia1/6/12 centrada y sin reducir fichas ni tocar cuerpos posteriores',()=>{

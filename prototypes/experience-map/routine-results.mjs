@@ -1,4 +1,4 @@
-import {actionSummary} from '../action-map/action-presentation.mjs';
+import {actionNotice} from '../action-map/action-presentation.mjs';
 export function playResult(receipt){const r=receipt.result||{};
  if(receipt.type==='bite'&&receipt.result)return r.option==='sacrifice'?r.targetName+' fue sacrificado; el contagio se detuvo.':r.roll?r.targetName+' arriesgó: dado '+r.roll.value+(r.roll.survived?' · se salvó.':' · murió; el contagio continuó.'):receipt.summary;
  if(receipt.type==='clean')return `Retiraste ${r.removedWaste} residuos · dado ${r.die}.`;
@@ -30,12 +30,12 @@ export function createRoutineResults({action,search,inventory,play,onNotice=()=>
    const a=action.inspect(),q=search.inspect(),i=inventory.inspect(),p=play.inspect(),d=next.play.decision;
    if(d?.kind==='recruit'&&!['sending','unknown'].includes(p.phase)){remember('recruit_'+next.play.generation+'_'+d.name,d.name+' se incorporó al grupo · '+d.job+'. '+d.skill);play.submit('recruit');return;}
    if(d||next.cycle?.decision)return;
-   if(a.phase==='result'&&a.operation&&!a.operation.generalDecision){remember(a.operation.operationId,actionSummary(a.operation));action.dismiss();return;}
+   if(a.phase==='result'&&a.operation&&!a.operation.generalDecision){remember(a.operation.operationId,actionNotice(a.operation,next.locations));action.dismiss();return;}
    if(q.phase==='result'&&q.operation&&!q.operation.generalDecision){const r=q.operation.result;remember(q.operation.operationId,r?`${q.operation.name} conservó ${r.card.name}.`: 'No quedaron cartas para conservar.');search.dismiss();return;}
    const ir=next.inventory?.receipt;if(ir&&!ir.generalDecision&&i.phase==='result'){remember(ir.id,inventoryResult(ir));inventory.dismiss();return;}
    const pr=next.play.receipt;if(pr&&pr.type!=='bite'&&!next.play.decision&&p.phase!=='sending'&&p.phase!=='unknown'){remember(pr.id,playResult(pr));play.submit('ack',{receiptId:pr.id});}
   });
  }
  function clear(){notice=null;onNotice(null);}
- return {update,clear,inspect:()=>notice};
+ return {update,clear,finishAction(op,next){remember(op.operationId,actionNotice(op,next.locations));},inspect:()=>notice};
 }

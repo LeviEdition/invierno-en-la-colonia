@@ -1,5 +1,13 @@
 import {exposureText} from '../movement-map/presentation-sequence.mjs';
 export function actionExposureText(e){return e?.ability==='pistol'?'Pistola · evitó la exposición sin tirar.':e?.ability==='rifle'?'Rifle · evitó la exposición sin tirar.':e?exposureText(e):'Sin exposición.';}
+export function actionNotice(op,locations=[]){
+ const r=op.resolution,place=locations.find(l=>l.engineIndex===(op.target??op.origin))?.name||'su localidad';
+ const site=place==='Colonia'?'en la Colonia':'en '+(/^(Hospital|Supermercado|Depósito)$/.test(place)?'el ':/^(Escuela|Biblioteca|Gasolinera|Comisaría)$/.test(place)?'la ':'')+place;
+ const outcome=op.kind==='attack'?`eliminó ${r.killed} zombi${r.killed===1?'':'s'}`:`construyó ${r.built} barricada${r.built===1?'':'s'}`;
+ const effect={frost:' y sufrió congelación',wound:' y sufrió una herida',bite:' y sufrió una mordedura',avoided:' y evitó el daño'}[r.exposure?.effect]||'';
+ const reinforced=op.kind==='attack'?Math.max(0,(r.zoneAfter?.b||0)-(r.zoneBefore?.b||0)):0;
+ return `${op.name} ${outcome} ${site}${effect}${reinforced?` y reforzó ${reinforced} barricada${reinforced===1?'':'s'}`:''}${r.actorAfter?.dead?'; falleció':''}.`;
+}
 export function actionSummary(op){
  const r=op?.resolution;if(!r)return '';
  const outcome=op.name+(op.kind==='attack'?` eliminó ${r.killed} zombi${r.killed===1?'':'s'}. `:` construyó ${r.built} barricada${r.built===1?'':'s'}. `);
