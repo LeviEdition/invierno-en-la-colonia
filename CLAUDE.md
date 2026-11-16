@@ -30,7 +30,7 @@ Las baterías de navegador (`scripts/check-*-browser.mjs`) necesitan Playwright 
 
 - Actualizar las secciones 1 a 5 del tablero **reemplazando** su contenido; no agregar bloques fechados.
 - El detalle va en un informe numerado en `docs/` (el siguiente número libre) y en la descripción del PR. Ajustar su extensión al tamaño del cambio.
-- La evidencia pesada (capturas, vídeos, JSON de pruebas) va al artifact del CI, no al repositorio, salvo las capturas que un informe cite.
+- La evidencia pesada (capturas, vídeos, JSON de pruebas) va al artifact del CI, no al repositorio, salvo las capturas que un informe cite. `tests/evidencias-enlazadas.test.mjs` falla si queda un archivo en `docs/evidencias` que ningún documento enlace.
 - En el informe, distinguir qué se comprobó, qué informa una herramienta y qué falta probar jugando en escritorio y en el teléfono de referencia (Samsung Galaxy A15).
 
 ## Idioma
