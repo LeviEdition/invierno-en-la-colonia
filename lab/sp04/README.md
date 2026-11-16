@@ -7,7 +7,7 @@ Informe y lectura de resultados: [docs/102-laboratorio-sp04-un-grupo.md](../../d
 ## Comandos
 
 ```bash
-node lab/sp04/correr.mjs                                   # plan completo: 74 celdas × 1000 partidas, escribe lab/sp04/resultados/
+node lab/sp04/correr.mjs                                   # plan completo: 74 celdas × 500 partidas, escribe lab/sp04/resultados/
 node lab/sp04/correr.mjs --partidas 200                    # mismo plan, semillas 1..200
 node lab/sp04/correr.mjs --ejemplo 17 --escenario B        # una partida ronda por ronda (semilla 17)
 node --test tests/sp04-arnes.test.mjs                      # reproducibilidad, calibración contra C14, un grupo, escenarios

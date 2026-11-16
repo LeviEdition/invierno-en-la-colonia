@@ -1,5 +1,5 @@
 // Plan completo del laboratorio SP-04. Reproduce todas las cifras del informe 102:
-//   node lab/sp04/correr.mjs                      (1000 partidas por celda, ~15 min)
+//   node lab/sp04/correr.mjs                      (500 partidas por celda)
 //   node lab/sp04/correr.mjs --partidas 200       (más rápido, mismas semillas 1..200)
 //   node lab/sp04/correr.mjs --ejemplo 17 --escenario B --politica ia-referencia
 // Semillas: la partida i de cada celda usa la semilla i (1..N); todas las celdas
@@ -13,7 +13,7 @@ import {escenarios,nombresDeEscenarios} from './escenarios.mjs';
 import {formulasDados,formulasComida,factoresZombis} from './motor-laboratorio.mjs';
 
 const args=process.argv.slice(2),opcion=(k,d)=>{const i=args.indexOf('--'+k);return i>=0?args[i+1]:d;};
-const partidasPorCelda=Number(opcion('partidas',1000)),salida=opcion('salida','lab/sp04/resultados');
+const partidasPorCelda=Number(opcion('partidas',500)),salida=opcion('salida','lab/sp04/resultados');
 
 export function planPrincipal(){
  const celdas=[];
