@@ -63,7 +63,7 @@ No cambian el motor, las reglas, los costes, el azar ni el orden de las decision
   Fixtures QA declarados: posición, zombis, dados y `Math.random=0`.
 - `tests/map-feedback-camera.test.mjs` esperaba el texto anterior («falleció»); ahora espera «, pero murió».
 
-Resultado local: `npm test` con 741/741. Las baterías de navegador del workflow se corrieron localmente contra el servidor QA; su resultado está en la descripción del PR. El CI del PR es la fuente de verdad.
+Resultado local: `npm test` con 741/741 y las nueve baterías del workflow aprobadas contra el servidor QA, en Chromium con emulación móvil (presentación, capacidades, inventario, ciclo, migración, experiencia, avisos y cámara, muertes y acciones h344). Falta el CI del PR, que es la fuente de verdad.
 
 ## Falta probar jugando
 
