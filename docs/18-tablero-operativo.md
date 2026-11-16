@@ -17,16 +17,14 @@ El mapa permite preparar, jugar y terminar una partida completa (humano + IA y d
 
 ## 2. Próxima tarea única
 
-**Prueba en el Samsung Galaxy A15 y en dos jugadores locales**, con la lista de la sección 5. El 16/11 el creador ganó una partida completa contra la IA en escritorio y aceptó el zoom 1:1 por ahora. El caso de Mara (hallazgo 6) está corregido en [101](101-muerte-durante-accion-propia.md). El CI de `179653c` está verde con las ocho baterías ([run 43862505431](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/43862505431)); falta el CI de la corrección, con la batería nueva de muertes.
+**Cerrar el Hito 3**, autorizado por el creador el 16/11 con la lista de la sección 5 completa. Falta que el CI de la corrección de acciones móviles salga verde; después, PR único hacia `main` y tag. El creador ganó una partida completa en escritorio con mordedura, muerte y sucesión, y aceptó el zoom 1:1 por ahora.
 
 ## 3. Cola ordenada
 
-1. **Confirmar jugando la corrección de muertes durante acciones** (hallazgo 6): Mara sola, contagio y muerte del líder, en escritorio y en el teléfono.
-2. **Acciones visibles en la ficha móvil** (hallazgo 3). Encargo pendiente de redactar tras la prueba manual.
-3. **Correcciones que salgan de la prueba manual**, solo las que afecten decisiones de juego.
-4. **Cierre del Hito 3:** aceptación del creador → PR único de la pila H3 hacia `main` → tag de versión del mapa. Requiere indicación expresa.
-5. **Mantenimiento antes de abrir el singleplayer** (propuesto, a decidir): consolidar el producto del mapa fuera de `prototypes/`, retirar prototipos intermedios conservándolos por tag, y sacar la evidencia pesada del repositorio.
-6. **SP-03/SP-04:** primera pregunta, cuántas acciones y recursos necesita un solo grupo para que abastecer la colonia y avanzar el objetivo compitan entre sí. Propuesta: responderla con simulaciones sobre el motor real.
+1. **Cierre del Hito 3** (autorizado por el creador el 16/11): CI verde → PR único de la pila H3 hacia `main` con merge convencional → cerrar los PR apilados → tag `v0.10.0-mapa-horizontal`.
+2. **Mantenimiento antes de abrir el singleplayer** (propuesto, a decidir): consolidar el producto del mapa fuera de `prototypes/`, retirar prototipos intermedios conservándolos por tag, y sacar la evidencia pesada del repositorio.
+3. **SP-03/SP-04:** primera pregunta, cuántas acciones y recursos necesita un solo grupo para que abastecer la colonia y avanzar el objetivo compitan entre sí. Laboratorio de simulación sobre el motor real (informe 102 previsto).
+4. **Mejoras menores del mapa** que no afectan decisiones: hallazgos 4 y 5, y una batería de CI que juegue una partida entera desde el mapa con clics reales.
 
 ## 4. Hallazgos abiertos
 
@@ -34,21 +32,21 @@ El mapa permite preparar, jugar y terminar una partida completa (humano + IA y d
 |---|---|---|---|
 | 1 | Aviso de combate en fichas ajenas | **Implementado** en `985bdf1`, CI verde en `179653c`; capturas correctas (Leo congelación 1, Iris 0) | Confirmar jugando |
 | 2 | Zoom máximo = tamaño del mapa | **Aceptado por ahora** (16/11): 1:1 sobre el fondo de 1671×941 | Revisar si en el teléfono alcanza para tocar retratos y accesos; arte de mayor resolución queda como deuda |
-| 3 | Moverse/Buscar/Atacar poco visibles en móvil | **Abierto.** En 393×852 la ficha muestra selector, inventario, retrato, atributos y dados antes que las acciones | Confirmar con el teléfono y encargar |
-| 4 | Selector de localidad desincronizado | **Por verificar.** La captura de zoom máximo dice "Hospital" con la vista centrada en la Colonia | Verificar en la prueba manual |
-| 5 | Aviso móvil tapa título y botones de la ficha ampliada durante 5 s | **Por verificar** | Verificar en la prueba manual |
-| 6 | La partida se trababa si un superviviente moría en su propia acción (panel vacío sobre «Fallecimientos») | **Corregido** ([101](101-muerte-durante-accion-propia.md)): el botón lleva a confirmar la muerte, al contagio o a la sucesión. Batería nueva en 1365×768 y 393×852 | Confirmar jugando; CI de la corrección pendiente |
+| 3 | Moverse/Buscar/Atacar poco visibles en móvil | **Corregido** (16/11, solo CSS móvil): en la ficha del superviviente propio las acciones van primero y «Inventario y equipo» al final. La batería de cámara y avisos comprueba en 852×393 y 393×852 que la primera acción se ve sin desplazar la ficha | Ver en el teléfono cuando se pueda |
+| 4 | Selector de localidad desincronizado | **Aceptado como menor** (16/11): no afecta decisiones | Después del cierre |
+| 5 | Aviso móvil tapa título y botones de la ficha ampliada durante 5 s | **Aceptado como menor** (16/11): el aviso caduca solo | Después del cierre |
+| 6 | La partida se trababa si un superviviente moría en su propia acción (panel vacío sobre «Fallecimientos») | **Corregido** ([101](101-muerte-durante-accion-propia.md)): el botón lleva a confirmar la muerte, al contagio o a la sucesión. Batería nueva en 1365×768 y 393×852 | Confirmado jugando (16/11) |
 
 ## 5. Lista de aceptación del Hito 3 (H3.6)
 
 - [x] CI de `179653c` verde con las ocho baterías ([run 43862505431](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/43862505431)).
 - [x] Partida completa humano + IA en escritorio (16/11, victoria).
-- [ ] Partida completa humano + IA en el Samsung Galaxy A15.
-- [ ] Partida de dos jugadores locales con pase de dispositivo, sin filtrar manos, dados ni registro.
-- [ ] Mordedura, muerte y sucesión reales durante una partida, incluida la muerte del atacante en su propia acción (hallazgo 6).
-- [ ] Desde el mapa se entiende de quién es el turno, qué pide la crisis, el objetivo y qué puede hacer el personaje seleccionado.
-- [ ] Ninguna acción se repite por animación, doble toque o recuperación.
-- [ ] Hallazgos 3 a 6 resueltos o aceptados.
+- [x] Teléfono: aceptado por el creador el 16/11 sobre la base de la emulación y las baterías móviles; prueba física pendiente como reserva.
+- [x] Dos jugadores locales: aceptado sobre las baterías automáticas de privacidad y pase; prueba manual pendiente como reserva.
+- [x] Mordedura, muerte y sucesión reales durante una partida (16/11, escritorio).
+- [x] Desde el mapa se entiende de quién es el turno, la crisis, el objetivo y las acciones (partida ganada en escritorio, 16/11).
+- [x] Ninguna acción repetida: cubierto por las baterías y sin casos en la partida manual.
+- [x] Hallazgos 3 y 6 corregidos; 4 y 5 aceptados como mejoras menores posteriores.
 - [x] Decisión sobre el zoom 1:1: aceptado por ahora (16/11).
 
 ## 6. Decisiones vigentes de mapa e interfaz
