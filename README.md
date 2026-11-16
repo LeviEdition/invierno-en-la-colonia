@@ -4,17 +4,17 @@ Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos un
 
 ## Estado actual
 
-El estado vigente, la próxima tarea y los hallazgos abiertos están en el **[tablero operativo](docs/18-tablero-operativo.md)**. Resumen al 16/11/2026: la referencia V9.9 está preservada (hitos 1 y 2 cerrados) y el mapa horizontal permite jugar partidas completas; el Hito 3 está en aceptación manual. El singleplayer está en diseño ([hoja de ruta 63](docs/63-hoja-de-ruta-planificacion-singleplayer.md)).
+El estado vigente, la próxima tarea y los hallazgos abiertos están en el **[tablero operativo](docs/18-tablero-operativo.md)**. Resumen al 16/11/2026: la referencia V9.9 está preservada (hitos 1 y 2 cerrados) y el mapa horizontal, que permite jugar partidas completas, quedó aceptado e integrado en `main` (Hito 3 cerrado, tag `v0.10.0-mapa-horizontal`). El singleplayer está en diseño ([hoja de ruta 63](docs/63-hoja-de-ruta-planificacion-singleplayer.md)).
 
 Documentos de referencia: [rumbo y hitos (62)](docs/62-hitos-referencia-fiel-y-juego-propio.md) · [plan del Hito 3 (75)](docs/75-plan-hito-3-identidad-visual.md) · [experiencia unificada del mapa (99)](docs/99-experiencia-unificada-del-mapa.md) · [dirección de producto (51)](docs/51-rumbo-fidelidad-e-identidad.md) · [matriz F (61)](docs/61-alcance-matriz-f-juego-propio.md). El historial de entregas y las guías de ramas anteriores están en el [tablero histórico](docs/18-historico-tablero.md).
 
-## Jugar el mapa horizontal (versión en desarrollo)
+## Jugar el mapa horizontal
 
-Rama `experiment/mapa-horizontal-ambientacion-h3`, [PR #25](https://github.com/LeviEdition/invierno-en-la-colonia/pull/25) en borrador. Requiere Node 22 o posterior. En VS Code, PowerShell, en la carpeta del repositorio:
+Está en `main`. Requiere Node 22 o posterior. En VS Code, PowerShell, en la carpeta del repositorio:
 
 ```powershell
 git fetch origin
-git switch experiment/mapa-horizontal-ambientacion-h3
+git switch main
 git pull --ff-only
 npm.cmd ci
 npm.cmd run dev:horizontal-map

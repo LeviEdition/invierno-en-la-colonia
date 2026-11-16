@@ -2,7 +2,7 @@
 
 > **Cómo se usa este documento.** Arriba está solo lo vigente: dónde estamos, la única tarea siguiente, la cola ordenada y los hallazgos abiertos. Cada entrega actualiza estas secciones **reemplazando** su contenido, no agregando un bloque nuevo. El detalle de cada entrega va en su informe numerado y en el PR. Los bloques fechados anteriores al 16/11/2026 están en [18-historico-tablero.md](18-historico-tablero.md) y no se editan.
 
-**Actualizado:** 16/11/2026 · **Rama de trabajo:** `experiment/mapa-horizontal-ambientacion-h3` · **PR:** [#25 (borrador)](https://github.com/LeviEdition/invierno-en-la-colonia/pull/25) · **Último cambio de producto:** corrección de muertes durante acciones ([101](101-muerte-durante-accion-propia.md)) · **main:** `826199d` (29/10/2026, sin cambios desde la preservación de la referencia)
+**Actualizado:** 16/11/2026 · **Rama del Hito 3:** `experiment/mapa-horizontal-ambientacion-h3`, integrada en `main` por el [PR #25](https://github.com/LeviEdition/invierno-en-la-colonia/pull/25) · **Tag:** `v0.10.0-mapa-horizontal` · **Último cambio de producto:** corrección de muertes durante acciones ([101](101-muerte-durante-accion-propia.md)) · **main:** `826199d` (29/10/2026, sin cambios desde la preservación de la referencia)
 
 ## 1. Dónde estamos
 
@@ -10,21 +10,21 @@
 |---|---|---|
 | 1 — Fidelidad aceptada y D1/D2 integradas | **Cerrado** (29/10) | [62](62-hitos-referencia-fiel-y-juego-propio.md), [71](71-integracion-main-y-cierre-d1-d2.md) |
 | 2 — Referencia V9.9 modular preservada | **Cerrado** (29/10), tag `v0.9.9-referencia-modular` | [72](72-preservacion-referencia-modular.md) |
-| 3 — Identidad visual y mapa jugable | **En aceptación.** H3.1–H3.5 cubiertos en la práctica por la migración al mapa horizontal; falta H3.6 (validación y cierre) | [75](75-plan-hito-3-identidad-visual.md), [99](99-experiencia-unificada-del-mapa.md), [100](100-avisos-y-zoom-nativo.md), [101](101-muerte-durante-accion-propia.md) |
+| 3 — Identidad visual y mapa jugable | **Cerrado** (16/11): aceptado por el creador, integrado en `main` y marcado con `v0.10.0-mapa-horizontal` | [75](75-plan-hito-3-identidad-visual.md), [99](99-experiencia-unificada-del-mapa.md), [100](100-avisos-y-zoom-nativo.md), [101](101-muerte-durante-accion-propia.md) |
 | Singleplayer (SP-00 a SP-08) | **Diseño en papel.** La puerta técnica de [63 §7](63-hoja-de-ruta-planificacion-singleplayer.md) (D1/D2 + referencia preservada) ya está cumplida | [63](63-hoja-de-ruta-planificacion-singleplayer.md) |
 
-El mapa permite preparar, jugar y terminar una partida completa (humano + IA y dos jugadores locales) con un único motor. La rama de trabajo acumula 87 commits sobre `main`, apilados sobre las ramas H3.2 a H3.4.4, ninguna integrada.
+El mapa permite preparar, jugar y terminar una partida completa (humano + IA y dos jugadores locales) con un único motor. La pila de ramas H3.2 → mapa horizontal quedó integrada en `main`; los PR apilados #18 a #24 se cerraron como incluidos, y #16 y #20 se cerraron sin fusionar (experimentos superados, ramas conservadas).
 
 ## 2. Próxima tarea única
 
-**Cerrar el Hito 3**, autorizado por el creador el 16/11 con la lista de la sección 5 completa. Falta que el CI de la corrección de acciones móviles salga verde; después, PR único hacia `main` y tag. El creador ganó una partida completa en escritorio con mordedura, muerte y sucesión, y aceptó el zoom 1:1 por ahora.
+**Decidir con qué se abre la etapa del singleplayer:** el laboratorio SP-04 (cola 1) o el mantenimiento previo (cola 2). Recomendación: el laboratorio primero, porque no depende de la estructura de `prototypes/` y responde la pregunta de diseño pendiente; el mantenimiento puede hacerse en paralelo.
 
 ## 3. Cola ordenada
 
-1. **Cierre del Hito 3** (autorizado por el creador el 16/11): CI verde → PR único de la pila H3 hacia `main` con merge convencional → cerrar los PR apilados → tag `v0.10.0-mapa-horizontal`.
-2. **Mantenimiento antes de abrir el singleplayer** (propuesto, a decidir): consolidar el producto del mapa fuera de `prototypes/`, retirar prototipos intermedios conservándolos por tag, y sacar la evidencia pesada del repositorio.
-3. **SP-03/SP-04:** primera pregunta, cuántas acciones y recursos necesita un solo grupo para que abastecer la colonia y avanzar el objetivo compitan entre sí. Laboratorio de simulación sobre el motor real (informe 102 previsto).
-4. **Mejoras menores del mapa** que no afectan decisiones: hallazgos 4 y 5, y una batería de CI que juegue una partida entera desde el mapa con clics reales.
+1. **SP-03/SP-04:** cuántas acciones y recursos necesita un solo grupo para que abastecer la colonia y avanzar el objetivo compitan entre sí. Laboratorio de simulación sobre el motor real, desde `main`, informe 102.
+2. **Mantenimiento** (propuesto, a decidir): consolidar el producto del mapa fuera de `prototypes/`, retirar prototipos intermedios conservándolos por tag, y sacar la evidencia pesada del repositorio.
+3. **Mejoras menores del mapa** que no afectan decisiones: hallazgos 4 y 5, y una batería de CI que juegue una partida entera desde el mapa con clics reales.
+4. **Reservas del Hito 3:** prueba física en el Samsung Galaxy A15 y prueba manual de dos jugadores locales cuando haya ocasión.
 
 ## 4. Hallazgos abiertos
 
@@ -37,9 +37,9 @@ El mapa permite preparar, jugar y terminar una partida completa (humano + IA y d
 | 5 | Aviso móvil tapa título y botones de la ficha ampliada durante 5 s | **Aceptado como menor** (16/11): el aviso caduca solo | Después del cierre |
 | 6 | La partida se trababa si un superviviente moría en su propia acción (panel vacío sobre «Fallecimientos») | **Corregido** ([101](101-muerte-durante-accion-propia.md)): el botón lleva a confirmar la muerte, al contagio o a la sucesión. Batería nueva en 1365×768 y 393×852 | Confirmado jugando (16/11) |
 
-## 5. Lista de aceptación del Hito 3 (H3.6)
+## 5. Lista de aceptación del Hito 3 (H3.6) — completa el 16/11
 
-- [x] CI de `179653c` verde con las ocho baterías ([run 43862505431](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/43862505431)).
+- [x] CI verde con todas las baterías sobre `1bc5037` ([run 43876444225](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/43876444225)).
 - [x] Partida completa humano + IA en escritorio (16/11, victoria).
 - [x] Teléfono: aceptado por el creador el 16/11 sobre la base de la emulación y las baterías móviles; prueba física pendiente como reserva.
 - [x] Dos jugadores locales: aceptado sobre las baterías automáticas de privacidad y pase; prueba manual pendiente como reserva.
