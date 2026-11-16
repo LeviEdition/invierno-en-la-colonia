@@ -17,7 +17,7 @@ El mapa permite preparar, jugar y terminar una partida completa (humano + IA y d
 
 ## 2. Próxima tarea única
 
-**Prueba manual de aceptación del Hito 3 por el creador**, con la lista de la sección 5. Primero, repetir el caso de Mara (hallazgo 6), que trababa la partida y está corregido en [101](101-muerte-durante-accion-propia.md). El CI de `179653c` está verde con las ocho baterías ([run 43862505431](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/43862505431)); falta el CI de la corrección, con la batería nueva de muertes.
+**Prueba en el Samsung Galaxy A15 y en dos jugadores locales**, con la lista de la sección 5. El 16/11 el creador ganó una partida completa contra la IA en escritorio y aceptó el zoom 1:1 por ahora. El caso de Mara (hallazgo 6) está corregido en [101](101-muerte-durante-accion-propia.md). El CI de `179653c` está verde con las ocho baterías ([run 43862505431](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/43862505431)); falta el CI de la corrección, con la batería nueva de muertes.
 
 ## 3. Cola ordenada
 
@@ -33,7 +33,7 @@ El mapa permite preparar, jugar y terminar una partida completa (humano + IA y d
 | # | Hallazgo | Estado | Próximo paso |
 |---|---|---|---|
 | 1 | Aviso de combate en fichas ajenas | **Implementado** en `985bdf1`, CI verde en `179653c`; capturas correctas (Leo congelación 1, Iris 0) | Confirmar jugando |
-| 2 | Zoom máximo = tamaño del mapa | **Implementado** como 1:1 sobre el fondo de 1671×941 | Decidir si se acepta: en 2560×1440 no hay zoom y en 1365×768 hay un solo paso |
+| 2 | Zoom máximo = tamaño del mapa | **Aceptado por ahora** (16/11): 1:1 sobre el fondo de 1671×941 | Revisar si en el teléfono alcanza para tocar retratos y accesos; arte de mayor resolución queda como deuda |
 | 3 | Moverse/Buscar/Atacar poco visibles en móvil | **Abierto.** En 393×852 la ficha muestra selector, inventario, retrato, atributos y dados antes que las acciones | Confirmar con el teléfono y encargar |
 | 4 | Selector de localidad desincronizado | **Por verificar.** La captura de zoom máximo dice "Hospital" con la vista centrada en la Colonia | Verificar en la prueba manual |
 | 5 | Aviso móvil tapa título y botones de la ficha ampliada durante 5 s | **Por verificar** | Verificar en la prueba manual |
@@ -42,14 +42,14 @@ El mapa permite preparar, jugar y terminar una partida completa (humano + IA y d
 ## 5. Lista de aceptación del Hito 3 (H3.6)
 
 - [x] CI de `179653c` verde con las ocho baterías ([run 43862505431](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/43862505431)).
-- [ ] Partida completa humano + IA en escritorio.
+- [x] Partida completa humano + IA en escritorio (16/11, victoria).
 - [ ] Partida completa humano + IA en el Samsung Galaxy A15.
 - [ ] Partida de dos jugadores locales con pase de dispositivo, sin filtrar manos, dados ni registro.
 - [ ] Mordedura, muerte y sucesión reales durante una partida, incluida la muerte del atacante en su propia acción (hallazgo 6).
 - [ ] Desde el mapa se entiende de quién es el turno, qué pide la crisis, el objetivo y qué puede hacer el personaje seleccionado.
 - [ ] Ninguna acción se repite por animación, doble toque o recuperación.
 - [ ] Hallazgos 3 a 6 resueltos o aceptados.
-- [ ] Decisión sobre el zoom 1:1.
+- [x] Decisión sobre el zoom 1:1: aceptado por ahora (16/11).
 
 ## 6. Decisiones vigentes de mapa e interfaz
 
