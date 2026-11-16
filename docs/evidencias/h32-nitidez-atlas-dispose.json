@@ -1,0 +1,44 @@
+{
+  "before": [
+    {
+      "isCanvas": true,
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "isCanvas": true,
+      "width": 2048,
+      "height": 2048
+    },
+    {
+      "isCanvas": true,
+      "width": 2048,
+      "height": 2048
+    }
+  ],
+  "after": [
+    {
+      "imageNull": true,
+      "sourceNull": true,
+      "rendererNull": true,
+      "textureNull": true,
+      "glTextureNull": true
+    },
+    {
+      "imageNull": true,
+      "sourceNull": true,
+      "rendererNull": true,
+      "textureNull": true,
+      "glTextureNull": true
+    },
+    {
+      "imageNull": true,
+      "sourceNull": true,
+      "rendererNull": true,
+      "textureNull": true,
+      "glTextureNull": true
+    }
+  ],
+  "note": "Referencias TextureSource anuladas; no prueba GC de bitmap ni VRAM",
+  "passed": true
+}

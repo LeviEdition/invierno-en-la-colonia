@@ -1,0 +1,12 @@
+{
+  "sha": "04126c6450e2a2101372a7be9db2703ab6e38ae7",
+  "run": 42300586160,
+  "runUrl": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/42300586160",
+  "conclusion": "failure",
+  "artifact": 13544673416,
+  "artifactBytes": 157267680,
+  "artifactSha256": "ab9babcb9b41f4e6e72fac715596226b46cc198410d739a4de2299af632cc5de",
+  "digestMatchesApi": true,
+  "zipCrcValid": true,
+  "cause": "Un delta de fotograma mayor que200ms puede saltarse la consecuencia visual; reproducción independiente en Chromium154 con RAF+500ms. No muta el motor."
+}

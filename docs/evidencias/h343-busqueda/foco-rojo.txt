@@ -1,0 +1,18 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: El foco debe permanecer visible dentro del panel desplazado
+
+false !== true
+
+    at file:///workspace/invierno-en-la-colonia/scripts/check-h343-edge-browser.mjs:17:550 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

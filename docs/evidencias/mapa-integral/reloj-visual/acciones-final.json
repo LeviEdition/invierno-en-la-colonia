@@ -1,0 +1,56 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "errors": [],
+      "barricadeFade": true,
+      "cancelPure": true,
+      "oneExecution": true,
+      "exposureOrder": true,
+      "barricadeCount": true,
+      "cameraStable": true,
+      "moveAndSearch": true,
+      "frames": 182,
+      "video": "/tmp/mapa-integral/cierre-reloj/acciones/1365x768/99bbc3912a6df8d24859803c15e38736.webm"
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "errors": [],
+      "barricadeFade": true,
+      "cancelPure": true,
+      "oneExecution": true,
+      "exposureOrder": true,
+      "barricadeCount": true,
+      "cameraStable": true,
+      "moveAndSearch": true,
+      "frames": 188,
+      "video": "/tmp/mapa-integral/cierre-reloj/acciones/852x393/584c434f1915d07fc4fdcbebdacbd359.webm"
+    },
+    {
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "errors": [],
+      "barricadeFade": true,
+      "cancelPure": true,
+      "oneExecution": true,
+      "exposureOrder": true,
+      "barricadeCount": true,
+      "cameraStable": true,
+      "moveAndSearch": true,
+      "frames": 168,
+      "video": "/tmp/mapa-integral/cierre-reloj/acciones/1920x1080/1167fc0ad4a758a555347321486bb81a.webm"
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

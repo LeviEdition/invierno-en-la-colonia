@@ -1,0 +1,33 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "errors": [],
+      "barricadeFade": true,
+      "cancelPure": true,
+      "oneExecution": true,
+      "exposureOrder": true,
+      "barricadeCount": true,
+      "cameraStable": true,
+      "moveAndSearch": true,
+      "frames": 153,
+      "video": "/workspace/invierno-en-la-colonia/work/presentation-review/acciones-final/1365x768/page@9dfca5d4b76f9ea1c0c0a5095bacb13e.webm"
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "errors": []
+    }
+  ],
+  "failures": [
+    "page.waitForFunction: Timeout 30000ms exceeded.\n    at /workspace/invierno-en-la-colonia/scripts/check-h344-browser.mjs:11:270"
+  ],
+  "passed": false
+}

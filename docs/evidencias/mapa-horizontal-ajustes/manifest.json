@@ -1,0 +1,216 @@
+{
+  "beforeCommit": "8113b557604bc5da1249a67fdeded11c2e97ea0f",
+  "deliveryCommit": "Consultar head exacto en PR25; evita SHA circular de esta evidencia",
+  "files": [
+    {
+      "file": "320x640/colonia.jpg",
+      "bytes": 174217,
+      "sha256": "73efbc8ca2ec29dd926e08a2ffd00676f483857ab43068da43ae78c65c336f8a"
+    },
+    {
+      "file": "320x640/general.jpg",
+      "bytes": 174738,
+      "sha256": "f81aed570eb50f8da1de5ee25b27f9a1b09390e471fc89d9d701e776209c5d0e"
+    },
+    {
+      "file": "393x852/colonia.jpg",
+      "bytes": 236991,
+      "sha256": "f71dc4089cbd4d587b371c5f4fc2130c1de596bd458b45b1e5c5e2cfd761561a"
+    },
+    {
+      "file": "393x852/general.jpg",
+      "bytes": 237104,
+      "sha256": "166f25e545d70ab7f6c51cb32c9926fce5fc4f81e8144b43be39dfb6bb19ed8c"
+    },
+    {
+      "file": "740x360/colonia.jpg",
+      "bytes": 195885,
+      "sha256": "280b531528399e86fd25e69c26910c55302aaf37bbe499533c3739efc328348f"
+    },
+    {
+      "file": "740x360/general.jpg",
+      "bytes": 200571,
+      "sha256": "03b5ab47c81f40e9e3fbb7d6aaaf3f6e5c0cb20ae99470cde7d09874e371ea05"
+    },
+    {
+      "file": "852x393/colonia.jpg",
+      "bytes": 226651,
+      "sha256": "47df66d6a4bbfaffed78390384e6d928997329c6180945b16c0ffd2aef6f2cd7"
+    },
+    {
+      "file": "852x393/general.jpg",
+      "bytes": 236500,
+      "sha256": "4324a79c6007b8069df6d9ff0a4de087ab3fd91b6a94ea1e4d40265ab5bcbf5e"
+    },
+    {
+      "file": "acciones.json",
+      "bytes": 1365,
+      "sha256": "badc67dbbc9f0952ce49d01efb8118b369b693c2c0bd1a3ba4f735293aa6199b"
+    },
+    {
+      "file": "antes/colonia.png",
+      "bytes": 887452,
+      "sha256": "3f513b15bbdce461dfbb362108b55927c55e4606db5b0570f2ff1714cec1e0ba"
+    },
+    {
+      "file": "antes/general.png",
+      "bytes": 1027772,
+      "sha256": "410ed8f59dffac5535d74bde15592a6bfeaf26d3abe1692a6bb27c0f1d3f84dd"
+    },
+    {
+      "file": "antes/hospital.png",
+      "bytes": 891487,
+      "sha256": "294fe73dfbc43d6d76c33127cf3cb46c67723c3bc07c6de097c739e87fe58bde"
+    },
+    {
+      "file": "base-618.txt",
+      "bytes": 55488,
+      "sha256": "af3b8dd08ff62698be50e6cc5b298adc51896b2f20dc2de2f959d336087bb978"
+    },
+    {
+      "file": "bordes.json",
+      "bytes": 1795,
+      "sha256": "41d4b06bb11337db605d796dfec9cb75a512d79f4603ec22b2e2ed2a2479a708"
+    },
+    {
+      "file": "camara.json",
+      "bytes": 2955,
+      "sha256": "e03836ca5ea64300c2cd7c6af45ebc2cb263cb5a91dc2596a8065e524c102cce"
+    },
+    {
+      "file": "check-build.txt",
+      "bytes": 125,
+      "sha256": "86e73c08796ad6d9c5656d310e04c5fa5753551cffd4756394886fdc14896ad7"
+    },
+    {
+      "file": "comparacion-modelo.json",
+      "bytes": 3566,
+      "sha256": "b312e1f76b9bffd7dbbdec58643e559223e89c7a0a3d1f47bd5741c5f860e3d2"
+    },
+    {
+      "file": "copas-luces-movimiento.webm",
+      "bytes": 4820424,
+      "sha256": "c5e542a2cd40800150f69788f5395bbfc2ed6500e0219977bec961a92dd71860"
+    },
+    {
+      "file": "despues/biblioteca.jpg",
+      "bytes": 177866,
+      "sha256": "fe44a43607d2acdc491996cc980755bd52fc0497c5036d3261dcfe879abeaad4"
+    },
+    {
+      "file": "despues/colonia.png",
+      "bytes": 918364,
+      "sha256": "6bdaa086662b552da00243bd063371649e0b373bf45b5fb75c66a7ce11141b71"
+    },
+    {
+      "file": "despues/colonia12.png",
+      "bytes": 925010,
+      "sha256": "7643c16cbc3dfb3ddacadc78ecae3418a4aeb346cd2f3e2e26080b7c938c99ab"
+    },
+    {
+      "file": "despues/comisaria.jpg",
+      "bytes": 170940,
+      "sha256": "b14eb462e284e9a994e60c2e16232cfad5ee17e8a2da802fc4d011b4bddbac98"
+    },
+    {
+      "file": "despues/escuela.jpg",
+      "bytes": 176326,
+      "sha256": "007a1c71856f340b8cc5020f949fa0ab178dcfa5d9b8fb6a1c1a96f1743261f0"
+    },
+    {
+      "file": "despues/gasolinera.jpg",
+      "bytes": 168074,
+      "sha256": "884bf35eab21662a6d6b28d4e61a883be52d05824e22e1a2f75d957645f6d7f9"
+    },
+    {
+      "file": "despues/general.png",
+      "bytes": 1027045,
+      "sha256": "921542096df13aa3bba04342a860540559eaaac7c93d77385e60f541f76748d2"
+    },
+    {
+      "file": "despues/hospital.png",
+      "bytes": 892216,
+      "sha256": "9b5f0d7985fe271fef4443dfb77c2f8f53287166522dfd6002f836cab6f33fb3"
+    },
+    {
+      "file": "despues/supermercado.jpg",
+      "bytes": 172548,
+      "sha256": "49930d0eb131cdc13fbf492e57367e43411ac61353f199e21b4cf1a0d2f33f4b"
+    },
+    {
+      "file": "escena.json",
+      "bytes": 152724,
+      "sha256": "3cf9811598f690f1f976e2034e28e457fb5bb8a48b9ca76ea933455754dde697"
+    },
+    {
+      "file": "medicion-resumen.json",
+      "bytes": 4108,
+      "sha256": "d9a16e7885083d96a055fdc10cafd6e9c6d5290063c1f7e3a8dd25db54e5ac28"
+    },
+    {
+      "file": "movimiento.json",
+      "bytes": 2905,
+      "sha256": "bfe527feeccf50048d06aed79a0b138cafb38b7d31eb0feea6a045e1a4d7cd4d"
+    },
+    {
+      "file": "npm-ci.txt",
+      "bytes": 24,
+      "sha256": "550451eb6124d6853c0b8244fc243f06298d4ebf7ac9c794bf04e6e7f2bd2edf"
+    },
+    {
+      "file": "oraculo-40.txt",
+      "bytes": 678,
+      "sha256": "51be11556f4efe2d65a46a037a2ba4cca5dfbf69aa40b3c0a391fae46e0a1b9d"
+    },
+    {
+      "file": "originales.json",
+      "bytes": 764,
+      "sha256": "b5065e7b1f69ae15b802253cdff46c92fac654042a27efb073c467812b27b329"
+    },
+    {
+      "file": "pruebas-rojas.txt",
+      "bytes": 5092,
+      "sha256": "d5771cea3241bf8055d91ef18921b24434815c4de0c3f84c378069f39f362e1d"
+    },
+    {
+      "file": "reproducciones/exposicion-timeout.jpg",
+      "bytes": 155093,
+      "sha256": "b6ce2b6980f6bbc172ed1302b6ccaef85077ed6d698297e25b876750c844e196"
+    },
+    {
+      "file": "reproducciones/movimiento-timeout.json",
+      "bytes": 1420,
+      "sha256": "1788ba32acc1cf2c70283e0f734d5414be66e327fa8bc68871f58e532dc6a60c"
+    },
+    {
+      "file": "reproducciones/movimiento-timeout.webm",
+      "bytes": 2473762,
+      "sha256": "652f9acadbf0a0aca14bd7080ef64cebc55da8667418e0f083dcd2fd31bbeff5"
+    },
+    {
+      "file": "reproducciones/tras-timeout.png",
+      "bytes": 436208,
+      "sha256": "97c02384dfe46b52c7837721331318d4077457479f8e7510d4e5d8abe0678b3e"
+    },
+    {
+      "file": "secuencia-temporal.jpg",
+      "bytes": 230796,
+      "sha256": "1fa8c878e4f9541e6f70b66702883f9d7555ce952c5be0874cae1158957b7e63"
+    },
+    {
+      "file": "siete-builds.txt",
+      "bytes": 33848,
+      "sha256": "6db456cb3d563042bf2ff6cbe1d028194985a2dcad4800c8bcc051f27641c9d1"
+    },
+    {
+      "file": "suite-623.txt",
+      "bytes": 56214,
+      "sha256": "1667f7aa7cb09b949fc98f70474e7cf043bac160ea466d69752be0ce32ec4c55"
+    },
+    {
+      "file": "video.json",
+      "bytes": 413223,
+      "sha256": "98022d8c2acf43d2146115476a342f712ed1140152cd2fb74b9f95d2ff8fc269"
+    }
+  ]
+}

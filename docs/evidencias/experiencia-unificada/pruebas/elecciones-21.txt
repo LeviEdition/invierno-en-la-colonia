@@ -1,0 +1,29 @@
+✔ Experiencia: reconoce resultados rutinarios una vez sin reenviar acciones (2.025951ms)
+✔ Experiencia: un microtask obsoleto no reconoce una decisión o audiencia nueva (0.579837ms)
+✔ Experiencia: mordedura, decisión general y operación incierta conservan bloqueo (0.213472ms)
+✔ Experiencia: cantidades de tratamiento y comida proceden de resultados estructurados (0.166482ms)
+✔ Experiencia: único dado se preselecciona sin enviar ni gastar; varios requieren elección (1.061594ms)
+✔ Experiencia: inventario preselecciona solo un receptor legal y conserva confirmación (1.73365ms)
+✔ Experiencia: reconocimiento de limpieza, mejora, curación y equipo conserva estado/azar (26.191426ms)
+✔ Experiencia: decisión ajena impide reconocer inventario y evita reintentos en bucle (0.277099ms)
+✔ Experiencia: recuperar un reconocimiento ya aplicado vuelve a la ficha sin reenviar (0.724825ms)
+✔ Experiencia: una mordedura nueva no muestra la tirada de una cadena anterior (0.476049ms)
+✔ Inventario: equivalencia de todos los usos manuales y equipamiento con V9.9, estado y azar (50.781514ms)
+✔ Inventario: objetivos inválidos, otro grupo, muerto, curación innecesaria y cancelación no consumen (11.26352ms)
+✔ Inventario: copias iguales identificadas; solo se descarta la copia confirmada, sin dados (2.466347ms)
+✔ Inventario: equipo efectivo, límites originales por tipo y transferencia equivalentes (4.186977ms)
+✔ Inventario: manual lleno sin residuos y combustible no disponible respetan reglas (1.39659ms)
+✔ Inventario protocolo: duplicación, obsolescencia, carta sustituida y consulta de respuesta perdida (26.978406ms)
+✔ Inventario privacidad: pase, turno y partida nuevos borran mano, intenciones y resultados privados (11.441123ms)
+✔ Inventario: aportar desde mano/equipo usa CrisisManager original sin residuos ni dados (3.722344ms)
+✔ Inventario protocolo: reemplazar una carta por otra igual invalida su identidad; campos ajenos rechazados (9.081022ms)
+✔ Inventario: objeto que gana la partida conserva resultado y exige continuar la decisión en V9.9 (1.810416ms)
+✔ Inventario: publicar el recibo no vuelve a procesar la cola de rescates del motor (1.711927ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 622.25191

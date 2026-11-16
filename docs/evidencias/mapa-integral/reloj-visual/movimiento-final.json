@@ -1,0 +1,122 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "records": [
+    {
+      "name": "blank",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "errors": [],
+      "targetHit": {
+        "id": "scene",
+        "tag": "CANVAS",
+        "html": "<canvas id=\"scene\" tabindex=\"0\" role=\"img\" aria-label=\"Mapa de localidades, supervivientes y destino de movimiento\" aria-describedby=\"map-instructions\" width=\"1055\" height=\"618\" st"
+      },
+      "exposureCheckpointStage": "reveal",
+      "stages": [
+        "travel",
+        "roll",
+        "reveal",
+        "consequence"
+      ],
+      "frameCount": 50,
+      "cameraStable": true,
+      "oneActorPerFrame": true,
+      "rngStableDuringPresentation": true,
+      "video": "/tmp/mapa-integral/cierre-reloj/movimiento/blank-1365x768/494379adb0f1602184edea3e81f13c24.webm"
+    },
+    {
+      "name": "wound",
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "errors": [],
+      "targetHit": {
+        "id": "scene",
+        "tag": "CANVAS",
+        "html": "<canvas id=\"scene\" tabindex=\"0\" role=\"img\" aria-label=\"Mapa de localidades, supervivientes y destino de movimiento\" aria-describedby=\"map-instructions\" width=\"1704\" height=\"588\" st"
+      },
+      "exposureCheckpointStage": "reveal",
+      "stages": [
+        "travel",
+        "roll",
+        "reveal",
+        "consequence"
+      ],
+      "frameCount": 60,
+      "cameraStable": true,
+      "oneActorPerFrame": true,
+      "rngStableDuringPresentation": true,
+      "video": "/tmp/mapa-integral/cierre-reloj/movimiento/wound-852x393/56ae43bf64542600ad4626e09a4cef11.webm"
+    },
+    {
+      "name": "frost",
+      "viewport": {
+        "width": 740,
+        "height": 360
+      },
+      "errors": [],
+      "targetHit": {
+        "id": "scene",
+        "tag": "CANVAS",
+        "html": "<canvas id=\"scene\" tabindex=\"0\" role=\"img\" aria-label=\"Mapa de localidades, supervivientes y destino de movimiento\" aria-describedby=\"map-instructions\" width=\"1480\" height=\"522\" st"
+      },
+      "exposureCheckpointStage": "reveal",
+      "stages": [
+        "travel",
+        "roll",
+        "reveal",
+        "consequence"
+      ],
+      "frameCount": 61,
+      "cameraStable": true,
+      "oneActorPerFrame": true,
+      "rngStableDuringPresentation": true,
+      "video": "/tmp/mapa-integral/cierre-reloj/movimiento/frost-740x360/83a51a17c28631f260759c5c0d25d889.webm"
+    },
+    {
+      "name": "blank",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "errors": [],
+      "targetHit": {
+        "id": "scene",
+        "tag": "CANVAS",
+        "html": "<canvas id=\"scene\" tabindex=\"0\" role=\"img\" aria-label=\"Mapa de localidades, supervivientes y destino de movimiento\" aria-describedby=\"map-instructions\" width=\"1610\" height=\"930\" st"
+      },
+      "exposureCheckpointStage": "reveal",
+      "stages": [
+        "travel",
+        "roll",
+        "reveal",
+        "consequence"
+      ],
+      "frameCount": 43,
+      "cameraStable": true,
+      "oneActorPerFrame": true,
+      "rngStableDuringPresentation": true,
+      "video": "/tmp/mapa-integral/cierre-reloj/movimiento/blank-1920x1080/88bb30c8eaae91de1fbcd2880509d9f2.webm"
+    },
+    {
+      "name": "decision",
+      "errors": [],
+      "waitedForPlayer": true,
+      "noEarlyDeath": true,
+      "video": "/tmp/mapa-integral/cierre-reloj/movimiento/decision/c1ce406e4628b261842bf1ba491a7bf4.webm"
+    },
+    {
+      "name": "death",
+      "errors": [],
+      "waitedForPlayer": true,
+      "noEarlyDeath": true,
+      "video": "/tmp/mapa-integral/cierre-reloj/movimiento/death/f197f8fa7e26917da6e5406965928968.webm"
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

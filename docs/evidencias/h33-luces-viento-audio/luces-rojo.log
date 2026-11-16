@@ -1,0 +1,35 @@
+✔ H3.3 ambiente: límites, emisores documentados y calles configuradas fuera de edificios (2.080458ms)
+✔ H3.3 ambiente: movimiento reducido inicia apagado y admite habilitación explícita (2.674761ms)
+✔ H3.3 ambiente: RNG propio, semilla reproducible y objetos reutilizados sin crecimiento (101.482088ms)
+✔ H3.3 ambiente: tiempo transcurrido, pausa y delta limitado sin ráfaga al reanudar (2.314561ms)
+✔ H3.3 ambiente: controles independientes, baja/normal y apagado sin cambios tardíos (1.635939ms)
+✔ H3.3 ambiente: partículas enteras dentro del mapa, estelas dentro de su zona y luces lentas (46.112845ms)
+✖ H3.3 ambiente: las cuatro luces varían claramente y no titilan al unísono (11.609255ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 6
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 249.507975
+
+✖ failing tests:
+
+test at tests/h33-atmosphere.test.mjs:41:1
+✖ H3.3 ambiente: las cuatro luces varían claramente y no titilan al unísono (11.609255ms)
+  AssertionError [ERR_ASSERTION]: La variación no alcanza para distinguir encendido/atenuado
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/h33-atmosphere.test.mjs:44:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

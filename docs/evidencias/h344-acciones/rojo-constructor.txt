@@ -1,0 +1,65 @@
+✔ H344 motor: ataque por ID independiente de seleccionado, dado repetido exacto y consulta pura (7.423963ms)
+✔ H344 motor: modificadores fighter/rifle/hacha y bajas de escopeta equivalentes (10.714991ms)
+✔ H344 motor: exposición blanco/herida/congelación/mordedura y muerte acumulada equivalentes (7.452115ms)
+✔ H344 motor: pistola una vez/rifle fuera de colonia/resistencia no inventan RNG (5.501181ms)
+✔ H344 motor: barricada usa dado1+, guardia+herramientas y límites compartidos (6.563859ms)
+✔ H344 motor: sin objetivo, lleno, rival, muerto, dado insuficiente y ausente no mutan (4.868019ms)
+✔ H344 motor: versión de dado/turno obsoletos rechazados y J2 usa su reserva (1.11734ms)
+✔ H344 motor: decisión pendiente bloquea nuevas acciones y reconocer resultado no cambia partida/RNG (1.514257ms)
+✔ H344 motor: cuatro construcciones agotan la reserva; dado ausente no consume nada (0.736597ms)
+✔ H344 motor: encrucijada real de ataque impide reconocimiento y nuevas acciones hasta resolver (1.35633ms)
+✔ H344 motor: acciones nativas posteriores retiran solo el diario viejo y no repiten consecuencias (1.21706ms)
+✖ H344 motor: habilidad de constructor sin dado equivale a special, sin bonus de herramientas ni RNG (1.386635ms)
+✖ H344 motor: habilidad de constructor sigue legal sin dados y respeta accesos ocupados (0.594984ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 11
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 117.776782
+
+✖ failing tests:
+
+test at tests/h344-action-engine.test.mjs:15:1
+✖ H344 motor: habilidad de constructor sin dado equivale a special, sin bonus de herramientas ni RNG (1.386635ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/h344-action-engine.test.mjs:15:265)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/h344-action-engine.test.mjs:16:1
+✖ H344 motor: habilidad de constructor sigue legal sin dados y respeta accesos ocupados (0.594984ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/h344-action-engine.test.mjs:16:325)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

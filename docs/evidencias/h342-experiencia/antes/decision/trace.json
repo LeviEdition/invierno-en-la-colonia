@@ -1,0 +1,2380 @@
+[
+  {
+    "time": 1696.4000000059605,
+    "phase": "idle",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 180,
+      "width": 1025,
+      "height": 563
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -319.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 1737.7999999970198,
+    "phase": "idle",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 180,
+      "width": 1025,
+      "height": 563
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -319.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 1757.5999999940395,
+    "phase": "idle",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 180,
+      "width": 1025,
+      "height": 563
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -319.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 1759,
+    "phase": "idle",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 180,
+      "width": 1025,
+      "height": 563
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -319.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 1776.5,
+    "phase": "idle",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 180,
+      "width": 1025,
+      "height": 563
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -319.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 1792.5999999940395,
+    "phase": "idle",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 180,
+      "width": 1025,
+      "height": 563
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -319.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 1809.2999999970198,
+    "phase": "idle",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 180,
+      "width": 1025,
+      "height": 563
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -319.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 1826,
+    "phase": "idle",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 180,
+      "width": 1025,
+      "height": 563
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -319.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 1842.7999999970198,
+    "phase": "idle",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 180,
+      "width": 1025,
+      "height": 563
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -319.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 1859.4000000059605,
+    "phase": "idle",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 180,
+      "width": 1025,
+      "height": 563
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -319.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 1876.2999999970198,
+    "phase": "idle",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 180,
+      "width": 1025,
+      "height": 563
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -319.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 1892.7999999970198,
+    "phase": "idle",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 180,
+      "width": 1025,
+      "height": 563
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -319.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 1909.2999999970198,
+    "phase": "idle",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 180,
+      "width": 1025,
+      "height": 563
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -319.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 1926.2999999970198,
+    "phase": "idle",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 180,
+      "width": 1025,
+      "height": 563
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -319.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 1943,
+    "phase": "idle",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 180,
+      "width": 1025,
+      "height": 563
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -319.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 1959.5,
+    "phase": "idle",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 180,
+      "width": 1025,
+      "height": 563
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -319.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 1976.5999999940395,
+    "phase": "choosing",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 268,
+      "width": 1025,
+      "height": 475
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -319.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.496316758747698,
+      "maxZoom": 2.4815837937384897
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 2004.2000000029802,
+    "phase": "choosing",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 268,
+      "width": 1025,
+      "height": 475
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -363.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.4152854511970534,
+      "maxZoom": 2.076427255985267
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 2053.7000000029802,
+    "phase": "choosing",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 268,
+      "width": 1025,
+      "height": 475
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -363.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.4152854511970534,
+      "maxZoom": 2.076427255985267
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 2087.0999999940395,
+    "phase": "choosing",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 268,
+      "width": 1025,
+      "height": 475
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -363.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.4152854511970534,
+      "maxZoom": 2.076427255985267
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 2129.2999999970198,
+    "phase": "choosing",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 268,
+      "width": 1025,
+      "height": 475
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -363.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.4152854511970534,
+      "maxZoom": 2.076427255985267
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 2150.2000000029802,
+    "phase": "choosing",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 268,
+      "width": 1025,
+      "height": 475
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -363.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.4152854511970534,
+      "maxZoom": 2.076427255985267
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 2159.4000000059605,
+    "phase": "choosing",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 268,
+      "width": 1025,
+      "height": 475
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -363.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.4152854511970534,
+      "maxZoom": 2.076427255985267
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 2176,
+    "phase": "choosing",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 268,
+      "width": 1025,
+      "height": 475
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -363.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.4152854511970534,
+      "maxZoom": 2.076427255985267
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 2193.5,
+    "phase": "choosing",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 268,
+      "width": 1025,
+      "height": 475
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -363.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.4152854511970534,
+      "maxZoom": 2.076427255985267
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 2209.4000000059605,
+    "phase": "choosing",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 268,
+      "width": 1025,
+      "height": 475
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -363.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.4152854511970534,
+      "maxZoom": 2.076427255985267
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 2226,
+    "phase": "choosing",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 268,
+      "width": 1025,
+      "height": 475
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -363.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.4152854511970534,
+      "maxZoom": 2.076427255985267
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 2242.9000000059605,
+    "phase": "choosing",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 268,
+      "width": 1025,
+      "height": 475
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -363.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.4152854511970534,
+      "maxZoom": 2.076427255985267
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 2259.2000000029802,
+    "phase": "choosing",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 268,
+      "width": 1025,
+      "height": 475
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -363.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.4152854511970534,
+      "maxZoom": 2.076427255985267
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 2276.2000000029802,
+    "phase": "choosing",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 268,
+      "width": 1025,
+      "height": 475
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -363.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.4152854511970534,
+      "maxZoom": 2.076427255985267
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 2292.9000000059605,
+    "phase": "choosing",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 268,
+      "width": 1025,
+      "height": 475
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -363.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.4152854511970534,
+      "maxZoom": 2.076427255985267
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 2309.2999999970198,
+    "phase": "choosing",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 268,
+      "width": 1025,
+      "height": 475
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -363.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.4152854511970534,
+      "maxZoom": 2.076427255985267
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 2325.9000000059605,
+    "phase": "choosing",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 268,
+      "width": 1025,
+      "height": 475
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -363.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.4152854511970534,
+      "maxZoom": 2.076427255985267
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 2342.5999999940395,
+    "phase": "choosing",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 268,
+      "width": 1025,
+      "height": 475
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -363.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.4152854511970534,
+      "maxZoom": 2.076427255985267
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 2359.5999999940395,
+    "phase": "choosing",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 268,
+      "width": 1025,
+      "height": 475
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -363.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.4152854511970534,
+      "maxZoom": 2.076427255985267
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 2376.4000000059605,
+    "phase": "choosing",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 268,
+      "width": 1025,
+      "height": 475
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -363.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.4152854511970534,
+      "maxZoom": 2.076427255985267
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 2392.5,
+    "phase": "sending",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 268,
+      "width": 1025,
+      "height": 475
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -363.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.4152854511970534,
+      "maxZoom": 2.076427255985267
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 2420.7999999970198,
+    "phase": "sending",
+    "mode": "map",
+    "blocked": null,
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 268,
+      "width": 1025,
+      "height": 475
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -363.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.4152854511970534,
+      "maxZoom": 2.076427255985267
+    },
+    "actor": {
+      "x": 775,
+      "y": 375
+    },
+    "markers": 6
+  },
+  {
+    "time": 2467.5,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 2472.0999999940395,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 2477.7000000029802,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 2492.5999999940395,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 2509,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 2558.7999999970198,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 2561.5999999940395,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 2575.5999999940395,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 2628.7000000029802,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 2642.9000000059605,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 2658.9000000059605,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 2675.7000000029802,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 2692.2999999970198,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 2709.0999999940395,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 2725.9000000059605,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 2742.7000000029802,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 2758.9000000059605,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 2775.5999999940395,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 2792.5,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 2809.2000000029802,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 2826.0999999940395,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 2842.4000000059605,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 2858.9000000059605,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 2875.5999999940395,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 2892.2999999970198,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 2909.0999999940395,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 2925.5,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 2966.2999999970198,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 2977.2000000029802,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 2992.4000000059605,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3009.2000000029802,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3026.0999999940395,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3042.4000000059605,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3059.2000000029802,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3075.7999999970198,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3092.7999999970198,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3109.2000000029802,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3127.4000000059605,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3142.5999999940395,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3158.9000000059605,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3176,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3192.2000000029802,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3209,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3225.4000000059605,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3242.5999999940395,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3259.2000000029802,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3276.0999999940395,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3292.7999999970198,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3309.2999999970198,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3328,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3342.4000000059605,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3359,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3375.7000000029802,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3392.9000000059605,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3409.2000000029802,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3425.5,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3442.4000000059605,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3459,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3475.7999999970198,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3492.2000000029802,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3509.5,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3525.7000000029802,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3543.0999999940395,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3563.4000000059605,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3575.7000000029802,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3592.2999999970198,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3609.4000000059605,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  },
+  {
+    "time": 3625.5,
+    "phase": "idle",
+    "mode": "reference",
+    "blocked": "decision",
+    "starts": 1,
+    "canvas": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "camera": {
+      "x": -699.4534161490683,
+      "y": -335.8509316770186,
+      "zoom": 1.2335403726708074,
+      "minZoom": 0.46685082872928174,
+      "maxZoom": 2.3342541436464086
+    },
+    "markers": 6
+  }
+]

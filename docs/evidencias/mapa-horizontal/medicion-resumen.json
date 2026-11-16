@@ -1,0 +1,251 @@
+{
+  "physicalMobile": false,
+  "browser": "154.0.8037.57",
+  "cpu": "AMD EPYC 9V74 80-Core Processor",
+  "method": "Secuencial. Misma partida/c\u00e1mara/DPR por perfil. Calentamiento500ms y dos muestras de1500ms. Diferencia de POST_RENDER y m\u00e9tricas CDP TaskDuration/heap; no VRAM ni rendimiento de tel\u00e9fono. Video en contexto aparte.",
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "profiles": [
+        {
+          "profile": "off",
+          "rendersPerSecondMean": 0.0,
+          "samples": [
+            {
+              "seconds": 1.5270999999940396,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "taskSeconds": 0.025453000000000003,
+              "heapBytes": 16238668
+            },
+            {
+              "seconds": 1.5250999999940396,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "taskSeconds": 0.021296999999999996,
+              "heapBytes": 18553712
+            }
+          ],
+          "vertices": 256,
+          "triangles": 216,
+          "mainRgbaWithMipsBytes": 61516456,
+          "runtimeCanvasesRgbaBytes": 6344200
+        },
+        {
+          "profile": "soft",
+          "rendersPerSecondMean": 14.537450179017108,
+          "samples": [
+            {
+              "seconds": 1.593699999988079,
+              "renderEvents": 23,
+              "rendersPerSecond": 14.431825312274608,
+              "taskSeconds": 1.507467,
+              "heapBytes": 14237772
+            },
+            {
+              "seconds": 1.639,
+              "renderEvents": 24,
+              "rendersPerSecond": 14.643075045759609,
+              "taskSeconds": 1.617012,
+              "heapBytes": 17515576
+            }
+          ],
+          "vertices": 256,
+          "triangles": 216,
+          "mainRgbaWithMipsBytes": 61516456,
+          "runtimeCanvasesRgbaBytes": 6344200
+        },
+        {
+          "profile": "storm",
+          "rendersPerSecondMean": 12.349442955996967,
+          "samples": [
+            {
+              "seconds": 1.591,
+              "renderEvents": 20,
+              "rendersPerSecond": 12.57071024512885,
+              "taskSeconds": 1.7555649999999998,
+              "heapBytes": 12707120
+            },
+            {
+              "seconds": 1.5666000000238418,
+              "renderEvents": 19,
+              "rendersPerSecond": 12.128175666865085,
+              "taskSeconds": 1.7112760000000007,
+              "heapBytes": 14427140
+            }
+          ],
+          "vertices": 256,
+          "triangles": 216,
+          "mainRgbaWithMipsBytes": 61516456,
+          "runtimeCanvasesRgbaBytes": 6344200
+        }
+      ],
+      "maxVegetationCoverage": 0.003289473684210526
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "profiles": [
+        {
+          "profile": "off",
+          "rendersPerSecondMean": 0.0,
+          "samples": [
+            {
+              "seconds": 1.5257000000178813,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "taskSeconds": 0.021579999999999995,
+              "heapBytes": 13315112
+            },
+            {
+              "seconds": 1.5475999999940395,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "taskSeconds": 0.019748,
+              "heapBytes": 15629764
+            }
+          ],
+          "vertices": 256,
+          "triangles": 216,
+          "mainRgbaWithMipsBytes": 61516456,
+          "runtimeCanvasesRgbaBytes": 6344200
+        },
+        {
+          "profile": "soft",
+          "rendersPerSecondMean": 12.227697025070196,
+          "samples": [
+            {
+              "seconds": 1.5549000000059605,
+              "renderEvents": 17,
+              "rendersPerSecond": 10.933178982529315,
+              "taskSeconds": 1.5126680000000001,
+              "heapBytes": 14846496
+            },
+            {
+              "seconds": 1.553,
+              "renderEvents": 21,
+              "rendersPerSecond": 13.522215067611075,
+              "taskSeconds": 1.5853300000000004,
+              "heapBytes": 13473492
+            }
+          ],
+          "vertices": 256,
+          "triangles": 216,
+          "mainRgbaWithMipsBytes": 61516456,
+          "runtimeCanvasesRgbaBytes": 6344200
+        },
+        {
+          "profile": "storm",
+          "rendersPerSecondMean": 13.869067802755692,
+          "samples": [
+            {
+              "seconds": 1.6010999999940396,
+              "renderEvents": 22,
+              "rendersPerSecond": 13.74055336960958,
+              "taskSeconds": 1.7694039999999998,
+              "heapBytes": 18789356
+            },
+            {
+              "seconds": 1.571699999988079,
+              "renderEvents": 22,
+              "rendersPerSecond": 13.997582235901804,
+              "taskSeconds": 1.7361210000000007,
+              "heapBytes": 19527280
+            }
+          ],
+          "vertices": 256,
+          "triangles": 216,
+          "mainRgbaWithMipsBytes": 61516456,
+          "runtimeCanvasesRgbaBytes": 6344200
+        }
+      ],
+      "maxVegetationCoverage": 0.003289473684210526
+    },
+    {
+      "viewport": {
+        "width": 740,
+        "height": 360
+      },
+      "profiles": [
+        {
+          "profile": "off",
+          "rendersPerSecondMean": 0.0,
+          "samples": [
+            {
+              "seconds": 1.5209000000059605,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "taskSeconds": 0.016395000000000003,
+              "heapBytes": 13650860
+            },
+            {
+              "seconds": 1.522,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "taskSeconds": 0.0174,
+              "heapBytes": 15965708
+            }
+          ],
+          "vertices": 256,
+          "triangles": 216,
+          "mainRgbaWithMipsBytes": 61516456,
+          "runtimeCanvasesRgbaBytes": 6344200
+        },
+        {
+          "profile": "soft",
+          "rendersPerSecondMean": 15.356154910864294,
+          "samples": [
+            {
+              "seconds": 1.559199999988079,
+              "renderEvents": 24,
+              "rendersPerSecond": 15.392508979081256,
+              "taskSeconds": 1.438872,
+              "heapBytes": 17716128
+            },
+            {
+              "seconds": 1.5665999999940394,
+              "renderEvents": 24,
+              "rendersPerSecond": 15.319800842647334,
+              "taskSeconds": 1.5913310000000003,
+              "heapBytes": 19013208
+            }
+          ],
+          "vertices": 256,
+          "triangles": 216,
+          "mainRgbaWithMipsBytes": 61516456,
+          "runtimeCanvasesRgbaBytes": 6344200
+        },
+        {
+          "profile": "storm",
+          "rendersPerSecondMean": 14.749715514991593,
+          "samples": [
+            {
+              "seconds": 1.5953000000119208,
+              "renderEvents": 21,
+              "rendersPerSecond": 13.16366827546109,
+              "taskSeconds": 1.7586630000000003,
+              "heapBytes": 15917184
+            },
+            {
+              "seconds": 1.5915999999940396,
+              "renderEvents": 26,
+              "rendersPerSecond": 16.335762754522097,
+              "taskSeconds": 1.7215559999999996,
+              "heapBytes": 14111984
+            }
+          ],
+          "vertices": 256,
+          "triangles": 216,
+          "mainRgbaWithMipsBytes": 61516456,
+          "runtimeCanvasesRgbaBytes": 6344200
+        }
+      ],
+      "maxVegetationCoverage": 0.003289473684210526
+    }
+  ]
+}

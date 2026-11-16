@@ -1,0 +1,50 @@
+name: H3.4.1 — Estado real y mapa de consulta
+on:
+  pull_request:
+    branches: [experiment/h3-3-taller-visual]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  state-map:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - run: npm run check:build && npm test
+      - name: Oráculo histórico, cuarenta partidas por variante
+        run: npm run test:poc
+      - run: npm run build:state-map && npm run check:state-map-build && node scripts/build-state-map.mjs --qa
+      - name: Chromium externo al producto
+        run: |
+          npm install --no-save --package-lock=false playwright@1.57.0
+          npx playwright install --with-deps chromium
+      - name: Consulta real, regresiones y ciclo de vida sobre head exacto
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/serve-state-map.mjs --qa > /tmp/h341-server.log 2>&1 &
+          STATE_MAP_SERVER_PID=$!
+          trap 'kill "$STATE_MAP_SERVER_PID"' EXIT
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:8775/prototypes/state-map/ -o /dev/null && break; sleep 1; done
+          export CHROMIUM_PATH="$(node --input-type=module -e "import {chromium} from 'playwright';console.log(chromium.executablePath())")"
+          git rev-parse HEAD
+          node scripts/check-h341-browser.mjs
+          node scripts/check-h341-edge-browser.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: h341-state-map-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            /tmp/h341-browser/
+            /tmp/h341-edge/
+            /tmp/h341-server.log
+            /tmp/d1d2-regressions/
+            dist/state-map/build.json

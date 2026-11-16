@@ -1,0 +1,806 @@
+{
+  "kit": {
+    "version": 1,
+    "id": "hospital-uploaded-pilot",
+    "status": "provisional-awaiting-model",
+    "reference": {
+      "id": "hospital-pilot-provisional",
+      "space": "illustration-xy",
+      "projection": {
+        "camera": "fixed-oblique",
+        "angle": null,
+        "status": "pending-model"
+      },
+      "scale": {
+        "humanHeight": 104,
+        "doorHeight": 126,
+        "unit": "illustration-unit-not-metre",
+        "status": "provisional"
+      }
+    },
+    "sourceSnapshot": "d9f73be0c30c2218658e50cbf5fb9bec362697ce",
+    "assets": [
+      {
+        "id": "hospital",
+        "kind": "image",
+        "file": "../../assets/prototipo-hospital/hospital.png",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2391925,
+        "sha256": "fc85ae8199e1d94b7f4636bed4b8f293c0e15ce64b8235dbbf63b2b3e0e76159",
+        "alpha": true,
+        "provenance": {
+          "manifest": "assets/prototipo-hospital/manifest.json",
+          "record": "hospital.png",
+          "uploadCommit": "ed3578f31d27fbdb1e09184de0073e911765b1e1",
+          "auditedCommit": "ba1d93a4ae73a91a6f07660584e2374b53043a67"
+        },
+        "pivot": {
+          "x": 630,
+          "y": 1148
+        },
+        "scale": 0.65,
+        "visibleBounds": {
+          "x": 39,
+          "y": 134,
+          "width": 1182,
+          "height": 1014
+        },
+        "states": [
+          "static"
+        ],
+        "reference": "hospital-pilot-provisional",
+        "provisional": true
+      },
+      {
+        "id": "ground",
+        "kind": "image",
+        "file": "../../assets/prototipo-hospital/suelo-nevado.png",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 3270542,
+        "sha256": "71487b23b4be9eba5c96e6e6c5d9feffaff025542339392c55f773384d12687a",
+        "alpha": false,
+        "provenance": {
+          "manifest": "assets/prototipo-hospital/manifest.json",
+          "record": "suelo-nevado.png",
+          "uploadCommit": "ed3578f31d27fbdb1e09184de0073e911765b1e1",
+          "auditedCommit": "ba1d93a4ae73a91a6f07660584e2374b53043a67"
+        },
+        "pivot": {
+          "x": 0,
+          "y": 0
+        },
+        "scale": 1,
+        "visibleBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1536,
+          "height": 1024
+        },
+        "states": [
+          "static"
+        ],
+        "reference": "hospital-pilot-provisional",
+        "provisional": true
+      },
+      {
+        "id": "zombie",
+        "kind": "image",
+        "file": "../../kit_arte_h33/assets/zombi.png",
+        "width": 1312,
+        "height": 1199,
+        "bytes": 932878,
+        "sha256": "0ca216bd601616d5c99232a1b737a250bce9f5598dba91f739277a287bb6c908",
+        "alpha": true,
+        "provenance": {
+          "manifest": "kit_arte_h33/manifest.json",
+          "record": "assets/zombi.png",
+          "uploadCommit": "d9f73be0c30c2218658e50cbf5fb9bec362697ce",
+          "source": "AI-generated-artwork-provided-by-creator"
+        },
+        "pivot": {
+          "x": 718,
+          "y": 1090
+        },
+        "scale": 0.095,
+        "visibleBounds": {
+          "x": 397,
+          "y": 35,
+          "width": 558,
+          "height": 1122
+        },
+        "states": [
+          "static"
+        ],
+        "reference": "hospital-pilot-provisional",
+        "provisional": true
+      },
+      {
+        "id": "survivor-marker",
+        "kind": "marker",
+        "file": null,
+        "width": 34,
+        "height": 104,
+        "pivot": {
+          "x": 17,
+          "y": 104
+        },
+        "scale": 1,
+        "visibleBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 34,
+          "height": 104
+        },
+        "states": [
+          "marker"
+        ],
+        "reference": "hospital-pilot-provisional",
+        "provenance": {
+          "kind": "geometric-diagnostic",
+          "artApproved": false
+        },
+        "provisional": true
+      },
+      {
+        "id": "barricade-marker",
+        "kind": "image",
+        "file": "../../kit_arte_h33/assets/barricada.png",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 2103514,
+        "sha256": "f21bd73b55822bff3059591e8b49de8536b7123db78773983034b1bbf1761377",
+        "alpha": true,
+        "provenance": {
+          "manifest": "kit_arte_h33/manifest.json",
+          "record": "assets/barricada.png",
+          "uploadCommit": "d9f73be0c30c2218658e50cbf5fb9bec362697ce",
+          "source": "AI-generated-artwork-provided-by-creator"
+        },
+        "pivot": {
+          "x": 752,
+          "y": 810
+        },
+        "scale": 0.07,
+        "visibleBounds": {
+          "x": 194,
+          "y": 99,
+          "width": 1183,
+          "height": 864
+        },
+        "states": [
+          "static"
+        ],
+        "reference": "hospital-pilot-provisional",
+        "provisional": true
+      },
+      {
+        "id": "human-guide",
+        "kind": "marker",
+        "file": null,
+        "width": 34,
+        "height": 104,
+        "pivot": {
+          "x": 17,
+          "y": 104
+        },
+        "scale": 1,
+        "visibleBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 34,
+          "height": 104
+        },
+        "states": [
+          "marker"
+        ],
+        "reference": "hospital-pilot-provisional",
+        "provenance": {
+          "kind": "geometric-diagnostic",
+          "artApproved": false
+        },
+        "provisional": true
+      },
+      {
+        "id": "door-guide",
+        "kind": "marker",
+        "file": null,
+        "width": 55,
+        "height": 126,
+        "pivot": {
+          "x": 27.5,
+          "y": 126
+        },
+        "scale": 1,
+        "visibleBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 55,
+          "height": 126
+        },
+        "states": [
+          "marker"
+        ],
+        "reference": "hospital-pilot-provisional",
+        "provenance": {
+          "kind": "geometric-diagnostic",
+          "artApproved": false
+        },
+        "provisional": true
+      },
+      {
+        "id": "survivor-portrait-1",
+        "kind": "image",
+        "file": "../../kit_arte_h33/assets/retrato-mara.png",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2932420,
+        "sha256": "7be85fb5c438ec5b666b1834668dd29db0d969276af1c3c1b93eced254955408",
+        "alpha": false,
+        "provenance": {
+          "manifest": "kit_arte_h33/manifest.json",
+          "record": "assets/retrato-mara.png",
+          "uploadCommit": "d9f73be0c30c2218658e50cbf5fb9bec362697ce",
+          "source": "AI-generated-artwork-provided-by-creator"
+        },
+        "pivot": {
+          "x": 627,
+          "y": 627
+        },
+        "scale": 0.051036682615629984,
+        "visibleBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1254,
+          "height": 1254
+        },
+        "states": [
+          "static"
+        ],
+        "reference": "hospital-pilot-provisional",
+        "provisional": true,
+        "presentation": "circular-portrait",
+        "rasterLimit": 384
+      },
+      {
+        "id": "survivor-portrait-2",
+        "kind": "image",
+        "file": "../../kit_arte_h33/assets/retrato-superviviente-02.png",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2525733,
+        "sha256": "399010b98ab86625d02d785f8b6d1ebbf405d92945548854f1e447d0e2d4f1f1",
+        "alpha": false,
+        "provenance": {
+          "manifest": "kit_arte_h33/manifest.json",
+          "record": "assets/retrato-superviviente-02.png",
+          "uploadCommit": "d9f73be0c30c2218658e50cbf5fb9bec362697ce",
+          "source": "AI-generated-artwork-provided-by-creator"
+        },
+        "pivot": {
+          "x": 627,
+          "y": 627
+        },
+        "scale": 0.051036682615629984,
+        "visibleBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1254,
+          "height": 1254
+        },
+        "states": [
+          "static"
+        ],
+        "reference": "hospital-pilot-provisional",
+        "provisional": true,
+        "presentation": "circular-portrait",
+        "rasterLimit": 384
+      },
+      {
+        "id": "survivor-portrait-3",
+        "kind": "image",
+        "file": "../../kit_arte_h33/assets/retrato-superviviente-03.png",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2798578,
+        "sha256": "24e669f61621f6a590c06a26df90074b36ddd640dfaece6f712522919a4b7a07",
+        "alpha": false,
+        "provenance": {
+          "manifest": "kit_arte_h33/manifest.json",
+          "record": "assets/retrato-superviviente-03.png",
+          "uploadCommit": "d9f73be0c30c2218658e50cbf5fb9bec362697ce",
+          "source": "AI-generated-artwork-provided-by-creator"
+        },
+        "pivot": {
+          "x": 627,
+          "y": 627
+        },
+        "scale": 0.051036682615629984,
+        "visibleBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1254,
+          "height": 1254
+        },
+        "states": [
+          "static"
+        ],
+        "reference": "hospital-pilot-provisional",
+        "provisional": true,
+        "presentation": "circular-portrait",
+        "rasterLimit": 384
+      },
+      {
+        "id": "survivor-portrait-4",
+        "kind": "image",
+        "file": "../../kit_arte_h33/assets/retrato-superviviente-04.png",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 2670374,
+        "sha256": "a867ee635a66997ca9768b6c18afa1d701cb729decc245f64383d01c4b2e63e3",
+        "alpha": false,
+        "provenance": {
+          "manifest": "kit_arte_h33/manifest.json",
+          "record": "assets/retrato-superviviente-04.png",
+          "uploadCommit": "d9f73be0c30c2218658e50cbf5fb9bec362697ce",
+          "source": "AI-generated-artwork-provided-by-creator"
+        },
+        "pivot": {
+          "x": 627,
+          "y": 627
+        },
+        "scale": 0.051036682615629984,
+        "visibleBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1254,
+          "height": 1254
+        },
+        "states": [
+          "static"
+        ],
+        "reference": "hospital-pilot-provisional",
+        "provisional": true,
+        "presentation": "circular-portrait",
+        "rasterLimit": 384
+      }
+    ],
+    "profiles": [
+      {
+        "id": "h32",
+        "label": "Kit subido — perfil de resolución original",
+        "factor": 1
+      },
+      {
+        "id": "three-quarter",
+        "label": "Ensayo 75% — no aprobado",
+        "factor": 0.75
+      },
+      {
+        "id": "half",
+        "label": "Ensayo 50% — no aprobado",
+        "factor": 0.5
+      }
+    ],
+    "derivation": {
+      "source": "original-png",
+      "storage": "runtime-only",
+      "method": "uniform-scale-canvas-high-quality-then-h32-pot-mipmaps",
+      "rounding": "ceil-raster-extent-with-uniform-scale",
+      "pivot": "original-pixel-pivot-times-factor",
+      "artApproved": false
+    },
+    "bounds": {
+      "x": 260,
+      "y": -40,
+      "width": 1040,
+      "height": 840
+    },
+    "buildingPosition": {
+      "x": 780,
+      "y": 670
+    },
+    "poses": {
+      "delante": {
+        "position": {
+          "x": 710,
+          "y": 670
+        },
+        "side": "front"
+      },
+      "detras": {
+        "position": {
+          "x": 790,
+          "y": 420
+        },
+        "side": "back"
+      },
+      "esquina": {
+        "position": {
+          "x": 411,
+          "y": 520
+        },
+        "side": "back"
+      }
+    },
+    "occlusion": {
+      "method": "explicit-demo-order-not-y-sorting",
+      "back": [
+        "ground",
+        "shadows",
+        "test-actor",
+        "hospital",
+        "occupants",
+        "guides",
+        "diagnostics"
+      ],
+      "front": [
+        "ground",
+        "shadows",
+        "hospital",
+        "test-actor",
+        "occupants",
+        "guides",
+        "diagnostics"
+      ],
+      "modelGeometryApproved": false
+    },
+    "survivorPositions": [
+      {
+        "id": "s1",
+        "x": 520,
+        "y": 690
+      },
+      {
+        "id": "s2",
+        "x": 620,
+        "y": 740
+      },
+      {
+        "id": "s3",
+        "x": 730,
+        "y": 780
+      },
+      {
+        "id": "s4",
+        "x": 840,
+        "y": 780
+      }
+    ],
+    "accessPositions": [
+      {
+        "id": "a1",
+        "x": 420,
+        "y": 610
+      },
+      {
+        "id": "a2",
+        "x": 920,
+        "y": 750
+      },
+      {
+        "id": "a3",
+        "x": 1040,
+        "y": 710
+      },
+      {
+        "id": "a4",
+        "x": 1150,
+        "y": 640
+      }
+    ],
+    "guidePositions": {
+      "human": {
+        "x": 1100,
+        "y": 800
+      },
+      "door": {
+        "x": 1220,
+        "y": 800
+      }
+    },
+    "budgetProposal": {
+      "status": "not-approved",
+      "scope": "uploaded-pilot-eight-image-textures-including-four-circular-portraits",
+      "hardware": "not-defined",
+      "minimumZoomRatio": 0.5,
+      "maximumZoomRatio": 4
+    },
+    "visibilityCriterion": {
+      "bounds": "RGBA alpha > 16 audited; opaque ground and marker bounds are complete",
+      "selection": "Original alpha >=16 for actors, circle for portraits; no destructive alpha edits",
+      "occlusion": "real image alpha plus explicit prepared order"
+    },
+    "survivorAssetIds": [
+      "survivor-portrait-1",
+      "survivor-portrait-2",
+      "survivor-portrait-3",
+      "survivor-portrait-4"
+    ]
+  },
+  "profiles": [
+    {
+      "id": "h32",
+      "factor": 1,
+      "textures": [
+        {
+          "id": "hospital",
+          "width": 1254,
+          "height": 1254,
+          "potWidth": 2048,
+          "potHeight": 2048,
+          "rgbaBase": 16777216,
+          "rgbaWithMips": 22369620,
+          "auxiliaryRgba": 16777216,
+          "derivedRgba": 0
+        },
+        {
+          "id": "ground",
+          "width": 1536,
+          "height": 1024,
+          "potWidth": 2048,
+          "potHeight": 1024,
+          "rgbaBase": 8388608,
+          "rgbaWithMips": 11184812,
+          "auxiliaryRgba": 8388608,
+          "derivedRgba": 0
+        },
+        {
+          "id": "zombie",
+          "width": 1312,
+          "height": 1199,
+          "potWidth": 2048,
+          "potHeight": 2048,
+          "rgbaBase": 16777216,
+          "rgbaWithMips": 22369620,
+          "auxiliaryRgba": 16777216,
+          "derivedRgba": 0
+        },
+        {
+          "id": "barricade-marker",
+          "width": 1536,
+          "height": 1024,
+          "potWidth": 2048,
+          "potHeight": 1024,
+          "rgbaBase": 8388608,
+          "rgbaWithMips": 11184812,
+          "auxiliaryRgba": 8388608,
+          "derivedRgba": 0
+        },
+        {
+          "id": "survivor-portrait-1",
+          "width": 384,
+          "height": 384,
+          "potWidth": 512,
+          "potHeight": 512,
+          "rgbaBase": 1048576,
+          "rgbaWithMips": 1398100,
+          "auxiliaryRgba": 1048576,
+          "derivedRgba": 589824
+        },
+        {
+          "id": "survivor-portrait-2",
+          "width": 384,
+          "height": 384,
+          "potWidth": 512,
+          "potHeight": 512,
+          "rgbaBase": 1048576,
+          "rgbaWithMips": 1398100,
+          "auxiliaryRgba": 1048576,
+          "derivedRgba": 589824
+        },
+        {
+          "id": "survivor-portrait-3",
+          "width": 384,
+          "height": 384,
+          "potWidth": 512,
+          "potHeight": 512,
+          "rgbaBase": 1048576,
+          "rgbaWithMips": 1398100,
+          "auxiliaryRgba": 1048576,
+          "derivedRgba": 589824
+        },
+        {
+          "id": "survivor-portrait-4",
+          "width": 384,
+          "height": 384,
+          "potWidth": 512,
+          "potHeight": 512,
+          "rgbaBase": 1048576,
+          "rgbaWithMips": 1398100,
+          "auxiliaryRgba": 1048576,
+          "derivedRgba": 589824
+        }
+      ]
+    },
+    {
+      "id": "three-quarter",
+      "factor": 0.75,
+      "textures": [
+        {
+          "id": "hospital",
+          "width": 941,
+          "height": 941,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 3541924
+        },
+        {
+          "id": "ground",
+          "width": 1152,
+          "height": 768,
+          "potWidth": 2048,
+          "potHeight": 1024,
+          "rgbaBase": 8388608,
+          "rgbaWithMips": 11184812,
+          "auxiliaryRgba": 8388608,
+          "derivedRgba": 3538944
+        },
+        {
+          "id": "zombie",
+          "width": 984,
+          "height": 900,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 3542400
+        },
+        {
+          "id": "barricade-marker",
+          "width": 1152,
+          "height": 768,
+          "potWidth": 2048,
+          "potHeight": 1024,
+          "rgbaBase": 8388608,
+          "rgbaWithMips": 11184812,
+          "auxiliaryRgba": 8388608,
+          "derivedRgba": 3538944
+        },
+        {
+          "id": "survivor-portrait-1",
+          "width": 384,
+          "height": 384,
+          "potWidth": 512,
+          "potHeight": 512,
+          "rgbaBase": 1048576,
+          "rgbaWithMips": 1398100,
+          "auxiliaryRgba": 1048576,
+          "derivedRgba": 589824
+        },
+        {
+          "id": "survivor-portrait-2",
+          "width": 384,
+          "height": 384,
+          "potWidth": 512,
+          "potHeight": 512,
+          "rgbaBase": 1048576,
+          "rgbaWithMips": 1398100,
+          "auxiliaryRgba": 1048576,
+          "derivedRgba": 589824
+        },
+        {
+          "id": "survivor-portrait-3",
+          "width": 384,
+          "height": 384,
+          "potWidth": 512,
+          "potHeight": 512,
+          "rgbaBase": 1048576,
+          "rgbaWithMips": 1398100,
+          "auxiliaryRgba": 1048576,
+          "derivedRgba": 589824
+        },
+        {
+          "id": "survivor-portrait-4",
+          "width": 384,
+          "height": 384,
+          "potWidth": 512,
+          "potHeight": 512,
+          "rgbaBase": 1048576,
+          "rgbaWithMips": 1398100,
+          "auxiliaryRgba": 1048576,
+          "derivedRgba": 589824
+        }
+      ]
+    },
+    {
+      "id": "half",
+      "factor": 0.5,
+      "textures": [
+        {
+          "id": "hospital",
+          "width": 627,
+          "height": 627,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 1572516
+        },
+        {
+          "id": "ground",
+          "width": 768,
+          "height": 512,
+          "potWidth": 1024,
+          "potHeight": 512,
+          "rgbaBase": 2097152,
+          "rgbaWithMips": 2796204,
+          "auxiliaryRgba": 2097152,
+          "derivedRgba": 1572864
+        },
+        {
+          "id": "zombie",
+          "width": 656,
+          "height": 600,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 1574400
+        },
+        {
+          "id": "barricade-marker",
+          "width": 768,
+          "height": 512,
+          "potWidth": 1024,
+          "potHeight": 512,
+          "rgbaBase": 2097152,
+          "rgbaWithMips": 2796204,
+          "auxiliaryRgba": 2097152,
+          "derivedRgba": 1572864
+        },
+        {
+          "id": "survivor-portrait-1",
+          "width": 384,
+          "height": 384,
+          "potWidth": 512,
+          "potHeight": 512,
+          "rgbaBase": 1048576,
+          "rgbaWithMips": 1398100,
+          "auxiliaryRgba": 1048576,
+          "derivedRgba": 589824
+        },
+        {
+          "id": "survivor-portrait-2",
+          "width": 384,
+          "height": 384,
+          "potWidth": 512,
+          "potHeight": 512,
+          "rgbaBase": 1048576,
+          "rgbaWithMips": 1398100,
+          "auxiliaryRgba": 1048576,
+          "derivedRgba": 589824
+        },
+        {
+          "id": "survivor-portrait-3",
+          "width": 384,
+          "height": 384,
+          "potWidth": 512,
+          "potHeight": 512,
+          "rgbaBase": 1048576,
+          "rgbaWithMips": 1398100,
+          "auxiliaryRgba": 1048576,
+          "derivedRgba": 589824
+        },
+        {
+          "id": "survivor-portrait-4",
+          "width": 384,
+          "height": 384,
+          "potWidth": 512,
+          "potHeight": 512,
+          "rgbaBase": 1048576,
+          "rgbaWithMips": 1398100,
+          "auxiliaryRgba": 1048576,
+          "derivedRgba": 589824
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "seed": 211969,
+  "mode": "normal",
+  "measurement": "Cambios dentro del canvas frente a apagado; strong=canal≥8/255; misma cámara y PNG, tiempo observado registrado, no igualdad exacta de fases",
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "scene": "general",
+      "camera": {
+        "x": 117.16666666666669,
+        "y": 12,
+        "zoom": 0.5460405156537753,
+        "minZoom": 0.5460405156537753,
+        "maxZoom": 2.7302025782688766
+      },
+      "dpr": 1,
+      "elapsed": 1.5049666667124018,
+      "seed": 211969,
+      "changed": 1258,
+      "strong": 172,
+      "energy": 13418
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "scene": "colonia",
+      "camera": {
+        "x": -699.4534161490683,
+        "y": -292.8509316770186,
+        "zoom": 1.2335403726708074,
+        "minZoom": 0.5460405156537753,
+        "maxZoom": 2.7302025782688766
+      },
+      "dpr": 1,
+      "elapsed": 3.4288333334848335,
+      "seed": 211969,
+      "changed": 2221,
+      "strong": 568,
+      "energy": 31591
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "scene": "general",
+      "camera": {
+        "x": 12,
+        "y": 184.625,
+        "zoom": 0.2548342541436464,
+        "minZoom": 0.2548342541436464,
+        "maxZoom": 1.274171270718232
+      },
+      "dpr": 2,
+      "elapsed": 1.4326266665980365,
+      "seed": 211969,
+      "changed": 1017,
+      "strong": 150,
+      "energy": 11502
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "scene": "colonia",
+      "camera": {
+        "x": -244.09937888198755,
+        "y": -32.61801242236024,
+        "zoom": 0.4484472049689441,
+        "minZoom": 0.2548342541436464,
+        "maxZoom": 1.274171270718232
+      },
+      "dpr": 2,
+      "elapsed": 3.218513333257995,
+      "seed": 211969,
+      "changed": 1377,
+      "strong": 335,
+      "energy": 18803
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "scene": "general",
+      "camera": {
+        "x": 12,
+        "y": 107,
+        "zoom": 0.20441988950276244,
+        "minZoom": 0.20441988950276244,
+        "maxZoom": 1.022099447513812
+      },
+      "dpr": 2,
+      "elapsed": 1.3446333333333194,
+      "seed": 211969,
+      "changed": 733,
+      "strong": 86,
+      "energy": 7452
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "scene": "colonia",
+      "camera": {
+        "x": -191.50310559006215,
+        "y": -53.409937888198755,
+        "zoom": 0.3577639751552795,
+        "minZoom": 0.2007366482504604,
+        "maxZoom": 1.003683241252302
+      },
+      "dpr": 2,
+      "elapsed": 2.907586666641665,
+      "seed": 211969,
+      "changed": 915,
+      "strong": 191,
+      "energy": 12073
+    }
+  ]
+}

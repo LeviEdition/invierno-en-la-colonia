@@ -1,0 +1,392 @@
+{
+  "url": "http://127.0.0.1:8770/prototypes/hospital/",
+  "chromium": "154.0.8037.57",
+  "device": "Chromium; viewports/táctil emulados, no teléfono físico",
+  "viewports": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "mobileEmulation": false,
+      "occlusion": [
+        {
+          "mode": "delante",
+          "showHidden": false,
+          "visiblePixels": 1165,
+          "unoccludedPixels": 1165,
+          "visibleRatio": 1,
+          "alpha": {
+            "ground": {
+              "min": 255,
+              "max": 255,
+              "width": 1536,
+              "height": 1024
+            },
+            "hospital": {
+              "min": 0,
+              "max": 255,
+              "width": 1254,
+              "height": 1254
+            },
+            "zombie": {
+              "min": 0,
+              "max": 255,
+              "width": 1175,
+              "height": 1338
+            }
+          }
+        },
+        {
+          "mode": "detras",
+          "showHidden": false,
+          "visiblePixels": 0,
+          "unoccludedPixels": 1180,
+          "visibleRatio": 0,
+          "alpha": {
+            "ground": {
+              "min": 255,
+              "max": 255,
+              "width": 1536,
+              "height": 1024
+            },
+            "hospital": {
+              "min": 0,
+              "max": 255,
+              "width": 1254,
+              "height": 1254
+            },
+            "zombie": {
+              "min": 0,
+              "max": 255,
+              "width": 1175,
+              "height": 1338
+            }
+          }
+        },
+        {
+          "mode": "esquina",
+          "showHidden": false,
+          "visiblePixels": 678,
+          "unoccludedPixels": 1195,
+          "visibleRatio": 0.5673640167364017,
+          "alpha": {
+            "ground": {
+              "min": 255,
+              "max": 255,
+              "width": 1536,
+              "height": 1024
+            },
+            "hospital": {
+              "min": 0,
+              "max": 255,
+              "width": 1254,
+              "height": 1254
+            },
+            "zombie": {
+              "min": 0,
+              "max": 255,
+              "width": 1175,
+              "height": 1338
+            }
+          }
+        },
+        {
+          "mode": "detras",
+          "showHidden": true,
+          "visiblePixels": 1199,
+          "unoccludedPixels": 1210,
+          "visibleRatio": 0.990909090909091,
+          "alpha": {
+            "ground": {
+              "min": 255,
+              "max": 255,
+              "width": 1536,
+              "height": 1024
+            },
+            "hospital": {
+              "min": 0,
+              "max": 255,
+              "width": 1254,
+              "height": 1254
+            },
+            "zombie": {
+              "min": 0,
+              "max": 255,
+              "width": 1175,
+              "height": 1338
+            }
+          }
+        }
+      ],
+      "checks": [
+        "Mostrar ocultos revela; desactivar restaura oclusión normal",
+        "Seleccionar hospital por clic/tap y descartar al tocar fuera de su alfa",
+        "Arrastre sin selección accidental; imagen completa y sombras se trasladan juntas",
+        "Rueda anclada al cursor y límites superior/inferior",
+        "Botones y posiciones con teclado; flechas/Enter/Escape/0 y restablecimiento"
+      ],
+      "errors": [],
+      "panPixelAgreement": 1
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "mobileEmulation": true,
+      "occlusion": [
+        {
+          "mode": "delante",
+          "showHidden": false,
+          "visiblePixels": 1135,
+          "unoccludedPixels": 1135,
+          "visibleRatio": 1,
+          "alpha": {
+            "ground": {
+              "min": 255,
+              "max": 255,
+              "width": 1536,
+              "height": 1024
+            },
+            "hospital": {
+              "min": 0,
+              "max": 255,
+              "width": 1254,
+              "height": 1254
+            },
+            "zombie": {
+              "min": 0,
+              "max": 255,
+              "width": 1175,
+              "height": 1338
+            }
+          }
+        },
+        {
+          "mode": "detras",
+          "showHidden": false,
+          "visiblePixels": 0,
+          "unoccludedPixels": 1176,
+          "visibleRatio": 0,
+          "alpha": {
+            "ground": {
+              "min": 255,
+              "max": 255,
+              "width": 1536,
+              "height": 1024
+            },
+            "hospital": {
+              "min": 0,
+              "max": 255,
+              "width": 1254,
+              "height": 1254
+            },
+            "zombie": {
+              "min": 0,
+              "max": 255,
+              "width": 1175,
+              "height": 1338
+            }
+          }
+        },
+        {
+          "mode": "esquina",
+          "showHidden": false,
+          "visiblePixels": 662,
+          "unoccludedPixels": 1168,
+          "visibleRatio": 0.5667808219178082,
+          "alpha": {
+            "ground": {
+              "min": 255,
+              "max": 255,
+              "width": 1536,
+              "height": 1024
+            },
+            "hospital": {
+              "min": 0,
+              "max": 255,
+              "width": 1254,
+              "height": 1254
+            },
+            "zombie": {
+              "min": 0,
+              "max": 255,
+              "width": 1175,
+              "height": 1338
+            }
+          }
+        },
+        {
+          "mode": "detras",
+          "showHidden": true,
+          "visiblePixels": 1190,
+          "unoccludedPixels": 1198,
+          "visibleRatio": 0.993322203672788,
+          "alpha": {
+            "ground": {
+              "min": 255,
+              "max": 255,
+              "width": 1536,
+              "height": 1024
+            },
+            "hospital": {
+              "min": 0,
+              "max": 255,
+              "width": 1254,
+              "height": 1254
+            },
+            "zombie": {
+              "min": 0,
+              "max": 255,
+              "width": 1175,
+              "height": 1338
+            }
+          }
+        }
+      ],
+      "checks": [
+        "Mostrar ocultos revela; desactivar restaura oclusión normal",
+        "Seleccionar hospital por clic/tap y descartar al tocar fuera de su alfa",
+        "Arrastre sin selección accidental; imagen completa y sombras se trasladan juntas",
+        "Rueda anclada al cursor y límites superior/inferior",
+        "Botones y posiciones con teclado; flechas/Enter/Escape/0 y restablecimiento",
+        "Pinza CDP de dos dedos: escala y centro estables, sin selección accidental",
+        "Arrastre CDP de un dedo después de pinza, sin selección accidental"
+      ],
+      "errors": [],
+      "panPixelAgreement": 0.9985236985236985
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "mobileEmulation": true,
+      "occlusion": [
+        {
+          "mode": "delante",
+          "showHidden": false,
+          "visiblePixels": 685,
+          "unoccludedPixels": 685,
+          "visibleRatio": 1,
+          "alpha": {
+            "ground": {
+              "min": 255,
+              "max": 255,
+              "width": 1536,
+              "height": 1024
+            },
+            "hospital": {
+              "min": 0,
+              "max": 255,
+              "width": 1254,
+              "height": 1254
+            },
+            "zombie": {
+              "min": 0,
+              "max": 255,
+              "width": 1175,
+              "height": 1338
+            }
+          }
+        },
+        {
+          "mode": "detras",
+          "showHidden": false,
+          "visiblePixels": 0,
+          "unoccludedPixels": 689,
+          "visibleRatio": 0,
+          "alpha": {
+            "ground": {
+              "min": 255,
+              "max": 255,
+              "width": 1536,
+              "height": 1024
+            },
+            "hospital": {
+              "min": 0,
+              "max": 255,
+              "width": 1254,
+              "height": 1254
+            },
+            "zombie": {
+              "min": 0,
+              "max": 255,
+              "width": 1175,
+              "height": 1338
+            }
+          }
+        },
+        {
+          "mode": "esquina",
+          "showHidden": false,
+          "visiblePixels": 392,
+          "unoccludedPixels": 699,
+          "visibleRatio": 0.5608011444921316,
+          "alpha": {
+            "ground": {
+              "min": 255,
+              "max": 255,
+              "width": 1536,
+              "height": 1024
+            },
+            "hospital": {
+              "min": 0,
+              "max": 255,
+              "width": 1254,
+              "height": 1254
+            },
+            "zombie": {
+              "min": 0,
+              "max": 255,
+              "width": 1175,
+              "height": 1338
+            }
+          }
+        },
+        {
+          "mode": "detras",
+          "showHidden": true,
+          "visiblePixels": 702,
+          "unoccludedPixels": 709,
+          "visibleRatio": 0.9901269393511989,
+          "alpha": {
+            "ground": {
+              "min": 255,
+              "max": 255,
+              "width": 1536,
+              "height": 1024
+            },
+            "hospital": {
+              "min": 0,
+              "max": 255,
+              "width": 1254,
+              "height": 1254
+            },
+            "zombie": {
+              "min": 0,
+              "max": 255,
+              "width": 1175,
+              "height": 1338
+            }
+          }
+        }
+      ],
+      "checks": [
+        "Mostrar ocultos revela; desactivar restaura oclusión normal",
+        "Seleccionar hospital por clic/tap y descartar al tocar fuera de su alfa",
+        "Arrastre sin selección accidental; imagen completa y sombras se trasladan juntas",
+        "Rueda anclada al cursor y límites superior/inferior",
+        "Botones y posiciones con teclado; flechas/Enter/Escape/0 y restablecimiento",
+        "Pinza CDP de dos dedos: escala y centro estables, sin selección accidental",
+        "Arrastre CDP de un dedo después de pinza, sin selección accidental"
+      ],
+      "errors": [],
+      "panPixelAgreement": 0.998103323699422
+    }
+  ],
+  "errors": [],
+  "missingAssetCheck": "PNG inaccesible: aviso visible y controles deshabilitados, sin sustitución",
+  "passed": true
+}

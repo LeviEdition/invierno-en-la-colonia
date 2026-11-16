@@ -1,0 +1,259 @@
+{
+  "browser": "154.0.8037.57",
+  "node": "v24.19.0",
+  "os": "linux",
+  "cpu": "AMD EPYC 9V74 80-Core Processor",
+  "logicalCpus": 5,
+  "method": "Secuencial, misma cámara/partida/viewport/DPR; calentamiento700ms; dos muestras de2s por perfil. POST_RENDER y reloj capturados juntos en cada extremo; TaskDuration de CDP es tiempo de tareas del renderer, no GPU/VRAM. Headless/software no representa teléfono físico.",
+  "physicalMobile": false,
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "profiles": [
+        {
+          "profile": "off",
+          "samples": [
+            {
+              "seconds": 2.0434000000059607,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "rendererTaskSeconds": 0.02971199999999999,
+              "jsHeapUsedBytes": 10804460
+            },
+            {
+              "seconds": 2.028800000011921,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "rendererTaskSeconds": 0.019352000000000008,
+              "jsHeapUsedBytes": 10722080
+            }
+          ],
+          "pool": 158,
+          "visibleParticles": 0,
+          "objects": 193,
+          "proceduralTextureBytes": 33792
+        },
+        {
+          "profile": "soft",
+          "samples": [
+            {
+              "seconds": 2.06120000000298,
+              "renderEvents": 61,
+              "rendersPerSecond": 29.59441102266243,
+              "rendererTaskSeconds": 1.5692150000000002,
+              "jsHeapUsedBytes": 11133216
+            },
+            {
+              "seconds": 2.0389000000059605,
+              "renderEvents": 61,
+              "rendersPerSecond": 29.918093089323495,
+              "rendererTaskSeconds": 1.5288470000000003,
+              "jsHeapUsedBytes": 11208396
+            }
+          ],
+          "pool": 158,
+          "visibleParticles": 77,
+          "objects": 193,
+          "proceduralTextureBytes": 33792
+        },
+        {
+          "profile": "storm",
+          "samples": [
+            {
+              "seconds": 2.0644000000059606,
+              "renderEvents": 61,
+              "rendersPerSecond": 29.54853710512685,
+              "rendererTaskSeconds": 1.7783579999999999,
+              "jsHeapUsedBytes": 10493676
+            },
+            {
+              "seconds": 2.0540999999940395,
+              "renderEvents": 62,
+              "rendersPerSecond": 30.1835353683754,
+              "rendererTaskSeconds": 1.8464420000000006,
+              "jsHeapUsedBytes": 10444768
+            }
+          ],
+          "pool": 158,
+          "visibleParticles": 156,
+          "objects": 193,
+          "proceduralTextureBytes": 33792
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "profiles": [
+        {
+          "profile": "off",
+          "samples": [
+            {
+              "seconds": 2.0275,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "rendererTaskSeconds": 0.019939000000000012,
+              "jsHeapUsedBytes": 8772300
+            },
+            {
+              "seconds": 2.0289000000059603,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "rendererTaskSeconds": 0.01840899999999998,
+              "jsHeapUsedBytes": 8748908
+            }
+          ],
+          "pool": 158,
+          "visibleParticles": 0,
+          "objects": 193,
+          "proceduralTextureBytes": 33792
+        },
+        {
+          "profile": "soft",
+          "samples": [
+            {
+              "seconds": 2.06620000000298,
+              "renderEvents": 60,
+              "rendersPerSecond": 29.03881521629729,
+              "rendererTaskSeconds": 1.721994,
+              "jsHeapUsedBytes": 12660504
+            },
+            {
+              "seconds": 2.0712000000029804,
+              "renderEvents": 62,
+              "rendersPerSecond": 29.934337582034946,
+              "rendererTaskSeconds": 2.016988,
+              "jsHeapUsedBytes": 11369176
+            }
+          ],
+          "pool": 158,
+          "visibleParticles": 76,
+          "objects": 193,
+          "proceduralTextureBytes": 33792
+        },
+        {
+          "profile": "storm",
+          "samples": [
+            {
+              "seconds": 2.06120000000298,
+              "renderEvents": 63,
+              "rendersPerSecond": 30.564719580782512,
+              "rendererTaskSeconds": 1.962339,
+              "jsHeapUsedBytes": 12300900
+            },
+            {
+              "seconds": 2.0627000000029803,
+              "renderEvents": 63,
+              "rendersPerSecond": 30.54249284913413,
+              "rendererTaskSeconds": 1.9781270000000006,
+              "jsHeapUsedBytes": 10261012
+            }
+          ],
+          "pool": 158,
+          "visibleParticles": 156,
+          "objects": 193,
+          "proceduralTextureBytes": 33792
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "profiles": [
+        {
+          "profile": "off",
+          "samples": [
+            {
+              "seconds": 2.026,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "rendererTaskSeconds": 0.02063200000000001,
+              "jsHeapUsedBytes": 11244056
+            },
+            {
+              "seconds": 2.0257000000029803,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "rendererTaskSeconds": 0.018394999999999995,
+              "jsHeapUsedBytes": 10705504
+            }
+          ],
+          "pool": 158,
+          "visibleParticles": 0,
+          "objects": 193,
+          "proceduralTextureBytes": 33792
+        },
+        {
+          "profile": "soft",
+          "samples": [
+            {
+              "seconds": 2.035,
+              "renderEvents": 61,
+              "rendersPerSecond": 29.97542997542997,
+              "rendererTaskSeconds": 0.907164,
+              "jsHeapUsedBytes": 9306132
+            },
+            {
+              "seconds": 2.031300000011921,
+              "renderEvents": 61,
+              "rendersPerSecond": 30.030030029853794,
+              "rendererTaskSeconds": 0.9529700000000001,
+              "jsHeapUsedBytes": 11282576
+            }
+          ],
+          "pool": 158,
+          "visibleParticles": 77,
+          "objects": 193,
+          "proceduralTextureBytes": 33792
+        },
+        {
+          "profile": "storm",
+          "samples": [
+            {
+              "seconds": 2.0322000000029803,
+              "renderEvents": 61,
+              "rendersPerSecond": 30.01673063670433,
+              "rendererTaskSeconds": 1.1741060000000005,
+              "jsHeapUsedBytes": 12634308
+            },
+            {
+              "seconds": 2.037,
+              "renderEvents": 61,
+              "rendersPerSecond": 29.945999018163967,
+              "rendererTaskSeconds": 1.1948619999999996,
+              "jsHeapUsedBytes": 10463920
+            }
+          ],
+          "pool": 158,
+          "visibleParticles": 158,
+          "objects": 193,
+          "proceduralTextureBytes": 33792
+        }
+      ]
+    }
+  ],
+  "video": "/tmp/h342-performance-complete/video/7412783b03a59ef476d6b1bc00bbeafa.webm",
+  "passed": true
+}

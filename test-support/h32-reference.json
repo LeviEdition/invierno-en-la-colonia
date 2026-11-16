@@ -1,0 +1,116 @@
+{
+  "sourceCommit": "ba1d93a4ae73a91a6f07660584e2374b53043a67",
+  "note": "Copia exacta, sin merge del PR16; controles, c\u00e1mara, pivotes, originales y evidencia hist\u00f3rica conservados",
+  "files": [
+    {
+      "path": "assets/prototipo-hospital/README.md",
+      "sha256": "716aabf9e55e2c9afe35d21056b911b30a3e114b8d105fddcba686b5d7a48944",
+      "bytes": 1403
+    },
+    {
+      "path": "assets/prototipo-hospital/hospital.png",
+      "sha256": "fc85ae8199e1d94b7f4636bed4b8f293c0e15ce64b8235dbbf63b2b3e0e76159",
+      "bytes": 2391925
+    },
+    {
+      "path": "assets/prototipo-hospital/manifest.json",
+      "sha256": "41ec113e8af3ba1caab4b1e33027b2dbed539a5610c52149048638740541cdc4",
+      "bytes": 1461
+    },
+    {
+      "path": "assets/prototipo-hospital/suelo-nevado.png",
+      "sha256": "71487b23b4be9eba5c96e6e6c5d9feffaff025542339392c55f773384d12687a",
+      "bytes": 3270542
+    },
+    {
+      "path": "assets/prototipo-hospital/zombi.png",
+      "sha256": "4f569398e24f4a1358348b5a1e770f3e41913386323f1478d0102d8df2349f82",
+      "bytes": 816224
+    },
+    {
+      "path": "docs/73-prototipo-visual-hospital-2-5d.md",
+      "sha256": "0a5a57b7d6da28b8995ce6c66cfadc20b30b112d7230b29500b7cf58b2eba388",
+      "bytes": 23438
+    },
+    {
+      "path": "docs/evidencias/hospital-acceso-web.json",
+      "sha256": "a41303b5cc9501097b186fdfc7fbf93b9b0482b6a640b143188e94a49bca2e64",
+      "bytes": 3238
+    },
+    {
+      "path": "docs/evidencias/hospital-ci.json",
+      "sha256": "3637ea79496d25f69d58547ba1af908b20d4d83113c08097f04cedf3aa66c318",
+      "bytes": 5347
+    },
+    {
+      "path": "docs/evidencias/hospital-delante.png",
+      "sha256": "566555a68e1aed3566172db9eb0eb8bf96e13c2f813ba0a5fbcb0c38d56ef5e1",
+      "bytes": 1041407
+    },
+    {
+      "path": "docs/evidencias/hospital-esquina.png",
+      "sha256": "9674b9690022a062f4974546288b77f5e91ae1449b90d955b6f27dcbdbc6a5df",
+      "bytes": 1041439
+    },
+    {
+      "path": "docs/evidencias/hospital-movil-esquina.png",
+      "sha256": "6f1322ca115f4115692c469ddfad9de4a80f28509bf8d6f278c587d2449fca4f",
+      "bytes": 1056418
+    },
+    {
+      "path": "docs/evidencias/hospital-prototipo.json",
+      "sha256": "35df37c4ccb15988b2feaf7671a96400117b0628bb96b8ee9c6bf7187fd92962",
+      "bytes": 12163
+    },
+    {
+      "path": "prototypes/hospital/camera.mjs",
+      "sha256": "883e48205f9f1ce1fafc55c8684bfa3ebadcc504167dc6af059a770f81016993",
+      "bytes": 1418
+    },
+    {
+      "path": "prototypes/hospital/controls.mjs",
+      "sha256": "8f48470042cd1c33705b6bcd85215a5278551208a47dea7d8ef538fb89fe8432",
+      "bytes": 3263
+    },
+    {
+      "path": "prototypes/hospital/index.html",
+      "sha256": "6807fc4aff70fdc7bbe80fcb2bfd433a4cff88d0dccd7434825ff41bbd0d6563",
+      "bytes": 3268
+    },
+    {
+      "path": "prototypes/hospital/main.mjs",
+      "sha256": "0d3a9973cc7c75300846e7bfb5f40a2e2a72463a8cb2de76dcaeeb60f62e0da8",
+      "bytes": 4036
+    },
+    {
+      "path": "prototypes/hospital/renderer.mjs",
+      "sha256": "ea0514e42324ddc75d5c0542d70df865e2efeafc3b09cc67bfd8bb605781e710",
+      "bytes": 2915
+    },
+    {
+      "path": "prototypes/hospital/scene.mjs",
+      "sha256": "98c19ea58271229d892f0e967f95205f07bfe91e70395fee552c8dacc482f161",
+      "bytes": 1470
+    },
+    {
+      "path": "prototypes/hospital/style.css",
+      "sha256": "ac5a73a3eb92130d2891c41d58aa056e82c0698d7daac10b02cbc1d22ad642f7",
+      "bytes": 3789
+    },
+    {
+      "path": "scripts/check-hospital-prototype-browser.mjs",
+      "sha256": "1b2cd6156feb6edf876c1a01d0e9314881e43be02ae2d99a4dfd1f8d43b4f502",
+      "bytes": 14437
+    },
+    {
+      "path": "tests/hospital-assets.test.mjs",
+      "sha256": "fa4530673e46384e28128e2d5ad6081d9aef568a9535ff3816e86a29ec1a78aa",
+      "bytes": 809
+    },
+    {
+      "path": "tests/hospital-camera.test.mjs",
+      "sha256": "2c394fe0f6d624698be2c5a2f4baa0d16ed74796ed5af0fbb2c7ba43eb76c32a",
+      "bytes": 3286
+    }
+  ]
+}

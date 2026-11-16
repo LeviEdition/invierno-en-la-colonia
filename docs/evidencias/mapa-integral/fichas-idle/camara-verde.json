@@ -1,0 +1,150 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "method": "RAF + POST_RENDER count and DOM positions during real input; video separately inspectable",
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "errors": [],
+      "profiles": [
+        {
+          "profile": "off",
+          "samples": 231,
+          "movingSamples": 84,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 0
+          }
+        },
+        {
+          "profile": "soft",
+          "samples": 285,
+          "movingSamples": 84,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 6
+          }
+        },
+        {
+          "profile": "storm",
+          "samples": 281,
+          "movingSamples": 83,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 3
+          }
+        }
+      ],
+      "markerRedraw": {
+        "writes": 0,
+        "records": [],
+        "frames": 1,
+        "sameMarkup": true,
+        "sameCamera": true
+      },
+      "video": "/tmp/mapa-integral/ci/idle-verde/1365/772aa430a729f109c4e1c604e251070d.webm"
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "errors": [],
+      "profiles": [
+        {
+          "profile": "off",
+          "samples": 190,
+          "movingSamples": 82,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 0
+          }
+        },
+        {
+          "profile": "soft",
+          "samples": 183,
+          "movingSamples": 82,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 3
+          }
+        },
+        {
+          "profile": "storm",
+          "samples": 185,
+          "movingSamples": 82,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 3
+          }
+        }
+      ],
+      "markerRedraw": {
+        "writes": 0,
+        "records": [],
+        "frames": 1,
+        "sameMarkup": true,
+        "sameCamera": true
+      },
+      "video": "/tmp/mapa-integral/ci/idle-verde/393/fbec57f06cf0ce95630a4fbfad8ebdaa.webm"
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "errors": [],
+      "profiles": [
+        {
+          "profile": "off",
+          "samples": 195,
+          "movingSamples": 82,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 0
+          }
+        },
+        {
+          "profile": "soft",
+          "samples": 186,
+          "movingSamples": 82,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 6
+          }
+        },
+        {
+          "profile": "storm",
+          "samples": 187,
+          "movingSamples": 82,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 5
+          }
+        }
+      ],
+      "markerRedraw": {
+        "writes": 0,
+        "records": [],
+        "frames": 1,
+        "sameMarkup": true,
+        "sameCamera": true
+      },
+      "video": "/tmp/mapa-integral/ci/idle-verde/320/0ca9d6e04a705541f3ae5e70967403d7.webm"
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

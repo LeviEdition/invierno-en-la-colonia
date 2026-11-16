@@ -438,22 +438,22 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         let d = ctx.catalog.resolve(it);
         return !p || p.dead || !d || d.effect !== "equip" ? !1 : ctx.equipmentOf(p).some((x) => ctx.kind(x) === d.kind) ? (ctx.message("⚠ " + p.name + " ya lleva un objeto de " + d.kind + ". Transferilo antes de equipar otro."), !1) : (p.equipment.push(it), ctx.message("🎒 " + p.name + " equipó " + d.name + ": " + d.desc), !0);
       }
-      attack(p, side) {
+      attack(p, side, onResolved) {
         let z = ctx.game.zones[p.loc];
         if (!z.z) return !1;
         let shotgun = this.has(p, "shotgun"), count = ctx.Math.min(z.z, shotgun ? 2 : 1);
         z.z -= count, ctx.message("⚔ " + p.name + " eliminó " + count + " zombi" + (count > 1 ? "s" : "") + " en " + ctx.places[p.loc] + (shotgun ? " con escopeta" : "") + ".");
-        let safe = !1;
+        let safe = !1, exposure;
         for (let id of ["pistol", "rifle"]) {
           let it = this.equipped(p, id);
           if (it && !it.usedRound && (id === "pistol" || p.loc !== 0)) {
-            it.usedRound = 1, safe = !0, ctx.message("🔫 " + ctx.catalog.resolve(it).name + ": ataque sin exposición.");
+            it.usedRound = 1, safe = !0, exposure = { rolled: !1, value: null, effect: "avoided", ability: id, wounds: 0, frost: 0, fatal: !1 }, ctx.message("🔫 " + ctx.catalog.resolve(it).name + ": ataque sin exposición.");
             break;
           }
         }
-        safe || ctx.expose(p, "ataque " + (side === "ai" ? "IA" : ""));
+        safe || (exposure = ctx.expose(p, "ataque " + (side === "ai" ? "IA" : "")));
         let axe = this.equipped(p, "hatchet");
-        return axe && !axe.usedRound && p.loc === 0 && ctx.openAccess(0) && !p.dead && (axe.usedRound = 1, z.b++, ctx.message("🪓 " + p.name + " reforzó una barricada después del combate.")), !0;
+        return axe && !axe.usedRound && p.loc === 0 && ctx.openAccess(0) && !p.dead && (axe.usedRound = 1, z.b++, ctx.message("🪓 " + p.name + " reforzó una barricada después del combate.")), onResolved?.({ killed: count, exposure }), !0;
       }
       moveWithFuel(p, dest, side, i) {
         let hand = side === "ai" ? ctx.game.botItems : ctx.game.items;
@@ -2023,7 +2023,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         if (p.skill === "builder") {
           let z = game.zones[p.loc];
           if (z.z + z.b >= zcap[p.loc]) return messageAndPaint("No hay accesos libres.");
-          z.b++, p.skillUsed = !0, message("★ " + p.name + " construyó una barricada."), paint();
+          executeBuilder(p);
         } else if (p.skill === "medic" || p.skill === "nurse") {
           if (pendingLoot) return;
           let targets = alive().filter((x) => x.loc === p.loc && (p.skill === "medic" ? x.wounds : x.frost));
@@ -2327,9 +2327,9 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
           hand.splice(0, hand.length), ruleMessage(env, "⚠ " + (side === "human" ? "Perdiste" : "La IA perdió") + " su último superviviente. Se descartaron " + discarded + " cartas de su mano."), recruit(side, !0, env) || (g.noReplacement = !0);
         }
     }
-    let ItemEngine = createItemEngine(c), itemEngine = new ItemEngine();
+    let ItemEngine = createItemEngine(c), itemEngine = new ItemEngine(), movementGeneration = 0, searchSerial = 0, searchOperation = null, actionSerial = 0, actionOperation = null;
     function create() {
-      view.resetToasts(), deathDirector.reset(), skipAI = !1, aiRunning = !1, selected = 0, target = 0, picked = 0, opened = "", profileId = "", pendingHeal = null, pendingLoot = null, pendingBite = null, pendingAttract = null, pendingTransfer = null, aiCrossChoice = null, settleDecisionWaiters(), resetLeaderRequests(), pendingRecruitInfo = null, selectionBySide.human = 0, selectionBySide.ai = 0, closeStatInfo();
+      movementGeneration++, searchOperation = null, searchSerial = 0, actionOperation = null, actionSerial = 0, view.resetToasts(), deathDirector.reset(), skipAI = !1, aiRunning = !1, selected = 0, target = 0, picked = 0, opened = "", profileId = "", pendingHeal = null, pendingLoot = null, pendingBite = null, pendingAttract = null, pendingTransfer = null, aiCrossChoice = null, settleDecisionWaiters(), resetLeaderRequests(), pendingRecruitInfo = null, selectionBySide.human = 0, selectionBySide.ai = 0, closeStatInfo();
       let objective = objectives[random(objectives.length)];
       game = stateFactory({ gameMode, objective, places, catalog }), all().forEach(addCharacter);
       for (let loc = 1; loc < places.length; loc++) game.decks[loc] = catalog.deck(loc);
@@ -2409,15 +2409,14 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
     }
     function expose(p, reason) {
       if (!p || p.dead) return;
-      let d = die();
-      if (message("🎲 Exposición de " + p.name + " (" + reason + "): " + (d === 1 ? "MORDEDURA" : d === 2 ? "CONGELACIÓN" : d === 3 ? "HERIDA" : "BLANCO") + "."), d < 4 && p.skill === "resilient" && !p.skillUsed) {
-        p.skillUsed = !0, message("★ " + p.name + " evitó la exposición gracias a su habilidad.");
-        return;
-      }
+      let before = { wounds: p.wounds, frost: p.frost }, d = die();
+      if (message("🎲 Exposición de " + p.name + " (" + reason + "): " + (d === 1 ? "MORDEDURA" : d === 2 ? "CONGELACIÓN" : d === 3 ? "HERIDA" : "BLANCO") + "."), d < 4 && p.skill === "resilient" && !p.skillUsed)
+        return p.skillUsed = !0, message("★ " + p.name + " evitó la exposición gracias a su habilidad."), { rolled: !0, value: d, effect: "avoided", ability: "resilient", wounds: 0, frost: 0, fatal: !1 };
       if (d === 1) {
         let coLocated = alive().filter((x) => x.id !== p.id && x.loc === p.loc).sort((a, b) => a.influence - b.influence).map((x) => x.id);
         game.biteResolving = !0, pendingBite = { victims: coLocated, target: null }, kill(p, "mordedura"), biteNext();
       } else (d === 2 || d === 3) && (d === 2 ? p.frost++ : p.wounds++, message((d === 2 ? "❄ Congelación de " : "♥ Herida de ") + p.name + "."), p.frost + p.wounds >= 3 && kill(p, "tres daños acumulados"));
+      return { rolled: !0, value: d, effect: d === 1 ? "bite" : d === 2 ? "frost" : d === 3 ? "wound" : "none", ability: null, wounds: p.wounds - before.wounds, frost: p.frost - before.frost, fatal: !!p.dead };
     }
     function drawItem(loc) {
       return game.decks[loc] && game.decks[loc].length ? game.decks[loc].shift() : null;
@@ -2467,13 +2466,13 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       if (!pendingLoot || game.ended || !canResolve("lootChoice") || !Number.isInteger(i) || i < 0 || i >= pendingLoot.items.length) return;
       let { items, actorId, loc } = pendingLoot, p = all().find((x) => x.id === actorId);
       if (pendingLoot = null, !p || p.dead) return;
-      let chosen = items[i];
-      game.decks[loc].push(...items.filter((_, j) => j !== i)), stashLoot(chosen, p, controls.side), message("⌕ " + p.name + " eligió " + itemTitle(chosen) + "; las demás cartas regresaron al fondo del mazo."), opened = "", view.closeBackdrop(), crossAction("search", p), verify(), paint(), pendingRecruitInfo && !game.crossPending && show("recruitSuccess");
+      let chosen = items[i], handBefore = controls.hand().length;
+      game.decks[loc].push(...items.filter((_, j) => j !== i)), stashLoot(chosen, p, controls.side), searchOperation?.pending === items && (searchOperation.status = "result", searchOperation.result = { card: searchCard(chosen), returned: items.length - 1, handDelta: controls.hand().length - handBefore, noise: game.zones[loc].noise }), message("⌕ " + p.name + " eligió " + itemTitle(chosen) + "; las demás cartas regresaron al fondo del mazo."), opened = "", view.closeBackdrop(), crossAction("search", p), verify(), paint(), pendingRecruitInfo && !game.crossPending && show("recruitSuccess");
     }
-    function consume(min) {
+    function consume(min, dieIndex = picked) {
       if (game.ended || !playable() || pendingLoot || pendingBite || leaderChoiceReady() || game.crossPending) return null;
       if (!actionDice().length) return messageAndPaint("No quedan dados de acción."), null;
-      let dice = actionDice(), i = Math.max(0, Math.min(picked, dice.length - 1)), value = dice[i];
+      let dice = actionDice(), i = Math.max(0, Math.min(dieIndex, dice.length - 1)), value = dice[i];
       return value < min ? (messageAndPaint("Necesitás un dado de " + min + " o más (seleccionado: " + value + ")."), null) : (dice.splice(i, 1), picked = Math.min(i, dice.length - 1), confirmStartingLeader(), message("🎲 Dado utilizado: " + value + " (mínimo " + min + ")."), value);
     }
     function boostDie() {
@@ -2490,13 +2489,13 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       let p = person();
       if (!p || p.dead || p.loc === 0) return messageAndPaint("Elegí un superviviente vivo que esté fuera de la colonia.");
       if (!game.decks[p.loc].length) return messageAndPaint("No quedan cartas en esta localidad.");
-      consume(effectiveSearch(p)) !== null && (beginSearch(p, controls.side), paint());
+      executeSearch(p, picked);
     }
     function attack() {
       if (!playable() || game.ended || pendingBite || leaderChoiceReady()) return;
       let p = person();
       if (!p || p.dead || !game.zones[p.loc].z) return messageAndPaint("No hay zombis que atacar con este superviviente.");
-      consume(effectiveAttack(p)) !== null && (itemEngine.attack(p, controls.side), pendingBite || crossAction("attack", p), verify(), paint());
+      executeAttack(p, picked);
     }
     function doMove() {
       if (!playable() || game.ended || pendingBite || leaderChoiceReady()) return;
@@ -2505,18 +2504,151 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         if (p.moved) return messageAndPaint("El superviviente ya se movió durante este turno.");
         if (p.loc === target) return messageAndPaint("Elegí otro destino.");
         if (!accessible(target)) return messageAndPaint("No hay espacios disponibles en el destino.");
-        confirmStartingLeader(), p.loc = target, p.moved = !0, message("→ " + p.name + " se movió a " + places[target] + "."), p.skill === "silent" && !p.skillUsed ? (p.skillUsed = !0, message("★ " + p.name + " evitó la exposición.")) : expose(p, "movimiento"), pendingBite || crossAction("move", p), verify(), paint();
+        executeMovement(p, target);
       }
+    }
+    function executeMovement(p, destination2) {
+      actionOperation = null;
+      let from = p.loc, actorBefore = { id: p.id, name: p.name, location: p.loc, wounds: p.wounds, frost: p.frost, dead: !!p.dead };
+      confirmStartingLeader(), p.loc = destination2, p.moved = !0, message("→ " + p.name + " se movió a " + places[destination2] + ".");
+      let exposure;
+      return p.skill === "silent" && !p.skillUsed ? (p.skillUsed = !0, message("★ " + p.name + " evitó la exposición."), exposure = { rolled: !1, value: null, effect: "avoided", ability: "silent", wounds: 0, frost: 0, fatal: !1 }) : exposure = expose(p, "movimiento"), pendingBite || crossAction("move", p), verify(), paint(), { actorId: p.id, from, destination: destination2, exposure, actorBefore, actorAfter: { id: p.id, name: p.name, location: p.loc, wounds: p.wounds, frost: p.frost, dead: !!p.dead } };
+    }
+    function actionBlockReason(p) {
+      let leaderDecision = pendingLeaderSides.length > 0 && (!game || game.mode !== "local" || pendingLeaderSides.includes(controls.side));
+      return game ? game.ended ? "ended" : controls.interactive ? deathWaiting() || pendingBite || pendingLoot || pendingHeal || pendingAttract || pendingTransfer || leaderDecision || game.crossPending || opened ? "decision" : p ? p.dead ? "dead" : ownerOf(p) !== controls.side ? "ownership" : null : "missing" : "turn" : "no-game";
+    }
+    function movementOptions(actorId) {
+      let p = game && all().find((p2) => p2.id === actorId), reason = actionBlockReason(p) || (p.moved ? "already-moved" : null);
+      return { gameGeneration: movementGeneration, round: game?.round, turn: game?.turn, actorId, origin: p?.loc ?? null, allowed: !reason, reason, destinations: reason ? [] : places.map((_, i) => i).filter((i) => i !== p.loc && accessible(i)) };
+    }
+    function moveById(request) {
+      let info = movementOptions(request?.actorId), reject = (reason) => ({ ok: !1, reason, actorId: request?.actorId });
+      if (!request || request.gameGeneration !== info.gameGeneration || request.round !== info.round || request.turn !== info.turn || request.origin !== info.origin) return reject("stale");
+      if (!info.allowed) return reject(info.reason);
+      if (!Number.isInteger(request.destination) || !info.destinations.includes(request.destination)) return reject("destination");
+      let p = all().find((p2) => p2.id === request.actorId), resolution = executeMovement(p, request.destination);
+      return { ok: !0, actorId: p.id, from: info.origin, destination: request.destination, location: p.loc, dead: !!p.dead, resolution };
+    }
+    function searchCard(it, index) {
+      let d = catalog.resolve(it);
+      return { index, id: d?.id || null, name: d?.name || "Objeto desconocido", kind: d?.kind || null, description: d?.desc || "", icon: d?.icon || "" };
+    }
+    function searchOptions(actorId) {
+      let p = game && all().find((x) => x.id === actorId), dice = game ? controls.dice() : [], requirement = p ? effectiveSearch(p) : null, base = actionBlockReason(p), reason = base || (p.loc === 0 ? "colony" : game.decks[p.loc]?.length ? dice.length ? dice.some((d) => d >= requirement) ? null : "insufficient" : "no-dice" : "deck-empty");
+      return { gameGeneration: movementGeneration, round: game?.round, turn: game?.turn, actorId, origin: p?.loc ?? null, requirement, diceVersion: JSON.stringify(dice), allowed: !reason, reason, dice: base ? [] : dice.map((value, index) => ({ index, value, allowed: !reason && value >= requirement })) };
+    }
+    function executeSearch(p, dieIndex) {
+      let value = consume(effectiveSearch(p), dieIndex);
+      if (value !== null)
+        return actionOperation = null, searchOperation = { operationId: "search_" + movementGeneration + "_" + ++searchSerial, gameGeneration: movementGeneration, round: game.round, ownerId: controls.side, actorId: p.id, name: p.name, origin: p.loc, dieIndex, dieValue: value, status: "empty", noiseBefore: game.zones[p.loc].noise, result: null, pending: null }, beginSearch(p, controls.side), pendingLoot?.actorId === p.id && (searchOperation.status = "choice", searchOperation.pending = pendingLoot.items), paint(), searchOperation.operationId;
+    }
+    function searchById(request) {
+      let info = searchOptions(request?.actorId), reject = (reason) => ({ ok: !1, reason });
+      if (!request || request.gameGeneration !== info.gameGeneration || request.round !== info.round || request.turn !== info.turn || request.origin !== info.origin || request.diceVersion !== info.diceVersion || request.requirement !== info.requirement) return reject("stale");
+      if (!info.allowed) return reject(info.reason);
+      let die2 = info.dice.find((d) => d.index === request.dieIndex);
+      return !die2 || die2.value !== request.dieValue || !die2.allowed ? reject("die") : { ok: !0, operationId: executeSearch(all().find((p) => p.id === request.actorId), request.dieIndex) };
+    }
+    function searchSnapshot() {
+      if (!game || !controls.interactive || deathWaiting()) return null;
+      let own = searchOperation && searchOperation.gameGeneration === movementGeneration && searchOperation.ownerId === controls.side && searchOperation.round === game.round ? searchOperation : null, general = !!(pendingBite || pendingHeal || pendingAttract || pendingTransfer || pendingLeaderSides.includes(controls.side) || game.crossPending || opened && !["lootChoice", "recruitSuccess"].includes(opened)), operation = own ? {
+        operationId: own.operationId,
+        gameGeneration: own.gameGeneration,
+        round: own.round,
+        ownerId: own.ownerId,
+        actorId: own.actorId,
+        name: own.name,
+        origin: own.origin,
+        dieIndex: own.dieIndex,
+        dieValue: own.dieValue,
+        status: own.status,
+        noise: game.zones[own.origin].noise,
+        noiseBefore: own.noiseBefore,
+        step: own.status + "_" + (pendingLoot?.items === own.pending ? pendingLoot.items.length : 0) + "_" + game.zones[own.origin].noise,
+        cards: own.status === "choice" && pendingLoot?.items === own.pending ? pendingLoot.items.map(searchCard) : [],
+        canNoise: own.status === "choice" && pendingLoot?.items === own.pending && !general && game.zones[own.origin].noise < 4 && game.decks[own.origin].length > 0,
+        result: own.result ? structuredClone(own.result) : null,
+        recruit: own.status === "result" && pendingRecruitInfo?.side === controls.side ? { ...pendingRecruitInfo } : null,
+        generalDecision: general
+      } : null;
+      return { gameGeneration: movementGeneration, round: game.round, ownerId: controls.side, hand: controls.hand().map(searchCard), operation };
+    }
+    function searchDecisionAllowed(request) {
+      let op = searchSnapshot()?.operation, p = op && all().find((p2) => p2.id === op.actorId);
+      return !!p && !p.dead && p.loc === op.origin && ownerOf(p) === op.ownerId && request?.operationId === op.operationId && request.gameGeneration === op.gameGeneration && request.round === op.round && request.ownerId === op.ownerId && request.step === op.step && op.status === "choice" && !op.generalDecision && pendingLoot?.items === searchOperation.pending;
+    }
+    function addSearchNoise(request) {
+      return searchDecisionAllowed(request) ? searchSnapshot().operation.canNoise ? (addNoiseSearch(), { ok: !0, operationId: request.operationId }) : { ok: !1, reason: "noise" } : { ok: !1, reason: "stale" };
+    }
+    function chooseSearchCard(request) {
+      return searchDecisionAllowed(request) ? !Number.isInteger(request.index) || request.index < 0 || request.index >= pendingLoot.items.length ? { ok: !1, reason: "card" } : (chooseLoot(request.index), { ok: !0, operationId: request.operationId }) : { ok: !1, reason: "stale" };
+    }
+    function dismissSearchResult(operationId) {
+      let op = searchSnapshot()?.operation;
+      return !op || op.operationId !== operationId || op.status === "choice" || op.generalDecision ? { ok: !1, reason: "stale" } : (opened === "recruitSuccess" && pendingRecruitInfo?.side === controls.side && dismissRecruit(), searchOperation = null, { ok: !0 });
     }
     function barricade() {
       if (!playable() || game.ended) return;
       let p = person();
       if (!p || p.dead || !openAccess(p.loc)) return messageAndPaint("No hay acceso libre para colocar una barricada.");
-      if (consume(1) === null) return;
-      let n = 0, max = (p.skill === "guard" ? 2 : 1) + (itemEngine.has(p, "repairkit") ? 1 : 0);
-      for (let i = 0; i < max && openAccess(p.loc); i++)
+      executeBarricade(p, picked);
+    }
+    let actorState = (p) => ({ id: p.id, name: p.name, location: p.loc, wounds: p.wounds, frost: p.frost, dead: !!p.dead }), barricadeLimit = (p) => (p.skill === "guard" ? 2 : 1) + (itemEngine.has(p, "repairkit") ? 1 : 0);
+    function rememberAction(kind2, p, dieIndex, dieValue, resolution) {
+      return actionOperation = { operationId: "action_" + movementGeneration + "_" + ++actionSerial, gameGeneration: movementGeneration, round: game.round, ownerId: controls.side, kind: kind2, actorId: p.id, name: p.name, origin: p.loc, dieIndex, dieValue, resolution }, actionOperation;
+    }
+    function executeAttack(p, dieIndex) {
+      let value = consume(effectiveAttack(p), dieIndex);
+      if (value === null) return;
+      searchOperation = null;
+      let actorBefore = actorState(p), before = { ...game.zones[p.loc] }, result;
+      itemEngine.attack(p, controls.side, (r) => {
+        result = r;
+      }), pendingBite || crossAction("attack", p), verify();
+      let op = rememberAction("attack", p, dieIndex, value, { ...result, actorBefore, actorAfter: actorState(p), zoneBefore: before, zoneAfter: { ...game.zones[p.loc] } });
+      return paint(), op;
+    }
+    function executeBuilder(p) {
+      searchOperation = null;
+      let actorBefore = actorState(p), before = { ...game.zones[p.loc] };
+      game.zones[p.loc].b++, p.skillUsed = !0, message("★ " + p.name + " construyó una barricada.");
+      let op = rememberAction("barricade", p, null, null, { built: 1, method: "ability", exposure: null, actorBefore, actorAfter: actorState(p), zoneBefore: before, zoneAfter: { ...game.zones[p.loc] } });
+      return paint(), op;
+    }
+    function executeBarricade(p, dieIndex) {
+      let value = consume(1, dieIndex);
+      if (value === null) return;
+      searchOperation = null;
+      let actorBefore = actorState(p), before = { ...game.zones[p.loc] }, n = 0;
+      for (let i = 0; i < barricadeLimit(p) && openAccess(p.loc); i++)
         game.zones[p.loc].b++, n++;
-      message("▥ " + p.name + " construyó " + n + " barricada(s)."), crossAction("barricade", p), paint();
+      message("▥ " + p.name + " construyó " + n + " barricada(s)."), crossAction("barricade", p);
+      let op = rememberAction("barricade", p, dieIndex, value, { built: n, exposure: null, actorBefore, actorAfter: actorState(p), zoneBefore: before, zoneAfter: { ...game.zones[p.loc] } });
+      return paint(), op;
+    }
+    function actionOptions(actorId, kind2) {
+      let p = game && all().find((x) => x.id === actorId), base = actionBlockReason(p), valid = ["attack", "barricade", "barricade-ability"].includes(kind2), dice = game ? controls.dice() : [], requirement = p && valid ? kind2 === "attack" ? effectiveAttack(p) : kind2 === "barricade-ability" ? null : 1 : null, reason = valid ? base || (kind2 === "barricade-ability" && p.skill !== "builder" ? "ability" : kind2 === "barricade-ability" && p.skillUsed ? "skill-used" : kind2 === "attack" && !game.zones[p.loc].z ? "no-target" : kind2.startsWith("barricade") && !openAccess(p.loc) ? "full" : kind2 === "barricade-ability" ? null : dice.length ? dice.some((d) => d >= requirement) ? null : "insufficient" : "no-dice") : "invalid";
+      return { gameGeneration: movementGeneration, round: game?.round, turn: game?.turn, actorId, kind: kind2, origin: p?.loc ?? null, requirement, cost: kind2 === "barricade-ability" ? 0 : 1, diceVersion: JSON.stringify(dice), allowed: !reason, reason, dice: base || !valid || kind2 === "barricade-ability" ? [] : dice.map((value, index) => ({ index, value, allowed: !reason && value >= requirement })), targets: !base && valid ? [p.loc] : [], zombies: !base && valid ? game.zones[p.loc].z : null, buildCount: !base && kind2.startsWith("barricade") ? Math.min(kind2 === "barricade-ability" ? 1 : barricadeLimit(p), zcap[p.loc] - game.zones[p.loc].z - game.zones[p.loc].b) : null };
+    }
+    function actById(request) {
+      let q = actionOptions(request?.actorId, request?.kind), reject = (reason) => ({ ok: !1, reason });
+      if (!request || request.gameGeneration !== q.gameGeneration || request.round !== q.round || request.turn !== q.turn || request.origin !== q.origin || request.diceVersion !== q.diceVersion || request.requirement !== q.requirement) return reject("stale");
+      if (!q.allowed) return reject(q.reason);
+      if (request.target !== q.origin) return reject("target");
+      let die2 = q.dice.find((d) => d.index === request.dieIndex);
+      if (q.cost !== 0 && (!die2?.allowed || die2.value !== request.dieValue) || q.cost === 0 && (request.dieIndex != null || request.dieValue != null)) return reject("die");
+      let p = all().find((x) => x.id === request.actorId), op = request.kind === "attack" ? executeAttack(p, request.dieIndex) : request.kind === "barricade-ability" ? executeBuilder(p) : executeBarricade(p, request.dieIndex);
+      return { ok: !0, ...structuredClone(op) };
+    }
+    function actionSnapshot() {
+      if (!game || passScreenActive) return null;
+      let op = actionOperation && actionOperation.gameGeneration === movementGeneration && actionOperation.round === game.round && actionOperation.ownerId === game.turn ? structuredClone(actionOperation) : null;
+      return op && (op.generalDecision = !!(game.ended || deathWaiting() || pendingBite || pendingLoot || pendingHeal || pendingAttract || pendingTransfer || pendingLeaderSides.includes(controls.side) || game.crossPending || opened)), { gameGeneration: movementGeneration, round: game.round, ownerId: game.turn, operation: op };
+    }
+    function dismissAction(operationId) {
+      let op = actionSnapshot()?.operation;
+      return !op || op.operationId !== operationId || op.generalDecision ? { ok: !1, reason: "stale" } : (actionOperation = null, { ok: !0 });
     }
     function clean() {
       if (!playable() || game.ended) return;
@@ -2751,6 +2883,18 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       }
     });
     return Object.freeze({
+      movementOptions,
+      moveById,
+      searchOptions,
+      searchById,
+      searchSnapshot,
+      addSearchNoise,
+      chooseSearchCard,
+      dismissSearchResult,
+      actionOptions,
+      actById,
+      actionSnapshot,
+      dismissAction,
       snapshot: () => game === void 0 ? null : JSON.parse(JSON.stringify(game)),
       dispatch(name, ...args) {
         if (!commands.has(name)) throw TypeError("Comando desconocido: " + name);
@@ -3362,8 +3506,8 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
   }
 
   // src/application/create-application.mjs
-  function createApplication({ environment = globalThis, autoStart = !0 } = {}) {
-    let engine = createEngine(), view = engine.connectPresentation((context) => createUi(context, environment));
+  function createApplication({ environment = globalThis, autoStart = !0, createPresentation = createUi } = {}) {
+    let engine = createEngine(), view = engine.connectPresentation((context) => createPresentation(context, environment));
     engine.connectAutomation((context) => createAgent(context));
     let commands2 = Object.fromEntries(commandNames.map((name) => [name, (...args) => engine.dispatch(name, ...args)]));
     Object.assign(commands2, {

@@ -1,0 +1,7 @@
+hospital-phaser build/check OK
+workshop build/check OK
+state-map build/check OK
+movement-map build/check OK
+search-map build/check OK
+action-map build/check OK
+horizontal-map build/check OK

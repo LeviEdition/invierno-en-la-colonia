@@ -1,0 +1,57 @@
+{
+  "original_bytes_unchanged": true,
+  "assets": [
+    {
+      "file": "hospital.png",
+      "uploaded_as": "Hospital abandonado bajo la nieve-1.png",
+      "upload_commit": "ed3578f31d27fbdb1e09184de0073e911765b1e1",
+      "sha256": "fc85ae8199e1d94b7f4636bed4b8f293c0e15ce64b8235dbbf63b2b3e0e76159",
+      "bytes": 2391925,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "visible_alpha_gt16_bbox": [
+        39,
+        134,
+        1221,
+        1148
+      ]
+    },
+    {
+      "file": "suelo-nevado.png",
+      "uploaded_as": "Terreno nevado vacío para hospital-2.png",
+      "upload_commit": "ed3578f31d27fbdb1e09184de0073e911765b1e1",
+      "sha256": "71487b23b4be9eba5c96e6e6c5d9feffaff025542339392c55f773384d12687a",
+      "bytes": 3270542,
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGB",
+      "alpha_extrema": null,
+      "visible_alpha_gt16_bbox": null
+    },
+    {
+      "file": "zombi.png",
+      "uploaded_as": "Zombi invernal encorvado-3.png",
+      "upload_commit": "ed3578f31d27fbdb1e09184de0073e911765b1e1",
+      "sha256": "4f569398e24f4a1358348b5a1e770f3e41913386323f1478d0102d8df2349f82",
+      "bytes": 816224,
+      "width": 1175,
+      "height": 1338,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "visible_alpha_gt16_bbox": [
+        340,
+        126,
+        844,
+        1219
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-30",
+  "timezone": "America/Montevideo",
+  "implementationCommit": "9ef2e392fd2ed23a289bbc031ea892bffc26dffb",
+  "baselineCommit": "6036b81779079c8721d7e5fd4b44744cc9c4459f",
+  "commands": [
+    {
+      "command": "npm ci --cache /tmp/h32-npm-cache",
+      "passed": true
+    },
+    {
+      "command": "npm run check:build",
+      "passed": true
+    },
+    {
+      "command": "npm test",
+      "passed": true,
+      "tests": 483,
+      "failures": 0
+    },
+    {
+      "command": "npm run build:hospital",
+      "passed": true
+    },
+    {
+      "command": "npm run check:hospital-build",
+      "passed": true
+    },
+    {
+      "command": "git diff --check",
+      "passed": true
+    }
+  ],
+  "browserGates": {
+    "calidad": {
+      "passed": true,
+      "evidence": "h32-nitidez-calidad.json"
+    },
+    "canvas": {
+      "passed": true,
+      "evidence": "h32-nitidez-canvas.json"
+    },
+    "browser": {
+      "passed": true,
+      "evidence": "h32-nitidez-browser.json"
+    },
+    "lifecycle": {
+      "passed": true,
+      "evidence": "h32-nitidez-lifecycle.json"
+    },
+    "navigation": {
+      "passed": true,
+      "evidence": "h32-nitidez-navigation.json"
+    },
+    "adapter": {
+      "passed": true,
+      "evidence": "h32-nitidez-adapter.json"
+    }
+  },
+  "scope": {
+    "rulesChanged": false,
+    "mainChanged": false,
+    "referenceChanged": false,
+    "originalArtChanged": false,
+    "canvasChanged": false,
+    "gameStartAdapterChanged": false,
+    "h33Started": false
+  },
+  "reviewStatus": "Revisión visual del creador pendiente; Phaser candidato, no adoptado definitivamente",
+  "ci": "Se registra aparte para el SHA exacto; no inferir aprobación a partir de pruebas locales"
+}

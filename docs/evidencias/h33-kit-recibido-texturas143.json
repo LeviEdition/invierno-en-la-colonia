@@ -1,0 +1,3384 @@
+{
+  "conditions": {
+    "os": "linux 6.18.57",
+    "cpu": "AMD EPYC 9V74 80-Core Processor",
+    "logicalCpus": 5,
+    "totalSystemMemoryBytes": 35743748096,
+    "node": "v24.19.0",
+    "chromium": "143.0.7499.4",
+    "headless": true,
+    "physicalMobile": false,
+    "network": "HTTP localhost, sin compresión ni throttling; PNG originales comunes, caché caliente durante cambios de perfil",
+    "method": "3 ensayos por perfil/viewport, orden rotativo, sin exportación PNG durante tiempos; host compartido con carga ajena no controlada. Tiempos CPU/envío y primer frame, no finalización GPU; no VRAM medida",
+    "memory": "RGBA teórica por dimensiones/potencias/niveles; excluye framebuffer, driver, cachés y marcadores. Auxiliares y derivados separados."
+  },
+  "sourceSnapshot": "4fc7c66c1af1d053458519b5c6367a8b9224e8a0",
+  "originalFiles": [
+    {
+      "id": "hospital",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 2391925,
+      "sha256": "fc85ae8199e1d94b7f4636bed4b8f293c0e15ce64b8235dbbf63b2b3e0e76159",
+      "alpha": true
+    },
+    {
+      "id": "ground",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 3270542,
+      "sha256": "71487b23b4be9eba5c96e6e6c5d9feffaff025542339392c55f773384d12687a",
+      "alpha": false
+    },
+    {
+      "id": "zombie",
+      "width": 1175,
+      "height": 1338,
+      "bytes": 816224,
+      "sha256": "4f569398e24f4a1358348b5a1e770f3e41913386323f1478d0102d8df2349f82",
+      "alpha": true
+    }
+  ],
+  "samples": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "trial": 1,
+      "profile": "h32",
+      "factor": 1,
+      "timings": {
+        "requestedAt": 632.1000000089407,
+        "startedAt": 650.1000000089407,
+        "loadAndAlphaMs": 30,
+        "derivationSubmitMs": 0.09999999403953552,
+        "rendererAndFirstFrameMs": 257.1000000089407,
+        "readyMs": 287.29999999701977,
+        "totalMountMs": 305.29999999701977
+      },
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "hospital": {
+          "width": 1254,
+          "height": 1254,
+          "potWidth": 2048,
+          "potHeight": 2048,
+          "rgbaBase": 16777216,
+          "rgbaWithMips": 22369620,
+          "auxiliaryRgba": 16777216,
+          "derivedRgba": 0,
+          "factor": 1,
+          "minFilter": 9987,
+          "sourceWidth": 2048,
+          "sourceHeight": 2048
+        },
+        "ground": {
+          "width": 1536,
+          "height": 1024,
+          "potWidth": 2048,
+          "potHeight": 1024,
+          "rgbaBase": 8388608,
+          "rgbaWithMips": 11184812,
+          "auxiliaryRgba": 8388608,
+          "derivedRgba": 0,
+          "factor": 1,
+          "minFilter": 9987,
+          "sourceWidth": 2048,
+          "sourceHeight": 1024
+        },
+        "zombie": {
+          "width": 1175,
+          "height": 1338,
+          "potWidth": 2048,
+          "potHeight": 2048,
+          "rgbaBase": 16777216,
+          "rgbaWithMips": 22369620,
+          "auxiliaryRgba": 16777216,
+          "derivedRgba": 0,
+          "factor": 1,
+          "minFilter": 9987,
+          "sourceWidth": 2048,
+          "sourceHeight": 2048
+        }
+      },
+      "idleDraws": 0,
+      "coldResources": [
+        {
+          "name": "/assets/prototipo-hospital/hospital.png",
+          "transferSize": 2392225,
+          "encodedBodySize": 2391925,
+          "duration": 33.099999994039536
+        },
+        {
+          "name": "/assets/prototipo-hospital/zombi.png",
+          "transferSize": 816524,
+          "encodedBodySize": 816224,
+          "duration": 18.599999994039536
+        },
+        {
+          "name": "/assets/prototipo-hospital/suelo-nevado.png",
+          "transferSize": 3270842,
+          "encodedBodySize": 3270542,
+          "duration": 38.19999998807907
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "trial": 1,
+      "profile": "three-quarter",
+      "factor": 0.75,
+      "timings": {
+        "requestedAt": 1444.7999999970198,
+        "startedAt": 1460.5,
+        "loadAndAlphaMs": 30.799999997019768,
+        "derivationSubmitMs": 4.800000011920929,
+        "rendererAndFirstFrameMs": 153.09999999403954,
+        "readyMs": 188.70000000298023,
+        "totalMountMs": 204.40000000596046
+      },
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "hospital": {
+          "width": 941,
+          "height": 941,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 3541924,
+          "factor": 0.75,
+          "minFilter": 9987,
+          "sourceWidth": 1024,
+          "sourceHeight": 1024
+        },
+        "ground": {
+          "width": 1152,
+          "height": 768,
+          "potWidth": 2048,
+          "potHeight": 1024,
+          "rgbaBase": 8388608,
+          "rgbaWithMips": 11184812,
+          "auxiliaryRgba": 8388608,
+          "derivedRgba": 3538944,
+          "factor": 0.75,
+          "minFilter": 9987,
+          "sourceWidth": 2048,
+          "sourceHeight": 1024
+        },
+        "zombie": {
+          "width": 882,
+          "height": 1004,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 3542112,
+          "factor": 0.75,
+          "minFilter": 9987,
+          "sourceWidth": 1024,
+          "sourceHeight": 1024
+        }
+      },
+      "idleDraws": 0
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "trial": 1,
+      "profile": "half",
+      "factor": 0.5,
+      "timings": {
+        "requestedAt": 2151.7000000029802,
+        "startedAt": 2182.1000000089407,
+        "loadAndAlphaMs": 33.19999998807907,
+        "derivationSubmitMs": 2.5,
+        "rendererAndFirstFrameMs": 117.80000001192093,
+        "readyMs": 153.5,
+        "totalMountMs": 183.90000000596046
+      },
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "hospital": {
+          "width": 627,
+          "height": 627,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 1572516,
+          "factor": 0.5,
+          "minFilter": 9987,
+          "sourceWidth": 1024,
+          "sourceHeight": 1024
+        },
+        "ground": {
+          "width": 768,
+          "height": 512,
+          "potWidth": 1024,
+          "potHeight": 512,
+          "rgbaBase": 2097152,
+          "rgbaWithMips": 2796204,
+          "auxiliaryRgba": 2097152,
+          "derivedRgba": 1572864,
+          "factor": 0.5,
+          "minFilter": 9987,
+          "sourceWidth": 1024,
+          "sourceHeight": 512
+        },
+        "zombie": {
+          "width": 588,
+          "height": 669,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 1573488,
+          "factor": 0.5,
+          "minFilter": 9987,
+          "sourceWidth": 1024,
+          "sourceHeight": 1024
+        }
+      },
+      "idleDraws": 0
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "trial": 2,
+      "profile": "three-quarter",
+      "factor": 0.75,
+      "timings": {
+        "requestedAt": 2851.6000000089407,
+        "startedAt": 2859.7999999970198,
+        "loadAndAlphaMs": 39.30000001192093,
+        "derivationSubmitMs": 4.699999988079071,
+        "rendererAndFirstFrameMs": 185.30000001192093,
+        "readyMs": 229.30000001192093,
+        "totalMountMs": 237.5
+      },
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "hospital": {
+          "width": 941,
+          "height": 941,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 3541924,
+          "factor": 0.75,
+          "minFilter": 9987,
+          "sourceWidth": 1024,
+          "sourceHeight": 1024
+        },
+        "ground": {
+          "width": 1152,
+          "height": 768,
+          "potWidth": 2048,
+          "potHeight": 1024,
+          "rgbaBase": 8388608,
+          "rgbaWithMips": 11184812,
+          "auxiliaryRgba": 8388608,
+          "derivedRgba": 3538944,
+          "factor": 0.75,
+          "minFilter": 9987,
+          "sourceWidth": 2048,
+          "sourceHeight": 1024
+        },
+        "zombie": {
+          "width": 882,
+          "height": 1004,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 3542112,
+          "factor": 0.75,
+          "minFilter": 9987,
+          "sourceWidth": 1024,
+          "sourceHeight": 1024
+        }
+      },
+      "idleDraws": 0
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "trial": 2,
+      "profile": "half",
+      "factor": 0.5,
+      "timings": {
+        "requestedAt": 3622.9000000059605,
+        "startedAt": 3631.7999999970198,
+        "loadAndAlphaMs": 34.5,
+        "derivationSubmitMs": 1.800000011920929,
+        "rendererAndFirstFrameMs": 120.59999999403954,
+        "readyMs": 156.90000000596046,
+        "totalMountMs": 165.79999999701977
+      },
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "hospital": {
+          "width": 627,
+          "height": 627,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 1572516,
+          "factor": 0.5,
+          "minFilter": 9987,
+          "sourceWidth": 1024,
+          "sourceHeight": 1024
+        },
+        "ground": {
+          "width": 768,
+          "height": 512,
+          "potWidth": 1024,
+          "potHeight": 512,
+          "rgbaBase": 2097152,
+          "rgbaWithMips": 2796204,
+          "auxiliaryRgba": 2097152,
+          "derivedRgba": 1572864,
+          "factor": 0.5,
+          "minFilter": 9987,
+          "sourceWidth": 1024,
+          "sourceHeight": 512
+        },
+        "zombie": {
+          "width": 588,
+          "height": 669,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 1573488,
+          "factor": 0.5,
+          "minFilter": 9987,
+          "sourceWidth": 1024,
+          "sourceHeight": 1024
+        }
+      },
+      "idleDraws": 0
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "trial": 2,
+      "profile": "h32",
+      "factor": 1,
+      "timings": {
+        "requestedAt": 4289.79999999702,
+        "startedAt": 4301.4000000059605,
+        "loadAndAlphaMs": 33,
+        "derivationSubmitMs": 0,
+        "rendererAndFirstFrameMs": 269.09999999403954,
+        "readyMs": 302.09999999403954,
+        "totalMountMs": 313.70000000298023
+      },
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "hospital": {
+          "width": 1254,
+          "height": 1254,
+          "potWidth": 2048,
+          "potHeight": 2048,
+          "rgbaBase": 16777216,
+          "rgbaWithMips": 22369620,
+          "auxiliaryRgba": 16777216,
+          "derivedRgba": 0,
+          "factor": 1,
+          "minFilter": 9987,
+          "sourceWidth": 2048,
+          "sourceHeight": 2048
+        },
+        "ground": {
+          "width": 1536,
+          "height": 1024,
+          "potWidth": 2048,
+          "potHeight": 1024,
+          "rgbaBase": 8388608,
+          "rgbaWithMips": 11184812,
+          "auxiliaryRgba": 8388608,
+          "derivedRgba": 0,
+          "factor": 1,
+          "minFilter": 9987,
+          "sourceWidth": 2048,
+          "sourceHeight": 1024
+        },
+        "zombie": {
+          "width": 1175,
+          "height": 1338,
+          "potWidth": 2048,
+          "potHeight": 2048,
+          "rgbaBase": 16777216,
+          "rgbaWithMips": 22369620,
+          "auxiliaryRgba": 16777216,
+          "derivedRgba": 0,
+          "factor": 1,
+          "minFilter": 9987,
+          "sourceWidth": 2048,
+          "sourceHeight": 2048
+        }
+      },
+      "idleDraws": 0
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "trial": 3,
+      "profile": "half",
+      "factor": 0.5,
+      "timings": {
+        "requestedAt": 5118.9000000059605,
+        "startedAt": 5141.4000000059605,
+        "loadAndAlphaMs": 33,
+        "derivationSubmitMs": 1.7999999970197678,
+        "rendererAndFirstFrameMs": 124.79999999701977,
+        "readyMs": 159.59999999403954,
+        "totalMountMs": 182.09999999403954
+      },
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "hospital": {
+          "width": 627,
+          "height": 627,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 1572516,
+          "factor": 0.5,
+          "minFilter": 9987,
+          "sourceWidth": 1024,
+          "sourceHeight": 1024
+        },
+        "ground": {
+          "width": 768,
+          "height": 512,
+          "potWidth": 1024,
+          "potHeight": 512,
+          "rgbaBase": 2097152,
+          "rgbaWithMips": 2796204,
+          "auxiliaryRgba": 2097152,
+          "derivedRgba": 1572864,
+          "factor": 0.5,
+          "minFilter": 9987,
+          "sourceWidth": 1024,
+          "sourceHeight": 512
+        },
+        "zombie": {
+          "width": 588,
+          "height": 669,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 1573488,
+          "factor": 0.5,
+          "minFilter": 9987,
+          "sourceWidth": 1024,
+          "sourceHeight": 1024
+        }
+      },
+      "idleDraws": 0
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "trial": 3,
+      "profile": "h32",
+      "factor": 1,
+      "timings": {
+        "requestedAt": 5838.4000000059605,
+        "startedAt": 5848.70000000298,
+        "loadAndAlphaMs": 38.099999994039536,
+        "derivationSubmitMs": 0,
+        "rendererAndFirstFrameMs": 299.40000000596046,
+        "readyMs": 337.5,
+        "totalMountMs": 347.79999999701977
+      },
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "hospital": {
+          "width": 1254,
+          "height": 1254,
+          "potWidth": 2048,
+          "potHeight": 2048,
+          "rgbaBase": 16777216,
+          "rgbaWithMips": 22369620,
+          "auxiliaryRgba": 16777216,
+          "derivedRgba": 0,
+          "factor": 1,
+          "minFilter": 9987,
+          "sourceWidth": 2048,
+          "sourceHeight": 2048
+        },
+        "ground": {
+          "width": 1536,
+          "height": 1024,
+          "potWidth": 2048,
+          "potHeight": 1024,
+          "rgbaBase": 8388608,
+          "rgbaWithMips": 11184812,
+          "auxiliaryRgba": 8388608,
+          "derivedRgba": 0,
+          "factor": 1,
+          "minFilter": 9987,
+          "sourceWidth": 2048,
+          "sourceHeight": 1024
+        },
+        "zombie": {
+          "width": 1175,
+          "height": 1338,
+          "potWidth": 2048,
+          "potHeight": 2048,
+          "rgbaBase": 16777216,
+          "rgbaWithMips": 22369620,
+          "auxiliaryRgba": 16777216,
+          "derivedRgba": 0,
+          "factor": 1,
+          "minFilter": 9987,
+          "sourceWidth": 2048,
+          "sourceHeight": 2048
+        }
+      },
+      "idleDraws": 0
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "trial": 3,
+      "profile": "three-quarter",
+      "factor": 0.75,
+      "timings": {
+        "requestedAt": 6682.70000000298,
+        "startedAt": 6697.20000000298,
+        "loadAndAlphaMs": 32.20000000298023,
+        "derivationSubmitMs": 3.2999999970197678,
+        "rendererAndFirstFrameMs": 156.30000001192093,
+        "readyMs": 191.90000000596046,
+        "totalMountMs": 206.40000000596046
+      },
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "hospital": {
+          "width": 941,
+          "height": 941,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 3541924,
+          "factor": 0.75,
+          "minFilter": 9987,
+          "sourceWidth": 1024,
+          "sourceHeight": 1024
+        },
+        "ground": {
+          "width": 1152,
+          "height": 768,
+          "potWidth": 2048,
+          "potHeight": 1024,
+          "rgbaBase": 8388608,
+          "rgbaWithMips": 11184812,
+          "auxiliaryRgba": 8388608,
+          "derivedRgba": 3538944,
+          "factor": 0.75,
+          "minFilter": 9987,
+          "sourceWidth": 2048,
+          "sourceHeight": 1024
+        },
+        "zombie": {
+          "width": 882,
+          "height": 1004,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 3542112,
+          "factor": 0.75,
+          "minFilter": 9987,
+          "sourceWidth": 1024,
+          "sourceHeight": 1024
+        }
+      },
+      "idleDraws": 0
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "trial": 1,
+      "profile": "h32",
+      "factor": 1,
+      "timings": {
+        "requestedAt": 698.5,
+        "startedAt": 711.0999999940395,
+        "loadAndAlphaMs": 28,
+        "derivationSubmitMs": 0.09999999403953552,
+        "rendererAndFirstFrameMs": 289.80000001192093,
+        "readyMs": 318,
+        "totalMountMs": 330.59999999403954
+      },
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "hospital": {
+          "width": 1254,
+          "height": 1254,
+          "potWidth": 2048,
+          "potHeight": 2048,
+          "rgbaBase": 16777216,
+          "rgbaWithMips": 22369620,
+          "auxiliaryRgba": 16777216,
+          "derivedRgba": 0,
+          "factor": 1,
+          "minFilter": 9987,
+          "sourceWidth": 2048,
+          "sourceHeight": 2048
+        },
+        "ground": {
+          "width": 1536,
+          "height": 1024,
+          "potWidth": 2048,
+          "potHeight": 1024,
+          "rgbaBase": 8388608,
+          "rgbaWithMips": 11184812,
+          "auxiliaryRgba": 8388608,
+          "derivedRgba": 0,
+          "factor": 1,
+          "minFilter": 9987,
+          "sourceWidth": 2048,
+          "sourceHeight": 1024
+        },
+        "zombie": {
+          "width": 1175,
+          "height": 1338,
+          "potWidth": 2048,
+          "potHeight": 2048,
+          "rgbaBase": 16777216,
+          "rgbaWithMips": 22369620,
+          "auxiliaryRgba": 16777216,
+          "derivedRgba": 0,
+          "factor": 1,
+          "minFilter": 9987,
+          "sourceWidth": 2048,
+          "sourceHeight": 2048
+        }
+      },
+      "idleDraws": 0,
+      "coldResources": [
+        {
+          "name": "/assets/prototipo-hospital/hospital.png",
+          "transferSize": 2392225,
+          "encodedBodySize": 2391925,
+          "duration": 20.700000002980232
+        },
+        {
+          "name": "/assets/prototipo-hospital/zombi.png",
+          "transferSize": 816524,
+          "encodedBodySize": 816224,
+          "duration": 8.5
+        },
+        {
+          "name": "/assets/prototipo-hospital/suelo-nevado.png",
+          "transferSize": 3270842,
+          "encodedBodySize": 3270542,
+          "duration": 23.30000001192093
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "trial": 1,
+      "profile": "three-quarter",
+      "factor": 0.75,
+      "timings": {
+        "requestedAt": 1532.5,
+        "startedAt": 1551,
+        "loadAndAlphaMs": 35.79999999701977,
+        "derivationSubmitMs": 3.5999999940395355,
+        "rendererAndFirstFrameMs": 154.79999999701977,
+        "readyMs": 194.19999998807907,
+        "totalMountMs": 212.69999998807907
+      },
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "hospital": {
+          "width": 941,
+          "height": 941,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 3541924,
+          "factor": 0.75,
+          "minFilter": 9987,
+          "sourceWidth": 1024,
+          "sourceHeight": 1024
+        },
+        "ground": {
+          "width": 1152,
+          "height": 768,
+          "potWidth": 2048,
+          "potHeight": 1024,
+          "rgbaBase": 8388608,
+          "rgbaWithMips": 11184812,
+          "auxiliaryRgba": 8388608,
+          "derivedRgba": 3538944,
+          "factor": 0.75,
+          "minFilter": 9987,
+          "sourceWidth": 2048,
+          "sourceHeight": 1024
+        },
+        "zombie": {
+          "width": 882,
+          "height": 1004,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 3542112,
+          "factor": 0.75,
+          "minFilter": 9987,
+          "sourceWidth": 1024,
+          "sourceHeight": 1024
+        }
+      },
+      "idleDraws": 0
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "trial": 1,
+      "profile": "half",
+      "factor": 0.5,
+      "timings": {
+        "requestedAt": 2244.2999999970198,
+        "startedAt": 2255.5999999940395,
+        "loadAndAlphaMs": 33.79999999701977,
+        "derivationSubmitMs": 1.9000000059604645,
+        "rendererAndFirstFrameMs": 127.29999999701977,
+        "readyMs": 163,
+        "totalMountMs": 174.29999999701977
+      },
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "hospital": {
+          "width": 627,
+          "height": 627,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 1572516,
+          "factor": 0.5,
+          "minFilter": 9987,
+          "sourceWidth": 1024,
+          "sourceHeight": 1024
+        },
+        "ground": {
+          "width": 768,
+          "height": 512,
+          "potWidth": 1024,
+          "potHeight": 512,
+          "rgbaBase": 2097152,
+          "rgbaWithMips": 2796204,
+          "auxiliaryRgba": 2097152,
+          "derivedRgba": 1572864,
+          "factor": 0.5,
+          "minFilter": 9987,
+          "sourceWidth": 1024,
+          "sourceHeight": 512
+        },
+        "zombie": {
+          "width": 588,
+          "height": 669,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 1573488,
+          "factor": 0.5,
+          "minFilter": 9987,
+          "sourceWidth": 1024,
+          "sourceHeight": 1024
+        }
+      },
+      "idleDraws": 0
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "trial": 2,
+      "profile": "three-quarter",
+      "factor": 0.75,
+      "timings": {
+        "requestedAt": 2899.5999999940395,
+        "startedAt": 2908.5999999940395,
+        "loadAndAlphaMs": 31.599999994039536,
+        "derivationSubmitMs": 4.4000000059604645,
+        "rendererAndFirstFrameMs": 142.59999999403954,
+        "readyMs": 178.59999999403954,
+        "totalMountMs": 187.59999999403954
+      },
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "hospital": {
+          "width": 941,
+          "height": 941,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 3541924,
+          "factor": 0.75,
+          "minFilter": 9987,
+          "sourceWidth": 1024,
+          "sourceHeight": 1024
+        },
+        "ground": {
+          "width": 1152,
+          "height": 768,
+          "potWidth": 2048,
+          "potHeight": 1024,
+          "rgbaBase": 8388608,
+          "rgbaWithMips": 11184812,
+          "auxiliaryRgba": 8388608,
+          "derivedRgba": 3538944,
+          "factor": 0.75,
+          "minFilter": 9987,
+          "sourceWidth": 2048,
+          "sourceHeight": 1024
+        },
+        "zombie": {
+          "width": 882,
+          "height": 1004,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 3542112,
+          "factor": 0.75,
+          "minFilter": 9987,
+          "sourceWidth": 1024,
+          "sourceHeight": 1024
+        }
+      },
+      "idleDraws": 0
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "trial": 2,
+      "profile": "half",
+      "factor": 0.5,
+      "timings": {
+        "requestedAt": 3579.8999999910593,
+        "startedAt": 3592.0999999940395,
+        "loadAndAlphaMs": 35.70000000298023,
+        "derivationSubmitMs": 2.2999999970197678,
+        "rendererAndFirstFrameMs": 133.20000000298023,
+        "readyMs": 171.20000000298023,
+        "totalMountMs": 183.40000000596046
+      },
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "hospital": {
+          "width": 627,
+          "height": 627,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 1572516,
+          "factor": 0.5,
+          "minFilter": 9987,
+          "sourceWidth": 1024,
+          "sourceHeight": 1024
+        },
+        "ground": {
+          "width": 768,
+          "height": 512,
+          "potWidth": 1024,
+          "potHeight": 512,
+          "rgbaBase": 2097152,
+          "rgbaWithMips": 2796204,
+          "auxiliaryRgba": 2097152,
+          "derivedRgba": 1572864,
+          "factor": 0.5,
+          "minFilter": 9987,
+          "sourceWidth": 1024,
+          "sourceHeight": 512
+        },
+        "zombie": {
+          "width": 588,
+          "height": 669,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 1573488,
+          "factor": 0.5,
+          "minFilter": 9987,
+          "sourceWidth": 1024,
+          "sourceHeight": 1024
+        }
+      },
+      "idleDraws": 0
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "trial": 2,
+      "profile": "h32",
+      "factor": 1,
+      "timings": {
+        "requestedAt": 4261.899999991059,
+        "startedAt": 4271.79999999702,
+        "loadAndAlphaMs": 43.5,
+        "derivationSubmitMs": 0,
+        "rendererAndFirstFrameMs": 268.59999999403954,
+        "readyMs": 312.09999999403954,
+        "totalMountMs": 322.1000000089407
+      },
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "hospital": {
+          "width": 1254,
+          "height": 1254,
+          "potWidth": 2048,
+          "potHeight": 2048,
+          "rgbaBase": 16777216,
+          "rgbaWithMips": 22369620,
+          "auxiliaryRgba": 16777216,
+          "derivedRgba": 0,
+          "factor": 1,
+          "minFilter": 9987,
+          "sourceWidth": 2048,
+          "sourceHeight": 2048
+        },
+        "ground": {
+          "width": 1536,
+          "height": 1024,
+          "potWidth": 2048,
+          "potHeight": 1024,
+          "rgbaBase": 8388608,
+          "rgbaWithMips": 11184812,
+          "auxiliaryRgba": 8388608,
+          "derivedRgba": 0,
+          "factor": 1,
+          "minFilter": 9987,
+          "sourceWidth": 2048,
+          "sourceHeight": 1024
+        },
+        "zombie": {
+          "width": 1175,
+          "height": 1338,
+          "potWidth": 2048,
+          "potHeight": 2048,
+          "rgbaBase": 16777216,
+          "rgbaWithMips": 22369620,
+          "auxiliaryRgba": 16777216,
+          "derivedRgba": 0,
+          "factor": 1,
+          "minFilter": 9987,
+          "sourceWidth": 2048,
+          "sourceHeight": 2048
+        }
+      },
+      "idleDraws": 0
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "trial": 3,
+      "profile": "half",
+      "factor": 0.5,
+      "timings": {
+        "requestedAt": 5095,
+        "startedAt": 5108.29999999702,
+        "loadAndAlphaMs": 30.399999991059303,
+        "derivationSubmitMs": 1.6000000089406967,
+        "rendererAndFirstFrameMs": 128.5,
+        "readyMs": 160.5,
+        "totalMountMs": 173.79999999701977
+      },
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "hospital": {
+          "width": 627,
+          "height": 627,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 1572516,
+          "factor": 0.5,
+          "minFilter": 9987,
+          "sourceWidth": 1024,
+          "sourceHeight": 1024
+        },
+        "ground": {
+          "width": 768,
+          "height": 512,
+          "potWidth": 1024,
+          "potHeight": 512,
+          "rgbaBase": 2097152,
+          "rgbaWithMips": 2796204,
+          "auxiliaryRgba": 2097152,
+          "derivedRgba": 1572864,
+          "factor": 0.5,
+          "minFilter": 9987,
+          "sourceWidth": 1024,
+          "sourceHeight": 512
+        },
+        "zombie": {
+          "width": 588,
+          "height": 669,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 1573488,
+          "factor": 0.5,
+          "minFilter": 9987,
+          "sourceWidth": 1024,
+          "sourceHeight": 1024
+        }
+      },
+      "idleDraws": 0
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "trial": 3,
+      "profile": "h32",
+      "factor": 1,
+      "timings": {
+        "requestedAt": 5780.79999999702,
+        "startedAt": 5790.199999988079,
+        "loadAndAlphaMs": 31.100000008940697,
+        "derivationSubmitMs": 0.09999999403953552,
+        "rendererAndFirstFrameMs": 281.1000000089407,
+        "readyMs": 312.30000001192093,
+        "totalMountMs": 321.70000000298023
+      },
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "hospital": {
+          "width": 1254,
+          "height": 1254,
+          "potWidth": 2048,
+          "potHeight": 2048,
+          "rgbaBase": 16777216,
+          "rgbaWithMips": 22369620,
+          "auxiliaryRgba": 16777216,
+          "derivedRgba": 0,
+          "factor": 1,
+          "minFilter": 9987,
+          "sourceWidth": 2048,
+          "sourceHeight": 2048
+        },
+        "ground": {
+          "width": 1536,
+          "height": 1024,
+          "potWidth": 2048,
+          "potHeight": 1024,
+          "rgbaBase": 8388608,
+          "rgbaWithMips": 11184812,
+          "auxiliaryRgba": 8388608,
+          "derivedRgba": 0,
+          "factor": 1,
+          "minFilter": 9987,
+          "sourceWidth": 2048,
+          "sourceHeight": 1024
+        },
+        "zombie": {
+          "width": 1175,
+          "height": 1338,
+          "potWidth": 2048,
+          "potHeight": 2048,
+          "rgbaBase": 16777216,
+          "rgbaWithMips": 22369620,
+          "auxiliaryRgba": 16777216,
+          "derivedRgba": 0,
+          "factor": 1,
+          "minFilter": 9987,
+          "sourceWidth": 2048,
+          "sourceHeight": 2048
+        }
+      },
+      "idleDraws": 0
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "trial": 3,
+      "profile": "three-quarter",
+      "factor": 0.75,
+      "timings": {
+        "requestedAt": 6610,
+        "startedAt": 6624.79999999702,
+        "loadAndAlphaMs": 28.899999991059303,
+        "derivationSubmitMs": 3.300000011920929,
+        "rendererAndFirstFrameMs": 136,
+        "readyMs": 168.20000000298023,
+        "totalMountMs": 183
+      },
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "textures": {
+        "hospital": {
+          "width": 941,
+          "height": 941,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 3541924,
+          "factor": 0.75,
+          "minFilter": 9987,
+          "sourceWidth": 1024,
+          "sourceHeight": 1024
+        },
+        "ground": {
+          "width": 1152,
+          "height": 768,
+          "potWidth": 2048,
+          "potHeight": 1024,
+          "rgbaBase": 8388608,
+          "rgbaWithMips": 11184812,
+          "auxiliaryRgba": 8388608,
+          "derivedRgba": 3538944,
+          "factor": 0.75,
+          "minFilter": 9987,
+          "sourceWidth": 2048,
+          "sourceHeight": 1024
+        },
+        "zombie": {
+          "width": 882,
+          "height": 1004,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 3542112,
+          "factor": 0.75,
+          "minFilter": 9987,
+          "sourceWidth": 1024,
+          "sourceHeight": 1024
+        }
+      },
+      "idleDraws": 0
+    }
+  ],
+  "exports": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "id": "hospital",
+      "profile": "h32",
+      "factor": 1,
+      "width": 1254,
+      "height": 1254,
+      "contentExtent": {
+        "width": 1254,
+        "height": 1254
+      },
+      "pivot": {
+        "x": 630,
+        "y": 1148
+      },
+      "canonicalPivot": {
+        "x": 630,
+        "y": 1148
+      },
+      "representationScale": 0.65,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "normalizedAlphaCoverage": 0.6222797196888773,
+      "sourceAlphaCoverage": 0.6222797196888773,
+      "pngBytes": 2638884,
+      "sha256": "9620db045b9440d12916b7359d7ab416d4c5bfd6cc306c869e579d82f193c93d",
+      "sourceSha256": "fc85ae8199e1d94b7f4636bed4b8f293c0e15ce64b8235dbbf63b2b3e0e76159",
+      "sourceProvenance": {
+        "manifest": "assets/prototipo-hospital/manifest.json",
+        "record": "hospital.png",
+        "uploadCommit": "ed3578f31d27fbdb1e09184de0073e911765b1e1",
+        "auditedCommit": "ba1d93a4ae73a91a6f07660584e2374b53043a67"
+      },
+      "referenceSnapshot": "4fc7c66c1af1d053458519b5c6367a8b9224e8a0",
+      "storage": "QA-export-not-runtime-network",
+      "artApproved": false,
+      "file": "derivatives/1365/h32/hospital.png"
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "id": "ground",
+      "profile": "h32",
+      "factor": 1,
+      "width": 1536,
+      "height": 1024,
+      "contentExtent": {
+        "width": 1536,
+        "height": 1024
+      },
+      "pivot": {
+        "x": 0,
+        "y": 0
+      },
+      "canonicalPivot": {
+        "x": 0,
+        "y": 0
+      },
+      "representationScale": 1,
+      "alphaRange": [
+        255,
+        255
+      ],
+      "normalizedAlphaCoverage": 1,
+      "sourceAlphaCoverage": 1,
+      "pngBytes": 4029048,
+      "sha256": "66946047fe9593a2b158c45e8b8a621b6bad6f592b157c68340309bb8027175d",
+      "sourceSha256": "71487b23b4be9eba5c96e6e6c5d9feffaff025542339392c55f773384d12687a",
+      "sourceProvenance": {
+        "manifest": "assets/prototipo-hospital/manifest.json",
+        "record": "suelo-nevado.png",
+        "uploadCommit": "ed3578f31d27fbdb1e09184de0073e911765b1e1",
+        "auditedCommit": "ba1d93a4ae73a91a6f07660584e2374b53043a67"
+      },
+      "referenceSnapshot": "4fc7c66c1af1d053458519b5c6367a8b9224e8a0",
+      "storage": "QA-export-not-runtime-network",
+      "artApproved": false,
+      "file": "derivatives/1365/h32/ground.png"
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "id": "zombie",
+      "profile": "h32",
+      "factor": 1,
+      "width": 1175,
+      "height": 1338,
+      "contentExtent": {
+        "width": 1175,
+        "height": 1338
+      },
+      "pivot": {
+        "x": 716,
+        "y": 1218
+      },
+      "canonicalPivot": {
+        "x": 716,
+        "y": 1218
+      },
+      "representationScale": 0.095,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "normalizedAlphaCoverage": 0.19139609863600054,
+      "sourceAlphaCoverage": 0.19139609863600054,
+      "pngBytes": 882748,
+      "sha256": "02d52b9a5efc830a4d33e688df5d68e7d50bbffe19eda3aa1c96c9546d1ce170",
+      "sourceSha256": "4f569398e24f4a1358348b5a1e770f3e41913386323f1478d0102d8df2349f82",
+      "sourceProvenance": {
+        "manifest": "assets/prototipo-hospital/manifest.json",
+        "record": "zombi.png",
+        "uploadCommit": "ed3578f31d27fbdb1e09184de0073e911765b1e1",
+        "auditedCommit": "ba1d93a4ae73a91a6f07660584e2374b53043a67"
+      },
+      "referenceSnapshot": "4fc7c66c1af1d053458519b5c6367a8b9224e8a0",
+      "storage": "QA-export-not-runtime-network",
+      "artApproved": false,
+      "file": "derivatives/1365/h32/zombie.png"
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "id": "hospital",
+      "profile": "three-quarter",
+      "factor": 0.75,
+      "width": 941,
+      "height": 941,
+      "contentExtent": {
+        "width": 940.5,
+        "height": 940.5
+      },
+      "pivot": {
+        "x": 472.5,
+        "y": 861
+      },
+      "canonicalPivot": {
+        "x": 630,
+        "y": 1148
+      },
+      "representationScale": 0.8666666666666667,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "normalizedAlphaCoverage": 0.6219084533728447,
+      "sourceAlphaCoverage": 0.6222797196888773,
+      "pngBytes": 1476759,
+      "sha256": "5fa6f079374d6c7a9e70c78b0bb9014468d638f35f0084ce7b4b7b2bd4156b25",
+      "sourceSha256": "fc85ae8199e1d94b7f4636bed4b8f293c0e15ce64b8235dbbf63b2b3e0e76159",
+      "sourceProvenance": {
+        "manifest": "assets/prototipo-hospital/manifest.json",
+        "record": "hospital.png",
+        "uploadCommit": "ed3578f31d27fbdb1e09184de0073e911765b1e1",
+        "auditedCommit": "ba1d93a4ae73a91a6f07660584e2374b53043a67"
+      },
+      "referenceSnapshot": "4fc7c66c1af1d053458519b5c6367a8b9224e8a0",
+      "storage": "QA-export-not-runtime-network",
+      "artApproved": false,
+      "file": "derivatives/1365/three-quarter/hospital.png"
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "id": "ground",
+      "profile": "three-quarter",
+      "factor": 0.75,
+      "width": 1152,
+      "height": 768,
+      "contentExtent": {
+        "width": 1152,
+        "height": 768
+      },
+      "pivot": {
+        "x": 0,
+        "y": 0
+      },
+      "canonicalPivot": {
+        "x": 0,
+        "y": 0
+      },
+      "representationScale": 1.3333333333333333,
+      "alphaRange": [
+        255,
+        255
+      ],
+      "normalizedAlphaCoverage": 1,
+      "sourceAlphaCoverage": 1,
+      "pngBytes": 2253264,
+      "sha256": "0c619aa1629b6dc940fc5f39cbc62345d359ef32747fcb733800cc9c6685836c",
+      "sourceSha256": "71487b23b4be9eba5c96e6e6c5d9feffaff025542339392c55f773384d12687a",
+      "sourceProvenance": {
+        "manifest": "assets/prototipo-hospital/manifest.json",
+        "record": "suelo-nevado.png",
+        "uploadCommit": "ed3578f31d27fbdb1e09184de0073e911765b1e1",
+        "auditedCommit": "ba1d93a4ae73a91a6f07660584e2374b53043a67"
+      },
+      "referenceSnapshot": "4fc7c66c1af1d053458519b5c6367a8b9224e8a0",
+      "storage": "QA-export-not-runtime-network",
+      "artApproved": false,
+      "file": "derivatives/1365/three-quarter/ground.png"
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "id": "zombie",
+      "profile": "three-quarter",
+      "factor": 0.75,
+      "width": 882,
+      "height": 1004,
+      "contentExtent": {
+        "width": 881.25,
+        "height": 1003.5
+      },
+      "pivot": {
+        "x": 537,
+        "y": 913.5
+      },
+      "canonicalPivot": {
+        "x": 716,
+        "y": 1218
+      },
+      "representationScale": 0.12666666666666668,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "normalizedAlphaCoverage": 0.19121865239150113,
+      "sourceAlphaCoverage": 0.19139609863600054,
+      "pngBytes": 496969,
+      "sha256": "012fe29f7ed42692dc96177ad11c97fa6696a0a54ef5d1270919825c339a3dc4",
+      "sourceSha256": "4f569398e24f4a1358348b5a1e770f3e41913386323f1478d0102d8df2349f82",
+      "sourceProvenance": {
+        "manifest": "assets/prototipo-hospital/manifest.json",
+        "record": "zombi.png",
+        "uploadCommit": "ed3578f31d27fbdb1e09184de0073e911765b1e1",
+        "auditedCommit": "ba1d93a4ae73a91a6f07660584e2374b53043a67"
+      },
+      "referenceSnapshot": "4fc7c66c1af1d053458519b5c6367a8b9224e8a0",
+      "storage": "QA-export-not-runtime-network",
+      "artApproved": false,
+      "file": "derivatives/1365/three-quarter/zombie.png"
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "id": "hospital",
+      "profile": "half",
+      "factor": 0.5,
+      "width": 627,
+      "height": 627,
+      "contentExtent": {
+        "width": 627,
+        "height": 627
+      },
+      "pivot": {
+        "x": 315,
+        "y": 574
+      },
+      "canonicalPivot": {
+        "x": 630,
+        "y": 1148
+      },
+      "representationScale": 1.3,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "normalizedAlphaCoverage": 0.6219248394193214,
+      "sourceAlphaCoverage": 0.6222797196888773,
+      "pngBytes": 689443,
+      "sha256": "4138bf44d972f6786a13430e66f7060b4dced330ea00f0cd553c064268f32a01",
+      "sourceSha256": "fc85ae8199e1d94b7f4636bed4b8f293c0e15ce64b8235dbbf63b2b3e0e76159",
+      "sourceProvenance": {
+        "manifest": "assets/prototipo-hospital/manifest.json",
+        "record": "hospital.png",
+        "uploadCommit": "ed3578f31d27fbdb1e09184de0073e911765b1e1",
+        "auditedCommit": "ba1d93a4ae73a91a6f07660584e2374b53043a67"
+      },
+      "referenceSnapshot": "4fc7c66c1af1d053458519b5c6367a8b9224e8a0",
+      "storage": "QA-export-not-runtime-network",
+      "artApproved": false,
+      "file": "derivatives/1365/half/hospital.png"
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "id": "ground",
+      "profile": "half",
+      "factor": 0.5,
+      "width": 768,
+      "height": 512,
+      "contentExtent": {
+        "width": 768,
+        "height": 512
+      },
+      "pivot": {
+        "x": 0,
+        "y": 0
+      },
+      "canonicalPivot": {
+        "x": 0,
+        "y": 0
+      },
+      "representationScale": 2,
+      "alphaRange": [
+        255,
+        255
+      ],
+      "normalizedAlphaCoverage": 1,
+      "sourceAlphaCoverage": 1,
+      "pngBytes": 1038706,
+      "sha256": "bb9e8e48624ea2dce52987b274e1afc3e9a26983feec0b6f06c416ab3e9fb7a5",
+      "sourceSha256": "71487b23b4be9eba5c96e6e6c5d9feffaff025542339392c55f773384d12687a",
+      "sourceProvenance": {
+        "manifest": "assets/prototipo-hospital/manifest.json",
+        "record": "suelo-nevado.png",
+        "uploadCommit": "ed3578f31d27fbdb1e09184de0073e911765b1e1",
+        "auditedCommit": "ba1d93a4ae73a91a6f07660584e2374b53043a67"
+      },
+      "referenceSnapshot": "4fc7c66c1af1d053458519b5c6367a8b9224e8a0",
+      "storage": "QA-export-not-runtime-network",
+      "artApproved": false,
+      "file": "derivatives/1365/half/ground.png"
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "id": "zombie",
+      "profile": "half",
+      "factor": 0.5,
+      "width": 588,
+      "height": 669,
+      "contentExtent": {
+        "width": 587.5,
+        "height": 669
+      },
+      "pivot": {
+        "x": 358,
+        "y": 609
+      },
+      "canonicalPivot": {
+        "x": 716,
+        "y": 1218
+      },
+      "representationScale": 0.19,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "normalizedAlphaCoverage": 0.191585331190645,
+      "sourceAlphaCoverage": 0.19139609863600054,
+      "pngBytes": 240574,
+      "sha256": "3382a70a889765fa1fd63cde841bd65a8e06d7c9a1b8857cabed0a1e3f553fbf",
+      "sourceSha256": "4f569398e24f4a1358348b5a1e770f3e41913386323f1478d0102d8df2349f82",
+      "sourceProvenance": {
+        "manifest": "assets/prototipo-hospital/manifest.json",
+        "record": "zombi.png",
+        "uploadCommit": "ed3578f31d27fbdb1e09184de0073e911765b1e1",
+        "auditedCommit": "ba1d93a4ae73a91a6f07660584e2374b53043a67"
+      },
+      "referenceSnapshot": "4fc7c66c1af1d053458519b5c6367a8b9224e8a0",
+      "storage": "QA-export-not-runtime-network",
+      "artApproved": false,
+      "file": "derivatives/1365/half/zombie.png"
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "id": "hospital",
+      "profile": "h32",
+      "factor": 1,
+      "width": 1254,
+      "height": 1254,
+      "contentExtent": {
+        "width": 1254,
+        "height": 1254
+      },
+      "pivot": {
+        "x": 630,
+        "y": 1148
+      },
+      "canonicalPivot": {
+        "x": 630,
+        "y": 1148
+      },
+      "representationScale": 0.65,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "normalizedAlphaCoverage": 0.6222797196888773,
+      "sourceAlphaCoverage": 0.6222797196888773,
+      "pngBytes": 2638884,
+      "sha256": "9620db045b9440d12916b7359d7ab416d4c5bfd6cc306c869e579d82f193c93d",
+      "sourceSha256": "fc85ae8199e1d94b7f4636bed4b8f293c0e15ce64b8235dbbf63b2b3e0e76159",
+      "sourceProvenance": {
+        "manifest": "assets/prototipo-hospital/manifest.json",
+        "record": "hospital.png",
+        "uploadCommit": "ed3578f31d27fbdb1e09184de0073e911765b1e1",
+        "auditedCommit": "ba1d93a4ae73a91a6f07660584e2374b53043a67"
+      },
+      "referenceSnapshot": "4fc7c66c1af1d053458519b5c6367a8b9224e8a0",
+      "storage": "QA-export-not-runtime-network",
+      "artApproved": false,
+      "file": "derivatives/393/h32/hospital.png"
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "id": "ground",
+      "profile": "h32",
+      "factor": 1,
+      "width": 1536,
+      "height": 1024,
+      "contentExtent": {
+        "width": 1536,
+        "height": 1024
+      },
+      "pivot": {
+        "x": 0,
+        "y": 0
+      },
+      "canonicalPivot": {
+        "x": 0,
+        "y": 0
+      },
+      "representationScale": 1,
+      "alphaRange": [
+        255,
+        255
+      ],
+      "normalizedAlphaCoverage": 1,
+      "sourceAlphaCoverage": 1,
+      "pngBytes": 4029048,
+      "sha256": "66946047fe9593a2b158c45e8b8a621b6bad6f592b157c68340309bb8027175d",
+      "sourceSha256": "71487b23b4be9eba5c96e6e6c5d9feffaff025542339392c55f773384d12687a",
+      "sourceProvenance": {
+        "manifest": "assets/prototipo-hospital/manifest.json",
+        "record": "suelo-nevado.png",
+        "uploadCommit": "ed3578f31d27fbdb1e09184de0073e911765b1e1",
+        "auditedCommit": "ba1d93a4ae73a91a6f07660584e2374b53043a67"
+      },
+      "referenceSnapshot": "4fc7c66c1af1d053458519b5c6367a8b9224e8a0",
+      "storage": "QA-export-not-runtime-network",
+      "artApproved": false,
+      "file": "derivatives/393/h32/ground.png"
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "id": "zombie",
+      "profile": "h32",
+      "factor": 1,
+      "width": 1175,
+      "height": 1338,
+      "contentExtent": {
+        "width": 1175,
+        "height": 1338
+      },
+      "pivot": {
+        "x": 716,
+        "y": 1218
+      },
+      "canonicalPivot": {
+        "x": 716,
+        "y": 1218
+      },
+      "representationScale": 0.095,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "normalizedAlphaCoverage": 0.19139609863600054,
+      "sourceAlphaCoverage": 0.19139609863600054,
+      "pngBytes": 882748,
+      "sha256": "02d52b9a5efc830a4d33e688df5d68e7d50bbffe19eda3aa1c96c9546d1ce170",
+      "sourceSha256": "4f569398e24f4a1358348b5a1e770f3e41913386323f1478d0102d8df2349f82",
+      "sourceProvenance": {
+        "manifest": "assets/prototipo-hospital/manifest.json",
+        "record": "zombi.png",
+        "uploadCommit": "ed3578f31d27fbdb1e09184de0073e911765b1e1",
+        "auditedCommit": "ba1d93a4ae73a91a6f07660584e2374b53043a67"
+      },
+      "referenceSnapshot": "4fc7c66c1af1d053458519b5c6367a8b9224e8a0",
+      "storage": "QA-export-not-runtime-network",
+      "artApproved": false,
+      "file": "derivatives/393/h32/zombie.png"
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "id": "hospital",
+      "profile": "three-quarter",
+      "factor": 0.75,
+      "width": 941,
+      "height": 941,
+      "contentExtent": {
+        "width": 940.5,
+        "height": 940.5
+      },
+      "pivot": {
+        "x": 472.5,
+        "y": 861
+      },
+      "canonicalPivot": {
+        "x": 630,
+        "y": 1148
+      },
+      "representationScale": 0.8666666666666667,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "normalizedAlphaCoverage": 0.6219084533728447,
+      "sourceAlphaCoverage": 0.6222797196888773,
+      "pngBytes": 1476759,
+      "sha256": "5fa6f079374d6c7a9e70c78b0bb9014468d638f35f0084ce7b4b7b2bd4156b25",
+      "sourceSha256": "fc85ae8199e1d94b7f4636bed4b8f293c0e15ce64b8235dbbf63b2b3e0e76159",
+      "sourceProvenance": {
+        "manifest": "assets/prototipo-hospital/manifest.json",
+        "record": "hospital.png",
+        "uploadCommit": "ed3578f31d27fbdb1e09184de0073e911765b1e1",
+        "auditedCommit": "ba1d93a4ae73a91a6f07660584e2374b53043a67"
+      },
+      "referenceSnapshot": "4fc7c66c1af1d053458519b5c6367a8b9224e8a0",
+      "storage": "QA-export-not-runtime-network",
+      "artApproved": false,
+      "file": "derivatives/393/three-quarter/hospital.png"
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "id": "ground",
+      "profile": "three-quarter",
+      "factor": 0.75,
+      "width": 1152,
+      "height": 768,
+      "contentExtent": {
+        "width": 1152,
+        "height": 768
+      },
+      "pivot": {
+        "x": 0,
+        "y": 0
+      },
+      "canonicalPivot": {
+        "x": 0,
+        "y": 0
+      },
+      "representationScale": 1.3333333333333333,
+      "alphaRange": [
+        255,
+        255
+      ],
+      "normalizedAlphaCoverage": 1,
+      "sourceAlphaCoverage": 1,
+      "pngBytes": 2253264,
+      "sha256": "0c619aa1629b6dc940fc5f39cbc62345d359ef32747fcb733800cc9c6685836c",
+      "sourceSha256": "71487b23b4be9eba5c96e6e6c5d9feffaff025542339392c55f773384d12687a",
+      "sourceProvenance": {
+        "manifest": "assets/prototipo-hospital/manifest.json",
+        "record": "suelo-nevado.png",
+        "uploadCommit": "ed3578f31d27fbdb1e09184de0073e911765b1e1",
+        "auditedCommit": "ba1d93a4ae73a91a6f07660584e2374b53043a67"
+      },
+      "referenceSnapshot": "4fc7c66c1af1d053458519b5c6367a8b9224e8a0",
+      "storage": "QA-export-not-runtime-network",
+      "artApproved": false,
+      "file": "derivatives/393/three-quarter/ground.png"
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "id": "zombie",
+      "profile": "three-quarter",
+      "factor": 0.75,
+      "width": 882,
+      "height": 1004,
+      "contentExtent": {
+        "width": 881.25,
+        "height": 1003.5
+      },
+      "pivot": {
+        "x": 537,
+        "y": 913.5
+      },
+      "canonicalPivot": {
+        "x": 716,
+        "y": 1218
+      },
+      "representationScale": 0.12666666666666668,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "normalizedAlphaCoverage": 0.19121865239150113,
+      "sourceAlphaCoverage": 0.19139609863600054,
+      "pngBytes": 496969,
+      "sha256": "012fe29f7ed42692dc96177ad11c97fa6696a0a54ef5d1270919825c339a3dc4",
+      "sourceSha256": "4f569398e24f4a1358348b5a1e770f3e41913386323f1478d0102d8df2349f82",
+      "sourceProvenance": {
+        "manifest": "assets/prototipo-hospital/manifest.json",
+        "record": "zombi.png",
+        "uploadCommit": "ed3578f31d27fbdb1e09184de0073e911765b1e1",
+        "auditedCommit": "ba1d93a4ae73a91a6f07660584e2374b53043a67"
+      },
+      "referenceSnapshot": "4fc7c66c1af1d053458519b5c6367a8b9224e8a0",
+      "storage": "QA-export-not-runtime-network",
+      "artApproved": false,
+      "file": "derivatives/393/three-quarter/zombie.png"
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "id": "hospital",
+      "profile": "half",
+      "factor": 0.5,
+      "width": 627,
+      "height": 627,
+      "contentExtent": {
+        "width": 627,
+        "height": 627
+      },
+      "pivot": {
+        "x": 315,
+        "y": 574
+      },
+      "canonicalPivot": {
+        "x": 630,
+        "y": 1148
+      },
+      "representationScale": 1.3,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "normalizedAlphaCoverage": 0.6219248394193214,
+      "sourceAlphaCoverage": 0.6222797196888773,
+      "pngBytes": 689443,
+      "sha256": "4138bf44d972f6786a13430e66f7060b4dced330ea00f0cd553c064268f32a01",
+      "sourceSha256": "fc85ae8199e1d94b7f4636bed4b8f293c0e15ce64b8235dbbf63b2b3e0e76159",
+      "sourceProvenance": {
+        "manifest": "assets/prototipo-hospital/manifest.json",
+        "record": "hospital.png",
+        "uploadCommit": "ed3578f31d27fbdb1e09184de0073e911765b1e1",
+        "auditedCommit": "ba1d93a4ae73a91a6f07660584e2374b53043a67"
+      },
+      "referenceSnapshot": "4fc7c66c1af1d053458519b5c6367a8b9224e8a0",
+      "storage": "QA-export-not-runtime-network",
+      "artApproved": false,
+      "file": "derivatives/393/half/hospital.png"
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "id": "ground",
+      "profile": "half",
+      "factor": 0.5,
+      "width": 768,
+      "height": 512,
+      "contentExtent": {
+        "width": 768,
+        "height": 512
+      },
+      "pivot": {
+        "x": 0,
+        "y": 0
+      },
+      "canonicalPivot": {
+        "x": 0,
+        "y": 0
+      },
+      "representationScale": 2,
+      "alphaRange": [
+        255,
+        255
+      ],
+      "normalizedAlphaCoverage": 1,
+      "sourceAlphaCoverage": 1,
+      "pngBytes": 1038706,
+      "sha256": "bb9e8e48624ea2dce52987b274e1afc3e9a26983feec0b6f06c416ab3e9fb7a5",
+      "sourceSha256": "71487b23b4be9eba5c96e6e6c5d9feffaff025542339392c55f773384d12687a",
+      "sourceProvenance": {
+        "manifest": "assets/prototipo-hospital/manifest.json",
+        "record": "suelo-nevado.png",
+        "uploadCommit": "ed3578f31d27fbdb1e09184de0073e911765b1e1",
+        "auditedCommit": "ba1d93a4ae73a91a6f07660584e2374b53043a67"
+      },
+      "referenceSnapshot": "4fc7c66c1af1d053458519b5c6367a8b9224e8a0",
+      "storage": "QA-export-not-runtime-network",
+      "artApproved": false,
+      "file": "derivatives/393/half/ground.png"
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "id": "zombie",
+      "profile": "half",
+      "factor": 0.5,
+      "width": 588,
+      "height": 669,
+      "contentExtent": {
+        "width": 587.5,
+        "height": 669
+      },
+      "pivot": {
+        "x": 358,
+        "y": 609
+      },
+      "canonicalPivot": {
+        "x": 716,
+        "y": 1218
+      },
+      "representationScale": 0.19,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "normalizedAlphaCoverage": 0.191585331190645,
+      "sourceAlphaCoverage": 0.19139609863600054,
+      "pngBytes": 240574,
+      "sha256": "3382a70a889765fa1fd63cde841bd65a8e06d7c9a1b8857cabed0a1e3f553fbf",
+      "sourceSha256": "4f569398e24f4a1358348b5a1e770f3e41913386323f1478d0102d8df2349f82",
+      "sourceProvenance": {
+        "manifest": "assets/prototipo-hospital/manifest.json",
+        "record": "zombi.png",
+        "uploadCommit": "ed3578f31d27fbdb1e09184de0073e911765b1e1",
+        "auditedCommit": "ba1d93a4ae73a91a6f07660584e2374b53043a67"
+      },
+      "referenceSnapshot": "4fc7c66c1af1d053458519b5c6367a8b9224e8a0",
+      "storage": "QA-export-not-runtime-network",
+      "artApproved": false,
+      "file": "derivatives/393/half/zombie.png"
+    }
+  ],
+  "comparisons": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "resource": "hospital",
+      "zoom": "min",
+      "zoomRatio": 0.5,
+      "camera": {
+        "x": 263.25,
+        "y": 175.94645833333334,
+        "zoom": 0.30416666666666664,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "panels": [
+        {
+          "profile": "h32",
+          "factor": 1,
+          "crop": {
+            "x": 405,
+            "y": 200,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 1001,
+            "height": 559
+          }
+        },
+        {
+          "profile": "three-quarter",
+          "factor": 0.75,
+          "crop": {
+            "x": 405,
+            "y": 200,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 1001,
+            "height": 559
+          }
+        },
+        {
+          "profile": "half",
+          "factor": 0.5,
+          "crop": {
+            "x": 405,
+            "y": 200,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 1001,
+            "height": 559
+          }
+        }
+      ],
+      "file": "1365-hospital-min.png"
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "resource": "hospital",
+      "zoom": "initial",
+      "zoomRatio": 1,
+      "camera": {
+        "x": 26.000000000000057,
+        "y": 72.39291666666668,
+        "zoom": 0.6083333333333333,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "panels": [
+        {
+          "profile": "h32",
+          "factor": 1,
+          "crop": {
+            "x": 405,
+            "y": 200,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 1001,
+            "height": 559
+          }
+        },
+        {
+          "profile": "three-quarter",
+          "factor": 0.75,
+          "crop": {
+            "x": 405,
+            "y": 200,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 1001,
+            "height": 559
+          }
+        },
+        {
+          "profile": "half",
+          "factor": 0.5,
+          "crop": {
+            "x": 405,
+            "y": 200,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 1001,
+            "height": 559
+          }
+        }
+      ],
+      "file": "1365-hospital-initial.png"
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "resource": "hospital",
+      "zoom": "max",
+      "zoomRatio": 4,
+      "camera": {
+        "x": -1397.4999999999998,
+        "y": -548.9283333333333,
+        "zoom": 2.433333333333333,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "panels": [
+        {
+          "profile": "h32",
+          "factor": 1,
+          "crop": {
+            "x": 405,
+            "y": 200,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 1001,
+            "height": 559
+          }
+        },
+        {
+          "profile": "three-quarter",
+          "factor": 0.75,
+          "crop": {
+            "x": 405,
+            "y": 200,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 1001,
+            "height": 559
+          }
+        },
+        {
+          "profile": "half",
+          "factor": 0.5,
+          "crop": {
+            "x": 405,
+            "y": 200,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 1001,
+            "height": 559
+          }
+        }
+      ],
+      "file": "1365-hospital-max.png"
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "resource": "ground",
+      "zoom": "min",
+      "zoomRatio": 0.5,
+      "camera": {
+        "x": 266.90000000000003,
+        "y": 123.76666666666668,
+        "zoom": 0.30416666666666664,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "panels": [
+        {
+          "profile": "h32",
+          "factor": 1,
+          "crop": {
+            "x": 405,
+            "y": 200,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 1001,
+            "height": 559
+          }
+        },
+        {
+          "profile": "three-quarter",
+          "factor": 0.75,
+          "crop": {
+            "x": 405,
+            "y": 200,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 1001,
+            "height": 559
+          }
+        },
+        {
+          "profile": "half",
+          "factor": 0.5,
+          "crop": {
+            "x": 405,
+            "y": 200,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 1001,
+            "height": 559
+          }
+        }
+      ],
+      "file": "1365-ground-min.png"
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "resource": "ground",
+      "zoom": "initial",
+      "zoomRatio": 1,
+      "camera": {
+        "x": 33.30000000000007,
+        "y": -31.96666666666664,
+        "zoom": 0.6083333333333333,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "panels": [
+        {
+          "profile": "h32",
+          "factor": 1,
+          "crop": {
+            "x": 405,
+            "y": 200,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 1001,
+            "height": 559
+          }
+        },
+        {
+          "profile": "three-quarter",
+          "factor": 0.75,
+          "crop": {
+            "x": 405,
+            "y": 200,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 1001,
+            "height": 559
+          }
+        },
+        {
+          "profile": "half",
+          "factor": 0.5,
+          "crop": {
+            "x": 405,
+            "y": 200,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 1001,
+            "height": 559
+          }
+        }
+      ],
+      "file": "1365-ground-initial.png"
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "resource": "ground",
+      "zoom": "max",
+      "zoomRatio": 4,
+      "camera": {
+        "x": -1368.2999999999997,
+        "y": -966.3666666666666,
+        "zoom": 2.433333333333333,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "panels": [
+        {
+          "profile": "h32",
+          "factor": 1,
+          "crop": {
+            "x": 405,
+            "y": 200,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 1001,
+            "height": 559
+          }
+        },
+        {
+          "profile": "three-quarter",
+          "factor": 0.75,
+          "crop": {
+            "x": 405,
+            "y": 200,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 1001,
+            "height": 559
+          }
+        },
+        {
+          "profile": "half",
+          "factor": 0.5,
+          "crop": {
+            "x": 405,
+            "y": 200,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 1001,
+            "height": 559
+          }
+        }
+      ],
+      "file": "1365-ground-max.png"
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "resource": "zombie",
+      "zoom": "min",
+      "zoomRatio": 0.5,
+      "camera": {
+        "x": 288.12475,
+        "y": 91.47101041666667,
+        "zoom": 0.30416666666666664,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "panels": [
+        {
+          "profile": "h32",
+          "factor": 1,
+          "crop": {
+            "x": 405,
+            "y": 200,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 1001,
+            "height": 559
+          }
+        },
+        {
+          "profile": "three-quarter",
+          "factor": 0.75,
+          "crop": {
+            "x": 405,
+            "y": 200,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 1001,
+            "height": 559
+          }
+        },
+        {
+          "profile": "half",
+          "factor": 0.5,
+          "crop": {
+            "x": 405,
+            "y": 200,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 1001,
+            "height": 559
+          }
+        }
+      ],
+      "file": "1365-zombie-min.png"
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "resource": "zombie",
+      "zoom": "initial",
+      "zoomRatio": 1,
+      "camera": {
+        "x": 75.74950000000001,
+        "y": -96.55797916666666,
+        "zoom": 0.6083333333333333,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "panels": [
+        {
+          "profile": "h32",
+          "factor": 1,
+          "crop": {
+            "x": 405,
+            "y": 200,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 1001,
+            "height": 559
+          }
+        },
+        {
+          "profile": "three-quarter",
+          "factor": 0.75,
+          "crop": {
+            "x": 405,
+            "y": 200,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 1001,
+            "height": 559
+          }
+        },
+        {
+          "profile": "half",
+          "factor": 0.5,
+          "crop": {
+            "x": 405,
+            "y": 200,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 1001,
+            "height": 559
+          }
+        }
+      ],
+      "file": "1365-zombie-initial.png"
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "resource": "zombie",
+      "zoom": "max",
+      "zoomRatio": 4,
+      "camera": {
+        "x": -1198.502,
+        "y": -1224.7319166666666,
+        "zoom": 2.433333333333333,
+        "minZoom": 0.30416666666666664,
+        "maxZoom": 2.433333333333333
+      },
+      "panels": [
+        {
+          "profile": "h32",
+          "factor": 1,
+          "crop": {
+            "x": 405,
+            "y": 200,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 1001,
+            "height": 559
+          }
+        },
+        {
+          "profile": "three-quarter",
+          "factor": 0.75,
+          "crop": {
+            "x": 405,
+            "y": 200,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 1001,
+            "height": 559
+          }
+        },
+        {
+          "profile": "half",
+          "factor": 0.5,
+          "crop": {
+            "x": 405,
+            "y": 200,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 1001,
+            "height": 559
+          }
+        }
+      ],
+      "file": "1365-zombie-max.png"
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "resource": "hospital",
+      "zoom": "min",
+      "zoomRatio": 0.5,
+      "camera": {
+        "x": 63.375000000000014,
+        "y": 194.44146634615385,
+        "zoom": 0.15144230769230768,
+        "minZoom": 0.15144230769230768,
+        "maxZoom": 1.2115384615384615
+      },
+      "panels": [
+        {
+          "profile": "h32",
+          "factor": 1,
+          "crop": {
+            "x": 267,
+            "y": 412,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 726,
+            "height": 984
+          }
+        },
+        {
+          "profile": "three-quarter",
+          "factor": 0.75,
+          "crop": {
+            "x": 267,
+            "y": 412,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 726,
+            "height": 984
+          }
+        },
+        {
+          "profile": "half",
+          "factor": 0.5,
+          "crop": {
+            "x": 267,
+            "y": 412,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 726,
+            "height": 984
+          }
+        }
+      ],
+      "file": "393-hospital-min.png"
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "resource": "hospital",
+      "zoom": "initial",
+      "zoomRatio": 1,
+      "camera": {
+        "x": -54.74999999999997,
+        "y": 142.8829326923077,
+        "zoom": 0.30288461538461536,
+        "minZoom": 0.15144230769230768,
+        "maxZoom": 1.2115384615384615
+      },
+      "panels": [
+        {
+          "profile": "h32",
+          "factor": 1,
+          "crop": {
+            "x": 267,
+            "y": 412,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 726,
+            "height": 984
+          }
+        },
+        {
+          "profile": "three-quarter",
+          "factor": 0.75,
+          "crop": {
+            "x": 267,
+            "y": 412,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 726,
+            "height": 984
+          }
+        },
+        {
+          "profile": "half",
+          "factor": 0.5,
+          "crop": {
+            "x": 267,
+            "y": 412,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 726,
+            "height": 984
+          }
+        }
+      ],
+      "file": "393-hospital-initial.png"
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "resource": "hospital",
+      "zoom": "max",
+      "zoomRatio": 4,
+      "camera": {
+        "x": -763.4999999999999,
+        "y": -166.46826923076918,
+        "zoom": 1.2115384615384615,
+        "minZoom": 0.15144230769230768,
+        "maxZoom": 1.2115384615384615
+      },
+      "panels": [
+        {
+          "profile": "h32",
+          "factor": 1,
+          "crop": {
+            "x": 267,
+            "y": 412,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 726,
+            "height": 984
+          }
+        },
+        {
+          "profile": "three-quarter",
+          "factor": 0.75,
+          "crop": {
+            "x": 267,
+            "y": 412,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 726,
+            "height": 984
+          }
+        },
+        {
+          "profile": "half",
+          "factor": 0.5,
+          "crop": {
+            "x": 267,
+            "y": 412,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 726,
+            "height": 984
+          }
+        }
+      ],
+      "file": "393-hospital-max.png"
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "resource": "ground",
+      "zoom": "min",
+      "zoomRatio": 0.5,
+      "camera": {
+        "x": 65.19230769230771,
+        "y": 168.46153846153845,
+        "zoom": 0.15144230769230768,
+        "minZoom": 0.15144230769230768,
+        "maxZoom": 1.2115384615384615
+      },
+      "panels": [
+        {
+          "profile": "h32",
+          "factor": 1,
+          "crop": {
+            "x": 267,
+            "y": 412,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 726,
+            "height": 984
+          }
+        },
+        {
+          "profile": "three-quarter",
+          "factor": 0.75,
+          "crop": {
+            "x": 267,
+            "y": 412,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 726,
+            "height": 984
+          }
+        },
+        {
+          "profile": "half",
+          "factor": 0.5,
+          "crop": {
+            "x": 267,
+            "y": 412,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 726,
+            "height": 984
+          }
+        }
+      ],
+      "file": "393-ground-min.png"
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "resource": "ground",
+      "zoom": "initial",
+      "zoomRatio": 1,
+      "camera": {
+        "x": -51.115384615384585,
+        "y": 90.92307692307693,
+        "zoom": 0.30288461538461536,
+        "minZoom": 0.15144230769230768,
+        "maxZoom": 1.2115384615384615
+      },
+      "panels": [
+        {
+          "profile": "h32",
+          "factor": 1,
+          "crop": {
+            "x": 267,
+            "y": 412,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 726,
+            "height": 984
+          }
+        },
+        {
+          "profile": "three-quarter",
+          "factor": 0.75,
+          "crop": {
+            "x": 267,
+            "y": 412,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 726,
+            "height": 984
+          }
+        },
+        {
+          "profile": "half",
+          "factor": 0.5,
+          "crop": {
+            "x": 267,
+            "y": 412,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 726,
+            "height": 984
+          }
+        }
+      ],
+      "file": "393-ground-initial.png"
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "resource": "ground",
+      "zoom": "max",
+      "zoomRatio": 4,
+      "camera": {
+        "x": -748.9615384615383,
+        "y": -374.30769230769226,
+        "zoom": 1.2115384615384615,
+        "minZoom": 0.15144230769230768,
+        "maxZoom": 1.2115384615384615
+      },
+      "panels": [
+        {
+          "profile": "h32",
+          "factor": 1,
+          "crop": {
+            "x": 267,
+            "y": 412,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 726,
+            "height": 984
+          }
+        },
+        {
+          "profile": "three-quarter",
+          "factor": 0.75,
+          "crop": {
+            "x": 267,
+            "y": 412,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 726,
+            "height": 984
+          }
+        },
+        {
+          "profile": "half",
+          "factor": 0.5,
+          "crop": {
+            "x": 267,
+            "y": 412,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 726,
+            "height": 984
+          }
+        }
+      ],
+      "file": "393-ground-max.png"
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "resource": "zombie",
+      "zoom": "min",
+      "zoomRatio": 0.5,
+      "camera": {
+        "x": 75.75995192307693,
+        "y": 152.38177283653846,
+        "zoom": 0.15144230769230768,
+        "minZoom": 0.15144230769230768,
+        "maxZoom": 1.2115384615384615
+      },
+      "panels": [
+        {
+          "profile": "h32",
+          "factor": 1,
+          "crop": {
+            "x": 267,
+            "y": 412,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 726,
+            "height": 984
+          }
+        },
+        {
+          "profile": "three-quarter",
+          "factor": 0.75,
+          "crop": {
+            "x": 267,
+            "y": 412,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 726,
+            "height": 984
+          }
+        },
+        {
+          "profile": "half",
+          "factor": 0.5,
+          "crop": {
+            "x": 267,
+            "y": 412,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 726,
+            "height": 984
+          }
+        }
+      ],
+      "file": "393-zombie-min.png"
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "resource": "zombie",
+      "zoom": "initial",
+      "zoomRatio": 1,
+      "camera": {
+        "x": -29.980096153846148,
+        "y": 58.76354567307695,
+        "zoom": 0.30288461538461536,
+        "minZoom": 0.15144230769230768,
+        "maxZoom": 1.2115384615384615
+      },
+      "panels": [
+        {
+          "profile": "h32",
+          "factor": 1,
+          "crop": {
+            "x": 267,
+            "y": 412,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 726,
+            "height": 984
+          }
+        },
+        {
+          "profile": "three-quarter",
+          "factor": 0.75,
+          "crop": {
+            "x": 267,
+            "y": 412,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 726,
+            "height": 984
+          }
+        },
+        {
+          "profile": "half",
+          "factor": 0.5,
+          "crop": {
+            "x": 267,
+            "y": 412,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 726,
+            "height": 984
+          }
+        }
+      ],
+      "file": "393-zombie-initial.png"
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "resource": "zombie",
+      "zoom": "max",
+      "zoomRatio": 4,
+      "camera": {
+        "x": -664.4203846153846,
+        "y": -502.9458173076922,
+        "zoom": 1.2115384615384615,
+        "minZoom": 0.15144230769230768,
+        "maxZoom": 1.2115384615384615
+      },
+      "panels": [
+        {
+          "profile": "h32",
+          "factor": 1,
+          "crop": {
+            "x": 267,
+            "y": 412,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 726,
+            "height": 984
+          }
+        },
+        {
+          "profile": "three-quarter",
+          "factor": 0.75,
+          "crop": {
+            "x": 267,
+            "y": 412,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 726,
+            "height": 984
+          }
+        },
+        {
+          "profile": "half",
+          "factor": 0.5,
+          "crop": {
+            "x": 267,
+            "y": 412,
+            "width": 192,
+            "height": 160
+          },
+          "backing": {
+            "width": 726,
+            "height": 984
+          }
+        }
+      ],
+      "file": "393-zombie-max.png"
+    }
+  ],
+  "failures": [],
+  "build": {
+    "phaser": "4.2.1",
+    "esbuild": "0.28.2",
+    "rawBytes": 1440282,
+    "gzip9Bytes": 386215,
+    "sha256": "212b0e9f55f2dedea639dc627ee838cf8b8a26b3767c0df8a0d3922f859b5a41",
+    "inputs": [
+      "prototypes/hospital-workshop/kit.json",
+      "prototypes/hospital-workshop/uploaded-kit.json",
+      "prototypes/hospital-workshop/kit.mjs",
+      "prototypes/hospital-workshop/resources.mjs",
+      "node_modules/phaser/dist/phaser.esm.js",
+      "prototypes/hospital-phaser/game.mjs",
+      "prototypes/hospital-phaser/dispose-game.mjs",
+      "prototypes/hospital-phaser/startup.mjs",
+      "prototypes/hospital-phaser/texture-quality.mjs",
+      "prototypes/hospital-workshop/renderer.mjs",
+      "prototypes/hospital/camera.mjs",
+      "prototypes/hospital/controls.mjs",
+      "prototypes/hospital/scene.mjs",
+      "prototypes/hospital-phaser/renderer.mjs",
+      "prototypes/hospital-workshop/main.mjs"
+    ],
+    "profiles": [
+      {
+        "id": "h32",
+        "factor": 1,
+        "textures": [
+          {
+            "id": "hospital",
+            "width": 1254,
+            "height": 1254,
+            "potWidth": 2048,
+            "potHeight": 2048,
+            "rgbaBase": 16777216,
+            "rgbaWithMips": 22369620,
+            "auxiliaryRgba": 16777216,
+            "derivedRgba": 0
+          },
+          {
+            "id": "ground",
+            "width": 1536,
+            "height": 1024,
+            "potWidth": 2048,
+            "potHeight": 1024,
+            "rgbaBase": 8388608,
+            "rgbaWithMips": 11184812,
+            "auxiliaryRgba": 8388608,
+            "derivedRgba": 0
+          },
+          {
+            "id": "zombie",
+            "width": 1175,
+            "height": 1338,
+            "potWidth": 2048,
+            "potHeight": 2048,
+            "rgbaBase": 16777216,
+            "rgbaWithMips": 22369620,
+            "auxiliaryRgba": 16777216,
+            "derivedRgba": 0
+          }
+        ]
+      },
+      {
+        "id": "three-quarter",
+        "factor": 0.75,
+        "textures": [
+          {
+            "id": "hospital",
+            "width": 941,
+            "height": 941,
+            "potWidth": 1024,
+            "potHeight": 1024,
+            "rgbaBase": 4194304,
+            "rgbaWithMips": 5592404,
+            "auxiliaryRgba": 4194304,
+            "derivedRgba": 3541924
+          },
+          {
+            "id": "ground",
+            "width": 1152,
+            "height": 768,
+            "potWidth": 2048,
+            "potHeight": 1024,
+            "rgbaBase": 8388608,
+            "rgbaWithMips": 11184812,
+            "auxiliaryRgba": 8388608,
+            "derivedRgba": 3538944
+          },
+          {
+            "id": "zombie",
+            "width": 882,
+            "height": 1004,
+            "potWidth": 1024,
+            "potHeight": 1024,
+            "rgbaBase": 4194304,
+            "rgbaWithMips": 5592404,
+            "auxiliaryRgba": 4194304,
+            "derivedRgba": 3542112
+          }
+        ]
+      },
+      {
+        "id": "half",
+        "factor": 0.5,
+        "textures": [
+          {
+            "id": "hospital",
+            "width": 627,
+            "height": 627,
+            "potWidth": 1024,
+            "potHeight": 1024,
+            "rgbaBase": 4194304,
+            "rgbaWithMips": 5592404,
+            "auxiliaryRgba": 4194304,
+            "derivedRgba": 1572516
+          },
+          {
+            "id": "ground",
+            "width": 768,
+            "height": 512,
+            "potWidth": 1024,
+            "potHeight": 512,
+            "rgbaBase": 2097152,
+            "rgbaWithMips": 2796204,
+            "auxiliaryRgba": 2097152,
+            "derivedRgba": 1572864
+          },
+          {
+            "id": "zombie",
+            "width": 588,
+            "height": 669,
+            "potWidth": 1024,
+            "potHeight": 1024,
+            "rgbaBase": 4194304,
+            "rgbaWithMips": 5592404,
+            "auxiliaryRgba": 4194304,
+            "derivedRgba": 1573488
+          }
+        ]
+      }
+    ]
+  },
+  "exportsIndependentOfDpr": true,
+  "passed": true
+}

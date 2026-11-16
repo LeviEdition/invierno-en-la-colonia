@@ -1,0 +1,3 @@
+back-to-back {"reduce":true,"events":[],"settings":{"enabled":true,"snow":true,"wind":true,"smoke":true,"lights":true,"intensity":"normal"}}
+observed no-preference {"reduce":false,"events":[{"at":1222.1000000014901,"reduce":false}],"settings":{"enabled":true,"snow":true,"wind":true,"smoke":true,"lights":true,"intensity":"normal"}}
+observed reduce {"reduce":true,"events":[{"at":1222.1000000014901,"reduce":false},{"at":1269.1000000014901,"reduce":true}],"settings":{"enabled":false,"snow":false,"wind":false,"smoke":false,"lights":false,"intensity":"normal"}}

@@ -1,0 +1,65 @@
+[
+  {
+    "file": "1365-colonia-normal.png",
+    "width": 1365,
+    "height": 768,
+    "bytes": 1412015,
+    "sha256": "7b910ae7df68018609a3e69483cff11fdd1f6ec86674f541421ea74bedc7efb8"
+  },
+  {
+    "file": "1365-general-normal.png",
+    "width": 1365,
+    "height": 768,
+    "bytes": 1222150,
+    "sha256": "96d044e645a8847d76fce02dc06cae59348276ed0f431d4f3cabd0aa00c33443"
+  },
+  {
+    "file": "1365-hospital-normal.png",
+    "width": 1365,
+    "height": 768,
+    "bytes": 1394853,
+    "sha256": "d10c8a6e60a8e3d354e1bd7b14fddb8bc063ff910dcd64b7977443b6da161dd0"
+  },
+  {
+    "file": "1365-viento-aislado.png",
+    "width": 1365,
+    "height": 768,
+    "bytes": 1003491,
+    "sha256": "d429397f3bc086cf142ddb4528fc2bf23fe29b4c49b79a574615e930d6ceeb72"
+  },
+  {
+    "file": "320-hospital-normal.png",
+    "width": 640,
+    "height": 1280,
+    "bytes": 840266,
+    "sha256": "b1a3688121cbc62b6dd0e004bb3085763fbfc32de0f2a27765b3e98111b3afc8"
+  },
+  {
+    "file": "393-colonia-normal.png",
+    "width": 786,
+    "height": 1704,
+    "bytes": 1415407,
+    "sha256": "3f6a3db2e56f11ccb1d5a0c9621f27fbc3e606058cf028770a9c00e7dbb5b1c4"
+  },
+  {
+    "file": "luces-hospital-0.png",
+    "width": 1365,
+    "height": 768,
+    "bytes": 1363070,
+    "sha256": "b13496daf3ad285219440edc69546b98bfc94ad8533f43659a2dba11aa74e8dc"
+  },
+  {
+    "file": "luces-hospital-4.png",
+    "width": 1365,
+    "height": 768,
+    "bytes": 1363131,
+    "sha256": "bb999485aaea7fc3e764b032e569eb0eb8b5d68a2db690ab8c8d8aa2728b5310"
+  },
+  {
+    "file": "luces-hospital-8.png",
+    "width": 1365,
+    "height": 768,
+    "bytes": 1362918,
+    "sha256": "b0c160c3fa9160a69fe3921007c53d247cb162971292223287dc0616b871fd18"
+  }
+]

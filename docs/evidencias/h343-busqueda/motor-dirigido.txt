@@ -1,0 +1,17 @@
+✔ H343: consulta pura y búsqueda por ID equivalentes al flujo original (9.652469ms)
+✔ H343: consume uno solo de dados repetidos y rechaza su referencia anterior (1.791771ms)
+✔ H343: dado ausente/insuficiente, rival, muerto y origen obsoleto no mutan (6.964151ms)
+✔ H343: explorador/linterna y modificadores conservan elecciones y ruido originales (8.653239ms)
+✔ H343: privacidad tras pase/partida nueva y recuperación sin nuevo robo (1.238571ms)
+✔ H343: límite de cuatro ruidos, mazo agotado y decisión obsoleta no roban de nuevo (2.226645ms)
+✔ H343: carta de rescate aplica reclutamiento/cola originales, nunca se inventa una carta de mano (3.514459ms)
+✔ H343: agotar dados por acciones reales y modificar un DTO no permite cambiar el motor (1.83089ms)
+✔ H343: linterna se usa una vez por ronda sin duplicar carta o ruido en la segunda búsqueda (1.426794ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 103.621966

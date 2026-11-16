@@ -1,0 +1,87 @@
+{
+  "count": 10,
+  "bytes": 4869552,
+  "allBrowserCaptures": "Full set in the CI artifact; these are selected versioned captures",
+  "files": [
+    {
+      "file": "h33-kit-delante.png",
+      "sourceFile": "1365-delante.png",
+      "bytes": 857919,
+      "sha256": "31b1d8d0d35bc6a8e0c1c15fb67aa32d637b8407e9870a0ce12c0f9f3106d07b",
+      "width": 1003,
+      "height": 561
+    },
+    {
+      "file": "h33-kit-esquina.png",
+      "sourceFile": "1365-esquina.png",
+      "bytes": 858077,
+      "sha256": "5b4d74deb77e0ae8bd1cdbcaded6ec792e87db59b91b2c1c3216317e15c0d595",
+      "width": 1003,
+      "height": 561
+    },
+    {
+      "file": "h33-kit-mixto.png",
+      "sourceFile": "1365-mixto.png",
+      "bytes": 865892,
+      "sha256": "ae1bccb2316c9473aa030a13595f72ee66c6892564e4cb7a166ce2fb239a15b5",
+      "width": 1003,
+      "height": 561
+    },
+    {
+      "file": "h33-kit-mixto-393.png",
+      "sourceFile": "393-mixto.png",
+      "bytes": 829906,
+      "sha256": "ce6bdfa23fcaf6e24898f5a795d00d0b3745bcba9ecd3a9bde1bfa61292454bc",
+      "width": 730,
+      "height": 990
+    },
+    {
+      "file": "h33-kit-interfaz-320.png",
+      "sourceFile": "320-interfaz.png",
+      "bytes": 587813,
+      "sha256": "25c6b4dfd1a9fcfe51362082015ad3c0fa92c2865b5b87f7dc7fb2e2774cdff9",
+      "width": 640,
+      "height": 1280
+    },
+    {
+      "file": "h33-kit-retrato-original-vs384.png",
+      "sourceFile": "1365-retrato-original-vs384-max.png",
+      "bytes": 122412,
+      "sha256": "84dd31a49240555b7e7a2c88d7ad02d03ffa3370ba13204e5cfdfe60be21541e",
+      "width": 384,
+      "height": 160
+    },
+    {
+      "file": "h33-kit-barricada-max.png",
+      "sourceFile": "1365-access-a2-max.png",
+      "bytes": 214734,
+      "sha256": "22c6cddd787519234281a437cdd667556514c250603728bb2dda9241c4b1a767",
+      "width": 576,
+      "height": 160
+    },
+    {
+      "file": "h33-kit-zombi-max.png",
+      "sourceFile": "1365-access-a3-max.png",
+      "bytes": 208293,
+      "sha256": "4b4717983d1b92456af87ed89772f5522a4a9525ac3fa7375c50649bd818a7c6",
+      "width": 576,
+      "height": 160
+    },
+    {
+      "file": "h33-kit-retrato-perfiles-max.png",
+      "sourceFile": "1365-s1-max.png",
+      "bytes": 121228,
+      "sha256": "3ea783b5e9b490b5b1d48189e8e979ab0830aa8e81934a71a17a531ba980c68c",
+      "width": 576,
+      "height": 160
+    },
+    {
+      "file": "h33-kit-alfa.png",
+      "bytes": 203278,
+      "sha256": "4b1b29472d114e84fb0947fef7d2cf1737f2f5af8f083e74661d4b110a449990",
+      "width": 960,
+      "height": 480,
+      "method": "Browser Canvas diagnostic composites, original alpha retained; same scale across backgrounds within each row"
+    }
+  ]
+}

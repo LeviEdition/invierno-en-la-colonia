@@ -1,0 +1,40 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "errors": [],
+      "barricadeFade": true,
+      "cancelPure": true,
+      "oneExecution": true,
+      "exposureOrder": true,
+      "barricadeCount": true,
+      "cameraStable": true,
+      "moveAndSearch": true,
+      "frames": 176,
+      "video": "/workspace/invierno-en-la-colonia/work/inventario/acciones/1365x768/page@57126b66fa87ea3b33109cc0aff98e03.webm"
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "errors": [],
+      "barricadeFade": true,
+      "cancelPure": true,
+      "oneExecution": true,
+      "exposureOrder": true,
+      "barricadeCount": true,
+      "cameraStable": true,
+      "moveAndSearch": true,
+      "frames": 192,
+      "video": "/workspace/invierno-en-la-colonia/work/inventario/acciones/852x393/page@6f3d792ac74e27145c649cbab16c0bb1.webm"
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

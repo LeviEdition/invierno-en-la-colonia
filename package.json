@@ -13,9 +13,32 @@
     "test:poc": "node scripts/check-esbuild-poc-regressions.mjs",
     "build:test": "node scripts/build-test-runtime.mjs",
     "pretest": "npm run build:test",
-    "precheck": "npm run build:test"
+    "precheck": "npm run build:test",
+    "build:hospital": "node scripts/build-hospital-phaser.mjs",
+    "check:hospital-build": "node scripts/build-hospital-phaser.mjs --check",
+    "dev:hospital": "node scripts/serve-hospital.mjs",
+    "check:workshop-kit": "node scripts/check-workshop-kit.mjs",
+    "build:workshop": "node scripts/build-workshop.mjs",
+    "check:workshop-build": "node scripts/build-workshop.mjs --check",
+    "dev:workshop": "node scripts/serve-workshop.mjs",
+    "build:state-map": "node scripts/build-state-map.mjs",
+    "check:state-map-build": "node scripts/build-state-map.mjs --check",
+    "dev:state-map": "node scripts/serve-state-map.mjs",
+    "build:movement-map": "node scripts/build-movement-map.mjs",
+    "check:movement-map-build": "node scripts/build-movement-map.mjs --check",
+    "dev:movement-map": "node scripts/serve-movement-map.mjs",
+    "build:search-map": "node scripts/build-search-map.mjs",
+    "check:search-map-build": "node scripts/build-search-map.mjs --check",
+    "dev:search-map": "node scripts/serve-search-map.mjs",
+    "build:action-map": "node scripts/build-action-map.mjs",
+    "check:action-map-build": "node scripts/build-action-map.mjs --check",
+    "dev:action-map": "node scripts/serve-action-map.mjs",
+    "build:horizontal-map": "node scripts/build-horizontal-map.mjs",
+    "check:horizontal-map-build": "node scripts/build-horizontal-map.mjs --check",
+    "dev:horizontal-map": "node scripts/serve-horizontal-map.mjs"
   },
   "devDependencies": {
-    "esbuild": "0.28.2"
+    "esbuild": "0.28.2",
+    "phaser": "4.2.1"
   }
 }

@@ -1,0 +1,150 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "method": "RAF + POST_RENDER count and DOM positions during real input; video separately inspectable",
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "errors": [],
+      "profiles": [
+        {
+          "profile": "off",
+          "samples": 228,
+          "movingSamples": 87,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 0
+          }
+        },
+        {
+          "profile": "soft",
+          "samples": 278,
+          "movingSamples": 87,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 6
+          }
+        },
+        {
+          "profile": "storm",
+          "samples": 277,
+          "movingSamples": 87,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 4
+          }
+        }
+      ],
+      "markerRedraw": {
+        "writes": 0,
+        "records": [],
+        "frames": 1,
+        "sameMarkup": true,
+        "sameCamera": true
+      },
+      "video": "/workspace/invierno-en-la-colonia/work/mapa-aprobado/camara/1365/page@a1a244664412b1e16375848b3e9dbbb6.webm"
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "errors": [],
+      "profiles": [
+        {
+          "profile": "off",
+          "samples": 186,
+          "movingSamples": 82,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 0
+          }
+        },
+        {
+          "profile": "soft",
+          "samples": 187,
+          "movingSamples": 82,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 3
+          }
+        },
+        {
+          "profile": "storm",
+          "samples": 187,
+          "movingSamples": 82,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 4
+          }
+        }
+      ],
+      "markerRedraw": {
+        "writes": 0,
+        "records": [],
+        "frames": 1,
+        "sameMarkup": true,
+        "sameCamera": true
+      },
+      "video": "/workspace/invierno-en-la-colonia/work/mapa-aprobado/camara/393/page@7c0eabf3297e7f64f056494e44c9a1a5.webm"
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "errors": [],
+      "profiles": [
+        {
+          "profile": "off",
+          "samples": 193,
+          "movingSamples": 82,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 0
+          }
+        },
+        {
+          "profile": "soft",
+          "samples": 185,
+          "movingSamples": 82,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 4
+          }
+        },
+        {
+          "profile": "storm",
+          "samples": 185,
+          "movingSamples": 82,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 5
+          }
+        }
+      ],
+      "markerRedraw": {
+        "writes": 0,
+        "records": [],
+        "frames": 1,
+        "sameMarkup": true,
+        "sameCamera": true
+      },
+      "video": "/workspace/invierno-en-la-colonia/work/mapa-aprobado/camara/320/page@d2f31512b1898b2a7c9d66c2a992c817.webm"
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

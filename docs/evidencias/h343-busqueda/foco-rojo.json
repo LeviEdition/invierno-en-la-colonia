@@ -1,0 +1,32 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "records": [
+    {
+      "kind": "focus-scroll",
+      "errors": [],
+      "focus": [
+        {
+          "text": "Conservar Vendas",
+          "top": 322.421875,
+          "bottom": 366.421875,
+          "panelTop": 187.25,
+          "panelBottom": 471.78125,
+          "visible": true
+        },
+        {
+          "text": "Conservar Vendas",
+          "top": 136.421875,
+          "bottom": 180.421875,
+          "panelTop": 187.25,
+          "panelBottom": 471.78125,
+          "visible": false
+        }
+      ]
+    }
+  ],
+  "failures": [
+    "AssertionError [ERR_ASSERTION]: El foco debe permanecer visible dentro del panel desplazado\n\nfalse !== true\n\n    at file:///workspace/invierno-en-la-colonia/scripts/check-h343-edge-browser.mjs:17:550"
+  ],
+  "passed": false
+}

@@ -1,0 +1,43 @@
+{
+  "physicalMobile": false,
+  "controlled": true,
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "searchObtained": true,
+      "usedOnTarget": true,
+      "equipped": true,
+      "modifiedSearchWithDie2": true,
+      "cancelPure": true,
+      "invalidRejected": true,
+      "doubleConfirmOnce": true,
+      "recoveredWithoutResend": true,
+      "cameraStable": true,
+      "selectedStable": true,
+      "errors": [],
+      "video": "/workspace/invierno-en-la-colonia/work/inventario/verificado/1365x768/page@f615da4e278b4202bdd90db79b664c81.webm"
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "searchObtained": true,
+      "usedOnTarget": true,
+      "equipped": true,
+      "modifiedSearchWithDie2": true,
+      "cancelPure": true,
+      "invalidRejected": true,
+      "doubleConfirmOnce": true,
+      "recoveredWithoutResend": false,
+      "cameraStable": true,
+      "selectedStable": true,
+      "errors": [],
+      "video": "/workspace/invierno-en-la-colonia/work/inventario/verificado/852x393/page@058537a5d6d9cb1a30634cb32a10f459.webm"
+    }
+  ],
+  "passed": true
+}

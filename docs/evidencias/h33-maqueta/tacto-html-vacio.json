@@ -1,0 +1,14 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalDevice": false,
+  "origin": "about:blank",
+  "applicationScripts": false,
+  "attempts": 4,
+  "buttonClicks": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "observation": "Tap posterior a drag CDP no genera click también sin Phaser/controles. No se cambia la aplicación; tests de tap y drag independientes. Secuencia física pendiente."
+}

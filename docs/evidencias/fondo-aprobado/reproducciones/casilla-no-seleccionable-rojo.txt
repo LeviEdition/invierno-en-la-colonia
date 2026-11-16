@@ -1,0 +1,30 @@
+✔ Mapa aprobado: capacidades exteriores menores conservan conteos y excedentes reales sin cambiar las reglas (2.807605ms)
+✔ Mapa aprobado QA: capacidad impar reparte actores enteros y conserva las 33 posiciones compartidas (29.905352ms)
+✖ Mapa aprobado: tocar cada apoyo o cuerpo selecciona su localidad sin añadir reglas de objetivos individuales (2.768109ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 2
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 220.605282
+
+✖ failing tests:
+
+test at tests/horizontal-approved-map.test.mjs:22:1
+✖ Mapa aprobado: tocar cada apoyo o cuerpo selecciona su localidad sin añadir reglas de objetivos individuales (2.768109ms)
+  AssertionError [ERR_ASSERTION]: escuela apoyo
+
+  null !== 'escuela'
+
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/horizontal-approved-map.test.mjs:25:95)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: 'escuela',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

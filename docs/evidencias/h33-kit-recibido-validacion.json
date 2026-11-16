@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-02",
+  "baseUpload": "d9f73be0c30c2218658e50cbf5fb9bec362697ce",
+  "initialNodeTests": 491,
+  "finalNodeTests": 495,
+  "passed": 495,
+  "failed": 0,
+  "skipped": 0,
+  "commands": {
+    "installation": "npm ci --cache /tmp/h33-npm-cache (escalated permission granted after default cache inaccessible)",
+    "builds": [
+      "npm run check:build",
+      "npm run build:hospital",
+      "npm run check:hospital-build",
+      "npm run build:workshop",
+      "npm run check:workshop-build"
+    ],
+    "browserSequential": [
+      "check-hospital-prototype-browser.mjs",
+      "check-h32-browser.mjs",
+      "check-h33-browser.mjs",
+      "check-h33-uploaded-browser.mjs",
+      "measure-h33-textures.mjs"
+    ]
+  },
+  "evidence": {
+    "uploaded": "h33-kit-recibido-browser.json",
+    "originalCanvas": "h33-kit-recibido-canvas.json",
+    "originalPhaser": "h33-kit-recibido-phaser.json",
+    "previousWorkshop": "h33-kit-recibido-taller-anterior.json",
+    "previousTextureTreatment": "h33-kit-recibido-texturas-referencia.json",
+    "inspection": "h33-kit-recibido-inspeccion.json"
+  },
+  "review": {
+    "originalsModified": false,
+    "mainModified": false,
+    "referencePrototypesModified": false,
+    "rulesOrEngineChanged": false,
+    "newDependencies": false,
+    "gameMapImplemented": false,
+    "physicalMobileTested": false,
+    "artApproved": false,
+    "h33Closed": false
+  },
+  "ci": "Exact implementation head, run and artifact verification recorded in PR19 description; local evidence is not CI evidence.",
+  "qaFollowup": {
+    "initialCiFailure": {
+      "head": "0a9a2876c1db6882a01ad9c31a4e542399548eee",
+      "run": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41514294299",
+      "cause": "Playwright1.57 waitForFunction predicate returned Promise<false>, returned early before app ready",
+      "productFailureConfirmed": false
+    },
+    "deterministicReproduction": "h33-kit-recibido-reproduccion-espera.json",
+    "qaCorrection": "Synchronous predicate using temporary module JSHandle; explicit completed navigation wait;200ms decode delay for three profile changes",
+    "localChromium143Passed": [
+      "h33-kit-recibido-browser143.json",
+      "h33-kit-recibido-taller143.json",
+      "h33-kit-recibido-texturas143.json"
+    ],
+    "bundleUnchanged": "212b0e9f55f2dedea639dc627ee838cf8b8a26b3767c0df8a0d3922f859b5a41",
+    "finalCi": "Recorded by exact final head in PR19"
+  }
+}

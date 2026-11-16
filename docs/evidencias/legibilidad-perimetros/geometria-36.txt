@@ -1,0 +1,44 @@
+✔ Mapa aprobado: capacidades exteriores menores conservan conteos y excedentes reales sin cambiar las reglas (14.10573ms)
+✔ Mapa aprobado QA: capacidad impar reparte actores enteros y conserva las 33 posiciones compartidas (2.057397ms)
+✔ Mapa aprobado: tocar cada apoyo o cuerpo selecciona su localidad sin añadir reglas de objetivos individuales (15.326717ms)
+✔ Composición: cuerpos completos de33 zombis y33 barricadas fuera de edificios, vehículos y anexos (16.26819ms)
+✔ Composición: separación de cuerpos vecinos incluso entre localidades (4.876042ms)
+✔ Composición: cuatro fichas por exterior, doce en colonia y círculos sin superponerse (0.469263ms)
+✔ Composición: vista general localiza las siete y enfoque incluye edificio, fichas y exteriores completos (3.953784ms)
+✔ Composición QA: cuatro modos sin mutar la partida; mismos IDs de acceso y cuatro retratos únicos (6.455771ms)
+✔ Composición: muerte y cambio de selección conservan retrato, apoyo e identidad de los restantes (37.720155ms)
+✔ Composición: fichas completas no tapan fachadas, entradas ni portón (14.321659ms)
+✔ Composición: las elipses completas evitan obstáculos sólidos del arte (114.699132ms)
+✔ Composición: fichas y actores completos de localidades vecinas no se superponen (2.490268ms)
+✔ Viento: progresión hasta las puntas sin fijar el borde superior (1.505454ms)
+✔ Viento: variaciones de velocidad y arbusto menos desplazado (0.385811ms)
+✔ Casillas: vacías discretas, selección por trazo y zoom, ocupadas conservadas (2.290206ms)
+✔ Ficha: resize reversible por los siete focos sin acumular deriva 1365 (1.977175ms)
+✔ Ficha: resize reversible por los siete focos sin acumular deriva 1920 (1.905151ms)
+✔ Ficha: el mínimo de cobertura no olvida el zoom preferido de la vista general (0.283069ms)
+✔ Horizontal: cámara cubierta y siete centros visibles {"width":930,"height":550} (2.805969ms)
+✔ Horizontal: cámara cubierta y siete centros visibles {"width":852,"height":250} (26.203517ms)
+✔ Horizontal: cámara cubierta y siete centros visibles {"width":740,"height":220} (1.078061ms)
+✔ Horizontal: cámara cubierta y siete centros visibles {"width":393,"height":650} (0.765723ms)
+✔ Horizontal: 36 apoyos y33 accesos distintos, discrepancia con el motor explícita (0.44998ms)
+✔ Horizontal: bases inmóviles y copas libres con viento y apagado exacto (0.435984ms)
+✔ Horizontal: luz irregular acotada; distintas fases y un nivel para fuente y suelo (1.105625ms)
+✔ Horizontal: doce accesos alrededor del cerco, orden manual y contornos completos fuera (7.33064ms)
+✔ Horizontal: contorno detallado del arte separado de la región de clic (1.291572ms)
+✔ Horizontal: salientes del contorno también se pueden seleccionar sin perder el área de clic previa (3.375995ms)
+✔ Horizontal: fondo con vegetación integrada no activa árboles de la composición anterior (0.600471ms)
+✔ Horizontal: luces anteriores desactivadas para conservar las luces pintadas del fondo (0.205477ms)
+✔ Horizontal: originales conservan dimensiones, alfa declarado y SHA-256 (20.256387ms)
+✔ Horizontal: construcción del visor sin motor y host idéntico a H344 (2105.256786ms)
+✔ Horizontal: servidor publica originales y nueva entrada; QA/fuentes inaccesibles (216.552018ms)
+✔ Horizontal: partición estática sin duplicaciones ni huecos en grupos móviles (4.071666ms)
+✔ Horizontal: selección de configuración admite separadores Windows y POSIX (0.26918ms)
+✔ Horizontal: atenuación local conserva el borde y evita una mancha azul de suelo (1.233034ms)
+ℹ tests 36
+ℹ suites 0
+ℹ pass 36
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3383.332665

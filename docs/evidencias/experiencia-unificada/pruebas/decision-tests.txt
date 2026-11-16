@@ -1,0 +1,24 @@
+✔ Experiencia: reconoce resultados rutinarios una vez sin reenviar acciones (2.70681ms)
+✔ Experiencia: un microtask obsoleto no reconoce una decisión o audiencia nueva (0.671245ms)
+✔ Experiencia: mordedura, decisión general y operación incierta conservan bloqueo (0.220914ms)
+✔ Experiencia: cantidades de tratamiento y comida proceden de resultados estructurados (0.129866ms)
+✔ Experiencia: único dado se preselecciona sin enviar ni gastar; varios requieren elección (0.7544ms)
+✔ Experiencia: inventario preselecciona solo un receptor legal y conserva confirmación (0.971378ms)
+✔ Experiencia: reconocimiento de limpieza, mejora, curación y equipo conserva estado/azar (32.388622ms)
+✔ Experiencia: decisión ajena impide reconocer inventario y evita reintentos en bucle (0.226863ms)
+✔ Experiencia: recuperar un reconocimiento ya aplicado vuelve a la ficha sin reenviar (0.51648ms)
+✔ Experiencia: una mordedura nueva no muestra la tirada de una cadena anterior (0.334997ms)
+✔ Paridad B: sacrificio y riesgo encadenado conservan estado, orden de muertes y azar (62.231435ms)
+✔ Paridad B: riesgo blanco salva sin repetir la tirada y consultas no consumen azar (7.689459ms)
+✔ Paridad B: encrucijada legal/ilegal, requisitos reales y carta futura oculta (20.847201ms)
+✔ Paridad B: mordedura precede a muertes sin abrir; pase no expone carta ni recibo privado (1.190219ms)
+✔ Paridad B: broker deduplica y rechaza respuestas/solicitudes de otra partida (108.418738ms)
+✔ Paridad B: prioridad de fallecimiento abierto impide decidir otra interrupción (2.248227ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1466.658848

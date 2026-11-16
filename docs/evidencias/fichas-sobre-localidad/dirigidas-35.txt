@@ -1,0 +1,43 @@
+✔ Composición: cuerpos completos de33 zombis y33 barricadas fuera de edificios, vehículos y anexos (15.544019ms)
+✔ Composición: separación de cuerpos vecinos incluso entre localidades (2.400628ms)
+✔ Composición: cuatro fichas por exterior, doce en colonia y círculos sin superponerse (0.475879ms)
+✔ Composición: vista general localiza las siete y enfoque incluye edificio, fichas y exteriores completos (4.187188ms)
+✔ Composición QA: cuatro modos sin mutar la partida; mismos IDs de acceso y cuatro retratos únicos (4.688025ms)
+✔ Composición: muerte conserva identidad y orden; solo colonia recentra por ocupación, sin saltos en estados iguales (1.922996ms)
+✔ Composición: fichas sobre su localidad conservan entradas, emblemas, vehículos y objetos importantes (8.242725ms)
+✔ Composición: las elipses completas evitan obstáculos sólidos del arte (49.929215ms)
+✔ Composición: fichas y actores completos de localidades vecinas no se superponen (1.164219ms)
+✔ Horizontal: márgenes centrados al caber el mapa y siete localidades accesibles {"width":930,"height":550} (3.147507ms)
+✔ Horizontal: márgenes centrados al caber el mapa y siete localidades accesibles {"width":852,"height":250} (0.348937ms)
+✔ Horizontal: márgenes centrados al caber el mapa y siete localidades accesibles {"width":740,"height":220} (0.321365ms)
+✔ Horizontal: márgenes centrados al caber el mapa y siete localidades accesibles {"width":393,"height":650} (0.538694ms)
+✔ Horizontal: 36 apoyos y33 accesos distintos, discrepancia con el motor explícita (0.357731ms)
+✔ Horizontal: bases inmóviles y copas libres con viento y apagado exacto (0.2117ms)
+✔ Horizontal: luz irregular acotada; distintas fases y un nivel para fuente y suelo (0.568379ms)
+✔ Horizontal: doce accesos alrededor del cerco, orden manual y contornos completos fuera (3.327679ms)
+✔ Horizontal: contorno detallado del arte separado de la región de clic (0.713418ms)
+✔ Horizontal: salientes del contorno también se pueden seleccionar sin perder el área de clic previa (1.862134ms)
+✔ Horizontal: fondo con vegetación integrada no activa árboles de la composición anterior (0.27154ms)
+✔ Horizontal: luces anteriores desactivadas para conservar las luces pintadas del fondo (0.116015ms)
+✔ Horizontal: originales conservan dimensiones, alfa declarado y SHA-256 (20.604486ms)
+✔ Horizontal: construcción del visor sin motor y host idéntico a H344 (1074.276978ms)
+✔ Horizontal: servidor publica originales y nueva entrada; QA/fuentes inaccesibles (109.357064ms)
+✔ Horizontal: partición estática sin duplicaciones ni huecos en grupos móviles (2.582573ms)
+✔ Horizontal: selección de configuración admite separadores Windows y POSIX (0.203988ms)
+✔ Horizontal: atenuación local conserva el borde y evita una mancha azul de suelo (0.41077ms)
+✔ Presentación: vista general contiene zonas completas y grupos máximos, también al abrir/cerrar ficha (3.600531ms)
+✔ Presentación: colonia1/6/12 centrada y sin reducir fichas ni tocar cuerpos posteriores (3.291164ms)
+✔ Presentación: cuatro apoyos posteriores repartidos por el ancho, no concentración3+1 (0.158159ms)
+✔ Presentación: pertenencia conserva identidad y orden; llegada coincide con destino y solo cambia con ocupación (1.981514ms)
+✔ Presentación: los arbustos pintados conocidos detectan las posiciones descartadas de gasolinera y comisaría (2.648853ms)
+✔ Presentación: objetivos de fichas conservan44px CSS en vista general; en proximidad se elige la más cercana (6.33963ms)
+✔ Presentación: todas las fichas quedan sobre su edificio o recinto, incluyendo colonia1/6/12 (2.192703ms)
+✔ Presentación: filas y ejes de casillas paralelos a su propia fachada, incluido lateral (0.578263ms)
+ℹ tests 35
+ℹ suites 0
+ℹ pass 35
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1601.444729

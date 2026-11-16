@@ -1,0 +1,736 @@
+{
+  "method": "Sondas QA de listeners, observers y objetos GL creados/eliminados; no miden VRAM",
+  "cycles": [
+    {
+      "listeners": [
+        {
+          "target": "document",
+          "type": "fullscreenchange"
+        },
+        {
+          "target": "document",
+          "type": "fullscreenerror"
+        },
+        {
+          "target": "document",
+          "type": "mozfullscreenchange"
+        },
+        {
+          "target": "document",
+          "type": "mozfullscreenerror"
+        },
+        {
+          "target": "document",
+          "type": "MSFullscreenChange"
+        },
+        {
+          "target": "document",
+          "type": "MSFullscreenError"
+        },
+        {
+          "target": "document",
+          "type": "visibilitychange"
+        },
+        {
+          "target": "document",
+          "type": "webkitfullscreenchange"
+        },
+        {
+          "target": "document",
+          "type": "webkitfullscreenerror"
+        },
+        {
+          "target": "scene",
+          "type": "keydown"
+        },
+        {
+          "target": "scene",
+          "type": "lostpointercapture"
+        },
+        {
+          "target": "scene",
+          "type": "pointercancel"
+        },
+        {
+          "target": "scene",
+          "type": "pointerdown"
+        },
+        {
+          "target": "scene",
+          "type": "pointermove"
+        },
+        {
+          "target": "scene",
+          "type": "pointerup"
+        },
+        {
+          "target": "scene",
+          "type": "webglcontextlost"
+        },
+        {
+          "target": "scene",
+          "type": "webglcontextlost"
+        },
+        {
+          "target": "scene",
+          "type": "webglcontextrestored"
+        },
+        {
+          "target": "scene",
+          "type": "webglcontextrestored"
+        },
+        {
+          "target": "scene",
+          "type": "wheel"
+        },
+        {
+          "target": "window",
+          "type": "blur"
+        },
+        {
+          "target": "window",
+          "type": "blur"
+        },
+        {
+          "target": "window",
+          "type": "focus"
+        },
+        {
+          "target": "window",
+          "type": "pagehide"
+        },
+        {
+          "target": "window",
+          "type": "pageshow"
+        },
+        {
+          "target": "window",
+          "type": "resize"
+        }
+      ],
+      "resizeTargets": 1,
+      "gl": {
+        "Texture": 9,
+        "Buffer": 9,
+        "Framebuffer": 0,
+        "Renderbuffer": 0,
+        "Program": 1,
+        "Shader": 2
+      }
+    },
+    {
+      "listeners": [
+        {
+          "target": "document",
+          "type": "fullscreenchange"
+        },
+        {
+          "target": "document",
+          "type": "fullscreenerror"
+        },
+        {
+          "target": "document",
+          "type": "mozfullscreenchange"
+        },
+        {
+          "target": "document",
+          "type": "mozfullscreenerror"
+        },
+        {
+          "target": "document",
+          "type": "MSFullscreenChange"
+        },
+        {
+          "target": "document",
+          "type": "MSFullscreenError"
+        },
+        {
+          "target": "document",
+          "type": "visibilitychange"
+        },
+        {
+          "target": "document",
+          "type": "webkitfullscreenchange"
+        },
+        {
+          "target": "document",
+          "type": "webkitfullscreenerror"
+        },
+        {
+          "target": "scene",
+          "type": "keydown"
+        },
+        {
+          "target": "scene",
+          "type": "lostpointercapture"
+        },
+        {
+          "target": "scene",
+          "type": "pointercancel"
+        },
+        {
+          "target": "scene",
+          "type": "pointerdown"
+        },
+        {
+          "target": "scene",
+          "type": "pointermove"
+        },
+        {
+          "target": "scene",
+          "type": "pointerup"
+        },
+        {
+          "target": "scene",
+          "type": "webglcontextlost"
+        },
+        {
+          "target": "scene",
+          "type": "webglcontextlost"
+        },
+        {
+          "target": "scene",
+          "type": "webglcontextrestored"
+        },
+        {
+          "target": "scene",
+          "type": "webglcontextrestored"
+        },
+        {
+          "target": "scene",
+          "type": "wheel"
+        },
+        {
+          "target": "window",
+          "type": "blur"
+        },
+        {
+          "target": "window",
+          "type": "blur"
+        },
+        {
+          "target": "window",
+          "type": "focus"
+        },
+        {
+          "target": "window",
+          "type": "pagehide"
+        },
+        {
+          "target": "window",
+          "type": "pageshow"
+        },
+        {
+          "target": "window",
+          "type": "resize"
+        }
+      ],
+      "resizeTargets": 1,
+      "gl": {
+        "Texture": 9,
+        "Buffer": 9,
+        "Framebuffer": 0,
+        "Renderbuffer": 0,
+        "Program": 1,
+        "Shader": 2
+      }
+    },
+    {
+      "listeners": [
+        {
+          "target": "document",
+          "type": "fullscreenchange"
+        },
+        {
+          "target": "document",
+          "type": "fullscreenerror"
+        },
+        {
+          "target": "document",
+          "type": "mozfullscreenchange"
+        },
+        {
+          "target": "document",
+          "type": "mozfullscreenerror"
+        },
+        {
+          "target": "document",
+          "type": "MSFullscreenChange"
+        },
+        {
+          "target": "document",
+          "type": "MSFullscreenError"
+        },
+        {
+          "target": "document",
+          "type": "visibilitychange"
+        },
+        {
+          "target": "document",
+          "type": "webkitfullscreenchange"
+        },
+        {
+          "target": "document",
+          "type": "webkitfullscreenerror"
+        },
+        {
+          "target": "scene",
+          "type": "keydown"
+        },
+        {
+          "target": "scene",
+          "type": "lostpointercapture"
+        },
+        {
+          "target": "scene",
+          "type": "pointercancel"
+        },
+        {
+          "target": "scene",
+          "type": "pointerdown"
+        },
+        {
+          "target": "scene",
+          "type": "pointermove"
+        },
+        {
+          "target": "scene",
+          "type": "pointerup"
+        },
+        {
+          "target": "scene",
+          "type": "webglcontextlost"
+        },
+        {
+          "target": "scene",
+          "type": "webglcontextlost"
+        },
+        {
+          "target": "scene",
+          "type": "webglcontextrestored"
+        },
+        {
+          "target": "scene",
+          "type": "webglcontextrestored"
+        },
+        {
+          "target": "scene",
+          "type": "wheel"
+        },
+        {
+          "target": "window",
+          "type": "blur"
+        },
+        {
+          "target": "window",
+          "type": "blur"
+        },
+        {
+          "target": "window",
+          "type": "focus"
+        },
+        {
+          "target": "window",
+          "type": "pagehide"
+        },
+        {
+          "target": "window",
+          "type": "pageshow"
+        },
+        {
+          "target": "window",
+          "type": "resize"
+        }
+      ],
+      "resizeTargets": 1,
+      "gl": {
+        "Texture": 9,
+        "Buffer": 9,
+        "Framebuffer": 0,
+        "Renderbuffer": 0,
+        "Program": 1,
+        "Shader": 2
+      }
+    },
+    {
+      "listeners": [
+        {
+          "target": "document",
+          "type": "fullscreenchange"
+        },
+        {
+          "target": "document",
+          "type": "fullscreenerror"
+        },
+        {
+          "target": "document",
+          "type": "mozfullscreenchange"
+        },
+        {
+          "target": "document",
+          "type": "mozfullscreenerror"
+        },
+        {
+          "target": "document",
+          "type": "MSFullscreenChange"
+        },
+        {
+          "target": "document",
+          "type": "MSFullscreenError"
+        },
+        {
+          "target": "document",
+          "type": "visibilitychange"
+        },
+        {
+          "target": "document",
+          "type": "webkitfullscreenchange"
+        },
+        {
+          "target": "document",
+          "type": "webkitfullscreenerror"
+        },
+        {
+          "target": "scene",
+          "type": "keydown"
+        },
+        {
+          "target": "scene",
+          "type": "lostpointercapture"
+        },
+        {
+          "target": "scene",
+          "type": "pointercancel"
+        },
+        {
+          "target": "scene",
+          "type": "pointerdown"
+        },
+        {
+          "target": "scene",
+          "type": "pointermove"
+        },
+        {
+          "target": "scene",
+          "type": "pointerup"
+        },
+        {
+          "target": "scene",
+          "type": "webglcontextlost"
+        },
+        {
+          "target": "scene",
+          "type": "webglcontextlost"
+        },
+        {
+          "target": "scene",
+          "type": "webglcontextrestored"
+        },
+        {
+          "target": "scene",
+          "type": "webglcontextrestored"
+        },
+        {
+          "target": "scene",
+          "type": "wheel"
+        },
+        {
+          "target": "window",
+          "type": "blur"
+        },
+        {
+          "target": "window",
+          "type": "blur"
+        },
+        {
+          "target": "window",
+          "type": "focus"
+        },
+        {
+          "target": "window",
+          "type": "pagehide"
+        },
+        {
+          "target": "window",
+          "type": "pageshow"
+        },
+        {
+          "target": "window",
+          "type": "resize"
+        }
+      ],
+      "resizeTargets": 1,
+      "gl": {
+        "Texture": 9,
+        "Buffer": 9,
+        "Framebuffer": 0,
+        "Renderbuffer": 0,
+        "Program": 1,
+        "Shader": 2
+      }
+    },
+    {
+      "listeners": [
+        {
+          "target": "document",
+          "type": "fullscreenchange"
+        },
+        {
+          "target": "document",
+          "type": "fullscreenerror"
+        },
+        {
+          "target": "document",
+          "type": "mozfullscreenchange"
+        },
+        {
+          "target": "document",
+          "type": "mozfullscreenerror"
+        },
+        {
+          "target": "document",
+          "type": "MSFullscreenChange"
+        },
+        {
+          "target": "document",
+          "type": "MSFullscreenError"
+        },
+        {
+          "target": "document",
+          "type": "visibilitychange"
+        },
+        {
+          "target": "document",
+          "type": "webkitfullscreenchange"
+        },
+        {
+          "target": "document",
+          "type": "webkitfullscreenerror"
+        },
+        {
+          "target": "scene",
+          "type": "keydown"
+        },
+        {
+          "target": "scene",
+          "type": "lostpointercapture"
+        },
+        {
+          "target": "scene",
+          "type": "pointercancel"
+        },
+        {
+          "target": "scene",
+          "type": "pointerdown"
+        },
+        {
+          "target": "scene",
+          "type": "pointermove"
+        },
+        {
+          "target": "scene",
+          "type": "pointerup"
+        },
+        {
+          "target": "scene",
+          "type": "webglcontextlost"
+        },
+        {
+          "target": "scene",
+          "type": "webglcontextlost"
+        },
+        {
+          "target": "scene",
+          "type": "webglcontextrestored"
+        },
+        {
+          "target": "scene",
+          "type": "webglcontextrestored"
+        },
+        {
+          "target": "scene",
+          "type": "wheel"
+        },
+        {
+          "target": "window",
+          "type": "blur"
+        },
+        {
+          "target": "window",
+          "type": "blur"
+        },
+        {
+          "target": "window",
+          "type": "focus"
+        },
+        {
+          "target": "window",
+          "type": "pagehide"
+        },
+        {
+          "target": "window",
+          "type": "pageshow"
+        },
+        {
+          "target": "window",
+          "type": "resize"
+        }
+      ],
+      "resizeTargets": 1,
+      "gl": {
+        "Texture": 9,
+        "Buffer": 9,
+        "Framebuffer": 0,
+        "Renderbuffer": 0,
+        "Program": 1,
+        "Shader": 2
+      }
+    }
+  ],
+  "initial": {
+    "listeners": [
+      {
+        "target": "document",
+        "type": "fullscreenchange"
+      },
+      {
+        "target": "document",
+        "type": "fullscreenerror"
+      },
+      {
+        "target": "document",
+        "type": "mozfullscreenchange"
+      },
+      {
+        "target": "document",
+        "type": "mozfullscreenerror"
+      },
+      {
+        "target": "document",
+        "type": "MSFullscreenChange"
+      },
+      {
+        "target": "document",
+        "type": "MSFullscreenError"
+      },
+      {
+        "target": "document",
+        "type": "visibilitychange"
+      },
+      {
+        "target": "document",
+        "type": "webkitfullscreenchange"
+      },
+      {
+        "target": "document",
+        "type": "webkitfullscreenerror"
+      },
+      {
+        "target": "scene",
+        "type": "keydown"
+      },
+      {
+        "target": "scene",
+        "type": "lostpointercapture"
+      },
+      {
+        "target": "scene",
+        "type": "pointercancel"
+      },
+      {
+        "target": "scene",
+        "type": "pointerdown"
+      },
+      {
+        "target": "scene",
+        "type": "pointermove"
+      },
+      {
+        "target": "scene",
+        "type": "pointerup"
+      },
+      {
+        "target": "scene",
+        "type": "webglcontextlost"
+      },
+      {
+        "target": "scene",
+        "type": "webglcontextlost"
+      },
+      {
+        "target": "scene",
+        "type": "webglcontextrestored"
+      },
+      {
+        "target": "scene",
+        "type": "webglcontextrestored"
+      },
+      {
+        "target": "scene",
+        "type": "wheel"
+      },
+      {
+        "target": "window",
+        "type": "blur"
+      },
+      {
+        "target": "window",
+        "type": "blur"
+      },
+      {
+        "target": "window",
+        "type": "focus"
+      },
+      {
+        "target": "window",
+        "type": "pagehide"
+      },
+      {
+        "target": "window",
+        "type": "pageshow"
+      },
+      {
+        "target": "window",
+        "type": "resize"
+      }
+    ],
+    "resizeTargets": 1,
+    "gl": {
+      "Texture": 9,
+      "Buffer": 9,
+      "Framebuffer": 0,
+      "Renderbuffer": 0,
+      "Program": 1,
+      "Shader": 2
+    }
+  },
+  "selection": "Click sobre alfa de fachada, margen vacío y selección tras zoom",
+  "zoomLimits": true,
+  "contextRecovery": true,
+  "disposed": {
+    "listeners": [
+      {
+        "target": "window",
+        "type": "pagehide"
+      },
+      {
+        "target": "window",
+        "type": "pageshow"
+      }
+    ],
+    "resizeTargets": 0,
+    "gl": {
+      "Texture": 0,
+      "Buffer": 0,
+      "Framebuffer": 0,
+      "Renderbuffer": 0,
+      "Program": 0,
+      "Shader": 0
+    }
+  },
+  "contextRelease": "Game.destroy elimina wrappers; WEBGL_lose_context libera también la textura temporal no registrada de Phaser 4.2.1. Conteo GL excluye contextos perdidos; no es una medición de VRAM",
+  "contextReleasedTextureHandles": 15,
+  "pageLifetimeListeners": 2,
+  "existingWindowHandlersPreserved": true,
+  "passed": true
+}

@@ -2,27 +2,25 @@
 
 Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos una adaptación funcional de *Dead of Winter* como referencia; después construiremos una experiencia original principalmente singleplayer, con Director de Juego y consecuencias narrativas persistentes.
 
-## Rumbo acordado
+## Estado actual
 
-1. **Fidelidad mecánica de la V9.9: ACEPTADA para nuestro objetivo.** La estabilización C está integrada y la [comparación de 14 áreas con el reglamento oficial](docs/49-c15-auditoria-final.md#comparación-con-dead-of-winter) documenta semejanzas y diferencias. El creador acepta esta fidelidad **suficiente**, sin exigir copia literal, reauditoría RF desde cero ni reproducir todas las reglas oficiales. Las reservas sobre Android físico, accesibilidad y balance siguen documentadas.
-2. **D1 y D2: integradas y validadas en main.** Estado, reglas, acciones, turnos, IA/interfaz separados;467 pruebas ycomparaciones de partidas preservan el comportamiento de referencia. **No modificar reglas ni introducir mecánicas nuevas** durante este refactor.
-3. **Referencia estable y modular preservada.** Tag anotado `v0.9.9-referencia-modular` sobre `62e4e85150b2416ccf07d671c186b5c421993b0b`, con [release pública](https://github.com/LeviEdition/invierno-en-la-colonia/releases/tag/v0.9.9-referencia-modular), HTML offline y manifiesto descargados y verificados. [Informe72](docs/72-preservacion-referencia-modular.md).
-4. **Comenzar nuestro juego propio.** En otra línea de desarrollo, revisar la **matriz F** (F-01, F-14, etc.) e implementar cambios propios, singleplayer, Director y narrativa persistente por etapas.
+El estado vigente, la próxima tarea y los hallazgos abiertos están en el **[tablero operativo](docs/18-tablero-operativo.md)**. Resumen al 16/11/2026: la referencia V9.9 está preservada (hitos 1 y 2 cerrados) y el mapa horizontal, que permite jugar partidas completas, quedó aceptado e integrado en `main` (Hito 3 cerrado, tag `v0.10.0-mapa-horizontal`). El singleplayer está en diseño ([hoja de ruta 63](docs/63-hoja-de-ruta-planificacion-singleplayer.md)).
 
-**Distinguir conceptos:** el informe 49 es la comparación mecánica ya realizada; una nueva matriz RF **no es requisito**. La matriz **F** registra decisiones de diseño **para el juego propio**, no bugs de la V9.9. La etapa F histórica (ampliación/presentación/red) tampoco es esa matriz.
+Documentos de referencia: [rumbo y hitos (62)](docs/62-hitos-referencia-fiel-y-juego-propio.md) · [plan del Hito 3 (75)](docs/75-plan-hito-3-identidad-visual.md) · [experiencia unificada del mapa (99)](docs/99-experiencia-unificada-del-mapa.md) · [dirección de producto (51)](docs/51-rumbo-fidelidad-e-identidad.md) · [matriz F (61)](docs/61-alcance-matriz-f-juego-propio.md). El historial de entregas y las guías de ramas anteriores están en el [tablero histórico](docs/18-historico-tablero.md).
 
-## Documentación y estado
+## Jugar el mapa horizontal
 
-- [Tablero operativo — próxima tarea](docs/18-tablero-operativo.md)
-- [Decisión vigente — D1/D2 cerradas y referencia preservada](docs/62-hitos-referencia-fiel-y-juego-propio.md)
-- [Hoja de ruta del singleplayer — bloques SP-00 a SP-08, acuerdos y pendientes](docs/63-hoja-de-ruta-planificacion-singleplayer.md)
-- [Dirección de producto](docs/51-rumbo-fidelidad-e-identidad.md)
-- [Alcance de la matriz F del juego propio](docs/61-alcance-matriz-f-juego-propio.md)
-- [Plan general](docs/01-plan-refactorizacion.md)
+Está en `main`. Requiere Node 22 o posterior. En VS Code, PowerShell, en la carpeta del repositorio:
 
-El [PR15](https://github.com/LeviEdition/invierno-en-la-colonia/pull/15) se integró mediante merge convencional `6b8bfcadfeb99d16a10b6f4576f3b061584ee1f9`, preservando historia yoráculo57872ee. [Informe71](docs/71-integracion-main-y-cierre-d1-d2.md) registra la validación posterior:467/467,40/40 contra cada referencia, partidas Chromium yoffline aprobados. SP-03 permanece conceptual ysin cambios respecto del head aprobado.
+```powershell
+git fetch origin
+git switch main
+git pull --ff-only
+npm.cmd ci
+npm.cmd run dev:horizontal-map
+```
 
-**Etapa de referencia cerrada:** D1/D2 integradas y preservación formal completada. **Próximo trabajo:** diseño SP-03 (ciclo de ronda), seguido de SP-04 (balance de un solo grupo), en una entrega separada; no hay implementación autorizada. SP-03 permanece intacto y no se creó rama del juego propio. Los commits documentales posteriores al tag no cambian la referencia preservada.
+Abrir **http://127.0.0.1:8779/prototypes/horizontal-map/** y elegir Jugar con IA o Dos jugadores en este dispositivo. Ctrl+C detiene el servidor; después de actualizar, reiniciarlo y recargar. [Guía para Windows, VS Code, celular en la red local y pruebas manuales](prototypes/horizontal-map/README.md) · [originales y configuración del arte](assets/mapa-horizontal/README.md).
 
 ## Descargar la referencia y jugar offline
 
@@ -40,7 +38,7 @@ La validación cubre Node y Chromium automatizado; no certifica equivalencia reg
 
 ## Desarrollo y construcción
 
-Requiere Node22 o posterior. Ejecutar `npm ci`, `npm run build`, `npm run check:build` y `npm test`. El lockfile fija esbuild0.28.2; no hay dependencias de ejecución externas. Editar módulos `src/` y la plantilla, nunca el HTML generado a mano. `npm run build` empaqueta módulos reales en una IIFE y la inserta en un único HTML autocontenido. La salida conserva la apertura offline.
+Requiere Node22 o posterior. Ejecutar `npm ci`, `npm run build`, `npm run check:build` y `npm test`. El lockfile fija esbuild0.28.2 y, para los experimentos visuales H3.2/H3.3, Phaser4.2.1. El HTML V9.9 conserva su distribución sin dependencias externas. Editar módulos `src/` y la plantilla, nunca el HTML generado a mano. `npm run build` empaqueta módulos reales en una IIFE y la inserta en un único HTML autocontenido. La salida conserva la apertura offline.
 
 El motor se importa desde `src/application/reference-engine.mjs`, admite reloj/RNG y efectos inyectados, y expone `start`, `dispatch` y `snapshot`. Un motor local funciona sin DOM ni cliente IA. La aplicación conecta vista y agente de referencia por capacidades explícitas; el estado mutable no se publica en window. El paquete de reglas V9.9 sigue representando dos grupos: no existe un nuevo modo singleplayer.
 

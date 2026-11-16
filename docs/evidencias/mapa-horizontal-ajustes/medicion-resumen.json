@@ -1,0 +1,158 @@
+{
+  "browser": "154.0.8037.57",
+  "cpu": "AMD EPYC 9V74 80-Core Processor",
+  "method": "Secuencial. Misma partida/cámara/DPR por perfil. Calentamiento500ms y dos muestras de1500ms. Diferencia de POST_RENDER y métricas CDP TaskDuration/heap; no VRAM ni rendimiento de teléfono. Video en contexto aparte.",
+  "physicalMobile": false,
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "profiles": [
+        {
+          "profile": "off",
+          "rendersPerSecond": 0.0,
+          "meshVertices": 256,
+          "triangles": 216,
+          "runtimeTextureBytes": 6344200
+        },
+        {
+          "profile": "soft",
+          "rendersPerSecond": 15.154723896346525,
+          "meshVertices": 256,
+          "triangles": 216,
+          "runtimeTextureBytes": 6344200
+        },
+        {
+          "profile": "storm",
+          "rendersPerSecond": 15.036763298875472,
+          "meshVertices": 256,
+          "triangles": 216,
+          "runtimeTextureBytes": 6344200
+        }
+      ],
+      "maxVegetationCoverage": 0.004111842105263158
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "profiles": [
+        {
+          "profile": "off",
+          "rendersPerSecond": 0.0,
+          "meshVertices": 256,
+          "triangles": 216,
+          "runtimeTextureBytes": 6344200
+        },
+        {
+          "profile": "soft",
+          "rendersPerSecond": 10.39654536188657,
+          "meshVertices": 256,
+          "triangles": 216,
+          "runtimeTextureBytes": 6344200
+        },
+        {
+          "profile": "storm",
+          "rendersPerSecond": 9.953944893782094,
+          "meshVertices": 256,
+          "triangles": 216,
+          "runtimeTextureBytes": 6344200
+        }
+      ],
+      "maxVegetationCoverage": 0.004111842105263158
+    },
+    {
+      "viewport": {
+        "width": 740,
+        "height": 360
+      },
+      "profiles": [
+        {
+          "profile": "off",
+          "rendersPerSecond": 0.0,
+          "meshVertices": 256,
+          "triangles": 216,
+          "runtimeTextureBytes": 6344200
+        },
+        {
+          "profile": "soft",
+          "rendersPerSecond": 14.794632473664258,
+          "meshVertices": 256,
+          "triangles": 216,
+          "runtimeTextureBytes": 6344200
+        },
+        {
+          "profile": "storm",
+          "rendersPerSecond": 13.361505447247493,
+          "meshVertices": 256,
+          "triangles": 216,
+          "runtimeTextureBytes": 6344200
+        }
+      ],
+      "maxVegetationCoverage": 0.004111842105263158
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "profiles": [
+        {
+          "profile": "off",
+          "rendersPerSecond": 0.0,
+          "meshVertices": 256,
+          "triangles": 216,
+          "runtimeTextureBytes": 6344200
+        },
+        {
+          "profile": "soft",
+          "rendersPerSecond": 10.959327435608307,
+          "meshVertices": 256,
+          "triangles": 216,
+          "runtimeTextureBytes": 6344200
+        },
+        {
+          "profile": "storm",
+          "rendersPerSecond": 9.227196861102648,
+          "meshVertices": 256,
+          "triangles": 216,
+          "runtimeTextureBytes": 6344200
+        }
+      ],
+      "maxVegetationCoverage": 0.004111842105263158
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "profiles": [
+        {
+          "profile": "off",
+          "rendersPerSecond": 0.0,
+          "meshVertices": 256,
+          "triangles": 216,
+          "runtimeTextureBytes": 6344200
+        },
+        {
+          "profile": "soft",
+          "rendersPerSecond": 18.14998608064003,
+          "meshVertices": 256,
+          "triangles": 216,
+          "runtimeTextureBytes": 6344200
+        },
+        {
+          "profile": "storm",
+          "rendersPerSecond": 17.423288729492718,
+          "meshVertices": 256,
+          "triangles": 216,
+          "runtimeTextureBytes": 6344200
+        }
+      ],
+      "maxVegetationCoverage": 0.004111842105263158
+    }
+  ]
+}

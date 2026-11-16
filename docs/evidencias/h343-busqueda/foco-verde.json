@@ -1,0 +1,49 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "records": [
+    {
+      "kind": "focus-scroll",
+      "errors": [],
+      "focus": [
+        {
+          "text": "Conservar Vendas",
+          "top": 322.421875,
+          "bottom": 366.421875,
+          "panelTop": 187.25,
+          "panelBottom": 471.78125,
+          "visible": true
+        },
+        {
+          "text": "Conservar Vendas",
+          "top": 195.421875,
+          "bottom": 239.421875,
+          "panelTop": 187.25,
+          "panelBottom": 471.78125,
+          "visible": true
+        },
+        {
+          "text": "Conservar Vendas",
+          "top": 195.421875,
+          "bottom": 239.421875,
+          "panelTop": 187.25,
+          "panelBottom": 471.78125,
+          "visible": true
+        },
+        {
+          "text": "Conservar Vendas",
+          "top": 195.421875,
+          "bottom": 239.421875,
+          "panelTop": 187.25,
+          "panelBottom": 471.78125,
+          "visible": true
+        }
+      ],
+      "keyboardFocusVisible": true,
+      "cameraStable": true,
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

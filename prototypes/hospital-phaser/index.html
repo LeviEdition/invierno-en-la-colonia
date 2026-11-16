@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="es">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <title>H3.2 · Hospital con Phaser 4.2.1</title>
+ <link rel="icon" href="data:,"><link rel="stylesheet" href="../hospital/style.css"><link rel="stylesheet" href="./style.css">
+ <script type="module" src="../../dist/hospital-phaser/game.mjs"></script>
+</head>
+<body>
+ <main>
+  <header class="heading"><div><p class="eyebrow">Invierno en la Colonia <span>/</span> H3.2 · Comparación técnica</p><h1>Hospital en la nieve</h1><p class="subtitle">Profundidad, escala y cámara en un sector aislado.</p></div><span class="badge">Phaser 4.2.1</span></header>
+  <div class="workspace">
+   <section class="scene-panel" aria-label="Escena del hospital">
+    <div class="viewport"><canvas id="scene" tabindex="0" role="img" aria-label="Hospital nevado y un zombi. Vista con cámara fija." aria-describedby="instructions position-description"></canvas><span class="scene-tag" aria-hidden="true">SECTOR HOSPITAL <i></i> INVIERNO</span><div id="loading" role="status">Cargando las tres imágenes…</div></div>
+    <p id="instructions" class="instructions">Arrastrá para explorar · Rueda o pinza para ampliar.<br>Teclado sobre la escena: flechas, + / −, 0 para restablecer, Enter para seleccionar.</p>
+   </section>
+   <aside aria-label="Controles de la prueba"><p id="renderer-status" role="status">Inicializando…</p><p class="compare-link"><a href="../hospital/">Abrir referencia Canvas</a></p>
+    <fieldset><legend><span class="step">01</span> Profundidad</legend><div class="positions"><button type="button" data-position="delante" aria-pressed="true">Delante</button><button type="button" data-position="detras" aria-pressed="false">Detrás</button><button type="button" data-position="esquina" aria-pressed="false">Esquina</button></div><p id="position-description" aria-live="polite"></p><label class="toggle"><input id="show-hidden" type="checkbox"> <span>Mostrar ocultos</span></label><p class="hint">Transparenta el hospital para localizar al personaje.</p></fieldset>
+    <fieldset><legend><span class="step">02</span> Cámara</legend><div class="zoom-controls"><button type="button" id="zoom-out" aria-label="Alejar">−</button><output id="zoom-value" aria-label="Zoom respecto del encuadre inicial">100 %</output><button type="button" id="zoom-in" aria-label="Acercar">+</button></div><button type="button" id="reset-view" class="wide">Restablecer vista</button><div class="pan-controls" role="group" aria-label="Desplazar cámara"><button type="button" data-pan="left" aria-label="Mirar a la izquierda">←</button><button type="button" data-pan="up" aria-label="Mirar hacia arriba">↑</button><button type="button" data-pan="down" aria-label="Mirar hacia abajo">↓</button><button type="button" data-pan="right" aria-label="Mirar a la derecha">→</button></div></fieldset>
+    <fieldset><legend><span class="step">03</span> Selección</legend><button type="button" id="select-hospital" class="wide" aria-pressed="false">Seleccionar hospital</button><p id="selection-status" role="status">También podés tocar el edificio.</p></fieldset>
+    <button type="button" id="restart-scene" class="wide">Reiniciar escena</button><p class="art-note">Arte provisional. Al ampliar puede perder nitidez. Las posiciones son demostraciones de oclusión, sin movimiento libre.</p>
+   </aside>
+  </div>
+  <footer>Escena independiente · Sin conexión con reglas, partidas o IA de V9.9.</footer>
+ </main>
+</body>
+</html>

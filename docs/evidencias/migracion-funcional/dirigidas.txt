@@ -1,0 +1,43 @@
+✔ Paridad C: limpiar igual coste/resultado y rechazos sin consumo fuera de colonia o sin residuos (23.347894ms)
+✔ Paridad C: atracción parcial, terminar sin devolución y saturación (12.764768ms)
+✔ Paridad C: médico y enfermero, alcance/límite por ronda y cancelación sin gastar habilidad (20.56971ms)
+✔ Paridad C: mejora de dado concreto; comida insuficiente, máximo e identidad obsoleta (6.226483ms)
+✔ Paridad C: habilidades automáticas informativas y constructor conserva acceso anterior (3.065059ms)
+✔ Paridad B: sacrificio y riesgo encadenado conservan estado, orden de muertes y azar (20.491338ms)
+✔ Paridad B: riesgo blanco salva sin repetir la tirada y consultas no consumen azar (2.744086ms)
+✔ Paridad B: encrucijada legal/ilegal, requisitos reales y carta futura oculta (5.334068ms)
+✔ Paridad B: mordedura precede a muertes sin abrir; pase no expone carta ni recibo privado (1.209378ms)
+✔ Paridad B: broker deduplica y rechaza respuestas/solicitudes de otra partida (21.867036ms)
+✔ Paridad B: prioridad de fallecimiento abierto impide decidir otra interrupción (1.69445ms)
+✔ Paridad D: transferencia entre jugadores locales conserva referencia y uso del objeto (16.016868ms)
+✔ Paridad D: rechaza receptor en otra localidad, equipado con mismo tipo, muerto y jugador IA (17.947755ms)
+✔ Paridad D: líder inicial solo en ventana legal; grupos sin manos/equipo privado (7.936681ms)
+✔ Paridad F: registro estructurado conserva información pública y proyecta cartas por audiencia (20.573693ms)
+✔ Paridad F: consultas no ejecutan reglas, no consumen azar y no copian log heredado (30.430544ms)
+✔ Paridad F: respuesta perdida consulta recibo sin reenviar; doble confirmación ejecuta una vez (16.803677ms)
+✔ Paridad F: fallo sin recibo bloquea la repetición y explica el estado desconocido (14.163719ms)
+✔ Paridad F: resultado con recibo permanece recuperable aunque se pierda la respuesta del adaptador (13.521509ms)
+✔ Paridad F: transferencia pendiente usa mismo objeto/receptor y puede cancelarse sin coste (2.630264ms)
+✔ Paridad F: encrucijada de IA muestra su decisión original sin permitir opción humana (4.02415ms)
+✔ Paridad F: durante IA la audiencia humana no recibe cartas ni reserva de dados de IA (3.794663ms)
+✔ Paridad F: consulta no sincroniza ni cambia solicitudes de liderazgo (11.707688ms)
+✔ Paridad F: objeto que gana conserva recibo confirmado hasta abrir el resultado final (22.421575ms)
+✔ Paridad F: sucesión pendiente del otro grupo local no oculta la encrucijada del turno actual (4.161237ms)
+✔ Paridad F: excepción de una operación anterior también bloquea repetición sin volver a V9 (31.284364ms)
+✔ Paridad F: host del mapa sin tablero ni controles DOM de V9, motor real conservado (580.142129ms)
+✔ Paridad F: segundo jugador gana sin perder recibo ni revelar la mano/registro privado de J1 (10.320422ms)
+✔ Paridad F: botín sin operación previa resuelve ruido y elección con costes y azar originales (3.300516ms)
+✔ Paridad F: recibo de mordedura terminal recupera resultado sin exponer registros privados (7.418167ms)
+✔ Paridad F: comandos desconocidos o heredados del prototipo se rechazan sin excepción ni consumo (18.912193ms)
+✔ Paridad E: preparar ambos modos desde mapa conserva grupos objetivo dados mazos y azar originales (16.004259ms)
+✔ Paridad E: abandonar requiere confirmación; nueva partida elimina recibos y solicitudes anteriores (32.021569ms)
+✔ Paridad E: iniciar otra partida durante IA invalida la continuación suspendida (3.941715ms)
+✔ Paridad E: nueva partida al finalizar no necesita confirmación de abandono (0.796594ms)
+ℹ tests 35
+ℹ suites 0
+ℹ pass 35
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1729.785208

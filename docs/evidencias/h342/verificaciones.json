@@ -1,0 +1,22 @@
+{
+  "base": "064f47cc6516932c0baac839e34669f98e2fda34",
+  "baselineOwnNodeTests": 528,
+  "newNodeTests": 17,
+  "totalNodeTests": 545,
+  "independentPreviousChromium": "Sin resultado final recuperable; no se declara aprobado independientemente.",
+  "sourceOriginals": "Fuentes/PNG de Canvas, H3.2, H3.3 y H3.4.1 sin cambios.",
+  "confirmedNewDefects": [
+    "Planificador heredaba la fila1fr y reducía el mapa a una franja: corregido flex; mínimo160px comprobado.",
+    "Segunda desconexión borraba unknown antes de consultar: corregido; cancelación y nuevo movimiento siguen bloqueados."
+  ],
+  "testHarnessCorrections": [
+    "Una mordedura con víctimas muestra primero elección de propagación y después confirma muertes; se respetó la secuencia original.",
+    "Una respuesta perdida no sale de unknown mientras haya una decisión pendiente; el arnés debe resolverla por V9.9 antes de esperar consulta completa.",
+    "Al contraer la ficha para elegir destino, cancelar debe recuperar panel/foco; se añadió esa recuperación.",
+    "Primera grabación no encontró FFmpeg de Playwright: se instaló externamente en caché temporal, sin dependencia de producto."
+  ],
+  "discardedObservation": "Personaje en lista sin icono fue descartado por el creador; no es un fallo confirmado.",
+  "physicalMobile": false,
+  "nativeVisibility": "Headless no certifica ocultación nativa; prueba de pausa con document.hidden y evento controlados, distinta de teléfono físico.",
+  "video": "8s, grabación real Playwright recortada; secuencia de capturas inspeccionada, no aprobación perceptual del creador."
+}

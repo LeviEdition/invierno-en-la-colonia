@@ -1,0 +1,1390 @@
+{
+  "passed": true,
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "videoFrameRateNotGuaranteed": true,
+  "controlledRandomOnlyInQaHost": true,
+  "samples": [
+    {
+      "locality": "place-2",
+      "sample": 0,
+      "elapsed": 0.5592399999999987,
+      "environment": {
+        "updates": 13,
+        "groups": [
+          {
+            "id": "arbol-oeste",
+            "anchor": {
+              "x": 222,
+              "y": 471
+            },
+            "crownOffset": 0.7082515397137141,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-hospital",
+            "anchor": {
+              "x": 385,
+              "y": 606
+            },
+            "crownOffset": 0.487804666017778,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-centro-sur",
+            "anchor": {
+              "x": 825,
+              "y": 747
+            },
+            "crownOffset": 0.3649786618314424,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbol-este",
+            "anchor": {
+              "x": 1080,
+              "y": 646
+            },
+            "crownOffset": 0.6903153797007664,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-este",
+            "anchor": {
+              "x": 1330,
+              "y": 826
+            },
+            "crownOffset": 0.41646086382785785,
+            "baseOffset": 0
+          },
+          {
+            "id": "pino-borde-este",
+            "anchor": {
+              "x": 1600,
+              "y": 634
+            },
+            "crownOffset": 0.3127516459634559,
+            "baseOffset": 0
+          },
+          {
+            "id": "grupo-suroeste",
+            "anchor": {
+              "x": 65,
+              "y": 735
+            },
+            "crownOffset": 0.5222403760180995,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-oeste",
+            "anchor": {
+              "x": 270,
+              "y": 811
+            },
+            "crownOffset": 0.17420084503629507,
+            "baseOffset": 0
+          }
+        ],
+        "dynamicVertices": 144,
+        "maxVertexOffset": 1.223577598967129,
+        "meshVertices": 256,
+        "triangles": 216,
+        "interactiveObjects": 0,
+        "lights": [
+          {
+            "id": "colonia-oeste",
+            "sourceAlpha": 0.763969872819074,
+            "spillAlpha": 0.763969872819074,
+            "level": 0.763969872819074
+          },
+          {
+            "id": "colonia-este",
+            "sourceAlpha": 0.5530425236819344,
+            "spillAlpha": 0.5530425236819344,
+            "level": 0.5530425236819344
+          },
+          {
+            "id": "hospital-entrada",
+            "sourceAlpha": 0.4435724789679175,
+            "spillAlpha": 0.4435724789679175,
+            "level": 0.4435724789679175
+          }
+        ],
+        "runtimeTextureBytes": 6344200
+      },
+      "camera": {
+        "zoom": 1.5,
+        "x": -15.5,
+        "y": -341,
+        "minZoom": 0.6309808612440191,
+        "maxZoom": 1.5
+      }
+    },
+    {
+      "locality": "place-2",
+      "sample": 1,
+      "elapsed": 1.2556066666666612,
+      "environment": {
+        "updates": 27,
+        "groups": [
+          {
+            "id": "arbol-oeste",
+            "anchor": {
+              "x": 222,
+              "y": 471
+            },
+            "crownOffset": 0.895952459097587,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-hospital",
+            "anchor": {
+              "x": 385,
+              "y": 606
+            },
+            "crownOffset": 0.47331413572099285,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-centro-sur",
+            "anchor": {
+              "x": 825,
+              "y": 747
+            },
+            "crownOffset": 0.31039625596495435,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbol-este",
+            "anchor": {
+              "x": 1080,
+              "y": 646
+            },
+            "crownOffset": 0.7851399025664635,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-este",
+            "anchor": {
+              "x": 1330,
+              "y": 826
+            },
+            "crownOffset": 0.3727877374070663,
+            "baseOffset": 0
+          },
+          {
+            "id": "pino-borde-este",
+            "anchor": {
+              "x": 1600,
+              "y": 634
+            },
+            "crownOffset": 0.37219228487232464,
+            "baseOffset": 0
+          },
+          {
+            "id": "grupo-suroeste",
+            "anchor": {
+              "x": 65,
+              "y": 735
+            },
+            "crownOffset": 0.44049309795690583,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-oeste",
+            "anchor": {
+              "x": 270,
+              "y": 811
+            },
+            "crownOffset": 0.26326214202769704,
+            "baseOffset": 0
+          }
+        ],
+        "dynamicVertices": 144,
+        "maxVertexOffset": 1.371830410398287,
+        "meshVertices": 256,
+        "triangles": 216,
+        "interactiveObjects": 0,
+        "lights": [
+          {
+            "id": "colonia-oeste",
+            "sourceAlpha": 0.818148822980976,
+            "spillAlpha": 0.818148822980976,
+            "level": 0.818148822980976
+          },
+          {
+            "id": "colonia-este",
+            "sourceAlpha": 0.4614388801931425,
+            "spillAlpha": 0.4614388801931425,
+            "level": 0.4614388801931425
+          },
+          {
+            "id": "hospital-entrada",
+            "sourceAlpha": 0.4479253718163351,
+            "spillAlpha": 0.4479253718163351,
+            "level": 0.4479253718163351
+          }
+        ],
+        "runtimeTextureBytes": 6344200
+      },
+      "camera": {
+        "zoom": 1.5,
+        "x": -15.5,
+        "y": -341,
+        "minZoom": 0.6309808612440191,
+        "maxZoom": 1.5
+      }
+    },
+    {
+      "locality": "place-2",
+      "sample": 2,
+      "elapsed": 1.60214333333333,
+      "environment": {
+        "updates": 34,
+        "groups": [
+          {
+            "id": "arbol-oeste",
+            "anchor": {
+              "x": 222,
+              "y": 471
+            },
+            "crownOffset": 0.9361333016179423,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-hospital",
+            "anchor": {
+              "x": 385,
+              "y": 606
+            },
+            "crownOffset": 0.434423915903079,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-centro-sur",
+            "anchor": {
+              "x": 825,
+              "y": 747
+            },
+            "crownOffset": 0.2873765679341527,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbol-este",
+            "anchor": {
+              "x": 1080,
+              "y": 646
+            },
+            "crownOffset": 0.7778668389667732,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-este",
+            "anchor": {
+              "x": 1330,
+              "y": 826
+            },
+            "crownOffset": 0.3316028730122301,
+            "baseOffset": 0
+          },
+          {
+            "id": "pino-borde-este",
+            "anchor": {
+              "x": 1600,
+              "y": 634
+            },
+            "crownOffset": 0.4255001530467199,
+            "baseOffset": 0
+          },
+          {
+            "id": "grupo-suroeste",
+            "anchor": {
+              "x": 65,
+              "y": 735
+            },
+            "crownOffset": 0.39361299281797146,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-oeste",
+            "anchor": {
+              "x": 270,
+              "y": 811
+            },
+            "crownOffset": 0.30779611667271445,
+            "baseOffset": 0
+          }
+        ],
+        "dynamicVertices": 144,
+        "maxVertexOffset": 1.3998082560780851,
+        "meshVertices": 256,
+        "triangles": 216,
+        "interactiveObjects": 0,
+        "lights": [
+          {
+            "id": "colonia-oeste",
+            "sourceAlpha": 0.8103909913478471,
+            "spillAlpha": 0.8103909913478471,
+            "level": 0.8103909913478471
+          },
+          {
+            "id": "colonia-este",
+            "sourceAlpha": 0.4191728199311412,
+            "spillAlpha": 0.4191728199311412,
+            "level": 0.4191728199311412
+          },
+          {
+            "id": "hospital-entrada",
+            "sourceAlpha": 0.46624708050582103,
+            "spillAlpha": 0.46624708050582103,
+            "level": 0.46624708050582103
+          }
+        ],
+        "runtimeTextureBytes": 6344200
+      },
+      "camera": {
+        "zoom": 1.5,
+        "x": -15.5,
+        "y": -341,
+        "minZoom": 0.6309808612440191,
+        "maxZoom": 1.5
+      }
+    },
+    {
+      "locality": "place-2",
+      "sample": 3,
+      "elapsed": 1.7995499999999984,
+      "environment": {
+        "updates": 38,
+        "groups": [
+          {
+            "id": "arbol-oeste",
+            "anchor": {
+              "x": 222,
+              "y": 471
+            },
+            "crownOffset": 0.9399182914087455,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-hospital",
+            "anchor": {
+              "x": 385,
+              "y": 606
+            },
+            "crownOffset": 0.40594591681284753,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-centro-sur",
+            "anchor": {
+              "x": 825,
+              "y": 747
+            },
+            "crownOffset": 0.27878126416440463,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbol-este",
+            "anchor": {
+              "x": 1080,
+              "y": 646
+            },
+            "crownOffset": 0.7577574077767195,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-este",
+            "anchor": {
+              "x": 1330,
+              "y": 826
+            },
+            "crownOffset": 0.30600347079585216,
+            "baseOffset": 0
+          },
+          {
+            "id": "pino-borde-este",
+            "anchor": {
+              "x": 1600,
+              "y": 634
+            },
+            "crownOffset": 0.4611870477779176,
+            "baseOffset": 0
+          },
+          {
+            "id": "grupo-suroeste",
+            "anchor": {
+              "x": 65,
+              "y": 735
+            },
+            "crownOffset": 0.3702085428132491,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-oeste",
+            "anchor": {
+              "x": 270,
+              "y": 811
+            },
+            "crownOffset": 0.3304553399851278,
+            "baseOffset": 0
+          }
+        ],
+        "dynamicVertices": 144,
+        "maxVertexOffset": 1.400524234992659,
+        "meshVertices": 256,
+        "triangles": 216,
+        "interactiveObjects": 0,
+        "lights": [
+          {
+            "id": "colonia-oeste",
+            "sourceAlpha": 0.7957197557782754,
+            "spillAlpha": 0.7957197557782754,
+            "level": 0.7957197557782754
+          },
+          {
+            "id": "colonia-este",
+            "sourceAlpha": 0.39765777583183626,
+            "spillAlpha": 0.39765777583183626,
+            "level": 0.39765777583183626
+          },
+          {
+            "id": "hospital-entrada",
+            "sourceAlpha": 0.4806807908555062,
+            "spillAlpha": 0.4806807908555062,
+            "level": 0.4806807908555062
+          }
+        ],
+        "runtimeTextureBytes": 6344200
+      },
+      "camera": {
+        "zoom": 1.5,
+        "x": -15.5,
+        "y": -341,
+        "minZoom": 0.6309808612440191,
+        "maxZoom": 1.5
+      }
+    },
+    {
+      "locality": "place-2",
+      "sample": 4,
+      "elapsed": 2.1437833333333263,
+      "environment": {
+        "updates": 45,
+        "groups": [
+          {
+            "id": "arbol-oeste",
+            "anchor": {
+              "x": 222,
+              "y": 471
+            },
+            "crownOffset": 0.9136764189222855,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-hospital",
+            "anchor": {
+              "x": 385,
+              "y": 606
+            },
+            "crownOffset": 0.3504680039048846,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-centro-sur",
+            "anchor": {
+              "x": 825,
+              "y": 747
+            },
+            "crownOffset": 0.27364380646957714,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbol-este",
+            "anchor": {
+              "x": 1080,
+              "y": 646
+            },
+            "crownOffset": 0.699032792357605,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-este",
+            "anchor": {
+              "x": 1330,
+              "y": 826
+            },
+            "crownOffset": 0.2623024301064062,
+            "baseOffset": 0
+          },
+          {
+            "id": "pino-borde-este",
+            "anchor": {
+              "x": 1600,
+              "y": 634
+            },
+            "crownOffset": 0.5276848379517828,
+            "baseOffset": 0
+          },
+          {
+            "id": "grupo-suroeste",
+            "anchor": {
+              "x": 65,
+              "y": 735
+            },
+            "crownOffset": 0.33968631949861067,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-oeste",
+            "anchor": {
+              "x": 270,
+              "y": 811
+            },
+            "crownOffset": 0.3619853141072223,
+            "baseOffset": 0
+          }
+        ],
+        "dynamicVertices": 144,
+        "maxVertexOffset": 1.3752751605511477,
+        "meshVertices": 256,
+        "triangles": 216,
+        "interactiveObjects": 0,
+        "lights": [
+          {
+            "id": "colonia-oeste",
+            "sourceAlpha": 0.754348921864644,
+            "spillAlpha": 0.754348921864644,
+            "level": 0.754348921864644
+          },
+          {
+            "id": "colonia-este",
+            "sourceAlpha": 0.3663434484759888,
+            "spillAlpha": 0.3663434484759888,
+            "level": 0.3663434484759888
+          },
+          {
+            "id": "hospital-entrada",
+            "sourceAlpha": 0.5112377513001944,
+            "spillAlpha": 0.5112377513001944,
+            "level": 0.5112377513001944
+          }
+        ],
+        "runtimeTextureBytes": 6344200
+      },
+      "camera": {
+        "zoom": 1.5,
+        "x": -15.5,
+        "y": -341,
+        "minZoom": 0.6309808612440191,
+        "maxZoom": 1.5
+      }
+    },
+    {
+      "locality": "place-2",
+      "sample": 5,
+      "elapsed": 2.48625666666665,
+      "environment": {
+        "updates": 52,
+        "groups": [
+          {
+            "id": "arbol-oeste",
+            "anchor": {
+              "x": 222,
+              "y": 471
+            },
+            "crownOffset": 0.8507301534659643,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-hospital",
+            "anchor": {
+              "x": 385,
+              "y": 606
+            },
+            "crownOffset": 0.29440338545450856,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-centro-sur",
+            "anchor": {
+              "x": 825,
+              "y": 747
+            },
+            "crownOffset": 0.2809889027599163,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbol-este",
+            "anchor": {
+              "x": 1080,
+              "y": 646
+            },
+            "crownOffset": 0.6185113573787187,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-este",
+            "anchor": {
+              "x": 1330,
+              "y": 826
+            },
+            "crownOffset": 0.22481415904312202,
+            "baseOffset": 0
+          },
+          {
+            "id": "pino-borde-este",
+            "anchor": {
+              "x": 1600,
+              "y": 634
+            },
+            "crownOffset": 0.5915370913925007,
+            "baseOffset": 0
+          },
+          {
+            "id": "grupo-suroeste",
+            "anchor": {
+              "x": 65,
+              "y": 735
+            },
+            "crownOffset": 0.32513428887787066,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-oeste",
+            "anchor": {
+              "x": 270,
+              "y": 811
+            },
+            "crownOffset": 0.3801584949937221,
+            "baseOffset": 0
+          }
+        ],
+        "dynamicVertices": 144,
+        "maxVertexOffset": 1.3185758496809452,
+        "meshVertices": 256,
+        "triangles": 216,
+        "interactiveObjects": 0,
+        "lights": [
+          {
+            "id": "colonia-oeste",
+            "sourceAlpha": 0.6974375192521717,
+            "spillAlpha": 0.6974375192521717,
+            "level": 0.6974375192521717
+          },
+          {
+            "id": "colonia-este",
+            "sourceAlpha": 0.34487311884262983,
+            "spillAlpha": 0.34487311884262983,
+            "level": 0.34487311884262983
+          },
+          {
+            "id": "hospital-entrada",
+            "sourceAlpha": 0.5460931070511851,
+            "spillAlpha": 0.5460931070511851,
+            "level": 0.5460931070511851
+          }
+        ],
+        "runtimeTextureBytes": 6344200
+      },
+      "camera": {
+        "zoom": 1.5,
+        "x": -15.5,
+        "y": -341,
+        "minZoom": 0.6309808612440191,
+        "maxZoom": 1.5
+      }
+    },
+    {
+      "locality": "place-0",
+      "sample": 0,
+      "elapsed": 3.462976666666645,
+      "environment": {
+        "updates": 72,
+        "groups": [
+          {
+            "id": "arbol-oeste",
+            "anchor": {
+              "x": 222,
+              "y": 471
+            },
+            "crownOffset": 0.557959816950305,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-hospital",
+            "anchor": {
+              "x": 385,
+              "y": 606
+            },
+            "crownOffset": 0.17788894824348292,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-centro-sur",
+            "anchor": {
+              "x": 825,
+              "y": 747
+            },
+            "crownOffset": 0.3404667137603977,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbol-este",
+            "anchor": {
+              "x": 1080,
+              "y": 646
+            },
+            "crownOffset": 0.35948956617809874,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-este",
+            "anchor": {
+              "x": 1330,
+              "y": 826
+            },
+            "crownOffset": 0.1737323624124359,
+            "baseOffset": 0
+          },
+          {
+            "id": "pino-borde-este",
+            "anchor": {
+              "x": 1600,
+              "y": 634
+            },
+            "crownOffset": 0.6890268451438363,
+            "baseOffset": 0
+          },
+          {
+            "id": "grupo-suroeste",
+            "anchor": {
+              "x": 65,
+              "y": 735
+            },
+            "crownOffset": 0.35620240744032305,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-oeste",
+            "anchor": {
+              "x": 270,
+              "y": 811
+            },
+            "crownOffset": 0.35058450646825073,
+            "baseOffset": 0
+          }
+        ],
+        "dynamicVertices": 144,
+        "maxVertexOffset": 1.1684320002677584,
+        "meshVertices": 256,
+        "triangles": 216,
+        "interactiveObjects": 0,
+        "lights": [
+          {
+            "id": "colonia-oeste",
+            "sourceAlpha": 0.5076842655744922,
+            "spillAlpha": 0.5076842655744922,
+            "level": 0.5076842655744922
+          },
+          {
+            "id": "colonia-este",
+            "sourceAlpha": 0.3485576142505328,
+            "spillAlpha": 0.3485576142505328,
+            "level": 0.3485576142505328
+          },
+          {
+            "id": "hospital-entrada",
+            "sourceAlpha": 0.6430462381719808,
+            "spillAlpha": 0.6430462381719808,
+            "level": 0.6430462381719808
+          }
+        ],
+        "runtimeTextureBytes": 6344200
+      },
+      "camera": {
+        "zoom": 1.5,
+        "x": -710,
+        "y": -363.5,
+        "minZoom": 0.6309808612440191,
+        "maxZoom": 1.5
+      }
+    },
+    {
+      "locality": "place-0",
+      "sample": 1,
+      "elapsed": 4.312976666666642,
+      "environment": {
+        "updates": 89,
+        "groups": [
+          {
+            "id": "arbol-oeste",
+            "anchor": {
+              "x": 222,
+              "y": 471
+            },
+            "crownOffset": 0.31483522674178166,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-hospital",
+            "anchor": {
+              "x": 385,
+              "y": 606
+            },
+            "crownOffset": 0.1486231743268271,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-centro-sur",
+            "anchor": {
+              "x": 825,
+              "y": 747
+            },
+            "crownOffset": 0.37312634270545564,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbol-este",
+            "anchor": {
+              "x": 1080,
+              "y": 646
+            },
+            "crownOffset": 0.20454391392313623,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-este",
+            "anchor": {
+              "x": 1330,
+              "y": 826
+            },
+            "crownOffset": 0.18192740061510312,
+            "baseOffset": 0
+          },
+          {
+            "id": "pino-borde-este",
+            "anchor": {
+              "x": 1600,
+              "y": 634
+            },
+            "crownOffset": 0.6262649285418374,
+            "baseOffset": 0
+          },
+          {
+            "id": "grupo-suroeste",
+            "anchor": {
+              "x": 65,
+              "y": 735
+            },
+            "crownOffset": 0.40061513882252,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-oeste",
+            "anchor": {
+              "x": 270,
+              "y": 811
+            },
+            "crownOffset": 0.2565873754883738,
+            "baseOffset": 0
+          }
+        ],
+        "dynamicVertices": 144,
+        "maxVertexOffset": 1.062002138684349,
+        "meshVertices": 256,
+        "triangles": 216,
+        "interactiveObjects": 0,
+        "lights": [
+          {
+            "id": "colonia-oeste",
+            "sourceAlpha": 0.4044163388812672,
+            "spillAlpha": 0.4044163388812672,
+            "level": 0.4044163388812672
+          },
+          {
+            "id": "colonia-este",
+            "sourceAlpha": 0.4303361399917618,
+            "spillAlpha": 0.4303361399917618,
+            "level": 0.4303361399917618
+          },
+          {
+            "id": "hospital-entrada",
+            "sourceAlpha": 0.6858950193480303,
+            "spillAlpha": 0.6858950193480303,
+            "level": 0.6858950193480303
+          }
+        ],
+        "runtimeTextureBytes": 6344200
+      },
+      "camera": {
+        "zoom": 1.5,
+        "x": -710,
+        "y": -363.5,
+        "minZoom": 0.6309808612440191,
+        "maxZoom": 1.5
+      }
+    },
+    {
+      "locality": "place-0",
+      "sample": 2,
+      "elapsed": 4.662976666666641,
+      "environment": {
+        "updates": 96,
+        "groups": [
+          {
+            "id": "arbol-oeste",
+            "anchor": {
+              "x": 222,
+              "y": 471
+            },
+            "crownOffset": 0.2435985435461742,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-hospital",
+            "anchor": {
+              "x": 385,
+              "y": 606
+            },
+            "crownOffset": 0.1496991725787545,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-centro-sur",
+            "anchor": {
+              "x": 825,
+              "y": 747
+            },
+            "crownOffset": 0.3698898698647336,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbol-este",
+            "anchor": {
+              "x": 1080,
+              "y": 646
+            },
+            "crownOffset": 0.16997462603888397,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-este",
+            "anchor": {
+              "x": 1330,
+              "y": 826
+            },
+            "crownOffset": 0.18899163509369715,
+            "baseOffset": 0
+          },
+          {
+            "id": "pino-borde-este",
+            "anchor": {
+              "x": 1600,
+              "y": 634
+            },
+            "crownOffset": 0.5689654010978958,
+            "baseOffset": 0
+          },
+          {
+            "id": "grupo-suroeste",
+            "anchor": {
+              "x": 65,
+              "y": 735
+            },
+            "crownOffset": 0.4062359004190607,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-oeste",
+            "anchor": {
+              "x": 270,
+              "y": 811
+            },
+            "crownOffset": 0.2132666375836763,
+            "baseOffset": 0
+          }
+        ],
+        "dynamicVertices": 144,
+        "maxVertexOffset": 0.964835240271638,
+        "meshVertices": 256,
+        "triangles": 216,
+        "interactiveObjects": 0,
+        "lights": [
+          {
+            "id": "colonia-oeste",
+            "sourceAlpha": 0.39631689524228525,
+            "spillAlpha": 0.39631689524228525,
+            "level": 0.39631689524228525
+          },
+          {
+            "id": "colonia-este",
+            "sourceAlpha": 0.4803362804182173,
+            "spillAlpha": 0.4803362804182173,
+            "level": 0.4803362804182173
+          },
+          {
+            "id": "hospital-entrada",
+            "sourceAlpha": 0.6852731210444792,
+            "spillAlpha": 0.6852731210444792,
+            "level": 0.6852731210444792
+          }
+        ],
+        "runtimeTextureBytes": 6344200
+      },
+      "camera": {
+        "zoom": 1.5,
+        "x": -710,
+        "y": -363.5,
+        "minZoom": 0.6309808612440191,
+        "maxZoom": 1.5
+      }
+    },
+    {
+      "locality": "place-0",
+      "sample": 3,
+      "elapsed": 5.012976666666639,
+      "environment": {
+        "updates": 103,
+        "groups": [
+          {
+            "id": "arbol-oeste",
+            "anchor": {
+              "x": 222,
+              "y": 471
+            },
+            "crownOffset": 0.19156944299523798,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-hospital",
+            "anchor": {
+              "x": 385,
+              "y": 606
+            },
+            "crownOffset": 0.15402927822304435,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-centro-sur",
+            "anchor": {
+              "x": 825,
+              "y": 747
+            },
+            "crownOffset": 0.35672675631839545,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbol-este",
+            "anchor": {
+              "x": 1080,
+              "y": 646
+            },
+            "crownOffset": 0.1500085390340054,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-este",
+            "anchor": {
+              "x": 1330,
+              "y": 826
+            },
+            "crownOffset": 0.1943562162162677,
+            "baseOffset": 0
+          },
+          {
+            "id": "pino-borde-este",
+            "anchor": {
+              "x": 1600,
+              "y": 634
+            },
+            "crownOffset": 0.5020782766652752,
+            "baseOffset": 0
+          },
+          {
+            "id": "grupo-suroeste",
+            "anchor": {
+              "x": 65,
+              "y": 735
+            },
+            "crownOffset": 0.40174022060016673,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-oeste",
+            "anchor": {
+              "x": 270,
+              "y": 811
+            },
+            "crownOffset": 0.17240705424625266,
+            "baseOffset": 0
+          }
+        ],
+        "dynamicVertices": 144,
+        "maxVertexOffset": 0.8514099693351325,
+        "meshVertices": 256,
+        "triangles": 216,
+        "interactiveObjects": 0,
+        "lights": [
+          {
+            "id": "colonia-oeste",
+            "sourceAlpha": 0.4096709417678721,
+            "spillAlpha": 0.4096709417678721,
+            "level": 0.4096709417678721
+          },
+          {
+            "id": "colonia-este",
+            "sourceAlpha": 0.5360384614804015,
+            "spillAlpha": 0.5360384614804015,
+            "level": 0.5360384614804015
+          },
+          {
+            "id": "hospital-entrada",
+            "sourceAlpha": 0.6732451565523458,
+            "spillAlpha": 0.6732451565523458,
+            "level": 0.6732451565523458
+          }
+        ],
+        "runtimeTextureBytes": 6344200
+      },
+      "camera": {
+        "zoom": 1.5,
+        "x": -710,
+        "y": -363.5,
+        "minZoom": 0.6309808612440191,
+        "maxZoom": 1.5
+      }
+    },
+    {
+      "locality": "place-0",
+      "sample": 4,
+      "elapsed": 5.362976666666638,
+      "environment": {
+        "updates": 110,
+        "groups": [
+          {
+            "id": "arbol-oeste",
+            "anchor": {
+              "x": 222,
+              "y": 471
+            },
+            "crownOffset": 0.15714356565905,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-hospital",
+            "anchor": {
+              "x": 385,
+              "y": 606
+            },
+            "crownOffset": 0.15917350007298156,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-centro-sur",
+            "anchor": {
+              "x": 825,
+              "y": 747
+            },
+            "crownOffset": 0.33537649944243825,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbol-este",
+            "anchor": {
+              "x": 1080,
+              "y": 646
+            },
+            "crownOffset": 0.14141363687638553,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-este",
+            "anchor": {
+              "x": 1330,
+              "y": 826
+            },
+            "crownOffset": 0.19662926589393848,
+            "baseOffset": 0
+          },
+          {
+            "id": "pino-borde-este",
+            "anchor": {
+              "x": 1600,
+              "y": 634
+            },
+            "crownOffset": 0.4316787333209395,
+            "baseOffset": 0
+          },
+          {
+            "id": "grupo-suroeste",
+            "anchor": {
+              "x": 65,
+              "y": 735
+            },
+            "crownOffset": 0.3877351027554001,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-oeste",
+            "anchor": {
+              "x": 270,
+              "y": 811
+            },
+            "crownOffset": 0.13624321584068047,
+            "baseOffset": 0
+          }
+        ],
+        "dynamicVertices": 144,
+        "maxVertexOffset": 0.7320284389528329,
+        "meshVertices": 256,
+        "triangles": 216,
+        "interactiveObjects": 0,
+        "lights": [
+          {
+            "id": "colonia-oeste",
+            "sourceAlpha": 0.4419298956139134,
+            "spillAlpha": 0.4419298956139134,
+            "level": 0.4419298956139134
+          },
+          {
+            "id": "colonia-este",
+            "sourceAlpha": 0.5942603597458853,
+            "spillAlpha": 0.5942603597458853,
+            "level": 0.5942603597458853
+          },
+          {
+            "id": "hospital-entrada",
+            "sourceAlpha": 0.6505730422486177,
+            "spillAlpha": 0.6505730422486177,
+            "level": 0.6505730422486177
+          }
+        ],
+        "runtimeTextureBytes": 6344200
+      },
+      "camera": {
+        "zoom": 1.5,
+        "x": -710,
+        "y": -363.5,
+        "minZoom": 0.6309808612440191,
+        "maxZoom": 1.5
+      }
+    },
+    {
+      "locality": "place-0",
+      "sample": 5,
+      "elapsed": 5.712976666666637,
+      "environment": {
+        "updates": 117,
+        "groups": [
+          {
+            "id": "arbol-oeste",
+            "anchor": {
+              "x": 222,
+              "y": 471
+            },
+            "crownOffset": 0.13752769608953466,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-hospital",
+            "anchor": {
+              "x": 385,
+              "y": 606
+            },
+            "crownOffset": 0.16347991650326993,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-centro-sur",
+            "anchor": {
+              "x": 825,
+              "y": 747
+            },
+            "crownOffset": 0.30826954041876353,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbol-este",
+            "anchor": {
+              "x": 1080,
+              "y": 646
+            },
+            "crownOffset": 0.1408670529234813,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-este",
+            "anchor": {
+              "x": 1330,
+              "y": 826
+            },
+            "crownOffset": 0.19534574481675732,
+            "baseOffset": 0
+          },
+          {
+            "id": "pino-borde-este",
+            "anchor": {
+              "x": 1600,
+              "y": 634
+            },
+            "crownOffset": 0.36289571320150793,
+            "baseOffset": 0
+          },
+          {
+            "id": "grupo-suroeste",
+            "anchor": {
+              "x": 65,
+              "y": 735
+            },
+            "crownOffset": 0.3660373341170648,
+            "baseOffset": 0
+          },
+          {
+            "id": "arbusto-sur-oeste",
+            "anchor": {
+              "x": 270,
+              "y": 811
+            },
+            "crownOffset": 0.10602014973121215,
+            "baseOffset": 0
+          }
+        ],
+        "dynamicVertices": 144,
+        "maxVertexOffset": 0.6153881623815654,
+        "meshVertices": 256,
+        "triangles": 216,
+        "interactiveObjects": 0,
+        "lights": [
+          {
+            "id": "colonia-oeste",
+            "sourceAlpha": 0.4883314758145895,
+            "spillAlpha": 0.4883314758145895,
+            "level": 0.4883314758145895
+          },
+          {
+            "id": "colonia-este",
+            "sourceAlpha": 0.6516247261350084,
+            "spillAlpha": 0.6516247261350084,
+            "level": 0.6516247261350084
+          },
+          {
+            "id": "hospital-entrada",
+            "sourceAlpha": 0.6189078229404157,
+            "spillAlpha": 0.6189078229404157,
+            "level": 0.6189078229404157
+          }
+        ],
+        "runtimeTextureBytes": 6344200
+      },
+      "camera": {
+        "zoom": 1.5,
+        "x": -710,
+        "y": -363.5,
+        "minZoom": 0.6309808612440191,
+        "maxZoom": 1.5
+      }
+    }
+  ],
+  "errors": []
+}

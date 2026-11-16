@@ -1,0 +1,193 @@
+{
+  "validatedHead": "b4df86688f22717ab7ff706d482e0f0c2d99a6a0",
+  "pr": "https://github.com/LeviEdition/invierno-en-la-colonia/pull/18",
+  "checks": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-30T11:28:12Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41048175119/job/124037347736",
+      "name": "engine",
+      "startedAt": "2026-10-30T11:27:09Z",
+      "status": "COMPLETED",
+      "workflowName": "D1 y D2 \u2014 arquitectura y regresiones"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-30T11:32:21Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41048175185/job/124037350403",
+      "name": "hospital",
+      "startedAt": "2026-10-30T11:27:10Z",
+      "status": "COMPLETED",
+      "workflowName": "H3.2 \u2014 Hospital Canvas y Phaser"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-30T11:27:24Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41048175125/job/124037347772",
+      "name": "pruebas",
+      "startedAt": "2026-10-30T11:27:09Z",
+      "status": "COMPLETED",
+      "workflowName": "Pruebas de regresi\u00f3n"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-30T11:30:33Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41048175119/job/124037348019",
+      "name": "browser",
+      "startedAt": "2026-10-30T11:27:10Z",
+      "status": "COMPLETED",
+      "workflowName": "D1 y D2 \u2014 arquitectura y regresiones"
+    }
+  ],
+  "artifact": "h32-hospital-b4df86688f22717ab7ff706d482e0f0c2d99a6a0",
+  "downloadedAndCompared": true,
+  "bundleEqualsLocal": true,
+  "build": {
+    "phaser": "4.2.1",
+    "esbuild": "0.28.2",
+    "rawBytes": 1412238,
+    "gzip9Bytes": 378108,
+    "sha256": "ed6b74eb280ea288971e79c797ab8d31cf5b817d7b3ace79927e4a5af9ee37d8",
+    "inputs": 10
+  },
+  "chromium": "143.0.7499.4",
+  "navigation": {
+    "passed": true,
+    "bfcacheActuallyExercised": true,
+    "cycles": [
+      {
+        "restoredFromBfcache": true,
+        "timerSuspension": {
+          "frozen": {
+            "type": "freeze",
+            "ticks": 21,
+            "time": 1005.7000000000116
+          },
+          "resumed": {
+            "type": "resume",
+            "ticks": 21,
+            "time": 1399.300000000003
+          }
+        }
+      },
+      {
+        "restoredFromBfcache": true,
+        "timerSuspension": {
+          "frozen": {
+            "type": "freeze",
+            "ticks": 36,
+            "time": 2110.300000000003
+          },
+          "resumed": {
+            "type": "resume",
+            "ticks": 36,
+            "time": 2479.600000000006
+          }
+        }
+      },
+      {
+        "restoredFromBfcache": true,
+        "timerSuspension": {
+          "frozen": {
+            "type": "freeze",
+            "ticks": 51,
+            "time": 3197.9000000000087
+          },
+          "resumed": {
+            "type": "resume",
+            "ticks": 51,
+            "time": 3569.4000000000087
+          }
+        }
+      }
+    ],
+    "realLeaveDuringLoad": {
+      "passed": true,
+      "sameDocument": true,
+      "pageshow": {
+        "type": "pageshow",
+        "persisted": false,
+        "time": 401.8999999999942,
+        "ticks": 6
+      }
+    },
+    "realLeaveDuringGame": {
+      "passed": true,
+      "restoredFromBfcache": true,
+      "sameDocument": true,
+      "lateCreateIgnored": true
+    },
+    "startupCases": [
+      {
+        "fault": "sync-constructor",
+        "elapsedMs": 437,
+        "cleanupErrors": []
+      },
+      {
+        "fault": "async-create",
+        "elapsedMs": 425,
+        "cleanupErrors": []
+      },
+      {
+        "fault": "async-start",
+        "elapsedMs": 507,
+        "cleanupErrors": []
+      },
+      {
+        "fault": "never-create",
+        "elapsedMs": 15288,
+        "cleanupErrors": []
+      },
+      {
+        "fault": "late-create",
+        "elapsedMs": 15303,
+        "cleanupErrors": []
+      },
+      {
+        "fault": "late-start",
+        "elapsedMs": 15307,
+        "cleanupErrors": []
+      }
+    ]
+  },
+  "adapter": {
+    "passed": true,
+    "foreignHandlersPreserved": true,
+    "cdpFreeze": {
+      "planned": 1793359787402,
+      "fired": 1793359787603,
+      "resumedAt": 1793359787805,
+      "verified": false,
+      "note": "Solo se cuenta suspensi\u00f3n si el timer realmente qued\u00f3 detenido. Un comando CDP aceptado no basta; tampoco equivale a suspensi\u00f3n f\u00edsica del tel\u00e9fono/SO"
+    }
+  },
+  "lifecyclePassed": true,
+  "canvasPassed": true,
+  "phaserPassed": true,
+  "performance": {
+    "passed": true,
+    "conditions": {
+      "os": "linux 7.0.0-1017-azure",
+      "cpu": "Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz",
+      "logicalCpus": 4,
+      "totalSystemMemoryBytes": 16759308288,
+      "node": "v22.23.4",
+      "chromium": "143.0.7499.4",
+      "headless": true,
+      "network": "HTTP localhost, sin compresi\u00f3n ni throttling",
+      "gpu": "consultar renderer por muestra; no GPU f\u00edsica garantizada",
+      "isolation": "Ensayos de renderizadores secuenciales; sin otros tests de navegador o builds ejecutados por esta tarea durante la medici\u00f3n. Host compartido, carga externa no controlada",
+      "physicalMobile": false,
+      "heap": "CDP JSHeapUsedSize despu\u00e9s de GC forzada; no incluye memoria GPU",
+      "navigation": "4 s, una tecla de pan por rAF, direcci\u00f3n alternada cada 30 cuadros; zoom cada 45. Eventos DOM reales de teclado sint\u00e9ticos, no entrada humana",
+      "idle": "3 s sin interacci\u00f3n; instrumentaci\u00f3n drawImage/drawArrays/drawElements",
+      "samplesPerConfiguration": 3
+    },
+    "samples": 18
+  },
+  "note": "Evidencia nueva del c\u00f3digo b4df866, no reutilizaci\u00f3n del CI320fc92. El commit documental posterior no cambia implementaci\u00f3n; se verifican sus checks y se registran en el PR para evitar SHA circular."
+}

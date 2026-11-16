@@ -1,0 +1,172 @@
+[
+  {
+    "file": "README.md",
+    "bytes": 4208,
+    "sha256": "69cc0f7790f3246a497c9994b905ae5df534a3821d93c3c03a130641a3126ed6"
+  },
+  {
+    "file": "acciones.json",
+    "bytes": 1065,
+    "sha256": "60b21363654837ff848c3424a57962669d2fe000b140f1b4a6562529ae5d8fc0"
+  },
+  {
+    "file": "antes/colonia-12-foco.png",
+    "bytes": 1148271,
+    "sha256": "82ebe4a9f2f2430dad8ffd6de047a92ce771fa3a8fee7049cbf8bc10c74a3ff8"
+  },
+  {
+    "file": "antes/colonia-6-foco.png",
+    "bytes": 1157922,
+    "sha256": "9c9e9c00330d865cd06b9a3536bb466f56093e99ffa4d5be3c22e28c419b3da3"
+  },
+  {
+    "file": "antes/general-852x393.png",
+    "bytes": 1618240,
+    "sha256": "07dddb423a4e70f6393f700d6b4610686f5d9d30f4f08ac103ca62aba71a7383"
+  },
+  {
+    "file": "antes/max-zombies-comisaria.png",
+    "bytes": 1159198,
+    "sha256": "57efeef93c166f9222e1c6daddce3818e6bffa09b2423b10bb3f5cdef854c77c"
+  },
+  {
+    "file": "antes/max-zombies-escuela.png",
+    "bytes": 1195127,
+    "sha256": "338c0d9c023066e0e4b54cbc051cfc0a763dce40dddac0ac21c6c761cf9a39c6"
+  },
+  {
+    "file": "antes/max-zombies-gasolinera.png",
+    "bytes": 1139175,
+    "sha256": "fa7df6aee557884bf7d97bb3ca1d37300457fde99da2b0d1ca3fa72a9517d426"
+  },
+  {
+    "file": "antes/max-zombies-hospital.png",
+    "bytes": 1175866,
+    "sha256": "347da50f4c9714f20d45ebe126c7831401c21e9e8dcca352c54f33b7aa8079c1"
+  },
+  {
+    "file": "antes/max-zombies-supermercado.png",
+    "bytes": 1146837,
+    "sha256": "6fa74ae9256a24033960d48c95bdf5abece7498a8cd8b2564721aed410406daa"
+  },
+  {
+    "file": "check-html.txt",
+    "bytes": 333,
+    "sha256": "8f6ce918aa29438c0055dd725574013238bfd8b6ee047cc7c017c0ec8f6423d0"
+  },
+  {
+    "file": "despues/colonia-1-foco.png",
+    "bytes": 1250179,
+    "sha256": "50b91b4ddf3bb90a1069d24e06c3e642d128c68edd161fd4233a4d54a77a2da8"
+  },
+  {
+    "file": "despues/colonia-12-foco.png",
+    "bytes": 1257423,
+    "sha256": "a6a80ae842d51ef7f3235669b0c320d8ac101cbd955d40797cc13c83d5085556"
+  },
+  {
+    "file": "despues/colonia-6-foco.png",
+    "bytes": 1255496,
+    "sha256": "ec1aab0fa573518d3e16a69818f70bc5c90bced498583baf6d367da3f9a78760"
+  },
+  {
+    "file": "despues/general-852x393.png",
+    "bytes": 1187047,
+    "sha256": "a839738e4789c20f9017acbaf8b632ae213dc1799fc4e68458e435cdfa48c8dd"
+  },
+  {
+    "file": "despues/max-barricades-colonia.png",
+    "bytes": 1255433,
+    "sha256": "e1ccebd50f74b7c1c0c6b76c2f9bad90a646a5ba4ebcca6dae0fc02edbfeb8fa"
+  },
+  {
+    "file": "despues/max-mixed-colonia.png",
+    "bytes": 1256659,
+    "sha256": "db2c8693939f12b9f434cd15706dfccbf49290a95ca11ea0e34a732436d7d4cb"
+  },
+  {
+    "file": "despues/max-zombies-comisaria.png",
+    "bytes": 1109350,
+    "sha256": "766c3cdd78dea044e89403a72f9f071b244733da3d50e283d7528167392e93ca"
+  },
+  {
+    "file": "despues/max-zombies-escuela.png",
+    "bytes": 1162544,
+    "sha256": "ba37fcd2c3f1361cf5873cc57549a5f30d4f7d6f3a76982392666d24b375618d"
+  },
+  {
+    "file": "despues/max-zombies-gasolinera.png",
+    "bytes": 1100928,
+    "sha256": "1c8a9ec440dec8acfabc5d7d14f619dd95ac309a630c67e1eacd649d16ace64e"
+  },
+  {
+    "file": "despues/max-zombies-hospital.png",
+    "bytes": 1146088,
+    "sha256": "3ba45ae67ceb9939350e4225b23c8a8b23ef0227a05eda1d90e8ae13e0643f19"
+  },
+  {
+    "file": "despues/max-zombies-supermercado.png",
+    "bytes": 1139578,
+    "sha256": "8fb3bb41c6f1c78b639719f82b86b42e632463be1de9ce0c1d42b2e96ef12eb2"
+  },
+  {
+    "file": "despues/movil-colonia-12-foco.png",
+    "bytes": 1491245,
+    "sha256": "b91cfacdf8593549e203dc5e46e400a9d25b81458fb47980f3b9fbfc2cf9fa76"
+  },
+  {
+    "file": "despues/movil-excedente-4.png",
+    "bytes": 990038,
+    "sha256": "5c0aaa0a3d0edaf2194c3c45d0bd0421e0f739174d07cd6fce6780fd1eb0258b"
+  },
+  {
+    "file": "despues/movil-excedente-6.png",
+    "bytes": 1054182,
+    "sha256": "e38f8b203b254e456dda78b47f1cafc9f6f84f5e5b7e8d55cd0aac5cd628526c"
+  },
+  {
+    "file": "dirigidas-42.txt",
+    "bytes": 4540,
+    "sha256": "49862118b419132cf68444d4889cb3c4f2cac043c52853d3eefb62a1f3c76042"
+  },
+  {
+    "file": "obstaculos-y-arte.json",
+    "bytes": 291,
+    "sha256": "a9b93c5d48156f0f56790b4369c699f0745bb21edb069fed47e03035257d2fbe"
+  },
+  {
+    "file": "presentacion.json",
+    "bytes": 40045,
+    "sha256": "3f623a3d3e838a894749b3a5da45fffa52805d78c242ca84a5fefc81f57de99b"
+  },
+  {
+    "file": "reproducciones/arbustos-rojo.txt",
+    "bytes": 1050,
+    "sha256": "5fc137ac96db8004110c4ba36776358e8fb751adcacecc1c60474538db56f03f"
+  },
+  {
+    "file": "reproducciones/espera-movil.json",
+    "bytes": 828,
+    "sha256": "4a9fdaa7bc5aa81da6ce8ed33820b08f19155448eee2d3e0f4815c5b3c573fbc"
+  },
+  {
+    "file": "reproducciones/espera-ultimo-fotograma.png",
+    "bytes": 551217,
+    "sha256": "68c2a1a459f81c0ba961af006ff91a7700d33c219cb8605caca7b604776985aa"
+  },
+  {
+    "file": "reproducciones/inicial-rojo.txt",
+    "bytes": 4623,
+    "sha256": "bf813e6355c4030cc7875e19ac6bd3578a19bb8caac6cb058f7daae3a386347f"
+  },
+  {
+    "file": "reproducciones/toque-rojo.txt",
+    "bytes": 1052,
+    "sha256": "95018059dfbefc3d4b770a43afe0a12e6b9a57b822b57ba7cf8b18ba032dc248"
+  },
+  {
+    "file": "suite-650.txt",
+    "bytes": 59798,
+    "sha256": "4b2f1278f343ac44dfb494f6d137435089d9e6c0fda02c90dfd1d1d8a600b279"
+  }
+]

@@ -1,0 +1,402 @@
+{
+  "passed": true,
+  "controlled": true,
+  "physicalMobile": false,
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "scenario": "local",
+      "phases": [
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise",
+        "round"
+      ],
+      "round": 2,
+      "outcome": null,
+      "cameraBefore": {
+        "overview": true,
+        "zoom": 0.5738575982996812,
+        "x": 48.04197662061637,
+        "y": 0,
+        "minZoom": 0.5738575982996812,
+        "maxZoom": 1.5
+      },
+      "cameraAfter": {
+        "overview": true,
+        "zoom": 0.5738575982996812,
+        "x": 48.04197662061637,
+        "y": 0,
+        "minZoom": 0.5738575982996812,
+        "maxZoom": 1.5
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/tmp/horizontal-cycle-migration/1365x768/local/page@6997a335d09c5bf046f825a8e5d017a3.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "scenario": "ai",
+      "phases": [
+        "ai",
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise",
+        "round"
+      ],
+      "round": 2,
+      "outcome": null,
+      "cameraBefore": {
+        "overview": true,
+        "zoom": 0.5738575982996812,
+        "x": 48.04197662061637,
+        "y": 0,
+        "minZoom": 0.5738575982996812,
+        "maxZoom": 1.5
+      },
+      "cameraAfter": {
+        "overview": true,
+        "zoom": 0.5738575982996812,
+        "x": 48.04197662061637,
+        "y": 0,
+        "minZoom": 0.5738575982996812,
+        "maxZoom": 1.5
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/tmp/horizontal-cycle-migration/1365x768/ai/page@70acfe538e319416cd3a9d73ca872a4e.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "scenario": "death",
+      "phases": [
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise",
+        "round"
+      ],
+      "round": 2,
+      "outcome": null,
+      "cameraBefore": {
+        "overview": true,
+        "zoom": 0.5738575982996812,
+        "x": 48.04197662061637,
+        "y": 0,
+        "minZoom": 0.5738575982996812,
+        "maxZoom": 1.5
+      },
+      "cameraAfter": {
+        "overview": true,
+        "zoom": 0.5738575982996812,
+        "x": 48.04197662061637,
+        "y": 0,
+        "minZoom": 0.5738575982996812,
+        "maxZoom": 1.5
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/tmp/horizontal-cycle-migration/1365x768/death/page@be89c76f35958fa397c1128b5adf7e04.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "scenario": "time",
+      "phases": [
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise"
+      ],
+      "round": 2,
+      "outcome": {
+        "reason": "time",
+        "label": "Derrota: se agotaron las rondas."
+      },
+      "cameraBefore": {
+        "overview": true,
+        "zoom": 0.5738575982996812,
+        "x": 48.04197662061637,
+        "y": 0,
+        "minZoom": 0.5738575982996812,
+        "maxZoom": 1.5
+      },
+      "cameraAfter": {
+        "overview": true,
+        "zoom": 0.5738575982996812,
+        "x": 48.04197662061637,
+        "y": 0,
+        "minZoom": 0.5738575982996812,
+        "maxZoom": 1.5
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/tmp/horizontal-cycle-migration/1365x768/time/page@66b656a6b1ef46bf28557e476412d127.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "scenario": "bite",
+      "phases": [
+        "ai",
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise",
+        "round"
+      ],
+      "round": 2,
+      "outcome": null,
+      "cameraBefore": {
+        "overview": true,
+        "zoom": 0.5738575982996812,
+        "x": 48.04197662061637,
+        "y": 0,
+        "minZoom": 0.5738575982996812,
+        "maxZoom": 1.5
+      },
+      "cameraAfter": {
+        "overview": true,
+        "zoom": 0.5738575982996812,
+        "x": 48.04197662061637,
+        "y": 0,
+        "minZoom": 0.5738575982996812,
+        "maxZoom": 1.5
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/tmp/horizontal-cycle-migration/1365x768/bite/page@c3fb01bd593fbfb0f3acfd8daf0adc71.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "scenario": "local",
+      "phases": [
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise",
+        "round"
+      ],
+      "round": 2,
+      "outcome": null,
+      "cameraBefore": {
+        "overview": true,
+        "zoom": 0.2359192348565356,
+        "x": 228.8894792773645,
+        "y": 0,
+        "minZoom": 0.2359192348565356,
+        "maxZoom": 1.5
+      },
+      "cameraAfter": {
+        "overview": true,
+        "zoom": 0.2359192348565356,
+        "x": 228.8894792773645,
+        "y": 0,
+        "minZoom": 0.2359192348565356,
+        "maxZoom": 1.5
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/tmp/horizontal-cycle-migration/852x393/local/page@885d00b930eb5c1c89ad3bde4f3a6cea.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "scenario": "ai",
+      "phases": [
+        "ai",
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise",
+        "round"
+      ],
+      "round": 2,
+      "outcome": null,
+      "cameraBefore": {
+        "overview": true,
+        "zoom": 0.2359192348565356,
+        "x": 228.8894792773645,
+        "y": 0,
+        "minZoom": 0.2359192348565356,
+        "maxZoom": 1.5
+      },
+      "cameraAfter": {
+        "overview": true,
+        "zoom": 0.2359192348565356,
+        "x": 228.8894792773645,
+        "y": 0,
+        "minZoom": 0.2359192348565356,
+        "maxZoom": 1.5
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/tmp/horizontal-cycle-migration/852x393/ai/page@4c8ffd1e5c164245d1a8a6023b602027.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "scenario": "death",
+      "phases": [
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise",
+        "round"
+      ],
+      "round": 2,
+      "outcome": null,
+      "cameraBefore": {
+        "overview": true,
+        "zoom": 0.2359192348565356,
+        "x": 228.8894792773645,
+        "y": 0,
+        "minZoom": 0.2359192348565356,
+        "maxZoom": 1.5
+      },
+      "cameraAfter": {
+        "overview": true,
+        "zoom": 0.2359192348565356,
+        "x": 228.8894792773645,
+        "y": 0,
+        "minZoom": 0.2359192348565356,
+        "maxZoom": 1.5
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/tmp/horizontal-cycle-migration/852x393/death/page@f69313704dce563a1e37975a2661d72e.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "scenario": "time",
+      "phases": [
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise"
+      ],
+      "round": 2,
+      "outcome": {
+        "reason": "time",
+        "label": "Derrota: se agotaron las rondas."
+      },
+      "cameraBefore": {
+        "overview": true,
+        "zoom": 0.2359192348565356,
+        "x": 228.8894792773645,
+        "y": 0,
+        "minZoom": 0.2359192348565356,
+        "maxZoom": 1.5
+      },
+      "cameraAfter": {
+        "overview": true,
+        "zoom": 0.2359192348565356,
+        "x": 228.8894792773645,
+        "y": 0,
+        "minZoom": 0.2359192348565356,
+        "maxZoom": 1.5
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/tmp/horizontal-cycle-migration/852x393/time/page@3db482e029b4fdec76f595c85758cbd2.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "scenario": "bite",
+      "phases": [
+        "ai",
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise",
+        "round"
+      ],
+      "round": 2,
+      "outcome": null,
+      "cameraBefore": {
+        "overview": true,
+        "zoom": 0.2359192348565356,
+        "x": 228.8894792773645,
+        "y": 0,
+        "minZoom": 0.2359192348565356,
+        "maxZoom": 1.5
+      },
+      "cameraAfter": {
+        "overview": true,
+        "zoom": 0.2359192348565356,
+        "x": 228.8894792773645,
+        "y": 0,
+        "minZoom": 0.2359192348565356,
+        "maxZoom": 1.5
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/tmp/horizontal-cycle-migration/852x393/bite/page@0147b3f418eb19a71d3f07f87a670152.webm",
+      "passed": true
+    }
+  ],
+  "cameraBefore": {
+    "scenario": "bite",
+    "width": 852,
+    "camera": {
+      "overview": true,
+      "zoom": 0.2359192348565356,
+      "x": 228.8894792773645,
+      "y": 0,
+      "minZoom": 0.2359192348565356,
+      "maxZoom": 1.5
+    },
+    "viewport": {
+      "width": 852,
+      "height": 222,
+      "dpr": 2
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "phaser": "4.2.1",
+  "esbuild": "0.28.2",
+  "rawBytes": 1430363,
+  "gzip9Bytes": 384574,
+  "sha256": "8bff2779567e5cd1d142932e75e80fc15950500a1b18cb4ff3a2c8193b928d69",
+  "inputs": [
+    "prototypes/hospital-workshop/kit.json",
+    "prototypes/hospital-workshop/kit.mjs",
+    "prototypes/hospital-workshop/resources.mjs",
+    "node_modules/phaser/dist/phaser.esm.js",
+    "prototypes/hospital-phaser/game.mjs",
+    "prototypes/hospital-phaser/dispose-game.mjs",
+    "prototypes/hospital-phaser/startup.mjs",
+    "prototypes/hospital-phaser/texture-quality.mjs",
+    "prototypes/hospital-workshop/renderer.mjs",
+    "prototypes/hospital/camera.mjs",
+    "prototypes/hospital/controls.mjs",
+    "prototypes/hospital/scene.mjs",
+    "prototypes/hospital-phaser/renderer.mjs",
+    "prototypes/hospital-workshop/main.mjs"
+  ],
+  "profiles": [
+    {
+      "id": "h32",
+      "factor": 1,
+      "textures": [
+        {
+          "id": "hospital",
+          "width": 1254,
+          "height": 1254,
+          "potWidth": 2048,
+          "potHeight": 2048,
+          "rgbaBase": 16777216,
+          "rgbaWithMips": 22369620,
+          "auxiliaryRgba": 16777216,
+          "derivedRgba": 0
+        },
+        {
+          "id": "ground",
+          "width": 1536,
+          "height": 1024,
+          "potWidth": 2048,
+          "potHeight": 1024,
+          "rgbaBase": 8388608,
+          "rgbaWithMips": 11184812,
+          "auxiliaryRgba": 8388608,
+          "derivedRgba": 0
+        },
+        {
+          "id": "zombie",
+          "width": 1175,
+          "height": 1338,
+          "potWidth": 2048,
+          "potHeight": 2048,
+          "rgbaBase": 16777216,
+          "rgbaWithMips": 22369620,
+          "auxiliaryRgba": 16777216,
+          "derivedRgba": 0
+        }
+      ]
+    },
+    {
+      "id": "three-quarter",
+      "factor": 0.75,
+      "textures": [
+        {
+          "id": "hospital",
+          "width": 941,
+          "height": 941,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 3541924
+        },
+        {
+          "id": "ground",
+          "width": 1152,
+          "height": 768,
+          "potWidth": 2048,
+          "potHeight": 1024,
+          "rgbaBase": 8388608,
+          "rgbaWithMips": 11184812,
+          "auxiliaryRgba": 8388608,
+          "derivedRgba": 3538944
+        },
+        {
+          "id": "zombie",
+          "width": 882,
+          "height": 1004,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 3542112
+        }
+      ]
+    },
+    {
+      "id": "half",
+      "factor": 0.5,
+      "textures": [
+        {
+          "id": "hospital",
+          "width": 627,
+          "height": 627,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 1572516
+        },
+        {
+          "id": "ground",
+          "width": 768,
+          "height": 512,
+          "potWidth": 1024,
+          "potHeight": 512,
+          "rgbaBase": 2097152,
+          "rgbaWithMips": 2796204,
+          "auxiliaryRgba": 2097152,
+          "derivedRgba": 1572864
+        },
+        {
+          "id": "zombie",
+          "width": 588,
+          "height": 669,
+          "potWidth": 1024,
+          "potHeight": 1024,
+          "rgbaBase": 4194304,
+          "rgbaWithMips": 5592404,
+          "auxiliaryRgba": 4194304,
+          "derivedRgba": 1573488
+        }
+      ]
+    }
+  ]
+}

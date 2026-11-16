@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <title>Invierno en la Colonia · Maqueta H3.3</title><link rel="icon" href="data:,">
+ <link rel="stylesheet" href="./mockup/style.css"><script type="module" src="../../dist/hospital-workshop/mockup.mjs"></script>
+</head>
+<body data-panel-open="true">
+ <header class="topbar">
+  <div class="brand"><h1>Invierno en la Colonia</h1><span class="sample-badge">MAQUETA</span></div>
+  <dl class="stats" aria-label="Datos de demostración"><div><dt>Ronda</dt><dd id="round">1</dd></div><div><dt>Turno</dt><dd id="turn">Grupo A</dd></div><div><dt>Moral</dt><dd id="morale">6</dd></div><div><dt>Comida</dt><dd id="food">4</dd></div></dl>
+  <nav class="mission" aria-label="Información de muestra"><button data-info="objetivo">Objetivo</button><button data-info="crisis">Crisis</button></nav>
+ </header>
+ <main class="layout">
+  <section id="map-panel" aria-label="Mapa continuo de las siete localidades">
+   <div class="map-tools">
+    <label class="sr-only" for="locality">Seleccionar y centrar localidad</label><select id="locality" aria-label="Seleccionar y centrar localidad"><option value="general">Vista general</option><option value="hospital">Hospital cercano</option><option value="colonia">Colonia</option><option value="escuela">Escuela</option><option value="biblioteca">Biblioteca</option><option value="gasolinera">Gasolinera</option><option value="comisaria">Comisaría</option><option value="supermercado">Supermercado</option></select>
+    <button id="zoom-out" aria-label="Alejar mapa">−</button><output id="zoom-value" aria-label="Zoom del mapa">100%</output><button id="zoom-in" aria-label="Acercar mapa">+</button><button id="reset-view">Restablecer</button>
+   </div>
+   <div class="map-viewport">
+    <canvas id="scene" tabindex="0" role="img" aria-label="Mapa del asentamiento: edificios y fichas seleccionables" aria-describedby="map-instructions"></canvas>
+    <div id="debug-labels" aria-hidden="true"></div><div id="loading" role="status">Preparando maqueta…</div><button id="retry-load" hidden>Reintentar carga</button>
+    <button id="menu-toggle" class="menu-toggle" aria-controls="floating-menu" aria-expanded="false">Menú</button>
+    <nav id="floating-menu" class="floating-menu" aria-label="Menú de demostración" hidden>
+     <button data-info="inventarios">Inventarios</button><button data-info="registro">Registro</button><button data-info="ayuda">Ayuda</button><button id="debug-toggle" aria-pressed="false">Depuración</button><button id="restart-mockup">Reiniciar maqueta</button><a href="./tecnico.html">Taller técnico anterior</a>
+    </nav>
+   </div>
+   <p id="demo-feedback" class="feedback" role="status">Datos de demostración · Sin reglas ni motor conectado.</p>
+   <p id="map-instructions" class="sr-only">Arrastrar para desplazar. Rueda o pinza para acercar. Flechas, más, menos y cero con foco en el mapa. Seleccionar un edificio o una ficha abre sus detalles. Los selectores HTML ofrecen acceso por teclado.</p>
+  </section>
+  <aside id="dossier" aria-label="Ficha de selección">
+   <div class="panel-heading"><h2 id="panel-title">Superviviente</h2><button id="panel-toggle" aria-label="Cerrar ficha" aria-expanded="true" aria-controls="panel-content">×</button></div>
+   <div id="panel-content" class="panel-content">
+    <article id="locality-card" hidden>
+     <h3 id="locality-name"></h3><p id="locality-description"></p><p class="provisional-note">Ambientación provisional</p>
+     <h4>Supervivientes <span id="locality-occupancy"></span></h4><div id="locality-survivors" class="locality-survivors"></div>
+     <h4>Espacios exteriores <span id="locality-exterior-total"></span></h4>
+     <dl class="locality-counts"><div><dt>Zombis</dt><dd id="locality-zombies"></dd></div><div><dt>Barricadas</dt><dd id="locality-barricades"></dd></div><div><dt>Vacíos</dt><dd id="locality-empty"></dd></div></dl>
+     <p class="provisional-note">Zombis y barricadas comparten los mismos espacios.</p>
+    </article>
+    <article id="character-card">
+     <div class="identity"><div class="photo-frame"><img id="portrait" width="132" height="132" alt="Retrato del superviviente de muestra"></div><div><h3 id="character-name"></h3><p id="character-location"></p><p id="character-group"></p></div></div>
+     <dl class="attributes"><div><dt>Influencia</dt><dd id="influence"></dd></div><div><dt>Combate</dt><dd id="combat"></dd></div><div><dt>Búsqueda</dt><dd id="search"></dd></div></dl>
+     <p id="character-state" class="character-state">Estado: sin heridas</p>
+    </article>
+    <p id="no-selection" hidden>Seleccioná un edificio o un retrato en el mapa, o usá los selectores.</p>
+    <section class="dice-section" aria-label="Reserva de dados del grupo y turno de demostración"><h3>Dados disponibles</h3><p id="dice-owner">Grupo A · Turno actual</p><div id="dice-pool" class="dice-pool"></div></section>
+    <section class="actions-section"><h3>Acciones</h3><div class="actions"><button data-action="Buscar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></svg><span>Buscar</span></button><button data-action="Atacar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 19 12-12 4-4-1 7-12 12m-3-7 6 6m-5-1-4 4"/></svg><span>Atacar</span></button><button data-action="Construir barricada"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 3v18M20 3v18M4 7h16M4 12h16M4 17h16"/></svg><span>Construir barricada</span></button><button data-action="Moverse"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 12h17m-6-6 6 6-6 6"/></svg><span>Moverse</span></button></div></section>
+    <details class="character-details"><summary>Equipo y habilidad</summary><div class="card-notes"><section><h4>Habilidad</h4><p>Descripción de muestra, sin efecto de juego.</p></section><section><h4>Equipo</h4><p>Sin equipo (demostración).</p></section></div></details>
+    <details class="history"><summary>Historia y detalles</summary><p>Ficha de ejemplo para revisar la presentación. No define una historia, habilidad o personaje definitivo.</p><p id="character-id" class="debug-only" hidden></p></details>
+    <details id="atmosphere-controls" class="demo-controls"><summary>Ambientación</summary>
+     <button id="ambient-enabled" aria-pressed="true">Efectos: activados</button>
+     <div class="ambient-toggles"><button data-ambient="snow" aria-pressed="true">Nieve</button><button data-ambient="wind" aria-pressed="true">Viento</button><button data-ambient="smoke" aria-pressed="true">Humo</button><button data-ambient="lights" aria-pressed="true">Luces</button></div>
+     <label for="ambient-intensity">Intensidad visual</label><select id="ambient-intensity"><option value="low">Baja</option><option value="normal">Normal</option></select>
+     <button id="ambient-audio" aria-pressed="false">Ventisca: sonido desactivado</button>
+     <label for="ambient-volume">Volumen de la ventisca <output id="ambient-volume-value" for="ambient-volume">40%</output></label><input id="ambient-volume" type="range" min="0" max="100" value="40" step="5">
+     <p id="ambient-audio-status" class="provisional-note" role="status"></p>
+     <p id="ambient-status" class="provisional-note" role="status"></p><p id="ambient-reduced" class="provisional-note" hidden>Movimiento reducido: efectos apagados al inicio. Podés activarlos expresamente.</p>
+    </details>
+    <details id="demo-controls" class="demo-controls"><summary>Composición y selección por teclado</summary><label for="fixture">Composición de muestra</label><select id="fixture"><option value="hospital">Hospital: cuatro fichas y ocupación mixta</option><option value="one-zombie">Un zombi por localidad</option><option value="maximum">Capacidad visual máxima</option></select><label for="locality-select">Consultar localidad</label><select id="locality-select"><option value="">Elegir localidad</option></select><label for="survivor-select">Seleccionar superviviente</label><select id="survivor-select"></select></details>
+    <p id="occupation-summary" class="occupation-summary"></p><a class="back-map" href="#scene">Volver al mapa</a>
+   </div>
+  </aside>
+ </main>
+ <dialog id="info-dialog" aria-labelledby="dialog-title"><div class="dialog-heading"><h2 id="dialog-title"></h2><button id="close-dialog" aria-label="Cerrar información">×</button></div><div id="dialog-content"></div><p class="sample-note">Maqueta visual · Sin integración con el motor.</p><a href="./tecnico.html">Abrir taller técnico anterior</a> · <a href="../hospital/">Referencia Canvas</a></dialog>
+</body>
+</html>

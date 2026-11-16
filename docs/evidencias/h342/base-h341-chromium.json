@@ -1,0 +1,783 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "errors": [],
+      "localities": [
+        {
+          "id": "place-0",
+          "survivors": 6,
+          "zombies": 3,
+          "barricades": 0
+        },
+        {
+          "id": "place-1",
+          "survivors": 0,
+          "zombies": 1,
+          "barricades": 0
+        },
+        {
+          "id": "place-2",
+          "survivors": 0,
+          "zombies": 1,
+          "barricades": 0
+        },
+        {
+          "id": "place-3",
+          "survivors": 0,
+          "zombies": 1,
+          "barricades": 0
+        },
+        {
+          "id": "place-4",
+          "survivors": 0,
+          "zombies": 1,
+          "barricades": 0
+        },
+        {
+          "id": "place-5",
+          "survivors": 0,
+          "zombies": 1,
+          "barricades": 0
+        },
+        {
+          "id": "place-6",
+          "survivors": 0,
+          "zombies": 1,
+          "barricades": 0
+        }
+      ],
+      "readOnly": {
+        "selection": true,
+        "camera": true,
+        "touch": false,
+        "effects": true,
+        "sound": true,
+        "rngUnchanged": true
+      },
+      "legalChanges": {
+        "movement": "UI V9.9",
+        "woundsAndHeal": true,
+        "barricades": true,
+        "diceAndFood": true,
+        "round": true
+      },
+      "restarts": [
+        {
+          "starts": 2,
+          "contexts": 1,
+          "gl": {
+            "Texture": 16,
+            "Buffer": 9,
+            "Framebuffer": 0,
+            "Renderbuffer": 0,
+            "Program": 4,
+            "Shader": 8
+          }
+        },
+        {
+          "starts": 3,
+          "contexts": 1,
+          "gl": {
+            "Texture": 16,
+            "Buffer": 9,
+            "Framebuffer": 0,
+            "Renderbuffer": 0,
+            "Program": 4,
+            "Shader": 8
+          }
+        },
+        {
+          "starts": 4,
+          "contexts": 1,
+          "gl": {
+            "Texture": 16,
+            "Buffer": 9,
+            "Framebuffer": 0,
+            "Renderbuffer": 0,
+            "Program": 4,
+            "Shader": 8
+          }
+        }
+      ],
+      "cleanupBeforeExit": {
+        "listeners": [
+          {
+            "target": "canvas",
+            "type": "change"
+          },
+          {
+            "target": "document",
+            "type": "fullscreenchange"
+          },
+          {
+            "target": "document",
+            "type": "fullscreenerror"
+          },
+          {
+            "target": "document",
+            "type": "mozfullscreenchange"
+          },
+          {
+            "target": "document",
+            "type": "mozfullscreenerror"
+          },
+          {
+            "target": "document",
+            "type": "MSFullscreenChange"
+          },
+          {
+            "target": "document",
+            "type": "MSFullscreenError"
+          },
+          {
+            "target": "document",
+            "type": "visibilitychange"
+          },
+          {
+            "target": "document",
+            "type": "visibilitychange"
+          },
+          {
+            "target": "document",
+            "type": "webkitfullscreenchange"
+          },
+          {
+            "target": "document",
+            "type": "webkitfullscreenerror"
+          },
+          {
+            "target": "scene",
+            "type": "keydown"
+          },
+          {
+            "target": "scene",
+            "type": "lostpointercapture"
+          },
+          {
+            "target": "scene",
+            "type": "pointercancel"
+          },
+          {
+            "target": "scene",
+            "type": "pointerdown"
+          },
+          {
+            "target": "scene",
+            "type": "pointermove"
+          },
+          {
+            "target": "scene",
+            "type": "pointerup"
+          },
+          {
+            "target": "scene",
+            "type": "webglcontextlost"
+          },
+          {
+            "target": "scene",
+            "type": "webglcontextlost"
+          },
+          {
+            "target": "scene",
+            "type": "webglcontextrestored"
+          },
+          {
+            "target": "scene",
+            "type": "webglcontextrestored"
+          },
+          {
+            "target": "scene",
+            "type": "wheel"
+          },
+          {
+            "target": "window",
+            "type": "blur"
+          },
+          {
+            "target": "window",
+            "type": "blur"
+          },
+          {
+            "target": "window",
+            "type": "focus"
+          },
+          {
+            "target": "window",
+            "type": "pagehide"
+          },
+          {
+            "target": "window",
+            "type": "pageshow"
+          },
+          {
+            "target": "window",
+            "type": "resize"
+          },
+          {
+            "target": "window",
+            "type": "resize"
+          }
+        ],
+        "resizeTargets": 1,
+        "gl": {
+          "Texture": 16,
+          "Buffer": 9,
+          "Framebuffer": 0,
+          "Renderbuffer": 0,
+          "Program": 4,
+          "Shader": 8
+        },
+        "startupTimers": 0,
+        "activeSceneContexts": 1
+      },
+      "disposed": {
+        "listeners": [
+          {
+            "target": "window",
+            "type": "pagehide"
+          },
+          {
+            "target": "window",
+            "type": "pageshow"
+          }
+        ],
+        "resizeTargets": 0,
+        "gl": {
+          "Texture": 0,
+          "Buffer": 0,
+          "Framebuffer": 0,
+          "Renderbuffer": 0,
+          "Program": 0,
+          "Shader": 0
+        },
+        "startupTimers": 0,
+        "activeSceneContexts": 0
+      }
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "errors": [],
+      "localities": [
+        {
+          "id": "place-0",
+          "survivors": 6,
+          "zombies": 3,
+          "barricades": 0
+        },
+        {
+          "id": "place-1",
+          "survivors": 0,
+          "zombies": 1,
+          "barricades": 0
+        },
+        {
+          "id": "place-2",
+          "survivors": 0,
+          "zombies": 1,
+          "barricades": 0
+        },
+        {
+          "id": "place-3",
+          "survivors": 0,
+          "zombies": 1,
+          "barricades": 0
+        },
+        {
+          "id": "place-4",
+          "survivors": 0,
+          "zombies": 1,
+          "barricades": 0
+        },
+        {
+          "id": "place-5",
+          "survivors": 0,
+          "zombies": 1,
+          "barricades": 0
+        },
+        {
+          "id": "place-6",
+          "survivors": 0,
+          "zombies": 1,
+          "barricades": 0
+        }
+      ],
+      "readOnly": {
+        "selection": true,
+        "camera": true,
+        "touch": true,
+        "effects": true,
+        "sound": true,
+        "rngUnchanged": true
+      },
+      "legalChanges": {
+        "movement": "UI V9.9",
+        "woundsAndHeal": true,
+        "barricades": true,
+        "diceAndFood": true,
+        "round": true
+      },
+      "restarts": [
+        {
+          "starts": 2,
+          "contexts": 1,
+          "gl": {
+            "Texture": 16,
+            "Buffer": 9,
+            "Framebuffer": 0,
+            "Renderbuffer": 0,
+            "Program": 4,
+            "Shader": 8
+          }
+        },
+        {
+          "starts": 3,
+          "contexts": 1,
+          "gl": {
+            "Texture": 16,
+            "Buffer": 9,
+            "Framebuffer": 0,
+            "Renderbuffer": 0,
+            "Program": 4,
+            "Shader": 8
+          }
+        },
+        {
+          "starts": 4,
+          "contexts": 1,
+          "gl": {
+            "Texture": 16,
+            "Buffer": 9,
+            "Framebuffer": 0,
+            "Renderbuffer": 0,
+            "Program": 4,
+            "Shader": 8
+          }
+        }
+      ],
+      "cleanupBeforeExit": {
+        "listeners": [
+          {
+            "target": "canvas",
+            "type": "change"
+          },
+          {
+            "target": "document",
+            "type": "fullscreenchange"
+          },
+          {
+            "target": "document",
+            "type": "fullscreenerror"
+          },
+          {
+            "target": "document",
+            "type": "mozfullscreenchange"
+          },
+          {
+            "target": "document",
+            "type": "mozfullscreenerror"
+          },
+          {
+            "target": "document",
+            "type": "MSFullscreenChange"
+          },
+          {
+            "target": "document",
+            "type": "MSFullscreenError"
+          },
+          {
+            "target": "document",
+            "type": "visibilitychange"
+          },
+          {
+            "target": "document",
+            "type": "visibilitychange"
+          },
+          {
+            "target": "document",
+            "type": "webkitfullscreenchange"
+          },
+          {
+            "target": "document",
+            "type": "webkitfullscreenerror"
+          },
+          {
+            "target": "scene",
+            "type": "keydown"
+          },
+          {
+            "target": "scene",
+            "type": "lostpointercapture"
+          },
+          {
+            "target": "scene",
+            "type": "pointercancel"
+          },
+          {
+            "target": "scene",
+            "type": "pointerdown"
+          },
+          {
+            "target": "scene",
+            "type": "pointermove"
+          },
+          {
+            "target": "scene",
+            "type": "pointerup"
+          },
+          {
+            "target": "scene",
+            "type": "webglcontextlost"
+          },
+          {
+            "target": "scene",
+            "type": "webglcontextlost"
+          },
+          {
+            "target": "scene",
+            "type": "webglcontextrestored"
+          },
+          {
+            "target": "scene",
+            "type": "webglcontextrestored"
+          },
+          {
+            "target": "scene",
+            "type": "wheel"
+          },
+          {
+            "target": "window",
+            "type": "blur"
+          },
+          {
+            "target": "window",
+            "type": "blur"
+          },
+          {
+            "target": "window",
+            "type": "focus"
+          },
+          {
+            "target": "window",
+            "type": "pagehide"
+          },
+          {
+            "target": "window",
+            "type": "pageshow"
+          },
+          {
+            "target": "window",
+            "type": "resize"
+          },
+          {
+            "target": "window",
+            "type": "resize"
+          }
+        ],
+        "resizeTargets": 1,
+        "gl": {
+          "Texture": 16,
+          "Buffer": 9,
+          "Framebuffer": 0,
+          "Renderbuffer": 0,
+          "Program": 4,
+          "Shader": 8
+        },
+        "startupTimers": 0,
+        "activeSceneContexts": 1
+      },
+      "disposed": {
+        "listeners": [
+          {
+            "target": "window",
+            "type": "pagehide"
+          },
+          {
+            "target": "window",
+            "type": "pageshow"
+          }
+        ],
+        "resizeTargets": 0,
+        "gl": {
+          "Texture": 0,
+          "Buffer": 0,
+          "Framebuffer": 0,
+          "Renderbuffer": 0,
+          "Program": 0,
+          "Shader": 0
+        },
+        "startupTimers": 0,
+        "activeSceneContexts": 0
+      }
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "errors": [],
+      "localities": [
+        {
+          "id": "place-0",
+          "survivors": 6,
+          "zombies": 3,
+          "barricades": 0
+        },
+        {
+          "id": "place-1",
+          "survivors": 0,
+          "zombies": 1,
+          "barricades": 0
+        },
+        {
+          "id": "place-2",
+          "survivors": 0,
+          "zombies": 1,
+          "barricades": 0
+        },
+        {
+          "id": "place-3",
+          "survivors": 0,
+          "zombies": 1,
+          "barricades": 0
+        },
+        {
+          "id": "place-4",
+          "survivors": 0,
+          "zombies": 1,
+          "barricades": 0
+        },
+        {
+          "id": "place-5",
+          "survivors": 0,
+          "zombies": 1,
+          "barricades": 0
+        },
+        {
+          "id": "place-6",
+          "survivors": 0,
+          "zombies": 1,
+          "barricades": 0
+        }
+      ],
+      "readOnly": {
+        "selection": true,
+        "camera": true,
+        "touch": true,
+        "effects": true,
+        "sound": true,
+        "rngUnchanged": true
+      },
+      "legalChanges": {
+        "movement": "UI V9.9",
+        "woundsAndHeal": true,
+        "barricades": true,
+        "diceAndFood": true,
+        "round": true
+      },
+      "restarts": [
+        {
+          "starts": 2,
+          "contexts": 1,
+          "gl": {
+            "Texture": 16,
+            "Buffer": 9,
+            "Framebuffer": 0,
+            "Renderbuffer": 0,
+            "Program": 4,
+            "Shader": 8
+          }
+        },
+        {
+          "starts": 3,
+          "contexts": 1,
+          "gl": {
+            "Texture": 16,
+            "Buffer": 9,
+            "Framebuffer": 0,
+            "Renderbuffer": 0,
+            "Program": 4,
+            "Shader": 8
+          }
+        },
+        {
+          "starts": 4,
+          "contexts": 1,
+          "gl": {
+            "Texture": 16,
+            "Buffer": 9,
+            "Framebuffer": 0,
+            "Renderbuffer": 0,
+            "Program": 3,
+            "Shader": 6
+          }
+        }
+      ],
+      "cleanupBeforeExit": {
+        "listeners": [
+          {
+            "target": "canvas",
+            "type": "change"
+          },
+          {
+            "target": "document",
+            "type": "fullscreenchange"
+          },
+          {
+            "target": "document",
+            "type": "fullscreenerror"
+          },
+          {
+            "target": "document",
+            "type": "mozfullscreenchange"
+          },
+          {
+            "target": "document",
+            "type": "mozfullscreenerror"
+          },
+          {
+            "target": "document",
+            "type": "MSFullscreenChange"
+          },
+          {
+            "target": "document",
+            "type": "MSFullscreenError"
+          },
+          {
+            "target": "document",
+            "type": "visibilitychange"
+          },
+          {
+            "target": "document",
+            "type": "visibilitychange"
+          },
+          {
+            "target": "document",
+            "type": "webkitfullscreenchange"
+          },
+          {
+            "target": "document",
+            "type": "webkitfullscreenerror"
+          },
+          {
+            "target": "scene",
+            "type": "keydown"
+          },
+          {
+            "target": "scene",
+            "type": "lostpointercapture"
+          },
+          {
+            "target": "scene",
+            "type": "pointercancel"
+          },
+          {
+            "target": "scene",
+            "type": "pointerdown"
+          },
+          {
+            "target": "scene",
+            "type": "pointermove"
+          },
+          {
+            "target": "scene",
+            "type": "pointerup"
+          },
+          {
+            "target": "scene",
+            "type": "webglcontextlost"
+          },
+          {
+            "target": "scene",
+            "type": "webglcontextlost"
+          },
+          {
+            "target": "scene",
+            "type": "webglcontextrestored"
+          },
+          {
+            "target": "scene",
+            "type": "webglcontextrestored"
+          },
+          {
+            "target": "scene",
+            "type": "wheel"
+          },
+          {
+            "target": "window",
+            "type": "blur"
+          },
+          {
+            "target": "window",
+            "type": "blur"
+          },
+          {
+            "target": "window",
+            "type": "focus"
+          },
+          {
+            "target": "window",
+            "type": "pagehide"
+          },
+          {
+            "target": "window",
+            "type": "pageshow"
+          },
+          {
+            "target": "window",
+            "type": "resize"
+          },
+          {
+            "target": "window",
+            "type": "resize"
+          }
+        ],
+        "resizeTargets": 1,
+        "gl": {
+          "Texture": 16,
+          "Buffer": 9,
+          "Framebuffer": 0,
+          "Renderbuffer": 0,
+          "Program": 4,
+          "Shader": 8
+        },
+        "startupTimers": 0,
+        "activeSceneContexts": 1
+      },
+      "disposed": {
+        "listeners": [
+          {
+            "target": "window",
+            "type": "pagehide"
+          },
+          {
+            "target": "window",
+            "type": "pageshow"
+          }
+        ],
+        "resizeTargets": 0,
+        "gl": {
+          "Texture": 0,
+          "Buffer": 0,
+          "Framebuffer": 0,
+          "Renderbuffer": 0,
+          "Program": 0,
+          "Shader": 0
+        },
+        "startupTimers": 0,
+        "activeSceneContexts": 0
+      }
+    }
+  ],
+  "failures": [],
+  "method": "Partida real en host V9.9; acciones legales por UI y API pública solo del artefacto QA; no escrituras de estado privado. RNG inyectado solo en QA.",
+  "passed": true
+}

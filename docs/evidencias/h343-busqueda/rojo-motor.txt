@@ -1,0 +1,72 @@
+✖ H343: consulta pura y búsqueda por ID equivalentes al flujo original (7.398368ms)
+✖ H343: consume uno solo de dados repetidos y rechaza su referencia anterior (1.732085ms)
+✖ H343: dado ausente/insuficiente, rival, muerto y origen obsoleto no mutan (0.654704ms)
+✖ H343: explorador/linterna y modificadores conservan elecciones y ruido originales (1.730503ms)
+✖ H343: privacidad tras pase/partida nueva y recuperación sin nuevo robo (0.925612ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 0
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 91.93085
+
+✖ failing tests:
+
+test at tests/h343-search-engine.test.mjs:17:1
+✖ H343: consulta pura y búsqueda por ID equivalentes al flujo original (7.398368ms)
+  TypeError: e.searchOptions is not a function
+      at request (file:///workspace/invierno-en-la-colonia/tests/h343-search-engine.test.mjs:16:46)
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/h343-search-engine.test.mjs:18:75)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+
+test at tests/h343-search-engine.test.mjs:27:1
+✖ H343: consume uno solo de dados repetidos y rechaza su referencia anterior (1.732085ms)
+  TypeError: e.searchOptions is not a function
+      at request (file:///workspace/invierno-en-la-colonia/tests/h343-search-engine.test.mjs:16:46)
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/h343-search-engine.test.mjs:28:53)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+test at tests/h343-search-engine.test.mjs:33:1
+✖ H343: dado ausente/insuficiente, rival, muerto y origen obsoleto no mutan (0.654704ms)
+  TypeError: e.searchOptions is not a function
+      at request (file:///workspace/invierno-en-la-colonia/tests/h343-search-engine.test.mjs:16:46)
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/h343-search-engine.test.mjs:35:18)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/h343-search-engine.test.mjs:40:1
+✖ H343: explorador/linterna y modificadores conservan elecciones y ruido originales (1.730503ms)
+  TypeError: a.engine.searchOptions is not a function
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/h343-search-engine.test.mjs:42:63)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/h343-search-engine.test.mjs:51:1
+✖ H343: privacidad tras pase/partida nueva y recuperación sin nuevo robo (0.925612ms)
+  TypeError: e.searchOptions is not a function
+      at request (file:///workspace/invierno-en-la-colonia/tests/h343-search-engine.test.mjs:16:46)
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/h343-search-engine.test.mjs:52:44)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)

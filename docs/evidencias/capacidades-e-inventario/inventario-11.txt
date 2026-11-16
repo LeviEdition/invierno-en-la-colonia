@@ -1,0 +1,19 @@
+✔ Inventario: equivalencia de todos los usos manuales y equipamiento con V9.9, estado y azar (31.95647ms)
+✔ Inventario: objetivos inválidos, otro grupo, muerto, curación innecesaria y cancelación no consumen (11.733021ms)
+✔ Inventario: copias iguales identificadas; solo se descarta la copia confirmada, sin dados (2.972151ms)
+✔ Inventario: equipo efectivo, límites originales por tipo y transferencia equivalentes (3.155778ms)
+✔ Inventario: manual lleno sin residuos y combustible no disponible respetan reglas (1.020723ms)
+✔ Inventario protocolo: duplicación, obsolescencia, carta sustituida y consulta de respuesta perdida (21.741454ms)
+✔ Inventario privacidad: pase, turno y partida nuevos borran mano, intenciones y resultados privados (14.106426ms)
+✔ Inventario: aportar desde mano/equipo usa CrisisManager original sin residuos ni dados (2.976558ms)
+✔ Inventario protocolo: reemplazar una carta por otra igual invalida su identidad; campos ajenos rechazados (7.791745ms)
+✔ Inventario: objeto que gana la partida conserva resultado y exige continuar la decisión en V9.9 (1.53543ms)
+✔ Inventario: publicar el recibo no vuelve a procesar la cola de rescates del motor (1.302838ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 236.294967

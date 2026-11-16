@@ -1,0 +1,8 @@
+{
+  "durationSeconds": 39.48,
+  "sourceSha256": "4c36ac7b497aa90f3811761f7754e5f6386b5be5947301f415b7146ccffdf8ed",
+  "sha256": "404138c4e4b9bc5c036d8faf3e3e05903e586b6c6d9aad2da8d469beed0bf9db",
+  "conversion": "H264/MP4; sin recortar ni acelerar; pad de1px si ancho impar",
+  "controlled": true,
+  "physicalMobile": false
+}

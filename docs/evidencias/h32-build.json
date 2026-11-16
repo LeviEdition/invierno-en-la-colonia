@@ -1,0 +1,8 @@
+{
+  "phaser": "4.2.1",
+  "esbuild": "0.28.2",
+  "rawBytes": 1409348,
+  "gzip9Bytes": 376966,
+  "sha256": "e0afde9f6f41d7e85bcb08d617cc14abdea0f586a3a4d31a46dde6a029a1939f",
+  "inputs": 8
+}

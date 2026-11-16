@@ -1,0 +1,20 @@
+{
+  "programs": [],
+  "stream_groups": [],
+  "streams": [
+    {
+      "codec_name": "h264",
+      "width": 1026,
+      "height": 618
+    }
+  ],
+  "format": {
+    "duration": "7.916667",
+    "size": "735700"
+  },
+  "sha256": "c6b5424dca4327187466190dd56cb7a8a7710acd77ec86d737c6017f28119c52",
+  "source": "MediaRecorder canvas WebM, intensidad Normal, colonia",
+  "physicalDevice": false,
+  "padding": "Un píxel derecho/inferior para codificación, sin reescalado",
+  "temporalAssessment": "Fotogramas y métricas inspeccionados; percepción continua pendiente del creador"
+}

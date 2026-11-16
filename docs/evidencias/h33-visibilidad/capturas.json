@@ -1,0 +1,79 @@
+[
+  {
+    "file": "1365-colonia-normal.png",
+    "width": 1365,
+    "height": 768,
+    "bytes": 1413198,
+    "sha256": "9ec188834e2d6386442e4489ffb2880c41719c60957c5a13d034d655bf04f775"
+  },
+  {
+    "file": "1365-general-normal.png",
+    "width": 1365,
+    "height": 768,
+    "bytes": 1222390,
+    "sha256": "735deeecd20b0bc060336a519d635f1c3d5c3f22e31635afc3d1ef996b49bc0a"
+  },
+  {
+    "file": "1365-hospital-normal.png",
+    "width": 1365,
+    "height": 768,
+    "bytes": 1395323,
+    "sha256": "03e65cd5ca40c09026ab1a2802b98d797de8fea810f93015955f2cc518d02d8e"
+  },
+  {
+    "file": "320-general-normal.png",
+    "width": 640,
+    "height": 1280,
+    "bytes": 728849,
+    "sha256": "b0f6844e32f9329772ee79475fa60ae2f6ef8bdaa2169995fa565bb3920dc46f"
+  },
+  {
+    "file": "320-hospital-normal.png",
+    "width": 640,
+    "height": 1280,
+    "bytes": 840577,
+    "sha256": "5e3a95b22671f1b8963415c60c0148c23132e37fee59dbf0ae90fdab263c9ab9"
+  },
+  {
+    "file": "393-colonia-normal.png",
+    "width": 786,
+    "height": 1704,
+    "bytes": 1415869,
+    "sha256": "31e3ff2b5bfb36101a2df6707c02c8d99c06572a2142fadf8da158e92fe34e45"
+  },
+  {
+    "file": "antes-1365-colonia-normal.png",
+    "width": 1365,
+    "height": 768,
+    "bytes": 1412933,
+    "sha256": "d0c70eb984ff8bec81bd4992218792f137d8b0a7547fc6ab2757878ab28d01b0"
+  },
+  {
+    "file": "antes-1365-general-normal.png",
+    "width": 1365,
+    "height": 768,
+    "bytes": 1221788,
+    "sha256": "2566f806cc56055ef7f1fe0d501e659966a9b353c2ae776a49077f45d84ae852"
+  },
+  {
+    "file": "despues-1365-colonia-normal.png",
+    "width": 1365,
+    "height": 768,
+    "bytes": 1412912,
+    "sha256": "a37bd231042d8c4384c23420584a5fc082e942cc04ca0a49ee412c704eea3de9"
+  },
+  {
+    "file": "despues-1365-general-normal.png",
+    "width": 1365,
+    "height": 768,
+    "bytes": 1222165,
+    "sha256": "6e2b9959f697c553f28726cf1942fc9e7e10be9595f62cddd52cf872ad748fe6"
+  },
+  {
+    "file": "despues-320-general-normal.png",
+    "width": 640,
+    "height": 1280,
+    "bytes": 674039,
+    "sha256": "55236a1a8223c78bd4cd96077632c7c85990c4f0fdac1f6ff4d3cd17b35419b1"
+  }
+]

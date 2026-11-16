@@ -1,0 +1,600 @@
+{
+  "chromium": "154.0.8037.57",
+  "scope": "Inspección de interfaz de producto; contexto nuevo por viewport; RNG fijo0.45 para capturas, sin partida de usuario",
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "setup": "PROTOCOLO DE REFUGIO · ACCESO 09\n☣\nINVIERNO EN LA COLONIA\n\nElegí quién controla el segundo grupo. Los dos modos son cooperativos y funcionan sin conexión.\n\n▣ 1 JUGADOR + IA\nLa IA juega como tu compañera de supervivencia.\n⚑ 2 JUGADORES LOCALES\nDos personas, un solo dispositivo, por turnos.\nLas partidas nuevas reinician el tablero y los mazos.",
+      "errors": [],
+      "board": {
+        "places": [
+          "⌂ Colonia6/12 plazas",
+          "▣ Supermercado0/4 plazas",
+          "✚ Hospital0/4 plazas",
+          "✦ Comisaría0/4 plazas",
+          "⚙ Gasolinera0/4 plazas",
+          "▤ Escuela0/4 plazas",
+          "▥ Biblioteca0/4 plazas"
+        ],
+        "survivors": [
+          "Mara",
+          "Leo",
+          "Iris",
+          "Ada",
+          "Bruno",
+          "Sol"
+        ],
+        "accessSlots": 36,
+        "stats": [
+          "Moral9ⓘ",
+          "Comida6ⓘ",
+          "Hambre0ⓘ",
+          "Ronda1/6ⓘ",
+          "Residuos0ⓘ",
+          "Zombis9ⓘ",
+          "Indefensos0ⓘ"
+        ],
+        "dice": 4,
+        "bodyWidth": 1365,
+        "viewportWidth": 1365,
+        "boardScrollWidth": 780,
+        "boardClientWidth": 780,
+        "boardClientHeight": 1514,
+        "boardScrollHeight": 1514,
+        "siteRects": [
+          {
+            "top": 419.21875,
+            "bottom": 920.21875,
+            "width": 766,
+            "height": 501
+          },
+          {
+            "top": 929.21875,
+            "bottom": 1251.21875,
+            "width": 378.5,
+            "height": 322
+          },
+          {
+            "top": 929.21875,
+            "bottom": 1251.21875,
+            "width": 378.5,
+            "height": 322
+          },
+          {
+            "top": 1260.21875,
+            "bottom": 1582.21875,
+            "width": 378.5,
+            "height": 322
+          },
+          {
+            "top": 1260.21875,
+            "bottom": 1582.21875,
+            "width": 378.5,
+            "height": 322
+          },
+          {
+            "top": 1591.21875,
+            "bottom": 1913.21875,
+            "width": 378.5,
+            "height": 322
+          },
+          {
+            "top": 1591.21875,
+            "bottom": 1913.21875,
+            "width": 378.5,
+            "height": 322
+          }
+        ],
+        "fonts": "\"Arial Narrow\", system-ui, -apple-system, \"Segoe UI\", sans-serif"
+      },
+      "modals": [
+        {
+          "type": "actions",
+          "title": "Acciones del superviviente",
+          "headings": [
+            "Elegí un dado",
+            "★ Habilidad especial",
+            "Movimiento",
+            "Acciones con dado"
+          ],
+          "buttons": [
+            "3",
+            "3",
+            "3",
+            "3",
+            "🥫 +1 al dado seleccionado (cuesta 1 comida)",
+            "Usar habilidad activa",
+            "→ Mover (sin dado)",
+            "⌕ Buscar",
+            "⚔ Atacar zombi",
+            "▥ Barricada",
+            "♻ Limpiar 3 residuos",
+            "☠ Atraer hasta 2 zombis"
+          ],
+          "cards": 0,
+          "paragraphExcerpt": "👤\n♛ Mara · Médica\n📍 Colonia · Destino: Colonia\n⚔ 4+ · ⌕ 3+ · ◆ Influencia 76 · ♥ 0 · ❄ 0\n★ Primeros auxilios — Una vez por ronda cura 1 herida de un superviviente en su localidad, sin dado.\nSin equipamiento\nElegí un dado\n3\n3\n3\n3\n🥫 +1 al dado seleccionado (cuesta 1 comida)\n★ Ha"
+        },
+        {
+          "type": "inventory",
+          "title": "Objetos y crisis",
+          "headings": [
+            "Cartas de tu mano"
+          ],
+          "buttons": [
+            "Usar",
+            "Usar",
+            "Aportar",
+            "Equipar",
+            "Usar",
+            "Usar",
+            "Usar"
+          ],
+          "cards": 6,
+          "paragraphExcerpt": "Crisis: 2 × medicina · 0/2 aportes. Podés aportar dos cartas extra para ganar +1 moral.\nCartas de tu mano\n🥫\nRación de comida\nAgrega 1 comida a la reserva.\nTipo: comida · Consumible\nUsar\n✚\nVendas\nCura 1 herida o congelación al personaje seleccionado.\nTipo: medicina · Consumible\nU"
+        },
+        {
+          "type": "group",
+          "title": "Grupos y líderes",
+          "headings": [
+            "Tu grupo",
+            "Jugador 2"
+          ],
+          "buttons": [
+            "Elegir líder",
+            "Elegir líder"
+          ],
+          "cards": 0,
+          "paragraphExcerpt": "La influencia decide el orden de propagación de mordeduras y las víctimas de desbordamientos: se expone primero la menor. Cada grupo tiene un líder; si muere, debe reemplazarse.\n\nTu grupo\n♛ Mara\nMédica · Influencia 76 · Colonia\nLeo\nMecánico · Influencia 58 · Colonia\nElegir líder\n"
+        },
+        {
+          "type": "crossroads",
+          "title": "Encrucijadas",
+          "headings": [
+            "✧ Encrucijadas"
+          ],
+          "buttons": [],
+          "cards": 0,
+          "paragraphExcerpt": "✧ Encrucijadas\n\nCada jugador recibe una carta oculta al empezar su turno. Solo se revela si se cumple el desencadenante. Si no ocurre, no se juega ninguna historia.\n\nLa carta de este turno ya se resolvió.\n\nHistorias originales: 26."
+        },
+        {
+          "type": "log",
+          "title": "Registro de la partida",
+          "headings": [],
+          "buttons": [],
+          "cards": 0,
+          "paragraphExcerpt": "R1 · ✧ La guardia nocturna: Reparar el muro. Consumís una herramienta; añadís dos barricadas si hay accesos.\nR1 · ✧ ENCRUCIJADA: La guardia nocturna.\nR1 · ⚠ Crisis: aportar 2 medicina.\nR1 · Objetivo: Operación antídoto · Reunir 5 muestras antes de que se agoten las 6 rondas."
+        },
+        {
+          "type": "help",
+          "title": "Reglas y controles",
+          "headings": [
+            "Invierno en la Colonia · V9.9",
+            "Turnos y dados",
+            "Acciones",
+            "Búsqueda",
+            "Exposición y mordeduras",
+            "Influencia y liderazgo",
+            "Estadísticas",
+            "Colonia",
+            "Objetos y supervivientes",
+            "Encrucijadas"
+          ],
+          "buttons": [
+            "Nueva partida"
+          ],
+          "cards": 0,
+          "paragraphExcerpt": "Invierno en la Colonia · V9.9\n\nCooperativo: vos y la IA defendemos la colonia. Sin traidores, exilios ni objetivos secretos. El objetivo general se decide al comenzar.\n\nTurnos y dados\n\nAl iniciar cada ronda recibís 1 dado más 1 por cada superviviente vivo. Tus dados disponibles p"
+        },
+        {
+          "type": "goal",
+          "title": "Objetivo general",
+          "excerpt": "Operación antídoto\n\nReunir 5 muestras antes de que se agoten las 6 rondas.\n\nMuestras: 0/5 · Ronda 1/6.\n\nEncontrá muestras con tus supervivientes. La habilidad de investigación solo beneficia al personaje que encontró la "
+        },
+        {
+          "type": "crisis",
+          "title": "Crisis actual",
+          "excerpt": "Crisis de la ronda 1\n\nRequiere 2 cartas de medicina.\n\nAportes válidos: 0/2. Solo se aceptan cartas del tipo requerido; dos aportes extra otorgan una moral.\n\nLa crisis se resuelve al finalizar la ronda. Si fracasa: dos zo"
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "setup": "PROTOCOLO DE REFUGIO · ACCESO 09\n☣\nINVIERNO EN LA COLONIA\n\nElegí quién controla el segundo grupo. Los dos modos son cooperativos y funcionan sin conexión.\n\n▣ 1 JUGADOR + IA\nLa IA juega como tu compañera de supervivencia.\n⚑ 2 JUGADORES LOCALES\nDos personas, un solo dispositivo, por turnos.\nLas partidas nuevas reinician el tablero y los mazos.",
+      "errors": [],
+      "board": {
+        "places": [
+          "⌂ Colonia6/12 plazas",
+          "▣ Supermercado0/4 plazas",
+          "✚ Hospital0/4 plazas",
+          "✦ Comisaría0/4 plazas",
+          "⚙ Gasolinera0/4 plazas",
+          "▤ Escuela0/4 plazas",
+          "▥ Biblioteca0/4 plazas"
+        ],
+        "survivors": [
+          "Mara",
+          "Leo",
+          "Iris",
+          "Ada",
+          "Bruno",
+          "Sol"
+        ],
+        "accessSlots": 36,
+        "stats": [
+          "Moral9ⓘ",
+          "Comida6ⓘ",
+          "Hambre0ⓘ",
+          "Ronda1/6ⓘ",
+          "Residuos0ⓘ",
+          "Zombis9ⓘ",
+          "Indefensos0ⓘ"
+        ],
+        "dice": 4,
+        "bodyWidth": 393,
+        "viewportWidth": 393,
+        "boardScrollWidth": 375,
+        "boardClientWidth": 375,
+        "boardClientHeight": 1625,
+        "boardScrollHeight": 1625,
+        "siteRects": [
+          {
+            "top": 431.53125,
+            "bottom": 932.53125,
+            "width": 361,
+            "height": 501
+          },
+          {
+            "top": 941.53125,
+            "bottom": 1300.53125,
+            "width": 176,
+            "height": 359
+          },
+          {
+            "top": 941.53125,
+            "bottom": 1300.53125,
+            "width": 176,
+            "height": 359
+          },
+          {
+            "top": 1309.53125,
+            "bottom": 1668.53125,
+            "width": 176,
+            "height": 359
+          },
+          {
+            "top": 1309.53125,
+            "bottom": 1668.53125,
+            "width": 176,
+            "height": 359
+          },
+          {
+            "top": 1677.53125,
+            "bottom": 2036.53125,
+            "width": 176,
+            "height": 359
+          },
+          {
+            "top": 1677.53125,
+            "bottom": 2036.53125,
+            "width": 176,
+            "height": 359
+          }
+        ],
+        "fonts": "\"Arial Narrow\", system-ui, -apple-system, \"Segoe UI\", sans-serif"
+      },
+      "modals": [
+        {
+          "type": "actions",
+          "title": "Acciones del superviviente",
+          "headings": [
+            "Elegí un dado",
+            "★ Habilidad especial",
+            "Movimiento",
+            "Acciones con dado"
+          ],
+          "buttons": [
+            "3",
+            "3",
+            "3",
+            "3",
+            "🥫 +1 al dado seleccionado (cuesta 1 comida)",
+            "Usar habilidad activa",
+            "→ Mover (sin dado)",
+            "⌕ Buscar",
+            "⚔ Atacar zombi",
+            "▥ Barricada",
+            "♻ Limpiar 3 residuos",
+            "☠ Atraer hasta 2 zombis"
+          ],
+          "cards": 0,
+          "paragraphExcerpt": "👤\n♛ Mara · Médica\n📍 Colonia · Destino: Colonia\n⚔ 4+ · ⌕ 3+ · ◆ Influencia 76 · ♥ 0 · ❄ 0\n★ Primeros auxilios — Una vez por ronda cura 1 herida de un superviviente en su localidad, sin dado.\nSin equipamiento\nElegí un dado\n3\n3\n3\n3\n🥫 +1 al dado seleccionado (cuesta 1 comida)\n★ Ha"
+        },
+        {
+          "type": "inventory",
+          "title": "Objetos y crisis",
+          "headings": [
+            "Cartas de tu mano"
+          ],
+          "buttons": [
+            "Usar",
+            "Usar",
+            "Aportar",
+            "Equipar",
+            "Usar",
+            "Usar",
+            "Usar"
+          ],
+          "cards": 6,
+          "paragraphExcerpt": "Crisis: 2 × medicina · 0/2 aportes. Podés aportar dos cartas extra para ganar +1 moral.\nCartas de tu mano\n🥫\nRación de comida\nAgrega 1 comida a la reserva.\nTipo: comida · Consumible\nUsar\n✚\nVendas\nCura 1 herida o congelación al personaje seleccionado.\nTipo: medicina · Consumible\nU"
+        },
+        {
+          "type": "group",
+          "title": "Grupos y líderes",
+          "headings": [
+            "Tu grupo",
+            "Jugador 2"
+          ],
+          "buttons": [
+            "Elegir líder",
+            "Elegir líder"
+          ],
+          "cards": 0,
+          "paragraphExcerpt": "La influencia decide el orden de propagación de mordeduras y las víctimas de desbordamientos: se expone primero la menor. Cada grupo tiene un líder; si muere, debe reemplazarse.\n\nTu grupo\n♛ Mara\nMédica · Influencia 76 · Colonia\nLeo\nMecánico · Influencia 58 · Colonia\nElegir líder\n"
+        },
+        {
+          "type": "crossroads",
+          "title": "Encrucijadas",
+          "headings": [
+            "✧ Encrucijadas"
+          ],
+          "buttons": [],
+          "cards": 0,
+          "paragraphExcerpt": "✧ Encrucijadas\n\nCada jugador recibe una carta oculta al empezar su turno. Solo se revela si se cumple el desencadenante. Si no ocurre, no se juega ninguna historia.\n\nLa carta de este turno ya se resolvió.\n\nHistorias originales: 26."
+        },
+        {
+          "type": "log",
+          "title": "Registro de la partida",
+          "headings": [],
+          "buttons": [],
+          "cards": 0,
+          "paragraphExcerpt": "R1 · ✧ La guardia nocturna: Reparar el muro. Consumís una herramienta; añadís dos barricadas si hay accesos.\nR1 · ✧ ENCRUCIJADA: La guardia nocturna.\nR1 · ⚠ Crisis: aportar 2 medicina.\nR1 · Objetivo: Operación antídoto · Reunir 5 muestras antes de que se agoten las 6 rondas."
+        },
+        {
+          "type": "help",
+          "title": "Reglas y controles",
+          "headings": [
+            "Invierno en la Colonia · V9.9",
+            "Turnos y dados",
+            "Acciones",
+            "Búsqueda",
+            "Exposición y mordeduras",
+            "Influencia y liderazgo",
+            "Estadísticas",
+            "Colonia",
+            "Objetos y supervivientes",
+            "Encrucijadas"
+          ],
+          "buttons": [
+            "Nueva partida"
+          ],
+          "cards": 0,
+          "paragraphExcerpt": "Invierno en la Colonia · V9.9\n\nCooperativo: vos y la IA defendemos la colonia. Sin traidores, exilios ni objetivos secretos. El objetivo general se decide al comenzar.\n\nTurnos y dados\n\nAl iniciar cada ronda recibís 1 dado más 1 por cada superviviente vivo. Tus dados disponibles p"
+        },
+        {
+          "type": "goal",
+          "title": "Objetivo general",
+          "excerpt": "Operación antídoto\n\nReunir 5 muestras antes de que se agoten las 6 rondas.\n\nMuestras: 0/5 · Ronda 1/6.\n\nEncontrá muestras con tus supervivientes. La habilidad de investigación solo beneficia al personaje que encontró la "
+        },
+        {
+          "type": "crisis",
+          "title": "Crisis actual",
+          "excerpt": "Crisis de la ronda 1\n\nRequiere 2 cartas de medicina.\n\nAportes válidos: 0/2. Solo se aceptan cartas del tipo requerido; dos aportes extra otorgan una moral.\n\nLa crisis se resuelve al finalizar la ronda. Si fracasa: dos zo"
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "setup": "PROTOCOLO DE REFUGIO · ACCESO 09\n☣\nINVIERNO EN LA COLONIA\n\nElegí quién controla el segundo grupo. Los dos modos son cooperativos y funcionan sin conexión.\n\n▣ 1 JUGADOR + IA\nLa IA juega como tu compañera de supervivencia.\n⚑ 2 JUGADORES LOCALES\nDos personas, un solo dispositivo, por turnos.\nLas partidas nuevas reinician el tablero y los mazos.",
+      "errors": [],
+      "board": {
+        "places": [
+          "⌂ Colonia6/12 plazas",
+          "▣ Supermercado0/4 plazas",
+          "✚ Hospital0/4 plazas",
+          "✦ Comisaría0/4 plazas",
+          "⚙ Gasolinera0/4 plazas",
+          "▤ Escuela0/4 plazas",
+          "▥ Biblioteca0/4 plazas"
+        ],
+        "survivors": [
+          "Mara",
+          "Leo",
+          "Iris",
+          "Ada",
+          "Bruno",
+          "Sol"
+        ],
+        "accessSlots": 36,
+        "stats": [
+          "Moral9ⓘ",
+          "Comida6ⓘ",
+          "Hambre0ⓘ",
+          "Ronda1/6ⓘ",
+          "Residuos0ⓘ",
+          "Zombis9ⓘ",
+          "Indefensos0ⓘ"
+        ],
+        "dice": 4,
+        "bodyWidth": 320,
+        "viewportWidth": 320,
+        "boardScrollWidth": 302,
+        "boardClientWidth": 302,
+        "boardClientHeight": 1580,
+        "boardScrollHeight": 1580,
+        "siteRects": [
+          {
+            "top": 433.53125,
+            "bottom": 922.53125,
+            "width": 292,
+            "height": 489
+          },
+          {
+            "top": 929.53125,
+            "bottom": 1280.53125,
+            "width": 142.5,
+            "height": 351
+          },
+          {
+            "top": 929.53125,
+            "bottom": 1280.53125,
+            "width": 142.5,
+            "height": 351
+          },
+          {
+            "top": 1287.53125,
+            "bottom": 1638.53125,
+            "width": 142.5,
+            "height": 351
+          },
+          {
+            "top": 1287.53125,
+            "bottom": 1638.53125,
+            "width": 142.5,
+            "height": 351
+          },
+          {
+            "top": 1645.53125,
+            "bottom": 1996.53125,
+            "width": 142.5,
+            "height": 351
+          },
+          {
+            "top": 1645.53125,
+            "bottom": 1996.53125,
+            "width": 142.5,
+            "height": 351
+          }
+        ],
+        "fonts": "\"Arial Narrow\", system-ui, -apple-system, \"Segoe UI\", sans-serif"
+      },
+      "modals": [
+        {
+          "type": "actions",
+          "title": "Acciones del superviviente",
+          "headings": [
+            "Elegí un dado",
+            "★ Habilidad especial",
+            "Movimiento",
+            "Acciones con dado"
+          ],
+          "buttons": [
+            "3",
+            "3",
+            "3",
+            "3",
+            "🥫 +1 al dado seleccionado (cuesta 1 comida)",
+            "Usar habilidad activa",
+            "→ Mover (sin dado)",
+            "⌕ Buscar",
+            "⚔ Atacar zombi",
+            "▥ Barricada",
+            "♻ Limpiar 3 residuos",
+            "☠ Atraer hasta 2 zombis"
+          ],
+          "cards": 0,
+          "paragraphExcerpt": "👤\n♛ Mara · Médica\n📍 Colonia · Destino: Colonia\n⚔ 4+ · ⌕ 3+ · ◆ Influencia 76 · ♥ 0 · ❄ 0\n★ Primeros auxilios — Una vez por ronda cura 1 herida de un superviviente en su localidad, sin dado.\nSin equipamiento\nElegí un dado\n3\n3\n3\n3\n🥫 +1 al dado seleccionado (cuesta 1 comida)\n★ Ha"
+        },
+        {
+          "type": "inventory",
+          "title": "Objetos y crisis",
+          "headings": [
+            "Cartas de tu mano"
+          ],
+          "buttons": [
+            "Usar",
+            "Usar",
+            "Aportar",
+            "Equipar",
+            "Usar",
+            "Usar",
+            "Usar"
+          ],
+          "cards": 6,
+          "paragraphExcerpt": "Crisis: 2 × medicina · 0/2 aportes. Podés aportar dos cartas extra para ganar +1 moral.\nCartas de tu mano\n🥫\nRación de comida\nAgrega 1 comida a la reserva.\nTipo: comida · Consumible\nUsar\n✚\nVendas\nCura 1 herida o congelación al personaje seleccionado.\nTipo: medicina · Consumible\nU"
+        },
+        {
+          "type": "group",
+          "title": "Grupos y líderes",
+          "headings": [
+            "Tu grupo",
+            "Jugador 2"
+          ],
+          "buttons": [
+            "Elegir líder",
+            "Elegir líder"
+          ],
+          "cards": 0,
+          "paragraphExcerpt": "La influencia decide el orden de propagación de mordeduras y las víctimas de desbordamientos: se expone primero la menor. Cada grupo tiene un líder; si muere, debe reemplazarse.\n\nTu grupo\n♛ Mara\nMédica · Influencia 76 · Colonia\nLeo\nMecánico · Influencia 58 · Colonia\nElegir líder\n"
+        },
+        {
+          "type": "crossroads",
+          "title": "Encrucijadas",
+          "headings": [
+            "✧ Encrucijadas"
+          ],
+          "buttons": [],
+          "cards": 0,
+          "paragraphExcerpt": "✧ Encrucijadas\n\nCada jugador recibe una carta oculta al empezar su turno. Solo se revela si se cumple el desencadenante. Si no ocurre, no se juega ninguna historia.\n\nLa carta de este turno ya se resolvió.\n\nHistorias originales: 26."
+        },
+        {
+          "type": "log",
+          "title": "Registro de la partida",
+          "headings": [],
+          "buttons": [],
+          "cards": 0,
+          "paragraphExcerpt": "R1 · ✧ La guardia nocturna: Reparar el muro. Consumís una herramienta; añadís dos barricadas si hay accesos.\nR1 · ✧ ENCRUCIJADA: La guardia nocturna.\nR1 · ⚠ Crisis: aportar 2 medicina.\nR1 · Objetivo: Operación antídoto · Reunir 5 muestras antes de que se agoten las 6 rondas."
+        },
+        {
+          "type": "help",
+          "title": "Reglas y controles",
+          "headings": [
+            "Invierno en la Colonia · V9.9",
+            "Turnos y dados",
+            "Acciones",
+            "Búsqueda",
+            "Exposición y mordeduras",
+            "Influencia y liderazgo",
+            "Estadísticas",
+            "Colonia",
+            "Objetos y supervivientes",
+            "Encrucijadas"
+          ],
+          "buttons": [
+            "Nueva partida"
+          ],
+          "cards": 0,
+          "paragraphExcerpt": "Invierno en la Colonia · V9.9\n\nCooperativo: vos y la IA defendemos la colonia. Sin traidores, exilios ni objetivos secretos. El objetivo general se decide al comenzar.\n\nTurnos y dados\n\nAl iniciar cada ronda recibís 1 dado más 1 por cada superviviente vivo. Tus dados disponibles p"
+        },
+        {
+          "type": "goal",
+          "title": "Objetivo general",
+          "excerpt": "Operación antídoto\n\nReunir 5 muestras antes de que se agoten las 6 rondas.\n\nMuestras: 0/5 · Ronda 1/6.\n\nEncontrá muestras con tus supervivientes. La habilidad de investigación solo beneficia al personaje que encontró la "
+        },
+        {
+          "type": "crisis",
+          "title": "Crisis actual",
+          "excerpt": "Crisis de la ronda 1\n\nRequiere 2 cartas de medicina.\n\nAportes válidos: 0/2. Solo se aceptan cartas del tipo requerido; dos aportes extra otorgan una moral.\n\nLa crisis se resuelve al finalizar la ronda. Si fracasa: dos zo"
+        }
+      ]
+    }
+  ]
+}

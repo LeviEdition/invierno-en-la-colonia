@@ -1,0 +1,131 @@
+{
+  "method": "Tres columnas nativas Canvas/Phaser antes/despues, sin reescalado. Recompresion IDAT lossless zlib9: stream de pixeles filtrados identico al PNG del arnes. Sin modificar arte original.",
+  "files": [
+    {
+      "file": "h32-nitidez-desktop-dpr1-in-ground.png",
+      "width": 456,
+      "height": 154,
+      "bytes": 115956,
+      "sha256": "5c2b6498233d682e50aa78a60e7c6420b9818cd7bf29d2ee0d4e0540d26582bc"
+    },
+    {
+      "file": "h32-nitidez-desktop-dpr1-in-hospital.png",
+      "width": 729,
+      "height": 169,
+      "bytes": 222902,
+      "sha256": "6d75a8643c734e44b793752cca766097ff3899baa116dd1a14052038f22a9615"
+    },
+    {
+      "file": "h32-nitidez-desktop-dpr1-in-zombie.png",
+      "width": 336,
+      "height": 123,
+      "bytes": 37644,
+      "sha256": "f1d1e35da634d76615de7531c1041174f7e980656020192f2b8e1cf650cf0cc8"
+    },
+    {
+      "file": "h32-nitidez-desktop-dpr1-in.png",
+      "width": 3003,
+      "height": 591,
+      "bytes": 3589168,
+      "sha256": "50eae62f50f6df8b253539259b5f3d2b90844ac87da3a87f25b34fee4f3bd995"
+    },
+    {
+      "file": "h32-nitidez-desktop-dpr1-initial-ground.png",
+      "width": 366,
+      "height": 129,
+      "bytes": 78689,
+      "sha256": "a46a5bbe1801e536b2fa2359a6e2cb7f038fc367544623ac6c0a39bb5a5dac07"
+    },
+    {
+      "file": "h32-nitidez-desktop-dpr1-initial-hospital.png",
+      "width": 585,
+      "height": 141,
+      "bytes": 149449,
+      "sha256": "bbd3410492501865c2ba5c948e35520da344e12153f68bae1568afc241a50378"
+    },
+    {
+      "file": "h32-nitidez-desktop-dpr1-initial-zombie.png",
+      "width": 336,
+      "height": 105,
+      "bytes": 26147,
+      "sha256": "9c4b51385f6336842ceac8ad2b400bdf02a4e701b3f5e465f0844e0f3f01b20d"
+    },
+    {
+      "file": "h32-nitidez-desktop-dpr1-initial.png",
+      "width": 3003,
+      "height": 591,
+      "bytes": 3243108,
+      "sha256": "f1fe0ce0d0459e53829b844161eccc22a0f89df667c01f4e7a8de048167850b7"
+    },
+    {
+      "file": "h32-nitidez-desktop-dpr1-out-ground.png",
+      "width": 336,
+      "height": 110,
+      "bytes": 52326,
+      "sha256": "48f7cd8a1c61498acdeb1bb131cef2faa429080d3fbbe4bbab9e2642dcecf853"
+    },
+    {
+      "file": "h32-nitidez-desktop-dpr1-out-hospital.png",
+      "width": 468,
+      "height": 120,
+      "bytes": 101197,
+      "sha256": "96e3942ae1da94229a4f7b9972a051f8dea6abbc6d8bbc60f35fc4314b2b6a2a"
+    },
+    {
+      "file": "h32-nitidez-desktop-dpr1-out-zombie.png",
+      "width": 336,
+      "height": 90,
+      "bytes": 17796,
+      "sha256": "68b242af4820f5bdd783aaa3a0aaa8abad598e04cb25d9b420ddc36eb9d2f048"
+    },
+    {
+      "file": "h32-nitidez-desktop-dpr1-out.png",
+      "width": 3003,
+      "height": 591,
+      "bytes": 2442254,
+      "sha256": "28a39ff8ad79b501256032578e27b8a054b1557de5cb9e3fa90cf2fc9ef2ff97"
+    },
+    {
+      "file": "h32-nitidez-desktop-dpr125-initial-ground.png",
+      "width": 456,
+      "height": 154,
+      "bytes": 115986,
+      "sha256": "ace391c838626efdc6f628cd6ef877c58c0cf45b635c3db3bf6b01f3c2fa1ccd"
+    },
+    {
+      "file": "h32-nitidez-desktop-dpr125-initial-hospital.png",
+      "width": 729,
+      "height": 169,
+      "bytes": 223325,
+      "sha256": "bc5c04fa2cd735cdecb8c0381ca35be958eaa3d4efc77fcfd82fecbc36df43b2"
+    },
+    {
+      "file": "h32-nitidez-desktop-dpr125-initial-zombie.png",
+      "width": 336,
+      "height": 123,
+      "bytes": 37787,
+      "sha256": "49dd51ee4eba888362100b7116cf8792fa9b4d95ec9c2504a5b577bb3948bc2e"
+    },
+    {
+      "file": "h32-nitidez-mobile-dpr2-initial-ground.png",
+      "width": 336,
+      "height": 111,
+      "bytes": 20488,
+      "sha256": "c66a2e4ab75e886486923d141e618833cc999fba00d1407fee3360806f84fc76"
+    },
+    {
+      "file": "h32-nitidez-mobile-dpr2-initial-hospital.png",
+      "width": 582,
+      "height": 141,
+      "bytes": 148649,
+      "sha256": "d733021da5c6f42f4c36389727bec1fcae2d132031b7d46e75b661c905896e5e"
+    },
+    {
+      "file": "h32-nitidez-mobile-dpr2-initial-zombie.png",
+      "width": 336,
+      "height": 105,
+      "bytes": 25614,
+      "sha256": "00f867939ad48a0e3b5c618be0ec9cb569192f3ebb0ba438a83baca3a670c860"
+    }
+  ]
+}

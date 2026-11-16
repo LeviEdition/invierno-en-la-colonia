@@ -1,0 +1,104 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "errors": [],
+      "movement": {
+        "cancelButton": true,
+        "escape": true,
+        "mouseOrTouchDestination": true,
+        "doubleClickOneMove": true,
+        "noOptimisticMove": true
+      },
+      "originalEquivalent": true,
+      "staleCancelled": true,
+      "woundReflected": true,
+      "restarts": [
+        {
+          "contexts": 1,
+          "objects": 193
+        },
+        {
+          "contexts": 1,
+          "objects": 193
+        },
+        {
+          "contexts": 1,
+          "objects": 193
+        }
+      ],
+      "cleaned": true
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "errors": [],
+      "movement": {
+        "cancelButton": true,
+        "escape": true,
+        "mouseOrTouchDestination": true,
+        "doubleClickOneMove": true,
+        "noOptimisticMove": true
+      },
+      "originalEquivalent": true,
+      "staleCancelled": true,
+      "woundReflected": true,
+      "restarts": [
+        {
+          "contexts": 1,
+          "objects": 193
+        },
+        {
+          "contexts": 1,
+          "objects": 193
+        },
+        {
+          "contexts": 1,
+          "objects": 193
+        }
+      ],
+      "cleaned": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "errors": [],
+      "movement": {
+        "cancelButton": true,
+        "escape": true,
+        "mouseOrTouchDestination": true,
+        "doubleClickOneMove": true,
+        "noOptimisticMove": true
+      },
+      "originalEquivalent": true,
+      "staleCancelled": true,
+      "woundReflected": true,
+      "restarts": [
+        {
+          "contexts": 1,
+          "objects": 193
+        },
+        {
+          "contexts": 1,
+          "objects": 193
+        },
+        {
+          "contexts": 1,
+          "objects": 193
+        }
+      ],
+      "cleaned": true
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

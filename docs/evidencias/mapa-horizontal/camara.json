@@ -1,0 +1,129 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "method": "RAF + POST_RENDER count and DOM positions during real input; video separately inspectable",
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "errors": [],
+      "profiles": [
+        {
+          "profile": "off",
+          "samples": 227,
+          "movingSamples": 84,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 0
+          }
+        },
+        {
+          "profile": "soft",
+          "samples": 282,
+          "movingSamples": 84,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 5
+          }
+        },
+        {
+          "profile": "storm",
+          "samples": 283,
+          "movingSamples": 84,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 5
+          }
+        }
+      ],
+      "video": "/tmp/mapa-horizontal/final-camara/1365/f2096981488be33f5ebd44516596c086.webm"
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "errors": [],
+      "profiles": [
+        {
+          "profile": "off",
+          "samples": 185,
+          "movingSamples": 82,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 0
+          }
+        },
+        {
+          "profile": "soft",
+          "samples": 187,
+          "movingSamples": 82,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 6
+          }
+        },
+        {
+          "profile": "storm",
+          "samples": 187,
+          "movingSamples": 82,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 4
+          }
+        }
+      ],
+      "video": "/tmp/mapa-horizontal/final-camara/393/0d2e7712f4d2861102ad47f91feb2593.webm"
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "errors": [],
+      "profiles": [
+        {
+          "profile": "off",
+          "samples": 187,
+          "movingSamples": 82,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 0
+          }
+        },
+        {
+          "profile": "soft",
+          "samples": 188,
+          "movingSamples": 82,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 6
+          }
+        },
+        {
+          "profile": "storm",
+          "samples": 188,
+          "movingSamples": 82,
+          "changedWithoutMapFrame": [],
+          "idle": {
+            "writes": 0,
+            "mapFrames": 7
+          }
+        }
+      ],
+      "video": "/tmp/mapa-horizontal/final-camara/320/ef3ef17b2530289600d6d4c0a7b6cd28.webm"
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

@@ -1,0 +1,30 @@
+✖ Presentación: objetivos de fichas conservan44px CSS en vista general; en proximidad se elige la más cercana (4.252828ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 345.894438
+
+✖ failing tests:
+
+test at tests/horizontal-presentation.test.mjs:53:1
+✖ Presentación: objetivos de fichas conservan44px CSS en vista general; en proximidad se elige la más cercana (4.252828ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  null !== 'a'
+
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/horizontal-presentation.test.mjs:55:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: 'a',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

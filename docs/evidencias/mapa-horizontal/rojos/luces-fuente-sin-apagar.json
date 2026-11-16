@@ -1,0 +1,23 @@
+{
+  "observation": "Luces desactivadas: fuente1 frente a iluminaci\u00f3n0; correcci\u00f3n requerida para apagado coherente",
+  "lights": [
+    {
+      "id": "colonia-oeste",
+      "sourceAlpha": 1,
+      "spillAlpha": 0,
+      "level": 1
+    },
+    {
+      "id": "colonia-este",
+      "sourceAlpha": 1,
+      "spillAlpha": 0,
+      "level": 1
+    },
+    {
+      "id": "hospital-entrada",
+      "sourceAlpha": 1,
+      "spillAlpha": 0,
+      "level": 1
+    }
+  ]
+}

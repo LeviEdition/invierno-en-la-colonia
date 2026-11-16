@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "production": true,
+  "fixtures": false,
+  "filtersPreserveIndividualIds": true,
+  "onlyOwnAbilityShown": true,
+  "builderWithoutDice": true,
+  "usedAbilityBlocked": true
+}

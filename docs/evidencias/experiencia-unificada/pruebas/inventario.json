@@ -1,0 +1,43 @@
+{
+  "physicalMobile": false,
+  "controlled": true,
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "searchObtained": true,
+      "usedOnTarget": true,
+      "equipped": true,
+      "modifiedSearchWithDie2": true,
+      "cancelPure": true,
+      "invalidRejected": true,
+      "doubleConfirmOnce": true,
+      "recoveredWithoutResend": true,
+      "cameraStable": true,
+      "selectedStable": true,
+      "errors": [],
+      "video": "/workspace/ux-work/qa-inventory-green/1365x768/page@649c8c16371b8f91601171d2deda0abe.webm"
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "searchObtained": true,
+      "usedOnTarget": true,
+      "equipped": true,
+      "modifiedSearchWithDie2": true,
+      "cancelPure": true,
+      "invalidRejected": true,
+      "doubleConfirmOnce": true,
+      "recoveredWithoutResend": false,
+      "cameraStable": true,
+      "selectedStable": true,
+      "errors": [],
+      "video": "/workspace/ux-work/qa-inventory-green/852x393/page@018f1824921c1b95ca97986e4145f3d6.webm"
+    }
+  ],
+  "passed": true
+}

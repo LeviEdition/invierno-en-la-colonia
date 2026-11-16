@@ -1,0 +1,1722 @@
+{
+  "browser": "154.0.8037.57",
+  "node": "v24.19.0",
+  "cpu": "AMD EPYC 9V74 80-Core Processor",
+  "physicalMobile": false,
+  "method": "Aislado y secuencial. Contextos nuevos. QA fuerza el mismo canvas1055×563, DPR1, vista general con Restablecer y partida. Calentamiento500ms,2 muestras1500ms por perfil. POST_RENDER y CDP TaskDuration/heap; no VRAM. No mide la ganancia de superficie de la interfaz normal.",
+  "records": [
+    {
+      "variant": "baseline",
+      "camera": {
+        "zoom": 0.6309808612440191,
+        "x": 0,
+        "y": -15.376495215310968,
+        "minZoom": 0.6309808612440191,
+        "maxZoom": 1.5
+      },
+      "viewport": {
+        "width": 1055,
+        "height": 563,
+        "dpr": 1
+      },
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "profiles": [
+        {
+          "profile": "off",
+          "samples": [
+            {
+              "seconds": 1.503800000011921,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "taskSeconds": 0.0017530000000000046,
+              "heapBytes": 12288068
+            },
+            {
+              "seconds": 1.503800000011921,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "taskSeconds": 0.001371000000000011,
+              "heapBytes": 12463648
+            }
+          ],
+          "geometry": {
+            "updates": 24,
+            "quadTopologyValid": true,
+            "partitionError": 1.5478923127567706e-16,
+            "groups": [
+              {
+                "id": "arbol-oeste",
+                "kind": "tree",
+                "frequency": 0.86,
+                "anchor": {
+                  "x": 222,
+                  "y": 456
+                },
+                "tipOffset": 0,
+                "fixedOffset": 0,
+                "crownOffset": 0,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-noroeste",
+                "kind": "tree",
+                "frequency": 1.12,
+                "anchor": {
+                  "x": 161,
+                  "y": 153
+                },
+                "tipOffset": 0,
+                "fixedOffset": 0,
+                "crownOffset": 0,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-norte",
+                "kind": "tree",
+                "frequency": 0.94,
+                "anchor": {
+                  "x": 780,
+                  "y": 148
+                },
+                "tipOffset": 0,
+                "fixedOffset": 0,
+                "crownOffset": 0,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-noreste",
+                "kind": "tree",
+                "frequency": 1.04,
+                "anchor": {
+                  "x": 1322,
+                  "y": 351
+                },
+                "tipOffset": 0,
+                "fixedOffset": 0,
+                "crownOffset": 0,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-sureste",
+                "kind": "tree",
+                "frequency": 0.78,
+                "anchor": {
+                  "x": 1430,
+                  "y": 594
+                },
+                "tipOffset": 0,
+                "fixedOffset": 0,
+                "crownOffset": 0,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbusto-sur-oeste",
+                "kind": "shrub",
+                "frequency": 1.3,
+                "anchor": {
+                  "x": 434,
+                  "y": 799
+                },
+                "tipOffset": 0,
+                "fixedOffset": 0,
+                "crownOffset": 0,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-sur-este",
+                "kind": "tree",
+                "frequency": 0.98,
+                "anchor": {
+                  "x": 1003,
+                  "y": 875
+                },
+                "tipOffset": 0,
+                "fixedOffset": 0,
+                "crownOffset": 0,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbusto-centro-este",
+                "kind": "shrub",
+                "frequency": 1.25,
+                "anchor": {
+                  "x": 1078,
+                  "y": 620
+                },
+                "tipOffset": 0,
+                "fixedOffset": 0,
+                "crownOffset": 0,
+                "baseOffset": 0
+              }
+            ],
+            "dynamicVertices": 363,
+            "maxVertexOffset": 0,
+            "meshVertices": 522,
+            "triangles": 416,
+            "interactiveObjects": 0,
+            "lights": [
+              {
+                "id": "colonia-oeste",
+                "sourceAlpha": 0,
+                "spillAlpha": 0,
+                "level": 0
+              },
+              {
+                "id": "colonia-este",
+                "sourceAlpha": 0,
+                "spillAlpha": 0,
+                "level": 0
+              },
+              {
+                "id": "hospital-entrada",
+                "sourceAlpha": 0,
+                "spillAlpha": 0,
+                "level": 0
+              }
+            ],
+            "runtimeTextureBytes": 5790524
+          },
+          "textures": {
+            "map": {
+              "width": 1672,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "vegetation": {
+              "width": 1672,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          }
+        },
+        {
+          "profile": "soft",
+          "samples": [
+            {
+              "seconds": 1.547,
+              "renderEvents": 21,
+              "rendersPerSecond": 13.574660633484163,
+              "taskSeconds": 1.383779,
+              "heapBytes": 13751084
+            },
+            {
+              "seconds": 1.581600000023842,
+              "renderEvents": 22,
+              "rendersPerSecond": 13.909964592607713,
+              "taskSeconds": 1.6189750000000003,
+              "heapBytes": 12163644
+            }
+          ],
+          "geometry": {
+            "updates": 79,
+            "quadTopologyValid": true,
+            "partitionError": 1.5478923127567706e-16,
+            "groups": [
+              {
+                "id": "arbol-oeste",
+                "kind": "tree",
+                "frequency": 0.86,
+                "anchor": {
+                  "x": 222,
+                  "y": 456
+                },
+                "tipOffset": 1.514252027557691,
+                "fixedOffset": 0,
+                "crownOffset": 0.5493074909511029,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-noroeste",
+                "kind": "tree",
+                "frequency": 1.12,
+                "anchor": {
+                  "x": 161,
+                  "y": 153
+                },
+                "tipOffset": 0.9593482368670971,
+                "fixedOffset": 0,
+                "crownOffset": 0.27643537211132213,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-norte",
+                "kind": "tree",
+                "frequency": 0.94,
+                "anchor": {
+                  "x": 780,
+                  "y": 148
+                },
+                "tipOffset": 1.1457878934543029,
+                "fixedOffset": 0,
+                "crownOffset": 0.33076437697595357,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-noreste",
+                "kind": "tree",
+                "frequency": 1.04,
+                "anchor": {
+                  "x": 1322,
+                  "y": 351
+                },
+                "tipOffset": 0.8672186140617462,
+                "fixedOffset": 0,
+                "crownOffset": 0.28538374670264166,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-sureste",
+                "kind": "tree",
+                "frequency": 0.78,
+                "anchor": {
+                  "x": 1430,
+                  "y": 594
+                },
+                "tipOffset": 0.9233655213441221,
+                "fixedOffset": 0,
+                "crownOffset": 0.19700558254709455,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbusto-sur-oeste",
+                "kind": "shrub",
+                "frequency": 1.3,
+                "anchor": {
+                  "x": 434,
+                  "y": 799
+                },
+                "tipOffset": 0.4540577269505716,
+                "fixedOffset": 0,
+                "crownOffset": 0.05899134479708477,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-sur-este",
+                "kind": "tree",
+                "frequency": 0.98,
+                "anchor": {
+                  "x": 1003,
+                  "y": 875
+                },
+                "tipOffset": 1.0911661073603707,
+                "fixedOffset": 0,
+                "crownOffset": 0.29826338553544324,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbusto-centro-este",
+                "kind": "shrub",
+                "frequency": 1.25,
+                "anchor": {
+                  "x": 1078,
+                  "y": 620
+                },
+                "tipOffset": 0.42430272247195056,
+                "fixedOffset": 0,
+                "crownOffset": 0.10689321655884541,
+                "baseOffset": 0
+              }
+            ],
+            "dynamicVertices": 363,
+            "maxVertexOffset": 1.514252027557692,
+            "meshVertices": 522,
+            "triangles": 416,
+            "interactiveObjects": 0,
+            "lights": [
+              {
+                "id": "colonia-oeste",
+                "sourceAlpha": 0.7739196946266514,
+                "spillAlpha": 0.7739196946266514,
+                "level": 0.7739196946266514
+              },
+              {
+                "id": "colonia-este",
+                "sourceAlpha": 0.7571996092444804,
+                "spillAlpha": 0.7571996092444804,
+                "level": 0.7571996092444804
+              },
+              {
+                "id": "hospital-entrada",
+                "sourceAlpha": 0.8062007935797526,
+                "spillAlpha": 0.8062007935797526,
+                "level": 0.8062007935797526
+              }
+            ],
+            "runtimeTextureBytes": 5790524
+          },
+          "textures": {
+            "map": {
+              "width": 1672,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "vegetation": {
+              "width": 1672,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          }
+        },
+        {
+          "profile": "storm",
+          "samples": [
+            {
+              "seconds": 1.5126000000238418,
+              "renderEvents": 20,
+              "rendersPerSecond": 13.2222662962348,
+              "taskSeconds": 1.5882580000000006,
+              "heapBytes": 13745580
+            },
+            {
+              "seconds": 1.561,
+              "renderEvents": 20,
+              "rendersPerSecond": 12.812299807815503,
+              "taskSeconds": 1.5606349999999996,
+              "heapBytes": 11563896
+            }
+          ],
+          "geometry": {
+            "updates": 137,
+            "quadTopologyValid": true,
+            "partitionError": 1.5478923127567706e-16,
+            "groups": [
+              {
+                "id": "arbol-oeste",
+                "kind": "tree",
+                "frequency": 0.86,
+                "anchor": {
+                  "x": 222,
+                  "y": 456
+                },
+                "tipOffset": 2.4401436485985117,
+                "fixedOffset": 0,
+                "crownOffset": 0.8851823611778857,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-noroeste",
+                "kind": "tree",
+                "frequency": 1.12,
+                "anchor": {
+                  "x": 161,
+                  "y": 153
+                },
+                "tipOffset": 2.59437278757812,
+                "fixedOffset": 0,
+                "crownOffset": 0.7475662948750479,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-norte",
+                "kind": "tree",
+                "frequency": 0.94,
+                "anchor": {
+                  "x": 780,
+                  "y": 148
+                },
+                "tipOffset": 2.274285729823153,
+                "fixedOffset": 0,
+                "crownOffset": 0.6565374855047365,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-noreste",
+                "kind": "tree",
+                "frequency": 1.04,
+                "anchor": {
+                  "x": 1322,
+                  "y": 351
+                },
+                "tipOffset": 3.051954414545842,
+                "fixedOffset": 0,
+                "crownOffset": 1.0043352062168094,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-sureste",
+                "kind": "tree",
+                "frequency": 0.78,
+                "anchor": {
+                  "x": 1430,
+                  "y": 594
+                },
+                "tipOffset": 3.136524483632838,
+                "fixedOffset": 0,
+                "crownOffset": 0.6691963461791713,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbusto-sur-oeste",
+                "kind": "shrub",
+                "frequency": 1.3,
+                "anchor": {
+                  "x": 434,
+                  "y": 799
+                },
+                "tipOffset": 0.6744605151998532,
+                "fixedOffset": 0,
+                "crownOffset": 0.08762615509570479,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-sur-este",
+                "kind": "tree",
+                "frequency": 0.98,
+                "anchor": {
+                  "x": 1003,
+                  "y": 875
+                },
+                "tipOffset": 2.30163260355134,
+                "fixedOffset": 0,
+                "crownOffset": 0.6291367812501685,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbusto-centro-este",
+                "kind": "shrub",
+                "frequency": 1.25,
+                "anchor": {
+                  "x": 1078,
+                  "y": 620
+                },
+                "tipOffset": 0.958520326649404,
+                "fixedOffset": 0,
+                "crownOffset": 0.24147693480652432,
+                "baseOffset": 0
+              }
+            ],
+            "dynamicVertices": 363,
+            "maxVertexOffset": 3.1365244836328383,
+            "meshVertices": 522,
+            "triangles": 416,
+            "interactiveObjects": 0,
+            "lights": [
+              {
+                "id": "colonia-oeste",
+                "sourceAlpha": 0.7926146610232859,
+                "spillAlpha": 0.7926146610232859,
+                "level": 0.7926146610232859
+              },
+              {
+                "id": "colonia-este",
+                "sourceAlpha": 0.8229864495362031,
+                "spillAlpha": 0.8229864495362031,
+                "level": 0.8229864495362031
+              },
+              {
+                "id": "hospital-entrada",
+                "sourceAlpha": 0.7841767367518122,
+                "spillAlpha": 0.7841767367518122,
+                "level": 0.7841767367518122
+              }
+            ],
+            "runtimeTextureBytes": 5790524
+          },
+          "textures": {
+            "map": {
+              "width": 1672,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "vegetation": {
+              "width": 1672,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variant": "candidate",
+      "camera": {
+        "zoom": 0.6309808612440191,
+        "x": 0,
+        "y": -15.376495215310968,
+        "minZoom": 0.6309808612440191,
+        "maxZoom": 1.5
+      },
+      "viewport": {
+        "width": 1055,
+        "height": 563,
+        "dpr": 1
+      },
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "profiles": [
+        {
+          "profile": "off",
+          "samples": [
+            {
+              "seconds": 1.504,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "taskSeconds": 0.0018449999999999855,
+              "heapBytes": 18280480
+            },
+            {
+              "seconds": 1.503300000011921,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "taskSeconds": 0.0012349999999999861,
+              "heapBytes": 18457876
+            }
+          ],
+          "geometry": {
+            "updates": 16,
+            "quadTopologyValid": true,
+            "partitionError": 1.5478923127567706e-16,
+            "groups": [
+              {
+                "id": "arbol-oeste",
+                "kind": "tree",
+                "frequency": 0.86,
+                "anchor": {
+                  "x": 222,
+                  "y": 456
+                },
+                "tipOffset": 0,
+                "fixedOffset": 0,
+                "crownOffset": 0,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-noroeste",
+                "kind": "tree",
+                "frequency": 1.12,
+                "anchor": {
+                  "x": 161,
+                  "y": 153
+                },
+                "tipOffset": 0,
+                "fixedOffset": 0,
+                "crownOffset": 0,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-norte",
+                "kind": "tree",
+                "frequency": 0.94,
+                "anchor": {
+                  "x": 780,
+                  "y": 148
+                },
+                "tipOffset": 0,
+                "fixedOffset": 0,
+                "crownOffset": 0,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-noreste",
+                "kind": "tree",
+                "frequency": 1.04,
+                "anchor": {
+                  "x": 1322,
+                  "y": 351
+                },
+                "tipOffset": 0,
+                "fixedOffset": 0,
+                "crownOffset": 0,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-sureste",
+                "kind": "tree",
+                "frequency": 0.78,
+                "anchor": {
+                  "x": 1430,
+                  "y": 594
+                },
+                "tipOffset": 0,
+                "fixedOffset": 0,
+                "crownOffset": 0,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbusto-sur-oeste",
+                "kind": "shrub",
+                "frequency": 1.3,
+                "anchor": {
+                  "x": 434,
+                  "y": 799
+                },
+                "tipOffset": 0,
+                "fixedOffset": 0,
+                "crownOffset": 0,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-sur-este",
+                "kind": "tree",
+                "frequency": 0.98,
+                "anchor": {
+                  "x": 1003,
+                  "y": 875
+                },
+                "tipOffset": 0,
+                "fixedOffset": 0,
+                "crownOffset": 0,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbusto-centro-este",
+                "kind": "shrub",
+                "frequency": 1.25,
+                "anchor": {
+                  "x": 1078,
+                  "y": 620
+                },
+                "tipOffset": 0,
+                "fixedOffset": 0,
+                "crownOffset": 0,
+                "baseOffset": 0
+              }
+            ],
+            "dynamicVertices": 363,
+            "maxVertexOffset": 0,
+            "meshVertices": 522,
+            "triangles": 416,
+            "interactiveObjects": 0,
+            "lights": [
+              {
+                "id": "colonia-oeste",
+                "sourceAlpha": 0,
+                "spillAlpha": 0,
+                "level": 0
+              },
+              {
+                "id": "colonia-este",
+                "sourceAlpha": 0,
+                "spillAlpha": 0,
+                "level": 0
+              },
+              {
+                "id": "hospital-entrada",
+                "sourceAlpha": 0,
+                "spillAlpha": 0,
+                "level": 0
+              }
+            ],
+            "runtimeTextureBytes": 5289104
+          },
+          "textures": {
+            "map": {
+              "width": 1672,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "vegetation": {
+              "width": 1672,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          }
+        },
+        {
+          "profile": "soft",
+          "samples": [
+            {
+              "seconds": 1.5172999999523162,
+              "renderEvents": 21,
+              "rendersPerSecond": 13.840374349607831,
+              "taskSeconds": 1.344512,
+              "heapBytes": 15692940
+            },
+            {
+              "seconds": 1.5505,
+              "renderEvents": 22,
+              "rendersPerSecond": 14.18897129958078,
+              "taskSeconds": 1.521249,
+              "heapBytes": 19691252
+            }
+          ],
+          "geometry": {
+            "updates": 70,
+            "quadTopologyValid": true,
+            "partitionError": 1.5478923127567706e-16,
+            "groups": [
+              {
+                "id": "arbol-oeste",
+                "kind": "tree",
+                "frequency": 0.86,
+                "anchor": {
+                  "x": 222,
+                  "y": 456
+                },
+                "tipOffset": 1.8846895685354093,
+                "fixedOffset": 0,
+                "crownOffset": 0.6836867834898505,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-noroeste",
+                "kind": "tree",
+                "frequency": 1.12,
+                "anchor": {
+                  "x": 161,
+                  "y": 153
+                },
+                "tipOffset": 0.9279577138225966,
+                "fixedOffset": 0,
+                "crownOffset": 0.2673902198036334,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-norte",
+                "kind": "tree",
+                "frequency": 0.94,
+                "anchor": {
+                  "x": 780,
+                  "y": 148
+                },
+                "tipOffset": 1.1051879011307213,
+                "fixedOffset": 0,
+                "crownOffset": 0.3190440304416117,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-noreste",
+                "kind": "tree",
+                "frequency": 1.04,
+                "anchor": {
+                  "x": 1322,
+                  "y": 351
+                },
+                "tipOffset": 1.0503303716145023,
+                "fixedOffset": 0,
+                "crownOffset": 0.34564204673030985,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-sureste",
+                "kind": "tree",
+                "frequency": 0.78,
+                "anchor": {
+                  "x": 1430,
+                  "y": 594
+                },
+                "tipOffset": 1.0088501003127548,
+                "fixedOffset": 0,
+                "crownOffset": 0.2152442311528965,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbusto-sur-oeste",
+                "kind": "shrub",
+                "frequency": 1.3,
+                "anchor": {
+                  "x": 434,
+                  "y": 799
+                },
+                "tipOffset": 0.5420261192379531,
+                "fixedOffset": 0,
+                "crownOffset": 0.07042023027277462,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-sur-este",
+                "kind": "tree",
+                "frequency": 0.98,
+                "anchor": {
+                  "x": 1003,
+                  "y": 875
+                },
+                "tipOffset": 1.042307669847329,
+                "fixedOffset": 0,
+                "crownOffset": 0.2849082392508282,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbusto-centro-este",
+                "kind": "shrub",
+                "frequency": 1.25,
+                "anchor": {
+                  "x": 1078,
+                  "y": 620
+                },
+                "tipOffset": 0.5531632551441471,
+                "fixedOffset": 0,
+                "crownOffset": 0.13935663499879627,
+                "baseOffset": 0
+              }
+            ],
+            "dynamicVertices": 363,
+            "maxVertexOffset": 1.8846895685354106,
+            "meshVertices": 522,
+            "triangles": 416,
+            "interactiveObjects": 0,
+            "lights": [
+              {
+                "id": "colonia-oeste",
+                "sourceAlpha": 0.7898186621040805,
+                "spillAlpha": 0.7898186621040805,
+                "level": 0.7898186621040805
+              },
+              {
+                "id": "colonia-este",
+                "sourceAlpha": 0.754193060470063,
+                "spillAlpha": 0.754193060470063,
+                "level": 0.754193060470063
+              },
+              {
+                "id": "hospital-entrada",
+                "sourceAlpha": 0.7979550450184884,
+                "spillAlpha": 0.7979550450184884,
+                "level": 0.7979550450184884
+              }
+            ],
+            "runtimeTextureBytes": 5289104
+          },
+          "textures": {
+            "map": {
+              "width": 1672,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "vegetation": {
+              "width": 1672,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          }
+        },
+        {
+          "profile": "storm",
+          "samples": [
+            {
+              "seconds": 1.5386000000238418,
+              "renderEvents": 20,
+              "rendersPerSecond": 12.998830105089096,
+              "taskSeconds": 1.53789,
+              "heapBytes": 13714352
+            },
+            {
+              "seconds": 1.5585,
+              "renderEvents": 20,
+              "rendersPerSecond": 12.832852101379531,
+              "taskSeconds": 1.5581589999999998,
+              "heapBytes": 20209596
+            }
+          ],
+          "geometry": {
+            "updates": 127,
+            "quadTopologyValid": true,
+            "partitionError": 1.5478923127567706e-16,
+            "groups": [
+              {
+                "id": "arbol-oeste",
+                "kind": "tree",
+                "frequency": 0.86,
+                "anchor": {
+                  "x": 222,
+                  "y": 456
+                },
+                "tipOffset": 2.4949800001571574,
+                "fixedOffset": 0,
+                "crownOffset": 0.9050747028352885,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-noroeste",
+                "kind": "tree",
+                "frequency": 1.12,
+                "anchor": {
+                  "x": 161,
+                  "y": 153
+                },
+                "tipOffset": 3.2915533096870444,
+                "fixedOffset": 0,
+                "crownOffset": 0.9484582647058586,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-norte",
+                "kind": "tree",
+                "frequency": 0.94,
+                "anchor": {
+                  "x": 780,
+                  "y": 148
+                },
+                "tipOffset": 2.9257202853090125,
+                "fixedOffset": 0,
+                "crownOffset": 0.84459266231088,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-noreste",
+                "kind": "tree",
+                "frequency": 1.04,
+                "anchor": {
+                  "x": 1322,
+                  "y": 351
+                },
+                "tipOffset": 3.24562898378859,
+                "fixedOffset": 0,
+                "crownOffset": 1.0680695095577435,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-sureste",
+                "kind": "tree",
+                "frequency": 0.78,
+                "anchor": {
+                  "x": 1430,
+                  "y": 594
+                },
+                "tipOffset": 3.3479835141594005,
+                "fixedOffset": 0,
+                "crownOffset": 0.7143124010141925,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbusto-sur-oeste",
+                "kind": "shrub",
+                "frequency": 1.3,
+                "anchor": {
+                  "x": 434,
+                  "y": 799
+                },
+                "tipOffset": 0.6313856696611235,
+                "fixedOffset": 0,
+                "crownOffset": 0.08202985551872836,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbol-sur-este",
+                "kind": "tree",
+                "frequency": 0.98,
+                "anchor": {
+                  "x": 1003,
+                  "y": 875
+                },
+                "tipOffset": 2.9588183095696725,
+                "fixedOffset": 0,
+                "crownOffset": 0.8087743563914134,
+                "baseOffset": 0
+              },
+              {
+                "id": "arbusto-centro-este",
+                "kind": "shrub",
+                "frequency": 1.25,
+                "anchor": {
+                  "x": 1078,
+                  "y": 620
+                },
+                "tipOffset": 0.9235337121417446,
+                "fixedOffset": 0,
+                "crownOffset": 0.23266286984026585,
+                "baseOffset": 0
+              }
+            ],
+            "dynamicVertices": 363,
+            "maxVertexOffset": 3.3479835141594005,
+            "meshVertices": 522,
+            "triangles": 416,
+            "interactiveObjects": 0,
+            "lights": [
+              {
+                "id": "colonia-oeste",
+                "sourceAlpha": 0.7777771114707058,
+                "spillAlpha": 0.7777771114707058,
+                "level": 0.7777771114707058
+              },
+              {
+                "id": "colonia-este",
+                "sourceAlpha": 0.8114754442947897,
+                "spillAlpha": 0.8114754442947897,
+                "level": 0.8114754442947897
+              },
+              {
+                "id": "hospital-entrada",
+                "sourceAlpha": 0.42221543819266233,
+                "spillAlpha": 0.42221543819266233,
+                "level": 0.42221543819266233
+              }
+            ],
+            "runtimeTextureBytes": 5289104
+          },
+          "textures": {
+            "map": {
+              "width": 1672,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "vegetation": {
+              "width": 1672,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "passed": true
+}

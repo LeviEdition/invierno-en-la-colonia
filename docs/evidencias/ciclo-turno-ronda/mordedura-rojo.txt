@@ -1,0 +1,40 @@
+✔ Ciclo D: ronda nueva reinicia usos/dados; revisión y pase no reejecutan ni revelan la mano entrante (37.123768ms)
+✔ Ciclo D: tiempo y victoria conservan causa y detienen nuevas rondas (13.93265ms)
+✔ Ciclo D: IA real equivalente, una ejecución; abrir/consultar no vuelve a invocarla (21.626114ms)
+✔ Ciclo D: muerte y sucesión obligatorias conservan elección humana y reglas de V9 (5.563516ms)
+✔ Ciclo D: reiniciar durante la IA invalida el trabajo y el diario anteriores (2.950212ms)
+✖ Ciclo D: mordedura pendiente precede a fallecimientos que V9 mantiene en espera (2.454298ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 5
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 321.058469
+
+✖ failing tests:
+
+test at tests/map-cycle-round.test.mjs:15:1
+✖ Ciclo D: mordedura pendiente precede a fallecimientos que V9 mantiene en espera (2.454298ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'death'
+  - 'biteChoice'
+  
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/map-cycle-round.test.mjs:16:371)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'death',
+    expected: 'biteChoice',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

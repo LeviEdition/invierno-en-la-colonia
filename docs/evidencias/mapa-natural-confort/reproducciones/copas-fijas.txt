@@ -1,0 +1,49 @@
+✖ Viento: progresión hasta las puntas sin fijar el borde superior (5.451971ms)
+✖ Viento: variaciones de velocidad y arbusto menos desplazado (0.315725ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 60.729364
+
+✖ failing tests:
+
+test at tests/horizontal-map-comfort.test.mjs:3:1
+✖ Viento: progresión hasta las puntas sin fijar el borde superior (5.451971ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+    assert.ok(top>middle&&middle>0)
+
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/horizontal-map-comfort.test.mjs:3:271)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/horizontal-map-comfort.test.mjs:4:1
+✖ Viento: variaciones de velocidad y arbusto menos desplazado (0.315725ms)
+  AssertionError [ERR_ASSERTION]: Expected "actual" to be strictly unequal to: 0
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/horizontal-map-comfort.test.mjs:4:177)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 0,
+    operator: 'notStrictEqual',
+    diff: 'simple'
+  }

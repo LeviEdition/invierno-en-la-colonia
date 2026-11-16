@@ -1,0 +1,36 @@
+
+> invierno-en-la-colonia@0.9.9 test:poc
+> node scripts/check-esbuild-poc-regressions.mjs
+
+{
+  "reference": "57872ee279e924460a126aecbcd0ee7141b5e078",
+  "variants": [
+    {
+      "name": "reference",
+      "tests": {
+        "exitCode": 0,
+        "tests": 451,
+        "pass": 451,
+        "fail": 0,
+        "skipped": 0,
+        "cancelled": 0
+      },
+      "gameExit": 0
+    },
+    {
+      "name": "candidate",
+      "tests": {
+        "exitCode": 0,
+        "tests": 629,
+        "pass": 629,
+        "fail": 0,
+        "skipped": 0,
+        "cancelled": 0
+      },
+      "gameExit": 0
+    }
+  ],
+  "configurations": 40,
+  "equal": 40,
+  "out": "/tmp/d1d2-regressions"
+}

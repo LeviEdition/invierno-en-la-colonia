@@ -1,0 +1,1423 @@
+> Histórico del tablero hasta el 16/11/2026. No se edita; lo vigente está en [18 — Tablero operativo](18-tablero-operativo.md). Al final se conservan las guías de prueba de ramas anteriores que estaban en el README.
+
+# 18 — Tablero operativo y control de etapas (fuente única del próximo paso)
+
+## Avisos de ataque y zoom nativo ·16/11/2026
+
+Encargo desde23b60a9, remoto/local y CI43640126887 verificados, misma rama/PR25 en borrador. [Informe100 y aceptación](100-avisos-y-zoom-nativo.md): aviso temporal sobre el mapa tras la animación, identidad del atacante conservada al consultar otra ficha y Registro sin duplicar acciones. Leo congelación1/Iris0 cubiertos en escritorio y móvil emulado. Máximo derivado del fondo original1671×941:100% nativo, compartido por botones/rueda/pinza/teclado/enfoque; `+` deshabilitado en el límite. Vista general contiene las siete localidades; ventanas mayores centran el fondo nativo. La ficha conserva escala/pan salvo ajuste necesario por bordes. Sustituye los comportamientos históricos de cámara/aviso descritos debajo. Evidencia y CI del SHA exacto en100/PR25. Sin cambios de reglas/costes/capacidades/arte/posiciones/referencia ni main/fusión/publicación. **Siguiente tarea tras verificar: revisión manual del creador.** Bloques siguientes históricos.
+
+---
+
+## Experiencia unificada del mapa ·14/11/2026
+
+Encargo desdeef99f3c, misma rama/PR25 en borrador. [Auditoría previa, accesos y revisión99](99-experiencia-unificada-del-mapa.md). Cabecera compacta, objetivo/crisis públicos con consecuencia, cámara sobre mapa y un panel contextual para ficha, acciones, inventario y consultas. Ajustes separados; desarrollo solo con `?dev=1`. Resultados rutinarios reconocidos con los comandos existentes, sin repetir efectos ni pedir Continuar; costes, decisiones obligatorias, privacidad, IA y ciclo conservados. Recuperación de reconocimiento perdido vuelve a la ficha; avisos anteriores se retiran al preparar otra acción. El final confirma fallecimientos y muestra la causa. Referencia estable, arte y posiciones/capacidades aprobadas intactos. Evidencia antes/después y CI del SHA exacto en99/PR25. **Única siguiente tarea tras verificar: revisión manual del creador.** Sin main/fusión/publicación ni nuevas reglas/balance/narrativa. Bloques siguientes históricos.
+
+---
+
+## Migración funcional a la interfaz del mapa ·13/11/2026
+
+Encargo desde31ffaf6, remoto/local y CI43486325893 success verificados. Misma rama/PR25 en borrador. Seis bloques revisables A–F, [matriz98 y guía manual](98-paridad-funcional-del-mapa.md): preparación y otra partida, mordeduras/cadenas/encrucijadas, limpieza/atracción/tratamiento/mejora de dados, transferencias locales y líderes iniciales, registro por audiencia y ayuda. Operaciones originales del motor V9; host horizontal mínimo sin montar el tablero ni los controles de la pantalla anterior. Sin retornos jugables obligatorios a V9. Registro público/privado explícito, recibos y bloqueo seguro ante resultado desconocido; recargar toda la aplicación pierde la instancia, sin guardado nuevo.719/719 y35 dirigidas locales; [evidencia y recorridos sin V9](evidencias/migracion-funcional/README.md), CI del SHA exacto en PR25. Capacidades33, plazas, arte, geometría, IA y referencia estable conservados. **Siguiente tarea al verificar CI: revisión manual del creador.** Sin main/fusión/publicación ni nuevas reglas/balance/narrativa. Bloques siguientes históricos.
+
+---
+
+## Ciclo de turno y ronda desde el mapa ·13/11/2026
+
+Encargo desde303bf26, remoto/local y CI43452381777 success verificados. Misma rama/PR25 draft, cuatro bloques revisables A/B/C/D. [Informe97 y tabla de flujos](97-ciclo-de-turno-y-ronda.md). Aportes desde crisis/inventario, terminar turno con confirmación, pase privado, IA original, cinco fases de colonia con resultados estructurados, revisión sin ejecutar efectos, nueva ronda y final con causa. Muertes/sucesión integradas; mordeduras/encrucijadas y otras decisiones nativas pendientes retornan explícitamente a V9. **No se declara integración de todo caso obligatorio.** Conserva33 accesos, plazas, arte/distribución y HTML estable. Suite684/684,18 dirigidas y diez recorridos escritorio/móvil emulado; regresiones de inventario/acciones aprobadas. [Capturas, vídeos y límites de recuperación](evidencias/ciclo-turno-ronda/README.md). CI exacto en PR25. **Siguiente tarea: revisión manual del creador; después, integrar decisiones restantes con su autorización.** Sin main/fusión/publicación ni balance nuevo. Bloques siguientes históricos.
+
+---
+
+## Capacidades exteriores e inventario autorizado ·13/11/2026
+
+Distribución visual de de4d1c8 **aceptada por el creador**. Encargo nuevo completado en dos commits revisables, misma rama/PR25 draft. [Informe96 y tabla de operaciones](96-capacidades-e-inventario.md). Bloque1/c1f2666: motor/presentación comparten33 accesos12/4/4/4/2/4/3; plazas12/4 intactas,655/655 y Chromium saturados antes de inventario. Bloque2: usar/equipar/transferir dentro del grupo/aportar a crisis desde el mapa mediante operaciones originales; confirmación, privacidad, revisión/deduplicación y recuperación. Retirar/sustituir directamente no existen; intercambio entre jugadores y decisiones generales siguen en V9.9. Entrega666/666 y Chromium escritorio/móvil: buscar→inventario→usar/equipar→buscar con modificador, cancelación/inválido, cámara y selección estables. [Capturas y vídeo](evidencias/capacidades-e-inventario/README.md). Referencia estable y geometría aceptada idénticas; CI del SHA exacto se registra en PR25. **Siguiente tarea: revisión manual del creador**, sin cierre de turnos, nuevas reglas/main/fusión/publicación. Bloques siguientes históricos.
+
+---
+
+## Fichas sobre la localidad y casillas paralelas ·13/11/2026
+
+Corrección solicitada sobre449b436, remoto sin avances y CI42696632195 success verificados. Misma rama/PR25 draft. **Fichas superpuestas a su propio edificio o recinto**: colonia1/6/12 centrada dentro del patio; resto sobre la estructura, con entradas, emblemas, vehículos y surtidores libres. Diámetros36/42 conservados. Filas y ejes de elipses exteriores paralelos al zócalo correspondiente, incluido el ala lateral del hospital; mantienen índices, capacidades y escala. Margen táctil de fichas funciona también sobre el edificio propio sin capturar las casillas exteriores. Obstáculos originales y arte intactos; la antigua exclusión de la fachada propia se sustituye expresamente por esta nueva composición y protecciones de detalles.652/652,35 dirigidas, HTML reproducible y Chromium1365/852 aprobados: máximos,66 clics/taps de casillas,14 de fichas superpuestas y recorrido de acciones. [Comparación y resultados](evidencias/fichas-sobre-localidad/README.md). CI del nuevo head se registra en PR25. **Siguiente tarea: revisión visual del creador**, sin reglas/main/fusión/publicación. Bloques siguientes históricos.
+
+---
+
+## Pertenencia y vista general completa ·09/11/2026
+
+Encargo desde5f3e319, remoto limpio y CI42622337005 success verificados. Misma rama/PR25 draft. Colonia1/6/12 centrada en una o dos filas con rótulo; cuatro posteriores distribuidas por el ancho. Supermercado en dos pares; gasolinera/comisaría fuera de los dos arbustos señalados; siluetas revisadas sobre ampliaciones. Vista general completa con márgenes y controles44px; enfoque/pan/zoom/panel conservados. Obstáculos previos intactos.650/650,42 dirigidas y Chromium1365/852 aprobados, con máximos,66 clics/taps y recorrido de acciones. [Comparación y límites](evidencias/pertenencia-y-vista-general/README.md), incluido un agotamiento de espera conservado y repetición final aprobada sin ampliar el límite. CI del nuevo head en PR25. **Siguiente tarea: aceptación visual del creador**, sin reglas/main/fusión/publicación. Bloques siguientes históricos.
+
+---
+
+
+## Legibilidad y perímetros ·09/11/2026
+
+Revisión del creador tras94: fichas demasiado pequeñas/dentro del patio, casillas alejadas, vacías poco visibles y marcos imprecisos. [Informe95](95-legibilidad-fichas-y-perimetros.md). Misma rama/PR25 draft desdee442f90, cuyo CI42618164383 success se verificó. Fichas42px/colonia36px por encima de localidades; accesos acercados con cuerpos completos fuera de sólidos, cuatro traseros de colonia junto al cerco sin tocar techo; vacías con contraste mínimo mayor solo en este mapa; marcos de aleros/chimeneas/esquinas revisados. Mantiene33 accesos/IDs,36 apoyos de supervivientes y motor intacto. 644/644, oráculo40/40, siete builds/checks, composición3 tamaños/84 capturas/21 clics y confort3 aprobados localmente. CI del nuevo head en95/PR25. **Siguiente tarea al verificar: revisión visual del creador**, sin main/fusión/publicación. Bloques inferiores históricos.
+
+---
+
+
+## Fondo aprobado y casillas confirmadas ·09/11/2026
+
+**Encargo vigente:** integrar `nuevo mapa.png` subido en dd13820/76c210b, conservar el original y redistribuir casillas manualmente. Misma rama/PR25 draft desde89f2c45; [informe94](94-integracion-fondo-aprobado.md). Colonia12(4+4+2+2), escuela4, gasolinera2, biblioteca3, hospital/supermercado/comisaría4:33 exteriores. Confirmación expresa del creador; no deducida de capacidades de supervivientes. Motor aún12/4: discrepancia visible y excedentes completos, sin cambiar reglas/resultados.
+
+**Implementado:** originalRGB1671×941 sin alterar, manifiesto/kit nuevos, sin capa antigua de vegetación ni manchas de luces incompatibles; humo reubicado. Nuevos contornos, clic, apoyos/fichas y enfoques; vista general móvil corregida tras fallo reproducido.66 volúmenes alternativos, elipses y fichas fuera de obstáculos importantes. Tres regresiones nuevas,644/644 y oráculo40/40 locales. Tocar casilla/cuerpo consulta su localidad sin ejecutar acciones; área44px CSS, solo habilitada en este mapa. Chromium y evidencia final en94/PR25; no atribuir el CI anterior al nuevo trabajo.
+
+**Pendientes separados:** reconciliar capacidades del motor requiere decisión de reglas; las luces pintadas permanecen estáticas. Vista general móvil recorta márgenes por cobertura, enfoques completos; no teléfono físico ni aceptación artística. **Siguiente tarea al concluir verificación: revisión visual del creador.** Sin main, fusión, publicación ni cierre de etapa. Los bloques siguientes conservan historia.
+
+---
+
+
+## Mapa horizontal — pasada integral de composición ·06/11/2026 UTC
+
+**Encargo vigente:** conservar los ajustes de92 y revisar apoyos completos, fichas máximas, enfoque, señalamiento y luces. Misma rama `experiment/mapa-horizontal-ambientacion-h3` desde **edacdf05c67967a49609e45d21dad6e9e0dcc4e0**, [PR25 draft](https://github.com/LeviEdition/invierno-en-la-colonia/pull/25) contra H3.4.4. [Informe93](93-composicion-integral-del-mapa.md). Bloques inferiores históricos; sin reglas/capacidades/IA/main/referencia/arte nuevo.
+
+**Implementado:**36 accesos recolocados manualmente conservando índices, doce fuera del cerco, cuatro por exterior; cuerpos completos y elipses contrastados con sólidos, vegetación y vecinos. Fichas compactas sin tapar fachadas/portón; asignación explícita de cuatro retratos e iniciales conservada, sin compactar identidad tras muerte. Enfoque incluye silueta, fichas y exteriores; panel310px y barras99px conservados. Señalamiento tenue, selección y destino diferenciados. Tres luces con manchas menores y titileo contenido; sin aclarado global. Vegetación de92 sin nuevos meshes ni partículas.
+
+**Validación:** línea base629/629 →638 de composición →641/641 con tres regresiones del reloj visual, oráculo40/40 y siete builds/checks. Composición3 tamaños/12 proyecciones máximas, acciones3, bordes13, movimiento6 finales, cámara9, escena6 y confort3 aprobados. El primer CI04126c6/42300586160 quedó rojo: fotogramas lentos omitían la consecuencia visual. Reproducido antes de corregir; límite100/50ms por cuadro conserva fases, sin tocar motor/azar. Chromium dirigido normal/reducido y regresiones originales se conservan. Resultados y CI del nuevo SHA exacto en93/evidencia/PR25; los verdes anteriores son historia. Sin teléfono físico ni aceptación manual/artística. Pendientes de arte: señal de biblioteca, detalles de supermercado, huellas/suministros y capas de calles; sin parches.
+
+**Segundo CI rojo conservado:** c746862/42304676153 pasa movimiento6 y las regresiones precedentes, luego registra18 escrituras en reposo móvil. Reproducción local:24 asignaciones idénticas al retirar el señalamiento; se evitan escrituras redundantes de clase/insignia/etiqueta. La QA espera presentación efectiva mediante `renderPending`, conserva0 escrituras/cuadros ociosos y añade el caso de contorno sin cambios en fichas. Quince compuertas y641 pruebas se mantienen; resultados del nuevo head en93/PR25, sin atribuirle verdes anteriores.
+
+**Inicio:** actualizar rama, Ctrl+C al servidor anterior, `npm.cmd run dev:horizontal-map` → **http://127.0.0.1:8779/prototypes/horizontal-map/**, Ctrl+Shift+R. [Guía](../prototypes/horizontal-map/README.md). **Única siguiente tarea: revisión visual del creador de la pasada integral.** Sin merge ni cierre de etapa.
+
+---
+
+## Mapa horizontal — vegetación natural y confort, seis ajustes ·06/11/2026 UTC
+
+**Solicitud vigente:** raíces fijas y copas libres; recuperar310px al cerrar ficha; móvil horizontal compacto; jerarquía de casillas; contornos/oclusiones separados; muestreo y límite de los PNG. Misma rama `experiment/mapa-horizontal-ambientacion-h3` desde **64bbe2c53b93a1efb61f5bbe474c25edaa2f50fa**, [PR25 draft](https://github.com/LeviEdition/invierno-en-la-colonia/pull/25) contra H3.4.4. [Informe92](92-vegetacion-natural-y-confort-del-mapa.md). Bloques inferiores históricos; sin main/referencia/reglas/capacidades/arte nuevo.
+
+**Implementado:** seis árboles y dos arbustos con siluetas complementarias y puntas libres, velocidades/fases distintas, viento compartido y sombras inferiores fijas. Panel/canvas/cámara se actualizan juntos sin reiniciar; foco/zoom solicitado conservados, con límite de cobertura explícito. Barras852×393:146→99px; mapa226→294px. Vacías ajenas tenues/discontinuas y selección continua; sprites ocupados visibles. Biblioteca incluye cabina, trazo constante1,3px, clic y oclusión independientes. Zoom nativo; fuentes mayores quedan pendientes artísticos, sin falso detalle.
+
+**Comprobaciones:** base623/623 → **629/629**, oráculo40/40, siete builds/checks. Resultados Chromium finales, video temporal, coste y CI exacto se registran en92/evidencia/PR25. Los verdes anteriores son historia. No teléfono físico ni aceptación artística; el mayor número de vértices tiene coste medido en software, sin garantía30FPS.
+
+**Inicio:** actualizar rama, Ctrl+C al servidor previo, `npm.cmd run dev:horizontal-map` → **http://127.0.0.1:8779/prototypes/horizontal-map/**, Ctrl+Shift+R. [Guía Windows/VSCode/LAN](../prototypes/horizontal-map/README.md). **Única siguiente tarea: revisión visual del creador de estos seis ajustes.** Sin merge ni avance automático.
+
+---
+
+## Mapa horizontal — cuatro ajustes visuales para revisión ·06/11/2026 UTC
+
+**Solicitud vigente:** copas más visibles, accesos ordenados y fuera de colonia, contornos ajustados al arte y titileos breves e independientes. Misma rama `experiment/mapa-horizontal-ambientacion-h3` y [PR25 draft](https://github.com/LeviEdition/invierno-en-la-colonia/pull/25), desde8113b557, sin cambios de reglas/capacidades/main/referencia ni arte nuevo. [Informe91](91-ajustes-visuales-mapa-horizontal.md); apartados inferiores históricos.
+
+**Implementado:** ocho grupos con balanceo ampliado y bases fijas; filas regulares de36 accesos, doce fuera del cerco en cuatro tramos; marco detallado separado del clic y la máscara de restauración, con salientes seleccionables. Tres luces con tramos estables y episodios rápidos de≈0,70–0,94s, independientes del azar del motor. Apagado/reducido/pausa y recursos existentes conservados. Colonia horizontal incluye el perímetro; en vertical se recorre con pan, sin comprimir capacidades.
+
+**Comprobaciones:** base618/618 →623/623; oráculo40/40 y siete builds/checks. Resultados finales de Chromium, secuencia temporal, coste y CI exacto se registran en91, evidencia y PR25. No se atribuye al ajuste el CI antiguo. Sin dispositivo móvil físico ni aceptación visual; máscaras de capas generadas y detalle del PNG siguen siendo reservas técnicas.
+
+**Inicio:** actualizar rama, detener servidor previo, `npm.cmd run dev:horizontal-map` → **http://127.0.0.1:8779/prototypes/horizontal-map/**, Ctrl+Shift+R. [Guía](../prototypes/horizontal-map/README.md). **Única siguiente tarea: revisión visual del creador de los cuatro ajustes.** Sin merge ni cierre de etapa.
+
+---
+
+## Mapa horizontal y ambientación — originales recibidos, entrega experimental ·05/11/2026
+
+**Encargo autorizado:** escenario horizontal sobre H3.4.4, sin aceptar retrospectivamente búsqueda/ataque/barricadas ni modificar reglas/capacidades/main. Misma rama **`experiment/mapa-horizontal-ambientacion-h3`**, [PR25 draft](https://github.com/LeviEdition/invierno-en-la-colonia/pull/25) contra H3.4.4/694b645. El creador subió los tres originales en **4f05c8f**; bloqueo89 resuelto por avance rápido, sin sobrescribir su trabajo. Main826199d9 y referencia preservadas. [Informe90](90-mapa-horizontal-ambientacion.md). Bloques inferiores históricos.
+
+**Implementación5b3a661:** nueva entrada independiente, siete localidades/IDs,36 apoyos y36 accesos según capacidad real. Selección, llegada, cámara con cobertura y centrado, dossier reservado en PC/plegable en móvil. Ocho grupos de vegetación con bases fijas y viento compartido; máscaras del mismo fondo restituyen fachadas, tres luces acoplan fuente/mancha y retiran su brillo fijo al apagar. Humo en949,306 de colonia, tormenta reutilizada/pool132, sonido apagado y reducido respetado. Originales1672×941/RGB/RGBA con alfa/hashes comprobados; sin regeneración, dependencias o motor duplicado.
+
+**Validación propia:** línea base605/605, entrega **618/618** y oráculo **40/40**; siete builds/checks. Recorrido de cuatro acciones en1365×768,852×393,740×360; batería de escena comprueba siete centros, máximos sintéticos36+36, pausa/reinicio/sin acumulación/reducido. Medición y regresiones finales se documentan en90/evidencia; CI/run/artifact del head exacto se verifican y registran en PR25 antes de entregar. Sin prueba física móvil ni VRAM medida/garantía60FPS.
+
+**Inicio:** `npm.cmd ci` → **`npm.cmd run dev:horizontal-map`** → **http://127.0.0.1:8779/prototypes/horizontal-map/**. [Guía Windows/VSCode/LAN](../prototypes/horizontal-map/README.md). Mapa anterior en `/prototypes/action-map/`, sin reemplazar PNG ni referencia. Persisten reservas de encaje/contorno de capas generadas, detalle al ampliar, rendimiento físico y aceptación visual. **Única siguiente tarea: revisión del creador del mapa y las cuatro acciones.** Sin merge, cierre de etapa o nuevas mecánicas.
+
+---
+
+## Mapa horizontal y ambientación — autorizado, originales pendientes ·05/11/2026
+
+**Encargo vigente:** nuevo escenario horizontal con siete localidades, vegetación anclada y luces coherentes, reutilizando tormenta y las cuatro acciones reales. No acepta retrospectivamente la revisión manual H3.4.3/H3.4.4 ni autoriza modificar reglas/capacidades/main o fusionar. Base remota limpia **694b64504ca39bb00627fb4cf9964b9521ec211f**, PR24 abierto/draft y CI42021660345 success. Rama nueva **`experiment/mapa-horizontal-ambientacion-h3`**, PR preparatorio draft contra H3.4.4. [Informe89](89-mapa-horizontal-ambientacion-preparacion.md). Bloques siguientes históricos.
+
+**Comprobado:** encargo leído, sin AGENTS.md aplicable, Git/instrucciones/escena/cámara/emisores revisados. Se ven las tres imágenes en el chat, pero **no hay binarios accesibles** en los adjuntos montados ni en el árbol remoto del head. El mapa del repositorio sigue siendo el anterior1448×1086/RGB. No se verifican alfa, dimensiones originales ni encaje a partir de previsualizaciones. No se sustituyó ni regeneró arte.
+
+**Preparación:** rutas sugeridas y guía de recepción en [`assets/mapa-horizontal/README.md`](../assets/mapa-horizontal/README.md); originales aún ausentes: `mapa-completo.png`, `fondo-sin-vegetacion.png`, `vegetacion.png`. No hace falta ZIP; se pueden subir individualmente a la rama nueva o indicar dónde están. Documentados acoplamientos actuales y secuencia de integración/validación. Solo documentación, sin cambios de producto ni nueva ejecución de npm/Chromium; el CI anterior corresponde a694b645. Main826199d9/referencia/PR24 intactos.
+
+**Única siguiente tarea:** obtener los tres originales y continuar el encargo ya autorizado. Implementación, pruebas gráficas/rendimiento/CI nuevo y aceptación manual **pendientes**, sin declarar entrega funcional ni cierre.
+
+---
+
+## H3.4.4 — Ataque y barricadas, entrega para revisión ·05/11/2026
+
+**Autorización vigente:** integrar ataque/construcción sobre H3.4.3, **sin marcar aceptada su validación manual**. Base limpia/remota **4357df8d60d45bf13ed966add489e79c0f27ad45**, PR23 draft/CI41924037076 success. Rama nueva `experiment/h3-4-4-ataque-barricadas-mapa`, PR nuevo draft contra H3.4.3. Main826199d9, tag/release de referencia, arte, mapa y reglas intactos. [Informe88](88-h3-4-4-ataque-barricadas-mapa.md). Los bloques siguientes son historia.
+
+**Implementaciónb8b9214 + ajuste1419077:** consulta pura por ID/dado versionado, ataque agregado de la localidad, equipo/habilidades/exposición originales y barricadas con coste1+ o habilidad gratuita de constructor. Ejecución compartida con V9.9, resultados estructurados, revisión común y deduplicación; sin dispatcher genérico ni reenvío ante resultado incierto. Bajas antes de exposición; daño/muerte después de revelar; decisiones esperan Continuar en V9.9. Inventario de grupo separado del equipo. Aparición discreta, controles y ficha móvil horizontal plegable; cámara/selección y búsqueda/movimiento conservados.
+
+**Validación propia:** base576/576 y Chromium3+11 (carrera del arnés de respuesta perdida corregida y documentada). Entrega **605/605**,29 nuevas; oráculo **40/40** y seis builds/checks. Chromium **1365×768,852×393,740×360,393×852,320×640**, ataque/herida/construcción/mover/buscar/ruido, sin parpadeo detectado; bordes **13 casos únicos** combinando las ejecuciones dirigidas, movimiento5/cámara9 y regresión H3.4.3 **3+11**. Se corrigieron bloqueo del panel al buscar, carrera de foco y atribución del resultado recuperado al actor equivocado. [Capturas, video, trazas y rojos](evidencias/h344-acciones/README.md). El nuevo CI exacto repite las15 baterías Chromium previas/nuevas, suite/oráculo/seis builds; run global y artifact se verifican y registran en la descripción del PR antes de entregar.
+
+**Inicio:** `npm.cmd ci` → **`npm.cmd run dev:action-map`** → **http://127.0.0.1:8778/prototypes/action-map/**. [Guía Windows/VSCode/LAN y pruebas manuales para ambas etapas](../prototypes/action-map/README.md). Detener el servidor previo con Ctrl+C, reiniciar y recargar tras actualizar. La ruta8777 de búsqueda anterior se conserva, pero no es la nueva entrega.
+
+**Reservas:** H3.4.3/H3.4.4 sin aceptación manual; móvil emulado/SwiftShader, no teléfono físico ni garantía60FPS/VRAM. Reconexión/visibilidad controladas; no certificación nueva de bfcache. Inventario accionable, otras habilidades manuales/turnos, arte/capacidades/mapa horizontal siguen pendientes; no guardados nuevos. **Única siguiente tarea: revisión manual del creador de ambas etapas en el nuevo PR draft.** Sin merge ni otra implementación.
+
+---
+
+## H3.4.3 — Buscar desde el mapa, entrega para revisión ·04/11/2026
+
+**Decisión vigente:** el creador aceptó los ajustes de H3.4.2 y autorizó únicamente Buscar, conservando Moverse. Rama `experiment/h3-4-3-busqueda-mapa` desde **c8d4e59321bac099306c99f53d18caba3fcd9e9d**, [PR23 draft](https://github.com/LeviEdition/invierno-en-la-colonia/pull/23) contra H3.4.2. Sin merge ni cambios en main/referencia/tag/release/arte/reglas. [Informe87](87-h3-4-3-busqueda-mapa.md). Los bloques inferiores se conservan como historia.
+
+**Implementación4138153:** selección propia → Buscar → requisito efectivo/dado indexado real → confirmar →≈750ms → carta/ruido/elección de una → resumen/mano del turno. Motor único y funciones originales; diario efímero estructurado, consultas puras, sesión/revisión/ID y deduplicación. No se transmiten mazos/mano rival ni el registro heredado que nombra cartas privadas. Pase/turno/interrupción limpian información; recuperar no reenvía. Encrucijadas generales esperan Continuar en V9.9. Sin inventario accionable ni otras acciones nuevas.
+
+**Validación propia:** línea base555/555+cámara9/experiencia5/recuperación5/movimiento3/bordes9 sobre c8d4; entrega **576/576**,21 nuevas, oráculo57872ee **40/40**, builds/checks. Chromium búsqueda **3 tamaños**, bordes/recuperación **11**, movimiento/exposición **5/5**, cámara **9/9**; regresiones H3.4.2 **3+9** y H3.4.1 **3+9**. Confirmada y corregida interrupción anticipada de exposición por muerte en la nueva entrada, con rojo/video y gate verde conservados. Revisión final corrigió también foco fuera del panel tras varios ruidos en320px; rojo→verde con cinco cartas, sin mover el mapa. [Evidencia y videos](evidencias/h343-busqueda/README.md). CI exacto del head documental y artifact se comprueban y enlazan en la descripción del nuevo PR; los checks de1141/c8d4 son historia, no evidencia de este head.
+
+**Probar:** `npm.cmd ci` → `npm.cmd run dev:search-map` → **http://127.0.0.1:8777/prototypes/search-map/**. Preparar V9.9 → Ver mapa → mover propio a exterior → Buscar → dado → confirmar → conservar/ruido → Continuar. [Guía Windows/VSCode/LAN](../prototypes/search-map/README.md). Detener servidor anterior con Ctrl+C, reiniciar y recargar; rutas anteriores conservadas.
+
+**Reservas:** revisión visual pendiente, móvil emulado/SwiftShader, grabación25FPS, visibilidad/reconexión controladas; no teléfono físico ni certificación nueva de bfcache. Registro/decisiones generales en V9.9, sin persistencia nueva. Arte/capacidades/mapa horizontal pendientes. **Única siguiente tarea: revisión del creador de H3.4.3 en el nuevo PR draft.** No combate ni avance automático.
+
+---
+
+## H3.4.2 — corrección de desfase de fichas durante pan/zoom ·04/11/2026
+
+**Observación del creador confirmada:** video con retratos desplazándose a saltos respecto del techo. Base74b40e0, mismo PR22 draft/H3.4.1, árbol inicial limpio. El DOM actualizaba su cámara por RAF antes del cuadro de Phaser; una prueba temporal reprodujo **30 actualizaciones sin nuevo cuadro del mapa**. Las comprobaciones anteriores cubrían alineación en reposo, no esta fase del gesto. [Informe86](86-h3-4-2-sincronizacion-camara-fichas.md), conservando85 como historia.
+
+**Arreglo acotado:** publicar la cámara de fichas/etiquetas/destinos mediante POST_RENDER público y conservar la última presentada mientras se espera; clics usan esa cámara visible. Sin elevar FPS, partículas ni bucles;0 escrituras de fichas en reposo. Solo cambia map-view de H3.4.2, nuevo gate y documentación/workflow. Motor, arte, adaptador y prototipos anteriores intactos; main/tag/release preservados.
+
+**Validación:**555/555 y builds/checks; cámara **9 combinaciones**1365/393/320×apagado/Suave/Tormenta con **0 desfases**, selección/RNG/partida conservados. Experiencia5/5, recuperación5/5 y regresión H3.4.2 **3+9** aprobadas; videos/capturas/rojo y trazas conservados. CI del nuevo head/run/artifact se comprueba y registra en PR22; el CI de74b40 finalmente cerró success, resolviendo la reserva global anterior; se conserva como evidencia histórica, no como CI del arreglo. [Evidencias](evidencias/h342-camara/README.md).
+
+**Reservas:** emulación/SwiftShader; no teléfono físico ni garantía60FPS. La corrección elimina el adelanto relativo detectado, no certifica toda GPU. Reiniciar servidor y recargar tras actualizar para reconstruir el bundle. **Única siguiente tarea: revisión del creador del arreglo en PR22.** Sin merge ni otras acciones. Bloques siguientes históricos.
+
+---
+
+## H3.4.2 — revisión de experiencia del movimiento ·04/11/2026
+
+**Encargo vigente:** continuar el mismo PR22 draft contra H3.4.1 desde1141b89; selección/destinos, continuidad, recorrido de1,5s, exposición real y consecuencias diferidas. La revisión independiente de esta base confirmó545 pruebas y Chromium3 tamaños, posterior a la reserva histórica de83/84. **No habilita otras acciones ni merge.** [Informe85](85-h3-4-2-experiencia-movimiento.md).
+
+**Implementación3713aa4:** todos los destinos legales resaltados, propuesta diferenciada, cancelar vuelve a elegir y salida/Escape; rival sin sección de acciones, scroll por identidad; controles superpuestos y cámara estable. Motor ejecuta una sola vez y devuelve exposición estructurada; ficha por ID recorre1500ms, muestra dado/resultado y después consecuencias. Decisiones esperan **Continuar en V9.9**; interrupciones recuperan estado real sin repetir acción/RNG. Habilidades sin tirada y daño evitado diferenciados. Identidad/ambientación/reglas y referencias anteriores preservadas.
+
+**Reproducción:** confirmados saltos de alto563→475→531px/cámara y cambio inmediato a V9.9 ante encrucijada; Phaser no se recreaba. **No se confirmó un cuadro blanco global** en los videos25FPS: no se declara una causa única del pestañeo informado. Evidencia anterior/posterior y límites de detección conservados.
+
+**Validación propia:** **555/555**,10 nuevas; instalación/builds/checks y oráculo **40/40**; Chromium **5 recorridos +5 recuperaciones**,1365/393/320, y regresiones H3.4.2 **3+9** / H3.4.1 **3+9**. Videos/trazas por cuadro, una ficha por actor, cámara/área estables y decisiones sin auto-confirmación. Corregidos toque interceptado, capas del menú y guía móvil reaparecida. [Evidencias y comandos](evidencias/h342-experiencia/README.md). CI del head documental final/run/artifact se comprueba y registra en el PR22 antes de entregar; el de1141 es histórico.
+
+**Probar:** `npm.cmd ci` → `npm.cmd run dev:movement-map` → **http://127.0.0.1:8776/prototypes/movement-map/**. Preparar V9.9 → Ver mapa → superviviente propio → Moverse → edificio iluminado → confirmar. [Guía](../prototypes/movement-map/README.md). Sin Python.
+
+**Reservas:** revisión visual pendiente, grabación25FPS/SwiftShader, visibilidad y reconexión controladas, sin teléfono físico/VRAM medida; interpolación de ficha sin caminos, sin persistencia. Arte/capacidades visuales/mapa horizontal aplazados. Main826199d9, tag/release y PR anteriores intactos. **Única siguiente tarea: revisión del creador de H3.4.2.** PR22 permanece draft, sin merge ni avance. Bloques siguientes históricos.
+
+---
+
+## H3.4.2 — movimiento desde el mapa autorizado ·04/11/2026
+
+**Decisión del creador:** H3.4.1 aprobado como integración de consulta. Se autoriza H3.4.2: movimiento por ID con confirmación, identidad sin retratos compartidos, bordes azul/rojo, dados/iconos y Suave/Tormenta. Nueva rama `experiment/h3-4-2-movimiento-mapa` desde064f47cc/PR21, nuevo PR draft contra H3.4.1; sin merge ni otras acciones. Main/referencia/tag/release y prototipos anteriores intactos. [Informe84](84-h3-4-2-movimiento-mapa.md).
+
+**Línea base recuperada propia:**528/528 y builds; Chromium3 tamaños +9 casos H3.4.1 con JSON final aprobado en esta ejecución. La revisión independiente anterior de Chromium no tuvo resultado recuperable; no se cita como aprobada independientemente.
+
+**Entrega técnica para revisión:** entrada independiente `/prototypes/movement-map/`; motor único con consulta pura y consecuencias compartidas por ID; intención acotada, revisión de partida, confirmación, deduplicación y recuperación sin reenvío. Decisiones/muerte/sucesión/propagación se resuelven en V9.9; otras acciones deshabilitadas. Cuatro retratos explícitos únicos e iniciales, bordes azul/rojo con halo estático, dados con puntos/valores extra fieles y SVG aprobados. Tormenta inicial salvo movimiento reducido, audio apagado; pool fijo158. No cambian capacidades reales ni arte original.
+
+**Validación local:** **545/545**,17 nuevas; oráculo **40/40**, builds/checks, Chromium1365/393/320 +**9 casos dirigidos**, cero errores normales/desbordamiento. Movimiento equivalente a V9.9/RNG, cancelación pura, datos obsoletos/propiedad/capacidad real, doble confirmación y reconexión, herida/muerte/sucesión/mordedura, J2 y producto sin QA. Se corrigieron planificador que tapaba mapa y segunda desconexión que perdía unknown, con rojo→verde conservado. Video8s/secuencia inspeccionada; Tormenta medida≈30 renders/s con más coste que Suave en **SwiftShader**, no teléfono. Apagado0 renders continuos. [Informe84 y evidencia](84-h3-4-2-movimiento-mapa.md).
+
+**Inicio:** `npm.cmd ci` → `npm.cmd run dev:movement-map` → **http://127.0.0.1:8776/prototypes/movement-map/**. Preparar V9.9 → Ver mapa → superviviente propio → Moverse → destino → revisar/confirmar o cancelar. [Guía Windows/VSCode/LAN](../prototypes/movement-map/README.md). Rutas anteriores disponibles con el mismo servidor; sin Python.
+
+**CI y reservas:** el workflow nuevo comprueba el head exacto, suite/oráculo, regresiones H3.4.1, H3.4.2 y coste/video; resultados finales/artifacts comprobados se enlazan en el nuevo PR draft antes de entregar. Sin teléfono físico/VRAM medida, sin garantía de rendimiento móvil; pausa con visibilidad controlada diferenciada. Arte, nitidez, capacidades visuales y mapa horizontal aplazados. **Única siguiente tarea: revisión del creador de H3.4.2.** No merge ni otras acciones. Bloques inferiores históricos.
+
+---
+
+## H3.4.1 — integración de consulta autorizada ·03/11/2026
+
+**Decisión posterior del creador:** H3.3 aceptada como dirección visual, incluida ambientación; detalles artísticos y pruebas físicas no bloquean H3.4.1. Se autoriza nueva rama/PR contra H3.3, **sin acciones desde el mapa ni merge**. La maqueta permanece independiente. [Informe83](83-h3-4-1-estado-real-consulta.md).
+
+**Base real:**0d7afce6/PR19 draft, CI41703994304 success sobre SHA completo:512/512 y siete JSON aprobados, artifact13264114406 descargado/hashes comparados. Esta evidencia cierra la validación técnica de82; no se confunde con CI de la nueva integración. Main826199d9, tag/release y PR16/18 intactos; PR20 documental no fusionado.
+
+**Entrega técnica para revisión:** rama `experiment/h3-4-1-estado-real`, nuevo PR draft contra H3.3. Partida única en host V9.9, preparación/acciones originales y mapa de consulta sincronizado mediante proyección pública. Fábrica opcional de presentación de dos líneas, receptor encadenado, sin llamadas adicionales a `paint`/`playable`. Sin manos/mazos/comandos en el mapa; pases/diálogos redactan el estado y vuelven a V9.9. Datos/capacidades reales, retratos/posiciones provisionales y excedentes con lista completa. Maqueta H3.3 y experimentos intactos.
+
+**Validación local:** instalación reproducible, builds/checks, **528/528**, oráculo57872ee **40/40**, Chromium1365/393/320 y **9/9 casos de borde**,0 errores normales. Acciones legales desde V9.9/API QA reflejan movimiento, heridas/cura, equipo, barricadas, dados/comida y ronda; mismos snapshot/RNG con FX on/off. Fallecimiento/sucesión, sobreocupación del dibujo, turno IA, error de recurso/reintento, tres reinicios por tamaño y restauración **bfcache real** comprobados. Se corrigieron Registro abierto obsoleto y canvas eliminado al reiniciar; se registran por separado ajustes del arnés. Producto sin globals QA. Guía/capturas/evidencia y reservas en [83](83-h3-4-1-estado-real-consulta.md) y [guía local](../prototypes/state-map/README.md). CI del head exacto se verifica y enlaza en el nuevo PR antes de entregar; el de la base no se atribuye a esta integración.
+
+**Inicio:** `npm.cmd ci` → `npm.cmd run dev:state-map` → **http://127.0.0.1:8775/prototypes/state-map/** → preparación V9.9 → Ver mapa. Referencia H3.3 independiente en el mismo servidor, `/prototypes/hospital-workshop/`. Sin Python.
+
+**Reservas:** sin teléfono físico, sin nuevo benchmark móvil ni persistencia añadida. Arte/slots/Phaser pendientes de revisión. Main/referencia/tag/release, SP-03 y reglas intactos. **Única siguiente tarea: revisión del creador de H3.4.1.** No acciones desde el mapa ni avance automático. Bloques inferiores históricos.
+
+---
+
+## H3.3 — luces asincrónicas, humo negro y sonido de ventisca ·03/11/2026
+
+**Nueva precisión del creador:**81 aún no muestra suficientemente luces/viento; pide titilar asincrónico, humo más negro y sonido de ventisca. Esa solicitud autoriza el audio ambiental y supera su exclusión anterior. Base25d5144/CI41698612565 success, sin confundir ese CI o sus métricas con aceptación visual. [Informe82](82-h3-3-luces-viento-y-ventisca.md);81 queda histórico.
+
+**Entrega para revisión:** cristales atenuados/iluminados localmente, ondas/fases independientes y continuas; humo casi negro en la misma chimenea de colonia, hospital omitido; estelas curvas más contrastadas, sin reiniciar su fase al envolver una zona. Pool120,126 objetos y33KiB de texturas procedurales base estimados. Audio Web Audio procedural independiente del motor, inicialmente apagado, activación expresa/volumen/pausa/limpieza; control general apaga también sonido. Sin nuevos PNG ni dependencias. No se altera main, referencia, reglas, capacidades exteriores, PR16/18 o SP-03.
+
+**Validación:**512/512 Node,11 dirigidas verdes tras rojo, builds/checks y gates locales de maqueta/ambientación aprobados en1365/393/320. Luces con cambio temporal real de píxeles105–118/255 y fases separadas; estelas aisladas2995/936/854 píxeles fuertes. Audio explícito, teclado/volumen, señal digital, pausa/limpieza y fallo/reintento comprobados; seis contextos cerrados por tamaño. Video y muestra de audio12s disponibles en82. Apagado0 renders/s, activo≈30 con costo alto en software. CI del nuevo head y artifact se verifican en PR19 antes de entregar.
+
+**Pendientes:** revisión visual/acústica y teléfono físico; ocultación real no expuesta por headless y consumo móvil no verificado. PR19 sigue draft, H3.3 abierto y sin H3.4/merge. **Única siguiente tarea: revisión del creador.** Bloques inferiores históricos.
+
+---
+
+## H3.3 — ambientación reforzada tras revisión del creador ·03/11/2026
+
+**Observación vigente:** la intensidad anterior resultaba prácticamente imperceptible; se autoriza aumentarla claramente. Este bloque sustituye la calibración inicial Baja del informe80, conservada como historia. Mismo alcance H3.3/PR19 draft, sin merge ni motor/H3.4; capacidades exteriores aplazadas.
+
+**Cambio:** nieve más grande, opaca y rápida con núcleo firme; estelas más anchas/contrastadas, humo más visible y cuatro halos de luces locales. Entrada **Normal**, Baja disponible, movimiento reducido inicia apagado. Misma cámara/anclajes, mismos originales; hospital sin humo por salida ambigua. Pool120 conservado,125 objetos y dos texturas pequeñas (17KiB RGBA base estimados). Fichas e interfaz conservan prioridad. [Informe81](81-h3-3-visibilidad-ambientacion.md).
+
+**Validación:**507/507 Node y builds/checks aprobados; gates locales de maqueta y ambientación aprobados en1365/393/320. El nuevo criterio de contraste en vista general supera500 píxeles fuertes por tamaño (2036/1825/1205); la muestra histórica solo86–172. Cinco reinicios por tamaño,125 objetos liberados, pool/GL/listeners estables y0 errores normales. Apagado0 renders/s, activo≈30; costo considerable en software. Una carrera del arnés de preferencia reducida se reprodujo y corrigió esperando cada notificación real, sin modificar la aplicación. Capturas comparables/video y prueba roja conservados en81. CI del head exacto y artifact se verifican en PR19 antes de entregar.
+
+**Reservas:** revisión perceptual del creador y dispositivos físicos pendientes; renderizado software no demuestra rendimiento móvil. Ocultación de pestaña en headless solo comprobada con alternativa controlada. H3.3 no cerrado. **Única siguiente tarea: revisión visual del creador de esta versión y su video.** Bloques inferiores históricos.
+
+---
+
+## H3.3 — pasada de ambientación visual autorizada ·03/11/2026
+
+Base comprobada `c61be77ae71d371e7c1b148bd51eff7e32d3c07f`, árbol limpio y remoto igual, PR19 OPEN/draft hacia PR18. Sin AGENTS.md aplicable; releídos README, protocolo15, tablero e informes74–79. Main/referencia/tag/release y prototipos de comparación preservados. **Autorizado:** nieve y viento sutiles, humo solo en salida coherente, luces localizadas, controles secundarios y pruebas; no motor/H3.4, sonido, animaciones de actores, mapa horizontal ni corrección de capacidades exteriores.
+
+**Implementación disponible para revisión:** configuración central, simulación visual/RNG propios, pool120 y una textura procedural; misma cámara y WebGL existentes. Nieve continua en mundo con bordes desvanecidos; tres zonas despejadas de viento. Chimenea de colonia(738,310), sin humo de hospital por salida ambigua; cuatro superposiciones lentas en cristales iluminados del hospital/colonia. Capas bajo las fichas, sin entrada propia. Ambientación: total/por efecto/baja-normal, inicial baja y apagada con movimiento reducido. Loop Phaser limitado nominalmente a30FPS solo con efectos; apagado vuelve a demanda. Pausa explícita y delta acotado sin ráfaga acumulada. [Informe80](80-h3-3-ambientacion-visual.md).
+
+**Validación local terminada:**507/507 Node, builds reproducibles y siete JSON aprobados: Canvas, H3.2, técnico, kit técnico, maqueta, ambientación y texturas. Tres tamaños1365/393/320, cinco reinicios por tamaño, pool/contextos/listeners estables, apagado0 renders en reposo. Video≈8s y capturas inspeccionadas; por software se miden≈30 renders/s activos con costo considerable de redibujado, no rendimiento de teléfono. CI del head exacto se registra en PR19 antes de entregar. Cambiar pestaña no expone `document.hidden` en este headless: pausa/reanudación controlada diferenciada de prueba real pendiente. Contraste de estelas calibrado tras una muestra aislada sin cambio detectable sobre nieve. Los resultados finales/limitaciones quedan en80/PR19. **Única siguiente tarea tras la entrega: revisión visual del creador.** H3.3 no cerrado y PR sin merge. Bloques inferiores históricos.
+
+
+## H3.3 — capacidades33, localidades seleccionables y revisión de interfaz ·03/11/2026
+
+Encargo adjunto vigente: actualizar gasolinera a2, biblioteca a3, otros exteriores a4 y colonia a12 **solo en la maqueta**, manteniendo36 espacios exteriores compartidos. Rama/PR19 desde `0b5a05cfd487e8130f47d38947a1f42ca736b8cf`; remoto igual, sin retroceder ni descartar trabajo. Dos pruebas locales pausadas se ajustan al encargo que reemplaza la primera interpretación de ocupación inicial. Sin cambios de motor, main, tag/release, arte, H3.2 o H3.4.
+
+**Implementación:** datos `survivorCapacity` y `exteriorCapacity` separados; fichas2/3 centradas. Siete polígonos ajustados al edificio, prioridad de retratos, clic/tap y selección HTML, panel alternable/cerrable con datos derivados del fixture y ambientación provisional. Sin probabilidades, bonificaciones o inventarios reales. Interfaz compacta, barra con columnas acotadas, nombres sin cortes internos, dados con puntos e iconos SVG/texto, mayor contraste fino de espacios, controles de ensayo secundarios. [Informe79](79-h3-3-localidades-capacidades-e-interfaz.md).
+
+**Revisión inicial:** acciones fuera de vista inicial de escritorio reproducidas; en Chromium154 local, Objetivo61×44 y Restablecer dentro del ancho320 en carga inicial. No se declara reproducido el fallo independiente de Chromium153. Gate fortalecido: tamaño mínimo44 estricto, contención en viewport y ancestros que recortan/scroll, acciones iniciales de escritorio, nombres por palabra y los siete edificios. **501/501 Node**, builds reproducibles y gates locales Canvas/H3.2/técnico/kit técnico aprobados; maqueta aprobada técnicamente en los tres tamaños con siete edificios, máximos33/36, palabras completas y contención de controles; comparación de texturas18 muestras. Los seis JSON locales pasaron y las nuevas capturas se inspeccionaron visualmente. Evidencia final en79; CI del head exacto se registra en PR19 antes de entregar.
+
+**Decisión pendiente:** explorar un mapa más horizontal como composición artística posterior. No estirar/recortar el mapa1448×1086 actual; conservar coordenadas/polígonos configurables. **Única siguiente tarea: revisión visual del creador tras la validación de esta entrega.** H3.3 no aprobado, sin H3.4 ni merge. Los bloques inferiores son historia.
+
+
+## H3.3 — maqueta principal del mapa implementada; revisión visual pendiente ·03/11/2026
+
+El creador autoriza expresamente `kit_arte_h33/PROMPT_CODEX.md`: mapa continuo con siete localidades,36 fichas y36 espacios compartidos de muestra, selección e interfaz inspirada en los bocetos. La restricción anterior que dejaba esa ampliación pendiente queda **superada**, conservada debajo como historia. La maqueta es la entrada principal; el taller técnico tiene ruta separada. Sin motor, reglas, turnos reales, IA, guardados, arte nuevo, merge ni H3.4. Falta revisión visual del creador; no se declara H3.3 aprobado.
+
+Base comprobada: `e974e283df12b582e50d65d2f476f1616a3cad41`, PR19 OPEN/draft hacia PR18; main826199d9, originales y referencias intactos. El entorno inicialmente no disponible ya admite terminal; causa de la demora no expuesta. Checkout principal limpio, reutilizado sin crear otro worktree; se ignoró únicamente el registro de un worktree temporal inexistente al cambiar a la rama H3.3. **Entrega:** mapa continuo y siete PNG originales, selección de fichas,36 espacios compartidos y máximo36 retratos/colonia12, hospital4 retratos+2 zombis+2 barricadas, HUD/expediente HTML fijo y adaptable. Arrastre/zoom/pinza/teclado, feedback de muestra sin reglas. Taller conservado en `tecnico.html`; entrada principal sin etiquetas técnicas. [Informe78](78-h3-3-maqueta-mapa-interactivo.md), capturas y seis JSON locales.
+
+**Validación:** referencia495/495 →499/499 sin reducir cobertura; builds reproducibles; Chromium154/SwiftShader en1365×768/DPR1,393×852/DPR2 y320×640/DPR2. Gates Canvas, Phaser, técnico, kit recibido, maqueta y texturas aprobados. Selección/pan/pinza/arrastre de un dedo, máximos y dados del grupo/turno comprobados, sin errores normales/overflow. Corregidos reinicio sin canvas y menú móvil recortado con reproducción roja conservada. Retorno bfcache real y cancelación sintética separados; limpieza sin acumulación. Sin teléfono físico ni VRAM medida; tap después de arrastre CDP también falla en HTML vacío y se registra como limitación del arnés, con secuencia física pendiente. CI del head exacto se registra en PR19 antes de entregar.
+
+**Reservas:** detalle del mapa1448×1086 al ampliar,58,67MiB de texturas estimadas más auxiliares, arte/pivotes/escala y aprobación H3.2 pendientes. Skill de entorno: borrador guardado con instalación/arranque Node actuales; no publicado ni restauración futura certificada. **Única siguiente tarea: revisión visual del creador de esta maqueta.** Detenerse sin H3.4 ni adopción definitiva de Phaser. Los bloques inferiores son historia, incluidas las restricciones anteriores ya superadas.
+
+## H3.3 — preparación técnica del taller autorizada; maqueta pendiente
+
+**Actualización02/11/2026 — archivos recibidos e integración del sector:** rama sincronizada por avance rápido a `d9f73be0c30c2218658e50cbf5fb9bec362697ce`, conservando la subida del creador. Siete PNG y dos bocetos accesibles y cotejados (dimensiones, modo, bytes, SHA-256 y alfa); se resolvió el bloqueo de acceso. Modo optativo `?kit=uploaded`: zombi/barricadas y cuatro fichas circulares seleccionables, sin cambiar el modo anterior. Mapa/bocetos disponibles como referencias, no como fondo de escena. El `PROMPT_CODEX.md` adjunto propone ampliar a siete localidades/interfaz; esa ampliación contradice el límite del encargo en el chat y **queda pendiente**, no se implementa por la sola subida de archivos. No hay motor ni nuevas reglas. Se conserva la dirección ilustrada; los nombres de archivos no crean identidades de juego.
+
+Retratos384px vs resolución original comparables a idéntica cámara/tamaño. Texturas del kit con retratos384: **69,33/37,33/21,33MiB** para100/75/50%, estimaciones; no VRAM. Sin límite384 al100%:149,33MiB. PNG del sector19.625.964 bytes en todos los perfiles; originales intactos y sin duplicar. [Informe77](77-h3-3-taller-visual-y-kit-piloto.md#integración-acotada-del-kit-recibido--02112026) registra método, evidencia, pruebas y reservas. **Única siguiente tarea vigente: revisión del creador del sector con el kit recibido y definición de apoyos/proyección mediante la maqueta.** H3.3 sigue abierto; aceptación visual de H3.2, dispositivos físicos y ampliación de alcance pendientes. Los apartados siguientes son checkpoints históricos; el bloqueo de archivos ya no está vigente.
+
+**Validación adicional del arnés:** CI inicial0a9a287 falla en una espera del gate nuevo, con495 tests/builds/gates previos aprobados. Reproducido localmente con Chromium143: Playwright1.57 resuelve `Promise<false>` sin repetir el predicado; el taller luego llega correctamente a ready en la misma generación. Corrección limitada a helpers QA de H3.3: polling síncrono de instancia lista/conteo, tres perfiles con decodificación demorada y navegación aguardada explícitamente. No cambia el bundle/producto, criterios visuales ni los prototipos de referencia. Evidencia roja y recuperación se conservan en77; el resultado del nuevo head exacto se registra en PR19 antes de entregar.
+
+**Revisión visual posterior del kit recibido:** siete elementos distintos en el chat (mapa, cuatro retratos, barricada y zombi); la barricada repetida no suma otro recurso. Originales enviados por el creador, todavía sin acceso binario desde las herramientas; ZIP no obligatorio. Dirección ilustrada/invernal común como juicio preliminar, sin aprobación artística. Mapa compuesto para referencia, retratos candidatos a paneles, zombi/barricada candidatos al ensayo hospital; no sustituyen la referencia de persona erguida/puerta ni fijan proyección. No se incorporó arte ni se modificó el contrato/escena. Alfa, dimensiones, hashes, escala real y encaje de estos nuevos aportes **no verificados**. Las pruebas previas de491 casos corresponden al taller anterior. [Detalle y límites en77](77-h3-3-taller-visual-y-kit-piloto.md#revisión-visual-posterior-siete-elementos-aportados-por-el-creador). **Única siguiente tarea vigente: acceso a los archivos y verificación antes de comparar zombi/barricada en el taller.** H3.3 abierto, maqueta y aceptación visual/física pendientes; sin H3.4. Los párrafos siguientes conservan la entrega técnica previa.
+
+Autorización del creador: preparar un taller independiente del hospital y un contrato pequeño del kit, con referencias provisionales, posiciones de ensayo y comparación acotada de texturas. **No implica aceptación visual de H3.2 ni pruebas físicas aprobadas.** Phaser4.2.1 sigue como candidato de trabajo.
+
+Rama `experiment/h3-3-taller-visual`, desde PR18/head `4fc7c66c1af1d053458519b5c6367a8b9224e8a0`, árbol inicial limpio. PR16/17/18 abiertos/draft, sin merge. El PR de H3.3 dependerá de la rama H3.2 para aislar su diff; no altera las referencias Canvas/Phaser. Main826199d9 y tag/release preservados. [Informe77](77-h3-3-taller-visual-y-kit-piloto.md).
+
+**Preparación local revisable:** entrada independiente `prototypes/hospital-workshop`, contrato validado y guía de incorporación. Pan/zoom/selección/centrado, cuadrícula XY, apoyos/límites/capas, guías H/P, oclusión y4S/4 accesos de ensayo. Perfiles explícitos100/75/50%; memoria principal estimada53,33/21,33/13,33MiB, red original6.478.691 bytes igual en los tres. Propuesta de presupuesto, no aprobación de pérdida visual.
+
+**Validación local y CI:**491/491 (483 anteriores+8 nuevas), build V9.9/Phaser/taller reproducibles; referencias conservadas por hashes y gates Chromium; taller1365/393/320, tacto/teclado, cinco reinicios por tamaño, contexto75%, cancelación de carga y bfcache real.0 errores normales/overflow.18 muestras de montaje y18 comparativas de texturas,24 capturas nativas. Sin teléfono físico ni VRAM real. **[PR19 draft](https://github.com/LeviEdition/invierno-en-la-colonia/pull/19)**, implementación21a805ec84868440a24608edeb088624c1d74f81 con [CI SUCCESS](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41097311067); artifact descargado,4 JSON passed y bundle idéntico local/CI. [Registro](evidencias/h33-ci.json). El commit documental posterior conserva ese producto y se verifica nuevamente por head exacto en PR19. Informe77 separa datos medidos/estimados y hallazgos del arnés.
+
+**Pendientes explícitos:** maqueta, perspectiva/proporciones aprobadas, capas finales, presupuesto con hardware real y aceptación artística. Solo marcadores para recursos ausentes. Sin motor, reglas, guardados, catálogo completo, animaciones definitivas o H3.4. **Única siguiente tarea: revisión del creador del taller y aporte de la maqueta según la lista de77/guía. H3.3 no queda terminado.**
+
+## Revisión adicional de nitidez H3.2 — corrección validada, aceptación visual pendiente
+
+El creador autoriza revisar la pixelación global en PR18; Phaser sigue siendo candidato, sin H3.3. Base remota6036b81 (4 checks success), rama experimental; dos notas locales de soporte Windows preservadas. Main826199d9, PR16 ba1d93a4 y referencia/tag/release intactos.
+
+**Reproducción confirmada:** resolución/DPR y filtro LINEAR correctos; aliasing de minificación sin mipmaps sobre los PNG NPOT. Comparaciones controladas antialiasGL, mipmaps sin adaptar, adaptación sin mipmaps y combinación. Corrección pequeña mediante API pública: atlas auxiliar potencia de dos en memoria, frame original/pivote intactos, margen mínimo y filtrado trilineal. Arte y Canvas sin cambios. Candidato inicial falla esquina320 por3,0786pp; margen mínimo1 conserva el criterio±3pp, con resultados1,90/0,62/2,94pp. No se movió al personaje ni se amplió la banda.
+
+**Estado local:** npm ci, check:build,483/483, bundle reproducible; Canvas/Phaser3 tamaños, cámara/pan100%, selección, tacto, reinicios/contexto, bfcache real, seis fallos/reintentos de arranque y adaptador aprobados. Comparativas inicial/acercar/alejar enDPR1/1,25/2;18 capturas nativas y copia RGBA exacta. Aprobación perceptual del creador pendiente. Informe76 registra causa, controles, evidencia previa, derivados y reservas. Aumentan memoria estimada de texturas (~18→53MiB) y carga local (482→597ms); el suelo inicial queda más suave. No se presume calidad por pasar geometría.
+
+**CI:** implementación9ef2e392fd2ed23a289bbc031ea892bffc26dffb,4 checks SUCCESS ([hospital](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41064115192), [engine/browser](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41064115216), [regresión](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41064115172)). Artifact descargado:7 JSON passed, bundle idéntico local/CI. [Resumen](evidencias/h32-nitidez-ci.json). Capturas/informe se agregan en commit documental posterior con el mismo producto; sus checks exactos se comprueban y enlazan en PR18 antes de entregar. Sin adopción definitiva ni prueba de teléfono físico.
+
+**Única siguiente tarea:** revisión del creador de ambas versiones y las capturas, antes de aceptar H3.2. No adopción definitiva, merge, publicación o H3.3. Los apartados siguientes conservan la historia de las entregas anteriores.
+
+
+## Revisión acotada de cierre H3.2 — corregida localmente, aceptación pendiente
+
+**Consulta de uso posterior:** el creador informa «Inicializando» desde VS Code. Captura posterior confirma bloqueo npm.ps1 por política de PowerShell (PSSecurityException); se indicó npm.cmd ci y npm.cmd run dev:hospital, sin modificar políticas. La posible falta del módulo generado y el resultado final de apertura siguen pendientes de confirmación del creador. Se indicó npm ci + npm run dev:hospital (Node22+), o build:hospital antes de Live Server. Si continúa, revisar primer error de consola. Registro en76; sin nueva implementación, publicación o autorización de H3.3.
+
+Autorización nueva: revisar solo PR18/rama experimental, sin H3.3 ni adopción definitiva. Base320fc92 limpia e igual a FETCH_HEAD remoto. Main826199d9, PR16 ba1d93a4 y tag62e4e851 intactos;480/480 de referencia.
+
+**Reproducción antes de corregir:** Chromium154, restauración bfcache real (`pageshow.persisted=true`, misma identidad de documento) vuelve en estado disposed sin app. Pagehide sintético durante descarga permite publicación tardía (caso controlado de cancelación, no prueba bfcache). Inyección QA de excepción síncrona tras construir Game muestra aviso pero deja Game parcial corriendo; excepción asíncrona en Scene.create y create que retorna sin completar quedan loading. [JSON rojo](evidencias/h32-cierre-reproduccion-inicial.json). **Resultado:** corrección `b4df86688f22717ab7ff706d482e0f0c2d99a6a0`: cancelación por intento/cola serial, recuperación en pageshow, reset visual definido, deadline total15s y limpieza de Game parcial. Tres ciclos bfcache y navegación durante Game pendiente confirmados con persisted=true; timer detenido entre freeze/resume. Seis fallos de arranque, reintento y callbacks tardíos aprobados.483/483, Canvas/Phaser3 tamaños,5 reinicios y recursos0 tras disposición (2 hooks de página necesarios). [Informe76](76-h3-2-phaser-hospital.md), evidencias h32-cierre-* y fuente oficial contrastada registran el detalle.
+
+**Adaptador:** sin alternativa pública equivalente para excluir VisibilityHandler anónimo; mismo Phaser4.2.1. Única ampliación funcional: guardia de instancia retirada, tras reproducir start tardío contra loop destruido. Omite broadcasts sin consumidores efectivos, HEADLESS y legacy; revisar al cambiar versión/capacidades. Preserva foco/reloj/PAUSE/RESUME y handlers ajenos. CDP frozen no produjo suspensión observable en este entorno y no se cuenta; bfcache real sí. Sin teléfono físico. Preview LAN opcional probado solo desde el propio entorno, con rutas canónicas restringidas.
+
+**Estado de entrega:** código b4df866 con cuatro checks success ([hospital](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41048175185), [engine/browser](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41048175119), [regresión](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/41048175125)). Artifact descargado, seis JSON passed y bundle idéntico local/CI; [resumen](evidencias/h32-cierre-ci.json). El commit documental posterior se valida nuevamente y se registra con su head exacto en PR18. No aceptación automática, adopción definitiva ni H3.3. **Única siguiente tarea: revisión del creador del cierre técnico.** Main/tag/release, PR16, arte original, reglas y SP-03 intactos. Los bloques inferiores son historia.
+
+
+## H3.2 terminada técnicamente — pendiente de revisión del creador
+
+**Alcance autorizado cumplido:** hospital aislado con Phaser4.2.1/WebGL, rama `experiment/h3-2-phaser-hospital`; implementación `678fd0cd1b6b9c569fad1d507b97d8547468192d`. Sin conexión al motor, nuevas reglas, PixiJS, mapa completo o H3.3. H3.1 aceptada con dirección de **tablero ilustrado2D por capas y mapa continuo de siete localidades**; propuestas anteriores conservadas como historia. PR16/17 siguen sin fusionar.
+
+**Comparación:** PNG/pivotes y referencia Canvas exactos del head auditado PR16 `ba1d93a4ae73a91a6f07660584e2374b53043a67`, copiados sin merge y protegidos por hashes. Delante100%/detrás0%; esquina Canvas56,08–56,74% frente a Phaser53,68–54,85%. La tolerancia inicial±2pp falló en320px (2,40pp); se calibró±3pp con geometría exacta y prueba independiente de cámara/pan. Sin mover recursos ni aprobar arte. Pan framebuffer100% en los tres tamaños.
+
+**Validación local:** npm ci, check:build,480/480 (467 juego+10 Canvas+3 H3.2), build Phaser reproducible. Gates Canvas y Phaser en1365×768,393×852,320×640, teclado/rueda/pinza CDP, selección/ocultos, resize/reset, recursos fallidos y WebGL ausente. Cinco reinicios con listeners/objetos GL estables y disposición final limpia, pérdida/restauración de contexto. Sin errores JS normales ni overflow. Emulación, no Android físico. [Informe76](76-h3-2-phaser-hospital.md) y JSON/capturas guardan evidencia y fallos iniciales.
+
+**Medición final local:** Chromium154 headless, SwiftShader software;18 ensayos secuenciales,3 por configuración/viewport. Canvas listo frío mediana181/207ms; Phaser bajo demanda378/401ms (escritorio/móvil emulado). Bundle1.409.348 bytes, gzip9 376.966; PNG comunes6.478.691. P95 rAF≈16,7–16,8ms, no tiempo GPU; reposo0 draws bajo demanda. Heap JS tras GC≈1,6MiB Canvas/4,8MiB Phaser; VRAM no medida. Resultados no extrapolables al mapa completo o teléfono.
+
+**Revisión crítica:** mitigados listener de visibilidad persistente y textura temporal del framework; adaptador de método protegido fijado a4.2.1 y liberación explícita del contexto. Se conserva el rojo. **Recomendación: ajustar antes de adopción definitiva**, por carga/mantenimiento y pruebas físicas pendientes. No hay mejora artística implícita. **[PR18 en borrador](https://github.com/LeviEdition/invierno-en-la-colonia/pull/18)** hacia main, sin merge. Head930117e: cuatro checks success (regresión/engine/browser/hospital), artifacts del hospital descargados y bundle CI idéntico al local; [evidencia CI](evidencias/h32-ci.json). El cierre documental posterior se verifica nuevamente y se comunica en el PR, sin circularidad de SHA.
+
+Main remoto826199d9, tag/release de referencia y HTML43b8883a… intactos; SP-03/63 sin cambios. **Única siguiente tarea: revisión del creador del PoC, diff e informe y decisión sobre renderer/H3.3. Detenerse.** Sin merge/publicación automática. Los bloques inferiores conservan la historia y sus checkpoints anteriores.
+
+## H3.1 aceptada; H3.2 autorizada con dirección visual precisada
+
+Acuerdo del creador: tablero ilustrado2D por capas y mapa continuo de siete localidades, cámara fija con pan/zoom; elementos independientes y personajes estáticos posibles. Botones de centrado/paneles móviles son compatibles, sectores separados no sustituyen al mapa continuo. Sin3D, rotación, navegación libre, distancias, colisiones o nuevas reglas. La propuesta anterior de resumen/sector queda histórica.
+
+**Única tarea activa:** H3.2, PoC exclusivo del hospital con Phaser candidato principal, versión fija y Canvas de comparación, en rama experimental independiente. PixiJS solo como alternativa ante bloqueo concreto. Comparar composición/controles y esquina contra la medida Canvas, medir costos y probar fallos/resize/reinicio/limpieza. No fusionar PR16/17 ni publicar. No motor, mapa completo o H3.3. Proporciones/encaje/aprobación artística quedan para H3.3. Informes74/75 actualizados antes de implementar.
+
+
+## H3.1 — auditoría y planificación visual terminadas; revisión pendiente · 29/10/2026
+
+**Encargo vigente:** iniciar Hito 3 «Identidad Visual y Experiencia Jugable» con auditoría documental. El creador aprobó el hospital como **base experimental**, no su merge. Rama de esta entrega `docs/h3-1-identidad-visual` desde main 826199d, en worktree separado. PR #16 sigue OPEN/draft sobre ba1d93a; main, prototipo, tag/release y SP-03 intactos. No se encontró AGENTS.md aplicable; se siguieron README y protocolo15.
+
+**Entregables:** [informe 74](74-h3-1-auditoria-identidad-visual.md), inventario de siete áreas/16 definiciones de superviviente/17 objetos/26 encrucijadas/tres objetivos/16 tipos de modal, guía visual propuesta, comparación versionada Phaser/Canvas y arquitectura con un único motor; [plan 75 H3.1–H3.6](75-plan-hito-3-identidad-visual.md), dependencias, criterios verificables y decisiones V-01–V-06. [Evidencia](evidencias/h31-auditoria.json) y capturas documentan la inspección. Se registra la priorización visual actual sin borrar la ruta histórica de SP.
+
+**Hallazgos que condicionan la decisión:** Phaser 4.2.1 es candidato, no dependencia instalada; Canvas interno disponible pero deprecado y APIs v4 diferentes. Snapshot no incluye interacción privada ni existe subscribe; el puerto de presentación es único. El loop gráfico no debe invocar paint(), procesar reglas o consumir RNG del motor. Recomendada evaluación de mundo gráfico + HUD HTML, con proyección por audiencia y sin física que decida acciones.
+
+**Verificación nueva:** npm ci/check:build y 467/467 en main limpio; Chromium en 1365×768,393×852,320×640, tablero/inicio y ocho paneles,0 excepciones normales y 0 overflow horizontal. Gate del hospital repetido y aprobado en tres tamaños. Fuente de restantes diálogos y pruebas existentes revisadas; no se ejecutaron de nuevo partidas completas/offline, Android físico o Phaser. No se afirma benchmark de un framework que no se ejecutó. Distribución Phaser medida solo como archivo:1,375,976 bytes,352,441 gzip9 local; arte actual≈18MiB RGBA base estimada.
+
+**Límite de la entrega:** solo Markdown, JSON de evidencia y capturas; sin código, dependencias, tests, workflows o assets originales nuevos/modificados. Referencia HTML43b8883a… y tag→62e4e851 preservados. **Única siguiente tarea:** revisión del creador de74/75 y decisión sobre autorizar H3.2. Detenerse; no implementar renderer, nuevos recursos, singleplayer ni otro hito en paralelo. Los bloques inferiores conservan el historial anterior.
+
+
+## Referencia V9.9 estable y modular preservada — hito2 cerrado · 29/10/2026
+
+**Autorización completada:** tag anotado y [release pública «V9.9 — Referencia estable y modular»](https://github.com/LeviEdition/invierno-en-la-colonia/releases/tag/v0.9.9-referencia-modular). Remoto inicial62e4e851, sin avances ni tags/releases previos. **Commit preservado: `62e4e85150b2416ccf07d671c186b5c421993b0b`**. Tag `v0.9.9-referencia-modular`, objeto `0fdb214612486f4cc46c1acb444390de963d05e8`, destino confirmado mediante Git y API; oráculo57872ee conservado. Los commits posteriores de automatización/documentación no forman parte del tag.
+
+**Producto publicado y descargado:** `invierno_colonia_v9_9.html`,225283 bytes, SHA-256 `43b8883ad4821e4b50c40791615c5ef6c0b3030476409b4e1c6da4dbd872d692`; manifiesto de300 bytes. Ambos coinciden byte a byte con el build validado. No se distribuyó QA. Checkout limpio: npm ci/check:build/467 pruebas/build/check:build; recuperación independiente desde el tag reconstruye el mismo HTML.
+
+**Publicación verificada:** bloqueo401 de uploads.github.com local, también fuera del sandbox; resuelto mediante workflow manual acotado con credencial del runner. [40908114721](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40908114721) success: vuelve a construir exactamente62,467/467 y descarga/valida adjuntos antes y después de publicar. Descarga adicional local posterior también idéntica. Sin mover tags, reemplazar assets ni modificar reglas.
+
+**Evidencia reutilizada del SHA62 exacto:** CI40903853712/40903853822 success;40/40 contra cada referencia,5QA+5reproducciones producto,3 tamaños, foco/pase/táctil/sucesiones/encrucijadas/finales y4file offline con red desactivada. Emulación móvil no equivale a Android físico. [Informe72](72-preservacion-referencia-modular.md), [evidencia](evidencias/v099-preservacion.json) y [manifiesto](evidencias/manifest-v0.9.9-referencia-modular.json) registran pruebas, reconstrucción y reservas. El CI de la documentación final se verifica por su SHA exacto antes de entregar.
+
+**Hitos1 y2 cerrados.** SP-03/63 intacto byte a byte; sin nueva rama del juego propio, mecánicas, balance o narrativa jugable. Reservas aceptadas: contexto de compatibilidad, esquema V9.9 de dos grupos, VM histórica; Android físico/TalkBack, otros navegadores y balance humano pendientes.
+
+**Único siguiente trabajo:** diseño SP-03 (ciclo de ronda), seguido de SP-04 (balance de un solo grupo), en una entrega separada. No implementar todavía. Los estados inferiores son registros históricos; no sustituyen este cierre.
+
+
+## D1/D2 integradas en main y validadas — hito 1 cerrado ·29/10/2026
+
+**Autorización del creador:** integrar PR15 tras revisión independiente, conservando historia. Se verificaron otra vez head7f3ac7c, main0b75d01, ausencia de conflictos yseis checks aprobados. **Merge convencional6b8bfcadfeb99d16a10b6f4576f3b061584ee1f9**, padres exactos0b75d01 y7f3ac7c; árbol idéntico al aprobado. Oráculo57872ee confirmado como ancestro de main. No squash/rebase.
+
+**Validación posterior en main:** npm ci/check:build,467/467 local yCI,40/40 iguales contra57872ee y40/40 contra V9.9/main0b75d01. Chromium5QA+5producto,3tamaños de producto,3C16/6pase/6táctiles/6C12/6C13/16issue7/6terminal y4file offlineCI; workflow D0 añade5QA/foco aprobados. [CI40902075722](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40902075722), [40902075714](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40902075714) y[40902075817](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40902075817): success sobre el merge real. Artifacts, HTML y15módulos cotejados.
+
+**SP-03 preservado byte a byte** en63 respecto del head aprobado; acuerdos ypropuestas conservan su estado. [Informe71](71-integracion-main-y-cierre-d1-d2.md) y[evidencia](evidencias/d1d2-integracion-main.json) registran SHA, padres, pruebas, límites yresultados. El commit posterior de cierre solo actualiza documentación; no altera el código integrado yse verifica también su CI exacto.
+
+**Tarea activa única:** preparar la preservación formal de la versión modular de referencia, pendiente de autorización específica. **No crear todavía tags/releases o ramas del juego propio ni implementar nuevas mecánicas.** D1/D2 cerradas; detener refactorización general. Reservas: contexto de compatibilidad, schema V9.9 dos grupos, VM de fixtures yvalidación física/otros navegadores/balance humano pendientes. Las secciones siguientes conservan los estados históricos previos al merge.
+
+
+## PR15 D1/D2 abierto — documentación reconciliada, pendiente de revisión final ·29/10/2026
+
+**Encargo cumplido hasta apertura:** [PR15](https://github.com/LeviEdition/invierno-en-la-colonia/pull/15), rama `refactor/d1-d2-arquitectura` → main, regular/no draft. **No fusionado ni auto-merge.** Preapertura7d6a68a con árbol limpio,467/467, build reproducible y[CI40896698599](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40896698599)/[40896698392](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40896698392) success.40/40 contra cada referencia,5QA+5producto y4file offline; artifacts cotejados. GitHub sin conflictos; los checks del último head se verifican antes de entregar yse enlazan en el PR.
+
+**Documentación:** novedades de diseño833eae7 incorporadas por hunks/bloques de18/63; no merge de la rama D1. Base8e3e7d3 y código6277e62 intactos. Acuerdos (base V9.9, tres clases, campaña reactiva, cronología máximo una encrucijada) separados de propuestas (ciclo completo, Encuentros reutilizables y contingencias por muerte). Informes67/68 conservados;69 registra PR actual y[70](70-reconciliacion-documental-y-pr-d1-d2.md) detalla procedencia yvalidación.
+
+**Estado protegido:** main remoto0b75d01 yD1 fuente833eae7 sin modificar. Nada de código singleplayer, reglas/IA/narrativa jugable, tags/releases o refactor extra. Estrategia propuesta de integración conserva ascendencia y57872ee mediante merge convencional, sujeto a aprobación futura.
+
+**Tarea activa única:** revisión final independiente del creador/ChatGPT ydecisión sobre aprobación/merge del PR. **No fusionar automáticamente ni iniciar juego propio.** Las secciones siguientes son registros históricos de preparación y diseño.
+
+
+## Cierre técnico D1/D2 — auditoría aprobada, integración pendiente de autorización ·29/10/2026
+
+Encargo focalizado desdeee73d29, main remoto0b75d01 sin cambios. **Dictamen:** referencia suficientemente modular/estable tras corregir3 bloqueos: controles por prototipo837e5ce, callbacks en vista5757a3c ylisteners de montaje fallidoee4b08e. No ampliar arquitectura singleplayer. [Informe68](68-cierre-integracion-d1-d2.md), [PR propuesto69](69-pr-propuesto-d1-d2.md) y[evidencia](evidencias/d1d2-cierre-integracion-ci.json).
+
+**Código auditado6277e62:**467/467 local yCI, sin omisiones;40/40 iguales contra57872ee y40/40 directamente contra main0b75d01 (451/451 y408/408 históricos). Chromium5QA+5producto,3viewports/3C16/6inicio-pase/6táctiles/6C12/6C13/16issue7/6terminal,4file offlineCI. ArtifactHTML y15módulos cotejados. [CI40884309357](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40884309357) y[40884309718](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40884309718) success. Se conserva el rojo352c094 por recorrido C15 histórico ya superado, corregido en selección de contrato vigente sin borrar la prueba anterior.
+
+**Integración propuesta:** merge convencional que conserve57872ee alcanzable para el oráculo; no squash/rebase sin resolver esa condición. Hay108archivos/78commits de contenido técnico frente a main, con informes/evidencias yplanificación histórica. [Inventario](evidencias/d1d2-integracion-commits.json); cierre posterior solo documental. No se abrió/fusionó PR, no tags/releases ni cambios de main. Reservas aceptadas: contexto de compatibilidad, schema dos grupos, VM de fixtures yvalidación física/otros navegadores pendiente.
+
+**Tarea activa única:** revisión del creador/ChatGPT de informe/diff ydescripción de PR. Esperar autorización antes de abrir o fusionar, preservar versión oficial o iniciar juego propio. Las secciones siguientes son historia de etapas anteriores.
+
+
+## D1/D2 — implementación técnica verificada, pendiente de revisión humana · 29/10/2026
+
+**Autorización vigente:** «Avanza todo incluso d2, manteniendo las reglas de alcance y de autorización». Rama `refactor/d1-d2-arquitectura`, desde57872ee. Commits151be08 y34a6274; documentación posterior conserva código. main remoto0b75d01 yD1ba9a423 intactas; PR14 ya fusionado históricamente. No nuevas fusiones, cierres de issues, tags/releases, singleplayer, SP-02 o narrativa.
+
+**Resultado:** un build esbuild reproducible con módulos privados;55 eventos migrados sin globals; estado/reglas/objetos/crisis/turnos separados, motor sin DOM, vista protegida y agente opcional mediante comandos.462/462 local yCI,0 omisiones;451/451 en checkout histórico;40/40 registros completos idénticos, conservado orden RNG/acciones/mensajes. Chromium5/5 QA y5/5 producto,3 viewports de producto,3C16,6contratos inicio/pase,6tamaños táctiles y4/4 aperturas file offline en CI. Localfile bloqueado por política, emulación no equivale a Android físico.
+
+**CI exacto34a6274:** [regresión40877102864](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40877102864) y[arquitectura40877102629](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40877102629) success; artifacts descargados/cotejados, hashes HTML y15módulos iguales. [Informe67](67-d1-d2-arquitectura.md), [evidencia](evidencias/d1d2-ci.json). Revisión crítica propia detectó/corrigió receptor queueMicrotask, descriptores de vistas y catálogo congelado, con regresiones. Reservas: contexto de compatibilidad amplio, schema/reglas V9.9 de dos grupos, VM en fixtures históricos y pruebas físicas/otros navegadores pendientes.
+
+**Tarea activa única:** revisar informe/diff y aceptar o pedir ajustes de D1/D2. No iniciar hito2, SP/juego propio ni integración automáticamente. Las secciones siguientes conservan checkpoints históricos superados por la autorización nueva.
+
+
+## D1.2b — primer contrato UI/cargador listo para revisión · 29/10/2026
+
+**Autorización de continuidad del creador:** tras discutir el método y el siguiente paso, «Bueno prodigamos». Se anunció y acotó D1.2b a cargador compartido, contrato de pruebas y piloto de inicio/pase. No aprobación de build principal, reglas, SP-02 o D2. Rama nueva `refactor/experiment-d1-2b-contracts`, desde918e241; main0b75d01 yD1ba9a423 intactas.
+
+**Resultado local:** referencia yPoC451/451,12 pruebas nuevas sin eliminar las439; smoke semántico con seis defectos deliberados detectados.40 configuraciones idénticas a referencia y evidencia A,5UI completas,3 viewports C16 y6 pruebas de comandos capturados. Los tres botones dejan de resolver el comando por su nombre global; resto de controles todavía conserva globals. Fuente/plantilla/HTML/build principal intactos. File de la nueva salida aprobado en CI:4/4 aperturas con red desactivada.
+
+[Informe66](66-d1-2b-contratos-inicio-y-pruebas.md), con límites y rollback. Código8b738df, CI40865297188/40865297184 ambos success451/451; artifacts cotejados,40motor/5UI/3viewports/6contratos/4file. Checkpoint documental se verifica por su SHA antes de entregar. **Tarea activa única:** revisión del bloque por el creador/ChatGPT para delimitar otra ampliación. No ampliar controles, cambiar build por defecto ni iniciar D2 automáticamente. El informe65 y las cifras438/439 siguientes son historia de D1.2a, conservada como evidencia.
+
+
+## D1.2a — experimento terminado, pendiente de revisión · 29/10/2026
+
+**Encargo vigente del creador:** PoC pequeño/reversible de esbuild, derivado de `refactor/d1-catalogo=ba9a423`, sin cambios de reglas ni otra auditoría de fidelidad. `main=0b75d01` coincide con referencia. Checkout previo limpio en rama C antigua; se creó `refactor/experiment-d1-2a-esbuild`. Los estados anteriores «pendiente de autorización» son históricos; SP-02 sigue siendo diseño separado, no implementación.
+
+**Resultado local y revisión del experimento:** referencia433/433 inicial y439/439 con6 tests nuevos; candidato438/439, una aserción literal `class ItemCatalog` incompatible con salida del bundler. **No eliminada ni debilitada; adopción no aprobada.**40/40 configuraciones reales comparadas idénticas salvo hashes de fuente,5/5 partidas UI antes/después y3/3 viewports por variante. File local bloqueado por política de Chromium en ambas versiones; **CI4/4 aperturas aprobadas**, red desactivada. Lockfile nuevo permite npm ci. Motor/plantilla/catálogo/HTML/build de referencia intactos.
+
+[Informe65](65-d1-2a-experimento-esbuild.md) contiene diff lógico, evidencia, riesgos, comparación y rollback. Recomendación **ajustar**, no adoptar. Implementación181903c: CI40859658496 referencia success439/439; CI40859658678 experimento failure por el único fallo de formato, browser success5UI/3viewports/4file. Artifacts cotejados con local; no declarar CI global verde. Checkpoint/prueba diagnóstica final se verifican por su SHA al entregar. **Tarea activa única:** revisión del informe/diff por el creador/ChatGPT; Codex se detiene. Prohibido avanzar D1.2b/c/d o D2 automáticamente.
+
+
+## Reconciliación de los registros de diseño SP-03
+
+Los bloques siguientes provienen de `refactor/d1-catalogo@833eae7`, escritos en orden cronológico inverso. Se conservan sus preguntas y propuestas como historia. **Prevalece la precisión cronológica de tres categorías**, posterior a la propuesta de retener candidatas hasta el cierre: no hay cancelación retroactiva. La sección63 «Estado reconciliado» distingue acuerdos de propuestas. Las menciones a D1/D2 «en curso» describen el momento de redacción; el cierre técnico y la tarea vigente están arriba.
+
+## SP-03 — Contingencia de muerte en historias secundarias reutilizables · 29/10/2026
+
+**CUESTIÓN ABIERTA PLANTEADA POR EL CREADOR:** la protagonista de un Encuentro/plantilla narrativa (p. ej., «Mara busca a su hermano») **puede morir una ronda después de iniciado**. El Director debe conservar la historia real sin inmortalidad, sin escenas con difuntos ni transferencia arbitraria de parentesco o motivaciones. [Evaluación y propuestas en 63 §6.2D](63-hoja-de-ruta-planificacion-singleplayer.md).
+
+**PROPUESTA CRÍTICA, NO APROBADA:** en caso de muerte, reevaluar si el arco se **cierra inconcluso**, **continúa opcionalmente con otro personaje que conocía la pista**, **se transforma** por consecuencias de NPCs/hechos persistentes, o **queda en pausa** hasta condiciones coherentes. Distinguir información que conoce el jugador de información que el líder y otros supervivientes realmente conocen. Mantener historia, familia, testigos, decisiones y agenda; no borrar ni reasignar silenciosamente los vínculos. Para evitar explosión de escritura: cada historia reutilizable requiere como mínimo un **cierre coherente tras muerte**, y solo algunas necesitan continuación; la campaña principal mantiene alternativas para evitar softlocks.
+
+**ÚNICA SIGUIENTE DECISIÓN DE DISEÑO:** confirmar o ajustar el criterio de mortalidad/continuidad de Encuentros (cierre posible; continuación solo sustentada por hechos y conocimiento) y después concretar un arco piloto con dos o tres escenas y muerte en distintos momentos. **Sin código, sin cambios mecánicos de V9.9 ni interferencias con D1/D2 o main.**
+
+
+## SP-03 — Propuesta de Encuentros con historias reutilizables por personaje · 29/10/2026
+
+**PROPUESTA DEL CREADOR, en evaluación crítica:** no escribir un arco exclusivo por cada superviviente; diseñar **plantillas de historias secundarias** que puedan asignarse dinámicamente a un superviviente **elegible** de los que controla el jugador. Ejemplo «familiar desaparecido en una localidad»: Mara, Iris o Damián podrían protagonizar la misma estructura narrativa **siempre que su biografía y hechos previos sean compatibles**. Un arco ya comenzado queda **vinculado a su personaje y sus NPCs concretos**; no reasignarlo sin justificación tras una muerte. La agencia del líder decide qué recursos/acciones dedicar. La personalización de tono, motivación y consecuencias debe impedir que todos parezcan nombres intercambiables.
+
+**REVISIÓN CRÍTICA:** la reutilización ahorra escritura pero puede generar contradicciones familiares, repetición de historias, personajes indistintos y bloqueos por muerte. Antes de aprobar, prototipar **una plantilla** y contrastar sus escenas con varios protagonistas, pérdida de actor, decisiones rechazadas, relaciones y consecuencias mecánicas. **No se han aprobado** asignación aleatoria, biografías nuevas, tasa de encuentros, esquema técnico, rasgos ni reglas de persistencia concretas. [Ver 63 §6.2C](63-hoja-de-ruta-planificacion-singleplayer.md).
+
+**SIGUIENTE TAREA DE DISEÑO:** confirmar o refinar la filosofía de Encuentros compartidos **con protagonista persistente y elegibilidad**; luego detallar disparadores/ritmo y prioridad de los tres sistemas narrativos. **V9.9/main/D1/D2 sin modificación por este registro.**
+
+
+## SP-03 — Tres clases narrativas + regla de prioridad temporal · 29/10/2026
+
+**ACUERDO DEL CREADOR (diseño conceptual):** organizar la narrativa en **Encrucijadas** (dilemas menores de convivencia y recursos; dar vida al mundo), **Encuentros** (desarrollo y carácter de supervivientes, relaciones y conflictos, con posibles efectos persistentes) e **Historia principal** (acontecimientos reactivos vinculados a la campaña/objetivo y sus requisitos de victoria). **Clasificar por función narrativa y no por gravedad exacta**. La presencia de personajes de la secta en un evento del hospital pertenece a la **Historia principal** aunque el jugador todavía no conozca su identidad; no forzar acontecimientos importantes cada ronda. Ver [63 §6.2B](63-hoja-de-ruta-planificacion-singleplayer.md).
+
+**PRECISIÓN CRONOLÓGICA, prevalece sobre anteriores ideas de aplazar encrucijadas:** encrucijadas condicionadas, **máximo una por ronda**; **si ocurre una antes que un evento importante de historia principal, pueden suceder ambos en esa jornada**; **si ya ocurrió un evento principal, no activar una encrucijada nueva ese mismo día**. No cancelar ni revertir una decisión ya realizada. Encrucijada y evento principal no son cuotas obligatorias; los encuentros tienen frecuencia y reglas propias **pendientes de acuerdo**.
+
+**OBSERVACIONES CRÍTICAS EN ANÁLISIS:** distinguir función editorial de impacto, duración, prioridad y obligatoriedad; no crear encuentros que sean solo encrucijadas largas con `moral +1`; campaña puede avanzar por complicaciones sin aumentar contador de muestras; algunas escenas pueden informar sin exigir decisión. **ÚNICA SIGUIENTE TAREA DE DISEÑO:** definir disparadores y prioridades de **Encuentros** cuando coinciden con Encrucijadas o Historia principal, luego simular distintas cronologías de una ronda. No se autoriza código; D1/D2 y main no cambian por esta documentación.
+
+
+## SP-03 — Campaña activada por acciones + encrucijadas cotidianas · 29/10/2026
+
+**ACLARACIÓN EXPRESA DEL CREADOR, ACUERDO CONCEPTUAL:** la partida inicia con una campaña/objetivo; el Director no debe forzar un gran evento narrativo cada ronda. **Los eventos de la campaña reaccionan a decisiones, lugares y hechos verificados**, y las pistas pueden sugerir destinos sin obligar al jugador. Ejemplo ilustrativo: en «Encontrar la cura», el rumor de desconocidos en hospital anticipa un **primer contacto al llegar allí por primera vez** con personas que pertenecen a la secta rival sin que el jugador lo sepa todavía; la decisión registrada condiciona escenas futuras. No convertir el ejemplo en guion canónico ni bloquear la victoria por no visitar el hospital: diseñar alternativas/contingencias.
+
+**SEGUNDO FLUJO — DECISIÓN ACORDADA 29/10/2026:** conservar encrucijadas de V9.9 (nombre por revisar) como decisiones cotidianas breves, **flexibles y condicionadas**. **Máximo una por ronda, solo si se cumple una condición**; **si esa ronda se activó un evento importante de campaña, desactivar la encrucijada cotidiana de esa jornada**. No existe obligación de generar contenido narrativo cada ronda. Un evento menor puede tener consecuencias acumulativas o abrir secundarias sin forzar la trama principal. Véase [63 §6.2A](63-hoja-de-ruta-planificacion-singleplayer.md).
+
+**ÚNICA SIGUIENTE MICRODECISIÓN DE DISEÑO:** definir **cuándo comprobar y presentar las encrucijadas candidatas** para que un evento importante que se dispara más tarde en la misma ronda también suprima la cotidiana, y si se reevalúa en rondas posteriores una condición que siguió vigente. **Propuesta no aprobada:** reunir candidatas condicionadas durante las acciones y resolver si se muestra una al cierre de la fase, después de conocer si hubo escena principal. Falta delimitar qué cuenta como «evento importante». No se programó nada; D1/D2, referencia V9.9 y main sin cambios por esta decisión.
+
+
+## SP-03 — Borrador de ciclo de ronda singleplayer · 29/10/2026
+
+**Diseño EN DISCUSIÓN, no aprobado:** estructura lógica A apertura de crisis/estado → B acciones libres del líder y reserva de dados del grupo (V9.9 de base) → C encuentros del Director **intercalados por disparadores válidos** → D única resolución de colonia → E resumen y persistencia de hechos/agenda. El Director no es J2 y no debe existir pase obligatorio a un segundo equipo ni duplicar la resolución. [Ficha SP-03 sección 6](63-hoja-de-ruta-planificacion-singleplayer.md).
+
+**Microdecisión siguiente de DISEÑO:** cómo sincronizar historia y estrategia: R1 escenas solo apertura/cierre, R2 escenas inmediatas ante todo disparador, o R3 **modelo híbrido contextual recomendado para valorar**, con encuentros urgentes cuando suceden y otras consecuencias diferibles agendadas; evitar escenas forzadas en todas las rondas. Aún no se autorizó ningún modelo.
+
+**Riesgos y pruebas pendientes:** muerte del actor/líder durante la ronda, qué ocurre con dados restantes, prioridad de decisiones y terminales, escenas invalidadas por muerte, uso de un solo equipo, alimentación/crisis/zombis, ritmo móvil, relato diferido sin aleatoriedad obligatoria. SP-04 será responsable del balance y acceso a reclutamiento, no se decide aquí. **Sin cambios de implementación, branch de producto, motor V9.9 o main; D1/D2 continúan por separado.**
+
+
+## SP — Decisión de alcance y balance singleplayer · 29/10/2026
+
+**APROBADO EN DISEÑO por el creador:** primer juego propio singleplayer con **mecánicas/dados esencialmente basados en V9.9**; la investigación alternativa de pool/híbrido y estadísticas nuevas se **aplaza**, no se implementa ni se elimina de la documentación. Enfoque creativo: líder encarnado, Director de Juego, tramas y consecuencias persistentes. **No se aprueba todavía un balance final ni se modifican F-10/F-12/F-15 automáticamente**; revisar posteriormente su pertinencia en la matriz F.
+
+**Advertencia explícita del creador:** al arrancar con tres supervivientes, morir uno resulta especialmente grave y quizá requiera **mayor acceso a nuevos supervivientes**. La fórmula V9.9 de **1 + supervivientes vivos** pasaría de **cuatro a tres dados** tras la primera baja, además de perder habilidades y cobertura espacial. Deben evaluarse espiral de derrota, encuentros/reclutamientos accesibles pero con costos y consecuencias, grupos de uno o dos, lesiones, sucesión, alimentación, crisis, zombis, exposición, objetivos y el posible desequilibrio opuesto por reclutar en exceso. **Ninguna tasa de reclutamiento ni regla compensatoria está aprobada**.
+
+**Próximo paso único de DISEÑO:** **SP-03**, describir ronda de líder singleplayer con V9.9 como base; coordinar con **SP-04** escenarios de muerte/reclutamiento y balance de uno a tres supervivientes. Documento de decisiones: [63, sección 5K](63-hoja-de-ruta-planificacion-singleplayer.md). **Trabajo técnico D1/D2 separado**: no alterar reglas, motor, main, pruebas o ramas de producto por este registro; Codex continúa su cierre bajo sus autorizaciones vigentes.
+
+
+## Cierre de jornada — bitácora 28/10/2026 y próximo SP-02 · 28/10/2026
+
+**Registro completo:** [64 — Bitácora de desarrollo del 28/10/2026](64-bitacora-2026-10-28.md). Cierre de la reflexión sobre alcance: **para el primer videojuego conviene examinar conservar las mecánicas V9.9 y priorizar narrativa persistente**. **No hay aprobación irreversible** de cancelar el motor híbrido ni autorización de iniciar código singleplayer. La investigación SP-02 queda documentada sin perderse.
+
+**REANUDACIÓN DE DISEÑO jueves 29/10/2026:** **SP-02**, no SP-05: (1) decidir si V9.9 será la referencia mecánica inicial y aparcar temporalmente híbrido; (2) revisar F-10/F-12/F-15 frente a esa decisión; (3) reserva de grupo 1 + vivos, reparto decidido por líder y tres supervivientes, **sin segundo equipo obligatorio**; (4) revisar catálogo/stats/pasivas y acciones sin dado; (5) simular 2–3 rondas sobre papel. **Vía técnica independiente sin cambios:** D1.2a reversible pendiente de autorización, luego D1/D2, sin tocar `main`.
+
+
+## SP — Alcance del primer videojuego: priorizar narrativa sobre mecánicas nuevas · 28/10/2026
+
+**Reflexión del creador, NO decisión cerrada:** siendo su primer videojuego, integrar mecánicas híbridas/nuevas estadísticas al Director y narrativa persistente puede exceder el alcance deseado. Se plantea **reutilizar mecánicas V9.9** y concentrar identidad del juego propio en singleplayer narrativo con decisiones diferidas. **Recomendación crítica:** la exploración de motores alternativos de SP-02 puede aparcarse como backlog; no eliminar el trabajo previo ni declarar mecánicas anteriores derogadas sin confirmación. [Ver 63, sección 5J](63-hoja-de-ruta-planificacion-singleplayer.md).
+
+**Matiz:** singleplayer sin equipo rival requiere todavía adecuaciones mecánicas mínimas y validación de crisis, dados, recursos y amenazas, no solo textos. **Siguiente tarea de DISEÑO sugerida:** acordar alcance limitado del primer vertical slice narrativo (objetivo, decisiones con consecuencias diferidas, estados persistentes, epílogo y pruebas), y delimitar qué permanece idéntico de V9.9 y qué solo se adapta por necesidad. **Tarea técnica vigente separada:** D1/D2; no autorizar cambios de código o fusiones por esta reflexión.
+
+
+## SP-02 — Exposición posterior al combate determinista · 28/10/2026
+
+**Nueva hipótesis del creador:** si una defensa preparada se resuelve **sin tirada de ataque**, el superviviente **podría tirar exposición después de cada combate**, manteniendo el peligro pese a tener resultado ofensivo previsible. **No aprobado como regla ni implementado.** La mecánica recuerda a V9.9: después de ataque ordinario se tira exposición, con excepciones por equipo/condiciones. El d6 de referencia: 1 mordedura letal, 2 congelación, 3 herida, 4–6 blanco; **dos exposiciones sin mitigación implican 30,56 % de al menos una mordedura**, si ambas se realizan. La agresividad puede ser excesiva.
+
+**Análisis y propuesta de prueba:** [63 — SP-02, sección 5I](63-hoja-de-ruta-planificacion-singleplayer.md). **No confundir** exposición por acción de combate con exposición por cada enemigo muerto; mantener separadas **eficacia de defensa** y **costo humano**. **Siguiente tarea conceptual:** simular 2–3 rondas con defensa determinista sin exposición, exposición V9.9, exposición mitigada por equipo/cobertura y combate por pool, midiendo bajas zombi y supervivencia por separado. **Técnica:** no alterar V9.9, `main`, F-10/F-12/F-15 ni vía D1/D2.
+
+
+## SP-02 — Pruebas del híbrido contextual · 750.000 rondas · 28/10/2026
+
+**Ejecución:** banco de pruebas del laboratorio SP-02 ampliado a **tres modelos** (V9.9 simplificado, tiradas por atributo puras, híbrido contextual) y **25 configuraciones × 3 métodos × 10.000 = 750.000 rondas simuladas**, **13/13 pruebas funcionales** aprobadas. Informe y advertencias detalladas: [63 — SP-02, sección 5H](63-hoja-de-ruta-planificacion-singleplayer.md).
+
+**Reglas HÍBRIDAS SOLO DE PRUEBA:** búsqueda y movilidad por dado/atributo; mantenimiento directo con costo de orden; defensa sin tirada y sin exposición únicamente si el combatiente tiene stat ≥4 y la colonia posee al menos una barricada. Otras situaciones siguen usando dados. **No se aprobó el umbral, la inmunidad, la cantidad de acciones ni el cambio de sistema**.
+
+**Metas comparadas, condiciones básicas de cuatro órdenes:** medicamentos **81,87 % / 71,16 % / 71,16 %**, asedio **83,17 % / 43,76 % / 62,33 %**, laboratorio **81,87 % / 61,57 % / 71,16 %** (V9 simplificado/pool/híbrido). Con éxitos escalonados y corrección de exposición: asedio **83,17 % / 59,35 % / 84,34 %**. **Crítico:** con «fortificar primero» y Damián, el híbrido llega a **100 %** en el asedio de la maqueta: la defensa determinista no tiene desgaste ni costos reales y trivializa el objetivo. Combatir en colonia sin exigir barricada también produce 100 % y es aún menos recomendable.
+
+**ÚNICA SIGUIENTE TAREA DE DISEÑO:** probar una defensa determinista condicionada por preparación **y costos reales (desgaste, municiones, capacidad, presión zombi)** en **2–3 rondas**, sin volver a introducir tiradas para toda tarea; comparar además grupos sin un gran combatiente y el efecto de tres órdenes. Este análisis debe mantenerse separado de D1/D2 y de las decisiones F-10/F-12/F-15 no sustituidas. **No alterar V9.9 ni `main`.**
+
+
+## SP-02 — Exploración de resolución híbrida contextual · 28/10/2026
+
+**Hipótesis del creador, NO regla aprobada:** unificar la **economía de órdenes limitadas** y permitir **diversas formas de resolución**, sin tirar dados en todas las acciones. Usar reservas por atributo en acciones inciertas (búsqueda, movilidad, encuentros) y resolver **acciones rutinarias directamente** o **combates de defensa preparada por estadísticas/equipo sin tirada**. Ejemplo: atacar desde la colonia sin tirar, para evitar pérdidas recurrentes de órdenes en el prototipo de asedio. **Advertencia:** la inferioridad estadística anterior del pool en asedio surgió de modelos no equivalentes, no demuestra que «combate con dados» sea un problema real.
+
+**Criterio de examen:** elegir resolución por las **condiciones del mundo**, no por parche de porcentajes; colonia con defensas establecidas puede justificar defensa previsible, pero cuando está invadida o colapsan defensas puede volver la incertidumbre. Un ataque sin tirada **sigue pudiendo consumir orden y recursos**, la estadística de combate debe tener efecto y el refugio no debe ser una zona de eliminaciones ilimitadas sin riesgo. Diferenciar **acción directa**, **resolución determinista por capacidades** y **prueba por atributo**.
+
+**Documento:** [63 — SP-02, sección 5G](63-hoja-de-ruta-planificacion-singleplayer.md). **Siguiente tarea conceptual:** comparar la misma defensa con pool puro vs híbrido contextual, manteniendo constante estado/acciones y contrastando refugio preparado, amenazado e invadido; comprobar consistencia, tensión, protagonismo de stats y número de tiradas. **Implementación prohibida en esta etapa:** no alterar F-10/F-12/F-15, V9.9 ni `main`; D1/D2 por su vía separada.
+
+
+## SP-02 — Informe de 480.000 simulaciones exploratorias del laboratorio · 28/10/2026
+
+**Pruebas realizadas:** 3 escenarios × 6 configuraciones × 2 métodos × 10.000 repeticiones = **360.000 rondas**, más 6 variantes de asignación de personajes × 2 métodos × 10.000 = **120.000**; **11/11 verificaciones** del motor simplificado aprobadas y ensayo anterior de 500 rondas reproducido. Detalle: [63 — sección 5F](63-hoja-de-ruta-planificacion-singleplayer.md).
+
+**Resultados ilustrativos con cuatro oportunidades, efectos básicos y movimiento gratis:** metas **V9.9 simplificado / nuevo pool**: medicamentos **81,87 % / 71,16 %**, asedio **83,17 % / 43,76 %**, laboratorio **81,87 % / 61,57 %**. **NO son tasas de victoria del V9.9 real ni evidencia causal de superioridad:** el clásico del laboratorio es aproximado, personajes y pasivas no equivalen, plan fijo, exposición distinta, los éxitos escalonados cambian simultáneamente recompensas y riesgo y la economía tres/cuatro órdenes no discrimina bien algunas metas. Ambos métodos ya muestran especialización; el nuevo tiene más acciones fallidas sin efecto básico.
+
+**DICTAMEN:** mantener órdenes limitadas + pruebas por atributo como **hipótesis preferida de exploración**, sin aprobar reemplazo de F-10/F-12/F-15. **ÚNICA SIGUIENTE TAREA DE DISEÑO:** prueba con una sola variable distinta entre métodos, después prueba manual de percepción estratégica/ritmo y casos de riesgo; evitar nuevos números de balance en tanto no se aísle la causa. **Tarea TÉCNICA:** D1.2a con Codex, luego D1/D2, sin modificar V9.9 ni `main`.
+
+
+## SP-02 — Evaluación de conveniencia de dados por atributo vs V9.9 · 28/10/2026
+
+**Pedido del creador:** evaluar si **órdenes limitadas + tiradas por atributo** generan una experiencia mejor que los **dados de acción revelados al inicio** de V9.9, **sin debatir aún balance de situaciones, heridas o dificultad concreta**. [63 — sección 5E](63-hoja-de-ruta-planificacion-singleplayer.md) contrasta decisión predominante, agencia, atributos, narrativa, ritmo, costos de implementación, incertidumbre y pérdida de optimización de dados visibles. **Dictamen provisional de DISEÑO:** modelo nuevo es **candidato principal a explorar** por su potencial para especialización y consecuencias narrativas; **no está aprobado ni demostrado superior**. F-10/F-12/F-15 no se reemplazan todavía.
+
+**Observación metodológica crítica:** V9.9 usa **1 + vivos** dados de acción y movimiento sin dado; propuesta usa **vivos** órdenes y movimiento con prueba. Para una comparación válida del **sistema de resolución**, mantener inicialmente **igual número de acciones y mismo costo de movimiento** y comparar el mismo dilema/estado con ambos modelos. Luego evaluar separadamente número de órdenes y movimiento. Evitar fallos sin ningún resultado, tiradas triviales e interrupciones que sustituyan estrategia por azar.
+
+**ÚNICA SIGUIENTE TAREA DE DISEÑO:** evaluar el mismo escenario de supervivencia y elección de personajes con ambos sistemas, observando agencia, especialización y ritmo sin calibrar resultados todavía. **TAREA TÉCNICA SIN CAMBIOS:** D1.2a con Codex, luego D1/D2; sin modificar V9.9 ni `main` o autorizar implementación del juego propio.
+
+
+## SP-02 — Nueva propuesta: acciones según supervivientes y movilidad por dados de atributo · 28/10/2026
+
+**HIPÓTESIS EXPLÍCITA DEL CREADOR (NO APROBADA COMO REGLA FINAL):** eliminar tirada inicial de dados de acción; el líder administraría una **cantidad de acciones por ronda igual a los supervivientes activos** (tres supervivientes → tres acciones), y las acciones importantes se resolverían lanzando tantos dados como el atributo de cada personaje. Se busca integrar exposición y otros riesgos en resultados por grados. **Ejemplo:** Mara movilidad 5, tira 5d6 para llegar al hospital; 2+ éxitos = llega sin exposición, 1 = llega y tira exposición, 0 = llega con herida. El ejemplo **no** es aún una tabla aprobada.
+
+**Revisión crítica y evidencia:** [63 — SP-02, sección 5D](63-hoja-de-ruta-planificacion-singleplayer.md) contiene probabilidades, el riesgo de que 1 éxito con mordedura resulte peor que 0 éxitos con herida, el peligro de movilidad baja, el costo de la expedición si trasladarse consume una de tres acciones, y la espiral por bajas. Compara **T1** movilidad cuesta acción, **T2** movilidad es prueba posicional pero no gasta acción, **T3** acción compuesta. Dejar F-10/F-12/F-15 **sin modificar** hasta una eventual revisión y aprobación explícitas.
+
+**ÚNICA SIGUIENTE TAREA DE DISEÑO:** comparar una ronda T1 vs T2 con tres supervivientes y tres acciones, estableciendo si desplazarse paga acción y cómo resolver consecuencias sin doble tirada ni daño arbitrario. **TAREA TÉCNICA SIN CAMBIOS:** D1.2a con Codex, luego D1/D2, sin cambios en V9.9 ni `main`, sin merge/release ni producto propio iniciado.
+
+
+## SP-02 — Alternativa de dados por atributo (dice pool) en comparación · 28/10/2026
+
+**Nueva hipótesis del creador:** el propio sistema de dados de V9.9 puede limitar el desarrollo de estadísticas. Se estudia un enfoque de *Arkham Horror* de mesa: pruebas que tiran tantos dados como atributo, cuentan éxitos y permiten resultados escalonados. **No se aprobó** reemplazar F-10, F-12 o F-15 ni introducir atributos o reglas nuevas.
+
+**Documento ampliado:** [63 — SP-02, sección 5C](63-hoja-de-ruta-planificacion-singleplayer.md). Compara **M1** dados preasignados del juego actual, **M2** acciones/órdenes del líder como recurso separado + pruebas de varios dados por atributo y **M3** híbrido. Registra probabilidades, riesgos de azar/frustración, costos de las acciones, pasivas, progreso narrativo y efecto sobre la tercera estadística.
+
+**ÚNICA SIGUIENTE TAREA DE DISEÑO:** simular/contrastar los mismos escenarios de 2–3 rondas bajo M1/M2/M3, empezando por decidir **si el azar debe revelarse antes de asignar las acciones o durante su ejecución**, sin cambiar el acuerdo de liderazgo/reparto libre. **TAREA TÉCNICA SIN CAMBIOS:** D1.2a con Codex, luego D1/D2; no cambiar V9.9 o `main`, fusionar ni crear versiones propias por esta discusión.
+
+
+## SP-02.1 — Evaluación de una tercera estadística relevante · 28/10/2026
+
+**Nueva hipótesis solicitada por el creador:** considerar una **tercera estadística** únicamente si agrega decisiones activas de peso comparable a **combate y búsqueda**, de forma coherente con el juego. No hay atributo, nombre ni reglas aprobadas. La revisión [63, sección 5B](63-hoja-de-ruta-planificacion-singleplayer.md) contrasta **movilidad, resistencia, técnica y apoyo/oficio/operaciones**, favoreciendo como hipótesis de estudio una tercera familia de operaciones de supervivencia (mantenimiento, fortificación, preparación), sin adoptarla. Se comprobaron acciones de V9.9: `barricade/clean/attract` consumen un dado cualquiera; movimiento no usa dado. No imponer nuevos umbrales sin balance.
+
+**Siguiente tarea de DISEÑO:** desarrollar **3–5 acciones concretas** candidatas de la tercera familia, su frecuencia/costo e impacto en la asignación de dados, y decidir si realmente justifica una tercera estadística. **Trabajo técnico sin cambios:** D1.2a y luego D1/D2 con Codex, sin cambio de V9.9, `main` ni permisos de merge.
+
+
+## SP-02 — Análisis de estadísticas y pasivas sin reglas nuevas aprobadas · 28/10/2026
+
+**Revisión de diseño:** se inspeccionó el catálogo real de V9.9: ataque, búsqueda, influencia y habilidades de búsqueda, ataque, construcción, curación, movilidad, cocina y resistencia. Se documentó en [63, sección 5A](63-hoja-de-ruta-planificacion-singleplayer.md#5a-análisis-de-especialización-y-pasivas-28102026--propuestas-no-acuerdos-nuevos) la distinción entre stats, pasivas, equipo y situación, dos opciones de amplitud del sistema, riesgos de monopolio y escenarios de pruebas en papel. Se detectó que el criterio F-10 `atributo >= dado` conserva probabilidades marginales de F-15, pero vuelve más difíciles los dados altos; la comparación con `atributo + dado >= 7` queda como **alternativa NO aprobada**, sin modificar el acuerdo F-10.
+
+**Decisiones previas conservadas:** líder dirige reparto libre de dados según especialidad; pasivas contextualizan decisiones; no se aprobó tope por personaje ni stats adicionales. **Siguiente tarea de DISEÑO:** comparar alternativa mínima de dos stats con ampliación (movilidad/técnica) y seleccionar qué estadísticas producen diferencias jugables, revisando ejemplos y casos límite. **Tarea TÉCNICA sin cambios:** D1.2a y luego D1/D2; no cambios ejecutables ni `main`.
+
+
+## SP-02 — Criterio táctico de reparto de dados ratificado · 28/10/2026
+
+**DECISIÓN DE DISEÑO del creador:** el jugador personifica al **líder**, que elige qué superviviente realiza cada acción y qué dado asignarle según **stats, pasivas, necesidades y contexto**; los personajes deben aportar especializaciones útiles en **movilidad, búsqueda, ataque y otros roles**. **No se exige repartir equitativamente** los dados ni asignarlos de manera fija a cada superviviente. La afirmación de que el jugador no querrá concentrar todos los dados en uno es un objetivo a **validar con balance**, no una garantía automática. **No se aprobó un tope artificial por personaje.**
+
+**Registro actualizado:** [63 — Hoja de ruta del singleplayer, SP-02](63-hoja-de-ruta-planificacion-singleplayer.md#5-próximo-trabajo-de-diseño-sp-02--decisiones-por-resolver). **Siguiente tarea de DISEÑO:** comparar roles/atributos/pasivas y casos de asignación dominante; después cerrar cantidad de dados y condiciones por acción con ejemplos y balance. **Siguiente tarea TÉCNICA sin cambios:** D1.2a con Codex, luego D1/D2; no iniciar implementación SP ni alterar V9.9, tests o `main`.
+
+
+## SP — Hoja de ruta de planificación singleplayer creada · 28/10/2026
+
+**Nuevo documento de DISEÑO:** [63 — Hoja de ruta de planificación singleplayer](63-hoja-de-ruta-planificacion-singleplayer.md). Organiza **SP-00 a SP-08**: rol del líder, selección F-14, economía de dados F-10/F-12/F-15, ronda, ajuste de supervivencia sin segundo grupo obligatorio, Director/memoria, campañas, interfaz/guardado y prototipo. Se distinguen **acuerdos**, **propuestas**, **pendientes** y criterios de aceptación, sin reabrir decisiones ya tomadas ni sustituir la matriz F externa.
+
+**ÚNICA SIGUIENTE TAREA DE DISEÑO:** **SP-02 — cerrar economía de acciones y dados**, empezando por reserva común y asignación entre supervivientes. Esto **no** autoriza código ni modifica el juego. **ÚNICA SIGUIENTE TAREA TÉCNICA SIN CAMBIOS:** **D1.2a** (PoC reversible de esbuild, pendiente de autorización), después D1/D2; preservar referencia antes de iniciar producto propio. `main` intacta, sin merge ni cambios de reglas por este registro.
+
+
+## Decisión vigente — fidelidad mecánica aceptada, solo D1/D2 pendiente · 28/10/2026
+
+**ACUERDO EXPRESO DEL CREADOR:** la V9.9 estabilizada **se considera mecánicamente suficientemente fiel a la experiencia central de *Dead of Winter*** para ser nuestra referencia. **No se exige mayor fidelidad literal** ni una nueva auditoría RF para comenzar la futura versión propia. Esta es una aceptación de **alcance del producto**, no una certificación de equivalencia exacta.
+
+**Evidencia ya disponible, no repetir:** [informe 49](49-c15-auditoria-final.md#comparación-con-dead-of-winter) comparó **14 áreas mecánicas** con el reglamento oficial y registró coincidencias y desviaciones (iniciativa fija, entradas de colonia agregadas, crisis/cooperativo simplificados y objetivos propios, entre otras). C fue estabilizada e integrada en `main`. Las 433 pruebas posteriores de D1.1 verificaron regresiones según su cobertura, no identidad de reglamento; Android físico, TalkBack, otros navegadores y balance humano permanecen reservas.
+
+**ÚNICO TRABAJO NECESARIO PARA TERMINAR LA BASE ANTES DEL JUEGO PROPIO:** **D1 → D2**, refactor de preservación para disponer de módulos de reglas, estado, turnos, automatización e interfaz con límites claros, build reproducible y pruebas. **No cambiar reglas en D.** Si se confirma un defecto funcional grave, se gestiona como incidencia puntual con autorización, sin reabrir toda la fidelidad.
+
+**Puertas posteriores:** una vez D1/D2 estén probadas y aceptadas, **preservar una referencia verificable** (SHA + build + tests, con autorización). Solo después iniciar **el juego propio** en rama/línea separada, aplicando selectivamente la **matriz F** y creando singleplayer/Director narrativo. Las propuestas F-01/F-14/etc. NO se aplican a esta V9.9.
+
+**Nomenclatura:** comparación oficial histórica = **informe 49**; `RF` fue una matriz adicional propuesta, **ya no obligatoria**; `F-xx` = matriz de diseño del juego propio; etapa F histórica = expansión visual/red. No confundir.
+
+**Fuente operativa:** [62 — Ruta ratificada](62-hitos-referencia-fiel-y-juego-propio.md), [51 — Rumbo](51-rumbo-fidelidad-e-identidad.md), [61 — Alcance F](61-alcance-matriz-f-juego-propio.md), [01 — Plan](01-plan-refactorizacion.md). Las entradas históricas que planteen otra auditoría RF obligatoria están reemplazadas por este acuerdo; se preservan para trazabilidad.
+
+**Próximo paso técnico SIN CAMBIOS:** **D1.2a** — PoC reversible esbuild con Codex (todavía no ejecutado ni adoptado). Sin modificar motor, reglas, `main`, ni realizar merge/release por esta actualización.
+
+## Alcance vigente de la matriz F — juego propio, NO refactor de V9.9 · 28/10/2026
+
+**Decisión expresa del creador y corrección del rumbo documental:** la **matriz F (comparación con *Dead of Winter*)** registra **decisiones de diseño para la futura versión propia de *Invierno en la Colonia***. Las propuestas «Conservar»/«Cambiar»/«Pendiente» se interpretan respecto al **juego propio**, y **no son una lista de cambios ni errores a resolver en V9.9**. F-14 (cinco candidatos → elegir tres → líder manual), F-01, F-03b y demás filas de esa matriz quedan **fuera del alcance del refactor D1/D2**. Tampoco están autorizadas para su implementación por el hecho de figurar aprobadas como diseño.
+
+**Dos líneas separadas:** 1) V9.9 de referencia: C estabilizada y D refactoriza preservando el comportamiento; 2) futuro juego propio principalmente singleplayer: tras conservar una línea base, se seleccionan/revalidan e implementan, en rama separada y con pruebas, las decisiones F realmente útiles y se desarrolla el Director narrativo. F-01 u otras mecánicas estrictamente de J1/J2 pueden perder vigencia en singleplayer, no deben trasladarse automáticamente.
+
+**Nomenclatura:** «matriz F» = IDs **F-01, F-14, etc.** de comparación/diseño; «etapa F» de expansión del plan histórico = presentación, campañas y cooperativo/red. No son lo mismo.
+
+**Acta vinculante:** [61 — Alcance de la matriz F](61-alcance-matriz-f-juego-propio.md); [51 — Rumbo de producto corregido](51-rumbo-fidelidad-e-identidad.md); [01 — Plan general actualizado](01-plan-refactorizacion.md). **Las menciones históricas más abajo que sugieran incorporar cambios F a la referencia se consideran sustituidas por este acuerdo; no se reescribe el registro histórico.**
+
+**Próxima tarea de código (sin cambios):** D1.2a, PoC esbuild para arquitectura, **no autorizado/ejecutado todavía**; se prevé Codex cuando haya disponibilidad. La matriz F puede seguir trabajándose hoy solo como diseño. No cambiar HTML, reglas, pruebas o `main` ni fusionar PR por esta aclaración.
+
+
+## D1.2 — auditoría de modularización y build, SIN CAMBIOS DE CÓDIGO · 28/10/2026
+
+**Dictamen:** [informe 60](60-d1-2-auditoria-arquitectura-build.md). Se examinó código real de `refactor/d1-catalogo`: `src/invierno.template.html` aún tiene ~156.656 caracteres (script principal ~100.386), 52 apariciones de `onclick=`, pruebas acopladas al script clásico (15 extraen el JS y 14 exigen un solo script), y `scripts/build-game.mjs` realiza una sustitución textual de la clase, **no bundling**. Se contrastaron alternativas actual/ESM directo/esbuild/Vite+singlefile con documentación oficial.
+
+**Decisión técnica propuesta:** preservar D1.1 como extracción válida, **no multiplicar ensamblados textuales**, y no asumir que más archivos resuelven el acoplamiento. Posponer PR/merge a `main` hasta definir la construcción a futuro; candidato razonable para experimento pequeño y descartable: `esbuild` con bundle IIFE e imports explícitos. **Bloqueo concreto:** funciones y estado accesibles para `onclick` y fixtures `vm` no sobreviven automáticamente al ámbito de módulo/IIFE. Un PoC deberá demostrar puente de interfaz acotado o listeners, tests 433+ y Chromium (5 partidas, 3 tamaños, archivo offline).
+
+**ÚNICA TAREA SIGUIENTE:** solicitar autorización para **D1.2a, PoC reversible de bundler**, sin cambiar reglas ni fusionar. No se modificó el ejecutable, motor, CI ni dependencias en esta auditoría; `main` sigue intacta.
+
+## D1.1 — catálogo separado y HTML autocontenido, gates verdes · 28/10/2026
+
+**Estado:** D1.1 implementada en `refactor/d1-catalogo` y **validada, sin merge a main**. [Informe 59](59-d1-1-extraccion-catalogo.md). `src/item-catalog.mjs` aporta `ItemCatalog` independiente del DOM, game y modos; recibe `mix` mediante inyección. `src/invierno.template.html` y `scripts/build-game.mjs` generan un único `invierno_colonia_v9_9.html` autocontenido. CI ordinario comprueba build reproducible; se agregaron cinco pruebas unitarias del módulo (20 D1.0 preservadas).
+
+**Gates de SHA `5cc07f50ceb8d3683fed583438a1978470a08b42`:** [Node 40720568281](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40720568281) **433/433**, cero fallos/omitidas/TODO; [Chromium 40720568450](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40720568450) **5/5 partidas C14**, **3/3 tamaños C16**, **2/2 aperturas file://** local/IA, cero errores JS e invariantes, [artefacto](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40720568450/artifacts/12829559449). El HTML de distribución sigue con script único. No se modificaron reglas, `ItemEngine`, IA ni Director narrativo.
+
+**ÚNICA TAREA SIGUIENTE:** auditoría independiente D1.2–D1.4 y preparación de puerta de integración. **No** merge a `main`, D2, F/E ni release sin autorización nueva. Reservas: Android físico, TalkBack, navegadores alternativos y balance humano.
+
+## D1.0 — caracterización de catálogo completada (sin extracción) · 28/10/2026
+
+**Autorización:** crear rama de implementación desde `main`, añadir pruebas con RNG determinista, validar y documentar; no modificar reglas, `ItemCatalog` ni `main`. Rama `refactor/d1-catalogo` desde `main` `0b75d01aba013cd029d9d0dd0bdbd20791be15fc`. Código de pruebas `6ccada45413dad93d1bcfe1330f95a3470b4f7c8`.
+
+**Resultado auditado:** [informe 58](58-d1-0-linea-base-catalogo.md). Archivo nuevo `tests/catalogo-caracterizacion-d1.test.mjs` únicamente: +20 tests para 17 cartas, 8 categorías, 6×20 cartas, resoluciones y metadatos, leyendas y RNG Fisher–Yates (4 semillas directas; 3 semillas para ambas modalidades). [CI 40719277668](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40719277668): **428/428**, 0 fallos/skip/TODO. El ejecutable HTML conserva blob `d192afb43ab216d0b63ed49fd24f1d830d03f4e7`, idéntico a `main`; sin PR, merge ni publicaciones. No se volvieron a ejecutar Chromium ni pruebas físicas: motor sin cambios.
+
+**ÚNICA TAREA SIGUIENTE:** autorización específica para **D1.1**: extraer `ItemCatalog` como fuente independiente y construir el HTML autocontenido de forma determinista, preservando RNG y todos los comportamientos. No extraer `ItemEngine`, no F/E/D2, no fusionar a `main` sin auditoría posterior.
+
+## D0-P1-I — PR #1 fusionado en main y validado · 28/10/2026
+
+**Estado:** etapa de integración **cerrada** con reservas. Por autorización expresa del creador, PR1 se actualizó, pasó a ready y se fusionó únicamente en `main`, commit `96e2b6c3dd19d5f11846820e51948af245c99e71`. No se publicó release, tag ni se iniciaron D1/F. **Informe y evidencia:** [56](56-d0-p1-i-integracion-main.md).
+
+**Gates post-merge:** Node [40713073359](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40713073359) sobre SHA de fusión: 408/408, 0 fallos/skip/TODO. Chromium [40713131565](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40713131565) sobre `main` después de activar trigger (sin cambios HTML): C16 3/3 viewports, C14 5/5 partidas completas, 0 errores JS/invariantes; [artifact](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40713131565/artifacts/12825993763). Persisten pendientes Android físico, TalkBack, otros motores, balance humano y fidelidad integral.
+
+**ÚNICA TAREA SIGUIENTE:** decisión de planificación posterior a promoción; evaluar y autorizar D1 (catálogo de objetos) como cambio de arquitectura separado y conservador. No iniciar F ni identidad E automáticamente.
+
+## D0-P1 — auditoría PR #1 hacia main completada (SIN MERGE) · 28/10/2026
+
+**Dictamen:** [informe 55](55-d0-p1-auditoria-previa-main.md). PR1 abierto/borrador, 251 commits delante de main, 0 detrás, 125 archivos, GitHub `mergeable=true`. Suite Node 408/408 y Chromium 5/5 recorridos con 3 viewports C16 sobre refactor, pero no equivalencia física Android/TalkBack/humana. PR1 describe todavía etapa A (238 pruebas, 3 TODO): cuerpo obsoleto a corregir antes de integrar. `main` no sufrió cambios.
+
+**ÚNICA TAREA SIGUIENTE:** D0-P1-I **solo con autorización expresa**: actualizar PR1, fijar SHA exacto, integrar controladamente únicamente en `main`, comprobar CI + humo Chromium en destino y registrar resultado. No D1, F, publicación ni release por esta auditoría.
+
+## D0-I-V — Chromium post-merge validado · 28/10/2026
+
+**Verificación real de navegador sobre rama integrada, sin cambiar motor.** Debido al bloqueo DNS del contenedor local, se utilizó Chromium real en GitHub Actions sobre `refactor/arquitectura`, commit `a6c3cf425363606ac68266a5b3c876e7d1616b2b` (mismo HTML del merge `c15373d4`; solo cambió workflow/documentación). [Ejecución Chromium 40711789374](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40711789374) `completed/success`; [evidencia ZIP](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40711789374/artifacts/12827075968), incluye JSON y capturas.
+
+**Resultados:** C16 foco real en 320×640, 393×852 y 1365×768: 3 recorridos aprobados, 0 excepciones JS; pase local, Ayuda, muerte, bloqueo de diálogos y sucesión verificados. C14: **5/5 partidas completas Chromium** mediante UI, con 0 errores, 0 invariantes incumplidas y 0 interrupciones: IA semilla 2654435761 victoria ronda4; IA 1401181143 derrota moral ronda6; local 2654435761 victoria ronda2; local 3816266512 derrota moral ronda4; local 3189639203 victoria ronda3. Suite Node post-merge previamente verificada **408/408** [40709698250](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40709698250).
+
+**Iteración de pruebas y límites:** primera ejecución [40711603986](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40711603986) falló por aserción obsoleta en `check-c15-terminal-browser.mjs`, que espera reproducir una fuga de foco ahora prohibida por C16; el runner final excluyó ese script histórico, manteniendo tests Node terminales y prueba C16 vigente. No afirmar que C15 browser completo pasó. Los recorridos de interfaz son automáticos y reproducibles, no pruebas humanas ni Android físico, TalkBack u otros motores. La ejecución se hizo en runner GitHub, no en contenedor local. Ningún cambio del motor V9.9 en D0-I-V.
+
+**Dictamen:** D0-I queda integrada y validada **en el alcance Node + Chromium automatizado**. PR14 merged en `refactor/arquitectura`; PR1 continúa sin fusionar y `main` intacta. **ÚNICA TAREA SIGUIENTE:** auditoría independiente D0-P1 de PR1 → `main` (alcance acumulado, diff y puertas de promoción), sin merge automático ni refactor D1/cambios F.
+
+**Actualización verificada de CI post-merge:** [Actions 40709698250](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40709698250), para el commit de integración `c15373d44f0a76affd9041be925eef48234239c3`, finalizó `completed/success`; se leyeron logs del job `122891290523` con **408 tests, 408 pass, 0 fail, 0 cancelled, 0 skipped y 0 todo**. Continúa pendiente el smoke Chromium específico sobre el árbol integrado, por lo que D0-I-V no se cierra todavía.
+
+## D0-I — PR #14 integrado en arquitectura; validación posterior pendiente · 28/10/2026
+
+**Autorización expresa:** el creador aprobó revisar, actualizar y fusionar solo PR14 → `refactor/arquitectura`, verificar después y documentar; `main` excluida. Se revisaron 97 patches, incluido HTML, workflow y pruebas clave; se corrigió el cuerpo obsoleto del PR14. GitHub exigió pasarlo de borrador a listo para revisión; [PR14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14) **merged** por commit `c15373d44f0a76affd9041be925eef48234239c3`. PR1 sigue abierto y sin fusionar; `main=d9068f4aa8d3a10bbbf1e0a8a2527744cc6952cb` sin cambios. A6 canónico permanece (blob `c132dd8`).
+
+**Verificación pendiente al documentar:** [Actions 40709698250](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40709698250) estaba `in_progress` para el commit del merge; no se ha verificado su resultado ni ejecutado smoke Chromium sobre el árbol integrado. Las 408 regresiones, recorridos C14/C15 y pruebas Chromium C16 anteriores son evidencia histórica, no validación post-merge. Tampoco existen ensayos Android físico, TalkBack o balance humano certificados.
+
+**ÚNICA TAREA SIGUIENTE:** D0-I-V, verificar por SHA la ejecución CI del merge y realizar recorridos de humo reales de ambos modos (setup, dados, decisiones, muerte, sucesión y finales), registrar resultados y cerrar formalmente D0-I solo si pasan. Luego auditar PR1 separadamente antes de considerar `main`; D1, F y Director narrativo siguen fuera de alcance.
+
+
+**Última revisión:** 28/10/2026 (D0: auditoría de integración PR14 sin merge; C cerrada). **Proyecto:** Invierno en la Colonia. **Rama activa de ajustes:** `fix/estabilizacion-v9-9` (base de auditoría `refactor/arquitectura`).
+**Documento operativo**: a diferencia de los documentos conceptuales, este archivo determina qué hacemos **ahora**, qué queda estacionado y qué evidencia habilita cambiar de fase.
+
+> **NORMA DE TRABAJO:** una etapa activa, una tarea activa. No empezar una fase posterior porque surgió una idea interesante; anotar la idea y retomar lo previsto. Cambiar prioridades exige una decisión explícita registrada aquí.
+
+> **REGISTRO OBLIGATORIO (acuerdo del usuario, 27/10/2026):** al terminar cada revisión, actualizar este tablero. Documentar acciones, decisiones, cambios, resultados, evidencia y límites en el registro pertinente, aunque no se haya modificado código. Véase [protocolo](15-protocolo-revision-critica.md#registro-obligatorio-de-cada-revisión-y-trabajo).
+
+## D0 — auditoría de integración completada (sin merge) · 28/10/2026
+
+**Autoriza el creador:** «Vamos con D0». Se inspeccionaron PR14→`refactor/arquitectura`, PR1→`main`, ramas/ancestro, 96 archivos del diff, workflow, tests, plan01 y el duplicado documental A6. **Resultado completo:** [informe54 — D0](54-d0-auditoria-integracion-sin-merge.md).
+
+**Conclusión:** PR14 está `open/draft` y GitHub reporta `mergeable=true, mergeable_state=clean`. La divergencia de 1 commit es **benigna en el contenido A6**: base `0933c70` y fix `ca1d910` eliminaron independientemente `docs/24-cierre-auditoria-a6.md`, y ambas ramas conservan `docs/24-cierre-auditoria-y-prioridades.md` con idéntico blob `c132dd8`. No requiere rebase obligado. PR14 tiene 153 commits y96 archivos respecto del ancestro (68 docs,1 HTML +452/−182 líneas,14 tests,9 scripts,3 test-support,1 workflow): integración importante pero **sin conflicto Git detectado**. Último SHA ejecutable auditado `951059e` / [CI40703513314](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40703513314) `completed/success`,408/408; Chromium histórico C16 verde. **No se ejecutó un merge de prueba ni se certificó Android físico**.
+
+**ÚNICA TAREA ACTIVA SIGUIENTE:** **D0-I solo con nueva autorización expresa:** preparar/integrar PR14 a `refactor/arquitectura`, actualizar primero descripción desactualizada de PR14 (issues ya cerrados y C aceptada), revisar código cambiado y verificar en destino CI por SHA y humo dos modos. Revisión separada PR1→`main` y promoción estable; D1/mecánicas F posteriores. **Ninguna fusión, force-push, publicación, cambios HTML/JS, inicio D1 o identidad E se ejecutó en D0.** `main` intacta.
+
+## C1–C16: cierre formal aceptado por el creador — 28/10/2026
+
+**Estado vigente y autorización:** el creador aprobó expresamente cerrar los nueve issues pendientes como **resueltos en la rama del PR14, aún no integrados**, y aceptar técnicamente C1–C16 con reservas («Vamos con eso»). El cierre fue ejecutado y contrastado en GitHub: issues **#2, #3, #7, #8, #9, #10, #11, #12, #13 = closed/completed**, cada uno con comentario de trazabilidad y `closed_at`; **0 issues abiertos** en el repositorio. #4/#5/#6 ya habían sido cerrados. **Etapa C CERRADA administrativamente / ACEPTADA técnicamente EN SU ALCANCE**. [Acta 53](53-cierre-formal-etapa-c.md), [dictamen previo 52](52-aceptacion-administrativa-etapa-c.md).
+
+**Evidencia técnica preservada:** 408/408 regresiones del ejecutable, [CI40701666201](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40701666201) completed/success antes del cierre;40 partidas completas de motor y5UI en C14/C15; Chromium C16 [CI40695882583](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40695882583) success, 3 viewports/78 pasos. **Reservas**: sin Android físico, TalkBack, otros navegadores, playtesting de balance humano ni equivalencia completa con Dead of Winter. Un CI verde no convierte estas reservas en resultados probados.
+
+**No integrado ni publicado:** PR14 sigue **open/draft** a `refactor/arquitectura`; `main=d9068f4aa8d3a10bbbf1e0a8a2527744cc6952cb` intacta, ningún merge, tag o release. La comparación previa mostraba 1 commit documental de base (`0933c70`) ausente en la rama y un PR grande; requiere revisión separada.
+
+**ÚNICA TAREA ACTIVA SIGUIENTE (D0, solo análisis):** evaluar la integración PR14 sin fusionar (revisar divergencia de ramas, documento A6, diff y riesgos), y presentar propuesta al creador. **No comenzar refactor D ejecutable, cambios F ni Director/identidad E** sin autorización. El hito de **fidelidad funcional y estabilidad de versión de referencia antes de identidad propia** sigue definido en [51](51-rumbo-fidelidad-e-identidad.md).
+
+## [Histórico previo] Cierre administrativo de C — revisión de nueve issues, 28/10/2026
+
+**Dictamen de solo lectura, documentado en [informe52](52-aceptacion-administrativa-etapa-c.md):** los nueve issues abiertos [#2](https://github.com/LeviEdition/invierno-en-la-colonia/issues/2), #3, #7, #8, #9, #10, #11, #12 y #13 tienen soluciones específicas y regresiones en `fix/estabilizacion-v9-9`. C1–C16 puede **proponerse para aceptación técnica con reservas**, y los nueve issues **para cierre administrativo individual** como «resueltos en PR14, sin integrar aún». No se confunde issue abierto con defecto vigente ni código en rama con software publicado.
+
+**Comprobaciones:** último CI previo a esta revisión `85146b8`/[40700529935](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40700529935) completed/success, **408/408**; Chromium C16 [40695882583](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40695882583) success,78 comprobaciones de teclado en tres viewports. C14/C15 cubrieron40 partidas de motor y5UI, con límites de jugador automático y prueba física detallados en52.
+
+**Integración no trivial:** comparación GitHub `refactor/arquitectura...fix/estabilizacion-v9-9` = **145 commits por delante,1 por detrás**; el único commit de la rama base no incorporado es documental (`0933c70`, informe A6). Este dato no demuestra conflicto mecánico, pero exige reconciliación/revisión de diff antes de merge. `main` intacta, PR14 open/draft, issues aún abiertos.
+
+**Única tarea activa siguiente:** obtener decisión explícita del creador sobre aceptar técnicamente C1–C16 y cerrar administrativamente los nueve issues pendientes con referencia al PR14; si se autoriza, registrar individualmente los cierres, actualizar tablero y confirmar CI. **Sin autorización de fusión, promoción a estable, cambios F o D/E/F.** La dirección futura sigue siendo completar fidelidad jugable antes de identidad singleplayer, según51.
+
+## Dirección de producto ratificada — 28/10/2026 (diseño, no implementación)
+
+**Acuerdo explícito del creador:** primero completar una versión **estable, suficientemente fiel en experiencia y núcleo táctico a `Dead of Winter`**; después comenzar a desarrollar la identidad propia de **`Invierno en la Colonia`**. La identidad futura es **principalmente singleplayer**: un jugador administra a su grupo frente a un Director de Juego que desencadena amenazas, crisis, facciones y narrativa con consecuencias persistentes, **sin exigir un segundo grupo gestionado por IA**. La referencia de mesa orienta el diseño, no presupone equivalencia total ni permite copiar contenido expresivo. [Documento de dirección51](51-rumbo-fidelidad-e-identidad.md).
+
+**F-14 acordada para el diseño de fidelidad:** presentar **cinco supervivientes aleatorios**, elegir **tres** y **designar líder manualmente**; conservar tres personajes iniciales evita recortar de inmediato dados/acciones. El comportamiento del segundo grupo en los modos actuales se definirá antes de programarlo; esta decisión **no está implementada**. Mantener todas las propuestas F como decisiones separadas de C.
+
+**Puertas de calidad:** aceptación administrativa C1–C16 → completar decisiones y pruebas de fidelidad sobre una referencia estable, con adaptaciones deliberadas → D refactor de preservación → E Director/narrativa e identidad propia. No forzar identidad antes del hito de estabilidad. **La única tarea operativa activa sigue siendo la aceptación de C**: revisar nueve issues abiertos y cierre por decisión del creador; no merge ni D/E/F automáticos. `main` intacta, PR14 draft.
+
+## C16 — aislamiento de foco, estado vigente 28/10/2026
+
+**Autorizado por el creador:** continuar estabilización para corregir A1/P2, sin tocar reglas ni comenzar D. **Implementación en rama**: ayuda y fallecimiento confinan Tab/Shift+Tab y foco exterior, el fondo queda inerte, se devuelve foco y se conserva prioridad de Inicio/Pase, Fallecimiento y decisiones del juego. Se añadió una guardia para Escape durante muerte, sin modificar resultados. [Informe50](50-c16-foco-dialogos.md).
+
+**TDD:** cuatro de seis tests C16 rojos antes, los seis verdes después. Tres iteraciones de CI detectaron incompatibilidad con DOM mínimo de pruebas y un fixture C4 intermitente por azar; corregidas y registradas. **Última prueba de código:** `265dc0d`, [CI 40695224171](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40695224171), **408/408**, cero fallidas/omitidas/TODO. Revisión por lectura de la implementación y sus seis regresiones; no se cambió motor mecánico, balance, IA ni dados.
+
+**Gate Chromium completado:** [Actions 40695882583](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40695882583) completed/success, Chromium156, tres viewports (320×640,393×852,1365×768), **78 pasos de teclado sin fugas**, foco programático retenido, retorno tras Ayuda y muerte→sucesión correcto, sin errores JS ni overflow. [Evidencia contrastada](evidencias/c16-chromium-verificado.json) y [artifact de ejecución](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40695882583/artifacts/12819432057). CI Node del mismo HTML [40695882411](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40695882411) success408/408. Android físico, TalkBack, otros motores y cumplimiento WCAG siguen sin certificar. La comparación y acuerdos F-01/F-10/F-12/F-15 están reservados a rediseño posterior, no se aplicaron en C16. PR14 sigue draft, main intacta, nueve issues aún abiertos, C oficialmente abierta.
+
+**Única tarea activa siguiente:** presentar C16 técnicamente validada en Node y Chromium para aceptación del creador; decidir aceptación/cierre administrativo de nueve issues y cierre oficial C con las reservas físicas/lectores descritas. No cerrar issues, fusionar, publicar ni iniciar D sin autorización.
+
+## Revisión de aceptación externa C12–C15 — 28/10/2026
+
+**Estado:** revisión crítica de solo lectura terminada; **entrega técnicamente apta para aceptación con una reserva P2**, sin declarar C oficialmente cerrada. Base comprobada `f597bf2f1aa1484408215b5a320699b0c10a1ea4`; PR14 abierto/draft hacia `refactor/arquitectura`, `main=d9068f4aa8d3a10bbbf1e0a8a2527744cc6952cb` intacta.
+
+**Verificación independiente:** se leyeron diffs reales de C12 (`f9429d1`), C13 (`3c152e8`), C14 (`d801dbb`), C15 (`f1a43c7`), HTML final, regresiones permanentes C12/C13/C15, controlador/fixture/runner de C14, informes46–49 y evidencia de CI. Los cinco CI de etapa/entrega están **completed/success**, incluido [CI documental final 40691733491](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40691733491); suite final declarada402/402 en los informes y Actions. C14 realmente emplea motor HTML y controlador reproducible sin editar recursos para forzar victoria;40 configuraciones(20/modo) y5 recorridos UI se verificaron contra evidencias, **sin repetirlos localmente en esta revisión**. Acciones/evidencia y límites detallados en [registro25](25-registro-estabilizacion.md#revision-de-aceptacion-externa-c12c15--28102026).
+
+**Reserva pendiente A1/P2:** el foco puede escapar de ayuda/fallecimiento; C15 bloquea `chooseLeader` tras una muerte, pero no implementa un confinamiento general del foco. No confundir el cierre técnico de #12 (setup/pase) con certificación de accesibilidad de todos los diálogos. Sin Android físico, TalkBack, otros navegadores ni balance humano. Las cuarenta partidas son simuladas por controlador, no jugadores humanos. El tratamiento de una crisis como efecto atómico se conservó deliberadamente; no hubo cambio autorizado de esa regla.
+
+**Decisiones de producto separadas:** la matriz de fidelidad discutida con el creador después del inicio de la misión propone alternar primer jugador en cada ronda y rediseñar el significado de atributos/dados/comida, entre otras decisiones. **No son defectos regresivos ni forman parte de C12–C15**; no implementarlas ni contarlas como deuda técnica a reparar automáticamente antes de cerrar C.
+
+**Única siguiente tarea recomendada:** decisión del creador sobre A1: corregir confinamiento de foco en ayuda/fallecimiento mediante tarea acotada y tests de teclado, o aceptar expresamente la reserva P2. Después revisar aceptación administrativa de los nueve issues abiertos y decidir cierre de C **sin fusión, publicación ni inicio de D automático**.
+
+## Misión autónoma C12 → C15 — estado actual
+
+Autorización explícita del creador para C12→C15 en orden y correcciones técnicas localizadas con TDD/revisión/CI. No reglas nuevas, main, fusión/cierres, versión estable ni D/E/F. Se preservan los checkpoints anteriores como históricos.
+
+| Etapa | Estado | Evidencia |
+| --- | --- | --- |
+| C12 | Aprobado técnicamente; f9429d1 y CI40682067180 success371/371 | [46](46-c12-sucesiones-simultaneas.md),371/371 y6casos Chromium |
+| C13 | Aprobado;3c152e8/CI40684493624success392/392 | [47](47-c13-integracion-profunda.md),392/392 |
+| C14 | Aprobado; d801dbb / CI40688534944 success394/394; 40 partidas motor y5UI | [48](48-c14-partidas-completas.md),394/394 |
+| C15 | Completada para aceptación con reservas; f1a43c7 / CI40691454445 success402/402; revisión aprobada | [49](49-c15-auditoria-final.md), fuentes oficiales,40 motor/5UI repetidos |
+
+**Tarea activa única:** revisión de aceptación V9.9 por el creador con checklist de informe49; decidir reservas A1/adaptaciones y cierre oficial de C. No iniciar D, fusionar ni cerrar issues automáticamente. C15 código f1a43c7 y CI40691454445 success402/402; revisión técnica/documental aprobada. La misión reemplaza la necesidad anterior de pedir autorización para H1. Main d9068f4 intacta, PR14 draft a refactor/arquitectura. Referencia sincronizada43f7c11,358/358 y CI40678862713 success.
+
+## Resultado actual C12→C15 — 28/10/2026, Montevideo
+
+**Entrega C15:** f1a43c7 / [CI40691454445](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40691454445) success402/402; PR14 actualizado a C1–C15. El commit documental de cierre se verifica por su SHA antes de entregar.
+
+H1 resuelto C12. C13 protege prioridades/esperas/terminales. C14 ejecutó40 configuraciones y5UI. C15 encontró **T1/P1** (hambre/residuos llevan moral0 y bonus de crisis podía recuperarla) y **T2/P2** (teclado elegía sucesor detrás de muerte); corregidos mediante verify/retornos en colonia y guardia de sucesión.8 nuevas pruebas, **402/402**,0 fallos/TODO; revisión independiente técnica aprobada. Las siete pruebas antiguas que omitían confirmar muerte ahora realizan ese paso y mantienen sus expectativas.
+
+Repetición final40/40 motor y5/5UI, mismos resultados/rondas, no trazas idénticas; C15 detiene eventos posteriores a derrota. Chromium: dados6viewports/24mediciones, encrucijadas16, sucesiones6, cadenas6, foco3 y terminal/teclado6. **A1/P2 queda pendiente: foco sale de ayuda/fallecimiento**, aunque las guardias funcionales comprobadas bloquean jugar/elegir líder durante muerte. Inicio/pase conservan foco. Sin Android físico/TalkBack/WCAG/balance humano.
+
+[Informe49](49-c15-auditoria-final.md) contiene matriz actual21 sistemas, fuente oficial y comparación de reglas, checklist y propuesta para D sin implementarla. **Recomendación:** presentar C para aceptación con reservas, no cerrarla oficialmente. Aceptar o encargar corrección de A1 y confirmar adaptaciones corresponde al creador. Nueve issues abiertos (#2/#3/#7/#8/#9/#10/#11/#12/#13) tienen correcciones en rama pendientes de aceptación en su alcance; no cierres/merge/main/versión estable.
+
+**Lectura del historial:** los apartados C1–C11 y sus frases «estado actual», «H1 pendiente» y «siguiente tarea» describen sus fechas/commits; el estado vigente es este bloque y el checkpoint C15. No borrar las evidencias anteriores ni interpretar sus358 tests como el total actual.
+
+## Revisión de entrega C10 para preparar siguiente trabajo — 27/10/2026 (hora Uruguay)
+
+**Lectura y comprobación de seguimiento por ChatGPT (solo revisión):** contrastados los commits `9e688624` (motor, pruebas y evidencia) y `d342f96` (documentación); se inspeccionaron `crossOptionAllowed()`, `crossTrigger()`, `evaluateCrossOptions()`, `chooseCrossOption()`, `feedingNeed()`, `gameOutcome()`, efectos de cartas y script Chromium. [GitHub Actions del SHA exacto `d342f96`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40622432370): **358/358, 0 fallidas/TODO**; [evidencia de los 16 recorridos dirigidos](evidencias/c10-issue7-chromium.json). La interfaz local J1/J2 conserva selección humana según las pruebas registradas. Se consultó PR14 (abierto/draft, no fusionado) y `main=d9068f4` inalterada.
+
+**Evaluación:** el cambio aborda el fallo reportado #7 sin depender de palabras del texto; los seis escenarios tienen resultados esperados y no se identificaron defectos nuevos en esta **inspección acotada**, que **no constituye ejecución independiente de Node/Chromium ni certificación completa**. El rojo inicial (11 casos fallidos) consta en el informe43 pero no se conserva como commit rojo separado; se usa como evidencia documentada de Codex, no como reproducción de esta revisión. Persisten reservas de partidas naturales completas, Android físico/TalkBack, balance y nuevos tipos de efectos de futuras cartas. **Issue #7 sigue abierto y requiere aceptación/cierre por decisión del creador**.
+
+**Único siguiente bloque técnico recomendado para un encargo nocturno separado:** C11 / [issue #13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13), ampliar áreas táctiles de dados en móviles con una corrección CSS/interfaz mínima, TDD y Chromium (320×640, 393×852 y escritorio); sin cambiar mecánicas ni iniciar más correcciones. Al terminar, solo auditar **en modo lectura** los issues aún abiertos y preparar una propuesta priorizada. No cerrar issues, fusionar PR14 ni alterar `main`. La entrega del prompt por el usuario a Codex constituye la autorización de ese bloque acotado; hasta entonces no está iniciada su implementación.
+
+## Encargo nocturno autorizado — C11 y auditoría, 28/10/2026
+
+**Encargo completado: C11/#13 y auditoría de pendientes.** Autorización expresa para ajuste acotado de presentación, TDD viable, Chromium real en 320×640/393×852/1365×768, suite, revisión independiente, CI y entrega a la rama existente. Solo después de C11 terminado/documentado/aprobado: auditoría de lectura/pruebas/documentación de #2/#3/#8/#9/#10/#11/#12 y riesgos de integración. No implementar otros issues ni comenzar D/E; no cerrar #7/#13 u otros issues, fusionar o modificar `main`.
+
+**Fase0 comprobada:** checkout limpio, avance directo de `d342f96` a `2fbbc59` (dos commits solo documentales); rama `fix/estabilizacion-v9-9`, PR14 abierto/draft a `refactor/arquitectura`; `main` remoto `d9068f4aa8d3a10bbbf1e0a8a2527744cc6952cb` intacta. Se leyó informe43, código/diff C10, issue13 y protocolo15. Suite de referencia 358/358 aprobada, sin TODO; CI exacto de 2fbbc59 [40622935501](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40622935501) success con 358/358. Sin regresión grave confirmada ni bloqueo Git. C10 sigue implementado y pendiente de aceptación humana; no se cambian sus reglas.
+
+**Estado actual del encargo:** C11 implementado/documentado/aprobado en pruebas y CI, incluida R1; auditoría de pendientes completada sin programar otros issues. **H1 confirmado: se pierde la sucesión J2 al morir ambos líderes locales; pendiente de nueva autorización para corregir.** [Auditoría45](45-auditoria-pendientes-estabilizacion.md). [Informe44](44-c11-dados-tactiles.md). Las notas de fase0 y checkpoint siguientes son históricas.
+
+## Revisión de la entrega nocturna C11 y fase4 — 28/10/2026
+
+**Pedido del creador:** revisar lo que Codex implementó y auditó durante la noche, sin autorizar de momento otro cambio de juego. Se comparó la rama `2fbbc59`→`5f5514d`, inspeccionando diff CSS C11 (19 líneas), arnés `scripts/check-issue13-browser.mjs`, informes44/45, JSON de auditoría, flujo de `reviewLeader()`/`chooseLeader()`/`leaderChoiceReady()` y issues/PR. Los commits fueron `7497d70` (dados) y `5f5514d` (auditoría de solo documentación). `main=d9068f4` intacta, PR14 abierto/draft hacia `refactor/arquitectura`.
+
+**Resultado contrastado:** C11 amplía los dados de **26×25 a 44×44 px CSS**, gap8, con franja inferior y fallback de scroll para alturas≤520; solo CSS, sin modificación de JavaScript o DOM de la aplicación. Informe44 conserva rojo inicial, R1 de pantallas bajas y revalidación Chromium en seis viewports; no se reejecutó Chromium en esta revisión. Auditoría fase4:54 regresiones dirigidas y21 comprobaciones Chromium según informe45/JSON inspeccionado. **[CI final 40627292012](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40627292012): completed/success, 358/358, cero fallidas/omitidas/TODO** (logs consultados). Los arreglos de #2/#3/#8/#9/#10/#11/#12, así como #7/#13, están en la rama y siguen pendientes de aceptación/cierre administrativo. No interpretar esto como cambios integrados en `main`.
+
+**Nuevo defecto H1/P2 confirmado y contrastado en evidencia:** mueren los dos líderes locales por desbordamiento durante una misma crisis; `reviewLeader()` mantiene únicamente `pendingLeader/pendingLeaderSide`, descarta la segunda petición cuando la primera ya está pendiente y J2 queda con `leaders.ai=null` sin diálogo de sucesión tras el pase. El JSON `docs/evidencias/c-auditoria-pendientes.json` registra el mismo resultado en C11 y pre-C11; la lógica revisada explica la pérdida. No es una regresión CSS ni una prueba de que el issue #6 original volvió a abrirse. **No se implementó corrección H1**.
+
+**Límites:** esta revisión fue de código, logs y evidencia del repositorio, no ejecución propia de suite/Chromium ni Android real/TalkBack/partidas completas. No se verificó equivalencia exhaustiva con el reglamento de *Dead of Winter*. **Única siguiente tarea recomendada, aún sin iniciar:** autorización de un arreglo mínimo H1 con regresión roja de sucesiones simultáneas, ambos órdenes de muerte, selección por dueño, pase, muerte, esperas y modo IA; luego CI y Chromium. No comenzar D/E, fusionar PR14, cerrar issues ni modificar `main`.
+
+## 1. Estado comprobado y alcance
+
+- **Estable:** `main`, `invierno_colonia_v9_9.html`, SHA Git blob `4ebaedad13d63c7a6762c524a52c0dd9695687b1`. El archivo es idéntico en `main` y `refactor/arquitectura` al revisar.
+- **Auditoría:** PR [#1](https://github.com/LeviEdition/invierno-en-la-colonia/pull/1) abierto y en borrador; no fusionar por ahora.
+- **Pruebas actuales de la rama C11:** **358/358** local y [CI exacto `7497d70`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40625219012), 0 fallidas/canceladas/omitidas/TODO. Componente **111/111**; Chromium C11 en seis viewports, 24 conjuntos de mediciones y revisión independiente aprobados tras R1. Auditoría posterior: **54/54** regresiones y **21** comprobaciones issue/viewport aprobadas; **también confirmó H1 fuera de esa cobertura: no declarar C estabilizada**. [Informe44](44-c11-dados-tactiles.md) y [auditoría45](45-auditoria-pendientes-estabilizacion.md). Android físico/TalkBack y balance mantienen reservas.
+- **Problemas registrados:** [#2](https://github.com/LeviEdition/invierno-en-la-colonia/issues/2), [#3](https://github.com/LeviEdition/invierno-en-la-colonia/issues/3), [#4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4), [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5), [#6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6), [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7) y [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8), [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9), [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10) y [#11](https://github.com/LeviEdition/invierno-en-la-colonia/issues/11), [#12](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12) y [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13). **#4, #5 y #6 están aceptados y cerrados**; #7 está implementado para revisión, todavía abierto; #13 implementado para revisión y todavía abierto. Otras correcciones registradas conservan issues abiertos: no se cierran automáticamente por este análisis.
+- **Narrativa:** visión, objetivos, campañas y bocetos registrados en `docs/12`–`docs/17`. Son **propuestas y decisiones de diseño**, no código ni campañas implementadas.
+
+## Estado consolidado tras trabajo en otro chat — 27/10/2026
+
+**Instantánea analizada:** `d09021f`, PR14 abierto/draft hacia `refactor/arquitectura`, `main` intacta. Se sincronizó el checkout limpio por avance directo desde `e7d0a48` (78 commits nuevos), sin reescribir historial. [Informe40](40-estado-actual-y-continuidad.md) registra fuentes, decisiones, pruebas, reservas y desajustes administrativos.
+
+C7/C7-R1 (#5 herramientas y botín), C8 (#4 transferencias por modo), aviso de segundo movimiento con combustible y C9/C9-R1 (#6 líder inicial y sucesión del dueño) están implementados y documentados. GitHub confirma #5/#4/#6 cerrados con aceptación del creador. La suite actual y [CI exacto](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40595507459) pasan **336/336, sin TODO**. Las pruebas Chromium anteriores se leyeron en sus informes; no se repitieron aquí.
+
+**Resultado de este análisis:** no se detectaron incoherencias materiales entre los cambios ejecutables leídos y los informes, dentro de una revisión acotada. Se actualizaron conteos y estados obsoletos de documentación. El título/cuerpo del PR14 aún dice C1–C4 y se registra como pendiente administrativo; no se editó el PR. No se implementó ni inició #7. La reserva de muertes simultáneas de ambos líderes, otras crisis y pruebas físicas/balance mantiene los límites de informe40.
+
+**Siguiente tarea propuesta en esa instantánea histórica (sustituida por C10 al final):** autorizar análisis de #7 y acordar criterios basados en efectos estructurados antes de modificar decisiones de IA. #13 y pulido de avisos siguen después; no fusionar ni publicar por esta verificación. Las secciones que siguen conservan la evolución histórica y sus resultados por etapa.
+
+## Entrega C5/C6 para revisión
+
+Código y pruebas subidos en [d4a6b3f](https://github.com/LeviEdition/invierno-en-la-colonia/commit/d4a6b3f45dc5c2563420980acf436a15e694775a); documentación de entrega en [64dcc2c](https://github.com/LeviEdition/invierno-en-la-colonia/commit/64dcc2c90714a5eab6c8dd1e1b4bd3d10d814dd3). Al revisar, la rama y el [PR #14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14) apuntan a `64dcc2c`; está abierto, en borrador y con base `refactor/arquitectura`, sin revisiones formales registradas. `main` sigue en `d9068f4` y conserva el blob estable `4ebaedad13d63c7a6762c524a52c0dd9695687b1`. Sin fusión, cierre de issues ni publicación de versión.
+
+**CI remoto confirmado:** [código `d4a6b3f`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40552155171) y [entrega `64dcc2c`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40552240429), ambos `completed/success`. Los logs de la entrega confirman 275 declaradas, 272 aprobadas, 0 fallidas/canceladas/omitidas y 3 TODO. La revisión final de C5/C6 se registra abajo con hallazgos; CI verde no equivale a aprobación.
+
+### Revisión documental y resolución de acceso — 27/10/2026
+
+Se comprobaron rama/PR/`main`, metadatos de CI y conteos en sus logs, y se corrigieron las referencias actuales que aún decían «CI sin confirmar». El rechazo previo provenía del proxy (`Tunnel connection failed: 403 Forbidden`): faltaba permitir `api.github.com`. Se guardó ese dominio en el borrador de configuración; el usuario aplicó el cambio y las consultas de API ahora funcionan. No hizo falta solicitar un token ni modificar el juego.
+
+Por instrucción del usuario se incorporó la obligación de actualizar el tablero tras **cada revisión** y documentar todo trabajo significativo en [protocolo 15](15-protocolo-revision-critica.md#registro-obligatorio-de-cada-revisión-y-trabajo), este tablero, [registro 25](25-registro-estabilizacion.md#revisión-documental-y-resolución-de-acceso--27102026) y matriz 04. Una revisión paralela de documentación detectó las referencias obsoletas; no se delegaron cambios de código. Esta actualización solo modifica esos cuatro documentos: se comprueba `git diff --check`, sin repetir pruebas locales de código que no cambió. Los nuevos commits documentales se comprobarán en Actions por su SHA, sin atribuirles por anticipado el resultado de `64dcc2c`.
+
+**Resultado y límites de aquella revisión documental:** acceso y CI de la entrega confirmados; documentación sincronizada. No se realizó entonces una nueva prueba de navegador o dispositivo físico ni una revisión final de código; la revisión de código posterior figura abajo. #5 sigue siendo una propuesta de trabajo posterior que requiere acordar la prioridad de la IA; no está iniciada ni autorizada su implementación.
+
+## Continuidad confirmada: preservar la ruta A→B→C→D→E→F — 27/10/2026
+
+**Decisión explícita del creador:** tras explorar un posible modo individual con un líder humano y un grupo de supervivientes, el creador indicó **«Sigamos avanzado con la ruta que ya teníamos»**, vinculándolo con **«finalicemos la auditoría, para asegurarnos que esta primera app funcione lo más parecido al juego de mesa y a partir de ahí vemos esta nueva identidad»**.
+
+**Interpretación de alcance:** no iniciar ahora rediseño single-player, órdenes por líder, mundo narrativo dinámico, arquitectura nueva ni una Utility AI extensa. Son **ideas estacionadas para E/F**, no reglas aprobadas ni funcionalidades V9.9. **La fase A6 de auditoría ya había cerrado con reservas** (informe24); esta decisión significa **terminar la fase C de estabilización** y su revisión transversal antes de avanzar a **D (refactor sin alterar reglas)** y **E (prototipo narrativo)**, no rehacer toda la A desde cero.
+
+**Objetivo de fidelidad:** conservar la dinámica táctica y cooperativa inspirada en *Dead of Winter*, contrastar expresamente las mecánicas relevantes con las reglas de mesa cuando corresponda, y registrar toda desviación voluntaria propia de la adaptación. **No** afirmar equivalencia total con el juego de mesa solo por tener CI verde o por una impresión de juego. Antes de promover V9.9, separar: defectos verificables, adaptaciones acordadas, diferencias de diseño pendientes, y límites de prueba reales (partidas completas, móvil físico, accesibilidad y balance).
+
+**Una sola tarea activa siguiente:** abordar **#7**, todavía abierto, con el alcance mínimo de estabilización: que la IA de encrucijadas deje de depender de fragmentos literales de texto. El informe experimental de Codex sobre prioridades/Utility en seis escenarios es **exploratorio**, no política aprobada ni código integrado. Elegir la regla mínima luego de definir condiciones verificables; después regresiones **rojo→verde**, Chromium y revisión crítica. **No introducir perfiles, personajes autónomos, memoria, planificación ni motor de Utility completo durante C** sin nueva autorización. Luego #13 (dados táctiles), verificación de issues que aún aparecen abiertos aunque parte de sus parches están hechos, pulido de alertas y revisión transversal previa a propuesta de promoción.
+
+**Control:** [PR14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14) continúa draft a `refactor/arquitectura` y `main` no cambia por esta anotación. La documentación de diseño previo sigue vigente como hipótesis, no como implementación.
+
+## 2. Etapa activa C — misión C12→C15; aceptación del creador pendiente
+
+**Objetivo:** saber qué hace realmente el juego, qué falla y qué no se ha probado, antes de intervenir sus reglas o extraer módulos.
+
+### Orden operativo dentro de A
+
+| Orden | Bloque | Resultado necesario | Situación |
+| --- | --- | --- | --- |
+| A1 | Caracterización automatizada de reglas y encrucijadas | Pruebas reproducibles del motor y matriz documentada | **Avanzado, no exhaustivo** |
+| A2 | Modo de dos jugadores en el mismo dispositivo | Dados/manos separados, pase de turno, interacciones y bloqueo de datos privados, casos pendientes | **Cerrado como caracterización automatizada (20 pruebas); visual pendiente A5** |
+| A3 | Interfaz, modales y secuencias de acciones | Pruebas de decisiones, cierre/apertura de diálogos, sucesión, mordeduras, esperas de IA y pantallas de pase | **21 pruebas automatizadas cerradas; interfaz real pendiente A5** |
+| A4 | Integración de partidas completas | Reproducir al menos una victoria y una derrota, modos local e IA, con finales y casos excepcionales | **23 pruebas automatizadas cerradas, incluidas partidas dirigidas de 10 rondas; naturalidad/balance pendientes** |
+| A5 | Verificación en navegador real y móvil | Lista manual/evidencia de escritorio y Android, táctil, desplazamiento horizontal, accesibilidad y rendimiento básico | **A5-01 completado; A5-02 físico diferido y documentado (no aprobado)** |
+| **A6** | **Cierre de cobertura** | Matriz de 21 subsistemas actualizada con evidencia y límites explícitos; lista priorizada de defectos sin resolver | **Documentado con reservas en [24](24-cierre-auditoria-y-prioridades.md). Usuario autoriza pasar a ajustes.** |
+
+**Importante:** A2 y A3 pueden compartir escenarios; no marcar una interacción visual como validada solo por probar funciones con DOM simulado.
+
+### A2-01 — Completada como caracterización automatizada
+
+**Resultado:** 20 pruebas nuevas; privacidad de manos y dados, pase de turno y estados pendientes caracterizados. **194 pruebas aprobadas, 0 fallidas y 3 TODO**. Defectos: [#3](https://github.com/LeviEdition/invierno-en-la-colonia/issues/3) previo y [#8](https://github.com/LeviEdition/invierno-en-la-colonia/issues/8) nuevo. No corregimos reglas. **La validación visual real, foco, pantalla táctil y uso del celular siguen pendientes de A5**.
+
+**Evidencia:** [docs/19-auditoria-modo-local.md](19-auditoria-modo-local.md) y [suite CI](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40524535143).
+
+### A3-01 — Cerrada como caracterización automatizada
+
+**Resultado:** [informe](20-auditoria-modales-a3.md), 21 tests, defectos de contrato [#9](https://github.com/LeviEdition/invierno-en-la-colonia/issues/9) y [#10](https://github.com/LeviEdition/invierno-en-la-colonia/issues/10). Pruebas visuales pendientes.
+
+### A4 — Cerrada como integración automatizada dirigida
+
+**Resultado:** [informe](21-auditoria-integracion-a4.md), 23 tests, recorridos de victoria/derrota, dos partidas dirigidas de 10 rondas, defecto de victoria de IA [#11](https://github.com/LeviEdition/invierno-en-la-colonia/issues/11).
+
+**Advertencia:** no se comprobó el balance de campañas bajo azar y recursos naturales; no se evaluó la interfaz real. **A4 automatizado completo no significa auditoría A completa.**
+
+### A5-01 — Verificación en Chromium y emulación táctil ejecutada
+
+**Evidencia:** [informe A5-01](22-auditoria-navegador-a5.md), 40 comprobaciones principales en cuatro viewports (1365×768, 393×852, 320×640 y 852×393) y 12 comprobaciones especiales en tres viewports. Menú, búsqueda, botín, encrucijadas, muerte, pase e inventario J2 funcionan en el navegador; sin errores JS ni desbordamiento horizontal de página en esos tamaños.
+
+**Defectos nuevos confirmados:** [#12](https://github.com/LeviEdition/invierno-en-la-colonia/issues/12), foco de teclado sale de setup/pase; [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13), dados flotantes de 26×25 px para uso táctil. No se corrigieron. **Las pruebas de móvil fueron emuladas: no Android real.**
+
+### A5-02 — Verificación física diferida; no ejecutada
+
+**Alcance:** ejecutar [guía manual](23-guia-prueba-android-a5.md) en al menos un teléfono Android. Validar apertura, scroll vertical, acciones, dados, modales, mano del segundo jugador, pase privado, orientación y respuesta táctil. Registrar observado/esperado, modelo, navegador y capturas de fallos si se producen.
+
+**Estado:** sin checklist de Android físico. El usuario indica que ha jugado repetidas veces con buen funcionamiento y autoriza avanzar. Se conserva como **riesgo pendiente**; no se afirma dispositivo, navegador ni pasos verificables. [Guía futura](23-guia-prueba-android-a5.md).
+
+### A6 — Lista de prioridades documentada; B1 y C1 habilitadas
+
+**Informe de cierre y priorización:** [24 — Cierre de auditoría V9.9](24-cierre-auditoria-y-prioridades.md). 238 pruebas ejecutables verdes, 3 TODO y 12 incidencias registradas (#2–#13), incluida una regla genuinamente ambigua (#4). A5-02 queda pendiente y no bloquea una **rama aislada** de correcciones por autorización expresa del creador.
+
+**B1 (clasificación):** defectos de expectativa inequívoca #11, #2 y #3 pueden corregirse sin crear reglas nuevas. #4 y #6 precisan acordar comportamiento. El resto conserva clasificación y orden sugerido en el documento 24.
+
+### Estabilización C1–C3 — completada en rama aislada y PR en borrador
+
+En `fix/estabilizacion-v9-9` fueron corregidos **[#11](https://github.com/LeviEdition/invierno-en-la-colonia/issues/11)** (victoria IA al alcanzar muestras), **[#2](https://github.com/LeviEdition/invierno-en-la-colonia/issues/2)** (cartas de recursos y consumo de encrucijadas) y **[#3](https://github.com/LeviEdition/invierno-en-la-colonia/issues/3)** (dados J2). Cada cambio incluyó regresiones y la [suite CI](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40537729389) finalizó con **245 aprobadas, 0 fallidas y 3 TODO** (**248 declaradas**).
+
+**Evidencia:** [registro C1–C4](25-registro-estabilizacion.md) y [PR #14 en borrador](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14). **No fusionar ni sustituir `main` sin revisión**. Los defectos #4, #6 y #7 requieren decisiones y no se alteraron.
+
+### C4 — Foco de diálogos (#12): implementado y verificado
+
+Se enfoca el diálogo de inicio/pase, se confina Tab/Shift+Tab, se hace inerte el tablero durante el pase y se devuelve el foco al contenido al cerrar. **Cinco regresiones nuevas**, suite 250/0/3 TODO; Chromium verificó Tab, Shift+Tab y Enter en 1365×768, 393×852 y 320×640. [Registro](25-registro-estabilizacion.md). No se afirma validación con TalkBack o Android físico.
+
+### C5 — Guardias de transición de turno (#8 y #10): R2 corregido en el seguimiento
+
+**Estado confirmado al comenzar:** rama y referencia Git del PR #14 en `5b3a663`, C4 cerrada; `main` en `d9068f4`. La consulta del PR mediante API devolvió `Forbidden`: no se confirmó en vivo su estado ni sus checks.
+
+**Precondición → acción → esperado → evidencia:** pase (incluido inicio) o aviso de fallecimiento activo → llamar `finishTurn()` o el atajo del menú → no cambiar partida, ronda, selección ni diálogo → tres regresiones locales fallaron antes del arreglo. Se reemplazaron las dos caracterizaciones del defecto por expectativas correctas y se añadieron inicio y fallecimiento en IA (cuatro casos C5). Tras confirmar, una nueva orden sí avanza; no se difiere una orden bloqueada.
+
+**Corrección mínima:** añadir `passScreenActive` y `deathDirector.active` a la guardia inicial de `finishTurn()`, sin cambiar reglas ni el gestor de foco. **Validación local:** 45/45 pruebas en los dos archivos afectados; `npm test`: **252 aprobadas, 0 fallidas y 3 TODO** (255 declaradas). Chromium sobre la rama real verificó bloqueo durante fallecimiento en local/IA, Continuar y avance posterior; en local también llamadas repetidas durante pase, confirmación y llegada a ronda 2. Sin errores JS. Escenarios dirigidos, no partida completa ni Android físico.
+
+Cambios entregados en el PR #14 para revisión, sin fusionar ni modificar `main`. CI remoto de C5/C6 confirmado en la entrega registrada arriba; los resultados de implementación anteriores son históricos. Detalles en [registro C5](25-registro-estabilizacion.md#c5--8-y-10-guardias-de-fin-de-turno).
+
+### C6 — Acciones durante curación pendiente (#9): R1 corregido en el seguimiento
+
+**Autorización:** el usuario indica «continuemos» después de confirmar C6 como siguiente tarea. Se conservaron los cambios locales de C5; `main` y los remotos no se modificaron.
+
+**Precondición → acción → esperado → observado:** selección de paciente activa → consumir/equipar/aportar desde mano o equipo/iniciar transferencia mediante llamadas internas → conservar estado hasta curar o cancelar → 15 regresiones fallaron antes del arreglo, cinco por cada contexto (J1, J2, humano contra IA).
+
+**Solución mínima:** `playable()` exige también ausencia de `pendingHeal`. `chooseHeal()` conserva la comprobación de `controls.interactive` para poder resolver la elección sin habilitar las acciones normales. Elegir paciente y cancelar mantienen sus reglas y liberan el bloqueo.
+
+**Evidencia:** 21 casos C6 (15 de bloqueo y 6 de recuperación) reemplazan una caracterización del fallo. Suite completa `npm test`: **272 aprobadas, 0 fallidas, 0 canceladas, 0 omitidas y 3 TODO previos** (275 declaradas). Archivo de modales: 42/42 aprobadas. Chromium sobre el HTML real comprobó seis recorridos dirigidos: curar/cancelar en J1, J2 y humano contra IA, rechazo de consumo durante la elección y consumo habilitado después; sin errores JS. No valida partida completa, Android físico ni TalkBack.
+
+Tablero, registro y matriz actualizados. Al terminar la implementación, los cambios aún estaban sin commit ni subida; la entrega posterior se registra arriba. CI remoto C6 confirmado en la entrega registrada arriba. No se cierra automáticamente #9 ni se fusiona. [Registro](25-registro-estabilizacion.md#c6--9-acciones-durante-curación-pendiente).
+
+### Revisión final C5/C6 — realizada con hallazgos, 27/10/2026
+
+**Alcance:** `5b3a663..247f819`, dos revisiones independientes de solo lectura y comprobación de reproducciones en Node/Chromium. [Informe 26 con precondiciones, acciones, esperado/observado y límites](26-revision-final-c5-c6.md).
+
+- **R1, regresión C6/P2:** llamada interna `search(); special(); chooseLoot(0)` crea botín y curación simultáneos; el nuevo `playable()` impide resolver el botín y el modal no ofrece curar/cancelar. Comparado antes/después y reproducido en J1, J2 y humano contra IA. Impide recomendar integrar C6 sin corrección.
+- **R2, residual C5/P2:** `kill(Leo); finishTurn()` en la misma pila avanza antes de la microtarea que abre la muerte. Preexistente; el bloqueo con diálogo ya visible sí funciona. No se afirma una explotación mediante clic normal.
+
+**Resultados:** 65/65 pruebas relevantes aprobadas; CI de `247f819` [aprobado](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40554797945). Los ocho experimentos de Chromium confirmaron los casos, sin errores JS; no cuentan como ocho pruebas funcionales aprobadas. Las pruebas existentes no cubren estas combinaciones. No hubo modificaciones de código ni nuevas regresiones incorporadas a la suite en esta revisión: se entrega diagnóstico, no una corrección. PR #14 sigue en borrador, sin aprobación formal ni fusión; `main` intacta.
+
+### C6-R1 — Bloqueo botín/curación: corregido y revisado, 27/10/2026
+
+[Informe 27](27-correccion-c6-r1.md), código/pruebas [a5043fa](https://github.com/LeviEdition/invierno-en-la-colonia/commit/a5043fadbaa686ed9d5c4cdc8c43ab90806baa52). Se impide iniciar la curación médica/enfermera mientras exista `pendingLoot`, sin relajar permisos para resolver botín ni cambiar otras habilidades. Seis regresiones fallaron antes y pasan después; 48/48 pruebas del archivo de modales. `npm test`: **281 declaradas, 278 aprobadas, 0 fallidas/canceladas/omitidas y 3 TODO previos**.
+
+Chromium completó 12 recorridos en 1365×768 y 393×852: J1/J2/humano contra IA, curar/cancelar, ruido/elección única y recuperación de búsqueda. Sin errores JS. Solo la orden tardía de habilidad se reproduce por llamada interna; las elecciones se verifican con botones reales. Una revisión independiente no encontró defectos en el ajuste. No se afirma Android físico/táctil ni todas las combinaciones de decisiones.
+
+**CI remoto confirmado:** [GitHub Actions sobre `a5043fa`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40556617672), `completed/success`; logs: **281 declaradas, 278 aprobadas, 0 fallidas/canceladas/omitidas y 3 TODO**.
+
+Tablero, registro, matriz e informes 26/27 actualizados; se conserva el hallazgo original como histórico. Sin fusión, cierre de issues ni aprobación formal del PR. `main` intacta. En C6-R1 no se modificó R2 de C5; su corrección posterior se registra abajo.
+
+### C5-R2 — Cola de fallecimiento: corregida y revisada, 27/10/2026
+
+[Informe 28](28-correccion-c5-r2.md), código/pruebas [c19916f](https://github.com/LeviEdition/invierno-en-la-colonia/commit/c19916f609498a0e058ef19b257b0f134e0c8aa5). La guardia de `finishTurn()` comprueba también muertes en cola, antes de que su microtarea abra el aviso. No cambia el gestor de fallecimientos ni las esperas de una transición ya iniciada.
+
+Seis regresiones fallaron antes y pasan después, con microtareas reales, J1/J2/humano contra IA, uno/dos avisos, rechazo sin mutar estado y recuperación después de confirmar todos. Un séptimo test preserva una colonia real que espera su muerte y termina solo una vez. Archivo: 55/55; `npm test`: **285 aprobadas, 0 fallidas/canceladas/omitidas y 3 TODO** (288 declaradas). Chromium: 12 recorridos en 1365×768 y 393×852, sin errores JS; confirmación/reintento mediante botones reales tras reproducir internamente la ventana. Revisión independiente sin defectos. No se afirma Android físico ni clic normal como origen del fallo.
+
+**CI remoto confirmado:** [GitHub Actions de `c19916f`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40557908505), `completed/success`; logs: **288 declaradas, 285 aprobadas, 0 fallidas/canceladas/omitidas y 3 TODO previos**.
+
+Tablero, registro, matriz e informes 26/27/28 actualizados; C6-R1 conserva sus pruebas. PR #14 en borrador, sin aprobación formal ni fusión; `main` intacta. No se implementó #5.
+
+### Definición de prioridad IA #5 — propuesta revisada, decisión pendiente
+
+**27/10/2026:** se revisaron catálogo, crisis, secuencia del turno IA, pruebas existentes e issue#5, con revisión independiente de solo lectura. [Propuesta y escenarios en informe29](29-propuesta-prioridad-ia-herramientas.md). Un aporte insuficiente no reduce la penalización; la IA puede encontrar más herramientas durante las acciones y su bloque actual no reevalúa al final.
+
+**Recomendación todavía no aprobada:** para crisis de herramientas, usar equipo durante las acciones y, antes de colonia, aportar exactamente lo faltante solo si mano+equipo propio pueden completar. Priorizar mano antes de equipo, permitiendo gastar la última herramienta equipada si hace falta. Si no alcanza o ya se cumplió, conservar; no buscar el bonus extra. Mantener otros tipos de recurso y reglas sin cambios.
+
+Se presentó el costo (perder equipo valioso para evitar una penalización) y la alternativa de proteger siempre el equipo. Se solicitó decisión al creador, sin suponerla por silencio. No se implementó #5 ni se ejecutaron nuevas pruebas; no hay nueva cobertura funcional. Solo informe29, tablero y registro modificados, con `git diff --check`. Los checks del commit documental no validan una política que aún no existe en código.
+
+### Siguiente tarea única — Decidir prioridad IA #5
+
+Recibir y registrar la decisión del creador sobre la propuesta. Implementación y regresiones quedan para el bloque posterior a una política aprobada; no tocar #4/#6 ni fusionar.
+
+### Continuidad verificada y segunda revisión de política #5 — 27/10/2026
+
+**Punto inicial remoto comprobado:** `main=d9068f4` y blob original V9.9 `4ebaedad13d63c7a6762c524a52c0dd9695687b1`; `refactor/arquitectura=0933c70`; `fix/estabilizacion-v9-9=e7d0a48` (sin avances frente al SHA de referencia). PR #1 y #14 abiertos, en borrador; #14 base `refactor/arquitectura`. #5 sigue abierto. [Actions 40559396788](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40559396788) confirma en logs checkout de `e7d0a48`, **288 declaradas/285 aprobadas/0 fallidas/3 TODO**. La ejecución no valida el arreglo de #5, que aún no existe.
+
+**Tarea C/B activa y única:** decidir prioridad IA de herramientas/crisis #5. Relectura de flujo IA, búsquedas, donaciones y catálogo confirmó además que `stashLoot()` puede equipar inmediatamente las herramientas encontradas. Crítica: donar la última herramienta equipada para evitar una penalización menor puede empeorar rondas futuras; políticas de preservar equipo o valorar severidad implican sacrificios distintos. [Informe29](29-propuesta-prioridad-ia-herramientas.md) y [registro25](25-registro-estabilizacion.md) documentan alternativas, recomendación acotada y pruebas/límites.
+
+**Decisión pendiente del creador, ninguna aprobación implícita:** se recomienda provisoriamente donar al final solo si se completa la crisis, usando primero mano y luego equipo propio vivo, sin bonificación extra, con desempate determinista documentado; no estimar valor táctico durante C. No se modificaron mecánicas, tests ni `main`, ni se fusionaron PRs o cerraron issues. Revisión estática, **sin nueva ejecución funcional/local, Chromium ni Android/TalkBack**. Los commits documentales posteriores deben verificarse por su propio SHA y checks.
+
+**Siguiente tarea única (sin empezar aquí):** recibir y registrar la decisión explícita del creador sobre la política #5, antes de cualquier implementación.
+
+### C7/#5 — Política A aprobada, implementada y probada (27/10/2026)
+
+El creador aprobó completar crisis de herramientas siempre que los aportes humanos anteriores más la mano y equipo de la IA lo permitan. La IA usa herramientas durante su turno, realiza sus búsquedas normales y **después** decide si aportar. Prioriza mano propia y luego equipo propio de supervivientes vivos en orden determinista, solo lo necesario, sin bonificación extra. Cuando no alcanza, conserva el material: en humano + IA no hay otro turno humano antes de colonia. Esto no cambia aportes parciales humanos ni modo local.
+
+**Evidencia C7:** [informe30](30-correccion-c7-ia-herramientas.md), [código 4166716](https://github.com/LeviEdition/invierno-en-la-colonia/commit/416671673c81c4aa88d91d06209a53855efb69c8), diez regresiones nuevas, [CI 40571819429](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40571819429): **297 declaradas, 295 aprobadas, 0 fallidas, 2 TODO** (#4 y #6). No se modifica comida, medicina, combustible, decisiones de botín ni selección de lugares de búsqueda. Hallar una herramienta puede ayudar a salvar la crisis, pero la IA **no busca deliberadamente herramientas por encima de otros tipos de botín**. No se hicieron nuevos ensayos Chromium, Android físico, TalkBack ni análisis de balance. Main intacta y PR #14 en borrador; #5 permanece abierto.
+
+**Siguiente tarea única:** revisión crítica de C7 antes de considerar integración o ampliar la estrategia de búsqueda.
+
+### Revisión crítica posterior de C7 — 27/10/2026
+
+Revisión de solo lectura de código, contrato de búsqueda, tests y estado CI. [Informe 31](31-revision-critica-c7.md): **la rutina de donación de herramientas satisface el alcance aprobado** (mano/equipo propio, colaboración con aportes humanos, evaluación final, aporte exacto), con 295/297 pruebas aprobadas y dos TODO en [CI sobre `9907cdb3`](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40572758503). No se ejecutaron pruebas dinámicas nuevas ni Chromium/Android/TalkBack, ni revisor externo.
+
+**Reserva H1/P2 (selección de botín, código inspeccionado):** la IA puntúa muestra 10 y herramienta 3 incluso cuando tomar esa herramienta completaría una crisis posible (ejemplo: linterna equipada, botín muestra+palanca, crisis de herramientas 0/2). Se pierde esa oportunidad. **H2 (límite anterior, no regresión):** comida, medicina y combustible todavía se donan antes de las búsquedas y no se reconsideran después. Esto estaba fuera del alcance de #5. Ambos escenarios requieren pruebas dirigidas antes de afirmar reproducción integral.
+
+**Estado:** revisión concluida con reserva, C7 implementada/CI verde pero #5 abierto; no modificar regla de botín ni generalizar otras crisis sin una decisión. `main` intacta, PR #14 sigue en borrador.
+
+**Tarea única siguiente:** aprobar o ajustar una política mínima C7-R1 para elegir herramientas reveladas **cuando esa elección permitiría completar la crisis**, preservando la victoria inmediata por objetivo. Después diseñar regresiones y parche solo si queda expresamente autorizado. No iniciar aún #4/#6 ni etapa D.
+
+### C7-R1 — Regla de selección de botín aprobada y corregida (27/10/2026)
+
+**Aprobación expresa del creador:** elegir la herramienta revelada **solo si adquirirla permitiría completar** una crisis de herramientas con el inventario/equipo propio vivo y los aportes humanos previos. Una muestra que otorgue **victoria inmediata** tiene prioridad mayor, incluyendo el doble avance de investigador. No iniciar cambios de ruta de búsqueda ni reordenar aportes de otros tipos.
+
+**Evidencia reproducida antes:** ocho regresiones añadidas en [`5debdbd`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/5debdbd49289b1e464e9df7a8384b6a41f95c0fc); [CI rojo 40575929242](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40575929242) documentó 3 fallos de la selección anterior. **Corrección:** [`f1e75ed`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/f1e75edc28a317a3d6745079d19e07558987a10a), puntajes condicionados dentro de `beginSearch()`, sin cambiar `botContributeTools()` ni otras clases de crisis.
+
+**CI verde del ejecutable:** [Actions 40576075140](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40576075140): **305 declaradas, 303 aprobadas, 0 fallidas y 2 TODO** (#4/#6). [Informe32](32-correccion-c7-r1-prioridad-botin.md) registra autorización, pruebas y límites. **No se ejecutaron** pruebas nuevas de navegador, Android, TalkBack ni partida natural. PR #14 permanece en borrador, #5 abierto y `main` intacta.
+
+**Tarea única siguiente:** revisión crítica posterior del parche C7-R1; todavía no autoriza fusión/cierre del issue ni otro defecto de estabilización.
+
+### Revisión crítica posterior C7-R1 — 27/10/2026
+
+[Informe33](33-revision-critica-c7-r1.md): revisión separada de la implementación [informe32](32-correccion-c7-r1-prioridad-botin.md), contrastando regla de puntuación, `gainSample`, inventarios, búsqueda, turnos, crisis y las ocho regresiones. **Dictamen:** no se encontraron fallos nuevos en el alcance del parche. H1 del informe31 (preferir muestra no ganadora sobre herramienta que permite completar crisis) queda resuelto por el parche C7-R1 y pruebas; victoria inmediata conserva prioridad, incluyendo investigador. No se cambiaron motor ni tests, solo documentos.
+
+**Evidencia verificada:** [CI 40576507329](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40576507329) del commit auditado `46564a5`: **305 tests, 303 aprobadas, 0 fallidas y 2 TODO**. `main` intacta; PR #14 borrador; #5 aún abierto. **Limitación significativa:** la suite de IA suprime encrucijadas, esperas/modales y animaciones; no hay smoke test nuevo en navegador ni Android/TalkBack. No afirmar que la UI está aceptada.
+
+**Única tarea siguiente:** preparar y realizar validación manual acotada en **navegador real** del flujo completo C7/C7-R1, con encrucijadas activas, antes de decidir cierre/promoción de #5. Registrar escenarios y resultados; no iniciar otros issues sin cambio explícito de prioridad.
+
+### Smoke test C7/C7-R1 en Chromium real — 27/10/2026
+
+[Informe34](34-validacion-navegador-c7-r1.md): se obtuvo la versión exacta del HTML de esta rama, SHA Git blob `7ae72fc88381e5109b5f64929f6b017a2d5d5dc6` verificado contra GitHub, y se ejecutó en Chromium con Playwright. **Cuatro escenarios aprobados:** completar crisis 1/2 humano con palanca IA equipada y modal de ronda; elegir herramienta frente a muestra no ganadora y superar crisis con modal de búsqueda; priorizar victoria inmediata por muestra; victoria por muestra duplicada de investigador en viewport táctil 390 px. Encrucijadas/acciones confirmadas mediante interfaz real; 0 errores JS detectados. `round`, inventario, mazo y log verificados.
+
+**Evidencia y límites:** ensayos con estado reproducible preparado por Playwright, temporizadores de animación de 1750 ms acortados, sin Android físico/TalkBack ni partidas aleatorias completas; `file://` bloqueado en entorno, documento cargado mediante `page.set_content()`. **No** se alteraron HTML ni tests del repositorio. El CI anterior de `5eb8302` era verde: **305 declaradas, 303 aprobadas, 0 fallidas, 2 TODO**, [run 40577893140](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40577893140). El número no aumenta por los cuatro recorridos externos. PR14 borrador, `main` intacta, #5 abierto.
+
+**Tarea única siguiente:** evaluar aceptación y cierre **administrativo** de #5, determinando si la prueba en Android físico es requisito previo para promoción. No cerrar ni fusionar sin aprobación expresa; no empezar otros issues.
+
+### Decisión de criterio de aceptación #5 — 27/10/2026
+
+**Criterio del creador:** **Android físico no será una prueba obligatoria para cerrar C7/C7-R1 (#5)**. Los cuatro smoke tests controlados de Chromium, la emulación táctil y las 303 pruebas aprobadas con 2 TODO previos son evidencia suficiente para proponer aceptación de esta corrección; no equivalen a certificar Android, TalkBack, toda la experiencia móvil o la versión completa. La validación en dispositivos reales se mantiene como prueba complementaria futura, no bloqueo de este issue. Ver [informe34](34-validacion-navegador-c7-r1.md#decisión-de-aceptación-sobre-android-físico).
+
+**Tarea siguiente única:** solicitar autorización explícita para **aceptar/cerrar administrativamente el issue #5**, sin fusionar PR #14 ni alterar `main`. No cerrar automáticamente por el solo cambio del criterio.
+
+### C7/C7-R1 — Issue #5 cerrado por decisión del creador (27/10/2026)
+
+**Autorización y cierre:** ante la propuesta expresa de «aceptar formalmente C7 y cerrar #5 sin fusionar PR #14», el creador respondió «Continúa». Se interpretó como consentimiento para el **cierre administrativo de [#5](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5)**, **no** como permiso de integración, publicación ni de abordar otro problema. Se agregó al issue el [comentario técnico 6453435186](https://github.com/LeviEdition/invierno-en-la-colonia/issues/5#issuecomment-6453435186) con política aprobada, implementación C7/C7-R1, regresiones, CI, Chromium y límites. El issue se verificó cerrado con `state_reason=completed`.
+
+**Criterios cumplidos:** política A (contribución de herramientas tras búsquedas, completas y deterministas), prioridad condicionada de botín, victoria inmediata, suite verde [40582012525](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40582012525) (**305 declaradas / 303 aprobadas / 0 fallidas / 2 TODO**), revisión crítica e [informe34](34-validacion-navegador-c7-r1.md) (cuatro smoke tests Chromium controlados, encrucijadas reales, 0 errores JS detectados). Android físico se considera opcional para este issue; no se afirma validación Android/TalkBack ni balance exhaustivo.
+
+**Separación esencial:** «issue cerrado» significa que se aceptó el **seguimiento funcional**, no que el parche haya entrado en la versión estable. Todos los cambios ejecutables permanecen en `fix/estabilizacion-v9-9`, [PR #14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14) **abierto y draft** hacia `refactor/arquitectura`; **`main` sigue en `d9068f4`**. La tarea se registró en este tablero y en el [registro25](25-registro-estabilizacion.md), sin iniciar otro issue.
+
+**Único paso siguiente recomendado, aún sin aprobación para trabajarlo:** **#4 — decidir la política de transferencia de objetos entre supervivientes humanos/IA**. Es un `test.todo` real y exige distinguir cesión cooperativa entre grupos de traspasos internos antes de escribir código. Comparar alternativas y su efecto sobre partidas cooperativas; no implementar ni cerrar #4 hasta que el creador elija una regla. #6 (momento de elección del líder de J2) sigue pendiente; #7 y #13 permanecen fuera del alcance de este cierre.
+
+### Issue #4 — Política de transferencia por modo acordada (27/10/2026)
+
+El creador decidió: **«por ahora, contra la IA sin tradeos; entre J1 y J2 sí»**. Se distingue transferencia *entre grupos controladores* de transferencia *interna entre supervivientes propios*:
+- **Contra la IA:** J1 puede reorganizar equipo entre los supervivientes que controla, pero **no puede transferirlo a supervivientes IA**, ni recibir equipo de ellos por la función manual de transferencia. El comportamiento automático de IA no se modifica.
+- **Modo local J1 + J2:** transferencias de un objeto equipado **bidireccionales** J1↔J2, más los traspasos internos del grupo, autorizadas desde el **turno del dueño que entrega**. Sin trueque recíproco obligatorio ni aceptar un objeto durante el pase de teléfono.
+- Restricciones conservadas: remitente y receptor vivos, misma localidad, remitente propio del turno interactivo, receptor sin equipamiento de categoría duplicada, objeto aún disponible, protección frente a acciones durante el pase/modales y confirmación. Los filtros deben aplicarse en **`startTransfer()` y `chooseTransfer()`**. Texto UI adecuado para modo local.
+
+**Registro de decisión:** [comentario del issue #4](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4#issuecomment-6453681346). **Alcance de esta intervención:** solo registrar reglas; no se cambiaron motor ni tests, no se ejecutaron nuevas regresiones, #4 permanece abierto, dos TODO (#4 y #6) sin resolver, PR14 sigue borrador y `main` intacta. Interpretación declarada, corregible antes de código: «sin tradeos con IA» **no** bloquea mover equipo dentro del grupo del J1.
+
+**Siguiente tarea única propuesta (pendiente de autorización):** C8/#4, preparar regresiones rojo→verde para estos modos y corregir guardas en `startTransfer()`/`chooseTransfer()`, seguida de pruebas Chromium y revisión crítica. No implementar todavía ni saltar al issue #6.
+
+### C8/#4 — Corrección aplicada y verificada, revisión crítica posterior pendiente (27/10/2026)
+
+**Autorización:** el creador aprobó «vamos con la corrección de C8» tras definir previamente que **no hay tradeos con IA pero sí cesión J1↔J2 en modo local**, conservando transferencias internas del propio grupo humano. [Informe35](35-c8-transferencias-por-modo.md) contiene precondiciones, código, 14 pruebas y resultados navegador.
+
+**Red primero:** [commit pruebas `5b4446f`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/5b4446ff8d6b0dad1b918ada94c0835fbed802a9), convierte el TODO #4 en 14 casos activos. [Actions rojo 40585772252](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40585772252) mostró **318 declaradas, 309 aprobadas, 8 fallidas y 1 TODO** (#6). Los fallos exponen accesos cruzados humano→IA, confirmaciones de turno/pase incorrecto, duplicación por cambio de equipo e ítem sustituido mientras está pendiente.
+
+**Verde después:** [commit `37d86d6`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/37d86d6bdb4707ff7ebf95a8274bd5747a08b989): filtro único `canReceiveTransfer` por modo + validaciones repetidas al confirmar (turno, propiedad, receptor, misma localidad, categoría, identidad del objeto), sin añadir IA negociadora. [Actions verde 40585960363](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40585960363): **318 declaradas, 317 aprobadas, 0 fallidas y 1 TODO #6**.
+
+**Chromium:** se verificó identidad de archivo del motor C8 Git blob **`32eb545cbdbca047ded8bc81d64b8e438e096a49`** con GitHub. **Tres recorridos de botones reales aprobados:** humano→otro superviviente propio, sin destinatarios IA; local J1→J2; local J2→J1 luego de pantalla de pase confirmada, con viewport táctil 393 × 852 px. **Sin errores JavaScript**. Pruebas con equipo preparado determinísticamente, sin Android físico ni navegación `file://`. Detalles y reservas: [35](35-c8-transferencias-por-modo.md).
+
+**No se modificó** `main`, no se fusionó PR #14 (draft/base `refactor/arquitectura`), **#4 sigue abierto**; #6 sigue como único TODO. Se recomienda revisión crítica posterior **separada** antes de aceptar/cerrar el issue.
+
+**Única tarea siguiente:** revisión crítica posterior C8/#4 (sin empezar otro issue). No cerrar #4 ni fusionar sin autorización.
+
+### Revisión crítica posterior C8/#4 — 27/10/2026
+
+[Informe36](36-revision-critica-c8.md): auditoría separada de C8, filtros de transferencia y doble comprobación al confirmar, `pendingTransfer.itemRef`, permisos de modo local y humano+IA, control del turno, modales y los 14 casos de regresión. **Dictamen:** sin defectos nuevos confirmados ni cambios adicionales requeridos para esta corrección. Se agregaron **seis controles nuevos de Chromium real** con viewport táctil emulado, todos aprobados sin excepciones JS: destino IA forzado; receptor con arma duplicada y cancelación; ítem de origen sustituido; donante muerto; pantalla de pase activa; categorías distintas (arma + herramienta). Total acumulado de C8: **3 recorridos anteriores + 6 controles nuevos = 9 escenarios** acotados, no partidas completas ni casos agregados a CI.
+
+**Evidencia CI previa de motor:** [40586682191](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40586682191), **318 declaradas, 317 aprobadas, 0 fallidas, 1 TODO (#6)**. No se modificaron HTML o tests en esta revisión. **Límite:** hay otras ventanas/eventos pendientes que `playable()` no modela globalmente; no hay defecto C8 confirmado por la UI y no se amplía alcance sin autorización. Sin Android físico/TalkBack; `main` intacta y PR14 draft. **#4 continúa abierto**.
+
+**Próximo paso único sujeto a aprobación:** aceptación funcional y cierre administrativo del issue #4, **sin** fusionar PR14 ni pasar automáticamente a #6.
+
+### Corrección UX — Alerta del segundo movimiento con combustible (27/10/2026)
+
+El creador preguntó específicamente por los **controles visibles que permiten intentar una acción ilegal**, distinguiéndolos de guardas internas. Auditoría acotada del caso reproducible: pulsar **«Usar»** en carta de combustible después de que el superviviente ya se movió rechazaba la acción **sin mensaje**, aunque `doMove()` sí avisaba. Ante su indicación, se agregó **exactamente el mismo aviso** `⚠ El superviviente ya se movió durante este turno.` en el flujo `ItemEngine.moveWithFuel()` (solo intento de jugador activo), sin gastar carta ni cambiar la regla.
+
+**Pruebas antes:** [CI rojo 40589116325](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40589116325), **320 declaradas, 317 aprobadas, 2 fallidas nuevas, 1 TODO** (#6). [Commit tests `78c55af`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/78c55af021b970427f7372860ab7a038621dbfeb).
+
+**Parche y pruebas después:** [commit `63cb294`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/63cb2949f979631c97152f971f7a2dda171672ba), [CI verde 40589214682](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40589214682), **320 declaradas, 319 aprobadas, 0 fallidas, 1 TODO**. Tres rutas de Chromium con botones reales —rechazo con aviso en J1, rechazo con aviso en J2 local/táctil emulado 393×852, éxito sin modificar para combustible válido—, sin JS errors; se constató que **el toast aparece visualmente**, con rol status/aria-live polite. HTML exacto Git blob `4748627825e9876809ec482cb7c10431e6c07cf9`. [Informe37](37-feedback-movimiento-con-combustible.md) especifica evidencia/límites.
+
+**Reserva y siguiente prioridad a decidir:** esto **no certifica todos los avisos** del juego; solo se corrigió el ejemplo aprobado. Se propone auditoría priorizada **solo de acciones realmente pulsables desde interfaz** en todo C1–C8, antes de nuevos ajustes. No confundir con rechazo de llamadas artificiales ni deshabilitados por diseño. #4 sigue abierto y aceptable según revisión36, pero no fue cerrado por este cambio.
+
+### C8/#4 cerrado; C9/#6 pasa a definición de regla — 27/10/2026
+
+**Autorización del creador:** «sí, hagamos esto que dijiste, sigamos con la ruta», aceptando la propuesta de **cerrar administrativamente #4** y abordar después el issue #6. Se registró el [comentario de aceptación](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4#issuecomment-6454516746) y GitHub confirmó [#4 cerrado/completed](https://github.com/LeviEdition/invierno-en-la-colonia/issues/4) (`2026-10-27T21:51:27Z`). El cierre significa aceptación de C8, **no integración**: PR14 sigue abierto/draft a `refactor/arquitectura`, `main=d9068f4aa8d3a10bbbf1e0a8a2527744cc6952cb` no se modificó.
+
+**Siguiente tarea en curso, solo análisis: C9/#6 (liderazgo inicial J2).** [Issue y opciones documentadas](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6#issuecomment-6454546559). Código verificado: `canPickStartingLeader()` distingue flags de J1 y J2, pero `consume()`, `doMove()` y `playItem()` solo marcan `game.leaderChosen`. **Observado:** J1 pierde la elección de líder inicial tras esas acciones; J2 local puede seguir cambiándolo. `tests/finales-lideres.test.mjs` conserva el único TODO (#6). Mensaje «Durante la primera ronda...» en modal no explica el bloqueo al actuar. [Última CI previa](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40589676353): **320 declaradas, 319 aprobadas, 0 fallidas, 1 TODO**.
+
+**Alternativas pendientes de aprobación:**
+- **A recomendada (cambio mínimo):** la primera acción que confirma el líder cierra esa selección en **J1 y J2**, con flags según turno y texto de UI coherente. Mantiene lo que ya hace J1. Precisar qué acciones cuentan (gastar dado, mover, usar carta; revisar habilidad/equipamiento para no dejar excepciones inadvertidas).
+- **B:** ambos pueden decidir líder durante toda la ronda 1, aunque hayan actuado. Implica cambiar también el comportamiento actual de J1 y probarlo.
+
+**Alcance actual:** solo comentario #6 y documentación. **No** se implementaron reglas nuevas, ni se alteró `main`, ni fusionó PR, ni cerró #6. Auditoría general de avisos se estaciona como pulido al cerrar Etapa C, no tarea activa.
+
+**Siguiente única decisión:** que el creador apruebe A o B para preparar regresiones rojo→verde de C9/#6.
+
+### C9 / issue #6 — Política A implementada y comprobada (27/10/2026)
+
+El creador **aprobó explícitamente política A**: «J1 y J2 deben confirmar su líder inicial antes de realizar las acciones que bloquean la elección». Se conservó la regla previa de J1: bloquean únicamente **gastar un dado con éxito, moverse válidamente o usar con éxito carta de inventario** durante la ronda 1. Una acción rechazada no confirma el líder; elecciones de sucesor por fallecimiento no se modifican. Los otros actos previamente no bloqueantes (habilidad gratis, equipo desde ficha, contribución a crisis) no se incluyeron porque no forman parte de la regla J1 previa. [Informe38](38-c9-lider-inicial-j2.md).
+
+**Pruebas primero:** se sustituyó el único `test.todo` #6 por **12 regresiones C9**: J1/J2 con dado, movimiento, carta, acción fallida, selección explícita, ronda 2 y texto de interfaz. [CI rojo 40591148076](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40591148076): **331 declaradas, 327 aprobadas, 4 fallidas, 0 TODO**. Fallaron tres caminos de J2 y un texto UI, confirmando defectos reales.
+
+**Corrección:** [commit `38e7ac8`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/38e7ac87832e4ca02dbf277dcc1a8acb56ce2849). Nueva función `confirmStartingLeader()` cambia solo flag del controlador (`leaderChosen` J1 / `localLeaderChosen` J2 local), reutilizada en `consume`, `doMove` y `playItem` después del éxito. Menú «Grupo y líderes» explica «antes de gastar un dado, moverte o usar una carta». [CI verde 40591238120](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40591238120): **331 declaradas / 331 aprobadas / 0 fallidas / 0 TODO**.
+
+**Chromium real:** cinco escenarios con botones de menú, acción y pase de J1→J2, incluidos dos en viewport móvil táctil simulado 393×852: J1 gasto dado, J2 gasto dado tras pase, intento J2 de movimiento inválido (elección permanece), J2 usa ración (bloquea elección), J2 elige líder antes de actuar (se confirma). **Cinco aprobados, sin errores JS**. Copia local del HTML verificada por Git blob **`b5b9f2020c5abb73fd95e0f7441db088bb746d16`**, igual al de GitHub. No partidas completas ni Android físico.
+
+**Estado:** cambio implementado, issue #6 **abierto**; pendiente revisión crítica posterior independiente y aceptación del creador. PR #14 abierto/draft hacia `refactor/arquitectura`; `main` intacta.
+
+**Siguiente único paso recomendado:** revisión crítica posterior C9/#6, sin cerrar el issue ni fusionar el PR automáticamente.
+
+### Revisión crítica C9/#6 y corrección C9-R1 — 27/10/2026
+
+**Decisión final del creador:** conservar la **elección manual del líder humano como en *Dead of Winter***, sin forzar nombramiento automático de mayor influencia. Se mantiene política A previamente aprobada: durante ronda 1 las acciones válidas de dado, movimiento y carta cierran la elección inicial **de cada jugador por separado**; sucesión tras muerte sigue siendo manual para humanos, automática para IA.
+
+**Hallazgo en revisión crítica:** si el líder **de J2 muere mientras actúa J1**, el modal de sucesión se muestra a **J1** y J1 puede elegir al sucesor del otro. Se **reprodujo en Chromium real**, incluyendo clic en «Sol» durante `game.turn='human'`. Se trata de P2 de propiedad de decisión, no del cálculo de influencia. [Informe39](39-revision-critica-c9-r1.md).
+
+**Primero las regresiones:** [tests `ed817b5`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/ed817b59825268c54aa1f183c783f19af3189c83), **5 casos** en `tests/finales-lideres.test.mjs`. [CI rojo 40593244756](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40593244756): **336 declaradas, 331 aprobadas, 5 fallidas, 0 TODO**. Se comprobó que J1 podía elegir por J2, que su turno quedaba bloqueado y que la elección propia podía verse interferida.
+
+**Parche C9-R1:** [`e84db6a`](https://github.com/LeviEdition/invierno-en-la-colonia/commit/e84db6ae088f314e232e377c15cda37683cce19b), añade `leaderChoiceReady()` y separa la sucesión vigente **del turno de su propietario** en `chooseLeader`, guardas de acciones, pintado/modal y `finishTurn`/`confirmPass`. Si muere líder J2 durante turno J1, **J1 puede seguir y finalizar**, se muestra **pantalla real de pase** y J2 elige su sucesor después de recibir control. **CI verde 40593438595**: **336 declaradas, 336 aprobadas, 0 fallidas, 0 TODO**.
+
+**Chromium después de R1:** tres recorridos reales aprobados con blob exacto GitHub **`2682f96f0d451eb0083fd9eaa3762b266f8aab60`**: elección manual J2 tras pase J1→J2 en móvil 393×852, sucesión inmediata del dueño J1, IA sucesora automática. Cero excepciones JS detectadas. Incluida preparación determinista de muerte para reproducir el borde, no partidas completas ni Android físico. Total C9: **5 escenarios UI iniciales, 5 escenarios positivos adicionales de revisión y 3 positivos de R1**. Reserva pendiente para estabilización general: muertes simultáneas de dos líderes cuando existe solo un `pendingLeader` global.
+
+**Estado:** #6 **permanece abierto** hasta que el creador lo acepte; PR14 sigue abierto/draft hacia `refactor/arquitectura`, `main` intacta. La auditoría de mensajes quedó estacionada y no se iniciaron #7/#13.
+
+**Próximo paso único recomendado:** aprobación y cierre **administrativo** del issue #6, sin publicar ni fusionar la rama; luego elegir siguiente tarea de etapa C.
+
+### C9/#6 aceptado y cerrado por autorización expresa — 27/10/2026
+
+El creador indicó **«cerra el issue»** después de la propuesta explícita de aceptar C9 y cerrar #6 sin fusionar PR14. Se dejó [comentario de cierre con pruebas](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6#issuecomment-6455187002) y GitHub confirmó el [issue #6](https://github.com/LeviEdition/invierno-en-la-colonia/issues/6) en estado **closed/completed** (`2026-10-27T22:30:07Z`).
+
+**Alcance funcional aceptado:** C9 política A iguala la confirmación del líder inicial tras acciones válidas para J1 y J2, mantiene la elección manual humana al estilo *Dead of Winter*; C9-R1 impide que un jugador elija al sucesor del otro cuando este muere durante su turno, sin bloquear el pase. La IA continúa eligiendo automáticamente su líder cuando corresponde. [Informe38](38-c9-lider-inicial-j2.md) y [revisión crítica/corrección39](39-revision-critica-c9-r1.md). **Último CI verde antes del cierre:** [40594225022](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40594225022), **336 declaradas, 336 aprobadas, 0 fallidas y 0 TODO**. Se verificaron recorridos Chromium de sucesión y pase. **No** Android físico ni cobertura exhaustiva de muertes simultáneas de ambos líderes; el `pendingLeader` único queda como riesgo para revisión transversal.
+
+**No implica publicar/integrar:** PR [#14](https://github.com/LeviEdition/invierno-en-la-colonia/pull/14) continúa **abierto/draft** sobre `refactor/arquitectura`, código de corrección solo en `fix/estabilizacion-v9-9`; `main` permanece en `d9068f4aa8d3a10bbbf1e0a8a2527744cc6952cb`. No se abrió ni empezó otro issue.
+
+**Próximo paso único recomendado, sujeto a aprobación del creador:** analizar [#7](https://github.com/LeviEdition/invierno-en-la-colonia/issues/7), decisiones de IA en las encrucijadas según texto de consecuencias, y definir criterio determinista con efectos estructurados antes de modificar código. La accesibilidad táctil [#13](https://github.com/LeviEdition/invierno-en-la-colonia/issues/13) y auditoría general de alertas permanecen en la ruta de estabilización.
+
+## Análisis de arquitectura #7 — propuesta Utility AI, 27/10/2026
+
+**Pedido explícito:** analizar encrucijadas y proponer módulos, dependencias, riesgos y secuencia de pruebas; **sin modificar código ni crear commits**. [Informe41](41-propuesta-utility-ai-encrucijadas.md). Se leyeron 26 cartas/52 opciones, activación, elegibilidad, callbacks, actor/dueño y espera de IA. La selección actual todavía depende del texto; no se cambió.
+
+**Propuesta no implementada:** catálogo con IDs y consecuencias estructuradas; contexto de solo lectura; proyección sin efectos secundarios; política de utilidad por estado; selector determinista conectado al flujo actual. Preservar reglas y decisión manual local; migrar gradualmente con conformidad de efectos, sin rediseñar todo el motor. Pesos/prioridades no aprobados automáticamente.
+
+**Validación de la revisión:** 30/30 tests existentes de encrucijadas aprobados, incluidos tests de caracterización de la heurística errónea. No se añadieron pruebas ni se repitió navegador/suite completa. Solo documentación local, `git diff --check`; sin staging, commit o push. `main` y PR14 intactos.
+
+**Siguiente tarea única propuesta:** acordar contrato y ejemplos de decisión del paso1 del informe41; después, implementar por bloques con sus pruebas. No se implementó #7 ni se inició #13.
+
+## Comparación de alternativas para #7 — 27/10/2026
+
+El creador solicita evaluar críticamente Utility AI frente a otras posibilidades. [Comparación en informe41](41-propuesta-utility-ai-encrucijadas.md#2-bis-comparación-crítica-de-alternativas--27102026). **Recomendación técnica no aprobada:** comenzar con prioridades contextuales sobre efectos estructurados, conservando una interfaz que permita Utility después. Con dos opciones por carta, puede ser más explicable y comprobable; no elimina el costo de proyectar efectos ni garantiza mejor estrategia. Utility conserva valor para compensaciones graduales; planificación de varios turnos se pospone por costo/alcance.
+
+No se seleccionó algoritmo ni orden final de prioridades, no hubo nuevas pruebas ejecutadas y no se modificó código. Solo documentación local de esta comparación, sin commits por instrucción vigente. **Siguiente tarea única propuesta:** contrastar escenarios y decidir prioridades o Utility antes de implementar #7. Las reglas existentes, `main` y PR14 permanecen intactos.
+
+## Comparación concreta de políticas #7 — 27/10/2026
+
+A pedido del creador se compararon prioridades y Utility con seis escenarios de cartas actuales, usando 12 resoluciones aisladas de sus efectos reales. [Informe42](42-comparacion-politicas-encrucijadas.md): cinco acuerdos y un desacuerdo con moral baja/alimentos insuficientes; cambiar un peso Utility invierte esa elección. Son perfiles ilustrativos no aprobados, no una medida de superioridad o balance. Ambos respetan opciones legales y desenlaces terminales del juego.
+
+Solo auxiliares temporales externos y documentación local42/41/18/25; sin cambios de código del repositorio, commits ni implementación de IA. No se repitieron suite completa o navegador. **Siguiente decisión única propuesta:** acordar cómo priorizar moral frente a reservas alimentarias cuando ninguna opción cubre el déficit, y usarlo para precisar el evaluador #7. Sin aprobar algoritmo por silencio, sin fusionar.
+
+## 3. Etapas posteriores: una por vez
+
+| Etapa | Propósito | Criterio para habilitar la siguiente |
+| --- | --- | --- |
+| **A — Auditar** | Caracterizar reglas, interfaces, turnos e integración | Matriz de cobertura actualizada, lista de pruebas manuales ejecutadas y defectos identificados; límites explícitos |
+| **B — Definir reglas y priorizar defectos** | Resolver ambigüedades y clasificar fallos por gravedad | Comportamiento esperado escrito para cada corrección prioritaria; decidir qué se corrige ahora y qué se pospone |
+| **C — Corregir y estabilizar** | Corregir defectos aprobados en cambios aislados con regresiones | Pruebas automáticas verdes + pruebas de humo manuales + estado jugable estable comprobado |
+| **D — Refactorizar sin alterar comportamiento** | Separar estado, reglas, comandos, turnos, IA y vista en módulos | Equivalencia de comportamiento y pruebas preservadas; ningún cambio inadvertido de mecánicas |
+| **E — Prototipo narrativo persistente** | Implementar una historia conectada que condicione recursos/objetivo y recuerde decisiones | Dos rutas jugables con resultados diferentes, consecuencias diferidas, pruebas y estados alternativos cuando mueren personajes |
+| **F — Campañas y presentación** | Expandir campañas, personajes, epílogos, arte 2D y después juego online | Criterios y pruebas propios por subetapa, acordados al iniciar |
+
+**Compuerta:** no dar por terminada A solo por tener muchas pruebas. Hay que demostrar cobertura en navegador real. No empezar a programar E mientras A siga abierta, salvo autorización explícita para cambiar la ruta.
+
+## 4. Protocolo obligatorio para cada bloque
+
+**Antes de trabajar:**
+- Decir: etapa activa, ID de tarea, alcance y *qué no se va a tocar*.
+- Revisar los archivos originales pertinentes, supuestos y pruebas ya existentes. Confirmar primero lo básico antes de cambiar configuración.
+- Definir condiciones reproducibles de éxito y fracaso.
+
+**Durante:**
+- Una tarea a la vez y cambios pequeños.
+- Documentar hallazgos con **precondición → acción → esperado → observado → prueba**.
+- Si aparece una pregunta de reglas no acordada, detener solo esa decisión y consultarla; no corregirla inventando criterios.
+- Toda idea interesante fuera de la etapa va al **estacionamiento**. No derivar hacia su implementación.
+- Distinguir fallo confirmado, restricción técnica, propuesta creativa e hipótesis.
+
+**Para cerrar:**
+- Ejecutar pruebas del bloque y suite `npm test` si se modificaron pruebas/código.
+- Comprobar resultado de GitHub Actions y SHA de V9.9 cuando haya commits.
+- Actualizar este tablero tras cada revisión, incluso sin cambios de código; registrar acciones, decisiones, cambios, resultados y límites en la documentación pertinente. Actualizar la matriz cuando corresponda e incluir enlaces a commit/prueba/incidencia.
+- Explicar en lenguaje claro **qué se verificó, qué NO se verificó y cuál es la única siguiente tarea**.
+- No iniciar esa tarea siguiente en el mismo bloque de trabajo sin confirmación del usuario.
+
+## 5. Registro de decisiones, defectos e ideas
+
+**Decisiones aprobadas:** normas que el usuario confirmó. Registrar en la documentación de diseño respectiva; si afectan el comportamiento, requieren aceptación explícita antes de programarlas.
+
+**Defectos:** GitHub Issues, con evidencia y severidad, separados de cambios de diseño. Un fallo de seguridad/privacidad o pérdida de datos puede ameritar prioridad especial; hay que informarlo.
+
+**Ideas estacionadas (no etapa activa):**
+- Narrativa central con decisiones grises, público +16 y consecuencias reales.
+- Campañas con objetivos fijos, duración variable, historias secundarias y epílogos distintos.
+- «Encontrar la cura»: investigación, científicos, secta antagonista y muestras disponibles mediante la trama.
+- Modo cooperativo online en celulares diferentes; escenas isométricas y presentación visual.
+- Arco piloto «Los que quedaron afuera», solo borrador y no canon.
+
+Los detalles están en `docs/12`–`docs/17`. **No abrir nuevos frentes para ampliarlos durante la auditoría.**
+
+## 6. Regla para desviaciones y cambio de prioridad
+
+Si surge una idea fuera de la tarea activa:
+
+> «Es una idea para la hoja de ruta, pero ahora estamos **en la tarea activa indicada en este tablero**. La registro y seguimos la estabilización. ¿Querés cambiar explícitamente la prioridad?»
+
+Solo cambiar la etapa activa con una decisión consciente; registrar motivo, riesgos, estado de la tarea interrumpida y cómo retomarla. No es necesario prohibir las conversaciones creativas: **conversar no equivale a cambiar la etapa ni a comenzar a programar**.
+
+## 7. Ubicación de la información
+
+- **Qué hacemos ahora:** este archivo `docs/18-tablero-operativo.md`.
+- **Qué subsistemas faltan auditar:** `docs/04-matriz-auditoria-funcional.md`.
+- **Por qué y cómo refactorizaremos después:** `docs/01-plan-refactorizacion.md`.
+- **Norma de evaluación objetiva:** `docs/15-protocolo-revision-critica.md`.
+- **Propuestas narrativas (estacionadas):** `docs/12`–`docs/17`.
+- **Defectos/decisiones por resolver:** GitHub Issues.
+
+**Tarea activa única: entregar C10/#7 para revisión del creador, con prioridades contextuales aprobadas, pruebas locales y Chromium verdes y revisión independiente sin defectos confirmados. CI del código aprobada; entrega documental final comprobada por SHA antes de informar. Sin cierre del issue, fusión ni versión estable.**
+
+
+## C10/#7 — checkpoint histórico de primera revisión, 28/10/2026
+
+El creador aprobó prioridades del informe42, con R3→apagar la radio, desempate numérico determinista y autorización de commits/push exclusivamente a `fix/estabilizacion-v9-9`. Esto sustituye la restricción anterior de solo análisis. Utility completa, #13 y arquitectura narrativa quedan fuera del alcance.
+
+**Primera revisión:** las consecuencias llamaban funciones globales; copiar `game` sin adaptar sus dependencias era inseguro. Se optó por un contexto explícito opcional para compartir las reglas de zombis, muerte, reemplazo/reclutamiento, alimentación y verificación, separando sus efectos de interfaz. Los requisitos se anexan a las opciones para independizarlos también del título.
+
+**TDD comprobado:** 43 tests de encrucijadas, rojo32/43 (11 fallidos), luego verde43/43. Se ampliaron a50/50: seis aceptaciones, elegibilidad, texto independiente, aislamiento con spies de azar/UI, muertes, reemplazo, indefensos, cocinero, empate y conformidad de las52 opciones en624 combinaciones. Suite inicial349/349 antes de esta última ampliación; suite final pendiente. Experimento temporal adicional compara624 resoluciones con el HTML de `6fdb774`: sin diferencias en reglas, estados mecánicos o pendientes. Segunda revisión independiente y Chromium en curso. [Informe43](43-c10-encrucijadas-prioridades.md).
+
+**Siguiente paso único:** terminar revisión independiente y pruebas de interfaz; corregir cualquier defecto confirmado antes de publicar para revisión en PR14. #7 permanece abierto, `main` intacta.
+
+
+### C10/#7 — segunda revisión y validación final local, 28/10/2026
+
+**Revisión crítica independiente solicitada por el creador:** otro agente revisó el diff sin editar ni crear commits. Ejecutó 312 evaluaciones con el acceso global a `game` prohibido mediante Proxy y spies que rechazan azar, mensajes y avisos de muerte; todas aprobadas. Comprobó además falta de reemplazos al completar muestras, diez candidatos de reclutamiento y derrota por desbordamiento. No encontró defectos confirmados. Se retiró una consulta redundante a `isLeader()` después de marcar al personaje muerto; no alteraba resultados. Dos casos adicionales quedan permanentes en la suite (falta de reemplazos frente a objetivo y acceso global prohibido).
+
+**Resultado final local:** `npm test`, 358 declaradas, 358 aprobadas, 0 fallidas/canceladas/omitidas y 0 TODO; 52 de encrucijadas. Chromium 154: 16 recorridos dirigidos aprobados, 8 por viewport (1365×768 y 393×852 móvil emulado): seis casos de IA, J1 y J2 manuales con opción no permitida y pase real. Sin excepciones JavaScript. El script `scripts/check-issue7-browser.mjs` y la evidencia JSON se conservan; estados preparados, no partidas naturales ni Android físico. La repetición final tras la simplificación también aprobó los 16 recorridos.
+
+**Integración documental:** antes del push se detectaron commits remotos `7b4de9b`/`f202184` del otro chat, solo documentos18/25. Se avanzó por fast-forward y se recuperó el trabajo local de un stash; los dos conflictos de documentación se resolvieron conservando las decisiones de continuidad y los informes nuevos. Sin reescritura de historial ni force-push. No hubo cambios de motor remotos que invaliden las pruebas.
+
+**Límites y recomendación:** evaluación inmediata, reclutamiento conservador y puntaje simple; futuras cartas deben respetar el contexto. Sin balance exhaustivo, Android físico/TalkBack ni validación del riesgo preexistente de líderes simultáneos. Técnicamente recomendable para aceptación de #7 si CI confirma esta entrega; el issue sigue abierto por instrucción. **Único paso siguiente: revisión del creador; no comenzar #13 ni narrativa.**
+
+
+### C10/#7 — publicación para aceptación, 28/10/2026
+
+Código y evidencia subidos en **`9e68862`**, exclusivamente a `fix/estabilizacion-v9-9`. [CI 40622261665](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40622261665) **completed/success**, logs 358/358 y sin TODO. PR14 actualizado en título/cuerpo para C1–C10; sigue **abierto/draft hacia `refactor/arquitectura`**. La actualización documental de esta evidencia se verificará también por SHA en Actions, sin cambiar ejecutable.
+
+**Recomendación final de la revisión:** #7 es técnicamente apto para aceptación, con evaluación inmediata/conservadora y límites de balance/dispositivo documentados. **Única tarea siguiente: revisión y aceptación del creador antes de cierre administrativo. #7 sigue abierto; no iniciar #13, fusionar o publicar. `main` remoto permanece `d9068f4`.**
+
+
+## C11/#13 — primera revisión y corrección R1 en verificación, 28/10/2026
+
+Referencia C10 Chromium 16/16 aprobada. Se reproduce26×25 px y gap3 px; Playwright rojo27 comprobaciones de geometría fallidas en los tres tamaños mínimos, con trazados mecánicos completos y 0 errores JS. Parche solo CSS:44×44/gap8 y franja inferior reservada, tablero desplazable y pool desplazable si excede dos filas. JavaScript idéntico al de 2fbbc59. Componente111/111 y suite 358/358 aprobados tras primer parche.
+
+**Revisión independiente: R1/P2 confirmado y no ocultado por el verde inicial.** Fuera de los tres tamaños obligatorios, en 852×393/640×320 y 320×480 la franja podía quedar fuera de pantalla. Se reproduce antes de corregir y se añade fallback para permitir scroll de página en alturas≤520 px. Se verifica en seis viewports y segunda revisión. [Informe44](44-c11-dados-tactiles.md). Se refina el arnés para respetar recortes de overflow y no confundir dados fuera del scroll con colisiones visibles.
+
+**Único paso siguiente:** concluir R1 y validación de C11, documentación/push/CI. Auditoría fase4 todavía no iniciada; ningún otro issue implementado, #7 sigue pendiente de aceptación y no se cierra.
+
+
+## C11/#13 — validación final y segunda revisión R1, 28/10/2026
+
+**Resultado:** dados44×44/gap8; franja inferior con espacio propio, tablero y pool desplazables, menús accesibles. Solo19líneas CSS; JavaScript y DOM idénticos a 2fbbc59. R1 corregido mediante scroll de página en altura≤520 px; no quedan defectos confirmados de C11 tras revalidación independiente.
+
+**Evidencia final:** componente 111/111, `npm test`358/358, sin fallos/TODO. Chromium 6 viewports (320×640/393×852/1365×768 y 852×393/640×320/320×480),24 mediciones/0 fallos/0 errores JS, selección de cada dado del pool 16, consumo correcto, pase J1→J2, siete localidades y menú accesibles. Tres trazados antes/después idénticos; revisión independiente revalida R1 en las tres ventanas bajas. [Informe44 y evidencia](44-c11-dados-tactiles.md). C10 se repitió en navegador antes/después sin cambios de reglas. Sin Android físico/TalkBack.
+
+**Única siguiente tarea:** publicar C11 y comprobar CI exacto; solo después habilitar auditoría fase4 de pendientes. #7/#13 siguen abiertos para revisión del creador, PR14 draft, `main` intacta. No empezar programación de otros issues ni D/E.
+
+
+## C11 aprobado; fase4 habilitada — 28/10/2026
+
+**Commit C11:** `7497d704e8888609c108ffa06d7bb52ff9d02701`; [Actions 40625219012](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/40625219012) **completed/success**,358/358 y 0 fallos/TODO según logs. Documentado en 44, 25 y matriz; evidencia de seis viewports y revisión R1 preservada. #13 sigue abierto para aceptación, #7 también; no main/fusión/cierres.
+
+**Única tarea activa ahora:** auditoría de lectura, pruebas no destructivas y documentación de issues abiertos, especialmente #2/#3/#8/#9/#10/#11/#12. Sin implementar otros cambios. Clasificar correcciones pendientes de cierre, fallos vigentes y límites; proponer riesgos de integración y una siguiente tarea para revisión humana.
+
+
+## Auditoría fase4 completada — 28/10/2026
+
+**Solo lectura, pruebas no destructivas y documentación.** #2/#3/#8/#9/#10/#11/#12 ya tienen arreglo en la rama:54/54 regresiones dirigidas y 21 comprobaciones Chromium (siete issues×tres viewports) aprobadas,0 errores JS. Permanecen abiertos administrativamente; no se cerró ninguno. #7/#13 implementados y pendientes de aceptación. [Tabla y evidencia45](45-auditoria-pendientes-estabilizacion.md).
+
+**H1/P2 confirmado, fuera de C11 y sin corregir:** una crisis con dos desbordamientos mata a ambos líderes locales; se registra la sucesión J1 pero se descarta la de J2. Tras elegir J1 y pasar a J2 en ronda 2, hay dos supervivientes J2 vivos, líder null y ningún pendiente que permita elegirlo. Reproducido mediante colonia y botones reales tanto en 7497d70 como en 2fbbc59; es preexistente y no una regresión CSS. No se alteran reglas ni se reabre #6.
+
+**Conclusión:** C11 está técnicamente terminado; C no debe considerarse cerrada por tener358 tests verdes. Se separan riesgos de integración y posibles diferencias con mesa, sin cambiar mecánicas. Se detectan ambigüedades históricas de documentación y alcance de foco limitado a setup/pase; lector de pantalla, Android y partidas naturales no certificados.
+
+**Única siguiente tarea recomendada (no iniciada): corregir H1, sucesión múltiple local, mediante una nueva autorización y regresión previa.** Sin otro código durante la auditoría, sin main/fusión/cierres ni D/E. Entrega documental final con comprobación de CI por SHA antes de informar.
+
+
+**Control final documental:** conteos y trazados cotejados contra JSON, DOM/JS idénticos a 2fbbc59 y sin cambios de código durante fase4. PR14 título/cuerpo actualizado aC1–C11, permanece abierto/draft hacia refactor/arquitectura. Se publica documentación/evidencia y se confirma CI final por SHA antes de entregar. Ningún issue cerrado, creado o reabierto. Única siguiente propuesta: H1 con autorización nueva.
+
+
+---
+
+# Anexo — Guías de prueba de ramas anteriores (ex README, 16/11/2026)
+
+Los enlaces relativos de este anexo se corrigieron para apuntar desde `docs/`.
+
+## H3.4.4 — Las cuatro acciones sobre el mapa anterior
+
+Node22+, terminal en la carpeta con package.json y package-lock.json:
+
+```powershell
+git fetch origin
+git switch experiment/h3-4-4-ataque-barricadas-mapa
+git pull --ff-only
+npm.cmd ci
+npm.cmd run dev:action-map
+```
+
+Abrir **http://127.0.0.1:8778/prototypes/action-map/**. Preparar en V9.9 → Ver mapa → seleccionar propio → Atacar/Construir → revisar objetivo, dado o habilidad gratuita → confirmar/cancelar. Se conservan Moverse y Buscar. Inventario del jugador separado del equipo del superviviente; decisiones pendientes esperan Continuar en V9.9. [Guía Windows, celular en LAN y lista de revisión de ambas etapas](../prototypes/action-map/README.md). Ctrl+C detiene el servidor; reiniciarlo y recargar tras actualizar. Sin Python.
+
+**H3.4.3 y H3.4.4 esperan revisión manual del creador.** Las entradas siguientes se conservan como historia y rutas de comparación; no incluyen las cuatro acciones nuevas.
+
+## H3.4.3 — Buscar desde el mapa
+
+El creador aceptó los ajustes de H3.4.2 y autorizó **Buscar** además de Moverse. Entrada independiente, motor único: dado real elegido por índice, requisito efectivo, hallazgo, elección de una carta, ruido y mano privada del turno. Encrucijadas y decisiones generales continúan en V9.9 mediante un botón explícito. Sin combate, inventario accionable, merge ni cambios en main/referencia. [Informe87](87-h3-4-3-busqueda-mapa.md).
+
+En VS Code, carpeta con package.json y package-lock.json, Node22+, PowerShell:
+
+```powershell
+git fetch origin
+git switch experiment/h3-4-3-busqueda-mapa
+git pull --ff-only
+npm.cmd ci
+npm.cmd run dev:search-map
+```
+
+Abrir **http://127.0.0.1:8777/prototypes/search-map/**. Preparar en V9.9 → Ver mapa → seleccionar propio → Moverse fuera de colonia → Buscar → elegir dado → confirmar → conservar una carta o revelar otra con +1 ruido cuando esté permitido → Continuar. Escape cancela antes de confirmar. La presentación no vuelve a tirar el dado. [Guía Windows, revisión manual, red local y límites](../prototypes/search-map/README.md). Ctrl+C detiene el servidor; reiniciarlo y recargar tras actualizar. Sin Python. Las rutas anteriores permanecen disponibles.
+
+La entrega requiere revisión del creador. No se da por aprobada H3.4.3 ni se avanza a otra acción.
+
+## H3.4.2 desde VS Code
+
+En la carpeta con package.json y package-lock.json, Node22+, PowerShell:
+
+```powershell
+git fetch origin
+git switch experiment/h3-4-2-movimiento-mapa
+git pull --ff-only
+npm.cmd ci
+npm.cmd run dev:movement-map
+```
+
+Abrir **http://127.0.0.1:8776/prototypes/movement-map/**. Preparar en V9.9 → Ver mapa → seleccionar superviviente propio → Moverse → elegir destino → revisar y confirmar/cancelar. Se iluminan los destinos legales. Tras aceptar: recorrido de1,5s, dado real y consecuencias; las decisiones esperan «Continuar en V9.9». Cancelar la confirmación vuelve a elegir; Salir/Escape permite abandonar sin mutaciones. Los dados siguen perteneciendo al turno. Nuevos bordes azul/rojo, retratos únicos o iniciales y perfiles Suave/Tormenta; sonido apagado al inicio. [Guía Windows, teclado, red local y reservas](../prototypes/movement-map/README.md). Ctrl+C detiene el servidor; sin Python.
+
+La consulta anterior sigue en `/prototypes/state-map/` y H3.3 en `/prototypes/hospital-workshop/`, también con el servidor8776. Los apartados siguientes conservan sus instrucciones independientes.
+
+## H3.4.1 desde VS Code
+
+En la carpeta con `package.json` y `package-lock.json`, Node22+, PowerShell:
+
+```powershell
+git fetch origin
+git switch experiment/h3-4-1-estado-real
+git pull --ff-only
+npm.cmd ci
+npm.cmd run dev:state-map
+```
+
+Abrir **http://127.0.0.1:8775/prototypes/state-map/**. Completar la preparación en V9.9 y pulsar **Ver mapa**. Los pases/diálogos se resuelven en la interfaz original; sus acciones siguen disponibles allí. El mapa muestra datos reales, permite consultar y configurar ambientación, sin consumir recursos ni ejecutar reglas. [Guía completa, Windows, capacidades y red local](../prototypes/state-map/README.md). Ctrl+C detiene el servidor. No requiere Python.
+
+La maqueta H3.3 conservada también se abre en http://127.0.0.1:8775/prototypes/hospital-workshop/ con este servidor. La sección siguiente conserva las instrucciones para su rama/servidor independiente.
+
+## Maqueta H3.3 desde VS Code
+
+Node22+, carpeta que contiene **package.json y package-lock.json**, conservar cualquier trabajo local. PowerShell:
+
+```powershell
+git fetch origin
+git switch experiment/h3-3-taller-visual
+git pull --ff-only
+npm.cmd ci
+npm.cmd run dev:workshop
+```
+
+Mantener terminal abierta y abrir **http://127.0.0.1:8772/prototypes/hospital-workshop/**. La entrada carga directamente `mapa-prototipo.png` con las siete localidades; no hace falta elegir un kit. No requiere Python ni recursos externos. `npm.cmd` evita el bloqueo de npm.ps1 sin cambiar políticas.
+
+- Usar «Hospital cercano» para ver cuatro retratos y dos zombis/dos barricadas sobre el terreno. Arrastre/rueda o pinza; Restablecer y tecla0 vuelven a la vista general.
+- Seleccionar un edificio abre su localidad (ocupación, capacidad y espacios); sus retratos abren al superviviente y tienen prioridad sobre el edificio. Seleccionar una ficha circular actualiza el expediente. En móvil se abre el panel inferior; «×» lo cierra para disponer de más mapa.
+- «Composición y selección por teclado» contiene el selector accesible y las composiciones: hospital mixto, un zombi por localidad y máximo33 fichas/36 espacios. Elegir máximo y centrar Colonia muestra sus12 fichas.
+- «Ambientación» permite apagar todo, elegir nieve/viento/humo/luces y baja/normal. Inicia en **Normal**, con copos, estelas, humo y luces reforzados; Baja conserva una alternativa más discreta. Con movimiento reducido inicia apagado. El hospital no tiene humo; la salida confirmada está en la chimenea oeste de colonia. El botón «Ventisca: sonido» inicia audio procedural opcional, apagado por defecto, con volumen propio. El control general apaga también el sonido. [Evidencia/video, muestra sonora y límites](82-h3-3-luces-viento-y-ventisca.md).
+- Dados del grupo/turno y acciones muestran feedback sin consumir ni resolver reglas. Objetivo/crisis y menú son paneles de demostración. «Depuración» activa etiquetas técnicas, apagadas por defecto.
+
+El taller anterior sigue en **`/prototypes/hospital-workshop/tecnico.html`** (su kit opcional: `tecnico.html?kit=uploaded`). Referencias Canvas y Phaser H3.2: `/prototypes/hospital/` y `/prototypes/hospital-phaser/`, en el mismo puerto8772. Los originales siguen en `kit_arte_h33/`, sin edición ni duplicación. [Guía Windows/VSCode/LAN](../prototypes/hospital-workshop/README.md) · [Escena de muestra y coordenadas](../prototypes/hospital-workshop/mockup/scene.json).
+
+Sin doble clic/file://, guardados, editor o motor. El mapa es el prototipo aprobado: al ampliar no se reemplaza por otro hospital y puede perder nitidez. No equivale a arte final, aprobación H3.3 o prueba en teléfono físico.
+
+## Probar H3.2 desde VS Code, sin Python
+
+En esta rama `experiment/h3-2-phaser-hospital`, abrir la carpeta del repositorio en VS Code y **Terminal → Nueva terminal**. Con Node22 o posterior instalado:
+
+```sh
+npm ci
+npm run dev:hospital
+```
+
+**Windows/PowerShell:** si aparece `npm.ps1`/`PSSecurityException`, usar `npm.cmd ci` y `npm.cmd run dev:hospital`; no hace falta cambiar la política de scripts. La terminal debe estar en la carpeta con **package.json y package-lock.json**. Si `npm ci` devuelve EUSAGE por falta del lockfile, comprobar la ubicación y la rama antes de generar otro: no sustituir la instalación reproducible por `npm install` para ocultar ese error.
+
+Mantener la terminal abierta y abrir en el navegador del mismo equipo:
+
+- Phaser: http://127.0.0.1:8771/prototypes/hospital-phaser/
+- Referencia Canvas: http://127.0.0.1:8771/prototypes/hospital/
+
+El comando genera el bundle con esbuild y sirve ambos experimentos; Ctrl+C lo detiene. Si el puerto8771 está ocupado, cerrar el servidor anterior o usar otro puerto: PowerShell `$env:HOSPITAL_PORT=8772; npm run dev:hospital`, bash `HOSPITAL_PORT=8772 npm run dev:hospital`; sustituir8771 por8772 en los enlaces. Los cambios JS requieren volver a ejecutar el comando y recargar. No abrir este prototipo mediante doble clic/file://: usa módulos y PNG locales servidos por HTTP.
+
+**Alternativa con Live Server:** ejecutar `npm ci` y `npm run build:hospital`, abrir `prototypes/hospital-phaser/index.html` → «Open with Live Server», desde la raíz completa del repositorio. Para comparar, abrir `prototypes/hospital/index.html` en el mismo servidor. No se usa CDN ni se exige Python; Internet hace falta para la instalación inicial de dependencias, no para la escena ya construida.
+
+Controles HTML: Delante/Detrás/Esquina, Mostrar ocultos, selección, zoom, flechas y restablecer. Arrastre, rueda y pinza sobre la escena; teclado con foco en el canvas: flechas, +/−,0,Enter,Escape. «Restablecer vista» reinicia la cámara; «Reiniciar escena» libera el renderer y carga el estado inicial. Sin WebGL se muestra un aviso y el enlace a Canvas, sin fallback automático de Phaser.
+
+**Atrás y reinicios:** al volver desde la caché de navegación, Phaser reconstruye una escena limpia: Delante, cámara inicial, selección y Mostrar ocultos desactivados. El navegador puede conservar el scroll de la página. El montaje se cancela al salir; si el arranque no completa en15 segundos, aparece un aviso accesible con reintento. No se guardan ni modifican partidas.
+
+**Celular en la misma red Wi-Fi:** detener el servidor anterior con Ctrl+C y ejecutar:
+
+```sh
+npm run dev:hospital -- --host 0.0.0.0
+```
+
+En Windows, `ipconfig` muestra la IPv4 del adaptador Wi-Fi/Ethernet de la PC. Desde el celular abrir `http://IP_DE_LA_PC:8771/prototypes/hospital-phaser/` y `http://IP_DE_LA_PC:8771/prototypes/hospital/`. Por ejemplo, si la IPv4 es192.168.1.50, usar `http://192.168.1.50:8771/prototypes/hospital-phaser/`. PC y celular deben compartir red; mantener la terminal abierta y permitir Node en la red privada si Windows lo solicita. En el teléfono no usar127.0.0.1: apunta al propio teléfono. El servidor también imprime direcciones de red; elegir la interfaz local correcta, no una VPN. El modo normal sigue escuchando solo en127.0.0.1.
+
+El acceso HTTP se comprobó desde loopback y la interfaz virtual del entorno. **No se probó un celular físico ni el router/firewall de tu casa.** Si no conecta, comprobar servidor, misma red, IPv4 y permiso de red privada; usar Canvas para distinguir falta de WebGL de un problema de conexión.
+
+Se reutilizan sin cambios los PNG, pivotes, controles y cámara del [commit auditado PR16](https://github.com/LeviEdition/invierno-en-la-colonia/tree/ba1d93a4ae73a91a6f07660584e2374b53043a67), copiados con manifiesto de hashes, sin merge. Canvas conserva sus archivos originales. [Informe76: comparación, pruebas, costos y reservas](76-h3-2-phaser-hospital.md) · [H3.1](74-h3-1-auditoria-identidad-visual.md) · [plan](75-plan-hito-3-identidad-visual.md).
+
+**Revisión de nitidez:** Phaser usa mipmaps trilineales con texturas auxiliares generadas en memoria; conserva los PNG y sus frames/pivotes. Las comparativas Canvas/antes/después del informe76 incluyen hospital, suelo y zombi al mismo DPR/zoom. Hay diferencias residuales de rasterización y un costo adicional de memoria/carga; la aprobación visual sigue pendiente del creador. No equivale a una adopción definitiva del renderizador.
+
+La escena es independiente del juego. Cambiar renderer no aprueba proporciones, encaje con el suelo ni calidad artística: corresponde a H3.3. El mapa continuo se implementa después en la maqueta H3.3 independiente; este apartado describe la referencia H3.2.
+

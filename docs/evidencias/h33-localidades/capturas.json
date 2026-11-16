@@ -1,0 +1,55 @@
+{
+  "browser": "154.0.8037.57 headless",
+  "renderer": "SwiftShader software",
+  "nativeScale": true,
+  "dpr": {
+    "1365": 1,
+    "393": 2,
+    "320": 2
+  },
+  "physicalMobile": false,
+  "screenshots": [
+    {
+      "file": "1365-antes.png",
+      "width": 1365,
+      "height": 768,
+      "sha256": "8f1f10af580b183a44b611184932a98904ea61d04dbb080797d2fcf0977b4990"
+    },
+    {
+      "file": "1365-biblioteca-completa.png",
+      "width": 1365,
+      "height": 768,
+      "sha256": "a3532dee24e3d1c8e7e7684dd44fe731e342185f899bf5483ab8105baa109acf"
+    },
+    {
+      "file": "1365-gasolinera-completa.png",
+      "width": 1365,
+      "height": 768,
+      "sha256": "37aa3199107c97866e5fb0bcf977c060e5b91ffc71d8f8758ba0ea382ec026db"
+    },
+    {
+      "file": "1365-general.png",
+      "width": 1365,
+      "height": 768,
+      "sha256": "53a00837993aeac66491eb17211de5892ea10ab45afd9afb308e8be7ec1df211"
+    },
+    {
+      "file": "1365-localidad-hospital.png",
+      "width": 1365,
+      "height": 768,
+      "sha256": "a2def59c224a91c1f4f2815e9429caa04c1fa2bdb04fb7bbefbbdc5a5cfcf0b4"
+    },
+    {
+      "file": "320-localidad-hospital.png",
+      "width": 640,
+      "height": 1280,
+      "sha256": "4931bc4ba1582e242be9fca4cffaa2eb3febfdd7a1777e205cc5858f415feebb"
+    },
+    {
+      "file": "393-colonia12.png",
+      "width": 786,
+      "height": 1704,
+      "sha256": "3f366a8d078233026e02d45f6fc0be3348d7e5f31b756d21834092c156b06bc4"
+    }
+  ]
+}

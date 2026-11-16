@@ -1,0 +1,423 @@
+{
+  "passed": true,
+  "controlled": true,
+  "physicalMobile": false,
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "scenario": "local",
+      "phases": [
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise",
+        "round"
+      ],
+      "round": 2,
+      "outcome": null,
+      "cameraBefore": {
+        "overview": false,
+        "zoom": 0.6134051466187912,
+        "x": 0,
+        "y": 35.89287851585874,
+        "minZoom": 0.6134051466187912,
+        "maxZoom": 1.5,
+        "retainedMin": 0.6134051466187912
+      },
+      "cameraAfter": {
+        "overview": false,
+        "zoom": 0.6134051466187912,
+        "x": 0,
+        "y": 35.89287851585874,
+        "minZoom": 0.6134051466187912,
+        "maxZoom": 1.5,
+        "retainedMin": 0.6134051466187912
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/workspace/ux-work/qa-cycle-final/1365x768/local/page@f8afad78089726ff3eba7e3af11ab472.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "scenario": "ai",
+      "phases": [
+        "ai",
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise",
+        "round"
+      ],
+      "round": 2,
+      "outcome": null,
+      "cameraBefore": {
+        "overview": false,
+        "zoom": 0.6134051466187912,
+        "x": 0,
+        "y": 35.89287851585874,
+        "minZoom": 0.6134051466187912,
+        "maxZoom": 1.5,
+        "retainedMin": 0.6134051466187912
+      },
+      "cameraAfter": {
+        "overview": false,
+        "zoom": 0.6134051466187912,
+        "x": 0,
+        "y": 35.89287851585874,
+        "minZoom": 0.6134051466187912,
+        "maxZoom": 1.5,
+        "retainedMin": 0.6134051466187912
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/workspace/ux-work/qa-cycle-final/1365x768/ai/page@8a9a7b4c637ea1743fe3c192d4731c0d.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "scenario": "death",
+      "phases": [
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise",
+        "round"
+      ],
+      "round": 2,
+      "outcome": null,
+      "cameraBefore": {
+        "overview": false,
+        "zoom": 0.6134051466187912,
+        "x": 0,
+        "y": 35.89287851585874,
+        "minZoom": 0.6134051466187912,
+        "maxZoom": 1.5,
+        "retainedMin": 0.6134051466187912
+      },
+      "cameraAfter": {
+        "overview": false,
+        "zoom": 0.6134051466187912,
+        "x": 0,
+        "y": 35.89287851585874,
+        "minZoom": 0.6134051466187912,
+        "maxZoom": 1.5,
+        "retainedMin": 0.6134051466187912
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/workspace/ux-work/qa-cycle-final/1365x768/death/page@3969292a4ed17b5b5d97a30a20c19317.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "scenario": "time",
+      "phases": [
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise"
+      ],
+      "round": 2,
+      "outcome": {
+        "reason": "time",
+        "label": "Derrota: se agotaron las rondas."
+      },
+      "cameraBefore": {
+        "overview": false,
+        "zoom": 0.6134051466187912,
+        "x": 0,
+        "y": 35.89287851585874,
+        "minZoom": 0.6134051466187912,
+        "maxZoom": 1.5,
+        "retainedMin": 0.6134051466187912
+      },
+      "cameraAfter": {
+        "overview": false,
+        "zoom": 0.6134051466187912,
+        "x": 0,
+        "y": 35.89287851585874,
+        "minZoom": 0.6134051466187912,
+        "maxZoom": 1.5,
+        "retainedMin": 0.6134051466187912
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/workspace/ux-work/qa-cycle-final/1365x768/time/page@b893dceff2c75c88a9657f39d97e308f.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "scenario": "bite",
+      "phases": [
+        "ai",
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise",
+        "round"
+      ],
+      "round": 2,
+      "outcome": null,
+      "cameraBefore": {
+        "overview": false,
+        "zoom": 0.6134051466187912,
+        "x": 0,
+        "y": 35.89287851585874,
+        "minZoom": 0.6134051466187912,
+        "maxZoom": 1.5,
+        "retainedMin": 0.6134051466187912
+      },
+      "cameraAfter": {
+        "overview": false,
+        "zoom": 0.6134051466187912,
+        "x": 0,
+        "y": 35.89287851585874,
+        "minZoom": 0.6134051466187912,
+        "maxZoom": 1.5,
+        "retainedMin": 0.6134051466187912
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/workspace/ux-work/qa-cycle-final/1365x768/bite/page@eca66bafa17fdd7aed185a82323262ef.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "scenario": "local",
+      "phases": [
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise",
+        "round"
+      ],
+      "round": 2,
+      "outcome": null,
+      "cameraBefore": {
+        "overview": false,
+        "zoom": 0.32624867162592985,
+        "x": 153.41923485653558,
+        "y": -11.5,
+        "minZoom": 0.3018065887353879,
+        "maxZoom": 1.5,
+        "retainedMin": 0.32624867162592985
+      },
+      "cameraAfter": {
+        "overview": false,
+        "zoom": 0.32624867162592985,
+        "x": 153.41923485653558,
+        "y": -11.5,
+        "minZoom": 0.3018065887353879,
+        "maxZoom": 1.5,
+        "retainedMin": 0.32624867162592985
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/workspace/ux-work/qa-cycle-final/852x393/local/page@d110d8b5006ea063a198456d01b489ce.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "scenario": "ai",
+      "phases": [
+        "ai",
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise",
+        "round"
+      ],
+      "round": 2,
+      "outcome": null,
+      "cameraBefore": {
+        "overview": false,
+        "zoom": 0.32624867162592985,
+        "x": 153.41923485653558,
+        "y": -11.5,
+        "minZoom": 0.3018065887353879,
+        "maxZoom": 1.5,
+        "retainedMin": 0.32624867162592985
+      },
+      "cameraAfter": {
+        "overview": false,
+        "zoom": 0.32624867162592985,
+        "x": 153.41923485653558,
+        "y": -11.5,
+        "minZoom": 0.3018065887353879,
+        "maxZoom": 1.5,
+        "retainedMin": 0.32624867162592985
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/workspace/ux-work/qa-cycle-final/852x393/ai/page@e4d344f4ca47c9a527dccbca1e74f82d.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "scenario": "death",
+      "phases": [
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise",
+        "round"
+      ],
+      "round": 2,
+      "outcome": null,
+      "cameraBefore": {
+        "overview": false,
+        "zoom": 0.32624867162592985,
+        "x": 153.41923485653558,
+        "y": -11.5,
+        "minZoom": 0.3018065887353879,
+        "maxZoom": 1.5,
+        "retainedMin": 0.32624867162592985
+      },
+      "cameraAfter": {
+        "overview": false,
+        "zoom": 0.32624867162592985,
+        "x": 153.41923485653558,
+        "y": -11.5,
+        "minZoom": 0.3018065887353879,
+        "maxZoom": 1.5,
+        "retainedMin": 0.32624867162592985
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/workspace/ux-work/qa-cycle-final/852x393/death/page@b5a54d231355654eaf81910a9966bc58.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "scenario": "time",
+      "phases": [
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise"
+      ],
+      "round": 2,
+      "outcome": {
+        "reason": "time",
+        "label": "Derrota: se agotaron las rondas."
+      },
+      "cameraBefore": {
+        "overview": false,
+        "zoom": 0.32624867162592985,
+        "x": 153.41923485653558,
+        "y": -11.5,
+        "minZoom": 0.3018065887353879,
+        "maxZoom": 1.5,
+        "retainedMin": 0.32624867162592985
+      },
+      "cameraAfter": {
+        "overview": false,
+        "zoom": 0.32624867162592985,
+        "x": 153.41923485653558,
+        "y": -21,
+        "minZoom": 0.281615302869288,
+        "maxZoom": 1.5,
+        "retainedMin": 0.3018065887353879
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/workspace/ux-work/qa-cycle-final/852x393/time/page@13cd36b51e6d02a30a4120699d1917c7.webm",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "scenario": "bite",
+      "phases": [
+        "ai",
+        "feeding",
+        "waste",
+        "crisis",
+        "population",
+        "noise",
+        "round"
+      ],
+      "round": 2,
+      "outcome": null,
+      "cameraBefore": {
+        "overview": false,
+        "zoom": 0.32624867162592985,
+        "x": 153.41923485653558,
+        "y": -11.5,
+        "minZoom": 0.3018065887353879,
+        "maxZoom": 1.5,
+        "retainedMin": 0.32624867162592985
+      },
+      "cameraAfter": {
+        "overview": false,
+        "zoom": 0.32624867162592985,
+        "x": 153.41923485653558,
+        "y": -11.5,
+        "minZoom": 0.3018065887353879,
+        "maxZoom": 1.5,
+        "retainedMin": 0.32624867162592985
+      },
+      "mode": "map",
+      "errors": [],
+      "video": "/workspace/ux-work/qa-cycle-final/852x393/bite/page@1ac6f128306f05fcf282de873c1e2042.webm",
+      "passed": true
+    }
+  ],
+  "cameraBefore": {
+    "scenario": "bite",
+    "width": 852,
+    "camera": {
+      "overview": false,
+      "zoom": 0.32624867162592985,
+      "x": 153.41923485653558,
+      "y": -11.5,
+      "minZoom": 0.3018065887353879,
+      "maxZoom": 1.5,
+      "retainedMin": 0.32624867162592985
+    },
+    "viewport": {
+      "width": 852,
+      "height": 284,
+      "dpr": 2
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "engineZombies": 36,
+      "drawnPositions": 33,
+      "gasOverflow": 2,
+      "libraryOverflow": 1,
+      "countsVisible": true,
+      "hostUnchanged": true
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "engineZombies": 36,
+      "drawnPositions": 33,
+      "gasOverflow": 2,
+      "libraryOverflow": 1,
+      "countsVisible": true,
+      "hostUnchanged": true
+    }
+  ]
+}

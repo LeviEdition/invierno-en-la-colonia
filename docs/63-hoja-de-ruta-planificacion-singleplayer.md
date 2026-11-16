@@ -1,5 +1,7 @@
 # 63 — Hoja de ruta de planificación: modo singleplayer de Invierno en la Colonia
 
+> **Nota 16/11/2026:** estado vigente en el [tablero 18](18-tablero-operativo.md). La puerta técnica de [63 §7](63-hoja-de-ruta-planificacion-singleplayer.md) (D1/D2 integradas y referencia preservada) está cumplida desde el 29/10/2026; las indicaciones de este documento que la dan por pendiente son históricas.
+
 ## Estado reconciliado al 29/10/2026
 
 Se incorporaron **los hunks documentales**, no una fusión de ramas, desde `refactor/d1-catalogo@833eae745479509ec8121707e9df452c1a5e85bc`, respecto de la base común `ba9a4238d22ad968edbe74d0445949f9a631ec70`. Se conservaron la investigación previa y los registros técnicos de la rama D1/D2. [Informe de reconciliación70](70-reconciliacion-documental-y-pr-d1-d2.md).

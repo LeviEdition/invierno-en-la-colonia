@@ -1,0 +1,146 @@
+{
+  "kind": "Muestreo numérico del modelo visual, no medición de píxeles renderizados ni FPS",
+  "sample": "60s a10ms, mismo viento Tormenta, centro de copa, coordenadas fuente",
+  "beforeCommit": "8113b557604bc5da1249a67fdeded11c2e97ea0f",
+  "groups": [
+    {
+      "id": "arbol-oeste",
+      "before": {
+        "min": 0.1596407702124635,
+        "max": 1.510256006823178,
+        "range": 1.3506152366107145
+      },
+      "after": {
+        "min": 1.419029068555231,
+        "max": 13.424497838428247,
+        "range": 12.005468769873016
+      }
+    },
+    {
+      "id": "arbusto-sur-hospital",
+      "before": {
+        "min": 0.09808951206423659,
+        "max": 0.9302089487048026,
+        "range": 0.8321194366405661
+      },
+      "after": {
+        "min": 0.8719067739043254,
+        "max": 8.268523988487136,
+        "range": 7.39661721458281
+      }
+    },
+    {
+      "id": "arbusto-centro-sur",
+      "before": {
+        "min": 0.13330882383660436,
+        "max": 1.2082761033339127,
+        "range": 1.0749672794973084
+      },
+      "after": {
+        "min": 1.2118983985145853,
+        "max": 10.98432821212648,
+        "range": 9.772429813611895
+      }
+    },
+    {
+      "id": "arbol-este",
+      "before": {
+        "min": 0.11886279276619818,
+        "max": 1.2964144483349405,
+        "range": 1.1775516555687422
+      },
+      "after": {
+        "min": 0.9905232730516517,
+        "max": 10.803453736124505,
+        "range": 9.812930463072853
+      }
+    },
+    {
+      "id": "arbusto-sur-este",
+      "before": {
+        "min": 0.1068022985452296,
+        "max": 0.9040332342101627,
+        "range": 0.7972309356649331
+      },
+      "after": {
+        "min": 0.9423732224579082,
+        "max": 7.976763831266141,
+        "range": 7.034390608808233
+      }
+    },
+    {
+      "id": "pino-borde-este",
+      "before": {
+        "min": 0.1373814983969854,
+        "max": 1.5478414438261237,
+        "range": 1.4104599454291382
+      },
+      "after": {
+        "min": 1.2756853422577217,
+        "max": 14.372813406956864,
+        "range": 13.097128064699142
+      }
+    },
+    {
+      "id": "grupo-suroeste",
+      "before": {
+        "min": 0.18035769237723923,
+        "max": 1.4430251069748157,
+        "range": 1.2626674145975765
+      },
+      "after": {
+        "min": 1.6648402373283622,
+        "max": 13.320231756690605,
+        "range": 11.655391519362244
+      }
+    },
+    {
+      "id": "arbusto-sur-oeste",
+      "before": {
+        "min": 0.09443766875037608,
+        "max": 0.9549957663416104,
+        "range": 0.8605580975912344
+      },
+      "after": {
+        "min": 0.8394459444477873,
+        "max": 8.48885125636987,
+        "range": 7.649405311922083
+      }
+    }
+  ],
+  "lights": [
+    {
+      "id": "colonia-oeste",
+      "minimum": 0.030950962700527072,
+      "maximum": 0.8349846463268552,
+      "fractionBelow30Percent": 0.04033333333333333,
+      "burstDurationRangeSeconds": [
+        0.697,
+        0.9429999999999998
+      ],
+      "cycleSeconds": 6.3
+    },
+    {
+      "id": "colonia-este",
+      "minimum": 0.029932338121466468,
+      "maximum": 0.8349507828584123,
+      "fractionBelow30Percent": 0.0325,
+      "burstDurationRangeSeconds": [
+        0.697,
+        0.9429999999999998
+      ],
+      "cycleSeconds": 8.7
+    },
+    {
+      "id": "hospital-entrada",
+      "minimum": 0.03035926099660795,
+      "maximum": 0.834999672504757,
+      "fractionBelow30Percent": 0.034,
+      "burstDurationRangeSeconds": [
+        0.697,
+        0.9429999999999998
+      ],
+      "cycleSeconds": 7.9
+    }
+  ]
+}

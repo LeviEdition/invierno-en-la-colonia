@@ -1,0 +1,178 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "method": "RAF + POST_RENDER count and DOM positions during real input; video separately inspectable",
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "errors": [],
+      "profiles": [
+        {
+          "profile": "storm",
+          "samples": 270,
+          "movingSamples": 93,
+          "changedWithoutMapFrame": [
+            {
+              "index": 3,
+              "renderEvents": 16,
+              "delta": 7.222955420047939
+            },
+            {
+              "index": 5,
+              "renderEvents": 17,
+              "delta": 7.175513500788634
+            },
+            {
+              "index": 7,
+              "renderEvents": 18,
+              "delta": 7.081423726906912
+            },
+            {
+              "index": 9,
+              "renderEvents": 19,
+              "delta": 6.939554596658192
+            },
+            {
+              "index": 11,
+              "renderEvents": 20,
+              "delta": 6.754289673977559
+            },
+            {
+              "index": 13,
+              "renderEvents": 21,
+              "delta": 6.522295991443502
+            },
+            {
+              "index": 19,
+              "renderEvents": 24,
+              "delta": 5.937244647140609
+            },
+            {
+              "index": 23,
+              "renderEvents": 26,
+              "delta": 5.5850483435687766
+            },
+            {
+              "index": 27,
+              "renderEvents": 28,
+              "delta": 5.198979899941882
+            },
+            {
+              "index": 29,
+              "renderEvents": 29,
+              "delta": 4.778479360633453
+            },
+            {
+              "index": 31,
+              "renderEvents": 30,
+              "delta": 4.329532307305272
+            },
+            {
+              "index": 33,
+              "renderEvents": 31,
+              "delta": 3.8546621122998395
+            },
+            {
+              "index": 35,
+              "renderEvents": 32,
+              "delta": 3.3596839137038126
+            },
+            {
+              "index": 37,
+              "renderEvents": 33,
+              "delta": 2.848134301608688
+            },
+            {
+              "index": 41,
+              "renderEvents": 35,
+              "delta": 2.329646325088862
+            },
+            {
+              "index": 43,
+              "renderEvents": 36,
+              "delta": 1.8152435098354909
+            },
+            {
+              "index": 51,
+              "renderEvents": 40,
+              "delta": 0.8314577559924411
+            },
+            {
+              "index": 53,
+              "renderEvents": 41,
+              "delta": 1.0761133769264233
+            },
+            {
+              "index": 55,
+              "renderEvents": 42,
+              "delta": 1.5094002120047856
+            },
+            {
+              "index": 57,
+              "renderEvents": 43,
+              "delta": 2.0057965998575047
+            },
+            {
+              "index": 61,
+              "renderEvents": 45,
+              "delta": 2.5190285826087853
+            },
+            {
+              "index": 65,
+              "renderEvents": 47,
+              "delta": 3.028061095816894
+            },
+            {
+              "index": 67,
+              "renderEvents": 48,
+              "delta": 3.5265259108647227
+            },
+            {
+              "index": 69,
+              "renderEvents": 49,
+              "delta": 4.0042619794413925
+            },
+            {
+              "index": 73,
+              "renderEvents": 51,
+              "delta": 4.458506139953157
+            },
+            {
+              "index": 77,
+              "renderEvents": 53,
+              "delta": 5.280621270267339
+            },
+            {
+              "index": 79,
+              "renderEvents": 54,
+              "delta": 5.641010725038585
+            },
+            {
+              "index": 83,
+              "renderEvents": 56,
+              "delta": 5.964779459460304
+            },
+            {
+              "index": 85,
+              "renderEvents": 57,
+              "delta": 6.249675351568305
+            },
+            {
+              "index": 87,
+              "renderEvents": 58,
+              "delta": 6.4934894317308025
+            }
+          ]
+        }
+      ],
+      "video": "/tmp/h342-stutter/before/1365/5daeb40a09c19455349e58846273b068.webm"
+    }
+  ],
+  "failures": [
+    "AssertionError [ERR_ASSERTION]: Desfase de cámara 1365/storm: la ficha cambió antes de otro cuadro del mapa\n\n30 !== 0\n\n    at file:///workspace/invierno-en-la-colonia/scripts/check-h342-camera-browser.mjs:96:43"
+  ],
+  "passed": false
+}

@@ -1,0 +1,53 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "errors": [],
+      "normal": true,
+      "noise": true,
+      "cancelPure": true,
+      "oneDrawPerCommand": true,
+      "cameraStable": true,
+      "privacyPass": true,
+      "frames": 216,
+      "video": "/tmp/h344/base-browser/1365/f42fcebf42bd6c162da35b8d005a2969.webm"
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "errors": [],
+      "normal": true,
+      "noise": true,
+      "cancelPure": true,
+      "oneDrawPerCommand": true,
+      "cameraStable": true,
+      "privacyPass": true,
+      "frames": 237,
+      "video": "/tmp/h344/base-browser/393/8fc9f051e2aede69355ae4df8fabd1fc.webm"
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "errors": [],
+      "normal": true,
+      "noise": true,
+      "cancelPure": true,
+      "oneDrawPerCommand": true,
+      "cameraStable": true,
+      "privacyPass": true,
+      "frames": 232,
+      "video": "/tmp/h344/base-browser/320/fb8e4070df035bd5f429417fbf316796.webm"
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

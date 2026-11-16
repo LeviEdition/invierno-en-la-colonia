@@ -1,0 +1,20 @@
+{
+  "helperAlreadyAborted": {
+    "status": "Defecto introducido en la primera versi\u00f3n de waitForStartup, reproducido y corregido antes de entrega",
+    "redNodeOutput": "\u2714 H3.2 cierre: timeout acotado y rechazo tard\u00edo no reabre una espera terminada (26.370774ms)\n\u2714 H3.2 cierre: abortar cancela una carga pendiente y conserva su motivo (0.819298ms)\n\u2716 H3.2 cierre: cancelaci\u00f3n previa consume tambi\u00e9n el rechazo de una descarga tard\u00eda (1.96094ms)\n\u2139 tests 3\n\u2139 suites 0\n\u2139 pass 2\n\u2139 fail 1\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 96.64121\n\n\u2716 failing tests:\n\ntest at tests/h32-startup.test.mjs:16:1\n\u2716 H3.2 cierre: cancelaci\u00f3n previa consume tambi\u00e9n el rechazo de una descarga tard\u00eda (1.96094ms)\n  Error: Descarga tard\u00eda\n      at TestContext.<anonymous> (file:///tmp/invierno-h32/tests/h32-startup.test.mjs:18:53)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)\n",
+    "fix": "Consumir el resultado/rechazo de la promesa subyacente incluso si el signal ya estaba abortado; finish idempotente"
+  },
+  "cdpFreeze": {
+    "status": "Comando aceptado en Chromium154 headless, sin suspensi\u00f3n real del timer en esta configuraci\u00f3n",
+    "observed": "Timer de200ms corri\u00f3 antes de reactivar a400ms. Otra pesta\u00f1a y desactivar focus emulation tampoco produjeron document.hidden. No se presenta como freeze validado; la suite registra verified=false. La suspensi\u00f3n mediante bfcache se verifica por separado."
+  },
+  "previewLanPath": {
+    "status": "Al preparar acceso LAN se confirm\u00f3 escape de ruta codificada hacia package.json en el servidor del PoC; se corrigi\u00f3 dentro del alcance del preview",
+    "red": "\u2716 H3.2: servidor entrega HTML/m\u00f3dulos/PNG, revalida cach\u00e9 y limita sus rutas (82.467436ms)\n\u2139 tests 1\n\u2139 suites 0\n\u2139 pass 0\n\u2139 fail 1\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 200.429934\n\n\u2716 failing tests:\n\ntest at tests/h32-preview.test.mjs:8:1\n\u2716 H3.2: servidor entrega HTML/m\u00f3dulos/PNG, revalida cach\u00e9 y limita sus rutas (82.467436ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  200 !== 404\n  \n      at TestContext.<anonymous> (file:///tmp/invierno-h32/tests/h32-preview.test.mjs:17:205)\n      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n      at async Test.run (node:internal/test_runner/test:1389:7)\n      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: 200,\n    expected: 404,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n",
+    "fix": "Validar los directorios permitidos otra vez sobre la ruta can\u00f3nica, adem\u00e1s del prefijo recibido. Misma prueba200\u2192404."
+  },
+  "bfcacheTimerProbe": {
+    "status": "Se corrigi\u00f3 una expectativa de QA, sin cambios de producto",
+    "observed": "Entre pagehide y pageshow puede ejecutarse un timer antes de congelar/despu\u00e9s de reanudar (26\u219227). La aserci\u00f3n usa ahora eventos document.freeze/resume y observa el contador constante dentro de ese intervalo, con m\u00e1s de250ms fuera de la p\u00e1gina."
+  }
+}

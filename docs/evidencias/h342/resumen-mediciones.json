@@ -1,0 +1,110 @@
+[
+  {
+    "viewport": {
+      "width": 1365,
+      "height": 768
+    },
+    "profile": "off",
+    "rendersPerSecondMean": 0,
+    "rendererTaskMsPerSecondMean": 12.039557647886461,
+    "visibleParticles": 0,
+    "pool": 158,
+    "objects": 193
+  },
+  {
+    "viewport": {
+      "width": 1365,
+      "height": 768
+    },
+    "profile": "soft",
+    "rendersPerSecondMean": 29.756252055992963,
+    "rendererTaskMsPerSecondMean": 755.5752504775427,
+    "visibleParticles": 77,
+    "pool": 158,
+    "objects": 193
+  },
+  {
+    "viewport": {
+      "width": 1365,
+      "height": 768
+    },
+    "profile": "storm",
+    "rendersPerSecondMean": 29.866036236751125,
+    "rendererTaskMsPerSecondMean": 880.1731078559271,
+    "visibleParticles": 156,
+    "pool": 158,
+    "objects": 193
+  },
+  {
+    "viewport": {
+      "width": 393,
+      "height": 852
+    },
+    "profile": "off",
+    "rendersPerSecondMean": 0,
+    "rendererTaskMsPerSecondMean": 9.453834094849807,
+    "visibleParticles": 0,
+    "pool": 158,
+    "objects": 193
+  },
+  {
+    "viewport": {
+      "width": 393,
+      "height": 852
+    },
+    "profile": "soft",
+    "rendersPerSecondMean": 29.48657639916612,
+    "rendererTaskMsPerSecondMean": 903.6184471462788,
+    "visibleParticles": 76,
+    "pool": 158,
+    "objects": 193
+  },
+  {
+    "viewport": {
+      "width": 393,
+      "height": 852
+    },
+    "profile": "storm",
+    "rendersPerSecondMean": 30.55360621495832,
+    "rendererTaskMsPerSecondMean": 955.5180238858122,
+    "visibleParticles": 156,
+    "pool": 158,
+    "objects": 193
+  },
+  {
+    "viewport": {
+      "width": 320,
+      "height": 640
+    },
+    "profile": "off",
+    "rendersPerSecondMean": 0,
+    "rendererTaskMsPerSecondMean": 9.63221230094875,
+    "visibleParticles": 0,
+    "pool": 158,
+    "objects": 193
+  },
+  {
+    "viewport": {
+      "width": 320,
+      "height": 640
+    },
+    "profile": "soft",
+    "rendersPerSecondMean": 30.002730002641883,
+    "rendererTaskMsPerSecondMean": 457.4618743916453,
+    "visibleParticles": 77,
+    "pool": 158,
+    "objects": 193
+  },
+  {
+    "viewport": {
+      "width": 320,
+      "height": 640
+    },
+    "profile": "storm",
+    "rendersPerSecondMean": 29.98136482743415,
+    "rendererTaskMsPerSecondMean": 582.1652444244247,
+    "visibleParticles": 158,
+    "pool": 158,
+    "objects": 193
+  }
+]

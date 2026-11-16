@@ -1,0 +1,20 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ ''
+- 'confirm-action'
+
+    at file:///workspace/invierno-en-la-colonia/scripts/check-h344-browser.mjs:8:193 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '',
+  expected: 'confirm-action',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

@@ -1,0 +1,43 @@
+{
+  "physicalMobile": false,
+  "controlled": true,
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "searchObtained": true,
+      "usedOnTarget": true,
+      "equipped": true,
+      "modifiedSearchWithDie2": true,
+      "cancelPure": true,
+      "invalidRejected": true,
+      "doubleConfirmOnce": true,
+      "recoveredWithoutResend": true,
+      "cameraStable": true,
+      "selectedStable": true,
+      "errors": [],
+      "video": "/tmp/horizontal-migration-inventory/1365x768/page@44ea0f988350ef46504b88ebafc41560.webm"
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "searchObtained": true,
+      "usedOnTarget": true,
+      "equipped": true,
+      "modifiedSearchWithDie2": true,
+      "cancelPure": true,
+      "invalidRejected": true,
+      "doubleConfirmOnce": true,
+      "recoveredWithoutResend": false,
+      "cameraStable": true,
+      "selectedStable": true,
+      "errors": [],
+      "video": "/tmp/horizontal-migration-inventory/852x393/page@1ae5613672a1cf458dec6cf7f849fb31.webm"
+    }
+  ],
+  "passed": true
+}

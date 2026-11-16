@@ -1,0 +1,25 @@
+{
+  "note": "Iteraciones locales anteriores al commit de implementación. Se separan errores del arnés de cambios del taller.",
+  "pointer": {
+    "classification": "QA",
+    "failure": [
+      "AssertionError [ERR_ASSERTION]: 779.999979620111 != 779.7689836483366\n    at near (file:///tmp/invierno-h33/scripts/check-h33-browser.mjs:14:32)\n    at file:///tmp/invierno-h33/scripts/check-h33-browser.mjs:68:296"
+    ],
+    "solution": "Coordenada de rueda entera como el evento CDP, manteniendo tolerancia de cámara0,02 unidades."
+  },
+  "alpha": {
+    "classification": "QA",
+    "failure": [
+      "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    0,\n+   254\n-   255\n  ]\n\n    at file:///tmp/invierno-h33/scripts/measure-h33-textures.mjs:28:267"
+    ],
+    "solution": "No exigir pico255 tras reducción de un original mayormente alfa252–253; comprobar transparencia y cobertura normalizada ±1% relativo, sin normalizar el PNG."
+  },
+  "initialUi": {
+    "observation": "Etiquetas largas se amontonaban en320px; controles de accesos requerían sincronización con presets, detectada por lectura.",
+    "changes": "Etiquetas S/A/H/P, nombres completos HTML, preset único para controles y nodos; casos de transición y selección por teclado cubiertos."
+  },
+  "review": {
+    "improvements": "Captura de perfil antes de exportación asíncrona; selección al ocultar capas; controles tras pérdida/restauración; liberación explícita de backing de Canvas auxiliares/derivados propios después de disponer Phaser.",
+    "referencesChanged": false
+  }
+}

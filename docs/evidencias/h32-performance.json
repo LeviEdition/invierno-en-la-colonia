@@ -1,0 +1,3450 @@
+{
+  "conditions": {
+    "os": "linux 6.18.55",
+    "cpu": "AMD EPYC 9V74 80-Core Processor",
+    "logicalCpus": 5,
+    "totalSystemMemoryBytes": 35743760384,
+    "node": "v24.19.0",
+    "chromium": "154.0.8037.57",
+    "headless": true,
+    "network": "HTTP localhost, sin compresión ni throttling",
+    "gpu": "consultar renderer por muestra; no GPU física garantizada",
+    "isolation": "Ensayos de renderizadores secuenciales; sin otros tests de navegador o builds ejecutados por esta tarea durante la medición. Host compartido, carga externa no controlada",
+    "physicalMobile": false,
+    "heap": "CDP JSHeapUsedSize después de GC forzada; no incluye memoria GPU",
+    "navigation": "4 s, una tecla de pan por rAF, dirección alternada cada 30 cuadros; zoom cada 45. Eventos DOM reales de teclado sintéticos, no entrada humana",
+    "idle": "3 s sin interacción; instrumentación drawImage/drawArrays/drawElements",
+    "samplesPerConfiguration": 3
+  },
+  "build": {
+    "phaser": "4.2.1",
+    "esbuild": "0.28.2",
+    "rawBytes": 1409348,
+    "gzip9Bytes": 376966,
+    "sha256": "e0afde9f6f41d7e85bcb08d617cc14abdea0f586a3a4d31a46dde6a029a1939f",
+    "inputs": 8
+  },
+  "samples": [
+    {
+      "configuration": "Canvas",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "trial": 1,
+      "cold": {
+        "readyMs": 219.40000000596046,
+        "domContentLoadedMs": 93.7000000178814,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 4089,
+            "encodedBodySize": 3789,
+            "durationMs": 15.099999994039536
+          },
+          {
+            "name": "/prototypes/hospital/main.mjs",
+            "transferSize": 4336,
+            "encodedBodySize": 4036,
+            "durationMs": 16.399999976158142
+          },
+          {
+            "name": "/prototypes/hospital/scene.mjs",
+            "transferSize": 1770,
+            "encodedBodySize": 1470,
+            "durationMs": 4.4000000059604645
+          },
+          {
+            "name": "/prototypes/hospital/camera.mjs",
+            "transferSize": 1718,
+            "encodedBodySize": 1418,
+            "durationMs": 7.5
+          },
+          {
+            "name": "/prototypes/hospital/renderer.mjs",
+            "transferSize": 3215,
+            "encodedBodySize": 2915,
+            "durationMs": 7.699999988079071
+          },
+          {
+            "name": "/prototypes/hospital/controls.mjs",
+            "transferSize": 3563,
+            "encodedBodySize": 3263,
+            "durationMs": 7.699999988079071
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 3270842,
+            "encodedBodySize": 3270542,
+            "durationMs": 39
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 816524,
+            "encodedBodySize": 816224,
+            "durationMs": 18.700000017881393
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 2392225,
+            "encodedBodySize": 2391925,
+            "durationMs": 33.400000005960464
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 3568,
+            "encodedBodySize": 3268
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "warm": {
+        "readyMs": 56.69999998807907,
+        "domContentLoadedMs": 30.599999994039536,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 5.399999976158142
+          },
+          {
+            "name": "/prototypes/hospital/main.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 5.4000000059604645
+          },
+          {
+            "name": "/prototypes/hospital/scene.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 5.5999999940395355
+          },
+          {
+            "name": "/prototypes/hospital/camera.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 7
+          },
+          {
+            "name": "/prototypes/hospital/renderer.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 7.299999982118607
+          },
+          {
+            "name": "/prototypes/hospital/controls.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 7
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 4.200000017881393
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 5.300000011920929
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 5.5
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 300,
+            "encodedBodySize": 3268
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "idle": {
+        "elapsedMs": 3003.5999999940395,
+        "drawCalls": 0,
+        "drawSubmissionMs": 0
+      },
+      "navigation": {
+        "elapsedMs": 4007.5999999940395,
+        "scheduledFrames": 241,
+        "p50FrameIntervalMs": 16.699999999999818,
+        "p95FrameIntervalMs": 16.700000000000728,
+        "over33ms": 0,
+        "drawCalls": 723,
+        "drawSubmissionMs": 5.400000125169754
+      },
+      "heapBytes": 1646100,
+      "renderer": null,
+      "errors": []
+    },
+    {
+      "configuration": "Phaser-demand",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "trial": 1,
+      "cold": {
+        "readyMs": 452.59999999403954,
+        "domContentLoadedMs": 210.2999999821186,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 4089,
+            "encodedBodySize": 3789,
+            "durationMs": 13.099999994039536
+          },
+          {
+            "name": "/prototypes/hospital-phaser/style.css",
+            "transferSize": 600,
+            "encodedBodySize": 300,
+            "durationMs": 18.19999998807907
+          },
+          {
+            "name": "/dist/hospital-phaser/game.mjs",
+            "transferSize": 1409648,
+            "encodedBodySize": 1409348,
+            "durationMs": 25.900000005960464
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 3270842,
+            "encodedBodySize": 3270542,
+            "durationMs": 34.400000005960464
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 816524,
+            "encodedBodySize": 816224,
+            "durationMs": 17.399999976158142
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 2392225,
+            "encodedBodySize": 2391925,
+            "durationMs": 29.599999994039536
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 3850,
+            "encodedBodySize": 3550
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "warm": {
+        "readyMs": 234.60000002384186,
+        "domContentLoadedMs": 88.60000002384186,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 1.9000000059604645
+          },
+          {
+            "name": "/prototypes/hospital-phaser/style.css",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.2999999821186066
+          },
+          {
+            "name": "/dist/hospital-phaser/game.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.800000011920929
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.399999976158142
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 3.0999999940395355
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 3.199999988079071
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 300,
+            "encodedBodySize": 3550
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "idle": {
+        "elapsedMs": 3002.100000023842,
+        "drawCalls": 0,
+        "drawSubmissionMs": 0
+      },
+      "navigation": {
+        "elapsedMs": 4019.800000011921,
+        "scheduledFrames": 241,
+        "p50FrameIntervalMs": 16.699999999999818,
+        "p95FrameIntervalMs": 16.700000000000728,
+        "over33ms": 0,
+        "drawCalls": 241,
+        "drawSubmissionMs": 0.5
+      },
+      "heapBytes": 4961220,
+      "renderer": {
+        "phaser": "4.2.1",
+        "backend": "WebGL",
+        "frameMode": "demand",
+        "loopRunning": false,
+        "gpu": {
+          "vendor": "Google Inc. (Google)",
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+          "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+          "maxTextureSize": 8192
+        },
+        "renderEvents": 243,
+        "renderMs": 47.099999874830246,
+        "textureKeys": [
+          "h32-ground",
+          "h32-hospital",
+          "h32-zombie",
+          "h32-shadow"
+        ],
+        "objectCount": 5,
+        "inputPlugins": {
+          "mouse": false,
+          "touch": false,
+          "keyboard": false
+        },
+        "actorBounds": {
+          "x": 641.98,
+          "y": 554.29,
+          "width": 111.625,
+          "height": 127.11
+        },
+        "transforms": {
+          "ground": {
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "originX": 0,
+            "originY": 0,
+            "depth": 0,
+            "filter": 9729,
+            "textureWidth": 1536,
+            "textureHeight": 1024
+          },
+          "hospital": {
+            "x": 780,
+            "y": 670,
+            "scaleX": 0.65,
+            "scaleY": 0.65,
+            "originX": 0.5023923444976076,
+            "originY": 0.9154704944178629,
+            "depth": 2,
+            "filter": 9729,
+            "textureWidth": 1254,
+            "textureHeight": 1254
+          },
+          "zombie": {
+            "x": 710,
+            "y": 670,
+            "scaleX": 0.095,
+            "scaleY": 0.095,
+            "originX": 0.6093617021276596,
+            "originY": 0.9103139013452914,
+            "depth": 3,
+            "filter": 9729,
+            "textureWidth": 1175,
+            "textureHeight": 1338
+          },
+          "shadow": {
+            "x": 703,
+            "y": 669,
+            "scaleX": 0.296875,
+            "scaleY": 0.15625,
+            "originX": 0.5,
+            "originY": 0.5,
+            "depth": 1,
+            "filter": 9729,
+            "textureWidth": 128,
+            "textureHeight": 64
+          }
+        }
+      },
+      "errors": []
+    },
+    {
+      "configuration": "Phaser-continuous",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "trial": 1,
+      "cold": {
+        "readyMs": 380.7999999821186,
+        "domContentLoadedMs": 161.39999997615814,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 4089,
+            "encodedBodySize": 3789,
+            "durationMs": 8.599999994039536
+          },
+          {
+            "name": "/prototypes/hospital-phaser/style.css",
+            "transferSize": 600,
+            "encodedBodySize": 300,
+            "durationMs": 8.300000011920929
+          },
+          {
+            "name": "/dist/hospital-phaser/game.mjs",
+            "transferSize": 1409648,
+            "encodedBodySize": 1409348,
+            "durationMs": 15.399999976158142
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 3270842,
+            "encodedBodySize": 3270542,
+            "durationMs": 28.100000023841858
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 2392225,
+            "encodedBodySize": 2391925,
+            "durationMs": 24.30000001192093
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 816524,
+            "encodedBodySize": 816224,
+            "durationMs": 14.299999982118607
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 3850,
+            "encodedBodySize": 3550
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "warm": {
+        "readyMs": 222.7999999821186,
+        "domContentLoadedMs": 76.40000000596046,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 1.7999999821186066
+          },
+          {
+            "name": "/prototypes/hospital-phaser/style.css",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 1.9000000059604645
+          },
+          {
+            "name": "/dist/hospital-phaser/game.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 4
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.0999999940395355
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.2000000178813934
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.7000000178813934
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 300,
+            "encodedBodySize": 3550
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "idle": {
+        "elapsedMs": 3005.4000000059605,
+        "drawCalls": 173,
+        "drawSubmissionMs": 0.9000000059604645
+      },
+      "navigation": {
+        "elapsedMs": 4006.7999999821186,
+        "scheduledFrames": 239,
+        "p50FrameIntervalMs": 16.699999999999818,
+        "p95FrameIntervalMs": 16.800000000000182,
+        "over33ms": 2,
+        "drawCalls": 240,
+        "drawSubmissionMs": 0.6000000834465027
+      },
+      "heapBytes": 5178816,
+      "renderer": {
+        "phaser": "4.2.1",
+        "backend": "WebGL",
+        "frameMode": "continuous",
+        "loopRunning": true,
+        "gpu": {
+          "vendor": "Google Inc. (Google)",
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+          "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+          "maxTextureSize": 8192
+        },
+        "renderEvents": 426,
+        "renderMs": 75.49999952316284,
+        "textureKeys": [
+          "h32-ground",
+          "h32-hospital",
+          "h32-zombie",
+          "h32-shadow"
+        ],
+        "objectCount": 5,
+        "inputPlugins": {
+          "mouse": false,
+          "touch": false,
+          "keyboard": false
+        },
+        "actorBounds": {
+          "x": 641.98,
+          "y": 554.29,
+          "width": 111.625,
+          "height": 127.11
+        },
+        "transforms": {
+          "ground": {
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "originX": 0,
+            "originY": 0,
+            "depth": 0,
+            "filter": 9729,
+            "textureWidth": 1536,
+            "textureHeight": 1024
+          },
+          "hospital": {
+            "x": 780,
+            "y": 670,
+            "scaleX": 0.65,
+            "scaleY": 0.65,
+            "originX": 0.5023923444976076,
+            "originY": 0.9154704944178629,
+            "depth": 2,
+            "filter": 9729,
+            "textureWidth": 1254,
+            "textureHeight": 1254
+          },
+          "zombie": {
+            "x": 710,
+            "y": 670,
+            "scaleX": 0.095,
+            "scaleY": 0.095,
+            "originX": 0.6093617021276596,
+            "originY": 0.9103139013452914,
+            "depth": 3,
+            "filter": 9729,
+            "textureWidth": 1175,
+            "textureHeight": 1338
+          },
+          "shadow": {
+            "x": 703,
+            "y": 669,
+            "scaleX": 0.296875,
+            "scaleY": 0.15625,
+            "originX": 0.5,
+            "originY": 0.5,
+            "depth": 1,
+            "filter": 9729,
+            "textureWidth": 128,
+            "textureHeight": 64
+          }
+        }
+      },
+      "errors": []
+    },
+    {
+      "configuration": "Phaser-demand",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "trial": 2,
+      "cold": {
+        "readyMs": 378.09999999403954,
+        "domContentLoadedMs": 155.09999999403954,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 4089,
+            "encodedBodySize": 3789,
+            "durationMs": 14.300000011920929
+          },
+          {
+            "name": "/prototypes/hospital-phaser/style.css",
+            "transferSize": 600,
+            "encodedBodySize": 300,
+            "durationMs": 13.200000017881393
+          },
+          {
+            "name": "/dist/hospital-phaser/game.mjs",
+            "transferSize": 1409648,
+            "encodedBodySize": 1409348,
+            "durationMs": 21.5
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 3270842,
+            "encodedBodySize": 3270542,
+            "durationMs": 37.20000001788139
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 816524,
+            "encodedBodySize": 816224,
+            "durationMs": 11.799999982118607
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 2392225,
+            "encodedBodySize": 2391925,
+            "durationMs": 31.099999994039536
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 3850,
+            "encodedBodySize": 3550
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "warm": {
+        "readyMs": 265.80000001192093,
+        "domContentLoadedMs": 106.2000000178814,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 3.800000011920929
+          },
+          {
+            "name": "/prototypes/hospital-phaser/style.css",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 3.199999988079071
+          },
+          {
+            "name": "/dist/hospital-phaser/game.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 3
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 3.399999976158142
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 3.300000011920929
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 3.4000000059604645
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 300,
+            "encodedBodySize": 3550
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "idle": {
+        "elapsedMs": 3003.9000000059605,
+        "drawCalls": 0,
+        "drawSubmissionMs": 0
+      },
+      "navigation": {
+        "elapsedMs": 4016,
+        "scheduledFrames": 238,
+        "p50FrameIntervalMs": 16.699999999999818,
+        "p95FrameIntervalMs": 16.799999999999272,
+        "over33ms": 1,
+        "drawCalls": 238,
+        "drawSubmissionMs": 1.0000000298023224
+      },
+      "heapBytes": 4961284,
+      "renderer": {
+        "phaser": "4.2.1",
+        "backend": "WebGL",
+        "frameMode": "demand",
+        "loopRunning": false,
+        "gpu": {
+          "vendor": "Google Inc. (Google)",
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+          "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+          "maxTextureSize": 8192
+        },
+        "renderEvents": 240,
+        "renderMs": 49.59999978542328,
+        "textureKeys": [
+          "h32-ground",
+          "h32-hospital",
+          "h32-zombie",
+          "h32-shadow"
+        ],
+        "objectCount": 5,
+        "inputPlugins": {
+          "mouse": false,
+          "touch": false,
+          "keyboard": false
+        },
+        "actorBounds": {
+          "x": 641.98,
+          "y": 554.29,
+          "width": 111.625,
+          "height": 127.11
+        },
+        "transforms": {
+          "ground": {
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "originX": 0,
+            "originY": 0,
+            "depth": 0,
+            "filter": 9729,
+            "textureWidth": 1536,
+            "textureHeight": 1024
+          },
+          "hospital": {
+            "x": 780,
+            "y": 670,
+            "scaleX": 0.65,
+            "scaleY": 0.65,
+            "originX": 0.5023923444976076,
+            "originY": 0.9154704944178629,
+            "depth": 2,
+            "filter": 9729,
+            "textureWidth": 1254,
+            "textureHeight": 1254
+          },
+          "zombie": {
+            "x": 710,
+            "y": 670,
+            "scaleX": 0.095,
+            "scaleY": 0.095,
+            "originX": 0.6093617021276596,
+            "originY": 0.9103139013452914,
+            "depth": 3,
+            "filter": 9729,
+            "textureWidth": 1175,
+            "textureHeight": 1338
+          },
+          "shadow": {
+            "x": 703,
+            "y": 669,
+            "scaleX": 0.296875,
+            "scaleY": 0.15625,
+            "originX": 0.5,
+            "originY": 0.5,
+            "depth": 1,
+            "filter": 9729,
+            "textureWidth": 128,
+            "textureHeight": 64
+          }
+        }
+      },
+      "errors": []
+    },
+    {
+      "configuration": "Phaser-continuous",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "trial": 2,
+      "cold": {
+        "readyMs": 382.69999998807907,
+        "domContentLoadedMs": 172.90000000596046,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 4089,
+            "encodedBodySize": 3789,
+            "durationMs": 16.19999998807907
+          },
+          {
+            "name": "/prototypes/hospital-phaser/style.css",
+            "transferSize": 600,
+            "encodedBodySize": 300,
+            "durationMs": 16
+          },
+          {
+            "name": "/dist/hospital-phaser/game.mjs",
+            "transferSize": 1409648,
+            "encodedBodySize": 1409348,
+            "durationMs": 19.400000005960464
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 3270842,
+            "encodedBodySize": 3270542,
+            "durationMs": 25.299999982118607
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 2392225,
+            "encodedBodySize": 2391925,
+            "durationMs": 16.599999994039536
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 816524,
+            "encodedBodySize": 816224,
+            "durationMs": 11.099999994039536
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 3850,
+            "encodedBodySize": 3550
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "warm": {
+        "readyMs": 241.40000000596046,
+        "domContentLoadedMs": 92.59999999403954,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 1.800000011920929
+          },
+          {
+            "name": "/prototypes/hospital-phaser/style.css",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 1.7999999821186066
+          },
+          {
+            "name": "/dist/hospital-phaser/game.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.699999988079071
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.7999999821186066
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 3.2999999821186066
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 300,
+            "encodedBodySize": 3550
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "idle": {
+        "elapsedMs": 3007.199999988079,
+        "drawCalls": 174,
+        "drawSubmissionMs": 0.30000001192092896
+      },
+      "navigation": {
+        "elapsedMs": 4003.5999999940395,
+        "scheduledFrames": 239,
+        "p50FrameIntervalMs": 16.699999999999818,
+        "p95FrameIntervalMs": 16.799999999999272,
+        "over33ms": 0,
+        "drawCalls": 240,
+        "drawSubmissionMs": 1.4000000953674316
+      },
+      "heapBytes": 5175424,
+      "renderer": {
+        "phaser": "4.2.1",
+        "backend": "WebGL",
+        "frameMode": "continuous",
+        "loopRunning": true,
+        "gpu": {
+          "vendor": "Google Inc. (Google)",
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+          "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+          "maxTextureSize": 8192
+        },
+        "renderEvents": 430,
+        "renderMs": 80.50000008940697,
+        "textureKeys": [
+          "h32-ground",
+          "h32-hospital",
+          "h32-zombie",
+          "h32-shadow"
+        ],
+        "objectCount": 5,
+        "inputPlugins": {
+          "mouse": false,
+          "touch": false,
+          "keyboard": false
+        },
+        "actorBounds": {
+          "x": 641.98,
+          "y": 554.29,
+          "width": 111.625,
+          "height": 127.11
+        },
+        "transforms": {
+          "ground": {
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "originX": 0,
+            "originY": 0,
+            "depth": 0,
+            "filter": 9729,
+            "textureWidth": 1536,
+            "textureHeight": 1024
+          },
+          "hospital": {
+            "x": 780,
+            "y": 670,
+            "scaleX": 0.65,
+            "scaleY": 0.65,
+            "originX": 0.5023923444976076,
+            "originY": 0.9154704944178629,
+            "depth": 2,
+            "filter": 9729,
+            "textureWidth": 1254,
+            "textureHeight": 1254
+          },
+          "zombie": {
+            "x": 710,
+            "y": 670,
+            "scaleX": 0.095,
+            "scaleY": 0.095,
+            "originX": 0.6093617021276596,
+            "originY": 0.9103139013452914,
+            "depth": 3,
+            "filter": 9729,
+            "textureWidth": 1175,
+            "textureHeight": 1338
+          },
+          "shadow": {
+            "x": 703,
+            "y": 669,
+            "scaleX": 0.296875,
+            "scaleY": 0.15625,
+            "originX": 0.5,
+            "originY": 0.5,
+            "depth": 1,
+            "filter": 9729,
+            "textureWidth": 128,
+            "textureHeight": 64
+          }
+        }
+      },
+      "errors": []
+    },
+    {
+      "configuration": "Canvas",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "trial": 2,
+      "cold": {
+        "readyMs": 154.80000001192093,
+        "domContentLoadedMs": 40.10000002384186,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 4089,
+            "encodedBodySize": 3789,
+            "durationMs": 9.900000005960464
+          },
+          {
+            "name": "/prototypes/hospital/main.mjs",
+            "transferSize": 4336,
+            "encodedBodySize": 4036,
+            "durationMs": 10.5
+          },
+          {
+            "name": "/prototypes/hospital/camera.mjs",
+            "transferSize": 1718,
+            "encodedBodySize": 1418,
+            "durationMs": 6.699999988079071
+          },
+          {
+            "name": "/prototypes/hospital/scene.mjs",
+            "transferSize": 1770,
+            "encodedBodySize": 1470,
+            "durationMs": 6.399999976158142
+          },
+          {
+            "name": "/prototypes/hospital/renderer.mjs",
+            "transferSize": 3215,
+            "encodedBodySize": 2915,
+            "durationMs": 6.699999988079071
+          },
+          {
+            "name": "/prototypes/hospital/controls.mjs",
+            "transferSize": 3563,
+            "encodedBodySize": 3263,
+            "durationMs": 8.199999988079071
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 2392225,
+            "encodedBodySize": 2391925,
+            "durationMs": 33.79999998211861
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 3270842,
+            "encodedBodySize": 3270542,
+            "durationMs": 40.29999998211861
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 816524,
+            "encodedBodySize": 816224,
+            "durationMs": 5.4000000059604645
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 3568,
+            "encodedBodySize": 3268
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "warm": {
+        "readyMs": 49.400000005960464,
+        "domContentLoadedMs": 29.80000001192093,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.2999999821186066
+          },
+          {
+            "name": "/prototypes/hospital/main.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.699999988079071
+          },
+          {
+            "name": "/prototypes/hospital/scene.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.4000000059604645
+          },
+          {
+            "name": "/prototypes/hospital/camera.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 5.700000017881393
+          },
+          {
+            "name": "/prototypes/hospital/renderer.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.7000000178813934
+          },
+          {
+            "name": "/prototypes/hospital/controls.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 5.699999988079071
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 3.0999999940395355
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 3.0999999940395355
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 300,
+            "encodedBodySize": 3268
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "idle": {
+        "elapsedMs": 3001.9000000059605,
+        "drawCalls": 0,
+        "drawSubmissionMs": 0
+      },
+      "navigation": {
+        "elapsedMs": 4009.0999999940395,
+        "scheduledFrames": 241,
+        "p50FrameIntervalMs": 16.699999999999818,
+        "p95FrameIntervalMs": 16.700000000000728,
+        "over33ms": 0,
+        "drawCalls": 723,
+        "drawSubmissionMs": 4.499999970197678
+      },
+      "heapBytes": 1651212,
+      "renderer": null,
+      "errors": []
+    },
+    {
+      "configuration": "Phaser-continuous",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "trial": 3,
+      "cold": {
+        "readyMs": 376.59999999403954,
+        "domContentLoadedMs": 161.80000001192093,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 4089,
+            "encodedBodySize": 3789,
+            "durationMs": 14.600000023841858
+          },
+          {
+            "name": "/prototypes/hospital-phaser/style.css",
+            "transferSize": 600,
+            "encodedBodySize": 300,
+            "durationMs": 14.699999988079071
+          },
+          {
+            "name": "/dist/hospital-phaser/game.mjs",
+            "transferSize": 1409648,
+            "encodedBodySize": 1409348,
+            "durationMs": 21.19999998807907
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 3270842,
+            "encodedBodySize": 3270542,
+            "durationMs": 26.599999994039536
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 2392225,
+            "encodedBodySize": 2391925,
+            "durationMs": 24.900000005960464
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 816524,
+            "encodedBodySize": 816224,
+            "durationMs": 6.100000023841858
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 3850,
+            "encodedBodySize": 3550
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "warm": {
+        "readyMs": 259.89999997615814,
+        "domContentLoadedMs": 95.69999998807907,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 6.4000000059604645
+          },
+          {
+            "name": "/prototypes/hospital-phaser/style.css",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 6.300000011920929
+          },
+          {
+            "name": "/dist/hospital-phaser/game.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 6.5
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.5999999940395355
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.7000000178813934
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.800000011920929
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 300,
+            "encodedBodySize": 3550
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "idle": {
+        "elapsedMs": 3017,
+        "drawCalls": 177,
+        "drawSubmissionMs": 0.9000000655651093
+      },
+      "navigation": {
+        "elapsedMs": 4015.5999999940395,
+        "scheduledFrames": 236,
+        "p50FrameIntervalMs": 16.699999999999818,
+        "p95FrameIntervalMs": 16.800000000000182,
+        "over33ms": 2,
+        "drawCalls": 237,
+        "drawSubmissionMs": 0.800000011920929
+      },
+      "heapBytes": 5171752,
+      "renderer": {
+        "phaser": "4.2.1",
+        "backend": "WebGL",
+        "frameMode": "continuous",
+        "loopRunning": true,
+        "gpu": {
+          "vendor": "Google Inc. (Google)",
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+          "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+          "maxTextureSize": 8192
+        },
+        "renderEvents": 425,
+        "renderMs": 88.80000057816505,
+        "textureKeys": [
+          "h32-ground",
+          "h32-hospital",
+          "h32-zombie",
+          "h32-shadow"
+        ],
+        "objectCount": 5,
+        "inputPlugins": {
+          "mouse": false,
+          "touch": false,
+          "keyboard": false
+        },
+        "actorBounds": {
+          "x": 641.98,
+          "y": 554.29,
+          "width": 111.625,
+          "height": 127.11
+        },
+        "transforms": {
+          "ground": {
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "originX": 0,
+            "originY": 0,
+            "depth": 0,
+            "filter": 9729,
+            "textureWidth": 1536,
+            "textureHeight": 1024
+          },
+          "hospital": {
+            "x": 780,
+            "y": 670,
+            "scaleX": 0.65,
+            "scaleY": 0.65,
+            "originX": 0.5023923444976076,
+            "originY": 0.9154704944178629,
+            "depth": 2,
+            "filter": 9729,
+            "textureWidth": 1254,
+            "textureHeight": 1254
+          },
+          "zombie": {
+            "x": 710,
+            "y": 670,
+            "scaleX": 0.095,
+            "scaleY": 0.095,
+            "originX": 0.6093617021276596,
+            "originY": 0.9103139013452914,
+            "depth": 3,
+            "filter": 9729,
+            "textureWidth": 1175,
+            "textureHeight": 1338
+          },
+          "shadow": {
+            "x": 703,
+            "y": 669,
+            "scaleX": 0.296875,
+            "scaleY": 0.15625,
+            "originX": 0.5,
+            "originY": 0.5,
+            "depth": 1,
+            "filter": 9729,
+            "textureWidth": 128,
+            "textureHeight": 64
+          }
+        }
+      },
+      "errors": []
+    },
+    {
+      "configuration": "Canvas",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "trial": 3,
+      "cold": {
+        "readyMs": 180.90000000596046,
+        "domContentLoadedMs": 59.099999994039536,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 4089,
+            "encodedBodySize": 3789,
+            "durationMs": 15.199999988079071
+          },
+          {
+            "name": "/prototypes/hospital/main.mjs",
+            "transferSize": 4336,
+            "encodedBodySize": 4036,
+            "durationMs": 15.200000017881393
+          },
+          {
+            "name": "/prototypes/hospital/scene.mjs",
+            "transferSize": 1770,
+            "encodedBodySize": 1470,
+            "durationMs": 2.5
+          },
+          {
+            "name": "/prototypes/hospital/camera.mjs",
+            "transferSize": 1718,
+            "encodedBodySize": 1418,
+            "durationMs": 2.600000023841858
+          },
+          {
+            "name": "/prototypes/hospital/renderer.mjs",
+            "transferSize": 3215,
+            "encodedBodySize": 2915,
+            "durationMs": 4.799999982118607
+          },
+          {
+            "name": "/prototypes/hospital/controls.mjs",
+            "transferSize": 3563,
+            "encodedBodySize": 3263,
+            "durationMs": 2.5
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 3270842,
+            "encodedBodySize": 3270542,
+            "durationMs": 42.400000005960464
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 2392225,
+            "encodedBodySize": 2391925,
+            "durationMs": 40.19999998807907
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 816524,
+            "encodedBodySize": 816224,
+            "durationMs": 22.19999998807907
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 3568,
+            "encodedBodySize": 3268
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "warm": {
+        "readyMs": 54.69999998807907,
+        "domContentLoadedMs": 31,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 6.399999976158142
+          },
+          {
+            "name": "/prototypes/hospital/main.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 7.4000000059604645
+          },
+          {
+            "name": "/prototypes/hospital/scene.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 1.5
+          },
+          {
+            "name": "/prototypes/hospital/camera.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2
+          },
+          {
+            "name": "/prototypes/hospital/renderer.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.199999988079071
+          },
+          {
+            "name": "/prototypes/hospital/controls.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.300000011920929
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 4.0999999940395355
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 4.200000017881393
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 4.4000000059604645
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 300,
+            "encodedBodySize": 3268
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "idle": {
+        "elapsedMs": 3002,
+        "drawCalls": 0,
+        "drawSubmissionMs": 0
+      },
+      "navigation": {
+        "elapsedMs": 4013.9000000059605,
+        "scheduledFrames": 241,
+        "p50FrameIntervalMs": 16.699999999999818,
+        "p95FrameIntervalMs": 16.700000000000728,
+        "over33ms": 0,
+        "drawCalls": 723,
+        "drawSubmissionMs": 4.299999922513962
+      },
+      "heapBytes": 1646100,
+      "renderer": null,
+      "errors": []
+    },
+    {
+      "configuration": "Phaser-demand",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "trial": 3,
+      "cold": {
+        "readyMs": 372.90000000596046,
+        "domContentLoadedMs": 156.59999999403954,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 4089,
+            "encodedBodySize": 3789,
+            "durationMs": 6.600000023841858
+          },
+          {
+            "name": "/prototypes/hospital-phaser/style.css",
+            "transferSize": 600,
+            "encodedBodySize": 300,
+            "durationMs": 6.4000000059604645
+          },
+          {
+            "name": "/dist/hospital-phaser/game.mjs",
+            "transferSize": 1409648,
+            "encodedBodySize": 1409348,
+            "durationMs": 15.800000011920929
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 3270842,
+            "encodedBodySize": 3270542,
+            "durationMs": 33.400000005960464
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 2392225,
+            "encodedBodySize": 2391925,
+            "durationMs": 32
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 816524,
+            "encodedBodySize": 816224,
+            "durationMs": 10.299999982118607
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 3850,
+            "encodedBodySize": 3550
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "warm": {
+        "readyMs": 249.59999999403954,
+        "domContentLoadedMs": 88.90000000596046,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 3.0999999940395355
+          },
+          {
+            "name": "/prototypes/hospital-phaser/style.css",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 3.300000011920929
+          },
+          {
+            "name": "/dist/hospital-phaser/game.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 3.2000000178813934
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.5
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.5
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.7000000178813934
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 300,
+            "encodedBodySize": 3550
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "idle": {
+        "elapsedMs": 3001.7999999821186,
+        "drawCalls": 0,
+        "drawSubmissionMs": 0
+      },
+      "navigation": {
+        "elapsedMs": 4005.7000000178814,
+        "scheduledFrames": 241,
+        "p50FrameIntervalMs": 16.699999999999818,
+        "p95FrameIntervalMs": 16.700000000000728,
+        "over33ms": 0,
+        "drawCalls": 241,
+        "drawSubmissionMs": 1.100000023841858
+      },
+      "heapBytes": 4962696,
+      "renderer": {
+        "phaser": "4.2.1",
+        "backend": "WebGL",
+        "frameMode": "demand",
+        "loopRunning": false,
+        "gpu": {
+          "vendor": "Google Inc. (Google)",
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+          "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+          "maxTextureSize": 8192
+        },
+        "renderEvents": 243,
+        "renderMs": 44.999999940395355,
+        "textureKeys": [
+          "h32-ground",
+          "h32-hospital",
+          "h32-zombie",
+          "h32-shadow"
+        ],
+        "objectCount": 5,
+        "inputPlugins": {
+          "mouse": false,
+          "touch": false,
+          "keyboard": false
+        },
+        "actorBounds": {
+          "x": 641.98,
+          "y": 554.29,
+          "width": 111.625,
+          "height": 127.11
+        },
+        "transforms": {
+          "ground": {
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "originX": 0,
+            "originY": 0,
+            "depth": 0,
+            "filter": 9729,
+            "textureWidth": 1536,
+            "textureHeight": 1024
+          },
+          "hospital": {
+            "x": 780,
+            "y": 670,
+            "scaleX": 0.65,
+            "scaleY": 0.65,
+            "originX": 0.5023923444976076,
+            "originY": 0.9154704944178629,
+            "depth": 2,
+            "filter": 9729,
+            "textureWidth": 1254,
+            "textureHeight": 1254
+          },
+          "zombie": {
+            "x": 710,
+            "y": 670,
+            "scaleX": 0.095,
+            "scaleY": 0.095,
+            "originX": 0.6093617021276596,
+            "originY": 0.9103139013452914,
+            "depth": 3,
+            "filter": 9729,
+            "textureWidth": 1175,
+            "textureHeight": 1338
+          },
+          "shadow": {
+            "x": 703,
+            "y": 669,
+            "scaleX": 0.296875,
+            "scaleY": 0.15625,
+            "originX": 0.5,
+            "originY": 0.5,
+            "depth": 1,
+            "filter": 9729,
+            "textureWidth": 128,
+            "textureHeight": 64
+          }
+        }
+      },
+      "errors": []
+    },
+    {
+      "configuration": "Canvas",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "trial": 1,
+      "cold": {
+        "readyMs": 171.40000000596046,
+        "domContentLoadedMs": 56.80000001192093,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 4089,
+            "encodedBodySize": 3789,
+            "durationMs": 10.700000017881393
+          },
+          {
+            "name": "/prototypes/hospital/main.mjs",
+            "transferSize": 4336,
+            "encodedBodySize": 4036,
+            "durationMs": 8.199999988079071
+          },
+          {
+            "name": "/prototypes/hospital/scene.mjs",
+            "transferSize": 1770,
+            "encodedBodySize": 1470,
+            "durationMs": 4.4000000059604645
+          },
+          {
+            "name": "/prototypes/hospital/camera.mjs",
+            "transferSize": 1718,
+            "encodedBodySize": 1418,
+            "durationMs": 6
+          },
+          {
+            "name": "/prototypes/hospital/renderer.mjs",
+            "transferSize": 3215,
+            "encodedBodySize": 2915,
+            "durationMs": 6.100000023841858
+          },
+          {
+            "name": "/prototypes/hospital/controls.mjs",
+            "transferSize": 3563,
+            "encodedBodySize": 3263,
+            "durationMs": 6.100000023841858
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 816524,
+            "encodedBodySize": 816224,
+            "durationMs": 8.699999988079071
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 2392225,
+            "encodedBodySize": 2391925,
+            "durationMs": 28.19999998807907
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 3270842,
+            "encodedBodySize": 3270542,
+            "durationMs": 30.799999982118607
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 3568,
+            "encodedBodySize": 3268
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "warm": {
+        "readyMs": 35.900000005960464,
+        "domContentLoadedMs": 25.30000001192093,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 3.9000000059604645
+          },
+          {
+            "name": "/prototypes/hospital/main.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 5.100000023841858
+          },
+          {
+            "name": "/prototypes/hospital/scene.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.7999999821186066
+          },
+          {
+            "name": "/prototypes/hospital/camera.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 3.199999988079071
+          },
+          {
+            "name": "/prototypes/hospital/renderer.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 3.5999999940395355
+          },
+          {
+            "name": "/prototypes/hospital/controls.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 4
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 1.4000000059604645
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 1.4000000059604645
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.2000000178813934
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 300,
+            "encodedBodySize": 3268
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "idle": {
+        "elapsedMs": 3002,
+        "drawCalls": 0,
+        "drawSubmissionMs": 0
+      },
+      "navigation": {
+        "elapsedMs": 4014.0999999940395,
+        "scheduledFrames": 241,
+        "p50FrameIntervalMs": 16.699999999999818,
+        "p95FrameIntervalMs": 16.799999999999272,
+        "over33ms": 0,
+        "drawCalls": 723,
+        "drawSubmissionMs": 4.799999952316284
+      },
+      "heapBytes": 1692460,
+      "renderer": null,
+      "errors": []
+    },
+    {
+      "configuration": "Phaser-demand",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "trial": 1,
+      "cold": {
+        "readyMs": 404.30000001192093,
+        "domContentLoadedMs": 168.40000000596046,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 4089,
+            "encodedBodySize": 3789,
+            "durationMs": 15.800000011920929
+          },
+          {
+            "name": "/prototypes/hospital-phaser/style.css",
+            "transferSize": 600,
+            "encodedBodySize": 300,
+            "durationMs": 15.900000005960464
+          },
+          {
+            "name": "/dist/hospital-phaser/game.mjs",
+            "transferSize": 1409648,
+            "encodedBodySize": 1409348,
+            "durationMs": 23.19999998807907
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 3270842,
+            "encodedBodySize": 3270542,
+            "durationMs": 37.099999994039536
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 2392225,
+            "encodedBodySize": 2391925,
+            "durationMs": 32.900000005960464
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 816524,
+            "encodedBodySize": 816224,
+            "durationMs": 10.899999976158142
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 3850,
+            "encodedBodySize": 3550
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "warm": {
+        "readyMs": 222.90000000596046,
+        "domContentLoadedMs": 82.5,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 4.4000000059604645
+          },
+          {
+            "name": "/prototypes/hospital-phaser/style.css",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 4.300000011920929
+          },
+          {
+            "name": "/dist/hospital-phaser/game.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 4.5999999940395355
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 4.200000017881393
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 4.0999999940395355
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 4.0999999940395355
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 300,
+            "encodedBodySize": 3550
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "idle": {
+        "elapsedMs": 3003,
+        "drawCalls": 0,
+        "drawSubmissionMs": 0
+      },
+      "navigation": {
+        "elapsedMs": 4010.9000000059605,
+        "scheduledFrames": 241,
+        "p50FrameIntervalMs": 16.699999999999818,
+        "p95FrameIntervalMs": 16.799999999999272,
+        "over33ms": 0,
+        "drawCalls": 241,
+        "drawSubmissionMs": 0.6999999582767487
+      },
+      "heapBytes": 5013152,
+      "renderer": {
+        "phaser": "4.2.1",
+        "backend": "WebGL",
+        "frameMode": "demand",
+        "loopRunning": false,
+        "gpu": {
+          "vendor": "Google Inc. (Google)",
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+          "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+          "maxTextureSize": 8192
+        },
+        "renderEvents": 243,
+        "renderMs": 48.39999994635582,
+        "textureKeys": [
+          "h32-ground",
+          "h32-hospital",
+          "h32-zombie",
+          "h32-shadow"
+        ],
+        "objectCount": 5,
+        "inputPlugins": {
+          "mouse": false,
+          "touch": false,
+          "keyboard": false
+        },
+        "actorBounds": {
+          "x": 641.98,
+          "y": 554.29,
+          "width": 111.625,
+          "height": 127.11
+        },
+        "transforms": {
+          "ground": {
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "originX": 0,
+            "originY": 0,
+            "depth": 0,
+            "filter": 9729,
+            "textureWidth": 1536,
+            "textureHeight": 1024
+          },
+          "hospital": {
+            "x": 780,
+            "y": 670,
+            "scaleX": 0.65,
+            "scaleY": 0.65,
+            "originX": 0.5023923444976076,
+            "originY": 0.9154704944178629,
+            "depth": 2,
+            "filter": 9729,
+            "textureWidth": 1254,
+            "textureHeight": 1254
+          },
+          "zombie": {
+            "x": 710,
+            "y": 670,
+            "scaleX": 0.095,
+            "scaleY": 0.095,
+            "originX": 0.6093617021276596,
+            "originY": 0.9103139013452914,
+            "depth": 3,
+            "filter": 9729,
+            "textureWidth": 1175,
+            "textureHeight": 1338
+          },
+          "shadow": {
+            "x": 703,
+            "y": 669,
+            "scaleX": 0.296875,
+            "scaleY": 0.15625,
+            "originX": 0.5,
+            "originY": 0.5,
+            "depth": 1,
+            "filter": 9729,
+            "textureWidth": 128,
+            "textureHeight": 64
+          }
+        }
+      },
+      "errors": []
+    },
+    {
+      "configuration": "Phaser-continuous",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "trial": 1,
+      "cold": {
+        "readyMs": 369.7999999821186,
+        "domContentLoadedMs": 144.09999999403954,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 4089,
+            "encodedBodySize": 3789,
+            "durationMs": 9.700000017881393
+          },
+          {
+            "name": "/prototypes/hospital-phaser/style.css",
+            "transferSize": 600,
+            "encodedBodySize": 300,
+            "durationMs": 9.900000005960464
+          },
+          {
+            "name": "/dist/hospital-phaser/game.mjs",
+            "transferSize": 1409648,
+            "encodedBodySize": 1409348,
+            "durationMs": 14.200000017881393
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 3270842,
+            "encodedBodySize": 3270542,
+            "durationMs": 39.20000001788139
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 816524,
+            "encodedBodySize": 816224,
+            "durationMs": 10
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 2392225,
+            "encodedBodySize": 2391925,
+            "durationMs": 36.400000005960464
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 3850,
+            "encodedBodySize": 3550
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "warm": {
+        "readyMs": 255.40000000596046,
+        "domContentLoadedMs": 91.2000000178814,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.800000011920929
+          },
+          {
+            "name": "/prototypes/hospital-phaser/style.css",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.800000011920929
+          },
+          {
+            "name": "/dist/hospital-phaser/game.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.7999999821186066
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 5.5999999940395355
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 6.799999982118607
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 5.9000000059604645
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 300,
+            "encodedBodySize": 3550
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "idle": {
+        "elapsedMs": 3011.199999988079,
+        "drawCalls": 171,
+        "drawSubmissionMs": 0.9000000357627869
+      },
+      "navigation": {
+        "elapsedMs": 4010.199999988079,
+        "scheduledFrames": 240,
+        "p50FrameIntervalMs": 16.699999999999818,
+        "p95FrameIntervalMs": 16.799999999999272,
+        "over33ms": 1,
+        "drawCalls": 241,
+        "drawSubmissionMs": 0.9999999701976776
+      },
+      "heapBytes": 5223300,
+      "renderer": {
+        "phaser": "4.2.1",
+        "backend": "WebGL",
+        "frameMode": "continuous",
+        "loopRunning": true,
+        "gpu": {
+          "vendor": "Google Inc. (Google)",
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+          "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+          "maxTextureSize": 8192
+        },
+        "renderEvents": 425,
+        "renderMs": 104.99999988079071,
+        "textureKeys": [
+          "h32-ground",
+          "h32-hospital",
+          "h32-zombie",
+          "h32-shadow"
+        ],
+        "objectCount": 5,
+        "inputPlugins": {
+          "mouse": false,
+          "touch": false,
+          "keyboard": false
+        },
+        "actorBounds": {
+          "x": 641.98,
+          "y": 554.29,
+          "width": 111.625,
+          "height": 127.11
+        },
+        "transforms": {
+          "ground": {
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "originX": 0,
+            "originY": 0,
+            "depth": 0,
+            "filter": 9729,
+            "textureWidth": 1536,
+            "textureHeight": 1024
+          },
+          "hospital": {
+            "x": 780,
+            "y": 670,
+            "scaleX": 0.65,
+            "scaleY": 0.65,
+            "originX": 0.5023923444976076,
+            "originY": 0.9154704944178629,
+            "depth": 2,
+            "filter": 9729,
+            "textureWidth": 1254,
+            "textureHeight": 1254
+          },
+          "zombie": {
+            "x": 710,
+            "y": 670,
+            "scaleX": 0.095,
+            "scaleY": 0.095,
+            "originX": 0.6093617021276596,
+            "originY": 0.9103139013452914,
+            "depth": 3,
+            "filter": 9729,
+            "textureWidth": 1175,
+            "textureHeight": 1338
+          },
+          "shadow": {
+            "x": 703,
+            "y": 669,
+            "scaleX": 0.296875,
+            "scaleY": 0.15625,
+            "originX": 0.5,
+            "originY": 0.5,
+            "depth": 1,
+            "filter": 9729,
+            "textureWidth": 128,
+            "textureHeight": 64
+          }
+        }
+      },
+      "errors": []
+    },
+    {
+      "configuration": "Phaser-demand",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "trial": 2,
+      "cold": {
+        "readyMs": 400.69999998807907,
+        "domContentLoadedMs": 187.09999999403954,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 4089,
+            "encodedBodySize": 3789,
+            "durationMs": 12.199999988079071
+          },
+          {
+            "name": "/prototypes/hospital-phaser/style.css",
+            "transferSize": 600,
+            "encodedBodySize": 300,
+            "durationMs": 13.900000005960464
+          },
+          {
+            "name": "/dist/hospital-phaser/game.mjs",
+            "transferSize": 1409648,
+            "encodedBodySize": 1409348,
+            "durationMs": 20.69999998807907
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 3270842,
+            "encodedBodySize": 3270542,
+            "durationMs": 25.19999998807907
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 816524,
+            "encodedBodySize": 816224,
+            "durationMs": 9.300000011920929
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 2392225,
+            "encodedBodySize": 2391925,
+            "durationMs": 19.30000001192093
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 3850,
+            "encodedBodySize": 3550
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "warm": {
+        "readyMs": 230.30000001192093,
+        "domContentLoadedMs": 79.80000001192093,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.9000000059604645
+          },
+          {
+            "name": "/prototypes/hospital-phaser/style.css",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.9000000059604645
+          },
+          {
+            "name": "/dist/hospital-phaser/game.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 3.699999988079071
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.2999999821186066
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.4000000059604645
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.5
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 300,
+            "encodedBodySize": 3550
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "idle": {
+        "elapsedMs": 3003,
+        "drawCalls": 0,
+        "drawSubmissionMs": 0
+      },
+      "navigation": {
+        "elapsedMs": 4012.5999999940395,
+        "scheduledFrames": 239,
+        "p50FrameIntervalMs": 16.699999999999818,
+        "p95FrameIntervalMs": 16.799999999999727,
+        "over33ms": 0,
+        "drawCalls": 239,
+        "drawSubmissionMs": 1.4000000059604645
+      },
+      "heapBytes": 5012948,
+      "renderer": {
+        "phaser": "4.2.1",
+        "backend": "WebGL",
+        "frameMode": "demand",
+        "loopRunning": false,
+        "gpu": {
+          "vendor": "Google Inc. (Google)",
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+          "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+          "maxTextureSize": 8192
+        },
+        "renderEvents": 241,
+        "renderMs": 53.79999953508377,
+        "textureKeys": [
+          "h32-ground",
+          "h32-hospital",
+          "h32-zombie",
+          "h32-shadow"
+        ],
+        "objectCount": 5,
+        "inputPlugins": {
+          "mouse": false,
+          "touch": false,
+          "keyboard": false
+        },
+        "actorBounds": {
+          "x": 641.98,
+          "y": 554.29,
+          "width": 111.625,
+          "height": 127.11
+        },
+        "transforms": {
+          "ground": {
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "originX": 0,
+            "originY": 0,
+            "depth": 0,
+            "filter": 9729,
+            "textureWidth": 1536,
+            "textureHeight": 1024
+          },
+          "hospital": {
+            "x": 780,
+            "y": 670,
+            "scaleX": 0.65,
+            "scaleY": 0.65,
+            "originX": 0.5023923444976076,
+            "originY": 0.9154704944178629,
+            "depth": 2,
+            "filter": 9729,
+            "textureWidth": 1254,
+            "textureHeight": 1254
+          },
+          "zombie": {
+            "x": 710,
+            "y": 670,
+            "scaleX": 0.095,
+            "scaleY": 0.095,
+            "originX": 0.6093617021276596,
+            "originY": 0.9103139013452914,
+            "depth": 3,
+            "filter": 9729,
+            "textureWidth": 1175,
+            "textureHeight": 1338
+          },
+          "shadow": {
+            "x": 703,
+            "y": 669,
+            "scaleX": 0.296875,
+            "scaleY": 0.15625,
+            "originX": 0.5,
+            "originY": 0.5,
+            "depth": 1,
+            "filter": 9729,
+            "textureWidth": 128,
+            "textureHeight": 64
+          }
+        }
+      },
+      "errors": []
+    },
+    {
+      "configuration": "Phaser-continuous",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "trial": 2,
+      "cold": {
+        "readyMs": 367.69999998807907,
+        "domContentLoadedMs": 166.2999999821186,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 4089,
+            "encodedBodySize": 3789,
+            "durationMs": 10.399999976158142
+          },
+          {
+            "name": "/prototypes/hospital-phaser/style.css",
+            "transferSize": 600,
+            "encodedBodySize": 300,
+            "durationMs": 10.599999994039536
+          },
+          {
+            "name": "/dist/hospital-phaser/game.mjs",
+            "transferSize": 1409648,
+            "encodedBodySize": 1409348,
+            "durationMs": 13.400000005960464
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 3270842,
+            "encodedBodySize": 3270542,
+            "durationMs": 26.80000001192093
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 2392225,
+            "encodedBodySize": 2391925,
+            "durationMs": 22.299999982118607
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 816524,
+            "encodedBodySize": 816224,
+            "durationMs": 9.599999994039536
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 3850,
+            "encodedBodySize": 3550
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "warm": {
+        "readyMs": 239.69999998807907,
+        "domContentLoadedMs": 88.90000000596046,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 1.899999976158142
+          },
+          {
+            "name": "/prototypes/hospital-phaser/style.css",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2
+          },
+          {
+            "name": "/dist/hospital-phaser/game.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.4000000059604645
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.0999999940395355
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.0999999940395355
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.300000011920929
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 300,
+            "encodedBodySize": 3550
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "idle": {
+        "elapsedMs": 3006.5999999940395,
+        "drawCalls": 157,
+        "drawSubmissionMs": 0.9000000357627869
+      },
+      "navigation": {
+        "elapsedMs": 4002.199999988079,
+        "scheduledFrames": 237,
+        "p50FrameIntervalMs": 16.699999999999818,
+        "p95FrameIntervalMs": 16.800000000000182,
+        "over33ms": 1,
+        "drawCalls": 238,
+        "drawSubmissionMs": 1.3999999165534973
+      },
+      "heapBytes": 5223844,
+      "renderer": {
+        "phaser": "4.2.1",
+        "backend": "WebGL",
+        "frameMode": "continuous",
+        "loopRunning": true,
+        "gpu": {
+          "vendor": "Google Inc. (Google)",
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+          "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+          "maxTextureSize": 8192
+        },
+        "renderEvents": 409,
+        "renderMs": 88.9000001847744,
+        "textureKeys": [
+          "h32-ground",
+          "h32-hospital",
+          "h32-zombie",
+          "h32-shadow"
+        ],
+        "objectCount": 5,
+        "inputPlugins": {
+          "mouse": false,
+          "touch": false,
+          "keyboard": false
+        },
+        "actorBounds": {
+          "x": 641.98,
+          "y": 554.29,
+          "width": 111.625,
+          "height": 127.11
+        },
+        "transforms": {
+          "ground": {
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "originX": 0,
+            "originY": 0,
+            "depth": 0,
+            "filter": 9729,
+            "textureWidth": 1536,
+            "textureHeight": 1024
+          },
+          "hospital": {
+            "x": 780,
+            "y": 670,
+            "scaleX": 0.65,
+            "scaleY": 0.65,
+            "originX": 0.5023923444976076,
+            "originY": 0.9154704944178629,
+            "depth": 2,
+            "filter": 9729,
+            "textureWidth": 1254,
+            "textureHeight": 1254
+          },
+          "zombie": {
+            "x": 710,
+            "y": 670,
+            "scaleX": 0.095,
+            "scaleY": 0.095,
+            "originX": 0.6093617021276596,
+            "originY": 0.9103139013452914,
+            "depth": 3,
+            "filter": 9729,
+            "textureWidth": 1175,
+            "textureHeight": 1338
+          },
+          "shadow": {
+            "x": 703,
+            "y": 669,
+            "scaleX": 0.296875,
+            "scaleY": 0.15625,
+            "originX": 0.5,
+            "originY": 0.5,
+            "depth": 1,
+            "filter": 9729,
+            "textureWidth": 128,
+            "textureHeight": 64
+          }
+        }
+      },
+      "errors": []
+    },
+    {
+      "configuration": "Canvas",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "trial": 2,
+      "cold": {
+        "readyMs": 206.7999999821186,
+        "domContentLoadedMs": 76.69999998807907,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 4089,
+            "encodedBodySize": 3789,
+            "durationMs": 16.69999998807907
+          },
+          {
+            "name": "/prototypes/hospital/main.mjs",
+            "transferSize": 4336,
+            "encodedBodySize": 4036,
+            "durationMs": 13.099999994039536
+          },
+          {
+            "name": "/prototypes/hospital/scene.mjs",
+            "transferSize": 1770,
+            "encodedBodySize": 1470,
+            "durationMs": 8.400000005960464
+          },
+          {
+            "name": "/prototypes/hospital/camera.mjs",
+            "transferSize": 1718,
+            "encodedBodySize": 1418,
+            "durationMs": 8.600000023841858
+          },
+          {
+            "name": "/prototypes/hospital/renderer.mjs",
+            "transferSize": 3215,
+            "encodedBodySize": 2915,
+            "durationMs": 8.5
+          },
+          {
+            "name": "/prototypes/hospital/controls.mjs",
+            "transferSize": 3563,
+            "encodedBodySize": 3263,
+            "durationMs": 8.800000011920929
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 3270842,
+            "encodedBodySize": 3270542,
+            "durationMs": 25.900000005960464
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 2392225,
+            "encodedBodySize": 2391925,
+            "durationMs": 23.30000001192093
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 816524,
+            "encodedBodySize": 816224,
+            "durationMs": 17
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 3568,
+            "encodedBodySize": 3268
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "warm": {
+        "readyMs": 44.29999998211861,
+        "domContentLoadedMs": 25.69999998807907,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.5
+          },
+          {
+            "name": "/prototypes/hospital/main.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.699999988079071
+          },
+          {
+            "name": "/prototypes/hospital/scene.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 3.7000000178813934
+          },
+          {
+            "name": "/prototypes/hospital/camera.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 3.7999999821186066
+          },
+          {
+            "name": "/prototypes/hospital/renderer.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 4
+          },
+          {
+            "name": "/prototypes/hospital/controls.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 4.199999988079071
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 1.2999999821186066
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 1.4000000059604645
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 1.600000023841858
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 300,
+            "encodedBodySize": 3268
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "idle": {
+        "elapsedMs": 3002.4000000059605,
+        "drawCalls": 0,
+        "drawSubmissionMs": 0
+      },
+      "navigation": {
+        "elapsedMs": 4014.800000011921,
+        "scheduledFrames": 241,
+        "p50FrameIntervalMs": 16.699999999999818,
+        "p95FrameIntervalMs": 16.800000000000182,
+        "over33ms": 0,
+        "drawCalls": 723,
+        "drawSubmissionMs": 6.800000011920929
+      },
+      "heapBytes": 1692460,
+      "renderer": null,
+      "errors": []
+    },
+    {
+      "configuration": "Phaser-continuous",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "trial": 3,
+      "cold": {
+        "readyMs": 393.59999999403954,
+        "domContentLoadedMs": 175.59999999403954,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 4089,
+            "encodedBodySize": 3789,
+            "durationMs": 13.5
+          },
+          {
+            "name": "/prototypes/hospital-phaser/style.css",
+            "transferSize": 600,
+            "encodedBodySize": 300,
+            "durationMs": 13.900000005960464
+          },
+          {
+            "name": "/dist/hospital-phaser/game.mjs",
+            "transferSize": 1409648,
+            "encodedBodySize": 1409348,
+            "durationMs": 18.400000005960464
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 3270842,
+            "encodedBodySize": 3270542,
+            "durationMs": 19.80000001192093
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 816524,
+            "encodedBodySize": 816224,
+            "durationMs": 5.5999999940395355
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 2392225,
+            "encodedBodySize": 2391925,
+            "durationMs": 17
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 3850,
+            "encodedBodySize": 3550
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "warm": {
+        "readyMs": 256.80000001192093,
+        "domContentLoadedMs": 90.09999999403954,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.5
+          },
+          {
+            "name": "/prototypes/hospital-phaser/style.css",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.7000000178813934
+          },
+          {
+            "name": "/dist/hospital-phaser/game.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 3.300000011920929
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 1.800000011920929
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.4000000059604645
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.699999988079071
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 300,
+            "encodedBodySize": 3550
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "idle": {
+        "elapsedMs": 3012.199999988079,
+        "drawCalls": 169,
+        "drawSubmissionMs": 0.30000001192092896
+      },
+      "navigation": {
+        "elapsedMs": 4026.5,
+        "scheduledFrames": 240,
+        "p50FrameIntervalMs": 16.699999999999818,
+        "p95FrameIntervalMs": 16.799999999999272,
+        "over33ms": 0,
+        "drawCalls": 241,
+        "drawSubmissionMs": 1.5999999344348907
+      },
+      "heapBytes": 5223228,
+      "renderer": {
+        "phaser": "4.2.1",
+        "backend": "WebGL",
+        "frameMode": "continuous",
+        "loopRunning": true,
+        "gpu": {
+          "vendor": "Google Inc. (Google)",
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+          "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+          "maxTextureSize": 8192
+        },
+        "renderEvents": 423,
+        "renderMs": 88.8999996483326,
+        "textureKeys": [
+          "h32-ground",
+          "h32-hospital",
+          "h32-zombie",
+          "h32-shadow"
+        ],
+        "objectCount": 5,
+        "inputPlugins": {
+          "mouse": false,
+          "touch": false,
+          "keyboard": false
+        },
+        "actorBounds": {
+          "x": 641.98,
+          "y": 554.29,
+          "width": 111.625,
+          "height": 127.11
+        },
+        "transforms": {
+          "ground": {
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "originX": 0,
+            "originY": 0,
+            "depth": 0,
+            "filter": 9729,
+            "textureWidth": 1536,
+            "textureHeight": 1024
+          },
+          "hospital": {
+            "x": 780,
+            "y": 670,
+            "scaleX": 0.65,
+            "scaleY": 0.65,
+            "originX": 0.5023923444976076,
+            "originY": 0.9154704944178629,
+            "depth": 2,
+            "filter": 9729,
+            "textureWidth": 1254,
+            "textureHeight": 1254
+          },
+          "zombie": {
+            "x": 710,
+            "y": 670,
+            "scaleX": 0.095,
+            "scaleY": 0.095,
+            "originX": 0.6093617021276596,
+            "originY": 0.9103139013452914,
+            "depth": 3,
+            "filter": 9729,
+            "textureWidth": 1175,
+            "textureHeight": 1338
+          },
+          "shadow": {
+            "x": 703,
+            "y": 669,
+            "scaleX": 0.296875,
+            "scaleY": 0.15625,
+            "originX": 0.5,
+            "originY": 0.5,
+            "depth": 1,
+            "filter": 9729,
+            "textureWidth": 128,
+            "textureHeight": 64
+          }
+        }
+      },
+      "errors": []
+    },
+    {
+      "configuration": "Canvas",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "trial": 3,
+      "cold": {
+        "readyMs": 224.09999999403954,
+        "domContentLoadedMs": 111.59999999403954,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 4089,
+            "encodedBodySize": 3789,
+            "durationMs": 16.30000001192093
+          },
+          {
+            "name": "/prototypes/hospital/main.mjs",
+            "transferSize": 4336,
+            "encodedBodySize": 4036,
+            "durationMs": 16.19999998807907
+          },
+          {
+            "name": "/prototypes/hospital/scene.mjs",
+            "transferSize": 1770,
+            "encodedBodySize": 1470,
+            "durationMs": 16.5
+          },
+          {
+            "name": "/prototypes/hospital/camera.mjs",
+            "transferSize": 1718,
+            "encodedBodySize": 1418,
+            "durationMs": 19.5
+          },
+          {
+            "name": "/prototypes/hospital/renderer.mjs",
+            "transferSize": 3215,
+            "encodedBodySize": 2915,
+            "durationMs": 19.5
+          },
+          {
+            "name": "/prototypes/hospital/controls.mjs",
+            "transferSize": 3563,
+            "encodedBodySize": 3263,
+            "durationMs": 18.900000005960464
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 3270842,
+            "encodedBodySize": 3270542,
+            "durationMs": 41.099999994039536
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 2392225,
+            "encodedBodySize": 2391925,
+            "durationMs": 34.29999998211861
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 816524,
+            "encodedBodySize": 816224,
+            "durationMs": 12.300000011920929
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 3568,
+            "encodedBodySize": 3268
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "warm": {
+        "readyMs": 52,
+        "domContentLoadedMs": 25.599999994039536,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2
+          },
+          {
+            "name": "/prototypes/hospital/main.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.0999999940395355
+          },
+          {
+            "name": "/prototypes/hospital/scene.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.800000011920929
+          },
+          {
+            "name": "/prototypes/hospital/camera.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.9000000059604645
+          },
+          {
+            "name": "/prototypes/hospital/renderer.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 3.2000000178813934
+          },
+          {
+            "name": "/prototypes/hospital/controls.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 3.9000000059604645
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 6.9000000059604645
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 7
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 7.100000023841858
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 300,
+            "encodedBodySize": 3268
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "idle": {
+        "elapsedMs": 3011.899999976158,
+        "drawCalls": 0,
+        "drawSubmissionMs": 0
+      },
+      "navigation": {
+        "elapsedMs": 4017.2999999821186,
+        "scheduledFrames": 241,
+        "p50FrameIntervalMs": 16.699999999999818,
+        "p95FrameIntervalMs": 16.799999999999727,
+        "over33ms": 0,
+        "drawCalls": 723,
+        "drawSubmissionMs": 7.599999934434891
+      },
+      "heapBytes": 1687336,
+      "renderer": null,
+      "errors": []
+    },
+    {
+      "configuration": "Phaser-demand",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "trial": 3,
+      "cold": {
+        "readyMs": 398.80000001192093,
+        "domContentLoadedMs": 183,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 4089,
+            "encodedBodySize": 3789,
+            "durationMs": 21.19999998807907
+          },
+          {
+            "name": "/prototypes/hospital-phaser/style.css",
+            "transferSize": 600,
+            "encodedBodySize": 300,
+            "durationMs": 21.400000005960464
+          },
+          {
+            "name": "/dist/hospital-phaser/game.mjs",
+            "transferSize": 1409648,
+            "encodedBodySize": 1409348,
+            "durationMs": 27.100000023841858
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 3270842,
+            "encodedBodySize": 3270542,
+            "durationMs": 38.20000001788139
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 2392225,
+            "encodedBodySize": 2391925,
+            "durationMs": 34.69999998807907
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 816524,
+            "encodedBodySize": 816224,
+            "durationMs": 15.699999988079071
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 3850,
+            "encodedBodySize": 3550
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "warm": {
+        "readyMs": 232.40000000596046,
+        "domContentLoadedMs": 84.7000000178814,
+        "resources": [
+          {
+            "name": "/prototypes/hospital/style.css",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 3.4000000059604645
+          },
+          {
+            "name": "/prototypes/hospital-phaser/style.css",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 3.7999999821186066
+          },
+          {
+            "name": "/dist/hospital-phaser/game.mjs",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 4.299999982118607
+          },
+          {
+            "name": "/assets/prototipo-hospital/suelo-nevado.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 1.699999988079071
+          },
+          {
+            "name": "/assets/prototipo-hospital/hospital.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.0999999940395355
+          },
+          {
+            "name": "/assets/prototipo-hospital/zombi.png",
+            "transferSize": 300,
+            "encodedBodySize": 0,
+            "durationMs": 2.800000011920929
+          }
+        ],
+        "navigation": [
+          {
+            "transferSize": 300,
+            "encodedBodySize": 3550
+          }
+        ],
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+      },
+      "idle": {
+        "elapsedMs": 3001.800000011921,
+        "drawCalls": 0,
+        "drawSubmissionMs": 0
+      },
+      "navigation": {
+        "elapsedMs": 4023.800000011921,
+        "scheduledFrames": 241,
+        "p50FrameIntervalMs": 16.699999999999818,
+        "p95FrameIntervalMs": 16.799999999999272,
+        "over33ms": 0,
+        "drawCalls": 241,
+        "drawSubmissionMs": 0.800000011920929
+      },
+      "heapBytes": 5011672,
+      "renderer": {
+        "phaser": "4.2.1",
+        "backend": "WebGL",
+        "frameMode": "demand",
+        "loopRunning": false,
+        "gpu": {
+          "vendor": "Google Inc. (Google)",
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+          "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+          "maxTextureSize": 8192
+        },
+        "renderEvents": 243,
+        "renderMs": 48.59999996423721,
+        "textureKeys": [
+          "h32-ground",
+          "h32-hospital",
+          "h32-zombie",
+          "h32-shadow"
+        ],
+        "objectCount": 5,
+        "inputPlugins": {
+          "mouse": false,
+          "touch": false,
+          "keyboard": false
+        },
+        "actorBounds": {
+          "x": 641.98,
+          "y": 554.29,
+          "width": 111.625,
+          "height": 127.11
+        },
+        "transforms": {
+          "ground": {
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "originX": 0,
+            "originY": 0,
+            "depth": 0,
+            "filter": 9729,
+            "textureWidth": 1536,
+            "textureHeight": 1024
+          },
+          "hospital": {
+            "x": 780,
+            "y": 670,
+            "scaleX": 0.65,
+            "scaleY": 0.65,
+            "originX": 0.5023923444976076,
+            "originY": 0.9154704944178629,
+            "depth": 2,
+            "filter": 9729,
+            "textureWidth": 1254,
+            "textureHeight": 1254
+          },
+          "zombie": {
+            "x": 710,
+            "y": 670,
+            "scaleX": 0.095,
+            "scaleY": 0.095,
+            "originX": 0.6093617021276596,
+            "originY": 0.9103139013452914,
+            "depth": 3,
+            "filter": 9729,
+            "textureWidth": 1175,
+            "textureHeight": 1338
+          },
+          "shadow": {
+            "x": 703,
+            "y": 669,
+            "scaleX": 0.296875,
+            "scaleY": 0.15625,
+            "originX": 0.5,
+            "originY": 0.5,
+            "depth": 1,
+            "filter": 9729,
+            "textureWidth": 128,
+            "textureHeight": 64
+          }
+        }
+      },
+      "errors": []
+    }
+  ],
+  "passed": true
+}

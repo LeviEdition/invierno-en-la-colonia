@@ -1,0 +1,3480 @@
+{
+  "browser": "154.0.8037.57",
+  "node": "v24.19.0",
+  "os": "linux",
+  "cpu": "INTEL(R) XEON(R) PLATINUM 8573C",
+  "physicalMobile": false,
+  "method": "Secuencial. Misma partida/cámara/DPR por perfil. Calentamiento500ms y dos muestras de1500ms. Diferencia de POST_RENDER y métricas CDP TaskDuration/heap; no VRAM ni rendimiento de teléfono. Video en contexto aparte.",
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "errors": [],
+      "localities": [
+        {
+          "id": "escuela",
+          "camera": {
+            "zoom": 1.5,
+            "x": -62,
+            "y": 0,
+            "minZoom": 0.6567481402763018,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 523,
+            "y": 255
+          }
+        },
+        {
+          "id": "biblioteca",
+          "camera": {
+            "zoom": 1.5,
+            "x": -1360.25,
+            "y": 0,
+            "minZoom": 0.6567481402763018,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 522.25,
+            "y": 270
+          }
+        },
+        {
+          "id": "hospital",
+          "camera": {
+            "zoom": 1.5,
+            "x": 0,
+            "y": -262.5,
+            "minZoom": 0.6567481402763018,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 420,
+            "y": 319.5
+          }
+        },
+        {
+          "id": "colonia",
+          "camera": {
+            "zoom": 1.4276048714479026,
+            "x": -659.5534506089309,
+            "y": -285.5974289580514,
+            "minZoom": 0.6567481402763018,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 529.6414073071719,
+            "y": 301.1481732070365
+          }
+        },
+        {
+          "id": "supermercado",
+          "camera": {
+            "zoom": 1.5,
+            "x": -1451.5,
+            "y": -304.5,
+            "minZoom": 0.6567481402763018,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 653,
+            "y": 324
+          }
+        },
+        {
+          "id": "gasolinera",
+          "camera": {
+            "zoom": 1.5,
+            "x": 0,
+            "y": -644.25,
+            "minZoom": 0.6567481402763018,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 457.5,
+            "y": 332.25
+          }
+        },
+        {
+          "id": "comisaria",
+          "camera": {
+            "zoom": 1.5,
+            "x": -1420.25,
+            "y": -668.25,
+            "minZoom": 0.6567481402763018,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 523.75,
+            "y": 321.75
+          }
+        }
+      ],
+      "profiles": [
+        {
+          "profile": "off",
+          "camera": {
+            "zoom": 0.8168761220825853,
+            "x": -155,
+            "y": -30.003590664272906,
+            "minZoom": 0.6567481402763018,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1055,
+            "height": 618,
+            "dpr": 1
+          },
+          "samples": [
+            {
+              "seconds": 1.5925,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "taskSeconds": 0.069326,
+              "heapBytes": 15554344
+            },
+            {
+              "seconds": 1.5857999999999302,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "taskSeconds": 0.04530400000000001,
+              "heapBytes": 10973224
+            }
+          ],
+          "environment": {
+            "updates": 18,
+            "quadTopologyValid": true,
+            "partitionError": 0,
+            "groups": [],
+            "dynamicVertices": 0,
+            "maxVertexOffset": 0,
+            "meshVertices": 0,
+            "triangles": 0,
+            "interactiveObjects": 0,
+            "lights": [],
+            "runtimeTextureBytes": 0
+          },
+          "textures": {
+            "map": {
+              "width": 1671,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          }
+        },
+        {
+          "profile": "soft",
+          "camera": {
+            "zoom": 0.8168761220825853,
+            "x": -155,
+            "y": -30.003590664272906,
+            "minZoom": 0.6567481402763018,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1055,
+            "height": 618,
+            "dpr": 1
+          },
+          "samples": [
+            {
+              "seconds": 1.8872999999999303,
+              "renderEvents": 11,
+              "rendersPerSecond": 5.828432151751394,
+              "taskSeconds": 1.9082449999999997,
+              "heapBytes": 12691660
+            },
+            {
+              "seconds": 1.69329999999993,
+              "renderEvents": 9,
+              "rendersPerSecond": 5.315065257190321,
+              "taskSeconds": 2.02619,
+              "heapBytes": 12722020
+            }
+          ],
+          "environment": {
+            "updates": 50,
+            "quadTopologyValid": true,
+            "partitionError": 0,
+            "groups": [],
+            "dynamicVertices": 0,
+            "maxVertexOffset": 0,
+            "meshVertices": 0,
+            "triangles": 0,
+            "interactiveObjects": 0,
+            "lights": [],
+            "runtimeTextureBytes": 0
+          },
+          "textures": {
+            "map": {
+              "width": 1671,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          }
+        },
+        {
+          "profile": "storm",
+          "camera": {
+            "zoom": 0.8168761220825853,
+            "x": -155,
+            "y": -30.003590664272906,
+            "minZoom": 0.6567481402763018,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1055,
+            "height": 618,
+            "dpr": 1
+          },
+          "samples": [
+            {
+              "seconds": 1.6894000000000233,
+              "renderEvents": 9,
+              "rendersPerSecond": 5.327335148573384,
+              "taskSeconds": 2.1453559999999996,
+              "heapBytes": 11444876
+            },
+            {
+              "seconds": 1.6715999999999767,
+              "renderEvents": 9,
+              "rendersPerSecond": 5.384063173007972,
+              "taskSeconds": 2.1352639999999994,
+              "heapBytes": 10904224
+            }
+          ],
+          "environment": {
+            "updates": 84,
+            "quadTopologyValid": true,
+            "partitionError": 0,
+            "groups": [],
+            "dynamicVertices": 0,
+            "maxVertexOffset": 0,
+            "meshVertices": 0,
+            "triangles": 0,
+            "interactiveObjects": 0,
+            "lights": [],
+            "runtimeTextureBytes": 0
+          },
+          "textures": {
+            "map": {
+              "width": 1671,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          }
+        }
+      ],
+      "integratedVegetation": true,
+      "panPinchKeyboard": true,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "controlledVisibility": true,
+      "restartsWithoutAccumulation": true,
+      "maximum": {
+        "synthetic": true,
+        "characters": 36,
+        "zombies": 17,
+        "barricades": 16,
+        "overflow": 0
+      }
+    },
+    {
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "errors": [],
+      "localities": [
+        {
+          "id": "escuela",
+          "camera": {
+            "zoom": 1.5,
+            "x": 0,
+            "y": 0,
+            "minZoom": 0.9883103081827843,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 585,
+            "y": 255
+          }
+        },
+        {
+          "id": "biblioteca",
+          "camera": {
+            "zoom": 1.5,
+            "x": -896.5,
+            "y": 0,
+            "minZoom": 0.9883103081827843,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 986,
+            "y": 270
+          }
+        },
+        {
+          "id": "hospital",
+          "camera": {
+            "zoom": 1.5,
+            "x": 0,
+            "y": -106.5,
+            "minZoom": 0.9883103081827843,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 420,
+            "y": 475.5
+          }
+        },
+        {
+          "id": "colonia",
+          "camera": {
+            "zoom": 1.5,
+            "x": -442.25,
+            "y": -159.75,
+            "minZoom": 0.9883103081827843,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 807.25,
+            "y": 456.75
+          }
+        },
+        {
+          "id": "supermercado",
+          "camera": {
+            "zoom": 1.5,
+            "x": -896.5,
+            "y": -148.5,
+            "minZoom": 0.9883103081827843,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 1208,
+            "y": 480
+          }
+        },
+        {
+          "id": "gasolinera",
+          "camera": {
+            "zoom": 1.5,
+            "x": 0,
+            "y": -481.5,
+            "minZoom": 0.9883103081827843,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 457.5,
+            "y": 495
+          }
+        },
+        {
+          "id": "comisaria",
+          "camera": {
+            "zoom": 1.5,
+            "x": -896.5,
+            "y": -481.5,
+            "minZoom": 0.9883103081827843,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 1047.5,
+            "y": 508.5
+          }
+        }
+      ],
+      "profiles": [
+        {
+          "profile": "off",
+          "camera": {
+            "zoom": 1.1490125673249552,
+            "x": -155,
+            "y": -11.840215439856365,
+            "minZoom": 0.9883103081827843,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1610,
+            "height": 930,
+            "dpr": 1
+          },
+          "samples": [
+            {
+              "seconds": 1.5769000000001396,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "taskSeconds": 0.0255,
+              "heapBytes": 18223248
+            },
+            {
+              "seconds": 1.535,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "taskSeconds": 0.027025999999999994,
+              "heapBytes": 12961148
+            }
+          ],
+          "environment": {
+            "updates": 18,
+            "quadTopologyValid": true,
+            "partitionError": 0,
+            "groups": [],
+            "dynamicVertices": 0,
+            "maxVertexOffset": 0,
+            "meshVertices": 0,
+            "triangles": 0,
+            "interactiveObjects": 0,
+            "lights": [],
+            "runtimeTextureBytes": 0
+          },
+          "textures": {
+            "map": {
+              "width": 1671,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          }
+        },
+        {
+          "profile": "soft",
+          "camera": {
+            "zoom": 1.1490125673249552,
+            "x": -155,
+            "y": -11.840215439856365,
+            "minZoom": 0.9883103081827843,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1610,
+            "height": 930,
+            "dpr": 1
+          },
+          "samples": [
+            {
+              "seconds": 1.6928000000000465,
+              "renderEvents": 9,
+              "rendersPerSecond": 5.316635160680383,
+              "taskSeconds": 1.7910620000000002,
+              "heapBytes": 13837040
+            },
+            {
+              "seconds": 1.6885,
+              "renderEvents": 10,
+              "rendersPerSecond": 5.922416345869115,
+              "taskSeconds": 1.8025380000000002,
+              "heapBytes": 14768560
+            }
+          ],
+          "environment": {
+            "updates": 45,
+            "quadTopologyValid": true,
+            "partitionError": 0,
+            "groups": [],
+            "dynamicVertices": 0,
+            "maxVertexOffset": 0,
+            "meshVertices": 0,
+            "triangles": 0,
+            "interactiveObjects": 0,
+            "lights": [],
+            "runtimeTextureBytes": 0
+          },
+          "textures": {
+            "map": {
+              "width": 1671,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          }
+        },
+        {
+          "profile": "storm",
+          "camera": {
+            "zoom": 1.1490125673249552,
+            "x": -155,
+            "y": -11.840215439856365,
+            "minZoom": 0.9883103081827843,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1610,
+            "height": 930,
+            "dpr": 1
+          },
+          "samples": [
+            {
+              "seconds": 1.7874000000001398,
+              "renderEvents": 8,
+              "rendersPerSecond": 4.4757748685237635,
+              "taskSeconds": 2.2619999999999996,
+              "heapBytes": 19839764
+            },
+            {
+              "seconds": 1.6890999999998604,
+              "renderEvents": 8,
+              "rendersPerSecond": 4.736250074004299,
+              "taskSeconds": 2.148758000000001,
+              "heapBytes": 17441100
+            }
+          ],
+          "environment": {
+            "updates": 77,
+            "quadTopologyValid": true,
+            "partitionError": 0,
+            "groups": [],
+            "dynamicVertices": 0,
+            "maxVertexOffset": 0,
+            "meshVertices": 0,
+            "triangles": 0,
+            "interactiveObjects": 0,
+            "lights": [],
+            "runtimeTextureBytes": 0
+          },
+          "textures": {
+            "map": {
+              "width": 1671,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          }
+        }
+      ],
+      "integratedVegetation": true,
+      "panPinchKeyboard": true,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "controlledVisibility": true,
+      "restartsWithoutAccumulation": true,
+      "maximum": {
+        "synthetic": true,
+        "characters": 36,
+        "zombies": 17,
+        "barricades": 16,
+        "overflow": 0
+      }
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "errors": [],
+      "localities": [
+        {
+          "id": "escuela",
+          "camera": {
+            "zoom": 1.2352941176470589,
+            "x": -59.470588235294144,
+            "y": -45.70588235294119,
+            "minZoom": 0.5098743267504489,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 422.29411764705884,
+            "y": 164.2941176470588
+          }
+        },
+        {
+          "id": "biblioteca",
+          "camera": {
+            "zoom": 1.176,
+            "x": -1053.9959999999999,
+            "y": -51.744,
+            "minZoom": 0.5098743267504489,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 421.884,
+            "y": 159.93599999999998
+          }
+        },
+        {
+          "id": "hospital",
+          "camera": {
+            "zoom": 1.0352112676056338,
+            "x": 0,
+            "y": -247.41549295774644,
+            "minZoom": 0.5098743267504489,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 289.85915492957747,
+            "y": 154.24647887323948
+          }
+        },
+        {
+          "id": "colonia",
+          "camera": {
+            "zoom": 0.7716535433070866,
+            "x": -215.6299212598425,
+            "y": -174.39370078740154,
+            "minZoom": 0.5098743267504489,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 427.1574803149606,
+            "y": 142.75590551181102
+          }
+        },
+        {
+          "id": "supermercado",
+          "camera": {
+            "zoom": 1.0808823529411764,
+            "x": -954.1544117647059,
+            "y": -295.08088235294116,
+            "minZoom": 0.5098743267504489,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 562.3235294117646,
+            "y": 157.80882352941177
+          }
+        },
+        {
+          "id": "gasolinera",
+          "camera": {
+            "zoom": 1.1902834008097165,
+            "x": 0,
+            "y": -609.4251012145749,
+            "minZoom": 0.5098743267504489,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 363.03643724696354,
+            "y": 165.44939271255055
+          }
+        },
+        {
+          "id": "comisaria",
+          "camera": {
+            "zoom": 1.1902834008097165,
+            "x": -1119.582995951417,
+            "y": -628.4696356275304,
+            "minZoom": 0.5098743267504489,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 423.0242914979756,
+            "y": 157.1174089068826
+          }
+        }
+      ],
+      "profiles": [
+        {
+          "profile": "off",
+          "camera": {
+            "zoom": 0.5098743267504489,
+            "x": 0,
+            "y": -64.59784560143629,
+            "minZoom": 0.5098743267504489,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 852,
+            "height": 294,
+            "dpr": 2
+          },
+          "samples": [
+            {
+              "seconds": 1.5500999999998604,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "taskSeconds": 0.03261,
+              "heapBytes": 20305740
+            },
+            {
+              "seconds": 1.5613000000000465,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "taskSeconds": 0.020374999999999997,
+              "heapBytes": 15175132
+            }
+          ],
+          "environment": {
+            "updates": 23,
+            "quadTopologyValid": true,
+            "partitionError": 0,
+            "groups": [],
+            "dynamicVertices": 0,
+            "maxVertexOffset": 0,
+            "meshVertices": 0,
+            "triangles": 0,
+            "interactiveObjects": 0,
+            "lights": [],
+            "runtimeTextureBytes": 0
+          },
+          "textures": {
+            "map": {
+              "width": 1671,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          }
+        },
+        {
+          "profile": "soft",
+          "camera": {
+            "zoom": 0.5098743267504489,
+            "x": 0,
+            "y": -64.59784560143629,
+            "minZoom": 0.5098743267504489,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 852,
+            "height": 294,
+            "dpr": 2
+          },
+          "samples": [
+            {
+              "seconds": 1.5911000000000932,
+              "renderEvents": 19,
+              "rendersPerSecond": 11.94142417195581,
+              "taskSeconds": 1.5491009999999998,
+              "heapBytes": 16983424
+            },
+            {
+              "seconds": 1.5995,
+              "renderEvents": 20,
+              "rendersPerSecond": 12.503907471084714,
+              "taskSeconds": 1.7626589999999998,
+              "heapBytes": 21449828
+            }
+          ],
+          "environment": {
+            "updates": 74,
+            "quadTopologyValid": true,
+            "partitionError": 0,
+            "groups": [],
+            "dynamicVertices": 0,
+            "maxVertexOffset": 0,
+            "meshVertices": 0,
+            "triangles": 0,
+            "interactiveObjects": 0,
+            "lights": [],
+            "runtimeTextureBytes": 0
+          },
+          "textures": {
+            "map": {
+              "width": 1671,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          }
+        },
+        {
+          "profile": "storm",
+          "camera": {
+            "zoom": 0.5098743267504489,
+            "x": 0,
+            "y": -64.59784560143629,
+            "minZoom": 0.5098743267504489,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 852,
+            "height": 294,
+            "dpr": 2
+          },
+          "samples": [
+            {
+              "seconds": 1.6348999999999068,
+              "renderEvents": 16,
+              "rendersPerSecond": 9.786531286317764,
+              "taskSeconds": 1.8321129999999997,
+              "heapBytes": 15071548
+            },
+            {
+              "seconds": 1.669399999999907,
+              "renderEvents": 11,
+              "rendersPerSecond": 6.589193722295803,
+              "taskSeconds": 1.966108000000001,
+              "heapBytes": 18499864
+            }
+          ],
+          "environment": {
+            "updates": 120,
+            "quadTopologyValid": true,
+            "partitionError": 0,
+            "groups": [],
+            "dynamicVertices": 0,
+            "maxVertexOffset": 0,
+            "meshVertices": 0,
+            "triangles": 0,
+            "interactiveObjects": 0,
+            "lights": [],
+            "runtimeTextureBytes": 0
+          },
+          "textures": {
+            "map": {
+              "width": 1671,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          }
+        }
+      ],
+      "integratedVegetation": true,
+      "panPinchKeyboard": true,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "controlledVisibility": true,
+      "restartsWithoutAccumulation": true,
+      "maximum": {
+        "synthetic": true,
+        "characters": 36,
+        "zombies": 17,
+        "barricades": 16,
+        "overflow": 0
+      }
+    },
+    {
+      "viewport": {
+        "width": 740,
+        "height": 360
+      },
+      "errors": [],
+      "localities": [
+        {
+          "id": "escuela",
+          "camera": {
+            "zoom": 1.096638655462185,
+            "x": -60.97899159663871,
+            "y": -40.575630252100865,
+            "minZoom": 0.4428485936564931,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 366.71008403361344,
+            "y": 145.85294117647058
+          }
+        },
+        {
+          "id": "biblioteca",
+          "camera": {
+            "zoom": 1.044,
+            "x": -943.874,
+            "y": -45.93600000000001,
+            "minZoom": 0.4428485936564931,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 366.346,
+            "y": 141.984
+          }
+        },
+        {
+          "id": "hospital",
+          "camera": {
+            "zoom": 0.9190140845070423,
+            "x": 0,
+            "y": -219.6443661971831,
+            "minZoom": 0.4428485936564931,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 257.32394366197184,
+            "y": 136.9330985915493
+          }
+        },
+        {
+          "id": "colonia",
+          "camera": {
+            "zoom": 0.6850393700787402,
+            "x": -199.61023622047242,
+            "y": -154.81889763779526,
+            "minZoom": 0.4428485936564931,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 371.0275590551181,
+            "y": 126.73228346456693
+          }
+        },
+        {
+          "id": "supermercado",
+          "camera": {
+            "zoom": 0.9595588235294118,
+            "x": -863.4227941176471,
+            "y": -261.95955882352945,
+            "minZoom": 0.4428485936564931,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 482.83823529411757,
+            "y": 140.0955882352941
+          }
+        },
+        {
+          "id": "gasolinera",
+          "camera": {
+            "zoom": 1.05668016194332,
+            "x": 0,
+            "y": -541.0202429149798,
+            "minZoom": 0.4428485936564931,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 322.2874493927126,
+            "y": 146.87854251012152
+          }
+        },
+        {
+          "id": "comisaria",
+          "camera": {
+            "zoom": 1.05668016194332,
+            "x": -1002.099190283401,
+            "y": -557.9271255060729,
+            "minZoom": 0.4428485936564931,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 367.3582995951417,
+            "y": 139.48178137651826
+          }
+        }
+      ],
+      "profiles": [
+        {
+          "profile": "off",
+          "camera": {
+            "zoom": 0.4428485936564931,
+            "x": 0,
+            "y": -53.28216636744463,
+            "minZoom": 0.4428485936564931,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 740,
+            "height": 261,
+            "dpr": 2
+          },
+          "samples": [
+            {
+              "seconds": 1.5280999999998603,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "taskSeconds": 0.018968,
+              "heapBytes": 16072136
+            },
+            {
+              "seconds": 1.5285,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "taskSeconds": 0.02092,
+              "heapBytes": 18484200
+            }
+          ],
+          "environment": {
+            "updates": 15,
+            "quadTopologyValid": true,
+            "partitionError": 0,
+            "groups": [],
+            "dynamicVertices": 0,
+            "maxVertexOffset": 0,
+            "meshVertices": 0,
+            "triangles": 0,
+            "interactiveObjects": 0,
+            "lights": [],
+            "runtimeTextureBytes": 0
+          },
+          "textures": {
+            "map": {
+              "width": 1671,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          }
+        },
+        {
+          "profile": "soft",
+          "camera": {
+            "zoom": 0.4428485936564931,
+            "x": 0,
+            "y": -53.28216636744463,
+            "minZoom": 0.4428485936564931,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 740,
+            "height": 261,
+            "dpr": 2
+          },
+          "samples": [
+            {
+              "seconds": 1.568600000000093,
+              "renderEvents": 22,
+              "rendersPerSecond": 14.0252454417944,
+              "taskSeconds": 1.473377,
+              "heapBytes": 16661776
+            },
+            {
+              "seconds": 1.604,
+              "renderEvents": 23,
+              "rendersPerSecond": 14.339152119700747,
+              "taskSeconds": 1.6851060000000002,
+              "heapBytes": 16781052
+            }
+          ],
+          "environment": {
+            "updates": 74,
+            "quadTopologyValid": true,
+            "partitionError": 0,
+            "groups": [],
+            "dynamicVertices": 0,
+            "maxVertexOffset": 0,
+            "meshVertices": 0,
+            "triangles": 0,
+            "interactiveObjects": 0,
+            "lights": [],
+            "runtimeTextureBytes": 0
+          },
+          "textures": {
+            "map": {
+              "width": 1671,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          }
+        },
+        {
+          "profile": "storm",
+          "camera": {
+            "zoom": 0.4428485936564931,
+            "x": 0,
+            "y": -53.28216636744463,
+            "minZoom": 0.4428485936564931,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 740,
+            "height": 261,
+            "dpr": 2
+          },
+          "samples": [
+            {
+              "seconds": 1.6454000000001396,
+              "renderEvents": 21,
+              "rendersPerSecond": 12.762854017259157,
+              "taskSeconds": 1.8292780000000004,
+              "heapBytes": 20574840
+            },
+            {
+              "seconds": 1.6006999999999534,
+              "renderEvents": 20,
+              "rendersPerSecond": 12.494533641532193,
+              "taskSeconds": 1.7777409999999998,
+              "heapBytes": 17172456
+            }
+          ],
+          "environment": {
+            "updates": 134,
+            "quadTopologyValid": true,
+            "partitionError": 0,
+            "groups": [],
+            "dynamicVertices": 0,
+            "maxVertexOffset": 0,
+            "meshVertices": 0,
+            "triangles": 0,
+            "interactiveObjects": 0,
+            "lights": [],
+            "runtimeTextureBytes": 0
+          },
+          "textures": {
+            "map": {
+              "width": 1671,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          }
+        }
+      ],
+      "integratedVegetation": true,
+      "panPinchKeyboard": true,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "controlledVisibility": true,
+      "restartsWithoutAccumulation": true,
+      "maximum": {
+        "synthetic": true,
+        "characters": 36,
+        "zombies": 17,
+        "barricades": 16,
+        "overflow": 0
+      }
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "errors": [],
+      "localities": [
+        {
+          "id": "escuela",
+          "camera": {
+            "zoom": 1.1424418604651163,
+            "x": -252.47965116279073,
+            "y": 0,
+            "minZoom": 0.7449521785334751,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 193.0726744186046,
+            "y": 194.21511627906978
+          }
+        },
+        {
+          "id": "biblioteca",
+          "camera": {
+            "zoom": 1.3693379790940767,
+            "x": -1526.8118466898957,
+            "y": 0,
+            "minZoom": 0.7449521785334751,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 191.70731707317054,
+            "y": 246.4808362369338
+          }
+        },
+        {
+          "id": "hospital",
+          "camera": {
+            "zoom": 0.9562043795620438,
+            "x": -87.01459854014598,
+            "y": -13.813868613138709,
+            "minZoom": 0.7449521785334751,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 180.72262773722628,
+            "y": 357.1934306569343
+          }
+        },
+        {
+          "id": "colonia",
+          "camera": {
+            "zoom": 0.7449521785334751,
+            "x": -422.92773645058446,
+            "y": 0,
+            "minZoom": 0.7449521785334751,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 197.61742826780028,
+            "y": 306.1753453772582
+          }
+        },
+        {
+          "id": "supermercado",
+          "camera": {
+            "zoom": 0.9055299539170507,
+            "x": -1075.7695852534562,
+            "y": -19.861751152073737,
+            "minZoom": 0.7449521785334751,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 194.68894009216592,
+            "y": 359.5552995391705
+          }
+        },
+        {
+          "id": "gasolinera",
+          "camera": {
+            "zoom": 1.152492668621701,
+            "x": -184.39882697947218,
+            "y": -381.909090909091,
+            "minZoom": 0.7449521785334751,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 167.11143695014664,
+            "y": 368.3636363636364
+          }
+        },
+        {
+          "id": "comisaria",
+          "camera": {
+            "zoom": 1.1008403361344539,
+            "x": -1232.9411764705883,
+            "y": -334.89075630252114,
+            "minZoom": 0.7449521785334751,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 193.74789915966403,
+            "y": 391.6638655462184
+          }
+        }
+      ],
+      "profiles": [
+        {
+          "profile": "off",
+          "camera": {
+            "zoom": 0.7449521785334751,
+            "x": -425.9075451647184,
+            "y": 0,
+            "minZoom": 0.7449521785334751,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 393,
+            "height": 701,
+            "dpr": 2
+          },
+          "samples": [
+            {
+              "seconds": 1.5298999999999068,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "taskSeconds": 0.020071000000000002,
+              "heapBytes": 18615728
+            },
+            {
+              "seconds": 1.5286999999999535,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "taskSeconds": 0.021553000000000003,
+              "heapBytes": 21027596
+            }
+          ],
+          "environment": {
+            "updates": 18,
+            "quadTopologyValid": true,
+            "partitionError": 0,
+            "groups": [],
+            "dynamicVertices": 0,
+            "maxVertexOffset": 0,
+            "meshVertices": 0,
+            "triangles": 0,
+            "interactiveObjects": 0,
+            "lights": [],
+            "runtimeTextureBytes": 0
+          },
+          "textures": {
+            "map": {
+              "width": 1671,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          }
+        },
+        {
+          "profile": "soft",
+          "camera": {
+            "zoom": 0.7449521785334751,
+            "x": -425.9075451647184,
+            "y": 0,
+            "minZoom": 0.7449521785334751,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 393,
+            "height": 701,
+            "dpr": 2
+          },
+          "samples": [
+            {
+              "seconds": 1.6431999999999534,
+              "renderEvents": 18,
+              "rendersPerSecond": 10.954235637780252,
+              "taskSeconds": 1.658141,
+              "heapBytes": 21560260
+            },
+            {
+              "seconds": 1.6230999999998603,
+              "renderEvents": 9,
+              "rendersPerSecond": 5.544944858604383,
+              "taskSeconds": 1.8086799999999998,
+              "heapBytes": 22666580
+            }
+          ],
+          "environment": {
+            "updates": 57,
+            "quadTopologyValid": true,
+            "partitionError": 0,
+            "groups": [],
+            "dynamicVertices": 0,
+            "maxVertexOffset": 0,
+            "meshVertices": 0,
+            "triangles": 0,
+            "interactiveObjects": 0,
+            "lights": [],
+            "runtimeTextureBytes": 0
+          },
+          "textures": {
+            "map": {
+              "width": 1671,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          }
+        },
+        {
+          "profile": "storm",
+          "camera": {
+            "zoom": 0.7449521785334751,
+            "x": -425.9075451647184,
+            "y": 0,
+            "minZoom": 0.7449521785334751,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 393,
+            "height": 701,
+            "dpr": 2
+          },
+          "samples": [
+            {
+              "seconds": 1.683100000000093,
+              "renderEvents": 8,
+              "rendersPerSecond": 4.7531340977954715,
+              "taskSeconds": 2.1080250000000005,
+              "heapBytes": 19138340
+            },
+            {
+              "seconds": 1.802899999999907,
+              "renderEvents": 10,
+              "rendersPerSecond": 5.54661933551529,
+              "taskSeconds": 2.2379489999999986,
+              "heapBytes": 21733840
+            }
+          ],
+          "environment": {
+            "updates": 90,
+            "quadTopologyValid": true,
+            "partitionError": 0,
+            "groups": [],
+            "dynamicVertices": 0,
+            "maxVertexOffset": 0,
+            "meshVertices": 0,
+            "triangles": 0,
+            "interactiveObjects": 0,
+            "lights": [],
+            "runtimeTextureBytes": 0
+          },
+          "textures": {
+            "map": {
+              "width": 1671,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          }
+        }
+      ],
+      "integratedVegetation": true,
+      "panPinchKeyboard": true,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "controlledVisibility": true,
+      "restartsWithoutAccumulation": true,
+      "maximum": {
+        "synthetic": true,
+        "characters": 36,
+        "zombies": 17,
+        "barricades": 16,
+        "overflow": 0
+      }
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "errors": [],
+      "localities": [
+        {
+          "id": "escuela",
+          "camera": {
+            "zoom": 0.9302325581395349,
+            "x": -205.5813953488372,
+            "y": 0,
+            "minZoom": 0.5196599362380446,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 157.2093023255814,
+            "y": 158.13953488372093
+          }
+        },
+        {
+          "id": "biblioteca",
+          "camera": {
+            "zoom": 1.1149825783972125,
+            "x": -1243.205574912892,
+            "y": 0,
+            "minZoom": 0.5196599362380446,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 156.09756097560967,
+            "y": 200.69686411149826
+          }
+        },
+        {
+          "id": "hospital",
+          "camera": {
+            "zoom": 0.7785888077858881,
+            "x": -70.85158150851584,
+            "y": -52.1423357664234,
+            "minZoom": 0.5196599362380446,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 147.15328467153284,
+            "y": 249.95012165450117
+          }
+        },
+        {
+          "id": "colonia",
+          "camera": {
+            "zoom": 0.5196599362380446,
+            "x": -272.0972369819341,
+            "y": 0,
+            "minZoom": 0.5196599362380446,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 160.7794899043571,
+            "y": 213.58023379383636
+          }
+        },
+        {
+          "id": "supermercado",
+          "camera": {
+            "zoom": 0.7373271889400922,
+            "x": -875.9447004608296,
+            "y": -57.06682027649771,
+            "minZoom": 0.5196599362380446,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 158.52534562211963,
+            "y": 251.87327188940094
+          }
+        },
+        {
+          "id": "gasolinera",
+          "camera": {
+            "zoom": 0.9384164222873901,
+            "x": -150.14662756598244,
+            "y": -351.8636363636364,
+            "minZoom": 0.5196599362380446,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 136.07038123167155,
+            "y": 259.0454545454546
+          }
+        },
+        {
+          "id": "comisaria",
+          "camera": {
+            "zoom": 0.896358543417367,
+            "x": -1003.921568627451,
+            "y": -339.47759103641454,
+            "minZoom": 0.5196599362380446,
+            "maxZoom": 1.5
+          },
+          "center": {
+            "x": 157.75910364145648,
+            "y": 252.1190476190477
+          }
+        }
+      ],
+      "profiles": [
+        {
+          "profile": "off",
+          "camera": {
+            "zoom": 0.5196599362380446,
+            "x": -274.1758767268863,
+            "y": 0,
+            "minZoom": 0.5196599362380446,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 320,
+            "height": 489,
+            "dpr": 2
+          },
+          "samples": [
+            {
+              "seconds": 1.6092000000001863,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "taskSeconds": 0.120315,
+              "heapBytes": 14864028
+            },
+            {
+              "seconds": 1.815,
+              "renderEvents": 0,
+              "rendersPerSecond": 0,
+              "taskSeconds": 0.21618900000000002,
+              "heapBytes": 17276288
+            }
+          ],
+          "environment": {
+            "updates": 18,
+            "quadTopologyValid": true,
+            "partitionError": 0,
+            "groups": [],
+            "dynamicVertices": 0,
+            "maxVertexOffset": 0,
+            "meshVertices": 0,
+            "triangles": 0,
+            "interactiveObjects": 0,
+            "lights": [],
+            "runtimeTextureBytes": 0
+          },
+          "textures": {
+            "map": {
+              "width": 1671,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          }
+        },
+        {
+          "profile": "soft",
+          "camera": {
+            "zoom": 0.5196599362380446,
+            "x": -274.1758767268863,
+            "y": 0,
+            "minZoom": 0.5196599362380446,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 320,
+            "height": 489,
+            "dpr": 2
+          },
+          "samples": [
+            {
+              "seconds": 2.021,
+              "renderEvents": 10,
+              "rendersPerSecond": 4.948045522018803,
+              "taskSeconds": 2.4850570000000003,
+              "heapBytes": 14438516
+            },
+            {
+              "seconds": 1.711,
+              "renderEvents": 14,
+              "rendersPerSecond": 8.182349503214494,
+              "taskSeconds": 1.8422079999999994,
+              "heapBytes": 15396596
+            }
+          ],
+          "environment": {
+            "updates": 55,
+            "quadTopologyValid": true,
+            "partitionError": 0,
+            "groups": [],
+            "dynamicVertices": 0,
+            "maxVertexOffset": 0,
+            "meshVertices": 0,
+            "triangles": 0,
+            "interactiveObjects": 0,
+            "lights": [],
+            "runtimeTextureBytes": 0
+          },
+          "textures": {
+            "map": {
+              "width": 1671,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          }
+        },
+        {
+          "profile": "storm",
+          "camera": {
+            "zoom": 0.5196599362380446,
+            "x": -274.1758767268863,
+            "y": 0,
+            "minZoom": 0.5196599362380446,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 320,
+            "height": 489,
+            "dpr": 2
+          },
+          "samples": [
+            {
+              "seconds": 1.7517999999998137,
+              "renderEvents": 13,
+              "rendersPerSecond": 7.420938463295686,
+              "taskSeconds": 2.0314830000000015,
+              "heapBytes": 19973228
+            },
+            {
+              "seconds": 1.7575999999998604,
+              "renderEvents": 13,
+              "rendersPerSecond": 7.396449704142599,
+              "taskSeconds": 2.145453999999999,
+              "heapBytes": 19773636
+            }
+          ],
+          "environment": {
+            "updates": 99,
+            "quadTopologyValid": true,
+            "partitionError": 0,
+            "groups": [],
+            "dynamicVertices": 0,
+            "maxVertexOffset": 0,
+            "meshVertices": 0,
+            "triangles": 0,
+            "interactiveObjects": 0,
+            "lights": [],
+            "runtimeTextureBytes": 0
+          },
+          "textures": {
+            "map": {
+              "width": 1671,
+              "height": 941,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "zombie": {
+              "width": 1312,
+              "height": 1199,
+              "potWidth": 2048,
+              "potHeight": 2048,
+              "rgbaBase": 16777216,
+              "rgbaWithMips": 22369620,
+              "auxiliaryRgba": 16777216,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 2048
+            },
+            "barricade-marker": {
+              "width": 1536,
+              "height": 1024,
+              "potWidth": 2048,
+              "potHeight": 1024,
+              "rgbaBase": 8388608,
+              "rgbaWithMips": 11184812,
+              "auxiliaryRgba": 8388608,
+              "derivedRgba": 0,
+              "factor": 1,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 2048,
+              "sourceHeight": 1024
+            },
+            "survivor-portrait-1": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-2": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-3": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            },
+            "survivor-portrait-4": {
+              "width": 384,
+              "height": 384,
+              "potWidth": 512,
+              "potHeight": 512,
+              "rgbaBase": 1048576,
+              "rgbaWithMips": 1398100,
+              "auxiliaryRgba": 1048576,
+              "derivedRgba": 589824,
+              "factor": 0.3062200956937799,
+              "minFilter": 9987,
+              "magFilter": 9729,
+              "sourceWidth": 512,
+              "sourceHeight": 512
+            }
+          }
+        }
+      ],
+      "integratedVegetation": true,
+      "panPinchKeyboard": true,
+      "gpu": {
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "controlledVisibility": true,
+      "restartsWithoutAccumulation": true,
+      "maximum": {
+        "synthetic": true,
+        "characters": 36,
+        "zombies": 17,
+        "barricades": 16,
+        "overflow": 0
+      }
+    }
+  ],
+  "reducedMotion": true,
+  "passed": true
+}

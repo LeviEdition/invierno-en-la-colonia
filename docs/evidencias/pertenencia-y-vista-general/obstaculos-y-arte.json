@@ -1,0 +1,10 @@
+{
+  "baseCommit": "5f3e31959cd7a4960723e43723145de92ace173b",
+  "existingObstaclesUnchanged": true,
+  "portraitExclusionsUnchanged": true,
+  "added": [
+    "gasolinera-arbusto",
+    "comisaria-arbusto"
+  ],
+  "artSha256": "0c5268c189068b5eb7bf51a1fbc871a87782b75e02dc86fe6d21aeeb272e4222"
+}

@@ -1,0 +1,1013 @@
+{
+  "browser": "154.0.8037.57",
+  "baseline": false,
+  "physicalMobile": false,
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "errors": [],
+      "focus": [
+        {
+          "id": "escuela",
+          "camera": {
+            "zoom": 1.5,
+            "x": -40.57572906545079,
+            "y": 0,
+            "minZoom": 0.8163875598086124,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1365,
+            "height": 618,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "biblioteca",
+          "camera": {
+            "zoom": 1.5,
+            "x": -1065,
+            "y": -21.00556542637537,
+            "minZoom": 0.8163875598086124,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1365,
+            "height": 618,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "hospital",
+          "camera": {
+            "zoom": 1.5,
+            "x": 0,
+            "y": -312.0251339200388,
+            "minZoom": 0.8163875598086124,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1365,
+            "height": 618,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "colonia",
+          "camera": {
+            "zoom": 1.5,
+            "x": -555.75,
+            "y": -354,
+            "minZoom": 0.8163875598086124,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1365,
+            "height": 618,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "supermercado",
+          "camera": {
+            "zoom": 1.5,
+            "x": -1143,
+            "y": -326.2548723717009,
+            "minZoom": 0.8163875598086124,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1365,
+            "height": 618,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "gasolinera",
+          "camera": {
+            "zoom": 1.5,
+            "x": 0,
+            "y": -693.0572045283047,
+            "minZoom": 0.8163875598086124,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1365,
+            "height": 618,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "comisaria",
+          "camera": {
+            "zoom": 1.5,
+            "x": -1143,
+            "y": -678.92218847646,
+            "minZoom": 0.8163875598086124,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1365,
+            "height": 618,
+            "dpr": 1
+          }
+        }
+      ],
+      "cases": [
+        {
+          "mode": "empty",
+          "characters": 36,
+          "zombies": 0,
+          "barricades": 0
+        },
+        {
+          "mode": "zombies",
+          "characters": 36,
+          "zombies": 36,
+          "barricades": 0
+        },
+        {
+          "mode": "barricades",
+          "characters": 36,
+          "zombies": 0,
+          "barricades": 36
+        },
+        {
+          "mode": "mixed",
+          "characters": 36,
+          "zombies": 18,
+          "barricades": 18
+        }
+      ],
+      "overview": {
+        "zoom": 0.8163875598086124,
+        "x": 0,
+        "y": -75.11034688995215,
+        "minZoom": 0.8163875598086124,
+        "maxZoom": 1.5
+      },
+      "hoverAndSelection": true,
+      "ellipseAlpha": [
+        {
+          "locality": "escuela",
+          "index": 0,
+          "maximum": 0
+        },
+        {
+          "locality": "escuela",
+          "index": 1,
+          "maximum": 1
+        },
+        {
+          "locality": "escuela",
+          "index": 2,
+          "maximum": 1
+        },
+        {
+          "locality": "escuela",
+          "index": 3,
+          "maximum": 1
+        },
+        {
+          "locality": "biblioteca",
+          "index": 0,
+          "maximum": 0
+        },
+        {
+          "locality": "biblioteca",
+          "index": 1,
+          "maximum": 1
+        },
+        {
+          "locality": "biblioteca",
+          "index": 2,
+          "maximum": 1
+        },
+        {
+          "locality": "biblioteca",
+          "index": 3,
+          "maximum": 11
+        },
+        {
+          "locality": "hospital",
+          "index": 0,
+          "maximum": 27
+        },
+        {
+          "locality": "hospital",
+          "index": 1,
+          "maximum": 0
+        },
+        {
+          "locality": "hospital",
+          "index": 2,
+          "maximum": 0
+        },
+        {
+          "locality": "hospital",
+          "index": 3,
+          "maximum": 0
+        },
+        {
+          "locality": "colonia",
+          "index": 0,
+          "maximum": 0
+        },
+        {
+          "locality": "colonia",
+          "index": 1,
+          "maximum": 0
+        },
+        {
+          "locality": "colonia",
+          "index": 2,
+          "maximum": 1
+        },
+        {
+          "locality": "colonia",
+          "index": 3,
+          "maximum": 0
+        },
+        {
+          "locality": "colonia",
+          "index": 4,
+          "maximum": 3
+        },
+        {
+          "locality": "colonia",
+          "index": 5,
+          "maximum": 0
+        },
+        {
+          "locality": "colonia",
+          "index": 6,
+          "maximum": 0
+        },
+        {
+          "locality": "colonia",
+          "index": 7,
+          "maximum": 0
+        },
+        {
+          "locality": "colonia",
+          "index": 8,
+          "maximum": 0
+        },
+        {
+          "locality": "colonia",
+          "index": 9,
+          "maximum": 1
+        },
+        {
+          "locality": "colonia",
+          "index": 10,
+          "maximum": 0
+        },
+        {
+          "locality": "colonia",
+          "index": 11,
+          "maximum": 4
+        },
+        {
+          "locality": "supermercado",
+          "index": 0,
+          "maximum": 0
+        },
+        {
+          "locality": "supermercado",
+          "index": 1,
+          "maximum": 0
+        },
+        {
+          "locality": "supermercado",
+          "index": 2,
+          "maximum": 0
+        },
+        {
+          "locality": "supermercado",
+          "index": 3,
+          "maximum": 2
+        },
+        {
+          "locality": "gasolinera",
+          "index": 0,
+          "maximum": 12
+        },
+        {
+          "locality": "gasolinera",
+          "index": 1,
+          "maximum": 4
+        },
+        {
+          "locality": "gasolinera",
+          "index": 2,
+          "maximum": 3
+        },
+        {
+          "locality": "gasolinera",
+          "index": 3,
+          "maximum": 0
+        },
+        {
+          "locality": "comisaria",
+          "index": 0,
+          "maximum": 1
+        },
+        {
+          "locality": "comisaria",
+          "index": 1,
+          "maximum": 3
+        },
+        {
+          "locality": "comisaria",
+          "index": 2,
+          "maximum": 0
+        },
+        {
+          "locality": "comisaria",
+          "index": 3,
+          "maximum": 1
+        }
+      ],
+      "volumes": {
+        "count": 72,
+        "solidOverlaps": 0,
+        "neighborOverlaps": 0
+      }
+    },
+    {
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "errors": [],
+      "focus": [
+        {
+          "id": "escuela",
+          "camera": {
+            "zoom": 1.5,
+            "x": 0,
+            "y": 0,
+            "minZoom": 1.1483253588516746,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1920,
+            "height": 930,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "biblioteca",
+          "camera": {
+            "zoom": 1.5,
+            "x": -588,
+            "y": 0,
+            "minZoom": 1.1483253588516746,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1920,
+            "height": 930,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "hospital",
+          "camera": {
+            "zoom": 1.5,
+            "x": 0,
+            "y": -156.0251339200388,
+            "minZoom": 1.1483253588516746,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1920,
+            "height": 930,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "colonia",
+          "camera": {
+            "zoom": 1.5,
+            "x": -278.25,
+            "y": -198,
+            "minZoom": 1.1483253588516746,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1920,
+            "height": 930,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "supermercado",
+          "camera": {
+            "zoom": 1.5,
+            "x": -588,
+            "y": -170.2548723717009,
+            "minZoom": 1.1483253588516746,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1920,
+            "height": 930,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "gasolinera",
+          "camera": {
+            "zoom": 1.5,
+            "x": 0,
+            "y": -481.5,
+            "minZoom": 1.1483253588516746,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1920,
+            "height": 930,
+            "dpr": 1
+          }
+        },
+        {
+          "id": "comisaria",
+          "camera": {
+            "zoom": 1.5,
+            "x": -588,
+            "y": -481.5,
+            "minZoom": 1.1483253588516746,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 1920,
+            "height": 930,
+            "dpr": 1
+          }
+        }
+      ],
+      "cases": [
+        {
+          "mode": "empty",
+          "characters": 36,
+          "zombies": 0,
+          "barricades": 0
+        },
+        {
+          "mode": "zombies",
+          "characters": 36,
+          "zombies": 36,
+          "barricades": 0
+        },
+        {
+          "mode": "barricades",
+          "characters": 36,
+          "zombies": 0,
+          "barricades": 36
+        },
+        {
+          "mode": "mixed",
+          "characters": 36,
+          "zombies": 18,
+          "barricades": 18
+        }
+      ],
+      "overview": {
+        "zoom": 1.1483253588516746,
+        "x": 0,
+        "y": -75.28708133971293,
+        "minZoom": 1.1483253588516746,
+        "maxZoom": 1.5
+      },
+      "hoverAndSelection": true,
+      "ellipseAlpha": [
+        {
+          "locality": "escuela",
+          "index": 0,
+          "maximum": 0
+        },
+        {
+          "locality": "escuela",
+          "index": 1,
+          "maximum": 1
+        },
+        {
+          "locality": "escuela",
+          "index": 2,
+          "maximum": 1
+        },
+        {
+          "locality": "escuela",
+          "index": 3,
+          "maximum": 1
+        },
+        {
+          "locality": "biblioteca",
+          "index": 0,
+          "maximum": 0
+        },
+        {
+          "locality": "biblioteca",
+          "index": 1,
+          "maximum": 1
+        },
+        {
+          "locality": "biblioteca",
+          "index": 2,
+          "maximum": 1
+        },
+        {
+          "locality": "biblioteca",
+          "index": 3,
+          "maximum": 11
+        },
+        {
+          "locality": "hospital",
+          "index": 0,
+          "maximum": 27
+        },
+        {
+          "locality": "hospital",
+          "index": 1,
+          "maximum": 0
+        },
+        {
+          "locality": "hospital",
+          "index": 2,
+          "maximum": 0
+        },
+        {
+          "locality": "hospital",
+          "index": 3,
+          "maximum": 0
+        },
+        {
+          "locality": "colonia",
+          "index": 0,
+          "maximum": 0
+        },
+        {
+          "locality": "colonia",
+          "index": 1,
+          "maximum": 0
+        },
+        {
+          "locality": "colonia",
+          "index": 2,
+          "maximum": 1
+        },
+        {
+          "locality": "colonia",
+          "index": 3,
+          "maximum": 0
+        },
+        {
+          "locality": "colonia",
+          "index": 4,
+          "maximum": 3
+        },
+        {
+          "locality": "colonia",
+          "index": 5,
+          "maximum": 0
+        },
+        {
+          "locality": "colonia",
+          "index": 6,
+          "maximum": 0
+        },
+        {
+          "locality": "colonia",
+          "index": 7,
+          "maximum": 0
+        },
+        {
+          "locality": "colonia",
+          "index": 8,
+          "maximum": 0
+        },
+        {
+          "locality": "colonia",
+          "index": 9,
+          "maximum": 1
+        },
+        {
+          "locality": "colonia",
+          "index": 10,
+          "maximum": 0
+        },
+        {
+          "locality": "colonia",
+          "index": 11,
+          "maximum": 4
+        },
+        {
+          "locality": "supermercado",
+          "index": 0,
+          "maximum": 0
+        },
+        {
+          "locality": "supermercado",
+          "index": 1,
+          "maximum": 0
+        },
+        {
+          "locality": "supermercado",
+          "index": 2,
+          "maximum": 0
+        },
+        {
+          "locality": "supermercado",
+          "index": 3,
+          "maximum": 2
+        },
+        {
+          "locality": "gasolinera",
+          "index": 0,
+          "maximum": 12
+        },
+        {
+          "locality": "gasolinera",
+          "index": 1,
+          "maximum": 4
+        },
+        {
+          "locality": "gasolinera",
+          "index": 2,
+          "maximum": 3
+        },
+        {
+          "locality": "gasolinera",
+          "index": 3,
+          "maximum": 0
+        },
+        {
+          "locality": "comisaria",
+          "index": 0,
+          "maximum": 1
+        },
+        {
+          "locality": "comisaria",
+          "index": 1,
+          "maximum": 3
+        },
+        {
+          "locality": "comisaria",
+          "index": 2,
+          "maximum": 0
+        },
+        {
+          "locality": "comisaria",
+          "index": 3,
+          "maximum": 1
+        }
+      ],
+      "volumes": {
+        "count": 72,
+        "solidOverlaps": 0,
+        "neighborOverlaps": 0
+      }
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "errors": [],
+      "focus": [
+        {
+          "id": "escuela",
+          "camera": {
+            "zoom": 1.2352941176470589,
+            "x": -169.47412981860657,
+            "y": -105,
+            "minZoom": 0.5095693779904307,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 852,
+            "height": 294,
+            "dpr": 2
+          }
+        },
+        {
+          "id": "biblioteca",
+          "camera": {
+            "zoom": 1.1052323253677467,
+            "x": -861.5956590534249,
+            "y": -96.15521230699395,
+            "minZoom": 0.5095693779904307,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 852,
+            "height": 294,
+            "dpr": 2
+          }
+        },
+        {
+          "id": "hospital",
+          "camera": {
+            "zoom": 1.0574264879002693,
+            "x": 0,
+            "y": -290.79228417257406,
+            "minZoom": 0.5095693779904307,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 852,
+            "height": 294,
+            "dpr": 2
+          }
+        },
+        {
+          "id": "colonia",
+          "camera": {
+            "zoom": 0.8596491228070176,
+            "x": -283.640350877193,
+            "y": -232.96491228070175,
+            "minZoom": 0.5095693779904307,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 852,
+            "height": 294,
+            "dpr": 2
+          }
+        },
+        {
+          "id": "supermercado",
+          "camera": {
+            "zoom": 1.1094067650710597,
+            "x": -1002.9281111988118,
+            "y": -322.8373686356784,
+            "minZoom": 0.5095693779904307,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 852,
+            "height": 294,
+            "dpr": 2
+          }
+        },
+        {
+          "id": "gasolinera",
+          "camera": {
+            "zoom": 1.157132843892279,
+            "x": -25.281809117988814,
+            "y": -626.008868545723,
+            "minZoom": 0.5095693779904307,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 852,
+            "height": 294,
+            "dpr": 2
+          }
+        },
+        {
+          "id": "comisaria",
+          "camera": {
+            "zoom": 1.009512822566394,
+            "x": -835.9054393310109,
+            "y": -517.8800779765602,
+            "minZoom": 0.5095693779904307,
+            "maxZoom": 1.5
+          },
+          "viewport": {
+            "width": 852,
+            "height": 294,
+            "dpr": 2
+          }
+        }
+      ],
+      "cases": [
+        {
+          "mode": "empty",
+          "characters": 36,
+          "zombies": 0,
+          "barricades": 0
+        },
+        {
+          "mode": "zombies",
+          "characters": 36,
+          "zombies": 36,
+          "barricades": 0
+        },
+        {
+          "mode": "barricades",
+          "characters": 36,
+          "zombies": 0,
+          "barricades": 36
+        },
+        {
+          "mode": "mixed",
+          "characters": 36,
+          "zombies": 18,
+          "barricades": 18
+        }
+      ],
+      "overview": {
+        "zoom": 0.5095693779904307,
+        "x": -5.684341886080802e-14,
+        "y": -92.75239234449762,
+        "minZoom": 0.5095693779904307,
+        "maxZoom": 1.5
+      },
+      "hoverAndSelection": true,
+      "ellipseAlpha": [
+        {
+          "locality": "escuela",
+          "index": 0,
+          "maximum": 0
+        },
+        {
+          "locality": "escuela",
+          "index": 1,
+          "maximum": 1
+        },
+        {
+          "locality": "escuela",
+          "index": 2,
+          "maximum": 1
+        },
+        {
+          "locality": "escuela",
+          "index": 3,
+          "maximum": 1
+        },
+        {
+          "locality": "biblioteca",
+          "index": 0,
+          "maximum": 0
+        },
+        {
+          "locality": "biblioteca",
+          "index": 1,
+          "maximum": 1
+        },
+        {
+          "locality": "biblioteca",
+          "index": 2,
+          "maximum": 1
+        },
+        {
+          "locality": "biblioteca",
+          "index": 3,
+          "maximum": 11
+        },
+        {
+          "locality": "hospital",
+          "index": 0,
+          "maximum": 27
+        },
+        {
+          "locality": "hospital",
+          "index": 1,
+          "maximum": 0
+        },
+        {
+          "locality": "hospital",
+          "index": 2,
+          "maximum": 0
+        },
+        {
+          "locality": "hospital",
+          "index": 3,
+          "maximum": 0
+        },
+        {
+          "locality": "colonia",
+          "index": 0,
+          "maximum": 0
+        },
+        {
+          "locality": "colonia",
+          "index": 1,
+          "maximum": 0
+        },
+        {
+          "locality": "colonia",
+          "index": 2,
+          "maximum": 1
+        },
+        {
+          "locality": "colonia",
+          "index": 3,
+          "maximum": 0
+        },
+        {
+          "locality": "colonia",
+          "index": 4,
+          "maximum": 3
+        },
+        {
+          "locality": "colonia",
+          "index": 5,
+          "maximum": 0
+        },
+        {
+          "locality": "colonia",
+          "index": 6,
+          "maximum": 0
+        },
+        {
+          "locality": "colonia",
+          "index": 7,
+          "maximum": 0
+        },
+        {
+          "locality": "colonia",
+          "index": 8,
+          "maximum": 0
+        },
+        {
+          "locality": "colonia",
+          "index": 9,
+          "maximum": 1
+        },
+        {
+          "locality": "colonia",
+          "index": 10,
+          "maximum": 0
+        },
+        {
+          "locality": "colonia",
+          "index": 11,
+          "maximum": 4
+        },
+        {
+          "locality": "supermercado",
+          "index": 0,
+          "maximum": 0
+        },
+        {
+          "locality": "supermercado",
+          "index": 1,
+          "maximum": 0
+        },
+        {
+          "locality": "supermercado",
+          "index": 2,
+          "maximum": 0
+        },
+        {
+          "locality": "supermercado",
+          "index": 3,
+          "maximum": 2
+        },
+        {
+          "locality": "gasolinera",
+          "index": 0,
+          "maximum": 12
+        },
+        {
+          "locality": "gasolinera",
+          "index": 1,
+          "maximum": 4
+        },
+        {
+          "locality": "gasolinera",
+          "index": 2,
+          "maximum": 3
+        },
+        {
+          "locality": "gasolinera",
+          "index": 3,
+          "maximum": 0
+        },
+        {
+          "locality": "comisaria",
+          "index": 0,
+          "maximum": 1
+        },
+        {
+          "locality": "comisaria",
+          "index": 1,
+          "maximum": 3
+        },
+        {
+          "locality": "comisaria",
+          "index": 2,
+          "maximum": 0
+        },
+        {
+          "locality": "comisaria",
+          "index": 3,
+          "maximum": 1
+        }
+      ],
+      "volumes": {
+        "count": 72,
+        "solidOverlaps": 0,
+        "neighborOverlaps": 0
+      }
+    }
+  ],
+  "passed": true
+}

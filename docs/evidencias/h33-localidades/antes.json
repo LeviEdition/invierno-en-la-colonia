@@ -1,0 +1,279 @@
+{
+  "browser": "154.0.8037.57",
+  "commit": "0b5a05cfd487e8130f47d38947a1f42ca736b8cf",
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "camera": [
+        {
+          "id": "locality",
+          "x": 8,
+          "y": 74,
+          "width": 235,
+          "height": 44,
+          "right": 243,
+          "bottom": 118
+        },
+        {
+          "id": "zoom-out",
+          "x": 249,
+          "y": 74,
+          "width": 44,
+          "height": 44,
+          "right": 293,
+          "bottom": 118
+        },
+        {
+          "id": "zoom-in",
+          "x": 345,
+          "y": 74,
+          "width": 44,
+          "height": 44,
+          "right": 389,
+          "bottom": 118
+        },
+        {
+          "id": "reset-view",
+          "x": 395,
+          "y": 74,
+          "width": 96.625,
+          "height": 44,
+          "right": 491.625,
+          "bottom": 118
+        }
+      ],
+      "objective": {
+        "x": 1175,
+        "y": 11,
+        "width": 84,
+        "height": 44,
+        "right": 1259,
+        "bottom": 55
+      },
+      "actions": [
+        {
+          "text": "Buscar",
+          "x": 1041,
+          "y": 742.5,
+          "width": 152,
+          "height": 48,
+          "right": 1193,
+          "bottom": 790.5
+        },
+        {
+          "text": "Atacar",
+          "x": 1200,
+          "y": 742.5,
+          "width": 152,
+          "height": 48,
+          "right": 1352,
+          "bottom": 790.5
+        },
+        {
+          "text": "Construir barricada",
+          "x": 1041,
+          "y": 797.5,
+          "width": 152,
+          "height": 48,
+          "right": 1193,
+          "bottom": 845.5
+        },
+        {
+          "text": "Moverse",
+          "x": 1200,
+          "y": 797.5,
+          "width": 152,
+          "height": 48,
+          "right": 1352,
+          "bottom": 845.5
+        }
+      ],
+      "scrollWidth": 1365
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "camera": [
+        {
+          "id": "locality",
+          "x": 4,
+          "y": 87.84375,
+          "width": 198.359375,
+          "height": 44,
+          "right": 202.359375,
+          "bottom": 131.84375
+        },
+        {
+          "id": "zoom-out",
+          "x": 205.359375,
+          "y": 87.84375,
+          "width": 44,
+          "height": 44,
+          "right": 249.359375,
+          "bottom": 131.84375
+        },
+        {
+          "id": "zoom-in",
+          "x": 285.359375,
+          "y": 87.84375,
+          "width": 44,
+          "height": 44,
+          "right": 329.359375,
+          "bottom": 131.84375
+        },
+        {
+          "id": "reset-view",
+          "x": 332.359375,
+          "y": 87.84375,
+          "width": 56.640625,
+          "height": 44,
+          "right": 389,
+          "bottom": 131.84375
+        }
+      ],
+      "objective": {
+        "x": 259,
+        "y": 31.84375,
+        "width": 61,
+        "height": 44,
+        "right": 320,
+        "bottom": 75.84375
+      },
+      "actions": [
+        {
+          "text": "Buscar",
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "text": "Atacar",
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "text": "Construir barricada",
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "text": "Moverse",
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0
+        }
+      ],
+      "scrollWidth": 393
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "camera": [
+        {
+          "id": "locality",
+          "x": 4,
+          "y": 85.546875,
+          "width": 125.359375,
+          "height": 44,
+          "right": 129.359375,
+          "bottom": 129.546875
+        },
+        {
+          "id": "zoom-out",
+          "x": 132.359375,
+          "y": 85.546875,
+          "width": 44,
+          "height": 44,
+          "right": 176.359375,
+          "bottom": 129.546875
+        },
+        {
+          "id": "zoom-in",
+          "x": 212.359375,
+          "y": 85.546875,
+          "width": 44,
+          "height": 44,
+          "right": 256.359375,
+          "bottom": 129.546875
+        },
+        {
+          "id": "reset-view",
+          "x": 259.359375,
+          "y": 85.546875,
+          "width": 56.640625,
+          "height": 44,
+          "right": 316,
+          "bottom": 129.546875
+        }
+      ],
+      "objective": {
+        "x": 186,
+        "y": 29.546875,
+        "width": 61,
+        "height": 44,
+        "right": 247,
+        "bottom": 73.546875
+      },
+      "actions": [
+        {
+          "text": "Buscar",
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "text": "Atacar",
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "text": "Construir barricada",
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "text": "Moverse",
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0
+        }
+      ],
+      "scrollWidth": 320
+    }
+  ]
+}

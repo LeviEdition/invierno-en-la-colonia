@@ -1,0 +1,41 @@
+{
+  "browser": "154.0.8037.57",
+  "records": [
+    {
+      "kind": "reference",
+      "errors": [],
+      "noRepeatedMoveOrRoll": true,
+      "passed": true
+    },
+    {
+      "kind": "hidden",
+      "errors": [],
+      "controlledVisibility": true,
+      "noRepeatedMoveOrRoll": true,
+      "passed": true
+    },
+    {
+      "kind": "reconnect",
+      "errors": [],
+      "controlledLifecycle": true,
+      "noRepeatedMoveOrRoll": true,
+      "passed": true
+    },
+    {
+      "kind": "stale",
+      "errors": [],
+      "noFalseAnimation": true,
+      "passed": true
+    },
+    {
+      "kind": "reduced",
+      "errors": [],
+      "noRepeatedMoveOrRoll": true,
+      "shortTransition": true,
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "physicalMobile": false,
+  "passed": true
+}

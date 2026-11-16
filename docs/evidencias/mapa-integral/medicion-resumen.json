@@ -1,0 +1,68 @@
+[
+  {
+    "variant": "baseline",
+    "camera": {
+      "zoom": 0.6309808612440191,
+      "x": 0,
+      "y": -15.376495215310968,
+      "minZoom": 0.6309808612440191,
+      "maxZoom": 1.5
+    },
+    "profiles": [
+      {
+        "profile": "off",
+        "rendersPerSecond": 0.0,
+        "vertices": 522,
+        "triangles": 416,
+        "auxiliaryRgbaBytes": 5790524
+      },
+      {
+        "profile": "soft",
+        "rendersPerSecond": 13.744166719833892,
+        "vertices": 522,
+        "triangles": 416,
+        "auxiliaryRgbaBytes": 5790524
+      },
+      {
+        "profile": "storm",
+        "rendersPerSecond": 13.014055179493011,
+        "vertices": 522,
+        "triangles": 416,
+        "auxiliaryRgbaBytes": 5790524
+      }
+    ]
+  },
+  {
+    "variant": "candidate",
+    "camera": {
+      "zoom": 0.6309808612440191,
+      "x": 0,
+      "y": -15.376495215310968,
+      "minZoom": 0.6309808612440191,
+      "maxZoom": 1.5
+    },
+    "profiles": [
+      {
+        "profile": "off",
+        "rendersPerSecond": 0.0,
+        "vertices": 522,
+        "triangles": 416,
+        "auxiliaryRgbaBytes": 5289104
+      },
+      {
+        "profile": "soft",
+        "rendersPerSecond": 14.016559097942617,
+        "vertices": 522,
+        "triangles": 416,
+        "auxiliaryRgbaBytes": 5289104
+      },
+      {
+        "profile": "storm",
+        "rendersPerSecond": 12.915307868551897,
+        "vertices": 522,
+        "triangles": 416,
+        "auxiliaryRgbaBytes": 5289104
+      }
+    ]
+  }
+]

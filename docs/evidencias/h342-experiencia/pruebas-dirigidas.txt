@@ -1,0 +1,18 @@
+✔ H342 experiencia: exposición estructurada distingue blanco, herida, frío y mordedura (10.045393ms)
+✔ H342 experiencia: la resolución es descriptiva, misma partida y RNG que doMove (11.707972ms)
+✔ H342 experiencia: Paso sigiloso omite tirada; Resistencia conserva el dado que sí ocurrió (1.029948ms)
+✔ H342 experiencia: el DTO temporal reutiliza la proyección pública sin manos ni mazos (26.570729ms)
+✔ H342 experiencia: salida y muerte no compactan las posiciones de otras fichas (3.29881ms)
+✔ H342 experiencia: 1500ms de recorrido, tirada real, pausa de resultado y consecuencia en orden (1.380886ms)
+✔ H342 experiencia: habilidad sin tirada, movimiento reducido e interrupción no repiten fases (0.396907ms)
+✔ H342 experiencia: rechazo no fabrica una secuencia; resultado exige datos estructurados (0.567994ms)
+✔ H342 experiencia: una pausa larga termina sin volver a tirar ni reiniciar el recorrido (0.195324ms)
+✔ H342 experiencia: confirmar bloquea nuevos comandos hasta presentar y esperar decisiones (3.768866ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 151.25

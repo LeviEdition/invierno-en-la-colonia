@@ -1,0 +1,12 @@
+{
+  "sha": "c20b027378c1ab3960236e721018c8cb025bf282",
+  "run": 43638610038,
+  "job": 132580870401,
+  "artifact": 14131576288,
+  "size": 138248286,
+  "sha256": "785a764d656f4a93fa1f80d792065aa1c7cb6a9b47b8f9a4baf882562535d64a",
+  "conclusion": "failure",
+  "failure": "aserci\u00f3n lee dado 5 mientras play.phase=sending y pending no nulo",
+  "expectedDieAfterCompletion": 6,
+  "productBundleUnchangedByHarnessFix": true
+}

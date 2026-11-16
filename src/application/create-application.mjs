@@ -2,9 +2,9 @@ import {createEngine,commandNames} from './reference-engine.mjs';
 import {createUi} from '../presentation/reference-view.mjs';
 import {createAgent} from '../agents/reference-agent.mjs';
 import {bindCommands} from '../presentation/commands.mjs';
-export function createApplication({environment=globalThis,autoStart=true}={}){
+export function createApplication({environment=globalThis,autoStart=true,createPresentation=createUi}={}){
  const engine=createEngine();
- const view=engine.connectPresentation(context=>createUi(context,environment));
+ const view=engine.connectPresentation(context=>createPresentation(context,environment));
  engine.connectAutomation(context=>createAgent(context));
  const commands=Object.fromEntries(commandNames.map(name=>[name,(...args)=>engine.dispatch(name,...args)]));
  Object.assign(commands,{

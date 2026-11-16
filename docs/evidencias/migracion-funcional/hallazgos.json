@@ -1,0 +1,30 @@
+[
+  {
+    "case": "Recibo terminal",
+    "observed": "page.waitForFunction: Timeout 30000ms exceeded.\n    at use (/workspace/invierno-en-la-colonia/scripts/check-map-migration-browser.mjs:13:368)\n    at async file:///workspace/invierno-en-la-colonia/scripts/check-map-migration-browser.mjs:40:135",
+    "cause": "La compuerta heredada convertía el estado final en waiting y descartaba su recibo de inventario.",
+    "fix": "Conservar recibo terminal y su audiencia/scope; pruebas de victoria J1 y J2."
+  },
+  {
+    "case": "Lectura anticipada de líder",
+    "observed": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'h0' !== 'h1'\n\n    at file:///workspace/invierno-en-la-colonia/scripts/check-map-migration-browser.mjs:22:193",
+    "cause": "El recorrido leía el motor antes de recibir la confirmación del comando.",
+    "fix": "Esperar el líder confirmado en la proyección."
+  },
+  {
+    "case": "Control de IA cambiante",
+    "observed": "locator.isDisabled: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#cycle-speed').first()\u001b[22m\n\n    at progress (/workspace/invierno-en-la-colonia/scripts/check-map-migration-browser.mjs:19:309)\n    at async file:///workspace/invierno-en-la-colonia/scripts/check-map-migration-browser.mjs:35:161",
+    "cause": "El botón de acortar pausas podía desaparecer entre consultar visible y consultar disabled.",
+    "fix": "Consultar/pulsar control vigente y comprobar objetivo de ronda atómicamente."
+  },
+  {
+    "case": "Sonda negativa del guardia",
+    "cause": "Se esperaba visibilidad de un iframe interno que debe permanecer oculto.",
+    "fix": "Esperar que esté adjunto; se conserva exigencia de ocultación y rechazo del retorno/navegación V9."
+  },
+  {
+    "case": "Borrador extra del recorrido",
+    "cause": "Entre la lectura del objetivo de ronda y el clic el estado podía avanzar a la ronda buscada.",
+    "fix": "Comprobar el objetivo y elegir control en el mismo paso, exigiendo controladores cerrados antes de devolver el recorrido."
+  }
+]

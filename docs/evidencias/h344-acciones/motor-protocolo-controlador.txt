@@ -1,0 +1,37 @@
+✔ H344 cliente: cancelar/Escape previo no envía; dado insuficiente no se elige (0.98568ms)
+✔ H344 cliente: confirmar dos veces ejecuta una intención y conserva dado por índice (0.337711ms)
+✔ H344 cliente: reconectar recupera resultado sin repetir ni simular animación (1.059612ms)
+✔ H344 cliente: cambio de turno limpia e ignora respuestas atrasadas (0.21144ms)
+✔ H344 cliente: cambio de versión cancela preparación; decisión general exige transición explícita (0.3241ms)
+✔ H344 cliente: constructor permite confirmar sin dado, con coste0 y mensaje acotado (0.173833ms)
+✔ H344 cliente: respuesta tardía de ataque no cancela un reconocimiento pendiente (0.154483ms)
+✔ H344 motor: ataque por ID independiente de seleccionado, dado repetido exacto y consulta pura (9.831688ms)
+✔ H344 motor: modificadores fighter/rifle/hacha y bajas de escopeta equivalentes (18.033284ms)
+✔ H344 motor: exposición blanco/herida/congelación/mordedura y muerte acumulada equivalentes (11.750488ms)
+✔ H344 motor: pistola una vez/rifle fuera de colonia/resistencia no inventan RNG (6.985223ms)
+✔ H344 motor: barricada usa dado1+, guardia+herramientas y límites compartidos (9.252421ms)
+✔ H344 motor: sin objetivo, lleno, rival, muerto, dado insuficiente y ausente no mutan (6.265995ms)
+✔ H344 motor: versión de dado/turno obsoletos rechazados y J2 usa su reserva (1.382951ms)
+✔ H344 motor: decisión pendiente bloquea nuevas acciones y reconocer resultado no cambia partida/RNG (2.064441ms)
+✔ H344 motor: cuatro construcciones agotan la reserva; dado ausente no consume nada (0.928534ms)
+✔ H344 motor: encrucijada real de ataque impide reconocimiento y nuevas acciones hasta resolver (1.355099ms)
+✔ H344 motor: acciones nativas posteriores retiran solo el diario viejo y no repiten consecuencias (1.270732ms)
+✔ H344 motor: habilidad de constructor sin dado equivale a special, sin bonus de herramientas ni RNG (1.875446ms)
+✔ H344 motor: habilidad de constructor sigue legal sin dados y respeta accesos ocupados (1.042787ms)
+✔ H344 protocolo: doble ataque y clave reutilizada no repiten dado/exposición (20.95748ms)
+✔ H344 protocolo: lista acotada, propiedad, obsoletos y destino inválido no mutan (14.456079ms)
+✔ H344 protocolo: resultado estructurado, metadatos sin cartas y reconciliación sin reenvío (8.174361ms)
+✔ H344 protocolo: pase limpia información y caché anterior no vuelve a revelarla (7.726794ms)
+✔ H344 protocolo: habilidad de constructor acotada sin dado y duplicado idempotente (5.200814ms)
+✔ H344 build: visor sin motor, host único y QA separado (385.989498ms)
+✔ H344 servidor: ruta nueva y entradas previas, no fuente/QA/traversal en producto (39.647903ms)
+✔ H344 presentación: ataque reutiliza tensión/exposición; barricada breve, original conserva1500ms (1.483443ms)
+✔ H344 representación: los doce/cuatro accesos reales muestran toda construcción legal sin cambiar capacidades (20.868416ms)
+ℹ tests 29
+ℹ suites 0
+ℹ pass 29
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 605.182334

@@ -1,0 +1,125 @@
+{
+  "note": "Prueba sobre árbol de trabajo posterior a320fc92, todavía sin guardia de start retirado",
+  "errors": [
+    "Cannot read properties of null (reading 'start')"
+  ],
+  "app": {
+    "starting": false,
+    "starts": 2,
+    "restarts": 1,
+    "lastDisposal": null,
+    "lastError": null,
+    "navigation": {
+      "pageHides": 0,
+      "bfcacheRestores": 0
+    },
+    "state": "ready",
+    "app": {
+      "camera": {
+        "x": 16,
+        "y": 46.666666666666686,
+        "zoom": 0.5666666666666667,
+        "minZoom": 0.2833333333333333,
+        "maxZoom": 2.2666666666666666
+      },
+      "viewport": {
+        "width": 916,
+        "height": 524,
+        "dpr": 1
+      },
+      "position": "delante",
+      "selected": false,
+      "showHidden": false,
+      "counters": {
+        "inputCommands": 0,
+        "drawRequests": 2
+      },
+      "renderer": {
+        "phaser": "4.2.1",
+        "backend": "WebGL",
+        "frameMode": "demand",
+        "loopRunning": false,
+        "hasFocus": false,
+        "clockInFocus": true,
+        "clockPauseTime": 0,
+        "clockPauseDuration": 0,
+        "gpu": {
+          "vendor": "Google Inc. (Google)",
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+          "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+          "maxTextureSize": 8192
+        },
+        "renderEvents": 3,
+        "renderMs": 14.299999982118607,
+        "textureKeys": [
+          "h32-ground",
+          "h32-hospital",
+          "h32-zombie",
+          "h32-shadow"
+        ],
+        "objectCount": 5,
+        "inputPlugins": {
+          "mouse": false,
+          "touch": false,
+          "keyboard": false
+        },
+        "actorBounds": {
+          "x": 641.98,
+          "y": 554.29,
+          "width": 111.625,
+          "height": 127.11
+        },
+        "transforms": {
+          "ground": {
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "originX": 0,
+            "originY": 0,
+            "depth": 0,
+            "filter": 9729,
+            "textureWidth": 1536,
+            "textureHeight": 1024
+          },
+          "hospital": {
+            "x": 780,
+            "y": 670,
+            "scaleX": 0.65,
+            "scaleY": 0.65,
+            "originX": 0.5023923444976076,
+            "originY": 0.9154704944178629,
+            "depth": 2,
+            "filter": 9729,
+            "textureWidth": 1254,
+            "textureHeight": 1254
+          },
+          "zombie": {
+            "x": 710,
+            "y": 670,
+            "scaleX": 0.095,
+            "scaleY": 0.095,
+            "originX": 0.6093617021276596,
+            "originY": 0.9103139013452914,
+            "depth": 3,
+            "filter": 9729,
+            "textureWidth": 1175,
+            "textureHeight": 1338
+          },
+          "shadow": {
+            "x": 703,
+            "y": 669,
+            "scaleX": 0.296875,
+            "scaleY": 0.15625,
+            "originX": 0.5,
+            "originY": 0.5,
+            "depth": 1,
+            "filter": 9729,
+            "textureWidth": 128,
+            "textureHeight": 64
+          }
+        }
+      }
+    }
+  }
+}

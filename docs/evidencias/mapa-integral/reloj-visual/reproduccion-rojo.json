@@ -1,0 +1,21 @@
+{
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "method": "RAF del visor demorado 500ms; sondeo independiente cada25ms; host sin instrumentación de tiempo",
+  "records": [
+    {
+      "reduced": false,
+      "errors": [],
+      "stallCalls": 18,
+      "stages": [
+        "travel",
+        "roll",
+        "reveal"
+      ]
+    }
+  ],
+  "failures": [
+    "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    'travel',\n    'roll',\n    'reveal',\n-   'consequence'\n  ]\n\n    at file:///workspace/invierno-en-la-colonia/scripts/check-h344-presentation-stalls-browser.mjs:45:43"
+  ],
+  "passed": false
+}

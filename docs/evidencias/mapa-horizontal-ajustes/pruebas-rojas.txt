@@ -1,0 +1,102 @@
+✔ Horizontal: cámara cubierta y siete centros visibles {"width":930,"height":550} (1.528758ms)
+✔ Horizontal: cámara cubierta y siete centros visibles {"width":852,"height":250} (0.158979ms)
+✔ Horizontal: cámara cubierta y siete centros visibles {"width":740,"height":220} (0.119159ms)
+✔ Horizontal: cámara cubierta y siete centros visibles {"width":393,"height":650} (0.25271ms)
+✔ Horizontal: 36 apoyos y36 accesos distintos, capacidades del motor conservadas (0.22612ms)
+✔ Horizontal: bases y bordes inmóviles, copas con viento y apagado exacto (0.220181ms)
+✔ Horizontal: luz irregular acotada; distintas fases y un nivel para fuente y suelo (1.328166ms)
+✖ Horizontal: doce accesos alrededor del cerco, con filas regulares y contornos completos fuera (1.527656ms)
+✖ Horizontal: contorno detallado del arte separado de la región de clic (0.403096ms)
+✖ Horizontal: copas perceptibles sin mover bases ni aumentar geometría (0.539271ms)
+✖ Horizontal: titileos breves reproducibles, descansos e independencia entre luces (2.77412ms)
+✔ Horizontal: originales conservan dimensiones, alfa declarado y SHA-256 (13.939598ms)
+✔ Horizontal: construcción del visor sin motor y host idéntico a H344 (1022.821942ms)
+✔ Horizontal: servidor publica originales y nueva entrada; QA/fuentes inaccesibles (135.082468ms)
+✔ Horizontal: partición estática sin duplicaciones ni huecos en grupos móviles (1.501216ms)
+✔ Horizontal: selección de configuración admite separadores Windows y POSIX (0.245539ms)
+✔ Horizontal: atenuación local conserva el borde y evita una mancha azul de suelo (1.10438ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 13
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1256.158718
+
+✖ failing tests:
+
+test at tests/horizontal-map.test.mjs:17:1
+✖ Horizontal: doce accesos alrededor del cerco, con filas regulares y contornos completos fuera (1.527656ms)
+  AssertionError [ERR_ASSERTION]: acceso dentro del cerco
+  + actual - expected
+
+  + 43.1885345999286
+  - 0
+
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/horizontal-map.test.mjs:20:83)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 43.1885345999286,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/horizontal-map.test.mjs:23:1
+✖ Horizontal: contorno detallado del arte separado de la región de clic (0.403096ms)
+  AssertionError [ERR_ASSERTION]: escuela
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/horizontal-map.test.mjs:23:118)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/horizontal-map.test.mjs:24:1
+✖ Horizontal: copas perceptibles sin mover bases ni aumentar geometría (0.539271ms)
+  AssertionError [ERR_ASSERTION]: arbol-oeste al menos4px fuente con ráfaga
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/horizontal-map.test.mjs:24:256)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/horizontal-map.test.mjs:25:1
+✖ Horizontal: titileos breves reproducibles, descansos e independencia entre luces (2.77412ms)
+  AssertionError [ERR_ASSERTION]: colonia-oeste apagón breve
+      at file:///workspace/invierno-en-la-colonia/tests/horizontal-map.test.mjs:26:116
+      at Array.map (<anonymous>)
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/horizontal-map.test.mjs:26:35)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

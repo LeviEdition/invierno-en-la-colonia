@@ -1,0 +1,5 @@
+/* Solo el marco técnico del PoC; el estilo de la referencia permanece intacto. */
+#renderer-status{margin:0;color:#b8c6cf;font-size:12px;line-height:1.5}
+.compare-link{margin:0;font-size:13px}
+a{color:#d5e6f3;text-underline-offset:3px}
+a:focus-visible{outline:3px solid #f4d091;outline-offset:3px}

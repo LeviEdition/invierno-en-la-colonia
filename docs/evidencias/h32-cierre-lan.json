@@ -1,0 +1,27 @@
+{
+  "command": "HOSPITAL_PORT=8773 node scripts/serve-hospital.mjs --host 0.0.0.0",
+  "records": [
+    {
+      "addressKind": "loopback",
+      "renderer": "hospital",
+      "status": 200
+    },
+    {
+      "addressKind": "loopback",
+      "renderer": "hospital-phaser",
+      "status": 200
+    },
+    {
+      "addressKind": "interfaz del contenedor",
+      "renderer": "hospital",
+      "status": 200
+    },
+    {
+      "addressKind": "interfaz del contenedor",
+      "renderer": "hospital-phaser",
+      "status": 200
+    }
+  ],
+  "physicalPhone": false,
+  "note": "HTTP desde loopback y la propia interfaz virtual del entorno. No demuestra acceso desde otro equipo/telefono ni configuración del router/firewall del creador."
+}

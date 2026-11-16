@@ -1,0 +1,433 @@
+{
+  "chromium": "154.0.8037.57",
+  "url": "http://127.0.0.1:8774",
+  "physicalDevice": false,
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "dpr": 1,
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "occlusion": [
+        {
+          "position": "delante",
+          "showHidden": false,
+          "phaser": {
+            "visible": 1163,
+            "total": 1163,
+            "ratio": 1
+          },
+          "canvas": {
+            "visible": 1165,
+            "total": 1165,
+            "ratio": 1
+          },
+          "absoluteDifference": 0,
+          "tolerance": 0.03,
+          "toleranceReason": "3 puntos porcentuales: banda estrecha de paridad perceptual para minificación Canvas/WebGL; se verifica además geometría exacta, sin mover pivotes o posiciones"
+        },
+        {
+          "position": "detras",
+          "showHidden": false,
+          "phaser": {
+            "visible": 0,
+            "total": 1184,
+            "ratio": 0
+          },
+          "canvas": {
+            "visible": 0,
+            "total": 1180,
+            "ratio": 0
+          },
+          "absoluteDifference": 0,
+          "tolerance": 0.03,
+          "toleranceReason": "3 puntos porcentuales: banda estrecha de paridad perceptual para minificación Canvas/WebGL; se verifica además geometría exacta, sin mover pivotes o posiciones"
+        },
+        {
+          "position": "esquina",
+          "showHidden": false,
+          "phaser": {
+            "visible": 699,
+            "total": 1192,
+            "ratio": 0.5864093959731543
+          },
+          "canvas": {
+            "visible": 678,
+            "total": 1195,
+            "ratio": 0.5673640167364017
+          },
+          "absoluteDifference": 0.019045379236752646,
+          "tolerance": 0.03,
+          "toleranceReason": "3 puntos porcentuales: banda estrecha de paridad perceptual para minificación Canvas/WebGL; se verifica además geometría exacta, sin mover pivotes o posiciones"
+        },
+        {
+          "position": "detras",
+          "showHidden": true,
+          "phaser": {
+            "visible": 1210,
+            "total": 1225,
+            "ratio": 0.9877551020408163
+          },
+          "canvas": {
+            "visible": 1199,
+            "total": 1210,
+            "ratio": 0.990909090909091
+          },
+          "absoluteDifference": 0.003153988868274671,
+          "tolerance": 0.03,
+          "toleranceReason": "3 puntos porcentuales: banda estrecha de paridad perceptual para minificación Canvas/WebGL; se verifica además geometría exacta, sin mover pivotes o posiciones"
+        }
+      ],
+      "checks": [
+        "Composición por backend, esquina ±3pp calibrada sobre Canvas, ocultos y oclusión normal",
+        "Rueda anclada y cámara real Phaser; pan, reset, teclado y un comando por activación",
+        "Resize y encuadre, tres reinicios y destrucción/reapertura sin duplicar comandos"
+      ],
+      "errors": [],
+      "transforms": {
+        "ground": {
+          "x": 0,
+          "y": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "originX": 0,
+          "originY": 0,
+          "depth": 0,
+          "filter": 9987,
+          "textureWidth": 2048,
+          "textureHeight": 1024
+        },
+        "hospital": {
+          "x": 780,
+          "y": 670,
+          "scaleX": 0.65,
+          "scaleY": 0.65,
+          "originX": 0.5023923444976076,
+          "originY": 0.9154704944178629,
+          "depth": 2,
+          "filter": 9987,
+          "textureWidth": 2048,
+          "textureHeight": 2048
+        },
+        "zombie": {
+          "x": 710,
+          "y": 670,
+          "scaleX": 0.095,
+          "scaleY": 0.095,
+          "originX": 0.6093617021276596,
+          "originY": 0.9103139013452914,
+          "depth": 3,
+          "filter": 9987,
+          "textureWidth": 2048,
+          "textureHeight": 2048
+        },
+        "shadow": {
+          "x": 703,
+          "y": 669,
+          "scaleX": 0.296875,
+          "scaleY": 0.15625,
+          "originX": 0.5,
+          "originY": 0.5,
+          "depth": 1,
+          "filter": 9987,
+          "textureWidth": 128,
+          "textureHeight": 64
+        }
+      },
+      "panPixelAgreement": 1
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 2,
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "occlusion": [
+        {
+          "position": "delante",
+          "showHidden": false,
+          "phaser": {
+            "visible": 1151,
+            "total": 1151,
+            "ratio": 1
+          },
+          "canvas": {
+            "visible": 1135,
+            "total": 1135,
+            "ratio": 1
+          },
+          "absoluteDifference": 0,
+          "tolerance": 0.03,
+          "toleranceReason": "3 puntos porcentuales: banda estrecha de paridad perceptual para minificación Canvas/WebGL; se verifica además geometría exacta, sin mover pivotes o posiciones"
+        },
+        {
+          "position": "detras",
+          "showHidden": false,
+          "phaser": {
+            "visible": 0,
+            "total": 1166,
+            "ratio": 0
+          },
+          "canvas": {
+            "visible": 0,
+            "total": 1176,
+            "ratio": 0
+          },
+          "absoluteDifference": 0,
+          "tolerance": 0.03,
+          "toleranceReason": "3 puntos porcentuales: banda estrecha de paridad perceptual para minificación Canvas/WebGL; se verifica además geometría exacta, sin mover pivotes o posiciones"
+        },
+        {
+          "position": "esquina",
+          "showHidden": false,
+          "phaser": {
+            "visible": 683,
+            "total": 1192,
+            "ratio": 0.572986577181208
+          },
+          "canvas": {
+            "visible": 662,
+            "total": 1168,
+            "ratio": 0.5667808219178082
+          },
+          "absoluteDifference": 0.006205755263399837,
+          "tolerance": 0.03,
+          "toleranceReason": "3 puntos porcentuales: banda estrecha de paridad perceptual para minificación Canvas/WebGL; se verifica además geometría exacta, sin mover pivotes o posiciones"
+        },
+        {
+          "position": "detras",
+          "showHidden": true,
+          "phaser": {
+            "visible": 1185,
+            "total": 1192,
+            "ratio": 0.9941275167785235
+          },
+          "canvas": {
+            "visible": 1190,
+            "total": 1198,
+            "ratio": 0.993322203672788
+          },
+          "absoluteDifference": 0.0008053131057355056,
+          "tolerance": 0.03,
+          "toleranceReason": "3 puntos porcentuales: banda estrecha de paridad perceptual para minificación Canvas/WebGL; se verifica además geometría exacta, sin mover pivotes o posiciones"
+        }
+      ],
+      "checks": [
+        "Composición por backend, esquina ±3pp calibrada sobre Canvas, ocultos y oclusión normal",
+        "Rueda anclada y cámara real Phaser; pan, reset, teclado y un comando por activación",
+        "Pinza real CDP y arrastre de un dedo, sin selección accidental",
+        "Resize y encuadre, tres reinicios y destrucción/reapertura sin duplicar comandos"
+      ],
+      "errors": [],
+      "transforms": {
+        "ground": {
+          "x": 0,
+          "y": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "originX": 0,
+          "originY": 0,
+          "depth": 0,
+          "filter": 9987,
+          "textureWidth": 2048,
+          "textureHeight": 1024
+        },
+        "hospital": {
+          "x": 780,
+          "y": 670,
+          "scaleX": 0.65,
+          "scaleY": 0.65,
+          "originX": 0.5023923444976076,
+          "originY": 0.9154704944178629,
+          "depth": 2,
+          "filter": 9987,
+          "textureWidth": 2048,
+          "textureHeight": 2048
+        },
+        "zombie": {
+          "x": 710,
+          "y": 670,
+          "scaleX": 0.095,
+          "scaleY": 0.095,
+          "originX": 0.6093617021276596,
+          "originY": 0.9103139013452914,
+          "depth": 3,
+          "filter": 9987,
+          "textureWidth": 2048,
+          "textureHeight": 2048
+        },
+        "shadow": {
+          "x": 703,
+          "y": 669,
+          "scaleX": 0.296875,
+          "scaleY": 0.15625,
+          "originX": 0.5,
+          "originY": 0.5,
+          "depth": 1,
+          "filter": 9987,
+          "textureWidth": 128,
+          "textureHeight": 64
+        }
+      },
+      "panPixelAgreement": 1
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "dpr": 2,
+      "gpu": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+        "maxTextureSize": 8192
+      },
+      "occlusion": [
+        {
+          "position": "delante",
+          "showHidden": false,
+          "phaser": {
+            "visible": 713,
+            "total": 713,
+            "ratio": 1
+          },
+          "canvas": {
+            "visible": 685,
+            "total": 685,
+            "ratio": 1
+          },
+          "absoluteDifference": 0,
+          "tolerance": 0.03,
+          "toleranceReason": "3 puntos porcentuales: banda estrecha de paridad perceptual para minificación Canvas/WebGL; se verifica además geometría exacta, sin mover pivotes o posiciones"
+        },
+        {
+          "position": "detras",
+          "showHidden": false,
+          "phaser": {
+            "visible": 0,
+            "total": 726,
+            "ratio": 0
+          },
+          "canvas": {
+            "visible": 0,
+            "total": 689,
+            "ratio": 0
+          },
+          "absoluteDifference": 0,
+          "tolerance": 0.03,
+          "toleranceReason": "3 puntos porcentuales: banda estrecha de paridad perceptual para minificación Canvas/WebGL; se verifica además geometría exacta, sin mover pivotes o posiciones"
+        },
+        {
+          "position": "esquina",
+          "showHidden": false,
+          "phaser": {
+            "visible": 435,
+            "total": 737,
+            "ratio": 0.5902306648575305
+          },
+          "canvas": {
+            "visible": 392,
+            "total": 699,
+            "ratio": 0.5608011444921316
+          },
+          "absoluteDifference": 0.02942952036539892,
+          "tolerance": 0.03,
+          "toleranceReason": "3 puntos porcentuales: banda estrecha de paridad perceptual para minificación Canvas/WebGL; se verifica además geometría exacta, sin mover pivotes o posiciones"
+        },
+        {
+          "position": "detras",
+          "showHidden": true,
+          "phaser": {
+            "visible": 743,
+            "total": 752,
+            "ratio": 0.988031914893617
+          },
+          "canvas": {
+            "visible": 702,
+            "total": 709,
+            "ratio": 0.9901269393511989
+          },
+          "absoluteDifference": 0.0020950244575819177,
+          "tolerance": 0.03,
+          "toleranceReason": "3 puntos porcentuales: banda estrecha de paridad perceptual para minificación Canvas/WebGL; se verifica además geometría exacta, sin mover pivotes o posiciones"
+        }
+      ],
+      "checks": [
+        "Composición por backend, esquina ±3pp calibrada sobre Canvas, ocultos y oclusión normal",
+        "Rueda anclada y cámara real Phaser; pan, reset, teclado y un comando por activación",
+        "Pinza real CDP y arrastre de un dedo, sin selección accidental",
+        "Resize y encuadre, tres reinicios y destrucción/reapertura sin duplicar comandos"
+      ],
+      "errors": [],
+      "transforms": {
+        "ground": {
+          "x": 0,
+          "y": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "originX": 0,
+          "originY": 0,
+          "depth": 0,
+          "filter": 9987,
+          "textureWidth": 2048,
+          "textureHeight": 1024
+        },
+        "hospital": {
+          "x": 780,
+          "y": 670,
+          "scaleX": 0.65,
+          "scaleY": 0.65,
+          "originX": 0.5023923444976076,
+          "originY": 0.9154704944178629,
+          "depth": 2,
+          "filter": 9987,
+          "textureWidth": 2048,
+          "textureHeight": 2048
+        },
+        "zombie": {
+          "x": 710,
+          "y": 670,
+          "scaleX": 0.095,
+          "scaleY": 0.095,
+          "originX": 0.6093617021276596,
+          "originY": 0.9103139013452914,
+          "depth": 3,
+          "filter": 9987,
+          "textureWidth": 2048,
+          "textureHeight": 2048
+        },
+        "shadow": {
+          "x": 703,
+          "y": 669,
+          "scaleX": 0.296875,
+          "scaleY": 0.15625,
+          "originX": 0.5,
+          "originY": 0.5,
+          "depth": 1,
+          "filter": 9987,
+          "textureWidth": 128,
+          "textureHeight": 64
+        }
+      },
+      "panPixelAgreement": 1
+    }
+  ],
+  "failures": [],
+  "resourceFailure": "Aviso y recuperación al reintentar, sin app parcial",
+  "webglAbsent": "Aviso explícito y enlace Canvas funcional; sin fallback Phaser silencioso",
+  "passed": true
+}

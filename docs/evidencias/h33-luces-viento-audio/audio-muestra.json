@@ -1,0 +1,8 @@
+{
+  "duration": 12,
+  "sampleRate": 44100,
+  "rms": 0.030071091087141504,
+  "peak": 0.15513120591640472,
+  "physicalListening": false,
+  "method": "Mismo grafo procedural, OfflineAudioContext, no captura de altavoces."
+}

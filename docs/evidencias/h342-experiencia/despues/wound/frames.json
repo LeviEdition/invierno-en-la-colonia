@@ -1,0 +1,7346 @@
+[
+  {
+    "time": 5349,
+    "mode": "map",
+    "phase": "confirming",
+    "stage": null,
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 775,
+        "y": 375
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 5397.4000000059605,
+    "mode": "map",
+    "phase": "confirming",
+    "stage": null,
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 775,
+        "y": 375
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 5437.5,
+    "mode": "map",
+    "phase": "confirming",
+    "stage": null,
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 775,
+        "y": 375
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 5471.79999999702,
+    "mode": "map",
+    "phase": "confirming",
+    "stage": null,
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 775,
+        "y": 375
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 5520.4000000059605,
+    "mode": "map",
+    "phase": "confirming",
+    "stage": null,
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 775,
+        "y": 375
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 5559.20000000298,
+    "mode": "map",
+    "phase": "confirming",
+    "stage": null,
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 775,
+        "y": 375
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 5597.29999999702,
+    "mode": "map",
+    "phase": "confirming",
+    "stage": null,
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 775,
+        "y": 375
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 5635.70000000298,
+    "mode": "map",
+    "phase": "confirming",
+    "stage": null,
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 775,
+        "y": 375
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 5672.4000000059605,
+    "mode": "map",
+    "phase": "confirming",
+    "stage": null,
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 775,
+        "y": 375
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 5708.70000000298,
+    "mode": "map",
+    "phase": "confirming",
+    "stage": null,
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 775,
+        "y": 375
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 5745.100000008941,
+    "mode": "map",
+    "phase": "confirming",
+    "stage": null,
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 775,
+        "y": 375
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 5776.79999999702,
+    "mode": "map",
+    "phase": "confirming",
+    "stage": null,
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 775,
+        "y": 375
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 5821.79999999702,
+    "mode": "map",
+    "phase": "confirming",
+    "stage": null,
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 775,
+        "y": 375
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 5858.600000008941,
+    "mode": "map",
+    "phase": "sending",
+    "stage": null,
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 775,
+        "y": 375
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 5900,
+    "mode": "map",
+    "phase": "sending",
+    "stage": null,
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 775,
+        "y": 375
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 5938.70000000298,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 775,
+        "y": 375
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 5976.4000000059605,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 775,
+        "y": 375
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 6014.100000008941,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 762.1905999999999,
+        "y": 375.0888
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 6054.20000000298,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 749.3811999999998,
+        "y": 375.1776
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 6090.20000000298,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 730.1478666666666,
+        "y": 375.3109333333333
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 6127.70000000298,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 717.3,
+        "y": 375.4
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 6165.4000000059605,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 704.4906,
+        "y": 375.4888
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 6203.4000000059605,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 685.2572666666666,
+        "y": 375.62213333333335
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 6239.100000008941,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 672.4094000000001,
+        "y": 375.7112
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 6275.100000008941,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 659.6,
+        "y": 375.8
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 6318,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 646.7905999999999,
+        "y": 375.8888
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 6354.79999999702,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 627.5572666666666,
+        "y": 376.02213333333333
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 6391,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 614.7478666666666,
+        "y": 376.1109333333333
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 6425.79999999702,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 601.9,
+        "y": 376.2
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 6460.70000000298,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 589.0906,
+        "y": 376.2888
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 6492.70000000298,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 576.2427333333334,
+        "y": 376.37786666666665
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 6526.20000000298,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 563.4717999999998,
+        "y": 376.4664
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 6560.600000008941,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 550.6239333333333,
+        "y": 376.5554666666667
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 6594.5,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 537.8145333333332,
+        "y": 376.6442666666667
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 6626.600000008941,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 524.9666666666667,
+        "y": 376.73333333333335
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 6665.79999999702,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 512.1572666666666,
+        "y": 376.82213333333334
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 6702.20000000298,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 492.92393333333325,
+        "y": 376.95546666666667
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 6740,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 480.07606666666675,
+        "y": 377.04453333333333
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 6778,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 467.3051333333331,
+        "y": 377.13306666666665
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 6817.70000000298,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 454.4572666666666,
+        "y": 377.2221333333333
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 6849.4000000059605,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 435.22393333333326,
+        "y": 377.35546666666664
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 6884,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 422.4145333333332,
+        "y": 377.4442666666667
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 6931.600000008941,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 409.60513333333313,
+        "y": 377.5330666666667
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 6975,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 396.7572666666666,
+        "y": 377.62213333333335
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 7017.79999999702,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 377.5239333333333,
+        "y": 377.7554666666667
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 7063.600000008941,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 358.2905999999999,
+        "y": 377.8888
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 7100.29999999702,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 339.09573333333344,
+        "y": 378.02186666666665
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 7139.100000008941,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 326.2478666666665,
+        "y": 378.1109333333333
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 7179.79999999702,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 313.43846666666644,
+        "y": 378.1997333333333
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 7217.9000000059605,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 294.2051333333331,
+        "y": 378.3330666666667
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 7267.600000008941,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 281.3572666666666,
+        "y": 378.4221333333333
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 7302.4000000059605,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 262.1239333333333,
+        "y": 378.5554666666667
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 7354.79999999702,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 249.3145333333332,
+        "y": 378.6442666666667
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 7401,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 230.08119999999985,
+        "y": 378.7776
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 7437.5,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 210.8478666666665,
+        "y": 378.91093333333333
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 7485.9000000059605,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "travel",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198.03846666666652,
+        "y": 378.9997333333333
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": null
+  },
+  {
+    "time": 7532.79999999702,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "roll",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "2"
+  },
+  {
+    "time": 7569.79999999702,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "roll",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "2"
+  },
+  {
+    "time": 7606.5,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "roll",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 7644.20000000298,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "roll",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 7683.100000008941,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "roll",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "4"
+  },
+  {
+    "time": 7725.100000008941,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "roll",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "4"
+  },
+  {
+    "time": 7775.9000000059605,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "roll",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "5"
+  },
+  {
+    "time": 7814.4000000059605,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "roll",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "5"
+  },
+  {
+    "time": 7859.9000000059605,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "roll",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "6"
+  },
+  {
+    "time": 7900.100000008941,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "roll",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "6"
+  },
+  {
+    "time": 7942.4000000059605,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "roll",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "1"
+  },
+  {
+    "time": 7985.79999999702,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "roll",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "1"
+  },
+  {
+    "time": 8024.20000000298,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "roll",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "2"
+  },
+  {
+    "time": 8066.29999999702,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "reveal",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 8111.29999999702,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "reveal",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 8159,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "reveal",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 8194.70000000298,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "reveal",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 8238.79999999702,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "reveal",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 8293.10000000894,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "reveal",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 8344.90000000596,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "reveal",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 8382.79999999702,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "reveal",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 8432.29999999702,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "reveal",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 8473,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "reveal",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 8522.5,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "reveal",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 8566.40000000596,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "reveal",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 8628.79999999702,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "reveal",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 8671.90000000596,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "reveal",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 8707.20000000298,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "reveal",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 8741.79999999702,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "reveal",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 8776.60000000894,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "reveal",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 8821.10000000894,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "reveal",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 8852.90000000596,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "reveal",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 8887.90000000596,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "reveal",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 8924.60000000894,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "reveal",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 8954,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "reveal",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 8986.90000000596,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "reveal",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 9022.29999999702,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "reveal",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 9056.29999999702,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "reveal",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 9087.5,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "reveal",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 9118.60000000894,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "reveal",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 0,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 9154.70000000298,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "consequence",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 1,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 9185.79999999702,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "consequence",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 1,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 9215.79999999702,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "consequence",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 1,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 9247.20000000298,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "consequence",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 1,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 9277.90000000596,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "consequence",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 1,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 9319.29999999702,
+    "mode": "map",
+    "phase": "presenting",
+    "stage": "consequence",
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 1,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 9355.60000000894,
+    "mode": "map",
+    "phase": "idle",
+    "stage": null,
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 1,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 9391.70000000298,
+    "mode": "map",
+    "phase": "idle",
+    "stage": null,
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 1,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 9424.5,
+    "mode": "map",
+    "phase": "idle",
+    "stage": null,
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 1,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 9460.79999999702,
+    "mode": "map",
+    "phase": "idle",
+    "stage": null,
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 1,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 9495.60000000894,
+    "mode": "map",
+    "phase": "idle",
+    "stage": null,
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 1,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  },
+  {
+    "time": 9526,
+    "mode": "map",
+    "phase": "idle",
+    "stage": null,
+    "starts": 1,
+    "rect": {
+      "x": 0,
+      "y": 179.25,
+      "width": 393,
+      "height": 649.75
+    },
+    "camera": {
+      "x": 12,
+      "y": 186.625,
+      "zoom": 0.2548342541436464,
+      "minZoom": 0.2548342541436464,
+      "maxZoom": 1.274171270718232
+    },
+    "actor": {
+      "position": {
+        "x": 198,
+        "y": 379
+      },
+      "wounds": 1,
+      "frost": 0
+    },
+    "others": [
+      {
+        "id": "h1",
+        "position": {
+          "x": 891,
+          "y": 375
+        }
+      },
+      {
+        "id": "h2",
+        "position": {
+          "x": 1007,
+          "y": 375
+        }
+      },
+      {
+        "id": "a0",
+        "position": {
+          "x": 833,
+          "y": 375
+        }
+      },
+      {
+        "id": "a1",
+        "position": {
+          "x": 949,
+          "y": 375
+        }
+      },
+      {
+        "id": "a2",
+        "position": {
+          "x": 1065,
+          "y": 375
+        }
+      }
+    ],
+    "actorNodes": 1,
+    "imagesReady": true,
+    "die": "3"
+  }
+]

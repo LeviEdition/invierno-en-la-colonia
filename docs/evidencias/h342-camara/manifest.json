@@ -1,0 +1,146 @@
+{
+  "initialCommit": "74b40e0b1094f63d6f0d9f638bb60157cbd80864",
+  "implementationCommit": "8665740bb8241e4fd1d431eda131dfbd9a9d2897",
+  "records": [
+    {
+      "file": "1365/despues.png",
+      "bytes": 1311268,
+      "sha256": "f49ccf7ea543938840a19c14e2658ab87968ccda8d6fcfb05ed86a1d1eee7475"
+    },
+    {
+      "file": "1365/off-frames.json",
+      "bytes": 86486,
+      "sha256": "9d7fa509040fba95d40d147ed526d6de9fd2543ab09c00b45875723df3bec832"
+    },
+    {
+      "file": "1365/pan-zoom-perfiles.webm",
+      "bytes": 5026846,
+      "sha256": "0ed9b5fcfa0209a87cd8520ff0ef6be9b39c7efcf4b21e786cc45db47154d765"
+    },
+    {
+      "file": "1365/soft-frames.json",
+      "bytes": 100957,
+      "sha256": "9b06908d6a9cb301141711adde238342dc9b2f3809f8b373eaefe905043bc93a"
+    },
+    {
+      "file": "1365/storm-frames.json",
+      "bytes": 100635,
+      "sha256": "b5c17bc957313ceef3a54527df2999c4e350d46fb53b0eba50608091b907f42f"
+    },
+    {
+      "file": "320/despues.png",
+      "bytes": 1202625,
+      "sha256": "107fcb6aca4d1c00cd7658333232e79a92a7c1acf59f4ce7f417ea39771506c9"
+    },
+    {
+      "file": "320/off-frames.json",
+      "bytes": 63122,
+      "sha256": "7eed1952bb724fbc90594883f3fa9f2880aa590d4ce3323f58b243db6c76c36e"
+    },
+    {
+      "file": "320/pan-zoom-perfiles.webm",
+      "bytes": 2848322,
+      "sha256": "7ac02b19752e101ab2bc38eb86c6ab1b60beed092eb3d64fc6b321a6e6eed83f"
+    },
+    {
+      "file": "320/soft-frames.json",
+      "bytes": 69768,
+      "sha256": "495bcf19f1c5e495ba47ce3f59e69958b00d7e334b81d78dd652650d7886d4d7"
+    },
+    {
+      "file": "320/storm-frames.json",
+      "bytes": 65260,
+      "sha256": "c743694344877343d2f9fb540892f004b659946f80e865b0af57c09d909b94ef"
+    },
+    {
+      "file": "393/despues.png",
+      "bytes": 1822149,
+      "sha256": "d6aecb082ddd3be15044d439d0d99a91dd79073da5c3743eb6edc4e9bc7261c3"
+    },
+    {
+      "file": "393/off-frames.json",
+      "bytes": 65327,
+      "sha256": "cac2f4cf3162625cc967d7b2ff072c292da74ee6b3f233baa376792e0d06b384"
+    },
+    {
+      "file": "393/pan-zoom-perfiles.webm",
+      "bytes": 4691267,
+      "sha256": "e32bfbd61773a89edef43667e8af10fcfc23b960ca9d44280c20886fde87edbd"
+    },
+    {
+      "file": "393/soft-frames.json",
+      "bytes": 66004,
+      "sha256": "810fd8aeed100b1b7970a1db3c05cdcef00f84fddfd22f99d8b731be507f16f0"
+    },
+    {
+      "file": "393/storm-frames.json",
+      "bytes": 66000,
+      "sha256": "f9734d74872c3ffe0e5b263575c0722bea72789dedc31b486384d3293debeb9b"
+    },
+    {
+      "file": "antes-frames.json",
+      "bytes": 94740,
+      "sha256": "9d49e832ee384eb718f176a46e04e7f39c0c0955d6fa353e9c05767e51474b56"
+    },
+    {
+      "file": "antes-pan-zoom.webm",
+      "bytes": 2261603,
+      "sha256": "d58b15a3f6b98e7ec8f5b62f0c1a0b66a002bdf7a49a8bb86a1d2ad14985f39e"
+    },
+    {
+      "file": "antes.json",
+      "bytes": 4762,
+      "sha256": "59740f7406eca6843c67b39d7511b7b39dd2db2f2d468e8f8bc24ada30dbb52d"
+    },
+    {
+      "file": "casos-limite.json",
+      "bytes": 1496,
+      "sha256": "32e4fa364433d768676b7f0755030023eeac730d48ab4bc8f1a9ff189a6c44b5"
+    },
+    {
+      "file": "despues.json",
+      "bytes": 2965,
+      "sha256": "0e275909aa810ed3c4804add961c8f35fd78259b0fa7b0d1adbf7edb2eda99f1"
+    },
+    {
+      "file": "experiencia.json",
+      "bytes": 2748,
+      "sha256": "995dc73cb261562771064f1b6b4f4957d2cece944a03a26e6a94f9e1a1ca4506"
+    },
+    {
+      "file": "muestra-creador.mp4",
+      "bytes": 1166453,
+      "sha256": "4bfb6c9be8928b1f157128c9dfa948afd393b5d19e6bebf8dd7a4581bce13327"
+    },
+    {
+      "file": "rastreo-video-creador.json",
+      "bytes": 34867,
+      "sha256": "f491889eaff305748e48247fb3ba6096ef96d4b7c1d591808f65723ef93b4a2d"
+    },
+    {
+      "file": "recorte-creador-alineado.png",
+      "bytes": 404859,
+      "sha256": "60c57836740510c03c465d4011141b08b30a4670003f28def9a038c0774da10e"
+    },
+    {
+      "file": "recuperacion.json",
+      "bytes": 789,
+      "sha256": "79eb51f44f7f97dcf48f056d5443dac898dfe3372110557914826b7aa0a41539"
+    },
+    {
+      "file": "regresion.json",
+      "bytes": 2084,
+      "sha256": "c81387a93c8dcb15a0f337ca1f0679054177fb669599825941194d31b51f1b9e"
+    },
+    {
+      "file": "rojo-camara.txt",
+      "bytes": 432,
+      "sha256": "aa29954e9ac8ef15f730dd1bd9ef53b59e274c5eee2ec98b4097a87da5d6867c"
+    },
+    {
+      "file": "suite.txt",
+      "bytes": 49371,
+      "sha256": "0159e81549d5774e08e81d18b88d5df56e9b419289424081644e5eac6890144e"
+    }
+  ]
+}

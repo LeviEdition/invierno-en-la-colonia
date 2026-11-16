@@ -1,0 +1,200 @@
+[
+  {
+    "filter": "LINEAR_MIPMAP_LINEAR",
+    "viewport": {
+      "width": 1365,
+      "height": 768
+    },
+    "position": "esquina",
+    "showHidden": false,
+    "phaser": {
+      "visible": 699,
+      "total": 1190,
+      "ratio": 0.5873949579831933
+    },
+    "canvas": {
+      "visible": 678,
+      "total": 1195,
+      "ratio": 0.5673640167364017
+    },
+    "absoluteDifference": 0.02003094124679161,
+    "tolerance": 0.03,
+    "toleranceReason": "3 puntos porcentuales: banda estrecha de paridad perceptual para minificación Canvas/WebGL; se verifica además geometría exacta, sin mover pivotes o posiciones"
+  },
+  {
+    "filter": "LINEAR_MIPMAP_LINEAR",
+    "viewport": {
+      "width": 393,
+      "height": 852
+    },
+    "position": "esquina",
+    "showHidden": false,
+    "phaser": {
+      "visible": 683,
+      "total": 1187,
+      "ratio": 0.5754001684919966
+    },
+    "canvas": {
+      "visible": 662,
+      "total": 1168,
+      "ratio": 0.5667808219178082
+    },
+    "absoluteDifference": 0.008619346574188391,
+    "tolerance": 0.03,
+    "toleranceReason": "3 puntos porcentuales: banda estrecha de paridad perceptual para minificación Canvas/WebGL; se verifica además geometría exacta, sin mover pivotes o posiciones"
+  },
+  {
+    "filter": "LINEAR_MIPMAP_LINEAR",
+    "viewport": {
+      "width": 320,
+      "height": 640
+    },
+    "position": "esquina",
+    "showHidden": false,
+    "phaser": {
+      "visible": 436,
+      "total": 737,
+      "ratio": 0.5915875169606513
+    },
+    "canvas": {
+      "visible": 392,
+      "total": 699,
+      "ratio": 0.5608011444921316
+    },
+    "absoluteDifference": 0.030786372468519674,
+    "tolerance": 0.03,
+    "toleranceReason": "3 puntos porcentuales: banda estrecha de paridad perceptual para minificación Canvas/WebGL; se verifica además geometría exacta, sin mover pivotes o posiciones"
+  },
+  {
+    "filter": "LINEAR_MIPMAP_NEAREST",
+    "viewport": {
+      "width": 1365,
+      "height": 768
+    },
+    "position": "esquina",
+    "showHidden": false,
+    "phaser": {
+      "visible": 671,
+      "total": 1178,
+      "ratio": 0.5696095076400679
+    },
+    "canvas": {
+      "visible": 678,
+      "total": 1195,
+      "ratio": 0.5673640167364017
+    },
+    "absoluteDifference": 0.002245490903666214,
+    "tolerance": 0.03,
+    "toleranceReason": "3 puntos porcentuales: banda estrecha de paridad perceptual para minificación Canvas/WebGL; se verifica además geometría exacta, sin mover pivotes o posiciones"
+  },
+  {
+    "filter": "LINEAR_MIPMAP_NEAREST",
+    "viewport": {
+      "width": 393,
+      "height": 852
+    },
+    "position": "esquina",
+    "showHidden": false,
+    "phaser": {
+      "visible": 662,
+      "total": 1172,
+      "ratio": 0.5648464163822525
+    },
+    "canvas": {
+      "visible": 662,
+      "total": 1168,
+      "ratio": 0.5667808219178082
+    },
+    "absoluteDifference": 0.0019344055355556833,
+    "tolerance": 0.03,
+    "toleranceReason": "3 puntos porcentuales: banda estrecha de paridad perceptual para minificación Canvas/WebGL; se verifica además geometría exacta, sin mover pivotes o posiciones"
+  },
+  {
+    "filter": "LINEAR_MIPMAP_NEAREST",
+    "viewport": {
+      "width": 320,
+      "height": 640
+    },
+    "position": "esquina",
+    "showHidden": false,
+    "phaser": {
+      "visible": 478,
+      "total": 770,
+      "ratio": 0.6207792207792208
+    },
+    "canvas": {
+      "visible": 392,
+      "total": 699,
+      "ratio": 0.5608011444921316
+    },
+    "absoluteDifference": 0.05997807628708918,
+    "tolerance": 0.03,
+    "toleranceReason": "3 puntos porcentuales: banda estrecha de paridad perceptual para minificación Canvas/WebGL; se verifica además geometría exacta, sin mover pivotes o posiciones"
+  },
+  {
+    "filter": "NEAREST_MIPMAP_LINEAR",
+    "viewport": {
+      "width": 1365,
+      "height": 768
+    },
+    "position": "esquina",
+    "showHidden": false,
+    "phaser": {
+      "visible": 651,
+      "total": 1145,
+      "ratio": 0.5685589519650655
+    },
+    "canvas": {
+      "visible": 678,
+      "total": 1195,
+      "ratio": 0.5673640167364017
+    },
+    "absoluteDifference": 0.0011949352286637627,
+    "tolerance": 0.03,
+    "toleranceReason": "3 puntos porcentuales: banda estrecha de paridad perceptual para minificación Canvas/WebGL; se verifica además geometría exacta, sin mover pivotes o posiciones"
+  },
+  {
+    "filter": "NEAREST_MIPMAP_LINEAR",
+    "viewport": {
+      "width": 393,
+      "height": 852
+    },
+    "position": "esquina",
+    "showHidden": false,
+    "phaser": {
+      "visible": 613,
+      "total": 1092,
+      "ratio": 0.5613553113553114
+    },
+    "canvas": {
+      "visible": 662,
+      "total": 1168,
+      "ratio": 0.5667808219178082
+    },
+    "absoluteDifference": 0.005425510562496849,
+    "tolerance": 0.03,
+    "toleranceReason": "3 puntos porcentuales: banda estrecha de paridad perceptual para minificación Canvas/WebGL; se verifica además geometría exacta, sin mover pivotes o posiciones"
+  },
+  {
+    "filter": "NEAREST_MIPMAP_LINEAR",
+    "viewport": {
+      "width": 320,
+      "height": 640
+    },
+    "position": "esquina",
+    "showHidden": false,
+    "phaser": {
+      "visible": 398,
+      "total": 683,
+      "ratio": 0.582723279648609
+    },
+    "canvas": {
+      "visible": 392,
+      "total": 699,
+      "ratio": 0.5608011444921316
+    },
+    "absoluteDifference": 0.02192213515647745,
+    "tolerance": 0.03,
+    "toleranceReason": "3 puntos porcentuales: banda estrecha de paridad perceptual para minificación Canvas/WebGL; se verifica además geometría exacta, sin mover pivotes o posiciones"
+  }
+]

@@ -1,0 +1,317 @@
+{
+  "method": "Sondas QA de listeners, observers y objetos GL creados/eliminados; no miden VRAM",
+  "cycles": [
+    {
+      "listeners": [
+        {
+          "target": "document",
+          "type": "fullscreenchange"
+        },
+        {
+          "target": "document",
+          "type": "fullscreenerror"
+        },
+        {
+          "target": "document",
+          "type": "mozfullscreenchange"
+        },
+        {
+          "target": "document",
+          "type": "mozfullscreenerror"
+        },
+        {
+          "target": "document",
+          "type": "MSFullscreenChange"
+        },
+        {
+          "target": "document",
+          "type": "MSFullscreenError"
+        },
+        {
+          "target": "document",
+          "type": "visibilitychange"
+        },
+        {
+          "target": "document",
+          "type": "visibilitychange"
+        },
+        {
+          "target": "document",
+          "type": "webkitfullscreenchange"
+        },
+        {
+          "target": "document",
+          "type": "webkitfullscreenerror"
+        },
+        {
+          "target": "scene",
+          "type": "keydown"
+        },
+        {
+          "target": "scene",
+          "type": "lostpointercapture"
+        },
+        {
+          "target": "scene",
+          "type": "pointercancel"
+        },
+        {
+          "target": "scene",
+          "type": "pointerdown"
+        },
+        {
+          "target": "scene",
+          "type": "pointermove"
+        },
+        {
+          "target": "scene",
+          "type": "pointerup"
+        },
+        {
+          "target": "scene",
+          "type": "webglcontextlost"
+        },
+        {
+          "target": "scene",
+          "type": "webglcontextlost"
+        },
+        {
+          "target": "scene",
+          "type": "webglcontextrestored"
+        },
+        {
+          "target": "scene",
+          "type": "webglcontextrestored"
+        },
+        {
+          "target": "scene",
+          "type": "wheel"
+        },
+        {
+          "target": "window",
+          "type": "__playwright_global_listeners_check__"
+        },
+        {
+          "target": "window",
+          "type": "auxclick"
+        },
+        {
+          "target": "window",
+          "type": "blur"
+        },
+        {
+          "target": "window",
+          "type": "click"
+        },
+        {
+          "target": "window",
+          "type": "contextmenu"
+        },
+        {
+          "target": "window",
+          "type": "dblclick"
+        },
+        {
+          "target": "window",
+          "type": "mousedown"
+        },
+        {
+          "target": "window",
+          "type": "mousemove"
+        },
+        {
+          "target": "window",
+          "type": "mouseup"
+        },
+        {
+          "target": "window",
+          "type": "pointerdown"
+        },
+        {
+          "target": "window",
+          "type": "pointerup"
+        },
+        {
+          "target": "window",
+          "type": "resize"
+        },
+        {
+          "target": "window",
+          "type": "touchcancel"
+        },
+        {
+          "target": "window",
+          "type": "touchend"
+        },
+        {
+          "target": "window",
+          "type": "touchstart"
+        }
+      ],
+      "resizeTargets": 1,
+      "gl": {
+        "Texture": 10,
+        "Buffer": 9,
+        "Framebuffer": 0,
+        "Renderbuffer": 0,
+        "Program": 1,
+        "Shader": 2
+      }
+    }
+  ],
+  "initial": {
+    "listeners": [
+      {
+        "target": "document",
+        "type": "fullscreenchange"
+      },
+      {
+        "target": "document",
+        "type": "fullscreenerror"
+      },
+      {
+        "target": "document",
+        "type": "mozfullscreenchange"
+      },
+      {
+        "target": "document",
+        "type": "mozfullscreenerror"
+      },
+      {
+        "target": "document",
+        "type": "MSFullscreenChange"
+      },
+      {
+        "target": "document",
+        "type": "MSFullscreenError"
+      },
+      {
+        "target": "document",
+        "type": "visibilitychange"
+      },
+      {
+        "target": "document",
+        "type": "webkitfullscreenchange"
+      },
+      {
+        "target": "document",
+        "type": "webkitfullscreenerror"
+      },
+      {
+        "target": "scene",
+        "type": "keydown"
+      },
+      {
+        "target": "scene",
+        "type": "lostpointercapture"
+      },
+      {
+        "target": "scene",
+        "type": "pointercancel"
+      },
+      {
+        "target": "scene",
+        "type": "pointerdown"
+      },
+      {
+        "target": "scene",
+        "type": "pointermove"
+      },
+      {
+        "target": "scene",
+        "type": "pointerup"
+      },
+      {
+        "target": "scene",
+        "type": "webglcontextlost"
+      },
+      {
+        "target": "scene",
+        "type": "webglcontextlost"
+      },
+      {
+        "target": "scene",
+        "type": "webglcontextrestored"
+      },
+      {
+        "target": "scene",
+        "type": "webglcontextrestored"
+      },
+      {
+        "target": "scene",
+        "type": "wheel"
+      },
+      {
+        "target": "window",
+        "type": "__playwright_global_listeners_check__"
+      },
+      {
+        "target": "window",
+        "type": "auxclick"
+      },
+      {
+        "target": "window",
+        "type": "blur"
+      },
+      {
+        "target": "window",
+        "type": "click"
+      },
+      {
+        "target": "window",
+        "type": "contextmenu"
+      },
+      {
+        "target": "window",
+        "type": "dblclick"
+      },
+      {
+        "target": "window",
+        "type": "mousedown"
+      },
+      {
+        "target": "window",
+        "type": "mousemove"
+      },
+      {
+        "target": "window",
+        "type": "mouseup"
+      },
+      {
+        "target": "window",
+        "type": "pointerdown"
+      },
+      {
+        "target": "window",
+        "type": "pointerup"
+      },
+      {
+        "target": "window",
+        "type": "resize"
+      },
+      {
+        "target": "window",
+        "type": "touchcancel"
+      },
+      {
+        "target": "window",
+        "type": "touchend"
+      },
+      {
+        "target": "window",
+        "type": "touchstart"
+      }
+    ],
+    "resizeTargets": 1,
+    "gl": {
+      "Texture": 9,
+      "Buffer": 9,
+      "Framebuffer": 0,
+      "Renderbuffer": 0,
+      "Program": 1,
+      "Shader": 2
+    }
+  },
+  "passed": false,
+  "error": "AssertionError [ERR_ASSERTION]: Listeners/recursos no deben crecer tras reiniciar\n+ actual - expected\n... Skipped lines\n\n  {\n    gl: {\n      Buffer: 9,\n      Framebuffer: 0,\n      Program: 1,\n      Renderbuffer: 0,\n      Shader: 2,\n+     Texture: 10\n-     Texture: 9\n    },\n    listeners: [\n      {\n        target: 'document',\n        type: 'fullscreenchange'\n...\n        target: 'document',\n+       type: 'visibilitychange'\n+     },\n+     {\n+       target: 'document',\n        type: 'webkitfullscreenchange'\n      },\n      {\n        target: 'document',\n        type: 'webkitfullscreenerror'\n\n    at file:///tmp/invierno-h32/scripts/check-h32-lifecycle.mjs:22:144"
+}

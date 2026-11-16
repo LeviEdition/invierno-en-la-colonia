@@ -1,0 +1,250 @@
+{
+  "version": 1,
+  "bounds": {
+    "x": 0,
+    "y": 0,
+    "width": 1448,
+    "height": 1086
+  },
+  "frameRate": 30,
+  "maxDelta": 0.05,
+  "limits": {
+    "snow": 128,
+    "smoke": 18,
+    "wind": 12
+  },
+  "intensities": {
+    "soft": {
+      "count": 0.48,
+      "alpha": 0.72,
+      "speed": 0.55,
+      "drift": 0.4
+    },
+    "storm": {
+      "count": 1,
+      "alpha": 1,
+      "speed": 2.1,
+      "drift": 1.8
+    }
+  },
+  "depths": {
+    "lights": 2,
+    "wind": 2.5,
+    "smoke": 4,
+    "snow": 6
+  },
+  "edgeFade": 18,
+  "snow": {
+    "size": [
+      4,
+      9
+    ],
+    "speed": [
+      35,
+      65
+    ],
+    "opacity": [
+      0.65,
+      0.95
+    ]
+  },
+  "wind": {
+    "base": 60,
+    "amplitude": 35,
+    "period": 9.7,
+    "secondaryPeriod": 6.3,
+    "size": [
+      100,
+      180
+    ],
+    "height": [
+      10,
+      16
+    ],
+    "life": [
+      7,
+      12
+    ],
+    "opacity": [
+      0.65,
+      0.9
+    ]
+  },
+  "windZones": [
+    {
+      "id": "calle-central-oeste",
+      "x": 190,
+      "y": 672,
+      "width": 260,
+      "height": 28
+    },
+    {
+      "id": "calle-central-este",
+      "x": 935,
+      "y": 672,
+      "width": 300,
+      "height": 28
+    },
+    {
+      "id": "calle-sur-comisaria",
+      "x": 590,
+      "y": 982,
+      "width": 235,
+      "height": 24
+    }
+  ],
+  "smokeEmitters": [
+    {
+      "id": "colonia-chimenea-oeste",
+      "locality": "colonia",
+      "x": 738,
+      "y": 310,
+      "source": "Boca superior del conducto de ladrillo del sector oeste, mapa original",
+      "life": [
+        10,
+        16
+      ],
+      "rise": [
+        7,
+        11
+      ],
+      "size": [
+        12,
+        20
+      ],
+      "opacity": [
+        0.48,
+        0.7
+      ]
+    }
+  ],
+  "omissions": [
+    {
+      "locality": "hospital",
+      "reason": "El tejado contiene conductos/equipos de ventilaci\u00f3n; no se identifica una chimenea de combusti\u00f3n inequ\u00edvoca. Se omite humo para no inventar una salida."
+    }
+  ],
+  "lights": [
+    {
+      "id": "hospital-ventana-oeste",
+      "locality": "hospital",
+      "polygon": [
+        [
+          182,
+          447
+        ],
+        [
+          195,
+          447
+        ],
+        [
+          195,
+          461
+        ],
+        [
+          182,
+          461
+        ]
+      ],
+      "period": 3.7,
+      "phase": 0.8,
+      "base": 0.43,
+      "variation": 0.41
+    },
+    {
+      "id": "hospital-ventana-este",
+      "locality": "hospital",
+      "polygon": [
+        [
+          359,
+          450
+        ],
+        [
+          371,
+          450
+        ],
+        [
+          371,
+          464
+        ],
+        [
+          359,
+          464
+        ]
+      ],
+      "period": 5.9,
+      "phase": 3.1,
+      "base": 0.43,
+      "variation": 0.41
+    },
+    {
+      "id": "colonia-entrada",
+      "locality": "colonia",
+      "polygon": [
+        [
+          913,
+          470
+        ],
+        [
+          920,
+          470
+        ],
+        [
+          920,
+          478
+        ],
+        [
+          913,
+          478
+        ]
+      ],
+      "period": 4.7,
+      "phase": 1.9,
+      "base": 0.43,
+      "variation": 0.41
+    },
+    {
+      "id": "colonia-ventana-oeste",
+      "locality": "colonia",
+      "polygon": [
+        [
+          748,
+          456
+        ],
+        [
+          760,
+          456
+        ],
+        [
+          760,
+          471
+        ],
+        [
+          748,
+          471
+        ]
+      ],
+      "period": 6.3,
+      "phase": 4.6,
+      "base": 0.43,
+      "variation": 0.41
+    }
+  ],
+  "colors": {
+    "snow": "#f8fafb",
+    "wind": "#f0f3f4",
+    "smoke": "#15171c",
+    "lights": "#ffc76b"
+  },
+  "lightsHaloScale": 2.8,
+  "lightsHaloAlpha": 0.5,
+  "lightsShadeAlpha": 0.8,
+  "audio": {
+    "bufferSeconds": 4,
+    "volume": 0.4,
+    "highpass": 90,
+    "lowpass": 1600,
+    "gustPeriod": 11,
+    "maxGain": 0.35
+  }
+}

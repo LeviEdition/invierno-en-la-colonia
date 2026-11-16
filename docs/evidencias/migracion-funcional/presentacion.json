@@ -1,0 +1,1522 @@
+{
+  "baseline": false,
+  "browser": "154.0.8037.57",
+  "physicalMobile": false,
+  "records": [
+    {
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "errors": [],
+      "colony": [
+        {
+          "count": 1,
+          "centerX": 835,
+          "characters": [
+            {
+              "id": "h0",
+              "position": {
+                "x": 835,
+                "y": 477
+              },
+              "portraitId": "survivor-portrait-1"
+            }
+          ],
+          "general": [
+            {
+              "id": "escuela",
+              "left": 341.34165781083954,
+              "top": 51.64718384697131,
+              "right": 515.7943676939426,
+              "bottom": 148.22741764080766,
+              "inside": true
+            },
+            {
+              "id": "biblioteca",
+              "left": 854.9442082890541,
+              "top": 64.2720510095643,
+              "right": 996.1131774707757,
+              "bottom": 157.8682252922423,
+              "inside": true
+            },
+            {
+              "id": "hospital",
+              "left": 266.740170031881,
+              "top": 169.86184909670564,
+              "right": 476.77205100956434,
+              "bottom": 291.989821466525,
+              "inside": true
+            },
+            {
+              "id": "colonia",
+              "left": 482.51062699256113,
+              "top": 155.5154091392136,
+              "right": 875.6030818278427,
+              "bottom": 336.85441020191286,
+              "inside": true
+            },
+            {
+              "id": "supermercado",
+              "left": 896.2619553666314,
+              "top": 190.52072263549417,
+              "right": 1124.0834218916048,
+              "bottom": 292.7247608926674,
+              "inside": true
+            },
+            {
+              "id": "gasolinera",
+              "left": 306.33634431455897,
+              "top": 337.42826780021255,
+              "right": 476.7720510095643,
+              "bottom": 421.392701381509,
+              "inside": true
+            },
+            {
+              "id": "comisaria",
+              "left": 857.2396386822529,
+              "top": 323.0818278427205,
+              "right": 1039.152497343252,
+              "bottom": 428.0977683315622,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "count": 6,
+          "centerX": 835,
+          "characters": [
+            {
+              "id": "h0",
+              "position": {
+                "x": 732.5,
+                "y": 477
+              },
+              "portraitId": "survivor-portrait-1"
+            },
+            {
+              "id": "h1",
+              "position": {
+                "x": 773.5,
+                "y": 477
+              },
+              "portraitId": "survivor-portrait-2"
+            },
+            {
+              "id": "a1",
+              "position": {
+                "x": 814.5,
+                "y": 477
+              },
+              "portraitId": "survivor-portrait-3"
+            },
+            {
+              "id": "a0",
+              "position": {
+                "x": 855.5,
+                "y": 477
+              },
+              "portraitId": "survivor-portrait-4"
+            },
+            {
+              "id": "qa-4",
+              "position": {
+                "x": 896.5,
+                "y": 477
+              },
+              "portraitId": null
+            },
+            {
+              "id": "qa-5",
+              "position": {
+                "x": 937.5,
+                "y": 477
+              },
+              "portraitId": null
+            }
+          ],
+          "general": [
+            {
+              "id": "escuela",
+              "left": 341.34165781083954,
+              "top": 51.64718384697131,
+              "right": 515.7943676939426,
+              "bottom": 148.22741764080766,
+              "inside": true
+            },
+            {
+              "id": "biblioteca",
+              "left": 854.9442082890541,
+              "top": 64.2720510095643,
+              "right": 996.1131774707757,
+              "bottom": 157.8682252922423,
+              "inside": true
+            },
+            {
+              "id": "hospital",
+              "left": 266.740170031881,
+              "top": 169.86184909670564,
+              "right": 476.77205100956434,
+              "bottom": 291.989821466525,
+              "inside": true
+            },
+            {
+              "id": "colonia",
+              "left": 482.51062699256113,
+              "top": 155.5154091392136,
+              "right": 875.6030818278427,
+              "bottom": 336.85441020191286,
+              "inside": true
+            },
+            {
+              "id": "supermercado",
+              "left": 896.2619553666314,
+              "top": 190.52072263549417,
+              "right": 1124.0834218916048,
+              "bottom": 292.7247608926674,
+              "inside": true
+            },
+            {
+              "id": "gasolinera",
+              "left": 306.33634431455897,
+              "top": 337.42826780021255,
+              "right": 476.7720510095643,
+              "bottom": 421.392701381509,
+              "inside": true
+            },
+            {
+              "id": "comisaria",
+              "left": 857.2396386822529,
+              "top": 323.0818278427205,
+              "right": 1039.152497343252,
+              "bottom": 428.0977683315622,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "count": 12,
+          "centerX": 835,
+          "characters": [
+            {
+              "id": "h0",
+              "position": {
+                "x": 609.5,
+                "y": 477
+              },
+              "portraitId": "survivor-portrait-1"
+            },
+            {
+              "id": "h1",
+              "position": {
+                "x": 650.5,
+                "y": 477
+              },
+              "portraitId": "survivor-portrait-2"
+            },
+            {
+              "id": "a1",
+              "position": {
+                "x": 691.5,
+                "y": 477
+              },
+              "portraitId": "survivor-portrait-3"
+            },
+            {
+              "id": "a0",
+              "position": {
+                "x": 732.5,
+                "y": 477
+              },
+              "portraitId": "survivor-portrait-4"
+            },
+            {
+              "id": "qa-4",
+              "position": {
+                "x": 773.5,
+                "y": 477
+              },
+              "portraitId": null
+            },
+            {
+              "id": "qa-5",
+              "position": {
+                "x": 814.5,
+                "y": 477
+              },
+              "portraitId": null
+            },
+            {
+              "id": "qa-6",
+              "position": {
+                "x": 855.5,
+                "y": 477
+              },
+              "portraitId": null
+            },
+            {
+              "id": "qa-7",
+              "position": {
+                "x": 896.5,
+                "y": 477
+              },
+              "portraitId": null
+            },
+            {
+              "id": "qa-8",
+              "position": {
+                "x": 937.5,
+                "y": 477
+              },
+              "portraitId": null
+            },
+            {
+              "id": "qa-9",
+              "position": {
+                "x": 978.5,
+                "y": 477
+              },
+              "portraitId": null
+            },
+            {
+              "id": "qa-10",
+              "position": {
+                "x": 1019.5,
+                "y": 477
+              },
+              "portraitId": null
+            },
+            {
+              "id": "qa-11",
+              "position": {
+                "x": 1060.5,
+                "y": 477
+              },
+              "portraitId": null
+            }
+          ],
+          "general": [
+            {
+              "id": "escuela",
+              "left": 341.34165781083954,
+              "top": 51.64718384697131,
+              "right": 515.7943676939426,
+              "bottom": 148.22741764080766,
+              "inside": true
+            },
+            {
+              "id": "biblioteca",
+              "left": 854.9442082890541,
+              "top": 64.2720510095643,
+              "right": 996.1131774707757,
+              "bottom": 157.8682252922423,
+              "inside": true
+            },
+            {
+              "id": "hospital",
+              "left": 266.740170031881,
+              "top": 169.86184909670564,
+              "right": 476.77205100956434,
+              "bottom": 291.989821466525,
+              "inside": true
+            },
+            {
+              "id": "colonia",
+              "left": 482.51062699256113,
+              "top": 155.5154091392136,
+              "right": 875.6030818278427,
+              "bottom": 336.85441020191286,
+              "inside": true
+            },
+            {
+              "id": "supermercado",
+              "left": 896.2619553666314,
+              "top": 190.52072263549417,
+              "right": 1124.0834218916048,
+              "bottom": 292.7247608926674,
+              "inside": true
+            },
+            {
+              "id": "gasolinera",
+              "left": 306.33634431455897,
+              "top": 337.42826780021255,
+              "right": 476.7720510095643,
+              "bottom": 421.392701381509,
+              "inside": true
+            },
+            {
+              "id": "comisaria",
+              "left": 857.2396386822529,
+              "top": 323.0818278427205,
+              "right": 1039.152497343252,
+              "bottom": 428.0977683315622,
+              "inside": true
+            }
+          ]
+        }
+      ],
+      "modes": [
+        {
+          "mode": "zombies",
+          "general": [
+            {
+              "id": "escuela",
+              "left": 341.34165781083954,
+              "top": 51.64718384697131,
+              "right": 515.7943676939426,
+              "bottom": 148.22741764080766,
+              "inside": true
+            },
+            {
+              "id": "biblioteca",
+              "left": 854.9442082890541,
+              "top": 64.2720510095643,
+              "right": 996.1131774707757,
+              "bottom": 157.8682252922423,
+              "inside": true
+            },
+            {
+              "id": "hospital",
+              "left": 266.740170031881,
+              "top": 169.86184909670564,
+              "right": 476.77205100956434,
+              "bottom": 291.989821466525,
+              "inside": true
+            },
+            {
+              "id": "colonia",
+              "left": 482.51062699256113,
+              "top": 155.5154091392136,
+              "right": 875.6030818278427,
+              "bottom": 336.85441020191286,
+              "inside": true
+            },
+            {
+              "id": "supermercado",
+              "left": 896.2619553666314,
+              "top": 190.52072263549417,
+              "right": 1124.0834218916048,
+              "bottom": 292.7247608926674,
+              "inside": true
+            },
+            {
+              "id": "gasolinera",
+              "left": 306.33634431455897,
+              "top": 337.42826780021255,
+              "right": 476.7720510095643,
+              "bottom": 421.392701381509,
+              "inside": true
+            },
+            {
+              "id": "comisaria",
+              "left": 857.2396386822529,
+              "top": 323.0818278427205,
+              "right": 1039.152497343252,
+              "bottom": 428.0977683315622,
+              "inside": true
+            }
+          ],
+          "characters": 36,
+          "zombies": 33,
+          "barricades": 0
+        },
+        {
+          "mode": "barricades",
+          "general": [
+            {
+              "id": "escuela",
+              "left": 341.34165781083954,
+              "top": 51.64718384697131,
+              "right": 515.7943676939426,
+              "bottom": 148.22741764080766,
+              "inside": true
+            },
+            {
+              "id": "biblioteca",
+              "left": 854.9442082890541,
+              "top": 64.2720510095643,
+              "right": 996.1131774707757,
+              "bottom": 157.8682252922423,
+              "inside": true
+            },
+            {
+              "id": "hospital",
+              "left": 266.740170031881,
+              "top": 169.86184909670564,
+              "right": 476.77205100956434,
+              "bottom": 291.989821466525,
+              "inside": true
+            },
+            {
+              "id": "colonia",
+              "left": 482.51062699256113,
+              "top": 155.5154091392136,
+              "right": 875.6030818278427,
+              "bottom": 336.85441020191286,
+              "inside": true
+            },
+            {
+              "id": "supermercado",
+              "left": 896.2619553666314,
+              "top": 190.52072263549417,
+              "right": 1124.0834218916048,
+              "bottom": 292.7247608926674,
+              "inside": true
+            },
+            {
+              "id": "gasolinera",
+              "left": 306.33634431455897,
+              "top": 337.42826780021255,
+              "right": 476.7720510095643,
+              "bottom": 421.392701381509,
+              "inside": true
+            },
+            {
+              "id": "comisaria",
+              "left": 857.2396386822529,
+              "top": 323.0818278427205,
+              "right": 1039.152497343252,
+              "bottom": 428.0977683315622,
+              "inside": true
+            }
+          ],
+          "characters": 36,
+          "zombies": 0,
+          "barricades": 33
+        },
+        {
+          "mode": "mixed",
+          "general": [
+            {
+              "id": "escuela",
+              "left": 341.34165781083954,
+              "top": 51.64718384697131,
+              "right": 515.7943676939426,
+              "bottom": 148.22741764080766,
+              "inside": true
+            },
+            {
+              "id": "biblioteca",
+              "left": 854.9442082890541,
+              "top": 64.2720510095643,
+              "right": 996.1131774707757,
+              "bottom": 157.8682252922423,
+              "inside": true
+            },
+            {
+              "id": "hospital",
+              "left": 266.740170031881,
+              "top": 169.86184909670564,
+              "right": 476.77205100956434,
+              "bottom": 291.989821466525,
+              "inside": true
+            },
+            {
+              "id": "colonia",
+              "left": 482.51062699256113,
+              "top": 155.5154091392136,
+              "right": 875.6030818278427,
+              "bottom": 336.85441020191286,
+              "inside": true
+            },
+            {
+              "id": "supermercado",
+              "left": 896.2619553666314,
+              "top": 190.52072263549417,
+              "right": 1124.0834218916048,
+              "bottom": 292.7247608926674,
+              "inside": true
+            },
+            {
+              "id": "gasolinera",
+              "left": 306.33634431455897,
+              "top": 337.42826780021255,
+              "right": 476.7720510095643,
+              "bottom": 421.392701381509,
+              "inside": true
+            },
+            {
+              "id": "comisaria",
+              "left": 857.2396386822529,
+              "top": 323.0818278427205,
+              "right": 1039.152497343252,
+              "bottom": 428.0977683315622,
+              "inside": true
+            }
+          ],
+          "characters": 36,
+          "zombies": 17,
+          "barricades": 16
+        }
+      ],
+      "picking": [
+        {
+          "locality": "escuela",
+          "index": 0
+        },
+        {
+          "locality": "escuela",
+          "index": 1
+        },
+        {
+          "locality": "escuela",
+          "index": 2
+        },
+        {
+          "locality": "escuela",
+          "index": 3
+        },
+        {
+          "locality": "biblioteca",
+          "index": 0
+        },
+        {
+          "locality": "biblioteca",
+          "index": 1
+        },
+        {
+          "locality": "biblioteca",
+          "index": 2
+        },
+        {
+          "locality": "hospital",
+          "index": 0
+        },
+        {
+          "locality": "hospital",
+          "index": 1
+        },
+        {
+          "locality": "hospital",
+          "index": 2
+        },
+        {
+          "locality": "hospital",
+          "index": 3
+        },
+        {
+          "locality": "colonia",
+          "index": 0
+        },
+        {
+          "locality": "colonia",
+          "index": 1
+        },
+        {
+          "locality": "colonia",
+          "index": 2
+        },
+        {
+          "locality": "colonia",
+          "index": 3
+        },
+        {
+          "locality": "colonia",
+          "index": 4
+        },
+        {
+          "locality": "colonia",
+          "index": 5
+        },
+        {
+          "locality": "colonia",
+          "index": 6
+        },
+        {
+          "locality": "colonia",
+          "index": 7
+        },
+        {
+          "locality": "colonia",
+          "index": 8
+        },
+        {
+          "locality": "colonia",
+          "index": 9
+        },
+        {
+          "locality": "colonia",
+          "index": 10
+        },
+        {
+          "locality": "colonia",
+          "index": 11
+        },
+        {
+          "locality": "supermercado",
+          "index": 0
+        },
+        {
+          "locality": "supermercado",
+          "index": 1
+        },
+        {
+          "locality": "supermercado",
+          "index": 2
+        },
+        {
+          "locality": "supermercado",
+          "index": 3
+        },
+        {
+          "locality": "gasolinera",
+          "index": 0
+        },
+        {
+          "locality": "gasolinera",
+          "index": 1
+        },
+        {
+          "locality": "comisaria",
+          "index": 0
+        },
+        {
+          "locality": "comisaria",
+          "index": 1
+        },
+        {
+          "locality": "comisaria",
+          "index": 2
+        },
+        {
+          "locality": "comisaria",
+          "index": 3
+        }
+      ],
+      "panel": [
+        "place-0",
+        "place-2",
+        "general"
+      ],
+      "general": [
+        {
+          "id": "escuela",
+          "left": 326.8108395324123,
+          "top": 53.846971307120086,
+          "right": 508.6939426142401,
+          "bottom": 154.54080765143465,
+          "inside": true
+        },
+        {
+          "id": "biblioteca",
+          "left": 862.2890541976619,
+          "top": 67.00956429330499,
+          "right": 1009.4707757704568,
+          "bottom": 164.5922422954304,
+          "inside": true
+        },
+        {
+          "id": "hospital",
+          "left": 249.0318809776833,
+          "top": 177.09670563230605,
+          "right": 468.00956429330495,
+          "bottom": 304.4264249734325,
+          "inside": true
+        },
+        {
+          "id": "colonia",
+          "left": 473.9925611052072,
+          "top": 162.13921360255048,
+          "right": 883.82784272051,
+          "bottom": 351.201912858661,
+          "inside": true
+        },
+        {
+          "id": "supermercado",
+          "left": 905.3666312433581,
+          "top": 198.63549415515408,
+          "right": 1142.8916046758768,
+          "bottom": 305.1926673751328,
+          "inside": true
+        },
+        {
+          "id": "gasolinera",
+          "left": 290.3145589798087,
+          "top": 351.8002125398512,
+          "right": 468.00956429330495,
+          "bottom": 439.3409090329436,
+          "inside": true
+        },
+        {
+          "id": "comisaria",
+          "left": 864.682252922423,
+          "top": 336.8427205100956,
+          "right": 1054.3432518597238,
+          "bottom": 446.33156216790644,
+          "inside": true
+        }
+      ],
+      "portraitTarget44": true,
+      "overlayPicking": [
+        "escuela",
+        "biblioteca",
+        "hospital",
+        "colonia",
+        "supermercado",
+        "gasolinera",
+        "comisaria"
+      ],
+      "qaOutsideMap": true,
+      "volumes": 66,
+      "panZoomReset": true
+    },
+    {
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "errors": [],
+      "colony": [
+        {
+          "count": 1,
+          "centerX": 835,
+          "characters": [
+            {
+              "id": "h0",
+              "position": {
+                "x": 835,
+                "y": 477
+              },
+              "portraitId": "survivor-portrait-1"
+            }
+          ],
+          "general": [
+            {
+              "id": "escuela",
+              "left": 285.74601487778955,
+              "top": 21.232731137088205,
+              "right": 357.4654622741764,
+              "bottom": 60.93793836344315,
+              "inside": true
+            },
+            {
+              "id": "biblioteca",
+              "left": 496.89373007438894,
+              "top": 26.422954303931988,
+              "right": 554.9298618490967,
+              "bottom": 64.90138150903294,
+              "inside": true
+            },
+            {
+              "id": "hospital",
+              "left": 255.07651434643995,
+              "top": 69.83209351753453,
+              "right": 341.422954303932,
+              "bottom": 120.04025993623804,
+              "inside": true
+            },
+            {
+              "id": "colonia",
+              "left": 343.7821466524973,
+              "top": 63.93411264612115,
+              "right": 505.3868225292242,
+              "bottom": 138.4845908607864,
+              "inside": true
+            },
+            {
+              "id": "supermercado",
+              "left": 513.8799149840595,
+              "top": 78.32518597236982,
+              "right": 607.5398512221042,
+              "bottom": 120.34240170031882,
+              "inside": true
+            },
+            {
+              "id": "gasolinera",
+              "left": 271.3549415515409,
+              "top": 138.72051009564294,
+              "right": 341.422954303932,
+              "bottom": 173.23922167906483,
+              "inside": true
+            },
+            {
+              "id": "comisaria",
+              "left": 497.8374070138151,
+              "top": 132.82252922422956,
+              "right": 572.6238044633369,
+              "bottom": 175.99574920297556,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "count": 6,
+          "centerX": 835,
+          "characters": [
+            {
+              "id": "h0",
+              "position": {
+                "x": 732.5,
+                "y": 477
+              },
+              "portraitId": "survivor-portrait-1"
+            },
+            {
+              "id": "h1",
+              "position": {
+                "x": 773.5,
+                "y": 477
+              },
+              "portraitId": "survivor-portrait-2"
+            },
+            {
+              "id": "a1",
+              "position": {
+                "x": 814.5,
+                "y": 477
+              },
+              "portraitId": "survivor-portrait-3"
+            },
+            {
+              "id": "a0",
+              "position": {
+                "x": 855.5,
+                "y": 477
+              },
+              "portraitId": "survivor-portrait-4"
+            },
+            {
+              "id": "qa-4",
+              "position": {
+                "x": 896.5,
+                "y": 477
+              },
+              "portraitId": null
+            },
+            {
+              "id": "qa-5",
+              "position": {
+                "x": 937.5,
+                "y": 477
+              },
+              "portraitId": null
+            }
+          ],
+          "general": [
+            {
+              "id": "escuela",
+              "left": 285.74601487778955,
+              "top": 21.232731137088205,
+              "right": 357.4654622741764,
+              "bottom": 60.93793836344315,
+              "inside": true
+            },
+            {
+              "id": "biblioteca",
+              "left": 496.89373007438894,
+              "top": 26.422954303931988,
+              "right": 554.9298618490967,
+              "bottom": 64.90138150903294,
+              "inside": true
+            },
+            {
+              "id": "hospital",
+              "left": 255.07651434643995,
+              "top": 69.83209351753453,
+              "right": 341.422954303932,
+              "bottom": 120.04025993623804,
+              "inside": true
+            },
+            {
+              "id": "colonia",
+              "left": 343.7821466524973,
+              "top": 63.93411264612115,
+              "right": 505.3868225292242,
+              "bottom": 138.4845908607864,
+              "inside": true
+            },
+            {
+              "id": "supermercado",
+              "left": 513.8799149840595,
+              "top": 78.32518597236982,
+              "right": 607.5398512221042,
+              "bottom": 120.34240170031882,
+              "inside": true
+            },
+            {
+              "id": "gasolinera",
+              "left": 271.3549415515409,
+              "top": 138.72051009564294,
+              "right": 341.422954303932,
+              "bottom": 173.23922167906483,
+              "inside": true
+            },
+            {
+              "id": "comisaria",
+              "left": 497.8374070138151,
+              "top": 132.82252922422956,
+              "right": 572.6238044633369,
+              "bottom": 175.99574920297556,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "count": 12,
+          "centerX": 835,
+          "characters": [
+            {
+              "id": "h0",
+              "position": {
+                "x": 609.5,
+                "y": 477
+              },
+              "portraitId": "survivor-portrait-1"
+            },
+            {
+              "id": "h1",
+              "position": {
+                "x": 650.5,
+                "y": 477
+              },
+              "portraitId": "survivor-portrait-2"
+            },
+            {
+              "id": "a1",
+              "position": {
+                "x": 691.5,
+                "y": 477
+              },
+              "portraitId": "survivor-portrait-3"
+            },
+            {
+              "id": "a0",
+              "position": {
+                "x": 732.5,
+                "y": 477
+              },
+              "portraitId": "survivor-portrait-4"
+            },
+            {
+              "id": "qa-4",
+              "position": {
+                "x": 773.5,
+                "y": 477
+              },
+              "portraitId": null
+            },
+            {
+              "id": "qa-5",
+              "position": {
+                "x": 814.5,
+                "y": 477
+              },
+              "portraitId": null
+            },
+            {
+              "id": "qa-6",
+              "position": {
+                "x": 855.5,
+                "y": 477
+              },
+              "portraitId": null
+            },
+            {
+              "id": "qa-7",
+              "position": {
+                "x": 896.5,
+                "y": 477
+              },
+              "portraitId": null
+            },
+            {
+              "id": "qa-8",
+              "position": {
+                "x": 937.5,
+                "y": 477
+              },
+              "portraitId": null
+            },
+            {
+              "id": "qa-9",
+              "position": {
+                "x": 978.5,
+                "y": 477
+              },
+              "portraitId": null
+            },
+            {
+              "id": "qa-10",
+              "position": {
+                "x": 1019.5,
+                "y": 477
+              },
+              "portraitId": null
+            },
+            {
+              "id": "qa-11",
+              "position": {
+                "x": 1060.5,
+                "y": 477
+              },
+              "portraitId": null
+            }
+          ],
+          "general": [
+            {
+              "id": "escuela",
+              "left": 285.74601487778955,
+              "top": 21.232731137088205,
+              "right": 357.4654622741764,
+              "bottom": 60.93793836344315,
+              "inside": true
+            },
+            {
+              "id": "biblioteca",
+              "left": 496.89373007438894,
+              "top": 26.422954303931988,
+              "right": 554.9298618490967,
+              "bottom": 64.90138150903294,
+              "inside": true
+            },
+            {
+              "id": "hospital",
+              "left": 255.07651434643995,
+              "top": 69.83209351753453,
+              "right": 341.422954303932,
+              "bottom": 120.04025993623804,
+              "inside": true
+            },
+            {
+              "id": "colonia",
+              "left": 343.7821466524973,
+              "top": 63.93411264612115,
+              "right": 505.3868225292242,
+              "bottom": 138.4845908607864,
+              "inside": true
+            },
+            {
+              "id": "supermercado",
+              "left": 513.8799149840595,
+              "top": 78.32518597236982,
+              "right": 607.5398512221042,
+              "bottom": 120.34240170031882,
+              "inside": true
+            },
+            {
+              "id": "gasolinera",
+              "left": 271.3549415515409,
+              "top": 138.72051009564294,
+              "right": 341.422954303932,
+              "bottom": 173.23922167906483,
+              "inside": true
+            },
+            {
+              "id": "comisaria",
+              "left": 497.8374070138151,
+              "top": 132.82252922422956,
+              "right": 572.6238044633369,
+              "bottom": 175.99574920297556,
+              "inside": true
+            }
+          ]
+        }
+      ],
+      "modes": [
+        {
+          "mode": "zombies",
+          "general": [
+            {
+              "id": "escuela",
+              "left": 285.74601487778955,
+              "top": 21.232731137088205,
+              "right": 357.4654622741764,
+              "bottom": 60.93793836344315,
+              "inside": true
+            },
+            {
+              "id": "biblioteca",
+              "left": 496.89373007438894,
+              "top": 26.422954303931988,
+              "right": 554.9298618490967,
+              "bottom": 64.90138150903294,
+              "inside": true
+            },
+            {
+              "id": "hospital",
+              "left": 255.07651434643995,
+              "top": 69.83209351753453,
+              "right": 341.422954303932,
+              "bottom": 120.04025993623804,
+              "inside": true
+            },
+            {
+              "id": "colonia",
+              "left": 343.7821466524973,
+              "top": 63.93411264612115,
+              "right": 505.3868225292242,
+              "bottom": 138.4845908607864,
+              "inside": true
+            },
+            {
+              "id": "supermercado",
+              "left": 513.8799149840595,
+              "top": 78.32518597236982,
+              "right": 607.5398512221042,
+              "bottom": 120.34240170031882,
+              "inside": true
+            },
+            {
+              "id": "gasolinera",
+              "left": 271.3549415515409,
+              "top": 138.72051009564294,
+              "right": 341.422954303932,
+              "bottom": 173.23922167906483,
+              "inside": true
+            },
+            {
+              "id": "comisaria",
+              "left": 497.8374070138151,
+              "top": 132.82252922422956,
+              "right": 572.6238044633369,
+              "bottom": 175.99574920297556,
+              "inside": true
+            }
+          ],
+          "characters": 36,
+          "zombies": 33,
+          "barricades": 0
+        },
+        {
+          "mode": "barricades",
+          "general": [
+            {
+              "id": "escuela",
+              "left": 285.74601487778955,
+              "top": 21.232731137088205,
+              "right": 357.4654622741764,
+              "bottom": 60.93793836344315,
+              "inside": true
+            },
+            {
+              "id": "biblioteca",
+              "left": 496.89373007438894,
+              "top": 26.422954303931988,
+              "right": 554.9298618490967,
+              "bottom": 64.90138150903294,
+              "inside": true
+            },
+            {
+              "id": "hospital",
+              "left": 255.07651434643995,
+              "top": 69.83209351753453,
+              "right": 341.422954303932,
+              "bottom": 120.04025993623804,
+              "inside": true
+            },
+            {
+              "id": "colonia",
+              "left": 343.7821466524973,
+              "top": 63.93411264612115,
+              "right": 505.3868225292242,
+              "bottom": 138.4845908607864,
+              "inside": true
+            },
+            {
+              "id": "supermercado",
+              "left": 513.8799149840595,
+              "top": 78.32518597236982,
+              "right": 607.5398512221042,
+              "bottom": 120.34240170031882,
+              "inside": true
+            },
+            {
+              "id": "gasolinera",
+              "left": 271.3549415515409,
+              "top": 138.72051009564294,
+              "right": 341.422954303932,
+              "bottom": 173.23922167906483,
+              "inside": true
+            },
+            {
+              "id": "comisaria",
+              "left": 497.8374070138151,
+              "top": 132.82252922422956,
+              "right": 572.6238044633369,
+              "bottom": 175.99574920297556,
+              "inside": true
+            }
+          ],
+          "characters": 36,
+          "zombies": 0,
+          "barricades": 33
+        },
+        {
+          "mode": "mixed",
+          "general": [
+            {
+              "id": "escuela",
+              "left": 285.74601487778955,
+              "top": 21.232731137088205,
+              "right": 357.4654622741764,
+              "bottom": 60.93793836344315,
+              "inside": true
+            },
+            {
+              "id": "biblioteca",
+              "left": 496.89373007438894,
+              "top": 26.422954303931988,
+              "right": 554.9298618490967,
+              "bottom": 64.90138150903294,
+              "inside": true
+            },
+            {
+              "id": "hospital",
+              "left": 255.07651434643995,
+              "top": 69.83209351753453,
+              "right": 341.422954303932,
+              "bottom": 120.04025993623804,
+              "inside": true
+            },
+            {
+              "id": "colonia",
+              "left": 343.7821466524973,
+              "top": 63.93411264612115,
+              "right": 505.3868225292242,
+              "bottom": 138.4845908607864,
+              "inside": true
+            },
+            {
+              "id": "supermercado",
+              "left": 513.8799149840595,
+              "top": 78.32518597236982,
+              "right": 607.5398512221042,
+              "bottom": 120.34240170031882,
+              "inside": true
+            },
+            {
+              "id": "gasolinera",
+              "left": 271.3549415515409,
+              "top": 138.72051009564294,
+              "right": 341.422954303932,
+              "bottom": 173.23922167906483,
+              "inside": true
+            },
+            {
+              "id": "comisaria",
+              "left": 497.8374070138151,
+              "top": 132.82252922422956,
+              "right": 572.6238044633369,
+              "bottom": 175.99574920297556,
+              "inside": true
+            }
+          ],
+          "characters": 36,
+          "zombies": 17,
+          "barricades": 16
+        }
+      ],
+      "picking": [
+        {
+          "locality": "escuela",
+          "index": 0
+        },
+        {
+          "locality": "escuela",
+          "index": 1
+        },
+        {
+          "locality": "escuela",
+          "index": 2
+        },
+        {
+          "locality": "escuela",
+          "index": 3
+        },
+        {
+          "locality": "biblioteca",
+          "index": 0
+        },
+        {
+          "locality": "biblioteca",
+          "index": 1
+        },
+        {
+          "locality": "biblioteca",
+          "index": 2
+        },
+        {
+          "locality": "hospital",
+          "index": 0
+        },
+        {
+          "locality": "hospital",
+          "index": 1
+        },
+        {
+          "locality": "hospital",
+          "index": 2
+        },
+        {
+          "locality": "hospital",
+          "index": 3
+        },
+        {
+          "locality": "colonia",
+          "index": 0
+        },
+        {
+          "locality": "colonia",
+          "index": 1
+        },
+        {
+          "locality": "colonia",
+          "index": 2
+        },
+        {
+          "locality": "colonia",
+          "index": 3
+        },
+        {
+          "locality": "colonia",
+          "index": 4
+        },
+        {
+          "locality": "colonia",
+          "index": 5
+        },
+        {
+          "locality": "colonia",
+          "index": 6
+        },
+        {
+          "locality": "colonia",
+          "index": 7
+        },
+        {
+          "locality": "colonia",
+          "index": 8
+        },
+        {
+          "locality": "colonia",
+          "index": 9
+        },
+        {
+          "locality": "colonia",
+          "index": 10
+        },
+        {
+          "locality": "colonia",
+          "index": 11
+        },
+        {
+          "locality": "supermercado",
+          "index": 0
+        },
+        {
+          "locality": "supermercado",
+          "index": 1
+        },
+        {
+          "locality": "supermercado",
+          "index": 2
+        },
+        {
+          "locality": "supermercado",
+          "index": 3
+        },
+        {
+          "locality": "gasolinera",
+          "index": 0
+        },
+        {
+          "locality": "gasolinera",
+          "index": 1
+        },
+        {
+          "locality": "comisaria",
+          "index": 0
+        },
+        {
+          "locality": "comisaria",
+          "index": 1
+        },
+        {
+          "locality": "comisaria",
+          "index": 2
+        },
+        {
+          "locality": "comisaria",
+          "index": 3
+        }
+      ],
+      "panel": [
+        "place-0",
+        "place-2",
+        "general"
+      ],
+      "general": [
+        {
+          "id": "escuela",
+          "left": 271.21519659936234,
+          "top": 23.43251859723697,
+          "right": 350.3650371944739,
+          "bottom": 67.25132837407014,
+          "inside": true
+        },
+        {
+          "id": "biblioteca",
+          "left": 504.23857598299685,
+          "top": 29.160467587672677,
+          "right": 568.2874601487779,
+          "bottom": 71.62539851222104,
+          "inside": true
+        },
+        {
+          "id": "hospital",
+          "left": 237.3682252922423,
+          "top": 77.06695005313496,
+          "right": 332.6604675876727,
+          "bottom": 132.4768634431456,
+          "inside": true
+        },
+        {
+          "id": "colonia",
+          "left": 335.2640807651435,
+          "top": 70.55791710945802,
+          "right": 513.6115834218916,
+          "bottom": 152.83209351753453,
+          "inside": true
+        },
+        {
+          "id": "supermercado",
+          "left": 522.9845908607864,
+          "top": 86.43995749202975,
+          "right": 626.3480340063762,
+          "bottom": 132.81030818278427,
+          "inside": true
+        },
+        {
+          "id": "gasolinera",
+          "left": 255.33315621679066,
+          "top": 153.09245483528161,
+          "right": 332.6604675876727,
+          "bottom": 191.18742933049947,
+          "inside": true
+        },
+        {
+          "id": "comisaria",
+          "left": 505.2800212539851,
+          "top": 146.5834218916047,
+          "right": 587.8145589798087,
+          "bottom": 194.2295430393199,
+          "inside": true
+        }
+      ],
+      "portraitTarget44": true,
+      "overlayPicking": [
+        "escuela",
+        "biblioteca",
+        "hospital",
+        "colonia",
+        "supermercado",
+        "gasolinera",
+        "comisaria"
+      ],
+      "qaOutsideMap": true,
+      "volumes": 66,
+      "panZoomReset": true
+    }
+  ],
+  "passed": true
+}

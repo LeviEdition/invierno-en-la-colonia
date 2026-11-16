@@ -1,0 +1,13 @@
+{
+  "failure": "Revisión desactualizada al confirmar inventario después de reconocer búsqueda",
+  "clientPhase": {
+    "phase": "browsing",
+    "intent": null,
+    "pending": null,
+    "message": "La partida o el inventario cambió. Revisá la operación.",
+    "busy": false
+  },
+  "inventoryRevision": 10,
+  "resolution": "Controlador sincronizado con cada estado confirmado; recorrido buscar→inventario aprobado",
+  "noTimeoutIncrease": true
+}

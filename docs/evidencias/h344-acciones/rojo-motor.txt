@@ -1,0 +1,115 @@
+✖ H344 motor: ataque por ID independiente de seleccionado, dado repetido exacto y consulta pura (9.538648ms)
+✖ H344 motor: modificadores fighter/rifle/hacha y bajas de escopeta equivalentes (1.099161ms)
+✖ H344 motor: exposición blanco/herida/congelación/mordedura y muerte acumulada equivalentes (0.988725ms)
+✖ H344 motor: pistola una vez/rifle fuera de colonia/resistencia no inventan RNG (1.130568ms)
+✖ H344 motor: barricada usa dado1+, guardia+herramientas y límites compartidos (1.593183ms)
+✖ H344 motor: sin objetivo, lleno, rival, muerto, dado insuficiente y ausente no mutan (0.748114ms)
+✖ H344 motor: versión de dado/turno obsoletos rechazados y J2 usa su reserva (0.454472ms)
+✖ H344 motor: decisión pendiente bloquea nuevas acciones y reconocer resultado no cambia partida/RNG (1.00551ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 0
+ℹ fail 8
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 134.03839
+
+✖ failing tests:
+
+test at tests/h344-action-engine.test.mjs:6:1
+✖ H344 motor: ataque por ID independiente de seleccionado, dado repetido exacto y consulta pura (9.538648ms)
+  TypeError: e.actionOptions is not a function
+      at request (file:///workspace/invierno-en-la-colonia/tests/h344-action-engine.test.mjs:4:68)
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/h344-action-engine.test.mjs:6:187)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+
+test at tests/h344-action-engine.test.mjs:7:1
+✖ H344 motor: modificadores fighter/rifle/hacha y bajas de escopeta equivalentes (1.099161ms)
+  TypeError: e.actionOptions is not a function
+      at request (file:///workspace/invierno-en-la-colonia/tests/h344-action-engine.test.mjs:4:68)
+      at equivalent (file:///workspace/invierno-en-la-colonia/tests/h344-action-engine.test.mjs:5:137)
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/h344-action-engine.test.mjs:7:262)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+test at tests/h344-action-engine.test.mjs:8:1
+✖ H344 motor: exposición blanco/herida/congelación/mordedura y muerte acumulada equivalentes (0.988725ms)
+  TypeError: e.actionOptions is not a function
+      at request (file:///workspace/invierno-en-la-colonia/tests/h344-action-engine.test.mjs:4:68)
+      at equivalent (file:///workspace/invierno-en-la-colonia/tests/h344-action-engine.test.mjs:5:137)
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/h344-action-engine.test.mjs:8:152)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/h344-action-engine.test.mjs:9:1
+✖ H344 motor: pistola una vez/rifle fuera de colonia/resistencia no inventan RNG (1.130568ms)
+  TypeError: e.actionOptions is not a function
+      at request (file:///workspace/invierno-en-la-colonia/tests/h344-action-engine.test.mjs:4:68)
+      at equivalent (file:///workspace/invierno-en-la-colonia/tests/h344-action-engine.test.mjs:5:137)
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/h344-action-engine.test.mjs:9:193)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/h344-action-engine.test.mjs:10:1
+✖ H344 motor: barricada usa dado1+, guardia+herramientas y límites compartidos (1.593183ms)
+  TypeError: e.actionOptions is not a function
+      at request (file:///workspace/invierno-en-la-colonia/tests/h344-action-engine.test.mjs:4:68)
+      at equivalent (file:///workspace/invierno-en-la-colonia/tests/h344-action-engine.test.mjs:5:137)
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/h344-action-engine.test.mjs:10:258)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/h344-action-engine.test.mjs:11:1
+✖ H344 motor: sin objetivo, lleno, rival, muerto, dado insuficiente y ausente no mutan (0.748114ms)
+  TypeError: e.actionOptions is not a function
+      at request (file:///workspace/invierno-en-la-colonia/tests/h344-action-engine.test.mjs:4:68)
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/h344-action-engine.test.mjs:11:337)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/h344-action-engine.test.mjs:12:1
+✖ H344 motor: versión de dado/turno obsoletos rechazados y J2 usa su reserva (0.454472ms)
+  TypeError: e.actionOptions is not a function
+      at request (file:///workspace/invierno-en-la-colonia/tests/h344-action-engine.test.mjs:4:68)
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/h344-action-engine.test.mjs:12:113)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/h344-action-engine.test.mjs:13:1
+✖ H344 motor: decisión pendiente bloquea nuevas acciones y reconocer resultado no cambia partida/RNG (1.00551ms)
+  TypeError: t.e.actionOptions is not a function
+      at TestContext.<anonymous> (file:///workspace/invierno-en-la-colonia/tests/h344-action-engine.test.mjs:13:219)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
