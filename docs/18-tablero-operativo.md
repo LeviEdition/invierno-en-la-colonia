@@ -11,20 +11,21 @@
 | 1 — Fidelidad aceptada y D1/D2 integradas | **Cerrado** (29/10) | [62](62-hitos-referencia-fiel-y-juego-propio.md), [71](71-integracion-main-y-cierre-d1-d2.md) |
 | 2 — Referencia V9.9 modular preservada | **Cerrado** (29/10), tag `v0.9.9-referencia-modular` | [72](72-preservacion-referencia-modular.md) |
 | 3 — Identidad visual y mapa jugable | **Cerrado** (16/11): aceptado por el creador, integrado en `main` y marcado con `v0.10.0-mapa-horizontal` | [75](75-plan-hito-3-identidad-visual.md), [99](99-experiencia-unificada-del-mapa.md), [100](100-avisos-y-zoom-nativo.md), [101](101-muerte-durante-accion-propia.md) |
-| Singleplayer (SP-00 a SP-08) | **Diseño en papel.** La puerta técnica de [63 §7](63-hoja-de-ruta-planificacion-singleplayer.md) (D1/D2 + referencia preservada) ya está cumplida | [63](63-hoja-de-ruta-planificacion-singleplayer.md) |
+| Singleplayer (SP-00 a SP-08) | **Diseño en papel; laboratorio SP-04 entregado** sobre el motor real, sin reglas aprobadas | [63](63-hoja-de-ruta-planificacion-singleplayer.md), [102](102-laboratorio-sp04-un-grupo.md) |
 
 El mapa permite preparar, jugar y terminar una partida completa (humano + IA y dos jugadores locales) con un único motor. La pila de ramas H3.2 → mapa horizontal quedó integrada en `main`; los PR apilados #18 a #24 se cerraron como incluidos, y #16 y #20 se cerraron sin fusionar (experimentos superados, ramas conservadas).
 
 ## 2. Próxima tarea única
 
-**Decidir con qué se abre la etapa del singleplayer:** el laboratorio SP-04 (cola 1) o el mantenimiento previo (cola 2). Recomendación: el laboratorio primero, porque no depende de la estructura de `prototypes/` y responde la pregunta de diseño pendiente; el mantenimiento puede hacerse en paralelo.
+**Leer el informe [102](102-laboratorio-sp04-un-grupo.md) y decidir qué línea de balance se prueba primero** (dados, crisis, comida o reclutamiento), o pedir más corridas del laboratorio. El laboratorio SP-04 está en la rama `experiment/sp04-laboratorio-un-grupo` (`lab/sp04/`), reproduce cualquier cifra con `node lab/sp04/correr.mjs` y tiene la línea base de dos grupos calibrada comando por comando contra las partidas completas de C14. Ninguna regla queda aprobada.
 
 ## 3. Cola ordenada
 
-1. **SP-03/SP-04:** cuántas acciones y recursos necesita un solo grupo para que abastecer la colonia y avanzar el objetivo compitan entre sí. Laboratorio de simulación sobre el motor real, desde `main`, informe 102.
-2. **Mantenimiento** (propuesto, a decidir): consolidar el producto del mapa fuera de `prototypes/`, retirar prototipos intermedios conservándolos por tag, y sacar la evidencia pesada del repositorio.
-3. **Mejoras menores del mapa** que no afectan decisiones: hallazgos 4 y 5, y una batería de CI que juegue una partida entera desde el mapa con clics reales.
-4. **Reservas del Hito 3:** prueba física en el Samsung Galaxy A15 y prueba manual de dos jugadores locales cuando haya ocasión.
+1. **SP-04, decisión del creador** sobre el informe 102: qué parámetro se explora en profundidad y con qué política de jugador como referencia.
+2. **SP-04, segunda vuelta** (si se pide): escenarios con reclutamiento buscable, objetivo fijo por semilla, políticas mixtas, y entrada de zombis independiente de la ocupación de la colonia.
+3. **Mantenimiento** (propuesto, a decidir): consolidar el producto del mapa fuera de `prototypes/`, retirar prototipos intermedios conservándolos por tag, y sacar la evidencia pesada del repositorio.
+4. **Mejoras menores del mapa** que no afectan decisiones: hallazgos 4 y 5, y una batería de CI que juegue una partida entera desde el mapa con clics reales.
+5. **Reservas del Hito 3:** prueba física en el Samsung Galaxy A15 y prueba manual de dos jugadores locales cuando haya ocasión.
 
 ## 4. Hallazgos abiertos
 
