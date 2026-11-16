@@ -1,5 +1,7 @@
 # 62 — Ruta oficial: fidelidad mecánica aceptada → D1/D2 → referencia preservada → juego propio
 
+> **Nota 16/11/2026:** estado vigente en el [tablero 18](18-tablero-operativo.md). La puerta técnica de [63 §7](63-hoja-de-ruta-planificacion-singleplayer.md) (D1/D2 integradas y referencia preservada) está cumplida desde el 29/10/2026; las indicaciones de este documento que la dan por pendiente son históricas.
+
 **Decisión vigente del creador (28/10/2026; actualización posterior al diseño inicial del hito RF).** Este documento complementa la [dirección de producto (51)](51-rumbo-fidelidad-e-identidad.md), el [alcance de la matriz F (61)](61-alcance-matriz-f-juego-propio.md) y el [tablero operativo (18)](18-tablero-operativo.md).
 
 ## Decisión: la fidelidad mecánica de la referencia ya es suficiente para nuestro objetivo

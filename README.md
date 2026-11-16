@@ -2,44 +2,15 @@
 
 Proyecto de videojuego de supervivencia en desarrollo gradual. Primero usamos una adaptación funcional de *Dead of Winter* como referencia; después construiremos una experiencia original principalmente singleplayer, con Director de Juego y consecuencias narrativas persistentes.
 
-## Rumbo acordado
+## Estado actual
 
-1. **Fidelidad mecánica de la V9.9: ACEPTADA para nuestro objetivo.** La estabilización C está integrada y la [comparación de 14 áreas con el reglamento oficial](docs/49-c15-auditoria-final.md#comparación-con-dead-of-winter) documenta semejanzas y diferencias. El creador acepta esta fidelidad **suficiente**, sin exigir copia literal, reauditoría RF desde cero ni reproducir todas las reglas oficiales. Las reservas sobre Android físico, accesibilidad y balance siguen documentadas.
-2. **D1 y D2: integradas y validadas en main.** Estado, reglas, acciones, turnos, IA/interfaz separados;467 pruebas ycomparaciones de partidas preservan el comportamiento de referencia. **No modificar reglas ni introducir mecánicas nuevas** durante este refactor.
-3. **Referencia estable y modular preservada.** Tag anotado `v0.9.9-referencia-modular` sobre `62e4e85150b2416ccf07d671c186b5c421993b0b`, con [release pública](https://github.com/LeviEdition/invierno-en-la-colonia/releases/tag/v0.9.9-referencia-modular), HTML offline y manifiesto descargados y verificados. [Informe72](docs/72-preservacion-referencia-modular.md).
-4. **Comenzar nuestro juego propio.** En otra línea de desarrollo, revisar la **matriz F** (F-01, F-14, etc.) e implementar cambios propios, singleplayer, Director y narrativa persistente por etapas.
+El estado vigente, la próxima tarea y los hallazgos abiertos están en el **[tablero operativo](docs/18-tablero-operativo.md)**. Resumen al 16/11/2026: la referencia V9.9 está preservada (hitos 1 y 2 cerrados) y el mapa horizontal permite jugar partidas completas; el Hito 3 está en aceptación manual. El singleplayer está en diseño ([hoja de ruta 63](docs/63-hoja-de-ruta-planificacion-singleplayer.md)).
 
-**Distinguir conceptos:** el informe 49 es la comparación mecánica ya realizada; una nueva matriz RF **no es requisito**. La matriz **F** registra decisiones de diseño **para el juego propio**, no bugs de la V9.9. La etapa F histórica (ampliación/presentación/red) tampoco es esa matriz.
+Documentos de referencia: [rumbo y hitos (62)](docs/62-hitos-referencia-fiel-y-juego-propio.md) · [plan del Hito 3 (75)](docs/75-plan-hito-3-identidad-visual.md) · [experiencia unificada del mapa (99)](docs/99-experiencia-unificada-del-mapa.md) · [dirección de producto (51)](docs/51-rumbo-fidelidad-e-identidad.md) · [matriz F (61)](docs/61-alcance-matriz-f-juego-propio.md). El historial de entregas y las guías de ramas anteriores están en el [tablero histórico](docs/18-historico-tablero.md).
 
-## Documentación y estado
+## Jugar el mapa horizontal (versión en desarrollo)
 
-- [Experiencia unificada del mapa — comparación y revisión](docs/99-experiencia-unificada-del-mapa.md)
-- [Tablero operativo — próxima tarea](docs/18-tablero-operativo.md)
-- [H3.1 — Auditoría de identidad visual](docs/74-h3-1-auditoria-identidad-visual.md)
-- [Plan propuesto H3.1–H3.6](docs/75-plan-hito-3-identidad-visual.md)
-- [Mapa horizontal — composición integral y evidencia](docs/93-composicion-integral-del-mapa.md)
-- [Mapa horizontal y ambientación — entrega experimental](docs/90-mapa-horizontal-ambientacion.md)
-- [H3.4.4 — Ataque y barricadas desde el mapa](docs/88-h3-4-4-ataque-barricadas-mapa.md)
-- [H3.4.3 — Buscar desde el mapa](docs/87-h3-4-3-busqueda-mapa.md)
-- [H3.4.2 — Movimiento desde el mapa](docs/84-h3-4-2-movimiento-mapa.md)
-- [H3.4.2 — Continuidad, recorrido y exposición visible](docs/85-h3-4-2-experiencia-movimiento.md)
-- [H3.4.2 — Corrección de fichas al desplazar el mapa](docs/86-h3-4-2-sincronizacion-camara-fichas.md)
-- [H3.4.1 — Mapa de consulta de una partida real](docs/83-h3-4-1-estado-real-consulta.md)
-- [H3.3 — Luces asincrónicas y ventisca opcional, evidencia histórica](docs/82-h3-3-luces-viento-y-ventisca.md)
-- [H3.3 — Localidades seleccionables y revisión de interfaz](docs/79-h3-3-localidades-capacidades-e-interfaz.md)
-- [Decisión vigente — D1/D2 cerradas y referencia preservada](docs/62-hitos-referencia-fiel-y-juego-propio.md)
-- [Hoja de ruta del singleplayer — bloques SP-00 a SP-08, acuerdos y pendientes](docs/63-hoja-de-ruta-planificacion-singleplayer.md)
-- [Dirección de producto](docs/51-rumbo-fidelidad-e-identidad.md)
-- [Alcance de la matriz F del juego propio](docs/61-alcance-matriz-f-juego-propio.md)
-- [Plan general](docs/01-plan-refactorizacion.md)
-
-El [PR15](https://github.com/LeviEdition/invierno-en-la-colonia/pull/15) se integró mediante merge convencional `6b8bfcadfeb99d16a10b6f4576f3b061584ee1f9`, preservando historia yoráculo57872ee. [Informe71](docs/71-integracion-main-y-cierre-d1-d2.md) registra la validación posterior:467/467,40/40 contra cada referencia, partidas Chromium yoffline aprobados. SP-03 permanece conceptual ysin cambios respecto del head aprobado.
-
-**Referencia cerrada:** D1/D2 y V9.9 modular preservadas. H3.4.3 tiene revisión técnica favorable y **validación manual pendiente**. El creador autorizó **H3.4.4: ataque y construcción de barricadas desde el mapa**, conservando búsqueda y movimiento. La nueva entrada reutiliza el motor V9.9; no modifica reglas ni arte. Sin merge ni cambios en main/referencia/SP-03. [Informe88](docs/88-h3-4-4-ataque-barricadas-mapa.md).
-
-## Mapa horizontal y ambientación — versión experimental actual
-
-Rama independiente sobre H3.4.4, PR25 en borrador. Preparación, inventario, acciones, decisiones y ciclo completo desde el mapa, con un panel contextual y menú de consultas. Conserva motor, arte y referencia estable. **La revisión visual y la aceptación manual de búsqueda/ataque/barricadas siguen pendientes.**
+Rama `experiment/mapa-horizontal-ambientacion-h3`, [PR #25](https://github.com/LeviEdition/invierno-en-la-colonia/pull/25) en borrador. Requiere Node 22 o posterior. En VS Code, PowerShell, en la carpeta del repositorio:
 
 ```powershell
 git fetch origin
@@ -49,137 +20,7 @@ npm.cmd ci
 npm.cmd run dev:horizontal-map
 ```
 
-Abrir **http://127.0.0.1:8779/prototypes/horizontal-map/**. Elegir Jugar con IA o Dos jugadores en este dispositivo. Menú ofrece Inventario, Grupo y líderes, Registro, Ajustes, Ayuda y Nueva partida. Ctrl+C detiene el servidor; reiniciar y recargar tras actualizar. En móvil se prioriza horizontal. [Guía Windows/VSCode/LAN y pruebas manuales](prototypes/horizontal-map/README.md), [originales y configuración](assets/mapa-horizontal/README.md). No requiere Python. Las entradas siguientes se conservan para comparación.
-
-## H3.4.4 — Las cuatro acciones sobre el mapa anterior
-
-Node22+, terminal en la carpeta con package.json y package-lock.json:
-
-```powershell
-git fetch origin
-git switch experiment/h3-4-4-ataque-barricadas-mapa
-git pull --ff-only
-npm.cmd ci
-npm.cmd run dev:action-map
-```
-
-Abrir **http://127.0.0.1:8778/prototypes/action-map/**. Preparar en V9.9 → Ver mapa → seleccionar propio → Atacar/Construir → revisar objetivo, dado o habilidad gratuita → confirmar/cancelar. Se conservan Moverse y Buscar. Inventario del jugador separado del equipo del superviviente; decisiones pendientes esperan Continuar en V9.9. [Guía Windows, celular en LAN y lista de revisión de ambas etapas](prototypes/action-map/README.md). Ctrl+C detiene el servidor; reiniciarlo y recargar tras actualizar. Sin Python.
-
-**H3.4.3 y H3.4.4 esperan revisión manual del creador.** Las entradas siguientes se conservan como historia y rutas de comparación; no incluyen las cuatro acciones nuevas.
-
-## H3.4.3 — Buscar desde el mapa
-
-El creador aceptó los ajustes de H3.4.2 y autorizó **Buscar** además de Moverse. Entrada independiente, motor único: dado real elegido por índice, requisito efectivo, hallazgo, elección de una carta, ruido y mano privada del turno. Encrucijadas y decisiones generales continúan en V9.9 mediante un botón explícito. Sin combate, inventario accionable, merge ni cambios en main/referencia. [Informe87](docs/87-h3-4-3-busqueda-mapa.md).
-
-En VS Code, carpeta con package.json y package-lock.json, Node22+, PowerShell:
-
-```powershell
-git fetch origin
-git switch experiment/h3-4-3-busqueda-mapa
-git pull --ff-only
-npm.cmd ci
-npm.cmd run dev:search-map
-```
-
-Abrir **http://127.0.0.1:8777/prototypes/search-map/**. Preparar en V9.9 → Ver mapa → seleccionar propio → Moverse fuera de colonia → Buscar → elegir dado → confirmar → conservar una carta o revelar otra con +1 ruido cuando esté permitido → Continuar. Escape cancela antes de confirmar. La presentación no vuelve a tirar el dado. [Guía Windows, revisión manual, red local y límites](prototypes/search-map/README.md). Ctrl+C detiene el servidor; reiniciarlo y recargar tras actualizar. Sin Python. Las rutas anteriores permanecen disponibles.
-
-La entrega requiere revisión del creador. No se da por aprobada H3.4.3 ni se avanza a otra acción.
-
-## H3.4.2 desde VS Code
-
-En la carpeta con package.json y package-lock.json, Node22+, PowerShell:
-
-```powershell
-git fetch origin
-git switch experiment/h3-4-2-movimiento-mapa
-git pull --ff-only
-npm.cmd ci
-npm.cmd run dev:movement-map
-```
-
-Abrir **http://127.0.0.1:8776/prototypes/movement-map/**. Preparar en V9.9 → Ver mapa → seleccionar superviviente propio → Moverse → elegir destino → revisar y confirmar/cancelar. Se iluminan los destinos legales. Tras aceptar: recorrido de1,5s, dado real y consecuencias; las decisiones esperan «Continuar en V9.9». Cancelar la confirmación vuelve a elegir; Salir/Escape permite abandonar sin mutaciones. Los dados siguen perteneciendo al turno. Nuevos bordes azul/rojo, retratos únicos o iniciales y perfiles Suave/Tormenta; sonido apagado al inicio. [Guía Windows, teclado, red local y reservas](prototypes/movement-map/README.md). Ctrl+C detiene el servidor; sin Python.
-
-La consulta anterior sigue en `/prototypes/state-map/` y H3.3 en `/prototypes/hospital-workshop/`, también con el servidor8776. Los apartados siguientes conservan sus instrucciones independientes.
-
-## H3.4.1 desde VS Code
-
-En la carpeta con `package.json` y `package-lock.json`, Node22+, PowerShell:
-
-```powershell
-git fetch origin
-git switch experiment/h3-4-1-estado-real
-git pull --ff-only
-npm.cmd ci
-npm.cmd run dev:state-map
-```
-
-Abrir **http://127.0.0.1:8775/prototypes/state-map/**. Completar la preparación en V9.9 y pulsar **Ver mapa**. Los pases/diálogos se resuelven en la interfaz original; sus acciones siguen disponibles allí. El mapa muestra datos reales, permite consultar y configurar ambientación, sin consumir recursos ni ejecutar reglas. [Guía completa, Windows, capacidades y red local](prototypes/state-map/README.md). Ctrl+C detiene el servidor. No requiere Python.
-
-La maqueta H3.3 conservada también se abre en http://127.0.0.1:8775/prototypes/hospital-workshop/ con este servidor. La sección siguiente conserva las instrucciones para su rama/servidor independiente.
-
-## Maqueta H3.3 desde VS Code
-
-Node22+, carpeta que contiene **package.json y package-lock.json**, conservar cualquier trabajo local. PowerShell:
-
-```powershell
-git fetch origin
-git switch experiment/h3-3-taller-visual
-git pull --ff-only
-npm.cmd ci
-npm.cmd run dev:workshop
-```
-
-Mantener terminal abierta y abrir **http://127.0.0.1:8772/prototypes/hospital-workshop/**. La entrada carga directamente `mapa-prototipo.png` con las siete localidades; no hace falta elegir un kit. No requiere Python ni recursos externos. `npm.cmd` evita el bloqueo de npm.ps1 sin cambiar políticas.
-
-- Usar «Hospital cercano» para ver cuatro retratos y dos zombis/dos barricadas sobre el terreno. Arrastre/rueda o pinza; Restablecer y tecla0 vuelven a la vista general.
-- Seleccionar un edificio abre su localidad (ocupación, capacidad y espacios); sus retratos abren al superviviente y tienen prioridad sobre el edificio. Seleccionar una ficha circular actualiza el expediente. En móvil se abre el panel inferior; «×» lo cierra para disponer de más mapa.
-- «Composición y selección por teclado» contiene el selector accesible y las composiciones: hospital mixto, un zombi por localidad y máximo33 fichas/36 espacios. Elegir máximo y centrar Colonia muestra sus12 fichas.
-- «Ambientación» permite apagar todo, elegir nieve/viento/humo/luces y baja/normal. Inicia en **Normal**, con copos, estelas, humo y luces reforzados; Baja conserva una alternativa más discreta. Con movimiento reducido inicia apagado. El hospital no tiene humo; la salida confirmada está en la chimenea oeste de colonia. El botón «Ventisca: sonido» inicia audio procedural opcional, apagado por defecto, con volumen propio. El control general apaga también el sonido. [Evidencia/video, muestra sonora y límites](docs/82-h3-3-luces-viento-y-ventisca.md).
-- Dados del grupo/turno y acciones muestran feedback sin consumir ni resolver reglas. Objetivo/crisis y menú son paneles de demostración. «Depuración» activa etiquetas técnicas, apagadas por defecto.
-
-El taller anterior sigue en **`/prototypes/hospital-workshop/tecnico.html`** (su kit opcional: `tecnico.html?kit=uploaded`). Referencias Canvas y Phaser H3.2: `/prototypes/hospital/` y `/prototypes/hospital-phaser/`, en el mismo puerto8772. Los originales siguen en `kit_arte_h33/`, sin edición ni duplicación. [Guía Windows/VSCode/LAN](prototypes/hospital-workshop/README.md) · [Escena de muestra y coordenadas](prototypes/hospital-workshop/mockup/scene.json).
-
-Sin doble clic/file://, guardados, editor o motor. El mapa es el prototipo aprobado: al ampliar no se reemplaza por otro hospital y puede perder nitidez. No equivale a arte final, aprobación H3.3 o prueba en teléfono físico.
-
-## Probar H3.2 desde VS Code, sin Python
-
-En esta rama `experiment/h3-2-phaser-hospital`, abrir la carpeta del repositorio en VS Code y **Terminal → Nueva terminal**. Con Node22 o posterior instalado:
-
-```sh
-npm ci
-npm run dev:hospital
-```
-
-**Windows/PowerShell:** si aparece `npm.ps1`/`PSSecurityException`, usar `npm.cmd ci` y `npm.cmd run dev:hospital`; no hace falta cambiar la política de scripts. La terminal debe estar en la carpeta con **package.json y package-lock.json**. Si `npm ci` devuelve EUSAGE por falta del lockfile, comprobar la ubicación y la rama antes de generar otro: no sustituir la instalación reproducible por `npm install` para ocultar ese error.
-
-Mantener la terminal abierta y abrir en el navegador del mismo equipo:
-
-- Phaser: http://127.0.0.1:8771/prototypes/hospital-phaser/
-- Referencia Canvas: http://127.0.0.1:8771/prototypes/hospital/
-
-El comando genera el bundle con esbuild y sirve ambos experimentos; Ctrl+C lo detiene. Si el puerto8771 está ocupado, cerrar el servidor anterior o usar otro puerto: PowerShell `$env:HOSPITAL_PORT=8772; npm run dev:hospital`, bash `HOSPITAL_PORT=8772 npm run dev:hospital`; sustituir8771 por8772 en los enlaces. Los cambios JS requieren volver a ejecutar el comando y recargar. No abrir este prototipo mediante doble clic/file://: usa módulos y PNG locales servidos por HTTP.
-
-**Alternativa con Live Server:** ejecutar `npm ci` y `npm run build:hospital`, abrir `prototypes/hospital-phaser/index.html` → «Open with Live Server», desde la raíz completa del repositorio. Para comparar, abrir `prototypes/hospital/index.html` en el mismo servidor. No se usa CDN ni se exige Python; Internet hace falta para la instalación inicial de dependencias, no para la escena ya construida.
-
-Controles HTML: Delante/Detrás/Esquina, Mostrar ocultos, selección, zoom, flechas y restablecer. Arrastre, rueda y pinza sobre la escena; teclado con foco en el canvas: flechas, +/−,0,Enter,Escape. «Restablecer vista» reinicia la cámara; «Reiniciar escena» libera el renderer y carga el estado inicial. Sin WebGL se muestra un aviso y el enlace a Canvas, sin fallback automático de Phaser.
-
-**Atrás y reinicios:** al volver desde la caché de navegación, Phaser reconstruye una escena limpia: Delante, cámara inicial, selección y Mostrar ocultos desactivados. El navegador puede conservar el scroll de la página. El montaje se cancela al salir; si el arranque no completa en15 segundos, aparece un aviso accesible con reintento. No se guardan ni modifican partidas.
-
-**Celular en la misma red Wi-Fi:** detener el servidor anterior con Ctrl+C y ejecutar:
-
-```sh
-npm run dev:hospital -- --host 0.0.0.0
-```
-
-En Windows, `ipconfig` muestra la IPv4 del adaptador Wi-Fi/Ethernet de la PC. Desde el celular abrir `http://IP_DE_LA_PC:8771/prototypes/hospital-phaser/` y `http://IP_DE_LA_PC:8771/prototypes/hospital/`. Por ejemplo, si la IPv4 es192.168.1.50, usar `http://192.168.1.50:8771/prototypes/hospital-phaser/`. PC y celular deben compartir red; mantener la terminal abierta y permitir Node en la red privada si Windows lo solicita. En el teléfono no usar127.0.0.1: apunta al propio teléfono. El servidor también imprime direcciones de red; elegir la interfaz local correcta, no una VPN. El modo normal sigue escuchando solo en127.0.0.1.
-
-El acceso HTTP se comprobó desde loopback y la interfaz virtual del entorno. **No se probó un celular físico ni el router/firewall de tu casa.** Si no conecta, comprobar servidor, misma red, IPv4 y permiso de red privada; usar Canvas para distinguir falta de WebGL de un problema de conexión.
-
-Se reutilizan sin cambios los PNG, pivotes, controles y cámara del [commit auditado PR16](https://github.com/LeviEdition/invierno-en-la-colonia/tree/ba1d93a4ae73a91a6f07660584e2374b53043a67), copiados con manifiesto de hashes, sin merge. Canvas conserva sus archivos originales. [Informe76: comparación, pruebas, costos y reservas](docs/76-h3-2-phaser-hospital.md) · [H3.1](docs/74-h3-1-auditoria-identidad-visual.md) · [plan](docs/75-plan-hito-3-identidad-visual.md).
-
-**Revisión de nitidez:** Phaser usa mipmaps trilineales con texturas auxiliares generadas en memoria; conserva los PNG y sus frames/pivotes. Las comparativas Canvas/antes/después del informe76 incluyen hospital, suelo y zombi al mismo DPR/zoom. Hay diferencias residuales de rasterización y un costo adicional de memoria/carga; la aprobación visual sigue pendiente del creador. No equivale a una adopción definitiva del renderizador.
-
-La escena es independiente del juego. Cambiar renderer no aprueba proporciones, encaje con el suelo ni calidad artística: corresponde a H3.3. El mapa continuo se implementa después en la maqueta H3.3 independiente; este apartado describe la referencia H3.2.
+Abrir **http://127.0.0.1:8779/prototypes/horizontal-map/** y elegir Jugar con IA o Dos jugadores en este dispositivo. Ctrl+C detiene el servidor; después de actualizar, reiniciarlo y recargar. [Guía para Windows, VS Code, celular en la red local y pruebas manuales](prototypes/horizontal-map/README.md) · [originales y configuración del arte](assets/mapa-horizontal/README.md).
 
 ## Descargar la referencia y jugar offline
 
