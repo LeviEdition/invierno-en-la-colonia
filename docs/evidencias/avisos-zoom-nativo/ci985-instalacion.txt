@@ -1,0 +1,10 @@
+CI43862283276 / job133281872011 / SHA985bdf11b6968cd0381ffb0b91156978010c987f
+Suite: tests737, pass737, fail0.
+Chromium externo al producto: failure. Navegadores: skipped.
+
+2026-11-16T11:58:18.3594636Z BEWARE: your OS is not officially supported by Playwright; installing dependencies for ubuntu26.04-x64 as a fallback.
+2026-11-16T11:58:18.3596904Z Cannot install dependencies for ubuntu26.04-x64 with Playwright 1.57.0!
+2026-11-16T11:58:18.3658916Z Error: ERROR: Playwright does not support chromium on ubuntu26.04-x64
+
+Artifact14224486304:444bytes, SHA256f12b38cceb2ec147c44fbc77e6d6db08fb7ee7a6513c6c1ae930f60c8ade2ed4.
+Contiene el build de test; no constituye evidencia de navegador aprobado.

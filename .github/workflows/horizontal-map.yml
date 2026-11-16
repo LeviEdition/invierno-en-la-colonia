@@ -7,7 +7,8 @@ permissions:
   contents: read
 jobs:
   horizontal:
-    runs-on: ubuntu-latest
+    # Playwright1.57 admite24.04; ubuntu-latest puede avanzar a26.04.
+    runs-on: ubuntu-24.04
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
