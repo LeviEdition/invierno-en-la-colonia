@@ -1,6 +1,6 @@
 import {present,unified} from '../experience-map/surfaces.mjs';
 export function contributionCards(own){const allowed=new Set(own?.options.filter(q=>q.mode==='contribute'&&q.allowed).map(q=>q.cardId));return {hand:(own?.hand||[]).filter(c=>allowed.has(c.uid)),equipment:(own?.equipment||[]).filter(c=>allowed.has(c.uid))};}
-import {inventoryMessages} from './controller.mjs';
+import {inventoryMessages} from './controller.mjs';import {decisionLabel} from '../cycle-map/controller.mjs';
 const el=(tag,text)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;return n;};
 export function mountInventoryPanel({controller,getContext,onNative,signal}){
  const dialog=document.getElementById('inventory-dialog');if(!dialog||!controller)return {render(){}};
@@ -19,7 +19,7 @@ export function mountInventoryPanel({controller,getContext,onNative,signal}){
   const next=JSON.stringify([s,inv]);if(key===next)return;key=next;const hadFocus=dialog.contains(document.activeElement),focusId=document.activeElement?.id,step=s.phase+'/'+(s.intent?.cardId||''),scroll=step===lastStep?dialog.scrollTop:0;lastStep=step;dialog.replaceChildren();
   const header=el('div');header.className='inventory-heading';header.append(el('h2','Inventario · '+(p.players.find(x=>x.id===own?.ownerId)?.label||'Jugador activo')),button('Cerrar','inventory-close',close,busy));dialog.append(header);
   const status=el('p',busy?'Resolviendo…':s.message&&s.phase!=='browsing'?s.message:'');status.id='inventory-status';status.setAttribute('role','status');dialog.append(status);
-  if(inv?.receipt){dialog.append(el('h3','Resultado'),el('p',inv.receipt.summary));if(inv.receipt.generalDecision){dialog.append(el('p',p.cycle?.outcome?'El motor finalizó la partida. Consultá el resultado en el mapa.':'Hay una decisión pendiente. Abrila para resolverla sin elegir automáticamente.'),button(p.cycle?.outcome?'Ver resultado final':p.play?'Resolver decisión':'Continuar en V9.9','inventory-native',onNative));}else dialog.append(button('Continuar en inventario','inventory-continue',()=>controller.dismiss(),busy));}
+  if(inv?.receipt){dialog.append(el('h3','Resultado'),el('p',inv.receipt.summary));if(inv.receipt.generalDecision){dialog.append(el('p',p.cycle?.outcome?'El motor finalizó la partida. Consultá el resultado en el mapa.':'Hay una decisión pendiente. Abrila para resolverla sin elegir automáticamente.'),button(p.nativeLabel||(p.play?decisionLabel(p):p.cycle?.outcome?'Ver resultado final':'Continuar en V9.9'),'inventory-native',onNative));}else dialog.append(button('Continuar en inventario','inventory-continue',()=>controller.dismiss(),busy));}
   else if(own){
    const contribution=s.purpose==='crisis',base=contribution?contributionCards(own):own,shown={...base,hand:filter==='equipment'?[]:base.hand,equipment:filter==='hand'?[]:base.equipment};
    if(s.phase==='picking'){

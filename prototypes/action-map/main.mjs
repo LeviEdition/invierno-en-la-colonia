@@ -1,7 +1,7 @@
 import {createMapNotice} from '../experience-map/map-notice.mjs';
 import {createRoutineResults} from '../experience-map/routine-results.mjs';
 import {createPlayController} from '../play-map/controller.mjs';
-import {createCycleController} from '../cycle-map/controller.mjs';
+import {createCycleController,cycleOwnedDecision,decisionLabel} from '../cycle-map/controller.mjs';
 import {createInventoryController} from '../inventory-map/controller.mjs';
 import {createSearchMapView} from './map-view.mjs';
 import {createMovementController} from '../movement-map/movement-controller.mjs';
@@ -41,12 +41,19 @@ function stopSearchClock(){clearTimeout(searchTimer);searchTimer=0;}
 function stopAction(){if(actionPresenting())viewer?.stopPresentation();action.interrupt();}
 function stopMovement(){presentationContext=null;viewer?.stopPresentation();movement.interruptPresentation();}
 function focusReference(){requestAnimationFrame(()=>{if(mode==='reference'&&port)port.postMessage({protocol,type:'focus'});});}
-function controllerState(p){return preferCycleFinal&&p?.cycle?.outcome?{...p,search:{...p.search,private:null,options:{}},action:{...p.action,operation:null,options:{}},inventory:{...p.inventory,private:null,receipt:null,presentation:null}}:p;}
-function showDecision(){if(state?.cycle?.outcome){preferCycleFinal=true;search.update(null);action.update(null);inventory.update(null);play.close();cycle.show();applyAuthority();return;}if(state?.play){stopMovement();stopAction();stopSearchClock();search.interrupt();inventory.close();applyAuthority();play.open('decision');return;}showReference();}
+// Mientras el jugador atiende una muerte o sucesión, los resultados propios quedan detrás del panel del ciclo.
+const cycleAttention=p=>cycle.inspect().attending&&cycleOwnedDecision(p?.cycle?.decision)&&!p?.play?.managed;
+function controllerState(p){return preferCycleFinal&&p?.cycle?.outcome||cycleAttention(p)?{...p,search:{...p.search,private:null,options:{}},action:{...p.action,operation:null,options:{}},inventory:{...p.inventory,private:null,receipt:null,presentation:null}}:p;}
+function showDecision(){if(state?.cycle?.outcome){preferCycleFinal=true;search.update(null);action.update(null);inventory.update(null);play.close();cycle.show();applyAuthority();return;}if(state?.play?.managed){stopMovement();stopAction();stopSearchClock();search.interrupt();inventory.close();cycle.attend();applyAuthority();play.open('decision');return;}
+ // Muerte, sucesión o mordedura en medio de una acción: el ciclo o el panel de juego la muestran; nunca se abre un panel vacío.
+ if(state?.play&&state.cycle?.decision){stopMovement();stopAction();stopSearchClock();search.interrupt();inventory.close();play.close();cycle.attend();applyAuthority();return;}
+ showReference();}
 function displayState(){
  if(preferCycleFinal&&state?.cycle?.outcome)return controllerState(state);
- if(ownedInventory(state)&&state.blocked&&state.inventory.presentation)return {...state.inventory.presentation,blocked:state.blocked,movement:state.movement,search:state.search,action:state.action,inventory:state.inventory};
- if(ownedAction(state)&&state.blocked&&state.action.presentation)return {...state.action.presentation,blocked:state.blocked,movement:state.movement,search:state.search,action:state.action};
+ // La proyección bloqueada por un fallecimiento llega sin datos públicos; se conserva la vista pública de la acción propia.
+ const presented=ownedInventory(state)&&state.blocked&&state.inventory.presentation?{...state.inventory.presentation,blocked:state.blocked,movement:state.movement,search:state.search,action:state.action,inventory:state.inventory,nativeLabel:state.play?decisionLabel(state):null}:ownedAction(state)&&state.blocked&&state.action.presentation?{...state.action.presentation,blocked:state.blocked,movement:state.movement,search:state.search,action:state.action,nativeLabel:state.play?decisionLabel(state):null}:null;
+ if(cycleAttention(state))return controllerState(presented?{...presented,inventory:state.inventory,cycle:state.cycle,play:state.play,dice:state.dice}:state);
+ if(presented)return presented;
  if(search.inspect().phase==='presenting'&&lastPublic)return {...lastPublic,search:state.search};
  if(state.blocked&&ownedSearch(state)&&lastPublic)return {...lastPublic,search:state.search,movement:state.movement};
  return state;
@@ -59,6 +66,8 @@ function showReference(){
 function applyAuthority(){
  if(!state)return;
  search.update(controllerState(state));action.update(controllerState(state));inventory.update(controllerState(state));cycle.update(state);play.update(state);
+ // Una mordedura siempre deja fallecimientos: al cerrar su panel, la cadena sigue en el ciclo sin volver al resultado.
+ if(state.play?.decision?.kind==='bite'&&!cycle.inspect().attending)cycle.attend();
  if(actionPresenting())return;
  movement.update(state);if(!state.blocked)movement.acknowledge();
  if(unified){const scope=state.play?`${state.play.session}/${state.play.generation}/${state.round}/${state.turn}`:null;if(scope!==movementNoticeScope||state.blocked||state.ended){movementNoticeEnabled=false;$('movement-result').textContent='';}movementNoticeScope=scope;}
@@ -121,7 +130,7 @@ function receive(event){
   if(!action.result(message))return;if(message.state&&validProjection(message.state))state=message.state;
   if(actionPresenting()){
    if(mode==='map'&&viewer&&!document.hidden&&message.resolution&&message.presentation){
-    viewer.startActionPresentation(message,()=>{action.finishPresentation();applyAuthority();if(unified)routine.finishAction(message,state);viewer?.updateActions();});
+    viewer.startActionPresentation(message,()=>{action.finishPresentation();applyAuthority();if(unified)routine.finishAction(message,message.presentation?.locations?.length?message.presentation:state);viewer?.updateActions();});
    }else {action.interrupt();applyAuthority();}
   }else applyAuthority();return;
  }
@@ -143,7 +152,7 @@ function receive(event){
   clearTimeout(requestTimer);if(!movement.result(message))return;
   if(message.ok&&mode==='map'&&viewer&&!document.hidden&&message.resolution&&message.presentation&&message.epoch===state?.epoch){
    presentationContext={epoch:state.epoch,turn:state.turn,round:state.round,session:state.movement.session};
-   viewer.startPresentation(message,()=>{movement.finishPresentation(movementSummary(message,message.presentation.locations),!!state?.blocked);if(state?.blocked){$('map-mode').disabled=true;status('Hay una decisión pendiente. Continuá cuando estés listo.');viewer.updateMovement();$('resolve-decision').focus({preventScroll:true});}else applyAuthority();});
+   viewer.startPresentation(message,()=>{movement.finishPresentation(movementSummary(message,message.presentation.locations),!!state?.blocked);if(state?.blocked){$('map-mode').disabled=true;status('Hay una decisión pendiente. Continuá cuando estés listo.');viewer.updateMovement();if(state.play)$('resolve-decision').textContent=decisionLabel(state);$('resolve-decision').focus({preventScroll:true});}else applyAuthority();});
   }else{movement.interruptPresentation();applyAuthority();}return;
  }
  if(message.type==='error'){stopSearchClock();stopMovement();stopAction();search.update(null);action.update(null);inventory.update(null);cycle.update(null);play.update(null);state=null;lastPublic=null;$('map-mode').disabled=true;status('La consulta no pudo actualizarse: '+message.message);showReference();void disposeViewer();return;}

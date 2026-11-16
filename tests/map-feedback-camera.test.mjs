@@ -15,7 +15,7 @@ test('Aviso: nombre, localidad, víctimas y daño proceden de la operación acep
  assert.equal(eventText({type:'attack',name:'Leo',count:1,location:2},locations),'Leo eliminó 1 zombi en Hospital.');assert.match(eventText({type:'exposure',name:'Leo',reason:'ataque ',value:2}),/dado 2 \(congelación\)/);
  assert.equal(actionNotice(op,locations),'Leo eliminó 1 zombi en el Hospital y sufrió congelación.');
  for(const effect of ['none','avoided','wound','bite']){const text=actionNotice({...op,resolution:{...op.resolution,killed:2,exposure:{effect}}},locations);assert.match(text,/Leo eliminó 2 zombis en el Hospital/);assert.equal(text.includes('congelación'),false);}
- assert.match(actionNotice({...op,resolution:{...op.resolution,actorAfter:{dead:true}}},locations),/falleció/);
+ assert.match(actionNotice({...op,resolution:{...op.resolution,actorAfter:{dead:true}}},locations),/, pero murió/);
 });
 test('Cámara: máximo se deriva de dimensiones originales, con mundo reescalado',()=>{
  const b={width:2000,height:1000,sourceWidth:1000,sourceHeight:500},c=fitMapCamera(b,{width:4000,height:2000});assert.equal(c.zoom,.5);assert.equal(c.maxZoom,.5);assert.equal(c.minZoom,.5);assert.equal(c.x,1500);assert.equal(c.y,750);
