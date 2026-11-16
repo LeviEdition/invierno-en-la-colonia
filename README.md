@@ -8,19 +8,19 @@ El estado vigente, la próxima tarea y los hallazgos abiertos están en el **[ta
 
 Documentos de referencia: [rumbo y hitos (62)](docs/62-hitos-referencia-fiel-y-juego-propio.md) · [plan del Hito 3 (75)](docs/75-plan-hito-3-identidad-visual.md) · [experiencia unificada del mapa (99)](docs/99-experiencia-unificada-del-mapa.md) · [dirección de producto (51)](docs/51-rumbo-fidelidad-e-identidad.md) · [matriz F (61)](docs/61-alcance-matriz-f-juego-propio.md). El historial de entregas y las guías de ramas anteriores están en el [tablero histórico](docs/18-historico-tablero.md).
 
-## Jugar el mapa horizontal
+## Jugar el mapa
 
-Está en `main`. Requiere Node 22 o posterior. En VS Code, PowerShell, en la carpeta del repositorio:
+Está en `main`, en `app/mapa/`. Requiere Node 22 o posterior. En VS Code, PowerShell, en la carpeta del repositorio:
 
 ```powershell
 git fetch origin
 git switch main
 git pull --ff-only
 npm.cmd ci
-npm.cmd run dev:horizontal-map
+npm.cmd run dev:mapa
 ```
 
-Abrir **http://127.0.0.1:8779/prototypes/horizontal-map/** y elegir Jugar con IA o Dos jugadores en este dispositivo. Ctrl+C detiene el servidor; después de actualizar, reiniciarlo y recargar. [Guía para Windows, VS Code, celular en la red local y pruebas manuales](prototypes/horizontal-map/README.md) · [originales y configuración del arte](assets/mapa-horizontal/README.md).
+Abrir **http://127.0.0.1:8779/app/mapa/** y elegir Jugar con IA o Dos jugadores en este dispositivo. Ctrl+C detiene el servidor; después de actualizar, reiniciarlo y recargar. [Guía para Windows, VS Code, celular en la red local y estructura del producto](app/mapa/README.md) · [originales y configuración del arte](assets/mapa-horizontal/README.md).
 
 ## Descargar la referencia y jugar offline
 
@@ -38,7 +38,7 @@ La validación cubre Node y Chromium automatizado; no certifica equivalencia reg
 
 ## Desarrollo y construcción
 
-Requiere Node22 o posterior. Ejecutar `npm ci`, `npm run build`, `npm run check:build` y `npm test`. El lockfile fija esbuild0.28.2 y, para los experimentos visuales H3.2/H3.3, Phaser4.2.1. El HTML V9.9 conserva su distribución sin dependencias externas. Editar módulos `src/` y la plantilla, nunca el HTML generado a mano. `npm run build` empaqueta módulos reales en una IIFE y la inserta en un único HTML autocontenido. La salida conserva la apertura offline.
+Requiere Node22 o posterior. Ejecutar `npm ci`, `npm run build`, `npm run check:build` y `npm test`. El lockfile fija esbuild 0.28.2 y, para el mapa, Phaser 4.2.1. El HTML V9.9 conserva su distribución sin dependencias externas. Editar módulos `src/` y la plantilla, nunca el HTML generado a mano. `npm run build` empaqueta módulos reales en una IIFE y la inserta en un único HTML autocontenido. La salida conserva la apertura offline.
 
 El motor se importa desde `src/application/reference-engine.mjs`, admite reloj/RNG y efectos inyectados, y expone `start`, `dispatch` y `snapshot`. Un motor local funciona sin DOM ni cliente IA. La aplicación conecta vista y agente de referencia por capacidades explícitas; el estado mutable no se publica en window. El paquete de reglas V9.9 sigue representando dos grupos: no existe un nuevo modo singleplayer.
 

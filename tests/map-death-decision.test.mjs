@@ -1,8 +1,8 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import {createEngine} from '../test-support/horizontal-engine.mjs';
-import {createPlayBroker} from '../prototypes/play-map/broker.mjs';import {projectVisibleState} from '../prototypes/state-map/projection.mjs';
-import {createCycleController,cycleOwnedDecision,decisionLabel} from '../prototypes/cycle-map/controller.mjs';
-import {actionSummary,actionNotice} from '../prototypes/action-map/action-presentation.mjs';
+import {createPlayBroker} from '../app/mapa/juego/broker.mjs';import {projectVisibleState} from '../app/mapa/estado/projection.mjs';
+import {createCycleController,cycleOwnedDecision,decisionLabel} from '../app/mapa/ciclo/controller.mjs';
+import {actionSummary,actionNotice} from '../app/mapa/acciones/action-presentation.mjs';
 const flush=async()=>{for(let i=0;i<8;i++)await Promise.resolve();};
 // Exposición fija en 1 (mordedura). El motor y sus decisiones son los reales.
 function make(){let calls=0;const math=Object.create(Math);math.random=()=>{calls++;return 0;};const e=createEngine({Math:math,queueMicrotask:f=>queueMicrotask(f),setTimeout:f=>{f();return 0;}});e.start('local');const c=e.testBindings;c.game.crossResolved=true;c.game.crossPending=false;c.game.dice=[6,6];for(const z of c.game.zones)z.z=0;c.game.zones[2].z=2;return {e,c,calls:()=>calls};}

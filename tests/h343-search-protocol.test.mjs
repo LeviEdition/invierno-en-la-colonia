@@ -1,8 +1,8 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import {createEngine} from '../src/application/reference-engine.mjs';
 import {createReferenceState} from '../src/domain/reference-state.mjs';
-import {projectVisibleState} from '../prototypes/state-map/projection.mjs';
-import {createSearchBroker} from '../prototypes/search-map/search-broker.mjs';
+import {projectVisibleState} from '../app/mapa/estado/projection.mjs';
+import {createSearchBroker} from '../app/mapa/busqueda/search-broker.mjs';
 function setup(){let context,calls=0;const math=Object.create(Math);math.random=()=>{calls++;return .8;};const engine=createEngine({Math:math,queueMicrotask(){},stateFactory:args=>{const g=createReferenceState(args);g.humans[0].loc=2;return g;}});engine.connectPresentation(c=>{context=c;return {};});engine.start('local');const read=()=>projectVisibleState(context,{gate:{},renderedPlayable:true,epoch:1}),broker=createSearchBroker(engine,{session:'session',readPublic:read});broker.project(read());return {engine,broker,read,calls:()=>calls};}
 const req=(b,id='once')=>{const s=b.snapshot();return {type:'search',requestId:id,session:s.search.session,revision:s.search.revision,actorId:'h0',dieIndex:0,dieValue:s.search.options.h0.dice[0].value};};
 test('H343 protocolo: doble solicitud y ruido repetido ejecutan una vez; clave reutilizada rechazada',()=>{const t=setup(),r=req(t.broker),result=t.broker.handle(r);assert.equal(result.ok,true);const before=t.engine.snapshot(),calls=t.calls();assert.deepEqual(t.broker.handle(r),result);assert.deepEqual(t.engine.snapshot(),before);assert.equal(t.calls(),calls);assert.equal(t.broker.handle({...r,dieIndex:1}).reason,'request-reused');const s=t.broker.snapshot(),q={type:'search-noise',requestId:'noise',session:s.search.session,revision:s.search.revision,operationId:s.search.private.operation.operationId};assert.equal(t.broker.handle(q).ok,true);const noisy=t.engine.snapshot();t.broker.handle(q);assert.deepEqual(t.engine.snapshot(),noisy);});

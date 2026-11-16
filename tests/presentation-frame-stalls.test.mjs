@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {createPresentationSequence} from '../prototypes/movement-map/presentation-sequence.mjs';
+import {createPresentationSequence} from '../app/mapa/movimiento/presentation-sequence.mjs';
 
 const response={resolution:{exposure:{rolled:true,value:3,effect:'wound'}}};
 function stages(sequence,delays){

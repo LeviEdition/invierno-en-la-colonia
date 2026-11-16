@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {createCamera, worldToScreen, screenToWorld, panCamera, zoomCameraAt, pinchCamera, fitCamera} from '../prototypes/hospital/camera.mjs';
+import {createCamera, worldToScreen, screenToWorld, panCamera, zoomCameraAt, pinchCamera, fitCamera} from '../app/mapa/render/camera.mjs';
 
 const close=(actual,expected)=>assert.ok(Math.abs(actual-expected)<1e-8,`${actual} != ${expected}`);
 const pointClose=(a,b)=>{close(a.x,b.x);close(a.y,b.y);};

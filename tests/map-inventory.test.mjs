@@ -1,8 +1,8 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import {createEngine} from '../test-support/horizontal-engine.mjs';
-import {createInventoryBroker} from '../prototypes/inventory-map/broker.mjs';
-import {createInventoryController} from '../prototypes/inventory-map/controller.mjs';
-import {projectVisibleState} from '../prototypes/state-map/projection.mjs';
+import {createInventoryBroker} from '../app/mapa/inventario/broker.mjs';
+import {createInventoryController} from '../app/mapa/inventario/controller.mjs';
+import {projectVisibleState} from '../app/mapa/estado/projection.mjs';
 function session(ids=['bandage','bandage','rifle','crowbar','gascan']){let calls=0;const math=Object.create(Math);math.random=()=>{calls++;return .8;};const e=createEngine({Math:math,queueMicrotask(){}});e.start('local');const c=e.testBindings;c.game.crossResolved=true;c.game.items=ids.map(id=>c.catalog.create(id));c.game.humans[0].wounds=1;c.game.humans[0].frost=1;c.game.waste=3;return {e,c,calls:()=>calls};}
 const req=(t,index=0,extra={})=>({mode:'use',cardId:t.e.inventorySnapshot().hand[index].uid,actorId:'h0',targetId:null,destination:null,...extra});
 function broker(t){const b=createInventoryBroker(t.e,{session:'test',readPublic:()=>projectVisibleState(t.c,{renderedPlayable:true,epoch:1})});b.project(projectVisibleState(t.c,{renderedPlayable:true,epoch:1}));return b;}
