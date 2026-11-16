@@ -118,6 +118,11 @@ dialog[data-surface=exclusive]::backdrop{background:#071014b8}
 #map-app #context-default .dice-section #boost-action{font-size:14px;padding:4px 8px}
 #map-app #context-default #dice-status{display:none}
 #map-app #context-default .actions-section{padding:0;border:0}
+/* Móvil: las acciones del superviviente propio van primero; datos, dados e inventario después (hallazgo 3). */
+#map-app #context-default:not([hidden]){display:flex;flex-direction:column}
+#map-app #context-default .actions-section{order:-1;margin:0 0 8px}
+#map-app #character-card:not([hidden]){display:flex;flex-direction:column}
+#map-app #context-default #character-inventory{order:1;margin:8px 0 0}
 #map-app .menu-toggle{z-index:50}#map-app .floating-menu{z-index:51}
 @media(max-width:950px){body[data-sheet-expanded=true] #map-app #dossier{max-height:calc(100% - 90px)}}
 body[data-panel-open=false] #panel-expand{display:none}
