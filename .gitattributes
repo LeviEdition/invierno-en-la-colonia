@@ -1,0 +1,23 @@
+# Finales de línea LF en todos los sistemas. Sin esto, git para Windows
+# convierte a CRLF al clonar y `npm run check:build` falla porque el HTML
+# de referencia deja de coincidir byte a byte.
+* text=auto eol=lf
+
+# Binarios: nunca se convierten ni se comparan como texto.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.mp3 binary
+*.ogg binary
+*.wav binary
+*.mp4 binary
+*.webm binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.otf binary
+*.zip binary
+*.pdf binary
