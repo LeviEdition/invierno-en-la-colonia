@@ -1,3 +1,4 @@
+import {paintExposureDie} from './movimiento/exposure-die-view.mjs';
 import {mountWorkspace} from './experiencia/workspace.mjs';
 import {present,unified} from './experiencia/surfaces.mjs';
 import {help,statistics,eventText} from './juego/information.mjs';
@@ -173,7 +174,7 @@ export async function createSearchMapView({signal,movement,search,action,invento
   const op=sequenceResponse,isAction=!!op.kind;
   const text=isAction?(step.stage==='travel'?(op.kind==='attack'?op.name+' ataca a los zombis.':op.name+' construye barricadas.'):step.stage==='roll'?'Exposición · '+op.name:step.stage==='reveal'?op.name+' · '+actionExposureText(step.exposure):actionSummary(op)):(step.stage==='travel'?'Traslado · '+op.name:step.stage==='roll'?'Exposición · '+op.name:step.stage==='reveal'?op.name+' · '+exposureText(step.exposure):movementSummary(op,projection.locations));
   if($('sequence-status').textContent!==text)$('sequence-status').textContent=text;
-  $('move-sequence').dataset.stage=step.stage;$('exposure-die').hidden=step.stage==='travel'||!step.exposure.rolled;$('exposure-die').textContent=step.stage==='roll'?String(1+Math.floor(step.elapsed/80)%6):String(step.exposure.value??'');
+  $('move-sequence').dataset.stage=step.stage;paintExposureDie($('exposure-die'),step);
  }
  function startActionPresentation(response,done){
   stopPresentation();$('floating-menu').hidden=true;$('menu-toggle').setAttribute('aria-expanded','false');sequenceResponse=response;sequenceCallback=done;sequenceApplied=false;impactApplied=false;sequenceLast=null;
