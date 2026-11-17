@@ -6,7 +6,8 @@
 > - **Rol narrativo del jugador:** para el piloto, la continuidad narrativa recae en **la colonia**, no en un protagonista individual. El jugador sigue dirigiendo como líder; si el líder muere, un relevo continúa la historia con los hechos acumulados (acordado). El papel mecánico del líder sigue abierto. Se deja de lado la reputación personal con el líder en el piloto.
 > - **«Encuentro» tiene dos sentidos.** En §6.2B–C designa historias secundarias reutilizables de personajes. En la campaña piloto designa una **escena activada por condiciones** (una acción, un lugar y hechos que la colonia conoce). Para no confundirlos, en la campaña se escribe «encuentro de campaña».
 > - **Conocimiento compartido:** el Director conserva pistas comunicadas, testigos, decisiones, bajas y personas incorporadas; lo comunicado sobrevive a la muerte de quien lo descubrió (acordado, SP-05). El elenco es variable.
-> - **Balance (SP-04):** la muerte de un superviviente debe pesar y abastecer debe estar justificado (decisión del creador, 16/11). Primer capítulo piloto: «La última guardia», ficha 105.
+> - **Balance (SP-04):** la muerte de un superviviente debe pesar y abastecer debe estar justificado (decisión del creador, 16/11). La muerte golpea a **la colonia** con más pérdida de moral, y se pierden el equipo y las habilidades del personaje (dirección del creador, 17/11; cifras y destino del equipo a medir en el laboratorio, [105 §5.2](105-ficha-capitulo-la-ultima-guardia.md)).
+> - **Capítulo piloto:** «La última guardia», ficha 105. El grupo encuentra al médico antes de ir al hospital; ese encuentro dispara el capítulo.
 
 ## Estado reconciliado al 29/10/2026
 

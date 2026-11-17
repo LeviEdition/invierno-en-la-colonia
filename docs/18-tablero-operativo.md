@@ -22,8 +22,8 @@ El mapa permite preparar, jugar y terminar una partida completa (humano + IA y d
 ## 3. Cola ordenada
 
 1. **PR #27 (D12):** prueba jugando → decisión de merge (requiere indicación expresa).
-2. **SP-04, segunda corrida del laboratorio** sobre `main` con el D12: indefensos fijos, comida inicial (6/3/0), crisis agravada, costo de muerte (−1/−2) y objetivos de 6 y 10 rondas, con las políticas cooperativa y objetivo; repetir el barrido de dados con ellas; variante del rescate del médico ([105 §5.1](105-ficha-capitulo-la-ultima-guardia.md)). El informe del laboratorio en su rama se renumera al integrarse (el 102 es del D12).
-3. **Decisiones del creador para el capítulo piloto** ([105](105-ficha-capitulo-la-ultima-guardia.md)): costo de morir en el rescate (§5.1) y si el médico acompaña al grupo o espera en el hospital (§3).
+2. **SP-04, segunda corrida del laboratorio** sobre `main` con el D12: indefensos fijos, comida inicial (6/3/0), crisis agravada, costo de muerte para la colonia (moral −1/−2 por superviviente; equipo perdido o que queda donde murió) y objetivos de 6 y 10 rondas, con las políticas cooperativa y objetivo; repetir el barrido de dados con ellas; variante del rescate del médico ([105 §5.1](105-ficha-capitulo-la-ultima-guardia.md)). El informe del laboratorio en su rama se renumera al integrarse (el 102 es del D12).
+3. **Decisiones del creador para el capítulo piloto** ([105](105-ficha-capitulo-la-ultima-guardia.md)): si el rescate necesita además la alternativa A (§5.1) y dónde y cómo se encuentra al médico antes del hospital (§3).
 4. **Implementar «La última guardia»** como capítulo jugable, después de 2 y 3.
 5. **Mejoras menores del mapa** que no afectan decisiones: hallazgos 4 y 5, y una batería de CI que juegue una partida entera desde el mapa con clics reales.
 6. **Reservas del Hito 3:** prueba física en el Samsung Galaxy A15 y prueba manual de dos jugadores locales cuando haya ocasión.

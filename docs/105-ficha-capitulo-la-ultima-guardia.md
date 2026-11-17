@@ -16,19 +16,20 @@ Probar dentro de una partida real que la campaña avanza por lo que los superviv
 | Elemento | Papel | Estado |
 |---|---|---|
 | La colonia | Protagonista de la campaña; un relevo de líder continúa la historia con los hechos acumulados | Acordado |
-| El médico | Persona a rescatar en el hospital; al incorporarse habilita Atención médica | Acordado |
+| El médico | El grupo lo encuentra **antes** de ir al hospital: ese encuentro dispara el capítulo. Acompaña al grupo al hospital, donde queda en peligro y hay que rescatarlo. Al incorporarse habilita Atención médica | Acordado (17/11) |
 | Elena Varela | Investigadora desaparecida con cuadernos sobre una posible cura; objetivo de la pista | Acordado |
 | Hospital: Admisión y tablón | Lugar donde se identifica el último traslado de Maternidad | Acordado |
 | Registro del hospital | Consultable directamente si alguien de la colonia conoce el apellido «Varela» | Acordado |
 | Escuela | Destino del vehículo del traslado; su llegada queda abierta para el capítulo siguiente | Acordado |
 
-**Pregunta abierta de redacción:** el informe 104 dice que el médico «acompaña al grupo desde la colonia hasta el hospital» y también que hay que rescatarlo en la puerta del hospital. Hay que fijar una de las dos versiones antes de implementar.
+**Versión final (creador, 17/11):** el médico se encuentra antes de ir al hospital y ese encuentro es el disparador del capítulo; después acompaña al grupo y el rescate ocurre en la puerta del hospital. **Pendiente:** dónde y cómo se lo encuentra (localidad y condición).
 
 ## 4. Secuencia y disparadores
 
 | Paso | Disparador | Qué conoce la colonia después | Estado |
 |---|---|---|---|
-| 1. Pista en Admisión | Un superviviente busca o se mueve a Admisión del hospital | El mensaje del tablón identifica el último traslado de Maternidad | Acordado |
+| 0. Encuentro con el médico | Encuentro de campaña previo al hospital (localidad y condición pendientes) | El médico acompaña al grupo; la colonia conoce el rastro de Elena Varela y el motivo para ir al hospital | Acordado (17/11) |
+| 1. Pista en Admisión | Un superviviente del grupo, con el médico, busca o se mueve a Admisión del hospital | El mensaje del tablón identifica el último traslado de Maternidad | Acordado |
 | 1b. Atajo por registro | Alguien de la colonia conoce el apellido «Varela» | Consulta directa del registro, sin pasar por el tablón | Acordado |
 | 2. Destino | Pista del paso 1 o 1b | El vehículo salió rumbo a la escuela; su llegada es una pregunta abierta | Acordado |
 | 3. Comunicación | El hallazgo se comunica **antes** del rescate | La pista queda en la colonia aunque quien la encontró muera | Acordado |
@@ -56,7 +57,15 @@ Alternativas para que la muerte del rescatista pese dentro del encuentro (**pend
 | B. Moral extra por la muerte del rescatista (por ejemplo, −1 adicional) | La colonia reacciona a que el líder mandó a alguien a morir | Coherente con «la muerte debe pesar»; fácil de medir | Si el costo general de muerte ya sube, puede duplicarse |
 | C. El médico desconfía del líder que lo mandó y no atiende al líder durante el capítulo | La relación con el rescatado cambia por la decisión | Consecuencia narrativa persistente (SP-05) | El informe 104 descartó la reputación personal con el líder para el piloto |
 
-Recomendación de Claude: **A**, porque no depende del costo general de muerte que todavía está en el laboratorio y no reabre la reputación personal que el piloto descartó.
+Recomendación de Claude: **A**, porque no reabre la reputación personal que el piloto descartó.
+
+**Efecto de la dirección del 17/11 sobre la muerte (ver §5.2):** si una muerte cuesta más moral a la colonia y el equipo del rescatista se pierde o queda en el hospital, ganar al médico deja de ser gratis y «Retirarse» vuelve a ser razonable. En ese caso A pasa a ser opcional. Medir en el laboratorio con y sin A.
+
+### 5.2 Dirección del creador sobre la muerte (17/11)
+
+- La muerte de un superviviente golpea a **la colonia**, que es la protagonista: más pérdida de moral por cada muerte (cifra a medir; candidata −2 por superviviente, −1 por indefenso).
+- Al morir, la colonia **pierde el equipo y las habilidades** del personaje. Hoy el motor devuelve el equipo a la mano si muere en la colonia y lo mezcla en el mazo de la localidad si muere afuera. Variantes a medir: equipo perdido del todo, o equipo que queda donde murió (recuperable volviendo).
+- Riesgo a vigilar: una mordedura con contagio puede costar dos muertes en un turno.
 
 ## 6. Recompensa: Atención médica
 
@@ -73,7 +82,7 @@ Recomendación de Claude: **A**, porque no depende del costo general de muerte q
 
 1. **D12 integrado** (PR #27).
 2. **Segunda corrida del laboratorio** con el D12: indefensos, comida inicial, crisis agravada, costo de muerte y duración del objetivo; más una variante del rescate para medir cuánto conviene sacrificar al rescatista con cada alternativa de §5.1.
-3. **Decisión del creador** sobre §5.1 y sobre la pregunta abierta de §3.
+3. **Decisión del creador** sobre §5.1 (si A sigue haciendo falta) y sobre dónde y cómo se encuentra al médico (§3).
 
 ## 9. Criterio de aceptación del capítulo jugable (para el futuro encargo)
 
