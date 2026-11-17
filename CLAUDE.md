@@ -11,6 +11,7 @@ Videojuego de supervivencia que empezó como adaptación de *Dead of Winter* (re
 - En el modo de dos jugadores locales, manos, dados y registro privados no se muestran durante el pase de dispositivo.
 - La referencia V9.9 (`invierno_colonia_v9_9.html`, tag `v0.9.9-referencia-modular`) no se modifica. El HTML se genera desde `src/`; nunca se edita a mano.
 - El mapa vive en `app/mapa/` y no importa nada de fuera salvo `src/`, `config/`, `assets/` y `kit_arte_h33/`. Los prototipos H3.2–H3.4.4 se retiraron del árbol; se consultan en la historia (informe 103).
+- Arte, paleta, tipografía y escenas narrativas nuevas siguen la [guía de estilo (109)](docs/109-guia-de-estilo.md).
 - No cambiar reglas, costes, balance, capacidades (33 accesos), posiciones ni arte aprobado sin decisión explícita del creador.
 - **Nada de merge, tags, releases ni publicación sin indicación expresa del creador.** Push solo a la rama de trabajo indicada.
 
