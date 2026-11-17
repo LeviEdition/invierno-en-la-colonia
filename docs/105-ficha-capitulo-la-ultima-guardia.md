@@ -8,7 +8,7 @@ Probar dentro de una partida real que la campaña avanza por lo que los superviv
 
 ## 2. Términos
 
-- **Encuentro (en la campaña):** escena activada cuando coinciden una acción, un lugar y hechos que la colonia conoce. *No* es el «Encuentro» de [63 §6.2B–C](63-hoja-de-ruta-planificacion-singleplayer.md), que designa historias secundarias reutilizables de personajes. Ver la nota de 63.
+- **Encuentro:** escena de impacto mayor activada cuando coinciden una acción, un lugar y hechos que la colonia conoce. Los encuentros hacen avanzar la historia principal o las secundarias; los de este capítulo avanzan la **historia principal** de *Una luz de esperanza*. Las **encrucijadas** son decisiones de impacto leve y pueden aparecer durante el capítulo según las reglas de 63. Ver la nota del 17/11 en 63.
 - **Conocimiento de la colonia:** pistas comunicadas, testigos, decisiones, bajas y personas incorporadas que conserva el Director (acordado, SP-05). Lo que un superviviente descubre y comunica sobrevive a su muerte.
 
 ## 3. Elenco y lugares
@@ -104,7 +104,7 @@ Recomendación de Claude: **A**, porque no reabre la reputación personal que el
 
 | # | Estado | Mejora | Problema que resuelve | Qué experimenta el jugador |
 |---|---|---|---|---|
-| M1 | **Adoptada** | **El médico aparece al abastecer:** encuentro de campaña en el **Supermercado**, la primera vez que un superviviente busca ahí desde la ronda 2. Estaba juntando medicamentos y comida | El laboratorio mostró que abastecer no tiene incentivo; así la historia avanza también por abastecer, no solo por el objetivo | «Fui a buscar comida porque no quedaba, y encontré al médico» |
+| M1 | **Adoptada** | **El médico aparece al abastecer:** encuentro en el **Supermercado**, la primera vez que un superviviente busca ahí desde la ronda 2. Estaba juntando medicamentos y comida | El laboratorio mostró que abastecer no tiene incentivo; así la historia avanza también por abastecer, no solo por el objetivo | «Fui a buscar comida porque no quedaba, y encontré al médico» |
 | M2 | No adoptada | **El apellido se gana:** el médico solo sabe «Elena, de Maternidad». El apellido «Varela» aparece en un cuaderno en la **Biblioteca** (búsqueda de notas) | Hoy no está definido de dónde sale el apellido; así el atajo del registro premia explorar y une historia con objetivo | «Si paso antes por la Biblioteca, en el hospital voy directo al registro y busco menos» |
 | M3 | **Adoptada** | **Buscar en el hospital hace ruido y el peligro de la puerta depende de eso:** el rescate se dispara cuando el médico entra a Maternidad y la horda llega; su gravedad depende de los zombis en los accesos del hospital | Conecta el clímax con decisiones previas, en lugar de un evento fijo | «Busqué tres veces sin el apellido; ahora la puerta está llena» |
 | M4 | **Adoptada** | **Comunicar con testigo:** la pista se comunica al instante si hay otro superviviente o el médico en la misma localidad; si no, cuando quien la encontró vuelve a la colonia | Le da forma jugable a «comunicar antes del rescate» y usa los testigos del Director (SP-05) | «Mando a dos juntos al hospital: si uno cae, el otro ya sabe» |
