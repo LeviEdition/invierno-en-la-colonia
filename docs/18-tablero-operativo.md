@@ -19,11 +19,11 @@ El mapa permite preparar, jugar y terminar una partida completa (humano + IA y d
 
 ## 2. Próxima tarea única
 
-**Decidir con el [informe 110](110-laboratorio-sp04-tercera-corrida.md)** (tercera corrida SP-04, [PR #32](https://github.com/LeviEdition/invierno-en-la-colonia/pull/32) en borrador). Sobre P1, un corredor que reparte al grupo gana 65 % frente a 36 % de la cooperativa: correr domina mientras la colonia vacía no coma ni atraiga zombis. Ninguna compensación de indefensos (cocinero, 2 + vivos dados, comida 8) deja a la cooperativa cerca del 50 % sin que correr domine. El médico jugable vuelve pareja la decisión de la puerta (rescatar y retirarse a ≤ 5 puntos en 11 de 12 celdas), pero su pasiva casi no actúa. Decisiones pendientes: si se miden «todos comen estén donde estén» y «llegadas a la colonia fijas», y si se adopta el médico jugable con la pasiva de solo heridas.
+**Decidir con el [informe 111](111-laboratorio-sp04-cuarta-corrida.md)** (cuarta corrida SP-04, regla B, rama `experiment/sp04-cuarta-corrida`, PR en borrador hacia `main`). Que los zombis lleguen a la colonia aunque esté vacía **no alcanza**: ninguna variante deja al corredor repartido a ≤ 5 puntos de la cooperativa. La que más acerca es «P1 · comida 8 · mínimo 2»: cooperativa 42 %, corredor 59 % (+17); mínimo 2 le quita al corredor 8 puntos sin dañar a la cooperativa. Mínimo 3 y fijo 3 castigan más a quien deja guardia. La ventaja que queda es la comida: la cooperativa pasa hambre en el 74 % de las partidas y el corredor en el 36–43 %. El rescate del médico sigue parejo (≤ 5 puntos). Decisión pendiente: medir la regla A («todos comen estén donde estén»), sola y con mínimo 2.
 
 ## 3. Cola ordenada
 
-1. **Decisión del creador sobre 110** y, si la pide, una cuarta corrida corta con las dos reglas de la colonia (110, recomendación 1).
+1. **Decisión del creador sobre 111** y, si la pide, una quinta corrida corta con la regla A, sola y combinada con mínimo 2.
 2. **Implementar «La última guardia»** como capítulo jugable, con la combinación que salga de 1. Reutiliza la tirada D12 y su resultado estructurado.
 3. **Rótulos de las localidades y dado centrado** (encargo listo; guía de estilo [109](109-guia-de-estilo.md)).
 4. **Mejoras menores del mapa** que no afectan decisiones: hallazgos 4 y 5, y una batería de CI que juegue una partida entera con clics reales.

@@ -9,7 +9,7 @@ import {createRules} from '../../src/domain/reference-rules.mjs';
 import {createTurns} from '../../src/application/reference-turns.mjs';
 import {createAgent} from '../../src/agents/reference-agent.mjs';
 import {crearAzar} from './azar.mjs';
-import {palancasBase,validarPalancas,esBase,ajustarEstado,instalarPalancas,habitantesExtra} from './palancas.mjs';
+import {palancasBase,validarPalancas,esBase,ajustarEstado,instalarPalancas,habitantesExtra,LLEGADA_SALTEADA} from './palancas.mjs';
 
 export const formulasDados={
  v99:n=>1+n,          // V9.9: 1 + supervivientes vivos
@@ -117,6 +117,8 @@ export function crearRegistro(){
   busquedaPendiente:null,
   exposiciones:[], // {ronda,efecto}: none · wound · frost · bite · avoided
   indefensosPerdidos:0,indefensosPorCrisis:0,equipoPerdido:0,enColonia:false,
+  llegadasExtraColonia:0, // regla B: llegadas agregadas (+) o salteadas (−) respecto de V9.9
+  desbordesColonia:[],    // {ronda,victima: superviviente · indefenso · nadie}
   rescate:null,
  };
 }
@@ -133,13 +135,22 @@ function instrumentar(c,registro){
  const crisis=c.resolveCrisis;
  c.resolveCrisis=()=>{const k=c.game.crisis,aportes=k.contributions.filter(t=>t===k.type).length;registro.crisis.push({ronda:c.game.round,tipo:k.type,exito:aportes>=k.need,aportes,necesidad:k.need,fallo:k.fail});return crisis();};
  const colonia=c.colony;
- c.colony=()=>{const g=c.game,antes={comida:g.food,moral:g.morale,hambre:g.hunger,necesidad:c.feedingNeed(g)};registro.enColonia=true;let salida;try{salida=colonia();}finally{registro.enColonia=false;}registro.colonia.push({ronda:g.round,comidaAntes:antes.comida,comidaDespues:g.food,necesidad:antes.necesidad,hambre:g.hunger,hambreNueva:g.hunger>antes.hambre,moralAntes:antes.moral,moralDespues:g.morale});return salida;};
+ c.colony=()=>{const g=c.game,antes={comida:g.food,moral:g.morale,hambre:g.hunger,necesidad:c.feedingNeed(g),guardia:g.humans.some(p=>!p.dead&&p.loc===0)};registro.enColonia=true;let salida;try{salida=colonia();}finally{registro.enColonia=false;}registro.colonia.push({ronda:g.round,comidaAntes:antes.comida,comidaDespues:g.food,necesidad:antes.necesidad,hambre:g.hunger,hambreNueva:g.hunger>antes.hambre,guardia:antes.guardia,moralAntes:antes.moral,moralDespues:g.morale});return salida;};
  const reclutar=c.recruit;
  c.recruit=(lado,emergencia=false,env=null)=>{const salida=reclutar(lado,emergencia,env);if(salida&&!env)registro.reclutas.push({ronda:c.game.round,lado,emergencia,nombre:c.ownerGroup(lado).at(-1)?.name});return salida;};
  const exponer=c.expose;
  c.expose=(p,razon)=>{const r=exponer(p,razon);if(r?.rolled)registro.exposiciones.push({ronda:c.game.round,efecto:r.effect});return r;};
  const llegada=c.addZombie;
- c.addZombie=(i,env=null)=>{const antes=env?null:c.game.helpless;const salida=llegada(i,env);if(!env&&c.game.helpless<antes)registro.indefensosPerdidos+=antes-c.game.helpless;return salida;};
+ c.addZombie=(i,env=null)=>{
+  if(env)return llegada(i,env);
+  const g=c.game,z=g.zones[i],antes={indefensos:g.helpless,z:z.z,b:z.b,vivos:g.humans.filter(p=>!p.dead).length};
+  const salida=llegada(i,env);
+  if(salida===LLEGADA_SALTEADA)return salida; // regla B: esta llegada no ocurre
+  if(g.helpless<antes.indefensos)registro.indefensosPerdidos+=antes.indefensos-g.helpless;
+  // Desbordamiento: el motor no sumó zombi ni gastó barricada. Solo se anota la colonia.
+  if(i===0&&z.z===antes.z&&z.b===antes.b&&z.z+z.b>0)registro.desbordesColonia.push({ronda:g.round,victima:g.helpless<antes.indefensos?'indefenso':g.humans.filter(p=>!p.dead).length<antes.vivos?'superviviente':'nadie'});
+  return salida;
+ };
  const mejorar=c.boostDie;
  c.boostDie=()=>{const antes=c.game.food;mejorar();if(c.game.food<antes)registro.mejorasComida++;};
  const elegirBotin=c.chooseLoot;

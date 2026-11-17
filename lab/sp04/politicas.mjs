@@ -1,3 +1,4 @@
+import {llegadasPrevistasColonia} from './palancas.mjs';
 // Políticas del jugador. Solo eligen entradas del motor; no aplican reglas.
 // Cada política ofrece decidir(c) para las decisiones pendientes (muerte, mordedura,
 // sucesión, encrucijada, botín, tratamiento…) y actuar(c,registro) para el turno.
@@ -180,7 +181,8 @@ const mazosComida=[1,5,4],mazosMuestras=[6,2,5];
 // ⌈(habitantes + indefensos)/2⌉, como en colony(). La colonia peligra si esas
 // llegadas, más dos por una crisis que atraiga zombis, alcanzan lo que absorben los
 // accesos libres y las barricadas (capacidad − zombis).
-const llegadasColonia=c=>Math.ceil((c.alive().filter(x=>x.loc===0).length+c.game.helpless)/2);
+// Con la regla B (docs/111) las llegadas siguen la variante vigente; sin ella, V9.9.
+const llegadasColonia=c=>llegadasPrevistasColonia(c);
 const coloniaEnPeligro=c=>{const g=c.game,z=g.zones[0];return g.helpless>0&&c.zcap[0]-z.z<=llegadasColonia(c)+2;};
 function actuarReferencia(c,registro,perfil,{indefensos=false}={}){
  const g=c.game;
@@ -236,7 +238,7 @@ function reglaDeDados(c,regla,group,dice,registro){
  if(regla==='buscar-comida')return buscar(group.filter(p=>mazosComida.includes(p.loc)));
  if(regla==='buscar-muestras')return buscar(group.filter(p=>mazosMuestras.includes(p.loc)));
  if(regla==='atacar')return atacar(()=>true);
- if(regla==='atacar-riesgo')return atacar(p=>{const z=g.zones[p.loc],llegan=p.loc===0?Math.ceil((c.alive().filter(x=>x.loc===0).length+g.helpless)/2):c.alive().filter(x=>x.loc===p.loc).length;return z.z+z.b+llegan>=c.zcap[p.loc];});
+ if(regla==='atacar-riesgo')return atacar(p=>{const z=g.zones[p.loc],llegan=p.loc===0?llegadasPrevistasColonia(c):c.alive().filter(x=>x.loc===p.loc).length;return z.z+z.b+llegan>=c.zcap[p.loc];});
  if(regla==='mejorar'){
   const buscador=group.find(p=>p.loc!==0&&g.decks[p.loc].length&&!dice.some(d=>d>=c.effectiveSearch(p)));
   if(buscador&&g.food>c.feedingNeed(g)+1&&Math.max(...dice)<6){c.picked=dice.indexOf(Math.max(...dice));c.boostDie();return 'mejorar-dado';}
