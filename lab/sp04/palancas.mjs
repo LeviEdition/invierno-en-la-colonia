@@ -1,4 +1,4 @@
-// Palancas de la segunda corrida (docs/107). Cada una se aplica con las inyecciones
+// Palancas de la segunda y la tercera corrida (docs/107 y docs/110). Cada una se aplica con las inyecciones
 // de createEngine o con los setters del contexto; ninguna toca src/. Con los valores
 // por defecto (V9.9) no se instala nada y el motor queda exactamente como en la
 // primera corrida, que es lo que comprueba la calibración.
@@ -14,6 +14,8 @@ export const palancasBase=Object.freeze({
  rondasObjetivo:null,    // null = objetivo sorteado (V9.9) · 6 · 8 · 10: objetivo de esa duración
  rescate:null,           // null · retirarse · rescatar · rescatar-A (médico sin curar 2 rondas si el rescatista murió)
  medicoCome:true,        // diagnóstico: false = el médico incorporado no consume comida
+ cocinero:null,          // tercera corrida: null · reemplaza (Tomás, cocinero, en lugar de Leo) · suma (Tomás como cuarto)
+ medico:'abstracto',     // abstracto (107: cura en la colonia, no juega) · jugable-heridas · jugable-heridas-congelacion (110)
 });
 export const valoresPalancas={
  exposicion:['d6','d12'],
@@ -23,7 +25,12 @@ export const valoresPalancas={
  rondasObjetivo:[null,6,8,10],
  rescate:[null,'retirarse','rescatar','rescatar-A'],
  medicoCome:[true,false],
+ cocinero:[null,'reemplaza','suma'],
+ medico:['abstracto','jugable-heridas','jugable-heridas-congelacion'],
 };
+// Médico jugable (105 §6): entra con recruit del motor y después se le fija la
+// identidad, para que sus atributos no dependan del sorteo del plantel.
+export const MEDICO_JUGABLE=Object.freeze({name:'Médico',job:'Médico',skill:'lab-medico',skillName:'Cura a un aliado',skillDesc:'Al empezar cada ronda cura una herida al aliado más herido en su localidad.',attack:4,search:3,influence:70});
 export const RONDA_RESCATE=5,RONDAS_SIN_CURAR_A=2;
 
 export function validarPalancas(p){
@@ -41,6 +48,10 @@ export function ajustarEstado(g,p,objetivos){
   const o=objetivos.find(o=>o.rounds===p.rondasObjetivo);if(!o)throw Error('Sin objetivo de '+p.rondasObjetivo+' rondas');
   g.objective=o;g.max=o.rounds;g.goal=o.need;
  }
+ // Cocinero: Tomás es el único cocinero del plantel. addCharacter completa sus
+ // atributos al arrancar, como con cualquier superviviente inicial.
+ if(p.cocinero==='reemplaza')g.humans[1]={id:'h1',name:'Tomás',loc:0,wounds:0,frost:0,dead:false};
+ if(p.cocinero==='suma')g.humans.push({id:'h'+g.nextId++,name:'Tomás',loc:0,wounds:0,frost:0,dead:false});
  if(p.rescate)g.labMedico=false; // true cuando el médico incorporado come como un habitante más (habitantesExtra)
  return g;
 }
@@ -98,19 +109,39 @@ export function instalarPalancas(c,p,registro){
    if(p.rescate==='retirarse'){registro.rescate.rescatistaMuere=false;c.verify();return 'rescate:retirarse:'+r.id;}
    const resultado=exponerD12(c,r,'rescate del médico');
    registro.rescate.cara=resultado?.die?.outcome??null;registro.rescate.rescatistaMuere=!!r.dead;
-   medico.activo=true;g.labMedico=p.medicoCome;registro.rescate.medico=true;
    medico.desde=g.round+1+(p.rescate==='rescatar-A'&&r.dead?RONDAS_SIN_CURAR_A:0);
+   if(p.medico==='abstracto'){medico.activo=true;g.labMedico=p.medicoCome;registro.rescate.medico=true;}
+   else if(!g.ended&&c.recruit('human')){
+    // Superviviente jugable: dados propios (1 + vivos), se mueve, se expone y come.
+    medico.persona=g.humans.at(-1);Object.assign(medico.persona,MEDICO_JUGABLE,{skillUsed:false});
+    medico.activo=true;registro.rescate.medico=true;
+   }
    c.verify();c.paint();
    return 'rescate:'+p.rescate+':'+r.id+':'+(r.dead?'muere':'vive');
   }
   if(medico.activo&&g.round>=medico.desde&&!medico.rondasCuradas.has(g.round)){
    medico.rondasCuradas.add(g.round);
-   const t=c.alive().filter(x=>humano(x)&&x.loc===0&&x.wounds>0).sort((a,b)=>b.influence-a.influence)[0];
-   if(t){t.wounds--;registro.rescate.curas++;c.message('✚ El médico curó una herida de '+t.name+'.');return 'medico-cura:'+t.id;}
+   if(p.medico==='abstracto'){
+    const t=c.alive().filter(x=>humano(x)&&x.loc===0&&x.wounds>0).sort((a,b)=>b.influence-a.influence)[0];
+    if(t){t.wounds--;registro.rescate.curas++;c.message('✚ El médico curó una herida de '+t.name+'.');return 'medico-cura:'+t.id;}
+   }else{
+    const t=objetivoDelMedico(c,medico.persona,p.medico);
+    if(t){const congelacion=p.medico==='jugable-heridas-congelacion'&&t.frost>0;if(congelacion)t.frost--;else t.wounds--;registro.rescate.curas++;c.message('✚ El médico curó '+(congelacion?'una congelación':'una herida')+' de '+t.name+'.');return 'medico-cura:'+t.id;}
+   }
   }
   return null;
  }
  return {alEmpezarTurno};
+}
+
+// Pasiva del médico jugable: el aliado vivo más herido en su misma localidad, sin
+// contarse a sí mismo. «heridas»: solo heridas. «heridas-congelacion»: heridas o
+// congelación; cura primero la congelación, que hiere cada ronda. A igualdad, el de
+// mayor influencia.
+export function objetivoDelMedico(c,m,variante){
+ if(!m||m.dead)return null;
+ const dano=x=>variante==='jugable-heridas'?x.wounds:x.wounds+x.frost;
+ return c.alive().filter(x=>x!==m&&c.ownerOf(x)==='human'&&x.loc===m.loc&&dano(x)>0).sort((a,b)=>dano(b)-dano(a)||b.influence-a.influence)[0]||null;
 }
 
 // Réplica de resolveMapExposure (src/domain/map-exposure.mjs) sin mapPlay: una sola

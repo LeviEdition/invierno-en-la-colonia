@@ -1,9 +1,10 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import {readdirSync,readFileSync,statSync} from 'node:fs';import {join,normalize,dirname} from 'node:path';
+import {readdirSync,readFileSync,statSync} from 'node:fs';import {join,normalize,dirname} from 'node:path';import {fileURLToPath} from 'node:url';
 // La evidencia pesada va al artifact del CI. Al repositorio solo entra lo que un
 // informe cita: cada archivo de docs/evidencias debe estar enlazado desde algún
 // documento (docs/*.md, README, CLAUDE) o desde un fixture de test-support.
-const raiz=new URL('../',import.meta.url).pathname;
+// fileURLToPath y no URL.pathname: en Windows pathname da «/c:/…» y la ruta queda «c:\c:\…».
+const raiz=fileURLToPath(new URL('../',import.meta.url));
 const listar=d=>readdirSync(d).flatMap(n=>{const p=join(d,n);return statSync(p).isDirectory()?listar(p):[p];});
 const relativo=p=>p.slice(raiz.length).replaceAll('\\','/');
 const documentos=[...listar(join(raiz,'docs')).filter(p=>p.endsWith('.md')),join(raiz,'README.md'),join(raiz,'CLAUDE.md')];

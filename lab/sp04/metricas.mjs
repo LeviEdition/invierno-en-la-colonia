@@ -102,3 +102,16 @@ export function agregarSegunda(partidas){
   moralFinConRescate:conRescate.length?media(conRescate.map(p=>p.moralFin)):null,
  };
 }
+
+// ---------- Tercera corrida (docs/110) ----------
+// Médico jugable: incorporado, muerto, curas. Aparte, para no cambiar columnas de 107.
+export function agregarTercera(partidas){
+ const conRescate=partidas.filter(p=>p.rescate?.ocurrio),conMedico=partidas.filter(p=>p.rescate?.medico);
+ const tasaEn=(xs,f)=>xs.length?xs.filter(f).length/xs.length:null;
+ return {
+  medicoIncorporado:tasaEn(conRescate,p=>p.rescate.medico),
+  medicoMuere:tasaEn(conMedico,p=>p.muertes.some(m=>m.nombre==='Médico')),
+  curasPorPartidaConMedico:conMedico.length?media(conMedico.map(p=>p.rescate.curas)):null,
+  muertesDesbordamiento:media(partidas.map(p=>p.muertes.filter(m=>/^desbordamiento/.test(m.causa)).length)),
+ };
+}

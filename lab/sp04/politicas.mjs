@@ -75,7 +75,7 @@ function mordeduraReferencia(c){
 }
 
 // ---------- cooperativa (puerto literal de autoplay-controller.mjs) ----------
-function actuarCooperativa(c,registro,{indefensos=false}={}){
+function actuarCooperativa(c,registro,{indefensos=false,repartida=false}={}){
  const g=c.game;
  if(!c.playable())return null;
  const group=c.controls.group().filter(p=>!p.dead),hand=c.currentHand();
@@ -98,7 +98,8 @@ function actuarCooperativa(c,registro,{indefensos=false}={}){
  const defender=group.slice().sort((a,b)=>c.effectiveAttack(a)-c.effectiveAttack(b)||a.id.localeCompare(b.id))[0];
  for(const p of group){
   if(p===defender||p.moved||p.loc!==0&&g.decks[p.loc]?.length)continue;
-  const dest=[6,2,1,4,5,3].find(l=>l!==p.loc&&c.accessible(l)&&g.decks[l]?.length);
+  // repartida (diagnóstico de docs/110): el mismo destino que «objetivo-repartido».
+  const dest=repartida?((d=>d!==0&&d!==p.loc?d:undefined)(destinoRepartido(c,p))):[6,2,1,4,5,3].find(l=>l!==p.loc&&c.accessible(l)&&g.decks[l]?.length);
   if(dest!==undefined){foco(c,p);c.target=dest;const fuel=hand.findIndex(it=>c.kind(it)==='combustible');if(fuel>=0){registro.accionActual='mover-combustible';c.playItem(fuel);return 'mover-combustible:'+p.id+':'+dest;}registro.accionActual='mover';c.doMove();return 'mover:'+p.id+':'+dest;}
  }
  const dice=c.actionDice();if(!dice.length)return 'terminar-turno';
@@ -145,7 +146,35 @@ const perfiles={
   prioridad:['buscar-muestras','atacar-riesgo','mejorar','buscar','barricada','limpiar'],
   botin:botinObjetivo,mordedura:mordeduraReferencia,defensor:false,mejorar:true,defensorSiPeligra:true,
  },
+ // Tercera corrida (docs/110): corre a las muestras como «objetivo», pero reparte al
+ // grupo entre mazos y no amontona. Mismas reglas de dados, botín y defensa.
+ 'objetivo-repartido':{
+  destino:(c,p)=>destinoRepartido(c,p),
+  umbralComida:c=>c.feedingNeed(c.game),
+  prioridad:['buscar-muestras','atacar-riesgo','mejorar','buscar','barricada','limpiar'],
+  botin:botinObjetivo,mordedura:mordeduraReferencia,defensor:false,mejorar:true,defensorSiPeligra:true,
+ },
 };
+// Destino repartido. Candidatos: los mazos de muestras y notas (Biblioteca, Hospital,
+// Escuela); si ninguno sirve, los demás (Supermercado, Comisaría, Gasolinera). Un
+// mazo sirve si tiene cartas, si hay plaza para uno más y si los accesos absorben las
+// llegadas de la próxima fase de colonia: llega un zombi por superviviente presente y
+// la localidad aguanta capacidad − zombis (accesos libres más barricadas) sin
+// desbordarse. Se elige el que tenga menos compañeros del grupo; a igualdad, el
+// primero de la lista. Quien ya está en un mazo que sirve y no tiene menos gente en
+// otro, se queda. Si no sirve ninguno, vuelve a la colonia.
+export const mazosRepartidos=[[6,2,5],[1,3,4]];
+export function destinoRepartido(c,p){
+ const g=c.game,otros=l=>c.alive().filter(x=>x!==p&&x.loc===l).length;
+ const sirve=l=>g.decks[l]?.length>0&&otros(l)+1<=c.capacity[l]&&otros(l)+1<=c.zcap[l]-g.zones[l].z;
+ for(const lista of mazosRepartidos){
+  const ok=lista.filter(sirve);if(!ok.length)continue;
+  const menor=Math.min(...ok.map(otros));
+  if(ok.includes(p.loc)&&otros(p.loc)===menor)return p.loc;
+  return ok.find(l=>otros(l)===menor);
+ }
+ return 0;
+}
 const mazosComida=[1,5,4],mazosMuestras=[6,2,5];
 // Segunda corrida (opción indefensos). Llegadas a la colonia en la próxima fase:
 // ⌈(habitantes + indefensos)/2⌉, como en colony(). La colonia peligra si esas
@@ -228,10 +257,12 @@ function aportarHerramientas(c,group){
  const j=c.equipmentOf(p).findIndex(it=>c.kind(it)==='herramienta');c.contributeEquipment(p.id,j);return 'aportar-herramienta-equipo:'+p.id;
 }
 
-export const nombresDePoliticas=['cooperativa','ia-referencia','abastecer','objetivo'];
+export const nombresDePoliticas=['cooperativa','ia-referencia','abastecer','objetivo']; // plan de la primera corrida
+export const politicasTerceraCorrida=['cooperativa','objetivo','objetivo-repartido'];
 // opciones.indefensos (segunda corrida): la política sabe de los indefensos. Solo
 // cambia algo cuando hay indefensos en la colonia; sin ellos juega igual que antes.
 export function crearPolitica(nombre,opciones={}){
+ if(nombre==='cooperativa-repartida')return {nombre,decidir:c=>decidirComun(c,{botin:botinCooperativa,mordedura:mordeduraRiesgo}),actuar:(c,registro)=>actuarCooperativa(c,registro,{...opciones,repartida:true})};
  if(nombre==='cooperativa')return {nombre,decidir:c=>decidirComun(c,{botin:botinCooperativa,mordedura:mordeduraRiesgo}),actuar:(c,registro)=>actuarCooperativa(c,registro,opciones)};
  const perfil=perfiles[nombre];if(!perfil)throw Error('Política desconocida: '+nombre);
  return {nombre,decidir:c=>decidirComun(c,{botin:perfil.botin,mordedura:perfil.mordedura,paciente:pacienteMasHerido}),actuar:(c,registro)=>actuarReferencia(c,registro,perfil,opciones)};

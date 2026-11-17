@@ -77,7 +77,7 @@ async function todo(){
   for(const escenario of ESCENARIOS)for(const politica of POLITICAS){
    const celda={...combo,escenario,politica},k=claveCombinacion(combo)+'|'+escenario+'|'+politica;
    if(cache.has(k)){const previa=cache.get(k);if(!previa.etapas.includes(etapa))previa.etapas.push(etapa);continue;}
-   const t=Date.now(),partidas=await correrCelda(celda,n),fila={etapas:[etapa],combo:claveCombinacion(combo),escenario,politica,...combo,...agregar(partidas),...agregarSegunda(partidas)};
+   const t=Date.now(),partidas=await correrCelda(celda,n),fila={etapas:[etapa],combo:claveCombinacion(combo),escenario,politica,...columnas107(combo),...agregar(partidas),...agregarSegunda(partidas)};
    cache.set(k,fila);celdas.push(fila);
    for(const r of porRonda(partidas))rondas.push({etapa,combo:fila.combo,escenario,politica,...r});
    console.error(`[${etapa}] ${escenario} ${politica} ${fila.combo} · victoria ${Math.round(fila.victoria*100)}% · ${Date.now()-t} ms`);
@@ -117,6 +117,9 @@ async function todo(){
  await writeFile(salida+'/README.md',`# Resultados SP-04 — segunda corrida\n\nGenerados con \`node lab/sp04/segunda-corrida.mjs --partidas ${n}${criterio==='v2'?'':' --criterio '+criterio}\` (${celdas.length} celdas, semillas semillaC14(1..${n}), ${Math.round((Date.now()-inicio)/1000)} s). Informe: docs/107-laboratorio-sp04-segunda-corrida.md. Los CSV de la primera corrida (\`../resumen.csv\`, \`../por-ronda.csv\`) no se tocan.\n\n- \`resumen.csv\`: una fila por celda (combinación × escenario × política), con los agregados de la primera corrida y los nuevos.\n- \`ventaja.csv\`: una fila por combinación y etapa: victoria cooperativa y objetivo (promedio de A y B y por escenario), ventaja de correr y si la cooperativa alcanza el 35 %.\n- \`por-ronda.csv\`: una fila por celda y ronda.\n\nCriterio de elección: ${criterio} (ver elegirMejor y docs/107 §1.5).\n\nCombinación elegida en cada etapa:\n\n${elegidas}\n`);
  console.error('Listo:',salida,Math.round((Date.now()-inicio)/1000)+' s');
 }
+// Las palancas de la tercera corrida (cocinero, médico jugable) no son columnas de
+// 107: se omiten para que sus CSV sigan siendo idénticos byte a byte.
+const columnas107=({cocinero,medico,...resto})=>resto;
 const pct=x=>Math.round(x*1000)/10+' %';
 
 // La configuración de la primera corrida con D6 tiene que dar exactamente lo mismo

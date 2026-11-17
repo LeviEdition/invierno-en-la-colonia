@@ -19,12 +19,12 @@ El mapa permite preparar, jugar y terminar una partida completa (humano + IA y d
 
 ## 2. Próxima tarea única
 
-**Tercera corrida corta del laboratorio SP-04**, sobre la combinación P1 de [107](107-laboratorio-sp04-segunda-corrida.md) (2 indefensos, comida 6, 8 rondas, D12): corredor que reparta al grupo, indefensos compensados (cocinero o un dado extra) y el médico como superviviente jugable con su pasiva de curación ([105 §6](105-ficha-capitulo-la-ultima-guardia.md)). Decisiones del creador del 17/11 ya registradas: moral −2 por superviviente, equipo perdido, alternativa A descartada.
+**Decidir con el [informe 110](110-laboratorio-sp04-tercera-corrida.md)** (tercera corrida SP-04, [PR #32](https://github.com/LeviEdition/invierno-en-la-colonia/pull/32) en borrador). Sobre P1, un corredor que reparte al grupo gana 65 % frente a 36 % de la cooperativa: correr domina mientras la colonia vacía no coma ni atraiga zombis. Ninguna compensación de indefensos (cocinero, 2 + vivos dados, comida 8) deja a la cooperativa cerca del 50 % sin que correr domine. El médico jugable vuelve pareja la decisión de la puerta (rescatar y retirarse a ≤ 5 puntos en 11 de 12 celdas), pero su pasiva casi no actúa. Decisiones pendientes: si se miden «todos comen estén donde estén» y «llegadas a la colonia fijas», y si se adopta el médico jugable con la pasiva de solo heridas.
 
 ## 3. Cola ordenada
 
-1. **Tercera corrida corta** (sección 2), con el arreglo de `tests/evidencias-enlazadas.test.mjs` en Windows (`URL.pathname`).
-2. **Implementar «La última guardia»** como capítulo jugable, con la combinación que salga de la tercera corrida. Reutiliza la tirada D12 y su resultado estructurado.
+1. **Decisión del creador sobre 110** y, si la pide, una cuarta corrida corta con las dos reglas de la colonia (110, recomendación 1).
+2. **Implementar «La última guardia»** como capítulo jugable, con la combinación que salga de 1. Reutiliza la tirada D12 y su resultado estructurado.
 3. **Rótulos de las localidades y dado centrado** (encargo listo; guía de estilo [109](109-guia-de-estilo.md)).
 4. **Mejoras menores del mapa** que no afectan decisiones: hallazgos 4 y 5, y una batería de CI que juegue una partida entera con clics reales.
 5. **Reservas del Hito 3:** Samsung Galaxy A15 físico y dos jugadores locales manuales.
