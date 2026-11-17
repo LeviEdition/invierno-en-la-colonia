@@ -59,20 +59,25 @@ Alternativas para que la muerte del rescatista pese dentro del encuentro (**pend
 | B. Moral extra por la muerte del rescatista (por ejemplo, −1 adicional) | La colonia reacciona a que el líder mandó a alguien a morir | Coherente con «la muerte debe pesar»; fácil de medir | Si el costo general de muerte ya sube, puede duplicarse |
 | C. El médico desconfía del líder que lo mandó y no atiende al líder durante el capítulo | La relación con el rescatado cambia por la decisión | Consecuencia narrativa persistente (SP-05) | El informe 104 descartó la reputación personal con el líder para el piloto |
 
-Recomendación de Claude: **A**, porque no reabre la reputación personal que el piloto descartó.
+**Decisión del creador (17/11), con el [informe 107](107-laboratorio-sp04-segunda-corrida.md):** la alternativa A **se descarta**: no cambió nada medible. El laboratorio mostró el problema contrario: retirarse gana siempre a rescatar por 7–15 puntos, porque el médico vale poco. La solución es que el médico valga más (§6).
 
 **Efecto de la dirección del 17/11 sobre la muerte (ver §5.2):** si una muerte cuesta más moral a la colonia y el equipo del rescatista se pierde o queda en el hospital, ganar al médico deja de ser gratis y «Retirarse» vuelve a ser razonable. En ese caso A pasa a ser opcional. Medir en el laboratorio con y sin A.
 
-### 5.2 Dirección del creador sobre la muerte (17/11)
+### 5.2 Costo de la muerte (decisión del creador, 17/11, con el informe 107)
 
-- La muerte de un superviviente golpea a **la colonia**, que es la protagonista: más pérdida de moral por cada muerte (cifra a medir; candidata −2 por superviviente, −1 por indefenso).
-- Al morir, la colonia **pierde el equipo y las habilidades** del personaje. Hoy el motor devuelve el equipo a la mano si muere en la colonia y lo mezcla en el mazo de la localidad si muere afuera. Variantes a medir: equipo perdido del todo, o equipo que queda donde murió (recuperable volviendo).
-- Riesgo a vigilar: una mordedura con contagio puede costar dos muertes en un turno.
+- Muerte de un superviviente: **−2 de moral** a la colonia. Muerte de un indefenso: −1.
+- El equipo del muerto **se pierde** y con él sus habilidades.
+- Riesgo medido: una muerte doble cuesta −4 y termina la partida en el 26–28 % de las partidas de quien amontona al grupo; para quien abastece, en el 8 %.
 
-## 6. Recompensa: Atención médica
+## 6. Recompensa: el médico como superviviente jugable
 
-- Cura una herida normal a un superviviente herido presente en la colonia, priorizando al de mayor influencia (propuesta, informe 104).
-- **Pendiente:** frecuencia y primera activación. Con el D12 las heridas suben del 17 % al 25 % por exposición, así que el médico vale más; la frecuencia tiene que evitar que las heridas se vuelvan triviales. Medir en el laboratorio.
+**Propuesta del creador (17/11), a medir en la tercera corrida del laboratorio:** el médico rescatado se incorpora como **superviviente jugable**, con una **pasiva: cura una herida por ronda a un aliado en su misma localidad**.
+
+- Como superviviente, suma un dado por ronda (1 + vivos), puede moverse, buscar y atacar, se expone y puede morir (−2 de moral). Come como cualquier superviviente cuando está en la colonia.
+- Su curación lo acompaña: en el hospital, en una salida o en la colonia.
+- Usa el reclutamiento que ya tiene el motor, así que no requiere una regla nueva de incorporación.
+- **A definir al medir:** si se cura a sí mismo, si cura congelación además de heridas, y cómo se diferencia de Mara si en la partida también hay una médica.
+- La propuesta anterior (curar en la colonia sin jugar) quedó descartada: el laboratorio mostró que curaba 0,1–0,5 heridas por partida y que su comida pesaba más que su ayuda.
 
 ## 7. Fuera de este capítulo
 

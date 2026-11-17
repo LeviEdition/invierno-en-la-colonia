@@ -19,13 +19,13 @@ El mapa permite preparar, jugar y terminar una partida completa (humano + IA y d
 
 ## 2. Próxima tarea única
 
-**Decidir con el [informe 107](107-laboratorio-sp04-segunda-corrida.md)** (segunda corrida SP-04, rama `experiment/sp04-laboratorio-un-grupo`, PR en borrador hacia `main`) qué combinación lleva «La última guardia» y qué hacer con el médico. Candidatas, todas con D12, moral −2 por superviviente y equipo perdido: **P1** (2 indefensos, comida 6, 8 rondas: cooperativa 36 %, correr 11 %), **P2** (sin indefensos, comida 3, crisis agravada, 8 rondas: 61 % / 16 %) y **P3** (sin indefensos, comida 3, 10 rondas: 36 % / 2 %). Rescate: retirarse siempre gana a rescatar por 7–15 puntos y la alternativa A no cambia nada, así que el médico tiene que valer más ([107 §3.3](107-laboratorio-sp04-segunda-corrida.md)). Ninguna cifra está aprobada.
+**Tercera corrida corta del laboratorio SP-04**, sobre la combinación P1 de [107](107-laboratorio-sp04-segunda-corrida.md) (2 indefensos, comida 6, 8 rondas, D12): corredor que reparta al grupo, indefensos compensados (cocinero o un dado extra) y el médico como superviviente jugable con su pasiva de curación ([105 §6](105-ficha-capitulo-la-ultima-guardia.md)). Decisiones del creador del 17/11 ya registradas: moral −2 por superviviente, equipo perdido, alternativa A descartada.
 
 ## 3. Cola ordenada
 
-1. **Decisión del creador sobre 107:** combinación del capítulo, moral −2, destino del equipo y valor del médico → merge del PR del laboratorio (requiere indicación expresa).
-2. **Tercera corrida corta, si la decisión la necesita** ([107 §5](107-laboratorio-sp04-segunda-corrida.md)): rescate sobre P1, indefensos con más dados o comida, variantes del médico que valgan más que una muerte y una política «objetivo» que no amontone al grupo.
-3. **Implementar «La última guardia»** como capítulo jugable, con la combinación decidida. Reutiliza la tirada D12 y su resultado estructurado.
+1. **Tercera corrida corta** (sección 2), con el arreglo de `tests/evidencias-enlazadas.test.mjs` en Windows (`URL.pathname`).
+2. **Implementar «La última guardia»** como capítulo jugable, con la combinación que salga de la tercera corrida. Reutiliza la tirada D12 y su resultado estructurado.
+3. **Rótulos de las localidades y dado centrado** (encargo listo; guía de estilo [109](109-guia-de-estilo.md)).
 4. **Mejoras menores del mapa** que no afectan decisiones: hallazgos 4 y 5, y una batería de CI que juegue una partida entera con clics reales.
 5. **Reservas del Hito 3:** Samsung Galaxy A15 físico y dos jugadores locales manuales.
 
