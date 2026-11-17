@@ -12,22 +12,21 @@
 | 2 — Referencia V9.9 modular preservada | **Cerrado** (29/10), tag `v0.9.9-referencia-modular`; sigue con su D6 de exposición | [72](72-preservacion-referencia-modular.md) |
 | 3 — Identidad visual y mapa jugable | **Cerrado** (16/11), integrado en `main` (PR #25) y marcado con `v0.10.0-mapa-horizontal` | [75](75-plan-hito-3-identidad-visual.md), [99](99-experiencia-unificada-del-mapa.md), [100](100-avisos-y-zoom-nativo.md), [101](101-muerte-durante-accion-propia.md) |
 | Mantenimiento: mapa como producto | **Integrado en `main`** (PR #26): `app/mapa/`, `npm run dev:mapa`, prototipos retirados | [103](103-consolidacion-mapa-producto.md) |
-| D12 de exposición | **Cambio de regla aceptado por el creador** (6 sin efecto, 3 heridas, 2 congelaciones, 1 mordedura). Implementado en el PR #27 y adaptado a `app/mapa/`; pendiente de revisión jugando y decisión de merge | [102](102-dado-exposicion-d12.md) |
-| Singleplayer (SP-00 a SP-08) | **Diseño en papel.** Puerta técnica de [63 §7](63-hoja-de-ruta-planificacion-singleplayer.md) cumplida | [63](63-hoja-de-ruta-planificacion-singleplayer.md) |
+| D12 de exposición | **Integrado en `main`** (PR #27, 17/11), aprobado por el creador jugando: 6 sin efecto, 3 heridas, 2 congelaciones, 1 mordedura en movimiento y combate del mapa | [102](102-dado-exposicion-d12.md) |
+| Singleplayer (SP-00 a SP-08) | **Diseño en papel.** Laboratorio SP-04 entregado en su rama; capítulo piloto «La última guardia» en ficha, con propuesta de mejoras y cronología pendiente de aprobación | [63](63-hoja-de-ruta-planificacion-singleplayer.md), [104](104-informe-avances-singleplayer.md), [105](105-ficha-capitulo-la-ultima-guardia.md) |
 
-El mapa permite preparar, jugar y terminar una partida completa (humano + IA y dos jugadores locales) con un único motor. En el PR #27 movimiento y combate del mapa comparten una única tirada D12 por exposición; los dados de acción y el riesgo de contagio siguen en D6.
+El mapa permite preparar, jugar y terminar una partida completa (humano + IA y dos jugadores locales) con un único motor. Vive en `app/mapa/` (`npm run dev:mapa` → `http://127.0.0.1:8779/app/mapa/`). Movimiento y combate comparten una única tirada D12 por exposición; los dados de acción y el riesgo de contagio siguen en D6.
 
 ## 2. Próxima tarea única
 
-**Revisar jugando el D12 del PR #27** desde `npm run dev:mapa` (`http://127.0.0.1:8779/app/mapa/`): movimiento y combate, la cara mostrada frente al Registro y el daño en la ficha. Con CI verde y esa revisión, el merge queda a indicación expresa del creador.
+**SP-04, segunda corrida del laboratorio** (cola 1). El diseño en papel de «La última guardia» quedó decidido el 17/11 ([105 §10](105-ficha-capitulo-la-ultima-guardia.md): M1, M3–M7 adoptadas, M2 no); el médico conoce el apellido «Varela» por ser colega de Elena.
 
 ## 3. Cola ordenada
 
-1. **D12 (102):** revisión jugando → decisión de merge del PR #27.
-2. **Rescate del médico:** reutiliza la tirada y el resultado estructurado del D12; no se inicia hasta su encargo.
-3. **SP-03/SP-04:** laboratorio de un solo grupo sobre el motor real (rama `experiment/sp04-laboratorio-un-grupo`; su informe se renumera al integrarse, porque el 102 es del D12).
-4. **Mejoras menores del mapa** que no afectan decisiones: hallazgos 4 y 5, y una batería de CI que juegue una partida entera con clics reales.
-5. **Reservas del Hito 3:** Samsung Galaxy A15 físico y dos jugadores locales manuales.
+1. **SP-04, segunda corrida del laboratorio** sobre `main` con el D12: indefensos fijos, comida inicial (6/3/0), crisis agravada, costo de muerte para la colonia (moral −1/−2 por superviviente; equipo perdido o que queda donde murió) y objetivos de 6, 8 y 10 rondas, con las políticas cooperativa y objetivo; repetir el barrido de dados; variante del rescate del médico con y sin la alternativa A ([105 §5](105-ficha-capitulo-la-ultima-guardia.md)). Su informe se renumera al integrarse (el 102 es del D12).
+2. **Implementar «La última guardia»** como capítulo jugable, después de 1. Reutiliza la tirada D12 y su resultado estructurado.
+3. **Mejoras menores del mapa** que no afectan decisiones: hallazgos 4 y 5, y una batería de CI que juegue una partida entera con clics reales.
+4. **Reservas del Hito 3:** Samsung Galaxy A15 físico y dos jugadores locales manuales.
 
 ## 4. Hallazgos abiertos
 
