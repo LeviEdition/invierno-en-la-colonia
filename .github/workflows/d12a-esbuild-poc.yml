@@ -33,7 +33,7 @@ jobs:
             /tmp/d1d2-regressions/
             /tmp/d1d2-main-regressions/
   browser:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4

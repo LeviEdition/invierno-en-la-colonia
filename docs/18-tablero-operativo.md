@@ -1,30 +1,30 @@
 # 18 — Tablero operativo (fuente única del próximo paso)
 
-> **Cómo se usa este documento.** Arriba está solo lo vigente: dónde estamos, la única tarea siguiente, la cola ordenada y los hallazgos abiertos. Cada entrega actualiza estas secciones **reemplazando** su contenido, no agregando un bloque nuevo. El detalle de cada entrega va en su informe numerado y en el PR. Los bloques fechados anteriores al 16/11/2026 están en [18-historico-tablero.md](18-historico-tablero.md) y no se editan.
+> Arriba está solo lo vigente. Cada entrega reemplaza las secciones1 a5; el detalle va en el informe numerado y el PR. El histórico anterior al16/11 sigue en [18-historico-tablero.md](18-historico-tablero.md).
 
-**Actualizado:** 16/11/2026 · **Rama del Hito 3:** `experiment/mapa-horizontal-ambientacion-h3`, integrada en `main` por el [PR #25](https://github.com/LeviEdition/invierno-en-la-colonia/pull/25) · **Tag:** `v0.10.0-mapa-horizontal` · **Último cambio de producto:** corrección de muertes durante acciones ([101](101-muerte-durante-accion-propia.md)) · **main:** `826199d` (29/10/2026, sin cambios desde la preservación de la referencia)
+**Actualizado:**16/11/2026, America/Montevideo · **Rama de esta entrega:** `feature/dado-exposicion-d12` · **Base remota verificada:** `main` en `a898a9a` (Hito3 integrado por PR25) · **Último cambio de producto:** [D12 de exposición](102-dado-exposicion-d12.md). Esta entrega no modifica `main`, no fusiona ni publica.
 
 ## 1. Dónde estamos
 
-| Hito | Estado | Referencia |
+| Hito o entrega | Estado | Referencia |
 |---|---|---|
-| 1 — Fidelidad aceptada y D1/D2 integradas | **Cerrado** (29/10) | [62](62-hitos-referencia-fiel-y-juego-propio.md), [71](71-integracion-main-y-cierre-d1-d2.md) |
-| 2 — Referencia V9.9 modular preservada | **Cerrado** (29/10), tag `v0.9.9-referencia-modular` | [72](72-preservacion-referencia-modular.md) |
-| 3 — Identidad visual y mapa jugable | **Cerrado** (16/11): aceptado por el creador, integrado en `main` y marcado con `v0.10.0-mapa-horizontal` | [75](75-plan-hito-3-identidad-visual.md), [99](99-experiencia-unificada-del-mapa.md), [100](100-avisos-y-zoom-nativo.md), [101](101-muerte-durante-accion-propia.md) |
-| Singleplayer (SP-00 a SP-08) | **Diseño en papel.** La puerta técnica de [63 §7](63-hoja-de-ruta-planificacion-singleplayer.md) (D1/D2 + referencia preservada) ya está cumplida | [63](63-hoja-de-ruta-planificacion-singleplayer.md) |
-
-El mapa permite preparar, jugar y terminar una partida completa (humano + IA y dos jugadores locales) con un único motor. La pila de ramas H3.2 → mapa horizontal quedó integrada en `main`; los PR apilados #18 a #24 se cerraron como incluidos, y #16 y #20 se cerraron sin fusionar (experimentos superados, ramas conservadas).
+| 1 — Fidelidad y D1/D2 | **Cerrado** (29/10) | [62](62-hitos-referencia-fiel-y-juego-propio.md), [71](71-integracion-main-y-cierre-d1-d2.md) |
+| 2 — Referencia V9.9 modular | **Cerrado**, preservada con su comportamiento y HTML original | [72](72-preservacion-referencia-modular.md) |
+| 3 — Mapa jugable | **Cerrado y aceptado** (16/11), integrado en `main` por PR25; se conservan las correcciones de muerte y ficha móvil | [99](99-experiencia-unificada-del-mapa.md), [100](100-avisos-y-zoom-nativo.md), [101](101-muerte-durante-accion-propia.md) |
+| D12 de exposición | **Implementado en rama nueva:** movimiento y combate comparten tirada uniforme, dodecaedro con símbolos y registro del mismo resultado | [102](102-dado-exposicion-d12.md) |
+| Singleplayer SP-00 aSP-08 | **Diseño en papel.** Puerta técnica cumplida | [63](63-hoja-de-ruta-planificacion-singleplayer.md) |
 
 ## 2. Próxima tarea única
 
-**Decidir con qué se abre la etapa del singleplayer:** el laboratorio SP-04 (cola 1) o el mantenimiento previo (cola 2). Recomendación: el laboratorio primero, porque no depende de la estructura de `prototypes/` y responde la pregunta de diseño pendiente; el mantenimiento puede hacerse en paralelo.
+**Revisar jugando el D12 en movimiento y combate.** El rescate del médico queda para el siguiente encargo y reutilizará esta tirada; no se implementa ni se inicia ahora.
 
 ## 3. Cola ordenada
 
-1. **SP-03/SP-04:** cuántas acciones y recursos necesita un solo grupo para que abastecer la colonia y avanzar el objetivo compitan entre sí. Laboratorio de simulación sobre el motor real, desde `main`, informe 102.
-2. **Mantenimiento** (propuesto, a decidir): consolidar el producto del mapa fuera de `prototypes/`, retirar prototipos intermedios conservándolos por tag, y sacar la evidencia pesada del repositorio.
-3. **Mejoras menores del mapa** que no afectan decisiones: hallazgos 4 y 5, y una batería de CI que juegue una partida entera desde el mapa con clics reales.
-4. **Reservas del Hito 3:** prueba física en el Samsung Galaxy A15 y prueba manual de dos jugadores locales cuando haya ocasión.
+1. Rescate del médico, cuando llegue su encargo: reutilizar la tirada/resultado D12.
+2. SP-03/SP-04: laboratorio sobre acciones, recursos y competencia entre abastecer y avanzar el objetivo, pendiente de decisión del creador.
+3. Mantenimiento propuesto: consolidar el producto fuera de `prototypes/` y retirar evidencia pesada del repositorio.
+4. Mejoras menores del mapa (hallazgos4 y5) y recorrido completo de una partida con clics reales.
+5. Reservas del Hito3: Samsung Galaxy A15 físico y dos jugadores locales manuales.
 
 ## 4. Hallazgos abiertos
 
@@ -36,8 +36,13 @@ El mapa permite preparar, jugar y terminar una partida completa (humano + IA y d
 | 4 | Selector de localidad desincronizado | **Aceptado como menor** (16/11): no afecta decisiones | Después del cierre |
 | 5 | Aviso móvil tapa título y botones de la ficha ampliada durante 5 s | **Aceptado como menor** (16/11): el aviso caduca solo | Después del cierre |
 | 6 | La partida se trababa si un superviviente moría en su propia acción (panel vacío sobre «Fallecimientos») | **Corregido** ([101](101-muerte-durante-accion-propia.md)): el botón lleva a confirmar la muerte, al contagio o a la sucesión. Batería nueva en 1365×768 y 393×852 | Confirmado jugando (16/11) |
+| 7 | Dado D12 de exposición | Implementado:6 caras lisas,3 heridas,2 congelaciones,1 mordedura; acción sigueD6 | Revisión manual en tablero/teléfono |
 
-## 5. Lista de aceptación del Hito 3 (H3.6) — completa el 16/11
+## 5. Verificación y aceptación
+
+D12:769/769 pruebas locales, doce caras deterministas desde movimiento y combate, galería a82px,24 acciones de navegador en tres tamaños, regresiones de combate y ocho casos de muerte aprobados. El CI del SHA de entrega y su artifact se registran en el PR del encargo. Inspección de capturas realizada; falta jugarlo manualmente y probar el teléfono físico.
+
+La aceptación del Hito3 se conserva (16/11):
 
 - [x] CI verde con todas las baterías sobre `1bc5037` ([run 43876444225](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/43876444225)).
 - [x] Partida completa humano + IA en escritorio (16/11, victoria).
@@ -59,6 +64,7 @@ El mapa permite preparar, jugar y terminar una partida completa (humano + IA y d
 - Resultado rutinario: aviso temporal único sobre el mapa y entrada en el Registro; cada ficha muestra su propio estado.
 - Zoom máximo: 1 píxel de la ilustración por píxel CSS.
 - Un solo motor determina costes, tiradas y consecuencias; la interfaz solo presenta.
+- Exposición del mapa: D12 uniforme6/3/2/1, con símbolos; un resultado compartido entre efecto, animación, etiqueta y Registro. Los dados de acción y de riesgo de contagio conservan el D6. Rescate del médico pendiente de próximo encargo.
 - Dispositivos de prueba: escritorio y Samsung Galaxy A15.
 
 ## 7. Reservas conocidas

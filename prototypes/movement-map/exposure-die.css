@@ -1,0 +1,12 @@
+.exposure-d12,#exposure-die.exposure-d12{width:82px;height:auto;display:grid;gap:1px;background:none;border:0;border-radius:0;margin:0;place-items:center;color:#f7edcf;font:600 14px/1.25 system-ui}
+.d12-solid{display:block;width:82px;height:82px;overflow:visible;filter:drop-shadow(0 2px 2px #0008)}
+.d12-solid polygon{stroke:#493d2c;stroke-width:.035;stroke-linejoin:round}
+.d12-symbol path{stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.d12-wound path{fill:#8e171d;stroke:#641018;stroke-width:1.1}
+.d12-frost path{stroke:#164e68;stroke-width:2.2}
+.d12-bite path{stroke:#791d27;stroke-width:2.5}
+.d12-caption{min-height:18px;white-space:nowrap}
+#move-sequence:has(#exposure-die.exposure-d12:not([hidden])){display:grid;grid-template-columns:82px minmax(0,1fr);gap:8px 12px;align-items:center;text-align:left;width:350px}
+#move-sequence:has(#exposure-die.exposure-d12:not([hidden])) #exposure-die{grid-column:1;grid-row:1/3}
+#move-sequence:has(#exposure-die.exposure-d12:not([hidden])) #sequence-status{grid-column:2}
+#move-sequence:has(#exposure-die.exposure-d12:not([hidden])) #resolve-decision{grid-column:2;margin-top:0}
