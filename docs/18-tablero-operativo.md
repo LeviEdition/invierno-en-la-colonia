@@ -1,30 +1,33 @@
 # 18 — Tablero operativo (fuente única del próximo paso)
 
-> Arriba está solo lo vigente. Cada entrega reemplaza las secciones1 a5; el detalle va en el informe numerado y el PR. El histórico anterior al16/11 sigue en [18-historico-tablero.md](18-historico-tablero.md).
+> **Cómo se usa este documento.** Arriba está solo lo vigente: dónde estamos, la única tarea siguiente, la cola ordenada y los hallazgos abiertos. Cada entrega actualiza estas secciones **reemplazando** su contenido, no agregando un bloque nuevo. El detalle de cada entrega va en su informe numerado y en el PR. Los bloques fechados anteriores al 16/11/2026 están en [18-historico-tablero.md](18-historico-tablero.md) y no se editan.
 
-**Actualizado:**16/11/2026, America/Montevideo · **Rama de esta entrega:** `feature/dado-exposicion-d12` · **Base remota verificada:** `main` en `a898a9a` (Hito3 integrado por PR25) · **Último cambio de producto:** [D12 de exposición](102-dado-exposicion-d12.md). Esta entrega no modifica `main`, no fusiona ni publica.
+**Actualizado:** 17/11/2026 · **main:** `f6a57d2` (PR #26 integrado: el mapa vive en `app/mapa/`) · **Tag vigente:** `v0.10.0-mapa-horizontal` · **Rama en revisión:** `feature/dado-exposicion-d12` ([PR #27](https://github.com/LeviEdition/invierno-en-la-colonia/pull/27), borrador), ya adaptada a `app/mapa/` · **Último cambio de regla aceptado:** [D12 de exposición](102-dado-exposicion-d12.md)
 
 ## 1. Dónde estamos
 
 | Hito o entrega | Estado | Referencia |
 |---|---|---|
-| 1 — Fidelidad y D1/D2 | **Cerrado** (29/10) | [62](62-hitos-referencia-fiel-y-juego-propio.md), [71](71-integracion-main-y-cierre-d1-d2.md) |
-| 2 — Referencia V9.9 modular | **Cerrado**, preservada con su comportamiento y HTML original | [72](72-preservacion-referencia-modular.md) |
-| 3 — Mapa jugable | **Cerrado y aceptado** (16/11), integrado en `main` por PR25; se conservan las correcciones de muerte y ficha móvil | [99](99-experiencia-unificada-del-mapa.md), [100](100-avisos-y-zoom-nativo.md), [101](101-muerte-durante-accion-propia.md) |
-| D12 de exposición | **Implementado en rama nueva:** movimiento y combate comparten tirada uniforme, dodecaedro con símbolos y registro del mismo resultado | [102](102-dado-exposicion-d12.md) |
-| Singleplayer SP-00 aSP-08 | **Diseño en papel.** Puerta técnica cumplida | [63](63-hoja-de-ruta-planificacion-singleplayer.md) |
+| 1 — Fidelidad aceptada y D1/D2 integradas | **Cerrado** (29/10) | [62](62-hitos-referencia-fiel-y-juego-propio.md), [71](71-integracion-main-y-cierre-d1-d2.md) |
+| 2 — Referencia V9.9 modular preservada | **Cerrado** (29/10), tag `v0.9.9-referencia-modular`; sigue con su D6 de exposición | [72](72-preservacion-referencia-modular.md) |
+| 3 — Identidad visual y mapa jugable | **Cerrado** (16/11), integrado en `main` (PR #25) y marcado con `v0.10.0-mapa-horizontal` | [75](75-plan-hito-3-identidad-visual.md), [99](99-experiencia-unificada-del-mapa.md), [100](100-avisos-y-zoom-nativo.md), [101](101-muerte-durante-accion-propia.md) |
+| Mantenimiento: mapa como producto | **Integrado en `main`** (PR #26): `app/mapa/`, `npm run dev:mapa`, prototipos retirados | [103](103-consolidacion-mapa-producto.md) |
+| D12 de exposición | **Cambio de regla aceptado por el creador** (6 sin efecto, 3 heridas, 2 congelaciones, 1 mordedura). Implementado en el PR #27 y adaptado a `app/mapa/`; pendiente de revisión jugando y decisión de merge | [102](102-dado-exposicion-d12.md) |
+| Singleplayer (SP-00 a SP-08) | **Diseño en papel.** Puerta técnica de [63 §7](63-hoja-de-ruta-planificacion-singleplayer.md) cumplida | [63](63-hoja-de-ruta-planificacion-singleplayer.md) |
+
+El mapa permite preparar, jugar y terminar una partida completa (humano + IA y dos jugadores locales) con un único motor. En el PR #27 movimiento y combate del mapa comparten una única tirada D12 por exposición; los dados de acción y el riesgo de contagio siguen en D6.
 
 ## 2. Próxima tarea única
 
-**Revisar jugando el D12 en movimiento y combate.** El rescate del médico queda para el siguiente encargo y reutilizará esta tirada; no se implementa ni se inicia ahora.
+**Revisar jugando el D12 del PR #27** desde `npm run dev:mapa` (`http://127.0.0.1:8779/app/mapa/`): movimiento y combate, la cara mostrada frente al Registro y el daño en la ficha. Con CI verde y esa revisión, el merge queda a indicación expresa del creador.
 
 ## 3. Cola ordenada
 
-1. Rescate del médico, cuando llegue su encargo: reutilizar la tirada/resultado D12.
-2. SP-03/SP-04: laboratorio sobre acciones, recursos y competencia entre abastecer y avanzar el objetivo, pendiente de decisión del creador.
-3. Mantenimiento propuesto: consolidar el producto fuera de `prototypes/` y retirar evidencia pesada del repositorio.
-4. Mejoras menores del mapa (hallazgos4 y5) y recorrido completo de una partida con clics reales.
-5. Reservas del Hito3: Samsung Galaxy A15 físico y dos jugadores locales manuales.
+1. **D12 (102):** revisión jugando → decisión de merge del PR #27.
+2. **Rescate del médico:** reutiliza la tirada y el resultado estructurado del D12; no se inicia hasta su encargo.
+3. **SP-03/SP-04:** laboratorio de un solo grupo sobre el motor real (rama `experiment/sp04-laboratorio-un-grupo`; su informe se renumera al integrarse, porque el 102 es del D12).
+4. **Mejoras menores del mapa** que no afectan decisiones: hallazgos 4 y 5, y una batería de CI que juegue una partida entera con clics reales.
+5. **Reservas del Hito 3:** Samsung Galaxy A15 físico y dos jugadores locales manuales.
 
 ## 4. Hallazgos abiertos
 
@@ -32,27 +35,21 @@
 |---|---|---|---|
 | 1 | Aviso de combate en fichas ajenas | **Implementado** en `985bdf1`, CI verde en `179653c`; capturas correctas (Leo congelación 1, Iris 0) | Confirmar jugando |
 | 2 | Zoom máximo = tamaño del mapa | **Aceptado por ahora** (16/11): 1:1 sobre el fondo de 1671×941 | Revisar si en el teléfono alcanza para tocar retratos y accesos; arte de mayor resolución queda como deuda |
-| 3 | Moverse/Buscar/Atacar poco visibles en móvil | **Corregido** (16/11, solo CSS móvil): en la ficha del superviviente propio las acciones van primero y «Inventario y equipo» al final. La batería de cámara y avisos comprueba en 852×393 y 393×852 que la primera acción se ve sin desplazar la ficha | Ver en el teléfono cuando se pueda |
-| 4 | Selector de localidad desincronizado | **Aceptado como menor** (16/11): no afecta decisiones | Después del cierre |
-| 5 | Aviso móvil tapa título y botones de la ficha ampliada durante 5 s | **Aceptado como menor** (16/11): el aviso caduca solo | Después del cierre |
-| 6 | La partida se trababa si un superviviente moría en su propia acción (panel vacío sobre «Fallecimientos») | **Corregido** ([101](101-muerte-durante-accion-propia.md)): el botón lleva a confirmar la muerte, al contagio o a la sucesión. Batería nueva en 1365×768 y 393×852 | Confirmado jugando (16/11) |
-| 7 | Dado D12 de exposición | Implementado:6 caras lisas,3 heridas,2 congelaciones,1 mordedura; acción sigueD6 | Revisión manual en tablero/teléfono |
+| 3 | Moverse/Buscar/Atacar poco visibles en móvil | **Corregido** (16/11, solo CSS móvil) | Ver en el teléfono cuando se pueda |
+| 4 | Selector de localidad desincronizado | **Aceptado como menor** (16/11): no afecta decisiones | Mejoras menores |
+| 5 | Aviso móvil tapa título y botones de la ficha ampliada durante 5 s | **Aceptado como menor** (16/11): el aviso caduca solo | Mejoras menores |
+| 6 | La partida se trababa si un superviviente moría en su propia acción | **Corregido** ([101](101-muerte-durante-accion-propia.md)) | Confirmado jugando (16/11) |
+| 7 | D12 de exposición sin probar a mano | Baterías automáticas en tres tamaños; falta partida manual y teléfono físico | Revisión del PR #27 |
 
-## 5. Verificación y aceptación
+## 5. Verificación y aceptación del D12 (PR #27)
 
-D12:769/769 pruebas locales, doce caras deterministas desde movimiento y combate, galería a82px,24 acciones de navegador en tres tamaños, regresiones de combate y ocho casos de muerte aprobados. El CI del SHA de entrega y su artifact se registran en el PR del encargo. Inspección de capturas realizada; falta jugarlo manualmente y probar el teléfono físico.
-
-La aceptación del Hito3 se conserva (16/11):
-
-- [x] CI verde con todas las baterías sobre `1bc5037` ([run 43876444225](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/43876444225)).
-- [x] Partida completa humano + IA en escritorio (16/11, victoria).
-- [x] Teléfono: aceptado por el creador el 16/11 sobre la base de la emulación y las baterías móviles; prueba física pendiente como reserva.
-- [x] Dos jugadores locales: aceptado sobre las baterías automáticas de privacidad y pase; prueba manual pendiente como reserva.
-- [x] Mordedura, muerte y sucesión reales durante una partida (16/11, escritorio).
-- [x] Desde el mapa se entiende de quién es el turno, la crisis, el objetivo y las acciones (partida ganada en escritorio, 16/11).
-- [x] Ninguna acción repetida: cubierto por las baterías y sin casos en la partida manual.
-- [x] Hallazgos 3 y 6 corregidos; 4 y 5 aceptados como mejoras menores posteriores.
-- [x] Decisión sobre el zoom 1:1: aceptado por ahora (16/11).
+- [x] Regla 6/3/2/1 con una sola muestra de azar por exposición; cara mostrada = cara registrada = efecto aplicado (pruebas unitarias y batería `check-exposure-d12-browser.mjs`).
+- [x] Referencia V9.9 intacta: el build preservado mantiene su HTML y su D6.
+- [x] Adaptado a `app/mapa/` sobre `main` `f6a57d2` (detalle en [102](102-dado-exposicion-d12.md)).
+- [ ] CI del PR #27 en verde sobre el SHA adaptado.
+- [ ] Movimiento y combate revisados jugando en escritorio.
+- [ ] Samsung Galaxy A15 físico (reserva, como en el Hito 3).
+- [ ] Decisión de merge del creador.
 
 ## 6. Decisiones vigentes de mapa e interfaz
 
@@ -64,7 +61,7 @@ La aceptación del Hito3 se conserva (16/11):
 - Resultado rutinario: aviso temporal único sobre el mapa y entrada en el Registro; cada ficha muestra su propio estado.
 - Zoom máximo: 1 píxel de la ilustración por píxel CSS.
 - Un solo motor determina costes, tiradas y consecuencias; la interfaz solo presenta.
-- Exposición del mapa: D12 uniforme6/3/2/1, con símbolos; un resultado compartido entre efecto, animación, etiqueta y Registro. Los dados de acción y de riesgo de contagio conservan el D6. Rescate del médico pendiente de próximo encargo.
+- Exposición del mapa: D12 uniforme 6/3/2/1, con símbolos; un resultado compartido entre efecto, animación, etiqueta y Registro. Los dados de acción y de riesgo de contagio conservan el D6. Rescate del médico pendiente de próximo encargo.
 - Dispositivos de prueba: escritorio y Samsung Galaxy A15.
 
 ## 7. Reservas conocidas

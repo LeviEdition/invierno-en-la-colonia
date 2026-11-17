@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {waitForStartup} from '../prototypes/hospital-phaser/startup.mjs';
+import {waitForStartup} from '../app/mapa/render/phaser/startup.mjs';
 
 test('H3.2 cierre: timeout acotado y rechazo tardío no reabre una espera terminada',async()=>{
  let reject;const pending=new Promise((_,r)=>reject=r);

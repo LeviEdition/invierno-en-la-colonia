@@ -1,8 +1,8 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import {createEngine} from '../test-support/horizontal-engine.mjs';
-import {createCycleBroker} from '../prototypes/cycle-map/broker.mjs';
-import {createCycleController} from '../prototypes/cycle-map/controller.mjs';
-import {projectVisibleState} from '../prototypes/state-map/projection.mjs';
+import {createCycleBroker} from '../app/mapa/ciclo/broker.mjs';
+import {createCycleController} from '../app/mapa/ciclo/controller.mjs';
+import {projectVisibleState} from '../app/mapa/estado/projection.mjs';
 export function session(){let calls=0;const e=createEngine({Math:Object.assign(Object.create(Math),{random:()=>{calls++;return .8;}}),queueMicrotask(){},setTimeout:f=>{f();return 0;}});e.start('local');const c=e.testBindings;c.game.crossResolved=true;c.game.food=100;for(const z of c.game.zones)z.z=0;return {e,c,calls:()=>calls};}
 const tick=async()=>{for(let i=0;i<8;i++)await Promise.resolve();};
 function broker(t){const b=createCycleBroker(t.e,{session:'test',readPublic:()=>projectVisibleState(t.c,{renderedPlayable:true,epoch:1})});b.project(projectVisibleState(t.c,{renderedPlayable:true,epoch:1}));return b;}

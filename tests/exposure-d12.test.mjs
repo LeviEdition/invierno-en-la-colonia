@@ -2,9 +2,9 @@ import test from 'node:test';import assert from 'node:assert/strict';
 import {EXPOSURE_FACES,rollExposureDie} from '../src/domain/exposure-die.mjs';
 import {createEngine} from '../test-support/horizontal-engine.mjs';
 import {createReferenceState} from '../src/domain/reference-state.mjs';
-import {createPresentationSequence,exposureText} from '../prototypes/movement-map/presentation-sequence.mjs';
-import {D12_FACES,projectExposureDie} from '../prototypes/movement-map/exposure-die-geometry.mjs';
-import {eventText} from '../prototypes/play-map/information.mjs';
+import {createPresentationSequence,exposureText} from '../app/mapa/movimiento/presentation-sequence.mjs';
+import {D12_FACES,projectExposureDie} from '../app/mapa/movimiento/exposure-die-geometry.mjs';
+import {eventText} from '../app/mapa/juego/information.mjs';
 const outcomes=['bite','frost','frost','wound','wound','wound','none','none','none','none','none','none'];
 function setup({name='Mara',equipment=[]}={}){
  let sample=.8,calls=0;const math=Object.create(Math);math.random=()=>{calls++;return sample;};

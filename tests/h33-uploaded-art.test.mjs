@@ -2,10 +2,10 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {checkWorkshopKit,checkUploadedArtwork} from '../scripts/check-workshop-kit.mjs';
-import {validateKit,defaultState,sceneNodes,representation,resourceFactor,textureEstimate} from '../prototypes/hospital-workshop/kit.mjs';
-import {pickNode} from '../prototypes/hospital-workshop/resources.mjs';
+import {validateKit,defaultState,sceneNodes,representation,resourceFactor,textureEstimate} from '../app/mapa/render/kit/kit.mjs';
+import {pickNode} from '../app/mapa/render/kit/resources.mjs';
 
-const load=async()=>JSON.parse(await readFile(new URL('../prototypes/hospital-workshop/uploaded-kit.json',import.meta.url)));
+const load=async()=>JSON.parse(await readFile(new URL('../app/mapa/render/kit/uploaded-kit.json',import.meta.url)));
 test('H3.3 kit subido: originales y dos bocetos coinciden con la entrega versionada',async()=>{
  const result=await checkUploadedArtwork();
  assert.equal(result.files.length,9);

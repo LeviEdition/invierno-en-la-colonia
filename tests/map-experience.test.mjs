@@ -1,10 +1,10 @@
-import {latestBiteRoll} from '../prototypes/play-map/information.mjs';
+import {latestBiteRoll} from '../app/mapa/juego/information.mjs';
 import test from 'node:test';import assert from 'node:assert/strict';
-import {createRoutineResults,playResult,inventoryResult} from '../prototypes/experience-map/routine-results.mjs';
-import {createPlayController} from '../prototypes/play-map/controller.mjs';
-import {createActionController} from '../prototypes/action-map/action-controller.mjs';
-import {createSearchController} from '../prototypes/search-map/search-controller.mjs';
-import {createInventoryController} from '../prototypes/inventory-map/controller.mjs';
+import {createRoutineResults,playResult,inventoryResult} from '../app/mapa/experiencia/routine-results.mjs';
+import {createPlayController} from '../app/mapa/juego/controller.mjs';
+import {createActionController} from '../app/mapa/acciones/action-controller.mjs';
+import {createSearchController} from '../app/mapa/busqueda/search-controller.mjs';
+import {createInventoryController} from '../app/mapa/inventario/controller.mjs';
 import {createEngine} from '../test-support/horizontal-engine.mjs';
 function harness(){const queue=[],sent=[],notices=[];let phases={action:'idle',search:'idle',inventory:'closed',play:'closed'},ops={};const controller=k=>({inspect:()=>({phase:phases[k],operation:ops[k]}),dismiss(){sent.push(k);phases[k]='sending';},submit(kind,args){sent.push({kind,args});phases.play='sending';}});const routine=createRoutineResults({...Object.fromEntries(Object.keys(phases).map(k=>[k,controller(k)])),enqueue:fn=>queue.push(fn),onNotice:n=>notices.push(n)});let p={round:1,turn:'human',play:{session:'s',generation:1}};return{routine,queue,sent,notices,phases,ops,p,flush(){while(queue.length)queue.shift()();}};}
 test('Experiencia: reconoce resultados rutinarios una vez sin reenviar acciones',()=>{for(const kind of ['action','search','inventory','play']){const t=harness();if(kind==='action')t.ops.action={operationId:'a',kind:'barricade',name:'Leo',resolution:{built:1,actorAfter:{}}};if(kind==='search')t.ops.search={operationId:'s',name:'Iris',result:{card:{name:'Vendas'}}};if(kind==='inventory')t.p.inventory={receipt:{id:'i',summary:'Equipado'}};if(kind==='play')t.p.play.receipt={id:'p',type:'clean',result:{removedWaste:3,die:1}};t.phases[kind]=kind==='play'?'open':'result';t.routine.update(t.p);t.flush();t.routine.update(t.p);t.flush();assert.equal(t.sent.length,1,kind);assert.ok(t.routine.inspect()?.text);}});

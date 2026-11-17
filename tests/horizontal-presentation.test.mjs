@@ -1,13 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {fitMapCamera,resizeMapCamera} from '../prototypes/horizontal-map/camera.mjs';
-import {localityFrame} from '../prototypes/horizontal-map/presentation.mjs';
-import {createStableLayout,destinationPosition} from '../prototypes/movement-map/stable-layout.mjs';
+import {fitMapCamera,resizeMapCamera} from '../app/mapa/escena/camera.mjs';
+import {localityFrame} from '../app/mapa/escena/presentation.mjs';
+import {createStableLayout,destinationPosition} from '../app/mapa/movimiento/stable-layout.mjs';
 import {capacityProjection,exteriorVolumes,boundsIntersectPolygon} from '../test-support/horizontal-composition.mjs';
-import {pickCharacter,pickMapTarget} from '../prototypes/hospital-workshop/mockup/model.mjs';
+import {pickCharacter,pickMapTarget} from '../app/mapa/render/maqueta/model.mjs';
 const json=p=>JSON.parse(readFileSync(new URL('../'+p,import.meta.url)));
-const scene=json('prototypes/horizontal-map/scene.json'),colony=scene.zones.find(z=>z.id==='colonia');
+const scene=json('app/mapa/escena/scene.json'),colony=scene.zones.find(z=>z.id==='colonia');
 const locations=['colonia','supermercado','hospital','comisaria','gasolinera','escuela','biblioteca'].map((id,engineIndex)=>({id:'place-'+engineIndex,engineIndex,capacity:engineIndex?4:12,exteriorCapacity:engineIndex?4:12}));
 const seed={locations,characters:[{id:'h0',name:'Mara',playerId:'human',locationId:'place-0'}],movement:{},search:{},action:{}};
 function state(n){const p=capacityProjection(seed,'mixed',scene),ids=p.characters.filter(c=>c.locationId==='place-0').slice(0,n).map(c=>c.id);p.characters=p.characters.filter(c=>c.locationId!=='place-0'||ids.includes(c.id));return p;}
@@ -20,7 +20,7 @@ test('Presentación: vista general contiene zonas completas y grupos máximos, t
  }
 });
 test('Presentación: colonia1/6/12 centrada y sin reducir fichas ni tocar cuerpos posteriores',()=>{
- const volumes=exteriorVolumes(scene,json('prototypes/hospital-workshop/uploaded-kit.json').assets);
+ const volumes=exteriorVolumes(scene,json('app/mapa/render/kit/uploaded-kit.json').assets);
  for(const n of [1,6,12]){const l=createStableLayout(scene).project(state(n)),members=l.characters.filter(c=>c.locationId==='place-0');
   const xs=members.map(c=>c.position.x);assert.ok(Math.abs((Math.min(...xs)+Math.max(...xs))/2-835)<1,'ocupación'+n+' centrada');
   assert.ok(members.every(c=>c.diameter===36));
@@ -45,7 +45,7 @@ test('Presentación: pertenencia conserva identidad y orden; llegada coincide co
 });
 test('Presentación: los arbustos pintados conocidos detectan las posiciones descartadas de gasolinera y comisaría',()=>{
  const vegetation=json('test-support/horizontal-obstacles.json').obstacles.filter(o=>['gasolinera-arbusto','comisaria-arbusto'].includes(o.id));assert.equal(vegetation.length,2);
- const assets=json('prototypes/hospital-workshop/uploaded-kit.json').assets,old=structuredClone(scene);
+ const assets=json('app/mapa/render/kit/uploaded-kit.json').assets,old=structuredClone(scene);
  old.zones.find(z=>z.id==='gasolinera').accesses[0]={x:233,y:724};old.zones.find(z=>z.id==='comisaria').accesses[3]={x:1430,y:737};
  for(const id of ['gasolinera','comisaria'])assert.ok(exteriorVolumes(old,assets).filter(a=>a.locality===id).some(a=>vegetation.some(o=>boundsIntersectPolygon(a,o.polygon))),id+' rojo conservado');
  for(const a of exteriorVolumes(scene,assets))for(const o of vegetation)assert.equal(boundsIntersectPolygon(a,o.polygon),false,a.locality+' invade vegetación');
@@ -60,7 +60,7 @@ test('Presentación: objetivos de fichas conservan44px CSS en vista general; en 
 });
 
 test('Presentación: todas las fichas quedan sobre su edificio o recinto, incluyendo colonia1/6/12',async()=>{
- const {pointInPolygon}=await import('../prototypes/hospital-workshop/mockup/model.mjs');
+ const {pointInPolygon}=await import('../app/mapa/render/maqueta/model.mjs');
  for(const n of [1,6,12]){const p=state(n),view=createStableLayout(scene).project(p);
   for(const loc of view.locations){const z=scene.zones.find(z=>z.id===loc.visualId);for(const c of loc.drawnCharacters)assert.equal(pointInPolygon(c.position,z.outlinePolygon),true,z.id+' ficha fuera de localidad');}
   if(n===1){const c=view.characters.find(c=>c.locationId==='place-0');assert.equal(pickMapTarget(scene,view.characters,{x:c.position.x,y:c.position.y-20/.29},.29).characterId,c.id,'44px sobre el propio edificio');}

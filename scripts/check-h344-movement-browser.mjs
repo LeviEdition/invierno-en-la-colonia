@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';import {mkdir,writeFile} from 'node:fs/promises';import {resolve} from 'node:path';
 import {actionMapChecks} from '../test-support/h344-browser-checks.mjs';
-const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright'),origin=process.env.H344_ORIGIN||'http://127.0.0.1:8778',out=process.env.H344_MOVEMENT_DIR||'/tmp/h344-experience';await mkdir(out,{recursive:true});
-const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',args:['--no-sandbox']}),t=actionMapChecks({origin,modulePath:process.env.H344_MODULE_PATH||'/dist/action-map-qa/map.mjs'}),evidence={browser:browser.version(),physicalMobile:false,records:[],failures:[]};
+const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright'),origin=process.env.H344_ORIGIN||'http://127.0.0.1:8779',out=process.env.H344_MOVEMENT_DIR||'/tmp/h344-experience';await mkdir(out,{recursive:true});
+const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',args:['--no-sandbox']}),t=actionMapChecks({origin,modulePath:process.env.H344_MODULE_PATH||'/dist/mapa-qa/map.mjs'}),evidence={browser:browser.version(),physicalMobile:false,records:[],failures:[]};
 const pickTarget=JSON.parse(process.env.H344_PICK_POINT||'{"x":280,"y":475}');
 const movementViewports=process.env.H344_MOVEMENT_VIEWPORTS?.split(',').map(s=>{const [width,height]=s.split('x').map(Number);return {width,height};})||[{width:1365,height:768},{width:393,height:852},{width:320,height:640}];
 async function begin(p,initial=.8){await t.load(p);await t.host(p).evaluate(v=>window.h344RandomValue=v,initial);await t.host(p).locator('#setupScreen button').filter({hasText:'2 JUGADORES LOCALES'}).click();await t.settle(p);await t.dispatch(p,'chooseLeader','h1');await t.sync(p);await t.openMap(p);}

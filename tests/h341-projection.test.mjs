@@ -1,6 +1,6 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import {createEngine} from '../src/application/reference-engine.mjs';
-import {projectVisibleState} from '../prototypes/state-map/projection.mjs';
+import {projectVisibleState} from '../app/mapa/estado/projection.mjs';
 function real(){let calls=0;const math=Object.create(Math);math.random=()=>{calls++;return .37;};const engine=createEngine({Math:math,queueMicrotask(){}});let context;engine.connectPresentation(c=>{context=c;return {};});engine.start('local');return {engine,context,rng:()=>calls};}
 test('H3.4.1 proyección: datos reales, IDs y cantidades sin invocar consultas con efectos',()=>{
  const t=real(),before=t.engine.snapshot(),rng=t.rng(),context=new Proxy(t.context,{get(target,key){if(['playable','canPickStartingLeader','show','finishTurn'].includes(key))throw Error('Consulta no permitida: '+key);return Reflect.get(target,key);}});

@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import {createSearchController} from '../prototypes/search-map/search-controller.mjs';
+import {createSearchController} from '../app/mapa/busqueda/search-controller.mjs';
 const op={operationId:'op',ownerId:'human',gameGeneration:1,round:1,actorId:'h0',status:'choice',cards:[{name:'Vendas',index:0}],canNoise:true,step:'choice_1_0'};
 function state({owner='human',operation=null,revision=1,blocked=null}={}){return {blocked,search:{session:'session',revision,options:{h0:{allowed:true,origin:2,requirement:3,dice:[{index:0,value:2,allowed:false},{index:1,value:5,allowed:true},{index:2,value:5,allowed:true}]}},private:owner?{gameGeneration:1,round:1,ownerId:owner,hand:[{name:owner==='human'?'Propia':'Otra'}],operation}:null}};}
 function setup(){let n=0;const sent=[];const c=createSearchController({send:r=>sent.push(r),requestId:()=> 'q'+(++n)});c.update(state());return {c,sent};}
