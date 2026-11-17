@@ -13,10 +13,14 @@
 //   competida          A>0, O>0 y A+O > D: hay que elegir
 //   obligada-abastecer A ≥ D con O>0: no queda margen para el objetivo
 //   solo-abastecer     O = 0, A > 0           solo-objetivo  A = 0, O > 0
-export function evaluarCompetencia(c){
+// Opción indefensos (segunda corrida): con indefensos en la colonia, la colonia
+// entra en la demanda de defensa aunque no haya supervivientes en ella, porque un
+// desbordamiento ahí mata a un indefenso. Sin indefensos, idéntico a la primera corrida.
+export function evaluarCompetencia(c,{indefensos=false}={}){
  const g=c.game,propios=g.humans.filter(p=>!p.dead),dados=g.dice.length;
  let defensa=0;
- for(const loc of new Set(propios.map(p=>p.loc))){
+ const lugares=new Set(propios.map(p=>p.loc));if(indefensos&&g.helpless>0)lugares.add(0);
+ for(const loc of lugares){
   const z=g.zones[loc],llegan=loc===0?Math.ceil((c.alive().filter(x=>x.loc===0).length+g.helpless)/2):c.alive().filter(x=>x.loc===loc).length;
   defensa+=Math.max(0,z.z+z.b+llegan-c.zcap[loc]+1);
  }

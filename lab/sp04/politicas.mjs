@@ -75,7 +75,7 @@ function mordeduraReferencia(c){
 }
 
 // ---------- cooperativa (puerto literal de autoplay-controller.mjs) ----------
-function actuarCooperativa(c,registro){
+function actuarCooperativa(c,registro,{indefensos=false}={}){
  const g=c.game;
  if(!c.playable())return null;
  const group=c.controls.group().filter(p=>!p.dead),hand=c.currentHand();
@@ -106,7 +106,7 @@ function actuarCooperativa(c,registro){
  const home=group.find(p=>p.loc===0);
  if(home&&g.waste>=8){foco(c,home);c.picked=pickMin();registro.accionActual='limpiar';c.clean();return 'limpiar:'+home.id;}
  for(const p of group){
-  const z=g.zones[p.loc],arriving=c.alive().filter(x=>x.loc===p.loc).length;
+  const z=g.zones[p.loc],arriving=indefensos&&p.loc===0&&g.helpless>0?llegadasColonia(c):c.alive().filter(x=>x.loc===p.loc).length;
   const risk=z.z+Math.max(1,arriving)>=c.zcap[p.loc];
   const di=dice.findIndex(d=>d>=c.effectiveAttack(p));
   if(z.z&&risk&&di>=0){foco(c,p);c.picked=di;registro.accionActual='atacar';c.attack();return 'atacar:'+p.id;}
@@ -143,11 +143,17 @@ const perfiles={
   destino:(c,p)=>[6,2,5].find(i=>c.accessible(i)&&c.game.decks[i].length)??[1,3,4].find(i=>c.accessible(i)&&c.game.decks[i].length)??p.loc,
   umbralComida:c=>c.feedingNeed(c.game),
   prioridad:['buscar-muestras','atacar-riesgo','mejorar','buscar','barricada','limpiar'],
-  botin:botinObjetivo,mordedura:mordeduraReferencia,defensor:false,mejorar:true,
+  botin:botinObjetivo,mordedura:mordeduraReferencia,defensor:false,mejorar:true,defensorSiPeligra:true,
  },
 };
 const mazosComida=[1,5,4],mazosMuestras=[6,2,5];
-function actuarReferencia(c,registro,perfil){
+// Segunda corrida (opción indefensos). Llegadas a la colonia en la próxima fase:
+// ⌈(habitantes + indefensos)/2⌉, como en colony(). La colonia peligra si esas
+// llegadas, más dos por una crisis que atraiga zombis, alcanzan lo que absorben los
+// accesos libres y las barricadas (capacidad − zombis).
+const llegadasColonia=c=>Math.ceil((c.alive().filter(x=>x.loc===0).length+c.game.helpless)/2);
+const coloniaEnPeligro=c=>{const g=c.game,z=g.zones[0];return g.helpless>0&&c.zcap[0]-z.z<=llegadasColonia(c)+2;};
+function actuarReferencia(c,registro,perfil,{indefensos=false}={}){
  const g=c.game;
  if(!c.playable())return null;
  const group=c.controls.group().filter(p=>!p.dead),hand=c.currentHand();
@@ -173,10 +179,13 @@ function actuarReferencia(c,registro,perfil){
   if(d.effect==='rescue'&&c.accessible(0))return use(group[0],k,'rescate');
  }
  // 4. Movimientos: cada superviviente una vez por ronda.
- const defensor=perfil.defensor?group.slice().sort((a,b)=>c.effectiveAttack(a)-c.effectiveAttack(b)||a.id.localeCompare(b.id))[0]:null;
+ // Con indefensos, «objetivo» deja (o hace volver) al mejor atacante a la colonia
+ // solo cuando la colonia está por desbordarse; si no, todos siguen corriendo.
+ const vuelveDefensor=indefensos&&perfil.defensorSiPeligra&&coloniaEnPeligro(c);
+ const defensor=perfil.defensor||vuelveDefensor?group.slice().sort((a,b)=>c.effectiveAttack(a)-c.effectiveAttack(b)||a.id.localeCompare(b.id))[0]:null;
  for(const p of group){
   if(p.moved)continue;
-  const dest=perfil.destino(c,p,defensor);if(dest===p.loc||!c.accessible(dest))continue;
+  const dest=vuelveDefensor&&p===defensor?0:perfil.destino(c,p,defensor);if(dest===p.loc||!c.accessible(dest))continue;
   foco(c,p);c.target=dest;const fuel=hand.findIndex(it=>c.kind(it)==='combustible');
   if(fuel>=0){registro.accionActual='mover-combustible';c.playItem(fuel);return 'mover-combustible:'+p.id+':'+dest;}
   registro.accionActual='mover';c.doMove();return 'mover:'+p.id+':'+dest;
@@ -220,8 +229,10 @@ function aportarHerramientas(c,group){
 }
 
 export const nombresDePoliticas=['cooperativa','ia-referencia','abastecer','objetivo'];
-export function crearPolitica(nombre){
- if(nombre==='cooperativa')return {nombre,decidir:c=>decidirComun(c,{botin:botinCooperativa,mordedura:mordeduraRiesgo}),actuar:actuarCooperativa};
+// opciones.indefensos (segunda corrida): la política sabe de los indefensos. Solo
+// cambia algo cuando hay indefensos en la colonia; sin ellos juega igual que antes.
+export function crearPolitica(nombre,opciones={}){
+ if(nombre==='cooperativa')return {nombre,decidir:c=>decidirComun(c,{botin:botinCooperativa,mordedura:mordeduraRiesgo}),actuar:(c,registro)=>actuarCooperativa(c,registro,opciones)};
  const perfil=perfiles[nombre];if(!perfil)throw Error('Política desconocida: '+nombre);
- return {nombre,decidir:c=>decidirComun(c,{botin:perfil.botin,mordedura:perfil.mordedura,paciente:pacienteMasHerido}),actuar:(c,registro)=>actuarReferencia(c,registro,perfil)};
+ return {nombre,decidir:c=>decidirComun(c,{botin:perfil.botin,mordedura:perfil.mordedura,paciente:pacienteMasHerido}),actuar:(c,registro)=>actuarReferencia(c,registro,perfil,opciones)};
 }

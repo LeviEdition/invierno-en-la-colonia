@@ -11,6 +11,12 @@ node lab/sp04/correr.mjs                                   # plan completo: 74 c
 node lab/sp04/correr.mjs --partidas 200                    # mismo plan, partidas 1..200
 node lab/sp04/correr.mjs --ejemplo 17 --escenario B        # una partida ronda por ronda (semilla 17)
 node --test tests/sp04-arnes.test.mjs                      # reproducibilidad, calibración contra C14, un grupo, escenarios
+
+# Segunda corrida (docs/107)
+node lab/sp04/segunda-corrida.mjs                          # 124 celdas × 500 partidas, ~2 min, escribe resultados/segunda-corrida/
+node lab/sp04/segunda-corrida.mjs --criterio v1            # la cadena con el primer criterio, en segunda-corrida/criterio-v1/
+node lab/sp04/segunda-corrida.mjs --ejemplo 147926525 --politica cooperativa --moralMuerte 2 --equipoMuerto perdido
+node --test tests/sp04-palancas.test.mjs                   # D12, cada palanca, rescate, criterio
 ```
 
 Opciones de `--ejemplo`: `--politica cooperativa|ia-referencia|abastecer|objetivo`, `--variante dos-grupos|un-grupo`, `--dados v99|mas-uno|doble`, `--crisis N`, `--comida v99|ligera|estricta`, `--zombis v99|mitad|doble`.
@@ -27,4 +33,7 @@ Opciones de `--ejemplo`: `--politica cooperativa|ia-referencia|abastecer|objetiv
 | `partida.mjs` | Bucle de una partida (igual que `test-support/run-game.mjs`). |
 | `metricas.mjs` | Agregados por celda y por ronda; CSV. |
 | `correr.mjs` | Plan principal y barrido; ejemplo ronda por ronda. |
-| `resultados/` | Solo CSV agregados; nunca registros por partida. |
+| `palancas.mjs` | Segunda corrida: D12 (réplica de `map-exposure` sin `mapPlay`), indefensos, comida inicial, crisis agravada, moral por muerte, equipo del muerto, duración del objetivo y rescate del médico. Con valores V9.9 no instala nada. |
+| `segunda-corrida.mjs` | Etapas encadenadas de docs/107, criterio de elección, calibración contra la primera corrida y ejemplos con cualquier palanca. |
+| `principal.mjs` | Detecta si el módulo se ejecutó con `node` (comparando rutas; en Windows las URL difieren en la letra de unidad). |
+| `resultados/` | Solo CSV agregados; nunca registros por partida. Primera corrida en la raíz; segunda en `segunda-corrida/`. |

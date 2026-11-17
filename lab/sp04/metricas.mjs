@@ -65,3 +65,40 @@ export function aCsv(filas){
  const columnas=Object.keys(filas[0]);
  return [columnas.join(','),...filas.map(f=>columnas.map(k=>{const v=f[k];return typeof v==='number'?r3(v):v===null||v===undefined?'':String(v);}).join(','))].join('\n')+'\n';
 }
+
+// ---------- Segunda corrida (docs/107) ----------
+// Se agregan aparte para que los CSV de la primera corrida conserven sus columnas.
+const causasContagio=['mordedura','propagación de mordedura','sacrificio para detener la mordedura'];
+export function agregarSegunda(partidas){
+ const n=partidas.length,tasa=f=>partidas.filter(f).length/n;
+ const propias=p=>p.muertes.filter(m=>m.lado==='human'&&m.causa!=='escenario de laboratorio');
+ // Muerte doble: dos o más muertes propias en la misma ronda y la misma fase (turno
+ // del jugador o fase de colonia). «Por contagio» si alguna es mordedura o su cadena.
+ const dobles=p=>{const grupos={};for(const m of propias(p))(grupos[m.ronda+'/'+m.fase]||=[]).push(m);return Object.values(grupos).filter(g=>g.length>=2).map(g=>({ronda:g[0].ronda,contagio:g.some(m=>causasContagio.includes(m.causa))}));};
+ const derrota=p=>p.resultado==='morale'||p.resultado==='survivors';
+ const exps=partidas.flatMap(p=>p.exposiciones);
+ const efecto=e=>exps.length?exps.filter(x=>x.efecto===e).length/exps.length:null;
+ const conRescate=partidas.filter(p=>p.rescate?.ocurrio);
+ const tasaEn=(xs,f)=>xs.length?xs.filter(f).length/xs.length:null;
+ return {
+  vivosFin:media(partidas.map(p=>p.vivosFin)),
+  victoriaCon2Vivos:tasa(p=>p.resultado==='victory'&&p.vivosFin>=2),
+  moralFin:media(partidas.map(p=>p.moralFin)),
+  indefensosIniciales:media(partidas.map(p=>p.inicial.indefensos)),
+  indefensosPerdidos:media(partidas.map(p=>p.indefensosPerdidos)),
+  indefensosPorCrisis:media(partidas.map(p=>p.indefensosPorCrisis)),
+  indefensosFin:media(partidas.map(p=>p.indefensosFin)),
+  equipoPerdido:media(partidas.map(p=>p.equipoPerdido)),
+  muertesDoblesPorPartida:media(partidas.map(p=>dobles(p).length)),
+  muertesDoblesContagioPorPartida:media(partidas.map(p=>dobles(p).filter(d=>d.contagio).length)),
+  partidasConMuerteDoble:tasa(p=>dobles(p).length>0),
+  partidasTerminanPorMuerteDoble:tasa(p=>derrota(p)&&dobles(p).some(d=>d.ronda===p.rondaFin)),
+  exposicionesPorPartida:media(partidas.map(p=>p.exposiciones.length)),
+  exposicionSinEfecto:efecto('none'),exposicionHerida:efecto('wound'),exposicionCongelacion:efecto('frost'),exposicionMordedura:efecto('bite'),exposicionEvitada:efecto('avoided'),
+  rescateOcurre:conRescate.length/n,
+  rescatistaMuere:tasaEn(conRescate,p=>p.rescate.rescatistaMuere),
+  curasMedico:conRescate.length?media(conRescate.map(p=>p.rescate.curas)):null,
+  victoriaConRescate:tasaEn(conRescate,p=>p.resultado==='victory'),
+  moralFinConRescate:conRescate.length?media(conRescate.map(p=>p.moralFin)):null,
+ };
+}

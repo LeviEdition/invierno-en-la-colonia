@@ -14,6 +14,7 @@ import {nombresDePoliticas} from './politicas.mjs';
 import {escenarios,nombresDeEscenarios} from './escenarios.mjs';
 import {formulasDados,formulasComida,factoresZombis} from './motor-laboratorio.mjs';
 import {semillaC14} from './azar.mjs';
+import {esPrincipal} from './principal.mjs';
 
 const args=process.argv.slice(2),opcion=(k,d)=>{const i=args.indexOf('--'+k);return i>=0?args[i+1]:d;};
 const partidasPorCelda=Number(opcion('partidas',500)),salida=opcion('salida','lab/sp04/resultados');
@@ -42,7 +43,11 @@ const clave=c=>[c.bloque,c.escenario,c.variante,c.politica,c.dados,'crisis'+c.cr
 
 async function ejemplo(){
  const semilla=Number(opcion('ejemplo')),r=await jugarPartida({semilla,escenario:opcion('escenario','A'),politica:opcion('politica','ia-referencia'),variante:opcion('variante','un-grupo'),dados:opcion('dados','v99'),crisis:Number(opcion('crisis',2)),comida:opcion('comida','v99'),zombis:opcion('zombis','v99')});
- console.log('Semilla',semilla,'·',r.inicial.objetivo,'·',r.inicial.necesidad,'muestras en',r.inicial.rondas,'rondas · resultado:',r.resultado,'en la ronda',r.rondaFin);
+ mostrarPartida(r,semilla);
+}
+// Una partida ronda por ronda (también la usa segunda-corrida.mjs --ejemplo).
+export function mostrarPartida(r,semilla){
+ console.log('Semilla',semilla,'·',r.inicial.objetivo,'·',r.inicial.necesidad,'muestras en',r.inicial.rondas,'rondas · indefensos',r.inicial.indefensos,'· comida',r.inicial.comida,'· moral',r.inicial.moral,'· resultado:',r.resultado,'en la ronda',r.rondaFin,'· vivos al final',r.vivosFin);
  for(const ronda of r.rondas){
   const k=r.crisis.find(x=>x.ronda===ronda.ronda),col=r.colonia.find(x=>x.ronda===ronda.ronda),comp=ronda.competencia;
   console.log(`\nRonda ${ronda.ronda} · vivos ${ronda.vivos} · dados ${ronda.dadosTotal} · comida ${ronda.comida} · moral ${ronda.moral} · muestras ${ronda.muestras}`+(k?` · crisis ${k.tipo} (${k.aportes}/${k.necesidad}, ${k.exito?'superada':'fallida: '+k.fallo})`:''));
@@ -51,7 +56,8 @@ async function ejemplo(){
   console.log('  '+r.traza.slice(i+1,j<0?undefined:j).join(' · '));
   console.log('  dados: '+r.dados.filter(d=>d.ronda===ronda.ronda).map(d=>`${d.nombre} ${d.accion}${d.detalle?'→'+d.detalle:''} (${d.valor}, ${d.categoria})`).join(' · ')+(ronda.noUsados?` · sin usar ${ronda.noUsados}`:''));
   if(col)console.log(`  colonia: comida ${col.comidaAntes}→${col.comidaDespues} (necesidad ${col.necesidad}${col.hambreNueva?', HAMBRE':''}) · moral ${col.moralAntes}→${col.moralDespues}`);
-  for(const m of r.muertes.filter(m=>m.ronda===ronda.ronda&&m.causa!=='escenario de laboratorio'))console.log(`  ☠ ${m.nombre}: ${m.causa}`);
+  for(const m of r.muertes.filter(m=>m.ronda===ronda.ronda&&m.causa!=='escenario de laboratorio'))console.log(`  ☠ ${m.nombre}: ${m.causa} (${m.fase==='colonia'?'fase de colonia':'turno'})`);
+  const ex=(r.exposiciones||[]).filter(e=>e.ronda===ronda.ronda);if(ex.length)console.log('  exposiciones: '+ex.map(e=>e.efecto).join(' · '));
  }
 }
 async function todo(){
@@ -68,4 +74,4 @@ async function todo(){
  await writeFile(salida+'/README.md',`# Resultados SP-04\n\nGenerados con \`node lab/sp04/correr.mjs --partidas ${partidasPorCelda}\` (${celdas.length} celdas, semillas semillaC14(1..${partidasPorCelda}), ${Math.round((Date.now()-inicio)/1000)} s).\n\n- \`resumen.csv\`: una fila por celda con los agregados de la partida completa.\n- \`por-ronda.csv\`: una fila por celda y ronda (dados, comida, moral y clase de decisión).\n\nLas columnas se describen en docs/106-laboratorio-sp04-un-grupo.md.\n`);
  console.error('Listo:',salida);
 }
-if(import.meta.url===new URL(process.argv[1],'file://').href){if(args.includes('--ejemplo'))await ejemplo();else await todo();}
+if(esPrincipal(import.meta.url)){if(args.includes('--ejemplo'))await ejemplo();else await todo();}
