@@ -91,3 +91,45 @@ Recomendación de Claude: **A**, porque no reabre la reputación personal que el
 - En la puerta, «Retirarse» es una opción que un jugador razonable elige en algunas partidas.
 - La tirada del rescate es una sola, se ve en el dado y coincide con el Registro.
 - El capítulo termina con el médico incorporado o con su destino desconocido, y la colonia conserva lo que supo.
+
+---
+
+## 10. Propuesta de Claude: mejoras y cronología (17/11/2026, pendiente de aprobación)
+
+Nada de esta sección está acordado. Cada mejora indica qué problema resuelve; el creador decide cuáles se adoptan.
+
+### 10.1 Mejoras propuestas
+
+| # | Mejora | Problema que resuelve | Qué experimenta el jugador |
+|---|---|---|---|
+| M1 | **El médico aparece al abastecer:** encuentro de campaña en el **Supermercado**, la primera vez que un superviviente busca ahí desde la ronda 2. Estaba juntando medicamentos y comida | El laboratorio mostró que abastecer no tiene incentivo; así la historia avanza también por abastecer, no solo por el objetivo | «Fui a buscar comida porque no quedaba, y encontré al médico» |
+| M2 | **El apellido se gana:** el médico solo sabe «Elena, de Maternidad». El apellido «Varela» aparece en un cuaderno en la **Biblioteca** (búsqueda de notas) | Hoy no está definido de dónde sale el apellido; así el atajo del registro premia explorar y une historia con objetivo | «Si paso antes por la Biblioteca, en el hospital voy directo al registro y busco menos» |
+| M3 | **Buscar en el hospital hace ruido y el peligro de la puerta depende de eso:** el rescate se dispara cuando el médico entra a Maternidad y la horda llega; su gravedad depende de los zombis en los accesos del hospital | Conecta el clímax con decisiones previas, en lugar de un evento fijo | «Busqué tres veces sin el apellido; ahora la puerta está llena» |
+| M4 | **Comunicar con testigo:** la pista se comunica al instante si hay otro superviviente o el médico en la misma localidad; si no, cuando quien la encontró vuelve a la colonia | Le da forma jugable a «comunicar antes del rescate» y usa los testigos del Director (SP-05) | «Mando a dos juntos al hospital: si uno cae, el otro ya sabe» |
+| M5 | **Retirarse siembra el capítulo siguiente:** si el grupo abandona al médico, sobrevive y lo captura la secta; así la secta sabe de la colonia | Resuelve la causa pendiente de la secta y da la consecuencia visible varias rondas después que pide la hoja de ruta | En el capítulo 2: «La secta sabe dónde estamos. El médico se lo dijo» |
+| M6 | **Válvulas de avance:** si en la ronda 4 nadie buscó en el Supermercado, el médico llega herido a las puertas de la colonia; si en la ronda 6 nadie entró al hospital, el médico va solo y el rescate ocurre igual | Evita que el capítulo se trabe por un orden de juego imprevisto, sin quitar libertad | El capítulo avanza siempre, pero llegar tarde tiene costo |
+| M7 | **Crisis alineadas por el Director:** crisis de comida en el acto I (empuja al Supermercado) y de medicina en el acto III (hace visible el valor del médico) | Las crisis acompañan la historia en lugar de competir con ella | «Justo cuando falta medicina, tengo un médico, si lo salvo» |
+
+### 10.2 Cronología propuesta (8 rondas)
+
+Las rondas son ventanas, no fechas fijas: el jugador puede adelantarse. Duración de 8 rondas porque el laboratorio mostró que con objetivos de 6 correr domina y con 10 abastecer importa; se confirma con la segunda corrida.
+
+| Acto | Rondas | Qué pasa | Decisión del jugador | Presión de supervivencia |
+|---|---|---|---|---|
+| I. La colonia aguanta | 1–2 | Arranque con tres supervivientes, indefensos y poca comida. Crisis de comida | Quién sale a abastecer y quién defiende | Comida baja, indefensos que comer |
+| II. El médico | 2–4 | Encuentro en el Supermercado (M1). El médico cuenta lo de Elena y Maternidad. Válvula en R4 (M6) | Incorporarlo al grupo que va al hospital o mandarlo a la colonia primero | El médico es una boca más hasta que ayude |
+| — Desvío opcional | 3–5 | Cuaderno con el apellido en la Biblioteca (M2) | Gastar dados en la Biblioteca para ahorrar búsquedas en el hospital | Cada salida es una exposición más |
+| III. El hospital | 4–6 | Admisión y tablón, o registro directo con el apellido. Pista del traslado a la escuela. Se comunica según M4. Crisis de medicina (M7) | Cuántas veces buscar y con quién; dejar o no un testigo | El ruido carga los accesos del hospital (M3) |
+| IV. La puerta | 5–7 | El médico entra a Maternidad y la horda llega. Decisión central (§5): retirarse, ayudar con la segunda decisión, o comprometerse. Una tirada D12 | Arriesgar o no al rescatista | Costo de muerte para la colonia (§5.2) |
+| V. Regreso | 6–8 | Vuelta a la colonia. Atención médica disponible desde la ronda siguiente. Diario con la pista de la escuela | Usar la primera curación en quién | La colonia sigue comiendo y defendiéndose |
+| Cierre | 8 | El capítulo termina si la colonia conoce el destino del traslado y sigue en pie. Gancho: la radio, y si se retiró, la secta (M5) | — | — |
+
+### 10.3 Desenlaces posibles
+
+| Desenlace | Condición | Qué se lleva el capítulo 2 |
+|---|---|---|
+| Rescate completo | Médico y rescatista vuelven | Atención médica, grupo entero, pista de la escuela |
+| Rescate con baja | El rescatista muere | Atención médica, menos moral, equipo perdido o en el hospital |
+| Retirada | El grupo abandona al médico | Sin Atención médica; la secta conoce la colonia (M5) |
+| Pista sin médico | Válvula de la ronda 6 y rescate fallido | Pista de la escuela; destino del médico desconocido |
+| Derrota | Moral 0 o sin supervivientes antes de la pista | Repetir el capítulo |
