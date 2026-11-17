@@ -11,20 +11,22 @@
 | 1 — Fidelidad aceptada y D1/D2 integradas | **Cerrado** (29/10) | [62](62-hitos-referencia-fiel-y-juego-propio.md), [71](71-integracion-main-y-cierre-d1-d2.md) |
 | 2 — Referencia V9.9 modular preservada | **Cerrado** (29/10), tag `v0.9.9-referencia-modular` | [72](72-preservacion-referencia-modular.md) |
 | 3 — Identidad visual y mapa jugable | **Cerrado** (16/11): aceptado por el creador, integrado en `main` y marcado con `v0.10.0-mapa-horizontal` | [75](75-plan-hito-3-identidad-visual.md), [99](99-experiencia-unificada-del-mapa.md), [100](100-avisos-y-zoom-nativo.md), [101](101-muerte-durante-accion-propia.md) |
-| Singleplayer (SP-00 a SP-08) | **Diseño en papel.** La puerta técnica de [63 §7](63-hoja-de-ruta-planificacion-singleplayer.md) (D1/D2 + referencia preservada) ya está cumplida | [63](63-hoja-de-ruta-planificacion-singleplayer.md) |
+| Singleplayer (SP-00 a SP-08) | **Diseño en papel.** Laboratorio SP-04 entregado en su rama; capítulo piloto «La última guardia» en ficha | [63](63-hoja-de-ruta-planificacion-singleplayer.md), [104](104-informe-avances-singleplayer.md), [105](105-ficha-capitulo-la-ultima-guardia.md) |
 
-El mapa permite preparar, jugar y terminar una partida completa (humano + IA y dos jugadores locales) con un único motor. La pila de ramas H3.2 → mapa horizontal quedó integrada en `main`; los PR apilados #18 a #24 se cerraron como incluidos, y #16 y #20 se cerraron sin fusionar (experimentos superados, ramas conservadas).
+El mapa permite preparar, jugar y terminar una partida completa (humano + IA y dos jugadores locales) con un único motor. La pila H3 está en `main` y el mapa vive en `app/mapa/` desde el [PR #26](https://github.com/LeviEdition/invierno-en-la-colonia/pull/26) ([103](103-consolidacion-mapa-producto.md)); se abre con `npm run dev:mapa` en `http://127.0.0.1:8779/app/mapa/`.
 
 ## 2. Próxima tarea única
 
-**Revisar y decidir el PR de mantenimiento** ([103](103-consolidacion-mapa-producto.md), rama `experiment/mantenimiento-mapa-producto`): el mapa pasa a `app/mapa/` con build y servidor propios (`npm run dev:mapa` → `http://127.0.0.1:8779/app/mapa/`), los prototipos H3.2–H3.4.4 salen del árbol y `docs/evidencias` baja de 543 MB a 102 MB. Sin cambios de jugabilidad, arte ni textos. En paralelo, el laboratorio SP-04 sigue en `experiment/sp04-laboratorio-un-grupo` (informe 102 en esa rama).
+**Decidir el PR #27 (dado de exposición D12, informe 102):** adaptado a `app/mapa`; falta que el creador juegue una partida con el D12 y lo apruebe. Cambia probabilidades del mapa (mordedura 17 % → 8 %, herida 17 % → 25 %); la referencia V9.9 conserva su D6.
 
 ## 3. Cola ordenada
 
-1. **Mantenimiento (103):** [PR #26](https://github.com/LeviEdition/invierno-en-la-colonia/pull/26) en borrador con CI verde → prueba de humo del creador desde la URL nueva → decisión de merge (requiere indicación expresa).
-2. **SP-03/SP-04:** cuántas acciones y recursos necesita un solo grupo para que abastecer la colonia y avanzar el objetivo compitan entre sí. Laboratorio sobre el motor real, informe 102 (rama `experiment/sp04-laboratorio-un-grupo`).
-3. **Mejoras menores del mapa** que no afectan decisiones: hallazgos 4 y 5, y una batería de CI que juegue una partida entera desde el mapa con clics reales.
-4. **Reservas del Hito 3:** prueba física en el Samsung Galaxy A15 y prueba manual de dos jugadores locales cuando haya ocasión.
+1. **PR #27 (D12):** prueba jugando → decisión de merge (requiere indicación expresa).
+2. **SP-04, segunda corrida del laboratorio** sobre `main` con el D12: indefensos fijos, comida inicial (6/3/0), crisis agravada, costo de muerte (−1/−2) y objetivos de 6 y 10 rondas, con las políticas cooperativa y objetivo; repetir el barrido de dados con ellas; variante del rescate del médico ([105 §5.1](105-ficha-capitulo-la-ultima-guardia.md)). El informe del laboratorio en su rama se renumera al integrarse (el 102 es del D12).
+3. **Decisiones del creador para el capítulo piloto** ([105](105-ficha-capitulo-la-ultima-guardia.md)): costo de morir en el rescate (§5.1) y si el médico acompaña al grupo o espera en el hospital (§3).
+4. **Implementar «La última guardia»** como capítulo jugable, después de 2 y 3.
+5. **Mejoras menores del mapa** que no afectan decisiones: hallazgos 4 y 5, y una batería de CI que juegue una partida entera desde el mapa con clics reales.
+6. **Reservas del Hito 3:** prueba física en el Samsung Galaxy A15 y prueba manual de dos jugadores locales cuando haya ocasión.
 
 ## 4. Hallazgos abiertos
 
