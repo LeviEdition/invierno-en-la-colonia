@@ -1,9 +1,10 @@
 import {localityFrame} from './presentation.mjs';
 // Cámara de presentación, sin distancias ni legalidad del motor.
 export function constrainCamera(camera,b,viewport){
- // Dimensiones originales / tamaño del fondo en el mundo: un píxel de la
- // ilustración ocupa como máximo un píxel CSS, con independencia del DPR.
- const maxZoom=Math.min((b.sourceWidth??b.width)/b.width,(b.sourceHeight??b.height)/b.height),minZoom=Math.min(maxZoom,viewport.width/b.width,viewport.height/b.height,camera.retainedMin??Infinity),zoom=Math.max(minZoom,Math.min(maxZoom,camera.zoom));
+ // Tope configurable (scene.json maxZoom, relativo al mundo lógico). Sin él, el de
+ // antes: dimensiones originales / tamaño del fondo en el mundo, un píxel de la
+ // ilustración por píxel CSS como máximo, con independencia del DPR.
+ const maxZoom=b.maxZoom??Math.min((b.sourceWidth??b.width)/b.width,(b.sourceHeight??b.height)/b.height),minZoom=Math.min(maxZoom,viewport.width/b.width,viewport.height/b.height,camera.retainedMin??Infinity),zoom=Math.max(minZoom,Math.min(maxZoom,camera.zoom));
  // Cuando el mapa cabe en un eje, centrarlo con margen de interfaz. Al
  // acercarse se conserva el pan hasta el borde real, sin estirar el fondo.
  const axis=(position,size,available)=>size<=available?(available-size)/2:Math.max(available-size,Math.min(0,position));
@@ -14,4 +15,6 @@ export function fitMapCamera(b,v){const zoom=Math.min(v.width/b.width,v.height/b
 // Solo los bordes (o centrar un eje donde cabe la imagen) mueven la cámara.
 export function resizeMapCamera(camera,anchor,b,v){return constrainCamera({...camera,retainedMin:Math.min(camera.minZoom,camera.zoom)},b,v);}
 export function focusAnchor(scene,id){const z=scene.zones.find(z=>z.id===id);if(!z)return null;const b=scene.fitPresentation?localityFrame(z):null;return b?{x:b.x+b.width/2,y:b.y+b.height/2}:z.center;}
-export function focusLocality(scene,id,v){const z=scene.zones.find(z=>z.id===id);if(!z)return fitMapCamera(scene.bounds,v);const frame=scene.fitPresentation?localityFrame(z):z.focus,anchor=focusAnchor(scene,id),base=fitMapCamera(scene.bounds,v),zoom=Math.min(base.maxZoom,Math.max(base.minZoom,Math.min(v.width/frame.width,v.height/frame.height)));return constrainCamera({overview:false,zoom,x:v.width/2-anchor.x*zoom,y:v.height/2-anchor.y*zoom},scene.bounds,v);}
+// El enfoque de una localidad tiene su propio tope (scene.json focusMaxZoom): con el mapa 2×
+// el zoom manual llega a 1,5, pero el encuadre al enfocar se conserva en 1 como antes.
+export function focusLocality(scene,id,v){const z=scene.zones.find(z=>z.id===id);if(!z)return fitMapCamera(scene.bounds,v);const frame=scene.fitPresentation?localityFrame(z):z.focus,anchor=focusAnchor(scene,id),base=fitMapCamera(scene.bounds,v),zoom=Math.min(base.maxZoom,scene.focusMaxZoom??Infinity,Math.max(base.minZoom,Math.min(v.width/frame.width,v.height/frame.height)));return constrainCamera({overview:false,zoom,x:v.width/2-anchor.x*zoom,y:v.height/2-anchor.y*zoom},scene.bounds,v);}

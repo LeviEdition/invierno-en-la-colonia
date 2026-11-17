@@ -56,9 +56,47 @@
       "sha256": "0c5268c189068b5eb7bf51a1fbc871a87782b75e02dc86fe6d21aeeb272e4222",
       "alphaExtrema": null,
       "visibleBounds": null
+    },
+    {
+      "file": "assets/mapa-horizontal/mapa-2x.webp",
+      "dimensions": [
+        3342,
+        1882
+      ],
+      "mode": "RGB",
+      "bytes": 1092582,
+      "sha256": "01cb343d6f27bf9b5c71fcab1c75964c6122b895df925f987a76c6fa067e7a65",
+      "alphaExtrema": null,
+      "visibleBounds": null,
+      "derivedFrom": {
+        "file": "assets/mapa-horizontal/nuevo mapa.png",
+        "scale": 2,
+        "upscaledSource": {
+          "name": "nuevo mapa_upscayl_2x_digital-art-4x.png",
+          "dimensions": [
+            3342,
+            1882
+          ],
+          "bytes": 9001436,
+          "sha256": "66d18a699996d8590e87884a4116ce69c8ffe1bbc4d6d40916c3aedcce09174f",
+          "tool": "Upscayl (modelo digital-art-4x, salida 2×)",
+          "inRepository": false,
+          "approvedBy": "creador, 17/11/2026"
+        },
+        "encoding": "WebP calidad 90 (sharp 0.34.4, libwebp 1.6.0, effort 6); PSNR 39,6 dB frente al PNG ampliado"
+      }
     }
   ],
   "derivatives": "runtime-only; previous originals preserved; approved background contains vegetation",
-  "activeMap": "assets/mapa-horizontal/nuevo mapa.png",
-  "activeMapCommit": "dd13820a08ca1d4f495b3d54961b4fbe05589c4b"
+  "activeMap": "assets/mapa-horizontal/mapa-2x.webp",
+  "activeMapCommit": "dd13820a08ca1d4f495b3d54961b4fbe05589c4b",
+  "activeMapWorld": {
+    "dimensions": [
+      1671,
+      941
+    ],
+    "textureScale": 0.5,
+    "note": "La textura 2× se muestra a la mitad: el mundo, los accesos y las posiciones siguen en coordenadas de nuevo mapa.png."
+  },
+  "previousActiveMap": "assets/mapa-horizontal/nuevo mapa.png"
 }

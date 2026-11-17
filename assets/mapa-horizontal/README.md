@@ -21,3 +21,14 @@ Configuración de presentación: [`scene.json`](../../app/mapa/escena/scene.json
 ## Fondo aprobado — 09/11/2026
 
 Activo: `nuevo mapa.png`, RGB1671×941, subido por el creador en dd13820. Se conserva íntegro; manifiesto con SHA/bytes. Los originales anteriores se mantienen para revertir. Este fondo incorpora vegetación: no superponer la capa aislada anterior. Véase `docs/94-integracion-fondo-aprobado.md`.
+
+## Mapa en doble resolución — 17/11/2026
+
+Activo: `mapa-2x.webp`, RGB **3342×1882**, 1 092 582 bytes, exactamente el doble de `nuevo mapa.png` (1671×941).
+
+- **Origen:** ampliación 2× de `nuevo mapa.png` con Upscayl (modelo *digital-art-4x*), aprobada por el creador sin retoques. El PNG ampliado (`nuevo mapa_upscayl_2x_digital-art-4x.png`, 9 001 436 bytes, SHA-256 `66d18a69…174f`) **no entra al repositorio**; su SHA queda en el manifiesto.
+- **Codificación:** WebP calidad 90 con sharp 0.34.4 (libwebp 1.6.0, effort 6). PSNR 39,6 dB frente al PNG ampliado.
+- **Uso:** el mundo conserva su tamaño lógico 1671×941; la textura se dibuja a escala 0,5. Accesos, barricadas, zombis, retratos y rótulos siguen en coordenadas de `nuevo mapa.png`, que se conserva íntegro como referencia y para revertir (`previousActiveMap` en el manifiesto).
+- **Zoom máximo:** 1,5 respecto del tamaño lógico (`maxZoom` en [`scene.json`](../../app/mapa/escena/scene.json)). A ese zoom, un píxel de la textura ocupa 0,75 píxel CSS.
+
+Véase el informe 112.
