@@ -11,6 +11,7 @@ import {createTurns} from './reference-turns.mjs';
 import {createMapInventory} from './map-inventory.mjs';
 import {createMapCycle} from './map-cycle.mjs';
 import {createMapPlay} from './map-play.mjs';
+import {resolveMapExposure} from '../domain/map-exposure.mjs';
 const noop=()=>{};
 export function createEngine({Math=globalThis.Math,queueMicrotask=globalThis.queueMicrotask||((f)=>Promise.resolve().then(f)),setTimeout=globalThis.setTimeout,stateFactory=createReferenceState,rulesFactory=createRules,turnsFactory=createTurns,effects={},automation=null}={}){
 let view=new Proxy(effects,{get:(target,key)=>target[key]||noop});
@@ -498,6 +499,7 @@ function chooseBite(option){
  opened='';view.closeBackdrop();biteNext();
 }
 function expose(p,reason){
+ if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)return resolveMapExposure(c,p,reason);
  if(!p||p.dead)return;
  const before={wounds:p.wounds,frost:p.frost};
  const d=die();if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('exposure',{actor:p.id,name:p.name,reason,value:d});message('🎲 Exposición de '+p.name+' ('+reason+'): '+(d===1?'MORDEDURA':d===2?'CONGELACIÓN':d===3?'HERIDA':'BLANCO')+'.');

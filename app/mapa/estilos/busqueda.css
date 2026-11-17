@@ -1,3 +1,4 @@
+@import url('../movimiento/exposure-die.css');
 #shell-nav{display:flex;flex:none;align-items:center;flex-wrap:wrap;gap:6px;padding:5px 8px;border-bottom:1px solid var(--edge);font:12px system-ui,sans-serif;background:#161e20}
 #shell-nav button{font-size:12px;padding:6px 9px}#connection-status{flex:1;min-width:140px;color:var(--muted);line-height:1.4}#shell-nav a{font-size:11px}
 #reference-frame{display:block;flex:1;min-height:0;width:100%;border:0;background:#dedaca}#map-app{display:flex;flex:1;min-height:0;flex-direction:column}
