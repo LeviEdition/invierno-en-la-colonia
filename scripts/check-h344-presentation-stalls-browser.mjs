@@ -5,7 +5,7 @@ import {resolve} from 'node:path';
 import {actionMapChecks} from '../test-support/h344-browser-checks.mjs';
 const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
 const out=process.env.H344_STALL_DIR||'/tmp/horizontal-presentation-stalls';await mkdir(out,{recursive:true});
-const t=actionMapChecks({origin:process.env.H344_ORIGIN||'http://127.0.0.1:8779',modulePath:process.env.H344_MODULE_PATH||'/dist/horizontal-map-qa/map.mjs'});
+const t=actionMapChecks({origin:process.env.H344_ORIGIN||'http://127.0.0.1:8779',modulePath:process.env.H344_MODULE_PATH||'/dist/mapa-qa/map.mjs'});
 const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',args:['--no-sandbox']});
 const result={browser:browser.version(),physicalMobile:false,method:'RAF del visor demorado 500ms; sondeo independiente cada25ms; host sin instrumentación de tiempo',records:[],failures:[]};
 try{

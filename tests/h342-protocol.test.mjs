@@ -1,6 +1,6 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import {createMovementBroker} from '../prototypes/movement-map/movement-broker.mjs';
-import {createMovementController} from '../prototypes/movement-map/movement-controller.mjs';
+import {createMovementBroker} from '../app/mapa/movimiento/movement-broker.mjs';
+import {createMovementController} from '../app/mapa/movimiento/movement-controller.mjs';
 import {createEngine} from '../src/application/reference-engine.mjs';
 const state={blocked:null,characters:[{id:'h0',name:'Mara',locationId:'place-0'}]};
 function setup(){const math=Object.create(Math);math.random=()=>.5;const engine=createEngine({Math:math,queueMicrotask(){}});engine.start('local');const broker=createMovementBroker(engine,{session:'test-session'});const p=broker.project(state);const request={type:'move',requestId:'request-1',session:p.movement.session,revision:p.movement.revision,actorId:'h0',destination:2};return {engine,broker,p,request};}

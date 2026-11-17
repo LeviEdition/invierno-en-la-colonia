@@ -2,9 +2,9 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createReferenceData} from '../src/domain/reference-data.mjs';
-import {createStableLayout} from '../prototypes/movement-map/stable-layout.mjs';
+import {createStableLayout} from '../app/mapa/movimiento/stable-layout.mjs';
 import {capacityProjection} from '../test-support/horizontal-composition.mjs';
-const json=p=>JSON.parse(readFileSync(new URL('../'+p,import.meta.url))),scene=json('prototypes/horizontal-map/scene.json');
+const json=p=>JSON.parse(readFileSync(new URL('../'+p,import.meta.url))),scene=json('app/mapa/escena/scene.json');
 const locations=['colonia','supermercado','hospital','comisaria','gasolinera','escuela','biblioteca'].map((visualId,engineIndex)=>({id:'place-'+engineIndex,engineIndex,capacity:engineIndex?4:12,exteriorCapacity:engineIndex?4:12,zombies:0,barricades:0}));
 const state={locations,characters:[{id:'h0',name:'Mara',playerId:'human',locationId:'place-0'}],movement:{},search:{},action:{}};
 test('Mapa aprobado: capacidades exteriores menores conservan conteos y excedentes reales sin cambiar las reglas',()=>{
@@ -20,7 +20,7 @@ test('Mapa aprobado QA: capacidad impar reparte actores enteros y conserva las 3
  assert.equal(layout.nodes.filter(n=>n.role==='zombie').length,17);assert.equal(layout.nodes.filter(n=>n.role==='barricade').length,16);assert.ok(layout.locations.every(l=>l.externalOverflow===0));
 });
 test('Mapa aprobado: tocar cada apoyo o cuerpo selecciona su localidad sin añadir reglas de objetivos individuales',async()=>{
- const {pickLocality}=await import('../prototypes/hospital-workshop/mockup/model.mjs');
+ const {pickLocality}=await import('../app/mapa/render/maqueta/model.mjs');
  const enabled={...scene,selectExteriorAccesses:true};
  for(const zoom of [.51,.77,1.5])for(const z of scene.zones)for(const a of z.accesses){assert.equal(pickLocality(enabled,a,zoom),z.id,z.id+' apoyo');assert.equal(pickLocality(enabled,{x:a.x,y:a.y-24},zoom),z.id,z.id+' cuerpo');}
  assert.equal(pickLocality({...scene,selectExteriorAccesses:false},scene.zones.find(z=>z.id==='colonia').accesses[0]),null);

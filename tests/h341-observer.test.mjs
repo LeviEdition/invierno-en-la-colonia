@@ -1,6 +1,6 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import {createEngine} from '../src/application/reference-engine.mjs';
-import {observeReferenceView} from '../prototypes/state-map/reference-observer.mjs';
+import {observeReferenceView} from '../app/mapa/estado/reference-observer.mjs';
 function setup(options={}){
  let context,queries=0,draws=0,disposals=0;const engine=createEngine({queueMicrotask(){}});engine.connectPresentation(c=>{context=c;return {};});engine.start('local');const tasks=[],states=[],errors=[];
  const supplied=new Proxy(context,{get(target,key){if(key==='playable')return ()=>{queries++;return true;};return Reflect.get(target,key);}});

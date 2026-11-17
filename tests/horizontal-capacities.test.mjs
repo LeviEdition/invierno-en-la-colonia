@@ -1,13 +1,13 @@
 import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';
 import {createEngine} from '../test-support/horizontal-engine.mjs';
 import {createReferenceData} from '../src/domain/reference-data.mjs';
-import {projectVisibleState} from '../prototypes/state-map/projection.mjs';
+import {projectVisibleState} from '../app/mapa/estado/projection.mjs';
 const expected=[12,4,4,4,2,4,3];
 const session=()=>{const e=createEngine({queueMicrotask(){},Math:Object.assign(Object.create(Math),{random:()=>.8})});e.start('local');return {e,c:e.testBindings};};
 test('Capacidades mapa: motor/proyección/posiciones coinciden en33; plazas y referencia estables',()=>{
  const {e,c}=session(),p=projectVisibleState(c,{renderedPlayable:true});
  assert.deepEqual(c.zcap,expected);assert.deepEqual(c.capacity,[12,4,4,4,4,4,4]);assert.deepEqual(createReferenceData().zcap,[12,4,4,4,4,4,4]);
- const scene=JSON.parse(readFileSync(new URL('../prototypes/horizontal-map/scene.json',import.meta.url)));
+ const scene=JSON.parse(readFileSync(new URL('../app/mapa/escena/scene.json',import.meta.url)));
  assert.equal(p.locations.reduce((n,l)=>n+l.exteriorCapacity,0),33);
  for(const l of p.locations)assert.equal(scene.zones.find(z=>z.id===['colonia','supermercado','hospital','comisaria','gasolinera','escuela','biblioteca'][l.engineIndex]).accesses.length,l.exteriorCapacity);
 });

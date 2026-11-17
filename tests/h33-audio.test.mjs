@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {createWindAudio} from '../prototypes/hospital-workshop/mockup/atmosphere-audio.mjs';
+import {createWindAudio} from '../app/mapa/render/maqueta/atmosphere-audio.mjs';
 const config={bufferSeconds:4,volume:.4,highpass:90,lowpass:1600,gustPeriod:11,maxGain:.35};
 function fakeContext(){
  const nodes=[];const param=()=>({value:0,cancelScheduledValues(){},setValueAtTime(v){this.value=v;},setTargetAtTime(v){this.value=v;}});

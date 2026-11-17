@@ -1,8 +1,8 @@
 import test from 'node:test';import assert from 'node:assert/strict';import {readFile} from 'node:fs/promises';
 import {createEngine} from '../src/application/reference-engine.mjs';
-import {observeReferenceView} from '../prototypes/state-map/reference-observer.mjs';
-import {createAtmosphereModel} from '../prototypes/hospital-workshop/mockup/atmosphere-model.mjs';
-const weatherConfig=JSON.parse(await readFile(new URL('../prototypes/hospital-workshop/mockup/atmosphere.json',import.meta.url)));
+import {observeReferenceView} from '../app/mapa/estado/reference-observer.mjs';
+import {createAtmosphereModel} from '../app/mapa/movimiento/storm-model.mjs';
+const weatherConfig=JSON.parse(await readFile(new URL('../app/mapa/escena/atmosphere.json',import.meta.url)));
 const tick=()=>new Promise(resolve=>setImmediate(resolve));
 function session(){let value=.5,calls=0,context,last;const math=Object.create(Math);math.random=()=>{calls++;return value;};const engine=createEngine({Math:math});
  engine.connectPresentation(ctx=>{context=ctx;return observeReferenceView(ctx,tracked=>new Proxy({draw(){tracked.playable();},dispose(){}},{get(target,key){return key in target?target[key]:()=>{};}}),{onState:p=>last=p});});

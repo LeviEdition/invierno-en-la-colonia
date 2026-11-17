@@ -2,7 +2,7 @@ import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {resolve} from 'node:path';
 import {fileURLToPath,pathToFileURL} from 'node:url';
-import {validateKit,textureEstimate,resourceFactor} from '../prototypes/hospital-workshop/kit.mjs';
+import {validateKit,textureEstimate,resourceFactor} from '../app/mapa/render/kit/kit.mjs';
 export const workshopRoot=fileURLToPath(new URL('../',import.meta.url));
 export async function checkUploadedArtwork(){
  const root=new URL('../kit_arte_h33/',import.meta.url),manifest=JSON.parse(await readFile(new URL('manifest.json',root)));
@@ -15,10 +15,11 @@ export async function checkUploadedArtwork(){
  return manifest;
 }
 export async function checkWorkshopKit({uploaded=false}={}){
- const url=new URL('../prototypes/hospital-workshop/'+(uploaded?'uploaded-kit.json':'kit.json'),import.meta.url),kit=validateKit(JSON.parse(await readFile(url)));
+ if(!uploaded)throw Error('El kit provisional H3.3 se retiró; solo existe el kit subido del producto');const url=new URL('../app/mapa/render/kit/uploaded-kit.json',import.meta.url),kit=validateKit(JSON.parse(await readFile(url)));
  if(uploaded)await checkUploadedArtwork();
  for(const asset of kit.assets.filter(a=>a.kind==='image')){
-  const bytes=await readFile(new URL(asset.file,url));
+  // Las rutas del kit son relativas al bundle (/dist/mapa/map.mjs), no al JSON.
+  const bytes=await readFile(new URL(asset.file,new URL('../dist/mapa/',import.meta.url)));
   if(bytes.length<26||bytes.toString('hex',0,8)!=='89504e470d0a1a0a'||bytes.length!==asset.bytes||createHash('sha256').update(bytes).digest('hex')!==asset.sha256||bytes.readUInt32BE(16)!==asset.width||bytes.readUInt32BE(20)!==asset.height||!([2,6].includes(bytes[25]))||(bytes[25]===6)!==asset.alpha)throw Error('PNG no coincide con contrato: '+asset.id);
   if(!/^(?:assets\/(?:prototipo-hospital|hospital-workshop)|kit_arte_h33)\/manifest\.json$/.test(asset.provenance.manifest))throw Error('Manifiesto de procedencia fuera del piloto');
   const provenance=JSON.parse(await readFile(resolve(workshopRoot,asset.provenance.manifest))),record=(provenance.assets||provenance.files).find(a=>a.file===asset.provenance.record);

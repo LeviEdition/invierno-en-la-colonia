@@ -3,18 +3,18 @@ import {readFile,mkdir,writeFile} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {actionMapChecks} from '../test-support/h344-browser-checks.mjs';
 import {capacityProjection,exteriorVolumes,boundsIntersectPolygon,overlaps} from '../test-support/horizontal-composition.mjs';
-import {localityFrame} from '../prototypes/horizontal-map/presentation.mjs';
-import {pointInPolygon} from '../prototypes/hospital-workshop/mockup/model.mjs';
+import {localityFrame} from '../app/mapa/escena/presentation.mjs';
+import {pointInPolygon} from '../app/mapa/render/maqueta/model.mjs';
 
 const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
 const baseline=process.env.PRESENTATION_BASELINE==='1';
 const out=resolve(process.env.PRESENTATION_DIR||'/tmp/horizontal-presentation-review');
 const origin=process.env.HORIZONTAL_ORIGIN||'http://127.0.0.1:8779';
 const json=async path=>JSON.parse(await readFile(new URL('../'+path,import.meta.url)));
-const scene=await json('prototypes/horizontal-map/scene.json');
-const assets=(await json('prototypes/hospital-workshop/uploaded-kit.json')).assets;
+const scene=await json('app/mapa/escena/scene.json');
+const assets=(await json('app/mapa/render/kit/uploaded-kit.json')).assets;
 const obstacles=(await json('test-support/horizontal-obstacles.json')).obstacles;
-const t=actionMapChecks({origin,modulePath:'/dist/horizontal-map-qa/map.mjs'});
+const t=actionMapChecks({origin,modulePath:'/dist/mapa-qa/map.mjs'});
 const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',args:['--no-sandbox']});
 const result={baseline,browser:browser.version(),physicalMobile:false,records:[]};
 await mkdir(out,{recursive:true});
@@ -63,8 +63,8 @@ try{
   if(!baseline){const styles=(await t.view(page)).renderer.slotStyles;assert.ok(styles.filter(a=>a.occupant==='empty').every(a=>a.solid&&a.alpha>=.5),'vacías visibles en general');}
   await page.screenshot({path:resolve(dir,'general-real.png')});
   const q=await context.newPage();q.on('pageerror',e=>errors.push(e.message));
-  await q.goto(origin+'/dist/horizontal-map-qa/capacity.html');
-  await q.evaluate(async p=>window.capacityView=await(await import('/dist/horizontal-map-qa/capacity.mjs')).mountCapacity(p),colonyCount(projection,1));
+  await q.goto(origin+'/dist/mapa-qa/capacity.html');
+  await q.evaluate(async p=>window.capacityView=await(await import('/dist/mapa-qa/capacity.mjs')).mountCapacity(p),colonyCount(projection,1));
   await q.waitForFunction(()=>capacityView.inspect().layout.locations.length===7);
   for(const n of [1,6,12]){
    await setQa(q,colonyCount(projection,n),'Colonia '+n+'; vecinos completos; exteriores mixtos');

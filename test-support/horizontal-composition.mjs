@@ -1,4 +1,4 @@
-import {spriteBounds} from '../prototypes/horizontal-map/presentation.mjs';
+import {spriteBounds} from '../app/mapa/escena/presentation.mjs';
 export function boundsIntersectPolygon(b,poly){
  const corners=[[b.x,b.y],[b.x+b.width,b.y],[b.x+b.width,b.y+b.height],[b.x,b.y+b.height]],inside=(p,ps)=>{let yes=false;for(let i=0,j=ps.length-1;i<ps.length;j=i++){const a=ps[i],c=ps[j];if((a[1]>p[1])!==(c[1]>p[1])&&p[0]<(c[0]-a[0])*(p[1]-a[1])/(c[1]-a[1])+a[0])yes=!yes;}return yes;},turn=(a,b,c)=>(b[0]-a[0])*(c[1]-a[1])-(b[1]-a[1])*(c[0]-a[0]);
  if(corners.some(p=>inside(p,poly))||poly.some(p=>inside(p,corners)))return true;

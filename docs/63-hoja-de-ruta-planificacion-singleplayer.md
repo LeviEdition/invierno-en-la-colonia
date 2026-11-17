@@ -2,6 +2,13 @@
 
 > **Nota 16/11/2026:** estado vigente en el [tablero 18](18-tablero-operativo.md). La puerta técnica de [63 §7](63-hoja-de-ruta-planificacion-singleplayer.md) (D1/D2 integradas y referencia preservada) está cumplida desde el 29/10/2026; las indicaciones de este documento que la dan por pendiente son históricas.
 
+> **Actualización 17/11/2026** ([104](104-informe-avances-singleplayer.md), [105](105-ficha-capitulo-la-ultima-guardia.md)). Prevalece sobre lo que este documento diga en contra:
+> - **Rol narrativo del jugador:** para el piloto, la continuidad narrativa recae en **la colonia**, no en un protagonista individual. El jugador sigue dirigiendo como líder; si el líder muere, un relevo continúa la historia con los hechos acumulados (acordado). El papel mecánico del líder sigue abierto. Se deja de lado la reputación personal con el líder en el piloto.
+> - **«Encuentro» tiene dos sentidos.** En §6.2B–C designa historias secundarias reutilizables de personajes. En la campaña piloto designa una **escena activada por condiciones** (una acción, un lugar y hechos que la colonia conoce). Para no confundirlos, en la campaña se escribe «encuentro de campaña».
+> - **Conocimiento compartido:** el Director conserva pistas comunicadas, testigos, decisiones, bajas y personas incorporadas; lo comunicado sobrevive a la muerte de quien lo descubrió (acordado, SP-05). El elenco es variable.
+> - **Balance (SP-04):** la muerte de un superviviente debe pesar y abastecer debe estar justificado (decisión del creador, 16/11). La muerte golpea a **la colonia** con más pérdida de moral, y se pierden el equipo y las habilidades del personaje (dirección del creador, 17/11; cifras y destino del equipo a medir en el laboratorio, [105 §5.2](105-ficha-capitulo-la-ultima-guardia.md)).
+> - **Capítulo piloto:** «La última guardia», ficha 105. El grupo encuentra al médico antes de ir al hospital; ese encuentro dispara el capítulo.
+
 ## Estado reconciliado al 29/10/2026
 
 Se incorporaron **los hunks documentales**, no una fusión de ramas, desde `refactor/d1-catalogo@833eae745479509ec8121707e9df452c1a5e85bc`, respecto de la base común `ba9a4238d22ad968edbe74d0445949f9a631ec70`. Se conservaron la investigación previa y los registros técnicos de la rama D1/D2. [Informe de reconciliación70](70-reconciliacion-documental-y-pr-d1-d2.md).
