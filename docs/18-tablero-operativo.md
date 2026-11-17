@@ -62,6 +62,7 @@ El mapa permite preparar, jugar y terminar una partida completa (humano + IA y d
 - Un solo motor determina costes, tiradas y consecuencias; la interfaz solo presenta.
 - Exposición del mapa: D12 uniforme 6/3/2/1, con símbolos; un resultado compartido entre efecto, animación, etiqueta y Registro. Los dados de acción y de riesgo de contagio conservan el D6. Rescate del médico pendiente de próximo encargo.
 - Dispositivos de prueba: escritorio y Samsung Galaxy A15.
+- Guía de estilo para arte, paleta, tipografía y escenas narrativas nuevas: [109](109-guia-de-estilo.md) (17/11). El mapa aprobado no se redibuja; su ajuste de color se evalúa aparte.
 
 ## 7. Reservas conocidas
 
