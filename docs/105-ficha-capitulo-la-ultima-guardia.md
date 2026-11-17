@@ -24,7 +24,7 @@ Probar dentro de una partida real que la campaña avanza por lo que los superviv
 
 **Versión final (creador, 17/11):** el médico se encuentra antes de ir al hospital y ese encuentro es el disparador del capítulo; después acompaña al grupo y el rescate ocurre en la puerta del hospital. **Dónde y cómo (M1, adoptada):** en el Supermercado, la primera vez que un superviviente busca ahí desde la ronda 2.
 
-**Pendiente:** de dónde sale el apellido «Varela» para el atajo del registro (M2, el cuaderno en la Biblioteca, no se adoptó). Sugerencia: que lo sepa el propio médico; así el registro directo queda para cuando el médico acompaña al grupo y el tablón, para cuando no (por ejemplo, si llegó por la válvula de M6 y se quedó en la colonia).
+**Origen del apellido (creador, 17/11):** el médico sabe que Elena se apellida Varela porque eran colegas. Si el médico acompaña al grupo al hospital, se puede ir directo al registro (menos búsquedas, menos ruido y, por M3, una horda menor en la puerta); si no está con el grupo (por ejemplo, llegó por la válvula de M6 y se quedó en la colonia), hay que pasar por el tablón de Admisión.
 
 ## 4. Secuencia y disparadores
 
@@ -32,7 +32,7 @@ Probar dentro de una partida real que la campaña avanza por lo que los superviv
 |---|---|---|---|
 | 0. Encuentro con el médico | Primera búsqueda en el Supermercado desde la ronda 2 (M1); válvula en la ronda 4 (M6) | El médico acompaña al grupo; la colonia conoce el rastro de Elena Varela y el motivo para ir al hospital | Acordado (17/11) |
 | 1. Pista en Admisión | Un superviviente del grupo, con el médico, busca o se mueve a Admisión del hospital | El mensaje del tablón identifica el último traslado de Maternidad | Acordado |
-| 1b. Atajo por registro | Alguien de la colonia conoce el apellido «Varela» | Consulta directa del registro, sin pasar por el tablón | Acordado |
+| 1b. Atajo por registro | El médico está con el grupo y aporta el apellido «Varela» (colega de Elena) | Consulta directa del registro, sin pasar por el tablón | Acordado |
 | 2. Destino | Pista del paso 1 o 1b | El vehículo salió rumbo a la escuela; su llegada es una pregunta abierta | Acordado |
 | 3. Comunicación | El hallazgo se comunica **antes** del rescate | La pista queda en la colonia aunque quien la encontró muera | Acordado |
 | 4. Puerta del hospital | Decisión de rescate (§5) | Médico rescatado o destino desconocido | Acordado, con problema abierto |
@@ -84,7 +84,7 @@ Recomendación de Claude: **A**, porque no reabre la reputación personal que el
 
 1. **D12 integrado** (PR #27).
 2. **Segunda corrida del laboratorio** con el D12: indefensos, comida inicial, crisis agravada, costo de muerte y duración del objetivo; más una variante del rescate para medir cuánto conviene sacrificar al rescatista con cada alternativa de §5.1.
-3. **Decisión del creador** sobre el origen del apellido (§3); la alternativa A de §5.1 se decide con el laboratorio.
+3. La alternativa A de §5.1 se decide con el laboratorio.
 
 ## 9. Criterio de aceptación del capítulo jugable (para el futuro encargo)
 

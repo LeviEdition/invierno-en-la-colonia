@@ -19,12 +19,12 @@ El mapa permite preparar, jugar y terminar una partida completa (humano + IA y d
 
 ## 2. Próxima tarea única
 
-**SP-04, segunda corrida del laboratorio** (cola 1). El diseño en papel de «La última guardia» quedó decidido el 17/11 ([105 §10](105-ficha-capitulo-la-ultima-guardia.md): M1, M3–M7 adoptadas, M2 no); solo falta el origen del apellido «Varela» (105 §3).
+**SP-04, segunda corrida del laboratorio** (cola 1). El diseño en papel de «La última guardia» quedó decidido el 17/11 ([105 §10](105-ficha-capitulo-la-ultima-guardia.md): M1, M3–M7 adoptadas, M2 no); el médico conoce el apellido «Varela» por ser colega de Elena.
 
 ## 3. Cola ordenada
 
 1. **SP-04, segunda corrida del laboratorio** sobre `main` con el D12: indefensos fijos, comida inicial (6/3/0), crisis agravada, costo de muerte para la colonia (moral −1/−2 por superviviente; equipo perdido o que queda donde murió) y objetivos de 6, 8 y 10 rondas, con las políticas cooperativa y objetivo; repetir el barrido de dados; variante del rescate del médico con y sin la alternativa A ([105 §5](105-ficha-capitulo-la-ultima-guardia.md)). Su informe se renumera al integrarse (el 102 es del D12).
-2. **Implementar «La última guardia»** como capítulo jugable, después de 1 y del origen del apellido. Reutiliza la tirada D12 y su resultado estructurado.
+2. **Implementar «La última guardia»** como capítulo jugable, después de 1. Reutiliza la tirada D12 y su resultado estructurado.
 3. **Mejoras menores del mapa** que no afectan decisiones: hallazgos 4 y 5, y una batería de CI que juegue una partida entera con clics reales.
 4. **Reservas del Hito 3:** Samsung Galaxy A15 físico y dos jugadores locales manuales.
 
