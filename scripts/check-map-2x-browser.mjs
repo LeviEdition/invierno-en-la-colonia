@@ -7,6 +7,7 @@
 //   MAPA2X_RECORD=test-support/mapa-2x-ajuste.json  graba la fixture (contra el build de main)
 import assert from 'node:assert/strict';import {mkdir,writeFile,readFile} from 'node:fs/promises';
 import {actionMapChecks} from '../test-support/h344-browser-checks.mjs';
+import {fitMapCamera} from '../app/mapa/escena/camera.mjs';
 const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
 const out=process.env.MAPA2X_DIR||'/tmp/horizontal-mapa-2x',origin=process.env.H344_ORIGIN||'http://127.0.0.1:8779',record=process.env.MAPA2X_RECORD||null;
 const t=actionMapChecks({origin,modulePath:'/dist/mapa-qa/map.mjs'});
@@ -37,9 +38,15 @@ try{
    row.texture={decoded,renderer:{width:tex.width,height:tex.height,potWidth:tex.potWidth,potHeight:tex.potHeight,sourceWidth:tex.sourceWidth,sourceHeight:tex.sourceHeight},scale:[map.scaleX,map.scaleY]};
    // Mismas posiciones que antes, a zoom de ajuste.
    const before=fixture.cases.find(c=>c.viewport.width===width&&c.viewport.height===height);assert.ok(before,key+': fixture');
-   assert.deepEqual(row.mapViewport,before.mapViewport,key+': mismo espacio del mapa');
-   for(const k of ['x','y','zoom'])near(cam[k],before.camera[k],key+' cámara de ajuste '+k,1e-6);
-   for(const a of accesses){const b=before.accesses.find(x=>x.id===a.id);assert.ok(b,a.id);assert.deepEqual(a.world,b.world,a.id+' mundo');near(a.screen.x,b.screen.x,a.id+' x');near(a.screen.y,b.screen.y,a.id+' y');}
+   // El alto disponible para el mapa depende de cómo cada navegador y sistema dibujan la
+   // interfaz (la fixture se grabó en Windows; el CI corre Chromium en Linux). Lo invariante:
+   // coordenadas del mundo idénticas y cámara de ajuste igual a la de main para ese espacio.
+   const fitBounds={...scene.bounds,sourceWidth:manifest.files.find(r=>r.file===manifest.previousActiveMap).dimensions[0],sourceHeight:manifest.files.find(r=>r.file===manifest.previousActiveMap).dimensions[1]};
+   const expected=fitMapCamera(fitBounds,row.mapViewport);
+   for(const k of ['x','y','zoom'])near(cam[k],expected[k],key+' cámara de ajuste '+k,1e-6);
+   const sameSpace=row.mapViewport.width===before.mapViewport.width&&row.mapViewport.height===before.mapViewport.height;row.sameSpaceAsFixture=sameSpace;
+   if(sameSpace)for(const k of ['x','y','zoom'])near(cam[k],before.camera[k],key+' cámara de ajuste (fixture) '+k,1e-6);
+   for(const a of accesses){const b=before.accesses.find(x=>x.id===a.id);assert.ok(b,a.id);assert.deepEqual(a.world,b.world,a.id+' mundo');if(sameSpace){near(a.screen.x,b.screen.x,a.id+' x');near(a.screen.y,b.screen.y,a.id+' y');}}
    assert.deepEqual(nodes,before.nodes,key+': zombis, barricadas y retratos en las mismas coordenadas');
    // Zoom máximo 1,5 del mundo lógico.
    for(let i=0;i<40&&!(await page.locator('#zoom-in').isDisabled());i++){await page.locator('#zoom-in').click();await t.frames(page);}
