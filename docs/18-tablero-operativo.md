@@ -21,7 +21,7 @@ El mapa permite preparar, jugar y terminar una partida completa (humano + IA y d
 
 ## 3. Cola ordenada
 
-1. **Mantenimiento (103):** CI del PR en verde → prueba de humo del creador desde la URL nueva → decisión de merge (requiere indicación expresa).
+1. **Mantenimiento (103):** [PR #26](https://github.com/LeviEdition/invierno-en-la-colonia/pull/26) en borrador con CI verde → prueba de humo del creador desde la URL nueva → decisión de merge (requiere indicación expresa).
 2. **SP-03/SP-04:** cuántas acciones y recursos necesita un solo grupo para que abastecer la colonia y avanzar el objetivo compitan entre sí. Laboratorio sobre el motor real, informe 102 (rama `experiment/sp04-laboratorio-un-grupo`).
 3. **Mejoras menores del mapa** que no afectan decisiones: hallazgos 4 y 5, y una batería de CI que juegue una partida entera desde el mapa con clics reales.
 4. **Reservas del Hito 3:** prueba física en el Samsung Galaxy A15 y prueba manual de dos jugadores locales cuando haya ocasión.

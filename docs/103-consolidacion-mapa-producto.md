@@ -68,4 +68,37 @@ app/mapa/
 
 ## 3. Resultado
 
-(Se completa al final de la entrega: estructura, tamaño antes y después, CI.)
+**Hecho:** los cinco puntos del encargo.
+
+- **Estructura:** `app/mapa/` como en §2, con 72 archivos movidos con `git mv`. Build único `scripts/build-mapa.mjs` (falla si alguna entrada viene de `prototypes/`) y servidor único `scripts/serve-mapa.mjs` con cinco prefijos. `npm run dev:mapa` → `http://127.0.0.1:8779/app/mapa/`; salida en `dist/mapa` y `dist/mapa-qa`.
+- **Retirado:** `prototypes/` completo (40 archivos que no usaba el producto), 14 scripts de build y servidor de la cadena, 24 baterías y mediciones de H3.2 a H3.4.3, 9 fixtures de `test-support`, 10 archivos de pruebas de páginas de prototipos y 8 workflows viejos. `storm.json` de H3.4.2 quedó como fixture en `test-support/h342-storm.json`.
+- **No retirado:** `assets/prototipo-hospital/` (6,2 MB). El plan lo daba por borrable, pero el kit del producto (`uploaded-kit.json`) todavía lo referencia y `tests/hospital-assets` verifica sus bytes. Queda para una limpieza posterior.
+- **Tamaño:** `docs/evidencias` 543 MB → 102 MB (805 archivos sin enlace borrados). Clon superficial de la rama: 1,2 GB → 281 MB (pack 557 → 134 MiB).
+- **Cambios en el HTML del producto:** rutas de estilos y bundle, y se quitaron dos enlaces ocultos a páginas de prototipos retiradas («Maqueta independiente H3.3» y «Mapa anterior H3.4.4», este último solo visible con `?dev=1`). Ningún otro cambio de interfaz, arte, posiciones ni textos.
+- **Workflows:** `mapa.yml` corre las nueve baterías en PR hacia `main`. `d12a-esbuild-poc.yml` ya fallaba en `main` (`a898a9a`) porque `ubuntu-latest` pasó a 26.04 y Playwright 1.57 no instala Chromium ahí; se fijó `ubuntu-24.04` en su job de navegador.
+
+**Comprobado:**
+
+- `npm test`: 708/708, también en un clon limpio sin `dist/`. Las aserciones de las pruebas conservadas no cambiaron, salvo rutas; se reescribieron dos pruebas de `horizontal-map` (build y servidor) porque comparaban contra el prototipo H3.4.4.
+- Las nueve baterías del workflow pasaron en local contra `serve-mapa --qa` y en el CI del PR #26 sobre `5e5e256` ([run 43966538925](https://github.com/LeviEdition/invierno-en-la-colonia/actions/runs/43966538925)). Incluyen 1365×768, 852×393 y 393×852, y partidas preparadas, jugadas y terminadas desde la URL nueva.
+- Enlaces internos de los documentos vigentes (README, CLAUDE, tablero, 62, 63, 75, 99–101, 103, guías de `app/mapa` y `assets/mapa-horizontal`): ninguno roto.
+
+**Falta probar jugando:** preparar, jugar y terminar una partida desde `http://127.0.0.1:8779/app/mapa/` en escritorio y en el teléfono por red local.
+
+## 4. Dónde consultar lo retirado
+
+Todo sigue en la historia. El commit `a898a9a` (merge del Hito 3 en `main`) contiene el árbol completo anterior; el tag `v0.10.0-mapa-horizontal` apunta ahí cuando exista.
+
+| Prototipo | Ruta en `a898a9a` | Informe |
+|---|---|---|
+| H3.2 hospital Canvas y Phaser | `prototypes/hospital/`, `prototypes/hospital-phaser/` | 73, 76 |
+| H3.3 taller, kit y maqueta | `prototypes/hospital-workshop/` | 77–82 |
+| H3.4.1 estado real | `prototypes/state-map/` | 83 |
+| H3.4.2 movimiento | `prototypes/movement-map/` | 84–86 |
+| H3.4.3 búsqueda | `prototypes/search-map/` | 87 |
+| H3.4.4 ataque y barricadas | `prototypes/action-map/` | 88 |
+| Mapa horizontal antes de consolidar | `prototypes/horizontal-map/` | 90–101 |
+
+Para ver un archivo: `git show a898a9a:prototypes/state-map/main.mjs`. Para correr un prototipo: `git switch --detach a898a9a` y los comandos `dev:*` de ese commit.
+
+Los informes 73 a 93 y el tablero histórico citan rutas de `prototypes/` y evidencia que ya no están en el árbol: son históricos y esas rutas se resuelven en `a898a9a`.
