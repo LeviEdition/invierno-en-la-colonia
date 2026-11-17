@@ -22,13 +22,15 @@ Probar dentro de una partida real que la campaña avanza por lo que los superviv
 | Registro del hospital | Consultable directamente si alguien de la colonia conoce el apellido «Varela» | Acordado |
 | Escuela | Destino del vehículo del traslado; su llegada queda abierta para el capítulo siguiente | Acordado |
 
-**Versión final (creador, 17/11):** el médico se encuentra antes de ir al hospital y ese encuentro es el disparador del capítulo; después acompaña al grupo y el rescate ocurre en la puerta del hospital. **Pendiente:** dónde y cómo se lo encuentra (localidad y condición).
+**Versión final (creador, 17/11):** el médico se encuentra antes de ir al hospital y ese encuentro es el disparador del capítulo; después acompaña al grupo y el rescate ocurre en la puerta del hospital. **Dónde y cómo (M1, adoptada):** en el Supermercado, la primera vez que un superviviente busca ahí desde la ronda 2.
+
+**Pendiente:** de dónde sale el apellido «Varela» para el atajo del registro (M2, el cuaderno en la Biblioteca, no se adoptó). Sugerencia: que lo sepa el propio médico; así el registro directo queda para cuando el médico acompaña al grupo y el tablón, para cuando no (por ejemplo, si llegó por la válvula de M6 y se quedó en la colonia).
 
 ## 4. Secuencia y disparadores
 
 | Paso | Disparador | Qué conoce la colonia después | Estado |
 |---|---|---|---|
-| 0. Encuentro con el médico | Encuentro de campaña previo al hospital (localidad y condición pendientes) | El médico acompaña al grupo; la colonia conoce el rastro de Elena Varela y el motivo para ir al hospital | Acordado (17/11) |
+| 0. Encuentro con el médico | Primera búsqueda en el Supermercado desde la ronda 2 (M1); válvula en la ronda 4 (M6) | El médico acompaña al grupo; la colonia conoce el rastro de Elena Varela y el motivo para ir al hospital | Acordado (17/11) |
 | 1. Pista en Admisión | Un superviviente del grupo, con el médico, busca o se mueve a Admisión del hospital | El mensaje del tablón identifica el último traslado de Maternidad | Acordado |
 | 1b. Atajo por registro | Alguien de la colonia conoce el apellido «Varela» | Consulta directa del registro, sin pasar por el tablón | Acordado |
 | 2. Destino | Pista del paso 1 o 1b | El vehículo salió rumbo a la escuela; su llegada es una pregunta abierta | Acordado |
@@ -82,7 +84,7 @@ Recomendación de Claude: **A**, porque no reabre la reputación personal que el
 
 1. **D12 integrado** (PR #27).
 2. **Segunda corrida del laboratorio** con el D12: indefensos, comida inicial, crisis agravada, costo de muerte y duración del objetivo; más una variante del rescate para medir cuánto conviene sacrificar al rescatista con cada alternativa de §5.1.
-3. **Decisión del creador** sobre §5.1 (si A sigue haciendo falta) y sobre dónde y cómo se encuentra al médico (§3).
+3. **Decisión del creador** sobre el origen del apellido (§3); la alternativa A de §5.1 se decide con el laboratorio.
 
 ## 9. Criterio de aceptación del capítulo jugable (para el futuro encargo)
 
@@ -94,21 +96,21 @@ Recomendación de Claude: **A**, porque no reabre la reputación personal que el
 
 ---
 
-## 10. Propuesta de Claude: mejoras y cronología (17/11/2026, pendiente de aprobación)
+## 10. Mejoras y cronología (propuesta de Claude, decidida por el creador el 17/11/2026)
 
-Nada de esta sección está acordado. Cada mejora indica qué problema resuelve; el creador decide cuáles se adoptan.
+**Adoptadas:** M1, M3, M4, M5, M6 y M7. **No adoptada:** M2. **Alternativa A del rescate (§5.1):** se decide con la segunda corrida del laboratorio, midiendo el rescate con y sin A.
 
-### 10.1 Mejoras propuestas
+### 10.1 Mejoras
 
-| # | Mejora | Problema que resuelve | Qué experimenta el jugador |
-|---|---|---|---|
-| M1 | **El médico aparece al abastecer:** encuentro de campaña en el **Supermercado**, la primera vez que un superviviente busca ahí desde la ronda 2. Estaba juntando medicamentos y comida | El laboratorio mostró que abastecer no tiene incentivo; así la historia avanza también por abastecer, no solo por el objetivo | «Fui a buscar comida porque no quedaba, y encontré al médico» |
-| M2 | **El apellido se gana:** el médico solo sabe «Elena, de Maternidad». El apellido «Varela» aparece en un cuaderno en la **Biblioteca** (búsqueda de notas) | Hoy no está definido de dónde sale el apellido; así el atajo del registro premia explorar y une historia con objetivo | «Si paso antes por la Biblioteca, en el hospital voy directo al registro y busco menos» |
-| M3 | **Buscar en el hospital hace ruido y el peligro de la puerta depende de eso:** el rescate se dispara cuando el médico entra a Maternidad y la horda llega; su gravedad depende de los zombis en los accesos del hospital | Conecta el clímax con decisiones previas, en lugar de un evento fijo | «Busqué tres veces sin el apellido; ahora la puerta está llena» |
-| M4 | **Comunicar con testigo:** la pista se comunica al instante si hay otro superviviente o el médico en la misma localidad; si no, cuando quien la encontró vuelve a la colonia | Le da forma jugable a «comunicar antes del rescate» y usa los testigos del Director (SP-05) | «Mando a dos juntos al hospital: si uno cae, el otro ya sabe» |
-| M5 | **Retirarse siembra el capítulo siguiente:** si el grupo abandona al médico, sobrevive y lo captura la secta; así la secta sabe de la colonia | Resuelve la causa pendiente de la secta y da la consecuencia visible varias rondas después que pide la hoja de ruta | En el capítulo 2: «La secta sabe dónde estamos. El médico se lo dijo» |
-| M6 | **Válvulas de avance:** si en la ronda 4 nadie buscó en el Supermercado, el médico llega herido a las puertas de la colonia; si en la ronda 6 nadie entró al hospital, el médico va solo y el rescate ocurre igual | Evita que el capítulo se trabe por un orden de juego imprevisto, sin quitar libertad | El capítulo avanza siempre, pero llegar tarde tiene costo |
-| M7 | **Crisis alineadas por el Director:** crisis de comida en el acto I (empuja al Supermercado) y de medicina en el acto III (hace visible el valor del médico) | Las crisis acompañan la historia en lugar de competir con ella | «Justo cuando falta medicina, tengo un médico, si lo salvo» |
+| # | Estado | Mejora | Problema que resuelve | Qué experimenta el jugador |
+|---|---|---|---|---|
+| M1 | **Adoptada** | **El médico aparece al abastecer:** encuentro de campaña en el **Supermercado**, la primera vez que un superviviente busca ahí desde la ronda 2. Estaba juntando medicamentos y comida | El laboratorio mostró que abastecer no tiene incentivo; así la historia avanza también por abastecer, no solo por el objetivo | «Fui a buscar comida porque no quedaba, y encontré al médico» |
+| M2 | No adoptada | **El apellido se gana:** el médico solo sabe «Elena, de Maternidad». El apellido «Varela» aparece en un cuaderno en la **Biblioteca** (búsqueda de notas) | Hoy no está definido de dónde sale el apellido; así el atajo del registro premia explorar y une historia con objetivo | «Si paso antes por la Biblioteca, en el hospital voy directo al registro y busco menos» |
+| M3 | **Adoptada** | **Buscar en el hospital hace ruido y el peligro de la puerta depende de eso:** el rescate se dispara cuando el médico entra a Maternidad y la horda llega; su gravedad depende de los zombis en los accesos del hospital | Conecta el clímax con decisiones previas, en lugar de un evento fijo | «Busqué tres veces sin el apellido; ahora la puerta está llena» |
+| M4 | **Adoptada** | **Comunicar con testigo:** la pista se comunica al instante si hay otro superviviente o el médico en la misma localidad; si no, cuando quien la encontró vuelve a la colonia | Le da forma jugable a «comunicar antes del rescate» y usa los testigos del Director (SP-05) | «Mando a dos juntos al hospital: si uno cae, el otro ya sabe» |
+| M5 | **Adoptada** | **Retirarse siembra el capítulo siguiente:** si el grupo abandona al médico, sobrevive y lo captura la secta; así la secta sabe de la colonia | Resuelve la causa pendiente de la secta y da la consecuencia visible varias rondas después que pide la hoja de ruta | En el capítulo 2: «La secta sabe dónde estamos. El médico se lo dijo» |
+| M6 | **Adoptada** | **Válvulas de avance:** si en la ronda 4 nadie buscó en el Supermercado, el médico llega herido a las puertas de la colonia; si en la ronda 6 nadie entró al hospital, el médico va solo y el rescate ocurre igual | Evita que el capítulo se trabe por un orden de juego imprevisto, sin quitar libertad | El capítulo avanza siempre, pero llegar tarde tiene costo |
+| M7 | **Adoptada** | **Crisis alineadas por el Director:** crisis de comida en el acto I (empuja al Supermercado) y de medicina en el acto III (hace visible el valor del médico) | Las crisis acompañan la historia en lugar de competir con ella | «Justo cuando falta medicina, tengo un médico, si lo salvo» |
 
 ### 10.2 Cronología propuesta (8 rondas)
 
@@ -118,7 +120,6 @@ Las rondas son ventanas, no fechas fijas: el jugador puede adelantarse. Duració
 |---|---|---|---|---|
 | I. La colonia aguanta | 1–2 | Arranque con tres supervivientes, indefensos y poca comida. Crisis de comida | Quién sale a abastecer y quién defiende | Comida baja, indefensos que comer |
 | II. El médico | 2–4 | Encuentro en el Supermercado (M1). El médico cuenta lo de Elena y Maternidad. Válvula en R4 (M6) | Incorporarlo al grupo que va al hospital o mandarlo a la colonia primero | El médico es una boca más hasta que ayude |
-| — Desvío opcional | 3–5 | Cuaderno con el apellido en la Biblioteca (M2) | Gastar dados en la Biblioteca para ahorrar búsquedas en el hospital | Cada salida es una exposición más |
 | III. El hospital | 4–6 | Admisión y tablón, o registro directo con el apellido. Pista del traslado a la escuela. Se comunica según M4. Crisis de medicina (M7) | Cuántas veces buscar y con quién; dejar o no un testigo | El ruido carga los accesos del hospital (M3) |
 | IV. La puerta | 5–7 | El médico entra a Maternidad y la horda llega. Decisión central (§5): retirarse, ayudar con la segunda decisión, o comprometerse. Una tirada D12 | Arriesgar o no al rescatista | Costo de muerte para la colonia (§5.2) |
 | V. Regreso | 6–8 | Vuelta a la colonia. Atención médica disponible desde la ronda siguiente. Diario con la pista de la escuela | Usar la primera curación en quién | La colonia sigue comiendo y defendiéndose |
