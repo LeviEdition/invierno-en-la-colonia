@@ -76,7 +76,7 @@ function mordeduraReferencia(c){
 }
 
 // ---------- cooperativa (puerto literal de autoplay-controller.mjs) ----------
-function actuarCooperativa(c,registro,{indefensos=false,repartida=false}={}){
+function actuarCooperativa(c,registro,{indefensos=false,repartida=false,regreso=false}={}){
  const g=c.game;
  if(!c.playable())return null;
  const group=c.controls.group().filter(p=>!p.dead),hand=c.currentHand();
@@ -122,6 +122,25 @@ function actuarCooperativa(c,registro,{indefensos=false,repartida=false}={}){
  for(const p of group){const di=dice.findIndex(d=>d>=c.effectiveAttack(p));if(g.zones[p.loc].z&&di>=0){foco(c,p);c.picked=di;registro.accionActual='atacar';c.attack();return 'atacar:'+p.id;}}
  const builder=group.find(p=>c.openAccess(p.loc));if(builder){foco(c,builder);c.picked=pickMin();registro.accionActual='barricada';c.barricade();return 'barricada:'+builder.id;}
  if(home&&g.waste){foco(c,home);c.picked=pickMin();registro.accionActual='limpiar';c.clean();return 'limpiar:'+home.id;}
+ // Regreso a la colonia (quinta corrida, docs/113): si queda un dado, el superviviente de menor
+ // influencia fuera regresa. Regla declarada: vuelve si es el de menor influencia de su
+ // localidad; cooperativa nunca excluye localidades de esta decisión (no persigue objetivo).
+ // El corredor nunca regresa (esto aplica solo a las políticas cooperativas).
+ if(regreso&&c.game.dice.length>0){
+  const afuera=group.filter(p=>p.loc!==0);
+  if(afuera.length){
+   const minInf=Math.min(...afuera.map(p=>p.influence));
+   const candidatos=afuera.filter(p=>p.influence===minInf);
+   const target=g.humans.find(p=>candidatos.includes(p)&&!p.dead);
+   if(target){
+    // Consume el dado de menor valor.
+    const dArr=c.game.dice,minVal=Math.min(...dArr);dArr.splice(dArr.indexOf(minVal),1);
+    target.loc=0;target.moved=true;
+    registro.regresos++;
+    return 'regresar:'+target.id;
+   }
+  }
+ }
  return 'terminar-turno';
 }
 

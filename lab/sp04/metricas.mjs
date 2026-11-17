@@ -134,3 +134,23 @@ export function agregarCuarta(partidas){
   partidasTerminanPorDesbordeColonia:partidas.filter(p=>(p.resultado==='morale'||p.resultado==='survivors')&&conVictima(p).some(d=>d.ronda===p.rondaFin)).length/n,
  };
 }
+
+// ---------- Quinta corrida (docs/113) ----------
+// Noche fuera de la colonia: muertes de noche, afuera al caer la noche, regresos.
+// Muere de noche: causada por una exposición nocturna (bite letal o daños acumulados).
+// Fase con alguien afuera: fases de colonia en que al menos un superviviente estaba fuera.
+export function agregarQuinta(partidas){
+ const n=partidas.length;
+ const exps=partidas.flatMap(p=>p.exposicionesNoche||[]);
+ const efecto=e=>exps.length?exps.filter(x=>x.efecto===e).length/exps.length:null;
+ const fasesNoche=partidas.flatMap(p=>p.afueraAlCaerNoche||[]);
+ return {
+  regresosPorPartida:media(partidas.map(p=>p.regresos||0)),
+  afueraAlCaerNochePromedio:fasesNoche.length?media(fasesNoche.map(f=>f.cantidad)):null,
+  fasesConAlguienAfuera:partidas.map(p=>{const col=p.colonia.length;return col?(p.afueraAlCaerNoche||[]).length/col:null;}).filter(x=>x!==null).reduce((a,b,_,xs)=>a+b/xs.length,0)||null,
+  muertesPorNochePorPartida:media(partidas.map(p=>p.muertesNoche||0)),
+  exposicionesNochePorPartida:media(partidas.map(p=>(p.exposicionesNoche||[]).length)),
+  nocheNada:efecto('none'),nocheHerida:efecto('wound'),nocheCongelacion:efecto('frost'),
+  nocheMordedura:efecto('bite'),nocheEvitada:efecto('avoided'),
+ };
+}

@@ -9,7 +9,9 @@ import {evaluarCompetencia} from './competencia.mjs';
 // conoceIndefensos (segunda corrida): la política y el evaluador de competencia
 // cuentan a los indefensos de la colonia. Sin indefensos no cambia nada.
 export async function jugarPartida({semilla,escenario='A',politica='ia-referencia',maxPasos=4000,conoceIndefensos=false,...configuracion}){
- const lab=crearMotor({semilla,...configuracion}),{engine,c,registro}=lab,estrategia=crearPolitica(politica,{indefensos:conoceIndefensos});
+ const lab=crearMotor({semilla,...configuracion}),{engine,c,registro}=lab;
+ // «regreso» (quinta corrida): la política puede usar la acción de volver a la colonia.
+ const estrategia=crearPolitica(politica,{indefensos:conoceIndefensos,regreso:configuracion.regreso||false});
  const evaluar=()=>evaluarCompetencia(c,{indefensos:conoceIndefensos});
  engine.start('ai');
  aplicarEscenario(c,escenario);
@@ -50,6 +52,7 @@ function resultado(lab,inicial,traza,completa,error){
   resultado:fin,rondaFin:Math.min(g.round,g.max),moralFin:g.morale,comidaFin:g.food,muestrasFin:g.samples,
   vivosFin:g.humans.filter(p=>!p.dead).length,indefensosFin:g.helpless,llamadasAzar:azar.llamadas(),
   exposiciones:registro.exposiciones,indefensosPerdidos:registro.indefensosPerdidos,indefensosPorCrisis:registro.indefensosPorCrisis,llegadasExtraColonia:registro.llegadasExtraColonia,desbordesColonia:registro.desbordesColonia,equipoPerdido:registro.equipoPerdido,rescate:registro.rescate,
+  regresos:registro.regresos,afueraAlCaerNoche:registro.afueraAlCaerNoche,exposicionesNoche:registro.exposicionesNoche,muertesNoche:registro.muertesNoche,
   dados:registro.dados,muertes:registro.muertes,crisis:registro.crisis,colonia:registro.colonia,rondas:Object.values(registro.rondas),reclutas:registro.reclutas,mejorasComida:registro.mejorasComida,
   traza,
  };
