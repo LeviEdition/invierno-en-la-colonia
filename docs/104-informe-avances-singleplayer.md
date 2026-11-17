@@ -22,7 +22,7 @@ La campaña sigue a una colonia cuyos integrantes pueden morir, irse o incorpora
 
 #### Qué reveló el laboratorio SP-04
 
-El informe 102 registra **37.000 partidas simuladas** en 74 combinaciones de escenario y política, con 500 partidas por combinación. En la comparación documentada, al pasar de dos grupos a uno, las partidas con hambre subieron del 25 % al 49 % y las crisis fallidas pasaron de 1,8 a 4,1 por partida. Aun así, una política centrada en conseguir muestras podía ganar con frecuencia.
+El informe [106](106-laboratorio-sp04-un-grupo.md) (numerado 102 en su rama) registra **37.000 partidas simuladas** en 74 combinaciones de escenario y política, con 500 partidas por combinación. En la comparación documentada, al pasar de dos grupos a uno, las partidas con hambre subieron del 25 % al 49 % y las crisis fallidas pasaron de 1,8 a 4,1 por partida. Aun así, una política centrada en conseguir muestras podía ganar con frecuencia.
 
 La pregunta de balance es concreta: **¿cuándo vale la pena gastar hoy un dado en alimentar a la colonia si dedicarlo al objetivo puede terminar la partida antes de que la escasez decida el resultado?** Las simulaciones detectan ese incentivo bajo políticas automáticas. Queda por elegir qué variable explorar primero —dados, crisis, comida o reclutamiento— y contrastar el resultado con jugadores.
 
@@ -43,7 +43,7 @@ El D12 es una pieza reutilizable de este diseño. La PR 27 implementó la exposi
 #### Dónde está guardado y qué conviene actualizar
 
 - **Plan de diseño en main.** El documento 63 contiene la secuencia SP-00 a SP-08, la exploración de dados y los acuerdos iniciales del ciclo. [Hoja de ruta de planificación singleplayer](https://github.com/LeviEdition/invierno-en-la-colonia/blob/main/docs/63-hoja-de-ruta-planificacion-singleplayer.md)
-- **Laboratorio en la rama experiment/sp04-laboratorio-un-grupo.** El informe documenta método, resultados y limitaciones. El simulador se ejecuta con `node lab/sp04/correr.mjs` y sus tablas están en `lab/sp04/resultados/`. [Informe 102](https://github.com/LeviEdition/invierno-en-la-colonia/blob/experiment/sp04-laboratorio-un-grupo/docs/102-laboratorio-sp04-un-grupo.md) · [Código y resultados](https://github.com/LeviEdition/invierno-en-la-colonia/tree/experiment/sp04-laboratorio-un-grupo/lab/sp04)
+- **Laboratorio en la rama experiment/sp04-laboratorio-un-grupo.** El informe documenta método, resultados y limitaciones. El simulador se ejecuta con `node lab/sp04/correr.mjs` y sus tablas están en `lab/sp04/resultados/`. [Informe 106](106-laboratorio-sp04-un-grupo.md) · [Código y resultados](https://github.com/LeviEdition/invierno-en-la-colonia/tree/experiment/sp04-laboratorio-un-grupo/lab/sp04)
 - **Entrega del dado.** El código y las comprobaciones del D12 se pueden seguir independientemente del diseño del encuentro. [PR 27](https://github.com/LeviEdition/invierno-en-la-colonia/pull/27)
 - **Diseño más reciente.** Los acuerdos sobre la colonia protagonista, el conocimiento compartido y el rescate se tomaron en el chat y quedan reunidos en este informe. El prompt de traspaso anterior también recoge estas decisiones.
 
@@ -53,7 +53,7 @@ El D12 es una pieza reutilizable de este diseño. La PR 27 implementó la exposi
 
 ## Notas de incorporación (17/11/2026)
 
-1. **Numeración.** Hay dos informes «102»: el del laboratorio SP-04, en la rama `experiment/sp04-laboratorio-un-grupo`, y el del dado D12, en el [PR #27](https://github.com/LeviEdition/invierno-en-la-colonia/pull/27). El D12 conserva el 102; el laboratorio tomará el siguiente número libre cuando se integre. Este informe es el 104 y la ficha del capítulo, el 105.
+1. **Numeración.** Hay dos informes «102»: el del laboratorio SP-04, en la rama `experiment/sp04-laboratorio-un-grupo`, y el del dado D12, en el [PR #27](https://github.com/LeviEdition/invierno-en-la-colonia/pull/27). El D12 conserva el 102; el laboratorio pasó al 106 (17/11) y su segunda corrida es el 107. Este informe es el 104 y la ficha del capítulo, el 105.
 2. **Primer ajuste de balance: ya decidido en parte.** El 16/11 el creador decidió que **la muerte de un superviviente debe pesar** y que abastecer y resolver crisis tienen que estar justificados. La segunda corrida del laboratorio probará indefensos fijos en la colonia, comida inicial baja, crisis con consecuencias agravadas, costo de muerte mayor y duración del objetivo (6 y 10 rondas), no dados, crisis, comida o reclutamiento por separado.
 3. **D12.** El PR #27 cambia la exposición del mapa de D6 a D12 (mordedura 17 % → 8 %, herida 17 % → 25 %, congelación igual, sin efecto igual). Las simulaciones del laboratorio usaron el D6 de la referencia; la segunda corrida debe usar el D12.
 4. **Rescate del médico.** Tal como está escrito, morir en el rescate no cuesta nada dentro del encuentro: el médico vuelve igual y aporta Atención médica. Se registra como problema abierto en la ficha 105, con alternativas.
