@@ -7,10 +7,10 @@ import {actionMapChecks} from '../test-support/h344-browser-checks.mjs';
 
 const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
 const out=process.env.H344_CAMERA_DIR||'/tmp/h344-camera';
-const origin=process.env.H344_ORIGIN||'http://127.0.0.1:8778';
+const origin=process.env.H344_ORIGIN||'http://127.0.0.1:8779';
 await mkdir(out,{recursive:true});
 const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',args:['--no-sandbox']});
-const t=actionMapChecks({origin,modulePath:process.env.H344_MODULE_PATH||'/dist/action-map-qa/map.mjs'});
+const t=actionMapChecks({origin,modulePath:process.env.H344_MODULE_PATH||'/dist/mapa-qa/map.mjs'});
 const evidence={browser:browser.version(),physicalMobile:false,method:'RAF + POST_RENDER count and DOM positions during real input; video separately inspectable',records:[],failures:[]};
 
 async function startTrace(p){
@@ -74,7 +74,7 @@ try{
   await t.begin(p);await t.openMap(p);await p.selectOption('#locality','place-0');await t.frames(p);
   await t.panel(p);await p.locator('.demo-controls').last().evaluate(el=>el.open=true);await p.selectOption('#survivor-select','h0');
   const game=await t.raw(p),rng=await t.rng(p);
-  if((process.env.H344_MODULE_PATH||'').includes('/horizontal-map-qa/')){
+  if((process.env.H344_MODULE_PATH||'').includes('/mapa-qa/')){
    // El hover solo modifica el contorno del mapa. Presentar ese cuadro no
    // necesita reescribir atributos idénticos de las fichas.
    await p.waitForFunction(()=>!h344Viewer.inspect().view.renderPending);

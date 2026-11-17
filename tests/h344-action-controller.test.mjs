@@ -1,4 +1,4 @@
-import test from 'node:test';import assert from 'node:assert/strict';import {createActionController} from '../prototypes/action-map/action-controller.mjs';
+import test from 'node:test';import assert from 'node:assert/strict';import {createActionController} from '../app/mapa/acciones/action-controller.mjs';
 const op={operationId:'op',ownerId:'human',kind:'attack',actorId:'h0',origin:0,resolution:{killed:1},generalDecision:false};
 const state=({owner='human',revision=1,operation=null}={})=>({action:{session:'s',revision,gameGeneration:1,round:1,ownerId:owner,operation,options:{h0:{attack:{allowed:true,origin:0,requirement:4,dice:[{index:0,value:3,allowed:false},{index:1,value:5,allowed:true}]}}}}});
 function setup(){const sent=[];let n=0;const c=createActionController({send:r=>sent.push(r),requestId:()=> 'q'+(++n)});c.update(state());return {c,sent};}

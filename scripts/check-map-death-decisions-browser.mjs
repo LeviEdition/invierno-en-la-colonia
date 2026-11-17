@@ -4,7 +4,7 @@
 // y azar fijo (Math.random=0 → exposición 1 = mordedura).
 import assert from 'node:assert/strict';import {mkdir,writeFile} from 'node:fs/promises';
 import {actionMapChecks} from '../test-support/h344-browser-checks.mjs';
-const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright'),out=process.env.DEATH_DECISIONS_DIR||'/tmp/horizontal-death-decisions',origin=process.env.H344_ORIGIN||'http://127.0.0.1:8779',t=actionMapChecks({origin,modulePath:'/dist/horizontal-map-qa/map.mjs'});
+const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright'),out=process.env.DEATH_DECISIONS_DIR||'/tmp/horizontal-death-decisions',origin=process.env.H344_ORIGIN||'http://127.0.0.1:8779',t=actionMapChecks({origin,modulePath:'/dist/mapa-qa/map.mjs'});
 await mkdir(out,{recursive:true});const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',args:['--no-sandbox']}),report={cases:[]};let page;
 const cases=[
  {id:'atacante-solo',actor:'h0',with:[],via:'attack',label:'Ver qué pasó',deaths:['Mara']},

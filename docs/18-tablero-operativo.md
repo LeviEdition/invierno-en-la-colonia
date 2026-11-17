@@ -17,12 +17,12 @@ El mapa permite preparar, jugar y terminar una partida completa (humano + IA y d
 
 ## 2. Próxima tarea única
 
-**Decidir con qué se abre la etapa del singleplayer:** el laboratorio SP-04 (cola 1) o el mantenimiento previo (cola 2). Recomendación: el laboratorio primero, porque no depende de la estructura de `prototypes/` y responde la pregunta de diseño pendiente; el mantenimiento puede hacerse en paralelo.
+**Revisar y decidir el PR de mantenimiento** ([103](103-consolidacion-mapa-producto.md), rama `experiment/mantenimiento-mapa-producto`): el mapa pasa a `app/mapa/` con build y servidor propios (`npm run dev:mapa` → `http://127.0.0.1:8779/app/mapa/`), los prototipos H3.2–H3.4.4 salen del árbol y `docs/evidencias` baja de 543 MB a 102 MB. Sin cambios de jugabilidad, arte ni textos. En paralelo, el laboratorio SP-04 sigue en `experiment/sp04-laboratorio-un-grupo` (informe 102 en esa rama).
 
 ## 3. Cola ordenada
 
-1. **SP-03/SP-04:** cuántas acciones y recursos necesita un solo grupo para que abastecer la colonia y avanzar el objetivo compitan entre sí. Laboratorio de simulación sobre el motor real, desde `main`, informe 102.
-2. **Mantenimiento** (propuesto, a decidir): consolidar el producto del mapa fuera de `prototypes/`, retirar prototipos intermedios conservándolos por tag, y sacar la evidencia pesada del repositorio.
+1. **Mantenimiento (103):** [PR #26](https://github.com/LeviEdition/invierno-en-la-colonia/pull/26) en borrador con CI verde → prueba de humo del creador desde la URL nueva → decisión de merge (requiere indicación expresa).
+2. **SP-03/SP-04:** cuántas acciones y recursos necesita un solo grupo para que abastecer la colonia y avanzar el objetivo compitan entre sí. Laboratorio sobre el motor real, informe 102 (rama `experiment/sp04-laboratorio-un-grupo`).
 3. **Mejoras menores del mapa** que no afectan decisiones: hallazgos 4 y 5, y una batería de CI que juegue una partida entera desde el mapa con clics reales.
 4. **Reservas del Hito 3:** prueba física en el Samsung Galaxy A15 y prueba manual de dos jugadores locales cuando haya ocasión.
 

@@ -10,6 +10,7 @@ Videojuego de supervivencia que empezó como adaptación de *Dead of Winter* (re
 - Ninguna animación, doble clic, toque repetido o recuperación de una respuesta puede repetir una acción ni consumir azar extra.
 - En el modo de dos jugadores locales, manos, dados y registro privados no se muestran durante el pase de dispositivo.
 - La referencia V9.9 (`invierno_colonia_v9_9.html`, tag `v0.9.9-referencia-modular`) no se modifica. El HTML se genera desde `src/`; nunca se edita a mano.
+- El mapa vive en `app/mapa/` y no importa nada de fuera salvo `src/`, `config/`, `assets/` y `kit_arte_h33/`. Los prototipos H3.2–H3.4.4 se retiraron del árbol; se consultan en la historia (informe 103).
 - No cambiar reglas, costes, balance, capacidades (33 accesos), posiciones ni arte aprobado sin decisión explícita del creador.
 - **Nada de merge, tags, releases ni publicación sin indicación expresa del creador.** Push solo a la rama de trabajo indicada.
 
@@ -20,17 +21,17 @@ Requiere Node 22 o posterior.
 ```bash
 npm ci
 npm run check:build && npm test          # construcción y suite unitaria
-npm run check:horizontal-map-build       # build del mapa horizontal
-npm run dev:horizontal-map               # http://127.0.0.1:8779/prototypes/horizontal-map/
+npm run check:mapa-build                 # build del mapa (app/mapa → dist/mapa)
+npm run dev:mapa                         # http://127.0.0.1:8779/app/mapa/
 ```
 
-Las baterías de navegador (`scripts/check-*-browser.mjs`) necesitan Playwright 1.57 con Chromium y el servidor en modo QA (`node scripts/serve-horizontal-map.mjs --qa`). La lista exacta y las variables de entorno están en [.github/workflows/horizontal-map.yml](.github/workflows/horizontal-map.yml). Si no podés correrlas localmente, el CI del PR es la fuente de verdad: decilo en el informe en lugar de darlas por aprobadas.
+Las baterías de navegador (`scripts/check-*-browser.mjs`) necesitan Playwright 1.57 con Chromium y el servidor en modo QA (`node scripts/serve-mapa.mjs --qa`). La lista exacta y las variables de entorno están en [.github/workflows/mapa.yml](.github/workflows/mapa.yml). Si no podés correrlas localmente, el CI del PR es la fuente de verdad: decilo en el informe en lugar de darlas por aprobadas.
 
 ## Cómo entregar
 
 - Actualizar las secciones 1 a 5 del tablero **reemplazando** su contenido; no agregar bloques fechados.
 - El detalle va en un informe numerado en `docs/` (el siguiente número libre) y en la descripción del PR. Ajustar su extensión al tamaño del cambio.
-- La evidencia pesada (capturas, vídeos, JSON de pruebas) va al artifact del CI, no al repositorio, salvo las capturas que un informe cite.
+- La evidencia pesada (capturas, vídeos, JSON de pruebas) va al artifact del CI, no al repositorio, salvo las capturas que un informe cite. `tests/evidencias-enlazadas.test.mjs` falla si queda un archivo en `docs/evidencias` que ningún documento enlace.
 - En el informe, distinguir qué se comprobó, qué informa una herramienta y qué falta probar jugando en escritorio y en el teléfono de referencia (Samsung Galaxy A15).
 
 ## Idioma

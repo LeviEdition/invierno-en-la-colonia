@@ -1,11 +1,11 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import {createMapNotice} from '../prototypes/experience-map/map-notice.mjs';
-import {eventText} from '../prototypes/play-map/information.mjs';
-import {actionNotice} from '../prototypes/action-map/action-presentation.mjs';
-import {fitMapCamera,constrainCamera,resizeMapCamera,focusLocality} from '../prototypes/horizontal-map/camera.mjs';
-import {zoomCameraAt,pinchCamera} from '../prototypes/hospital/camera.mjs';
+import {createMapNotice} from '../app/mapa/experiencia/map-notice.mjs';
+import {eventText} from '../app/mapa/juego/information.mjs';
+import {actionNotice} from '../app/mapa/acciones/action-presentation.mjs';
+import {fitMapCamera,constrainCamera,resizeMapCamera,focusLocality} from '../app/mapa/escena/camera.mjs';
+import {zoomCameraAt,pinchCamera} from '../app/mapa/render/camera.mjs';
 import {readFileSync} from 'node:fs';
-const read=p=>JSON.parse(readFileSync(new URL('../'+p,import.meta.url))),geometry=read('prototypes/horizontal-map/scene.json'),manifest=read('assets/mapa-horizontal/manifest.json'),source=manifest.files.find(r=>r.file===manifest.activeMap),bounds={...geometry.bounds,sourceWidth:source.dimensions[0],sourceHeight:source.dimensions[1]},scene={...geometry,bounds};
+const read=p=>JSON.parse(readFileSync(new URL('../'+p,import.meta.url))),geometry=read('app/mapa/escena/scene.json'),manifest=read('assets/mapa-horizontal/manifest.json'),source=manifest.files.find(r=>r.file===manifest.activeMap),bounds={...geometry.bounds,sourceWidth:source.dimensions[0],sourceHeight:source.dimensions[1]},scene={...geometry,bounds};
 test('Aviso: caduca una vez y no reaparece al consultar, reconstruir o recuperar el mismo resultado',()=>{
  const renders=[],timers=new Map();let serial=0;const n=createMapNotice({render:x=>renders.push(x),setTimer:fn=>{timers.set(++serial,fn);return serial;},cancelTimer:id=>timers.delete(id)}),a={scope:'s/1/1/human',id:'attack-1',text:'Leo eliminó 1 zombi en el Hospital y sufrió congelación.'};
  n.show(a);assert.equal(timers.size,1);const timer=[...timers.values()][0];n.show({...a});assert.equal(timers.size,1);assert.equal(renders.filter(Boolean).length,1);timer();assert.equal(n.inspect(),null);n.show({...a});assert.equal(n.inspect(),null);assert.equal(renders.filter(Boolean).length,1);n.clear();n.show(a);assert.equal(n.inspect(),null);n.show({...a,scope:'s/2/1/human'});assert.equal(n.inspect().scope,'s/2/1/human');n.clear();assert.equal(n.inspect(),null);

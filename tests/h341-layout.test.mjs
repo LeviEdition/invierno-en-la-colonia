@@ -1,6 +1,6 @@
 import test from 'node:test';import assert from 'node:assert/strict';import {readFile} from 'node:fs/promises';
-import {layoutState,portraitFor} from '../prototypes/state-map/layout.mjs';
-const scene=JSON.parse(await readFile(new URL('../prototypes/hospital-workshop/mockup/scene.json',import.meta.url)));
+import {layoutState,portraitFor} from '../app/mapa/estado/layout.mjs';
+const scene=JSON.parse(await readFile(new URL('../app/mapa/render/maqueta/scene.json',import.meta.url)));
 const locations=Array.from({length:7},(_,i)=>({id:'place-'+i,engineIndex:i,name:'Localidad '+i,capacity:i===0?12:4,exteriorCapacity:i===0?12:4,zombies:0,barricades:0,helpless:0}));
 const state=characters=>({blocked:null,characters,locations:structuredClone(locations)});
 test('H3.4.1 dibujo: gasolinera conserva capacidad real y expone todos los excedentes visuales',()=>{

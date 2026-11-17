@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';import {mkdir,writeFile} from 'node:fs/promises';import {resolve} from 'node:path';
 import {actionMapChecks} from '../test-support/h344-browser-checks.mjs';
 const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
-const out=resolve(process.env.INVENTORY_DIR||'/tmp/horizontal-inventory'),t=actionMapChecks({origin:process.env.H344_ORIGIN||'http://127.0.0.1:8779',modulePath:'/dist/horizontal-map-qa/map.mjs'});
+const out=resolve(process.env.INVENTORY_DIR||'/tmp/horizontal-inventory'),t=actionMapChecks({origin:process.env.H344_ORIGIN||'http://127.0.0.1:8779',modulePath:'/dist/mapa-qa/map.mjs'});
 await mkdir(out,{recursive:true});const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',args:['--no-sandbox']});let lastPage;const result={physicalMobile:false,controlled:true,records:[],passed:false};
 try{for(const [width,height]of [[1365,768],[852,393]]){
  const dir=resolve(out,width+'x'+height);await mkdir(dir,{recursive:true});const context=await browser.newContext({viewport:{width,height},hasTouch:width<950,isMobile:width<950,deviceScaleFactor:width<950?2:1,recordVideo:{dir,size:{width,height}}});await t.instrument(context);const p=await context.newPage(),errors=[];p.on('pageerror',e=>errors.push(e.message));

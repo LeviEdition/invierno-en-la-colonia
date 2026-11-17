@@ -1,6 +1,6 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import {createEngine,createUninstrumentedEngine} from '../test-support/horizontal-engine.mjs';
-import {createPlayBroker} from '../prototypes/play-map/broker.mjs';import {projectVisibleState} from '../prototypes/state-map/projection.mjs';
+import {createPlayBroker} from '../app/mapa/juego/broker.mjs';import {projectVisibleState} from '../app/mapa/estado/projection.mjs';
 function make(factory=createEngine){let calls=0;const math=Object.create(Math);math.random=()=>{calls++;return .8;};const e=factory({Math:math,queueMicrotask(){}});e.start('local');const c=e.testBindings;c.game.crossResolved=true;return {e,c,math,calls:()=>calls};}
 function equal(a,b){assert.deepEqual(a.e.snapshot(),b.e.snapshot());assert.equal(a.calls(),b.calls());}
 function bite(t){t.c.game.humans[0].influence=1;t.c.game.humans[2].influence=2;t.math.random=()=>0;t.c.expose(t.c.game.humans[1],'QA');}
