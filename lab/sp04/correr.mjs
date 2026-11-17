@@ -1,4 +1,4 @@
-// Plan completo del laboratorio SP-04. Reproduce todas las cifras del informe 102:
+// Plan completo del laboratorio SP-04. Reproduce todas las cifras del informe 106 (primera corrida):
 //   node lab/sp04/correr.mjs                      (500 partidas por celda)
 //   node lab/sp04/correr.mjs --partidas 200       (más rápido, mismas semillas 1..200)
 //   node lab/sp04/correr.mjs --ejemplo 17 --escenario B --politica ia-referencia
@@ -65,7 +65,7 @@ async function todo(){
  }
  await writeFile(salida+'/resumen.csv',aCsv(resumen));
  await writeFile(salida+'/por-ronda.csv',aCsv(rondas));
- await writeFile(salida+'/README.md',`# Resultados SP-04\n\nGenerados con \`node lab/sp04/correr.mjs --partidas ${partidasPorCelda}\` (${celdas.length} celdas, semillas semillaC14(1..${partidasPorCelda}), ${Math.round((Date.now()-inicio)/1000)} s).\n\n- \`resumen.csv\`: una fila por celda con los agregados de la partida completa.\n- \`por-ronda.csv\`: una fila por celda y ronda (dados, comida, moral y clase de decisión).\n\nLas columnas se describen en docs/102-laboratorio-sp04-un-grupo.md.\n`);
+ await writeFile(salida+'/README.md',`# Resultados SP-04\n\nGenerados con \`node lab/sp04/correr.mjs --partidas ${partidasPorCelda}\` (${celdas.length} celdas, semillas semillaC14(1..${partidasPorCelda}), ${Math.round((Date.now()-inicio)/1000)} s).\n\n- \`resumen.csv\`: una fila por celda con los agregados de la partida completa.\n- \`por-ronda.csv\`: una fila por celda y ronda (dados, comida, moral y clase de decisión).\n\nLas columnas se describen en docs/106-laboratorio-sp04-un-grupo.md.\n`);
  console.error('Listo:',salida);
 }
 if(import.meta.url===new URL(process.argv[1],'file://').href){if(args.includes('--ejemplo'))await ejemplo();else await todo();}

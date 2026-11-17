@@ -2,7 +2,7 @@
 
 Arnés sin DOM que juega partidas completas con `createEngine` (`src/application/reference-engine.mjs`) y azar por semilla. No modifica `src/` ni la referencia V9.9: la variante de un grupo se arma con las inyecciones del motor (`stateFactory`, `rulesFactory`, `turnsFactory`, `automation`) y con los setters del contexto que el motor entrega a `rulesFactory`, la misma superficie que usan la extensión del mapa y las pruebas.
 
-Informe y lectura de resultados: [docs/102-laboratorio-sp04-un-grupo.md](../../docs/102-laboratorio-sp04-un-grupo.md).
+Informes: primera corrida [docs/106-laboratorio-sp04-un-grupo.md](../../docs/106-laboratorio-sp04-un-grupo.md) · segunda corrida [docs/107-laboratorio-sp04-segunda-corrida.md](../../docs/107-laboratorio-sp04-segunda-corrida.md).
 
 ## Comandos
 

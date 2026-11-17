@@ -1,6 +1,6 @@
-# 102 — Laboratorio SP-04: economía de un solo grupo sobre el motor real
+# 106 — Laboratorio SP-04: economía de un solo grupo sobre el motor real
 
-16/11/2026. Rama `experiment/sp04-laboratorio-un-grupo`, creada desde `main` (`a898a9a`, Hito 3 cerrado). Código en `lab/sp04/`; resultados agregados en `lab/sp04/resultados/`. No se tocan `src/`, la referencia V9.9, los tags ni el mapa.
+16/11/2026 (numerado 102 en su rama; renumerado 106 el 17/11, porque el 102 es el del D12). Segunda corrida: [107](107-laboratorio-sp04-segunda-corrida.md). Rama `experiment/sp04-laboratorio-un-grupo`, creada desde `main` (`a898a9a`, Hito 3 cerrado). Código en `lab/sp04/`; resultados agregados en `lab/sp04/resultados/`. No se tocan `src/`, la referencia V9.9, los tags ni el mapa.
 
 **Pregunta de diseño (docs/63 §5K):** ¿cuántas acciones y recursos necesita un solo grupo para que abastecer la colonia y avanzar hacia el objetivo sean alternativas viables que compitan entre sí?
 
