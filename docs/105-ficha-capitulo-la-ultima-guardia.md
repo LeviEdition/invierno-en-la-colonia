@@ -71,13 +71,13 @@ Alternativas para que la muerte del rescatista pese dentro del encuentro (**pend
 
 ## 6. Recompensa: el médico como superviviente jugable
 
-**Propuesta del creador (17/11), a medir en la tercera corrida del laboratorio:** el médico rescatado se incorpora como **superviviente jugable**, con una **pasiva: cura una herida por ronda a un aliado en su misma localidad**.
+**Decisión del creador (17/11), medida en el [informe 110](110-laboratorio-sp04-tercera-corrida.md):** el médico rescatado se incorpora como **superviviente jugable**.
 
-- Como superviviente, suma un dado por ronda (1 + vivos), puede moverse, buscar y atacar, se expone y puede morir (−2 de moral). Come como cualquier superviviente cuando está en la colonia.
-- Su curación lo acompaña: en el hospital, en una salida o en la colonia.
-- Usa el reclutamiento que ya tiene el motor, así que no requiere una regla nueva de incorporación.
-- **A definir al medir:** si se cura a sí mismo, si cura congelación además de heridas, y cómo se diferencia de Mara si en la partida también hay una médica.
-- La propuesta anterior (curar en la colonia sin jugar) quedó descartada: el laboratorio mostró que curaba 0,1–0,5 heridas por partida y que su comida pesaba más que su ayuda.
+- Suma su dado por ronda (1 + vivos), se mueve, busca, ataca, se expone y come como cualquier superviviente. Si muere, la colonia pierde 2 de moral.
+- **Pasiva:** al empezar cada ronda cura **una herida** (solo heridas, no congelación) al aliado más herido que esté en su misma localidad; a igualdad, al de mayor influencia. **No se cura a sí mismo.**
+- Entra con el reclutamiento que ya tiene el motor.
+- Con él, rescatar o retirarse quedan parejos (diferencia menor a 5 puntos en 11 de 12 celdas), que es lo que pide §9.
+- **A definir en su carta:** ataque y búsqueda (el laboratorio usó 4 y 3) y cómo se diferencia visualmente de Mara.
 
 ## 7. Fuera de este capítulo
 
