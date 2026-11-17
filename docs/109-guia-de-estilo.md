@@ -97,7 +97,22 @@ Dos condiciones para que sea justo:
 - Acción seleccionada con borde y texto en Lámpara.
 - Señales de estado: heridas en Sangre fría, congelación en Escarcha, igual que los símbolos del D12.
 
+## 8. Interfaz v2 (decisiones del creador, 17/11/2026)
+
+Referencia visual: el lienzo de diseño «Invierno en la Colonia — dirección de interfaz» (claude.ai).
+
+- **Plataforma principal: teléfono en horizontal** (referencia 852×393). Escritorio usa la misma disposición, con el mapa como protagonista y los paneles más livianos. En vertical se muestra un aviso para girar el teléfono.
+- **El mapa manda:** ocupa toda la pantalla; los paneles flotan sobre él, compactos.
+- **Mapa en tonos fríos:** se aprueba el filtro de color sobre la ilustración existente (saturación 0,5, tono −28°, brillo 0,85, contraste 1,05), sin redibujarla. Cierra el pendiente de §7.
+- **Materiales:** chapa corrugada y oxidada en barras y marcos; nieve acumulada en los bordes superiores; pinos del mapa en algunas esquinas (`assets/interfaz/`). **El óxido es un material, no una señal:** es textura apagada y nunca marca algo importante; la regla de la Lámpara (§2.1) sigue valiendo. Sin guirnaldas de luces.
+- **Papel rasgado** para los recuadros de texto (pensamiento, consecuencia «X recordará eso») y los rótulos de las localidades.
+- **Recursos como chapas redondas con ícono:** fogata (moral, en Lámpara), lata (comida), adulto y chico (indefensos), bolsa (residuos).
+- **Dados de acción con puntos**, como dados reales; el D12 conserva su forma y sus símbolos.
+- **Rótulos de las localidades:** aparecen al mover el mouse sobre el mapa, al tocarlo o al desplazarlo, y se desvanecen tras unos segundos sin interacción; la localidad seleccionada conserva el suyo.
+- **Movimiento:** los paneles entran y salen con transiciones fluidas, no de golpe; el cambio de localidad es rápido pero suave. Se respeta la preferencia de movimiento reducido.
+- **Resultados de encrucijadas** en viñetas grandes, de borde a borde, con la barra de resultado debajo.
+
 ## 7. Pendiente
 
-- **Ajuste de color del mapa aprobado:** el mapa es violeta y la paleta nueva es azul y gris. Probar un ajuste de color sobre la ilustración existente, sin redibujarla, y decidir si se adopta.
+- ~~Ajuste de color del mapa~~: resuelto en §8 (filtro frío aprobado).
 - Sets de expresiones de los supervivientes y viñetas de la primera encrucijada con la paleta nueva.
