@@ -42,7 +42,7 @@ El mapa permite preparar, jugar y terminar una partida completa (humano + IA y d
 | 5 | Aviso móvil tapa título y botones de la ficha ampliada durante 5 s | **Aceptado como menor** (16/11) | Mejoras menores |
 | 6 | La partida se trababa si un superviviente moría en su propia acción | **Corregido** ([101](101-muerte-durante-accion-propia.md)) | Confirmado jugando (16/11) |
 | 7 | D12 de exposición sin probar a mano | Integrado; baterías automáticas en tres tamaños | Partida manual y teléfono físico |
-| 8 | Enfoque de localidad con el mapa 2× | **Conservado en 1** (`focusMaxZoom`): sin tope propio acercaba a 1,5 casi todas las localidades | Decidir si el enfoque también debe acercar más |
+| 8 | Enfoque de localidad con el mapa 2× | **1,5** (`focusMaxZoom`), decisión del creador 17/11: centrar y acercar un poco más | Probar en escritorio y A15 |
 
 ## 5. Verificación del mapa 2× (rama `feature/mapa-2x`)
 

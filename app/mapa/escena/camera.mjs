@@ -16,5 +16,5 @@ export function fitMapCamera(b,v){const zoom=Math.min(v.width/b.width,v.height/b
 export function resizeMapCamera(camera,anchor,b,v){return constrainCamera({...camera,retainedMin:Math.min(camera.minZoom,camera.zoom)},b,v);}
 export function focusAnchor(scene,id){const z=scene.zones.find(z=>z.id===id);if(!z)return null;const b=scene.fitPresentation?localityFrame(z):null;return b?{x:b.x+b.width/2,y:b.y+b.height/2}:z.center;}
 // El enfoque de una localidad tiene su propio tope (scene.json focusMaxZoom): con el mapa 2×
-// el zoom manual llega a 1,5, pero el encuadre al enfocar se conserva en 1 como antes.
+// el zoom manual y el enfoque llegan a 1,5; el encuadre de cada localidad también limita.
 export function focusLocality(scene,id,v){const z=scene.zones.find(z=>z.id===id);if(!z)return fitMapCamera(scene.bounds,v);const frame=scene.fitPresentation?localityFrame(z):z.focus,anchor=focusAnchor(scene,id),base=fitMapCamera(scene.bounds,v),zoom=Math.min(base.maxZoom,scene.focusMaxZoom??Infinity,Math.max(base.minZoom,Math.min(v.width/frame.width,v.height/frame.height)));return constrainCamera({overview:false,zoom,x:v.width/2-anchor.x*zoom,y:v.height/2-anchor.y*zoom},scene.bounds,v);}

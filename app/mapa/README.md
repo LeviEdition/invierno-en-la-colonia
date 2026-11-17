@@ -69,6 +69,6 @@ El visor nunca importa el motor ni ningún archivo de prototipos; el build lo co
 
 ## Límites conocidos
 
-- El fondo activo es `mapa-2x.webp` (3342×1882), mostrado a la mitad sobre el mundo de 1671×941. El zoom máximo es 1,5 respecto del mundo (`maxZoom` en `escena/scene.json`) y el enfoque de localidad se limita a 1 (`focusMaxZoom`). Véase docs/112.
+- El fondo activo es `mapa-2x.webp` (3342×1882), mostrado a la mitad sobre el mundo de 1671×941. El zoom máximo es 1,5 respecto del mundo (`maxZoom` en `escena/scene.json`) y el enfoque de localidad llega a 1,5 (`focusMaxZoom`), limitado también por el encuadre de cada localidad. Véase docs/112.
 - Validado en Chromium con emulación móvil; falta el teléfono físico.
 - El enlace «Referencia estable» de las herramientas de desarrollo (`?dev=1`) abre `invierno_colonia_v9_9.html`, que no sirve este servidor: abrirlo directamente desde el repositorio.
