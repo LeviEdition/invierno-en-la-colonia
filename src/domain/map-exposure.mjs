@@ -16,7 +16,7 @@ export function resolveMapExposure(ctx,p,reason){
   const victims=ctx.alive().filter(x=>x.id!==p.id&&x.loc===p.loc).sort((a,b)=>a.influence-b.influence).map(x=>x.id);
   ctx.game.biteResolving=true;ctx.pendingBite={victims,target:null};ctx.kill(p,'mordedura');ctx.biteNext();
  }else if(die.outcome==='frost'||die.outcome==='wound'){
-  if(die.outcome==='frost')p.frost++;else p.wounds++;
+  if(die.outcome==='frost'){delete p.frostFresh;p.frost++;}else p.wounds++;
   ctx.message((die.outcome==='frost'?'❄ Congelación de ':'♥ Herida de ')+p.name+'.');
   if(p.frost+p.wounds>=3)ctx.kill(p,'tres daños acumulados');
  }

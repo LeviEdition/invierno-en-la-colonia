@@ -35,8 +35,9 @@ class ItemEngine {
   if(d.effect==='heal'||d.effect==='frost'){
    if(!p||p.dead||!p.wounds&&!p.frost){ctx.message('⚠ Seleccioná a un superviviente que necesite tratamiento.');return false;}
    if(d.effect==='frost'&&!p.frost){ctx.message('⚠ Este tratamiento solo elimina congelaciones.');return false;}
-   const qty=d.amount+(p.skill==='paramedic'?1:0);let healed=0;
+   const beforeFrost=p.frost,qty=d.amount+(p.skill==='paramedic'?1:0);let healed=0;
    for(let j=0;j<qty;j++){if(d.effect==='frost'&&p.frost){p.frost--;healed++;}else if(d.effect==='heal'){if(p.wounds){p.wounds--;healed++;}else if(p.frost){p.frost--;healed++;}}}
+   if(p.frost<beforeFrost)delete p.frostFresh;
    if(!healed)return false;ctx.message('✚ '+p.name+' recibió '+d.name+' y curó '+healed+' daño(s).');
   }else if(d.effect==='food'){ctx.game.food+=d.amount;ctx.message('🥫 '+d.name+': +'+d.amount+' comida(s) a la reserva.');}
   else if(d.effect==='sample'){const finder=ctx.all().find(x=>x.id===it.finderId);ctx.gainSample(finder||p);ctx.message('◈ Muestra entregada al objetivo.');}

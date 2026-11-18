@@ -52,7 +52,14 @@ export function continueNight(ctx){
   const watcher=nightWatcher(game.humans,loc);
   if(!watcher)continue;
   ctx.mapCycle?.before('night',{actorId:watcher.id,name:watcher.name,location:loc});
+  const priorFrost=watcher.frost;
   const result=resolveMapExposure(ctx,watcher,'la noche en '+ctx.places[loc]);
+  if(game.testRules?.laNoche&&!watcher.dead&&priorFrost===0&&result?.effect==='frost'){
+   watcher.frostFresh=true;
+   const summary='❄ '+watcher.name+' se congeló en la noche: el frío le pasará factura la ronda que viene.';
+   ctx.mapPlay?.event('frost-grace',{actor:watcher.id,name:watcher.name,summary});
+   ctx.message(summary);
+  }
   ctx.verify();
   ctx.mapCycle?.annotate({exposure:result});
   ctx.mapCycle?.after();

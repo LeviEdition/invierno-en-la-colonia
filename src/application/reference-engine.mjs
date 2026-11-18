@@ -276,7 +276,7 @@ const {places,icons,em,capacity,zcap,objectives,roster}=createReferenceData();
 
 
 function special(){const p=person();if(!p||p.dead||!playable()||game.ended)return;if(p.skillUsed)return messageAndPaint('Ya usaste esta habilidad en la ronda.');if(p.skill==='builder'){const z=game.zones[p.loc];if(z.z+z.b>=zcap[p.loc])return messageAndPaint('No hay accesos libres.');executeBuilder(p);}else if(p.skill==='medic'||p.skill==='nurse'){if(pendingLoot)return;const targets=alive().filter(x=>x.loc===p.loc&&(p.skill==='medic'?x.wounds:x.frost));if(!targets.length)return messageAndPaint('No hay nadie que necesite ese tratamiento aquí.');pendingHeal={actor:p.id,targets:targets.map(x=>x.id)};show('healTarget');}else return messageAndPaint('La habilidad de este personaje es automática.');}
-function chooseHeal(id){if(!pendingHeal||!pendingHeal.targets.includes(id))return;const p=all().find(x=>x.id===pendingHeal.actor),t=all().find(x=>x.id===id);if(!p||!t||p.dead||t.dead||p.skillUsed||p.loc!==t.loc||!canResolve('healTarget'))return;const key=p.skill==='medic'?'wounds':'frost';if(!t[key])return; t[key]--;p.skillUsed=true;pendingHeal=null;if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('treatment',{actor:p.id,name:p.name,target:t.name,skill:p.skillName});message('✚ '+p.name+' atendió a '+t.name+' con '+p.skillName+'.');hide();paint();}
+function chooseHeal(id){if(!pendingHeal||!pendingHeal.targets.includes(id))return;const p=all().find(x=>x.id===pendingHeal.actor),t=all().find(x=>x.id===id);if(!p||!t||p.dead||t.dead||p.skillUsed||p.loc!==t.loc||!canResolve('healTarget'))return;const key=p.skill==='medic'?'wounds':'frost';if(!t[key])return; t[key]--;if(key==='frost')delete t.frostFresh;p.skillUsed=true;pendingHeal=null;if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('treatment',{actor:p.id,name:p.name,target:t.name,skill:p.skillName});message('✚ '+p.name+' atendió a '+t.name+' con '+p.skillName+'.');hide();paint();}
 const random=n=>Math.floor(Math.random()*n),die=()=>random(6)+1;
 let game,selected=0,target=0,picked=0,opened='',profileId='',skipAI=false,aiRunning=false,pendingHeal=null,pendingLoot=null;
 let gameMode='ai',passScreenActive=false;
@@ -536,7 +536,7 @@ function expose(p,reason){
  if(d===1){
   const coLocated=alive().filter(x=>x.id!==p.id&&x.loc===p.loc).sort((a,b)=>a.influence-b.influence).map(x=>x.id);
   game.biteResolving=true;pendingBite={victims:coLocated,target:null};kill(p,'mordedura');biteNext();
- }else if(d===2||d===3){if(d===2)p.frost++;else p.wounds++;message((d===2?'❄ Congelación de ':'♥ Herida de ')+p.name+'.');if(p.frost+p.wounds>=3)kill(p,'tres daños acumulados');}
+ }else if(d===2||d===3){if(d===2){delete p.frostFresh;p.frost++;}else p.wounds++;message((d===2?'❄ Congelación de ':'♥ Herida de ')+p.name+'.');if(p.frost+p.wounds>=3)kill(p,'tres daños acumulados');}
  return {rolled:true,value:d,effect:d===1?'bite':d===2?'frost':d===3?'wound':'none',ability:null,wounds:p.wounds-before.wounds,frost:p.frost-before.frost,fatal:!!p.dead};
 }
 function drawItem(loc){return game.decks[loc]&&game.decks[loc].length?game.decks[loc].shift():null;}
@@ -1028,7 +1028,7 @@ const actor=id=>all().find(p=>p.id===id);
 const automationActions=Object.freeze({
  contributeHand(i){if(!CrisisManager.add(game.botItems[i],'La IA'))return false;game.botItems.splice(i,1);return true;},
  contributeEquipment(id,j){const p=actor(id);if(!CrisisManager.add(p.equipment[j],p.name))return false;p.equipment.splice(j,1);return true;},
- treat(id,targetId){const p=actor(id),t=actor(targetId);if(p.skill==='medic')t.wounds--;else t.frost--;p.skillUsed=true;if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('treatment',{name:p.name,target:t.name,skill:p.skillName});message('★ '+p.name+' atendió a '+t.name+'.');},
+ treat(id,targetId){const p=actor(id),t=actor(targetId);if(p.skill==='medic')t.wounds--;else{t.frost--;delete t.frostFresh;}p.skillUsed=true;if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('treatment',{name:p.name,target:t.name,skill:p.skillName});message('★ '+p.name+' atendió a '+t.name+'.');},
  buildFree(id){const p=actor(id);game.zones[p.loc].b++;p.skillUsed=true;if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('build',{actor:p.id,name:p.name,count:1,method:'ability'});message('★ '+p.name+' construyó una barricada sin dado.');},
  useItem(i,id){return itemEngine.use(i,actor(id),'ai');},
  moveWithFuel(id,dest,i){return itemEngine.moveWithFuel(actor(id),dest,'ai',i);},

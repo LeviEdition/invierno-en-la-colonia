@@ -20,7 +20,11 @@ function newRound(){
 }
 function applyFrost(side){
  const group=side==='human'?ctx.game.humans:ctx.game.bots;
- for(const p of [...group])if(!p.dead&&p.frost>0){p.wounds++;ctx.message('❄ '+p.name+' recibe una herida por congelación (inicio de turno).');if(p.wounds+p.frost>=3)ctx.kill(p,'heridas por congelación');}
+ for(const p of [...group]){
+  const fresh=ctx.game.testRules?.laNoche&&p.frostFresh;
+  if(p.frostFresh)delete p.frostFresh;
+  if(!p.dead&&p.frost>0&&!fresh){p.wounds++;ctx.message('❄ '+p.name+' recibe una herida por congelación (inicio de turno).');if(p.wounds+p.frost>=3)ctx.kill(p,'heridas por congelación');}
+ }
 }
 async function finishTurn(){
  const turnGame=ctx.game;

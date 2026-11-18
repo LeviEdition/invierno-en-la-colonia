@@ -509,10 +509,10 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
             return ctx.message("⚠ Seleccioná a un superviviente que necesite tratamiento."), !1;
           if (d.effect === "frost" && !p.frost)
             return ctx.message("⚠ Este tratamiento solo elimina congelaciones."), !1;
-          let qty = d.amount + (p.skill === "paramedic" ? 1 : 0), healed = 0;
+          let beforeFrost = p.frost, qty = d.amount + (p.skill === "paramedic" ? 1 : 0), healed = 0;
           for (let j = 0; j < qty; j++)
             d.effect === "frost" && p.frost ? (p.frost--, healed++) : d.effect === "heal" && (p.wounds ? (p.wounds--, healed++) : p.frost && (p.frost--, healed++));
-          if (!healed) return !1;
+          if (p.frost < beforeFrost && delete p.frostFresh, !healed) return !1;
           ctx.message("✚ " + p.name + " recibió " + d.name + " y curó " + healed + " daño(s).");
         } else if (d.effect === "food")
           ctx.game.food += d.amount, ctx.message("🥫 " + d.name + ": +" + d.amount + " comida(s) a la reserva.");
@@ -958,7 +958,10 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
     }
     function applyFrost(side) {
       let group = side === "human" ? ctx.game.humans : ctx.game.bots;
-      for (let p of [...group]) !p.dead && p.frost > 0 && (p.wounds++, ctx.message("❄ " + p.name + " recibe una herida por congelación (inicio de turno)."), p.wounds + p.frost >= 3 && ctx.kill(p, "heridas por congelación"));
+      for (let p of [...group]) {
+        let fresh = ctx.game.testRules?.laNoche && p.frostFresh;
+        p.frostFresh && delete p.frostFresh, !p.dead && p.frost > 0 && !fresh && (p.wounds++, ctx.message("❄ " + p.name + " recibe una herida por congelación (inicio de turno)."), p.wounds + p.frost >= 3 && ctx.kill(p, "heridas por congelación"));
+      }
     }
     async function finishTurn() {
       let turnGame = ctx.game;
@@ -1054,7 +1057,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
     if (die.outcome === "bite") {
       let victims = ctx.alive().filter((x) => x.id !== p.id && x.loc === p.loc).sort((a, b) => a.influence - b.influence).map((x) => x.id);
       ctx.game.biteResolving = !0, ctx.pendingBite = { victims, target: null }, ctx.kill(p, "mordedura"), ctx.biteNext();
-    } else (die.outcome === "frost" || die.outcome === "wound") && (die.outcome === "frost" ? p.frost++ : p.wounds++, ctx.message((die.outcome === "frost" ? "❄ Congelación de " : "♥ Herida de ") + p.name + "."), p.frost + p.wounds >= 3 && ctx.kill(p, "tres daños acumulados"));
+    } else (die.outcome === "frost" || die.outcome === "wound") && (die.outcome === "frost" ? (delete p.frostFresh, p.frost++) : p.wounds++, ctx.message((die.outcome === "frost" ? "❄ Congelación de " : "♥ Herida de ") + p.name + "."), p.frost + p.wounds >= 3 && ctx.kill(p, "tres daños acumulados"));
     return { ...result, wounds: p.wounds - before.wounds, frost: p.frost - before.frost, fatal: !!p.dead };
   }
 
@@ -1087,7 +1090,12 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       let loc = game.nightRemaining.shift(), watcher = nightWatcher(game.humans, loc);
       if (!watcher) continue;
       ctx.mapCycle?.before("night", { actorId: watcher.id, name: watcher.name, location: loc });
-      let result = resolveMapExposure(ctx, watcher, "la noche en " + ctx.places[loc]);
+      let priorFrost = watcher.frost, result = resolveMapExposure(ctx, watcher, "la noche en " + ctx.places[loc]);
+      if (game.testRules?.laNoche && !watcher.dead && priorFrost === 0 && result?.effect === "frost") {
+        watcher.frostFresh = !0;
+        let summary = "❄ " + watcher.name + " se congeló en la noche: el frío le pasará factura la ronda que viene.";
+        ctx.mapPlay?.event("frost-grace", { actor: watcher.id, name: watcher.name, summary }), ctx.message(summary);
+      }
       ctx.verify(), ctx.mapCycle?.annotate({ exposure: result }), ctx.mapCycle?.after(), rolls.push({ loc, id: watcher.id, effect: result?.effect ?? null });
     }
     return rolls;
@@ -2173,7 +2181,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       let p = all().find((x) => x.id === pendingHeal.actor), t = all().find((x) => x.id === id);
       if (!p || !t || p.dead || t.dead || p.skillUsed || p.loc !== t.loc || !canResolve("healTarget")) return;
       let key = p.skill === "medic" ? "wounds" : "frost";
-      t[key] && (t[key]--, p.skillUsed = !0, pendingHeal = null, message("✚ " + p.name + " atendió a " + t.name + " con " + p.skillName + "."), hide(), paint());
+      t[key] && (t[key]--, key === "frost" && delete t.frostFresh, p.skillUsed = !0, pendingHeal = null, message("✚ " + p.name + " atendió a " + t.name + " con " + p.skillName + "."), hide(), paint());
     }
     let random = (n) => Math2.floor(Math2.random() * n), die = () => random(6) + 1, game, selected = 0, target = 0, picked = 0, opened = "", profileId = "", skipAI = !1, aiRunning = !1, pendingHeal = null, pendingLoot = null, gameMode = "ai", passScreenActive = !1, testRules = TEST_RULE_DEFAULTS;
     function setTestRules(patch) {
@@ -2561,7 +2569,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       if (d === 1) {
         let coLocated = alive().filter((x) => x.id !== p.id && x.loc === p.loc).sort((a, b) => a.influence - b.influence).map((x) => x.id);
         game.biteResolving = !0, pendingBite = { victims: coLocated, target: null }, kill(p, "mordedura"), biteNext();
-      } else (d === 2 || d === 3) && (d === 2 ? p.frost++ : p.wounds++, message((d === 2 ? "❄ Congelación de " : "♥ Herida de ") + p.name + "."), p.frost + p.wounds >= 3 && kill(p, "tres daños acumulados"));
+      } else (d === 2 || d === 3) && (d === 2 ? (delete p.frostFresh, p.frost++) : p.wounds++, message((d === 2 ? "❄ Congelación de " : "♥ Herida de ") + p.name + "."), p.frost + p.wounds >= 3 && kill(p, "tres daños acumulados"));
       return { rolled: !0, value: d, effect: d === 1 ? "bite" : d === 2 ? "frost" : d === 3 ? "wound" : "none", ability: null, wounds: p.wounds - before.wounds, frost: p.frost - before.frost, fatal: !!p.dead };
     }
     function drawItem(loc) {
@@ -3022,7 +3030,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       },
       treat(id, targetId) {
         let p = actor(id), t = actor(targetId);
-        p.skill === "medic" ? t.wounds-- : t.frost--, p.skillUsed = !0, message("★ " + p.name + " atendió a " + t.name + ".");
+        p.skill === "medic" ? t.wounds-- : (t.frost--, delete t.frostFresh), p.skillUsed = !0, message("★ " + p.name + " atendió a " + t.name + ".");
       },
       buildFree(id) {
         let p = actor(id);

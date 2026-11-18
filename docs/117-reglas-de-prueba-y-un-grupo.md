@@ -99,3 +99,13 @@ La cobertura unitaria verifica eventos, instantáneas, orden, caras sin efecto/c
 Por decisión del creador, los PR ejecutan la preparación breve y un D12 reducido en escritorio y móvil horizontal: movimiento, combate, Regresar y la noche, sin capturas ni galería, con un límite de 5 minutos para ese paso. El recorrido completo conserva todas sus baterías y se ejecuta desde **Actions → Mapa — baterías de navegador → Run workflow**, eligiendo la rama; ya no se repite automáticamente en cada PR.
 
 **Pendiente de ver jugando:** no se abrieron capturas ni se ejecutaron navegadores localmente. El CI comprueba estados y transiciones; **la animación no se da por aprobada visualmente**. El ritmo, la duración del viaje y la legibilidad del D12 deben confirmarse a ojo en escritorio y Samsung Galaxy A15.
+
+### Gracia para la congelación nocturna
+
+La reproducción previa al cambio confirmó el problema: la tirada nocturna dejaba congelación 1 y el inicio inmediato de la ronda 2 añadía herida 1. Ahora, con `testRules.laNoche`, una primera congelación nocturna marca `frostFresh`; el inicio inmediato consume esa marca sin herida y el siguiente cobra normalmente. El Registro avisa que el frío pasará factura la ronda que viene.
+
+El frío que ya existía conserva su cobro: otra congelación nocturna no renueva la gracia. Una congelación diurna adicional elimina la marca y vuelve al cobro normal; tratar realmente la congelación también la elimina, con cartas o enfermera. Curar solo heridas conserva la marca. Los tres daños acumulados siguen matando inmediatamente. La marca no se crea con la regla apagada y no se agrega azar ni lógica de reglas a la interfaz.
+
+**Balance:** este ajuste baja la letalidad de La noche. No se re-corrió el laboratorio de balance; debe confirmarse jugando en escritorio y A15. Se añadieron regresiones unitarias; no se ejecutaron navegadores localmente ni se abrieron capturas.
+
+La comprobación adicional del primitivo interno de tratamiento de IA se detuvo tras dos accesos fallidos: ese símbolo no está expuesto por el adaptador VM. Se verifica la eliminación de la marca mediante enfermera y cartas; la limpieza en el primitivo de IA se revisó en código.
