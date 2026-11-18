@@ -13,7 +13,7 @@ import {createMapCycle} from './map-cycle.mjs';
 import {createMapPlay} from './map-play.mjs';
 import {resolveMapExposure} from '../domain/map-exposure.mjs';
 import {TEST_RULE_DEFAULTS,normalizeTestRules,describeTestRules,partialThreshold,halvedConsequence} from '../domain/test-rules.mjs';
-import {resolveNight,nightEnabled,nightWatch,sleepingOutside} from '../domain/reference-night.mjs';
+import {beginNight,continueNight,nightUnfinished,nightEnabled,nightWatch,sleepingOutside} from '../domain/reference-night.mjs';
 import {soloMode} from '../domain/reference-state.mjs';
 const noop=()=>{};
 export function createEngine({Math=globalThis.Math,queueMicrotask=globalThis.queueMicrotask||((f)=>Promise.resolve().then(f)),setTimeout=globalThis.setTimeout,stateFactory=createReferenceState,rulesFactory=createRules,turnsFactory=createTurns,effects={},automation=null}={}){
@@ -98,6 +98,9 @@ get setTestRules(){return setTestRules;},
 get nightEnabled(){return ()=>nightEnabled(game);},
 get nightWatch(){return ()=>nightWatch(game);},
 get sleepingOutside(){return ()=>sleepingOutside(game);},
+get nightUnfinished(){return ()=>nightUnfinished(game);},
+get continueNight(){return ()=>continueNight(c);},
+get finishNight(){return finishNight;},
 get returnHome(){return returnHome;},set returnHome(value){returnHome=value;},
 get passScreenActive(){return passScreenActive;},set passScreenActive(value){passScreenActive=value;},
 get selectionBySide(){return selectionBySide;},
@@ -278,11 +281,12 @@ const random=n=>Math.floor(Math.random()*n),die=()=>random(6)+1;
 let game,selected=0,target=0,picked=0,opened='',profileId='',skipAI=false,aiRunning=false,pendingHeal=null,pendingLoot=null;
 let gameMode='ai',passScreenActive=false;
 // Reglas de prueba elegidas antes de crear la partida (panel de desarrollo).
-// Se aplican en create() y quedan copiadas en el estado como registro.
+// Se aplican en create() y quedan copiadas en el estado como registro: la
+// partida en curso lee game.testRules, así que elegirlas nunca la altera.
 let testRules=TEST_RULE_DEFAULTS;
 function setTestRules(patch){
- if(game&&!game.ended&&!passScreenActive)return messageAndPaint('Las reglas de prueba se eligen antes de empezar una partida.');
  testRules=normalizeTestRules(patch,testRules);
+ if(game&&!game.ended)message('⚙ Reglas de prueba: se aplican a la próxima partida.');
  paint();
  return testRules;
 }
@@ -361,7 +365,7 @@ function syncLeaderRequests(){
 function requestLeader(side){
  if(pendingLeaderSides.includes(side))return;
  pendingLeaderSides.push(side);syncLeaderRequests();
- message('♛ El líder del '+controls.display(side)+' murió: elegí a su sucesor.');
+ message('♛ '+(controls.solo?'Tu líder':'El líder del '+controls.display(side))+' murió: elegí a su sucesor.');
 }
 function clearLeaderRequest(side){
  pendingLeaderSides=pendingLeaderSides.filter(s=>s!==side);syncLeaderRequests();
@@ -384,7 +388,7 @@ function chooseLeader(id){
  if(side==='human')game.leaderChosen=true;
  else game.localLeaderChosen=true;
  if(succession)clearLeaderRequest(side);
- message('♛ '+p.name+' asume el liderazgo del '+controls.display(side)+' (influencia '+p.influence+').');
+ message('♛ '+p.name+' asume el liderazgo '+(controls.solo?'de tu grupo':'del '+controls.display(side))+' (influencia '+p.influence+').');
  opened='';view.closeBackdrop();
  paint();
 }
@@ -626,6 +630,7 @@ function doMove(){
 }
 // «Regresar a la colonia»: acción con dado de cualquier valor, haya movido o no.
 // No tira exposición y solo lleva a la colonia; el movimiento normal no cambia.
+// Cuenta como movimiento (decisión del creador, 18/11): después ya no puede moverse.
 let returnHome=function returnHome(){
  if(!playable()||game.ended||pendingBite||leaderChoiceReady())return;
  if(!game.testRules?.regreso)return messageAndPaint('La regla «Regresar a la colonia» está apagada.');
@@ -634,9 +639,9 @@ let returnHome=function returnHome(){
  if(!accessible(0))return messageAndPaint('No hay espacios disponibles en la colonia.');
  if(consume(1)===null)return;
  searchOperation=null;actionOperation=null;
- const from=p.loc;p.loc=0;
+ const from=p.loc;p.loc=0;p.moved=true;
  if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('move',{actor:p.id,name:p.name,from,destination:0,reason:'return'});
- message('⌂ '+p.name+' regresó a la colonia desde '+places[from]+' (sin exposición).');
+ message('⌂ '+p.name+' regresó a la colonia desde '+places[from]+' (sin exposición). Ya no puede moverse esta ronda.');
  verify();paint();
 };
 // Consecuencias únicas para ambos consumidores. No depende de selected/target.
@@ -951,8 +956,22 @@ function colony(){
  }
  verify();if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.after();
  if(game.ended)return;
- // «La noche» cierra la ronda: una tirada del D12 por localidad exterior ocupada.
- resolveNight(c);
+ // «La noche» cierra la ronda: una tirada del D12 por localidad exterior
+ // ocupada. Si una mordedura queda pendiente, finishNight la reanuda.
+ beginNight(c);
+}
+// Termina la noche aunque una mordedura la pause: resuelta la decisión, sigue
+// con las localidades que faltaban. La ronda siguiente no abre antes.
+async function finishNight(){
+ const nightGame=game;
+ while(game===nightGame&&!game.ended&&nightUnfinished(game)){
+  await waitForBite();
+  if(game!==nightGame||game.ended||!nightUnfinished(game))break;
+  const before=game.nightRemaining.length;
+  continueNight(c);
+  if(game.nightRemaining.length>=before&&!pendingBite)break;
+ }
+ if(game===nightGame)await waitForBite();
 }
 function showSetup(){
  if(aiRunning)return;

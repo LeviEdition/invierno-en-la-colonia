@@ -44,10 +44,18 @@ test('reglas | La noche existe en IA y un grupo, no en dos jugadores locales',()
  assert.deepEqual(['ai','solo','local'].map(nightAvailable),[true,true,false]);
 });
 
-test('reglas | las reglas no se cambian con una partida en curso',()=>{
+test('reglas | elegirlas con una partida en curso no la altera: valen para la próxima',()=>{
  const t=fixture({mode:'ai',seed:7});
- t.run('setTestRules({laNoche:true});');
- assert.equal(t.state('testRules.laNoche'),false,'con partida activa el cambio se rechaza');
+ const antes=t.state('game');
+ t.run('game.log=[];setTestRules({laNoche:true,comidaInicial:10});');
+ assert.equal(t.state('testRules.laNoche'),true,'la elección se acepta');
+ assert.deepEqual(t.state('game.testRules'),{...TEST_RULE_DEFAULTS},'la partida en curso conserva las suyas');
+ assert.equal(t.state('game.food'),antes.food,'la comida de la partida en curso no cambia');
+ assert.equal(t.state('nightEnabled()'),false,'La noche no se enciende a mitad de partida');
+ assert.ok(t.state('game.log').some(line=>/próxima partida/.test(line)),'el registro lo aclara');
+ t.run('create();');
+ assert.equal(t.state('game.food'),10,'la partida nueva sí las toma');
+ assert.equal(t.state('nightEnabled()'),true);
 });
 
 // ─── Identidad con todo apagado ─────────────────────────────────────────────
@@ -161,15 +169,58 @@ test('reglas | una mordedura en soledad se resuelve sola y la noche sigue',()=>{
  assert.equal(t.state('pendingBite'),null,'no queda decisión abierta');
 });
 
-test('reglas | una mordedura con compañeros deja la decisión abierta y corta la noche',()=>{
+test('reglas | una mordedura con compañeros pausa la noche y deja la decisión abierta',()=>{
  const t=prepare({laNoche:true},{seed:5});
  // Dos en la escuela (la mordedura amenaza al otro) y uno en la gasolinera.
  t.run(quiet+'game.humans[0].loc=1;game.humans[1].loc=1;game.humans[2].loc=5;'+
   'game.humans[0].influence=40;game.humans[1].influence=70;game.humans[2].influence=60;');
  setDie(t,D12.bite);t.run('game.log=[];colony();');
- assert.equal(t.state('game.log').filter(line=>/la noche en/.test(line)).length,1,'la mordedura pendiente corta la noche');
+ assert.equal(t.state('game.log').filter(line=>/la noche en/.test(line)).length,1,'solo tiró la primera localidad');
  assert.equal(t.state('pendingBite.target'),'h1','el compañero queda amenazado');
- assert.equal(t.state('game.humans[2].loc'),5,'la gasolinera no llegó a tirar');
+ assert.deepEqual(t.state('game.nightRemaining'),[5],'la gasolinera queda anotada, no descartada');
+ assert.equal(t.state('nightUnfinished()'),true);
+});
+
+test('reglas | resuelta la decisión, la noche sigue con las localidades que faltaban',()=>{
+ const t=prepare({laNoche:true},{seed:5});
+ t.run(quiet+'game.humans[0].loc=1;game.humans[1].loc=1;game.humans[2].loc=5;'+
+  'game.humans[0].influence=40;game.humans[1].influence=70;game.humans[2].influence=60;');
+ setDie(t,D12.bite);t.run('game.log=[];colony();');
+ assert.equal(t.state('nightUnfinished()'),true,'la noche quedó a medias');
+ // El jugador sacrifica al compañero amenazado y la noche continúa.
+ setDie(t,D12.wound);t.run('chooseBite("sacrifice");continueNight();');
+ const tiradas=t.state('game.log').filter(line=>/la noche en/.test(line));
+ assert.equal(tiradas.length,2,'la segunda localidad tira al reanudar');
+ // El registro va de lo más nuevo a lo más viejo: places[5] es Escuela.
+ assert.match(tiradas[0],/la noche en Escuela/,'la tirada reanudada es la última anotada');
+ assert.match(tiradas[1],/la noche en Supermercado/,'la primera fue la que mordió');
+ assert.equal(t.state('game.humans[2].wounds'),1,'la tirada reanudada recae en quien faltaba');
+ assert.equal(t.state('nightUnfinished()'),false,'no queda noche pendiente');
+ assert.deepEqual(t.state('game.nightRemaining'),[]);
+});
+
+test('reglas | la noche reanudada conserva el orden de las localidades',()=>{
+ const t=prepare({laNoche:true},{seed:5});
+ // Mordedura en el supermercado (1); faltan hospital (2) y escuela (5), en ese orden.
+ t.run(quiet+'game.humans.forEach((p,i)=>{p.loc=[1,1,2][i];p.influence=[40,70,60][i];});'+
+  'game.humans.push(addCharacter({id:"h9",name:"Nadia",loc:5,wounds:0,frost:0,dead:false}));game.humans[3].influence=50;');
+ setDie(t,D12.bite);t.run('game.log=[];colony();');
+ assert.deepEqual(t.state('game.nightRemaining'),[2,5],'quedan en orden de localidad');
+ setDie(t,D12.none);t.run('chooseBite("sacrifice");continueNight();');
+ const tiradas=t.state('game.log').filter(line=>/la noche en/.test(line)).reverse();
+ assert.deepEqual(tiradas.map(line=>line.match(/la noche en ([^)]+)\)/)[1]),['Supermercado','Hospital','Escuela']);
+ assert.equal(t.state('nightUnfinished()'),false);
+});
+
+test('reglas | si el centinela que faltaba murió antes, la localidad se saltea sola',()=>{
+ const t=prepare({laNoche:true},{seed:5});
+ t.run(quiet+'game.humans[0].loc=1;game.humans[1].loc=1;game.humans[2].loc=5;'+
+  'game.humans[0].influence=40;game.humans[1].influence=70;game.humans[2].influence=60;');
+ setDie(t,D12.bite);t.run('game.log=[];colony();');
+ // El único de la escuela muere por otra vía antes de reanudar.
+ t.run('game.humans[2].dead=true;chooseBite("sacrifice");continueNight();');
+ assert.equal(t.state('game.log').filter(line=>/la noche en Escuela/.test(line)).length,0);
+ assert.equal(t.state('nightUnfinished()'),false,'la noche termina igual');
 });
 
 // ─── Regresar a la colonia ──────────────────────────────────────────────────
@@ -199,6 +250,17 @@ test('reglas | regresar funciona haya movido o no',()=>{
   t.run('game.humans[0].loc=2;game.humans[0].moved='+moved+';game.dice=[2];selected=0;returnHome();');
   assert.equal(t.state('game.humans[0].loc'),0,'moved='+moved);
  }
+});
+
+test('reglas | regresar cuenta como movimiento: después ya no puede moverse',()=>{
+ const t=prepare({regreso:true},{seed:11});
+ t.run('game.humans[0].loc=2;game.humans[0].moved=false;game.dice=[2,6];selected=0;returnHome();');
+ assert.equal(t.state('game.humans[0].loc'),0,'regresó');
+ assert.equal(t.state('game.humans[0].moved'),true,'queda marcado como movido');
+ t.run('target=3;game.log=[];doMove();');
+ assert.equal(t.state('game.humans[0].loc'),0,'el movimiento posterior se rechaza');
+ assert.ok(t.state('game.log').some(line=>/ya se movió/.test(line)),'el motor lo explica');
+ assert.deepEqual(t.state('game.dice'),[6],'el movimiento rechazado no gasta nada');
 });
 
 test('reglas | regresar solo lleva a la colonia y exige estar afuera',()=>{

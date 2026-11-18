@@ -450,7 +450,8 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       last: "",
       turn: "human",
       nextId: 6,
-      decks: {}
+      decks: {},
+      nightRemaining: []
     };
   }
 
@@ -977,7 +978,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         if (ctx.hide(), ctx.controls.solo) {
           ctx.aiRunning = !0;
           try {
-            if (ctx.message("⌂ Resolviendo fase de colonia."), ctx.colony(), await ctx.waitForBite(), ctx.game !== turnGame || (await ctx.deathDirector.wait(), ctx.game !== turnGame)) return;
+            if (ctx.message("⌂ Resolviendo fase de colonia."), ctx.colony(), await ctx.finishNight(), ctx.game !== turnGame || (await ctx.deathDirector.wait(), ctx.game !== turnGame)) return;
             ctx.game.ended || (ctx.game.round++, ctx.game.round > ctx.game.max ? (ctx.game.ended = !0, ctx.game.turn = "end", ctx.cancelPendingDecisions(), ctx.message("☠ Derrota: se agotaron las rondas.")) : ctx.newRound());
           } finally {
             ctx.game === turnGame && (ctx.aiRunning = !1, ctx.paint());
@@ -992,7 +993,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
           if (ctx.game.turn === "ai") {
             ctx.selectionBySide.ai = ctx.selected, ctx.aiRunning = !0;
             try {
-              if (ctx.message("⌂ Ambos jugadores terminaron. Resolviendo fase de colonia."), ctx.colony(), await ctx.waitForBite(), ctx.game !== turnGame || (await ctx.deathDirector.wait(), ctx.game !== turnGame)) return;
+              if (ctx.message("⌂ Ambos jugadores terminaron. Resolviendo fase de colonia."), ctx.colony(), await ctx.finishNight(), ctx.game !== turnGame || (await ctx.deathDirector.wait(), ctx.game !== turnGame)) return;
               ctx.game.ended || (ctx.game.round++, ctx.game.round > ctx.game.max ? (ctx.game.ended = !0, ctx.game.turn = "end", ctx.cancelPendingDecisions(), ctx.message("☠ Derrota: se agotaron las rondas.")) : ctx.newRound());
             } finally {
               ctx.game === turnGame && (ctx.aiRunning = !1, ctx.game.ended || ctx.showPass("human"), ctx.paint());
@@ -1002,7 +1003,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         }
         ctx.aiRunning = !0, ctx.skipAI = !1, ctx.game.turn = "ai", ctx.paint();
         try {
-          if (await ctx.botTurn(), ctx.game !== turnGame || ctx.game.ended || !ctx.game.ended && (ctx.message("⌂ Resolviendo fase de colonia."), await ctx.pause(), ctx.game !== turnGame || ctx.game.ended || (ctx.colony(), await ctx.waitForBite(), ctx.game !== turnGame || ctx.game.ended) || (await ctx.pause(), ctx.game !== turnGame || ctx.game.ended)))
+          if (await ctx.botTurn(), ctx.game !== turnGame || ctx.game.ended || !ctx.game.ended && (ctx.message("⌂ Resolviendo fase de colonia."), await ctx.pause(), ctx.game !== turnGame || ctx.game.ended || (ctx.colony(), await ctx.finishNight(), ctx.game !== turnGame || ctx.game.ended) || (await ctx.pause(), ctx.game !== turnGame || ctx.game.ended)))
             return;
           ctx.game.ended || (ctx.game.round++, ctx.game.round > ctx.game.max ? (ctx.game.ended = !0, ctx.game.turn = "end", ctx.cancelPendingDecisions(), ctx.message("☠ Derrota: se agotaron las rondas.")) : ctx.newRound());
         } finally {
@@ -1067,17 +1068,24 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
   function nightWatch(game) {
     return game ? [...new Set(game.humans.filter((p) => !p.dead && p.loc !== 0).map((p) => p.loc))].sort((a, b) => a - b).map((loc) => ({ loc, watcher: nightWatcher(game.humans, loc) })).filter((entry) => entry.watcher) : [];
   }
-  var sleepingOutside = (game) => game ? game.humans.filter((p) => !p.dead && p.loc !== 0) : [], nightEnabled = (game) => !!game?.testRules?.laNoche && nightAvailable(game.mode);
-  function resolveNight(ctx) {
+  var sleepingOutside = (game) => game ? game.humans.filter((p) => !p.dead && p.loc !== 0) : [], nightEnabled = (game) => !!game?.testRules?.laNoche && nightAvailable(game.mode), nightUnfinished = (game) => !!game && Array.isArray(game.nightRemaining) && game.nightRemaining.length > 0;
+  function beginNight(ctx) {
     let game = ctx.game;
     if (!game || game.ended || !nightEnabled(game)) return [];
     let watch = nightWatch(game);
-    if (!watch.length) return [];
-    ctx.message("☾ La noche: " + watch.length + " localidad(es) con gente afuera.");
-    let rolls = [];
-    for (let { loc, watcher } of watch) {
-      if (game.ended || ctx.pendingBite) break;
-      if (watcher.dead) continue;
+    return game.nightRemaining = watch.map((entry) => entry.loc), watch.length ? (ctx.message("☾ La noche: " + watch.length + " localidad(es) con gente afuera."), continueNight(ctx)) : [];
+  }
+  function continueNight(ctx) {
+    let game = ctx.game, rolls = [];
+    if (!game) return rolls;
+    for (; nightUnfinished(game); ) {
+      if (game.ended) {
+        game.nightRemaining = [];
+        break;
+      }
+      if (ctx.pendingBite) break;
+      let loc = game.nightRemaining.shift(), watcher = nightWatcher(game.humans, loc);
+      if (!watcher) continue;
       let result = resolveMapExposure(ctx, watcher, "la noche en " + ctx.places[loc]);
       ctx.verify(), rolls.push({ loc, id: watcher.id, effect: result?.effect ?? null });
     }
@@ -1223,6 +1231,15 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       },
       get sleepingOutside() {
         return () => sleepingOutside(game);
+      },
+      get nightUnfinished() {
+        return () => nightUnfinished(game);
+      },
+      get continueNight() {
+        return () => continueNight(c);
+      },
+      get finishNight() {
+        return finishNight;
       },
       get returnHome() {
         return returnHome;
@@ -2159,7 +2176,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
     }
     let random = (n) => Math2.floor(Math2.random() * n), die = () => random(6) + 1, game, selected = 0, target = 0, picked = 0, opened = "", profileId = "", skipAI = !1, aiRunning = !1, pendingHeal = null, pendingLoot = null, gameMode = "ai", passScreenActive = !1, testRules = TEST_RULE_DEFAULTS;
     function setTestRules(patch) {
-      return game && !game.ended && !passScreenActive ? messageAndPaint("Las reglas de prueba se eligen antes de empezar una partida.") : (testRules = normalizeTestRules(patch, testRules), paint(), testRules);
+      return testRules = normalizeTestRules(patch, testRules), game && !game.ended && message("⚙ Reglas de prueba: se aplican a la próxima partida."), paint(), testRules;
     }
     let selectionBySide = { human: 0, ai: 0 };
     class TurnController {
@@ -2369,7 +2386,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       pendingLeader = pendingLeaderSides.length > 0, pendingLeaderSide = game?.mode === "local" && pendingLeaderSides.includes(controls.side) ? controls.side : pendingLeaderSides[0] || "human";
     }
     function requestLeader(side) {
-      pendingLeaderSides.includes(side) || (pendingLeaderSides.push(side), syncLeaderRequests(), message("♛ El líder del " + controls.display(side) + " murió: elegí a su sucesor."));
+      pendingLeaderSides.includes(side) || (pendingLeaderSides.push(side), syncLeaderRequests(), message("♛ " + (controls.solo ? "Tu líder" : "El líder del " + controls.display(side)) + " murió: elegí a su sucesor."));
     }
     function clearLeaderRequest(side) {
       pendingLeaderSides = pendingLeaderSides.filter((s) => s !== side), syncLeaderRequests(), pendingLeader || leaderWaiters.splice(0).forEach((done) => done());
@@ -2383,7 +2400,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
     function chooseLeader(id) {
       if (pendingBite || deathWaiting()) return;
       let succession = leaderChoiceReady(), side = succession ? pendingLeaderSide : controls.side, group = ownerGroup(side).filter((p2) => !p2.dead), p = group.find((x) => x.id === id);
-      !p || !succession && !canPickStartingLeader() || (game.leaders[side] = p.id, side === "human" ? game.leaderChosen = !0 : game.localLeaderChosen = !0, succession && clearLeaderRequest(side), message("♛ " + p.name + " asume el liderazgo del " + controls.display(side) + " (influencia " + p.influence + ")."), opened = "", view.closeBackdrop(), paint());
+      !p || !succession && !canPickStartingLeader() || (game.leaders[side] = p.id, side === "human" ? game.leaderChosen = !0 : game.localLeaderChosen = !0, succession && clearLeaderRequest(side), message("♛ " + p.name + " asume el liderazgo " + (controls.solo ? "de tu grupo" : "del " + controls.display(side)) + " (influencia " + p.influence + ")."), opened = "", view.closeBackdrop(), paint());
     }
     function reviewLeader(side, env = null) {
       let g = env ? env.game : game, group = ownerGroup(side, g).filter((p) => !p.dead);
@@ -2645,7 +2662,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       if (consume(1) === null) return;
       searchOperation = null, actionOperation = null;
       let from = p.loc;
-      p.loc = 0, message("⌂ " + p.name + " regresó a la colonia desde " + places[from] + " (sin exposición)."), verify(), paint();
+      p.loc = 0, p.moved = !0, message("⌂ " + p.name + " regresó a la colonia desde " + places[from] + " (sin exposición). Ya no puede moverse esta ronda."), verify(), paint();
     };
     function executeMovement(p, destination2) {
       actionOperation = null;
@@ -2932,7 +2949,15 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
           if (message("🔊 " + places[i] + ": ruido " + (j + 1) + "/" + n + " → dado " + d + (d <= 3 ? ", llega un zombi." : ", sin aparición.")), d <= 3 && addZombie(i), verify(), game.ended) return;
         }
       }
-      verify(), !game.ended && resolveNight(c);
+      verify(), !game.ended && beginNight(c);
+    }
+    async function finishNight() {
+      let nightGame = game;
+      for (; game === nightGame && !game.ended && nightUnfinished(game) && (await waitForBite(), !(game !== nightGame || game.ended || !nightUnfinished(game))); ) {
+        let before = game.nightRemaining.length;
+        if (continueNight(c), game.nightRemaining.length >= before && !pendingBite) break;
+      }
+      game === nightGame && await waitForBite();
     }
     function showSetup() {
       aiRunning || (hide(), view.showSetup(), passScreenActive = !0, toggleFab(!1), syncHandoverAccessibility());

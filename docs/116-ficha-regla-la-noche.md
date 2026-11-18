@@ -22,7 +22,7 @@ Es el mismo D12 que ya usan movimiento y combate en el mapa ([102](102-dado-expo
 - **La colonia nunca tira.** Dormir bajo techo no expone.
 - **El grupo de la IA no tira.** La regla es del singleplayer.
 - **La mordedura sigue el flujo normal existente**: muerte, contagio a los acompañantes de la localidad, decisión de sacrificar o arriesgar, sucesión del liderazgo y avisos. No hay un camino aparte.
-- Si una mordedura queda pendiente de decisión, **la noche se detiene**: las localidades que faltaban no tiran esa noche. La ronda siguiente no abre hasta resolverla.
+- Si una mordedura queda pendiente de decisión, **la noche se pausa, no se corta**: resuelta la decisión, sigue con las localidades que faltaban, en el mismo orden y con la misma secuencia de azar. La ronda siguiente no abre hasta terminarlas todas. El centinela de cada localidad se decide al tirar, así que si murió antes esa localidad se saltea.
 - **Solo para el singleplayer**: aplica en modo contra la IA (solo al grupo humano) y en modo «un grupo». **En dos jugadores locales la opción no existe.**
 
 ## Regresar a la colonia
@@ -30,6 +30,7 @@ Es el mismo D12 que ya usan movimiento y combate en el mapa ([102](102-dado-expo
 Acompaña a «La noche» porque es su contrapeso: sin una forma de volver, quedarse afuera sería una trampa.
 
 - Acción para un superviviente humano **fuera de la colonia**, **haya movido o no**.
+- **Cuenta como movimiento** (decisión del creador, 18/11): después de regresar **ya no puede moverse** esa ronda. Puede usarse aunque ya se haya movido, pero no al revés.
 - **Cuesta un dado de acción de cualquier valor.**
 - **No tira exposición** y **solo lleva a la colonia**.
 - **El movimiento normal a la colonia no cambia**: sigue siendo gratis y con exposición.
@@ -37,7 +38,6 @@ Acompaña a «La noche» porque es su contrapeso: sin una forma de volver, queda
 ## A confirmar jugando
 
 - **Comida inicial: 6 u 8.** El laboratorio midió la regla con un grupo solo y encontró que 6 deja la partida muy ajustada cuando alguien muere de noche ([113](113-laboratorio-sp04-quinta-corrida.md)); con 8 y 10 la cooperativa vuelve al rango objetivo ([115](115-laboratorio-sp04-septima-corrida.md)). El panel ofrece 6, 8 y 10 para decidir en la mesa. **Ninguna cifra está fijada.**
-- **Si «Regresar a la colonia» debe marcar al superviviente como movido.** Hoy **no** lo marca: es una acción con dado, no un movimiento, así que no bloquea un movimiento posterior. El dado que cuesta ya limita el ir y venir. Queda por ver si en la mano se siente abusivo.
 - **Si una tirada por localidad es suficiente tensión** o conviene una por superviviente.
 
 ## Dónde vive

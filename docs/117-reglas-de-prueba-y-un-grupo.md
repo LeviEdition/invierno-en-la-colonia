@@ -42,10 +42,40 @@ Consecuencias de la crisis parcial, con lo pedido en 2: moral 1→0, zombis 2→
 
 - **La batería de navegador nueva no se corrió localmente**: no hay Chromium en este entorno y la política del proyecto es no instalarlo acá. Queda registrada en el workflow `d12a-esbuild-poc` y **el CI del PR es la fuente de verdad**. Cubre dos escenarios: activar las reglas desde el panel en modo contra la IA y terminar una ronda con alguien afuera verificando el aviso nocturno; y jugar dos rondas en modo «un grupo». No doy por aprobado nada de eso.
 - **Comida inicial 6 u 8**: la decisión es de mesa, no de simulación ([116](116-ficha-regla-la-noche.md)).
-- **Si «Regresar a la colonia» debe marcar al superviviente como movido.** Hoy no lo marca; la justificación y el riesgo están en la ficha.
 - **Escritorio y Samsung Galaxy A15 a mano**: la noche con mordedura y sucesión en el teléfono, el botón de regreso en la ficha móvil y el panel `?dev` en pantalla chica. Nada de esto se vio en un dispositivo real.
-- **El mapa no se tocó.** El visor sigue ofreciendo los dos modos actuales; «un grupo» se eligió desde la pantalla del motor. Llevar el modo y los rótulos al mapa es trabajo aparte.
 
 ## Reserva
 
 `node_modules` está versionado como enlace simbólico en el repositorio y `npm ci` lo reemplaza por un directorio real, así que aparece como borrado en `git status`. No se incluyó en ningún commit; conviene revisarlo aparte.
+
+## Informe — reglas en el mapa y dos correcciones (18/11)
+
+Tercera entrega de la rama. Un commit.
+
+**Las reglas y el modo llegaron al mapa.** `app/mapa/` no duplica nada: pregunta al motor y presenta.
+
+- **Preparar partida con `?dev`**: botón «Un grupo (sin IA)» junto a los dos modos actuales y las cuatro reglas (comida 6/8/10 y los tres interruptores). Sin `?dev` el mapa es idéntico a hoy. El motor expone `preparation.modes`, `preparation.testRules` y `preparation.testRuleOptions`; el panel solo dibuja y manda `test-rules`.
+- **Ficha del superviviente**: «Dormirá afuera» y «Hace guardia esta noche · recibe la tirada» salen de `characters[].night`, que la proyección arma con `nightEnabled()` y `nightWatch()` del motor. Botón «Regresar a la colonia» en la grilla de acciones, con su coste en la pista («Dado 1+ · cuenta como movimiento»); se oculta cuando la regla está apagada.
+- **Tiradas nocturnas**: la noche usa el mismo `resolveMapExposure` que movimiento y combate, así que llegan como avisos normales con el D12 y su animación, y la mordedura abre el flujo de mordedura y sucesión existente.
+- **Rótulos**: en «un grupo» la proyección no publica el bando vacío de la IA y la etiqueta del grupo es «Tu grupo». El ciclo muestra «Tu turno» en lugar de «Turno de …», y la fase «Actúa la IA» no puede aparecer porque el modo no pasa por el turno de la IA.
+- **Sin estilos nuevos**: los controles reutilizan `.actions button` y los botones del diálogo, que ya traen alturas de 48px y 44px. La batería mide las alturas reales en 852×393.
+
+**Corrección 1 — la noche no se corta.** Antes, una mordedura pendiente descartaba las localidades que faltaban. Ahora `beginNight` las anota en `game.nightRemaining` y `continueNight` las retoma; `finishNight` (en el motor) espera la decisión y sigue hasta terminarlas, en el mismo orden y con la misma secuencia de azar. La ronda siguiente no abre antes. El centinela de cada localidad se elige al tirar, así que si murió en una tirada anterior la localidad se saltea sola.
+
+**Corrección 2 — regresar cuenta como movimiento.** `returnHome` marca `moved`. Sigue disponible haya movido o no, pero después ya no puede moverse esa ronda; la ficha lo muestra como «Ya se movió» y el movimiento queda con el motivo `already-moved`.
+
+**Al pasar:** elegir reglas con una partida en curso ya no se rechaza. No podía afectarla —la partida lee su copia `game.testRules`— y rechazarlo obligaba a recargar la página entre pruebas; ahora se aceptan y el registro aclara que valen para la próxima partida.
+
+### Qué se comprobó
+
+- **851 pruebas, 0 fallos** (9 nuevas del adaptador del mapa y 5 del motor). `check:build` y `check:mapa-build` en verde.
+- **La noche reanudada**: mordedura en la primera localidad con una segunda ocupada → al resolver la decisión, la segunda tira; el orden se conserva con tres localidades; si el centinela que faltaba murió antes, se saltea; `nightRemaining` queda vacío al terminar.
+- **Regresar**: deja `moved` en true y el movimiento posterior se rechaza sin gastar nada.
+- **Mapa**: la preparación ofrece los tres modos y las cuatro reglas; elegirlas llega al tablero; una regla o un valor inválidos se rechazan sin tocar nada; «un grupo» no proyecta el bando de la IA y su etiqueta es «Tu grupo»; los modos actuales siguen con seis personajes y sin dato nocturno; la ficha recibe guardia y afuera del motor; regresar consume un dado de cualquier valor, no consume azar y deja la acción en `home`.
+- **Paridad**: empezar «un grupo» desde el mapa da el mismo estado y el mismo azar que `startGame('solo')` en el motor (la prueba de paridad existente ahora cubre los tres modos).
+
+### Qué falta
+
+- **La batería nueva del mapa (`check-map-reglas-de-prueba-browser.mjs`) no se corrió localmente**: no hay Chromium en este entorno. Está registrada en el workflow `mapa` y **el CI del PR es la fuente de verdad**. Cubre 852×393 y 1365×768: partida nueva con `?dev` en «un grupo» con la noche y regresar activos, rótulos de la ficha, alturas táctiles, regresar y comprobar que no puede moverse, y terminar una ronda con alguien afuera para ver el aviso nocturno. **No doy por aprobado nada de eso.**
+- **La animación del D12 en la noche no se vio.** La tirada entra por el mismo camino que movimiento y combate, así que debería presentarse igual, pero eso solo se confirma mirando.
+- **Jugar en el teléfono de referencia** sigue pendiente, y con él la decisión de comida inicial.

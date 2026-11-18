@@ -6,12 +6,16 @@ const placeId=index=>Number.isInteger(index)?'place-'+index:null;
 export function projectVisibleState(context,{gate={},renderedPlayable=false,epoch=0}={}){
  const g=context.game,blocked=gate.setup?'setup':gate.pass?'handover':gate.death?'death':gate.modal?'decision':!g?'waiting':null;
  if(blocked)return freeze({schema:1,epoch,blocked,players:[],characters:[],locations:[],objective:null,crisis:null,log:[],dice:{ownerId:null,available:null,used:null},round:null,morale:null,food:null});
- const players=['human','ai'].map(id=>({id,label:context.controls.display(id),leaderId:text(g.leaders?.[id]),initialLeaderConfirmed:!!(id==='human'?g.leaderChosen:g.localLeaderChosen)}));
+ // En «un grupo» el bando de la IA no existe: no se proyecta un grupo vacío.
+ const players=['human','ai'].filter(id=>(id==='human'?g.humans:g.bots).length).map(id=>({id,label:context.controls.display(id),leaderId:text(g.leaders?.[id]),initialLeaderConfirmed:!!(id==='human'?g.leaderChosen:g.localLeaderChosen)}));
+ // «La noche»: el motor dice quién queda afuera y a quién le toca la tirada.
+ const nightOn=!!context.nightEnabled?.(),watchers=nightOn?new Set(context.nightWatch().map(entry=>entry.watcher.id)):null;
  const characters=players.flatMap(player=>(player.id==='human'?g.humans:g.bots).filter(p=>!p.dead).map(p=>({
   id:String(p.id),name:text(p.name),job:text(p.job),playerId:player.id,locationId:placeId(p.loc),
   influence:number(p.influence),attack:number(p.attack),search:number(p.search),effectiveAttack:number(context.effectiveAttack(p)),effectiveSearch:number(context.effectiveSearch(p)),
   wounds:number(p.wounds),frost:number(p.frost),moved:typeof p.moved==='boolean'?p.moved:null,leader:g.leaders?.[player.id]===p.id,
   skill:{id:text(p.skill),name:text(p.skillName),description:text(p.skillDesc),used:typeof p.skillUsed==='boolean'?p.skillUsed:null},
+  night:nightOn?{outside:player.id==='human'&&p.loc!==0,watch:watchers.has(p.id)}:null,
   equipment:context.equipmentOf(p).map(item=>{const d=context.catalog.resolve(item);return {id:text(d?.id),name:text(d?.name),kind:text(d?.kind),description:text(d?.desc),usedRound:number(item?.usedRound)};})
  })));
  const locations=context.places.map((_,index)=>{

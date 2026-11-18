@@ -7,4 +7,5 @@ export function createReferenceState({gameMode,objective,places,catalog,testRule
  bots:solo?[]:[{id:'a0',name:'Ada',loc:0,wounds:0,frost:0,dead:false},{id:'a1',name:'Bruno',loc:0,wounds:0,frost:0,dead:false},{id:'a2',name:'Sol',loc:0,wounds:0,frost:0,dead:false}],
  zones:places.map((name,i)=>({name,z:i===0?3:1,b:0,noise:0,accessIndex:0})),items:['ration','bandage','crowbar','pistol','canned','gascan','ration'].map(id=>catalog.create(id)),botItems:solo?[]:['ration','bandage','gascan','ration','pistol','repairkit','ration'].map(id=>catalog.create(id)),helpless:0,
  leaders:{human:'h0',ai:solo?null:'a1'},leaderChosen:false,localLeaderChosen:gameMode!=='local',rescueQueue:[],crossRemaining:[],crossCard:0,crossResolved:false,crossPending:false,crossOwner:'human',crossActorId:null,crossAttempts:0,
- dice:[],crisis:null,ended:false,noReplacement:false,biteResolving:false,log:[],last:'',turn:'human',nextId:6,decks:{}};}
+ dice:[],crisis:null,ended:false,noReplacement:false,biteResolving:false,log:[],last:'',turn:'human',nextId:6,decks:{},
+ nightRemaining:[]};}
