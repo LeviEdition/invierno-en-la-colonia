@@ -159,6 +159,37 @@ test('reglas | una mordedura nocturna entra al flujo normal de muerte y sucesió
  assert.equal(t.state('game.morale'),8,'la muerte cuesta una moral, como siempre');
 });
 
+test('reglas | cerrar sin noche pendiente no agrega una espera',async()=>{
+ for(const rules of [{},{laNoche:true}]){
+  const t=prepare(rules,{seed:5});
+  t.run(quiet+'game.humans.forEach(p=>{p.loc=0;});colony();');
+  let cerrado=false;
+  t.run('finishNight()').then(()=>{cerrado=true;});
+  await Promise.resolve();
+  assert.equal(cerrado,true,'sin localidades ni mordedura, el cierre ya está resuelto');
+ }
+});
+
+test('reglas | el cierre espera la mordedura incluso en la última localidad',async()=>{
+ for(const otraLocalidad of [0,5]){
+  const t=prepare({laNoche:true},{seed:5});
+  t.run(quiet+'game.humans.forEach((p,i)=>{p.loc=[1,1,'+otraLocalidad+'][i];p.influence=[40,70,60][i];});');
+  setDie(t,D12.bite);t.run('game.log=[];colony();');
+  assert.deepEqual(t.state('game.nightRemaining'),otraLocalidad?[5]:[]);
+  let cerrado=false;
+  const cierre=t.run('finishNight()').then(()=>{cerrado=true;});
+  await Promise.resolve();
+  assert.equal(cerrado,false,'la decisión de mordedura todavía está pendiente');
+  setDie(t,D12.wound);t.run('chooseBite("sacrifice");');
+  await cierre;
+  assert.equal(t.state('pendingBite'),null);
+  assert.equal(t.state('nightUnfinished()'),false);
+  assert.equal(t.state('game.log').filter(line=>/la noche en/.test(line)).length,otraLocalidad?2:1,
+   'el cierre retoma solo las localidades que faltaban');
+  if(otraLocalidad)assert.equal(t.state('game.humans[2].wounds'),1);
+ }
+});
+
 test('reglas | una mordedura en soledad se resuelve sola y la noche sigue',()=>{
  // Sin compañeros no hay contagio que decidir: biteNext cierra la mordedura y
  // las demás localidades reciben su tirada.

@@ -978,7 +978,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         if (ctx.hide(), ctx.controls.solo) {
           ctx.aiRunning = !0;
           try {
-            if (ctx.message("⌂ Resolviendo fase de colonia."), ctx.colony(), await ctx.finishNight(), ctx.game !== turnGame || (await ctx.deathDirector.wait(), ctx.game !== turnGame)) return;
+            if (ctx.message("⌂ Resolviendo fase de colonia."), ctx.colony(), (ctx.nightUnfinished() || ctx.pendingBite) && await ctx.finishNight(), ctx.game !== turnGame || (await ctx.deathDirector.wait(), ctx.game !== turnGame)) return;
             ctx.game.ended || (ctx.game.round++, ctx.game.round > ctx.game.max ? (ctx.game.ended = !0, ctx.game.turn = "end", ctx.cancelPendingDecisions(), ctx.message("☠ Derrota: se agotaron las rondas.")) : ctx.newRound());
           } finally {
             ctx.game === turnGame && (ctx.aiRunning = !1, ctx.paint());
@@ -993,7 +993,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
           if (ctx.game.turn === "ai") {
             ctx.selectionBySide.ai = ctx.selected, ctx.aiRunning = !0;
             try {
-              if (ctx.message("⌂ Ambos jugadores terminaron. Resolviendo fase de colonia."), ctx.colony(), await ctx.finishNight(), ctx.game !== turnGame || (await ctx.deathDirector.wait(), ctx.game !== turnGame)) return;
+              if (ctx.message("⌂ Ambos jugadores terminaron. Resolviendo fase de colonia."), ctx.colony(), (ctx.nightUnfinished() || ctx.pendingBite) && await ctx.finishNight(), ctx.game !== turnGame || (await ctx.deathDirector.wait(), ctx.game !== turnGame)) return;
               ctx.game.ended || (ctx.game.round++, ctx.game.round > ctx.game.max ? (ctx.game.ended = !0, ctx.game.turn = "end", ctx.cancelPendingDecisions(), ctx.message("☠ Derrota: se agotaron las rondas.")) : ctx.newRound());
             } finally {
               ctx.game === turnGame && (ctx.aiRunning = !1, ctx.game.ended || ctx.showPass("human"), ctx.paint());
@@ -1003,7 +1003,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         }
         ctx.aiRunning = !0, ctx.skipAI = !1, ctx.game.turn = "ai", ctx.paint();
         try {
-          if (await ctx.botTurn(), ctx.game !== turnGame || ctx.game.ended || !ctx.game.ended && (ctx.message("⌂ Resolviendo fase de colonia."), await ctx.pause(), ctx.game !== turnGame || ctx.game.ended || (ctx.colony(), await ctx.finishNight(), ctx.game !== turnGame || ctx.game.ended) || (await ctx.pause(), ctx.game !== turnGame || ctx.game.ended)))
+          if (await ctx.botTurn(), ctx.game !== turnGame || ctx.game.ended || !ctx.game.ended && (ctx.message("⌂ Resolviendo fase de colonia."), await ctx.pause(), ctx.game !== turnGame || ctx.game.ended || (ctx.colony(), (ctx.nightUnfinished() || ctx.pendingBite) && await ctx.finishNight(), ctx.game !== turnGame || ctx.game.ended) || (await ctx.pause(), ctx.game !== turnGame || ctx.game.ended)))
             return;
           ctx.game.ended || (ctx.game.round++, ctx.game.round > ctx.game.max ? (ctx.game.ended = !0, ctx.game.turn = "end", ctx.cancelPendingDecisions(), ctx.message("☠ Derrota: se agotaron las rondas.")) : ctx.newRound());
         } finally {
@@ -2952,6 +2952,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       verify(), !game.ended && beginNight(c);
     }
     async function finishNight() {
+      if (!nightUnfinished(game) && !pendingBite) return;
       let nightGame = game;
       for (; game === nightGame && !game.ended && nightUnfinished(game) && (await waitForBite(), !(game !== nightGame || game.ended || !nightUnfinished(game))); ) {
         let before = game.nightRemaining.length;

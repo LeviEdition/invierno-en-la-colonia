@@ -963,6 +963,7 @@ function colony(){
 // Termina la noche aunque una mordedura la pause: resuelta la decisión, sigue
 // con las localidades que faltaban. La ronda siguiente no abre antes.
 async function finishNight(){
+ if(!nightUnfinished(game)&&!pendingBite)return;
  const nightGame=game;
  while(game===nightGame&&!game.ended&&nightUnfinished(game)){
   await waitForBite();
