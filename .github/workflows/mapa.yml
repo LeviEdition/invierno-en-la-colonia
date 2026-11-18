@@ -23,8 +23,40 @@ jobs:
       - name: Chromium externo al producto
         run: |
           npm install --no-save --package-lock=false playwright@1.57.0
-          npx playwright install --with-deps chromium ffmpeg
+          npx playwright install --with-deps chromium
+          if [ "$GITHUB_EVENT_NAME" = workflow_dispatch ]; then npx playwright install ffmpeg; fi
+      - name: Reglas de prueba — preparación breve del mapa
+        timeout-minutes: 2
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/horizontal-reglas
+          node scripts/serve-mapa.mjs --qa > /tmp/horizontal-reglas/mapa-server.log 2>&1 &
+          PREVIEW_PID=$!
+          trap 'kill "$PREVIEW_PID"' EXIT
+          for i in $(seq 1 15); do curl --max-time 1 -fsS http://127.0.0.1:8779/app/mapa/ -o /dev/null && break; sleep 1; done
+          curl --max-time 1 -fsS http://127.0.0.1:8779/app/mapa/ -o /dev/null
+          export CHROMIUM_PATH="$(node --input-type=module -e "import {chromium} from 'playwright';console.log(chromium.executablePath())")"
+          export H344_ORIGIN=http://127.0.0.1:8779
+          MAP_REGLAS_DIR=/tmp/horizontal-reglas node scripts/check-map-reglas-de-prueba-browser.mjs
+      - name: Movimiento y D12 — recorrido corto de PR
+        if: ${{ github.event_name != 'workflow_dispatch' }}
+        timeout-minutes: 5
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/horizontal-d12-breve
+          node scripts/serve-mapa.mjs --qa > /tmp/horizontal-d12-breve/mapa-server.log 2>&1 &
+          PREVIEW_PID=$!
+          trap 'kill "$PREVIEW_PID"' EXIT
+          for i in $(seq 1 15); do curl --max-time 1 -fsS http://127.0.0.1:8779/app/mapa/ -o /dev/null && break; sleep 1; done
+          curl --max-time 1 -fsS http://127.0.0.1:8779/app/mapa/ -o /dev/null
+          export CHROMIUM_PATH="$(node --input-type=module -e "import {chromium} from 'playwright';console.log(chromium.executablePath())")"
+          export H344_ORIGIN=http://127.0.0.1:8779
+          npm run check:mapa-build
+          EXPOSURE_QUICK=1 EXPOSURE_VIEWPORTS=1365x768x1,852x393x2 EXPOSURE_DIR=/tmp/horizontal-d12-breve node scripts/check-exposure-d12-browser.mjs
       - name: Presentación y recorrido de acciones — escritorio y móvil horizontal
+        if: ${{ github.event_name == 'workflow_dispatch' }}
         shell: bash
         run: |
           set -euo pipefail

@@ -12,6 +12,9 @@ import {createMapInventory} from './map-inventory.mjs';
 import {createMapCycle} from './map-cycle.mjs';
 import {createMapPlay} from './map-play.mjs';
 import {resolveMapExposure} from '../domain/map-exposure.mjs';
+import {TEST_RULE_DEFAULTS,normalizeTestRules,describeTestRules,partialThreshold,halvedConsequence} from '../domain/test-rules.mjs';
+import {beginNight,continueNight,nightUnfinished,nightEnabled,nightWatch,sleepingOutside} from '../domain/reference-night.mjs';
+import {soloMode} from '../domain/reference-state.mjs';
 const noop=()=>{};
 export function createEngine({Math=globalThis.Math,queueMicrotask=globalThis.queueMicrotask||((f)=>Promise.resolve().then(f)),setTimeout=globalThis.setTimeout,stateFactory=createReferenceState,rulesFactory=createRules,turnsFactory=createTurns,effects={},automation=null}={}){
 let view=new Proxy(effects,{get:(target,key)=>target[key]||noop});
@@ -90,6 +93,15 @@ get aiRunning(){return aiRunning;},set aiRunning(value){aiRunning=value;},
 get pendingHeal(){return pendingHeal;},set pendingHeal(value){pendingHeal=value;},
 get pendingLoot(){return pendingLoot;},set pendingLoot(value){pendingLoot=value;},
 get gameMode(){return gameMode;},set gameMode(value){gameMode=value;},
+get testRules(){return testRules;},
+get setTestRules(){return setTestRules;},
+get nightEnabled(){return ()=>nightEnabled(game);},
+get nightWatch(){return ()=>nightWatch(game);},
+get sleepingOutside(){return ()=>sleepingOutside(game);},
+get nightUnfinished(){return ()=>nightUnfinished(game);},
+get continueNight(){return ()=>continueNight(c);},
+get finishNight(){return finishNight;},
+get returnHome(){return returnHome;},set returnHome(value){returnHome=value;},
 get passScreenActive(){return passScreenActive;},set passScreenActive(value){passScreenActive=value;},
 get selectionBySide(){return selectionBySide;},
 get controls(){return controls;},
@@ -264,19 +276,31 @@ const {places,icons,em,capacity,zcap,objectives,roster}=createReferenceData();
 
 
 function special(){const p=person();if(!p||p.dead||!playable()||game.ended)return;if(p.skillUsed)return messageAndPaint('Ya usaste esta habilidad en la ronda.');if(p.skill==='builder'){const z=game.zones[p.loc];if(z.z+z.b>=zcap[p.loc])return messageAndPaint('No hay accesos libres.');executeBuilder(p);}else if(p.skill==='medic'||p.skill==='nurse'){if(pendingLoot)return;const targets=alive().filter(x=>x.loc===p.loc&&(p.skill==='medic'?x.wounds:x.frost));if(!targets.length)return messageAndPaint('No hay nadie que necesite ese tratamiento aquí.');pendingHeal={actor:p.id,targets:targets.map(x=>x.id)};show('healTarget');}else return messageAndPaint('La habilidad de este personaje es automática.');}
-function chooseHeal(id){if(!pendingHeal||!pendingHeal.targets.includes(id))return;const p=all().find(x=>x.id===pendingHeal.actor),t=all().find(x=>x.id===id);if(!p||!t||p.dead||t.dead||p.skillUsed||p.loc!==t.loc||!canResolve('healTarget'))return;const key=p.skill==='medic'?'wounds':'frost';if(!t[key])return; t[key]--;p.skillUsed=true;pendingHeal=null;if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('treatment',{actor:p.id,name:p.name,target:t.name,skill:p.skillName});message('✚ '+p.name+' atendió a '+t.name+' con '+p.skillName+'.');hide();paint();}
+function chooseHeal(id){if(!pendingHeal||!pendingHeal.targets.includes(id))return;const p=all().find(x=>x.id===pendingHeal.actor),t=all().find(x=>x.id===id);if(!p||!t||p.dead||t.dead||p.skillUsed||p.loc!==t.loc||!canResolve('healTarget'))return;const key=p.skill==='medic'?'wounds':'frost';if(!t[key])return; t[key]--;if(key==='frost')delete t.frostFresh;p.skillUsed=true;pendingHeal=null;if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('treatment',{actor:p.id,name:p.name,target:t.name,skill:p.skillName});message('✚ '+p.name+' atendió a '+t.name+' con '+p.skillName+'.');hide();paint();}
 const random=n=>Math.floor(Math.random()*n),die=()=>random(6)+1;
 let game,selected=0,target=0,picked=0,opened='',profileId='',skipAI=false,aiRunning=false,pendingHeal=null,pendingLoot=null;
 let gameMode='ai',passScreenActive=false;
+// Reglas de prueba elegidas antes de crear la partida (panel de desarrollo).
+// Se aplican en create() y quedan copiadas en el estado como registro: la
+// partida en curso lee game.testRules, así que elegirlas nunca la altera.
+let testRules=TEST_RULE_DEFAULTS;
+function setTestRules(patch){
+ testRules=normalizeTestRules(patch,testRules);
+ if(game&&!game.ended)message('⚙ Reglas de prueba: se aplican a la próxima partida.');
+ paint();
+ return testRules;
+}
 const selectionBySide={human:0,ai:0};
 class TurnController {
  get side(){return game?.turn==='ai'?'ai':'human';}
  get local(){return game?.mode==='local';}
+ get solo(){return soloMode(game?.mode);}
  get interactive(){return !!game&&!game.ended&&!passScreenActive&&!aiRunning&&(game.turn==='human'||(this.local&&game.turn==='ai'));}
  group(side=this.side){return side==='ai'?game.bots:game.humans;}
  hand(side=this.side){return side==='ai'?game.botItems:game.items;}
  dice(side=this.side){return side==='ai'?game.botDice:game.dice;}
- display(side=this.side){return side==='human'?'Jugador 1':(this.local?'Jugador 2':'IA');}
+ // «Un grupo» no menciona a la IA ni a un segundo jugador.
+ display(side=this.side){return this.solo?'Tu grupo':side==='human'?'Jugador 1':(this.local?'Jugador 2':'IA');}
 }
 const controls=new TurnController();
 function deathWaiting(){return deathDirector.active||deathDirector.pending.length>0;}
@@ -341,7 +365,7 @@ function syncLeaderRequests(){
 function requestLeader(side){
  if(pendingLeaderSides.includes(side))return;
  pendingLeaderSides.push(side);syncLeaderRequests();
- message('♛ El líder del '+controls.display(side)+' murió: elegí a su sucesor.');
+ message('♛ '+(controls.solo?'Tu líder':'El líder del '+controls.display(side))+' murió: elegí a su sucesor.');
 }
 function clearLeaderRequest(side){
  pendingLeaderSides=pendingLeaderSides.filter(s=>s!==side);syncLeaderRequests();
@@ -364,7 +388,7 @@ function chooseLeader(id){
  if(side==='human')game.leaderChosen=true;
  else game.localLeaderChosen=true;
  if(succession)clearLeaderRequest(side);
- message('♛ '+p.name+' asume el liderazgo del '+controls.display(side)+' (influencia '+p.influence+').');
+ message('♛ '+p.name+' asume el liderazgo '+(controls.solo?'de tu grupo':'del '+controls.display(side))+' (influencia '+p.influence+').');
  opened='';view.closeBackdrop();
  paint();
 }
@@ -415,6 +439,8 @@ function replaceLastSurvivors(env=null){
  const g=env?env.game:game;
  if(!g||g.ended||g.biteResolving||g.morale<=0)return;
  for(const [side,group] of [['human',g.humans],['ai',g.bots]]){
+  // En «un grupo» el bando de la IA no existe: no se reemplaza ni se descarta.
+  if(side==='ai'&&soloMode(g.mode))continue;
   if(group.some(p=>!p.dead))continue;
   const hand=side==='human'?g.items:g.botItems;
   const discarded=hand.length;hand.splice(0,hand.length);if(!env&&typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('replacement-discard',{side,count:discarded}); // La mano se descarta, no se añade a basura.
@@ -429,10 +455,13 @@ function create(){
  movementGeneration++;searchOperation=null;searchSerial=0;actionOperation=null;actionSerial=0;
  view.resetToasts();deathDirector.reset();skipAI=false;aiRunning=false;selected=0;target=0;picked=0;opened='';profileId='';pendingHeal=null;pendingLoot=null;pendingBite=null;pendingAttract=null;pendingTransfer=null;aiCrossChoice=null;settleDecisionWaiters();resetLeaderRequests();pendingRecruitInfo=null;selectionBySide.human=0;selectionBySide.ai=0;closeStatInfo();
  const objective=objectives[random(objectives.length)];
- game=stateFactory({gameMode,objective,places,catalog});
+ game=stateFactory({gameMode,objective,places,catalog,testRules});
  all().forEach(addCharacter);
  for(let loc=1;loc<places.length;loc++)game.decks[loc]=catalog.deck(loc);
- message('Objetivo: '+objective.name+' · '+objective.description);newRound();
+ message('Objetivo: '+objective.name+' · '+objective.description);
+ const summary=describeTestRules(game.testRules||TEST_RULE_DEFAULTS);
+ if(summary)message('⚙ Reglas de prueba: '+summary+'.');
+ newRound();
 }
 let DeathDirector=createDeathDirector(c);
 const deathDirector=new DeathDirector();
@@ -507,7 +536,7 @@ function expose(p,reason){
  if(d===1){
   const coLocated=alive().filter(x=>x.id!==p.id&&x.loc===p.loc).sort((a,b)=>a.influence-b.influence).map(x=>x.id);
   game.biteResolving=true;pendingBite={victims:coLocated,target:null};kill(p,'mordedura');biteNext();
- }else if(d===2||d===3){if(d===2)p.frost++;else p.wounds++;message((d===2?'❄ Congelación de ':'♥ Herida de ')+p.name+'.');if(p.frost+p.wounds>=3)kill(p,'tres daños acumulados');}
+ }else if(d===2||d===3){if(d===2){delete p.frostFresh;p.frost++;}else p.wounds++;message((d===2?'❄ Congelación de ':'♥ Herida de ')+p.name+'.');if(p.frost+p.wounds>=3)kill(p,'tres daños acumulados');}
  return {rolled:true,value:d,effect:d===1?'bite':d===2?'frost':d===3?'wound':'none',ability:null,wounds:p.wounds-before.wounds,frost:p.frost-before.frost,fatal:!!p.dead};
 }
 function drawItem(loc){return game.decks[loc]&&game.decks[loc].length?game.decks[loc].shift():null;}
@@ -599,6 +628,22 @@ function doMove(){
  if(!accessible(target))return messageAndPaint('No hay espacios disponibles en el destino.');
  executeMovement(p,target);
 }
+// «Regresar a la colonia»: acción con dado de cualquier valor, haya movido o no.
+// No tira exposición y solo lleva a la colonia; el movimiento normal no cambia.
+// Cuenta como movimiento (decisión del creador, 18/11): después ya no puede moverse.
+let returnHome=function returnHome(){
+ if(!playable()||game.ended||pendingBite||leaderChoiceReady())return;
+ if(!game.testRules?.regreso)return messageAndPaint('La regla «Regresar a la colonia» está apagada.');
+ const p=person();if(!p||p.dead)return;
+ if(p.loc===0)return messageAndPaint('Este superviviente ya está en la colonia.');
+ if(!accessible(0))return messageAndPaint('No hay espacios disponibles en la colonia.');
+ if(consume(1)===null)return;
+ searchOperation=null;actionOperation=null;
+ const from=p.loc;p.loc=0;p.moved=true;
+ if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('move',{actor:p.id,name:p.name,from,destination:0,reason:'return',exposure:{rolled:false,value:null,effect:'none',ability:null,wounds:0,frost:0,fatal:false}});
+ message('⌂ '+p.name+' regresó a la colonia desde '+places[from]+' (sin exposición). Ya no puede moverse esta ronda.');
+ verify();paint();
+};
 // Consecuencias únicas para ambos consumidores. No depende de selected/target.
 function executeMovement(p,destination){
  actionOperation=null;
@@ -853,8 +898,24 @@ function addZombie(i,env=null){
 }
 function resolveCrisis(){
  const c=game.crisis;const points=c.contributions.filter(it=>it===c.type).length;
- if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)resolveCrisis.onResult({valid:points,success:points>=c.need});
+ // Crisis parcial: con la mitad de lo pedido (hacia arriba) sin completarla, la
+ // consecuencia se reduce a la mitad hacia abajo (moral 1→0, zombis 2→1,
+ // comida 2→1, herida 1→0). Media consecuencia de 1 es ninguna.
+ const partial=!!game.testRules?.crisisParcial&&points<c.need&&points>=partialThreshold(c.need);
+ if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)resolveCrisis.onResult({valid:points,success:points>=c.need,partial});
  if(points>=c.need){message('✓ Crisis superada: '+points+' aportes válidos de '+c.need+'.');if(points>=c.need+2){game.morale++;message('✓ Aporte excepcional: +1 moral.');}}
+ else if(partial){
+  message('◐ Crisis parcial ('+points+'/'+c.need+'): la consecuencia se reduce a la mitad.');
+  const food=halvedConsequence(2),zombies=halvedConsequence(2),wounds=halvedConsequence(1),morale=halvedConsequence(1);
+  if(c.fail==='food'){game.food=Math.max(0,game.food-food);message('🥫 La crisis parcial consumió hasta '+food+' comida(s).');}
+  else if(c.fail==='zombie'){for(let i=0;i<zombies;i++){addZombie(0);verify();if(game.ended)break;}message('☠ La crisis parcial atrajo '+zombies+' zombi(s) a la colonia.');}
+  else if(c.fail==='wound'){
+   const t=wounds>0?alive().filter(p=>p.loc===0).sort((a,b)=>a.influence-b.influence)[0]:null;
+   if(t){t.wounds+=wounds;message('♥ '+t.name+' sufrió '+wounds+' herida(s) durante la crisis parcial.');if(t.wounds+t.frost>=3)kill(t,'heridas de la crisis');}
+   else message('♥ La crisis parcial no causó heridas.');
+  }
+  else{game.morale=Math.max(0,game.morale-morale);message('⚠ Crisis parcial: '+(morale?'-'+morale+' moral.':'sin pérdida de moral.'));}
+ }
  else{
   message('⚠ Crisis fallida ('+points+'/'+c.need+').');
   if(c.fail==='food'){game.food=Math.max(0,game.food-2);message('🥫 La crisis consumió hasta 2 comidas.');}
@@ -894,6 +955,24 @@ function colony(){
   for(let j=0;j<n;j++){const d=die();if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.event('noise-roll',{location:i,index:j+1,count:n,value:d});message('🔊 '+places[i]+': ruido '+(j+1)+'/'+n+' → dado '+d+(d<=3?', llega un zombi.':', sin aparición.'));if(d<=3)addZombie(i);verify();if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__&&game.ended)c.mapCycle.after();if(game.ended)return;}
  }
  verify();if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.after();
+ if(game.ended)return;
+ // «La noche» cierra la ronda: una tirada del D12 por localidad exterior
+ // ocupada. Si una mordedura queda pendiente, finishNight la reanuda.
+ beginNight(c);
+}
+// Termina la noche aunque una mordedura la pause: resuelta la decisión, sigue
+// con las localidades que faltaban. La ronda siguiente no abre antes.
+async function finishNight(){
+ if(!nightUnfinished(game)&&!pendingBite)return;
+ const nightGame=game;
+ while(game===nightGame&&!game.ended&&nightUnfinished(game)){
+  await waitForBite();
+  if(game!==nightGame||game.ended||!nightUnfinished(game))break;
+  const before=game.nightRemaining.length;
+  continueNight(c);
+  if(game.nightRemaining.length>=before&&!pendingBite)break;
+ }
+ if(game===nightGame)await waitForBite();
 }
 function showSetup(){
  if(aiRunning)return;
@@ -902,7 +981,7 @@ function showSetup(){
 }
 function startGame(mode){
  if(mode==='ai'&&!hasAutomation)throw Error('Falta un automatismo para el modo IA');
- if(mode!=='ai'&&mode!=='local')return;
+ if(!['ai','local','solo'].includes(mode))return;
  gameMode=mode;
  view.hideHandover();
  passScreenActive=false;
@@ -949,7 +1028,7 @@ const actor=id=>all().find(p=>p.id===id);
 const automationActions=Object.freeze({
  contributeHand(i){if(!CrisisManager.add(game.botItems[i],'La IA'))return false;game.botItems.splice(i,1);return true;},
  contributeEquipment(id,j){const p=actor(id);if(!CrisisManager.add(p.equipment[j],p.name))return false;p.equipment.splice(j,1);return true;},
- treat(id,targetId){const p=actor(id),t=actor(targetId);if(p.skill==='medic')t.wounds--;else t.frost--;p.skillUsed=true;if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('treatment',{name:p.name,target:t.name,skill:p.skillName});message('★ '+p.name+' atendió a '+t.name+'.');},
+ treat(id,targetId){const p=actor(id),t=actor(targetId);if(p.skill==='medic')t.wounds--;else{t.frost--;delete t.frostFresh;}p.skillUsed=true;if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('treatment',{name:p.name,target:t.name,skill:p.skillName});message('★ '+p.name+' atendió a '+t.name+'.');},
  buildFree(id){const p=actor(id);game.zones[p.loc].b++;p.skillUsed=true;if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('build',{actor:p.id,name:p.name,count:1,method:'ability'});message('★ '+p.name+' construyó una barricada sin dado.');},
  useItem(i,id){return itemEngine.use(i,actor(id),'ai');},
  moveWithFuel(id,dest,i){return itemEngine.moveWithFuel(actor(id),dest,'ai',i);},
@@ -974,5 +1053,5 @@ return Object.freeze({
  ...(typeof __GAME_TEST__!=='undefined'&&__GAME_TEST__?{testBindings:c}:{}),
 });
 }
-export const commandNames=Object.freeze(["pickActionDie","skipAutomation","deathContinue","startGame","confirmPass","finishTurn","show","hide","showSetup","select","profile","destination","special","chooseHeal","chooseLeader","dismissRecruit","chooseBite","chooseAttract","cancelAttract","chooseTransfer","cancelTransfer","cancelHeal","chooseLoot","addNoiseSearch","crossAiContinue","crossChoose","startTransfer","contributeEquipment","equipItem","unequipItem","boostDie","pickFloatingDie","search","attack","doMove","barricade","clean","attract","playItem","contribute"]);
+export const commandNames=Object.freeze(["pickActionDie","skipAutomation","deathContinue","startGame","confirmPass","finishTurn","show","hide","showSetup","select","profile","destination","special","chooseHeal","chooseLeader","dismissRecruit","chooseBite","chooseAttract","cancelAttract","chooseTransfer","cancelTransfer","cancelHeal","chooseLoot","addNoiseSearch","crossAiContinue","crossChoose","startTransfer","contributeEquipment","equipItem","unequipItem","boostDie","pickFloatingDie","search","attack","doMove","returnHome","barricade","clean","attract","playItem","contribute","setTestRules"]);
 const commands=new Set(commandNames);
