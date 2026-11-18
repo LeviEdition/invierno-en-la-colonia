@@ -1,3 +1,4 @@
+import {llegadasPrevistasColonia} from './palancas.mjs';
 // ¿Abastecer y avanzar el objetivo compiten de verdad en esta ronda?
 // Se evalúa con el estado del grupo al consumir su primer dado (ya hechos los
 // movimientos), o al terminar el turno si no usó ninguno. Todo en «dados equivalentes».
@@ -21,7 +22,7 @@ export function evaluarCompetencia(c,{indefensos=false}={}){
  let defensa=0;
  const lugares=new Set(propios.map(p=>p.loc));if(indefensos&&g.helpless>0)lugares.add(0);
  for(const loc of lugares){
-  const z=g.zones[loc],llegan=loc===0?Math.ceil((c.alive().filter(x=>x.loc===0).length+g.helpless)/2):c.alive().filter(x=>x.loc===loc).length;
+  const z=g.zones[loc],llegan=loc===0?llegadasPrevistasColonia(c):c.alive().filter(x=>x.loc===loc).length;
   defensa+=Math.max(0,z.z+z.b+llegan-c.zcap[loc]+1);
  }
  const k=g.crisis,enMano=c.currentHand().filter(it=>c.kind(it)===k.type).length;
