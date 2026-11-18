@@ -24,6 +24,20 @@ jobs:
         run: |
           npm install --no-save --package-lock=false playwright@1.57.0
           npx playwright install --with-deps chromium ffmpeg
+      - name: Reglas de prueba — preparación breve del mapa
+        timeout-minutes: 2
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/horizontal-reglas
+          node scripts/serve-mapa.mjs --qa > /tmp/horizontal-reglas/mapa-server.log 2>&1 &
+          PREVIEW_PID=$!
+          trap 'kill "$PREVIEW_PID"' EXIT
+          for i in $(seq 1 15); do curl --max-time 1 -fsS http://127.0.0.1:8779/app/mapa/ -o /dev/null && break; sleep 1; done
+          curl --max-time 1 -fsS http://127.0.0.1:8779/app/mapa/ -o /dev/null
+          export CHROMIUM_PATH="$(node --input-type=module -e "import {chromium} from 'playwright';console.log(chromium.executablePath())")"
+          export H344_ORIGIN=http://127.0.0.1:8779
+          MAP_REGLAS_DIR=/tmp/horizontal-reglas node scripts/check-map-reglas-de-prueba-browser.mjs
       - name: Presentación y recorrido de acciones — escritorio y móvil horizontal
         shell: bash
         run: |
@@ -46,7 +60,6 @@ jobs:
           node scripts/check-map-death-decisions-browser.mjs
           node scripts/check-exposure-d12-browser.mjs
           node scripts/check-map-2x-browser.mjs
-          MAP_REGLAS_DIR=/tmp/horizontal-reglas node scripts/check-map-reglas-de-prueba-browser.mjs
           export H344_MODULE_PATH=/dist/mapa-qa/map.mjs
           export H344_VIEWPORTS=1365x768,852x393
           export H344_OUTPUT_DIR=/tmp/horizontal-actions
