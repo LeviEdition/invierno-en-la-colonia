@@ -54,6 +54,8 @@ try{
   // Preparar una ronda tranquila con una sola localidad exterior ocupada.
   record.preparacion=await api.evaluate(()=>{
    game.crossPending=false;game.crossResolved=true;
+   // La IA roba su propia encrucijada: aislar esa decisión de la prueba nocturna.
+   game.crossRemaining=Array(32).fill(crossroadsDeck.findIndex(c=>c.title==='Un almacén bajo el hielo'));
    game.zones.forEach(z=>{z.noise=0;z.b=0;z.z=0;});game.waste=0;
    game.crisis.contributions=Array(game.crisis.need).fill(game.crisis.type);game.crisis.given=game.crisis.need;
    game.humans.forEach(p=>{p.loc=0;p.wounds=0;p.frost=0;p.moved=false;});

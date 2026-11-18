@@ -28,6 +28,9 @@ try{
   await p.goto(origin+modulePath.replace(/\/map\.mjs$/,'/index.html'));
   await p.evaluate(async path=>window.h344Viewer=await import(path),modulePath);
   await p.waitForFunction(()=>window.h344Viewer.inspect().projection?.blocked==='setup');
+  // La proyección llega antes que el diálogo: contar cuando la preparación ya se dibujó.
+  await p.locator('#play-dialog').waitFor({state:'visible'});
+  await p.locator('#play-start-local').waitFor({state:'visible'});
   row.sinDev={solo:await p.locator('#play-start-solo').count(),reglas:await p.locator('#play-test-rules').count(),
    modos:await p.locator('#play-start-local, #play-start-ai').count()};
   assert.deepEqual(row.sinDev,{solo:0,reglas:0,modos:2},'sin ?dev el mapa no ofrece nada nuevo');

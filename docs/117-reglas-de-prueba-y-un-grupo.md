@@ -79,3 +79,13 @@ Tercera entrega de la rama. Un commit.
 - **La batería nueva del mapa (`check-map-reglas-de-prueba-browser.mjs`) no se corrió localmente**: no hay Chromium en este entorno. Está registrada en el workflow `mapa` y **el CI del PR es la fuente de verdad**. Cubre 852×393 y 1365×768: partida nueva con `?dev` en «un grupo» con la noche y regresar activos, rótulos de la ficha, alturas táctiles, regresar y comprobar que no puede moverse, y terminar una ronda con alguien afuera para ver el aviso nocturno. **No doy por aprobado nada de eso.**
 - **La animación del D12 en la noche no se vio.** La tirada entra por el mismo camino que movimiento y combate, así que debería presentarse igual, pero eso solo se confirma mirando.
 - **Jugar en el teléfono de referencia** sigue pendiente, y con él la decisión de comida inicial.
+
+### Corrección acotada del CI del PR #37
+
+1. **Oráculo:** `finishNight` agregaba esperas aun sin noche pendiente ni mordedura. Ahora retorna inmediatamente en ese caso y los tres cierres de turno evitan también el `await` de la llamada vacía. Se regeneró el HTML desde `src/`. Dos regresiones comprueban el cierre sin espera y la mordedura pendiente, incluso en la última localidad.
+2. **Navegador del motor:** la preparación solo anulaba la encrucijada humana. La IA robaba «El último botiquín» y esperaba «Continuar»; `skipAutomation` no resuelve decisiones. Se aisló esa encrucijada en la batería, sin cambiar el motor para saltarla.
+3. **Navegador del mapa:** la proyección anunciaba preparación antes de dibujar sus controles. La batería espera el diálogo visible y el botón de modo antes de contarlos; así obtiene los dos botones sin `?dev`.
+
+**Comprobado por herramientas:** Node 24, `check:build`, suite completa de 853 pruebas sin fallos y `check:mapa-build`; oráculo histórico 40/40 y comparación con `0b75d01aba013cd029d9d0dd0bdbd20791be15fc` 40/40, incluyendo `step`. La batería del motor pasó en 1365×768 y 393×852.
+
+**Pendiente del mapa:** al superar la preparación, la batería falló dos veces al contar el aviso nocturno: consulta `projection.log`, que el adaptador vacía por privacidad. Se detuvieron los intentos conforme al límite pedido y se retiró el ajuste de cierre del resumen que no resolvía esa causa. El motor sí llegó a ronda 2 y aplicó una herida a Iris, según los datos del ciclo. Falta adaptar esa lectura al Registro disponible y confirmar el CI; **la batería del mapa no se da por aprobada**. No se abrieron capturas. Sigue pendiente probar jugando en escritorio y Samsung Galaxy A15.
