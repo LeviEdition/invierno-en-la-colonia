@@ -20,6 +20,8 @@ export const formulasComida={
  v99:(g,c)=>{const home=c.alive(g).filter(p=>p.loc===0);return Math.max(0,Math.ceil((home.length+g.helpless+habitantesExtra(g))/2)-(home.some(p=>p.skill==='cook')?1:0));},
  ligera:(g,c)=>{const home=c.alive(g).filter(p=>p.loc===0);return Math.max(0,Math.floor((home.length+g.helpless+habitantesExtra(g))/2)-(home.some(p=>p.skill==='cook')?1:0));},
  estricta:(g,c)=>{const home=c.alive(g).filter(p=>p.loc===0);return Math.max(0,home.length+g.helpless+habitantesExtra(g)-(home.some(p=>p.skill==='cook')?1:0));},
+ // quinta corrida — regla A: todos comen estén donde estén
+ todos:(g,c)=>{const all=c.alive(g);return Math.max(0,Math.ceil((all.length+g.helpless+habitantesExtra(g))/2)-(all.some(p=>p.skill==='cook')?1:0));},
 };
 export const factoresZombis={v99:1,mitad:.5,doble:2};
 export const configuracionBase=Object.freeze({variante:'un-grupo',dados:'v99',crisis:2,comida:'v99',zombis:'v99'});
@@ -70,7 +72,7 @@ function nuevaRondaUnGrupo(c,{dados,crisis}){
  const g=c.game;if(g.ended)return;
  g.turn='human';c.selected=c.selectionBySide.human;g.crossPending=false;g.crossResolved=false;g.noReplacement=false;
  c.reviewLeader('human');c.reviewLeader('ai');
- c.all().forEach(p=>{p.moved=false;p.skillUsed=false;for(const eq of c.equipmentOf(p))if(eq&&typeof eq==='object')eq.usedRound=0;});
+ c.all().forEach(p=>{p.moved=false;p.skillUsed=false;p.hasImprovised=false;for(const eq of c.equipmentOf(p))if(eq&&typeof eq==='object')eq.usedRound=0;});
  const types=['comida','medicina','herramienta','combustible'];const crisisType=types[c.random(types.length)];
  g.crisis={type:crisisType,need:crisis,given:0,contributions:[],fail:['moral','zombie','food','wound'][c.random(4)]};
  g.dice=Array.from({length:formulasDados[dados](g.humans.filter(p=>!p.dead).length)},c.die);
@@ -120,6 +122,13 @@ export function crearRegistro(){
   llegadasExtraColonia:0, // regla B: llegadas agregadas (+) o salteadas (−) respecto de V9.9
   desbordesColonia:[],    // {ronda,victima: superviviente · indefenso · nadie}
   rescate:null,
+  // quinta corrida — noche fuera de la colonia
+  regresos:0,                // acciones «regresar a la colonia» ejecutadas
+  afueraAlCaerNoche:[],      // {ronda,cantidad}: supervivientes fuera al inicio de cada noche
+  exposicionesNoche:[],      // {ronda,efecto,localidad}: tiradas D12 de noche
+  muertesNoche:0,            // muertes causadas por la noche (bite + daños acumulados)
+  // sexta corrida — improvisar
+  improvisaciones:0,         // veces que se usó la improvisación de crisis
  };
 }
 // Observadores: llaman al original y anotan; no alteran resultados ni consumen azar.

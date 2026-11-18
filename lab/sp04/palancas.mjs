@@ -1,7 +1,7 @@
-// Palancas de la segunda, tercera y cuarta corrida (docs/107, docs/110 y docs/111). Cada una se aplica con las inyecciones
-// de createEngine o con los setters del contexto; ninguna toca src/. Con los valores
-// por defecto (V9.9) no se instala nada y el motor queda exactamente como en la
-// primera corrida, que es lo que comprueba la calibración.
+// Palancas de la segunda, tercera, cuarta y quinta corrida (docs/107, docs/110, docs/111 y docs/113).
+// Cada una se aplica con las inyecciones de createEngine o con los setters del contexto; ninguna
+// toca src/. Con los valores por defecto (V9.9) no se instala nada y el motor queda exactamente como
+// en la primera corrida, que es lo que comprueba la calibración.
 import {rollExposureDie} from '../../src/domain/exposure-die.mjs';
 
 export const palancasBase=Object.freeze({
@@ -17,6 +17,11 @@ export const palancasBase=Object.freeze({
  cocinero:null,          // tercera corrida: null · reemplaza (Tomás, cocinero, en lugar de Leo) · suma (Tomás como cuarto)
  medico:'abstracto',     // abstracto (107: cura en la colonia, no juega) · jugable-heridas · jugable-heridas-congelacion (110)
  llegadasColonia:'v99',  // cuarta corrida (regla B): v99 · min2 · min3 · fijo3 — llegadas de población a la colonia
+ nocheAfuera:null,       // quinta corrida: null · 'localidad' · 'unica' — exposición al caer la noche
+ regreso:false,          // quinta corrida: false · true — permite «Regresar a la colonia» (segundo movimiento, cuesta un dado)
+ improvisar:false,       // sexta corrida: false · true — dado ≥umbral en colonia aporta 1 contribución válida a la crisis (una vez por ronda por superviviente)
+ improvisarUmbral:4,     // séptima corrida: 4 · 3 — valor mínimo de dado para improvisar
+ crisisParcial:false,    // sexta corrida: false · true — aportes ≥ ceil(necesidad/2) reducen la consecuencia a la mitad
 });
 export const valoresPalancas={
  exposicion:['d6','d12'],
@@ -29,6 +34,11 @@ export const valoresPalancas={
  cocinero:[null,'reemplaza','suma'],
  medico:['abstracto','jugable-heridas','jugable-heridas-congelacion'],
  llegadasColonia:['v99','min2','min3','fijo3'],
+ nocheAfuera:[null,'localidad','unica'],
+ regreso:[false,true],
+ improvisar:[false,true],
+ improvisarUmbral:[3,4],
+ crisisParcial:[false,true],
 };
 // Regla B (docs/111): llegadas de población a la colonia en la fase de colonia, a
 // partir de las de V9.9 (⌈(habitantes + indefensos)/2⌉). El ruido y la crisis fallida
@@ -123,6 +133,64 @@ export function instalarPalancas(c,p,registro){
   };
   c.addZombie=(i,env=null)=>{if(!env&&i===0&&saltear>0){saltear--;return LLEGADA_SALTEADA;}return llegada(i,env);};
  }
+ // Improvisación (sexta corrida): instala c.improvisarCrisis(survivorId) si improvisar=true.
+ // La función consume el dado de menor valor ≥4 y aporta 1 contribución válida.
+ // Cada superviviente puede improvisar una vez por ronda (p.hasImprovised, reseteado en nuevaRondaUnGrupo).
+ if(p.improvisar){
+  c.improvisarCrisis=(survivorId)=>{
+   const g=c.game,k=g.crisis;
+   if(g.ended||g.turn!=='human')return null;
+   if(k.contributions.filter(t=>t===k.type).length>=k.need)return null;
+   const sv=c.alive().find(x=>x.id===survivorId&&x.loc===0&&!x.hasImprovised);
+   if(!sv)return null;
+   const di=g.dice.findIndex(d=>d>=p.improvisarUmbral);if(di<0)return null;
+   const val=g.dice[di];g.dice.splice(di,1);
+   k.contributions.push(k.type);k.given=k.contributions.filter(t=>t===k.type).length;
+   sv.hasImprovised=true;registro.improvisaciones++;
+   c.message('🛠 '+sv.name+' improvisó para la crisis (dado '+val+').');
+   return 'improvisar:'+survivorId+':'+val;
+  };
+ }
+ // Crisis parcial (sexta corrida): si los aportes llegan a ceil(necesidad/2) sin completar,
+ // la consecuencia se reduce a la mitad (moral 1→0, zombis 2→1, comida 2→1, herida 1→0).
+ // Se instala ANTES de instrumentar, por lo que el registro de crisis ya tiene la entrada
+ // cuando este wrapper corre; se marca .parcial en ella.
+ if(p.crisisParcial){
+  const resolverCrisisPalanca=c.resolveCrisis;
+  c.resolveCrisis=()=>{
+   const k=c.game.crisis,g=c.game;
+   const aportes=k.contributions.filter(t=>t===k.type).length;
+   const esParcial=aportes>=Math.ceil(k.need/2)&&aportes<k.need;
+   // Marcar la entrada que instrumentar (wrapper exterior) ya empujó.
+   if(registro.crisis.length)registro.crisis[registro.crisis.length-1].parcial=esParcial;
+   if(!esParcial)return resolverCrisisPalanca();
+   const failType=k.fail;
+   // Rellenar contribuciones para que el motor vea éxito (sin penalidad del motor).
+   while(k.contributions.filter(t=>t===k.type).length<k.need)k.contributions.push(k.type);
+   const salida=resolverCrisisPalanca();
+   // Aplicar penalidad parcial si la partida sigue.
+   if(!g.ended){
+    if(failType==='food'){g.food=Math.max(0,g.food-1);c.message('⚠ Crisis parcial: -1 comida.');}
+    else if(failType==='zombie'){c.addZombie(0);c.verify();c.message('⚠ Crisis parcial: 1 zombi a la colonia.');}
+    else if(failType==='wound'){/* 1→0: sin penalidad */c.message('⚠ Crisis parcial: herida reducida a 0.');}
+    else{/* moral 1→0 */c.message('⚠ Crisis parcial: pérdida de moral reducida a 0.');}
+   }
+   return salida;
+  };
+ }
+ // Noche fuera de la colonia (quinta corrida, docs/113). Se ejecuta al terminar la fase de colonia
+ // (después del consumo de comida, llegadas de zombis y c.verify). Por cada localidad (modo
+ // 'localidad') o por todo el grupo exterior (modo 'unica'), tira el D12 de exposición sobre el
+ // superviviente de MENOR INFLUENCIA (empate: primero en c.game.humans). Si hay un mordedura
+ // pendiente se detiene; los demás supervivientes del mismo exterior quedan sin tirada esa noche.
+ if(p.nocheAfuera){
+  const coloniaOriginal=c.colony;
+  c.colony=()=>{
+   const salida=coloniaOriginal();
+   if(!c.game.ended)aplicarNocheAfuera(c,p.nocheAfuera,registro);
+   return salida;
+  };
+ }
  // Rescate del médico (105 §5, simplificado) y Atención médica. Se ejecuta al empezar
  // el turno del jugador, sin decisiones pendientes.
  const medico={activo:false,desde:null,rondasCuradas:new Set(),hecho:false};
@@ -172,6 +240,45 @@ export function objetivoDelMedico(c,m,variante){
  if(!m||m.dead)return null;
  const dano=x=>variante==='jugable-heridas'?x.wounds:x.wounds+x.frost;
  return c.alive().filter(x=>x!==m&&c.ownerOf(x)==='human'&&x.loc===m.loc&&dano(x)>0).sort((a,b)=>dano(b)-dano(a)||b.influence-a.influence)[0]||null;
+}
+
+// Noche fuera de la colonia: tira el D12 sobre el superviviente de menor influencia de cada
+// localidad exterior ('localidad') o de todos los que están afuera ('unica').
+// Empate de influencia: el primero en el orden de c.game.humans.
+// Si un bite queda pendiente o el juego termina, se detiene sin exponer más.
+function aplicarNocheAfuera(c,modo,registro){
+ const humano=x=>c.ownerOf(x)==='human';
+ const afuera=c.alive().filter(x=>humano(x)&&x.loc!==0);
+ if(!afuera.length)return;
+ registro.afueraAlCaerNoche.push({ronda:c.game.round,cantidad:afuera.length});
+ const exponer=(objetivo,loc)=>{
+  if(c.game.ended||c.pendingBite)return;
+  if(!objetivo||objetivo.dead)return;
+  const r=exponerD12(c,objetivo,'noche fuera de la colonia'+(loc!=null?' (loc '+loc+')':''));
+  c.verify();
+  if(r?.rolled){
+   registro.exposicionesNoche.push({ronda:c.game.round,efecto:r.effect,localidad:loc??null});
+   if(objetivo.dead||r.fatal)registro.muertesNoche++;
+  }
+ };
+ if(modo==='unica'){
+  exponer(minimoInfluencia(afuera,c.game.humans),null);
+ }else{
+  const locs=[...new Set(afuera.map(x=>x.loc))];
+  for(const loc of locs){
+   if(c.game.ended||c.pendingBite)break;
+   const enLoc=afuera.filter(x=>x.loc===loc&&!x.dead);
+   if(enLoc.length)exponer(minimoInfluencia(enLoc,c.game.humans),loc);
+  }
+ }
+}
+// Superviviente de menor influencia de la lista; en empate, el primero en el orden de humans.
+function minimoInfluencia(candidatos,orden){
+ const minInf=Math.min(...candidatos.map(x=>x.influence));
+ const conMin=candidatos.filter(x=>x.influence===minInf);
+ if(conMin.length===1)return conMin[0];
+ for(const p of orden)if(conMin.includes(p))return p;
+ return conMin[0];
 }
 
 // Réplica de resolveMapExposure (src/domain/map-exposure.mjs) sin mapPlay: una sola

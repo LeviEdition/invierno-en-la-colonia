@@ -2,7 +2,7 @@
 
 > **Cómo se usa este documento.** Arriba está solo lo vigente: dónde estamos, la única tarea siguiente, la cola ordenada y los hallazgos abiertos. Cada entrega actualiza estas secciones **reemplazando** su contenido, no agregando un bloque nuevo. El detalle de cada entrega va en su informe numerado y en el PR. Los bloques fechados anteriores al 16/11/2026 están en [18-historico-tablero.md](18-historico-tablero.md) y no se editan.
 
-**Actualizado:** 17/11/2026 · **main:** `f6a57d2` (PR #26 integrado: el mapa vive en `app/mapa/`) · **Tag vigente:** `v0.10.0-mapa-horizontal` · **Rama en revisión:** `feature/dado-exposicion-d12` ([PR #27](https://github.com/LeviEdition/invierno-en-la-colonia/pull/27), borrador), ya adaptada a `app/mapa/` · **Último cambio de regla aceptado:** [D12 de exposición](102-dado-exposicion-d12.md)
+**Actualizado:** 17/11/2026 · **main:** `27ef968` (PR #32: laboratorio SP-04 integrado) · **Tag vigente:** `v0.10.0-mapa-horizontal` · **Ramas en revisión:** `feature/mapa-2x` ([112](112-mapa-doble-resolucion.md)) y `experiment/sp04-noche` (corridas 5–7, noche fuera de la colonia, [113](113-laboratorio-sp04-quinta-corrida.md), [114](114-laboratorio-sp04-sexta-corrida.md), [115](115-laboratorio-sp04-septima-corrida.md))
 
 ## 1. Dónde estamos
 
@@ -13,43 +13,44 @@
 | 3 — Identidad visual y mapa jugable | **Cerrado** (16/11), integrado en `main` (PR #25) y marcado con `v0.10.0-mapa-horizontal` | [75](75-plan-hito-3-identidad-visual.md), [99](99-experiencia-unificada-del-mapa.md), [100](100-avisos-y-zoom-nativo.md), [101](101-muerte-durante-accion-propia.md) |
 | Mantenimiento: mapa como producto | **Integrado en `main`** (PR #26): `app/mapa/`, `npm run dev:mapa`, prototipos retirados | [103](103-consolidacion-mapa-producto.md) |
 | D12 de exposición | **Integrado en `main`** (PR #27, 17/11), aprobado por el creador jugando: 6 sin efecto, 3 heridas, 2 congelaciones, 1 mordedura en movimiento y combate del mapa | [102](102-dado-exposicion-d12.md) |
-| Singleplayer (SP-00 a SP-08) | **Diseño en papel.** Laboratorio SP-04 entregado en su rama; capítulo piloto «La última guardia» en ficha, con propuesta de mejoras y cronología pendiente de aprobación | [63](63-hoja-de-ruta-planificacion-singleplayer.md), [104](104-informe-avances-singleplayer.md), [105](105-ficha-capitulo-la-ultima-guardia.md) |
+| Singleplayer (SP-00 a SP-08) | **Diseño en papel.** Laboratorio SP-04 con cuatro corridas en `main` (106, 107, 110) y en su rama (111, 113, 114, 115); séptima corrida en `experiment/sp04-noche` ([115](115-laboratorio-sp04-septima-corrida.md)); capítulo piloto «La última guardia» en ficha | [63](63-hoja-de-ruta-planificacion-singleplayer.md), [105](105-ficha-capitulo-la-ultima-guardia.md) |
+| Mapa en doble resolución | **En revisión** (rama `feature/mapa-2x`): textura 3342×1882, zoom máximo 1,5 | [112](112-mapa-doble-resolucion.md) |
 
 El mapa permite preparar, jugar y terminar una partida completa (humano + IA y dos jugadores locales) con un único motor. Vive en `app/mapa/` (`npm run dev:mapa` → `http://127.0.0.1:8779/app/mapa/`). Movimiento y combate comparten una única tirada D12 por exposición; los dados de acción y el riesgo de contagio siguen en D6.
 
 ## 2. Próxima tarea única
 
-**Decidir con el [informe 111](111-laboratorio-sp04-cuarta-corrida.md)** (cuarta corrida SP-04, regla B, rama `experiment/sp04-cuarta-corrida`, PR en borrador hacia `main`). Que los zombis lleguen a la colonia aunque esté vacía **no alcanza**: ninguna variante deja al corredor repartido a ≤ 5 puntos de la cooperativa. La que más acerca es «P1 · comida 8 · mínimo 2»: cooperativa 42 %, corredor 59 % (+17); mínimo 2 le quita al corredor 8 puntos sin dañar a la cooperativa. Mínimo 3 y fijo 3 castigan más a quien deja guardia. La ventaja que queda es la comida: la cooperativa pasa hambre en el 74 % de las partidas y el corredor en el 36–43 %. El rescate del médico sigue parejo (≤ 5 puntos). Decisión pendiente: medir la regla A («todos comen estén donde estén»), sola y con mínimo 2.
+**Revisar el mapa en doble resolución** ([112](112-mapa-doble-resolucion.md)) y **decidir sobre la combinación del laboratorio** ([115](115-laboratorio-sp04-septima-corrida.md)). La séptima corrida confirma que **noche/localidad + comida 10 + crisisParcial + políticas prudentes** cumple el criterio: cooperativa-prudente **41,8 %**, ventaja **+3,1 pp**. Improvisar no se recomienda (perjudica la cooperativa). Decisión pendiente del creador.
 
 ## 3. Cola ordenada
 
-1. **Decisión del creador sobre 111** y, si la pide, una quinta corrida corta con la regla A, sola y combinada con mínimo 2.
-2. **Implementar «La última guardia»** como capítulo jugable, con la combinación que salga de 1. Reutiliza la tirada D12 y su resultado estructurado.
-3. **Rótulos de las localidades y dado centrado** (encargo listo; guía de estilo [109](109-guia-de-estilo.md)).
-4. **Mejoras menores del mapa** que no afectan decisiones: hallazgos 4 y 5, y una batería de CI que juegue una partida entera con clics reales.
-5. **Reservas del Hito 3:** Samsung Galaxy A15 físico y dos jugadores locales manuales.
+1. **Revisar mapa 2× (112):** CI del PR → prueba en escritorio y en el Samsung Galaxy A15 → decisión de merge (requiere indicación expresa).
+2. **Decisión sobre la combinación del laboratorio (115):** candidata clara: noche/localidad + comida 10 + crisisParcial + políticas prudentes.
+3. **Implementar «La última guardia»** como capítulo jugable, con la combinación que apruebe el creador.
+4. **Rótulos de las localidades y dado centrado** (encargo listo; guía de estilo [109](109-guia-de-estilo.md)).
+5. **Mejoras menores del mapa:** hallazgos 4 y 5, batería de CI con partida entera de clics reales.
+6. **Reservas del Hito 3:** Samsung Galaxy A15 físico y dos jugadores locales manuales.
 
 ## 4. Hallazgos abiertos
 
 | # | Hallazgo | Estado | Próximo paso |
 |---|---|---|---|
-| 1 | Aviso de combate en fichas ajenas | **Implementado** en `985bdf1`, CI verde en `179653c`; capturas correctas (Leo congelación 1, Iris 0) | Confirmar jugando |
-| 2 | Zoom máximo = tamaño del mapa | **Aceptado por ahora** (16/11): 1:1 sobre el fondo de 1671×941 | Revisar si en el teléfono alcanza para tocar retratos y accesos; arte de mayor resolución queda como deuda |
+| 1 | Aviso de combate en fichas ajenas | **Implementado** en `985bdf1` | Confirmar jugando |
+| 2 | Zoom máximo = tamaño del mapa | **Resuelto en rama** (`feature/mapa-2x`): textura 2× y zoom máximo 1,5 | Probar en el teléfono y decidir merge |
 | 3 | Moverse/Buscar/Atacar poco visibles en móvil | **Corregido** (16/11, solo CSS móvil) | Ver en el teléfono cuando se pueda |
-| 4 | Selector de localidad desincronizado | **Aceptado como menor** (16/11): no afecta decisiones | Mejoras menores |
-| 5 | Aviso móvil tapa título y botones de la ficha ampliada durante 5 s | **Aceptado como menor** (16/11): el aviso caduca solo | Mejoras menores |
+| 4 | Selector de localidad desincronizado | **Aceptado como menor** (16/11) | Mejoras menores |
+| 5 | Aviso móvil tapa título y botones de la ficha ampliada durante 5 s | **Aceptado como menor** (16/11) | Mejoras menores |
 | 6 | La partida se trababa si un superviviente moría en su propia acción | **Corregido** ([101](101-muerte-durante-accion-propia.md)) | Confirmado jugando (16/11) |
-| 7 | D12 de exposición sin probar a mano | Baterías automáticas en tres tamaños; falta partida manual y teléfono físico | Revisión del PR #27 |
+| 7 | D12 de exposición sin probar a mano | Integrado en `main`; baterías automáticas en tres tamaños | Partida manual y teléfono físico |
+| 8 | Improvisar perjudica la cooperativa cuando se activa antes del ataque | Corroborado en 115: consume dados de defensa → zombis acumulan → colapso | Rediseñar condición de activación (p. ej., solo sin zombis en colonia) si se quiere usar |
 
-## 5. Verificación y aceptación del D12 (PR #27)
+## 5. Verificación de la séptima corrida (rama `experiment/sp04-noche`)
 
-- [x] Regla 6/3/2/1 con una sola muestra de azar por exposición; cara mostrada = cara registrada = efecto aplicado (pruebas unitarias y batería `check-exposure-d12-browser.mjs`).
-- [x] Referencia V9.9 intacta: el build preservado mantiene su HTML y su D6.
-- [x] Adaptado a `app/mapa/` sobre `main` `f6a57d2` (detalle en [102](102-dado-exposicion-d12.md)).
-- [ ] CI del PR #27 en verde sobre el SHA adaptado.
-- [ ] Movimiento y combate revisados jugando en escritorio.
-- [ ] Samsung Galaxy A15 físico (reserva, como en el Hito 3).
-- [ ] Decisión de merge del creador.
+- [x] 9 tests en verde (`sp04-septima.test.mjs`): bug 1 (reserva no bloquea crisis), bug 2 (improvisar antes de ataque), umbral 3 ≥ umbral 4, sin-reserva, compatibilidad con sexta corrida, reproducibilidad.
+- [x] 791 tests totales en verde (`npm test`).
+- [x] Simulación completa: 500 partidas × 5 variantes × 2 escenarios × 2 políticas = 100 celdas, ~23 s, 0 partidas incompletas.
+- [ ] CI del PR (incluye baterías sin vídeo).
+- [ ] Decisión del creador sobre la combinación a aprobar.
 
 ## 6. Decisiones vigentes de mapa e interfaz
 

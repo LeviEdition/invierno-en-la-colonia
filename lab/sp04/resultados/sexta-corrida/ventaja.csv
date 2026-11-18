@@ -1,0 +1,8 @@
+variante,comidaInicial,cooperativa,cooperativaA,cooperativaB,cooperativa-prudente,cooperativa-prudenteA,cooperativa-prudenteB,objetivo-repartido,objetivo-repartidoA,objetivo-repartidoB,objetivo-repartido-prudente,objetivo-repartido-prudenteA,objetivo-repartido-prudenteB,ventajaPrudente
+base,,0.357,0.442,0.272,0.376,0.538,0.214,0.653,0.596,0.71,0.663,0.574,0.752,0.287
+c6-normal,6,0.254,0.322,0.186,0.297,0.44,0.154,0.33,0.358,0.302,0.376,0.376,0.376,0.079
+c6-adapt,6,0.296,0.384,0.208,0.318,0.458,0.178,0.349,0.376,0.322,0.388,0.386,0.39,0.07
+c8-normal,8,0.296,0.384,0.208,0.349,0.51,0.188,0.357,0.376,0.338,0.417,0.416,0.418,0.068
+c8-adapt,8,0.334,0.422,0.246,0.372,0.518,0.226,0.388,0.406,0.37,0.431,0.43,0.432,0.059
+c10-normal,10,0.331,0.416,0.246,0.393,0.548,0.238,0.376,0.396,0.356,0.456,0.436,0.476,0.063
+c10-adapt,10,0.367,0.45,0.284,0.407,0.556,0.258,0.403,0.424,0.382,0.465,0.444,0.486,0.058

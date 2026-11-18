@@ -134,3 +134,38 @@ export function agregarCuarta(partidas){
   partidasTerminanPorDesbordeColonia:partidas.filter(p=>(p.resultado==='morale'||p.resultado==='survivors')&&conVictima(p).some(d=>d.ronda===p.rondaFin)).length/n,
  };
 }
+
+// ---------- Sexta corrida (docs/114) ----------
+// Crisis: éxitos plenos, parciales (crisisParcial activa y aportes ≥ ceil(necesidad/2) < necesidad)
+// y fallos totales. Improvisaciones: veces que un superviviente aportó sin carta.
+export function agregarSexta(partidas){
+ const n=partidas.length;
+ const crisisTodas=partidas.flatMap(p=>p.crisis||[]);
+ const contarCrisis=pred=>media(partidas.map(p=>(p.crisis||[]).filter(pred).length));
+ return {
+  crisisExitosPorPartida:contarCrisis(k=>k.exito),
+  crisisParciales:contarCrisis(k=>k.parcial),
+  crisisFallasPorPartida:contarCrisis(k=>!k.exito&&!k.parcial),
+  improvisacionesPorPartida:media(partidas.map(p=>p.improvisaciones||0)),
+ };
+}
+
+// ---------- Quinta corrida (docs/113) ----------
+// Noche fuera de la colonia: muertes de noche, afuera al caer la noche, regresos.
+// Muere de noche: causada por una exposición nocturna (bite letal o daños acumulados).
+// Fase con alguien afuera: fases de colonia en que al menos un superviviente estaba fuera.
+export function agregarQuinta(partidas){
+ const n=partidas.length;
+ const exps=partidas.flatMap(p=>p.exposicionesNoche||[]);
+ const efecto=e=>exps.length?exps.filter(x=>x.efecto===e).length/exps.length:null;
+ const fasesNoche=partidas.flatMap(p=>p.afueraAlCaerNoche||[]);
+ return {
+  regresosPorPartida:media(partidas.map(p=>p.regresos||0)),
+  afueraAlCaerNochePromedio:fasesNoche.length?media(fasesNoche.map(f=>f.cantidad)):null,
+  fasesConAlguienAfuera:partidas.map(p=>{const col=p.colonia.length;return col?(p.afueraAlCaerNoche||[]).length/col:null;}).filter(x=>x!==null).reduce((a,b,_,xs)=>a+b/xs.length,0)||null,
+  muertesPorNochePorPartida:media(partidas.map(p=>p.muertesNoche||0)),
+  exposicionesNochePorPartida:media(partidas.map(p=>(p.exposicionesNoche||[]).length)),
+  nocheNada:efecto('none'),nocheHerida:efecto('wound'),nocheCongelacion:efecto('frost'),
+  nocheMordedura:efecto('bite'),nocheEvitada:efecto('avoided'),
+ };
+}
