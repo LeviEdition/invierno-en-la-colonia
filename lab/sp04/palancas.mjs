@@ -19,7 +19,8 @@ export const palancasBase=Object.freeze({
  llegadasColonia:'v99',  // cuarta corrida (regla B): v99 · min2 · min3 · fijo3 — llegadas de población a la colonia
  nocheAfuera:null,       // quinta corrida: null · 'localidad' · 'unica' — exposición al caer la noche
  regreso:false,          // quinta corrida: false · true — permite «Regresar a la colonia» (segundo movimiento, cuesta un dado)
- improvisar:false,       // sexta corrida: false · true — dado ≥4 en colonia aporta 1 contribución válida a la crisis (una vez por ronda por superviviente)
+ improvisar:false,       // sexta corrida: false · true — dado ≥umbral en colonia aporta 1 contribución válida a la crisis (una vez por ronda por superviviente)
+ improvisarUmbral:4,     // séptima corrida: 4 · 3 — valor mínimo de dado para improvisar
  crisisParcial:false,    // sexta corrida: false · true — aportes ≥ ceil(necesidad/2) reducen la consecuencia a la mitad
 });
 export const valoresPalancas={
@@ -36,6 +37,7 @@ export const valoresPalancas={
  nocheAfuera:[null,'localidad','unica'],
  regreso:[false,true],
  improvisar:[false,true],
+ improvisarUmbral:[3,4],
  crisisParcial:[false,true],
 };
 // Regla B (docs/111): llegadas de población a la colonia en la fase de colonia, a
@@ -141,7 +143,7 @@ export function instalarPalancas(c,p,registro){
    if(k.contributions.filter(t=>t===k.type).length>=k.need)return null;
    const sv=c.alive().find(x=>x.id===survivorId&&x.loc===0&&!x.hasImprovised);
    if(!sv)return null;
-   const di=g.dice.findIndex(d=>d>=4);if(di<0)return null;
+   const di=g.dice.findIndex(d=>d>=p.improvisarUmbral);if(di<0)return null;
    const val=g.dice[di];g.dice.splice(di,1);
    k.contributions.push(k.type);k.given=k.contributions.filter(t=>t===k.type).length;
    sv.hasImprovised=true;registro.improvisaciones++;
