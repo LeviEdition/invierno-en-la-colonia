@@ -344,6 +344,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
   <label><input type="checkbox" id="testRulesNight" data-command="testRuleFlag" data-args="[&quot;laNoche&quot;]" data-event="change"> La noche · tirada D12 por localidad exterior ocupada</label>
   <label><input type="checkbox" id="testRulesReturn" data-command="testRuleFlag" data-args="[&quot;regreso&quot;]" data-event="change"> Regresar a la colonia · cuesta un dado, sin exposición</label>
   <label><input type="checkbox" id="testRulesPartial" data-command="testRuleFlag" data-args="[&quot;crisisParcial&quot;]" data-event="change"> Crisis parcial · media consecuencia con la mitad de los aportes</label>
+  <button class="setupChoice" id="startSolo" data-command="startGame" data-args="[&quot;solo&quot;]"><strong>☗ UN GRUPO (SIN IA)</strong><small>Un solo grupo: tu turno y después la colonia.</small></button>
  </details>
  </section>
 </div>
@@ -408,7 +409,9 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
   }
 
   // src/domain/reference-state.mjs
+  var soloMode = (mode) => mode === "solo";
   function createReferenceState({ gameMode, objective, places, catalog, testRules = TEST_RULE_DEFAULTS }) {
+    let solo = soloMode(gameMode);
     return {
       mode: gameMode,
       objective,
@@ -422,12 +425,12 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       waste: 0,
       testRules: { ...testRules },
       humans: [{ id: "h0", name: "Mara", loc: 0, wounds: 0, frost: 0, dead: !1 }, { id: "h1", name: "Leo", loc: 0, wounds: 0, frost: 0, dead: !1 }, { id: "h2", name: "Iris", loc: 0, wounds: 0, frost: 0, dead: !1 }],
-      bots: [{ id: "a0", name: "Ada", loc: 0, wounds: 0, frost: 0, dead: !1 }, { id: "a1", name: "Bruno", loc: 0, wounds: 0, frost: 0, dead: !1 }, { id: "a2", name: "Sol", loc: 0, wounds: 0, frost: 0, dead: !1 }],
+      bots: solo ? [] : [{ id: "a0", name: "Ada", loc: 0, wounds: 0, frost: 0, dead: !1 }, { id: "a1", name: "Bruno", loc: 0, wounds: 0, frost: 0, dead: !1 }, { id: "a2", name: "Sol", loc: 0, wounds: 0, frost: 0, dead: !1 }],
       zones: places.map((name, i) => ({ name, z: i === 0 ? 3 : 1, b: 0, noise: 0, accessIndex: 0 })),
       items: ["ration", "bandage", "crowbar", "pistol", "canned", "gascan", "ration"].map((id) => catalog.create(id)),
-      botItems: ["ration", "bandage", "gascan", "ration", "pistol", "repairkit", "ration"].map((id) => catalog.create(id)),
+      botItems: solo ? [] : ["ration", "bandage", "gascan", "ration", "pistol", "repairkit", "ration"].map((id) => catalog.create(id)),
       helpless: 0,
-      leaders: { human: "h0", ai: "a1" },
+      leaders: { human: "h0", ai: solo ? null : "a1" },
       leaderChosen: !1,
       localLeaderChosen: gameMode !== "local",
       rescueQueue: [],
@@ -729,7 +732,9 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       return Math2.max(1, p.search - (p.skill === "librarian" && p.loc === 6 ? 1 : 0) - (ctx.itemEngine.has(p, "crowbar") ? 1 : 0));
     }
     function gameOutcome(g) {
-      return g.morale <= 0 ? "morale" : g.noReplacement || (!g.humans.some((p) => !p.dead) || !g.bots.some((p) => !p.dead)) && !g.biteResolving ? "survivors" : g.samples >= g.goal ? "victory" : null;
+      if (g.morale <= 0) return "morale";
+      let lost = soloMode(g.mode) ? !g.humans.some((p) => !p.dead) : !g.humans.some((p) => !p.dead) || !g.bots.some((p) => !p.dead);
+      return g.noReplacement || lost && !g.biteResolving ? "survivors" : g.samples >= g.goal ? "victory" : null;
     }
     function canReceiveTransfer(from, to, it) {
       return !!from && !!to && !!it && !to.dead && from.id !== to.id && from.loc === to.loc && (ctx.game.mode === "local" || ctx.ownerOf(from) === ctx.ownerOf(to)) && !ctx.equipmentOf(to).some((eq) => ctx.kind(eq) === ctx.kind(it));
@@ -948,7 +953,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         for (let eq of ctx.equipmentOf(p)) eq && typeof eq == "object" && (eq.usedRound = 0);
       });
       let types = ["comida", "medicina", "herramienta", "combustible"], crisisType = types[ctx.random(types.length)];
-      ctx.game.crisis = { type: crisisType, need: 2, given: 0, contributions: [], fail: ["moral", "zombie", "food", "wound"][ctx.random(4)] }, ctx.game.dice = Array.from({ length: 1 + ctx.game.humans.filter((p) => !p.dead).length }, ctx.die), ctx.game.botDice = Array.from({ length: 1 + ctx.game.bots.filter((p) => !p.dead).length }, ctx.die), ctx.picked = 0, ctx.game.crossAttempts = 0, ctx.crossDraw("human"), ctx.message("⚠ Crisis: aportar 2 " + crisisType + "."), ctx.applyFrost("human"), ctx.replaceLastSurvivors(), ctx.verify(), ctx.game.ended || ctx.crossTrigger("round", null), ctx.paint();
+      ctx.game.crisis = { type: crisisType, need: 2, given: 0, contributions: [], fail: ["moral", "zombie", "food", "wound"][ctx.random(4)] }, ctx.game.dice = Array.from({ length: 1 + ctx.game.humans.filter((p) => !p.dead).length }, ctx.die), ctx.game.botDice = ctx.controls.solo ? [] : Array.from({ length: 1 + ctx.game.bots.filter((p) => !p.dead).length }, ctx.die), ctx.picked = 0, ctx.game.crossAttempts = 0, ctx.crossDraw("human"), ctx.message("⚠ Crisis: aportar 2 " + crisisType + "."), ctx.applyFrost("human"), ctx.replaceLastSurvivors(), ctx.verify(), ctx.game.ended || ctx.crossTrigger("round", null), ctx.paint();
     }
     function applyFrost(side) {
       let group = side === "human" ? ctx.game.humans : ctx.game.bots;
@@ -969,7 +974,17 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
           ctx.show("crossroads");
           return;
         }
-        if (ctx.hide(), ctx.game.mode === "local") {
+        if (ctx.hide(), ctx.controls.solo) {
+          ctx.aiRunning = !0;
+          try {
+            if (ctx.message("⌂ Resolviendo fase de colonia."), ctx.colony(), await ctx.waitForBite(), ctx.game !== turnGame || (await ctx.deathDirector.wait(), ctx.game !== turnGame)) return;
+            ctx.game.ended || (ctx.game.round++, ctx.game.round > ctx.game.max ? (ctx.game.ended = !0, ctx.game.turn = "end", ctx.cancelPendingDecisions(), ctx.message("☠ Derrota: se agotaron las rondas.")) : ctx.newRound());
+          } finally {
+            ctx.game === turnGame && (ctx.aiRunning = !1, ctx.paint());
+          }
+          return;
+        }
+        if (ctx.game.mode === "local") {
           if (ctx.game.turn === "human") {
             ctx.selectionBySide.human = ctx.selected, ctx.game.turn = "ai", ctx.selected = ctx.selectionBySide.ai, ctx.picked = 0, ctx.target = ctx.person()?.loc ?? 0, ctx.applyFrost("ai"), ctx.replaceLastSurvivors(), ctx.verify(), ctx.game.ended || (ctx.crossDraw("ai"), ctx.crossTrigger("round", null), ctx.showPass("ai")), ctx.paint();
             return;
@@ -2154,6 +2169,9 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       get local() {
         return game?.mode === "local";
       }
+      get solo() {
+        return soloMode(game?.mode);
+      }
       get interactive() {
         return !!game && !game.ended && !passScreenActive && !aiRunning && (game.turn === "human" || this.local && game.turn === "ai");
       }
@@ -2166,8 +2184,9 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       dice(side = this.side) {
         return side === "ai" ? game.botDice : game.dice;
       }
+      // «Un grupo» no menciona a la IA ni a un segundo jugador.
       display(side = this.side) {
-        return side === "human" ? "Jugador 1" : this.local ? "Jugador 2" : "IA";
+        return this.solo ? "Tu grupo" : side === "human" ? "Jugador 1" : this.local ? "Jugador 2" : "IA";
       }
     }
     let controls = new TurnController();
@@ -2429,7 +2448,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       let g = env ? env.game : game;
       if (!(!g || g.ended || g.biteResolving || g.morale <= 0))
         for (let [side, group] of [["human", g.humans], ["ai", g.bots]]) {
-          if (group.some((p) => !p.dead)) continue;
+          if (side === "ai" && soloMode(g.mode) || group.some((p) => !p.dead)) continue;
           let hand = side === "human" ? g.items : g.botItems, discarded = hand.length;
           hand.splice(0, hand.length), ruleMessage(env, "⚠ " + (side === "human" ? "Perdiste" : "La IA perdió") + " su último superviviente. Se descartaron " + discarded + " cartas de su mano."), recruit(side, !0, env) || (g.noReplacement = !0);
         }
@@ -2920,7 +2939,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
     }
     function startGame(mode) {
       if (mode === "ai" && !hasAutomation) throw Error("Falta un automatismo para el modo IA");
-      mode !== "ai" && mode !== "local" || (gameMode = mode, view.hideHandover(), passScreenActive = !1, create(), paint(), syncHandoverAccessibility(), returnFocusAfterHandover());
+      ["ai", "local", "solo"].includes(mode) && (gameMode = mode, view.hideHandover(), passScreenActive = !1, create(), paint(), syncHandoverAccessibility(), returnFocusAfterHandover());
     }
     function showPass(side) {
       game.mode !== "local" || game.ended || (view.showPass(side), passScreenActive = !0, toggleFab(!1), syncHandoverAccessibility());
@@ -3241,7 +3260,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         let info = ctx.pendingRecruitInfo;
         html = info ? '<div class="recruitStory"><div class="recruitSeal">' + (info.queued ? "⌛" : "♛") + "</div><h3>" + info.name + "</h3><p>" + (info.queued ? "La colonia está llena y el superviviente espera una plaza disponible." : "Rescataste a <b>" + info.name + "</b> (" + info.job + "). Se incorporó directamente a tu grupo en la colonia.") + '</p><p class="tiny">' + info.skill + '</p><button class="action" style="width:100%" ' + commandAttributes("dismissRecruit", []) + ">Continuar</button></div>" : "";
       } else if (ctx.opened === "group") {
-        let row = (side) => '<div class="groupPanel"><h3>' + (side === ctx.controls.side ? "Tu grupo" : ctx.game.mode === "local" ? ctx.controls.display(side) : "Grupo de la IA") + "</h3>" + ctx.ownerGroup(side).filter((p) => !p.dead).map((p) => '<div class="groupMember"><div><b>' + (ctx.isLeader(p) ? "♛ " : "") + p.name + "</b><small>" + p.job + " · Influencia " + p.influence + " · " + ctx.places[p.loc] + "</small></div>" + (side === ctx.controls.side && ctx.canPickStartingLeader() && !ctx.isLeader(p) ? '<button class="action secondary" ' + commandAttributes("chooseLeader", [p.id]) + ">Elegir líder</button>" : "") + "</div>").join("") + "</div>";
+        let row = (side) => ctx.ownerGroup(side).length ? '<div class="groupPanel"><h3>' + (side === ctx.controls.side ? "Tu grupo" : ctx.game.mode === "local" ? ctx.controls.display(side) : "Grupo de la IA") + "</h3>" + ctx.ownerGroup(side).filter((p) => !p.dead).map((p) => '<div class="groupMember"><div><b>' + (ctx.isLeader(p) ? "♛ " : "") + p.name + "</b><small>" + p.job + " · Influencia " + p.influence + " · " + ctx.places[p.loc] + "</small></div>" + (side === ctx.controls.side && ctx.canPickStartingLeader() && !ctx.isLeader(p) ? '<button class="action secondary" ' + commandAttributes("chooseLeader", [p.id]) + ">Elegir líder</button>" : "") + "</div>").join("") + "</div>" : "";
         html = "<p>La influencia decide el orden de propagación de mordeduras y las víctimas de desbordamientos: se expone primero la menor. Cada grupo tiene un líder; si muere, debe reemplazarse.</p>" + row("human") + row("ai") + (ctx.canPickStartingLeader() ? '<p class="message">Durante la primera ronda podés elegir tu líder inicial antes de gastar un dado, moverte o usar una carta.</p>' : "") + (ctx.game.rescueQueue.length ? '<p class="message">Rescates pendientes: ' + ctx.game.rescueQueue.length + ". Llegarán cuando haya lugar en la colonia.</p>" : "");
       } else if (ctx.opened === "biteChoice") {
         let p = ctx.pendingBite && ctx.all().find((x) => x.id === ctx.pendingBite.target);

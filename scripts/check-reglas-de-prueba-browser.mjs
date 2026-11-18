@@ -13,7 +13,7 @@ const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'
 // .45 cae en la cara 6 del D12 (herida): efecto visible y no mortal.
 const RANDOM=.45;
 const evidence={htmlSha256:createHash('sha256').update(html).digest('hex'),chromium:browser.version(),
- scope:'panel ?dev=1, comida inicial 8, La noche en modo contra la IA, una ronda con alguien afuera',records:[],errors:[]};
+ scope:'panel ?dev=1, comida inicial 8, La noche en modo contra la IA con alguien afuera, y dos rondas en modo «un grupo»',records:[],errors:[]};
 try{
  for(const viewport of [{width:1365,height:768},{width:393,height:852}]){
   const context=await browser.newContext({viewport,isMobile:viewport.width<500,hasTouch:viewport.width<500});
@@ -101,6 +101,47 @@ try{
   const acompanante=record.noche.heridas.find(p=>p.name!==record.preparacion.centinela&&record.preparacion.fuera.includes(p.name));
   assert.equal(acompanante.wounds,0,'el acompañante no recibe tirada propia');
   await page.screenshot({path:output+'/noche-'+viewport.width+'.png'});
+
+  // (2) Modo «un grupo»: dos rondas sin turno de la IA.
+  await page.goto(url+'?dev=1');
+  await page.locator('#setupScreen').waitFor({state:'visible'});
+  await page.locator('#testRules summary').click();
+  await page.locator('#startSolo').click();
+  await page.locator('#setupScreen').waitFor({state:'hidden'});
+  record.solo=await api.evaluate(()=>({mode:game.mode,bots:game.bots.length,botDice:game.botDice.length,
+   lider:game.leaders.ai,rotulo:document.getElementById('turnLabel').textContent,
+   humanos:game.humans.map(p=>p.name),dados:game.dice.length}));
+  assert.equal(record.solo.mode,'solo');
+  assert.equal(record.solo.bots,0,'no hay grupo de la IA');
+  assert.equal(record.solo.botDice,0,'no hay dados de la IA');
+  assert.equal(record.solo.lider,null);
+  assert.equal(record.solo.dados,4,'1 + tres supervivientes');
+  assert.doesNotMatch(record.solo.rotulo,/IA|JUGADOR 2/,'el rótulo de turno no menciona a la IA');
+  await page.screenshot({path:output+'/un-grupo-'+viewport.width+'.png'});
+
+  record.soloRondas=[];
+  await api.evaluate(()=>{game.zones.forEach(z=>{z.noise=0;z.b=0;z.z=0;});game.food=40;game.waste=0;});
+  for(const ronda of [1,2]){
+   const antes=await api.evaluate(()=>({round:game.round,turn:game.turn}));
+   assert.equal(antes.round,ronda);
+   assert.equal(antes.turn,'human','el turno siempre es del jugador');
+   await api.evaluate(()=>{
+    game.crossPending=false;game.crossResolved=true;
+    game.crisis.contributions=Array(game.crisis.need).fill(game.crisis.type);game.crisis.given=game.crisis.need;
+    game.log=[];finishTurn();
+   });
+   await api.waitForFunction(r=>game.round>r||game.ended,ronda,{timeout:30000});
+   record.soloRondas.push(await api.evaluate(()=>({round:game.round,ended:game.ended,
+    turn:game.turn,log:game.log.slice(0,12)})));
+  }
+  assert.equal(record.soloRondas.at(-1).round,3,'dos rondas completas');
+  assert.equal(record.soloRondas.at(-1).ended,false);
+  const avisos=record.soloRondas.flatMap(r=>r.log);
+  assert.ok(avisos.some(line=>/fase de colonia/.test(line)),'la colonia se resolvió cada ronda');
+  assert.deepEqual(avisos.filter(line=>/\bIA\b|Jugador 2/.test(line)),[],
+   'ningún aviso menciona a la IA ni a un segundo jugador');
+  await page.screenshot({path:output+'/un-grupo-ronda3-'+viewport.width+'.png'});
+
   await context.close();console.log('reglas-de-prueba',viewport.width,'ok');
  }
  assert.deepEqual(evidence.errors,[],'sin errores de página');

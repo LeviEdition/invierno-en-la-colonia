@@ -9,7 +9,8 @@ function newRound(){
  const types=['comida','medicina','herramienta','combustible'];const crisisType=types[ctx.random(types.length)];
  ctx.game.crisis={type:crisisType,need:2,given:0,contributions:[],fail:['moral','zombie','food','wound'][ctx.random(4)]};
  ctx.game.dice=Array.from({length:1+ctx.game.humans.filter(p=>!p.dead).length},ctx.die);
- ctx.game.botDice=Array.from({length:1+ctx.game.bots.filter(p=>!p.dead).length},ctx.die);
+ // «Un grupo»: sin bando de la IA no se tiran sus dados ni se consume azar por ellos.
+ ctx.game.botDice=ctx.controls.solo?[]:Array.from({length:1+ctx.game.bots.filter(p=>!p.dead).length},ctx.die);
  ctx.picked=0;ctx.game.crossAttempts=0;ctx.crossDraw('human');
  ctx.message('⚠ Crisis: aportar 2 '+crisisType+'.');
  ctx.applyFrost('human');ctx.replaceLastSurvivors();ctx.verify();
@@ -29,6 +30,22 @@ async function finishTurn(){
  if(ctx.pendingHeal||ctx.pendingLoot||ctx.pendingBite||ctx.pendingAttract||ctx.pendingTransfer){ctx.show(ctx.pendingHeal?'healTarget':ctx.pendingLoot?'lootChoice':ctx.pendingBite?'biteChoice':ctx.pendingAttract?'attractTarget':'transferTarget');return;}
  if(ctx.game.crossPending){ctx.show('crossroads');return;}
  ctx.hide();
+ // «Un grupo»: del turno del jugador directo a la fase de colonia, sin turno de la IA.
+ if(ctx.controls.solo){
+  ctx.aiRunning=true;
+  try{
+   ctx.message('⌂ Resolviendo fase de colonia.');
+   ctx.colony();
+   await ctx.waitForBite();if(ctx.game!==turnGame)return;
+   await ctx.deathDirector.wait();if(ctx.game!==turnGame)return;
+   if(!ctx.game.ended){
+    ctx.game.round++;
+    if(ctx.game.round>ctx.game.max){ctx.game.ended=true;ctx.game.turn='end';ctx.cancelPendingDecisions();if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)ctx.mapPlay.event('end',{reason:'time'});ctx.message('☠ Derrota: se agotaron las rondas.');}
+    else ctx.newRound();
+   }
+  }finally{if(ctx.game===turnGame){ctx.aiRunning=false;ctx.paint();}}
+  return;
+ }
  if(ctx.game.mode==='local'){
   if(ctx.game.turn==='human'){
    ctx.selectionBySide.human=ctx.selected;

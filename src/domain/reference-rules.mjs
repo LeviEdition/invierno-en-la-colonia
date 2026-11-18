@@ -1,4 +1,5 @@
 // V9.9: extracción con enlaces vivos; las reglas se conservan.
+import {soloMode} from './reference-state.mjs';
 export function createRules(ctx,{Math=globalThis.Math,setTimeout=globalThis.setTimeout}={}){
 function equipmentOf(p){return p.equipment||[];}
 function ownerGroup(side,g=ctx.game){return side==='ai'?g.bots:g.humans;}
@@ -17,7 +18,9 @@ function effectiveAttack(p){return Math.max(1,p.attack-(p.skill==='fighter'?1:0)
 function effectiveSearch(p){return Math.max(1,p.search-(p.skill==='librarian'&&p.loc===6?1:0)-(ctx.itemEngine.has(p,'crowbar')?1:0));}
 function gameOutcome(g){
  if(g.morale<=0)return 'morale';
- if(g.noReplacement||(!g.humans.some(p=>!p.dead)||!g.bots.some(p=>!p.dead))&&!g.biteResolving)return 'survivors';
+ // En «un grupo» solo cuenta el grupo humano: no hay bando de la IA que perder.
+ const lost=soloMode(g.mode)?!g.humans.some(p=>!p.dead):!g.humans.some(p=>!p.dead)||!g.bots.some(p=>!p.dead);
+ if(g.noReplacement||lost&&!g.biteResolving)return 'survivors';
  if(g.samples>=g.goal)return 'victory';
  return null;
 }

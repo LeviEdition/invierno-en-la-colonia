@@ -14,6 +14,7 @@ import {createMapPlay} from './map-play.mjs';
 import {resolveMapExposure} from '../domain/map-exposure.mjs';
 import {TEST_RULE_DEFAULTS,normalizeTestRules,describeTestRules,partialThreshold,halvedConsequence} from '../domain/test-rules.mjs';
 import {resolveNight,nightEnabled,nightWatch,sleepingOutside} from '../domain/reference-night.mjs';
+import {soloMode} from '../domain/reference-state.mjs';
 const noop=()=>{};
 export function createEngine({Math=globalThis.Math,queueMicrotask=globalThis.queueMicrotask||((f)=>Promise.resolve().then(f)),setTimeout=globalThis.setTimeout,stateFactory=createReferenceState,rulesFactory=createRules,turnsFactory=createTurns,effects={},automation=null}={}){
 let view=new Proxy(effects,{get:(target,key)=>target[key]||noop});
@@ -289,11 +290,13 @@ const selectionBySide={human:0,ai:0};
 class TurnController {
  get side(){return game?.turn==='ai'?'ai':'human';}
  get local(){return game?.mode==='local';}
+ get solo(){return soloMode(game?.mode);}
  get interactive(){return !!game&&!game.ended&&!passScreenActive&&!aiRunning&&(game.turn==='human'||(this.local&&game.turn==='ai'));}
  group(side=this.side){return side==='ai'?game.bots:game.humans;}
  hand(side=this.side){return side==='ai'?game.botItems:game.items;}
  dice(side=this.side){return side==='ai'?game.botDice:game.dice;}
- display(side=this.side){return side==='human'?'Jugador 1':(this.local?'Jugador 2':'IA');}
+ // «Un grupo» no menciona a la IA ni a un segundo jugador.
+ display(side=this.side){return this.solo?'Tu grupo':side==='human'?'Jugador 1':(this.local?'Jugador 2':'IA');}
 }
 const controls=new TurnController();
 function deathWaiting(){return deathDirector.active||deathDirector.pending.length>0;}
@@ -432,6 +435,8 @@ function replaceLastSurvivors(env=null){
  const g=env?env.game:game;
  if(!g||g.ended||g.biteResolving||g.morale<=0)return;
  for(const [side,group] of [['human',g.humans],['ai',g.bots]]){
+  // En «un grupo» el bando de la IA no existe: no se reemplaza ni se descarta.
+  if(side==='ai'&&soloMode(g.mode))continue;
   if(group.some(p=>!p.dead))continue;
   const hand=side==='human'?g.items:g.botItems;
   const discarded=hand.length;hand.splice(0,hand.length);if(!env&&typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('replacement-discard',{side,count:discarded}); // La mano se descarta, no se añade a basura.
@@ -956,7 +961,7 @@ function showSetup(){
 }
 function startGame(mode){
  if(mode==='ai'&&!hasAutomation)throw Error('Falta un automatismo para el modo IA');
- if(mode!=='ai'&&mode!=='local')return;
+ if(!['ai','local','solo'].includes(mode))return;
  gameMode=mode;
  view.hideHandover();
  passScreenActive=false;
