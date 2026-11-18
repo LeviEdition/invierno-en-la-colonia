@@ -1,22 +1,14 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import {fixture,silentCross} from '../test-support/game-fixture.mjs';
+import {fixture,prepare,setDie as fixDie,silentCross} from '../test-support/game-fixture.mjs';
 import {normalizeTestRules,partialThreshold,halvedConsequence,nightAvailable,TEST_RULE_DEFAULTS} from '../src/domain/test-rules.mjs';
 import {nightWatcher,nightWatch} from '../src/domain/reference-night.mjs';
 
 // Reglas de prueba del singleplayer (docs/116 y 117). Todas apagadas por defecto: con
 // la configuración base el motor resuelve exactamente igual que la referencia.
 
-// Las reglas se eligen en la pantalla de preparación y se aplican al crear la
-// partida, igual que en el panel de desarrollo.
-function prepare(rules,{mode='ai',seed=20261118,face=6}={}){
- const t=fixture({mode,seed,face});
- t.run('passScreenActive=true;setTestRules('+JSON.stringify(rules||{})+');passScreenActive=false;create();');
- t.run(silentCross);
- return t;
-}
 // Caras del D12 de exposición: 1 mordedura, 2-3 congelación, 4-6 herida, 7-12 sin efecto.
 const D12={bite:0.01,frost:0.12,wound:0.30,none:0.60};
-const setDie=(t,value)=>t.run('Math.random=()=>'+value+';');
+const setDie=(t,value)=>fixDie(t.run('Math'),value);
 // Fase de colonia sin ruido ni crisis: deja ver solo lo que aporta cada regla.
 const quiet='game.zones.forEach(z=>{z.noise=0;z.b=0;z.z=0;});game.waste=0;game.food=40;'+
  'game.crisis.contributions=Array(game.crisis.need).fill(game.crisis.type);game.crisis.given=game.crisis.need;';

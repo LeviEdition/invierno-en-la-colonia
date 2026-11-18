@@ -15,7 +15,7 @@
 | D12 de exposición | **Integrado en `main`** (PR #27, 17/11), aprobado jugando | [102](102-dado-exposicion-d12.md) |
 | Laboratorio SP-04 | **Cerrado** (17/11, PR #33 y #35). Conclusión aprobada por el creador: la noche por localidad, el regreso con un dado y el éxito parcial de la crisis; improvisar descartado; comida inicial a definir jugando | [111](111-laboratorio-sp04-cuarta-corrida.md), [113](113-laboratorio-sp04-quinta-corrida.md), [114](114-laboratorio-sp04-sexta-corrida.md), [115](115-laboratorio-sp04-septima-corrida.md) |
 | Mapa en doble resolución | **En revisión** (rama `feature/mapa-2x`, PR #34): textura 3342×1882, zoom máximo 1,5, enfoque de localidad hasta 1,5 | [112](112-mapa-doble-resolucion.md) |
-| Reglas de prueba y modo «un grupo» | **En revisión** (rama `feature/reglas-de-prueba`, PR #37): comida inicial 6/8/10, «La noche», «Regresar a la colonia» y crisis parcial, todas apagadas por defecto, más el modo de un solo grupo. **Disponibles en el mapa con `?dev`.** Falta probar jugando y el CI | [116](116-ficha-regla-la-noche.md), [117](117-reglas-de-prueba-y-un-grupo.md) |
+| Reglas de prueba y modo «un grupo» | **En revisión** (rama `feature/reglas-de-prueba`, PR #37): comida inicial 6/8/10, «La noche», «Regresar a la colonia» y crisis parcial, todas apagadas por defecto, más el modo de un solo grupo. **Disponibles en el mapa con `?dev`.** La resistencia del motor se cubre en Node. Falta probar jugando | [116](116-ficha-regla-la-noche.md), [117](117-reglas-de-prueba-y-un-grupo.md) |
 | Singleplayer (SP-00 a SP-08) | **Diseño en papel**; capítulo piloto «La última guardia» en ficha. Las reglas que lo sostienen ya existen como opción de prueba | [63](63-hoja-de-ruta-planificacion-singleplayer.md), [105](105-ficha-capitulo-la-ultima-guardia.md) |
 
 El mapa permite preparar, jugar y terminar una partida completa (humano + IA y dos jugadores locales) con un único motor. Vive en `app/mapa/` (`npm run dev:mapa` → `http://127.0.0.1:8779/app/mapa/`).
@@ -26,7 +26,7 @@ El mapa permite preparar, jugar y terminar una partida completa (humano + IA y d
 
 ## 3. Cola ordenada
 
-1. **Probar las reglas jugando en el mapa (117):** fijar comida inicial y confirmar la duda abierta de la ficha ([116](116-ficha-regla-la-noche.md)). El CI del PR #37 valida las dos baterías nuevas, que no se corrieron localmente.
+1. **Probar las reglas jugando en el mapa (117):** fijar comida inicial y confirmar la duda abierta de la ficha ([116](116-ficha-regla-la-noche.md)). El PR #37 verifica el motor y los recorridos breves de navegador.
 2. **Mapa 2× (112):** prueba del creador en escritorio y en el A15 → decisión de merge (requiere indicación expresa).
 3. **Interfaz v2** (rama `feature/interfaz-v2`; decisiones en [109 §8](109-guia-de-estilo.md)), sobre el mapa 2× ya integrado.
 4. **Implementar «La última guardia»** como capítulo jugable, con los valores que se fijen en 1.
@@ -49,6 +49,8 @@ El mapa permite preparar, jugar y terminar una partida completa (humano + IA y d
 | 10 | `node_modules` está versionado como enlace simbólico | Detectado 18/11: `npm ci` lo reemplaza por un directorio y aparece como borrado en `git status`; no se incluyó en ningún commit | Revisar aparte si debe dejar de estar versionado |
 
 ## 5. Verificación de las reglas de prueba y el modo «un grupo» (rama `feature/reglas-de-prueba`, PR #37)
+
+- [x] La batería de resistencia completó 98 partidas en Node con semillas reproducibles y comprobó los reintentos de una mordedura nocturna ([117](117-reglas-de-prueba-y-un-grupo.md)).
 
 - [x] **851 pruebas, 0 fallos**: 59 nuevas (35 de reglas, 14 del modo, 9 del adaptador del mapa, más la paridad de preparación extendida a los tres modos).
 - [x] Con todo apagado, una partida con semilla fija es idéntica; los modos contra la IA y dos jugadores locales conservan grupo, mano, dados y líder de la IA.

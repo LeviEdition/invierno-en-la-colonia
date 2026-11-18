@@ -109,3 +109,11 @@ El frío que ya existía conserva su cobro: otra congelación nocturna no renuev
 **Balance:** este ajuste baja la letalidad de La noche. No se re-corrió el laboratorio de balance; debe confirmarse jugando en escritorio y A15. Se añadieron regresiones unitarias; no se ejecutaron navegadores localmente ni se abrieron capturas.
 
 La comprobación adicional del primitivo interno de tratamiento de IA se detuvo tras dos accesos fallidos: ese símbolo no está expuesto por el adaptador VM. Se verifica la eliminación de la marca mediante enfermera y cartas; la limpieza en el primitivo de IA se revisó en código.
+
+### Resistencia de las reglas de prueba
+
+La batería de Node juega 98 partidas completas con el motor del mapa. Cruza «un grupo» y contra la IA con las ocho combinaciones de reglas y comida inicial 6, 8 y 10. Repite cada configuración con la misma semilla C14 y compara el estado final completo, las tiradas nocturnas y el consumo de azar. Otras dos partidas comparan los ajustes apagados con la preparación por defecto. El límite por partida es de 2500 pasos y 8 segundos de reloj, vigilados desde otro hilo.
+
+En las 48 primeras partidas se observaron 86 D12 nocturnos, 99 regresos y 31 crisis parciales. La prueba controla los recursos, el daño de quienes siguen vivos, la ocupación de la localidad al tirar y las decisiones pendientes al abrir ronda. Un escenario adicional compara una noche con mordedura y dos localidades con y sin reintentos. Repetir el cierre, Regresar, la decisión de arriesgar o la continuación nocturna conservó el estado, los eventos y el número de llamadas al azar.
+
+No apareció un fallo del motor. En la medición local, Node informó 10,5 s para las dos pruebas nuevas. La suite pasó de 30,0 a 38,4 s. Queda probar jugando la claridad del regreso y de la pausa por mordedura en escritorio y en el Samsung Galaxy A15.
