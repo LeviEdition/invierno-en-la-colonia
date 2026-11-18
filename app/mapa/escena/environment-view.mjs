@@ -10,6 +10,10 @@ import {vegetationGeometry} from './vegetation-geometry.mjs';
 export function createHorizontalEnvironment(scene,atmosphere,options){
  const weather=createAtmosphereView(scene,atmosphere,options),objects=[],surfaces=[],keys=[];
  const vegetation=config.groups.length?scene.textures.get('h33-vegetation'):null,vf=vegetation?.get('original'),base=scene.textures.get('h33-map'),bf=base.get('original'),source=base.getSourceImage();
+ // Luces y vegetación recortan el fondo en coordenadas del mundo: solo valen con una
+ // textura del tamaño del mundo. Hoy están desactivadas (environment.json); si se
+ // reactivan con el mapa 2×, hay que escalar esos recortes.
+ if((config.groups.length||config.lights.length)&&source.width!==sceneConfig.bounds.width)throw Error('Luces y vegetación requieren adaptar sus recortes a la escala de la textura del mapa');
  const meshes=[],affected=[],geometry=vegetationGeometry(sceneConfig.bounds,config.groups,Phaser.Geom.Polygon.Earcut);
  function addMesh(spec,group){const vertices=[],indices=[],anchor=group?.anchor||{x:0,y:0};
   for(let n=0;n<spec.points.length;n+=2){const x=spec.points[n],y=spec.points[n+1],i=vertices.length;vertices.push(x-anchor.x,y-anchor.y,vf.u0+(vf.u1-vf.u0)*x/1672,vf.v0+(vf.v1-vf.v0)*y/941);if(group)affected.push({i,x,y,base:x-anchor.x,vertices,group});}

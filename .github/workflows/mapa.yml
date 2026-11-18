@@ -45,6 +45,7 @@ jobs:
           node scripts/check-map-feedback-camera-browser.mjs
           node scripts/check-map-death-decisions-browser.mjs
           node scripts/check-exposure-d12-browser.mjs
+          node scripts/check-map-2x-browser.mjs
           export H344_MODULE_PATH=/dist/mapa-qa/map.mjs
           export H344_VIEWPORTS=1365x768,852x393
           export H344_OUTPUT_DIR=/tmp/horizontal-actions
