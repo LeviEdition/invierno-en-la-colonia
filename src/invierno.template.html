@@ -337,6 +337,14 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
  <button class="setupChoice" data-command="startGame" data-args="[&quot;ai&quot;]"><strong>▣ 1 JUGADOR + IA</strong><small>La IA juega como tu compañera de supervivencia.</small></button>
  <button class="setupChoice" data-command="startGame" data-args="[&quot;local&quot;]"><strong>⚑ 2 JUGADORES LOCALES</strong><small>Dos personas, un solo dispositivo, por turnos.</small></button>
  <span class="setupNote">Las partidas nuevas reinician el tablero y los mazos.</span>
+ <details id="testRules" class="testRules" hidden><summary>Reglas de prueba (desarrollo)</summary>
+  <p class="tiny">Apagadas por defecto. «La noche» no se aplica en dos jugadores locales.</p>
+  <label for="testRulesFood">Comida inicial</label>
+  <select class="control" id="testRulesFood" data-command="testRuleFood" data-args="[]" data-event="change"><option value="6">6 (actual)</option><option value="8">8</option><option value="10">10</option></select>
+  <label><input type="checkbox" id="testRulesNight" data-command="testRuleFlag" data-args="[&quot;laNoche&quot;]" data-event="change"> La noche · tirada D12 por localidad exterior ocupada</label>
+  <label><input type="checkbox" id="testRulesReturn" data-command="testRuleFlag" data-args="[&quot;regreso&quot;]" data-event="change"> Regresar a la colonia · cuesta un dado, sin exposición</label>
+  <label><input type="checkbox" id="testRulesPartial" data-command="testRuleFlag" data-args="[&quot;crisisParcial&quot;]" data-event="change"> Crisis parcial · media consecuencia con la mitad de los aportes</label>
+ </details>
  </section>
 </div>
 <div id="passScreen" class="handoverBackdrop" role="dialog" aria-modal="true" aria-labelledby="passTitle" hidden>

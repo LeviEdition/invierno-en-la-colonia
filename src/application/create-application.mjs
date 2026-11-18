@@ -2,6 +2,13 @@ import {createEngine,commandNames} from './reference-engine.mjs';
 import {createUi} from '../presentation/reference-view.mjs';
 import {createAgent} from '../agents/reference-agent.mjs';
 import {bindCommands} from '../presentation/commands.mjs';
+// Las reglas de prueba solo se ofrecen con ?dev en la dirección de la página.
+function revealTestRules(environment){
+ const panel=environment.document?.getElementById?.('testRules');
+ if(!panel)return;
+ const search=environment.location?.search||'';
+ panel.hidden=!new URLSearchParams(search).has('dev');
+}
 export function createApplication({environment=globalThis,autoStart=true,createPresentation=createUi}={}){
  const engine=createEngine();
  const view=engine.connectPresentation(context=>createPresentation(context,environment));
@@ -15,11 +22,14 @@ export function createApplication({environment=globalThis,autoStart=true,createP
   newGame:()=>{if(environment.confirm('¿Comenzar una partida nueva?')){engine.dispatch('hide');engine.dispatch('showSetup');}},
   statInfo:(key,{element,event})=>view.showStatInfo(key,element,event.type==='mouseenter'?'hover':'click'),
   statInfoClose:key=>view.closeStatInfo(key),
+  // El panel de desarrollo solo elige valores; las consecuencias viven en el motor.
+  testRuleFood:({element})=>engine.dispatch('setTestRules',{comidaInicial:Number(element.value)}),
+  testRuleFlag:(key,{element})=>engine.dispatch('setTestRules',{[key]:!!element.checked}),
  });
  let dispose;
  try{
   dispose=bindCommands(environment.document,commands);
-  if(autoStart)engine.initialize();
+  if(autoStart){revealTestRules(environment);engine.initialize();}
  }catch(error){dispose?.();view.dispose();throw error;}
  return {engine,dispose(){dispose();view.dispose();}};
 }

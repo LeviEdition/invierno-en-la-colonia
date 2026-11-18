@@ -44,6 +44,8 @@ async function finishTurn(){
    try{
     ctx.message('⌂ Ambos jugadores terminaron. Resolviendo fase de colonia.');
     ctx.colony();
+    // Una mordedura de «La noche» se resuelve antes de abrir la ronda siguiente.
+    await ctx.waitForBite();if(ctx.game!==turnGame)return;
     await ctx.deathDirector.wait();if(ctx.game!==turnGame)return;
     if(!ctx.game.ended){
      ctx.game.round++;
@@ -60,7 +62,7 @@ async function finishTurn(){
  try{
   if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)ctx.mapCycle?.before('ai');
   await ctx.botTurn();if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__&&ctx.game===turnGame)ctx.mapCycle?.after();if(ctx.game!==turnGame||ctx.game.ended)return;
-  if(!ctx.game.ended){ctx.message('⌂ Resolviendo fase de colonia.');await ctx.pause();if(ctx.game!==turnGame||ctx.game.ended)return;ctx.colony();await ctx.pause();if(ctx.game!==turnGame||ctx.game.ended)return;}
+  if(!ctx.game.ended){ctx.message('⌂ Resolviendo fase de colonia.');await ctx.pause();if(ctx.game!==turnGame||ctx.game.ended)return;ctx.colony();await ctx.waitForBite();if(ctx.game!==turnGame||ctx.game.ended)return;await ctx.pause();if(ctx.game!==turnGame||ctx.game.ended)return;}
   if(!ctx.game.ended){ctx.game.round++;if(ctx.game.round>ctx.game.max){ctx.game.ended=true;ctx.game.turn='end';ctx.cancelPendingDecisions();if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)ctx.mapPlay.event('end',{reason:'time'});ctx.message('☠ Derrota: se agotaron las rondas.');}else ctx.newRound();}
  }finally{if(ctx.game===turnGame){ctx.aiRunning=false;ctx.skipAI=false;ctx.paint();}}
 }

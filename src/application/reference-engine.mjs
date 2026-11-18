@@ -12,6 +12,8 @@ import {createMapInventory} from './map-inventory.mjs';
 import {createMapCycle} from './map-cycle.mjs';
 import {createMapPlay} from './map-play.mjs';
 import {resolveMapExposure} from '../domain/map-exposure.mjs';
+import {TEST_RULE_DEFAULTS,normalizeTestRules,describeTestRules,partialThreshold,halvedConsequence} from '../domain/test-rules.mjs';
+import {resolveNight,nightEnabled,nightWatch,sleepingOutside} from '../domain/reference-night.mjs';
 const noop=()=>{};
 export function createEngine({Math=globalThis.Math,queueMicrotask=globalThis.queueMicrotask||((f)=>Promise.resolve().then(f)),setTimeout=globalThis.setTimeout,stateFactory=createReferenceState,rulesFactory=createRules,turnsFactory=createTurns,effects={},automation=null}={}){
 let view=new Proxy(effects,{get:(target,key)=>target[key]||noop});
@@ -90,6 +92,12 @@ get aiRunning(){return aiRunning;},set aiRunning(value){aiRunning=value;},
 get pendingHeal(){return pendingHeal;},set pendingHeal(value){pendingHeal=value;},
 get pendingLoot(){return pendingLoot;},set pendingLoot(value){pendingLoot=value;},
 get gameMode(){return gameMode;},set gameMode(value){gameMode=value;},
+get testRules(){return testRules;},
+get setTestRules(){return setTestRules;},
+get nightEnabled(){return ()=>nightEnabled(game);},
+get nightWatch(){return ()=>nightWatch(game);},
+get sleepingOutside(){return ()=>sleepingOutside(game);},
+get returnHome(){return returnHome;},set returnHome(value){returnHome=value;},
 get passScreenActive(){return passScreenActive;},set passScreenActive(value){passScreenActive=value;},
 get selectionBySide(){return selectionBySide;},
 get controls(){return controls;},
@@ -268,6 +276,15 @@ function chooseHeal(id){if(!pendingHeal||!pendingHeal.targets.includes(id))retur
 const random=n=>Math.floor(Math.random()*n),die=()=>random(6)+1;
 let game,selected=0,target=0,picked=0,opened='',profileId='',skipAI=false,aiRunning=false,pendingHeal=null,pendingLoot=null;
 let gameMode='ai',passScreenActive=false;
+// Reglas de prueba elegidas antes de crear la partida (panel de desarrollo).
+// Se aplican en create() y quedan copiadas en el estado como registro.
+let testRules=TEST_RULE_DEFAULTS;
+function setTestRules(patch){
+ if(game&&!game.ended&&!passScreenActive)return messageAndPaint('Las reglas de prueba se eligen antes de empezar una partida.');
+ testRules=normalizeTestRules(patch,testRules);
+ paint();
+ return testRules;
+}
 const selectionBySide={human:0,ai:0};
 class TurnController {
  get side(){return game?.turn==='ai'?'ai':'human';}
@@ -429,10 +446,13 @@ function create(){
  movementGeneration++;searchOperation=null;searchSerial=0;actionOperation=null;actionSerial=0;
  view.resetToasts();deathDirector.reset();skipAI=false;aiRunning=false;selected=0;target=0;picked=0;opened='';profileId='';pendingHeal=null;pendingLoot=null;pendingBite=null;pendingAttract=null;pendingTransfer=null;aiCrossChoice=null;settleDecisionWaiters();resetLeaderRequests();pendingRecruitInfo=null;selectionBySide.human=0;selectionBySide.ai=0;closeStatInfo();
  const objective=objectives[random(objectives.length)];
- game=stateFactory({gameMode,objective,places,catalog});
+ game=stateFactory({gameMode,objective,places,catalog,testRules});
  all().forEach(addCharacter);
  for(let loc=1;loc<places.length;loc++)game.decks[loc]=catalog.deck(loc);
- message('Objetivo: '+objective.name+' · '+objective.description);newRound();
+ message('Objetivo: '+objective.name+' · '+objective.description);
+ const summary=describeTestRules(game.testRules||TEST_RULE_DEFAULTS);
+ if(summary)message('⚙ Reglas de prueba: '+summary+'.');
+ newRound();
 }
 let DeathDirector=createDeathDirector(c);
 const deathDirector=new DeathDirector();
@@ -599,6 +619,21 @@ function doMove(){
  if(!accessible(target))return messageAndPaint('No hay espacios disponibles en el destino.');
  executeMovement(p,target);
 }
+// «Regresar a la colonia»: acción con dado de cualquier valor, haya movido o no.
+// No tira exposición y solo lleva a la colonia; el movimiento normal no cambia.
+let returnHome=function returnHome(){
+ if(!playable()||game.ended||pendingBite||leaderChoiceReady())return;
+ if(!game.testRules?.regreso)return messageAndPaint('La regla «Regresar a la colonia» está apagada.');
+ const p=person();if(!p||p.dead)return;
+ if(p.loc===0)return messageAndPaint('Este superviviente ya está en la colonia.');
+ if(!accessible(0))return messageAndPaint('No hay espacios disponibles en la colonia.');
+ if(consume(1)===null)return;
+ searchOperation=null;actionOperation=null;
+ const from=p.loc;p.loc=0;
+ if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('move',{actor:p.id,name:p.name,from,destination:0,reason:'return'});
+ message('⌂ '+p.name+' regresó a la colonia desde '+places[from]+' (sin exposición).');
+ verify();paint();
+};
 // Consecuencias únicas para ambos consumidores. No depende de selected/target.
 function executeMovement(p,destination){
  actionOperation=null;
@@ -853,8 +888,24 @@ function addZombie(i,env=null){
 }
 function resolveCrisis(){
  const c=game.crisis;const points=c.contributions.filter(it=>it===c.type).length;
- if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)resolveCrisis.onResult({valid:points,success:points>=c.need});
+ // Crisis parcial: con la mitad de lo pedido (hacia arriba) sin completarla, la
+ // consecuencia se reduce a la mitad hacia abajo (moral 1→0, zombis 2→1,
+ // comida 2→1, herida 1→0). Media consecuencia de 1 es ninguna.
+ const partial=!!game.testRules?.crisisParcial&&points<c.need&&points>=partialThreshold(c.need);
+ if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)resolveCrisis.onResult({valid:points,success:points>=c.need,partial});
  if(points>=c.need){message('✓ Crisis superada: '+points+' aportes válidos de '+c.need+'.');if(points>=c.need+2){game.morale++;message('✓ Aporte excepcional: +1 moral.');}}
+ else if(partial){
+  message('◐ Crisis parcial ('+points+'/'+c.need+'): la consecuencia se reduce a la mitad.');
+  const food=halvedConsequence(2),zombies=halvedConsequence(2),wounds=halvedConsequence(1),morale=halvedConsequence(1);
+  if(c.fail==='food'){game.food=Math.max(0,game.food-food);message('🥫 La crisis parcial consumió hasta '+food+' comida(s).');}
+  else if(c.fail==='zombie'){for(let i=0;i<zombies;i++){addZombie(0);verify();if(game.ended)break;}message('☠ La crisis parcial atrajo '+zombies+' zombi(s) a la colonia.');}
+  else if(c.fail==='wound'){
+   const t=wounds>0?alive().filter(p=>p.loc===0).sort((a,b)=>a.influence-b.influence)[0]:null;
+   if(t){t.wounds+=wounds;message('♥ '+t.name+' sufrió '+wounds+' herida(s) durante la crisis parcial.');if(t.wounds+t.frost>=3)kill(t,'heridas de la crisis');}
+   else message('♥ La crisis parcial no causó heridas.');
+  }
+  else{game.morale=Math.max(0,game.morale-morale);message('⚠ Crisis parcial: '+(morale?'-'+morale+' moral.':'sin pérdida de moral.'));}
+ }
  else{
   message('⚠ Crisis fallida ('+points+'/'+c.need+').');
   if(c.fail==='food'){game.food=Math.max(0,game.food-2);message('🥫 La crisis consumió hasta 2 comidas.');}
@@ -894,6 +945,9 @@ function colony(){
   for(let j=0;j<n;j++){const d=die();if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.event('noise-roll',{location:i,index:j+1,count:n,value:d});message('🔊 '+places[i]+': ruido '+(j+1)+'/'+n+' → dado '+d+(d<=3?', llega un zombi.':', sin aparición.'));if(d<=3)addZombie(i);verify();if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__&&game.ended)c.mapCycle.after();if(game.ended)return;}
  }
  verify();if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.after();
+ if(game.ended)return;
+ // «La noche» cierra la ronda: una tirada del D12 por localidad exterior ocupada.
+ resolveNight(c);
 }
 function showSetup(){
  if(aiRunning)return;
@@ -974,5 +1028,5 @@ return Object.freeze({
  ...(typeof __GAME_TEST__!=='undefined'&&__GAME_TEST__?{testBindings:c}:{}),
 });
 }
-export const commandNames=Object.freeze(["pickActionDie","skipAutomation","deathContinue","startGame","confirmPass","finishTurn","show","hide","showSetup","select","profile","destination","special","chooseHeal","chooseLeader","dismissRecruit","chooseBite","chooseAttract","cancelAttract","chooseTransfer","cancelTransfer","cancelHeal","chooseLoot","addNoiseSearch","crossAiContinue","crossChoose","startTransfer","contributeEquipment","equipItem","unequipItem","boostDie","pickFloatingDie","search","attack","doMove","barricade","clean","attract","playItem","contribute"]);
+export const commandNames=Object.freeze(["pickActionDie","skipAutomation","deathContinue","startGame","confirmPass","finishTurn","show","hide","showSetup","select","profile","destination","special","chooseHeal","chooseLeader","dismissRecruit","chooseBite","chooseAttract","cancelAttract","chooseTransfer","cancelTransfer","cancelHeal","chooseLoot","addNoiseSearch","crossAiContinue","crossChoose","startTransfer","contributeEquipment","equipItem","unequipItem","boostDie","pickFloatingDie","search","attack","doMove","returnHome","barricade","clean","attract","playItem","contribute","setTestRules"]);
 const commands=new Set(commandNames);

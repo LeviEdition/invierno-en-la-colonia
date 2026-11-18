@@ -59,6 +59,7 @@ jobs:
           node scripts/check-d1-offline-browser.mjs > /tmp/d1d2-browser/offline-product.json
           GAME_FILE_URL="file://$GITHUB_WORKSPACE/dist/invierno-test.html" node scripts/check-d1-offline-browser.mjs > /tmp/d1d2-browser/offline-qa.json
           D12B_OUTPUT_DIR=/tmp/d1d2-browser/handover node scripts/check-d12b-handover-browser.mjs
+          REGLAS_OUTPUT_DIR=/tmp/d1d2-browser/reglas-de-prueba node scripts/check-reglas-de-prueba-browser.mjs
           C16_OUTPUT_DIR=/tmp/d1d2-browser/focus node scripts/check-c16-focus-browser.mjs
           C11_OUTPUT_DIR=/tmp/d1d2-browser/dice node scripts/check-issue13-browser.mjs
           node scripts/check-c12-browser.mjs > /tmp/d1d2-browser/c12.json
