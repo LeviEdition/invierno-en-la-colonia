@@ -278,6 +278,164 @@ function aportarHerramientas(c,group){
  const j=c.equipmentOf(p).findIndex(it=>c.kind(it)==='herramienta');c.contributeEquipment(p.id,j);return 'aportar-herramienta-equipo:'+p.id;
 }
 
+// ---------- políticas prudentes (sexta corrida, docs/114) ----------
+// Lógica común de reserva: no usar/aportar la última carta de cada tipo de crisis
+// (comida, medicina, herramienta, combustible) salvo emergencia.
+const KINDS_CRISIS=['comida','medicina','herramienta','combustible'];
+function esEmergencia(c,group){const g=c.game;return g.food<c.feedingNeed(g)||group.some(p=>p.wounds>=2);}
+function bloqueadoPorReserva(c,kind,emergencia){return KINDS_CRISIS.includes(kind)&&!emergencia&&c.currentHand().filter(it=>c.kind(it)===kind).length<=1;}
+
+// Regresar: supervivientes solos en localidades exteriores (excluye 'buscandoMuestras' si se indica).
+function regresarSoloPrudente(c,group,registro,{excluirMuestras=false}={}){
+ const g=c.game;if(!g.dice.length)return null;
+ const solos=group.filter(p=>{
+  if(p.loc===0)return false;
+  if(excluirMuestras&&mazosMuestras.includes(p.loc)&&g.decks[p.loc]?.length)return false;
+  return group.filter(q=>q.loc===p.loc&&!q.dead).length===1;
+ });
+ if(!solos.length)return null;
+ const minInf=Math.min(...solos.map(p=>p.influence));
+ const candidatos=solos.filter(p=>p.influence===minInf);
+ const target=g.humans.find(p=>candidatos.includes(p)&&!p.dead);
+ if(!target)return null;
+ const dArr=g.dice,minVal=Math.min(...dArr);dArr.splice(dArr.indexOf(minVal),1);
+ target.loc=0;target.moved=true;registro.regresos++;
+ return 'regresar-prudente:'+target.id;
+}
+
+// Improvisar para la crisis: llama c.improvisarCrisis por cada superviviente en colonia
+// que no haya improvisado y haya dado ≥4. Se llama antes de barricar/limpiar.
+function improvisarSiPuede(c,group){
+ if(!c.improvisarCrisis)return null;
+ const g=c.game,k=g.crisis;
+ if(k.contributions.filter(t=>t===k.type).length>=k.need)return null;
+ for(const p of group.filter(p=>p.loc===0&&!p.hasImprovised)){
+  if(g.dice.some(d=>d>=4)){const r=c.improvisarCrisis(p.id);if(r)return r;}
+ }
+ return null;
+}
+
+// cooperativa-prudente: igual a cooperativa pero con reserva, regreso de solos e improvisación.
+function actuarCooperativaPrudente(c,registro,{indefensos=false,repartida=false}={}){
+ const g=c.game;
+ if(!c.playable())return null;
+ const group=c.controls.group().filter(p=>!p.dead),hand=c.currentHand();
+ if(!group.length)throw Error('sin superviviente y partida activa');
+ const emerg=()=>esEmergencia(c,group);
+ const bloq=kind=>bloqueadoPorReserva(c,kind,emerg());
+ const use=(p,i)=>{foco(c,p);const id=c.catalog.resolve(hand[i]).id;registro.accionActual='usar';c.playItem(i);return 'usar:'+p.id+':'+id;};
+ // 1. Muestras/investigación
+ let i=hand.findIndex(it=>['sample','research'].includes(c.catalog.resolve(it)?.effect));if(i>=0)return use(group[0],i);
+ // 2. Crisis (con reserva)
+ i=hand.findIndex(it=>c.kind(it)===g.crisis.type&&g.crisis.given<g.crisis.need&&!bloq(c.kind(it)));
+ if(i>=0){c.contribute(i);return 'aportar-crisis:'+i;}
+ // 3. Habilidades
+ for(const p of group){
+  const hurt=group.some(t=>t.loc===p.loc&&(p.skill==='medic'?t.wounds:t.frost));
+  if(!p.skillUsed&&(['medic','nurse'].includes(p.skill)&&hurt||p.skill==='builder'&&c.openAccess(p.loc))){foco(c,p);c.special();return 'habilidad:'+p.id;}
+ }
+ // 4. Cartas (con reserva)
+ for(let k=0;k<hand.length;k++){
+  const d=c.catalog.resolve(hand[k]);if(!d)continue;
+  if(['heal','frost'].includes(d.effect)){const p=group.find(p=>d.effect==='frost'?p.frost:p.wounds+p.frost);if(p)return use(p,k);}
+  if(d.effect==='food'&&!bloq('comida')&&g.food<c.feedingNeed(g)+3)return use(group[0],k);
+  if(d.effect==='equip'&&!bloq(d.kind)){const p=group.find(p=>!c.equipmentOf(p).some(it=>c.kind(it)===d.kind));if(p)return use(p,k);}
+  if(d.effect==='manual'&&g.waste>=2)return use(group[0],k);
+ }
+ // 5. Movimiento
+ const defender=group.slice().sort((a,b)=>c.effectiveAttack(a)-c.effectiveAttack(b)||a.id.localeCompare(b.id))[0];
+ for(const p of group){
+  if(p===defender||p.moved||p.loc!==0&&g.decks[p.loc]?.length)continue;
+  const dest=repartida?((d=>d!==0&&d!==p.loc?d:undefined)(destinoRepartido(c,p))):[6,2,1,4,5,3].find(l=>l!==p.loc&&c.accessible(l)&&g.decks[l]?.length);
+  if(dest!==undefined){foco(c,p);c.target=dest;const fuel=hand.findIndex(it=>c.kind(it)==='combustible');if(fuel>=0){registro.accionActual='mover-combustible';c.playItem(fuel);return 'mover-combustible:'+p.id+':'+dest;}registro.accionActual='mover';c.doMove();return 'mover:'+p.id+':'+dest;}
+ }
+ // 6. Dados: limpiar (basura>=8), atacar con riesgo, buscar
+ const dice=c.actionDice();
+ if(dice.length){
+  const pickMin=()=>g.dice.indexOf(Math.min(...g.dice));
+  const home=group.find(p=>p.loc===0);
+  if(home&&g.waste>=8){foco(c,home);c.picked=pickMin();registro.accionActual='limpiar';c.clean();return 'limpiar:'+home.id;}
+  for(const p of group){
+   const z=g.zones[p.loc],arriving=indefensos&&p.loc===0&&g.helpless>0?llegadasColonia(c):c.alive().filter(x=>x.loc===p.loc).length;
+   const risk=z.z+Math.max(1,arriving)>=c.zcap[p.loc];
+   const di=dice.findIndex(d=>d>=c.effectiveAttack(p));
+   if(z.z&&risk&&di>=0){foco(c,p);c.picked=di;registro.accionActual='atacar';c.attack();return 'atacar:'+p.id;}
+  }
+  const searcher=group.filter(p=>p.loc!==0&&g.decks[p.loc]?.length).sort((a,b)=>c.effectiveSearch(a)-c.effectiveSearch(b))[0];
+  if(searcher){
+   const di=dice.findIndex(d=>d>=c.effectiveSearch(searcher));
+   if(di>=0){foco(c,searcher);c.picked=di;registro.accionActual='buscar';c.search();return 'buscar:'+searcher.id;}
+   if(g.food>c.feedingNeed(g)+1&&Math.max(...dice)<6){c.picked=dice.indexOf(Math.max(...dice));c.boostDie();return 'mejorar-dado';}
+  }
+  for(const p of group){const di=dice.findIndex(d=>d>=c.effectiveAttack(p));if(g.zones[p.loc].z&&di>=0){foco(c,p);c.picked=di;registro.accionActual='atacar';c.attack();return 'atacar:'+p.id;}}
+ }
+ // 7. Regresar supervivientes solos
+ const r=regresarSoloPrudente(c,group,registro);if(r)return r;
+ // 8. Improvisar para la crisis
+ const im=improvisarSiPuede(c,group);if(im)return im;
+ // 9. Barricada y limpieza
+ const builder=group.find(p=>c.openAccess(p.loc));
+ if(builder&&g.dice.length){foco(c,builder);c.picked=g.dice.indexOf(Math.min(...g.dice));registro.accionActual='barricada';c.barricade();return 'barricada:'+builder.id;}
+ const home2=group.find(p=>p.loc===0&&g.waste);
+ if(home2&&g.dice.length){foco(c,home2);c.picked=g.dice.indexOf(Math.min(...g.dice));registro.accionActual='limpiar';c.clean();return 'limpiar:'+home2.id;}
+ return 'terminar-turno';
+}
+
+// objetivo-repartido-prudente: igual a objetivo-repartido pero con reserva, regreso de solos
+// (excepto buscadores de muestras) e improvisación.
+function actuarObjetivoRepartidoPrudente(c,registro,opciones={}){
+ const g=c.game;
+ if(!c.playable())return null;
+ const group=c.controls.group().filter(p=>!p.dead),hand=c.currentHand();
+ if(!group.length)throw Error('sin superviviente y partida activa');
+ const emerg=()=>esEmergencia(c,group);
+ const bloq=kind=>bloqueadoPorReserva(c,kind,emerg());
+ // 1. Habilidades
+ for(const p of group){
+  if(p.skillUsed)continue;
+  if(['medic','nurse'].includes(p.skill)&&c.alive().some(x=>x.loc===p.loc&&(p.skill==='medic'?x.wounds:x.frost))){foco(c,p);c.special();return 'habilidad:'+p.id;}
+  if(p.skill==='builder'&&c.openAccess(p.loc)){foco(c,p);c.special();return 'habilidad:'+p.id;}
+ }
+ // 2. Equipar (con reserva)
+ for(const p of group)for(let k=hand.length-1;k>=0;k--){const d=c.catalog.resolve(hand[k]);if(d?.effect==='equip'&&!bloq(d.kind)&&!c.equipmentOf(p).some(it=>c.kind(it)===d.kind)){foco(c,p);const id=d.id;registro.accionActual='equipar';c.playItem(k);return 'equipar:'+p.id+':'+id;}}
+ // 3. Cartas de mano (con reserva)
+ const perfRep=perfiles['objetivo-repartido'];
+ for(let k=hand.length-1;k>=0;k--){
+  const d=c.catalog.resolve(hand[k]);if(!d)continue;
+  if(d.kind===g.crisis.type&&d.kind!=='herramienta'&&g.crisis.contributions.length<g.crisis.need&&!bloq(d.kind)){c.contribute(k);return 'aportar-crisis:'+k;}
+  const herido=group.filter(p=>d.effect==='frost'?p.frost:p.wounds+p.frost).sort((a,b)=>(b.wounds+b.frost)-(a.wounds+a.frost))[0];
+  if((d.effect==='heal'||d.effect==='frost')&&herido){foco(c,herido);const id=d.id;registro.accionActual='curar';c.playItem(k);return 'curar:'+herido.id+':'+id;}
+  if(d.effect==='food'&&!bloq('comida')&&g.food<perfRep.umbralComida(c)){foco(c,group[0]);const id=d.id;registro.accionActual='comida';c.playItem(k);return 'comida:'+group[0].id+':'+id;}
+  if(d.effect==='research'||d.effect==='sample'){foco(c,group[0]);const id=d.id;registro.accionActual='muestra';c.playItem(k);return 'muestra:'+group[0].id+':'+id;}
+  if(d.effect==='manual'&&g.waste>=2){foco(c,group[0]);const id=d.id;registro.accionActual='manual';c.playItem(k);return 'manual:'+group[0].id+':'+id;}
+  if(d.effect==='rescue'&&c.accessible(0)){foco(c,group[0]);const id=d.id;registro.accionActual='rescate';c.playItem(k);return 'rescate:'+group[0].id+':'+id;}
+ }
+ // 4. Movimiento (igual a objetivo-repartido)
+ for(const p of group){
+  if(p.moved)continue;const dest=destinoRepartido(c,p);if(dest===p.loc||!c.accessible(dest))continue;
+  foco(c,p);c.target=dest;const fuel=hand.findIndex(it=>c.kind(it)==='combustible');
+  if(fuel>=0){registro.accionActual='mover-combustible';c.playItem(fuel);return 'mover-combustible:'+p.id+':'+dest;}
+  registro.accionActual='mover';c.doMove();return 'mover:'+p.id+':'+dest;
+ }
+ // 5. Dados: buscar muestras, atacar riesgo, mejorar, buscar
+ const dice=c.actionDice();
+ if(dice.length)for(const regla of ['buscar-muestras','atacar-riesgo','mejorar','buscar']){const r2=reglaDeDados(c,regla,group,dice,registro);if(r2)return r2;}
+ // 6. Herramientas (con reserva)
+ if(!bloq('herramienta')){const ht=aportarHerramientas(c,group);if(ht)return ht;}
+ // 7. Regresar solos (excepto buscadores de muestras)
+ const r=regresarSoloPrudente(c,group,registro,{excluirMuestras:true});if(r)return r;
+ // 8. Improvisar
+ const im=improvisarSiPuede(c,group);if(im)return im;
+ // 9. Barricada y limpieza
+ if(g.dice.length){
+  const builder=group.find(p=>c.openAccess(p.loc));
+  if(builder){foco(c,builder);c.picked=0;registro.accionActual='barricada';c.barricade();return 'barricada:'+builder.id;}
+  const home=group.find(p=>p.loc===0&&g.waste);
+  if(home){foco(c,home);c.picked=0;registro.accionActual='limpiar';c.clean();return 'limpiar:'+home.id;}
+ }
+ return 'terminar-turno';
+}
+
 export const nombresDePoliticas=['cooperativa','ia-referencia','abastecer','objetivo']; // plan de la primera corrida
 export const politicasTerceraCorrida=['cooperativa','objetivo','objetivo-repartido'];
 // opciones.indefensos (segunda corrida): la política sabe de los indefensos. Solo
@@ -285,6 +443,9 @@ export const politicasTerceraCorrida=['cooperativa','objetivo','objetivo-reparti
 export function crearPolitica(nombre,opciones={}){
  if(nombre==='cooperativa-repartida')return {nombre,decidir:c=>decidirComun(c,{botin:botinCooperativa,mordedura:mordeduraRiesgo}),actuar:(c,registro)=>actuarCooperativa(c,registro,{...opciones,repartida:true})};
  if(nombre==='cooperativa')return {nombre,decidir:c=>decidirComun(c,{botin:botinCooperativa,mordedura:mordeduraRiesgo}),actuar:(c,registro)=>actuarCooperativa(c,registro,opciones)};
+ // Sexta corrida: políticas prudentes (reserva + regreso solos + improvisación)
+ if(nombre==='cooperativa-prudente')return {nombre,decidir:c=>decidirComun(c,{botin:botinCooperativa,mordedura:mordeduraRiesgo}),actuar:(c,registro)=>actuarCooperativaPrudente(c,registro,opciones)};
+ if(nombre==='objetivo-repartido-prudente')return {nombre,decidir:c=>decidirComun(c,{botin:botinObjetivo,mordedura:mordeduraReferencia,paciente:pacienteMasHerido}),actuar:(c,registro)=>actuarObjetivoRepartidoPrudente(c,registro,opciones)};
  const perfil=perfiles[nombre];if(!perfil)throw Error('Política desconocida: '+nombre);
  return {nombre,decidir:c=>decidirComun(c,{botin:perfil.botin,mordedura:perfil.mordedura,paciente:pacienteMasHerido}),actuar:(c,registro)=>actuarReferencia(c,registro,perfil,opciones)};
 }

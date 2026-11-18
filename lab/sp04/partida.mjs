@@ -53,6 +53,7 @@ function resultado(lab,inicial,traza,completa,error){
   vivosFin:g.humans.filter(p=>!p.dead).length,indefensosFin:g.helpless,llamadasAzar:azar.llamadas(),
   exposiciones:registro.exposiciones,indefensosPerdidos:registro.indefensosPerdidos,indefensosPorCrisis:registro.indefensosPorCrisis,llegadasExtraColonia:registro.llegadasExtraColonia,desbordesColonia:registro.desbordesColonia,equipoPerdido:registro.equipoPerdido,rescate:registro.rescate,
   regresos:registro.regresos,afueraAlCaerNoche:registro.afueraAlCaerNoche,exposicionesNoche:registro.exposicionesNoche,muertesNoche:registro.muertesNoche,
+  improvisaciones:registro.improvisaciones,
   dados:registro.dados,muertes:registro.muertes,crisis:registro.crisis,colonia:registro.colonia,rondas:Object.values(registro.rondas),reclutas:registro.reclutas,mejorasComida:registro.mejorasComida,
   traza,
  };

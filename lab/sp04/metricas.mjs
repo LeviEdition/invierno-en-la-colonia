@@ -135,6 +135,21 @@ export function agregarCuarta(partidas){
  };
 }
 
+// ---------- Sexta corrida (docs/114) ----------
+// Crisis: éxitos plenos, parciales (crisisParcial activa y aportes ≥ ceil(necesidad/2) < necesidad)
+// y fallos totales. Improvisaciones: veces que un superviviente aportó sin carta.
+export function agregarSexta(partidas){
+ const n=partidas.length;
+ const crisisTodas=partidas.flatMap(p=>p.crisis||[]);
+ const contarCrisis=pred=>media(partidas.map(p=>(p.crisis||[]).filter(pred).length));
+ return {
+  crisisExitosPorPartida:contarCrisis(k=>k.exito),
+  crisisParciales:contarCrisis(k=>k.parcial),
+  crisisFallasPorPartida:contarCrisis(k=>!k.exito&&!k.parcial),
+  improvisacionesPorPartida:media(partidas.map(p=>p.improvisaciones||0)),
+ };
+}
+
 // ---------- Quinta corrida (docs/113) ----------
 // Noche fuera de la colonia: muertes de noche, afuera al caer la noche, regresos.
 // Muere de noche: causada por una exposición nocturna (bite letal o daños acumulados).

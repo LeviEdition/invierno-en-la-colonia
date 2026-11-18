@@ -2,7 +2,7 @@
 
 > **Cómo se usa este documento.** Arriba está solo lo vigente: dónde estamos, la única tarea siguiente, la cola ordenada y los hallazgos abiertos. Cada entrega actualiza estas secciones **reemplazando** su contenido, no agregando un bloque nuevo. El detalle de cada entrega va en su informe numerado y en el PR. Los bloques fechados anteriores al 16/11/2026 están en [18-historico-tablero.md](18-historico-tablero.md) y no se editan.
 
-**Actualizado:** 17/11/2026 · **main:** `27ef968` (PR #32: laboratorio SP-04 integrado) · **Tag vigente:** `v0.10.0-mapa-horizontal` · **Ramas en revisión:** `feature/mapa-2x` ([112](112-mapa-doble-resolucion.md)) y `experiment/sp04-noche` (quinta corrida, noche fuera de la colonia, [113](113-laboratorio-sp04-quinta-corrida.md))
+**Actualizado:** 17/11/2026 · **main:** `27ef968` (PR #32: laboratorio SP-04 integrado) · **Tag vigente:** `v0.10.0-mapa-horizontal` · **Ramas en revisión:** `feature/mapa-2x` ([112](112-mapa-doble-resolucion.md)) y `experiment/sp04-noche` (quinta + sexta corrida, noche fuera de la colonia, [113](113-laboratorio-sp04-quinta-corrida.md), [114](114-laboratorio-sp04-sexta-corrida.md))
 
 ## 1. Dónde estamos
 
@@ -13,24 +13,23 @@
 | 3 — Identidad visual y mapa jugable | **Cerrado** (16/11), integrado en `main` (PR #25) y marcado con `v0.10.0-mapa-horizontal` | [75](75-plan-hito-3-identidad-visual.md), [99](99-experiencia-unificada-del-mapa.md), [100](100-avisos-y-zoom-nativo.md), [101](101-muerte-durante-accion-propia.md) |
 | Mantenimiento: mapa como producto | **Integrado en `main`** (PR #26): `app/mapa/`, `npm run dev:mapa`, prototipos retirados | [103](103-consolidacion-mapa-producto.md) |
 | D12 de exposición | **Integrado en `main`** (PR #27, 17/11), aprobado por el creador jugando: 6 sin efecto, 3 heridas, 2 congelaciones, 1 mordedura en movimiento y combate del mapa | [102](102-dado-exposicion-d12.md) |
-| Singleplayer (SP-00 a SP-08) | **Diseño en papel.** Laboratorio SP-04 con cuatro corridas en `main` (106, 107, 110) y en su rama (111); quinta corrida en `experiment/sp04-noche` ([113](113-laboratorio-sp04-quinta-corrida.md)); capítulo piloto «La última guardia» en ficha | [63](63-hoja-de-ruta-planificacion-singleplayer.md), [105](105-ficha-capitulo-la-ultima-guardia.md) |
+| Singleplayer (SP-00 a SP-08) | **Diseño en papel.** Laboratorio SP-04 con cuatro corridas en `main` (106, 107, 110) y en su rama (111, 113, 114); sexta corrida en `experiment/sp04-noche` ([114](114-laboratorio-sp04-sexta-corrida.md)); capítulo piloto «La última guardia» en ficha | [63](63-hoja-de-ruta-planificacion-singleplayer.md), [105](105-ficha-capitulo-la-ultima-guardia.md) |
 | Mapa en doble resolución | **En revisión** (rama `feature/mapa-2x`): textura 3342×1882, zoom máximo 1,5 | [112](112-mapa-doble-resolucion.md) |
 
 El mapa permite preparar, jugar y terminar una partida completa (humano + IA y dos jugadores locales) con un único motor. Vive en `app/mapa/` (`npm run dev:mapa` → `http://127.0.0.1:8779/app/mapa/`). Movimiento y combate comparten una única tirada D12 por exposición; los dados de acción y el riesgo de contagio siguen en D6.
 
 ## 2. Próxima tarea única
 
-**Revisar el mapa en doble resolución** ([112](112-mapa-doble-resolucion.md)) y **decidir sobre la quinta corrida del laboratorio** ([113](113-laboratorio-sp04-quinta-corrida.md)). La quinta corrida muestra que la **noche/localidad + regreso** es el mecanismo más efectivo: la ventaja del corredor baja de +24,7 a +6,1 puntos (P1·comida8), pero la cooperativa cae a 29,6 % (por debajo del rango objetivo de 35–55 %). La propuesta de la corrida: medir noche/localidad con `comidaInicial = 10 ó 12` para volver a subir la cooperativa. Decisión pendiente del creador.
+**Revisar el mapa en doble resolución** ([112](112-mapa-doble-resolucion.md)) y **decidir sobre la combinación del laboratorio** ([114](114-laboratorio-sp04-sexta-corrida.md)). La sexta corrida muestra que **noche/localidad + comida 8 + improvisar + parcial + políticas prudentes** es la primera combinación que cumple el criterio: cooperativa-prudente 37,2 %, ventaja +5,9 pp. La alternativa sin palancas de crisis: **noche/localidad + comida 10 + prudentes** (coop-prudente 39,3 %, ventaja +6,3 pp). Decisión pendiente del creador.
 
 ## 3. Cola ordenada
 
 1. **Revisar mapa 2× (112):** CI del PR → prueba en escritorio y en el Samsung Galaxy A15 → decisión de merge (requiere indicación expresa).
-2. **Decisión sobre la quinta corrida del laboratorio (113):** noche/localidad funciona bien pero necesita ajuste de comida; propuesta en §113.
-3. **Sexta corrida del laboratorio (si se aprueba):** noche/localidad + comidaInicial 10 ó 12 para meter la cooperativa en el rango 35–55 %.
-4. **Implementar «La última guardia»** como capítulo jugable, con la combinación que salga de 3.
-5. **Rótulos de las localidades y dado centrado** (encargo listo; guía de estilo [109](109-guia-de-estilo.md)).
-6. **Mejoras menores del mapa:** hallazgos 4 y 5, batería de CI con partida entera de clics reales.
-7. **Reservas del Hito 3:** Samsung Galaxy A15 físico y dos jugadores locales manuales.
+2. **Decisión sobre la combinación del laboratorio (114):** dos candidatas en §114; la más simple es noche/localidad + comida 10 + políticas prudentes.
+3. **Implementar «La última guardia»** como capítulo jugable, con la combinación que apruebe el creador.
+4. **Rótulos de las localidades y dado centrado** (encargo listo; guía de estilo [109](109-guia-de-estilo.md)).
+5. **Mejoras menores del mapa:** hallazgos 4 y 5, batería de CI con partida entera de clics reales.
+6. **Reservas del Hito 3:** Samsung Galaxy A15 físico y dos jugadores locales manuales.
 
 ## 4. Hallazgos abiertos
 
@@ -43,16 +42,16 @@ El mapa permite preparar, jugar y terminar una partida completa (humano + IA y d
 | 5 | Aviso móvil tapa título y botones de la ficha ampliada durante 5 s | **Aceptado como menor** (16/11) | Mejoras menores |
 | 6 | La partida se trababa si un superviviente moría en su propia acción | **Corregido** ([101](101-muerte-durante-accion-propia.md)) | Confirmado jugando (16/11) |
 | 7 | D12 de exposición sin probar a mano | Integrado en `main`; baterías automáticas en tres tamaños | Partida manual y teléfono físico |
-| 8 | La cooperativa cae en noche/localidad aunque ya tiene mucha gente en casa | Observado en 113: probablemente el P1 tiene comida ajustada (6) y una muerte de noche basta para colapsar | Medir con comidaInicial 10 u 12 |
+| 8 | Improvisar dispara ≈ 0 veces con políticas estándar | Observado en 114: los dados útiles (≥ 4) se consumen en ataques/búsquedas antes de llegar al paso de improvisación | Revisar umbral (≥ 3 en lugar de ≥ 4) o ventana de activación |
 
-## 5. Verificación de la quinta corrida (rama `experiment/sp04-noche`)
+## 5. Verificación de la sexta corrida (rama `experiment/sp04-noche`)
 
-- [x] 9 tests en verde (`sp04-quinta.test.mjs`): noche registrada, tiradas por localidad, regreso consume dado, objetivo nunca regresa, regla A cómputo correcto, reproducibilidad.
-- [x] Sin palancas nuevas el resultado es idéntico a la cuarta corrida (calibración V9.9).
-- [x] Simulación completa: 500 partidas × 10 celdas de variantes × 2 escenarios × 4 políticas = 160 celdas, ~77 s, 0 partidas incompletas.
-- [x] `npm test` pendiente (se corre al final del encargo).
+- [x] 13 tests en verde (`sp04-sexta.test.mjs`): improvisar instalado/ausente, consume dado ≥4, límite por ronda, parcial moral/zombie, éxito pleno, políticas prudentes, compatibilidad con quinta corrida, reproducibilidad.
+- [x] 9 tests de quinta corrida siguen en verde.
+- [x] 782 tests totales en verde (`npm test`).
+- [x] Simulación completa: 500 partidas × 7 variantes × 2 escenarios × 4 políticas = 112 celdas, ~60 s, 0 partidas incompletas.
 - [ ] CI del PR (incluye baterías sin vídeo).
-- [ ] Decisión del creador sobre si avanzar con noche/localidad + más comida.
+- [ ] Decisión del creador sobre la combinación a aprobar.
 
 ## 6. Decisiones vigentes de mapa e interfaz
 

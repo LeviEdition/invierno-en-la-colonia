@@ -72,7 +72,7 @@ function nuevaRondaUnGrupo(c,{dados,crisis}){
  const g=c.game;if(g.ended)return;
  g.turn='human';c.selected=c.selectionBySide.human;g.crossPending=false;g.crossResolved=false;g.noReplacement=false;
  c.reviewLeader('human');c.reviewLeader('ai');
- c.all().forEach(p=>{p.moved=false;p.skillUsed=false;for(const eq of c.equipmentOf(p))if(eq&&typeof eq==='object')eq.usedRound=0;});
+ c.all().forEach(p=>{p.moved=false;p.skillUsed=false;p.hasImprovised=false;for(const eq of c.equipmentOf(p))if(eq&&typeof eq==='object')eq.usedRound=0;});
  const types=['comida','medicina','herramienta','combustible'];const crisisType=types[c.random(types.length)];
  g.crisis={type:crisisType,need:crisis,given:0,contributions:[],fail:['moral','zombie','food','wound'][c.random(4)]};
  g.dice=Array.from({length:formulasDados[dados](g.humans.filter(p=>!p.dead).length)},c.die);
@@ -127,6 +127,8 @@ export function crearRegistro(){
   afueraAlCaerNoche:[],      // {ronda,cantidad}: supervivientes fuera al inicio de cada noche
   exposicionesNoche:[],      // {ronda,efecto,localidad}: tiradas D12 de noche
   muertesNoche:0,            // muertes causadas por la noche (bite + daños acumulados)
+  // sexta corrida — improvisar
+  improvisaciones:0,         // veces que se usó la improvisación de crisis
  };
 }
 // Observadores: llaman al original y anotan; no alteran resultados ni consumen azar.
