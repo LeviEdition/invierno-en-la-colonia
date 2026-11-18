@@ -165,21 +165,21 @@ export async function createSearchMapView({signal,movement,search,action,invento
  function updateSearch(){const phase=search.inspect().phase;if(phase!==lastSearchPhase){lastSearchPhase=phase;if(!unified()&&phase==='picking'&&matchMedia('(max-width:800px)').matches)panel(false);}updateMovement();}
  function applyPresentationState(){if(!sequenceResponse?.presentation)return;const next={...sequenceResponse.presentation,movement:projection.movement,search:projection.search,action:projection.action};projection=next;layout=stableLayout.project(next);if(!next.characters.some(c=>c.id===selected))selected=null;updateUI();sceneDirty=true;}
  function applyImpact(){
-  if(!sequenceResponse.kind)return;
+  if(!['attack','barricade'].includes(sequenceResponse.kind))return;
   if(sequenceResponse.kind==='barricade'){applyPresentationState();sequenceApplied=true;return;}
   const next={...projection,locations:projection.locations.map(l=>l.engineIndex===sequenceResponse.origin?{...l,zombies:sequenceResponse.resolution.zoneBefore.z-sequenceResponse.resolution.killed}:l)};
   projection=next;layout=stableLayout.project(next);sceneDirty=true;
  }
  function paintSequence(step){
   const op=sequenceResponse,isAction=!!op.kind;
-  const text=isAction?(step.stage==='travel'?(op.kind==='attack'?op.name+' ataca a los zombis.':op.name+' construye barricadas.'):step.stage==='roll'?'Exposición · '+op.name:step.stage==='reveal'?op.name+' · '+actionExposureText(step.exposure):actionSummary(op)):(step.stage==='travel'?'Traslado · '+op.name:step.stage==='roll'?'Exposición · '+op.name:step.stage==='reveal'?op.name+' · '+exposureText(step.exposure):movementSummary(op,projection.locations));
+  const text=op.kind==='exposure'?('La noche en '+projection.locations.find(l=>l.engineIndex===op.origin)?.name+' · '+op.name+(['travel','roll'].includes(step.stage)?'': ' · '+exposureText(step.exposure))):isAction?(step.stage==='travel'?(op.kind==='attack'?op.name+' ataca a los zombis.':op.name+' construye barricadas.'):step.stage==='roll'?'Exposición · '+op.name:step.stage==='reveal'?op.name+' · '+actionExposureText(step.exposure):actionSummary(op)):(step.stage==='travel'?'Traslado · '+op.name:step.stage==='roll'?'Exposición · '+op.name:step.stage==='reveal'?op.name+' · '+exposureText(step.exposure):movementSummary(op,projection.locations));
   if($('sequence-status').textContent!==text)$('sequence-status').textContent=text;
   $('move-sequence').dataset.stage=step.stage;paintExposureDie($('exposure-die'),step);
  }
  function startActionPresentation(response,done){
   stopPresentation();$('floating-menu').hidden=true;$('menu-toggle').setAttribute('aria-expanded','false');sequenceResponse=response;sequenceCallback=done;sequenceApplied=false;impactApplied=false;sequenceLast=null;
-  sequence=createPresentationSequence({...response,resolution:{...response.resolution,exposure:response.resolution.exposure||{rolled:false,value:null,effect:'none'}}},{reduced:motion.matches||!!$('motion-reduced')?.checked,introDuration:550,resultDuration:response.kind==='barricade'?0:1100});
-  $('move-sequence').hidden=false;$('resolve-decision').hidden=true;selected=response.actorId;updateActions();schedule();
+  sequence=createPresentationSequence({...response,resolution:{...response.resolution,exposure:response.resolution.exposure||{rolled:false,value:null,effect:'none'}}},{reduced:motion.matches||!!$('motion-reduced')?.checked,introDuration:response.kind==='exposure'?0:550,resultDuration:response.kind==='barricade'?0:1100});
+  $('move-sequence').hidden=false;$('resolve-decision').hidden=true;selected=response.actorId;if(response.kind==='exposure')updateUI();else updateActions();schedule();
  }
  function startPresentation(response,done){
   stopPresentation();$('floating-menu').hidden=true;$('menu-toggle').setAttribute('aria-expanded','false');sequenceResponse=response;let actor=layout.characters.find(c=>c.id===response.actorId);if(!actor){const data=projection.characters.find(c=>c.id===response.actorId),loc=layout.locations.find(l=>l.engineIndex===response.from),zone=scene.zones.find(z=>z.id===loc?.visualId);actor={...data,portraitId:portraitFor(response.actorId),initials:initials(data?.name),diameter:zone?.portraitDiameter||44,position:{...loc.badgePosition}};layout.characters.push(actor);}sequenceFrom={...actor.position};sequenceTo=destinationPosition(layout,scene,response.destination);sequenceCallback=done;sequenceApplied=false;sequenceLast=null;sequence=createPresentationSequence(response,{reduced:motion.matches||!!$('motion-reduced')?.checked});$('move-sequence').hidden=false;$('resolve-decision').hidden=true;selected=response.actorId;updateMovement();schedule();

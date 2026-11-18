@@ -4,7 +4,7 @@ export const cycleMessages={recovery:'El cierre no quedó confirmado. Consultá 
 export const cycleOwnedDecision=d=>['death','leaderChoice'].includes(d?.kind);
 // Texto del botón que lleva a la decisión general: no promete una elección cuando solo hay que confirmar una muerte.
 export function decisionLabel(p){return p?.cycle?.outcome?'Ver resultado final':!p?.play?.managed&&p?.cycle?.decision?.kind==='death'?'Ver qué pasó':'Resolver decisión';}
-export function createCycleController({send,onChange=()=>{},requestId=uniqueToken}={}){
+export function createCycleController({send,onChange=()=>{},requestId=uniqueToken,isPresenting=()=>false}={}){
  let state=null,phase='closed',pending=null,message='',index=0,seen=null,hiddenFinal=null,attending=false;
  const meta=()=>state?.cycle,inspect=()=>({phase,pending,message,index,attending}),notify=()=>onChange(inspect());
  function update(next){const old=meta(),fresh=next?.cycle;state=next;if(!fresh){phase='closed';pending=null;seen=null;index=0;attending=false;notify();return;}
@@ -18,8 +18,8 @@ export function createCycleController({send,onChange=()=>{},requestId=uniqueToke
   if(held&&!['sending','unknown','confirming'].includes(phase))phase='showing';
   if(phase==='showing'&&!fresh.managed&&!fresh.review&&!held)phase='closed';notify();
  }
- function begin(){if(!meta()?.finish.allowed||meta()?.review||['sending','unknown'].includes(phase))return false;phase='confirming';message=meta().finish.diceRemaining?`Quedan ${meta().finish.diceRemaining} dados. Podés terminar igualmente; no garantizan una acción legal.`:'Confirmá el fin del turno actual.';notify();return true;}
- function submit(kind,extra={}){if(pending)return false;phase='sending';pending=requestId();message='Confirmando la operación…';notify();try{send({type:'cycle-'+kind,session:meta().session,revision:meta().revision,requestId:pending,...extra});}catch{disconnect();}return true;}
+ function begin(){if(isPresenting()||!meta()?.finish.allowed||meta()?.review||['sending','unknown'].includes(phase))return false;phase='confirming';message=meta().finish.diceRemaining?`Quedan ${meta().finish.diceRemaining} dados. Podés terminar igualmente; no garantizan una acción legal.`:'Confirmá el fin del turno actual.';notify();return true;}
+ function submit(kind,extra={}){if(isPresenting()||pending)return false;phase='sending';pending=requestId();message='Confirmando la operación…';notify();try{send({type:'cycle-'+kind,session:meta().session,revision:meta().revision,requestId:pending,...extra});}catch{disconnect();}return true;}
  function confirm(){if(phase!=='confirming')return false;return submit('finish');}
  function cancel(){if(phase!=='confirming')return false;phase='closed';message='Cierre cancelado sin cambios.';notify();return true;}
  function resolve(kind,target){if(['sending','unknown'].includes(phase))return false;return submit(kind,target?{target}:{});}

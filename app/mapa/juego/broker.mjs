@@ -4,11 +4,12 @@ const token=x=>typeof x==='string'&&/^[a-zA-Z0-9_-]{1,80}$/.test(x);
 const fields={start:['mode','confirmed'],'test-rules':['rule','value'],'return-home':['actorId','dieId','dieIndex','dieValue'],loot:['index'],'loot-noise':[],transfer:['target'],'transfer-cancel':[],bite:['option'],cross:['index'],'cross-ai':[],recruit:[],ack:['receiptId'],'starting-leader':['target'],heal:['target'],'heal-cancel':[],'attract-choose':['source'],'attract-end':[],clean:['actorId','dieId','dieIndex','dieValue'],attract:['actorId','dieId','dieIndex','dieValue'],special:['actorId','dieId','dieIndex','dieValue'],boost:['actorId','dieId','dieIndex','dieValue']};
 export function createPlayBroker(engine,{session=uniqueToken(),readPublic}={}){
  const previous=createCycleBroker(engine,{session,readPublic});if(!engine.playSnapshot)return previous;
- let revision=0,stamp=null,unknown=null;const completed=new Map();
+ let revision=0,stamp=null,unknown=null,returnPresentation=null;const completed=new Map();
+ const publicFrame=()=>({...readPublic(),log:[],last:null});
  function snapshot(){const p=previous.snapshot(),s=engine.playSnapshot();if(unknown&&(unknown.generation!==s.generation||s.lastReceipt?.requestId===unknown.requestId))unknown=null;const key=JSON.stringify([p.action.revision,s,unknown]);if(key!==stamp){stamp=key;revision++;}
   const managed=!!(s.setup||s.decision||s.receipt||unknown),q=managed&&!['setup','handover','waiting'].includes(p.blocked)?{...readPublic(),log:[],last:null}:p;
   const barrier=managed||p.cycle?.barrier,redacted=s.setup||p.cycle?.decision?.kind==='handover';
-  return {...q,epoch:p.epoch,log:[],last:null,movement:{...p.movement,revision,...(barrier?{options:{}}:{})},search:{...p.search,revision,...(managed?{options:{},private:null}:{})},action:{...p.action,revision,...(managed?{options:{}}:{})},inventory:{...p.inventory,revision,...(managed?{private:null}:{})},dice:barrier?{ownerId:null,available:null,used:null}:p.dice,cycle:p.cycle?{...p.cycle,revision,managed:managed?false:p.cycle.managed}:null,play:{...s,session,revision,managed,unknown,events:redacted?[]:s.events}};
+  return {...q,epoch:p.epoch,log:[],last:null,movement:{...p.movement,revision,...(barrier?{options:{}}:{})},search:{...p.search,revision,...(managed?{options:{},private:null}:{})},action:{...p.action,revision,...(managed?{options:{}}:{})},inventory:{...p.inventory,revision,...(managed?{private:null}:{})},dice:barrier?{ownerId:null,available:null,used:null}:p.dice,cycle:p.cycle?{...p.cycle,revision,managed:managed?false:p.cycle.managed}:null,play:{...s,session,revision,managed,unknown,presentation:!redacted&&s.receipt?.id===returnPresentation?.receiptId?returnPresentation:null,events:redacted?[]:s.events}};
  }
  function project(p){previous.project(p);return snapshot();}
  function handle(r){const p=snapshot(),answer=(ok,reason,extra={})=>({type:'play-result',requestId:token(r?.requestId)?r.requestId:null,ok,reason,...extra,state:snapshot()});
@@ -23,8 +24,17 @@ export function createPlayBroker(engine,{session=uniqueToken(),readPublic}={}){
   if(cached){if(cached.generation!==p.play.generation)return answer(false,'stale');return cached.key===key?{...cached.result,state:snapshot()}:answer(false,'request-reused');}
   if(r.session!==session||r.revision!==revision)return answer(false,'stale');if(unknown)return answer(false,'unknown');
   if(r.kind!=='start'&&!p.play.managed&&(p.search.private?.operation||p.action.operation||p.inventory.receipt||p.cycle?.barrier))return answer(false,'decision');
-  let result;try{const execution=engine.playExecute(r);result=answer(execution.ok,execution.reason||null,execution);}catch{unknown={generation:p.play.generation,requestId:r.requestId};result=answer(false,'unknown');}
+  let result;try{
+   const before=r.kind==='return-home'?publicFrame():null,seen=before?new Set(p.play.events.map(e=>e.id)):null;
+   const execution=engine.playExecute(r);
+   if(execution.ok&&before){
+    const fresh=engine.playSnapshot(),move=fresh.events.find(e=>e.type==='move'&&e.actor===r.actorId&&!seen.has(e.id));
+    if(move)returnPresentation={id:move.id,order:move.order,receiptId:fresh.receipt?.id,actorId:move.actor,name:move.name,
+     from:move.from,destination:move.destination,resolution:{exposure:move.exposure},before,presentation:publicFrame()};
+   }
+   result=answer(execution.ok,execution.reason||null,execution);
+  }catch{unknown={generation:p.play.generation,requestId:r.requestId};result=answer(false,'unknown');}
   completed.set(r.requestId,{key,generation:engine.playSnapshot().generation,result});if(completed.size>256)completed.delete(completed.keys().next().value);return result;
  }
- return {project,snapshot,handle};
+ return {project,snapshot,handle,capturePresentation:previous.capturePresentation};
 }

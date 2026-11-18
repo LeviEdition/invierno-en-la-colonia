@@ -51,8 +51,11 @@ export function continueNight(ctx){
   // El centinela se decide al tirar: alguien pudo morir en una tirada anterior.
   const watcher=nightWatcher(game.humans,loc);
   if(!watcher)continue;
+  ctx.mapCycle?.before('night',{actorId:watcher.id,name:watcher.name,location:loc});
   const result=resolveMapExposure(ctx,watcher,'la noche en '+ctx.places[loc]);
   ctx.verify();
+  ctx.mapCycle?.annotate({exposure:result});
+  ctx.mapCycle?.after();
   rolls.push({loc,id:watcher.id,effect:result?.effect??null});
  }
  return rolls;

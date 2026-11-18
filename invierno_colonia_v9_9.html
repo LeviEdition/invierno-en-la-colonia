@@ -1086,8 +1086,9 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       if (ctx.pendingBite) break;
       let loc = game.nightRemaining.shift(), watcher = nightWatcher(game.humans, loc);
       if (!watcher) continue;
+      ctx.mapCycle?.before("night", { actorId: watcher.id, name: watcher.name, location: loc });
       let result = resolveMapExposure(ctx, watcher, "la noche en " + ctx.places[loc]);
-      ctx.verify(), rolls.push({ loc, id: watcher.id, effect: result?.effect ?? null });
+      ctx.verify(), ctx.mapCycle?.annotate({ exposure: result }), ctx.mapCycle?.after(), rolls.push({ loc, id: watcher.id, effect: result?.effect ?? null });
     }
     return rolls;
   }

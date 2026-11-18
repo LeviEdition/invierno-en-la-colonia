@@ -640,7 +640,7 @@ let returnHome=function returnHome(){
  if(consume(1)===null)return;
  searchOperation=null;actionOperation=null;
  const from=p.loc;p.loc=0;p.moved=true;
- if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('move',{actor:p.id,name:p.name,from,destination:0,reason:'return'});
+ if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapPlay.event('move',{actor:p.id,name:p.name,from,destination:0,reason:'return',exposure:{rolled:false,value:null,effect:'none',ability:null,wounds:0,frost:0,fatal:false}});
  message('⌂ '+p.name+' regresó a la colonia desde '+places[from]+' (sin exposición). Ya no puede moverse esta ronda.');
  verify();paint();
 };
