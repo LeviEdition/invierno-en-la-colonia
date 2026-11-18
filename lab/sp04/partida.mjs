@@ -49,7 +49,7 @@ function resultado(lab,inicial,traza,completa,error){
   configuracion:{...configuracion},inicial,completa,error:error?String(error.stack||error):null,
   resultado:fin,rondaFin:Math.min(g.round,g.max),moralFin:g.morale,comidaFin:g.food,muestrasFin:g.samples,
   vivosFin:g.humans.filter(p=>!p.dead).length,indefensosFin:g.helpless,llamadasAzar:azar.llamadas(),
-  exposiciones:registro.exposiciones,indefensosPerdidos:registro.indefensosPerdidos,indefensosPorCrisis:registro.indefensosPorCrisis,equipoPerdido:registro.equipoPerdido,rescate:registro.rescate,
+  exposiciones:registro.exposiciones,indefensosPerdidos:registro.indefensosPerdidos,indefensosPorCrisis:registro.indefensosPorCrisis,llegadasExtraColonia:registro.llegadasExtraColonia,desbordesColonia:registro.desbordesColonia,equipoPerdido:registro.equipoPerdido,rescate:registro.rescate,
   dados:registro.dados,muertes:registro.muertes,crisis:registro.crisis,colonia:registro.colonia,rondas:Object.values(registro.rondas),reclutas:registro.reclutas,mejorasComida:registro.mejorasComida,
   traza,
  };

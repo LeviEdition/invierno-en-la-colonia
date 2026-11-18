@@ -119,7 +119,7 @@ async function todo(){
 }
 // Las palancas de la tercera corrida (cocinero, médico jugable) no son columnas de
 // 107: se omiten para que sus CSV sigan siendo idénticos byte a byte.
-const columnas107=({cocinero,medico,...resto})=>resto;
+const columnas107=({cocinero,medico,llegadasColonia,...resto})=>resto;
 const pct=x=>Math.round(x*1000)/10+' %';
 
 // La configuración de la primera corrida con D6 tiene que dar exactamente lo mismo

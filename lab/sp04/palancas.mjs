@@ -1,4 +1,4 @@
-// Palancas de la segunda y la tercera corrida (docs/107 y docs/110). Cada una se aplica con las inyecciones
+// Palancas de la segunda, tercera y cuarta corrida (docs/107, docs/110 y docs/111). Cada una se aplica con las inyecciones
 // de createEngine o con los setters del contexto; ninguna toca src/. Con los valores
 // por defecto (V9.9) no se instala nada y el motor queda exactamente como en la
 // primera corrida, que es lo que comprueba la calibración.
@@ -16,6 +16,7 @@ export const palancasBase=Object.freeze({
  medicoCome:true,        // diagnóstico: false = el médico incorporado no consume comida
  cocinero:null,          // tercera corrida: null · reemplaza (Tomás, cocinero, en lugar de Leo) · suma (Tomás como cuarto)
  medico:'abstracto',     // abstracto (107: cura en la colonia, no juega) · jugable-heridas · jugable-heridas-congelacion (110)
+ llegadasColonia:'v99',  // cuarta corrida (regla B): v99 · min2 · min3 · fijo3 — llegadas de población a la colonia
 });
 export const valoresPalancas={
  exposicion:['d6','d12'],
@@ -27,7 +28,16 @@ export const valoresPalancas={
  medicoCome:[true,false],
  cocinero:[null,'reemplaza','suma'],
  medico:['abstracto','jugable-heridas','jugable-heridas-congelacion'],
+ llegadasColonia:['v99','min2','min3','fijo3'],
 };
+// Regla B (docs/111): llegadas de población a la colonia en la fase de colonia, a
+// partir de las de V9.9 (⌈(habitantes + indefensos)/2⌉). El ruido y la crisis fallida
+// suman aparte, como en el motor.
+export const LLEGADA_SALTEADA='llegada-salteada';
+export const reglasLlegadas={v99:n=>n,min2:n=>Math.max(n,2),min3:n=>Math.max(n,3),fijo3:()=>3};
+export const llegadasV99=(c,g=c.game)=>Math.ceil((c.alive(g).filter(p=>p.loc===0).length+g.helpless)/2);
+// Lo que saben las políticas y el evaluador: la regla vigente sobre las llegadas de V9.9.
+export const llegadasPrevistasColonia=(c,g=c.game)=>reglasLlegadas[g.labLlegadas||'v99'](llegadasV99(c,g));
 // Médico jugable (105 §6): entra con recruit del motor y después se le fija la
 // identidad, para que sus atributos no dependan del sorteo del plantel.
 export const MEDICO_JUGABLE=Object.freeze({name:'Médico',job:'Médico',skill:'lab-medico',skillName:'Cura a un aliado',skillDesc:'Al empezar cada ronda cura una herida al aliado más herido en su localidad.',attack:4,search:3,influence:70});
@@ -52,6 +62,7 @@ export function ajustarEstado(g,p,objetivos){
  // atributos al arrancar, como con cualquier superviviente inicial.
  if(p.cocinero==='reemplaza')g.humans[1]={id:'h1',name:'Tomás',loc:0,wounds:0,frost:0,dead:false};
  if(p.cocinero==='suma')g.humans.push({id:'h'+g.nextId++,name:'Tomás',loc:0,wounds:0,frost:0,dead:false});
+ if(p.llegadasColonia!=='v99')g.labLlegadas=p.llegadasColonia;
  if(p.rescate)g.labMedico=false; // true cuando el médico incorporado come como un habitante más (habitantesExtra)
  return g;
 }
@@ -92,6 +103,25 @@ export function instalarPalancas(c,p,registro){
    }
    return salida;
   };
+ }
+ // Regla B. La población llega justo después de la crisis (colony(): crisis →
+ // verify → población, empezando por la colonia), con los habitantes contados una vez
+ // antes de las llegadas. Al terminar la crisis, el laboratorio cuenta lo mismo, hace
+ // llegar todas las de la variante con addZombie del motor (mismo desbordamiento) y
+ // saltea exactamente las que el motor calcula a continuación: ⌈(habitantes +
+ // indefensos)/2⌉ con los que quedaron, que son las primeras addZombie(0) siguientes.
+ if(p.llegadasColonia!=='v99'){
+  const resolver=c.resolveCrisis,llegada=c.addZombie;let saltear=0;
+  c.resolveCrisis=()=>{
+   const salida=resolver();saltear=0;
+   const g=c.game;if(g.ended)return salida;
+   const v99=llegadasV99(c),objetivo=reglasLlegadas[p.llegadasColonia](v99);
+   registro.llegadasExtraColonia+=objetivo-v99;
+   for(let k=0;k<objetivo&&!g.ended;k++){c.addZombie(0);c.verify();}
+   if(!g.ended)saltear=llegadasV99(c);
+   return salida;
+  };
+  c.addZombie=(i,env=null)=>{if(!env&&i===0&&saltear>0){saltear--;return LLEGADA_SALTEADA;}return llegada(i,env);};
  }
  // Rescate del médico (105 §5, simplificado) y Atención médica. Se ejecuta al empezar
  // el turno del jugador, sin decisiones pendientes.

@@ -115,3 +115,22 @@ export function agregarTercera(partidas){
   muertesDesbordamiento:media(partidas.map(p=>p.muertes.filter(m=>/^desbordamiento/.test(m.causa)).length)),
  };
 }
+
+// ---------- Cuarta corrida (docs/111) ----------
+// Guardia: fases de colonia que empiezan con al menos un superviviente en la colonia.
+// Desborde de la colonia: llegada sin acceso libre ni barricada; «con víctima» si mató
+// a un superviviente o a un indefenso. Termina por desborde: derrota en una ronda con
+// desborde de la colonia con víctima.
+export function agregarCuarta(partidas){
+ const n=partidas.length,fases=partidas.flatMap(p=>p.colonia);
+ const conVictima=p=>p.desbordesColonia.filter(d=>d.victima!=='nadie');
+ return {
+  fasesConGuardia:fases.length?fases.filter(f=>f.guardia).length/fases.length:null,
+  rondasConGuardiaPorPartida:media(partidas.map(p=>p.colonia.filter(f=>f.guardia).length)),
+  fasesColoniaPorPartida:media(partidas.map(p=>p.colonia.length)),
+  llegadasExtraColonia:media(partidas.map(p=>p.llegadasExtraColonia)),
+  desbordesColoniaPorPartida:media(partidas.map(p=>p.desbordesColonia.length)),
+  desbordesColoniaConVictima:media(partidas.map(p=>conVictima(p).length)),
+  partidasTerminanPorDesbordeColonia:partidas.filter(p=>(p.resultado==='morale'||p.resultado==='survivors')&&conVictima(p).some(d=>d.ronda===p.rondaFin)).length/n,
+ };
+}
