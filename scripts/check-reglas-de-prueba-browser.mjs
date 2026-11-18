@@ -1,4 +1,4 @@
-// Reglas de prueba (docs/116): activar «La noche» desde el panel de desarrollo en
+// Reglas de prueba (docs/116 y 117): activar «La noche» desde el panel de desarrollo en
 // modo contra la IA, terminar una ronda con alguien afuera y verificar el aviso
 // nocturno. Batería corta: no cubre el mapa, solo el motor y su pantalla.
 import assert from 'node:assert/strict';

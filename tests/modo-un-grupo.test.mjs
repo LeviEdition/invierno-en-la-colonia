@@ -2,7 +2,7 @@ import test from 'node:test';import assert from 'node:assert/strict';
 import {fixture,silentCross} from '../test-support/game-fixture.mjs';
 import {soloMode} from '../src/domain/reference-state.mjs';
 
-// Modo «un grupo» (docs/116): un solo grupo humano, sin bando de la IA. La ronda
+// Modo «un grupo» (docs/117): un solo grupo humano, sin bando de la IA. La ronda
 // pasa del turno del jugador directo a la fase de colonia. Referencia de
 // comportamiento: la variante «un-grupo» del laboratorio (docs/106).
 

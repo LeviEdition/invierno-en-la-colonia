@@ -3,7 +3,7 @@ import {fixture,silentCross} from '../test-support/game-fixture.mjs';
 import {normalizeTestRules,partialThreshold,halvedConsequence,nightAvailable,TEST_RULE_DEFAULTS} from '../src/domain/test-rules.mjs';
 import {nightWatcher,nightWatch} from '../src/domain/reference-night.mjs';
 
-// Reglas de prueba del singleplayer (docs/116). Todas apagadas por defecto: con
+// Reglas de prueba del singleplayer (docs/116 y 117). Todas apagadas por defecto: con
 // la configuración base el motor resuelve exactamente igual que la referencia.
 
 // Las reglas se eligen en la pantalla de preparación y se aplican al crear la
