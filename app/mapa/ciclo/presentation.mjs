@@ -1,4 +1,4 @@
-const labels={ai:'Turno de la IA',feeding:'Alimentación',waste:'Residuos',crisis:'Crisis',population:'Llegadas por habitantes',noise:'Ruido',round:'Inicio de ronda',contribution:'Aportación entregada',death:'Fallecimiento',zombie:'Incorporación de zombi'};
+const labels={ai:'Turno de la IA',feeding:'Alimentación',waste:'Residuos',crisis:'Crisis',population:'Llegadas por habitantes',noise:'Ruido',night:'La noche',round:'Inicio de ronda',contribution:'Aportación entregada',death:'Fallecimiento',zombie:'Incorporación de zombi'};
 export function describeCycleStep(step){
  if(!step)return {title:'Ciclo',explanation:'No hay datos de este paso.',changes:[],events:[]};
  const a=step.before,b=step.after,m=step.meta||{},changes=[],events=[];
@@ -10,6 +10,7 @@ export function describeCycleStep(step){
  if(step.kind==='crisis')explanation=(m.success?'Crisis superada.':'Crisis fallida.')+' Se resolvieron '+m.given+' cartas entregadas; '+m.valid+' aportes válidos para un requisito de '+m.required+'. Los aportes ya se retiraron.';
  if(step.kind==='population')explanation='Se resolvieron las llegadas por habitantes en el orden de localidades del motor.';
  if(step.kind==='noise')explanation='Tiradas reales de ruido. Las fichas se limpian al resolver cada localidad; una derrota detiene las restantes.';
+ if(step.kind==='night')explanation='Tirada nocturna de '+m.name+' en '+a?.locations.find(l=>l.index===m.location)?.name+': '+m.exposure.die.label+'.';
  if(step.kind==='ai')explanation='La IA completó su actuación. Se muestran sus cambios públicos; las cartas privadas no se publican.';
  if(step.kind==='round')explanation='Se reiniciaron los usos por ronda, se prepararon la crisis y los dados y se resolvió la congelación inicial. Pase y decisiones pendientes deben completarse antes de jugar.';
  if(a&&b){

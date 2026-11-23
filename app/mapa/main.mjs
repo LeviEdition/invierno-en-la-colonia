@@ -1,5 +1,6 @@
 import {createMapNotice} from './experiencia/map-notice.mjs';
 import {createRoutineResults} from './experiencia/routine-results.mjs';
+import {createEventPresentations} from './experiencia/event-presentations.mjs';
 import {createPlayController} from './juego/controller.mjs';
 import {createCycleController,cycleOwnedDecision,decisionLabel} from './ciclo/controller.mjs';
 import {createInventoryController} from './inventario/controller.mjs';
@@ -11,7 +12,7 @@ import {createSearchController} from './busqueda/search-controller.mjs';
 const unified=document.body.dataset.experience==='unified';
 const protocol='iec-action-map/v1',$=id=>document.getElementById(id),frame=$('reference-frame'),lifetime=new AbortController();
 let port=null,state=null,lastPublic=null,viewer=null,attempt=null,serial=Promise.resolve(),generation=0,starts=0,lastDisposal=null,lastError=null,mode=__ACTION_MAP_VARIANT__==='horizontal-map'?'map':'reference',pageActive=true,preferCycleFinal=false,retainedView=null;
-let requestTimer=0,searchTimer=0,presentationContext=null,movementNoticeScope=null,movementNoticeEnabled=false;
+let requestTimer=0,searchTimer=0,presentationContext=null,movementNoticeScope=null,movementNoticeEnabled=false,eventPresentations=null;
 const actionPresenting=()=>action.inspect().phase==='presenting';
 const ownedAction=p=>p?.action.operation&&!['setup','handover','waiting'].includes(p.blocked);
 const movementPresenting=()=>['presenting','awaiting-decision'].includes(movement.inspect().phase);
@@ -26,11 +27,23 @@ const search=createSearchController({selectOnly:unified,send,onChange:()=>{if(se
 const action=createActionController({selectOnly:unified,send,onChange:()=>{if(action.inspect().phase==='picking')clearPreviousResult();viewer?.updateActions();}});
 const inventory=createInventoryController({selectOnly:unified,send,onChange:()=>{if(inventory.inspect().phase==='picking')clearPreviousResult();viewer?.updateActions();}});
 const ownedInventory=p=>p?.inventory?.receipt&&!['setup','handover','waiting'].includes(p.blocked);
-const cycle=createCycleController({send,onChange:()=>{if(cycle.inspect().phase==='confirming')clearPreviousResult();viewer?.updateActions();}});
-const play=createPlayController({send,onChange:()=>{if(play.inspect().intent)clearPreviousResult();viewer?.updateActions();}});
+const cycle=createCycleController({send,isPresenting:()=>!!eventPresentations?.busy(),onChange:()=>{if(cycle.inspect().phase==='confirming')clearPreviousResult();viewer?.updateActions();}});
+const play=createPlayController({send,isPresenting:()=>!!eventPresentations?.busy(),onChange:()=>{if(play.inspect().intent)clearPreviousResult();viewer?.updateActions();}});
 const mapNotice=unified?createMapNotice({render:n=>{const el=$('map-notice');el.hidden=!n;el.textContent=n?.text||'';}}):null;
 lifetime.signal.addEventListener('abort',()=>mapNotice?.clear(),{once:true});
 const routine=createRoutineResults({action,search,inventory,play,onNotice:n=>{if(n){movementNoticeEnabled=false;$('movement-result').textContent='';}mapNotice?.show(n);}});
+// Conserva los datos públicos de cada instante; las decisiones y comandos esperan al visor.
+const eventFrame=p=>({...state,...p,blocked:null,movement:{...state.movement,options:{}},search:{...state.search,private:null,options:{}},action:{...state.action,operation:null,options:{}},inventory:null,cycle:null,play:null});
+eventPresentations=createEventPresentations({
+ canPresent:()=>mode==='map'&&!!viewer&&!document.hidden&&!['sending','unknown'].includes(movement.inspect().phase),
+ start(frame,done){
+  const response={...frame,presentation:eventFrame(frame.presentation)};
+  viewer.setState(eventFrame(frame.before));movement.present(response);
+  const finish=()=>{movement.finishPresentation(frame.kind==='exposure'?'':movementSummary(response,response.presentation.locations));done();};
+  if(frame.kind==='exposure')viewer.startActionPresentation(response,finish);else viewer.startPresentation(response,finish);
+ },
+ stop(){viewer?.stopPresentation();movement.interruptPresentation();},onIdle:()=>applyAuthority(),
+});
 function clearPreviousResult(){if(!unified)return;movementNoticeEnabled=false;if($('movement-result').textContent)$('movement-result').textContent='';if(routine.inspect())routine.clear();}
 const managedCycle=p=>!!p?.cycle?.managed||!!p?.play?.managed;
 const variant=typeof __ACTION_MAP_VARIANT__==='undefined'?'action-map':__ACTION_MAP_VARIANT__;
@@ -60,11 +73,12 @@ function displayState(){
 }
 function showReference(){
  if(variant==='horizontal-map'){showMap();return;}
+ eventPresentations.interrupt();
  inventory.close();stopSearchClock();search.interrupt();stopAction();if(movementPresenting()){stopMovement();if(state)viewer?.setState(state);}
  mode='reference';document.body.dataset.presentation=mode;$('map-app').hidden=true;frame.hidden=false;$('reference-mode').setAttribute('aria-pressed','true');$('map-mode').setAttribute('aria-pressed','false');viewer?.setActive(false);focusReference();
 }
 function applyAuthority(){
- if(!state)return;
+ if(!state||eventPresentations.busy())return;
  search.update(controllerState(state));action.update(controllerState(state));inventory.update(controllerState(state));cycle.update(state);play.update(state);
  // Una mordedura siempre deja fallecimientos: al cerrar su panel, la cadena sigue en el ciclo sin volver al resultado.
  if(state.play?.decision?.kind==='bite'&&!cycle.inspect().attending)cycle.attend();
@@ -79,7 +93,7 @@ function applyAuthority(){
  else{status('');if(mode==='map'&&!viewer&&(!attempt||attempt.signal.aborted))void mountViewer();}
 }
 function interruptSearch(){stopSearchClock();search.interrupt();if(state)applyAuthority();}
-function disconnect(){clearTimeout(requestTimer);stopSearchClock();viewer?.stopPresentation();movement.disconnect();search.disconnect();action.disconnect();inventory.disconnect();cycle.disconnect();play.disconnect();if(port){port.onmessage=null;port.close();port=null;}}
+function disconnect(){eventPresentations.interrupt();clearTimeout(requestTimer);stopSearchClock();viewer?.stopPresentation();movement.disconnect();search.disconnect();action.disconnect();inventory.disconnect();cycle.disconnect();play.disconnect();if(port){port.onmessage=null;port.close();port=null;}}
 async function clearViewer(){const previous=viewer;viewer=null;if(previous){const v=previous.inspect();retainedView={...v,epoch:state?.epoch,turn:state?.turn};lastDisposal=await previous.destroy();}}
 function mountViewer(){
  const id=++generation;attempt?.abort();attempt=new AbortController();const current=attempt;
@@ -96,14 +110,15 @@ function mountViewer(){
  });return serial;
 }
 function showMap(){
- if(variant==='horizontal-map'){mode='map';document.body.dataset.presentation=mode;frame.hidden=true;$('map-app').hidden=false;if(viewer){if(state)viewer.setState(displayState());viewer.setActive(!!state);}else if(state&&(!attempt||attempt.signal.aborted))void mountViewer();return;}
+ if(variant==='horizontal-map'){mode='map';document.body.dataset.presentation=mode;frame.hidden=true;$('map-app').hidden=false;if(viewer){if(state&&!eventPresentations.busy())viewer.setState(displayState());viewer.setActive(!!state);}else if(state&&(!attempt||attempt.signal.aborted))void mountViewer();return;}
  if(!state||state.blocked&&!ownedSearch(state)&&!ownedAction(state)&&!ownedInventory(state)&&!managedCycle(state)){showReference();return;}
  mode='map';document.body.dataset.presentation=mode;frame.hidden=true;$('map-app').hidden=false;$('reference-mode').setAttribute('aria-pressed','false');$('map-mode').setAttribute('aria-pressed','true');
- if(viewer){viewer.setState(displayState());viewer.setActive(true);}else void mountViewer();
+ if(viewer){if(!eventPresentations.busy())viewer.setState(displayState());viewer.setActive(true);}else void mountViewer();
 }
 function acceptState(next){
  const previous=state,changedGame=previous&&(next.epoch!==previous.epoch||next.movement.session!==previous.movement.session);
- state=next;if(changedGame){preferCycleFinal=false;lastPublic=null;stopMovement();stopSearchClock();stopAction();}
+ state=next;if(changedGame){eventPresentations.interrupt();preferCycleFinal=false;lastPublic=null;stopMovement();stopSearchClock();stopAction();}
+ if(eventPresentations.update(state))return;
  search.update(controllerState(state));action.update(controllerState(state));inventory.update(controllerState(state));cycle.update(state);play.update(state);
  // Redactar la búsqueda inmediatamente; la muerte del movimiento conserva su
  // revelación ya aceptada hasta «Continuar», como en H3.4.2.
@@ -120,7 +135,7 @@ function receive(event){
  const message=event.data;if(message?.protocol!==protocol)return;
  if(message.type==='play-result'){if(message.requestId!==play.inspect().pending)return;clearTimeout(requestTimer);if(!play.result(message))return;if(message.state&&validProjection(message.state))acceptState(message.state);else applyAuthority();return;}
  if(message.type==='cycle-result'){
-  if(message.requestId!==cycle.inspect().pending)return;clearTimeout(requestTimer);if(!cycle.result(message))return;if(message.state&&validProjection(message.state))state=message.state;applyAuthority();return;
+  if(message.requestId!==cycle.inspect().pending)return;clearTimeout(requestTimer);if(!cycle.result(message))return;if(message.state&&validProjection(message.state))acceptState(message.state);else applyAuthority();return;
  }
  if(message.type==='inventory-result'){
   if(message.requestId!==inventory.inspect().pending)return;clearTimeout(requestTimer);if(!inventory.result(message))return;if(message.state&&validProjection(message.state))state=message.state;applyAuthority();return;
@@ -164,11 +179,11 @@ $('recover-connection')?.addEventListener('click',()=>connect(),{signal:lifetime
 $('reconnect-source')?.addEventListener('click',()=>connect(),{signal:lifetime.signal});
 $('reference-mode').addEventListener('click',showReference,{signal:lifetime.signal});$('return-reference')?.addEventListener('click',showReference,{signal:lifetime.signal});$('map-mode').addEventListener('click',showMap,{signal:lifetime.signal});$('resolve-decision').addEventListener('click',showDecision,{signal:lifetime.signal});
 for(const id of ['restart-view','retry-view'])$(id).addEventListener('click',()=>{if(mode==='map')void mountViewer();},{signal:lifetime.signal});
-document.addEventListener('visibilitychange',()=>{if(document.hidden){stopAction();interruptSearch();if(movementPresenting()){stopMovement();applyAuthority();}}},{signal:lifetime.signal});
-export function inspect(){return {mode,connected:!!port,starts,generation,projection:state?structuredClone(state):null,movement:movement.inspect(),search:search.inspect(),action:action.inspect(),inventory:inventory.inspect(),cycle:cycle.inspect(),play:play.inspect(),view:viewer?.inspect()||null,lastDisposal,lastError};}
+document.addEventListener('visibilitychange',()=>{if(document.hidden){eventPresentations.interrupt();stopAction();interruptSearch();if(movementPresenting()){stopMovement();applyAuthority();}}},{signal:lifetime.signal});
+export function inspect(){return {mode,connected:!!port,starts,generation,projection:state?structuredClone(state):null,movement:movement.inspect(),search:search.inspect(),action:action.inspect(),inventory:inventory.inspect(),cycle:cycle.inspect(),play:play.inspect(),eventPresentations:eventPresentations.inspect(),view:viewer?.inspect()||null,lastDisposal,lastError};}
 export function worldAt(point){return viewer?.worldAt(point);}
-export function disposeViewer(){stopSearchClock();stopMovement();stopAction();search.interrupt();attempt?.abort();generation++;serial=serial.catch(()=>{}).then(clearViewer);return serial;}
-window.addEventListener('pagehide',event=>{mapNotice?.clear();pageActive=false;disconnect();search.update(null);action.update(null);inventory.update(null);cycle.update(null);play.update(null);lastPublic=null;if(state){state={...state,inventory:null,cycle:null,blocked:'waiting',characters:[],players:[],locations:[],dice:{ownerId:null,available:null,used:null},movement:{...state.movement,options:{}},search:{...state.search,private:null,options:{}},action:{...state.action,ownerId:null,operation:null,presentation:null,options:{}}};viewer?.setState(state);}void disposeViewer();if(!event.persisted)lifetime.abort();});
+export function disposeViewer(){eventPresentations.interrupt();stopSearchClock();stopMovement();stopAction();search.interrupt();attempt?.abort();generation++;serial=serial.catch(()=>{}).then(clearViewer);return serial;}
+window.addEventListener('pagehide',event=>{mapNotice?.clear();pageActive=false;disconnect();search.update(null);action.update(null);inventory.update(null);cycle.update(null);play.update(null);lastPublic=null;if(state){state={...state,inventory:null,cycle:null,play:state.play?{...state.play,presentation:null}:null,blocked:'waiting',characters:[],players:[],locations:[],dice:{ownerId:null,available:null,used:null},movement:{...state.movement,options:{}},search:{...state.search,private:null,options:{}},action:{...state.action,ownerId:null,operation:null,presentation:null,options:{}}};viewer?.setState(state);}void disposeViewer();if(!event.persisted)lifetime.abort();});
 window.addEventListener('pageshow',event=>{pageActive=true;if(event.persisted){connect();if(mode==='map'&&state&&(!state.blocked||ownedSearch(state)||ownedAction(state)||ownedInventory(state)||managedCycle(state)))void mountViewer();}});
 matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',event=>{if(event.matches&&actionPresenting()){stopAction();applyAuthority();}if(event.matches&&search.inspect().phase==='presenting'){stopSearchClock();search.finishPresentation();applyAuthority();}},{signal:lifetime.signal});
 frame.src=hostPath;

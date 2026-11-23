@@ -5,7 +5,7 @@ export function createMapCycle(context,{generation,clear}){
  const clone=x=>structuredClone(x);
  function sync(){if(stampGeneration!==generation()){stampGeneration=generation();chronology=0;operation=null;journal=[];deathEntries=[];busy=false;pendingStep=null;}}
  const nextOrder=()=>{sync();return ++chronology;};
- const publish=()=>listener();
+ const publish=change=>listener(change);
  function facts(){const g=context().game;if(!g)return null;return {round:g.round,turn:g.turn,food:g.food,morale:g.morale,waste:g.waste,hunger:g.hunger,samples:g.samples,helpless:g.helpless,ended:g.ended,locations:g.zones.map((z,i)=>({index:i,name:z.name,zombies:z.z,barricades:z.b,noise:z.noise})),people:context().all().map(p=>({id:p.id,name:p.name,location:p.loc,dead:!!p.dead,wounds:p.wounds,frost:p.frost,moved:!!p.moved,skillUsed:!!p.skillUsed,equipmentUsed:context().equipmentOf(p).filter(e=>e?.usedRound).length}))};}
  function decision(){
   const g=context().game;if(!g)return null;
@@ -38,8 +38,8 @@ export function createMapCycle(context,{generation,clear}){
   return {ok:false,reason:'invalid'};
  }
  const api={cycleSnapshot,cycleExecute,subscribeCycle(fn){listener=fn||(()=>{});return ()=>{listener=()=>{};};}};
- function before(kind,meta={}){sync();pendingStep={kind,meta:clone(meta),before:facts(),events:[]};if(operation?.status==='processing')operation.stage=kind;publish();}
- function after(){if(!pendingStep)return;const step={...pendingStep,order:nextOrder(),after:facts()};pendingStep=null;if(operation?.status==='processing')operation.steps.push(step);journal.push({round:step.before.round,...step});if(journal.length>80)journal.shift();publish();}
+ function before(kind,meta={}){sync();pendingStep={kind,meta:clone(meta),before:facts(),events:[]};if(operation?.status==='processing')operation.stage=kind;publish({phase:'before',step:pendingStep});}
+ function after(){if(!pendingStep)return;const step={...pendingStep,order:nextOrder(),after:facts()};pendingStep=null;if(operation?.status==='processing')operation.steps.push(step);journal.push({round:step.before.round,...step});if(journal.length>80)journal.shift();publish({phase:'after',step});}
  function annotate(meta){if(pendingStep)Object.assign(pendingStep.meta,clone(meta));}
  function event(type,data){sync();if(pendingStep)pendingStep.events.push({type,...clone(data)});else{journal.push({kind:type,order:nextOrder(),round:context().game?.round,meta:clone(data)});if(journal.length>80)journal.shift();publish();}}
  return {api,nextOrder,deaths(entries){sync();deathEntries=clone(entries);},facts,before,after,annotate,event,startColony(){sync();if(operation?.status==='processing'){operation.colony=true;operation.stage='colony';}publish();}};

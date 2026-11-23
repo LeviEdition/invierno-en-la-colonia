@@ -2,7 +2,7 @@
 
 > **Cómo se usa este documento.** Arriba está solo lo vigente: dónde estamos, la única tarea siguiente, la cola ordenada y los hallazgos abiertos. Cada entrega actualiza estas secciones **reemplazando** su contenido, no agregando un bloque nuevo. El detalle de cada entrega va en su informe numerado y en el PR. Los bloques fechados anteriores al 16/11/2026 están en [18-historico-tablero.md](18-historico-tablero.md) y no se editan.
 
-**Actualizado:** 17/11/2026 · **main:** `d872dcf` (PR #33 y #35: laboratorio SP-04 cerrado, corridas 4 a 7) · **Tag vigente:** `v0.10.0-mapa-horizontal` · **Ramas en revisión:** `feature/mapa-2x` ([112](112-mapa-doble-resolucion.md)) y `feature/reglas-de-prueba` (en curso)
+**Actualizado:** 18/11/2026 · **main:** `d872dcf` (PR #33 y #35: laboratorio SP-04 cerrado, corridas 4 a 7) · **Tag vigente:** `v0.10.0-mapa-horizontal` · **Ramas en revisión:** `feature/mapa-2x` ([112](112-mapa-doble-resolucion.md)) y `feature/reglas-de-prueba` (PR #37; [116](116-ficha-regla-la-noche.md), [117](117-reglas-de-prueba-y-un-grupo.md))
 
 ## 1. Dónde estamos
 
@@ -15,20 +15,21 @@
 | D12 de exposición | **Integrado en `main`** (PR #27, 17/11), aprobado jugando | [102](102-dado-exposicion-d12.md) |
 | Laboratorio SP-04 | **Cerrado** (17/11, PR #33 y #35). Conclusión aprobada por el creador: la noche por localidad, el regreso con un dado y el éxito parcial de la crisis; improvisar descartado; comida inicial a definir jugando | [111](111-laboratorio-sp04-cuarta-corrida.md), [113](113-laboratorio-sp04-quinta-corrida.md), [114](114-laboratorio-sp04-sexta-corrida.md), [115](115-laboratorio-sp04-septima-corrida.md) |
 | Mapa en doble resolución | **En revisión** (rama `feature/mapa-2x`, PR #34): textura 3342×1882, zoom máximo 1,5, enfoque de localidad hasta 1,5 | [112](112-mapa-doble-resolucion.md) |
-| Singleplayer (SP-00 a SP-08) | **Diseño en papel**; capítulo piloto «La última guardia» en ficha. Reglas de prueba y modo «un grupo» en curso (`feature/reglas-de-prueba`) | [63](63-hoja-de-ruta-planificacion-singleplayer.md), [105](105-ficha-capitulo-la-ultima-guardia.md) |
+| Reglas de prueba y modo «un grupo» | **En revisión** (rama `feature/reglas-de-prueba`, PR #37): comida inicial 6/8/10, «La noche», «Regresar a la colonia» y crisis parcial, todas apagadas por defecto, más el modo de un solo grupo. **Disponibles en el mapa con `?dev`.** La resistencia del motor se cubre en Node. Falta probar jugando | [116](116-ficha-regla-la-noche.md), [117](117-reglas-de-prueba-y-un-grupo.md) |
+| Singleplayer (SP-00 a SP-08) | **Diseño en papel**; capítulo piloto «La última guardia» en ficha. Las reglas que lo sostienen ya existen como opción de prueba | [63](63-hoja-de-ruta-planificacion-singleplayer.md), [105](105-ficha-capitulo-la-ultima-guardia.md) |
 
 El mapa permite preparar, jugar y terminar una partida completa (humano + IA y dos jugadores locales) con un único motor. Vive en `app/mapa/` (`npm run dev:mapa` → `http://127.0.0.1:8779/app/mapa/`).
 
 ## 2. Próxima tarea única
 
-**Probar el mapa en doble resolución** ([112](112-mapa-doble-resolucion.md), PR #34) en escritorio y en el Samsung Galaxy A15 —nitidez a zoom máximo, fluidez, carga y el nuevo acercamiento al elegir una localidad— y decidir el merge.
+**Probar jugando las reglas de prueba en el mapa** ([117](117-reglas-de-prueba-y-un-grupo.md)) para **fijar la comida inicial en 6 u 8**. Abrir `app/mapa/` con `?dev=1`, activar «La noche», «Regresar a la colonia» y la crisis parcial al preparar la partida, y jugar en modo contra la IA y en «Un grupo (sin IA)». Lo que hay que sentir está en la ficha ([116](116-ficha-regla-la-noche.md)): si una tirada por localidad da la tensión justa y si el coste de un dado alcanza para que regresar no sea gratis.
 
 ## 3. Cola ordenada
 
-1. **Mapa 2× (112):** prueba del creador en escritorio y en el A15 → decisión de merge (requiere indicación expresa).
-2. **Reglas de prueba y modo «un grupo»** (`feature/reglas-de-prueba`): la noche, el regreso, la comida inicial 6/8/10 y la crisis parcial en las herramientas de desarrollo; el creador las prueba jugando para fijar valores.
+1. **Probar las reglas jugando en el mapa (117):** fijar comida inicial y confirmar la duda abierta de la ficha ([116](116-ficha-regla-la-noche.md)). El PR #37 verifica el motor y los recorridos breves de navegador.
+2. **Mapa 2× (112):** prueba del creador en escritorio y en el A15 → decisión de merge (requiere indicación expresa).
 3. **Interfaz v2** (rama `feature/interfaz-v2`; decisiones en [109 §8](109-guia-de-estilo.md)), sobre el mapa 2× ya integrado.
-4. **Implementar «La última guardia»** como capítulo jugable, con las reglas que se aprueben jugando.
+4. **Implementar «La última guardia»** como capítulo jugable, con los valores que se fijen en 1.
 5. **Mejoras menores del mapa:** hallazgos 4 y 5, batería de CI con partida entera de clics reales.
 6. **Reservas del Hito 3:** Samsung Galaxy A15 físico y dos jugadores locales manuales.
 
@@ -44,14 +45,26 @@ El mapa permite preparar, jugar y terminar una partida completa (humano + IA y d
 | 6 | La partida se trababa si un superviviente moría en su propia acción | **Corregido** ([101](101-muerte-durante-accion-propia.md)) | Confirmado jugando (16/11) |
 | 7 | D12 de exposición sin probar a mano | Integrado en `main`; baterías automáticas en tres tamaños | Partida manual y teléfono físico |
 | 8 | Enfoque de localidad con el mapa 2× | **1,5** (`focusMaxZoom`), decisión del creador 17/11: centrar y acercar un poco más | Probar en escritorio y A15 |
+| 9 | «Regresar a la colonia» y el movimiento | **Resuelto** (18/11, decisión del creador): cuenta como movimiento; después ya no puede moverse esa ronda | Confirmar jugando que el coste de un dado alcanza ([116](116-ficha-regla-la-noche.md)) |
+| 10 | `node_modules` está versionado como enlace simbólico | Detectado 18/11: `npm ci` lo reemplaza por un directorio y aparece como borrado en `git status`; no se incluyó en ningún commit | Revisar aparte si debe dejar de estar versionado |
 
-## 5. Verificación del mapa 2× (rama `feature/mapa-2x`)
+## 5. Verificación de las reglas de prueba y el modo «un grupo» (rama `feature/reglas-de-prueba`, PR #37)
 
-- [x] Textura de 3342×1882 decodificada y mostrada a escala 0,5; mundo en 1671×941 (batería `check-map-2x-browser.mjs`).
-- [x] Los 33 accesos, zombis, barricadas y retratos en las mismas coordenadas del mundo que en `main`, y cámara de ajuste igual a la de `main` para el espacio medido (1365×768, 852×393, 393×852).
-- [x] Zoom máximo 1,5 con rótulo «150 %»; enfoque de localidad hasta 1,5; capturas a zoom máximo en el artifact del CI.
-- [x] CI del PR en verde (pruebas, arquitectura y baterías de navegador).
-- [ ] Revisión del creador en escritorio y en el Samsung Galaxy A15.
+- [x] La batería de resistencia completó 98 partidas en Node con semillas reproducibles y comprobó los reintentos de una mordedura nocturna ([117](117-reglas-de-prueba-y-un-grupo.md)).
+
+- [x] **851 pruebas, 0 fallos**: 59 nuevas (35 de reglas, 14 del modo, 9 del adaptador del mapa, más la paridad de preparación extendida a los tres modos).
+- [x] Con todo apagado, una partida con semilla fija es idéntica; los modos contra la IA y dos jugadores locales conservan grupo, mano, dados y líder de la IA.
+- [x] La noche: una tirada por localidad exterior ocupada, nunca en la colonia ni por el grupo de la IA; menor influencia con empate por orden del grupo; las cuatro caras del D12; no existe en dos jugadores locales.
+- [x] Mordedura nocturna en el flujo normal de muerte y sucesión; **la noche se pausa y sigue** con las localidades que faltaban, en el mismo orden, antes de abrir la ronda siguiente.
+- [x] Regresar cuesta un dado de cualquier valor, no tira exposición, **no consume azar** y **cuenta como movimiento**; el movimiento normal no cambia.
+- [x] Crisis parcial en sus cuatro consecuencias; apagada, media crisis sigue fallando entera.
+- [x] Un grupo: dos rondas pasan del turno del jugador a la colonia sin turno de la IA ni avisos que la mencionen; semilla fija, partida idéntica.
+- [x] **En el mapa**: con `?dev` aparecen el modo y las cuatro reglas y sin `?dev` nada cambia; la ficha recibe «dormirá afuera» y «hace guardia» del motor; regresar se ofrece con su coste y deja el movimiento en `already-moved`; «un grupo» no proyecta el bando de la IA y su etiqueta es «Tu grupo».
+- [x] Empezar «un grupo» desde el mapa da el mismo estado y el mismo azar que `startGame('solo')` en el motor.
+- [x] `check:build` y `check:mapa-build` en verde; HTML y `dist/mapa` regenerados desde las fuentes.
+- [ ] **Las dos baterías de navegador nuevas no se corrieron localmente** (sin Chromium en el entorno): `check-reglas-de-prueba-browser.mjs` (workflow `d12a`) y `check-map-reglas-de-prueba-browser.mjs` (workflow `mapa`, 852×393 y 1365×768). El CI del PR #37 es la fuente de verdad.
+- [ ] Animación del D12 en la tirada nocturna: entra por el mismo camino que movimiento y combate, pero no se vio.
+- [ ] Prueba jugando en escritorio y en el Samsung Galaxy A15; comida inicial a fijar.
 - [ ] Decisión de merge del creador.
 
 

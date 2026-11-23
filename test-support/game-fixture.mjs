@@ -13,10 +13,20 @@ export function fixture({mode='local',face=6,seed,render=false,natural=false,pro
   return nodes.get(id);
  };
  const document={addEventListener(){},getElementById:node,querySelector:node};
- const context=createContext({document,Math:math,queueMicrotask,setTimeout(fn){queueMicrotask(fn);},clearTimeout(){}});
+ const context=createContext({document,Math:math,structuredClone,queueMicrotask,setTimeout(fn){queueMicrotask(fn);},clearTimeout(){}});
  runInContext(program.runtimeSource,context,{timeout:3000});
  const run=code=>runInContext(code,context,{timeout:4000});
  run((render||natural?'':'paint=()=>{};')+'toast=()=>{};gameMode='+JSON.stringify(mode)+';create();passScreenActive=false;'+(natural?'':'game.crossPending=false;game.crossResolved=true;hide();'));
  return {run,state:expr=>JSON.parse(run('JSON.stringify('+expr+')')),node,metadata:{...program.metadata,rng:rngDescription},roll(face){roll=(face-.5)/6;},seed(value){rng=value>>>0;}};
 }
 export const silentCross='game.crossRemaining=Array(32).fill(crossroadsDeck.findIndex(c=>c.title==="Un almacén bajo el hielo"));game.crossPending=false;game.crossResolved=true;';
+
+export function prepare(rules,{mode='ai',seed=20261118,face=6,natural=false,program}={}){
+ const t=fixture({mode,seed,face,natural,program});
+ t.run('showSetup();');
+ if(rules)t.run('setTestRules('+JSON.stringify(rules)+');');
+ t.run('startGame('+JSON.stringify(mode)+');');
+ if(!natural)t.run(silentCross);
+ return t;
+}
+export function setDie(math,value){math.random=()=>value;}

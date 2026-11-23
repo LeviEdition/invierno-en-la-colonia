@@ -3,12 +3,24 @@ import {uniqueToken} from '../movimiento/nonce.mjs';
 const token=x=>typeof x==='string'&&/^[a-zA-Z0-9_-]{1,80}$/.test(x);
 export function createCycleBroker(engine,{session=uniqueToken(),readPublic}={}){
  const previous=createInventoryBroker(engine,{session,readPublic});if(!engine.cycleSnapshot)return previous;
- let revision=0,stamp=null,rawBlocked='waiting';const completed=new Map();
+ let revision=0,stamp=null,rawBlocked='waiting',presentationCycle=null,nightBefore=null,nightFrames=[];const completed=new Map();
+ const publicFrame=()=>({...readPublic(),log:[],last:null,dice:{ownerId:null,available:null,used:null}});
+ // Se captura durante la notificación síncrona del motor, antes de agrupar mensajes.
+ function capturePresentation(change){
+  if(change?.step?.kind!=='night')return;
+  const operation=engine.cycleSnapshot()?.operation;if(!operation)return;
+  if(presentationCycle!==operation.id){presentationCycle=operation.id;nightBefore=null;nightFrames=[];}
+  if(change.phase==='before'){nightBefore=publicFrame();return;}
+  const step=change.step;if(!nightBefore||change.phase!=='after')return;
+  nightFrames.push({id:operation.id+'_'+step.order,order:step.order,kind:'exposure',actorId:step.meta.actorId,
+   name:step.meta.name,origin:step.meta.location,resolution:{exposure:step.meta.exposure},before:nightBefore,presentation:publicFrame()});
+  nightBefore=null;
+ }
  function snapshot(){const base=previous.snapshot(),s=engine.cycleSnapshot(),visible=s&&!['setup','waiting'].includes(rawBlocked),key=JSON.stringify([base.action.revision,visible?s:null]);if(key!==stamp){stamp=key;revision++;}
   const ownsCycle=!!visible&&(s.processing||s.review||s.operation?.status==='unknown'),delegated=!!(base.search.private?.operation||base.action.operation||base.inventory.receipt);
   const managed=!!visible&&(ownsCycle||!!s.outcome||!!s.decision&&!delegated),barrier=managed;
   const p=managed?{...readPublic(),blocked:rawBlocked,log:[],last:null}:base;
-  const cycle=visible?{...s,session,revision,managed,barrier}:null;
+  const cycle=visible?{...s,session,revision,managed,barrier,presentations:s.operation?.id===presentationCycle?nightFrames:[]}:null;
   return {...p,round:s?.operation?.colony&&(s.processing||s.review)?s.operation.round:p.round,epoch:base.epoch,movement:{...base.movement,revision,...(barrier?{options:{}}:{})},search:{...base.search,revision,...(barrier?{private:null,options:{}}:{})},action:{...base.action,revision,...(barrier?{options:{}}:{})},inventory:{...base.inventory,revision,...(barrier?{private:null}:{})},dice:barrier?{ownerId:null,available:null,used:null}:p.dice,cycle};
  }
  function project(p){rawBlocked=p.blocked;previous.project(p);return snapshot();}
@@ -28,5 +40,5 @@ export function createCycleBroker(engine,{session=uniqueToken(),readPublic}={}){
   if(!p.cycle||r.session!==session||r.revision!==revision)return answer(false,'stale');
   const execution=engine.cycleExecute({...r,kind}),result=answer(execution.ok,execution.reason||null,execution);completed.set(r.requestId,{key,generation:p.cycle.generation,result});if(completed.size>128)completed.delete(completed.keys().next().value);return result;
  }
- return {project,snapshot,handle};
+ return {project,snapshot,handle,capturePresentation};
 }

@@ -337,6 +337,15 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
  <button class="setupChoice" data-command="startGame" data-args="[&quot;ai&quot;]"><strong>▣ 1 JUGADOR + IA</strong><small>La IA juega como tu compañera de supervivencia.</small></button>
  <button class="setupChoice" data-command="startGame" data-args="[&quot;local&quot;]"><strong>⚑ 2 JUGADORES LOCALES</strong><small>Dos personas, un solo dispositivo, por turnos.</small></button>
  <span class="setupNote">Las partidas nuevas reinician el tablero y los mazos.</span>
+ <details id="testRules" class="testRules" hidden><summary>Reglas de prueba (desarrollo)</summary>
+  <p class="tiny">Apagadas por defecto. «La noche» no se aplica en dos jugadores locales.</p>
+  <label for="testRulesFood">Comida inicial</label>
+  <select class="control" id="testRulesFood" data-command="testRuleFood" data-args="[]" data-event="change"><option value="6">6 (actual)</option><option value="8">8</option><option value="10">10</option></select>
+  <label><input type="checkbox" id="testRulesNight" data-command="testRuleFlag" data-args="[&quot;laNoche&quot;]" data-event="change"> La noche · tirada D12 por localidad exterior ocupada</label>
+  <label><input type="checkbox" id="testRulesReturn" data-command="testRuleFlag" data-args="[&quot;regreso&quot;]" data-event="change"> Regresar a la colonia · cuesta un dado, sin exposición</label>
+  <label><input type="checkbox" id="testRulesPartial" data-command="testRuleFlag" data-args="[&quot;crisisParcial&quot;]" data-event="change"> Crisis parcial · media consecuencia con la mitad de los aportes</label>
+  <button class="setupChoice" id="startSolo" data-command="startGame" data-args="[&quot;solo&quot;]"><strong>☗ UN GRUPO (SIN IA)</strong><small>Un solo grupo: tu turno y después la colonia.</small></button>
+ </details>
  </section>
 </div>
 <div id="passScreen" class="handoverBackdrop" role="dialog" aria-modal="true" aria-labelledby="passTitle" hidden>
@@ -349,7 +358,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
 <div id="toastStack" class="toastStack" role="status" aria-live="polite"></div><div id="backdrop" class="modalBackdrop" data-command="backdropHide" data-args="[]"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modalHeader"><h2 id="modalTitle"></h2><button class="btn" data-command="hide" data-args="[]">✕ Cerrar</button></div><div class="modalContent" id="modalContent"></div></div></div>
 <script>(() => {
   // src/application/reference-contracts.mjs
-  var viewCapabilities = Object.freeze(["actionDice", "activeDialog", "aiCrossChoice", "aiRunning", "alive", "all", "canPickStartingLeader", "capacity", "catalog", "closeStatInfo", "controls", "crossroadsView", "currentHand", "dialogButtons", "drainToasts", "effectiveAttack", "effectiveSearch", "em", "equipIcons", "equipmentOf", "finishTurn", "focusHandover", "game", "groupLeader", "handoverDialog", "hide", "icons", "isLeader", "itemTitle", "kind", "opened", "ownerGroup", "ownerOf", "paintDice", "pendingAttract", "pendingBite", "pendingHeal", "pendingLeaderSide", "pendingLoot", "pendingRecruitInfo", "pendingTransfer", "person", "picked", "places", "playable", "profileId", "renderModal", "renderSite", "selected", "show", "skipAI", "statusText", "syncHandoverAccessibility", "target", "toggleFab", "token", "zcap"]), agentCapabilities = Object.freeze(["accessible", "actions", "alive", "applyFrost", "botContributeTools", "catalog", "crossAction", "crossDraw", "crossTrigger", "effectiveAttack", "effectiveSearch", "equipmentOf", "game", "kind", "message", "openAccess", "pause", "pendingBite", "replaceLastSurvivors", "verify", "waitForBite"]);
+  var viewCapabilities = Object.freeze(["actionDice", "activeDialog", "aiCrossChoice", "aiRunning", "alive", "all", "canPickStartingLeader", "capacity", "catalog", "closeStatInfo", "controls", "crossroadsView", "currentHand", "dialogButtons", "drainToasts", "effectiveAttack", "effectiveSearch", "em", "equipIcons", "equipmentOf", "finishTurn", "focusHandover", "game", "groupLeader", "handoverDialog", "hide", "icons", "isLeader", "itemTitle", "kind", "nightEnabled", "nightWatch", "opened", "ownerGroup", "ownerOf", "paintDice", "pendingAttract", "pendingBite", "pendingHeal", "pendingLeaderSide", "pendingLoot", "pendingRecruitInfo", "pendingTransfer", "person", "picked", "places", "playable", "profileId", "renderModal", "renderSite", "selected", "show", "skipAI", "sleepingOutside", "statusText", "syncHandoverAccessibility", "target", "toggleFab", "token", "zcap"]), agentCapabilities = Object.freeze(["accessible", "actions", "alive", "applyFrost", "botContributeTools", "catalog", "crossAction", "crossDraw", "crossTrigger", "effectiveAttack", "effectiveSearch", "equipmentOf", "game", "kind", "message", "openAccess", "pause", "pendingBite", "replaceLastSurvivors", "verify", "waitForBite"]);
   function capabilities(context, names) {
     let result = /* @__PURE__ */ Object.create(null);
     for (let name of names) Object.defineProperty(result, name, { enumerable: !0, get: () => context[name] });
@@ -378,26 +387,50 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
     ] };
   }
 
+  // src/domain/test-rules.mjs
+  var COMIDA_INICIAL = Object.freeze([6, 8, 10]), TEST_RULE_DEFAULTS = Object.freeze({ comidaInicial: 6, laNoche: !1, regreso: !1, crisisParcial: !1 }), nightAvailable = (mode) => mode === "ai" || mode === "solo", partialThreshold = (need) => Math.ceil(need / 2), halvedConsequence = (amount) => Math.floor(amount / 2);
+  function normalizeTestRules(patch, base = TEST_RULE_DEFAULTS) {
+    let rules = { ...TEST_RULE_DEFAULTS, ...base };
+    for (let [key, value] of Object.entries(patch || {})) {
+      if (!Object.hasOwn(TEST_RULE_DEFAULTS, key)) throw TypeError("Regla de prueba desconocida: " + key);
+      if (key === "comidaInicial") {
+        if (!COMIDA_INICIAL.includes(value)) throw RangeError("comidaInicial admite " + COMIDA_INICIAL.join(", ") + ": " + value);
+        rules[key] = value;
+      } else {
+        if (typeof value != "boolean") throw TypeError("La regla " + key + " es un interruptor: " + value);
+        rules[key] = value;
+      }
+    }
+    return Object.freeze(rules);
+  }
+  function describeTestRules(rules) {
+    let parts = [];
+    return rules.comidaInicial !== TEST_RULE_DEFAULTS.comidaInicial && parts.push("comida inicial " + rules.comidaInicial), rules.laNoche && parts.push("La noche"), rules.regreso && parts.push("Regresar a la colonia"), rules.crisisParcial && parts.push("Crisis parcial"), parts.join(" · ");
+  }
+
   // src/domain/reference-state.mjs
-  function createReferenceState({ gameMode, objective, places, catalog }) {
+  var soloMode = (mode) => mode === "solo";
+  function createReferenceState({ gameMode, objective, places, catalog, testRules = TEST_RULE_DEFAULTS }) {
+    let solo = soloMode(gameMode);
     return {
       mode: gameMode,
       objective,
       round: 1,
       max: objective.rounds,
       morale: 9,
-      food: 6,
+      food: testRules.comidaInicial,
       hunger: 0,
       samples: 0,
       goal: objective.need,
       waste: 0,
+      testRules: { ...testRules },
       humans: [{ id: "h0", name: "Mara", loc: 0, wounds: 0, frost: 0, dead: !1 }, { id: "h1", name: "Leo", loc: 0, wounds: 0, frost: 0, dead: !1 }, { id: "h2", name: "Iris", loc: 0, wounds: 0, frost: 0, dead: !1 }],
-      bots: [{ id: "a0", name: "Ada", loc: 0, wounds: 0, frost: 0, dead: !1 }, { id: "a1", name: "Bruno", loc: 0, wounds: 0, frost: 0, dead: !1 }, { id: "a2", name: "Sol", loc: 0, wounds: 0, frost: 0, dead: !1 }],
+      bots: solo ? [] : [{ id: "a0", name: "Ada", loc: 0, wounds: 0, frost: 0, dead: !1 }, { id: "a1", name: "Bruno", loc: 0, wounds: 0, frost: 0, dead: !1 }, { id: "a2", name: "Sol", loc: 0, wounds: 0, frost: 0, dead: !1 }],
       zones: places.map((name, i) => ({ name, z: i === 0 ? 3 : 1, b: 0, noise: 0, accessIndex: 0 })),
       items: ["ration", "bandage", "crowbar", "pistol", "canned", "gascan", "ration"].map((id) => catalog.create(id)),
-      botItems: ["ration", "bandage", "gascan", "ration", "pistol", "repairkit", "ration"].map((id) => catalog.create(id)),
+      botItems: solo ? [] : ["ration", "bandage", "gascan", "ration", "pistol", "repairkit", "ration"].map((id) => catalog.create(id)),
       helpless: 0,
-      leaders: { human: "h0", ai: "a1" },
+      leaders: { human: "h0", ai: solo ? null : "a1" },
       leaderChosen: !1,
       localLeaderChosen: gameMode !== "local",
       rescueQueue: [],
@@ -417,7 +450,8 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       last: "",
       turn: "human",
       nextId: 6,
-      decks: {}
+      decks: {},
+      nightRemaining: []
     };
   }
 
@@ -475,10 +509,10 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
             return ctx.message("⚠ Seleccioná a un superviviente que necesite tratamiento."), !1;
           if (d.effect === "frost" && !p.frost)
             return ctx.message("⚠ Este tratamiento solo elimina congelaciones."), !1;
-          let qty = d.amount + (p.skill === "paramedic" ? 1 : 0), healed = 0;
+          let beforeFrost = p.frost, qty = d.amount + (p.skill === "paramedic" ? 1 : 0), healed = 0;
           for (let j = 0; j < qty; j++)
             d.effect === "frost" && p.frost ? (p.frost--, healed++) : d.effect === "heal" && (p.wounds ? (p.wounds--, healed++) : p.frost && (p.frost--, healed++));
-          if (!healed) return !1;
+          if (p.frost < beforeFrost && delete p.frostFresh, !healed) return !1;
           ctx.message("✚ " + p.name + " recibió " + d.name + " y curó " + healed + " daño(s).");
         } else if (d.effect === "food")
           ctx.game.food += d.amount, ctx.message("🥫 " + d.name + ": +" + d.amount + " comida(s) a la reserva.");
@@ -675,7 +709,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
   };
 
   // src/domain/reference-rules.mjs
-  function createRules(ctx, { Math = globalThis.Math, setTimeout = globalThis.setTimeout } = {}) {
+  function createRules(ctx, { Math: Math2 = globalThis.Math, setTimeout = globalThis.setTimeout } = {}) {
     function equipmentOf(p) {
       return p.equipment || [];
     }
@@ -693,13 +727,15 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
     }
     let kind = (x) => ctx.catalog.resolve(x)?.kind || "", ownerHand = (g) => g.crossOwner === "ai" ? g.botItems : g.items, crossActor = (g = ctx.game) => ctx.all(g).find((p) => p.id === g.crossActorId) || ctx.groupLeader(g.crossOwner, g) || ctx.alive(g)[0] || { loc: 0 }, ownerOf = (p) => p.id[0] === "a" ? "ai" : "human", accessible = (loc, g = ctx.game) => ctx.alive(g).filter((p) => p.loc === loc).length + (loc === 0 ? g.helpless : 0) < ctx.capacity[loc], openAccess = (i, g = ctx.game) => g.zones[i].z + g.zones[i].b < ctx.zcap[i], hasAnyAccess = () => ctx.game.zones.some((z, i) => ctx.openAccess(i)), itemTitle = (it) => ctx.catalog.label(it);
     function effectiveAttack(p) {
-      return Math.max(1, p.attack - (p.skill === "fighter" ? 1 : 0) - (ctx.itemEngine.has(p, "rifle") || ctx.itemEngine.has(p, "hatchet") ? 1 : 0));
+      return Math2.max(1, p.attack - (p.skill === "fighter" ? 1 : 0) - (ctx.itemEngine.has(p, "rifle") || ctx.itemEngine.has(p, "hatchet") ? 1 : 0));
     }
     function effectiveSearch(p) {
-      return Math.max(1, p.search - (p.skill === "librarian" && p.loc === 6 ? 1 : 0) - (ctx.itemEngine.has(p, "crowbar") ? 1 : 0));
+      return Math2.max(1, p.search - (p.skill === "librarian" && p.loc === 6 ? 1 : 0) - (ctx.itemEngine.has(p, "crowbar") ? 1 : 0));
     }
     function gameOutcome(g) {
-      return g.morale <= 0 ? "morale" : g.noReplacement || (!g.humans.some((p) => !p.dead) || !g.bots.some((p) => !p.dead)) && !g.biteResolving ? "survivors" : g.samples >= g.goal ? "victory" : null;
+      if (g.morale <= 0) return "morale";
+      let lost = soloMode(g.mode) ? !g.humans.some((p) => !p.dead) : !g.humans.some((p) => !p.dead) || !g.bots.some((p) => !p.dead);
+      return g.noReplacement || lost && !g.biteResolving ? "survivors" : g.samples >= g.goal ? "victory" : null;
     }
     function canReceiveTransfer(from, to, it) {
       return !!from && !!to && !!it && !to.dead && from.id !== to.id && from.loc === to.loc && (ctx.game.mode === "local" || ctx.ownerOf(from) === ctx.ownerOf(to)) && !ctx.equipmentOf(to).some((eq) => ctx.kind(eq) === ctx.kind(it));
@@ -719,7 +755,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
     }
     function feedingNeed(g) {
       let home = ctx.alive(g).filter((p) => p.loc === 0);
-      return Math.max(0, Math.ceil((home.length + g.helpless) / 2) - (home.some((p) => p.skill === "cook") ? 1 : 0));
+      return Math2.max(0, Math2.ceil((home.length + g.helpless) / 2) - (home.some((p) => p.skill === "cook") ? 1 : 0));
     }
     function crossResourceValue(g) {
       return [...g.items, ...g.botItems, ...ctx.alive(g).flatMap(ctx.equipmentOf)].reduce((n, it) => {
@@ -910,7 +946,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
   }
 
   // src/application/reference-turns.mjs
-  function createTurns(ctx, { Math = globalThis.Math, setTimeout = globalThis.setTimeout } = {}) {
+  function createTurns(ctx, { Math: Math2 = globalThis.Math, setTimeout = globalThis.setTimeout } = {}) {
     function newRound() {
       if (ctx.game.ended) return;
       ctx.game.turn = "human", ctx.selected = ctx.selectionBySide.human, ctx.game.crossPending = !1, ctx.game.crossResolved = !1, ctx.game.noReplacement = !1, ctx.reviewLeader("human"), ctx.reviewLeader("ai"), ctx.all().forEach((p) => {
@@ -918,11 +954,14 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         for (let eq of ctx.equipmentOf(p)) eq && typeof eq == "object" && (eq.usedRound = 0);
       });
       let types = ["comida", "medicina", "herramienta", "combustible"], crisisType = types[ctx.random(types.length)];
-      ctx.game.crisis = { type: crisisType, need: 2, given: 0, contributions: [], fail: ["moral", "zombie", "food", "wound"][ctx.random(4)] }, ctx.game.dice = Array.from({ length: 1 + ctx.game.humans.filter((p) => !p.dead).length }, ctx.die), ctx.game.botDice = Array.from({ length: 1 + ctx.game.bots.filter((p) => !p.dead).length }, ctx.die), ctx.picked = 0, ctx.game.crossAttempts = 0, ctx.crossDraw("human"), ctx.message("⚠ Crisis: aportar 2 " + crisisType + "."), ctx.applyFrost("human"), ctx.replaceLastSurvivors(), ctx.verify(), ctx.game.ended || ctx.crossTrigger("round", null), ctx.paint();
+      ctx.game.crisis = { type: crisisType, need: 2, given: 0, contributions: [], fail: ["moral", "zombie", "food", "wound"][ctx.random(4)] }, ctx.game.dice = Array.from({ length: 1 + ctx.game.humans.filter((p) => !p.dead).length }, ctx.die), ctx.game.botDice = ctx.controls.solo ? [] : Array.from({ length: 1 + ctx.game.bots.filter((p) => !p.dead).length }, ctx.die), ctx.picked = 0, ctx.game.crossAttempts = 0, ctx.crossDraw("human"), ctx.message("⚠ Crisis: aportar 2 " + crisisType + "."), ctx.applyFrost("human"), ctx.replaceLastSurvivors(), ctx.verify(), ctx.game.ended || ctx.crossTrigger("round", null), ctx.paint();
     }
     function applyFrost(side) {
       let group = side === "human" ? ctx.game.humans : ctx.game.bots;
-      for (let p of [...group]) !p.dead && p.frost > 0 && (p.wounds++, ctx.message("❄ " + p.name + " recibe una herida por congelación (inicio de turno)."), p.wounds + p.frost >= 3 && ctx.kill(p, "heridas por congelación"));
+      for (let p of [...group]) {
+        let fresh = ctx.game.testRules?.laNoche && p.frostFresh;
+        p.frostFresh && delete p.frostFresh, !p.dead && p.frost > 0 && !fresh && (p.wounds++, ctx.message("❄ " + p.name + " recibe una herida por congelación (inicio de turno)."), p.wounds + p.frost >= 3 && ctx.kill(p, "heridas por congelación"));
+      }
     }
     async function finishTurn() {
       let turnGame = ctx.game;
@@ -939,7 +978,17 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
           ctx.show("crossroads");
           return;
         }
-        if (ctx.hide(), ctx.game.mode === "local") {
+        if (ctx.hide(), ctx.controls.solo) {
+          ctx.aiRunning = !0;
+          try {
+            if (ctx.message("⌂ Resolviendo fase de colonia."), ctx.colony(), (ctx.nightUnfinished() || ctx.pendingBite) && await ctx.finishNight(), ctx.game !== turnGame || (await ctx.deathDirector.wait(), ctx.game !== turnGame)) return;
+            ctx.game.ended || (ctx.game.round++, ctx.game.round > ctx.game.max ? (ctx.game.ended = !0, ctx.game.turn = "end", ctx.cancelPendingDecisions(), ctx.message("☠ Derrota: se agotaron las rondas.")) : ctx.newRound());
+          } finally {
+            ctx.game === turnGame && (ctx.aiRunning = !1, ctx.paint());
+          }
+          return;
+        }
+        if (ctx.game.mode === "local") {
           if (ctx.game.turn === "human") {
             ctx.selectionBySide.human = ctx.selected, ctx.game.turn = "ai", ctx.selected = ctx.selectionBySide.ai, ctx.picked = 0, ctx.target = ctx.person()?.loc ?? 0, ctx.applyFrost("ai"), ctx.replaceLastSurvivors(), ctx.verify(), ctx.game.ended || (ctx.crossDraw("ai"), ctx.crossTrigger("round", null), ctx.showPass("ai")), ctx.paint();
             return;
@@ -947,7 +996,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
           if (ctx.game.turn === "ai") {
             ctx.selectionBySide.ai = ctx.selected, ctx.aiRunning = !0;
             try {
-              if (ctx.message("⌂ Ambos jugadores terminaron. Resolviendo fase de colonia."), ctx.colony(), await ctx.deathDirector.wait(), ctx.game !== turnGame) return;
+              if (ctx.message("⌂ Ambos jugadores terminaron. Resolviendo fase de colonia."), ctx.colony(), (ctx.nightUnfinished() || ctx.pendingBite) && await ctx.finishNight(), ctx.game !== turnGame || (await ctx.deathDirector.wait(), ctx.game !== turnGame)) return;
               ctx.game.ended || (ctx.game.round++, ctx.game.round > ctx.game.max ? (ctx.game.ended = !0, ctx.game.turn = "end", ctx.cancelPendingDecisions(), ctx.message("☠ Derrota: se agotaron las rondas.")) : ctx.newRound());
             } finally {
               ctx.game === turnGame && (ctx.aiRunning = !1, ctx.game.ended || ctx.showPass("human"), ctx.paint());
@@ -957,7 +1006,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         }
         ctx.aiRunning = !0, ctx.skipAI = !1, ctx.game.turn = "ai", ctx.paint();
         try {
-          if (await ctx.botTurn(), ctx.game !== turnGame || ctx.game.ended || !ctx.game.ended && (ctx.message("⌂ Resolviendo fase de colonia."), await ctx.pause(), ctx.game !== turnGame || ctx.game.ended || (ctx.colony(), await ctx.pause(), ctx.game !== turnGame || ctx.game.ended)))
+          if (await ctx.botTurn(), ctx.game !== turnGame || ctx.game.ended || !ctx.game.ended && (ctx.message("⌂ Resolviendo fase de colonia."), await ctx.pause(), ctx.game !== turnGame || ctx.game.ended || (ctx.colony(), (ctx.nightUnfinished() || ctx.pendingBite) && await ctx.finishNight(), ctx.game !== turnGame || ctx.game.ended) || (await ctx.pause(), ctx.game !== turnGame || ctx.game.ended)))
             return;
           ctx.game.ended || (ctx.game.round++, ctx.game.round > ctx.game.max ? (ctx.game.ended = !0, ctx.game.turn = "end", ctx.cancelPendingDecisions(), ctx.message("☠ Derrota: se agotaron las rondas.")) : ctx.newRound());
         } finally {
@@ -987,10 +1036,75 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
     };
   }
 
+  // src/domain/exposure-die.mjs
+  var labels = { none: "Sin efecto", wound: "Herida", frost: "Congelación", bite: "Mordedura" };
+  function createExposureFaces() {
+    return Object.freeze(["bite", "frost", "frost", "wound", "wound", "wound", "none", "none", "none", "none", "none", "none"].map((outcome, index) => Object.freeze({ sides: 12, face: index + 1, outcome, label: labels[outcome] })));
+  }
+  var EXPOSURE_FACES = /* @__PURE__ */ createExposureFaces();
+  function rollExposureDie(random = globalThis.Math.random) {
+    let sample = random();
+    if (!Number.isFinite(sample) || sample < 0 || sample >= 1) throw RangeError("La tirada requiere azar en [0,1).");
+    return Object.freeze({ ...EXPOSURE_FACES[globalThis.Math.floor(sample * EXPOSURE_FACES.length)], faces: Object.freeze(EXPOSURE_FACES.map((f) => f.outcome)) });
+  }
+
+  // src/domain/map-exposure.mjs
+  function resolveMapExposure(ctx, p, reason) {
+    if (!p || p.dead) return;
+    let before = { wounds: p.wounds, frost: p.frost }, die = rollExposureDie(() => ctx.Math.random()), result = { rolled: !0, value: die.face, die, effect: die.outcome, ability: null, wounds: 0, frost: 0, fatal: !1 };
+    if (ctx.mapPlay?.event?.("exposure", { actor: p.id, name: p.name, reason, value: die.face, die }), ctx.message("🎲 Exposición de " + p.name + " (" + reason + "): " + { none: "BLANCO", wound: "HERIDA", frost: "CONGELACIÓN", bite: "MORDEDURA" }[die.outcome] + "."), die.outcome !== "none" && p.skill === "resilient" && !p.skillUsed)
+      return p.skillUsed = !0, ctx.mapPlay?.event?.("ability", { name: p.name, skill: p.skillName, effect: "Evitó la exposición.", value: die.face, die }), ctx.message("★ " + p.name + " evitó la exposición gracias a su habilidad."), { ...result, effect: "avoided", ability: "resilient" };
+    if (die.outcome === "bite") {
+      let victims = ctx.alive().filter((x) => x.id !== p.id && x.loc === p.loc).sort((a, b) => a.influence - b.influence).map((x) => x.id);
+      ctx.game.biteResolving = !0, ctx.pendingBite = { victims, target: null }, ctx.kill(p, "mordedura"), ctx.biteNext();
+    } else (die.outcome === "frost" || die.outcome === "wound") && (die.outcome === "frost" ? (delete p.frostFresh, p.frost++) : p.wounds++, ctx.message((die.outcome === "frost" ? "❄ Congelación de " : "♥ Herida de ") + p.name + "."), p.frost + p.wounds >= 3 && ctx.kill(p, "tres daños acumulados"));
+    return { ...result, wounds: p.wounds - before.wounds, frost: p.frost - before.frost, fatal: !!p.dead };
+  }
+
+  // src/domain/reference-night.mjs
+  function nightWatcher(group, loc) {
+    let present = group.filter((p) => !p.dead && p.loc === loc);
+    if (!present.length) return null;
+    let lowest = Math.min(...present.map((p) => p.influence));
+    return present.find((p) => p.influence === lowest) || null;
+  }
+  function nightWatch(game) {
+    return game ? [...new Set(game.humans.filter((p) => !p.dead && p.loc !== 0).map((p) => p.loc))].sort((a, b) => a - b).map((loc) => ({ loc, watcher: nightWatcher(game.humans, loc) })).filter((entry) => entry.watcher) : [];
+  }
+  var sleepingOutside = (game) => game ? game.humans.filter((p) => !p.dead && p.loc !== 0) : [], nightEnabled = (game) => !!game?.testRules?.laNoche && nightAvailable(game.mode), nightUnfinished = (game) => !!game && Array.isArray(game.nightRemaining) && game.nightRemaining.length > 0;
+  function beginNight(ctx) {
+    let game = ctx.game;
+    if (!game || game.ended || !nightEnabled(game)) return [];
+    let watch = nightWatch(game);
+    return game.nightRemaining = watch.map((entry) => entry.loc), watch.length ? (ctx.message("☾ La noche: " + watch.length + " localidad(es) con gente afuera."), continueNight(ctx)) : [];
+  }
+  function continueNight(ctx) {
+    let game = ctx.game, rolls = [];
+    if (!game) return rolls;
+    for (; nightUnfinished(game); ) {
+      if (game.ended) {
+        game.nightRemaining = [];
+        break;
+      }
+      if (ctx.pendingBite) break;
+      let loc = game.nightRemaining.shift(), watcher = nightWatcher(game.humans, loc);
+      if (!watcher) continue;
+      ctx.mapCycle?.before("night", { actorId: watcher.id, name: watcher.name, location: loc });
+      let priorFrost = watcher.frost, result = resolveMapExposure(ctx, watcher, "la noche en " + ctx.places[loc]);
+      if (game.testRules?.laNoche && !watcher.dead && priorFrost === 0 && result?.effect === "frost") {
+        watcher.frostFresh = !0;
+        let summary = "❄ " + watcher.name + " se congeló en la noche: el frío le pasará factura la ronda que viene.";
+        ctx.mapPlay?.event("frost-grace", { actor: watcher.id, name: watcher.name, summary }), ctx.message(summary);
+      }
+      ctx.verify(), ctx.mapCycle?.annotate({ exposure: result }), ctx.mapCycle?.after(), rolls.push({ loc, id: watcher.id, effect: result?.effect ?? null });
+    }
+    return rolls;
+  }
+
   // src/application/reference-engine.mjs
   var noop = () => {
   };
-  function createEngine({ Math = globalThis.Math, queueMicrotask = globalThis.queueMicrotask || ((f) => Promise.resolve().then(f)), setTimeout = globalThis.setTimeout, stateFactory = createReferenceState, rulesFactory = createRules, turnsFactory = createTurns, effects = {}, automation = null } = {}) {
+  function createEngine({ Math: Math2 = globalThis.Math, queueMicrotask = globalThis.queueMicrotask || ((f) => Promise.resolve().then(f)), setTimeout = globalThis.setTimeout, stateFactory = createReferenceState, rulesFactory = createRules, turnsFactory = createTurns, effects = {}, automation = null } = {}) {
     let view = new Proxy(effects, { get: (target2, key) => target2[key] || noop }), hasAutomation = !!automation, agent = automation || { botTurn: () => Promise.resolve(), botContributeTools: noop }, toast = (...args) => view.toast(...args), drainToasts = (...args) => view.drainToasts(...args), equipIcons = (...args) => view.equipIcons(...args), showStatInfo = (...args) => view.showStatInfo(...args), closeStatInfo = (...args) => view.closeStatInfo(...args), statusText = (...args) => view.statusText(...args), token = (...args) => view.token(...args), toggleFab = (...args) => view.toggleFab(...args), menuGo = (...args) => view.menuGo(...args), menuEndTurn = (...args) => view.menuEndTurn(...args), toggleEquipDescription = (...args) => view.toggleEquipDescription(...args), handoverDialog = (...args) => view.handoverDialog(...args), activeDialog = (...args) => view.activeDialog(...args), dialogButtons = (...args) => view.dialogButtons(...args), focusHandover = (...args) => view.focusHandover(...args), syncHandoverAccessibility = (...args) => view.syncHandoverAccessibility(...args), returnFocusAfterHandover = (...args) => view.returnFocusAfterHandover(...args), renderModal = (...args) => view.renderModal(...args), paintDice = (...args) => view.paintDice(...args), renderSite = (...args) => view.renderSite(...args), draw = (...args) => view.draw(...args), equipmentOf = (...args) => rules.equipmentOf(...args), ownerGroup = (...args) => rules.ownerGroup(...args), groupLeader = (...args) => rules.groupLeader(...args), isLeader = (...args) => rules.isLeader(...args), canPickStartingLeader = (...args) => rules.canPickStartingLeader(...args), kind = (...args) => rules.kind(...args), ownerHand = (...args) => rules.ownerHand(...args), crossActor = (...args) => rules.crossActor(...args), ownerOf = (...args) => rules.ownerOf(...args), accessible = (...args) => rules.accessible(...args), openAccess = (...args) => rules.openAccess(...args), hasAnyAccess = (...args) => rules.hasAnyAccess(...args), itemTitle = (...args) => rules.itemTitle(...args), effectiveAttack = (...args) => rules.effectiveAttack(...args), effectiveSearch = (...args) => rules.effectiveSearch(...args), gameOutcome = (...args) => rules.gameOutcome(...args), canReceiveTransfer = (...args) => rules.canReceiveTransfer(...args), crossHandIndex = (...args) => rules.crossHandIndex(...args), ownerGroupHand = (...args) => rules.ownerGroupHand(...args), colonyRoom = (...args) => rules.colonyRoom(...args), crossOptionAllowed = (...args) => rules.crossOptionAllowed(...args), feedingNeed = (...args) => rules.feedingNeed(...args), crossResourceValue = (...args) => rules.crossResourceValue(...args), crossRank = (...args) => rules.crossRank(...args), compareCrossRanks = (...args) => rules.compareCrossRanks(...args), evaluateCrossOptions = (...args) => rules.evaluateCrossOptions(...args), chooseCrossOption = (...args) => rules.chooseCrossOption(...args), newRound = (...args) => turns.newRound(...args), applyFrost = (...args) => turns.applyFrost(...args), finishTurn = (...args) => turns.finishTurn(...args), botContributeTools = (...args) => agent.botContributeTools(...args), botTurn = (...args) => agent.botTurn(...args), c = {
       get crossroadsView() {
         return crossroadsView;
@@ -1011,7 +1125,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         return (fn) => queueMicrotask(fn);
       },
       get Math() {
-        return Math;
+        return Math2;
       },
       get toastQueue() {
         return view.toastQueue;
@@ -1111,6 +1225,36 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       },
       set gameMode(value) {
         gameMode = value;
+      },
+      get testRules() {
+        return testRules;
+      },
+      get setTestRules() {
+        return setTestRules;
+      },
+      get nightEnabled() {
+        return () => nightEnabled(game);
+      },
+      get nightWatch() {
+        return () => nightWatch(game);
+      },
+      get sleepingOutside() {
+        return () => sleepingOutside(game);
+      },
+      get nightUnfinished() {
+        return () => nightUnfinished(game);
+      },
+      get continueNight() {
+        return () => continueNight(c);
+      },
+      get finishNight() {
+        return finishNight;
+      },
+      get returnHome() {
+        return returnHome;
+      },
+      set returnHome(value) {
+        returnHome = value;
       },
       get passScreenActive() {
         return passScreenActive;
@@ -2015,7 +2159,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       get catalog() {
         return catalog;
       }
-    }, rules = rulesFactory(c), turns = turnsFactory(c, { Math, setTimeout }), catalog = new ItemCatalog((cards) => mix(cards)), { places, icons, em, capacity, zcap, objectives, roster } = createReferenceData();
+    }, rules = rulesFactory(c), turns = turnsFactory(c, { Math: Math2, setTimeout }), catalog = new ItemCatalog((cards) => mix(cards)), { places, icons, em, capacity, zcap, objectives, roster } = createReferenceData();
     function special() {
       let p = person();
       if (!(!p || p.dead || !playable() || game.ended)) {
@@ -2037,15 +2181,22 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       let p = all().find((x) => x.id === pendingHeal.actor), t = all().find((x) => x.id === id);
       if (!p || !t || p.dead || t.dead || p.skillUsed || p.loc !== t.loc || !canResolve("healTarget")) return;
       let key = p.skill === "medic" ? "wounds" : "frost";
-      t[key] && (t[key]--, p.skillUsed = !0, pendingHeal = null, message("✚ " + p.name + " atendió a " + t.name + " con " + p.skillName + "."), hide(), paint());
+      t[key] && (t[key]--, key === "frost" && delete t.frostFresh, p.skillUsed = !0, pendingHeal = null, message("✚ " + p.name + " atendió a " + t.name + " con " + p.skillName + "."), hide(), paint());
     }
-    let random = (n) => Math.floor(Math.random() * n), die = () => random(6) + 1, game, selected = 0, target = 0, picked = 0, opened = "", profileId = "", skipAI = !1, aiRunning = !1, pendingHeal = null, pendingLoot = null, gameMode = "ai", passScreenActive = !1, selectionBySide = { human: 0, ai: 0 };
+    let random = (n) => Math2.floor(Math2.random() * n), die = () => random(6) + 1, game, selected = 0, target = 0, picked = 0, opened = "", profileId = "", skipAI = !1, aiRunning = !1, pendingHeal = null, pendingLoot = null, gameMode = "ai", passScreenActive = !1, testRules = TEST_RULE_DEFAULTS;
+    function setTestRules(patch) {
+      return testRules = normalizeTestRules(patch, testRules), game && !game.ended && message("⚙ Reglas de prueba: se aplican a la próxima partida."), paint(), testRules;
+    }
+    let selectionBySide = { human: 0, ai: 0 };
     class TurnController {
       get side() {
         return game?.turn === "ai" ? "ai" : "human";
       }
       get local() {
         return game?.mode === "local";
+      }
+      get solo() {
+        return soloMode(game?.mode);
       }
       get interactive() {
         return !!game && !game.ended && !passScreenActive && !aiRunning && (game.turn === "human" || this.local && game.turn === "ai");
@@ -2059,8 +2210,9 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       dice(side = this.side) {
         return side === "ai" ? game.botDice : game.dice;
       }
+      // «Un grupo» no menciona a la IA ni a un segundo jugador.
       display(side = this.side) {
-        return side === "human" ? "Jugador 1" : this.local ? "Jugador 2" : "IA";
+        return this.solo ? "Tu grupo" : side === "human" ? "Jugador 1" : this.local ? "Jugador 2" : "IA";
       }
     }
     let controls = new TurnController();
@@ -2081,7 +2233,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       { title: "Golpes en la puerta", when: "move", story: "Una familia exhausta sigue a tu grupo hasta el portón. Piden refugio, pero las reservas ya escasean.", choices: [["Darles refugio", "Llegan 2 indefensos; +1 moral.", (g) => {
         g.helpless += 2, g.morale++;
       }, (g) => colonyRoom(g, 2)], ["Compartir provisiones y despedirlos", "-2 comida; +1 moral.", (g) => {
-        g.food = Math.max(0, g.food - 2), g.morale++;
+        g.food = Math2.max(0, g.food - 2), g.morale++;
       }, (g) => g.food >= 2]] },
       { title: "La radio encendida", when: "search", story: "Entre interferencias, una voz ofrece coordenadas de un depósito de suministros. También podrían ser saqueadores.", choices: [["Confiar en la señal", "+2 comida, pero llegan 2 zombis al exterior.", (g, env) => {
         g.food += 2, addZombie(1, env), addZombie(1, env);
@@ -2091,18 +2243,18 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       { title: "Una mano entre los escombros", when: "search", story: "Encontrás a una persona atrapada. Rescatarla demora y puede atraer a los muertos.", choices: [["Intentar el rescate", "Reclutás un superviviente, si hay espacio; +1 zombi.", (g, env) => {
         recruit(g.crossOwner, !1, env), addZombie(2, env);
       }], ["Buscar provisiones primero", "+2 comida, -1 moral.", (g) => {
-        g.food += 2, g.morale = Math.max(0, g.morale - 1);
+        g.food += 2, g.morale = Math2.max(0, g.morale - 1);
       }]] },
       { title: "El último cargador", when: "attack", story: "Una persona te pide munición para defender a su hermano. Es lo último que le queda a la colonia.", choices: [["Entregar las municiones", "-1 comida, -1 zombi en la colonia.", (g) => {
-        g.food = Math.max(0, g.food - 1), g.zones[0].z = Math.max(0, g.zones[0].z - 1);
+        g.food = Math2.max(0, g.food - 1), g.zones[0].z = Math2.max(0, g.zones[0].z - 1);
       }], ["Reservarlas para el grupo", "+1 barricada en la colonia, si hay lugar.", (g) => {
         g.zones[0].z + g.zones[0].b < zcap[0] && g.zones[0].b++;
       }]] },
       { title: "Fiebre en el refugio", when: "round", story: "Un niño del refugio tiembla de fiebre. La medicina es escasa y otros también la necesitan.", choices: [["Usar el botiquín", "Consumís 1 medicina, si hay; +1 moral.", (g) => {
         let i = crossHandIndex(g, "medicina");
-        i >= 0 ? (ownerHand(g).splice(i, 1), g.morale++) : g.morale = Math.max(0, g.morale - 1);
+        i >= 0 ? (ownerHand(g).splice(i, 1), g.morale++) : g.morale = Math2.max(0, g.morale - 1);
       }, (g, side) => ownerGroupHand(g, side).some((it) => kind(it) === "medicina")], ["Aislar al enfermo", "Sin costo de objetos; -1 moral.", (g) => {
-        g.morale = Math.max(0, g.morale - 1);
+        g.morale = Math2.max(0, g.morale - 1);
       }]] },
       { title: "Huellas sobre la nieve", when: "move", story: "Unas pisadas recientes se alejan del camino. Podrían conducir a un refugio seguro.", choices: [["Seguir las huellas", "+1 herramienta y +1 zombi en la localidad.", (g, env) => {
         ownerHand(g).push("herramienta"), addZombie(crossActor(g).loc, env);
@@ -2121,19 +2273,19 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         g.food++;
       }]] },
       { title: "El perro del estacionamiento", when: "move", story: "Un perro hambriento se acerca al grupo. Sus ladridos podrían alertar a los zombis.", choices: [["Alimentarlo", "-1 comida, +1 moral.", (g) => {
-        g.food = Math.max(0, g.food - 1), g.morale++;
+        g.food = Math2.max(0, g.food - 1), g.morale++;
       }, (g) => g.food >= 1], ["Alejarlo", "+1 zombi en la ubicación del superviviente.", (g, env) => {
         addZombie(crossActor(g).loc, env);
       }]] },
       { title: "Una discusión por las raciones", when: "round", story: "Dos habitantes discuten por el reparto. La tensión amenaza con dividir al refugio.", choices: [["Repartir comida extra", "-2 comida, +2 moral.", (g) => {
-        g.food = Math.max(0, g.food - 2), g.morale += 2;
+        g.food = Math2.max(0, g.food - 2), g.morale += 2;
       }, (g) => g.food >= 2], ["Mantener las raciones", "-1 moral.", (g) => {
-        g.morale = Math.max(0, g.morale - 1);
+        g.morale = Math2.max(0, g.morale - 1);
       }]] },
       { title: "El autobús varado", when: "move", story: "Hay personas atrapadas en un autobús. Sacarlas implica hacer ruido y gastar tiempo.", choices: [["Evacuarlas", "+3 indefensos, +1 moral, +2 zombis en la colonia.", (g, env) => {
         g.helpless += 3, g.morale++, addZombie(0, env), addZombie(0, env);
       }, (g) => colonyRoom(g, 3)], ["No intervenir", "-1 moral.", (g) => {
-        g.morale = Math.max(0, g.morale - 1);
+        g.morale = Math2.max(0, g.morale - 1);
       }]] },
       { title: "La guardia nocturna", when: "round", story: "Un centinela descubre una abertura en el perímetro. Repararla implica gastar herramientas o arriesgar la seguridad.", choices: [["Reparar el muro", "Consumís una herramienta; añadís dos barricadas si hay accesos.", (g, env) => {
         let k = crossHandIndex(g, "herramienta");
@@ -2141,9 +2293,9 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
           ownerHand(g).splice(k, 1);
           for (let i = 0; i < 2; i++) g.zones[0].z + g.zones[0].b < zcap[0] && g.zones[0].b++;
         } else
-          g.morale = Math.max(0, g.morale - 1), ruleMessage(env, "Sin herramientas: -1 moral.");
+          g.morale = Math2.max(0, g.morale - 1), ruleMessage(env, "Sin herramientas: -1 moral.");
       }, (g, side) => ownerGroupHand(g, side).some((it) => kind(it) === "herramienta")], ["Mantener una guardia improvisada", "Un zombi menos en la colonia, pero +1 residuo.", (g) => {
-        g.zones[0].z = Math.max(0, g.zones[0].z - 1), g.waste++;
+        g.zones[0].z = Math2.max(0, g.zones[0].z - 1), g.waste++;
       }]] },
       { title: "La farmacia saqueada", when: "search", story: "Encontrás un armario con medicinas y una nota que advierte que otros refugiados volverán por ellas.", choices: [["Llevar los medicamentos", "Obtenés dos medicinas; +1 zombi en tu localidad.", (g, env) => {
         ownerHand(g).push("medicina", "medicina"), addZombie(crossActor(g).loc, env);
@@ -2156,7 +2308,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         g.zones[0].z + g.zones[0].b < zcap[0] && g.zones[0].b++;
       }]] },
       { title: "Disparos a lo lejos", when: "attack", story: "Una patrulla desconocida dispara contra los muertos. Sus miembros piden suministros a cambio de cubrir la retirada.", choices: [["Compartir una ración", "Gastás una comida y eliminás hasta dos zombis de tu localidad.", (g, env) => {
-        g.food > 0 ? (g.food--, g.zones[crossActor(g).loc].z = Math.max(0, g.zones[crossActor(g).loc].z - 2)) : ruleMessage(env, "No había comida para negociar.");
+        g.food > 0 ? (g.food--, g.zones[crossActor(g).loc].z = Math2.max(0, g.zones[crossActor(g).loc].z - 2)) : ruleMessage(env, "No había comida para negociar.");
       }, (g) => g.food >= 1], ["Rechazar el trato", "La tensión atrae un zombi a tu localidad.", (g, env) => {
         addZombie(crossActor(g).loc, env);
       }]] },
@@ -2173,7 +2325,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       }]] },
       { title: "El aviso del centinela", when: "attack", require: (p) => !!p && p.influence >= 65, story: "Un superviviente respetado ve una emboscada desde el segundo piso. Su aviso llega justo a tiempo.", choices: [["Reagrupar a los defensores", "Retirá un zombi de esta localidad si lo hay.", (g) => {
         let z = g.zones[crossActor(g).loc];
-        z.z = Math.max(0, z.z - 1);
+        z.z = Math2.max(0, z.z - 1);
       }], ["Asegurar la salida", "Añadí una barricada aquí si hay lugar.", (g) => {
         let l = crossActor(g).loc;
         openAccess(l, g) && g.zones[l].b++;
@@ -2194,7 +2346,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         for (let i = 0; i < 2 && openAccess(0, g); i++) g.zones[0].b++;
       }]] },
       { title: "La ruta de los veteranos", when: "search", require: (p) => !!p && !isLeader(p) && p.influence <= 55, story: "Un explorador poco conocido descubre un camino discreto hacia un viejo depósito. Nadie le cree todavía.", choices: [["Confiar en su hallazgo", "Obtené un combustible, pero acumulá un ruido en esta localidad.", (g) => {
-        ownerHand(g).push("combustible"), g.zones[crossActor(g).loc].noise = Math.min(4, g.zones[crossActor(g).loc].noise + 1);
+        ownerHand(g).push("combustible"), g.zones[crossActor(g).loc].noise = Math2.min(4, g.zones[crossActor(g).loc].noise + 1);
       }], ["Evitar riesgos", "Ganás una herramienta.", (g) => {
         ownerHand(g).push("herramienta");
       }]] },
@@ -2204,14 +2356,14 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         ownerHand(g).push(catalog.create("notes"));
       }]] },
       { title: "La caja de municiones", when: "attack", require: (p) => !!p && p.loc === 3, story: "Un depósito olvidado abre nuevas opciones para defenderse. Una escopeta espera entre los escombros.", choices: [["Tomar el arma", "Obtenés una escopeta y 1 ruido en la comisaría.", (g) => {
-        ownerHand(g).push(catalog.create("shotgun")), g.zones[3].noise = Math.min(4, g.zones[3].noise + 1);
+        ownerHand(g).push(catalog.create("shotgun")), g.zones[3].noise = Math2.min(4, g.zones[3].noise + 1);
       }], ["Cerrar la armería", "Construís una barricada si queda espacio.", (g) => {
         openAccess(3, g) && g.zones[3].b++;
       }]] },
       { title: "Páginas de otro mundo", when: "search", require: (p) => !!p && p.loc === 6, story: "En una biblioteca abandonada hay instrucciones para fabricar defensas, pero el papel sirve también para calentar el refugio.", choices: [["Guardar el manual", "Obtenés un manual de fortificación.", (g) => {
         ownerHand(g).push(catalog.create("manual"));
       }], ["Usar el papel como abrigo", "Quitás 2 residuos de la colonia.", (g) => {
-        g.waste = Math.max(0, g.waste - 2);
+        g.waste = Math2.max(0, g.waste - 2);
       }]] },
       { title: "El último botiquín", when: "search", require: (p) => !!p && p.loc === 2, story: "Hay un botiquín intacto en un armario, y una familia enferma en la sala contigua.", choices: [["Conservar el botiquín", "Obtenés un botiquín completo.", (g) => {
         ownerHand(g).push(catalog.create("medkit"));
@@ -2243,7 +2395,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       pendingLeader = pendingLeaderSides.length > 0, pendingLeaderSide = game?.mode === "local" && pendingLeaderSides.includes(controls.side) ? controls.side : pendingLeaderSides[0] || "human";
     }
     function requestLeader(side) {
-      pendingLeaderSides.includes(side) || (pendingLeaderSides.push(side), syncLeaderRequests(), message("♛ El líder del " + controls.display(side) + " murió: elegí a su sucesor."));
+      pendingLeaderSides.includes(side) || (pendingLeaderSides.push(side), syncLeaderRequests(), message("♛ " + (controls.solo ? "Tu líder" : "El líder del " + controls.display(side)) + " murió: elegí a su sucesor."));
     }
     function clearLeaderRequest(side) {
       pendingLeaderSides = pendingLeaderSides.filter((s) => s !== side), syncLeaderRequests(), pendingLeader || leaderWaiters.splice(0).forEach((done) => done());
@@ -2257,7 +2409,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
     function chooseLeader(id) {
       if (pendingBite || deathWaiting()) return;
       let succession = leaderChoiceReady(), side = succession ? pendingLeaderSide : controls.side, group = ownerGroup(side).filter((p2) => !p2.dead), p = group.find((x) => x.id === id);
-      !p || !succession && !canPickStartingLeader() || (game.leaders[side] = p.id, side === "human" ? game.leaderChosen = !0 : game.localLeaderChosen = !0, succession && clearLeaderRequest(side), message("♛ " + p.name + " asume el liderazgo del " + controls.display(side) + " (influencia " + p.influence + ")."), opened = "", view.closeBackdrop(), paint());
+      !p || !succession && !canPickStartingLeader() || (game.leaders[side] = p.id, side === "human" ? game.leaderChosen = !0 : game.localLeaderChosen = !0, succession && clearLeaderRequest(side), message("♛ " + p.name + " asume el liderazgo " + (controls.solo ? "de tu grupo" : "del " + controls.display(side)) + " (influencia " + p.influence + ")."), opened = "", view.closeBackdrop(), paint());
     }
     function reviewLeader(side, env = null) {
       let g = env ? env.game : game, group = ownerGroup(side, g).filter((p) => !p.dead);
@@ -2322,7 +2474,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       let g = env ? env.game : game;
       if (!(!g || g.ended || g.biteResolving || g.morale <= 0))
         for (let [side, group] of [["human", g.humans], ["ai", g.bots]]) {
-          if (group.some((p) => !p.dead)) continue;
+          if (side === "ai" && soloMode(g.mode) || group.some((p) => !p.dead)) continue;
           let hand = side === "human" ? g.items : g.botItems, discarded = hand.length;
           hand.splice(0, hand.length), ruleMessage(env, "⚠ " + (side === "human" ? "Perdiste" : "La IA perdió") + " su último superviviente. Se descartaron " + discarded + " cartas de su mano."), recruit(side, !0, env) || (g.noReplacement = !0);
         }
@@ -2331,15 +2483,17 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
     function create() {
       movementGeneration++, searchOperation = null, searchSerial = 0, actionOperation = null, actionSerial = 0, view.resetToasts(), deathDirector.reset(), skipAI = !1, aiRunning = !1, selected = 0, target = 0, picked = 0, opened = "", profileId = "", pendingHeal = null, pendingLoot = null, pendingBite = null, pendingAttract = null, pendingTransfer = null, aiCrossChoice = null, settleDecisionWaiters(), resetLeaderRequests(), pendingRecruitInfo = null, selectionBySide.human = 0, selectionBySide.ai = 0, closeStatInfo();
       let objective = objectives[random(objectives.length)];
-      game = stateFactory({ gameMode, objective, places, catalog }), all().forEach(addCharacter);
+      game = stateFactory({ gameMode, objective, places, catalog, testRules }), all().forEach(addCharacter);
       for (let loc = 1; loc < places.length; loc++) game.decks[loc] = catalog.deck(loc);
-      message("Objetivo: " + objective.name + " · " + objective.description), newRound();
+      message("Objetivo: " + objective.name + " · " + objective.description);
+      let summary = describeTestRules(game.testRules || TEST_RULE_DEFAULTS);
+      summary && message("⚙ Reglas de prueba: " + summary + "."), newRound();
     }
     let DeathDirector = createDeathDirector(c), deathDirector = new DeathDirector();
     function kill(p, reason, env = null) {
       let g = env ? env.game : game;
       if (!p || p.dead) return;
-      if (p.dead = !0, env && env.deaths++, g.morale = Math.max(0, g.morale - 1), !env && ownerOf(p) === controls.side && person() === p) {
+      if (p.dead = !0, env && env.deaths++, g.morale = Math2.max(0, g.morale - 1), !env && ownerOf(p) === controls.side && person() === p) {
         let next = controls.group().findIndex((x) => !x.dead);
         next >= 0 && (selected = next, selectionBySide[controls.side] = next, target = controls.group()[next].loc);
       }
@@ -2415,7 +2569,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       if (d === 1) {
         let coLocated = alive().filter((x) => x.id !== p.id && x.loc === p.loc).sort((a, b) => a.influence - b.influence).map((x) => x.id);
         game.biteResolving = !0, pendingBite = { victims: coLocated, target: null }, kill(p, "mordedura"), biteNext();
-      } else (d === 2 || d === 3) && (d === 2 ? p.frost++ : p.wounds++, message((d === 2 ? "❄ Congelación de " : "♥ Herida de ") + p.name + "."), p.frost + p.wounds >= 3 && kill(p, "tres daños acumulados"));
+      } else (d === 2 || d === 3) && (d === 2 ? (delete p.frostFresh, p.frost++) : p.wounds++, message((d === 2 ? "❄ Congelación de " : "♥ Herida de ") + p.name + "."), p.frost + p.wounds >= 3 && kill(p, "tres daños acumulados"));
       return { rolled: !0, value: d, effect: d === 1 ? "bite" : d === 2 ? "frost" : d === 3 ? "wound" : "none", ability: null, wounds: p.wounds - before.wounds, frost: p.frost - before.frost, fatal: !!p.dead };
     }
     function drawItem(loc) {
@@ -2472,12 +2626,12 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
     function consume(min, dieIndex = picked) {
       if (game.ended || !playable() || pendingLoot || pendingBite || leaderChoiceReady() || game.crossPending) return null;
       if (!actionDice().length) return messageAndPaint("No quedan dados de acción."), null;
-      let dice = actionDice(), i = Math.max(0, Math.min(dieIndex, dice.length - 1)), value = dice[i];
-      return value < min ? (messageAndPaint("Necesitás un dado de " + min + " o más (seleccionado: " + value + ")."), null) : (dice.splice(i, 1), picked = Math.min(i, dice.length - 1), confirmStartingLeader(), message("🎲 Dado utilizado: " + value + " (mínimo " + min + ")."), value);
+      let dice = actionDice(), i = Math2.max(0, Math2.min(dieIndex, dice.length - 1)), value = dice[i];
+      return value < min ? (messageAndPaint("Necesitás un dado de " + min + " o más (seleccionado: " + value + ")."), null) : (dice.splice(i, 1), picked = Math2.min(i, dice.length - 1), confirmStartingLeader(), message("🎲 Dado utilizado: " + value + " (mínimo " + min + ")."), value);
     }
     function boostDie() {
       if (game.ended || !playable() || !actionDice().length || game.food < 1) return messageAndPaint("Necesitás comida de la reserva y un dado disponible.");
-      let i = Math.max(0, Math.min(picked, actionDice().length - 1));
+      let i = Math2.max(0, Math2.min(picked, actionDice().length - 1));
       if (actionDice()[i] >= 6) return messageAndPaint("El dado ya tiene valor 6.");
       game.food--, actionDice()[i]++, message("🥫 Gastaste una comida para mejorar el dado a " + actionDice()[i] + "."), paint();
     }
@@ -2507,6 +2661,18 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         executeMovement(p, target);
       }
     }
+    let returnHome = function() {
+      if (!playable() || game.ended || pendingBite || leaderChoiceReady()) return;
+      if (!game.testRules?.regreso) return messageAndPaint("La regla «Regresar a la colonia» está apagada.");
+      let p = person();
+      if (!p || p.dead) return;
+      if (p.loc === 0) return messageAndPaint("Este superviviente ya está en la colonia.");
+      if (!accessible(0)) return messageAndPaint("No hay espacios disponibles en la colonia.");
+      if (consume(1) === null) return;
+      searchOperation = null, actionOperation = null;
+      let from = p.loc;
+      p.loc = 0, p.moved = !0, message("⌂ " + p.name + " regresó a la colonia desde " + places[from] + " (sin exposición). Ya no puede moverse esta ronda."), verify(), paint();
+    };
     function executeMovement(p, destination2) {
       actionOperation = null;
       let from = p.loc, actorBefore = { id: p.id, name: p.name, location: p.loc, wounds: p.wounds, frost: p.frost, dead: !!p.dead };
@@ -2629,7 +2795,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
     }
     function actionOptions(actorId, kind2) {
       let p = game && all().find((x) => x.id === actorId), base = actionBlockReason(p), valid = ["attack", "barricade", "barricade-ability"].includes(kind2), dice = game ? controls.dice() : [], requirement = p && valid ? kind2 === "attack" ? effectiveAttack(p) : kind2 === "barricade-ability" ? null : 1 : null, reason = valid ? base || (kind2 === "barricade-ability" && p.skill !== "builder" ? "ability" : kind2 === "barricade-ability" && p.skillUsed ? "skill-used" : kind2 === "attack" && !game.zones[p.loc].z ? "no-target" : kind2.startsWith("barricade") && !openAccess(p.loc) ? "full" : kind2 === "barricade-ability" ? null : dice.length ? dice.some((d) => d >= requirement) ? null : "insufficient" : "no-dice") : "invalid";
-      return { gameGeneration: movementGeneration, round: game?.round, turn: game?.turn, actorId, kind: kind2, origin: p?.loc ?? null, requirement, cost: kind2 === "barricade-ability" ? 0 : 1, diceVersion: JSON.stringify(dice), allowed: !reason, reason, dice: base || !valid || kind2 === "barricade-ability" ? [] : dice.map((value, index) => ({ index, value, allowed: !reason && value >= requirement })), targets: !base && valid ? [p.loc] : [], zombies: !base && valid ? game.zones[p.loc].z : null, buildCount: !base && kind2.startsWith("barricade") ? Math.min(kind2 === "barricade-ability" ? 1 : barricadeLimit(p), zcap[p.loc] - game.zones[p.loc].z - game.zones[p.loc].b) : null };
+      return { gameGeneration: movementGeneration, round: game?.round, turn: game?.turn, actorId, kind: kind2, origin: p?.loc ?? null, requirement, cost: kind2 === "barricade-ability" ? 0 : 1, diceVersion: JSON.stringify(dice), allowed: !reason, reason, dice: base || !valid || kind2 === "barricade-ability" ? [] : dice.map((value, index) => ({ index, value, allowed: !reason && value >= requirement })), targets: !base && valid ? [p.loc] : [], zombies: !base && valid ? game.zones[p.loc].z : null, buildCount: !base && kind2.startsWith("barricade") ? Math2.min(kind2 === "barricade-ability" ? 1 : barricadeLimit(p), zcap[p.loc] - game.zones[p.loc].z - game.zones[p.loc].b) : null };
     }
     function actById(request) {
       let q = actionOptions(request?.actorId, request?.kind), reject = (reason) => ({ ok: !1, reason });
@@ -2655,7 +2821,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       let p = person();
       if (!p || p.dead || p.loc !== 0 || !game.waste) return messageAndPaint("Se necesita un superviviente en la colonia y residuos para limpiar.");
       if (consume(1) === null) return;
-      let n = Math.min(3, game.waste);
+      let n = Math2.min(3, game.waste);
       game.waste -= n, message("♻ " + p.name + " retiró " + n + " cartas del montón de residuos."), paint();
     }
     function attract() {
@@ -2737,36 +2903,50 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         return;
       }
       let victims = alive(g).filter((p) => p.loc === i).sort((a, b) => a.influence - b.influence);
-      victims.length ? kill(victims[0], "desbordamiento en " + places[i], env) : i === 0 && g.helpless > 0 ? (g.helpless--, env && env.deaths++, g.morale = Math.max(0, g.morale - 1), ruleMessage(env, "☠ Murió un superviviente indefenso durante el desbordamiento.")) : ruleMessage(env, "☠ " + places[i] + " sufrió un desbordamiento sin habitantes; no se pierde moral.");
+      victims.length ? kill(victims[0], "desbordamiento en " + places[i], env) : i === 0 && g.helpless > 0 ? (g.helpless--, env && env.deaths++, g.morale = Math2.max(0, g.morale - 1), ruleMessage(env, "☠ Murió un superviviente indefenso durante el desbordamiento.")) : ruleMessage(env, "☠ " + places[i] + " sufrió un desbordamiento sin habitantes; no se pierde moral.");
     }
     function resolveCrisis() {
-      let c2 = game.crisis, points = c2.contributions.filter((it) => it === c2.type).length;
+      let c2 = game.crisis, points = c2.contributions.filter((it) => it === c2.type).length, partial = !!game.testRules?.crisisParcial && points < c2.need && points >= partialThreshold(c2.need);
       if (points >= c2.need)
         message("✓ Crisis superada: " + points + " aportes válidos de " + c2.need + "."), points >= c2.need + 2 && (game.morale++, message("✓ Aporte excepcional: +1 moral."));
-      else if (message("⚠ Crisis fallida (" + points + "/" + c2.need + ")."), c2.fail === "food")
-        game.food = Math.max(0, game.food - 2), message("🥫 La crisis consumió hasta 2 comidas.");
+      else if (partial) {
+        message("◐ Crisis parcial (" + points + "/" + c2.need + "): la consecuencia se reduce a la mitad.");
+        let food = halvedConsequence(2), zombies = halvedConsequence(2), wounds = halvedConsequence(1), morale = halvedConsequence(1);
+        if (c2.fail === "food")
+          game.food = Math2.max(0, game.food - food), message("🥫 La crisis parcial consumió hasta " + food + " comida(s).");
+        else if (c2.fail === "zombie") {
+          for (let i = 0; i < zombies && (addZombie(0), verify(), !game.ended); i++)
+            ;
+          message("☠ La crisis parcial atrajo " + zombies + " zombi(s) a la colonia.");
+        } else if (c2.fail === "wound") {
+          let t = wounds > 0 ? alive().filter((p) => p.loc === 0).sort((a, b) => a.influence - b.influence)[0] : null;
+          t ? (t.wounds += wounds, message("♥ " + t.name + " sufrió " + wounds + " herida(s) durante la crisis parcial."), t.wounds + t.frost >= 3 && kill(t, "heridas de la crisis")) : message("♥ La crisis parcial no causó heridas.");
+        } else
+          game.morale = Math2.max(0, game.morale - morale), message("⚠ Crisis parcial: " + (morale ? "-" + morale + " moral." : "sin pérdida de moral."));
+      } else if (message("⚠ Crisis fallida (" + points + "/" + c2.need + ")."), c2.fail === "food")
+        game.food = Math2.max(0, game.food - 2), message("🥫 La crisis consumió hasta 2 comidas.");
       else if (c2.fail === "zombie")
         addZombie(0), addZombie(0), message("☠ La crisis atrajo dos zombis a la colonia.");
       else if (c2.fail === "wound") {
         let t = alive().filter((p) => p.loc === 0).sort((a, b) => a.influence - b.influence)[0];
-        t ? (t.wounds++, message("♥ " + t.name + " sufrió una herida durante la crisis."), t.wounds + t.frost >= 3 && kill(t, "heridas de la crisis")) : game.morale = Math.max(0, game.morale - 1);
+        t ? (t.wounds++, message("♥ " + t.name + " sufrió una herida durante la crisis."), t.wounds + t.frost >= 3 && kill(t, "heridas de la crisis")) : game.morale = Math2.max(0, game.morale - 1);
       } else
-        game.morale = Math.max(0, game.morale - 1), message("⚠ Crisis: -1 moral.");
+        game.morale = Math2.max(0, game.morale - 1), message("⚠ Crisis: -1 moral.");
       c2.contributions = [], c2.given = 0;
     }
     function colony() {
       if (game.ended) return;
       message("⌂ Fase de colonia: alimentación → residuos → crisis → zombis.");
       let need = feedingNeed(game);
-      if (game.food >= need ? (game.food -= need, message("🥫 Alimentación: " + need + " comida(s), quedan " + game.food + ".")) : (game.hunger++, game.morale = Math.max(0, game.morale - game.hunger), message("⚠ HAMBRE acumulada: " + game.hunger + " ficha(s), -" + game.hunger + " moral. La comida existente permanece.")), verify(), game.ended) return;
+      if (game.food >= need ? (game.food -= need, message("🥫 Alimentación: " + need + " comida(s), quedan " + game.food + ".")) : (game.hunger++, game.morale = Math2.max(0, game.morale - game.hunger), message("⚠ HAMBRE acumulada: " + game.hunger + " ficha(s), -" + game.hunger + " moral. La comida existente permanece.")), verify(), game.ended) return;
       if (game.waste >= 10) {
-        let loss = Math.floor(game.waste / 10);
-        game.morale = Math.max(0, game.morale - loss), message("♻ Basura: " + game.waste + " cartas, -" + loss + " moral.");
+        let loss = Math2.floor(game.waste / 10);
+        game.morale = Math2.max(0, game.morale - loss), message("♻ Basura: " + game.waste + " cartas, -" + loss + " moral.");
       }
       if (verify(), game.ended || (resolveCrisis(), verify(), game.ended)) return;
       let inhabitants = alive().filter((p) => p.loc === 0).length + game.helpless;
       for (let i = 0; i < places.length; i++) {
-        let arriving = i === 0 ? Math.ceil(inhabitants / 2) : alive().filter((p) => p.loc === i).length;
+        let arriving = i === 0 ? Math2.ceil(inhabitants / 2) : alive().filter((p) => p.loc === i).length;
         for (let j = 0; j < arriving; j++)
           if (addZombie(i), verify(), game.ended) return;
       }
@@ -2778,14 +2958,23 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
           if (message("🔊 " + places[i] + ": ruido " + (j + 1) + "/" + n + " → dado " + d + (d <= 3 ? ", llega un zombi." : ", sin aparición.")), d <= 3 && addZombie(i), verify(), game.ended) return;
         }
       }
-      verify();
+      verify(), !game.ended && beginNight(c);
+    }
+    async function finishNight() {
+      if (!nightUnfinished(game) && !pendingBite) return;
+      let nightGame = game;
+      for (; game === nightGame && !game.ended && nightUnfinished(game) && (await waitForBite(), !(game !== nightGame || game.ended || !nightUnfinished(game))); ) {
+        let before = game.nightRemaining.length;
+        if (continueNight(c), game.nightRemaining.length >= before && !pendingBite) break;
+      }
+      game === nightGame && await waitForBite();
     }
     function showSetup() {
       aiRunning || (hide(), view.showSetup(), passScreenActive = !0, toggleFab(!1), syncHandoverAccessibility());
     }
     function startGame(mode) {
       if (mode === "ai" && !hasAutomation) throw Error("Falta un automatismo para el modo IA");
-      mode !== "ai" && mode !== "local" || (gameMode = mode, view.hideHandover(), passScreenActive = !1, create(), paint(), syncHandoverAccessibility(), returnFocusAfterHandover());
+      ["ai", "local", "solo"].includes(mode) && (gameMode = mode, view.hideHandover(), passScreenActive = !1, create(), paint(), syncHandoverAccessibility(), returnFocusAfterHandover());
     }
     function showPass(side) {
       game.mode !== "local" || game.ended || (view.showPass(side), passScreenActive = !0, toggleFab(!1), syncHandoverAccessibility());
@@ -2841,7 +3030,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       },
       treat(id, targetId) {
         let p = actor(id), t = actor(targetId);
-        p.skill === "medic" ? t.wounds-- : t.frost--, p.skillUsed = !0, message("★ " + p.name + " atendió a " + t.name + ".");
+        p.skill === "medic" ? t.wounds-- : (t.frost--, delete t.frostFresh), p.skillUsed = !0, message("★ " + p.name + " atendió a " + t.name + ".");
       },
       buildFree(id) {
         let p = actor(id);
@@ -2873,7 +3062,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         return message("🎲 IA " + p.name + " gastó dado " + d + " al combatir."), itemEngine.attack(p, "ai");
       },
       clean(d) {
-        let n = Math.min(3, game.waste);
+        let n = Math2.min(3, game.waste);
         game.waste -= n, message("♻ IA limpió " + n + " residuos con dado " + d + ".");
       },
       barricade(id, d) {
@@ -2917,7 +3106,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       }
     });
   }
-  var commandNames = Object.freeze(["pickActionDie", "skipAutomation", "deathContinue", "startGame", "confirmPass", "finishTurn", "show", "hide", "showSetup", "select", "profile", "destination", "special", "chooseHeal", "chooseLeader", "dismissRecruit", "chooseBite", "chooseAttract", "cancelAttract", "chooseTransfer", "cancelTransfer", "cancelHeal", "chooseLoot", "addNoiseSearch", "crossAiContinue", "crossChoose", "startTransfer", "contributeEquipment", "equipItem", "unequipItem", "boostDie", "pickFloatingDie", "search", "attack", "doMove", "barricade", "clean", "attract", "playItem", "contribute"]), commands = new Set(commandNames);
+  var commandNames = Object.freeze(["pickActionDie", "skipAutomation", "deathContinue", "startGame", "confirmPass", "finishTurn", "show", "hide", "showSetup", "select", "profile", "destination", "special", "chooseHeal", "chooseLeader", "dismissRecruit", "chooseBite", "chooseAttract", "cancelAttract", "chooseTransfer", "cancelTransfer", "cancelHeal", "chooseLoot", "addNoiseSearch", "crossAiContinue", "crossChoose", "startTransfer", "contributeEquipment", "equipItem", "unequipItem", "boostDie", "pickFloatingDie", "search", "attack", "doMove", "returnHome", "barricade", "clean", "attract", "playItem", "contribute", "setTestRules"]), commands = new Set(commandNames);
 
   // src/presentation/commands.mjs
   var installed = /* @__PURE__ */ new WeakSet(), escape = (value) => String(value).replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("'", "&#39;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
@@ -2957,7 +3146,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
   }
 
   // src/presentation/reference-view.mjs
-  function createUi(ctx, { document = globalThis.document, window = globalThis.window, Math = globalThis.Math, setTimeout = globalThis.setTimeout } = {}) {
+  function createUi(ctx, { document = globalThis.document, window = globalThis.window, Math: Math2 = globalThis.Math, setTimeout = globalThis.setTimeout } = {}) {
     let toastQueue = [], toastBusy = !1, listeners = [], listen = (...args) => {
       document.addEventListener(...args), listeners.push(args);
     };
@@ -2981,6 +3170,9 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       let eq = ctx.equipmentOf(p).map(ctx.kind);
       return (eq.includes("arma") ? "🔫" : "") + (eq.includes("herramienta") ? "⛏️" : "");
     }
+    function nightLabel(p) {
+      return !ctx.nightEnabled() || p.loc === 0 ? "" : '<span class="nightNote">☾ ' + (ctx.nightWatch().some((entry) => entry.watcher?.id === p.id) ? "hace guardia esta noche (recibe la tirada)" : "dormirá afuera") + "</span>";
+    }
     function showStatInfo(key, el, eventType) {
       let tooltip = document.getElementById("statInfo"), data = statDetails[key];
       if (!tooltip || !data || eventType === "hover" && !window.matchMedia("(hover:hover)").matches) return;
@@ -2990,10 +3182,10 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         return;
       }
       tooltip.dataset.key = key, tooltip.innerHTML = "<b>" + data.title + "</b><span>" + data.description + "</span>", tooltip.hidden = !1;
-      let rect = el.getBoundingClientRect(), width = Math.min(290, window.innerWidth - 24);
-      tooltip.style.width = width + "px", tooltip.style.left = Math.max(12, Math.min(rect.left, window.innerWidth - width - 12)) + "px";
+      let rect = el.getBoundingClientRect(), width = Math2.min(290, window.innerWidth - 24);
+      tooltip.style.width = width + "px", tooltip.style.left = Math2.max(12, Math2.min(rect.left, window.innerWidth - width - 12)) + "px";
       let below = rect.bottom + 8;
-      tooltip.style.top = (below + 114 > window.innerHeight ? Math.max(8, rect.top - 126) : below) + "px";
+      tooltip.style.top = (below + 114 > window.innerHeight ? Math2.max(8, rect.top - 126) : below) + "px";
     }
     function closeStatInfo(key) {
       let e = document.getElementById("statInfo");
@@ -3103,7 +3295,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         let info = ctx.pendingRecruitInfo;
         html = info ? '<div class="recruitStory"><div class="recruitSeal">' + (info.queued ? "⌛" : "♛") + "</div><h3>" + info.name + "</h3><p>" + (info.queued ? "La colonia está llena y el superviviente espera una plaza disponible." : "Rescataste a <b>" + info.name + "</b> (" + info.job + "). Se incorporó directamente a tu grupo en la colonia.") + '</p><p class="tiny">' + info.skill + '</p><button class="action" style="width:100%" ' + commandAttributes("dismissRecruit", []) + ">Continuar</button></div>" : "";
       } else if (ctx.opened === "group") {
-        let row = (side) => '<div class="groupPanel"><h3>' + (side === ctx.controls.side ? "Tu grupo" : ctx.game.mode === "local" ? ctx.controls.display(side) : "Grupo de la IA") + "</h3>" + ctx.ownerGroup(side).filter((p) => !p.dead).map((p) => '<div class="groupMember"><div><b>' + (ctx.isLeader(p) ? "♛ " : "") + p.name + "</b><small>" + p.job + " · Influencia " + p.influence + " · " + ctx.places[p.loc] + "</small></div>" + (side === ctx.controls.side && ctx.canPickStartingLeader() && !ctx.isLeader(p) ? '<button class="action secondary" ' + commandAttributes("chooseLeader", [p.id]) + ">Elegir líder</button>" : "") + "</div>").join("") + "</div>";
+        let row = (side) => ctx.ownerGroup(side).length ? '<div class="groupPanel"><h3>' + (side === ctx.controls.side ? "Tu grupo" : ctx.game.mode === "local" ? ctx.controls.display(side) : "Grupo de la IA") + "</h3>" + ctx.ownerGroup(side).filter((p) => !p.dead).map((p) => '<div class="groupMember"><div><b>' + (ctx.isLeader(p) ? "♛ " : "") + p.name + "</b><small>" + p.job + " · Influencia " + p.influence + " · " + ctx.places[p.loc] + "</small></div>" + (side === ctx.controls.side && ctx.canPickStartingLeader() && !ctx.isLeader(p) ? '<button class="action secondary" ' + commandAttributes("chooseLeader", [p.id]) + ">Elegir líder</button>" : "") + "</div>").join("") + "</div>" : "";
         html = "<p>La influencia decide el orden de propagación de mordeduras y las víctimas de desbordamientos: se expone primero la menor. Cada grupo tiene un líder; si muere, debe reemplazarse.</p>" + row("human") + row("ai") + (ctx.canPickStartingLeader() ? '<p class="message">Durante la primera ronda podés elegir tu líder inicial antes de gastar un dado, moverte o usar una carta.</p>' : "") + (ctx.game.rescueQueue.length ? '<p class="message">Rescates pendientes: ' + ctx.game.rescueQueue.length + ". Llegarán cuando haya lugar en la colonia.</p>" : "");
       } else if (ctx.opened === "biteChoice") {
         let p = ctx.pendingBite && ctx.all().find((x) => x.id === ctx.pendingBite.target);
@@ -3142,7 +3334,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         html = "<h3>Crisis de la ronda " + ctx.game.round + "</h3><p>Requiere <b>" + ctx.game.crisis.need + " cartas de " + ctx.game.crisis.type + '</b>.</p><div class="message">Aportes válidos: ' + ctx.game.crisis.given + "/" + ctx.game.crisis.need + ". Solo se aceptan cartas del tipo requerido; dos aportes extra otorgan una moral.</div><p>La crisis se resuelve al finalizar la ronda. Si fracasa: " + ({ moral: "-1 moral", food: "pérdida de comida", wound: "herida en la colonia", zombie: "dos zombis adicionales" }[ctx.game.crisis.fail] || "penalización") + ".</p>";
       else if (ctx.opened === "actions") {
         let p = ctx.person();
-        !p || p.dead ? html = "<p>Seleccioná un superviviente propio vivo.</p>" : html = '<div class="actorCard"><div class="actorPortrait" aria-hidden="true">👤</div><div class="actorMeta"><strong>' + (ctx.isLeader(p) ? "♛ " : "") + p.name + " · " + p.job + "</strong><span>📍 " + ctx.places[p.loc] + " · Destino: " + ctx.places[ctx.target] + "</span><span>⚔ " + ctx.effectiveAttack(p) + "+ · ⌕ " + ctx.effectiveSearch(p) + "+ · ◆ Influencia " + p.influence + " · ♥ " + p.wounds + " · ❄ " + p.frost + '</span><div class="actorSkill">★ ' + p.skillName + " — " + p.skillDesc + '</div><div class="actorEquipment">' + (ctx.equipmentOf(p).length ? ctx.equipIcons(p) + " " + ctx.equipmentOf(p).map(ctx.itemTitle).join(", ") : "Sin equipamiento") + '</div></div></div><h3>Elegí un dado</h3><div class="dice">' + (ctx.actionDice().map((d, i) => '<button class="die ' + (ctx.picked === i ? "picked" : "") + '" ' + commandAttributes("pickActionDie", [i]) + ">" + d + "</button>").join("") || '<span class="tiny">No quedan dados.</span>') + '</div><button class="action secondary" ' + commandAttributes("boostDie", []) + " " + (ctx.game.food < 1 || !ctx.actionDice().length ? "disabled" : "") + '>🥫 +1 al dado seleccionado (cuesta 1 comida)</button><h3>★ Habilidad especial</h3><p class="tiny">' + p.skillDesc + '</p><button class="action secondary" ' + commandAttributes("special", []) + '>Usar habilidad activa</button><h3>Movimiento</h3><div class="grid2"><select class="control" id="dest" ' + commandAttributes("destinationInput", [], { event: "change" }) + ">" + ctx.places.map((n, i) => '<option value="' + i + '" ' + (ctx.target === i ? "selected" : "") + ">" + n + "</option>").join("") + '</select><button class="action" ' + commandAttributes("doMove", []) + '>→ Mover (sin dado)</button></div><h3>Acciones con dado</h3><div class="grid2"><button class="action" ' + commandAttributes("search", []) + '>⌕ Buscar</button><button class="action" ' + commandAttributes("attack", []) + '>⚔ Atacar zombi</button><button class="action secondary" ' + commandAttributes("barricade", []) + '>▥ Barricada</button><button class="action secondary" ' + commandAttributes("clean", []) + '>♻ Limpiar 3 residuos</button><button class="action secondary" ' + commandAttributes("attract", []) + '>☠ Atraer hasta 2 zombis</button></div><p class="actionsNote">Buscar abre una elección: quedarte con una carta o hacer ruido para revelar más. Movimiento y ataque requieren exposición.</p>';
+        !p || p.dead ? html = "<p>Seleccioná un superviviente propio vivo.</p>" : html = '<div class="actorCard"><div class="actorPortrait" aria-hidden="true">👤</div><div class="actorMeta"><strong>' + (ctx.isLeader(p) ? "♛ " : "") + p.name + " · " + p.job + "</strong><span>📍 " + ctx.places[p.loc] + " · Destino: " + ctx.places[ctx.target] + "</span>" + nightLabel(p) + "<span>⚔ " + ctx.effectiveAttack(p) + "+ · ⌕ " + ctx.effectiveSearch(p) + "+ · ◆ Influencia " + p.influence + " · ♥ " + p.wounds + " · ❄ " + p.frost + '</span><div class="actorSkill">★ ' + p.skillName + " — " + p.skillDesc + '</div><div class="actorEquipment">' + (ctx.equipmentOf(p).length ? ctx.equipIcons(p) + " " + ctx.equipmentOf(p).map(ctx.itemTitle).join(", ") : "Sin equipamiento") + '</div></div></div><h3>Elegí un dado</h3><div class="dice">' + (ctx.actionDice().map((d, i) => '<button class="die ' + (ctx.picked === i ? "picked" : "") + '" ' + commandAttributes("pickActionDie", [i]) + ">" + d + "</button>").join("") || '<span class="tiny">No quedan dados.</span>') + '</div><button class="action secondary" ' + commandAttributes("boostDie", []) + " " + (ctx.game.food < 1 || !ctx.actionDice().length ? "disabled" : "") + '>🥫 +1 al dado seleccionado (cuesta 1 comida)</button><h3>★ Habilidad especial</h3><p class="tiny">' + p.skillDesc + '</p><button class="action secondary" ' + commandAttributes("special", []) + '>Usar habilidad activa</button><h3>Movimiento</h3><div class="grid2"><select class="control" id="dest" ' + commandAttributes("destinationInput", [], { event: "change" }) + ">" + ctx.places.map((n, i) => '<option value="' + i + '" ' + (ctx.target === i ? "selected" : "") + ">" + n + "</option>").join("") + '</select><button class="action" ' + commandAttributes("doMove", []) + '>→ Mover (sin dado)</button></div><h3>Acciones con dado</h3><div class="grid2"><button class="action" ' + commandAttributes("search", []) + '>⌕ Buscar</button><button class="action" ' + commandAttributes("attack", []) + '>⚔ Atacar zombi</button><button class="action secondary" ' + commandAttributes("barricade", []) + '>▥ Barricada</button><button class="action secondary" ' + commandAttributes("clean", []) + '>♻ Limpiar 3 residuos</button><button class="action secondary" ' + commandAttributes("attract", []) + ">☠ Atraer hasta 2 zombis</button>" + (ctx.game.testRules?.regreso ? '<button class="action secondary" ' + commandAttributes("returnHome", []) + " " + (p.loc === 0 ? "disabled" : "") + ">⌂ Regresar a la colonia</button>" : "") + '</div><p class="actionsNote">Buscar abre una elección: quedarte con una carta o hacer ruido para revelar más. Movimiento y ataque requieren exposición.' + (ctx.game.testRules?.regreso ? " Regresar a la colonia cuesta un dado de cualquier valor y no tira exposición." : "") + "</p>";
       } else ctx.opened === "inventory" ? html = '<div class="message">Crisis: ' + ctx.game.crisis.need + " × " + ctx.game.crisis.type + " · " + ctx.game.crisis.given + "/" + ctx.game.crisis.need + " aportes. Podés aportar dos cartas extra para ganar +1 moral.</div><h3>Cartas de tu mano</h3>" + (ctx.currentHand().length ? ctx.currentHand().map((it, i) => {
         let d = ctx.catalog.resolve(it);
         if (!d) return "";
@@ -3179,7 +3371,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       if (!ctx.game) return;
       document.getElementById("board").innerHTML = ctx.places.map((_, i) => ctx.renderSite(i)).join("");
       let obj = ctx.game.objective;
-      document.getElementById("goalCard").innerHTML = '<span class="eyebrow">⚑ OBJETIVO GENERAL</span><span class="main"><span>' + obj.name + "</span><span>" + ctx.game.samples + "/" + ctx.game.goal + '</span></span><span class="sub">' + obj.description + '</span><span class="progress"><i style="width:' + Math.min(100, ctx.game.samples / ctx.game.goal * 100) + '%"></i></span>', document.getElementById("crisisCard").innerHTML = '<span class="eyebrow">⚠ CRISIS · RONDA ' + ctx.game.round + '</span><span class="main"><span>' + ctx.game.crisis.type + "</span><span>" + ctx.game.crisis.given + "/" + ctx.game.crisis.need + '</span></span><span class="sub">Aportá únicamente el objeto requerido</span><span class="progress"><i style="width:' + Math.min(100, ctx.game.crisis.given / ctx.game.crisis.need * 100) + '%"></i></span>', document.getElementById("turnLabel").textContent = ctx.game.ended ? "FIN DE PARTIDA" : ctx.aiRunning ? "⌂ FASE DE COLONIA" : ctx.game.mode === "local" ? "● " + ctx.controls.display().toUpperCase() : ctx.game.turn === "ai" ? "🤖 TURNO IA" : "● TU TURNO";
+      document.getElementById("goalCard").innerHTML = '<span class="eyebrow">⚑ OBJETIVO GENERAL</span><span class="main"><span>' + obj.name + "</span><span>" + ctx.game.samples + "/" + ctx.game.goal + '</span></span><span class="sub">' + obj.description + '</span><span class="progress"><i style="width:' + Math2.min(100, ctx.game.samples / ctx.game.goal * 100) + '%"></i></span>', document.getElementById("crisisCard").innerHTML = '<span class="eyebrow">⚠ CRISIS · RONDA ' + ctx.game.round + '</span><span class="main"><span>' + ctx.game.crisis.type + "</span><span>" + ctx.game.crisis.given + "/" + ctx.game.crisis.need + '</span></span><span class="sub">Aportá únicamente el objeto requerido</span><span class="progress"><i style="width:' + Math2.min(100, ctx.game.crisis.given / ctx.game.crisis.need * 100) + '%"></i></span>', document.getElementById("turnLabel").textContent = ctx.game.ended ? "FIN DE PARTIDA" : ctx.aiRunning ? "⌂ FASE DE COLONIA" : ctx.game.mode === "local" ? "● " + ctx.controls.display().toUpperCase() : ctx.game.turn === "ai" ? "🤖 TURNO IA" : "● TU TURNO";
       let humanLeader = ctx.groupLeader("human"), aiLeader = ctx.groupLeader("ai");
       document.getElementById("leadersSummary").textContent = "♛ J1: " + (humanLeader?.name || "Por elegir") + " · " + (ctx.game.mode === "local" ? "J2" : "IA") + ": " + (aiLeader?.name || "Sin líder"), document.getElementById("skipAI").style.display = ctx.aiRunning ? "block" : "none", document.getElementById("fabEndTurn").disabled = !ctx.playable();
       let fabAction = document.querySelector("#fabMenu button");
@@ -3379,11 +3571,11 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
   }
 
   // src/agents/reference-agent.mjs
-  function createAgent(ctx, { Math = globalThis.Math, setTimeout = globalThis.setTimeout } = {}) {
+  function createAgent(ctx, { Math: Math2 = globalThis.Math, setTimeout = globalThis.setTimeout } = {}) {
     function botContributeTools() {
       let c = ctx.game.crisis;
       if (ctx.game.ended || !c || c.type !== "herramienta") return;
-      let remaining = Math.max(0, c.need - c.contributions.filter((type) => type === "herramienta").length);
+      let remaining = Math2.max(0, c.need - c.contributions.filter((type) => type === "herramienta").length);
       if (!(!remaining || ctx.game.botItems.filter((it) => ctx.kind(it) === "herramienta").length + ctx.game.bots.filter((p) => !p.dead).reduce((n, p) => n + ctx.equipmentOf(p).filter((it) => ctx.kind(it) === "herramienta").length, 0) < remaining))
         for (let n = 0; n < remaining; n++) {
           let i = ctx.game.botItems.findIndex((it) => ctx.kind(it) === "herramienta");
@@ -3429,7 +3621,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         let injured = ctx.game.bots.filter((p) => !p.dead && (d.effect === "frost" ? p.frost : p.wounds + p.frost)).sort((a, b) => b.wounds + b.frost - (a.wounds + a.frost))[0];
         if ((d.effect === "heal" || d.effect === "frost") && injured) {
           if (ctx.actions.useItem(k, injured.id) && await ctx.pause(), ctx.game !== turnGame || ctx.game.ended) return;
-        } else if (d.effect === "food" && ctx.game.food < Math.ceil((ctx.alive().filter((p) => p.loc === 0).length + ctx.game.helpless) / 2) + 1) {
+        } else if (d.effect === "food" && ctx.game.food < Math2.ceil((ctx.alive().filter((p) => p.loc === 0).length + ctx.game.helpless) / 2) + 1) {
           if (ctx.actions.useItem(k, bots.find((p) => !p.dead)?.id) && await ctx.pause(), ctx.game !== turnGame || ctx.game.ended) return;
         } else if (d.effect === "research") {
           if (ctx.actions.useItem(k, bots.find((p) => !p.dead)?.id) && (ctx.verify(), ctx.game.ended || (await ctx.pause(), ctx.game !== turnGame || ctx.game.ended)))
@@ -3506,6 +3698,12 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
   }
 
   // src/application/create-application.mjs
+  function revealTestRules(environment) {
+    let panel = environment.document?.getElementById?.("testRules");
+    if (!panel) return;
+    let search = environment.location?.search || "";
+    panel.hidden = !new URLSearchParams(search).has("dev");
+  }
   function createApplication({ environment = globalThis, autoStart = !0, createPresentation = createUi } = {}) {
     let engine = createEngine(), view = engine.connectPresentation((context) => createPresentation(context, environment));
     engine.connectAutomation((context) => createAgent(context));
@@ -3523,11 +3721,14 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         environment.confirm("¿Comenzar una partida nueva?") && (engine.dispatch("hide"), engine.dispatch("showSetup"));
       },
       statInfo: (key, { element, event }) => view.showStatInfo(key, element, event.type === "mouseenter" ? "hover" : "click"),
-      statInfoClose: (key) => view.closeStatInfo(key)
+      statInfoClose: (key) => view.closeStatInfo(key),
+      // El panel de desarrollo solo elige valores; las consecuencias viven en el motor.
+      testRuleFood: ({ element }) => engine.dispatch("setTestRules", { comidaInicial: Number(element.value) }),
+      testRuleFlag: (key, { element }) => engine.dispatch("setTestRules", { [key]: !!element.checked })
     });
     let dispose;
     try {
-      dispose = bindCommands(environment.document, commands2), autoStart && engine.initialize();
+      dispose = bindCommands(environment.document, commands2), autoStart && (revealTestRules(environment), engine.initialize());
     } catch (error) {
       throw dispose?.(), view.dispose(), error;
     }
