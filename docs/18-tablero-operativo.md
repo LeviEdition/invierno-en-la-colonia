@@ -2,7 +2,7 @@
 
 > **Cómo se usa este documento.** Arriba está solo lo vigente: dónde estamos, la única tarea siguiente, la cola ordenada y los hallazgos abiertos. Cada entrega actualiza estas secciones **reemplazando** su contenido, no agregando un bloque nuevo. El detalle de cada entrega va en su informe numerado y en el PR. Los bloques fechados anteriores al 16/11/2026 están en [18-historico-tablero.md](18-historico-tablero.md) y no se editan.
 
-**Actualizado:** 23/11/2026 · **main:** `4d5f1a1` (PR #34 mapa 2×, #37 reglas de prueba, #36 limpieza de `node_modules`) · **Tag vigente:** `v0.10.0-mapa-horizontal` · **Ramas en revisión, apiladas:** `feature/interfaz-v2-sesion-1` (PR #38, [119](119-interfaz-v2-sesion-1.md)) → `feature/interfaz-v2-sesion-2` (PR #39, [120](120-interfaz-v2-sesion-2.md)) → `feature/interfaz-v2-sesion-3` (PR #40, [121](121-interfaz-v2-sesion-3.md)) → `feature/interfaz-v2-sesion-4` ([122](122-interfaz-v2-sesion-4.md)) → `feature/interfaz-v2-sesion-5` ([123](123-interfaz-v2-sesion-5.md))
+**Actualizado:** 23/11/2026 · **main:** `4d5f1a1` (PR #34 mapa 2×, #37 reglas de prueba, #36 limpieza de `node_modules`) · **Tag vigente:** `v0.10.0-mapa-horizontal` · **Ramas en revisión, apiladas:** `feature/interfaz-v2-sesion-1` (PR #38, [119](119-interfaz-v2-sesion-1.md)) → `feature/interfaz-v2-sesion-2` (PR #39, [120](120-interfaz-v2-sesion-2.md)) → `feature/interfaz-v2-sesion-3` (PR #40, [121](121-interfaz-v2-sesion-3.md)) → `feature/interfaz-v2-sesion-4` ([122](122-interfaz-v2-sesion-4.md)) → `feature/interfaz-v2-sesion-5` ([123](123-interfaz-v2-sesion-5.md)) → `feature/interfaz-v2-sesion-6` ([125](125-interfaz-v2-sesion-6.md))
 
 ## 1. Dónde estamos
 
@@ -18,6 +18,7 @@
 | Interfaz v2 — sesión 2 | **En revisión** (PR #39, borrador), partes A y B, foco en escritorio: recursos como chapas, rótulos que aparecen con la interacción, papel rasgado, transiciones, encrucijada en viñeta con consecuencias después de decidir, dados con puntos en todos los botones; marcas de daño ancladas a su ficha, margen de cámara con la ficha abierta, pino anclado y ficha que vuelve arriba | [120](120-interfaz-v2-sesion-2.md) |
 | Interfaz v2 — sesión 3 | **En revisión** (PR #40), con ajustes: ventanas en el tono de la Lámpara; parpadeo errático con semilla, ahora siempre (de día tenue); noche más marcada mientras se presentan las tiradas nocturnas, con el D12 bajo la localidad que tira; marcas de daño en una fila | [121](121-interfaz-v2-sesion-3.md) |
 | Interfaz v2 — sesión 5 | **En revisión** (rama `feature/interfaz-v2-sesion-5`): paneles plegables con «H», globos en las chapas, zoom que cubre el mapa, enfoque más cercano (tope 2), luces más notorias, tres contornos corregidos y Bitter y Alegreya Sans autoalojadas | [123](123-interfaz-v2-sesion-5.md) |
+| Interfaz v2 — sesión 6 | **En revisión** (rama `feature/interfaz-v2-sesion-6`): los paneles se pliegan y despliegan tocándolos, sin pestañas con flecha; los controles internos nunca pliegan | [125](125-interfaz-v2-sesion-6.md) |
 | Interfaz v2 — sesión 4 | **En revisión** (rama `feature/interfaz-v2-sesion-4`): barra de acción permanente con superviviente, dados y acciones; tarjetas de Objetivo y Crisis; papel viejo con sangre seca en vez de nieve en los paneles; transiciones de paneles; comida en peligro desde el motor | [122](122-interfaz-v2-sesion-4.md) |
 | Singleplayer (SP-00 a SP-08) | **Diseño en papel**; capítulo piloto «La última guardia» en ficha | [63](63-hoja-de-ruta-planificacion-singleplayer.md), [105](105-ficha-capitulo-la-ultima-guardia.md) |
 
@@ -25,25 +26,24 @@ El mapa permite preparar, jugar y terminar una partida completa (contra la IA, d
 
 ## 2. Próxima tarea única
 
-**Revisar la interfaz v2, sesión 5 ([123](123-interfaz-v2-sesion-5.md)).**
+**Revisar las sesiones 5 y 6 de la interfaz v2 ([123](123-interfaz-v2-sesion-5.md), [125](125-interfaz-v2-sesion-6.md)).**
 
-1. Abrir el PR de `feature/interfaz-v2-sesion-5` (base: `feature/interfaz-v2-sesion-4`) y esperar el CI; las capturas de los contornos están en el artifact.
+1. Abrir los PR de `feature/interfaz-v2-sesion-5` (base: sesión 4) y `feature/interfaz-v2-sesion-6` (base: sesión 5) y esperar el CI.
 2. Jugar en escritorio y decidir sobre:
-   - las tiras plegadas y la tecla «H»;
-   - el enfoque más cercano (tope 2) y el zoom que cubre;
-   - los destellos;
-   - los contornos de escuela, biblioteca y colonia;
-   - las tipografías.
+   - abrir y cerrar los paneles tocándolos (sin flecha): si la señal de cursor y tono alcanza, y si la ficha debe cerrarse solo por su encabezado;
+   - la tecla «H», el enfoque con tope 2, el zoom que cubre, los destellos, los contornos y las tipografías (sesión 5).
 3. Siguen pendientes de la sesión 4: los residuos en peligro y si tocar una ficha del mapa debe abrir la ficha lateral.
 
 ## 3. Cola ordenada
 
-1. **Decisión de merge de las sesiones 1 a 5** de la interfaz v2, en ese orden (requiere indicación expresa). Sigue pendiente ver jugando la noche, el D12 y los globos de la sesión 3.
-2. **Arte de encrucijadas:** viñetas genéricas y sets de expresiones con la paleta de 109 para llenar la zona de imagen; tipografías de la guía incluidas en el repositorio.
-3. **Probar jugando las reglas de prueba** ([117](117-reglas-de-prueba-y-un-grupo.md)) para fijar la comida inicial y la duda de [116](116-ficha-regla-la-noche.md).
-4. **Implementar «La última guardia»** como capítulo jugable.
-5. **Mejoras menores del mapa:** hallazgos 4 y 5, batería de CI con partida entera de clics reales.
-6. **Reservas del Hito 3:** Samsung Galaxy A15 físico y dos jugadores locales manuales (el teléfono queda en pausa por decisión del creador).
+1. **Decisión de merge de las sesiones 1 a 6** de la interfaz v2, en ese orden (requiere indicación expresa). Sigue pendiente ver jugando la noche, el D12 y los globos de la sesión 3.
+2. **Fichas del hito de contenido documentadas en 124** (rama `docs/plantel-y-muestras`).
+3. **Pendiente: prueba acotada de viento** en 2–3 pinos recortados del fondo (mecerse rígidos desde la base, ráfagas, nieve que se desprende); el efecto viejo de deformación queda descartado.
+4. **Arte de encrucijadas:** viñetas genéricas y sets de expresiones con la paleta de 109 para llenar la zona de imagen.
+5. **Probar jugando las reglas de prueba** ([117](117-reglas-de-prueba-y-un-grupo.md)) para fijar la comida inicial y la duda de [116](116-ficha-regla-la-noche.md).
+6. **Implementar «La última guardia»** como capítulo jugable.
+7. **Mejoras menores del mapa:** hallazgos 4 y 5, batería de CI con partida entera de clics reales.
+8. **Reservas del Hito 3:** Samsung Galaxy A15 físico y dos jugadores locales manuales (el teléfono queda en pausa por decisión del creador).
 
 ## 4. Hallazgos abiertos
 
@@ -65,16 +65,15 @@ El mapa permite preparar, jugar y terminar una partida completa (contra la IA, d
 | 17 | `luces.json` se detecta en la textura 1× | Válido mientras el arte 2× no se desplace respecto de la 1× | Regenerar (`node scripts/detectar-luces.mjs`) si cambia el arte |
 | 19 | Residuos en peligro | No se hizo: el umbral (10) es un literal dentro de `colony()`; la comida sí ([122](122-interfaz-v2-sesion-4.md)) | Decisión del creador |
 | 20 | Tocar una ficha del mapa abre la ficha lateral | Se conservó (las baterías y el uso actual dependen de eso); la barra no la abre salvo «Más», el retrato o una acción con borrador | Decidir jugando |
-| 21 | Pestañas de plegado y globos con pulsación larga | Probados con Edge en escritorio y 852×393 emulado | Probar en el A15 |
+| 21 | Plegado por toque y globos con pulsación larga | Sin pestañas: el panel se toca; los controles internos no pliegan; doble toque ignorado durante 320 ms. Probado con Edge en escritorio y 852×393 emulado ([125](125-interfaz-v2-sesion-6.md)) | Probar en el A15 (franja libre chica en la fila de recursos plegada) |
 | 15 | Zona de imagen de la encrucijada sin arte | «Al otro lado» es una pantalla compuesta y no sirve como imagen | Arte de encrucijadas (cola 2) |
 
-## 5. Verificación de la interfaz v2, sesión 5 (rama `feature/interfaz-v2-sesion-5`)
+## 5. Verificación de la interfaz v2, sesión 6 (rama `feature/interfaz-v2-sesion-6`)
 
-- [x] **918 pruebas, 0 fallos** (9 nuevas en `interfaz-v2-sesion-5`). Las pruebas de cámara anteriores se actualizaron a las decisiones nuevas (cubrir en vez de contener, enfoque con tope 2, 852×393).
-- [x] `check:build`, `check:mapa-build`, `generar-papel --check` y `detectar-luces --check` en verde; `src/` sin cambios.
-- [x] Edge a 1365×768 y 852×393: fuentes cargadas; zoom sin franjas; enfoques de 1,14 a 2; globos que no tapan la chapa; «H» pliega todo sin tocar la partida; estado recordado y tolerante a `localStorage` bloqueado; clics en los contornos corregidos. Batería `check-map-experience-browser` en verde.
-- [x] Dos capturas citadas en [123](123-interfaz-v2-sesion-5.md); los contornos antes y después, en el artifact del CI.
-- [ ] Resto de las baterías y oráculo `test:poc` (EPERM en Windows): CI del PR.
+- [x] **924 pruebas, 0 fallos** (6 nuevas en `interfaz-v2-sesion-6`): la tira despliega, el encabezado y el papel libre pliegan, dados, botones y chapas no cambian el plegado y ejecutan lo suyo una vez, Enter y Espacio sobre el botón real, doble toque consistente.
+- [x] `check:build` y `check:mapa-build` en verde; `src/` sin cambios.
+- [x] Guion propio con Edge a 1365×768 y 852×393 (no es una batería del CI): tira, papel, barra, dados, chapa, Enter, Espacio, foco visible y ficha por su encabezado; la partida queda idéntica, sin errores ni desbordes.
+- [ ] Baterías de navegador y oráculo `test:poc` (EPERM en Windows): CI del PR.
 - [ ] Ver jugando en escritorio y en el Galaxy A15.
 - [ ] Decisión de merge del creador.
 

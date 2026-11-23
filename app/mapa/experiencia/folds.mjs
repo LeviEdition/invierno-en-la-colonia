@@ -24,3 +24,29 @@ export function isFoldShortcut(e,{modalOpen=false}={}){
  if(modalOpen||e.defaultPrevented||e.ctrlKey||e.metaKey||e.altKey||(e.key!=='h'&&e.key!=='H'))return false;
  const t=e.target,tag=t?.localName;return !(tag==='input'||tag==='select'||tag==='textarea'||t?.isContentEditable);
 }
+// Sesión 6 (informe 125): sin pestañas. El panel mismo se pliega al tocarlo, resuelto por
+// delegación: un toque que cae en un control interno (botón, dado, chapa con globo, campo) nunca
+// pliega ni despliega; el control ejecuta solo lo suyo (acá no se frena ni se previene el evento).
+export const FOLD_CONTROLS='button,a[href],input,select,textarea,label,summary,[role=button],[contenteditable=true],[tabindex]:not([tabindex="-1"]),[data-no-fold]';
+export const FOLD_GUARD_MS=320;
+// ¿Este toque pliega o despliega el panel? `hit` es el botón real del panel (teclado y lectores):
+// Enter o Espacio sobre él llegan como clic y sí cuentan. Desplegado, si el panel define `zone`
+// (la ficha: solo su encabezado), el toque tiene que caer adentro; plegado, cualquier papel sirve.
+export function foldTouch(target,panel,{folded=false,hit=null,zone=null}={}){
+ if(!target||!panel||!(target===panel||panel.contains?.(target)))return false;
+ if(hit&&(target===hit||hit.contains?.(target)))return true;
+ const control=target.closest?.(FOLD_CONTROLS);
+ if(control&&control!==panel&&panel.contains?.(control))return false;
+ if(!folded&&zone&&!target.closest?.(zone))return false;
+ return true;
+}
+// Doble toque rápido: el segundo toque del mismo panel dentro de la ventana se ignora, así el
+// panel nunca queda a mitad de camino ni parpadea plegar→desplegar.
+export function createFoldGate(ms=FOLD_GUARD_MS,now=()=>globalThis.performance?.now?.()??Date.now()){
+ const last=new Map();return key=>{const t=now(),prev=last.get(key);if(prev!==undefined&&t-prev<ms)return false;last.set(key,t);return true;};
+}
+// Un oyente por panel. `toggle(key)` es el único efecto: cambia el plegado, nunca el juego.
+export function mountFoldPanels(panels,{isFolded,toggle,signal,gate=createFoldGate()}){
+ for(const {key,el,hit=null,zone=null} of panels){if(!el)continue;
+  el.addEventListener('click',e=>{if(!foldTouch(e.target,el,{folded:isFolded(key),hit,zone})||!gate(key))return;toggle(key);},{signal});}
+}
