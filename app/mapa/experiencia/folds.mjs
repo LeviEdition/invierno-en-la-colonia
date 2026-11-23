@@ -35,8 +35,9 @@ export const FOLD_GUARD_MS=320;
 export function foldTouch(target,panel,{folded=false,hit=null,zone=null}={}){
  if(!target||!panel||!(target===panel||panel.contains?.(target)))return false;
  if(hit&&(target===hit||hit.contains?.(target)))return true;
+ // data-fold-pass: enfocable (globo de chapa o de tarjeta) pero el toque pliega igual (informe 125, ajustes).
  const control=target.closest?.(FOLD_CONTROLS);
- if(control&&control!==panel&&panel.contains?.(control))return false;
+ if(control&&control!==panel&&panel.contains?.(control)&&!control.hasAttribute?.('data-fold-pass'))return false;
  if(!folded&&zone&&!target.closest?.(zone))return false;
  return true;
 }
@@ -46,7 +47,8 @@ export function createFoldGate(ms=FOLD_GUARD_MS,now=()=>globalThis.performance?.
  const last=new Map();return key=>{const t=now(),prev=last.get(key);if(prev!==undefined&&t-prev<ms)return false;last.set(key,t);return true;};
 }
 // Un oyente por panel. `toggle(key)` es el único efecto: cambia el plegado, nunca el juego.
-export function mountFoldPanels(panels,{isFolded,toggle,signal,gate=createFoldGate()}){
+// `skip(e)`: toques que ya usó otra cosa (la pulsación larga que mostró un globo).
+export function mountFoldPanels(panels,{isFolded,toggle,signal,gate=createFoldGate(),skip=()=>false}){
  for(const {key,el,hit=null,zone=null} of panels){if(!el)continue;
-  el.addEventListener('click',e=>{if(!foldTouch(e.target,el,{folded:isFolded(key),hit,zone})||!gate(key))return;toggle(key);},{signal});}
+  el.addEventListener('click',e=>{if(skip(e)||!foldTouch(e.target,el,{folded:isFolded(key),hit,zone})||!gate(key))return;toggle(key);},{signal});}
 }

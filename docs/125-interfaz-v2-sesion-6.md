@@ -46,3 +46,35 @@ Un guion propio con Edge (no es una batería del CI), a 1365×768 y 852×393 emu
 - **En el Galaxy A15:**
   - la fila de recursos plegada deja poco papel libre entre las chapas;
   - si tocarlas resulta cómodo.
+
+## Ajustes (observados jugando)
+
+**Paneles de la izquierda.** Plegaban solo si se acertaba al borde: las tarjetas eran casi enteras botones (`#objective-details`, `#crisis-details`) y las chapas tenían `tabIndex=0`, así que `foldTouch` las tomaba como controles.
+- **Tarjetas:** los envoltorios pasan a `<div>`; tocar cualquier parte del papel pliega o despliega. El detalle (descripción y muestras del objetivo; requisito, entregas y consecuencia de la crisis) se muestra en el mismo globo de las chapas: mouse, foco de teclado y pulsación larga. Es el mismo texto que daba el diálogo de información; la descripción del objetivo también queda en el texto para lectores de pantalla.
+- **Chapas:** tocar una pliega o despliega la fila. Siguen enfocables y con su globo; se marcan con `data-fold-pass`, que `foldTouch` deja pasar.
+- **Pulsación larga** (500 ms): muestra el globo y el clic que la sigue no pliega.
+- **«Aportar a crisis»** sigue siendo un botón: ejecuta y no pliega.
+
+**Tirada de dados más lenta.** Una sola constante (`sequenceDurations` en `presentation-sequence.mjs`) sirve para moverse, atacar y el D12 nocturno.
+
+| | Antes | Después |
+|---|---|---|
+| Giro | 550 ms, caras a ritmo fijo | **1200 ms con freno** (ease-out cúbico) |
+| Quieto en la cara final | — | **200 ms**, antes de revelar la consecuencia |
+| Movimiento reducido | 80 ms | 80 ms (`reducedDurations`) |
+
+- **Toque durante la tirada:** la adelanta al resultado (`skipRoll`). Solo mueve el reloj visual. No vuelve a tirar ni manda nada al motor, y ese toque no hace nada más.
+- **Pruebas viejas:** `h342-experience-sequence` y `h344-presentation` fijaban 550 ms; ahora usan `sequenceDurations`.
+
+**Comprobado.**
+- **930 pruebas, 0 fallos**, con 6 nuevas de ajustes en `interfaz-v2-sesion-6.test.mjs`.
+- `check:build` y `check:mapa-build` en verde.
+- **Guion con Edge** a 1365×768 y 852×393:
+  - tocar el título del objetivo o de la crisis pliega, y la tira despliega;
+  - la chapa de comida pliega y despliega;
+  - los globos de las tarjetas aparecen con mouse y con foco;
+  - la partida queda idéntica, sin desbordes.
+- **Falta:**
+  - la tirada lenta y el salto vistos en pantalla;
+  - la pulsación larga en el A15;
+  - las baterías de navegador y `test:poc` (EPERM en Windows), que valida el CI.

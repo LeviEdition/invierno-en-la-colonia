@@ -157,16 +157,16 @@ body[data-interfaz=v2] #map-app #dossier #boost-reason{margin-top:6px}
    delegación). Para teclado y lectores, cada panel conserva un botón real (.fold-hit) invisible que
    muestra el foco sobre el panel entero. Señal de que se puede tocar: cursor y un leve cambio de tono. */
 body[data-interfaz=v2] #map-app [data-fold-zone]{pointer-events:auto;cursor:pointer}
-body[data-interfaz=v2] #map-app [data-fold-zone] :is(button,select,input,[tabindex],[data-no-fold]){cursor:auto}
+body[data-interfaz=v2] #map-app [data-fold-zone] :is(button,select,input,[tabindex]:not([data-fold-pass]),[data-no-fold]){cursor:auto}
 body[data-interfaz=v2] #map-app [data-fold-zone] button{cursor:pointer}
-body[data-interfaz=v2] #map-app [data-fold-zone] .stats>div{cursor:help}
+body[data-interfaz=v2] #map-app [data-fold-zone] [data-fold-pass]{cursor:pointer}
 body[data-interfaz=v2]:not([data-panel-open=false]) #map-app #dossier[data-fold-zone]{cursor:auto}
 body[data-interfaz=v2]:not([data-panel-open=false]) #map-app #dossier[data-fold-zone] .panel-heading{cursor:pointer}
 body[data-interfaz=v2] #map-app .fold-hit{position:absolute;width:1px;height:1px;min-width:0;min-height:0;margin:-1px;padding:0;border:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;background:none;box-shadow:none}
 body[data-interfaz=v2] #map-app [data-fold-zone]:has(>.fold-hit:focus-visible){outline:2px solid var(--lampara);outline-offset:2px}
-body[data-interfaz=v2] #map-app :is(.paper-card,#action-bar)[data-fold-zone]:hover:not(:has(:is(button,select,[tabindex],[data-no-fold]):hover))::before,
+body[data-interfaz=v2] #map-app :is(.paper-card,#action-bar)[data-fold-zone]:hover:not(:has(:is(button,select,[tabindex]:not([data-fold-pass]),[data-no-fold]):hover))::before,
 body[data-interfaz=v2][data-panel-open=false] #map-app #dossier:hover:not(:has(button:hover))::before{filter:brightness(1.07) sepia(.12)}
-body[data-interfaz=v2] #map-app .topbar[data-fold-zone]:hover:not(:has(:is(button,[tabindex]):hover)){background-color:color-mix(in srgb,var(--chapa) 88%,#E8DCC0)}
+body[data-interfaz=v2] #map-app .topbar[data-fold-zone]:hover:not(:has(:is(button,[tabindex]:not([data-fold-pass])):hover)){background-color:color-mix(in srgb,var(--chapa) 88%,#E8DCC0)}
 body[data-interfaz=v2]:not([data-panel-open=false]) #map-app #dossier .panel-heading:hover:not(:has(button:hover)){background:#E8DCC026}
 
 /* Plegadas: una tira mínima que sigue informando. */

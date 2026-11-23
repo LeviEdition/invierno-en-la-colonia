@@ -18,7 +18,7 @@
 | Interfaz v2 — sesión 2 | **En revisión** (PR #39, borrador), partes A y B, foco en escritorio: recursos como chapas, rótulos que aparecen con la interacción, papel rasgado, transiciones, encrucijada en viñeta con consecuencias después de decidir, dados con puntos en todos los botones; marcas de daño ancladas a su ficha, margen de cámara con la ficha abierta, pino anclado y ficha que vuelve arriba | [120](120-interfaz-v2-sesion-2.md) |
 | Interfaz v2 — sesión 3 | **En revisión** (PR #40), con ajustes: ventanas en el tono de la Lámpara; parpadeo errático con semilla, ahora siempre (de día tenue); noche más marcada mientras se presentan las tiradas nocturnas, con el D12 bajo la localidad que tira; marcas de daño en una fila | [121](121-interfaz-v2-sesion-3.md) |
 | Interfaz v2 — sesión 5 | **En revisión** (rama `feature/interfaz-v2-sesion-5`): paneles plegables con «H», globos en las chapas, zoom que cubre el mapa, enfoque más cercano (tope 2), luces más notorias, tres contornos corregidos y Bitter y Alegreya Sans autoalojadas | [123](123-interfaz-v2-sesion-5.md) |
-| Interfaz v2 — sesión 6 | **En revisión** (rama `feature/interfaz-v2-sesion-6`): los paneles se pliegan y despliegan tocándolos, sin pestañas con flecha; los controles internos nunca pliegan | [125](125-interfaz-v2-sesion-6.md) |
+| Interfaz v2 — sesión 6 | **En revisión** (rama `feature/interfaz-v2-sesion-6`), con ajustes: los paneles se pliegan y despliegan tocándolos, sin pestañas con flecha, incluido el texto de las tarjetas y las chapas; el detalle de Objetivo y Crisis va en globos; tirada de dados de 1200 ms con freno y pausa final, que un toque adelanta | [125](125-interfaz-v2-sesion-6.md) |
 | Interfaz v2 — sesión 4 | **En revisión** (rama `feature/interfaz-v2-sesion-4`): barra de acción permanente con superviviente, dados y acciones; tarjetas de Objetivo y Crisis; papel viejo con sangre seca en vez de nieve en los paneles; transiciones de paneles; comida en peligro desde el motor | [122](122-interfaz-v2-sesion-4.md) |
 | Singleplayer (SP-00 a SP-08) | **Diseño en papel**; capítulo piloto «La última guardia» en ficha | [63](63-hoja-de-ruta-planificacion-singleplayer.md), [105](105-ficha-capitulo-la-ultima-guardia.md) |
 
@@ -30,7 +30,8 @@ El mapa permite preparar, jugar y terminar una partida completa (contra la IA, d
 
 1. Abrir los PR de `feature/interfaz-v2-sesion-5` (base: sesión 4) y `feature/interfaz-v2-sesion-6` (base: sesión 5) y esperar el CI.
 2. Jugar en escritorio y decidir sobre:
-   - abrir y cerrar los paneles tocándolos (sin flecha): si la señal de cursor y tono alcanza, y si la ficha debe cerrarse solo por su encabezado;
+   - abrir y cerrar los paneles tocándolos (sin flecha, también desde el texto de las tarjetas y las chapas): si la señal de cursor y tono alcanza, y si la ficha debe cerrarse solo por su encabezado;
+   - la tirada de dados más lenta (1200 ms + 200 ms) y el toque que la adelanta;
    - la tecla «H», el enfoque con tope 2, el zoom que cubre, los destellos, los contornos y las tipografías (sesión 5).
 3. Siguen pendientes de la sesión 4: los residuos en peligro y si tocar una ficha del mapa debe abrir la ficha lateral.
 
@@ -65,16 +66,16 @@ El mapa permite preparar, jugar y terminar una partida completa (contra la IA, d
 | 17 | `luces.json` se detecta en la textura 1× | Válido mientras el arte 2× no se desplace respecto de la 1× | Regenerar (`node scripts/detectar-luces.mjs`) si cambia el arte |
 | 19 | Residuos en peligro | No se hizo: el umbral (10) es un literal dentro de `colony()`; la comida sí ([122](122-interfaz-v2-sesion-4.md)) | Decisión del creador |
 | 20 | Tocar una ficha del mapa abre la ficha lateral | Se conservó (las baterías y el uso actual dependen de eso); la barra no la abre salvo «Más», el retrato o una acción con borrador | Decidir jugando |
-| 21 | Plegado por toque y globos con pulsación larga | Sin pestañas: el panel se toca; los controles internos no pliegan; doble toque ignorado durante 320 ms. Probado con Edge en escritorio y 852×393 emulado ([125](125-interfaz-v2-sesion-6.md)) | Probar en el A15 (franja libre chica en la fila de recursos plegada) |
+| 21 | Plegado por toque y globos con pulsación larga | Sin pestañas; el toque pliega también sobre el texto de las tarjetas y las chapas (`data-fold-pass`); la pulsación larga muestra el globo sin plegar. Probado con Edge en escritorio y 852×393 emulado ([125](125-interfaz-v2-sesion-6.md)) | Probar en el A15 |
 | 15 | Zona de imagen de la encrucijada sin arte | «Al otro lado» es una pantalla compuesta y no sirve como imagen | Arte de encrucijadas (cola 2) |
 
-## 5. Verificación de la interfaz v2, sesión 6 (rama `feature/interfaz-v2-sesion-6`)
+## 5. Verificación de la interfaz v2, sesión 6 con ajustes (rama `feature/interfaz-v2-sesion-6`)
 
-- [x] **924 pruebas, 0 fallos** (6 nuevas en `interfaz-v2-sesion-6`): la tira despliega, el encabezado y el papel libre pliegan, dados, botones y chapas no cambian el plegado y ejecutan lo suyo una vez, Enter y Espacio sobre el botón real, doble toque consistente.
+- [x] **930 pruebas, 0 fallos** (12 en `interfaz-v2-sesion-6`, 6 de ajustes). `h342-experience-sequence` y `h344-presentation` dejaron de fijar 550 ms y usan `sequenceDurations`.
 - [x] `check:build` y `check:mapa-build` en verde; `src/` sin cambios.
-- [x] Guion propio con Edge a 1365×768 y 852×393 (no es una batería del CI): tira, papel, barra, dados, chapa, Enter, Espacio, foco visible y ficha por su encabezado; la partida queda idéntica, sin errores ni desbordes.
-- [ ] Baterías de navegador y oráculo `test:poc` (EPERM en Windows): CI del PR.
-- [ ] Ver jugando en escritorio y en el Galaxy A15.
+- [x] Guion propio con Edge a 1365×768 y 852×393: texto de las tarjetas y chapas pliegan; globos de las tarjetas con mouse y foco; partida idéntica, sin desbordes.
+- [ ] Tirada lenta y salto por toque vistos en pantalla; baterías de navegador y oráculo `test:poc` (EPERM en Windows): CI del PR.
+- [ ] Ver jugando en escritorio y en el Galaxy A15 (pulsación larga).
 - [ ] Decisión de merge del creador.
 
 ## 6. Decisiones vigentes de mapa e interfaz

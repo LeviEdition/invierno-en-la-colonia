@@ -79,3 +79,82 @@ test('Sesión 6 · el plegado por toque no ejecuta juego ni azar y conserva «H�
  assert.match(mountLine,/toggle:key=>\{if\(key==='dossier'\)\$\('panel-toggle'\)\.click\(\);else setFold\(key,!folds\[key\]\);\}/,'la ficha usa su camino de siempre; el resto, setFold (transición, memoria y cámara)');
  assert.match(view,/isFoldShortcut\(e,/);assert.equal(FOLD_KEYS.length,5);
 });
+
+// ── Ajustes (informe 125): paneles de la izquierda y tirada más lenta ──
+import {createPressMemory,itemTip,LONG_PRESS_MS} from '../app/mapa/experiencia/stat-tips.mjs';
+import {createPresentationSequence,sequenceDurations,reducedDurations,rollEase} from '../app/mapa/movimiento/presentation-sequence.mjs';
+// Nodo con atributos: lo que el navegador resolvería con closest(FOLD_CONTROLS) y hasAttribute.
+function el(parent,{control=false,pass=false}={}){const n=node(parent,{control});n.hasAttribute=a=>a==='data-fold-pass'&&pass;return n;}
+function leftPanels(){
+ const card=node(),details=el(card,{control:true,pass:true}),title=el(details),consequence=el(details),contribute=el(card,{control:true});
+ const bar=node(),chip=el(bar,{control:true,pass:true}),chipValue=el(chip);
+ return {card,details,title,consequence,contribute,bar,chip,chipValue};
+}
+
+test('Sesión 6, ajustes · tocar el texto del Objetivo o de la Crisis pliega y despliega',()=>{
+ const m=leftPanels();
+ for(const t of [m.title,m.consequence,m.details])assert.equal(foldTouch(t,m.card,{folded:false}),true);
+ const html=read('app/mapa/index.html');
+ assert.match(html,/<div id="objective-details" data-tip="">/);assert.match(html,/<div id="crisis-details" data-tip="">/);
+ assert.doesNotMatch(html,/<button id="(objective|crisis)-details"|data-info="(objetivo|crisis)"/,'los envoltorios ya no son botones de clic');
+ // El detalle sigue disponible: globo (mismo texto que el diálogo) y texto para lectores de pantalla.
+ const view=read('app/mapa/map-view.mjs');
+ assert.match(view,/function paintCardTips\(p\)\{[^\n]*\n[^\n]*o\.description,'Muestras: '/);
+ assert.match(view,/if\(o\?\.description\)\$\('public-objective'\)\.textContent\+=' · '\+o\.description;/);
+ assert.match(view,/'Crisis',c\?'Requisito: '[^\n]*\$\('crisis-consequence'\)\.textContent/);
+ assert.deepEqual(itemTip({dataset:{tipTitle:'Vacunas',tipText:'Juntar muestras.'}}),{title:'Vacunas',text:'Juntar muestras.'});
+ assert.equal(itemTip({querySelector:()=>({id:'round'})}).title,'Rondas restantes','las chapas conservan sus textos');
+});
+
+test('Sesión 6, ajustes · tocar una chapa pliega la fila; sigue enfocable con su globo',()=>{
+ const m=leftPanels();
+ for(const t of [m.chip,m.chipValue])for(const folded of [false,true])assert.equal(foldTouch(t,m.bar,{folded}),true);
+ const tips=read('app/mapa/experiencia/stat-tips.mjs');
+ assert.match(tips,/item\.tabIndex=0;item\.dataset\.foldPass='';/,'tabIndex 0 para el teclado, marcada para que el toque pase');
+ assert.match(tips,/querySelectorAll\('#map-app \.stats>div,#map-app \[data-tip\]'\)/);
+ assert.match(tips,/addEventListener\('mouseenter'[\s\S]*?addEventListener\('focus'/,'hover y foco siguen mostrando el globo');
+ assert.match(read('app/mapa/experiencia/folds.mjs'),/!control\.hasAttribute\?\.\('data-fold-pass'\)/);
+});
+
+test('Sesión 6, ajustes · la pulsación larga en una chapa muestra el globo y no pliega',()=>{
+ let t=0;const memory=createPressMemory(()=>t),m=leftPanels(),state={resources:false},toggles=[];
+ mountFoldPanels([{key:'resources',el:m.bar}],{isFolded:k=>state[k],toggle:k=>{toggles.push(k);state[k]=!state[k];},skip:e=>memory.consume(e.target),gate:createFoldGate(0,()=>t+=1)});
+ memory.mark(m.chip);t+=LONG_PRESS_MS+40;click(m.chipValue,m.bar);
+ assert.equal(state.resources,false,'el clic que sigue a la pulsación larga no pliega');assert.deepEqual(toggles,[]);
+ t+=100;click(m.chip,m.bar);assert.equal(state.resources,true,'un toque común después sí pliega');
+ assert.match(read('app/mapa/experiencia/stat-tips.mjs'),/press=setTimeout\(\(\)=>\{show\(item\);pressed\.mark\(item\);\},longPressMs\);/);
+ assert.match(read('app/mapa/map-view.mjs'),/skip:e=>!!statTips\?\.longPressed\(e\.target\)/);
+});
+
+test('Sesión 6, ajustes · «Aportar a crisis» ejecuta su acción y no pliega',()=>{
+ const m=leftPanels(),state={crisis:false},toggles=[];
+ mountFoldPanels([{key:'crisis',el:m.card}],{isFolded:k=>state[k],toggle:k=>{toggles.push(k);state[k]=!state[k];}});
+ const e=click(m.contribute,m.card);
+ assert.equal(m.contribute.action,1);assert.equal(state.crisis,false);assert.deepEqual(toggles,[]);assert.equal(e.stopped||e.prevented,false);
+ assert.match(read('app/mapa/index.html'),/<\/div><button id="crisis-contribute">Aportar a crisis<\/button>/);
+});
+
+test('Sesión 6, ajustes · la tirada dura ~1200 ms con freno y pausa final; reducido sigue corto',()=>{
+ assert.deepEqual({roll:sequenceDurations.roll,settle:sequenceDurations.settle},{roll:1200,settle:200});
+ assert.equal(reducedDurations.roll+reducedDurations.settle,80,'movimiento reducido: como antes');
+ const response={resolution:{exposure:{rolled:true,value:3,effect:'wound'}}};
+ for(const intro of [1500,550,0]){// moverse, atacar, D12 nocturno: la misma constante
+  const s=createPresentationSequence(response,{introDuration:intro});s.advance(intro);assert.equal(s.inspect().stage,'roll');
+  s.advance(600);const mid=s.inspect();assert.equal(mid.settling,false);assert.ok(rollEase(mid.progress)>.85,'ease-out: a mitad de tiempo ya frenó casi todo');
+  s.advance(600);assert.equal(s.inspect().settling,true);assert.equal(s.inspect().progress,1,'quieta en la cara final');
+  s.advance(199);assert.equal(s.inspect().stage,'roll','todavía sin revelar la consecuencia');s.advance(1);assert.equal(s.inspect().stage,'reveal');}
+ const r=createPresentationSequence(response,{reduced:true});r.advance(100);assert.equal(r.inspect().stage,'roll');r.advance(80);assert.equal(r.inspect().stage,'reveal');
+ assert.ok(rollEase(.25)-rollEase(0)>rollEase(1)-rollEase(.75),'las caras cambian rápido al principio y frenan al final');
+ const map=read('app/mapa/map-view.mjs');assert.doesNotMatch(map,/roll:\s*550|reduced\?80:550/);
+});
+
+test('Sesión 6, ajustes · un toque durante la tirada salta al resultado sin nuevo evento del motor',()=>{
+ const response={resolution:{exposure:{rolled:true,value:7,effect:'frost'}}},s=createPresentationSequence(response,{introDuration:550});
+ assert.equal(s.skipRoll(),false,'durante el recorrido no hay tirada que adelantar');
+ s.advance(600);assert.equal(s.skipRoll(),true);const now=s.inspect();
+ assert.equal(now.stage,'reveal');assert.equal(now.progress,0);assert.equal(now.exposure.value,7,'mismo resultado del motor');
+ assert.equal(s.skipRoll(),false,'un segundo toque no repite nada');s.interrupt();assert.equal(s.skipRoll(),false);
+ const line=read('app/mapa/map-view.mjs').split('\n').find(l=>l.includes('sequence?.skipRoll()'));assert.ok(line);
+ assert.doesNotMatch(line,/send\(|request|movement\.|action\.|search\.|cycle\.|Math\.random|\.click\(\)/,'solo mueve el reloj visual');
+ assert.match(line,/addEventListener\('click',swallow,\{capture:true,once:true/,'el toque no hace nada más');
+});
