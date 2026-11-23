@@ -1,3 +1,5 @@
+// Informe 123: el mapa v2 ocupa toda la pantalla del teléfono (852×393); 852×294 era el área del
+// mapa en la disposición anterior, donde cubrir el área recortaba de más.
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
@@ -12,9 +14,11 @@ const locations=['colonia','supermercado','hospital','comisaria','gasolinera','e
 const seed={locations,characters:[{id:'h0',name:'Mara',playerId:'human',locationId:'place-0'}],movement:{},search:{},action:{}};
 function state(n){const p=capacityProjection(seed,'mixed',scene),ids=p.characters.filter(c=>c.locationId==='place-0').slice(0,n).map(c=>c.id);p.characters=p.characters.filter(c=>c.locationId!=='place-0'||ids.includes(c.id));return p;}
 test('Presentación: vista general contiene zonas completas y grupos máximos, también al abrir/cerrar ficha',()=>{
- for(const viewport of [{width:1365,height:618},{width:1055,height:618},{width:852,height:294}]){
+ for(const viewport of [{width:1365,height:618},{width:1055,height:618},{width:852,height:393}]){
   const c=fitMapCamera(scene.bounds,viewport);
-  for(const z of scene.zones){const b=localityFrame(z,0);assert.ok(c.x+b.x*c.zoom>=-1&&c.y+b.y*c.zoom>=-1&&c.x+(b.x+b.width)*c.zoom<=viewport.width+1&&c.y+(b.y+b.height)*c.zoom<=viewport.height+1,z.id+' completa');}
+  // Informe 123: la vista general CUBRE el área (sin franjas); cada localidad sigue a la vista.
+  assert.ok(c.x<=1e-9&&c.y<=1e-9&&c.x+scene.bounds.width*c.zoom>=viewport.width-1e-9&&c.y+scene.bounds.height*c.zoom>=viewport.height-1e-9,'sin franjas');
+  for(const z of scene.zones){const x=c.x+z.center.x*c.zoom,y=c.y+z.center.y*c.zoom;assert.ok(x>0&&x<viewport.width&&y>0&&y<viewport.height,z.id+' a la vista');}
   const small={...viewport,width:viewport.width-310},open=resizeMapCamera(c,{x:835.5,y:470.5},scene.bounds,small),closed=resizeMapCamera(open,{x:835.5,y:470.5},scene.bounds,viewport);
   for(const key of ['x','y','zoom'])assert.equal(closed[key],c[key],'recupera encuadre y escala '+key);
  }

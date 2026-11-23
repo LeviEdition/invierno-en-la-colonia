@@ -82,6 +82,12 @@ jobs:
           export H344_VIEWPORTS=1365x768,852x393
           export H344_OUTPUT_DIR=/tmp/horizontal-actions
           node scripts/check-h344-browser.mjs
+      - name: Contornos de localidades sobre el fondo — antes y después (informe 123)
+        if: always()
+        shell: bash
+        run: |
+          git fetch --no-tags --depth=1 origin 26fe4ec || true
+          node scripts/contornos-localidades.mjs /tmp/horizontal-contornos 26fe4ec
       - uses: actions/upload-artifact@v4
         if: always()
         with:

@@ -43,12 +43,13 @@ test('Sesión 3 · parpadeo entre 60 y 100 %, intervalos de 80 a 450 ms, a lo su
 });
 
 test('Sesión 3 · parpadeo siempre: día tenue, noche plena, movimiento reducido fijo',()=>{
- assert.equal(lightLevel({night:0,flicker:1,reduced:false}),.35,'de día la base es 35 %');
- assert.ok(Math.abs(lightLevel({night:0,flicker:.7,reduced:false})-.245)<1e-12,'y de día también parpadea');
+ // Informe 123: la base de día pasó de 35 % a 50 % (FLICKER.day).
+ assert.equal(FLICKER.day,.5);assert.equal(lightLevel({night:0,flicker:1,reduced:false}),FLICKER.day,'base de día');
+ assert.ok(Math.abs(lightLevel({night:0,flicker:.7,reduced:false})-.7*FLICKER.day)<1e-12,'y de día también parpadea');
  assert.equal(lightLevel({night:1,flicker:.7,reduced:false}),.7);
  assert.equal(lightLevel({night:1,flicker:.7,reduced:true}),.8);
  assert.equal(lightLevel({night:1,flicker:1,reduced:true}),.8);
- assert.ok(Math.abs(lightLevel({night:0,flicker:.6,reduced:true})-.28)<1e-12,'movimiento reducido de día: fijo y tenue');
+ assert.ok(Math.abs(lightLevel({night:0,flicker:.6,reduced:true})-.8*FLICKER.day)<1e-12,'movimiento reducido de día: fijo y tenue');
  const n=createNightAtmosphere();n.begin(0);assert.equal(n.level(5000,true),1,'sin rampa con movimiento reducido');n.end(100);assert.equal(n.level(NIGHT.minMs+1,true),0,'amanece sin animar');
  const view=read('app/mapa/render/phaser/night-view.mjs');assert.match(view,/night=getNight\(performance\.now\(\)\);if\(!reduced\(\)\)flicker\.step\(delta\)/,'parpadea de día y de noche, nunca con movimiento reducido');
  // El bucle no duerme mientras parpadea (24 cuadros por segundo si no hay nieve); con

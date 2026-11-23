@@ -53,6 +53,7 @@ El amarillo solo marca lo que importa: esperanza, peligro, lo que hay que mirar 
 - Las tres tienen licencia SIL OFL: se incluyen en el repositorio (con su licencia) y no se cargan desde un servicio externo, para que el juego funcione sin conexión.
 - Tamaños mínimos en el teléfono: 16 px para narración, 14 px para etiquetas.
 - Descartada: Roboto Slab (duplica el papel de Bitter).
+- **Incluidas desde el informe 123:** Bitter 600 y 700, Alegreya Sans 400, 500 y 700, en `assets/fuentes/` (woff2, latino y latino extendido, con `OFL.txt`). Se usan con `--fuente-titulo` y `--fuente-texto` y `font-display: swap`. Alegreya (con serifa, para la narración) sigue pendiente; mientras tanto, la narración usa Alegreya Sans.
 
 ## 4. Escenas narrativas
 
@@ -109,7 +110,10 @@ Referencia visual: el lienzo de diseño «Invierno en la Colonia — dirección 
 - **Papel viejo en los paneles de lectura** (informe 122): la barra de acción, las tarjetas de Objetivo y Crisis y la ficha lateral son papel crema amarillento que oscurece hacia los bordes, con fibra y grano finos, un pliegue suave y el borde rasgado. Tres variantes (barra, tarjeta chica, ficha). El texto va en tinta `#2B2219` (secundario `#4E4134`); los botones sobre el papel son chapa oscura con sombra dura `3px 3px 0 #07090C`, y «Terminar turno» va en Lámpara sólida. La nieve queda solo en el mapa: ningún panel la lleva. Las texturas se generan una vez (`scripts/generar-papel.mjs`).
 - **Sangre seca sobre el papel:** marrón oxidado desaturado (referencia `#6A2E22`), oscuro y apagado, nunca el rojo de señal (Sangre fría `#B5473F`): no se lee como herida. Va en capa aparte del papel, para moverla o quitarla sin rehacerlo. Solo en esquinas y bordes, jamás debajo de un número, nombre, botón o dado; como máximo una mancha de borde por panel (la tarjeta de Crisis lleva una más grande). Posiciones fijas por tipo de panel, sorteadas con semilla.
 - **Recurso en peligro:** la chapa lleva anillo y su número en insignia, en Sangre fría (`#B5473F`), solo cuando el motor lo indica (hoy, la comida que no alcanza para la próxima fase de colonia).
-- **Tipografía provisoria:** variables `--fuente-texto` y `--fuente-titulo` con respaldo serif, hasta decidir §3.
+- **Tipografía:** variables `--fuente-texto` (Alegreya Sans) y `--fuente-titulo` (Bitter), autoalojadas (§3).
+- **Paneles plegables** (informe 123): las tarjetas de Objetivo y Crisis, la fila de recursos y la ficha se pliegan con una pestaña de papel en su borde, con una flecha que apunta hacia donde se mueve. Plegadas quedan como una tira que sigue informando («Objetivo 4/7 · R8», «Crisis 1/2», recursos con ícono y número). La barra de acción nunca desaparece: plegada conserva retrato, dados y «Terminar turno». Una crisis nueva despliega su tarjeta una vez. La tecla «H» pliega o despliega todo. El estado se recuerda entre partidas.
+- **Globos de las chapas:** al pasar el mouse, con el foco de teclado o con una pulsación larga, cada chapa muestra en papel su nombre y una línea de descripción (los textos de la ficha V9). El globo va debajo de la chapa, sin taparla ni salir de la pantalla.
+- **Cámara** (informe 123): el zoom mínimo cubre el área, así que el mapa nunca deja franjas. El enfoque de una localidad la lleva a cerca del 70 % del área libre, con tope en la resolución del fondo (2).
 - **Recursos como chapas redondas con ícono:** fogata (moral, en Lámpara), lata (comida), adulto y chico (indefensos), bolsa (residuos).
 - **Dados de acción con puntos**, como dados reales; el D12 conserva su forma y sus símbolos.
 - **Rótulos de las localidades:** aparecen al mover el mouse sobre el mapa, al tocarlo o al desplazarlo, y se desvanecen tras unos segundos sin interacción; la localidad seleccionada conserva el suyo.

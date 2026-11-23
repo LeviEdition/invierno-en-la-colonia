@@ -87,7 +87,8 @@ test('Parte B · margen de cámara con la ficha abierta: el supermercado entra e
  assert.equal(loose.x,plain.x-352,'el borde derecho puede correrse lo que tapa la ficha');assert.equal(loose.y,plain.y,'solo horizontal');assert.equal(loose.zoom,plain.zoom);
  assert.deepEqual(fitMapCamera(scene.bounds,v),fitMapCamera(scene.bounds,{...v,slack:panel}),'la vista general no cambia');
  const z=scene.zones.find(z=>z.id==='supermercado'),before=focusLocality(scene,z.id,{...v,inset}),c=focusLocality(scene,z.id,{...v,inset,slack:panel});
- assert.ok(c.zoom<=1.5&&Math.abs(c.zoom-before.zoom)<1e-12,'el zoom no cambia');
+ // Informe 123: el enfoque puede llegar al tope de la resolución (2); el margen no cambia el zoom.
+ assert.ok(c.zoom<=2&&Math.abs(c.zoom-before.zoom)<1e-12,'el zoom no cambia');
  const points=zone=>[...zone.accesses.map(a=>a.x),...zone.portraits.map(p=>p[0])],out=cam=>points(z).filter(x=>cam.x+x*cam.zoom>v.width-inset.right).length;
  assert.ok(out(before)>0,'sin margen quedaba un punto bajo la ficha');assert.equal(out(c),0,'con margen ningún acceso ni retrato queda bajo la ficha');
  for(const zone of scene.zones){const f=focusLocality(scene,zone.id,{...v,inset,slack:panel});for(const x of points(zone))assert.ok(f.x+x*f.zoom<=v.width-inset.right+.5,zone.id);}

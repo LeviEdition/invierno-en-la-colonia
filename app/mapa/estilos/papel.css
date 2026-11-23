@@ -23,11 +23,11 @@ body[data-interfaz=v2][data-panel-open=false] #map-app #dossier>.mancha{display:
 .v2-sr{position:absolute!important;width:1px;height:1px;margin:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 
 /* Botones sobre papel: chapa oscura con sombra dura; «Terminar turno» en Lámpara sólida. */
-body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button:not(#bar-portrait):not(#objective-details):not(#crisis-details){min-height:44px;padding:5px 12px;border:2px solid #07090C;border-radius:3px;background:#262D35;color:var(--nieve);font:600 14px/1.1 var(--fuente-texto);box-shadow:var(--sombra-dura);cursor:pointer}
-body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button:not(#bar-portrait):not(#objective-details):not(#crisis-details):active:not(:disabled){translate:2px 2px;box-shadow:1px 1px 0 #07090C}
+body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button:not(#bar-portrait):not(#objective-details):not(#crisis-details):not(.fold-tab){min-height:44px;padding:5px 12px;border:2px solid #07090C;border-radius:3px;background:#262D35;color:var(--nieve);font:600 14px/1.1 var(--fuente-texto);box-shadow:var(--sombra-dura);cursor:pointer}
+body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button:not(#bar-portrait):not(#objective-details):not(#crisis-details):not(.fold-tab):active:not(:disabled){translate:2px 2px;box-shadow:1px 1px 0 #07090C}
 body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button:disabled{opacity:.45;box-shadow:none;cursor:default}
 /* Misma cadena que la regla general, con el id del botón: gana sin !important. */
-body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button#finish-turn:not(#bar-portrait):not(#objective-details):not(#crisis-details){background:var(--lampara);color:#1A1408;border-color:#07090C}
+body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button#finish-turn:not(#bar-portrait):not(#objective-details):not(#crisis-details):not(.fold-tab){background:var(--lampara);color:#1A1408;border-color:#07090C}
 body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button:focus-visible{outline:2px solid var(--lampara);outline-offset:2px}
 
 /* ── Disposición v2 en horizontal y pantallas anchas ── */
@@ -92,7 +92,7 @@ body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button:focus-visibl
  body[data-interfaz=v2] #map-app #bar-name{font-size:14px}
  body[data-interfaz=v2] #map-app #bar-who{flex-basis:150px}
  body[data-interfaz=v2] #map-app .bar-die{width:24px;height:24px;padding:3px}
- body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button:not(#bar-portrait):not(#objective-details):not(#crisis-details){min-height:44px;padding:3px 8px;font-size:12px}
+ body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button:not(#bar-portrait):not(#objective-details):not(#crisis-details):not(.fold-tab){min-height:44px;padding:3px 8px;font-size:12px}
  body[data-interfaz=v2] #map-app #action-bar #cycle-status{display:none}
  body[data-interfaz=v2] #map-app #public-summaries{width:196px;gap:5px}
  body[data-interfaz=v2] #map-app .paper-card{padding:5px 9px 6px}
@@ -147,7 +147,46 @@ body[data-interfaz=v2][data-motion=reduced] #map-app .bar-die::before,body[data-
 body[data-interfaz=v2] #map-app #dossier :where(button:not(.die):not([data-ambient]):not(#ambient-enabled)){background-color:#262D35;border-color:#07090C}
 @media (max-height:500px) and (orientation:landscape){body[data-interfaz=v2] #map-app #public-summaries{top:calc(var(--v2-top) + 6px)}}
 /* Notas que estaban en tono claro para la pizarra: en tinta suave sobre el papel. */
-body[data-interfaz=v2] #map-app #dossier :is(.dice-section p,.provisional-note,dt){color:var(--tinta-suave)}
+body[data-interfaz=v2] #map-app #dossier :is(.dice-section p,.provisional-note,dt,#locality-description){color:var(--tinta-suave)}
 /* Herramientas de desarrollo (solo con ?dev): arriba de la barra, sin tapar el retrato. */
 @media (min-width:601px),(orientation:landscape){body[data-interfaz=v2] #development-tools{bottom:calc(var(--v2-bottom) + 4px)}}
 body[data-interfaz=v2] #map-app #dossier #boost-reason{margin-top:6px}
+
+/* ══ Sesión 5 (informe 123): paneles plegables y globos de las chapas ══ */
+/* Pestaña de papel en el borde de cada panel, con una flecha que apunta hacia donde se mueve. */
+body[data-interfaz=v2] #map-app .fold-tab{position:absolute;z-index:3;width:30px;height:30px;min-width:0;min-height:0;margin:0;padding:0;border:0;border-radius:0;box-shadow:none;cursor:pointer;pointer-events:auto;clip-path:var(--torn);background:url(../../../assets/interfaz/papel/papel-grano.png) 0 0/128px 128px,url(../../../assets/interfaz/papel/papel-tarjeta.png) 0 0/100% 100%;background-blend-mode:multiply,normal}
+body[data-interfaz=v2] #map-app .fold-tab::before{content:'';position:absolute;left:50%;top:50%;width:0;height:0;border:6px solid transparent;border-left:8px solid var(--tinta);border-right:0;translate:-35% -50%;rotate:var(--fold-arrow,0deg)}
+body[data-interfaz=v2] #map-app .fold-tab:focus-visible{outline:2px solid var(--lampara);outline-offset:2px}
+@media (pointer:coarse){body[data-interfaz=v2] #map-app .fold-tab{width:44px;height:44px}}
+/* Tarjetas: pestaña asomando por el borde derecho. Desplegada apunta a la izquierda (plegar). */
+body[data-interfaz=v2] #map-app .paper-card>.fold-tab{top:6px;right:-30px;--fold-arrow:180deg}
+body[data-interfaz=v2] #map-app .paper-card[data-folded=true]>.fold-tab{--fold-arrow:0deg}
+@media (pointer:coarse){body[data-interfaz=v2] #map-app .paper-card>.fold-tab{right:-44px}}
+/* Fila de recursos: pestaña colgando del borde inferior. */
+body[data-interfaz=v2] #map-app .topbar>.fold-tab{right:8px;bottom:-30px;--fold-arrow:-90deg}
+body[data-interfaz=v2] #map-app .topbar[data-folded=true]>.fold-tab{--fold-arrow:90deg}
+@media (pointer:coarse){body[data-interfaz=v2] #map-app .topbar>.fold-tab{bottom:-44px}}
+/* Barra de acción: pestaña sobre el borde superior. */
+body[data-interfaz=v2] #map-app #action-bar>.fold-tab{left:60px;top:-30px;--fold-arrow:90deg}
+body[data-interfaz=v2] #map-app #action-bar[data-folded=true]>.fold-tab{--fold-arrow:-90deg}
+@media (pointer:coarse){body[data-interfaz=v2] #map-app #action-bar>.fold-tab{top:-44px}}
+
+/* Plegadas: una tira mínima que sigue informando. */
+body[data-interfaz=v2] #map-app .fold-strip{display:none;font:700 13px/1.2 var(--fuente-texto);color:var(--tinta);white-space:nowrap;font-variant-numeric:lining-nums tabular-nums}
+body[data-interfaz=v2] #map-app .paper-card[data-folded=true]{width:max-content;padding:6px 12px}
+body[data-interfaz=v2] #map-app .paper-card[data-folded=true] .fold-strip{display:block}
+body[data-interfaz=v2] #map-app .paper-card[data-folded=true]>:is(button:not(.fold-tab),div,.mancha),body[data-interfaz=v2] #map-app .paper-card[data-folded=true] :is(#objective-details,#crisis-details){display:none}
+body[data-interfaz=v2] #map-app #public-summaries:has(.paper-card[data-folded=true]){width:auto;align-items:flex-start}
+body[data-interfaz=v2] #map-app .topbar[data-folded=true] .stats>div:not(.resource){display:none}
+body[data-interfaz=v2] #map-app #action-bar[data-folded=true]{right:auto;height:58px;gap:10px;padding-right:12px}
+body[data-interfaz=v2] #map-app #action-bar[data-folded=true] :is(.bar-identity,#bar-actions,#cycle-status,.mancha){display:none}
+body[data-interfaz=v2] #map-app #action-bar[data-folded=true] #bar-portrait{width:44px;height:44px}
+
+/* Globo de las chapas: papel, debajo de la chapa, sin salir de la pantalla (stat-tips.mjs). */
+body[data-interfaz=v2] #map-app .stats>div{pointer-events:auto;cursor:help}
+body[data-interfaz=v2] #map-app .stats>div:focus-visible{outline:2px solid var(--lampara);outline-offset:2px}
+body[data-interfaz=v2] .stat-tip{position:fixed;z-index:60;max-width:260px;padding:9px 12px 10px;box-sizing:border-box;color:var(--tinta);font:13px/1.35 var(--fuente-texto);pointer-events:none;isolation:isolate}
+body[data-interfaz=v2] .stat-tip::before{content:'';position:absolute;inset:0;z-index:-1;clip-path:var(--torn);background:url(../../../assets/interfaz/papel/papel-grano.png) 0 0/128px 128px,url(../../../assets/interfaz/papel/papel-tarjeta.png) 0 0/100% 100%;background-blend-mode:multiply,normal}
+body[data-interfaz=v2] .stat-tip[hidden]{display:none}
+body[data-interfaz=v2] .stat-tip-title{display:block;margin-bottom:2px;font:700 14px/1.2 var(--fuente-titulo)}
+@media (prefers-reduced-motion:no-preference){body[data-interfaz=v2]:not([data-motion=reduced]) .stat-tip:not([hidden]){animation:v2-slide 160ms ease-out;--v2-shift:0 8px}}

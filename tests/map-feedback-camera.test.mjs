@@ -2,7 +2,7 @@ import test from 'node:test';import assert from 'node:assert/strict';
 import {createMapNotice} from '../app/mapa/experiencia/map-notice.mjs';
 import {eventText} from '../app/mapa/juego/information.mjs';
 import {actionNotice} from '../app/mapa/acciones/action-presentation.mjs';
-import {fitMapCamera,constrainCamera,resizeMapCamera,focusLocality} from '../app/mapa/escena/camera.mjs';
+import {fitMapCamera,constrainCamera,resizeMapCamera,focusLocality,coverZoom,resolutionMaxZoom} from '../app/mapa/escena/camera.mjs';
 import {zoomCameraAt,pinchCamera} from '../app/mapa/render/camera.mjs';
 import {readFileSync} from 'node:fs';
 const read=p=>JSON.parse(readFileSync(new URL('../'+p,import.meta.url))),geometry=read('app/mapa/escena/scene.json'),manifest=read('assets/mapa-horizontal/manifest.json'),source=manifest.files.find(r=>r.file===manifest.activeMap),bounds={...geometry.bounds,sourceWidth:source.dimensions[0],sourceHeight:source.dimensions[1],maxZoom:geometry.maxZoom},scene={...geometry,bounds};
@@ -26,8 +26,10 @@ test('Cámara: zoom máximo configurado en 1,5 respecto del mundo lógico y text
 });
 for(const [width,height]of [[1025,618],[1365,618],[852,294],[393,600],[2560,1440]])test('Cámara: todas las entradas y enfoque comparten el límite configurado '+width+'×'+height,()=>{
  const v={width,height},fit=fitMapCamera(bounds,v),anchor={x:width/2,y:height/2},max=geometry.maxZoom;
- assert.ok(fit.zoom<=max);for(const z of scene.zones){const f=focusLocality(scene,z.id,v);assert.ok(f.zoom<=max,z.id);assert.ok(f.zoom<=Math.max(geometry.focusMaxZoom,fit.zoom)+1e-12,z.id+': el enfoque conserva su tope de antes (1) salvo que la vista general ya sea mayor');}
+ assert.ok(fit.zoom<=max);for(const z of scene.zones){const f=focusLocality(scene,z.id,v);// Informe 123: el enfoque puede pasar el tope manual hasta el de la resolución del fondo (2).
+ assert.ok(f.zoom<=resolutionMaxZoom(bounds)+1e-12,z.id);assert.equal(resolutionMaxZoom(bounds),2);}
  for(const next of [zoomCameraAt(fit,1e6,anchor),pinchCamera(fit,anchor,anchor,1e6),{...fit,zoom:1e6}]){const c=constrainCamera(next,bounds,v);assert.equal(c.zoom,max);assert.equal(c.maxZoom,max);assert.equal(Math.round(c.zoom*100),150,'el rótulo mide respecto del tamaño lógico');assert.ok(bounds.width*c.zoom/source.dimensions[0]<=1,'un píxel de la textura ocupa como mucho un píxel CSS');}
  if(width>bounds.width&&height>bounds.height){assert.equal(fit.zoom,max);assert.equal(fit.x,(width-bounds.width*max)/2);assert.equal(fit.y,(height-bounds.height*max)/2);}
- const after=resizeMapCamera({...fit,x:fit.x-30},null,bounds,{width:width+200,height});assert.equal(after.zoom,fit.zoom);
+ // Informe 123: al redimensionar no baja del zoom que cubre el área (nunca franjas vacías).
+ const after=resizeMapCamera({...fit,x:fit.x-30},null,bounds,{width:width+200,height});assert.equal(after.zoom,Math.max(fit.zoom,Math.min(max,coverZoom(bounds,{width:width+200,height}))));
 });

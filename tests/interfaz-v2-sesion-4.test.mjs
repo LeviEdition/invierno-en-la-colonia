@@ -49,7 +49,7 @@ test('Sesión 4 · barra: superviviente activo, vista previa y textos de las tar
  const preview=actionBarModel(p,{});assert.equal(preview.actor.id,'h1','sin selección: el líder del grupo en turno');assert.equal(preview.preview,true);assert.equal(preview.own,true);
  const chosen=actionBarModel(p,{selectedId:'h0',chosenIndex:1});assert.equal(chosen.preview,false);assert.equal(chosen.actor.location,'Hospital');
  assert.deepEqual(chosen.actor.damage.map(d=>d.kind+d.count),['wound2','frost1']);assert.deepEqual(chosen.dice.map(d=>d.chosen),[false,true]);
- assert.deepEqual(cardsModel(p),{objective:{title:'Encontrar la cura',progress:'4 de 7 muestras · R8',ratio:4/7},crisis:{title:'Crisis',progress:'2 medicinas · 1 de 2',ratio:.5}});
+ assert.deepEqual(cardsModel(p),{objective:{title:'Encontrar la cura',progress:'4 de 7 muestras · R8',short:'Objetivo 4/7 · R8',ratio:4/7},crisis:{title:'Crisis',progress:'2 medicinas · 1 de 2',short:'Crisis 1/2',ratio:.5}});
  assert.equal(cardsModel({...p,crisis:{type:'combustible',need:1,given:0}}).crisis.progress,'1 combustible · 0 de 1');
  assert.equal(actionBarModel({...p,turn:'ai'},{selectedId:'h0'}).own,false,'fuera de turno no actúa');
 });

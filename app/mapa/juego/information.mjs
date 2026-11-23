@@ -13,15 +13,18 @@ export const help=[
  ['Registro y privacidad','El registro conserva hasta 200 eventos estructurados y los últimos 80 pasos del ciclo. Las cartas encontradas o conservadas solo se muestran a su jugador; acciones, costes, usos, tiradas y resultados públicos siguen visibles. Durante el pase se ocultan registro, manos, dados y borradores hasta que confirme el jugador entrante.'],
  ['Controles y recuperación','Arrastrá el mapa; rueda o pinza para zoom. Con foco en el mapa: flechas, +, − y 0. Consultá fichas y edificios o usá los selectores por teclado. Escape cancela un borrador, pero no una decisión obligatoria. Si se pierde la conexión, usá Recuperar conexión para consultar el resultado antes de repetir una acción. Recargar toda la aplicación pierde la instancia: no hay guardado persistente. Si un resultado no puede determinarse, se bloquea repetirlo.']
 ];
+// Tercer campo: el título de la ficha V9 (statDetails de src/presentation/reference-view.mjs),
+// usado por los globos de las chapas (informe 123). Turno no tenía texto: se agregó acá.
 export const statistics=[
- ['Moral','Disminuye por muertes, hambre y crisis fallidas. Si llega a cero, termina la partida.'],
- ['Comida','Reserva común para alimentación y mejora de dados.'],
- ['Hambre','Se acumula cuando no alcanza la comida y no desaparece automáticamente.'],
- ['Ronda','Límite del objetivo: agotarlo sin cumplir la misión provoca derrota.'],
- ['Residuos','Cada diez cuestan una moral por fase de colonia; limpiar retira hasta tres.'],
- ['Zombis','Suma de colonia y localidades. Llegan por población, ruido y algunas encrucijadas.'],
- ['Indefensos','Viven en colonia, consumen comida y atraen zombis; no actúan ni tienen dados.'],
- ['Rescates','Esperan una plaza en colonia y llegan automáticamente cuando queda disponible.'],
+ ['Turno','Grupo que juega ahora. «Terminar turno» pasa al grupo siguiente o a la fase de colonia.','Turno en curso'],
+ ['Moral','Disminuye por muertes, hambre y crisis fallidas. Si llega a cero, termina la partida.','Moral de la colonia'],
+ ['Comida','Reserva común para alimentación y mejora de dados.','Reserva de comida'],
+ ['Hambre','Se acumula cuando no alcanza la comida y no desaparece automáticamente.','Hambre acumulada'],
+ ['Ronda','Límite del objetivo: agotarlo sin cumplir la misión provoca derrota.','Rondas restantes'],
+ ['Residuos','Cada diez cuestan una moral por fase de colonia; limpiar retira hasta tres.','Montón de residuos'],
+ ['Zombis','Suma de colonia y localidades. Llegan por población, ruido y algunas encrucijadas.','Zombis en el tablero'],
+ ['Indefensos','Viven en colonia, consumen comida y atraen zombis; no actúan ni tienen dados.','Supervivientes indefensos'],
+ ['Rescates','Esperan una plaza en colonia y llegan automáticamente cuando queda disponible.','Rescates pendientes'],
  ['Influencia','Orden de propagación y víctimas de desbordamiento: primero la menor.'],
  ['Ataque y búsqueda','El valor efectivo es el mínimo del dado; ficha y equipo muestran los modificadores actuales.']
 ];

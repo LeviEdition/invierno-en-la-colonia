@@ -7,7 +7,9 @@ import {createFlicker,lightLevel} from '../../experiencia/night-lights.mjs';
 export const NIGHT_LOOK=Object.freeze({glow:0xf2c14e,shade:0x41557a,shadeAlpha:.65,
  // Tope del resplandor: sumado a la ventana remapeada (60 % de la Lámpara) su centro queda
  // por debajo de la Lámpara plena del contorno de selección.
- glowAlpha:.32,glowSize:2.4});
+ // Informe 123: antes glowAlpha .32 y glowSize 2.4. El tope de glowAlpha es 0,4 (con la
+ // ventana al 60 % de la Lámpara, el centro sigue por debajo del contorno).
+ glowAlpha:.38,glowSize:3.2});
 const TEXTURE='night-glow';
 // Ritmo del bucle cuando solo parpadean las luces (la nieve, si está activa, pide el suyo).
 export const FLICKER_FPS=24;

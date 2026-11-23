@@ -4,7 +4,9 @@
 // mulberry32: misma semilla, misma secuencia.
 export function mulberry32(seed){let a=seed>>>0;return ()=>{a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return ((t^t>>>14)>>>0)/4294967296;};}
 
-export const FLICKER=Object.freeze({low:.6,high:1,minMs:80,maxMs:450,smoothMs:70,flashDelta:.2,maxFlashesPerSecond:3,reduced:.8,day:.35});
+// Informe 123: más amplitud (de 60–100 % a 30–100 %), destellos más marcados (salto de 0,3) y
+// día más visible (de 35 % a 50 %). Antes: low .6, flashDelta .2, day .35.
+export const FLICKER=Object.freeze({low:.3,high:1,minMs:80,maxMs:450,smoothMs:70,flashDelta:.3,maxFlashesPerSecond:3,reduced:.8,day:.5});
 
 // Parpadeo errático: cada luz con su propio ritmo (desfasado), entre 60 % y 100 % de su base,
 // nunca apagada; cambios cada 80–450 ms con suavizado. Un salto de 0,2 o más cuenta como

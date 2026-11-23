@@ -29,6 +29,7 @@ export function mountActionBar({portraitUrl,initials}){
   const el=$(id+'-card');if(!el)return;el.dataset.empty=String(!card);
   const text=card?card.title+'|'+card.progress:'';const apply=()=>{setText($(id+'-title'),card?.title||'');setText($(id+'-progress'),card?.progress||'');};
   if(cardText[id]!==undefined&&cardText[id]!==text)crossfade($(id+'-text'),apply);else apply();cardText[id]=text;
+  setText($(id+'-strip'),card?.short||'');
   // La barra avanza con transform (escala horizontal), con transición de 300 ms en CSS.
   const bar=$(id+'-bar'),scale='scaleX('+(card?card.ratio:0)+')';if(bar&&bar.style.transform!==scale)bar.style.transform=scale;
  }
