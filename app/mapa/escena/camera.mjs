@@ -7,8 +7,10 @@ export function constrainCamera(camera,b,viewport){
  const maxZoom=b.maxZoom??Math.min((b.sourceWidth??b.width)/b.width,(b.sourceHeight??b.height)/b.height),minZoom=Math.min(maxZoom,viewport.width/b.width,viewport.height/b.height,camera.retainedMin??Infinity),zoom=Math.max(minZoom,Math.min(maxZoom,camera.zoom));
  // Cuando el mapa cabe en un eje, centrarlo con margen de interfaz. Al
  // acercarse se conserva el pan hasta el borde real, sin estirar el fondo.
- const axis=(position,size,available)=>size<=available?(available-size)/2:Math.max(available-size,Math.min(0,position));
- return {...camera,minZoom,maxZoom,zoom,x:axis(camera.x,b.width*zoom,viewport.width),y:axis(camera.y,b.height*zoom,viewport.height)};
+ // viewport.slack (opcional): margen extra de desplazamiento cuando un panel flotante tapa
+ // un borde (la ficha abierta): permite llevar ese borde del mapa a la zona libre.
+ const s=viewport.slack||{},axis=(position,size,available,before=0,after=0)=>size<=available?(available-size)/2:Math.max(available-size-after,Math.min(before,position));
+ return {...camera,minZoom,maxZoom,zoom,x:axis(camera.x,b.width*zoom,viewport.width,s.left||0,s.right||0),y:axis(camera.y,b.height*zoom,viewport.height,s.top||0,s.bottom||0)};
 }
 export function fitMapCamera(b,v){const zoom=Math.min(v.width/b.width,v.height/b.height);return constrainCamera({overview:true,zoom,x:0,y:0},b,v);}
 // Un cambio de espacio disponible conserva la escala y el pan elegidos.

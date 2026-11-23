@@ -43,3 +43,13 @@ export function safeInsets(viewport,rects,{minShare=.4}={}){
 export const LABEL_WAKE_MS=2800;
 export function localityLabelAnchor(zone){const g=zone?.portraitGroup?.labelPosition,b=zone?.buildingBounds;return g?{x:g.x,y:g.y}:b?{x:b.x+b.width/2,y:b.y+b.height*.34}:null;}
 export function labelVisible({id,selectedId,awakeUntil,now}){return id===selectedId||now<awakeUntil;}
+
+// Globo de daño anclado a su ficha: marcas apiladas, no más ancho que la ficha, con una punta
+// hacia ella. Así, con fichas pegadas, cada globo queda sobre su dueña y no invade a la vecina.
+// Ancho estimado de una marca: símbolo y cifras (≈ .75em + .6em por cifra) más 6 px de borde,
+// relleno y globo.
+export function damageBubble(diameter,marks){
+ if(!marks?.length||!(diameter>0))return null;
+ const digits=Math.max(...marks.map(m=>String(m.count).length)),em=.75+.6*digits,fontSize=Math.max(8,Math.min(11,Math.floor((diameter-6)/em)));
+ return {fontSize,maxWidth:Math.max(diameter,Math.ceil(fontSize*em+6)),width:Math.ceil(fontSize*em+6)};
+}

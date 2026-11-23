@@ -15,7 +15,7 @@
 | Mapa en doble resolución | **Integrado en `main`** (PR #34) | [112](112-mapa-doble-resolucion.md) |
 | Reglas de prueba y modo «un grupo» | **Integrado en `main`** (PR #37), apagadas por defecto y disponibles con `?dev`. Falta probarlas jugando | [116](116-ficha-regla-la-noche.md), [117](117-reglas-de-prueba-y-un-grupo.md), [118](118-auditoria-datos-interfaz-v2.md) |
 | Interfaz v2 — sesión 1 | **En revisión** (PR #38, borrador): mapa a pantalla completa, paneles flotantes, filtro frío, materiales, daño y ruido siempre visibles | [119](119-interfaz-v2-sesion-1.md) |
-| Interfaz v2 — sesión 2 | **En revisión** (rama `feature/interfaz-v2-sesion-2`), parte A, foco en escritorio: recursos como chapas, rótulos que aparecen con la interacción, papel rasgado, transiciones, encrucijada en viñeta con consecuencias después de decidir, dados con puntos en todos los botones | [120](120-interfaz-v2-sesion-2.md) |
+| Interfaz v2 — sesión 2 | **En revisión** (rama `feature/interfaz-v2-sesion-2`), partes A y B, foco en escritorio: recursos como chapas, rótulos que aparecen con la interacción, papel rasgado, transiciones, encrucijada en viñeta con consecuencias después de decidir, dados con puntos en todos los botones; marcas de daño ancladas a su ficha, margen de cámara con la ficha abierta, pino anclado y ficha que vuelve arriba | [120](120-interfaz-v2-sesion-2.md) |
 | Singleplayer (SP-00 a SP-08) | **Diseño en papel**; capítulo piloto «La última guardia» en ficha | [63](63-hoja-de-ruta-planificacion-singleplayer.md), [105](105-ficha-capitulo-la-ultima-guardia.md) |
 
 El mapa permite preparar, jugar y terminar una partida completa (contra la IA, dos jugadores locales y, con `?dev`, un grupo) con un único motor. Vive en `app/mapa/` (`npm run dev:mapa` → `http://127.0.0.1:8779/app/mapa/`).
@@ -24,13 +24,12 @@ El mapa permite preparar, jugar y terminar una partida completa (contra la IA, d
 
 **Completar y revisar la sesión 2 de la interfaz v2 ([120](120-interfaz-v2-sesion-2.md)).**
 
-1. Recibir la parte B del encargo (ajustes de la sesión 1), que llegó cortada, y aplicarla en la misma rama.
-2. Abrir el PR borrador de `feature/interfaz-v2-sesion-2` (base: `feature/interfaz-v2-sesion-1`) y esperar el CI.
-3. Probar en escritorio los rótulos, las transiciones y la encrucijada.
+1. Abrir el PR borrador de `feature/interfaz-v2-sesion-2` (base: `feature/interfaz-v2-sesion-1`) y esperar el CI.
+2. Probar en escritorio los rótulos, las transiciones, la encrucijada, los globos de daño y el enfoque con la ficha abierta.
 
 ## 3. Cola ordenada
 
-1. **Interfaz v2, sesión 2, parte B** y decisión de merge de las sesiones 1 y 2 (requiere indicación expresa).
+1. **Decisión de merge de las sesiones 1 y 2** de la interfaz v2 (requiere indicación expresa).
 2. **Arte de encrucijadas:** viñetas genéricas y sets de expresiones con la paleta de 109 para llenar la zona de imagen; tipografías de la guía incluidas en el repositorio.
 3. **Probar jugando las reglas de prueba** ([117](117-reglas-de-prueba-y-un-grupo.md)) para fijar la comida inicial y la duda de [116](116-ficha-regla-la-noche.md).
 4. **Implementar «La última guardia»** como capítulo jugable.
@@ -49,23 +48,22 @@ El mapa permite preparar, jugar y terminar una partida completa (contra la IA, d
 | 7 | D12 de exposición sin probar a mano | Integrado; baterías automáticas en tres tamaños | Partida manual |
 | 8 | Enfoque de localidad | **1,5**, en el área libre de paneles ([119](119-interfaz-v2-sesion-1.md)), con recorrido de 220 ms ([120](120-interfaz-v2-sesion-2.md)) | Probar en escritorio |
 | 9 | «Regresar a la colonia» cuenta como movimiento | **Resuelto** (18/11) | Confirmar jugando que el coste de un dado alcanza |
-| 11 | Marcas de daño a 11 px, debajo del mínimo de 14 px de la guía | Decisión de la sesión 1 | Decisión del creador al verlo |
+| 11 | Marcas de daño de 8 a 11 px, debajo del mínimo de 14 px de la guía | Ahora en un globo anclado a cada ficha y no más ancho que ella ([120](120-interfaz-v2-sesion-2.md)) | Decisión del creador al verlo |
 | 12 | Tipografías de la guía (Alegreya Sans, Bitter) no incluidas | Siguen las del sistema; Georgia provisoria en la encrucijada | Incluirlas con su licencia |
-| 13 | En escritorio, con la ficha abierta, un acceso del supermercado queda bajo la ficha al enfocarlo | Con la ficha cerrada no pasa | Ver jugando si molesta |
 | 14 | El oráculo del motor (`test:poc`) no corre en Windows | Enlace simbólico rechazado (EPERM) | Lo corre el CI |
 | 15 | Zona de imagen de la encrucijada sin arte | «Al otro lado» es una pantalla compuesta y no sirve como imagen | Arte de encrucijadas (cola 2) |
 
 ## 5. Verificación de la interfaz v2, sesión 2 (rama `feature/interfaz-v2-sesion-2`)
 
-- [x] **886 pruebas, 0 fallos** (5 nuevas): chapas, rótulos, transiciones, encrucijada y dados.
+- [x] **890 pruebas, 0 fallos** (14 nuevas): chapas, rótulos, transiciones, encrucijada, dados, globos de daño, margen de cámara, pino y vuelta arriba de la ficha.
 - [x] `check:build` y `check:mapa-build` en verde.
 - [x] Recorrido corto con Edge en 1365×768, 852×393 y 393×852:
   - rótulos que se encienden y se apagan;
   - salida del menú con copia inerte y sin duplicados;
   - encrucijada sin consecuencia antes y con resultado después, un solo efecto ante doble clic, sin azar extra;
   - sin errores ni desplazamiento horizontal.
-- [x] Tres capturas de escritorio citadas en [120](120-interfaz-v2-sesion-2.md).
-- [ ] **Parte B del encargo**: pendiente (mensaje cortado).
+- [x] Parte B en escritorio: globos centrados y dentro de su ficha, sin solapes; supermercado a zoom 1,5 con la ficha abierta, sin puntos tapados; a 852×393 la ficha queda arriba.
+- [x] Cinco capturas de escritorio citadas en [120](120-interfaz-v2-sesion-2.md).
 - [ ] **Baterías de navegador y oráculo**: no se corrieron localmente; CI del PR.
 - [ ] Prueba jugando en escritorio.
 - [ ] Decisión de merge del creador.

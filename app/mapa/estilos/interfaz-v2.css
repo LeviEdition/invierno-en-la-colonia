@@ -11,10 +11,12 @@
 }
 
 /* ── Marcas permanentes del mapa (todas las disposiciones) ── */
-/* Apiladas sobre la ficha (herida abajo, congelación arriba): cada pila cabe en el ancho
-   de su ficha y no pisa a las vecinas cuando las fichas están pegadas. */
-#map-app .actor-marker>.damage-marks{position:absolute;left:50%;bottom:calc(100% - 3px);transform:translateX(-50%);display:flex;flex-direction:column-reverse;align-items:center;gap:1px;pointer-events:none;font:700 11px/12px system-ui,sans-serif;letter-spacing:-.02em;font-variant-numeric:lining-nums tabular-nums;text-shadow:none;white-space:nowrap;z-index:1}
-#map-app .damage-mark{display:inline-flex;align-items:center;gap:0;padding:0 2px 0 1px;border:1px solid;border-radius:7px;background:#0f141aeb;box-shadow:0 1px 2px #0009}
+/* Globo de daño anclado a su ficha (informe 120, punto 7): marcas apiladas dentro de un
+   recuadro centrado sobre la ficha, con una punta que baja hasta ella. El tamaño de letra
+   (damageBubble) hace que el globo no sea más ancho que la ficha. */
+#map-app .actor-marker>.damage-marks{position:absolute;left:50%;bottom:calc(100% + 4px);transform:translateX(-50%);display:flex;flex-direction:column-reverse;align-items:center;gap:1px;padding:2px;border:1px solid var(--acero);border-radius:5px;background:#0f141af0;box-shadow:0 1px 3px #000a;pointer-events:none;font:700 11px/1.15 system-ui,sans-serif;font-variant-numeric:lining-nums tabular-nums;letter-spacing:-.02em;text-shadow:none;white-space:nowrap;z-index:1}
+#map-app .actor-marker>.damage-marks::after{content:'';position:absolute;left:50%;top:100%;transform:translateX(-50%);border:4px solid transparent;border-top-color:var(--acero);border-bottom:0}
+#map-app .damage-mark{display:inline-flex;align-items:center;gap:0;padding:0 2px 0 1px;border:1px solid;border-radius:4px;background:transparent}
 #map-app .damage-count{color:var(--nieve)}
 #map-app .damage-wound{border-color:var(--sangre-fria)}#map-app .damage-wound .damage-symbol{color:var(--sangre-fria)}
 #map-app .damage-frost{border-color:var(--escarcha)}#map-app .damage-frost .damage-symbol{color:var(--escarcha)}
@@ -62,7 +64,10 @@
  body[data-interfaz=v2] #map-app #objective-details,body[data-interfaz=v2] #map-app #crisis-details{color:var(--nieve)}
  body[data-interfaz=v2] #map-app #crisis-consequence{font-size:12px;color:var(--hielo)}
  body[data-interfaz=v2] #map-app #turn-cycle-controls{display:flex;gap:6px;padding:0;background:transparent;border:0}
- body[data-interfaz=v2] #map-app #public-summaries::after{content:'';position:absolute;left:4px;bottom:calc(100% - 3px);width:44px;height:44px;background:url(../../../assets/interfaz/pinos-izq.png) 0 100%/contain no-repeat;pointer-events:none}
+ /* Pino anclado a la barra (informe 120, punto 9): nace dentro del extremo izquierdo, sobre la
+    chapa, y asoma por encima del borde; el texto le deja lugar. */
+ body[data-interfaz=v2] #map-app #public-summaries{padding-left:44px}
+ body[data-interfaz=v2] #map-app #public-summaries::after{content:'';position:absolute;z-index:2;left:2px;bottom:3px;width:40px;height:calc(100% + 18px);background:url(../../../assets/interfaz/pinos-izq.png) 0 100%/contain no-repeat;pointer-events:none}
 
  /* Ficha flotante a la derecha, entre el menú y la barra inferior; cerrada queda un botón abajo a la derecha. */
  body[data-interfaz=v2] #map-app #dossier,body[data-interfaz=v2][data-sheet-expanded=true] #map-app #dossier{position:absolute;z-index:26;top:var(--v2-top);right:var(--v2-gap);bottom:auto;left:auto;width:var(--v2-dossier);max-width:calc(100% - 2*var(--v2-gap));max-height:calc(100% - var(--v2-top) - var(--v2-bottom));background:#1c242df2;overflow:visible}

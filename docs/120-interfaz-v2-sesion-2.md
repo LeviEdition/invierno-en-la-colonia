@@ -7,7 +7,7 @@ npm run check:build && npm test     # 886 pruebas
 npm run check:mapa-build
 ```
 
-**Alcance:** parte A del encargo. La parte B (ajustes de la sesión 1) llegó cortada en el mensaje y queda pendiente.
+**Alcance:** parte A del encargo y, al final, la parte B (ajustes de la sesión 1).
 
 ## Qué cambió
 
@@ -68,7 +68,6 @@ Capturas en 1365×768:
 
 ## Qué falta
 
-- **Parte B del encargo:** el mensaje se cortó; queda a la espera.
 - **Baterías de navegador** sin correr localmente ni modificar. En `check-map-experience`, `check-map-migration` y los ayudantes h344, los recorridos ya pulsan cualquier `[id^=play-cross-]`, así que cierran la vista de resultado (`play-cross-continue`). Fuente de verdad: el CI del PR.
 - **Tipografías** (Alegreya Sans, Bitter): siguen sin incluirse. La encrucijada usa Georgia como serif provisoria.
 - **En escritorio, jugando:**
@@ -78,3 +77,22 @@ Capturas en 1365×768:
   - cómo se lee la viñeta vacía hasta que haya arte.
 
   Nada de lo visual está aprobado hasta verlo.
+
+## Parte B — ajustes de la sesión 1 (escritorio)
+
+- **7. Marcas de daño ancladas a su ficha.** Cada ficha con daño tiene un globo propio, centrado sobre ella y con una punta que baja hasta la ficha. Adentro van las marcas apiladas: ♥ en Sangre fría y ❄ en Escarcha, cada una solo si es mayor que 0. `damageBubble` ajusta la letra (8–11 px) para que el globo no sea más ancho que la ficha.
+- **8. Margen de cámara con la ficha abierta.** Mientras la ficha está abierta, la cámara puede correrse hacia el lado que la ficha tapa tanto como mide la ficha. Solo es horizontal; el zoom máximo 1,5 y las posiciones no cambian. Al cerrar la ficha, la cámara vuelve a los bordes normales con el mismo recorrido suave. Sin ficha abierta, `constrainCamera` da exactamente lo de antes.
+- **9. Pino anclado.** El pino nace dentro del extremo izquierdo de la barra inferior, sobre la chapa, y el texto le deja lugar.
+- **10. «Bruno» y «Sol» cortados a 852×393.** Era real, no un artefacto de la captura. «Grupo y líderes» se abre dentro de la ficha; al cerrarse, la ficha quedaba desplazada 279 px sobre la lista de la localidad. Ahora vuelve arriba al cerrarse un panel de contexto y al cambiar de superviviente o de localidad (antes solo al cambiar de superviviente).
+
+**Comprobado:**
+- **890 pruebas, 0 fallos**, con nueve nuevas: el globo cabe en la ficha de 24 a 66 px, el margen corre solo lo que tapa la ficha y ningún acceso ni retrato de ninguna localidad queda bajo la ficha, el pino y la vuelta arriba de la ficha. `check:build` y `check:mapa-build` en verde.
+- **Con Edge a 1365×768**, con cinco fichas dañadas en la colonia: cada globo queda centrado y dentro de su ficha, sin solapes. Con la ficha abierta, el supermercado a zoom 1,5 no tiene puntos tapados.
+- **A 852×393**, después del recorrido de inicio, la ficha queda arriba (antes, desplazada 279 px).
+- Sin errores de página.
+
+**Capturas:**
+- [colonia con seis fichas](evidencias/interfaz-v2/120-colonia-seis-fichas-1365x768.jpg)
+- [supermercado enfocado con la ficha abierta](evidencias/interfaz-v2/120-supermercado-ficha-abierta-1365x768.jpg)
+
+**Falta:** las baterías de navegador (CI del PR) y verlo jugando en escritorio.
