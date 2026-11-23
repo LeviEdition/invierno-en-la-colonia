@@ -96,8 +96,9 @@ test('Parte B · margen de cámara con la ficha abierta: el supermercado entra e
 
 test('Parte B · pino anclado a la barra inferior',()=>{
  const css=read('app/mapa/estilos/interfaz-v2.css');
- assert.match(css,/#public-summaries::after\{content:'';position:absolute;z-index:2;left:2px;bottom:3px;/,'nace dentro de la barra');
- assert.match(css,/#public-summaries\{padding-left:44px\}/);
+ // Desde el informe 122 la barra inferior es la de acción.
+ assert.match(css,/#action-bar::after\{content:'';position:absolute;z-index:2;left:2px;bottom:3px;/,'nace dentro de la barra');
+ assert.match(css,/#action-bar\{padding-left:44px\}/);
 });
 
 test('Parte B · la ficha vuelve arriba al cambiar de superviviente o de localidad',()=>{

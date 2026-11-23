@@ -3,9 +3,10 @@ const number=value=>Number.isFinite(value)?value:null;
 const text=value=>typeof value==='string'?value:null;
 function freeze(value){if(value&&typeof value==='object'){for(const child of Object.values(value))freeze(child);Object.freeze(value);}return value;}
 const placeId=index=>Number.isInteger(index)?'place-'+index:null;
+function foodState(context,g){const need=typeof context.feedingNeed==='function'?number(context.feedingNeed(g)):null,food=number(g.food);return {need,danger:need!==null&&food!==null&&!(food>=need)};}
 export function projectVisibleState(context,{gate={},renderedPlayable=false,epoch=0}={}){
  const g=context.game,blocked=gate.setup?'setup':gate.pass?'handover':gate.death?'death':gate.modal?'decision':!g?'waiting':null;
- if(blocked)return freeze({schema:1,epoch,blocked,players:[],characters:[],locations:[],objective:null,crisis:null,log:[],dice:{ownerId:null,available:null,used:null},round:null,morale:null,food:null});
+ if(blocked)return freeze({schema:1,epoch,blocked,players:[],characters:[],locations:[],objective:null,crisis:null,log:[],dice:{ownerId:null,available:null,used:null},round:null,morale:null,food:null,resources:null});
  // En «un grupo» el bando de la IA no existe: no se proyecta un grupo vacío.
  const players=['human','ai'].filter(id=>(id==='human'?g.humans:g.bots).length).map(id=>({id,label:context.controls.display(id),leaderId:text(g.leaders?.[id]),initialLeaderConfirmed:!!(id==='human'?g.leaderChosen:g.localLeaderChosen)}));
  // «La noche»: el motor dice quién queda afuera y a quién le toca la tirada.
@@ -26,6 +27,9 @@ export function projectVisibleState(context,{gate={},renderedPlayable=false,epoc
   objective:g.objective?{name:text(g.objective.name),description:text(g.objective.description),samples:number(g.samples),goal:number(g.goal)}:null,
   crisis:g.crisis?{type:text(g.crisis.type),need:number(g.crisis.need),given:number(g.crisis.given),failure:text(g.crisis.fail)}:null,
   log:g.log.filter(entry=>typeof entry==='string').slice(),last:text(g.last),
-  dice:{ownerId:g.ended?null:context.controls.side,available:renderedPlayable?Array.from(context.controls.dice()||[]):null,used:null}
+  dice:{ownerId:g.ended?null:context.controls.side,available:renderedPlayable?Array.from(context.controls.dice()||[]):null,used:null},
+  // Recurso en peligro (informe 122), solo lectura: lo que el motor pedirá de comida en la
+  // próxima fase de colonia (feedingNeed) y su misma condición (food>=need alcanza).
+  resources:{food:foodState(context,g)}
  });
 }

@@ -39,10 +39,10 @@
  body[data-interfaz=v2] #map-app .map-viewport{position:absolute;inset:0;height:auto;min-height:0}
  body[data-interfaz=v2] #map-app .feedback{position:absolute;width:1px;height:1px;min-height:0;margin:0;padding:0;border:0;overflow:hidden;clip-path:inset(50%)}
 
- /* Material: chapa apagada en barras y marcos, nieve acumulada arriba. */
+ /* Material: chapa apagada en barras y marcos. La nieve queda solo en el mapa (informe 122):
+    los paneles de lectura son papel viejo (papel.css). */
  body[data-interfaz=v2] #map-app .topbar,body[data-interfaz=v2] #map-app #public-summaries,body[data-interfaz=v2] #map-app .map-tools,body[data-interfaz=v2] #map-app .menu-toggle,body[data-interfaz=v2] #map-app #dossier .panel-heading{background:var(--chapa);color:var(--nieve)}
  body[data-interfaz=v2] #map-app .topbar,body[data-interfaz=v2] #map-app #public-summaries,body[data-interfaz=v2] #map-app .map-tools,body[data-interfaz=v2] #map-app #dossier{border:1px solid var(--acero);border-radius:4px;box-shadow:0 3px 12px #0f141a99}
- body[data-interfaz=v2] #map-app .topbar::before,body[data-interfaz=v2] #map-app #public-summaries::before,body[data-interfaz=v2] #map-app #dossier::before{content:'';position:absolute;z-index:1;left:-1px;right:-1px;top:-7px;height:22px;background:url(../../../assets/interfaz/nieve.png) 0 0/600px 30px repeat-x;pointer-events:none}
 
  /* Fila superior: cámara a la izquierda, estado al lado, menú a la derecha. */
  body[data-interfaz=v2] #map-app .map-tools{top:var(--v2-gap);left:var(--v2-gap);width:var(--v2-tools);max-width:none;z-index:31;padding:3px}
@@ -64,10 +64,10 @@
  body[data-interfaz=v2] #map-app #objective-details,body[data-interfaz=v2] #map-app #crisis-details{color:var(--nieve)}
  body[data-interfaz=v2] #map-app #crisis-consequence{font-size:12px;color:var(--hielo)}
  body[data-interfaz=v2] #map-app #turn-cycle-controls{display:flex;gap:6px;padding:0;background:transparent;border:0}
- /* Pino anclado a la barra (informe 120, punto 9): nace dentro del extremo izquierdo, sobre la
-    chapa, y asoma por encima del borde; el texto le deja lugar. */
- body[data-interfaz=v2] #map-app #public-summaries{padding-left:44px}
- body[data-interfaz=v2] #map-app #public-summaries::after{content:'';position:absolute;z-index:2;left:2px;bottom:3px;width:40px;height:calc(100% + 18px);background:url(../../../assets/interfaz/pinos-izq.png) 0 100%/contain no-repeat;pointer-events:none}
+ /* Pino anclado a la barra (informe 120, punto 9): nace dentro del extremo izquierdo y asoma
+    por encima del borde; el contenido le deja lugar. Desde el informe 122 la barra es la de acción. */
+ body[data-interfaz=v2] #map-app #action-bar{padding-left:44px}
+ body[data-interfaz=v2] #map-app #action-bar::after{content:'';position:absolute;z-index:2;left:2px;bottom:3px;width:40px;height:calc(100% + 18px);background:url(../../../assets/interfaz/pinos-izq.png) 0 100%/contain no-repeat;pointer-events:none}
 
  /* Ficha flotante a la derecha, entre el menú y la barra inferior; cerrada queda un botón abajo a la derecha. */
  body[data-interfaz=v2] #map-app #dossier,body[data-interfaz=v2][data-sheet-expanded=true] #map-app #dossier{position:absolute;z-index:26;top:var(--v2-top);right:var(--v2-gap);bottom:auto;left:auto;width:var(--v2-dossier);max-width:calc(100% - 2*var(--v2-gap));max-height:calc(100% - var(--v2-top) - var(--v2-bottom));background:#1c242df2;overflow:visible}

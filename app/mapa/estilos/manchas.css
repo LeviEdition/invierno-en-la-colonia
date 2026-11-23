@@ -1,0 +1,6 @@
+/* Generado por scripts/generar-papel.mjs: no editar a mano. Manchas de sangre seca en capa
+   aparte del papel (informe 122): para moverlas o quitarlas, cambiar STAINS y regenerar. */
+body[data-interfaz=v2] #map-app .mancha[data-mancha=barra]{bottom:0;right:0;width:24px;height:24px;background:url(../../../assets/interfaz/papel/sangre-barra.png) -6px -11px/64px 64px no-repeat}
+body[data-interfaz=v2] #map-app .mancha[data-mancha=objetivo]{top:0;right:0;width:26px;height:26px;background:url(../../../assets/interfaz/papel/sangre-objetivo.png) -8px -33px/64px 64px no-repeat}
+body[data-interfaz=v2] #map-app .mancha[data-mancha=crisis]{top:0;right:0;width:40px;height:40px;background:url(../../../assets/interfaz/papel/sangre-crisis.png) -18px -53px/112px 112px no-repeat}
+body[data-interfaz=v2] #map-app .mancha[data-mancha=ficha]{bottom:0;right:0;width:28px;height:28px;background:url(../../../assets/interfaz/papel/sangre-ficha.png) -9px -5px/72px 72px no-repeat}
