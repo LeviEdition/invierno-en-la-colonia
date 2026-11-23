@@ -44,12 +44,39 @@ export const LABEL_WAKE_MS=2800;
 export function localityLabelAnchor(zone){const g=zone?.portraitGroup?.labelPosition,b=zone?.buildingBounds;return g?{x:g.x,y:g.y}:b?{x:b.x+b.width/2,y:b.y+b.height*.34}:null;}
 export function labelVisible({id,selectedId,awakeUntil,now}){return id===selectedId||now<awakeUntil;}
 
-// Globo de daño anclado a su ficha: marcas apiladas, no más ancho que la ficha, con una punta
-// hacia ella. Así, con fichas pegadas, cada globo queda sobre su dueña y no invade a la vecina.
-// Ancho estimado de una marca: símbolo y cifras (≈ .75em + .6em por cifra) más 6 px de borde,
-// relleno y globo.
+// Globo de daño anclado a su ficha, en una sola fila: herida a la izquierda y congelación a la
+// derecha, con una punta hacia la ficha. La letra se ajusta al diámetro como si cada marca fuera
+// sola; con dos marcas el globo puede ser más ancho que su ficha (ver damageLift).
+// Ancho estimado de una marca: símbolo y cifras (≈ .75em + .6em por cifra); 2 px entre marcas y
+// 6 px de borde, relleno y globo.
 export function damageBubble(diameter,marks){
  if(!marks?.length||!(diameter>0))return null;
- const digits=Math.max(...marks.map(m=>String(m.count).length)),em=.75+.6*digits,fontSize=Math.max(8,Math.min(11,Math.floor((diameter-6)/em)));
- return {fontSize,maxWidth:Math.max(diameter,Math.ceil(fontSize*em+6)),width:Math.ceil(fontSize*em+6)};
+ const ems=marks.map(m=>.75+.6*String(m.count).length),fontSize=Math.max(8,Math.min(11,Math.floor((diameter-6)/Math.max(...ems))));
+ const width=Math.ceil(fontSize*ems.reduce((a,b)=>a+b,0)+2*(marks.length-1)+6);
+ return {fontSize,width,maxWidth:width,height:Math.ceil(fontSize*1.15+8),wide:width>diameter};
+}
+// Globos que se tocan: el segundo (de izquierda a derecha) sube un nivel, y así hasta que no
+// pise a ninguno. bubbles: {id,x (centro), y (base, sobre la ficha), width, height} en píxeles
+// de pantalla. Devuelve {id: nivel}; el nivel 0 es su lugar de siempre.
+export function damageLift(bubbles,{gap=2,maxLevel=4}={}){
+ const placed=[],levels={};
+ for(const b of [...bubbles].filter(b=>b&&b.width>0).sort((a,c)=>a.x-c.x||String(a.id).localeCompare(String(c.id)))){
+  let level=0;const box=l=>({left:b.x-b.width/2,right:b.x+b.width/2,bottom:b.y-l*(b.height+gap),top:b.y-l*(b.height+gap)-b.height});
+  const hits=r=>placed.some(p=>r.left<p.right+gap&&r.right>p.left-gap&&r.top<p.bottom&&r.bottom>p.top);
+  while(level<maxLevel&&hits(box(level)))level++;
+  placed.push(box(level));levels[b.id]=level;
+ }
+ return levels;
+}
+
+// D12 de la noche (solo tiradas nocturnas): bajo el edificio de la localidad que tira, del
+// mundo a la pantalla con la cámara dibujada. pin es el centro del dado dentro de su tarjeta.
+// Si no entra en el área libre (fuera de pantalla o bajo un panel), se corre adentro sin mover
+// la cámara. Coordenadas en píxeles CSS del visor del mapa.
+export function nightDieAnchor(zone,camera,viewport,box,{pin,inset={},gap=6,margin=8}={}){
+ const b=zone?.buildingBounds;if(!b||!camera||!(viewport?.width>0)||!(box?.width>0))return null;
+ const px=pin?.x??box.width/2,want={x:camera.x+(b.x+b.width/2)*camera.zoom-px,y:camera.y+(b.y+b.height)*camera.zoom+gap};
+ const minX=(inset.left||0)+margin,minY=(inset.top||0)+margin,maxX=Math.max(minX,viewport.width-(inset.right||0)-margin-box.width),maxY=Math.max(minY,viewport.height-(inset.bottom||0)-margin-box.height);
+ const left=Math.round(Math.min(maxX,Math.max(minX,want.x))),top=Math.round(Math.min(maxY,Math.max(minY,want.y)));
+ return {left,top,clamped:left!==Math.round(want.x)||top!==Math.round(want.y)};
 }

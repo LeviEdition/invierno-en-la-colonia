@@ -79,3 +79,37 @@ La noche de las capturas se forzó con el gancho QA. El disparo real por tiradas
   Nada de lo visual está aprobado hasta verlo.
 - **Coincidencia de texturas:** `luces.json` usa la textura 1×. Si el arte 2× se desplazara respecto de la 1×, habría que regenerar desde otra fuente.
 - **CI del PR:** baterías de navegador y oráculo.
+
+## Ajustes tras la primera prueba del creador
+
+El creador jugó con `?dev=1`, «Un grupo (sin IA)», La noche y alguien afuera, y no vio la noche. Estos ajustes reemplazan los tiempos, la sombra y el brillo de día descritos arriba.
+
+**Diagnóstico (Edge, partida real, sin `qaNight`).** Se jugó una partida igual con Playwright, y se registró por cuadro el estado de la noche y las llamadas a `viewer.night`.
+- **Sí se disparaba:** `begin` 1, `end` 1, `adopt` 0.
+- **Era breve y sutil:** el nivel pasaba de 0 durante 2,76 s, pero solo ~0,65 s a pleno, con una sombra máxima de 0,5. La presentación de una localidad dura ~1,85 s, y la entrada de 1,2 s se comía casi toda.
+
+**Cambios.**
+- **Noche:** sombra 0,65, entrada 0,7 s, mínimo 2,2 s y amanecer 1,2 s. Medido igual: 3,4 s con nivel mayor que 0 y sombra máxima 0,65. La señal sale de `nightCue` (`night-lights.mjs`), que usan `main.mjs` y la prueba nueva del camino real (motor → broker → cola de presentaciones → atmósfera).
+- **D12 nocturno bajo la localidad:**
+  - La tarjeta del D12 se ancla bajo el edificio que tira, con la cámara dibujada (`nightDieAnchor`).
+  - Si queda fuera de pantalla o bajo un panel, se corre dentro del área libre (`focusInset`/`safeInsets`), sin mover la cámara.
+  - Solo pasa con presentaciones `exposure` de la noche; el D12 de combate y el de movimiento siguen abajo al centro.
+  - Al terminar, la tarjeta vuelve a su lugar.
+- **Marcas de daño en fila:**
+  - Herida a la izquierda y congelación a la derecha, cada una solo si es mayor que 0.
+  - Si un globo toca al de la ficha vecina, el segundo (de izquierda a derecha) sube un nivel (`damageLift`, con el tamaño medido del globo). La punta sigue hacia su ficha.
+- **Parpadeo constante:**
+  - Las luces parpadean siempre: de día al 35 % de su base, de noche a pleno.
+  - Con movimiento reducido quedan fijas al 80 %, y el bucle vuelve a dormir. Cambiar el ajuste despierta o duerme el bucle.
+  - Sin nieve, el bucle va a 24 cuadros por segundo; con la nieve activa, al ritmo de la nieve (30). Sigue en pausa con la pestaña oculta.
+
+**Medido (Edge, 1365×768).**
+- **Coste del parpadeo:** 0,043 ms por cuadro de promedio (peor 0,2 ms) a 24 cuadros por segundo; con nieve, 0,047 ms a 30.
+- **Movimiento reducido:** bucle detenido (0 cuadros en 1,5 s) y luces fijas.
+- **Seis fichas con daño en la colonia, en vista general:** ningún globo pisado; uno sube un nivel.
+
+Capturas:
+- [noche real con el D12 bajo el Hospital](evidencias/interfaz-v2/121-noche-real-d12-1365x768.jpg)
+- [colonia con seis fichas y daños](evidencias/interfaz-v2/121-colonia-seis-fichas-1365x768.jpg)
+
+**Pruebas:** 901, 0 fallos; tres nuevas en `tests/interfaz-v2-sesion-3-ajustes.test.mjs`. `src/` no cambió. Ninguna batería de navegador mira la posición del D12 ni de los globos, así que no se corrieron localmente. Lo visual no está aprobado hasta verlo jugando; el teléfono no se revisó.

@@ -69,7 +69,7 @@ test('Parte B · marcas de daño ancladas a su ficha',async()=>{
  const {damageBubble,damageMarks}=await import('../app/mapa/experiencia/state-marks.mjs');
  assert.equal(damageBubble(36,[]),null,'una ficha sana no tiene globo');assert.equal(damageBubble(0,damageMarks({wounds:1})),null);
  // Fichas de la colonia en escritorio: unos 36 px (vista general) a 66 px (enfoque 1,5).
- for(const d of [24,30,36,44,66]){for(const marks of [damageMarks({wounds:2}),damageMarks({wounds:2,frost:1}),damageMarks({wounds:12,frost:3})]){const b=damageBubble(d,marks);assert.ok(b.width<=d,d+' '+JSON.stringify(marks.map(m=>m.count)));assert.ok(b.fontSize>=8&&b.fontSize<=11);}}
+ for(const d of [24,30,36,44,66]){for(const marks of [damageMarks({wounds:2}),damageMarks({wounds:2,frost:1}),damageMarks({wounds:12,frost:3})]){const b=damageBubble(d,marks);if(marks.length===1)assert.ok(b.width<=d,d+' '+JSON.stringify(marks.map(m=>m.count)));assert.ok(b.fontSize>=8&&b.fontSize<=11);}}
  const css=read('app/mapa/estilos/interfaz-v2.css'),view=read('app/mapa/map-view.mjs');
  assert.match(css,/\.actor-marker>\.damage-marks\{position:absolute;left:50%;bottom:calc\(100% \+ 4px\);transform:translateX\(-50%\)/,'centrado sobre su ficha');
  assert.match(css,/\.actor-marker>\.damage-marks::after\{[^}]*top:100%/,'punta hacia la ficha');

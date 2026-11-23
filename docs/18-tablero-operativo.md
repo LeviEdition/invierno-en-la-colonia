@@ -2,7 +2,7 @@
 
 > **Cómo se usa este documento.** Arriba está solo lo vigente: dónde estamos, la única tarea siguiente, la cola ordenada y los hallazgos abiertos. Cada entrega actualiza estas secciones **reemplazando** su contenido, no agregando un bloque nuevo. El detalle de cada entrega va en su informe numerado y en el PR. Los bloques fechados anteriores al 16/11/2026 están en [18-historico-tablero.md](18-historico-tablero.md) y no se editan.
 
-**Actualizado:** 23/11/2026 · **main:** `4d5f1a1` (PR #34 mapa 2×, #37 reglas de prueba, #36 limpieza de `node_modules`) · **Tag vigente:** `v0.10.0-mapa-horizontal` · **Ramas en revisión, apiladas:** `feature/interfaz-v2-sesion-1` (PR #38, [119](119-interfaz-v2-sesion-1.md)) → `feature/interfaz-v2-sesion-2` (PR #39, [120](120-interfaz-v2-sesion-2.md)) → `feature/interfaz-v2-sesion-3` ([121](121-interfaz-v2-sesion-3.md))
+**Actualizado:** 23/11/2026 · **main:** `4d5f1a1` (PR #34 mapa 2×, #37 reglas de prueba, #36 limpieza de `node_modules`) · **Tag vigente:** `v0.10.0-mapa-horizontal` · **Ramas en revisión, apiladas:** `feature/interfaz-v2-sesion-1` (PR #38, [119](119-interfaz-v2-sesion-1.md)) → `feature/interfaz-v2-sesion-2` (PR #39, [120](120-interfaz-v2-sesion-2.md)) → `feature/interfaz-v2-sesion-3` (PR #40, [121](121-interfaz-v2-sesion-3.md))
 
 ## 1. Dónde estamos
 
@@ -16,7 +16,7 @@
 | Reglas de prueba y modo «un grupo» | **Integrado en `main`** (PR #37), apagadas por defecto y disponibles con `?dev`. Falta probarlas jugando | [116](116-ficha-regla-la-noche.md), [117](117-reglas-de-prueba-y-un-grupo.md), [118](118-auditoria-datos-interfaz-v2.md) |
 | Interfaz v2 — sesión 1 | **En revisión** (PR #38, CI verde): mapa a pantalla completa, paneles flotantes, filtro frío, materiales, daño y ruido siempre visibles | [119](119-interfaz-v2-sesion-1.md) |
 | Interfaz v2 — sesión 2 | **En revisión** (PR #39, borrador), partes A y B, foco en escritorio: recursos como chapas, rótulos que aparecen con la interacción, papel rasgado, transiciones, encrucijada en viñeta con consecuencias después de decidir, dados con puntos en todos los botones; marcas de daño ancladas a su ficha, margen de cámara con la ficha abierta, pino anclado y ficha que vuelve arriba | [120](120-interfaz-v2-sesion-2.md) |
-| Interfaz v2 — sesión 3 | **En revisión** (rama `feature/interfaz-v2-sesion-3`): ventanas en el tono de la Lámpara, parpadeo errático con semilla y atmósfera de noche mientras se presentan las tiradas nocturnas | [121](121-interfaz-v2-sesion-3.md) |
+| Interfaz v2 — sesión 3 | **En revisión** (PR #40), con ajustes: ventanas en el tono de la Lámpara; parpadeo errático con semilla, ahora siempre (de día tenue); noche más marcada mientras se presentan las tiradas nocturnas, con el D12 bajo la localidad que tira; marcas de daño en una fila | [121](121-interfaz-v2-sesion-3.md) |
 | Singleplayer (SP-00 a SP-08) | **Diseño en papel**; capítulo piloto «La última guardia» en ficha | [63](63-hoja-de-ruta-planificacion-singleplayer.md), [105](105-ficha-capitulo-la-ultima-guardia.md) |
 
 El mapa permite preparar, jugar y terminar una partida completa (contra la IA, dos jugadores locales y, con `?dev`, un grupo) con un único motor. Vive en `app/mapa/` (`npm run dev:mapa` → `http://127.0.0.1:8779/app/mapa/`).
@@ -25,11 +25,12 @@ El mapa permite preparar, jugar y terminar una partida completa (contra la IA, d
 
 **Revisar la interfaz v2, sesión 3 ([121](121-interfaz-v2-sesion-3.md)).**
 
-1. Abrir el PR borrador de `feature/interfaz-v2-sesion-3` (base: `feature/interfaz-v2-sesion-2`) y esperar el CI.
+1. Esperar el CI del PR #40 con los ajustes.
 2. Jugar en escritorio una ronda con La noche (`?dev`) y alguien afuera, y decidir sobre:
-   - el tono de las ventanas;
-   - el parpadeo;
-   - la entrada y el amanecer de la noche.
+   - si la noche ahora se percibe (0,65 de sombra, 0,7 s de entrada, 2,2 s de mínimo, 1,2 s de amanecer);
+   - el D12 bajo la localidad;
+   - el parpadeo constante y el tono de las ventanas;
+   - los globos de daño en fila con seis fichas en la colonia.
 
 ## 3. Cola ordenada
 
@@ -52,21 +53,22 @@ El mapa permite preparar, jugar y terminar una partida completa (contra la IA, d
 | 7 | D12 de exposición sin probar a mano | Integrado; baterías automáticas en tres tamaños | Partida manual |
 | 8 | Enfoque de localidad | **1,5**, en el área libre de paneles ([119](119-interfaz-v2-sesion-1.md)), con recorrido de 220 ms ([120](120-interfaz-v2-sesion-2.md)) | Probar en escritorio |
 | 9 | «Regresar a la colonia» cuenta como movimiento | **Resuelto** (18/11) | Confirmar jugando que el coste de un dado alcanza |
-| 11 | Marcas de daño de 8 a 11 px, debajo del mínimo de 14 px de la guía | Ahora en un globo anclado a cada ficha y no más ancho que ella ([120](120-interfaz-v2-sesion-2.md)) | Decisión del creador al verlo |
+| 11 | Marcas de daño de 8 a 11 px, debajo del mínimo de 14 px de la guía | En un globo de una fila anclado a cada ficha; si toca al de la vecina, sube un nivel ([121](121-interfaz-v2-sesion-3.md)) | Decisión del creador al verlo |
 | 12 | Tipografías de la guía (Alegreya Sans, Bitter) no incluidas | Siguen las del sistema; Georgia provisoria en la encrucijada | Incluirlas con su licencia |
 | 14 | El oráculo del motor (`test:poc`) no corre en Windows | Enlace simbólico rechazado (EPERM) | Lo corre el CI |
-| 16 | La noche de las capturas se forzó con el gancho QA | El disparo real (tiradas nocturnas presentadas) está cubierto por pruebas unitarias | Verlo jugando una ronda con La noche |
+| 16 | El creador no veía la noche | Se disparaba en partida real, pero breve y sutil (0,65 s a pleno, sombra 0,5). Reforzada; comprobada en una partida real automatizada (3,4 s, sombra 0,65) y con una prueba del camino real | Verlo jugando |
+| 18 | D12 nocturno anclado bajo la localidad | Probado a 1365×768; en el teléfono la tarjeta puede quedar corrida por el área libre | Ver en el teléfono cuando se retome |
 | 17 | `luces.json` se detecta en la textura 1× | Válido mientras el arte 2× no se desplace respecto de la 1× | Regenerar (`node scripts/detectar-luces.mjs`) si cambia el arte |
 | 15 | Zona de imagen de la encrucijada sin arte | «Al otro lado» es una pantalla compuesta y no sirve como imagen | Arte de encrucijadas (cola 2) |
 
 ## 5. Verificación de la interfaz v2, sesión 3 (rama `feature/interfaz-v2-sesion-3`)
 
-- [x] **898 pruebas, 0 fallos** (7 nuevas): remapeo de luces, contorno más vivo, generador con semilla, rango y límite de destellos, movimiento reducido, atmósfera de noche y detector reproducible.
-- [x] `check:build` y `check:mapa-build` en verde; `src/` sin cambios (oráculo igual).
-- [x] Edge a 1365×768: las ventanas quedan por debajo del contorno de selección (198, 219 y 229 frente a 242); el parpadeo cuesta 0,045 ms por cuadro de promedio; amanecer completo. A 852×393 y 393×852, sin errores ni desplazamiento horizontal.
-- [x] Tres capturas citadas en [121](121-interfaz-v2-sesion-3.md).
-- [ ] Baterías de navegador y oráculo: CI del PR.
-- [ ] Ver jugando en escritorio una noche real.
+- [x] **901 pruebas, 0 fallos** (3 nuevas en `interfaz-v2-sesion-3-ajustes`): noche por el camino real, anclaje del D12 (también fuera de pantalla y bajo un panel), fila de marcas y desplazamiento al tocarse. Las de la sesión 3 se actualizaron al parpadeo constante y a los tiempos nuevos.
+- [x] `check:build`, `check:mapa-build` y `detectar-luces --check` en verde; `src/` sin cambios (oráculo igual).
+- [x] Edge a 1365×768, partida real sin gancho QA: la noche dura 3,4 s con sombra 0,65; el D12 queda bajo el Hospital. El parpadeo cuesta 0,04 ms por cuadro, a 24 cuadros por segundo sin nieve; con movimiento reducido el bucle duerme. Seis fichas con daño en la colonia sin globos pisados.
+- [x] Cinco capturas citadas en [121](121-interfaz-v2-sesion-3.md) (tres de la entrega y dos de los ajustes).
+- [ ] Baterías de navegador y oráculo: CI del PR (ninguna mira la posición del D12 ni de los globos).
+- [ ] Ver jugando en escritorio la noche, el D12 y los globos.
 - [ ] Decisión de merge del creador.
 
 ## 6. Decisiones vigentes de mapa e interfaz

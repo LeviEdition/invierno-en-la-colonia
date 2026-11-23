@@ -22,7 +22,7 @@ export async function createWorkshopRenderer(canvas,kit,prepared,{signal,deadlin
  const assets=Object.fromEntries(kit.assets.map(a=>[a.id,a])),objects=new Map();let diagnostics,slots,atmosphere;
  const ready=new Promise((resolve,reject)=>{resolveReady=resolve;rejectReady=reject;});
  const wake=()=>{if(!disposed&&(!atmosphere||(!document.hidden&&!game.loop.running)))game.loop.wake();};
- const refreshLoop=()=>{if(atmosphere){const limit=atmosphere.isAnimating()?atmosphereFrameRate:0;if(game.loop.fpsLimit!==limit)game.loop.setFPSLimit(limit);}wake();};
+ const refreshLoop=()=>{if(atmosphere){const limit=atmosphere.isAnimating()?(atmosphere.frameRate?.()||atmosphereFrameRate):0;if(game.loop.fpsLimit!==limit)game.loop.setFPSLimit(limit);}wake();};
  const nextFrame=()=>new Promise(resolve=>{game.events.once(Phaser.Core.Events.POST_RENDER,resolve);wake();});
  const release=()=>{
   if(disposed)return;disposed=true;
@@ -41,7 +41,7 @@ export async function createWorkshopRenderer(canvas,kit,prepared,{signal,deadlin
    create(){try{
     if(disposed||signal?.aborted)return;world=this;
     for(const [id,p]of Object.entries(prepared))addIllustratedTexture(this.textures,'h33-'+id,p.image);
-    this.textures.addCanvas('h33-shadow',shadowTexture());slots=this.add.graphics().setDepth(1);diagnostics=this.add.graphics().setDepth(100);atmosphere=createAtmosphere?.(this);if(atmosphere&&this.game.loop.fpsLimit!==(atmosphere.isAnimating()?atmosphereFrameRate:0))this.game.loop.setFPSLimit(atmosphere.isAnimating()?atmosphereFrameRate:0);
+    this.textures.addCanvas('h33-shadow',shadowTexture());slots=this.add.graphics().setDepth(1);diagnostics=this.add.graphics().setDepth(100);atmosphere=createAtmosphere?.(this);if(atmosphere&&this.game.loop.fpsLimit!==(atmosphere.isAnimating()?(atmosphere.frameRate?.()||atmosphereFrameRate):0))this.game.loop.setFPSLimit(atmosphere.isAnimating()?(atmosphere.frameRate?.()||atmosphereFrameRate):0);
     if(atomicResize)this.game.events.on(Phaser.Core.Events.PRE_RENDER,()=>{if(pendingModel){const next=pendingModel;pendingModel=null;applyModel(next);}});
     this.game.events.on(Phaser.Core.Events.POST_RENDER,()=>{renderEvents++;if(model&&!atmosphere?.isAnimating())game.loop.sleep();});this.game.events.once(Phaser.Core.Events.POST_RENDER,resolveReady);
    }catch(error){rejectReady(error);}}

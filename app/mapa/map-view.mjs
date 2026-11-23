@@ -14,7 +14,7 @@ import {animateExits,reducedMotion} from './experiencia/transitions.mjs';
 import {createNightAtmosphere} from './experiencia/night-lights.mjs';
 import {createNightView} from './render/phaser/night-view.mjs';
 import luces from './escena/luces.json';
-import {damageMarks,damageKey,noiseMarks,noiseAnchor,safeInsets,localityLabelAnchor,labelVisible,LABEL_WAKE_MS,damageBubble} from './experiencia/state-marks.mjs';
+import {damageMarks,damageKey,noiseMarks,noiseAnchor,safeInsets,localityLabelAnchor,labelVisible,LABEL_WAKE_MS,damageBubble,damageLift,nightDieAnchor} from './experiencia/state-marks.mjs';
 import {createWorkshopRenderer} from './render/kit/renderer.mjs';
 import {initialAtmosphereSettings} from './movimiento/storm-model.mjs';
 import {createWindAudio} from './render/maqueta/atmosphere-audio.mjs';
@@ -101,10 +101,11 @@ export async function createSearchMapView({signal,movement,search,action,invento
   // en pausa con la pestaña oculta.
   const env=createAtmosphereView(world,atmosphere,{settings,kit});
   nightView=createNightView(world,{lights:luces.lights,bounds:scene.bounds,getNight:t=>nightState.level(t,reducedMotion()),active:t=>nightState.active(t),reduced:reducedMotion});
-  return {step(d){env.step(d);nightView.step(d);},isAnimating:()=>env.isAnimating()||nightView.isAnimating(),setSettings(p){env.setSettings(p);},setPaused(v){env.setPaused(v);nightView.setPaused(v);},inspect:()=>({...env.inspect(),night:nightView.inspect()}),destroy:()=>({...env.destroy(),...nightView.destroy()})};
+  return {step(d){env.step(d);nightView.step(d);},isAnimating:()=>env.isAnimating()||nightView.isAnimating(),frameRate:()=>env.isAnimating()?atmosphere.frameRate:nightView.frameRate,setSettings(p){env.setSettings(p);},setPaused(v){env.setPaused(v);nightView.setPaused(v);},inspect:()=>({...env.inspect(),night:{...nightView.inspect(),state:nightState.inspect()}}),destroy:()=>({...env.destroy(),...nightView.destroy()})};
  }
  function labels(camera,viewport){
   const alive=new Set(layout.characters.map(c=>c.id));for(const [id,node]of actors)if(!alive.has(id)){node.remove();actors.delete(id);}
+  const bubbles=[];
   for(const c of layout.characters){
    let marker=actors.get(c.id);if(!marker){marker=element('span',undefined,'actor-marker');marker.dataset.actorId=c.id;const portrait=kit.assets.find(a=>a.id===c.portraitId);if(portrait){const image=element('img');image.src=new URL(portrait.file,import.meta.url).href;image.alt='';image.draggable=false;marker.append(image);}else marker.append(element('span',c.initials,'actor-initials'));marker.append(element('span',c.playerId==='human'?'J1':projection.mode==='local'?'J2':'IA','group-badge'));$('actor-markers').append(marker);actors.set(c.id,marker);}
    const d=c.diameter*camera.zoom,classes='actor-marker '+(c.playerId==='human'?'owner-human':'owner-ai')+(selected===c.id?' actor-selected':''),label=c.name+', '+playerName(c.playerId)+(selected===c.id?', seleccionado':''),badge=marker.querySelector('.group-badge');
@@ -116,8 +117,10 @@ export async function createSearchMapView({signal,movement,search,action,invento
    if(marker.getAttribute('aria-label')!==label)marker.setAttribute('aria-label',label);
    // Daño siempre visible (v2): herida y congelación, cada una solo si es mayor que 0.
    const damage=damageMarks(c),damageId=damageKey(damage);if(marker.dataset.damage!==damageId){marker.dataset.damage=damageId;marker.querySelector('.damage-marks')?.remove();if(damage.length){const box=element('span',undefined,'damage-marks');for(const m of damage){const mark=element('span',undefined,'damage-mark damage-'+m.kind);mark.dataset.kind=m.kind;mark.dataset.count=String(m.count);mark.append(element('span',m.symbol,'damage-symbol'),element('span',String(m.count),'damage-count'));box.append(mark);}marker.append(box);}}
-   {const box=marker.querySelector('.damage-marks'),bubble=box&&damageBubble(d,damage);if(bubble){const size=bubble.fontSize+'px';if(box.style.fontSize!==size)box.style.fontSize=size;}}
+   {const box=marker.querySelector('.damage-marks'),bubble=box&&damageBubble(d,damage);if(bubble){const size=bubble.fontSize+'px';if(box.style.fontSize!==size)box.style.fontSize=size;bubbles.push({id:c.id,box,x:camera.x+c.position.x*camera.zoom,y:camera.y+c.position.y*camera.zoom-d/2-4,width:box.offsetWidth||bubble.width,height:box.offsetHeight||bubble.height});}}
   }
+  // Globos en fila: si uno más ancho que su ficha toca al de la vecina, el segundo sube un nivel.
+  {const lift=damageLift(bubbles);for(const b of bubbles){const v=lift[b.id]?'0 '+(-lift[b.id]*(b.height+2))+'px':'';if(b.box.style.translate!==v)b.box.style.translate=v;const l=String(lift[b.id]||0);if(b.box.dataset.lift!==l)b.box.dataset.lift=l;}}
   const decorations=[];for(const loc of layout.locations){const zone=scene.zones.find(z=>z.id===loc.visualId);{const noise=noiseMarks(loc),anchor=noise&&noiseAnchor(zone);if(anchor){const el=element('span',undefined,'noise-marks');el.dataset.locality=loc.id;el.dataset.noise=String(noise.count);el.title=noise.label;el.style.left=camera.x+anchor.x*camera.zoom+'px';el.style.top=camera.y+anchor.y*camera.zoom+'px';for(let i=0;i<noise.filled+noise.empty;i++)el.append(element('span',undefined,'noise-mark'+(i<noise.filled?' noise-on':'')));decorations.push(el);}}const notes=[];if(loc.characterOverflow.length)notes.push('+'+loc.characterOverflow.length+' fichas');if(loc.externalOverflow)notes.push('+'+loc.externalOverflow+' exteriores');if(loc.helpless)notes.push(loc.helpless+' indefensos');if(notes.length){const el=element('span',notes.join(' · '),'overflow-badge');el.style.left=camera.x+loc.badgePosition.x*camera.zoom+'px';el.style.top=camera.y+loc.badgePosition.y*camera.zoom+'px';decorations.push(el);}}
   const m=movement.inspect(),selecting=['choosing','confirming'].includes(m.phase),legal=projection?.movement?.options[m.intent?.actorId]?.destinations||[];
   $('destination-name').hidden=!selecting||!hoveredLocation;
@@ -125,7 +128,15 @@ export async function createSearchMapView({signal,movement,search,action,invento
   const operation=action.inspect().intent||action.inspect().operation;
   if(action.inspect().busy&&operation){const loc=layout.locations.find(l=>l.engineIndex===(operation.target??operation.origin));for(const a of loc?.accesses.filter(a=>operation.kind==='attack'?a.occupant==='zombie':a.occupant==='barricade')||[]){const mark=element('span',undefined,'action-target-marker '+(operation.kind==='attack'?'attack-target':'build-target'));mark.style.left=camera.x+a.position.x*camera.zoom+'px';mark.style.top=camera.y+a.position.y*camera.zoom+'px';mark.style.width=60*camera.zoom+'px';mark.style.height=28*camera.zoom+'px';decorations.push(mark);}}
   $('map-labels').replaceChildren(...decorations);
-  paintLocalityLabels(camera);
+  paintLocalityLabels(camera);placeNightDie(camera,viewport);
+ }
+ // D12 de la noche bajo la localidad que tira; el de combate y movimiento no cambia de lugar.
+ function placeNightDie(camera,viewport){
+  const card=$('move-sequence'),die=$('exposure-die'),op=sequenceResponse,night=!!sequence&&op?.kind==='exposure'&&!card.hidden;
+  if(!night){if(card.dataset.anchor){delete card.dataset.anchor;for(const k of ['left','top','bottom','transform'])card.style[k]='';}return;}
+  const loc=layout.locations.find(l=>l.engineIndex===op.origin),zone=scene.zones.find(z=>z.id===loc?.visualId),pin=die.hidden?undefined:{x:die.offsetLeft+die.offsetWidth/2};
+  const at=nightDieAnchor(zone,camera,viewport,{width:card.offsetWidth,height:card.offsetHeight},{pin,inset:focusInset()});if(!at)return;
+  card.dataset.anchor=at.clamped?'locality-clamped':'locality';card.style.left=at.left+'px';card.style.top=at.top+'px';card.style.bottom='auto';card.style.transform='none';
  }
  // Rótulos persistentes: así el desvanecimiento es una transición y no un salto.
  function paintLocalityLabels(camera){
@@ -217,7 +228,7 @@ export async function createSearchMapView({signal,movement,search,action,invento
  function startPresentation(response,done){
   stopPresentation();$('floating-menu').hidden=true;$('menu-toggle').setAttribute('aria-expanded','false');sequenceResponse=response;let actor=layout.characters.find(c=>c.id===response.actorId);if(!actor){const data=projection.characters.find(c=>c.id===response.actorId),loc=layout.locations.find(l=>l.engineIndex===response.from),zone=scene.zones.find(z=>z.id===loc?.visualId);actor={...data,portraitId:portraitFor(response.actorId),initials:initials(data?.name),diameter:zone?.portraitDiameter||44,position:{...loc.badgePosition}};layout.characters.push(actor);}sequenceFrom={...actor.position};sequenceTo=destinationPosition(layout,scene,response.destination);sequenceCallback=done;sequenceApplied=false;sequenceLast=null;sequence=createPresentationSequence(response,{reduced:motion.matches||!!$('motion-reduced')?.checked});$('move-sequence').hidden=false;$('resolve-decision').hidden=true;selected=response.actorId;updateMovement();schedule();
  }
- function stopPresentation(){sequence?.interrupt();sequence=null;sequenceLast=null;sequenceCallback=null;$('move-sequence').hidden=true;}
+ function stopPresentation(){sequence?.interrupt();sequence=null;sequenceLast=null;sequenceCallback=null;$('move-sequence').hidden=true;placeNightDie();}
  function syncAmbient(){
   if(!audio)return;const sound=audio.inspect(),visual=settings.enabled&&['snow','wind','smoke','lights'].some(k=>settings[k]),any=visual||sound.enabled;$('ambient-enabled').setAttribute('aria-pressed',String(any));$('ambient-enabled').textContent=any?'Ambientación: activada':'Ambientación: desactivada';
   for(const b of document.querySelectorAll('[data-ambient]'))b.setAttribute('aria-pressed',String(settings.enabled&&settings[b.dataset.ambient]));$('ambient-intensity').value=settings.intensity;$('ambient-reduced').hidden=!motion.matches;$('ambient-status').textContent=!active?'Ambientación en pausa.':visual?'Intensidad '+(settings.intensity==='soft'?'Suave.':'Tormenta.'):'Sin efectos animados.';
@@ -259,6 +270,8 @@ export async function createSearchMapView({signal,movement,search,action,invento
   $('panel-content').addEventListener('close',e=>{if(e.target?.dataset?.surface==='context')$('panel-content').scrollTop=0;},{capture:true,signal:ui.signal});
   animateExits([[$('panel-content'),$('dossier')],...['floating-menu','info-dialog','play-dialog','cycle-dialog','inventory-dialog'].map($)],ui.signal);
   if($('motion-reduced')){$('motion-reduced').checked=motion.matches;listen('#motion-reduced','change',()=>{document.body.dataset.motion=$('motion-reduced').checked?'reduced':'normal';if($('motion-reduced').checked&&sequence){sequence.advance(1e6);schedule();}});}
+  // Movimiento reducido: luces fijas y el bucle vuelve a dormir; al quitarlo, vuelve el parpadeo.
+  {const wakeLights=()=>{nightView?.refresh();renderer?.setAtmosphere({});};motion.addEventListener?.('change',wakeLights,{signal:ui.signal});listen('#motion-reduced','change',wakeLights);}
   listen('#ambient-enabled','click',()=>{const on=!(settings.enabled&&['snow','wind','smoke','lights'].some(k=>settings[k])||audio.inspect().enabled);if(!on)audio.setEnabled(false);setAmbient({enabled:on,snow:on,wind:on,smoke:on,lights:on});});listen('[data-ambient]','click',e=>{const key=e.currentTarget.dataset.ambient;setAmbient(settings.enabled?{[key]:!settings[key]}:{enabled:true,snow:false,wind:false,smoke:false,lights:false,[key]:true});});listen('#ambient-intensity','change',e=>setAmbient({intensity:e.target.value}));listen('#ambient-audio','click',()=>audio.setEnabled(!audio.inspect().enabled));listen('#ambient-volume','input',e=>audio.setVolume(Number(e.target.value)/100));motion.addEventListener('change',e=>{if(e.matches&&sequence){sequence.advance(1e6);schedule();}if(e.matches)setAmbient({enabled:false,snow:false,wind:false,smoke:false,lights:false});syncAmbient();},options);document.addEventListener('visibilitychange',pause,options);
   canvas.addEventListener('pointerdown',wakeLabels,options);
   canvas.addEventListener('pointermove',event=>{if(camera&&performance.now()>labelsAwakeUntil-LABEL_WAKE_MS+250)wakeLabels();if(!camera||!scene.hoverOutline&&!['choosing','confirming'].includes(movement.inspect().phase))return;if(event.buttons){if(pointedLocality){pointedLocality=null;sceneDirty=true;schedule();}return;}const rect=canvas.getBoundingClientRect(),visual=pickLocality(scene,screenToWorld(displayCamera||camera,{x:event.clientX-rect.left,y:event.clientY-rect.top}),(displayCamera||camera).zoom),loc=layout.locations.find(l=>l.visualId===visual);if(scene.hoverOutline&&pointedLocality!==visual){pointedLocality=visual;sceneDirty=true;schedule();}if(!['choosing','confirming'].includes(movement.inspect().phase))return;hoveredLocation=loc?.id||null;$('destination-name').textContent=loc?.name||'';$('destination-name').hidden=!loc;},options);

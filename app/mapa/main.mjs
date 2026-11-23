@@ -1,6 +1,7 @@
 import {createMapNotice} from './experiencia/map-notice.mjs';
 import {createRoutineResults} from './experiencia/routine-results.mjs';
 import {createEventPresentations} from './experiencia/event-presentations.mjs';
+import {nightCue} from './experiencia/night-lights.mjs';
 import {createPlayController} from './juego/controller.mjs';
 import {createCycleController,cycleOwnedDecision,decisionLabel} from './ciclo/controller.mjs';
 import {createInventoryController} from './inventario/controller.mjs';
@@ -34,6 +35,7 @@ lifetime.signal.addEventListener('abort',()=>mapNotice?.clear(),{once:true});
 const routine=createRoutineResults({action,search,inventory,play,onNotice:n=>{if(n){movementNoticeEnabled=false;$('movement-result').textContent='';}mapNotice?.show(n);}});
 // Conserva los datos públicos de cada instante; las decisiones y comandos esperan al visor.
 const eventFrame=p=>({...state,...p,blocked:null,movement:{...state.movement,options:{}},search:{...state.search,private:null,options:{}},action:{...state.action,operation:null,options:{}},inventory:null,cycle:null,play:null});
+const nightSignal=nightCue(kind=>viewer?.night?.(kind));
 eventPresentations=createEventPresentations({
  canPresent:()=>mode==='map'&&!!viewer&&!document.hidden&&!['sending','unknown'].includes(movement.inspect().phase),
  start(frame,done){
@@ -41,10 +43,10 @@ eventPresentations=createEventPresentations({
   viewer.setState(eventFrame(frame.before));movement.present(response);
   const finish=()=>{movement.finishPresentation(frame.kind==='exposure'?'':movementSummary(response,response.presentation.locations));done();};
   // Noche: empieza con la primera tirada nocturna presentada; termina cuando la cola se vacía.
-  viewer.night?.(frame.kind==='exposure'?'begin':'end');
+  nightSignal.start(frame);
   if(frame.kind==='exposure')viewer.startActionPresentation(response,finish);else viewer.startPresentation(response,finish);
  },
- stop(){viewer?.stopPresentation();movement.interruptPresentation();viewer?.night?.('adopt');},onIdle:()=>{viewer?.night?.('end');applyAuthority();},
+ stop(){viewer?.stopPresentation();movement.interruptPresentation();nightSignal.stop();},onIdle:()=>{nightSignal.idle();applyAuthority();},
 });
 function clearPreviousResult(){if(!unified)return;movementNoticeEnabled=false;if($('movement-result').textContent)$('movement-result').textContent='';if(routine.inspect())routine.clear();}
 const managedCycle=p=>!!p?.cycle?.managed||!!p?.play?.managed;

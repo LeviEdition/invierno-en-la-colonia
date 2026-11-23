@@ -29,16 +29,16 @@ export function createFlicker(count,{seed=0x1c0ffee,config=FLICKER}={}){
  return {step,values:()=>lights.map(l=>l.value),inspect:()=>lights.map(l=>({value:l.value,target:l.target,flashes:l.flashes.length}))};
 }
 
-// Brillo de cada luz: de día tenue y quieta; de noche, el parpadeo (o fijo con movimiento
-// reducido). night ∈ [0,1] mezcla ambos.
-export function lightLevel({night,flicker,reduced,config=FLICKER}){return config.day+((reduced?config.reduced:flicker)-config.day)*night;}
+// Brillo de cada luz: parpadea siempre; de día sobre una base tenue (35 %), de noche plena.
+// Con movimiento reducido, fija al 80 % (de esa base). night ∈ [0,1] mezcla ambos.
+export function lightLevel({night,flicker,reduced,config=FLICKER}){return (reduced?config.reduced:flicker)*(config.day+(1-config.day)*night);}
 
-// Noche (opción A): solo mientras se presentan tiradas nocturnas. Entra en 1,2 s, dura al menos
-// 1,2 s y amanece en 1 s. Sin tiradas no empieza. adopt(): una vista recuperada toma el estado
+// Noche (opción A): solo mientras se presentan tiradas nocturnas. Entra en 0,7 s, dura al menos
+// 2,2 s y amanece en 1,2 s. Sin tiradas no empieza. adopt(): una vista recuperada toma el estado
 // actual (día) sin volver a animar.
-export const NIGHT=Object.freeze({inMs:1200,minMs:1200,dawnMs:1000});
+export const NIGHT=Object.freeze({inMs:700,minMs:2200,dawnMs:1200});
 export function createNightAtmosphere(config=NIGHT){
- let start=null,end=null;
+ let start=null,end=null;const calls={begin:0,end:0,adopt:0};
  const rise=(t,reduced)=>reduced?1:Math.min(1,Math.max(0,(t-start)/config.inMs));
  function level(t,reduced=false){
   if(start===null)return 0;
@@ -48,11 +48,16 @@ export function createNightAtmosphere(config=NIGHT){
   return rise(end,reduced)*fall;
  }
  return {
-  begin(t){if(start===null){start=t;end=null;return;}if(end!==null){const current=level(t);start=t-current*config.inMs;end=null;}},
-  end(t){if(start!==null&&end===null)end=Math.max(t,start+config.minMs);},
-  adopt(){start=end=null;},
+  begin(t){calls.begin++;if(start===null){start=t;end=null;return;}if(end!==null){const current=level(t);start=t-current*config.inMs;end=null;}},
+  end(t){calls.end++;if(start!==null&&end===null)end=Math.max(t,start+config.minMs);},
+  adopt(){calls.adopt++;start=end=null;},
   level,
   active:t=>level(t)>0||start!==null&&end===null,
-  inspect:()=>({start,end})
+  inspect:()=>({start,end,calls:{...calls}})
  };
 }
+
+// Señal de la noche desde la cola de presentaciones (la usa main.mjs): empieza con la primera
+// tirada nocturna presentada, termina cuando la cola se vacía, y el pase o una vista recuperada
+// adoptan el día sin animar. night(kind) recibe 'begin' | 'end' | 'adopt'.
+export function nightCue(night){return {start:frame=>night(frame?.kind==='exposure'?'begin':'end'),stop:()=>night('adopt'),idle:()=>night('end')};}

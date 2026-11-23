@@ -42,28 +42,39 @@ test('Sesión 3 · parpadeo entre 60 y 100 %, intervalos de 80 a 450 ms, a lo su
  const values=f.values();assert.ok(new Set(values.map(v=>v.toFixed(3))).size>20,'luces desincronizadas');
 });
 
-test('Sesión 3 · día tenue, noche con parpadeo, movimiento reducido fijo',()=>{
- assert.equal(lightLevel({night:0,flicker:.7,reduced:false}),.35);
+test('Sesión 3 · parpadeo siempre: día tenue, noche plena, movimiento reducido fijo',()=>{
+ assert.equal(lightLevel({night:0,flicker:1,reduced:false}),.35,'de día la base es 35 %');
+ assert.ok(Math.abs(lightLevel({night:0,flicker:.7,reduced:false})-.245)<1e-12,'y de día también parpadea');
  assert.equal(lightLevel({night:1,flicker:.7,reduced:false}),.7);
  assert.equal(lightLevel({night:1,flicker:.7,reduced:true}),.8);
  assert.equal(lightLevel({night:1,flicker:1,reduced:true}),.8);
- const n=createNightAtmosphere();n.begin(0);assert.equal(n.level(5000,true),1,'sin rampa con movimiento reducido');n.end(100);assert.equal(n.level(1300,true),0,'amanece sin animar');
- const view=read('app/mapa/render/phaser/night-view.mjs');assert.match(view,/if\(night>0&&!reduced\(\)\)flicker\.step\(delta\)/,'sin parpadeo con movimiento reducido');
+ assert.ok(Math.abs(lightLevel({night:0,flicker:.6,reduced:true})-.28)<1e-12,'movimiento reducido de día: fijo y tenue');
+ const n=createNightAtmosphere();n.begin(0);assert.equal(n.level(5000,true),1,'sin rampa con movimiento reducido');n.end(100);assert.equal(n.level(NIGHT.minMs+1,true),0,'amanece sin animar');
+ const view=read('app/mapa/render/phaser/night-view.mjs');assert.match(view,/night=getNight\(performance\.now\(\)\);if\(!reduced\(\)\)flicker\.step\(delta\)/,'parpadea de día y de noche, nunca con movimiento reducido');
+ // El bucle no duerme mientras parpadea (24 cuadros por segundo si no hay nieve); con
+ // movimiento reducido vuelve a dormir salvo durante una noche.
+ assert.match(view,/isAnimating:\(\)=>!paused&&\(!reduced\(\)\|\|active\(performance\.now\(\)\)\|\|night>0\)/);
+ assert.match(view,/export const FLICKER_FPS=24;/);assert.match(view,/frameRate:FLICKER_FPS/);
+ assert.match(read('app/mapa/map-view.mjs'),/frameRate:\(\)=>env\.isAnimating\(\)\?atmosphere\.frameRate:nightView\.frameRate/);
+ assert.match(read('app/mapa/render/kit/renderer.mjs'),/atmosphere\.isAnimating\(\)\?\(atmosphere\.frameRate\?\.\(\)\|\|atmosphereFrameRate\):0/);
+ assert.match(read('app/mapa/map-view.mjs'),/motion\.addEventListener\?\.\('change',wakeLights/,'al cambiar el movimiento reducido se despierta o se duerme');
  assert.match(read('app/mapa/experiencia/transitions.mjs'),/document\.body\.dataset\.motion==='reduced'/,'también el ajuste del juego');
 });
 
-test('Sesión 3 · atmósfera de noche: cuándo entra, mínimo de 1,2 s, se saltea y adopta',()=>{
+test('Sesión 3 · atmósfera de noche: entra en 0,7 s, mínimo de 2,2 s, amanece en 1,2 s, se saltea y adopta',()=>{
  const n=createNightAtmosphere();
  assert.equal(n.level(0),0);n.end(10);assert.equal(n.level(20),0,'sin tiradas no hay noche');assert.equal(n.active(20),false);
- n.begin(1000);assert.equal(n.level(1000),0);assert.equal(n.level(1600),.5);assert.equal(n.level(2200),1);assert.equal(n.active(1000),true);
- n.end(1300);assert.equal(n.inspect().end,1000+NIGHT.minMs,'dura al menos 1,2 s');assert.equal(n.level(2200),1);
- assert.equal(n.level(2700),.5,'amanece en 1 s');assert.equal(n.level(3200),0);assert.equal(n.active(3300),false);
- const r=createNightAtmosphere();r.begin(0);r.end(5000);assert.equal(r.level(5500),.5);r.begin(5500);assert.equal(r.level(5500),.5,'otra tirada durante el amanecer sigue desde donde está');assert.equal(r.level(6100),1);
+ n.begin(1000);assert.equal(n.level(1000),0);assert.equal(n.level(1350),.5);assert.equal(n.level(1700),1,'entra en 0,7 s');assert.equal(n.active(1000),true);
+ n.end(1300);assert.equal(n.inspect().end,1000+NIGHT.minMs,'dura al menos 2,2 s');assert.equal(NIGHT.minMs,2200);assert.equal(n.level(3199),1);
+ assert.equal(n.level(3800),.5,'amanece en 1,2 s');assert.equal(n.level(4400),0);assert.equal(n.active(4500),false);
+ const r=createNightAtmosphere();r.begin(0);r.end(5000);assert.equal(r.level(5600),.5);r.begin(5600);assert.equal(r.level(5600),.5,'otra tirada durante el amanecer sigue desde donde está');assert.equal(r.level(5950),1);
  const a=createNightAtmosphere();a.begin(0);assert.equal(a.level(2000),1);a.adopt();assert.equal(a.level(2001),0,'una vista recuperada adopta el día sin animar');assert.equal(a.active(2001),false);
  const main=read('app/mapa/main.mjs');
- assert.match(main,/viewer\.night\?\.\(frame\.kind==='exposure'\?'begin':'end'\);/,'empieza con la primera tirada nocturna presentada');
- assert.match(main,/stop\(\)\{viewer\?\.stopPresentation\(\);movement\.interruptPresentation\(\);viewer\?\.night\?\.\('adopt'\);\}/,'pase o recuperación: adopta sin animar');
- assert.match(main,/onIdle:\(\)=>\{viewer\?\.night\?\.\('end'\);/);
+ assert.match(main,/const nightSignal=nightCue\(kind=>viewer\?\.night\?\.\(kind\)\);/);
+ assert.match(main,/ nightSignal\.start\(frame\);/,'empieza con la primera tirada nocturna presentada');
+ assert.match(main,/stop\(\)\{viewer\?\.stopPresentation\(\);movement\.interruptPresentation\(\);nightSignal\.stop\(\);\}/,'pase o recuperación: adopta sin animar');
+ assert.match(main,/onIdle:\(\)=>\{nightSignal\.idle\(\);/);
+ assert.match(read('app/mapa/render/phaser/night-view.mjs'),/shadeAlpha:\.65,/,'se percibe en una noche de una localidad');
 });
 
 test('Sesión 3 · luces detectadas: reproducibles, en el mundo y como mucho 25',async()=>{

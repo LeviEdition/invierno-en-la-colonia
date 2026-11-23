@@ -14,7 +14,7 @@
 /* Globo de daño anclado a su ficha (informe 120, punto 7): marcas apiladas dentro de un
    recuadro centrado sobre la ficha, con una punta que baja hasta ella. El tamaño de letra
    (damageBubble) hace que el globo no sea más ancho que la ficha. */
-#map-app .actor-marker>.damage-marks{position:absolute;left:50%;bottom:calc(100% + 4px);transform:translateX(-50%);display:flex;flex-direction:column-reverse;align-items:center;gap:1px;padding:2px;border:1px solid var(--acero);border-radius:5px;background:#0f141af0;box-shadow:0 1px 3px #000a;pointer-events:none;font:700 11px/1.15 system-ui,sans-serif;font-variant-numeric:lining-nums tabular-nums;letter-spacing:-.02em;text-shadow:none;white-space:nowrap;z-index:1}
+#map-app .actor-marker>.damage-marks{position:absolute;left:50%;bottom:calc(100% + 4px);transform:translateX(-50%);display:flex;flex-direction:row;align-items:center;gap:2px;padding:2px;border:1px solid var(--acero);border-radius:5px;background:#0f141af0;box-shadow:0 1px 3px #000a;pointer-events:none;font:700 11px/1.15 system-ui,sans-serif;font-variant-numeric:lining-nums tabular-nums;letter-spacing:-.02em;text-shadow:none;white-space:nowrap;z-index:1}
 #map-app .actor-marker>.damage-marks::after{content:'';position:absolute;left:50%;top:100%;transform:translateX(-50%);border:4px solid transparent;border-top-color:var(--acero);border-bottom:0}
 #map-app .damage-mark{display:inline-flex;align-items:center;gap:0;padding:0 2px 0 1px;border:1px solid;border-radius:4px;background:transparent}
 #map-app .damage-count{color:var(--nieve)}
