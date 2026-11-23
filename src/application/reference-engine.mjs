@@ -14,7 +14,7 @@ import {createMapPlay} from './map-play.mjs';
 import {resolveMapExposure} from '../domain/map-exposure.mjs';
 import {TEST_RULE_DEFAULTS,normalizeTestRules,describeTestRules,partialThreshold,halvedConsequence} from '../domain/test-rules.mjs';
 import {beginNight,continueNight,nightUnfinished,nightEnabled,nightWatch,sleepingOutside} from '../domain/reference-night.mjs';
-import {soloMode} from '../domain/reference-state.mjs';
+import {soloMode,NOISE_LIMIT} from '../domain/reference-state.mjs';
 const noop=()=>{};
 export function createEngine({Math=globalThis.Math,queueMicrotask=globalThis.queueMicrotask||((f)=>Promise.resolve().then(f)),setTimeout=globalThis.setTimeout,stateFactory=createReferenceState,rulesFactory=createRules,turnsFactory=createTurns,effects={},automation=null}={}){
 let view=new Proxy(effects,{get:(target,key)=>target[key]||noop});
@@ -95,6 +95,7 @@ get pendingLoot(){return pendingLoot;},set pendingLoot(value){pendingLoot=value;
 get gameMode(){return gameMode;},set gameMode(value){gameMode=value;},
 get testRules(){return testRules;},
 get setTestRules(){return setTestRules;},
+get noiseLimit(){return NOISE_LIMIT;},
 get nightEnabled(){return ()=>nightEnabled(game);},
 get nightWatch(){return ()=>nightWatch(game);},
 get sleepingOutside(){return ()=>sleepingOutside(game);},
@@ -345,10 +346,10 @@ const crossroadsDeck=[
 ,{title:'Una petición al líder',when:'move',require:(p)=>!!p&&isLeader(p),story:'En el trayecto, dos refugiados reconocen al líder del grupo y le piden que decida si regresar con ellos a la colonia.',choices:[['Escoltarlos','Se incorporan dos indefensos si hay lugar. +1 moral.',g=>{g.helpless+=2;g.morale++;},g=>colonyRoom(g,2)],['Indicar una ruta segura','Recibís una comida y una medicina.',g=>{ownerHand(g).push('comida','medicina');}]]}
 ,{title:'El rescate de la plaza',when:'search',require:(p)=>!!p&&p.influence>=60,story:'Un grupo de vecinos pide ayuda. Te reconocen como alguien capaz de mantenerlos unidos y quieren seguirte.',choices:[['Llevar a uno hasta la colonia','Reclutás un superviviente si hay sitio.',(g,env)=>{recruit(g.crossOwner,false,env);},g=>accessible(0,g)&&roster.some(r=>!all(g).some(p=>p.name===r.name))],['Organizar una caravana de suministros','Incorporá dos comidas a la reserva.',g=>{g.food+=2;}]]}
 ,{title:'Un juramento bajo la nieve',when:'round',require:(p,g)=>!!p&&p.loc===0&&g.morale<=6,story:'La moral está bajando y los refugiados miran al líder buscando una razón para seguir luchando.',choices:[['Hablar ante la colonia','Recuperá una moral.',g=>{g.morale++;}],['Preparar defensas','Agregá dos barricadas, si hay lugar.',g=>{for(let i=0;i<2&&openAccess(0,g);i++)g.zones[0].b++;}]]}
-,{title:'La ruta de los veteranos',when:'search',require:(p)=>!!p&&!isLeader(p)&&p.influence<=55,story:'Un explorador poco conocido descubre un camino discreto hacia un viejo depósito. Nadie le cree todavía.',choices:[['Confiar en su hallazgo','Obtené un combustible, pero acumulá un ruido en esta localidad.',g=>{ownerHand(g).push('combustible');g.zones[crossActor(g).loc].noise=Math.min(4,g.zones[crossActor(g).loc].noise+1);} ],['Evitar riesgos','Ganás una herramienta.',g=>{ownerHand(g).push('herramienta');}]]}
+,{title:'La ruta de los veteranos',when:'search',require:(p)=>!!p&&!isLeader(p)&&p.influence<=55,story:'Un explorador poco conocido descubre un camino discreto hacia un viejo depósito. Nadie le cree todavía.',choices:[['Confiar en su hallazgo','Obtené un combustible, pero acumulá un ruido en esta localidad.',g=>{ownerHand(g).push('combustible');g.zones[crossActor(g).loc].noise=Math.min(NOISE_LIMIT,g.zones[crossActor(g).loc].noise+1);} ],['Evitar riesgos','Ganás una herramienta.',g=>{ownerHand(g).push('herramienta');}]]}
 
 ,{title:'Un almacén bajo el hielo',when:'search',require:(p,g)=>!!p&&p.loc===4,story:'Un bidón todavía tibio aparece junto a una moto cubierta por la nieve. Alguien acaba de irse.',choices:[['Recoger el combustible','Tu grupo obtiene un bidón de combustible, pero atraés un zombi.',(g,env)=>{ownerHand(g).push(catalog.create('gascan'));addZombie(4,env);}],['Buscar señales de vida','Encontrás notas de laboratorio.',g=>{ownerHand(g).push(catalog.create('notes'));}]]}
-,{title:'La caja de municiones',when:'attack',require:(p)=>!!p&&p.loc===3,story:'Un depósito olvidado abre nuevas opciones para defenderse. Una escopeta espera entre los escombros.',choices:[['Tomar el arma','Obtenés una escopeta y 1 ruido en la comisaría.',g=>{ownerHand(g).push(catalog.create('shotgun'));g.zones[3].noise=Math.min(4,g.zones[3].noise+1);}],['Cerrar la armería','Construís una barricada si queda espacio.',g=>{if(openAccess(3,g))g.zones[3].b++;}]]}
+,{title:'La caja de municiones',when:'attack',require:(p)=>!!p&&p.loc===3,story:'Un depósito olvidado abre nuevas opciones para defenderse. Una escopeta espera entre los escombros.',choices:[['Tomar el arma','Obtenés una escopeta y 1 ruido en la comisaría.',g=>{ownerHand(g).push(catalog.create('shotgun'));g.zones[3].noise=Math.min(NOISE_LIMIT,g.zones[3].noise+1);}],['Cerrar la armería','Construís una barricada si queda espacio.',g=>{if(openAccess(3,g))g.zones[3].b++;}]]}
 ,{title:'Páginas de otro mundo',when:'search',require:(p)=>!!p&&p.loc===6,story:'En una biblioteca abandonada hay instrucciones para fabricar defensas, pero el papel sirve también para calentar el refugio.',choices:[['Guardar el manual','Obtenés un manual de fortificación.',g=>{ownerHand(g).push(catalog.create('manual'));}],['Usar el papel como abrigo','Quitás 2 residuos de la colonia.',g=>{g.waste=Math.max(0,g.waste-2);}]]}
 ,{title:'El último botiquín',when:'search',require:(p)=>!!p&&p.loc===2,story:'Hay un botiquín intacto en un armario, y una familia enferma en la sala contigua.',choices:[['Conservar el botiquín','Obtenés un botiquín completo.',g=>{ownerHand(g).push(catalog.create('medkit'));}],['Atender a la familia','La moral aumenta 1, pero se incorporan 2 indefensos.',g=>{g.morale++;g.helpless+=2;}]]}
 
@@ -583,7 +584,7 @@ function beginSearch(p,side){
 }
 function addNoiseSearch(){
  if(!pendingLoot||game.ended||!canResolve('lootChoice'))return;
- const loc=pendingLoot.loc,z=game.zones[loc];if(z.noise>=4||!game.decks[loc].length)return;
+ const loc=pendingLoot.loc,z=game.zones[loc];if(z.noise>=NOISE_LIMIT||!game.decks[loc].length)return;
  z.noise++;const newCard=drawItem(loc);pendingLoot.items.push(newCard);if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__){c.mapPlay.event('noise',{location:loc,count:z.noise});c.mapPlay.event('findings',{cards:[itemTitle(newCard)]},controls.side);}message('🔊 Ruido en '+places[loc]+': se reveló '+itemTitle(newCard)+'.');paint();
 }
 function chooseLoot(i){
@@ -707,7 +708,7 @@ function searchSnapshot(){
   operationId:own.operationId,gameGeneration:own.gameGeneration,round:own.round,ownerId:own.ownerId,actorId:own.actorId,name:own.name,origin:own.origin,dieIndex:own.dieIndex,dieValue:own.dieValue,status:own.status,
   noise:game.zones[own.origin].noise,noiseBefore:own.noiseBefore,step:own.status+'_'+(pendingLoot?.items===own.pending?pendingLoot.items.length:0)+'_'+game.zones[own.origin].noise,
   cards:own.status==='choice'&&pendingLoot?.items===own.pending?pendingLoot.items.map(searchCard):[],
-  canNoise:own.status==='choice'&&pendingLoot?.items===own.pending&&!general&&game.zones[own.origin].noise<4&&game.decks[own.origin].length>0,
+  canNoise:own.status==='choice'&&pendingLoot?.items===own.pending&&!general&&game.zones[own.origin].noise<NOISE_LIMIT&&game.decks[own.origin].length>0,
   result:own.result?structuredClone(own.result):null,
   recruit:own.status==='result'&&pendingRecruitInfo?.side===controls.side?{...pendingRecruitInfo}:null,
   generalDecision:general,

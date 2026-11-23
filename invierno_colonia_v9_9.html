@@ -358,7 +358,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
 <div id="toastStack" class="toastStack" role="status" aria-live="polite"></div><div id="backdrop" class="modalBackdrop" data-command="backdropHide" data-args="[]"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modalHeader"><h2 id="modalTitle"></h2><button class="btn" data-command="hide" data-args="[]">✕ Cerrar</button></div><div class="modalContent" id="modalContent"></div></div></div>
 <script>(() => {
   // src/application/reference-contracts.mjs
-  var viewCapabilities = Object.freeze(["actionDice", "activeDialog", "aiCrossChoice", "aiRunning", "alive", "all", "canPickStartingLeader", "capacity", "catalog", "closeStatInfo", "controls", "crossroadsView", "currentHand", "dialogButtons", "drainToasts", "effectiveAttack", "effectiveSearch", "em", "equipIcons", "equipmentOf", "finishTurn", "focusHandover", "game", "groupLeader", "handoverDialog", "hide", "icons", "isLeader", "itemTitle", "kind", "nightEnabled", "nightWatch", "opened", "ownerGroup", "ownerOf", "paintDice", "pendingAttract", "pendingBite", "pendingHeal", "pendingLeaderSide", "pendingLoot", "pendingRecruitInfo", "pendingTransfer", "person", "picked", "places", "playable", "profileId", "renderModal", "renderSite", "selected", "show", "skipAI", "sleepingOutside", "statusText", "syncHandoverAccessibility", "target", "toggleFab", "token", "zcap"]), agentCapabilities = Object.freeze(["accessible", "actions", "alive", "applyFrost", "botContributeTools", "catalog", "crossAction", "crossDraw", "crossTrigger", "effectiveAttack", "effectiveSearch", "equipmentOf", "game", "kind", "message", "openAccess", "pause", "pendingBite", "replaceLastSurvivors", "verify", "waitForBite"]);
+  var viewCapabilities = Object.freeze(["actionDice", "activeDialog", "aiCrossChoice", "aiRunning", "alive", "all", "canPickStartingLeader", "capacity", "catalog", "closeStatInfo", "controls", "crossroadsView", "currentHand", "dialogButtons", "drainToasts", "effectiveAttack", "effectiveSearch", "em", "equipIcons", "equipmentOf", "finishTurn", "focusHandover", "game", "groupLeader", "handoverDialog", "hide", "icons", "isLeader", "itemTitle", "kind", "nightEnabled", "nightWatch", "noiseLimit", "opened", "ownerGroup", "ownerOf", "paintDice", "pendingAttract", "pendingBite", "pendingHeal", "pendingLeaderSide", "pendingLoot", "pendingRecruitInfo", "pendingTransfer", "person", "picked", "places", "playable", "profileId", "renderModal", "renderSite", "selected", "show", "skipAI", "sleepingOutside", "statusText", "syncHandoverAccessibility", "target", "toggleFab", "token", "zcap"]), agentCapabilities = Object.freeze(["accessible", "actions", "alive", "applyFrost", "botContributeTools", "catalog", "crossAction", "crossDraw", "crossTrigger", "effectiveAttack", "effectiveSearch", "equipmentOf", "game", "kind", "message", "openAccess", "pause", "pendingBite", "replaceLastSurvivors", "verify", "waitForBite"]);
   function capabilities(context, names) {
     let result = /* @__PURE__ */ Object.create(null);
     for (let name of names) Object.defineProperty(result, name, { enumerable: !0, get: () => context[name] });
@@ -409,7 +409,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
   }
 
   // src/domain/reference-state.mjs
-  var soloMode = (mode) => mode === "solo";
+  var soloMode = (mode) => mode === "solo", NOISE_LIMIT = 4;
   function createReferenceState({ gameMode, objective, places, catalog, testRules = TEST_RULE_DEFAULTS }) {
     let solo = soloMode(gameMode);
     return {
@@ -1231,6 +1231,9 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       },
       get setTestRules() {
         return setTestRules;
+      },
+      get noiseLimit() {
+        return NOISE_LIMIT;
       },
       get nightEnabled() {
         return () => nightEnabled(game);
@@ -2346,7 +2349,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         for (let i = 0; i < 2 && openAccess(0, g); i++) g.zones[0].b++;
       }]] },
       { title: "La ruta de los veteranos", when: "search", require: (p) => !!p && !isLeader(p) && p.influence <= 55, story: "Un explorador poco conocido descubre un camino discreto hacia un viejo depósito. Nadie le cree todavía.", choices: [["Confiar en su hallazgo", "Obtené un combustible, pero acumulá un ruido en esta localidad.", (g) => {
-        ownerHand(g).push("combustible"), g.zones[crossActor(g).loc].noise = Math2.min(4, g.zones[crossActor(g).loc].noise + 1);
+        ownerHand(g).push("combustible"), g.zones[crossActor(g).loc].noise = Math2.min(NOISE_LIMIT, g.zones[crossActor(g).loc].noise + 1);
       }], ["Evitar riesgos", "Ganás una herramienta.", (g) => {
         ownerHand(g).push("herramienta");
       }]] },
@@ -2356,7 +2359,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         ownerHand(g).push(catalog.create("notes"));
       }]] },
       { title: "La caja de municiones", when: "attack", require: (p) => !!p && p.loc === 3, story: "Un depósito olvidado abre nuevas opciones para defenderse. Una escopeta espera entre los escombros.", choices: [["Tomar el arma", "Obtenés una escopeta y 1 ruido en la comisaría.", (g) => {
-        ownerHand(g).push(catalog.create("shotgun")), g.zones[3].noise = Math2.min(4, g.zones[3].noise + 1);
+        ownerHand(g).push(catalog.create("shotgun")), g.zones[3].noise = Math2.min(NOISE_LIMIT, g.zones[3].noise + 1);
       }], ["Cerrar la armería", "Construís una barricada si queda espacio.", (g) => {
         openAccess(3, g) && g.zones[3].b++;
       }]] },
@@ -2611,7 +2614,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
     function addNoiseSearch() {
       if (!pendingLoot || game.ended || !canResolve("lootChoice")) return;
       let loc = pendingLoot.loc, z = game.zones[loc];
-      if (z.noise >= 4 || !game.decks[loc].length) return;
+      if (z.noise >= NOISE_LIMIT || !game.decks[loc].length) return;
       z.noise++;
       let newCard = drawItem(loc);
       pendingLoot.items.push(newCard), message("🔊 Ruido en " + places[loc] + ": se reveló " + itemTitle(newCard) + "."), paint();
@@ -2733,7 +2736,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
         noiseBefore: own.noiseBefore,
         step: own.status + "_" + (pendingLoot?.items === own.pending ? pendingLoot.items.length : 0) + "_" + game.zones[own.origin].noise,
         cards: own.status === "choice" && pendingLoot?.items === own.pending ? pendingLoot.items.map(searchCard) : [],
-        canNoise: own.status === "choice" && pendingLoot?.items === own.pending && !general && game.zones[own.origin].noise < 4 && game.decks[own.origin].length > 0,
+        canNoise: own.status === "choice" && pendingLoot?.items === own.pending && !general && game.zones[own.origin].noise < NOISE_LIMIT && game.decks[own.origin].length > 0,
         result: own.result ? structuredClone(own.result) : null,
         recruit: own.status === "result" && pendingRecruitInfo?.side === controls.side ? { ...pendingRecruitInfo } : null,
         generalDecision: general

@@ -20,7 +20,7 @@ export function projectVisibleState(context,{gate={},renderedPlayable=false,epoc
  })));
  const locations=context.places.map((_,index)=>{
   const z=g.zones[index],id=placeId(index),members=characters.filter(c=>c.locationId===id),helpless=index===0?number(g.helpless):0,capacity=number(context.capacity[index]),exteriorCapacity=number(context.zcap[index]),zombies=number(z?.z),barricades=number(z?.b),occupied=helpless===null?null:members.length+helpless;
-  return {id,engineIndex:index,name:text(z?.name)||text(context.places[index]),survivors:members.length,characterIds:members.map(c=>c.id),helpless,occupied,capacity,available:capacity===null||occupied===null?null:capacity-occupied,zombies,barricades,exteriorCapacity,exteriorAvailable:[exteriorCapacity,zombies,barricades].some(x=>x===null)?null:exteriorCapacity-zombies-barricades,noise:number(z?.noise)};
+  return {id,engineIndex:index,name:text(z?.name)||text(context.places[index]),survivors:members.length,characterIds:members.map(c=>c.id),helpless,occupied,capacity,available:capacity===null||occupied===null?null:capacity-occupied,zombies,barricades,exteriorCapacity,exteriorAvailable:[exteriorCapacity,zombies,barricades].some(x=>x===null)?null:exteriorCapacity-zombies-barricades,noise:number(z?.noise),noiseLimit:number(context.noiseLimit)};
  });
  return freeze({schema:1,epoch,blocked:null,mode:text(g.mode),round:number(g.round),maxRounds:number(g.max),morale:number(g.morale),food:number(g.food),ended:!!g.ended,turn:text(g.turn),automationRunning:!!context.aiRunning,players,characters,locations,
   objective:g.objective?{name:text(g.objective.name),description:text(g.objective.description),samples:number(g.samples),goal:number(g.goal)}:null,

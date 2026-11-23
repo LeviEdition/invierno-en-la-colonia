@@ -2,69 +2,77 @@
 
 > **Cómo se usa este documento.** Arriba está solo lo vigente: dónde estamos, la única tarea siguiente, la cola ordenada y los hallazgos abiertos. Cada entrega actualiza estas secciones **reemplazando** su contenido, no agregando un bloque nuevo. El detalle de cada entrega va en su informe numerado y en el PR. Los bloques fechados anteriores al 16/11/2026 están en [18-historico-tablero.md](18-historico-tablero.md) y no se editan.
 
-**Actualizado:** 18/11/2026 · **main:** `d872dcf` (PR #33 y #35: laboratorio SP-04 cerrado, corridas 4 a 7) · **Tag vigente:** `v0.10.0-mapa-horizontal` · **Ramas en revisión:** `feature/mapa-2x` ([112](112-mapa-doble-resolucion.md)) y `feature/reglas-de-prueba` (PR #37; [116](116-ficha-regla-la-noche.md), [117](117-reglas-de-prueba-y-un-grupo.md))
+**Actualizado:** 23/11/2026 · **main:** `4d5f1a1` (PR #34 mapa 2×, #37 reglas de prueba, #36 limpieza de `node_modules`) · **Tag vigente:** `v0.10.0-mapa-horizontal` · **Rama en revisión:** `feature/interfaz-v2-sesion-1` ([119](119-interfaz-v2-sesion-1.md))
 
 ## 1. Dónde estamos
 
 | Hito o entrega | Estado | Referencia |
 |---|---|---|
 | 1 — Fidelidad aceptada y D1/D2 integradas | **Cerrado** (29/10) | [62](62-hitos-referencia-fiel-y-juego-propio.md), [71](71-integracion-main-y-cierre-d1-d2.md) |
-| 2 — Referencia V9.9 modular preservada | **Cerrado** (29/10), tag `v0.9.9-referencia-modular`; sigue con su D6 de exposición | [72](72-preservacion-referencia-modular.md) |
-| 3 — Identidad visual y mapa jugable | **Cerrado** (16/11), integrado en `main` (PR #25) y marcado con `v0.10.0-mapa-horizontal` | [75](75-plan-hito-3-identidad-visual.md), [99](99-experiencia-unificada-del-mapa.md), [100](100-avisos-y-zoom-nativo.md), [101](101-muerte-durante-accion-propia.md) |
-| Mantenimiento: mapa como producto | **Integrado en `main`** (PR #26): `app/mapa/`, `npm run dev:mapa`, prototipos retirados | [103](103-consolidacion-mapa-producto.md) |
-| D12 de exposición | **Integrado en `main`** (PR #27, 17/11), aprobado jugando | [102](102-dado-exposicion-d12.md) |
-| Laboratorio SP-04 | **Cerrado** (17/11, PR #33 y #35). Conclusión aprobada por el creador: la noche por localidad, el regreso con un dado y el éxito parcial de la crisis; improvisar descartado; comida inicial a definir jugando | [111](111-laboratorio-sp04-cuarta-corrida.md), [113](113-laboratorio-sp04-quinta-corrida.md), [114](114-laboratorio-sp04-sexta-corrida.md), [115](115-laboratorio-sp04-septima-corrida.md) |
-| Mapa en doble resolución | **En revisión** (rama `feature/mapa-2x`, PR #34): textura 3342×1882, zoom máximo 1,5, enfoque de localidad hasta 1,5 | [112](112-mapa-doble-resolucion.md) |
-| Reglas de prueba y modo «un grupo» | **En revisión** (rama `feature/reglas-de-prueba`, PR #37): comida inicial 6/8/10, «La noche», «Regresar a la colonia» y crisis parcial, todas apagadas por defecto, más el modo de un solo grupo. **Disponibles en el mapa con `?dev`.** La resistencia del motor se cubre en Node. Falta probar jugando | [116](116-ficha-regla-la-noche.md), [117](117-reglas-de-prueba-y-un-grupo.md) |
-| Singleplayer (SP-00 a SP-08) | **Diseño en papel**; capítulo piloto «La última guardia» en ficha. Las reglas que lo sostienen ya existen como opción de prueba | [63](63-hoja-de-ruta-planificacion-singleplayer.md), [105](105-ficha-capitulo-la-ultima-guardia.md) |
+| 2 — Referencia V9.9 modular preservada | **Cerrado** (29/10), tag `v0.9.9-referencia-modular` | [72](72-preservacion-referencia-modular.md) |
+| 3 — Identidad visual y mapa jugable | **Cerrado** (16/11), tag `v0.10.0-mapa-horizontal` | [75](75-plan-hito-3-identidad-visual.md), [99](99-experiencia-unificada-del-mapa.md) |
+| Laboratorio SP-04 | **Cerrado** (17/11): la noche por localidad, el regreso con un dado y la crisis parcial; comida inicial a definir jugando | [111](111-laboratorio-sp04-cuarta-corrida.md), [115](115-laboratorio-sp04-septima-corrida.md) |
+| Mapa en doble resolución | **Integrado en `main`** (PR #34): textura 3342×1882, zoom máximo y enfoque 1,5 | [112](112-mapa-doble-resolucion.md) |
+| Reglas de prueba y modo «un grupo» | **Integrado en `main`** (PR #37), apagadas por defecto y disponibles con `?dev`. Falta probarlas jugando | [116](116-ficha-regla-la-noche.md), [117](117-reglas-de-prueba-y-un-grupo.md), [118](118-auditoria-datos-interfaz-v2.md) |
+| Interfaz v2 — sesión 1 | **En revisión** (rama `feature/interfaz-v2-sesion-1`): mapa a pantalla completa con paneles flotantes, filtro frío, chapa, nieve y pinos, daño y ruido siempre visibles, tope de ruido desde el motor | [119](119-interfaz-v2-sesion-1.md), [109 §8](109-guia-de-estilo.md) |
+| Singleplayer (SP-00 a SP-08) | **Diseño en papel**; capítulo piloto «La última guardia» en ficha | [63](63-hoja-de-ruta-planificacion-singleplayer.md), [105](105-ficha-capitulo-la-ultima-guardia.md) |
 
-El mapa permite preparar, jugar y terminar una partida completa (humano + IA y dos jugadores locales) con un único motor. Vive en `app/mapa/` (`npm run dev:mapa` → `http://127.0.0.1:8779/app/mapa/`).
+El mapa permite preparar, jugar y terminar una partida completa (contra la IA, dos jugadores locales y, con `?dev`, un grupo) con un único motor. Vive en `app/mapa/` (`npm run dev:mapa` → `http://127.0.0.1:8779/app/mapa/`).
 
 ## 2. Próxima tarea única
 
-**Probar jugando las reglas de prueba en el mapa** ([117](117-reglas-de-prueba-y-un-grupo.md)) para **fijar la comida inicial en 6 u 8**. Abrir `app/mapa/` con `?dev=1`, activar «La noche», «Regresar a la colonia» y la crisis parcial al preparar la partida, y jugar en modo contra la IA y en «Un grupo (sin IA)». Lo que hay que sentir está en la ficha ([116](116-ficha-regla-la-noche.md)): si una tirada por localidad da la tensión justa y si el coste de un dado alcanza para que regresar no sea gratis.
+**Revisar la interfaz v2, sesión 1 ([119](119-interfaz-v2-sesion-1.md)).**
+
+1. Abrir el PR borrador de `feature/interfaz-v2-sesion-1` y esperar los cuatro checks (pruebas, engine, browser, horizontal).
+2. Lanzar una vez el recorrido completo: Actions → «Mapa — baterías de navegador» → Run workflow, con esa rama.
+3. Jugar un rato en escritorio y en el A15 y decidir sobre:
+   - la legibilidad de las marcas de daño a 11 px;
+   - el ruido 0 sin dibujar;
+   - cuánto mapa tapan las barras;
+   - el filtro y los materiales en la pantalla real.
 
 ## 3. Cola ordenada
 
-1. **Probar las reglas jugando en el mapa (117):** fijar comida inicial y confirmar la duda abierta de la ficha ([116](116-ficha-regla-la-noche.md)). El PR #37 verifica el motor y los recorridos breves de navegador.
-2. **Mapa 2× (112):** prueba del creador en escritorio y en el A15 → decisión de merge (requiere indicación expresa).
-3. **Interfaz v2** (rama `feature/interfaz-v2`; decisiones en [109 §8](109-guia-de-estilo.md)), sobre el mapa 2× ya integrado.
-4. **Implementar «La última guardia»** como capítulo jugable, con los valores que se fijen en 1.
-5. **Mejoras menores del mapa:** hallazgos 4 y 5, batería de CI con partida entera de clics reales.
-6. **Reservas del Hito 3:** Samsung Galaxy A15 físico y dos jugadores locales manuales.
+1. **Interfaz v2, sesión 2** ([109 §8](109-guia-de-estilo.md)):
+   - recursos como chapas con ícono;
+   - dados con puntos;
+   - rótulos que aparecen con la interacción;
+   - papel rasgado;
+   - transiciones;
+   - viñetas de encrucijadas;
+   - tipografías de la guía incluidas en el repositorio.
+2. **Probar jugando las reglas de prueba** ([117](117-reglas-de-prueba-y-un-grupo.md)) para fijar la comida inicial en 6 u 8 y la duda de la ficha [116](116-ficha-regla-la-noche.md).
+3. **Implementar «La última guardia»** como capítulo jugable, con los valores que se fijen en 2.
+4. **Mejoras menores del mapa:** hallazgos 4 y 5, batería de CI con partida entera de clics reales.
+5. **Reservas del Hito 3:** Samsung Galaxy A15 físico y dos jugadores locales manuales.
 
 ## 4. Hallazgos abiertos
 
 | # | Hallazgo | Estado | Próximo paso |
 |---|---|---|---|
 | 1 | Aviso de combate en fichas ajenas | **Implementado** en `985bdf1` | Confirmar jugando |
-| 2 | Zoom máximo = tamaño del mapa | **Resuelto en rama** (`feature/mapa-2x`): textura 2× y zoom máximo 1,5 | Probar en el teléfono que alcanza para tocar retratos y accesos, y la memoria de la textura (4096×2048) |
-| 3 | Moverse/Buscar/Atacar poco visibles en móvil | **Corregido** (16/11, solo CSS móvil) | Ver en el teléfono cuando se pueda |
+| 2 | Zoom máximo = tamaño del mapa | **Resuelto** en `main` (PR #34): textura 2× y zoom máximo 1,5 | Probar en el teléfono la memoria de la textura (4096×2048) |
+| 3 | Moverse/Buscar/Atacar poco visibles en móvil | **Corregido** (16/11, solo CSS móvil) | Ver en el teléfono |
 | 4 | Selector de localidad desincronizado | **Aceptado como menor** (16/11) | Mejoras menores |
-| 5 | Aviso móvil tapa título y botones de la ficha ampliada durante 5 s | **Aceptado como menor** (16/11) | Mejoras menores |
-| 6 | La partida se trababa si un superviviente moría en su propia acción | **Corregido** ([101](101-muerte-durante-accion-propia.md)) | Confirmado jugando (16/11) |
-| 7 | D12 de exposición sin probar a mano | Integrado en `main`; baterías automáticas en tres tamaños | Partida manual y teléfono físico |
-| 8 | Enfoque de localidad con el mapa 2× | **1,5** (`focusMaxZoom`), decisión del creador 17/11: centrar y acercar un poco más | Probar en escritorio y A15 |
-| 9 | «Regresar a la colonia» y el movimiento | **Resuelto** (18/11, decisión del creador): cuenta como movimiento; después ya no puede moverse esa ronda | Confirmar jugando que el coste de un dado alcanza ([116](116-ficha-regla-la-noche.md)) |
-| 10 | `node_modules` está versionado como enlace simbólico | Detectado 18/11: `npm ci` lo reemplaza por un directorio y aparece como borrado en `git status`; no se incluyó en ningún commit | Revisar aparte si debe dejar de estar versionado |
+| 5 | Aviso móvil tapa título y botones de la ficha ampliada durante 5 s | **Aceptado como menor** (16/11) | Revisar con la disposición v2 |
+| 7 | D12 de exposición sin probar a mano | Integrado; baterías automáticas en tres tamaños | Partida manual y teléfono físico |
+| 8 | Enfoque de localidad | **1,5** (17/11). Con v2, en el área libre de paneles ([119](119-interfaz-v2-sesion-1.md)) | Probar en escritorio y A15 |
+| 9 | «Regresar a la colonia» cuenta como movimiento | **Resuelto** (18/11) | Confirmar jugando que el coste de un dado alcanza |
+| 11 | Marcas de daño a 11 px, debajo del mínimo de 14 px de la guía | Decisión de la sesión para que quepan en fichas de 16 px en la vista general | Decisión del creador tras verlo en el A15 |
+| 12 | Tipografías de la guía (Alegreya Sans, Bitter) no incluidas | Siguen las del sistema | Sesión 2 |
+| 13 | En escritorio, con la ficha abierta, un acceso del supermercado queda bajo la ficha al enfocarlo | El borde del mapa no deja correr más la cámara; con la ficha cerrada no pasa | Ver jugando si molesta |
+| 14 | El oráculo del motor (`test:poc`) no corre en Windows | El script crea un enlace simbólico (EPERM) | Lo corre el CI; revisar aparte si conviene una unión de directorio |
 
-## 5. Verificación de las reglas de prueba y el modo «un grupo» (rama `feature/reglas-de-prueba`, PR #37)
+## 5. Verificación de la interfaz v2, sesión 1 (rama `feature/interfaz-v2-sesion-1`)
 
-- [x] La batería de resistencia completó 98 partidas en Node con semillas reproducibles y comprobó los reintentos de una mordedura nocturna ([117](117-reglas-de-prueba-y-un-grupo.md)).
-
-- [x] **851 pruebas, 0 fallos**: 59 nuevas (35 de reglas, 14 del modo, 9 del adaptador del mapa, más la paridad de preparación extendida a los tres modos).
-- [x] Con todo apagado, una partida con semilla fija es idéntica; los modos contra la IA y dos jugadores locales conservan grupo, mano, dados y líder de la IA.
-- [x] La noche: una tirada por localidad exterior ocupada, nunca en la colonia ni por el grupo de la IA; menor influencia con empate por orden del grupo; las cuatro caras del D12; no existe en dos jugadores locales.
-- [x] Mordedura nocturna en el flujo normal de muerte y sucesión; **la noche se pausa y sigue** con las localidades que faltaban, en el mismo orden, antes de abrir la ronda siguiente.
-- [x] Regresar cuesta un dado de cualquier valor, no tira exposición, **no consume azar** y **cuenta como movimiento**; el movimiento normal no cambia.
-- [x] Crisis parcial en sus cuatro consecuencias; apagada, media crisis sigue fallando entera.
-- [x] Un grupo: dos rondas pasan del turno del jugador a la colonia sin turno de la IA ni avisos que la mencionen; semilla fija, partida idéntica.
-- [x] **En el mapa**: con `?dev` aparecen el modo y las cuatro reglas y sin `?dev` nada cambia; la ficha recibe «dormirá afuera» y «hace guardia» del motor; regresar se ofrece con su coste y deja el movimiento en `already-moved`; «un grupo» no proyecta el bando de la IA y su etiqueta es «Tu grupo».
-- [x] Empezar «un grupo» desde el mapa da el mismo estado y el mismo azar que `startGame('solo')` en el motor.
-- [x] `check:build` y `check:mapa-build` en verde; HTML y `dist/mapa` regenerados desde las fuentes.
-- [ ] **Las dos baterías de navegador nuevas no se corrieron localmente** (sin Chromium en el entorno): `check-reglas-de-prueba-browser.mjs` (workflow `d12a`) y `check-map-reglas-de-prueba-browser.mjs` (workflow `mapa`, 852×393 y 1365×768). El CI del PR #37 es la fuente de verdad.
-- [ ] Animación del D12 en la tirada nocturna: entra por el mismo camino que movimiento y combate, pero no se vio.
-- [ ] Prueba jugando en escritorio y en el Samsung Galaxy A15; comida inicial a fijar.
+- [x] **881 pruebas, 0 fallos** (9 nuevas): contrato de proyección del ruido y su tope, privacidad en bloqueos, qué se dibuja con 0 y con valores, enfoque en el área libre, filtro frío y página.
+- [x] Tope de ruido: una constante del motor usada en sus cuatro sitios, expuesta como `noiseLimit` y proyectada por localidad; mismo valor (4).
+- [x] Filtro frío en un solo lugar, horneado en la textura del fondo; el canvas no se filtra entero y ningún archivo de arte cambió.
+- [x] `check:build` y `check:mapa-build` en verde; HTML de referencia regenerado desde `src/`.
+- [x] Dos capturas (852×393 y 1365×768) con marcas en su lugar, sin errores de página ni desplazamiento horizontal.
+- [ ] **Oráculo del motor**: no corre localmente; job `engine` del CI.
+- [ ] **Baterías de navegador**: no se corrieron localmente ni se modificaron; CI del PR y recorrido completo a mano una vez.
+- [ ] Prueba jugando en escritorio y en el Samsung Galaxy A15.
 - [ ] Decisión de merge del creador.
 
 
@@ -76,11 +84,12 @@ El mapa permite preparar, jugar y terminar una partida completa (humano + IA y d
 - Ficha contextual para la selección; las acciones con coste muestran el gasto antes de confirmar.
 - Mordeduras, sucesión y pase privado conservan su atención; las acciones rutinarias informan sin pedir «Continuar».
 - Resultado rutinario: aviso temporal único sobre el mapa y entrada en el Registro; cada ficha muestra su propio estado.
-- Zoom máximo: 1,5 respecto del tamaño lógico del mundo (1671×941), con la textura 2× (en revisión, [112](112-mapa-doble-resolucion.md)); en `main`, 1 píxel de la ilustración por píxel CSS. El enfoque de localidad llega a 1,5.
+- Zoom máximo: 1,5 respecto del tamaño lógico del mundo (1671×941), con la textura 2× ([112](112-mapa-doble-resolucion.md)). El enfoque de localidad llega a 1,5 y, con la interfaz v2, encuadra en el área libre de paneles.
 - Un solo motor determina costes, tiradas y consecuencias; la interfaz solo presenta.
 - Exposición del mapa: D12 uniforme 6/3/2/1, con símbolos; un resultado compartido entre efecto, animación, etiqueta y Registro. Los dados de acción y de riesgo de contagio conservan el D6. Rescate del médico pendiente de próximo encargo.
 - Dispositivos de prueba: escritorio y Samsung Galaxy A15.
-- Guía de estilo para arte, paleta, tipografía y escenas narrativas nuevas: [109](109-guia-de-estilo.md) (17/11). El mapa aprobado no se redibuja; su ajuste de color se evalúa aparte.
+- Guía de estilo para arte, paleta, tipografía y escenas narrativas nuevas: [109](109-guia-de-estilo.md) (17/11). El mapa aprobado no se redibuja; el filtro frío aprobado (109 §8) se aplica en render.
+- Interfaz v2 ([109 §8](109-guia-de-estilo.md)): teléfono horizontal como plataforma principal; mapa a pantalla completa con paneles flotantes; daño (♥, ❄) y ruido siempre visibles en el mapa ([119](119-interfaz-v2-sesion-1.md)).
 
 ## 7. Reservas conocidas
 
