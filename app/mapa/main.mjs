@@ -40,9 +40,11 @@ eventPresentations=createEventPresentations({
   const response={...frame,presentation:eventFrame(frame.presentation)};
   viewer.setState(eventFrame(frame.before));movement.present(response);
   const finish=()=>{movement.finishPresentation(frame.kind==='exposure'?'':movementSummary(response,response.presentation.locations));done();};
+  // Noche: empieza con la primera tirada nocturna presentada; termina cuando la cola se vacía.
+  viewer.night?.(frame.kind==='exposure'?'begin':'end');
   if(frame.kind==='exposure')viewer.startActionPresentation(response,finish);else viewer.startPresentation(response,finish);
  },
- stop(){viewer?.stopPresentation();movement.interruptPresentation();},onIdle:()=>applyAuthority(),
+ stop(){viewer?.stopPresentation();movement.interruptPresentation();viewer?.night?.('adopt');},onIdle:()=>{viewer?.night?.('end');applyAuthority();},
 });
 function clearPreviousResult(){if(!unified)return;movementNoticeEnabled=false;if($('movement-result').textContent)$('movement-result').textContent='';if(routine.inspect())routine.clear();}
 const managedCycle=p=>!!p?.cycle?.managed||!!p?.play?.managed;
@@ -180,6 +182,8 @@ $('reconnect-source')?.addEventListener('click',()=>connect(),{signal:lifetime.s
 $('reference-mode').addEventListener('click',showReference,{signal:lifetime.signal});$('return-reference')?.addEventListener('click',showReference,{signal:lifetime.signal});$('map-mode').addEventListener('click',showMap,{signal:lifetime.signal});$('resolve-decision').addEventListener('click',showDecision,{signal:lifetime.signal});
 for(const id of ['restart-view','retry-view'])$(id).addEventListener('click',()=>{if(mode==='map')void mountViewer();},{signal:lifetime.signal});
 document.addEventListener('visibilitychange',()=>{if(document.hidden){eventPresentations.interrupt();stopAction();interruptSearch();if(movementPresenting()){stopMovement();applyAuthority();}}},{signal:lifetime.signal});
+// Solo QA: fuerza la atmósfera de noche para capturas y mediciones. En producto no hace nada.
+export function qaNight(kind){if(__ACTION_MAP_QA__)viewer?.night?.(kind);}
 export function inspect(){return {mode,connected:!!port,starts,generation,projection:state?structuredClone(state):null,movement:movement.inspect(),search:search.inspect(),action:action.inspect(),inventory:inventory.inspect(),cycle:cycle.inspect(),play:play.inspect(),eventPresentations:eventPresentations.inspect(),view:viewer?.inspect()||null,lastDisposal,lastError};}
 export function worldAt(point){return viewer?.worldAt(point);}
 export function disposeViewer(){eventPresentations.interrupt();stopSearchClock();stopMovement();stopAction();search.interrupt();attempt?.abort();generation++;serial=serial.catch(()=>{}).then(clearViewer);return serial;}

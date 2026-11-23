@@ -70,7 +70,7 @@ test('Interfaz v2 · enfoque: sin márgenes igual que antes; con márgenes, la l
 });
 
 test('Interfaz v2 · filtro frío: valores aprobados y un solo lugar',()=>{
- assert.deepEqual({...MAP_COLOR_FILTER},{saturate:.5,hueRotate:-28,brightness:.85,contrast:1.05});
+ {const {saturate,hueRotate,brightness,contrast}=MAP_COLOR_FILTER;assert.deepEqual({saturate,hueRotate,brightness,contrast},{saturate:.5,hueRotate:-28,brightness:.85,contrast:1.05});}
  assert.equal(cssFilter(MAP_COLOR_FILTER),'saturate(0.5) hue-rotate(-28deg) brightness(0.85) contrast(1.05)');assert.equal(cssFilter(null),'none');
  const id=filterMatrix(null),neutral=filterMatrix({saturate:1,hueRotate:0,brightness:1,contrast:1});
  for(let i=0;i<3;i++)for(let j=0;j<4;j++)assert.ok(Math.abs(neutral[i][j]-id[i][j])<1e-12);

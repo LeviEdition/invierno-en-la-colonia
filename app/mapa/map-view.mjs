@@ -11,6 +11,9 @@ import {scene,kit,atmosphere,camera as cameraFunctions,createAtmosphereView} fro
 import {loadResources,prepareResources} from './render/kit/resources.mjs';
 import {withMapFilter} from './render/cold-filter.mjs';
 import {animateExits,reducedMotion} from './experiencia/transitions.mjs';
+import {createNightAtmosphere} from './experiencia/night-lights.mjs';
+import {createNightView} from './render/phaser/night-view.mjs';
+import luces from './escena/luces.json';
 import {damageMarks,damageKey,noiseMarks,noiseAnchor,safeInsets,localityLabelAnchor,labelVisible,LABEL_WAKE_MS,damageBubble} from './experiencia/state-marks.mjs';
 import {createWorkshopRenderer} from './render/kit/renderer.mjs';
 import {initialAtmosphereSettings} from './movimiento/storm-model.mjs';
@@ -36,7 +39,7 @@ const element=(tag,text,className)=>{const el=document.createElement(tag);if(tex
 export async function createSearchMapView({signal,movement,search,action,inventory,cycle,play,onRecover,onSearchNative}={}){
  const ui=new AbortController(),options={signal:ui.signal},motion=matchMedia('(prefers-reduced-motion: reduce)'),deadline=performance.now()+STARTUP_TIMEOUT_MS;
  let renderer,audio,observer,unbind,frame=0,disposed=false,active=false,contextLost=false,projection=null,layout={nodes:[],characters:[],locations:[],unmappedCharacterIds:[]},camera,viewport,selected=null,selectedLocation=null,infoKind=null,epoch,lastMovementPhase='idle',commands=0,draws=0;
- const stableLayout=createStableLayout(scene),actors=new Map();let sequence=null,sequenceResponse=null,sequenceFrom=null,sequenceTo=null,sequenceLast=null,sequenceCallback=null,sequenceApplied=false,hoveredLocation=null;let pointedLocality=null;let sceneDirty=true,lastPanelActor=null;const localityLabels=new Map();let labelsAwakeUntil=0,labelTimer=0,glide=null;const GLIDE_MS=220;
+ const stableLayout=createStableLayout(scene),actors=new Map();let sequence=null,sequenceResponse=null,sequenceFrom=null,sequenceTo=null,sequenceLast=null,sequenceCallback=null,sequenceApplied=false,hoveredLocation=null;let pointedLocality=null;let sceneDirty=true,lastPanelActor=null;const localityLabels=new Map(),nightState=createNightAtmosphere();let nightView=null;let labelsAwakeUntil=0,labelTimer=0,glide=null;const GLIDE_MS=220;
  let windowWidth=innerWidth,windowHeight=innerHeight;
  let panelFocusTarget=null,panelTarget=document.body.dataset.panelOpen!=='false',resizeAnchor=null,resizeZoom=null,submittedCamera=null,submittedViewport=null,displayCamera=null,displayViewport=null,lastSearchPhase='idle',lastActionPhase='idle',impactApplied=false;
  const workspace=mountWorkspace({getContext:()=>({projection,selected,active,action,search,inventory,play,movement,cycle}),panel,signal:ui.signal});
@@ -94,7 +97,11 @@ export async function createSearchMapView({signal,movement,search,action,invento
   };
   events.on(Phaser.Core.Events.POST_RENDER,onFrame);
   ui.signal.addEventListener('abort',()=>events.off(Phaser.Core.Events.POST_RENDER,onFrame),{once:true});
-  return createAtmosphereView(world,atmosphere,{settings,kit});
+  // Noche y luces (informe 121) comparten el bucle de la atmósfera: un solo paso por cuadro,
+  // en pausa con la pestaña oculta.
+  const env=createAtmosphereView(world,atmosphere,{settings,kit});
+  nightView=createNightView(world,{lights:luces.lights,bounds:scene.bounds,getNight:t=>nightState.level(t,reducedMotion()),active:t=>nightState.active(t),reduced:reducedMotion});
+  return {step(d){env.step(d);nightView.step(d);},isAnimating:()=>env.isAnimating()||nightView.isAnimating(),setSettings(p){env.setSettings(p);},setPaused(v){env.setPaused(v);nightView.setPaused(v);},inspect:()=>({...env.inspect(),night:nightView.inspect()}),destroy:()=>({...env.destroy(),...nightView.destroy()})};
  }
  function labels(camera,viewport){
   const alive=new Set(layout.characters.map(c=>c.id));for(const [id,node]of actors)if(!alive.has(id)){node.remove();actors.delete(id);}
@@ -264,6 +271,9 @@ export async function createSearchMapView({signal,movement,search,action,invento
    restoreView(saved){if(!viewport||!saved?.camera)return;selected=projection?.characters.some(c=>c.id===saved.selected)?saved.selected:null;selectedLocation=projection?.locations.some(l=>l.id===saved.selectedLocation)?saved.selectedLocation:null;change({...saved.camera});updateUI();schedule();},
    setActive(value){active=!!value;if(!active){pointedLocality=null;infoKind=null;$('info-dialog').close();workspace.render();$('floating-menu').hidden=true;$('menu-toggle').setAttribute('aria-expanded','false');}if(!active&&frame){cancelAnimationFrame(frame);frame=0;}pause();updateMovement();if(active){resize();schedule();}},
    inspect(){return {active,selected,selectedLocation,epoch,pointedLocality,renderPending:!!frame||submittedCamera!==displayCamera,panel:{requestedOpen:panelTarget,presentedOpen:!$('panel-content').hidden},camera:camera?{...camera}:null,viewport:viewport?{...viewport}:null,commands,draws,layout:structuredClone(layout),renderer:renderer.inspect(),audio:audio.inspect(),contextLost,presentation:sequence?.inspect()||null,action:action.inspect(),movement:movement.inspect(),workspace:workspace.inspect?.()};},
+   // Atmósfera de noche, solo presentación: begin/end acompañan las tiradas nocturnas que ya
+   // presenta la cola; adopt toma el estado actual (día) sin animar.
+   night(kind){if(disposed)return;const now=performance.now();if(kind==='begin')nightState.begin(now);else if(kind==='end')nightState.end(now);else nightState.adopt();nightView?.refresh();renderer?.setAtmosphere({});},
    worldAt:point=>renderer.worldAt(point),
    async destroy(){if(disposed)return;disposed=true;active=false;playPanel.render();cyclePanel.render();inventoryPanel.render();searchPanel.render();actionPanel.render();stopPresentation();ui.abort();observer.disconnect();unbind();if(frame)cancelAnimationFrame(frame);$('info-dialog').close();const graphics=renderer.destroy(),audioRelease=await audio.destroy();clearTimeout(labelTimer);$('map-labels').replaceChildren();$('locality-labels').replaceChildren();localityLabels.clear();$('actor-markers').replaceChildren();actors.clear();return {...graphics,audioRelease,disposed:true};}
   };
