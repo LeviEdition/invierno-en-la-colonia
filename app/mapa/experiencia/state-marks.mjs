@@ -37,3 +37,9 @@ export function safeInsets(viewport,rects,{minShare=.4}={}){
  if(height-inset.top-inset.bottom<height*minShare)inset.top=inset.bottom=0;
  return inset;
 }
+
+// Rótulo de localidad (v2): aparece con la interacción y se desvanece; la seleccionada lo
+// conserva. Colonia usa su posición de grupo; el resto, el frente del edificio, debajo del ruido.
+export const LABEL_WAKE_MS=2800;
+export function localityLabelAnchor(zone){const g=zone?.portraitGroup?.labelPosition,b=zone?.buildingBounds;return g?{x:g.x,y:g.y}:b?{x:b.x+b.width/2,y:b.y+b.height*.34}:null;}
+export function labelVisible({id,selectedId,awakeUntil,now}){return id===selectedId||now<awakeUntil;}

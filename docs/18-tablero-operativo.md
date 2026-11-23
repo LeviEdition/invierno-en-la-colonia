@@ -2,7 +2,7 @@
 
 > **Cómo se usa este documento.** Arriba está solo lo vigente: dónde estamos, la única tarea siguiente, la cola ordenada y los hallazgos abiertos. Cada entrega actualiza estas secciones **reemplazando** su contenido, no agregando un bloque nuevo. El detalle de cada entrega va en su informe numerado y en el PR. Los bloques fechados anteriores al 16/11/2026 están en [18-historico-tablero.md](18-historico-tablero.md) y no se editan.
 
-**Actualizado:** 23/11/2026 · **main:** `4d5f1a1` (PR #34 mapa 2×, #37 reglas de prueba, #36 limpieza de `node_modules`) · **Tag vigente:** `v0.10.0-mapa-horizontal` · **Rama en revisión:** `feature/interfaz-v2-sesion-1` ([119](119-interfaz-v2-sesion-1.md))
+**Actualizado:** 23/11/2026 · **main:** `4d5f1a1` (PR #34 mapa 2×, #37 reglas de prueba, #36 limpieza de `node_modules`) · **Tag vigente:** `v0.10.0-mapa-horizontal` · **Ramas en revisión:** `feature/interfaz-v2-sesion-1` (PR #38, [119](119-interfaz-v2-sesion-1.md)) y `feature/interfaz-v2-sesion-2` ([120](120-interfaz-v2-sesion-2.md)), que parte de la anterior
 
 ## 1. Dónde estamos
 
@@ -12,67 +12,62 @@
 | 2 — Referencia V9.9 modular preservada | **Cerrado** (29/10), tag `v0.9.9-referencia-modular` | [72](72-preservacion-referencia-modular.md) |
 | 3 — Identidad visual y mapa jugable | **Cerrado** (16/11), tag `v0.10.0-mapa-horizontal` | [75](75-plan-hito-3-identidad-visual.md), [99](99-experiencia-unificada-del-mapa.md) |
 | Laboratorio SP-04 | **Cerrado** (17/11): la noche por localidad, el regreso con un dado y la crisis parcial; comida inicial a definir jugando | [111](111-laboratorio-sp04-cuarta-corrida.md), [115](115-laboratorio-sp04-septima-corrida.md) |
-| Mapa en doble resolución | **Integrado en `main`** (PR #34): textura 3342×1882, zoom máximo y enfoque 1,5 | [112](112-mapa-doble-resolucion.md) |
+| Mapa en doble resolución | **Integrado en `main`** (PR #34) | [112](112-mapa-doble-resolucion.md) |
 | Reglas de prueba y modo «un grupo» | **Integrado en `main`** (PR #37), apagadas por defecto y disponibles con `?dev`. Falta probarlas jugando | [116](116-ficha-regla-la-noche.md), [117](117-reglas-de-prueba-y-un-grupo.md), [118](118-auditoria-datos-interfaz-v2.md) |
-| Interfaz v2 — sesión 1 | **En revisión** (rama `feature/interfaz-v2-sesion-1`): mapa a pantalla completa con paneles flotantes, filtro frío, chapa, nieve y pinos, daño y ruido siempre visibles, tope de ruido desde el motor | [119](119-interfaz-v2-sesion-1.md), [109 §8](109-guia-de-estilo.md) |
+| Interfaz v2 — sesión 1 | **En revisión** (PR #38, borrador): mapa a pantalla completa, paneles flotantes, filtro frío, materiales, daño y ruido siempre visibles | [119](119-interfaz-v2-sesion-1.md) |
+| Interfaz v2 — sesión 2 | **En revisión** (rama `feature/interfaz-v2-sesion-2`), parte A, foco en escritorio: recursos como chapas, rótulos que aparecen con la interacción, papel rasgado, transiciones, encrucijada en viñeta con consecuencias después de decidir, dados con puntos en todos los botones | [120](120-interfaz-v2-sesion-2.md) |
 | Singleplayer (SP-00 a SP-08) | **Diseño en papel**; capítulo piloto «La última guardia» en ficha | [63](63-hoja-de-ruta-planificacion-singleplayer.md), [105](105-ficha-capitulo-la-ultima-guardia.md) |
 
 El mapa permite preparar, jugar y terminar una partida completa (contra la IA, dos jugadores locales y, con `?dev`, un grupo) con un único motor. Vive en `app/mapa/` (`npm run dev:mapa` → `http://127.0.0.1:8779/app/mapa/`).
 
 ## 2. Próxima tarea única
 
-**Revisar la interfaz v2, sesión 1 ([119](119-interfaz-v2-sesion-1.md)).**
+**Completar y revisar la sesión 2 de la interfaz v2 ([120](120-interfaz-v2-sesion-2.md)).**
 
-1. Abrir el PR borrador de `feature/interfaz-v2-sesion-1` y esperar los cuatro checks (pruebas, engine, browser, horizontal).
-2. Lanzar una vez el recorrido completo: Actions → «Mapa — baterías de navegador» → Run workflow, con esa rama.
-3. Jugar un rato en escritorio y en el A15 y decidir sobre:
-   - la legibilidad de las marcas de daño a 11 px;
-   - el ruido 0 sin dibujar;
-   - cuánto mapa tapan las barras;
-   - el filtro y los materiales en la pantalla real.
+1. Recibir la parte B del encargo (ajustes de la sesión 1), que llegó cortada, y aplicarla en la misma rama.
+2. Abrir el PR borrador de `feature/interfaz-v2-sesion-2` (base: `feature/interfaz-v2-sesion-1`) y esperar el CI.
+3. Probar en escritorio los rótulos, las transiciones y la encrucijada.
 
 ## 3. Cola ordenada
 
-1. **Interfaz v2, sesión 2** ([109 §8](109-guia-de-estilo.md)):
-   - recursos como chapas con ícono;
-   - dados con puntos;
-   - rótulos que aparecen con la interacción;
-   - papel rasgado;
-   - transiciones;
-   - viñetas de encrucijadas;
-   - tipografías de la guía incluidas en el repositorio.
-2. **Probar jugando las reglas de prueba** ([117](117-reglas-de-prueba-y-un-grupo.md)) para fijar la comida inicial en 6 u 8 y la duda de la ficha [116](116-ficha-regla-la-noche.md).
-3. **Implementar «La última guardia»** como capítulo jugable, con los valores que se fijen en 2.
-4. **Mejoras menores del mapa:** hallazgos 4 y 5, batería de CI con partida entera de clics reales.
-5. **Reservas del Hito 3:** Samsung Galaxy A15 físico y dos jugadores locales manuales.
+1. **Interfaz v2, sesión 2, parte B** y decisión de merge de las sesiones 1 y 2 (requiere indicación expresa).
+2. **Arte de encrucijadas:** viñetas genéricas y sets de expresiones con la paleta de 109 para llenar la zona de imagen; tipografías de la guía incluidas en el repositorio.
+3. **Probar jugando las reglas de prueba** ([117](117-reglas-de-prueba-y-un-grupo.md)) para fijar la comida inicial y la duda de [116](116-ficha-regla-la-noche.md).
+4. **Implementar «La última guardia»** como capítulo jugable.
+5. **Mejoras menores del mapa:** hallazgos 4 y 5, batería de CI con partida entera de clics reales.
+6. **Reservas del Hito 3:** Samsung Galaxy A15 físico y dos jugadores locales manuales (el teléfono queda en pausa por decisión del creador).
 
 ## 4. Hallazgos abiertos
 
 | # | Hallazgo | Estado | Próximo paso |
 |---|---|---|---|
 | 1 | Aviso de combate en fichas ajenas | **Implementado** en `985bdf1` | Confirmar jugando |
-| 2 | Zoom máximo = tamaño del mapa | **Resuelto** en `main` (PR #34): textura 2× y zoom máximo 1,5 | Probar en el teléfono la memoria de la textura (4096×2048) |
+| 2 | Zoom máximo = tamaño del mapa | **Resuelto** en `main` (PR #34) | Probar en el teléfono la memoria de la textura (4096×2048) |
 | 3 | Moverse/Buscar/Atacar poco visibles en móvil | **Corregido** (16/11, solo CSS móvil) | Ver en el teléfono |
 | 4 | Selector de localidad desincronizado | **Aceptado como menor** (16/11) | Mejoras menores |
 | 5 | Aviso móvil tapa título y botones de la ficha ampliada durante 5 s | **Aceptado como menor** (16/11) | Revisar con la disposición v2 |
-| 7 | D12 de exposición sin probar a mano | Integrado; baterías automáticas en tres tamaños | Partida manual y teléfono físico |
-| 8 | Enfoque de localidad | **1,5** (17/11). Con v2, en el área libre de paneles ([119](119-interfaz-v2-sesion-1.md)) | Probar en escritorio y A15 |
+| 7 | D12 de exposición sin probar a mano | Integrado; baterías automáticas en tres tamaños | Partida manual |
+| 8 | Enfoque de localidad | **1,5**, en el área libre de paneles ([119](119-interfaz-v2-sesion-1.md)), con recorrido de 220 ms ([120](120-interfaz-v2-sesion-2.md)) | Probar en escritorio |
 | 9 | «Regresar a la colonia» cuenta como movimiento | **Resuelto** (18/11) | Confirmar jugando que el coste de un dado alcanza |
-| 11 | Marcas de daño a 11 px, debajo del mínimo de 14 px de la guía | Decisión de la sesión para que quepan en fichas de 16 px en la vista general | Decisión del creador tras verlo en el A15 |
-| 12 | Tipografías de la guía (Alegreya Sans, Bitter) no incluidas | Siguen las del sistema | Sesión 2 |
-| 13 | En escritorio, con la ficha abierta, un acceso del supermercado queda bajo la ficha al enfocarlo | El borde del mapa no deja correr más la cámara; con la ficha cerrada no pasa | Ver jugando si molesta |
-| 14 | El oráculo del motor (`test:poc`) no corre en Windows | El script crea un enlace simbólico (EPERM) | Lo corre el CI; revisar aparte si conviene una unión de directorio |
+| 11 | Marcas de daño a 11 px, debajo del mínimo de 14 px de la guía | Decisión de la sesión 1 | Decisión del creador al verlo |
+| 12 | Tipografías de la guía (Alegreya Sans, Bitter) no incluidas | Siguen las del sistema; Georgia provisoria en la encrucijada | Incluirlas con su licencia |
+| 13 | En escritorio, con la ficha abierta, un acceso del supermercado queda bajo la ficha al enfocarlo | Con la ficha cerrada no pasa | Ver jugando si molesta |
+| 14 | El oráculo del motor (`test:poc`) no corre en Windows | Enlace simbólico rechazado (EPERM) | Lo corre el CI |
+| 15 | Zona de imagen de la encrucijada sin arte | «Al otro lado» es una pantalla compuesta y no sirve como imagen | Arte de encrucijadas (cola 2) |
 
-## 5. Verificación de la interfaz v2, sesión 1 (rama `feature/interfaz-v2-sesion-1`)
+## 5. Verificación de la interfaz v2, sesión 2 (rama `feature/interfaz-v2-sesion-2`)
 
-- [x] **881 pruebas, 0 fallos** (9 nuevas): contrato de proyección del ruido y su tope, privacidad en bloqueos, qué se dibuja con 0 y con valores, enfoque en el área libre, filtro frío y página.
-- [x] Tope de ruido: una constante del motor usada en sus cuatro sitios, expuesta como `noiseLimit` y proyectada por localidad; mismo valor (4).
-- [x] Filtro frío en un solo lugar, horneado en la textura del fondo; el canvas no se filtra entero y ningún archivo de arte cambió.
-- [x] `check:build` y `check:mapa-build` en verde; HTML de referencia regenerado desde `src/`.
-- [x] Dos capturas (852×393 y 1365×768) con marcas en su lugar, sin errores de página ni desplazamiento horizontal.
-- [ ] **Oráculo del motor**: no corre localmente; job `engine` del CI.
-- [ ] **Baterías de navegador**: no se corrieron localmente ni se modificaron; CI del PR y recorrido completo a mano una vez.
-- [ ] Prueba jugando en escritorio y en el Samsung Galaxy A15.
+- [x] **886 pruebas, 0 fallos** (5 nuevas): chapas, rótulos, transiciones, encrucijada y dados.
+- [x] `check:build` y `check:mapa-build` en verde.
+- [x] Recorrido corto con Edge en 1365×768, 852×393 y 393×852:
+  - rótulos que se encienden y se apagan;
+  - salida del menú con copia inerte y sin duplicados;
+  - encrucijada sin consecuencia antes y con resultado después, un solo efecto ante doble clic, sin azar extra;
+  - sin errores ni desplazamiento horizontal.
+- [x] Tres capturas de escritorio citadas en [120](120-interfaz-v2-sesion-2.md).
+- [ ] **Parte B del encargo**: pendiente (mensaje cortado).
+- [ ] **Baterías de navegador y oráculo**: no se corrieron localmente; CI del PR.
+- [ ] Prueba jugando en escritorio.
 - [ ] Decisión de merge del creador.
 
 
@@ -89,7 +84,7 @@ El mapa permite preparar, jugar y terminar una partida completa (contra la IA, d
 - Exposición del mapa: D12 uniforme 6/3/2/1, con símbolos; un resultado compartido entre efecto, animación, etiqueta y Registro. Los dados de acción y de riesgo de contagio conservan el D6. Rescate del médico pendiente de próximo encargo.
 - Dispositivos de prueba: escritorio y Samsung Galaxy A15.
 - Guía de estilo para arte, paleta, tipografía y escenas narrativas nuevas: [109](109-guia-de-estilo.md) (17/11). El mapa aprobado no se redibuja; el filtro frío aprobado (109 §8) se aplica en render.
-- Interfaz v2 ([109 §8](109-guia-de-estilo.md)): teléfono horizontal como plataforma principal; mapa a pantalla completa con paneles flotantes; daño (♥, ❄) y ruido siempre visibles en el mapa ([119](119-interfaz-v2-sesion-1.md)).
+- Interfaz v2 ([109 §8](109-guia-de-estilo.md)): teléfono horizontal como plataforma principal; mapa a pantalla completa con paneles flotantes; daño (♥, ❄) y ruido siempre visibles en el mapa ([119](119-interfaz-v2-sesion-1.md)). Recursos como chapas con ícono, rótulos de localidad que aparecen con la interacción, papel rasgado, transiciones de 150–250 ms que nunca retrasan una acción y encrucijadas en viñeta con las consecuencias solo después de decidir ([120](120-interfaz-v2-sesion-2.md)).
 
 ## 7. Reservas conocidas
 

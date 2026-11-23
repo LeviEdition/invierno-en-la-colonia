@@ -83,3 +83,68 @@
  body[data-interfaz=v2] #map-app #dossier,body[data-interfaz=v2][data-sheet-expanded=true] #map-app #dossier{background:#1c242de0}
  body[data-interfaz=v2] #map-app .topbar,body[data-interfaz=v2] #map-app #public-summaries,body[data-interfaz=v2] #map-app .map-tools{box-shadow:0 2px 8px #0f141a66}
 }
+
+/* ══ Sesión 2 (informe 120) ══ */
+:root{
+ /* Papel rasgado: bordes superior e inferior irregulares, sin ilustración. */
+ --torn:polygon(0 3px,6% 0,13% 2px,21% 0,30% 3px,38% 1px,47% 3px,55% 0,63% 2px,72% 0,80% 3px,89% 1px,100% 2px,100% calc(100% - 2px),93% 100%,85% calc(100% - 3px),76% calc(100% - 1px),67% 100%,58% calc(100% - 3px),49% calc(100% - 1px),40% 100%,31% calc(100% - 2px),22% 100%,14% calc(100% - 3px),6% calc(100% - 1px),0 100%);
+ --torn-lg:polygon(0 5px,4% 1px,9% 4px,15% 0,22% 5px,29% 2px,36% 6px,44% 1px,51% 4px,58% 0,66% 5px,73% 2px,81% 6px,88% 1px,95% 4px,100% 2px,100% calc(100% - 4px),96% 100%,90% calc(100% - 5px),83% calc(100% - 1px),76% calc(100% - 6px),69% calc(100% - 2px),61% 100%,54% calc(100% - 4px),46% calc(100% - 1px),39% calc(100% - 5px),31% 100%,24% calc(100% - 3px),17% calc(100% - 6px),10% calc(100% - 1px),4% calc(100% - 4px),0 100%);
+ --v2-in:200ms;
+}
+
+/* Recursos como chapas redondas con ícono; ronda, turno y hambre siguen como texto. */
+body[data-interfaz=v2] #map-app .stats .resource{display:flex;align-items:center;gap:4px;padding:2px 8px 2px 2px;border:1px solid var(--acero);border-radius:999px;background:#0f141acc;min-width:0}
+body[data-interfaz=v2] #map-app .stats .resource dt{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+body[data-interfaz=v2] #map-app .stats .resource dd{margin:0;font:600 15px/1 system-ui,sans-serif;font-variant-numeric:lining-nums tabular-nums}
+body[data-interfaz=v2] #map-app .resource-icon{flex:none;width:24px;height:24px;padding:3px;box-sizing:border-box;border-radius:50%;background:var(--pizarra);fill:var(--hielo);color:var(--hielo)}
+/* La fogata (moral) es el único recurso en Lámpara: esperanza (109 §2.1 y §8). */
+body[data-interfaz=v2] #map-app [data-resource=morale] .resource-icon{fill:var(--lampara);color:var(--lampara)}
+@media (min-width:601px),(orientation:landscape){
+ body[data-interfaz=v2] #map-app .stats{align-items:center;gap:8px}
+ body[data-interfaz=v2] #map-app .stats>div:not(.resource){margin:0 2px}
+}
+
+/* Rótulos de localidad: aparecen con la interacción, se desvanecen; la seleccionada lo conserva. */
+#locality-labels{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+#map-app .locality-label{position:absolute;transform:translate(-50%,-50%);padding:4px 11px;background:var(--pizarra);color:var(--nieve);font:600 12px/14px system-ui,sans-serif;letter-spacing:.02em;white-space:nowrap;clip-path:var(--torn);opacity:0;pointer-events:none}
+#map-app .locality-label.is-awake,#map-app .locality-label.is-selected{opacity:1}
+
+/* Papel rasgado en el aviso temporal, el resultado de encrucijada y los recuadros de consulta. */
+body[data-interfaz=v2] #map-notice{background:var(--pizarra);color:var(--nieve);border:0;border-radius:0;padding:12px 16px;clip-path:var(--torn-lg);box-shadow:none}
+body[data-interfaz=v2] #info-dialog{background:var(--pizarra);color:var(--nieve);border:0;border-radius:0;padding:18px 20px;clip-path:var(--torn-lg)}
+
+/* Entradas de paneles y diálogos; las salidas son copias inertes (experiencia/transitions.mjs). */
+@keyframes v2-in{from{opacity:0;transform:translateY(6px)}}
+@media (prefers-reduced-motion:no-preference){
+ body[data-interfaz=v2]:not([data-motion=reduced]) #panel-content:not([hidden]),
+ body[data-interfaz=v2]:not([data-motion=reduced]) #floating-menu:not([hidden]),
+ body[data-interfaz=v2]:not([data-motion=reduced]) dialog[open]{animation:v2-in var(--v2-in) ease-out}
+ body[data-interfaz=v2]:not([data-motion=reduced]) #map-app .locality-label{transition:opacity 220ms ease}
+}
+.exit-ghost{position:fixed;z-index:2147483000;pointer-events:none;overflow:hidden;box-sizing:border-box}
+
+/* Encrucijada en viñeta de borde a borde; la barra de resultado va debajo de la imagen. */
+#play-dialog.crossroads{width:100vw;max-width:100vw;max-height:100dvh;margin:auto 0;padding:10px 0 18px;box-sizing:border-box;border:0;border-block:1px solid var(--acero);background:var(--noche);color:var(--nieve)}
+#play-dialog.crossroads>*{margin-inline:24px}
+#play-dialog.crossroads>h2{margin-block:4px;font:11px/1.2 system-ui,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:var(--niebla);text-align:center}
+#play-dialog.crossroads>[role=status]:empty{display:none}
+#play-dialog.crossroads .cross-title{margin:2px 24px 10px;text-align:center;font:600 26px/1.2 Georgia,'Times New Roman',serif;color:var(--nieve)}
+#play-dialog.crossroads .cross-vignette{margin:0}
+#play-dialog .cross-art{position:relative;width:100%;aspect-ratio:21/8;max-height:44dvh;background:radial-gradient(ellipse at 50% 60%,#33404c 0,#1c242d 55%,#0f141a 100%) center/cover no-repeat}
+/* Zona segura central (109 §5): lo importante de cada viñeta va dentro; el resto puede recortarse. */
+#play-dialog .cross-safe{position:absolute;left:25%;right:25%;top:8%;bottom:8%}
+#play-dialog.crossroads .cross-result{margin:0;padding:12px 24px;background:var(--pizarra);color:var(--nieve);clip-path:var(--torn-lg);text-align:center;font-size:16px;line-height:1.4}
+#play-dialog.crossroads .cross-result strong{font-weight:700}
+#play-dialog.crossroads .cross-story{max-width:72ch;margin:14px auto 8px;padding-inline:24px;text-align:center;font:17px/1.5 Georgia,'Times New Roman',serif;color:var(--nieve)}
+#play-dialog.crossroads .cross-story+p{margin-block:4px 10px;text-align:center;font-style:italic;color:var(--niebla)}
+#play-dialog.crossroads .cross-choices{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
+/* Opciones iguales en reposo; la Lámpara solo al pasar, enfocar o tocar (109 §2.1). */
+#play-dialog.crossroads .cross-choices button{flex:1 1 220px;max-width:420px;min-height:48px;margin:0;background:transparent;color:var(--nieve);border:1px solid var(--hielo);font:17px/1.3 Georgia,'Times New Roman',serif}
+#play-dialog.crossroads .cross-choices button:hover:not(:disabled),#play-dialog.crossroads .cross-choices button:focus-visible,#play-dialog.crossroads .cross-choices button:active:not(:disabled){border-color:var(--lampara);color:var(--lampara)}
+#play-dialog.crossroads #play-cross-ai,#play-dialog.crossroads #play-cross-continue{display:block;margin:14px auto 0;min-width:200px}
+
+/* Dados de acción con puntos también en los botones del diálogo de juego. */
+#play-dialog .die-choice{display:inline-flex;align-items:center;gap:8px}
+#play-dialog .die-small{display:inline-grid;grid-template:repeat(3,1fr)/repeat(3,1fr);gap:2px;width:26px;height:26px;padding:4px;box-sizing:border-box;background:#d0c19b;border:1px solid #e9dcb3;border-radius:3px;flex:none}
+#play-dialog .die-small.numeric{place-items:center;grid-template:1fr/1fr;color:#252c25;font:bold 14px system-ui}
+#play-dialog .die-small .pip{width:4px;height:4px;border-radius:50%;background:#252c25;justify-self:center;align-self:center}

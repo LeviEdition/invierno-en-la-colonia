@@ -90,5 +90,7 @@ test('Interfaz v2 · página: hoja reversible, materiales servidos y aviso verti
  assert.doesNotMatch(css,/guirnalda|garland/i);
  for(const [name,hex]of [['sangre-fria','#B5473F'],['escarcha','#7FC4E8'],['lampara','#F2C14E']])assert.match(css,new RegExp('--'+name+':'+hex));
  assert.match(css,/\.damage-wound \.damage-symbol\{color:var\(--sangre-fria\)\}/);assert.match(css,/\.damage-frost \.damage-symbol\{color:var\(--escarcha\)\}/);
- assert.doesNotMatch(css.replace(/--lampara:#F2C14E;/,''),/lampara/,'la chapa y las marcas no usan la Lámpara');
+ // La Lámpara solo en la fogata (moral, 109 §8) y en la opción de encrucijada enfocada (§2.1).
+ const lamp=css.split(/\r?\n/).filter(l=>l.includes('var(--lampara)'));assert.equal(lamp.length,2,lamp.join(' | '));assert.ok(lamp.some(l=>l.includes('[data-resource=morale]')));assert.ok(lamp.some(l=>l.includes('.cross-choices button:hover')&&l.includes(':focus-visible')));
+ for(const material of ['chapa','damage','noise'])assert.ok(!lamp.some(l=>l.includes(material)),material);
 });
