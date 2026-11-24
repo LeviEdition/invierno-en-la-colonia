@@ -84,9 +84,10 @@ test('Sesión 4 · doble clic: la barra no activa dos veces el mismo control',()
  assert.equal(guard('search-action'),true);t=30;assert.equal(guard('search-action'),false,'segundo clic del doble clic');assert.equal(guard('move-action'),true,'otro control sí');
  t=500;assert.equal(guard('search-action'),true,'pasado el instante, vuelve a responder');
  const view=read('app/mapa/map-view.mjs');
- assert.match(view,/function barAct\(source\)\{if\(!barGuard\(source\)/);
- assert.match(view,/const b=\$\(source\);if\(b&&!b\.disabled\)b\.click\(\);\}/,'usa el botón de la ficha: mismos controladores y validaciones');
- assert.match(view,/listen\('#bar-more','click',\(\)=>\{if\(!barGuard\('more'\)\)return;/);
+ // Sesión 7 (informe 126): la barra ya no reenvía clics a la ficha; sus botones son los reales.
+ // El doble clic (detail>1) se descarta en captura, antes de llegar al botón.
+ assert.match(view,/if\(e\.detail>1\)\{e\.stopImmediatePropagation\(\);e\.preventDefault\(\);return;\}/);
+ assert.match(view,/listen\('#bar-more','click',\(\)=>\{if\(barGuard\('more'\)\)setFan\(!fanOpen\);\}\);/);
  assert.doesNotMatch(read('app/mapa/juego/action-bar.mjs')+read('app/mapa/juego/action-bar-model.mjs'),/Math\.random|send\(|handle\(/,'la barra no tira ni manda comandos');
 });
 
@@ -134,7 +135,8 @@ test('Sesión 4 · papel y manchas: generados una vez, con semilla, en esquinas 
 
 test('Sesión 4 · estructura: la barra conserva los ids del turno y la ficha su contenido',()=>{
  const html=read('app/mapa/index.html'),bar=html.slice(html.indexOf('<section id="action-bar"'),html.indexOf('<section id="connection-banner"'));
- for(const id of ['bar-portrait','bar-name','bar-role','bar-location','bar-damage','bar-dice','bar-search','bar-attack','bar-move','bar-more','turn-cycle-controls','finish-turn','cycle-status','final-new-game','review-final'])assert.ok(bar.includes(`id="${id}"`),id);
+ // Sesión 7 (informe 126): bar-search/bar-attack/bar-move se quitaron; las acciones reales viven en la barra.
+ for(const id of ['bar-portrait','bar-name','bar-role','bar-location','bar-damage','bar-dice','search-action','attack-action','move-action','bar-more','turn-cycle-controls','finish-turn','cycle-status','final-new-game','review-final'])assert.ok(bar.includes(`id="${id}"`),id);
  for(const id of ['search-action','attack-action','move-action','dice-pool','character-card','public-objective','public-crisis','crisis-contribute','objective-details','crisis-details'])assert.equal(html.split(`id="${id}"`).length-1,1,id);
  assert.match(read('app/mapa/estilos/papel.css'),/--fuente-texto:'Alegreya Sans',Georgia,'Times New Roman',serif;/);
 });

@@ -32,7 +32,9 @@ export function mountStatTips({root=document,signal,longPressMs=LONG_PRESS_MS}={
  for(const item of items){
   if(!item.hasAttribute('data-tip')&&!statTip(item.querySelector('dd')?.id))continue;
   // Enfocable para el globo, pero el toque pasa al panel y lo pliega (folds.mjs).
-  item.tabIndex=0;item.dataset.foldPass='';
+  // Sesión 7: el motivo de una acción apagada de la barra (data-no-fold) muestra su globo pero
+  // nunca pliega la barra; map-view lo hace enfocable solo cuando hay motivo.
+  item.tabIndex=0;if(!item.hasAttribute('data-no-fold'))item.dataset.foldPass='';
   item.addEventListener('mouseenter',()=>show(item),{signal});item.addEventListener('mouseleave',hide,{signal});
   item.addEventListener('focus',()=>show(item),{signal});item.addEventListener('blur',hide,{signal});
   item.addEventListener('pointerdown',e=>{if(e.pointerType!=='touch')return;clearTimeout(press);press=setTimeout(()=>{show(item);pressed.mark(item);},longPressMs);},{signal});

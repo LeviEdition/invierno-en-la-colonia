@@ -29,6 +29,7 @@ function complete(view){
 }
 async function qaView(page){await t.frames(page);return page.evaluate(()=>capacityView.inspect());}
 async function closePanel(page){if(await page.locator('#panel-content').isVisible())await page.locator('#panel-toggle').click();await t.frames(page);}
+async function togglePanel(page){if(await page.locator('#panel-content').isVisible()){await page.locator('#panel-toggle').click();await t.frames(page);}else await t.panel(page);}
 async function focus(page,id){await page.selectOption('#locality',id);await closePanel(page);}
 async function general(page){await closePanel(page);await page.locator('#reset-view').click();await t.frames(page);}
 async function setQa(page,p,label){
@@ -101,7 +102,7 @@ try{
   await setQa(q,legacy,'QA · estado anterior incompatible: gasolinera4 / biblioteca4');
   for(const [index,extra]of [[4,2],[6,1]]){
    await focus(q,'place-'+index);const loc=(await qaView(q)).layout.locations.find(l=>l.engineIndex===index);assert.equal(loc.zombies,4);assert.equal(loc.externalOverflow,extra);
-   await q.locator('#panel-toggle').click();await t.frames(q);
+   await t.panel(q);
    assert.match(await q.locator('#locality-exterior').textContent(),/Zombis: 4/);assert.ok((await q.locator('#map-labels').textContent()).includes('+'+extra+' exteriores'));
    await q.screenshot({path:resolve(dir,'excedente-'+index+'.png')});await closePanel(q);
   }
@@ -117,11 +118,11 @@ try{
    for(const id of ['place-0','place-2','general']){
     if(id==='general')await general(page);else{await page.selectOption('#locality',id);await closePanel(page);}
     for(let toggle=0;toggle<2;toggle++){
-     const before=await t.view(page);await page.locator('#panel-toggle').click();await t.frames(page);const after=await t.view(page);
+     const before=await t.view(page);await togglePanel(page);const after=await t.view(page);
      assert.ok(Math.abs(before.camera.zoom-after.camera.zoom)<1e-8,'ficha conserva escala');
      for(const [axis,size]of [['x','width'],['y','height']]){const extent=scene.bounds[size]*before.camera.zoom,available=after.viewport[size],expected=extent<=available?(available-extent)/2:Math.max(available-extent,Math.min(0,before.camera[axis]));assert.ok(Math.abs(after.camera[axis]-expected)<1e-6,'ficha solo ajusta bordes '+axis);}
     }
-    r.panel.push(id);if(id==='general'){await page.locator('#panel-toggle').click();await t.frames(page);await page.locator('#reset-view').click();await t.frames(page);assert.ok(complete(await t.view(page)).every(z=>z.inside),'restablecer encuadra general con ficha abierta');await closePanel(page);}
+    r.panel.push(id);if(id==='general'){await togglePanel(page);await page.locator('#reset-view').click();await t.frames(page);assert.ok(complete(await t.view(page)).every(z=>z.inside),'restablecer encuadra general con ficha abierta');await closePanel(page);}
    }
    await page.locator('#zoom-in').click();await page.locator('#zoom-in').click();await page.locator('#zoom-in').click();await t.frames(page);
    const before=(await t.view(page)).camera,box=await page.locator('#scene').boundingBox();

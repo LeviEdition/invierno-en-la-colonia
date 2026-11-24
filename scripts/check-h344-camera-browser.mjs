@@ -98,7 +98,7 @@ try{
   }
   for(const profile of process.env.H344_CAMERA_BASELINE?['storm']:['off','soft','storm']){
    await p.selectOption('#locality','place-0');await t.panel(p);
-   await p.locator('.demo-controls').last().evaluate(el=>el.open=true);await p.selectOption('#survivor-select','h0');
+   await t.panel(p);await p.locator('.demo-controls').last().evaluate(el=>el.open=true);await p.selectOption('#survivor-select','h0');
    await t.ambient(p);const current=await t.view(p);
    if(profile==='off'&&current.renderer.atmosphere.settings.enabled)await p.locator('#ambient-enabled').click();
    if(profile!=='off'){
@@ -114,7 +114,7 @@ try{
    const marker=await p.locator('[data-actor-id="h0"]').boundingBox();
    await p.mouse.click(marker.x+marker.width/2,marker.y+marker.height/2);
    assert.equal((await t.view(p)).selected,'h0','Clic sobre la ficha visible tras el gesto');
-   if(touch)await p.locator('#panel-toggle').click();
+   if(touch&&await p.locator('#panel-content').isVisible())await p.locator('#panel-toggle').click();
    // Medir reposo después de presentar la selección/panel, no200ms después
    // de solicitarlo: en software ese cuadro puede tardar más.
    await p.waitForFunction(()=>!h344Viewer.inspect().view.renderPending);

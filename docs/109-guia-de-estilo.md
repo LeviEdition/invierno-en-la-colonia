@@ -119,6 +119,28 @@ Referencia visual: el lienzo de diseño «Invierno en la Colonia — dirección 
 - **Rótulos de las localidades:** aparecen al mover el mouse sobre el mapa, al tocarlo o al desplazarlo, y se desvanecen tras unos segundos sin interacción; la localidad seleccionada conserva el suyo.
 - **Movimiento:** los paneles entran y salen con transiciones fluidas, no de golpe; el cambio de localidad es rápido pero suave. Se respeta la preferencia de movimiento reducido. Desde el informe 122: fundido y 8–12 px desde el borde de donde viene cada panel, 200 ms de entrada y 180 ms de salida, solo opacidad y transformaciones, interrumpibles; con movimiento reducido, sin desplazamiento ni escala.
 - **Resultados de encrucijadas** en viñetas grandes, de borde a borde, con la barra de resultado debajo.
+- **Una sola barra para actuar** (informe 126). La barra de abajo es el único lugar de acción de turno. De izquierda a derecha:
+  - **grupo:** miniaturas redondas; la activa lleva borde Lámpara;
+  - **superviviente activo:** retrato, nombre, localidad, heridas y congelación, y tres ranuras de equipo (herramienta, arma, libro), con borde punteado si están vacías;
+  - **dados**, y «+1 (1 comida)» solo cuando el motor permite mejorar uno;
+  - **acciones:** Buscar, Atacar y Moverse, siempre visibles, y «Más»;
+  - **«Terminar turno»**, separado por una línea de puntos.
+
+  Una acción apagada sigue a la vista y muestra en el globo de papel el motivo que da el motor. Si el motor no da motivo, no tiene globo.
+- **Abanico de «Más»:** un papel rasgado sobre la barra con las demás acciones de turno que el motor permite en ese momento (barricada, limpiar residuos, atraer, regresar, habilidad, usar carta). Se cierra al elegir, con Esc o tocando fuera.
+- **Tira de la acción en curso:** una línea de papel sobre la barra que dice qué falta («Buscar en Biblioteca · elegí un dado de 3 o más») y lleva «Cancelar (Esc)». Los dados que el motor acepta se marcan en Lámpara y los demás se apagan.
+- **Papel al centro:** lo que resuelve una acción (dados, cartas reveladas grandes y lado a lado, curación, crisis, fin de turno) va en papel rasgado al centro, sin tapar la barra. El movimiento no tapa el mapa: su confirmación es un papel chico justo sobre la barra.
+- **Expediente** (la antigua ficha): solo información. Muestra los datos del superviviente, la mano y el equipo (con «Equipar» y «Dar a…», que actúan sobre la carta), el registro y los ajustes. Se abre y se cierra con el retrato o la tecla E, y se cierra también con Esc. Cerrado no ocupa pantalla. Tocar una ficha del mapa no lo abre: la hace activa en la barra.
+- **Atajos de escritorio:**
+  - B buscar, A atacar, M moverse;
+  - E expediente;
+  - 1–4 elegir dado en la acción en curso;
+  - Espacio terminar turno (si el foco no está en un botón);
+  - H plegar.
+
+  Ninguno actúa con Ctrl, Alt o Mayús, dentro de un campo de texto, con una ventana obligatoria abierta ni durante el pase de dispositivo.
+- **Dado nocturno:** centrado en su casilla de papel: título arriba («La noche en Biblioteca · Leo»), el D12 al medio y «Tirando…» o el resultado abajo.
+- **Objetivo y Crisis:** del mismo ancho, en columna. Plegadas, sus tiras también.
 
 ## 7. Pendiente
 

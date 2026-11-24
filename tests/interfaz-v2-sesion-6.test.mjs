@@ -110,7 +110,8 @@ test('Sesión 6, ajustes · tocar una chapa pliega la fila; sigue enfocable con 
  const m=leftPanels();
  for(const t of [m.chip,m.chipValue])for(const folded of [false,true])assert.equal(foldTouch(t,m.bar,{folded}),true);
  const tips=read('app/mapa/experiencia/stat-tips.mjs');
- assert.match(tips,/item\.tabIndex=0;item\.dataset\.foldPass='';/,'tabIndex 0 para el teclado, marcada para que el toque pase');
+ // Sesión 7 (informe 126): los motivos de la barra (data-no-fold) no se marcan para plegar.
+ assert.match(tips,/item\.tabIndex=0;if\(!item\.hasAttribute\('data-no-fold'\)\)item\.dataset\.foldPass='';/,'tabIndex 0 para el teclado, marcada para que el toque pase');
  assert.match(tips,/querySelectorAll\('#map-app \.stats>div,#map-app \[data-tip\]'\)/);
  assert.match(tips,/addEventListener\('mouseenter'[\s\S]*?addEventListener\('focus'/,'hover y foco siguen mostrando el globo');
  assert.match(read('app/mapa/experiencia/folds.mjs'),/!control\.hasAttribute\?\.\('data-fold-pass'\)/);

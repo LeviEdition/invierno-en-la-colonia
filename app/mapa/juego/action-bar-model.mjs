@@ -2,6 +2,7 @@
 // proyección: no calculan costes, reglas ni azar. En el pase la proyección llega bloqueada y
 // vacía, así que la barra no muestra superviviente, dados ni nada privado.
 import {damageMarks} from '../experiencia/state-marks.mjs';
+import {equipmentSlots,groupMembers} from './turn-flow.mjs';
 const count=v=>Number.isFinite(v)?v:null,shown=v=>v===null||v===undefined?'—':String(v),ratio=(a,b)=>Number.isFinite(a)&&b>0?Math.max(0,Math.min(1,a/b)):0;
 const plural=(n,word)=>n===1||!word?word||'':word+(/[aeiouáéíóú]$/i.test(word)?'s':'es');
 
@@ -25,14 +26,16 @@ export function trackDice(previous,available,used){
 }
 // Superviviente activo: el seleccionado; si no hay, el líder del grupo en turno (vista previa).
 export function actionBarModel(p,{selectedId=null,chosenIndex=null,previousDice=null}={}){
- const empty={actor:null,preview:false,own:false,dice:[],turnKey:p?[p.round,p.turn,p.blocked,p.ended].join('|'):''};
+ const empty={actor:null,preview:false,own:false,dice:[],group:[],turnKey:p?[p.round,p.turn,p.blocked,p.ended].join('|'):''};
  if(!p||p.blocked||!Array.isArray(p.characters))return empty;
  const selected=p.characters.find(c=>c.id===selectedId)||null,leader=p.players?.find(x=>x.id===p.turn)?.leaderId;
  const c=selected||p.characters.find(x=>x.id===leader)||p.characters.find(x=>x.playerId===p.turn)||null;
  const dice=trackDice(previousDice,p.dice?.available??null,spentDice(p.play?.events));
  let k=0;for(const d of dice)d.chosen=!d.used&&Number.isInteger(chosenIndex)&&k++===chosenIndex;
  return {...empty,
-  actor:c&&{id:c.id,name:c.name||'Nombre no disponible',job:c.job||'',playerId:c.playerId,leader:!!c.leader,location:p.locations.find(l=>l.id===c.locationId)?.name||'—',damage:damageMarks(c)},
+  actor:c&&{id:c.id,name:c.name||'Nombre no disponible',job:c.job||'',playerId:c.playerId,leader:!!c.leader,location:p.locations.find(l=>l.id===c.locationId)?.name||'—',damage:damageMarks(c),slots:equipmentSlots(c)},
+  // Sesión 7 (informe 126): miniaturas del grupo del activo; tocar una la hace activa.
+  group:groupMembers(p,c),
   preview:!selected&&!!c,own:!!c&&!p.ended&&c.playerId===p.turn,dice};
 }
 // Tarjetas arriba a la izquierda. Los números son los que proyecta el motor.
