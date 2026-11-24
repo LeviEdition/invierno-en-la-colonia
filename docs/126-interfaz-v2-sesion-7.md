@@ -193,3 +193,31 @@ Commits nuevos en la misma rama. `src/` no cambió y ninguna batería de navegad
 - ver jugando la intensidad del papel;
 - revisar el papel de búsqueda con 3 cartas en el teléfono, que necesita desplazamiento;
 - probar el grupo flotante al tacto en el A15.
+
+### J. Registro duplicado (rompía el CI)
+
+`check-exposure-d12-browser` fallaba en el CI (#44): `locator('[data-info=registro]')` encontraba dos botones «Registro», uno en el menú flotante del mapa y otro en «Consultas del expediente». Lo mismo pasaba con «Ayuda».
+
+**Qué se quitó:** «Registro» y «Ayuda» salieron del menú flotante. Quedan solo en el expediente, en «Registro» y «Ayuda y atajos».
+
+**Qué hacían que el expediente no hace:**
+- Abrían el diálogo sin abrir el expediente, con un clic menos. Ahora son dos: retrato o E, y después «Registro».
+- El menú también estaba disponible durante el pase de dispositivo. El expediente no se abre en el pase, y eso es coherente con la privacidad.
+- El contenido no cambia: los dos botones llamaban a la misma `showInfo`.
+
+**Lo que no cambió:** «Ajustes» sigue en los dos lugares. No es un `data-info`: el botón del expediente delega en `menu-settings`, así que no hay dos botones con el mismo selector. El menú sigue con Inventario, Grupo y líderes, Ajustes y Nueva partida.
+
+**Prueba unitaria:** cada `data-info` aparece una sola vez en el HTML. Registro y ayuda están en el expediente, el menú no tiene ninguno y ningún módulo crea `data-info` en tiempo de ejecución.
+
+**Baterías.** Había que cambiarlas: abrían el menú para llegar al registro, y ese acceso ya no existe. El expediente empieza cerrado, así que hay que abrirlo antes.
+
+| Batería | Cambio |
+|---|---|
+| `test-support/h344-browser-checks.mjs` | Nuevo `registry(p)`: abre el expediente si hacía falta, toca «Registro» y, al cerrar el registro, deja el expediente como estaba. |
+| `check-exposure-d12-browser` | Usa `t.registry(p)` en lugar de menú → Registro. |
+| `check-map-feedback-camera-browser` | Ídem. |
+| `check-map-experience-browser` | Abre el expediente (retrato) antes de «Registro», en los dos lugares. La lista esperada del menú queda sin «Registro» ni «Ayuda». |
+
+**Corrida local con Edge** (`CHROMIUM_PATH`, servidor QA en otro puerto):
+- `check-exposure-d12-browser` pasa a 1365×768 y 852×393, con `EXPOSURE_QUICK=1`.
+- `check-map-experience-browser` y `check-map-feedback-camera-browser` fallan antes de llegar al registro: el foco al cerrar el globo de Objetivo, y el enfoque del Hospital. Fallan igual en los commits de la sesión 6 (`29ec1b7`) y de la sesión 7 (`c665668`), así que no vienen de este cambio. Parece una diferencia de Edge en Windows. Las valida el CI.

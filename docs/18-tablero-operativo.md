@@ -82,7 +82,7 @@ El mapa permite preparar, jugar y terminar una partida completa (contra la IA, d
 
 ## 5. Verificación de la interfaz v2, sesión 7 y ajustes (rama `feature/interfaz-v2-sesion-7`)
 
-- [x] **955 pruebas, 0 fallos**: 11 nuevas en `interfaz-v2-sesion-7-ajustes`; `interfaz-v2-sesion-7` se ajustó a la casilla única y a «Cartas».
+- [x] **956 pruebas, 0 fallos**: 12 nuevas en `interfaz-v2-sesion-7-ajustes` (incluida la de `data-info` únicos); `interfaz-v2-sesion-7` se ajustó a la casilla única y a «Cartas».
 - [x] `check:build` y `check:mapa-build` en verde; `src/` sin cambios.
 - [x] Guion propio con Edge a 1365×768 y 852×393, en una partida real «un grupo» con La noche:
   - el grupo flotante en círculos de 44 px, con iniciales para Iris;
@@ -91,7 +91,8 @@ El mapa permite preparar, jugar y terminar una partida completa (contra la IA, d
   - búsqueda con 1 y con 3 cartas (330 y 800 px de ancho);
   - Objetivo y Crisis plegadas mientras hay papel central, y restauradas al cerrarlo;
   - sin desbordes ni errores.
-- [ ] CI del PR: baterías de navegador (los ajustes no cambiaron ninguna) y el oráculo `test:poc` (EPERM en Windows).
+- [x] Registro duplicado (CI #44): «Registro» y «Ayuda» quedan solo en el expediente; `check-exposure-d12-browser` pasa local con Edge en los dos tamaños.
+- [ ] CI del PR: las tres baterías ajustadas al registro único (`check-exposure-d12`, `check-map-experience`, `check-map-feedback-camera`) y el oráculo `test:poc` (EPERM en Windows). Con Edge local, las dos últimas fallan antes del registro también en la sesión 6 ([126](126-interfaz-v2-sesion-7.md), J).
 - [ ] Ver jugando en escritorio y en el Galaxy A15 (barra compacta, abanico y tira al tacto).
 - [ ] Decisión de merge del creador.
 
