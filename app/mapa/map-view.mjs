@@ -23,11 +23,11 @@ import {bindControls} from './render/controls.mjs';
 import {pickMapTarget,pickLocality} from './render/maqueta/model.mjs';
 import {webglAvailable} from './render/phaser/renderer.mjs';
 import {waitForStartup,STARTUP_TIMEOUT_MS} from './render/phaser/startup.mjs';
-import {portraitFor,initials} from './movimiento/layout.mjs';
+import {portraitFor,initials} from './movimiento/layout.mjs';import {rollCardText} from './experiencia/roll-card.mjs';import {mountPaper} from './experiencia/papel.mjs';
 import {dieFace} from './movimiento/dice.mjs';
 import {actionBarModel,cardsModel,createClickGuard} from './juego/action-bar-model.mjs';
 import {mountActionBar} from './juego/action-bar.mjs';
-import {FOLD_KEYS,foldStorage,loadFolds,saveFolds,toggleAll,foldLabel,createCrisisWatcher,isFoldShortcut,mountFoldPanels} from './experiencia/folds.mjs';
+import {FOLD_KEYS,foldStorage,loadFolds,saveFolds,toggleAll,foldLabel,createCrisisWatcher,isFoldShortcut,mountFoldPanels,shownFolded,STAGE_FOLDS} from './experiencia/folds.mjs';
 import {mountStatTips} from './experiencia/stat-tips.mjs';
 import {createPresentationSequence,exposureText,movementSummary} from './movimiento/presentation-sequence.mjs';
 import {createStableLayout,destinationPosition} from './movimiento/stable-layout.mjs';
@@ -96,7 +96,7 @@ export async function createSearchMapView({signal,movement,search,action,invento
  // Barra de acción (informes 122 y 126): el ÚNICO lugar de acción de turno. Los botones de
  // acción son los reales (mismos ids, controladores y validaciones del motor); la barra solo
  // decide qué se ve: principales siempre, el resto en el abanico de «Más» si el motor lo permite.
-  const actionBar=mountActionBar({portraitUrl:id=>{const a=kit.assets.find(x=>x.id===portraitFor(id));return a?new URL(a.file,import.meta.url).href:null;},initials,onSelect:id=>selectCharacter(id,{open:false}),onDie:k=>{if(k>=0)chooseDieAt(k);},signal:ui.signal}),barGuard=createClickGuard();let barState=null,flow=null,fanOpen=false,stageWas=false,lastOpener=null,localityChosen=false;
+  const actionBar=mountActionBar({portraitUrl:id=>{const a=kit.assets.find(x=>x.id===portraitFor(id));return a?new URL(a.file,import.meta.url).href:null;},initials,onSelect:id=>selectCharacter(id,{open:false}),onDie:k=>{if(k>=0)chooseDieAt(k);},signal:ui.signal}),barGuard=createClickGuard();let barState=null,flow=null,fanOpen=false,stageWas=false,stageFold=false,lastOpener=null,localityChosen=false;
  function chosenDie(){const s=search.inspect(),a=action.inspect();return s.phase==='picking'?s.intent?.dieIndex??null:a.phase==='picking'?a.intent?.dieIndex??null:play?.inspect().intent?.dieIndex??null;}
  function setFan(open){fanOpen=!!open;const fan=$('bar-fan');if(fan.hidden===!fanOpen)return;fan.hidden=!fanOpen;$('bar-more').setAttribute('aria-expanded',String(fanOpen));}
  function renderBar(){if(!projection)return;if(crisisNew(projection)&&folds.crisis)setFold('crisis',false);
@@ -112,7 +112,7 @@ export async function createSearchMapView({signal,movement,search,action,invento
   let any=false;for(const fid of FAN_IDS){const b=$(fid),c=b?.closest('.action-control');if(!c)continue;const off=b.disabled||c.hidden;c.dataset.fanOff=String(off);if(!off)any=true;}
   $('bar-fan').dataset.empty=String(!any);const more=!own||!any||!!flow;if($('bar-more').disabled!==more)$('bar-more').disabled=more;if(more&&fanOpen)setFan(false);
   // Al cerrarse el papel del centro, si el foco quedó suelto vuelve a la barra.
-  const staged=document.body.dataset.stage==='true';if(stageWas&&!staged&&(!document.activeElement||document.activeElement===document.body)){const back=[lastOpener,'bar-more','finish-turn'].map(x=>x&&$(x)).find(e=>e&&!e.disabled&&e.getClientRects().length);back?.focus({preventScroll:true});}stageWas=staged;}
+  const staged=document.body.dataset.stage==='true';if(staged!==stageFold){stageFold=staged;for(const k of STAGE_FOLDS)paintFold(k);}if(stageWas&&!staged&&(!document.activeElement||document.activeElement===document.body)){const back=[lastOpener,'bar-more','finish-turn'].map(x=>x&&$(x)).find(e=>e&&!e.disabled&&e.getClientRects().length);back?.focus({preventScroll:true});}stageWas=staged;}
  // Elegir el dado k de la acción en curso: por el mismo botón del panel (mismas validaciones).
  function chooseDieAt(k){const f=flow;if(!active||!f?.dice)return false;const die=f.dice.find(d=>d.index===k);if(!die?.allowed)return false;const b=document.querySelector(f.kind==='search'?'#search-dice [data-die="'+k+'"]':f.kind==='action'?'#action-dice [data-action-die="'+k+'"]':'#play-die-'+k);if(!b||b.disabled)return false;b.click();return true;}
  // «Cancelar (Esc)» de la tira: los mismos caminos que Escape en cada panel.
@@ -124,9 +124,10 @@ export async function createSearchMapView({signal,movement,search,action,invento
   if(i&&['browsing','picking'].includes(i.phase)&&['use','crisis'].includes(i.purpose)){inventory.close();focusPanelControl(i.purpose==='use'?'use-card-action':'crisis-contribute');}}
  // Plegado: el estado vive en folds; cada panel lo refleja en data-folded y en su botón de plegado.
  function foldTarget(key){return {objective:$('objective-card'),crisis:$('crisis-card'),resources:document.querySelector('#map-app .topbar'),bar:$('action-bar')}[key]||null;}
- function paintFold(key){const el=foldTarget(key),folded=!!folds[key];if(el&&el.dataset.folded!==String(folded))el.dataset.folded=String(folded);for(const tab of document.querySelectorAll('.fold-hit[data-fold='+key+']')){tab.setAttribute('aria-expanded',String(!folded));tab.setAttribute('aria-label',foldLabel(key,folded));}}
+ function paintFold(key){const el=foldTarget(key),folded=shownFolded(folds,key,stageFold);if(el&&el.dataset.folded!==String(folded))el.dataset.folded=String(folded);for(const tab of document.querySelectorAll('.fold-hit[data-fold='+key+']')){tab.setAttribute('aria-expanded',String(!folded));tab.setAttribute('aria-label',foldLabel(key,folded));}}
  function applyFolds(){for(const k of FOLD_KEYS)if(k!=='dossier')paintFold(k);}
- function setFold(key,folded,{refit=true}={}){if(!FOLD_KEYS.includes(key)||folds[key]===folded)return;if(key==='dossier'){panel(!folded);return;}folds={...folds,[key]:folded};saveFolds(foldStore,folds);const el=foldTarget(key);if(el)crossfade(el,()=>paintFold(key));else paintFold(key);if(refit)refitCamera();}
+ function setFold(key,folded,{refit=true}={}){if(!FOLD_KEYS.includes(key)||folds[key]===folded)return;if(stageFold&&STAGE_FOLDS.includes(key))return;// Con papel central, Objetivo y Crisis quedan plegadas sin cambiar lo guardado.
+ if(key==='dossier'){panel(!folded);return;}folds={...folds,[key]:folded};saveFolds(foldStore,folds);const el=foldTarget(key);if(el)crossfade(el,()=>paintFold(key));else paintFold(key);if(refit)refitCamera();}
  // Al plegar, la cámara recalcula las franjas tapadas: el enfoque vuelve a encuadrar en el
  // área libre nueva y la vista libre se reacomoda a los bordes.
  function refitCamera(){if(!camera||!viewport)return;const id=$('locality').value,loc=id&&id!=='general'&&!camera.overview?layout.locations.find(l=>l.id===id):null;if(loc)glideTo(focusLocality(scene,loc.visualId,{...viewport,inset:focusInset(),slack:panelSlack()}));else change(camera);}
@@ -273,9 +274,13 @@ export async function createSearchMapView({signal,movement,search,action,invento
   const op=sequenceResponse,isAction=!!op.kind;
   const text=op.kind==='exposure'?('La noche en '+projection.locations.find(l=>l.engineIndex===op.origin)?.name+' · '+op.name+(['travel','roll'].includes(step.stage)?'': ' · '+exposureText(step.exposure))):isAction?(step.stage==='travel'?(op.kind==='attack'?op.name+' ataca a los zombis.':op.name+' construye barricadas.'):step.stage==='roll'?'Exposición · '+op.name:step.stage==='reveal'?op.name+' · '+actionExposureText(step.exposure):actionSummary(op)):(step.stage==='travel'?'Traslado · '+op.name:step.stage==='roll'?'Exposición · '+op.name:step.stage==='reveal'?op.name+' · '+exposureText(step.exposure):movementSummary(op,projection.locations));
   if($('sequence-status').textContent!==text)$('sequence-status').textContent=text;
-  // Sesión 7 (informe 126): el dado nocturno va centrado en su casilla de papel: título arriba,
-  // dado al medio y «Tirando…» o el resultado abajo. #sequence-status conserva el texto entero.
-  const night=op.kind==='exposure',card=$('move-sequence');if(night){card.dataset.kind='night';const title='La noche en '+(projection.locations.find(l=>l.engineIndex===op.origin)?.name||'—')+' · '+op.name,result=['travel','roll'].includes(step.stage)?'Tirando…':exposureText(step.exposure);if($('night-title').textContent!==title)$('night-title').textContent=title;if($('night-result').textContent!==result)$('night-result').textContent=result;}else if(card.dataset.kind){delete card.dataset.kind;$('night-title').textContent=$('night-result').textContent='';}
+  // Ajustes de la sesión 7: todas las tiradas animadas usan la misma casilla de papel (un solo
+  // componente, experiencia/roll-card.mjs): título arriba, dado al medio y «Tirando…» o el
+  // resultado abajo. #sequence-status conserva el texto entero para lectores y baterías.
+  const card=$('move-sequence'),late=!['travel','roll'].includes(step.stage),{title,result}=rollCardText({kind:op.kind,stage:step.stage,name:op.name,place:projection.locations.find(l=>l.engineIndex===op.origin)?.name,
+   reveal:late?(op.kind==='exposure'||!isAction?exposureText(step.exposure):actionExposureText(step.exposure)):'',summary:late&&step.stage!=='reveal'?(isAction?actionSummary(op):movementSummary(op,projection.locations)):'',
+   travel:isAction?(op.kind==='attack'?op.name+' ataca a los zombis.':op.name+' construye barricadas.'):'Traslado · '+op.name});
+  card.dataset.kind='roll';if($('night-title').textContent!==title)$('night-title').textContent=title;if($('night-result').textContent!==result)$('night-result').textContent=result;
   $('move-sequence').dataset.stage=step.stage;paintExposureDie($('exposure-die'),step);
  }
  function startActionPresentation(response,done){
@@ -330,14 +335,17 @@ export async function createSearchMapView({signal,movement,search,action,invento
   // Paneles plegables (informe 123): pestañas de papel y «H» para todo. Nunca tocan el juego.
   // Tocar el panel lo pliega o despliega (delegación en folds.mjs); los controles internos no. La ficha pasa por «×/Ficha», el mismo camino que ya descarta borradores.
   let statTips=null;
-  mountFoldPanels(FOLD_KEYS.map(key=>({key,el:document.querySelector('[data-fold-zone='+key+']'),hit:document.querySelector('.fold-hit[data-fold='+key+']'),zone:key==='dossier'?'.panel-heading':null})),{isFolded:key=>key==='dossier'?document.body.dataset.panelOpen==='false':!!folds[key],toggle:key=>{if(key==='dossier')$('panel-toggle').click();else setFold(key,!folds[key]);},skip:e=>!!statTips?.longPressed(e.target),signal:ui.signal});
+  mountFoldPanels(FOLD_KEYS.map(key=>({key,el:document.querySelector('[data-fold-zone='+key+']'),hit:document.querySelector('.fold-hit[data-fold='+key+']'),zone:key==='dossier'?'.panel-heading':null})),{isFolded:key=>key==='dossier'?document.body.dataset.panelOpen==='false':shownFolded(folds,key,stageFold),toggle:key=>{if(key==='dossier')$('panel-toggle').click();else setFold(key,!folds[key]);},skip:e=>!!statTips?.longPressed(e.target),signal:ui.signal});
   // Un toque durante la tirada la adelanta al resultado (informe 125, ajustes). Solo mueve el reloj visual: no tira, no manda nada al motor, y ese toque no hace nada más.
   document.addEventListener('pointerdown',e=>{if(!active||!sequence?.skipRoll())return;e.preventDefault();e.stopPropagation();const swallow=ev=>{ev.preventDefault();ev.stopPropagation();};document.addEventListener('click',swallow,{capture:true,once:true,signal:ui.signal});setTimeout(()=>document.removeEventListener('click',swallow,{capture:true}),600);schedule();},{capture:true,signal:ui.signal});
   document.addEventListener('keydown',e=>{if(!active||!isFoldShortcut(e,{modalOpen:!!document.querySelector('dialog:modal')}))return;e.preventDefault();const next=toggleAll(folds);for(const k of FOLD_KEYS)if(next[k]!==folds[k])setFold(k,next[k],{refit:false});refitCamera();},{signal:ui.signal});
-  statTips=mountStatTips({signal:ui.signal});applyFolds();panel(false);
+  statTips=mountStatTips({signal:ui.signal});mountPaper();applyFolds();panel(false);
   // Sesión 7 (informe 126): barra única. Un doble clic o doble toque (detail>1) sobre una
   // acción de la barra se descarta antes de llegar al botón: nunca abre dos veces un borrador.
   $('action-bar').addEventListener('click',e=>{const b=e.target.closest?.('button');if(!b||!b.closest('#bar-actions,.bar-dice-zone'))return;if(e.detail>1){e.stopImmediatePropagation();e.preventDefault();return;}if(b.id)lastOpener=b.id;},{capture:true,signal:ui.signal});
+  // Ajustes: lo mismo en el papel del centro. El segundo toque de un doble toque nunca cae en el
+  // botón que aparece debajo (por ejemplo, «Continuar» después de conservar una carta).
+  $('action-stage')?.addEventListener('click',e=>{if(e.detail>1&&e.target.closest?.('button')){e.stopImmediatePropagation();e.preventDefault();}},{capture:true,signal:ui.signal});
   listen('#bar-more','click',()=>{if(barGuard('more'))setFan(!fanOpen);});listen('#bar-fan','click',e=>{if(e.target.closest('button'))setFan(false);});
   document.addEventListener('pointerdown',e=>{if(fanOpen&&!e.target.closest?.('#bar-fan,#bar-more'))setFan(false);},{capture:true,signal:ui.signal});
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&fanOpen&&!e.defaultPrevented){e.preventDefault();e.stopPropagation();setFan(false);$('bar-more').focus({preventScroll:true});}},{capture:true,signal:ui.signal});

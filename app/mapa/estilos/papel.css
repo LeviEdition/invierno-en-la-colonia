@@ -47,7 +47,7 @@ body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button:focus-visibl
  body[data-interfaz=v2] #map-app .bar-damage:empty{display:none}
  /* Las señales de daño van sobre chapa oscura, como en el mapa: conservan Sangre fría y
     Escarcha con contraste, y nunca se confunden con la sangre seca del papel. */
- body[data-interfaz=v2] #map-app .bar-damage .damage-mark{padding:1px 5px 1px 4px;border:1px solid var(--acero);border-radius:4px;background:var(--noche);font:700 12px/1.2 system-ui,sans-serif}
+ body[data-interfaz=v2] #map-app .bar-damage .damage-mark{padding:1px 5px 1px 4px;border:1px solid var(--acero);border-radius:4px;background:var(--noche);font:700 12px/1.2 var(--fuente-ui,system-ui),sans-serif}
  body[data-interfaz=v2] #map-app .bar-damage .damage-count{color:var(--nieve)}
  body[data-interfaz=v2] #map-app .bar-actions{display:flex;gap:8px;margin-left:auto}
  body[data-interfaz=v2] #map-app #action-bar #turn-cycle-controls{display:flex;align-items:center;gap:8px;padding:0;background:none;border:0}
@@ -188,3 +188,37 @@ body[data-interfaz=v2] .stat-tip::before{content:'';position:absolute;inset:0;z-
 body[data-interfaz=v2] .stat-tip[hidden]{display:none}
 body[data-interfaz=v2] .stat-tip-title{display:block;margin-bottom:2px;font:700 14px/1.2 var(--fuente-titulo)}
 @media (prefers-reduced-motion:no-preference){body[data-interfaz=v2]:not([data-motion=reduced]) .stat-tip:not([hidden]){animation:v2-slide 160ms ease-out;--v2-shift:0 8px}}
+
+/* ══ Ajustes de la sesión 7 (informe 126, «Ajustes»; guía 109 §8): papel real y tipografía ══ */
+/* Relieve (arrugas, repetible) y grano (escaneo, no repetible) de assets/interfaz/papel-fuente/:
+   capas grises (128 = sin efecto) en soft-light sobre el crema. Una variable por capa; con
+   estos valores la tinta queda por encima de AA en el 99 % del papel (tests/interfaz-v2-sesion-7-ajustes). Bordes
+   y desplazamiento de las texturas: experiencia/papel.mjs (semilla por panel). */
+:root{
+ --papel-arrugas:.8;--papel-grano:.7;
+ --papel-arrugas-img:url(../../../assets/interfaz/papel-fuente/papel-arrugas.webp);
+ --papel-grano-img:url(../../../assets/interfaz/papel-fuente/papel-grano.webp);
+}
+/* Paneles con el crema en ::before: un elemento propio (.papel-relieve), primero entre sus
+   hijos, debajo de la mancha y del contenido. Dentro, grano y arrugas se combinan alrededor de
+   128 y el conjunto se mezcla en soft-light. */
+body[data-interfaz=v2] :is(#map-app,body) .papel-relieve{position:absolute;inset:0;z-index:-1;clip-path:var(--torn);background:#808080;mix-blend-mode:soft-light;pointer-events:none}
+body[data-interfaz=v2] #map-app #dossier>.papel-relieve{clip-path:var(--torn-lg)}
+body[data-interfaz=v2] .papel-relieve::before,body[data-interfaz=v2] .papel-relieve::after{content:'';position:absolute;inset:0}
+body[data-interfaz=v2] .papel-relieve::before{background:var(--papel-grano-img) var(--papel-x,0) var(--papel-y,0)/max(1024px,100%) auto no-repeat;opacity:var(--papel-grano)}
+body[data-interfaz=v2] .papel-relieve::after{background:var(--papel-arrugas-img) var(--papel-x,0) var(--papel-y,0)/640px 640px repeat;opacity:var(--papel-arrugas);mix-blend-mode:overlay}
+/* Paneles con el crema en su propio fondo (abanico, tira, movimiento, tirada, papel del
+   centro): el grano en ::before y las arrugas en ::after, cada una en soft-light. */
+body[data-interfaz=v2] #map-app :is(#bar-fan,#action-strip,#move-planner,#move-sequence[data-kind=roll],#action-stage>section,#action-stage>dialog){isolation:isolate}
+body[data-interfaz=v2] #map-app #action-stage>:is(section,dialog){position:relative}
+body[data-interfaz=v2] #map-app :is(#bar-fan,#action-strip,#move-planner,#move-sequence[data-kind=roll],#action-stage>section,#action-stage>dialog)::before,
+body[data-interfaz=v2] #map-app :is(#bar-fan,#action-strip,#move-planner,#move-sequence[data-kind=roll],#action-stage>section,#action-stage>dialog)::after{content:'';position:absolute;inset:0;z-index:-1;mix-blend-mode:soft-light;pointer-events:none}
+body[data-interfaz=v2] #map-app :is(#bar-fan,#action-strip,#move-planner,#move-sequence[data-kind=roll],#action-stage>section,#action-stage>dialog)::before{background:var(--papel-grano-img) var(--papel-x,0) var(--papel-y,0)/max(1024px,100%) auto no-repeat;opacity:var(--papel-grano)}
+body[data-interfaz=v2] #map-app :is(#bar-fan,#action-strip,#move-planner,#move-sequence[data-kind=roll],#action-stage>section,#action-stage>dialog)::after{background:var(--papel-arrugas-img) var(--papel-x,0) var(--papel-y,0)/640px 640px repeat;opacity:var(--papel-arrugas)}
+
+/* Tipografía en toda la interfaz: base Alegreya Sans; títulos y números destacados (chapas,
+   ronda, turno, contadores) en Bitter. Las reglas heredadas con la fuente del sistema pasan por
+   --fuente-ui, que en v2 vale la fuente de texto. Mismos archivos de assets/fuentes. */
+body[data-interfaz=v2]{--fuente-ui:var(--fuente-texto);font-family:var(--fuente-texto)}
+body[data-interfaz=v2] :is(button,select,input,textarea,output){font-family:inherit}
+body[data-interfaz=v2] #map-app :is(.stats dd,#zoom-value,.bar-die.numeric,.damage-count),body[data-interfaz=v2] :is(#map-app,dialog) :is(h1,h2,h3){--fuente-ui:var(--fuente-titulo);font-family:var(--fuente-titulo)}

@@ -120,14 +120,14 @@ Referencia visual: el lienzo de diseño «Invierno en la Colonia — dirección 
 - **Movimiento:** los paneles entran y salen con transiciones fluidas, no de golpe; el cambio de localidad es rápido pero suave. Se respeta la preferencia de movimiento reducido. Desde el informe 122: fundido y 8–12 px desde el borde de donde viene cada panel, 200 ms de entrada y 180 ms de salida, solo opacidad y transformaciones, interrumpibles; con movimiento reducido, sin desplazamiento ni escala.
 - **Resultados de encrucijadas** en viñetas grandes, de borde a borde, con la barra de resultado debajo.
 - **Una sola barra para actuar** (informe 126). La barra de abajo es el único lugar de acción de turno. De izquierda a derecha:
-  - **grupo:** miniaturas redondas; la activa lleva borde Lámpara;
+  - **grupo** (ajustes): los retratos de todo el grupo flotan en círculos sobre el borde superior izquierdo de la barra; el activo lleva anillo Lámpara y tocar otro lo hace activo. Sin retrato, iniciales en tinta sobre papel, nunca un círculo vacío. Se pliegan con la barra;
   - **superviviente activo:** retrato, nombre, localidad, heridas y congelación, y tres ranuras de equipo (herramienta, arma, libro), con borde punteado si están vacías;
   - **dados**, y «+1 (1 comida)» solo cuando el motor permite mejorar uno;
   - **acciones:** Buscar, Atacar y Moverse, siempre visibles, y «Más»;
   - **«Terminar turno»**, separado por una línea de puntos.
 
   Una acción apagada sigue a la vista y muestra en el globo de papel el motivo que da el motor. Si el motor no da motivo, no tiene globo.
-- **Abanico de «Más»:** un papel rasgado sobre la barra con las demás acciones de turno que el motor permite en ese momento (barricada, limpiar residuos, atraer, regresar, habilidad, usar carta). Se cierra al elegir, con Esc o tocando fuera.
+- **Abanico de «Más»:** un papel rasgado sobre la barra con las demás acciones de turno que el motor permite en ese momento (barricada, limpiar residuos, atraer, regresar, habilidad, «Cartas»). Se cierra al elegir, con Esc o tocando fuera.
 - **Tira de la acción en curso:** una línea de papel sobre la barra que dice qué falta («Buscar en Biblioteca · elegí un dado de 3 o más») y lleva «Cancelar (Esc)». Los dados que el motor acepta se marcan en Lámpara y los demás se apagan.
 - **Papel al centro:** lo que resuelve una acción (dados, cartas reveladas grandes y lado a lado, curación, crisis, fin de turno) va en papel rasgado al centro, sin tapar la barra. El movimiento no tapa el mapa: su confirmación es un papel chico justo sobre la barra.
 - **Expediente** (la antigua ficha): solo información. Muestra los datos del superviviente, la mano y el equipo (con «Equipar» y «Dar a…», que actúan sobre la carta), el registro y los ajustes. Se abre y se cierra con el retrato o la tecla E, y se cierra también con Esc. Cerrado no ocupa pantalla. Tocar una ficha del mapa no lo abre: la hace activa en la barra.
@@ -139,8 +139,15 @@ Referencia visual: el lienzo de diseño «Invierno en la Colonia — dirección 
   - H plegar.
 
   Ninguno actúa con Ctrl, Alt o Mayús, dentro de un campo de texto, con una ventana obligatoria abierta ni durante el pase de dispositivo.
-- **Dado nocturno:** centrado en su casilla de papel: título arriba («La noche en Biblioteca · Leo»), el D12 al medio y «Tirando…» o el resultado abajo.
-- **Objetivo y Crisis:** del mismo ancho, en columna. Plegadas, sus tiras también.
+- **Casilla de tirada** (un solo componente para todos los dados animados del mapa): papel, título arriba («La noche en Biblioteca · Leo», «Exposición · Leo»), el dado centrado y «Tirando…» o el resultado abajo.
+- **«Cartas»** (antes «Usar carta», en el abanico): papel al centro con dos secciones, «De uso» y «Equipables» (las que el motor deja equipar al superviviente activo, cada una con «Equipar»). Una sección vacía no se muestra. «Equipar» sigue también en el expediente.
+- **Íconos de las ranuras:** herramienta, arma y libro con el mismo trazo (2 px, puntas redondas). El libro tiene tapas, lomo y canto de hojas.
+- **Papel real:** relieve de arrugas y grano de un escaneo (`assets/interfaz/papel-fuente/`), grises en soft-light sobre el crema, con una variable por capa (`--papel-arrugas`, `--papel-grano`). Los bordes rasgados se generan con código: irregulares, con fibras y alguna muesca, distintos por panel y fijos (semilla por panel). La sangre seca y el oscurecido de bordes siguen en sus capas.
+- **Tipografía en toda la interfaz:** la base de la página es Alegreya Sans, también en la barra superior, el zoom, el menú, los avisos y los rótulos. Los títulos y los números destacados (chapas, ronda, turno, contadores) van en Bitter.
+- **Botones sobre papel:** papel, tinta y sombra dura, como «+1 (1 comida)»; la confirmación va en Lámpara. Ningún papel central lleva bloques oscuros genéricos.
+- **Papel de búsqueda:** mide según la cantidad de cartas (1, 2 o 3). Toda la carta es el botón «Conservar …».
+- **Nada sobre el papel central:** mientras está abierto, Objetivo y Crisis se pliegan solas, sin cambiar lo guardado, y los rótulos del mapa quedan debajo.
+- **Objetivo y Crisis:** del mismo ancho, en columna, debajo de la barra del zoom con el mismo margen. Plegadas, sus tiras también.
 
 ## 7. Pendiente
 

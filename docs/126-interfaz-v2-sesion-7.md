@@ -151,3 +151,45 @@ Capturas citadas (1365×768):
   - la barra compacta, sin ranuras ni grupo;
   - la tira;
   - el abanico al tacto.
+
+## Ajustes (después de jugarla)
+
+Commits nuevos en la misma rama. `src/` no cambió y ninguna batería de navegador se tocó.
+
+| Problema | Qué se hizo |
+|---|---|
+| Grupo duplicado, miniaturas ovaladas y tercera miniatura vacía | El grupo flota en círculos de 44 px sobre el borde superior izquierdo de la barra, y la barra muestra solo al activo. Los óvalos venían del mínimo global de 44 px de ancho de los botones. El círculo vacío era Iris (`h2`): solo cuatro supervivientes tienen retrato provisional y su círculo usaba la clase de iniciales de la ficha. Ahora las iniciales en tinta sobre papel están siempre debajo y quedan visibles si no hay retrato o si la imagen falla (hallazgo 24). |
+| «Usar carta» sin equipables | Pasa a llamarse «Cartas», con dos secciones: «De uso» y «Equipables». Equipables son las cartas con opción `allowed` del motor para el superviviente activo (`equipableCards`). Una sección vacía no se muestra. |
+| Ícono de libro raro | Los tres íconos de las ranuras son SVG con el mismo trazo; el libro tiene tapas, lomo y canto de hojas. |
+| Dado de exposición en la caja oscura | Hay una sola casilla para todas las tiradas animadas (`experiencia/roll-card.mjs`, `data-kind=roll`), con títulos como «Exposición · Leo» o «La noche en X · Leo». La duración, el freno y el salto con un toque no cambiaron. |
+| Papel plano y borde regular | Se integraron las capas de `papel-fuente/` (arrugas y grano) en soft-light sobre el crema, con `--papel-arrugas: .8` y `--papel-grano: .7`. Los bordes se generan con mulberry32 y una semilla por panel (`experiencia/papel.mjs`). La sangre seca y el oscurecido siguen en sus capas. |
+| Fuente del sistema fuera del papel | La base de la página es Alegreya Sans. Las reglas heredadas pasan por `--fuente-ui`, que en v2 vale la fuente de texto. Bitter va en títulos, chapas, zoom y números de los dados. |
+| Papel de búsqueda enorme y botones oscuros | El papel mide 330, 580 u 800 px según haya 1, 2 o 3 cartas. Toda la carta es el botón (`aria-label` «Conservar …»). «Revelar otra carta» y los demás botones del centro son de papel con sombra dura. Un doble toque en el papel central se descarta antes de llegar al botón. |
+| Crisis y rótulos encima del papel central | Con papel central, Objetivo y Crisis se muestran plegadas sin tocar lo guardado (`shownFolded`), y los rótulos del mapa se ocultan. Al cerrar, vuelven como estaban. |
+| Objetivo cortado por el zoom | La columna empieza a 64 px, debajo de la barra del zoom (que termina en 58 px), con el mismo margen de 6 px. |
+
+**Peso medido en el navegador:**
+- las texturas nuevas suman 186 KB (`papel-grano.webp` 169 KB y `papel-arrugas.webp` 17 KB);
+- el papel anterior y las manchas suman 47 KB;
+- no hay fuentes nuevas.
+
+**Contraste.** Lo cubre una prueba unitaria. Para el peor caso combinado se tomó el tono más oscuro del interior de la tarjeta, por el grano viejo más oscuro, con las capas nuevas en su percentil 1. La tinta queda en 5,2:1, por encima de AA. En motas sueltas del grano (0,1 % de los píxeles) baja a unos 3,6:1 local (hallazgo 25).
+
+**Qué se comprobó:**
+- 955 pruebas, 0 fallos. Hay 11 nuevas en `interfaz-v2-sesion-7-ajustes`, y `interfaz-v2-sesion-7` se ajustó a `data-kind=roll` y a «Cartas».
+- `check:build` y `check:mapa-build` en verde.
+- `test:poc` sigue fallando en Windows por EPERM; lo valida el CI.
+- Con el mismo guion propio con Edge (1365×768 y 852×393) se comprobó todo lo de la tabla, sin desbordes ni errores de página.
+
+**Capturas (1365×768):**
+- [grupo flotante](evidencias/interfaz-v2/126-ajustes-grupo-1365x768.jpg)
+- [«Cartas»](evidencias/interfaz-v2/126-ajustes-cartas-1365x768.jpg)
+- [búsqueda con 1 carta](evidencias/interfaz-v2/126-ajustes-busqueda-1-carta-1365x768.jpg)
+- [búsqueda con 3 cartas](evidencias/interfaz-v2/126-ajustes-busqueda-3-cartas-1365x768.jpg)
+- [dado de exposición](evidencias/interfaz-v2/126-ajustes-dado-exposicion-1365x768.jpg)
+- [papel de cerca](evidencias/interfaz-v2/126-ajustes-papel-de-cerca.jpg)
+
+**Falta:**
+- ver jugando la intensidad del papel;
+- revisar el papel de búsqueda con 3 cartas en el teléfono, que necesita desplazamiento;
+- probar el grupo flotante al tacto en el A15.

@@ -20,10 +20,6 @@ body[data-interfaz=v2] #map-app .bar-identity{max-width:150px}
 body[data-interfaz=v2] #map-app .bar-slots{display:flex;gap:4px;flex:none}
 body[data-interfaz=v2] #map-app .bar-slot{width:40px;height:40px;box-sizing:border-box;padding:2px;border:2px solid var(--tinta);border-radius:4px;background:#F3E9D2a6;color:var(--tinta);font:600 9px/1.05 var(--fuente-texto);display:grid;place-items:center;text-align:center;overflow:hidden;word-break:break-word;hyphens:auto}
 body[data-interfaz=v2] #map-app .bar-slot[data-empty=true]{border-style:dashed;border-color:var(--tinta-suave);background:transparent}
-body[data-interfaz=v2] #map-app .bar-slot[data-empty=true]::after{font:700 15px/1 var(--fuente-titulo);color:var(--tinta-suave);opacity:.55}
-body[data-interfaz=v2] #map-app .bar-slot[data-slot=herramienta][data-empty=true]::after{content:'⚒'}
-body[data-interfaz=v2] #map-app .bar-slot[data-slot=arma][data-empty=true]::after{content:'⚔'}
-body[data-interfaz=v2] #map-app .bar-slot[data-slot=educacion][data-empty=true]::after{content:'❧'}
 /* Dados y «+1 (1 comida)», que solo aparece cuando play.boost lo permite. */
 body[data-interfaz=v2] #map-app .bar-dice-zone{display:flex;align-items:center;gap:6px;flex:none}
 body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button#boost-action:not(#bar-portrait):not(#objective-details):not(#crisis-details):not(.fold-hit){min-height:32px;padding:3px 8px;background:#F3E9D2;color:var(--tinta);border:2px solid var(--tinta);font-size:12px}
@@ -104,16 +100,17 @@ body[data-interfaz=v2][data-panel-open=false] #map-app #dossier{display:none}
 body[data-interfaz=v2] #map-app .dossier-links{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 4px}
 body[data-interfaz=v2] #map-app .dossier-links button{min-height:36px;padding:4px 10px}
 
-/* ── Dado nocturno centrado en su casilla de papel (informe 126, F) ── */
-body[data-interfaz=v2] #map-app #move-sequence:not([data-kind=night]) :is(.night-title,.night-result){display:none}
-body[data-interfaz=v2] #map-app #move-sequence[data-kind=night]{display:flex;flex-direction:column;align-items:center;gap:6px;width:240px;padding:12px 14px 14px;text-align:center;border:0;border-radius:0;background:var(--papel-fondo);background-blend-mode:multiply,normal;clip-path:var(--torn);filter:drop-shadow(0 4px 12px #0f141acc);color:var(--tinta)}
-body[data-interfaz=v2] #map-app #move-sequence[data-kind=night][hidden]{display:none}
-body[data-interfaz=v2] #map-app #move-sequence[data-kind=night] .night-title{font:700 15px/1.2 var(--fuente-titulo);color:var(--tinta)}
-body[data-interfaz=v2] #map-app #move-sequence[data-kind=night] #exposure-die{margin:0 auto;color:var(--tinta)}
-body[data-interfaz=v2] #map-app #move-sequence[data-kind=night] .d12-caption{display:none}
-body[data-interfaz=v2] #map-app #move-sequence[data-kind=night] .night-result{min-height:18px;font:600 14px/1.25 var(--fuente-texto);color:var(--tinta)}
-body[data-interfaz=v2] #map-app #move-sequence[data-kind=night] #sequence-status{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-body[data-interfaz=v2] #map-app #move-sequence[data-kind=night] #resolve-decision{margin-top:4px}
+/* ── Casilla de tirada: el dado nocturno y el de exposición (y cualquier tirada animada) usan la
+   misma casilla de papel centrada (informe 126, F; ajustes: un solo componente, roll-card.mjs) ── */
+body[data-interfaz=v2] #map-app #move-sequence:not([data-kind=roll]) :is(.night-title,.night-result){display:none}
+body[data-interfaz=v2] #map-app #move-sequence[data-kind=roll]{display:flex;flex-direction:column;align-items:center;gap:6px;width:240px;padding:12px 14px 14px;text-align:center;border:0;border-radius:0;background:var(--papel-fondo);background-blend-mode:multiply,normal;clip-path:var(--torn);filter:drop-shadow(0 4px 12px #0f141acc);color:var(--tinta)}
+body[data-interfaz=v2] #map-app #move-sequence[data-kind=roll][hidden]{display:none}
+body[data-interfaz=v2] #map-app #move-sequence[data-kind=roll] .night-title{font:700 15px/1.2 var(--fuente-titulo);color:var(--tinta)}
+body[data-interfaz=v2] #map-app #move-sequence[data-kind=roll] #exposure-die{margin:0 auto;color:var(--tinta)}
+body[data-interfaz=v2] #map-app #move-sequence[data-kind=roll] .d12-caption{display:none}
+body[data-interfaz=v2] #map-app #move-sequence[data-kind=roll] .night-result{min-height:18px;font:600 14px/1.25 var(--fuente-texto);color:var(--tinta)}
+body[data-interfaz=v2] #map-app #move-sequence[data-kind=roll] #sequence-status{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+body[data-interfaz=v2] #map-app #move-sequence[data-kind=roll] #resolve-decision{margin-top:4px}
 
 /* ── Objetivo y Crisis del mismo ancho, en columna; plegadas, tiras del mismo ancho ── */
 body[data-interfaz=v2] #map-app #public-summaries,body[data-interfaz=v2] #map-app #public-summaries:has(.paper-card[data-folded=true]){display:grid;grid-template-columns:max-content;justify-items:stretch;align-items:start;width:max-content}
@@ -122,7 +119,6 @@ body[data-interfaz=v2] #map-app #public-summaries>.paper-card:not([data-folded=t
 
 /* ── Escritorio angosto y teléfono horizontal: misma pieza, más compacta ── */
 @media (max-width:1250px){
- body[data-interfaz=v2] #map-app .bar-group{display:none}
  body[data-interfaz=v2] #map-app #action-bar #cycle-status{display:none}
 }
 @media (max-width:1000px){
@@ -131,7 +127,7 @@ body[data-interfaz=v2] #map-app #public-summaries>.paper-card:not([data-folded=t
 }
 @media (max-height:500px) and (orientation:landscape){
  body[data-interfaz=v2] #map-app #action-bar{gap:6px}
- body[data-interfaz=v2] #map-app .bar-group,body[data-interfaz=v2] #map-app .bar-slots{display:none}
+ body[data-interfaz=v2] #map-app .bar-slots{display:none}
  body[data-interfaz=v2] #map-app #action-bar .action-control>button svg{display:none}
  body[data-interfaz=v2] #map-app #action-bar #turn-cycle-controls{margin-left:6px;padding-left:6px}
  body[data-interfaz=v2] #map-app #action-strip{font-size:13px;padding:3px 6px 3px 10px}
@@ -145,3 +141,64 @@ body[data-interfaz=v2] #map-app #public-summaries>.paper-card:not([data-folded=t
 /* Dados para elegir en el papel del centro: la etiqueta va debajo de la cara, no encima. */
 body[data-interfaz=v2] #map-app #action-stage .search-die{display:inline-flex;flex-direction:column;align-items:center;gap:3px;min-width:56px;padding:6px}
 body[data-interfaz=v2] #map-app #action-stage .search-die small{position:static;font:600 11px/1 var(--fuente-texto);color:var(--nieve)}
+
+/* ══ Ajustes de la sesión 7 (informe 126, «Ajustes»; guía 109 §8.6) ══ */
+/* Grupo flotante: los retratos de todo el grupo en círculos sobre el borde superior izquierdo
+   de la barra; la barra muestra solo al activo. Se pliega con la barra. Sin retrato (o si la
+   imagen no carga), iniciales sobre papel. */
+body[data-interfaz=v2] #map-app #action-bar .bar-group{position:absolute;z-index:1;left:40px;bottom:calc(100% + 8px);display:flex;gap:8px;pointer-events:auto}
+body[data-interfaz=v2] #map-app #action-bar[data-folded=true] .bar-group{display:none}
+body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button.bar-mate:not(#bar-portrait):not(#objective-details):not(#crisis-details):not(.fold-hit){position:relative;flex:none;width:44px;height:44px;min-width:0;min-height:0;aspect-ratio:1;padding:0;border:2px solid var(--tinta);border-radius:50%;overflow:hidden;background:#EDE2C8;color:var(--tinta);display:grid;place-items:center;box-shadow:var(--sombra-dura);font:700 15px/1 var(--fuente-titulo)}
+body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button.bar-mate:not(#bar-portrait):not(#objective-details):not(#crisis-details):not(.fold-hit)[aria-pressed=true]{border:3px solid var(--lampara);box-shadow:0 0 0 2px #07090C,var(--sombra-dura)}
+body[data-interfaz=v2] #map-app #action-bar .bar-mate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:50%}
+body[data-interfaz=v2] #map-app #action-bar .bar-mate .mate-initials{grid-area:1/1}
+
+/* Ranuras de equipo: los tres íconos con el mismo trazo (2 px, puntas redondas). El libro se
+   lee como libro: tapas, lomo y el canto de las hojas. */
+body[data-interfaz=v2] #map-app .bar-slot[data-empty=true]::after{content:'';width:22px;height:22px;background:var(--tinta-suave);opacity:.6;-webkit-mask:var(--icono) center/contain no-repeat;mask:var(--icono) center/contain no-repeat}
+body[data-interfaz=v2] #map-app .bar-slot[data-slot=herramienta]{--icono:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 4l6 6-2.5 2.5-6-6z'/%3E%3Cpath d='M12 8.5L4 16.5 7.5 20l8-8'/%3E%3C/svg%3E")}
+body[data-interfaz=v2] #map-app .bar-slot[data-slot=arma]{--icono:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 4l-9.5 9.5 0 0M20 4v4l-8 8-2-2'/%3E%3Cpath d='M7 13l4 4M8.5 15.5L4 20'/%3E%3C/svg%3E")}
+body[data-interfaz=v2] #map-app .bar-slot[data-slot=educacion]{--icono:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 3h12v15H7.5A1.5 1.5 0 0 0 6 19.5z'/%3E%3Cpath d='M6 19.5A1.5 1.5 0 0 0 7.5 21H18v-3'/%3E%3Cpath d='M9 3v15'/%3E%3C/svg%3E")}
+
+/* Botón de papel (el de la barra: papel, tinta y sombra dura). Ningún papel central lleva
+   botones oscuros genéricos; la confirmación sigue en Lámpara. */
+body[data-interfaz=v2] #map-app :is(#action-stage,#move-planner,#move-sequence) button:not(.search-card):not(.die):not(.search-die),body[data-interfaz=v2] #map-app #action-strip-cancel{background:#F3E9D2;color:var(--tinta);border:2px solid var(--tinta);box-shadow:var(--sombra-dura)}
+body[data-interfaz=v2] #map-app :is(#action-stage,#move-planner,#move-sequence) button:active:not(:disabled){translate:2px 2px;box-shadow:1px 1px 0 #07090C}
+body[data-interfaz=v2] #map-app #action-stage :is(#confirm-search,#confirm-action,#play-confirm,#inventory-confirm),body[data-interfaz=v2] #map-app #move-planner #confirm-move{background:var(--lampara);color:#1A1408;border-color:#07090C}
+body[data-interfaz=v2] #map-app #action-stage .search-die{background:#F3E9D2;color:var(--tinta);border:2px solid var(--tinta);box-shadow:var(--sombra-dura)}
+body[data-interfaz=v2] #map-app #action-stage .search-die small{color:var(--tinta)}
+body[data-interfaz=v2] #map-app #action-stage #search-noise{display:inline-flex;width:auto;margin:6px auto 0}
+
+/* Papel de búsqueda: mide según la cantidad de cartas; toda la carta es el botón «Conservar». */
+body[data-interfaz=v2] #map-app #action-stage>#search-panel{width:min(480px,100%)}
+body[data-interfaz=v2] #map-app #action-stage>#search-panel[data-cards="1"]{width:min(330px,100%)}
+body[data-interfaz=v2] #map-app #action-stage>#search-panel[data-cards="1"] .search-cards>.search-card{flex-basis:270px;min-height:340px}
+body[data-interfaz=v2] #map-app #action-stage>#search-panel[data-cards="2"]{width:min(580px,100%)}
+body[data-interfaz=v2] #map-app #action-stage>#search-panel[data-cards="3"]{width:min(800px,100%)}
+body[data-interfaz=v2] #map-app #action-stage{width:min(800px,calc(100% - 2*var(--v2-gap) - 16px))}
+body[data-interfaz=v2] #map-app #action-stage .search-cards>.search-card{flex:0 0 236px;min-height:300px;padding:16px;cursor:pointer;white-space:normal;font:15px/1.4 var(--fuente-texto)}
+body[data-interfaz=v2] #map-app #action-stage .search-cards>.search-card small{font:600 12px/1.2 var(--fuente-texto);color:var(--tinta-suave)}
+body[data-interfaz=v2] #map-app #action-stage .search-cards>.search-card strong{font:700 19px/1.2 var(--fuente-titulo)}
+body[data-interfaz=v2] #map-app #action-stage .search-card-text{flex:1}
+body[data-interfaz=v2] #map-app #action-stage .search-card-keep{align-self:center;padding-top:6px;border-top:1px dashed #2B221966;font:600 13px/1.2 var(--fuente-texto);color:var(--tinta-suave)}
+body[data-interfaz=v2] #map-app #action-stage .search-cards>.search-card:focus-visible{outline:3px solid var(--lampara);outline-offset:3px}
+body[data-interfaz=v2] #map-app #action-stage .search-cards>.search-card:disabled{opacity:.6;translate:none}
+body[data-interfaz=v2] #map-app #action-stage .inventory-cards[data-section] article button{width:100%}
+
+/* Nada se monta sobre el papel central: Objetivo y Crisis se pliegan solas (map-view, sin
+   guardar) y los rótulos del mapa quedan por debajo. */
+body[data-interfaz=v2][data-stage=true] #map-app :is(#locality-labels,#destination-name,#map-labels){visibility:hidden}
+
+/* La columna de tarjetas empieza debajo de la barra del zoom, con el mismo margen. */
+body[data-interfaz=v2] #map-app #public-summaries{top:var(--v2-cards-top,calc(var(--v2-top) + 8px))}
+
+@media (max-height:500px) and (orientation:landscape){
+ body[data-interfaz=v2] #map-app #action-bar .bar-group{left:36px;bottom:calc(100% + 5px);gap:6px}
+ body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button.bar-mate:not(#bar-portrait):not(#objective-details):not(#crisis-details):not(.fold-hit){width:34px;height:34px;font-size:12px}
+ body[data-interfaz=v2]:has(#action-strip:not([hidden])) #map-app #action-bar .bar-group{display:none}
+ body[data-interfaz=v2] #map-app #action-stage .search-cards>.search-card{flex-basis:160px;min-height:170px;padding:10px;font-size:13px}
+ body[data-interfaz=v2] #map-app #action-stage>#search-panel[data-cards="1"]{width:min(240px,100%)}
+ body[data-interfaz=v2] #map-app #action-stage>#search-panel[data-cards="1"] .search-cards>.search-card{flex-basis:200px;min-height:170px}
+ body[data-interfaz=v2] #map-app #action-stage>#search-panel[data-cards="2"]{width:min(420px,100%)}
+ body[data-interfaz=v2] #map-app #action-stage>#search-panel[data-cards="3"]{width:min(600px,100%)}
+}

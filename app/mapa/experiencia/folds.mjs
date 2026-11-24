@@ -52,3 +52,8 @@ export function mountFoldPanels(panels,{isFolded,toggle,signal,gate=createFoldGa
  for(const {key,el,hit=null,zone=null} of panels){if(!el)continue;
   el.addEventListener('click',e=>{if(skip(e)||!foldTouch(e.target,el,{folded:isFolded(key),hit,zone})||!gate(key))return;toggle(key);},{signal});}
 }
+// Ajustes de la sesión 7: mientras hay un papel al centro, Objetivo y Crisis se muestran
+// plegadas para no montarse sobre él. Es solo presentación: el plegado guardado no cambia y,
+// al cerrarse el papel, cada tarjeta vuelve como estaba.
+export const STAGE_FOLDS=Object.freeze(['objective','crisis']);
+export function shownFolded(folds,key,staged=false){return !!folds?.[key]||(staged&&STAGE_FOLDS.includes(key));}

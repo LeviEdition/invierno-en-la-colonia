@@ -78,7 +78,7 @@ test('Sesión 7 · tira de la acción en curso: texto de una línea y dados que 
  f=actionInProgress(P,{play:{page:'action',intent:{kind:'clean',actorId:'h0'}}});assert.equal(f.text,'Limpiar residuos · Leo · elegí un dado');
  f=actionInProgress(P,{movement:{phase:'choosing',intent:{actorId:'h0'}}});assert.equal(f.text,'Moverse · Leo · elegí un edificio iluminado');assert.equal(f.dice,null);
  f=actionInProgress(P,{movement:{phase:'confirming',intent:{actorId:'h0',destination:0}}});assert.equal(f.text,'Moverse · Leo a Colonia · confirmá');
- f=actionInProgress(P,{inventory:{phase:'picking',purpose:'use',intent:{cardId:'c1'}}});assert.equal(f.text,'Usar carta · Combustible · confirmá');
+ f=actionInProgress(P,{inventory:{phase:'picking',purpose:'use',intent:{cardId:'c1'}}});assert.equal(f.text,'Cartas · Combustible · confirmá');
  assert.equal(actionInProgress(P,{inventory:{phase:'browsing',purpose:'manage'}}),null,'equipar en el expediente no es acción en curso');
  assert.equal(actionInProgress(P,{}),null);
  assert.equal(actionInProgress({...P,blocked:'handover'},{search:{phase:'picking',intent:{actorId:'h0'}}}),null,'en el pase la tira no muestra nada');
@@ -167,9 +167,10 @@ test('Sesión 7 · diálogos de acción en papel al centro, sin tapar la barra',
 test('Sesión 7 · dado nocturno centrado en su casilla de papel',()=>{
  const seq=between(html,'<section id="move-sequence"','</section>');
  assert.ok(seq.indexOf('id="night-title"')<seq.indexOf('id="exposure-die"')&&seq.indexOf('id="exposure-die"')<seq.indexOf('id="night-result"'),'título, dado y resultado, en ese orden');
- assert.match(css,/#move-sequence\[data-kind=night\]\{display:flex;flex-direction:column;align-items:center;/);
- assert.match(css,/#move-sequence\[data-kind=night\]\{[^}]*background:var\(--papel-fondo\)/,'papel, no la caja gris');
- assert.match(view,/const title='La noche en '\+\(projection\.locations\.find\(l=>l\.engineIndex===op\.origin\)\?\.name\|\|'—'\)\+' · '\+op\.name,result=\['travel','roll'\]\.includes\(step\.stage\)\?'Tirando…':exposureText\(step\.exposure\);/);
+ // Ajustes de la sesión 7: la noche usa la casilla única de tiradas (data-kind=roll, roll-card.mjs).
+ assert.match(css,/#move-sequence\[data-kind=roll\]\{display:flex;flex-direction:column;align-items:center;/);
+ assert.match(css,/#move-sequence\[data-kind=roll\]\{[^}]*background:var\(--papel-fondo\)/,'papel, no la caja gris');
+ assert.match(view,/rollCardText\(\{kind:op\.kind,stage:step\.stage,name:op\.name,place:projection\.locations\.find\(l=>l\.engineIndex===op\.origin\)\?\.name,/);
  assert.match(view,/if\(\$\('sequence-status'\)\.textContent!==text\)\$\('sequence-status'\)\.textContent=text;/,'el texto completo sigue en #sequence-status para lectores y baterías');
 });
 

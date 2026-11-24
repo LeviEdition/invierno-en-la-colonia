@@ -16,7 +16,9 @@ export function mountActionBar({portraitUrl,initials,onSelect=()=>{},onDie=()=>{
  function paintGroup(list){
   const box=$('bar-group');if(!box)return;const key=list.map(g=>g.id+(g.active?'*':'')).join(' ');if(key===groupKey)return;groupKey=key;box.hidden=list.length<2;
   box.replaceChildren(...list.map(g=>{const b=element('button',undefined,'bar-mate');b.type='button';b.dataset.groupId=g.id;b.setAttribute('aria-pressed',String(g.active));b.setAttribute('aria-label',(g.active?'Activo: ':'Elegir a ')+g.name);b.title=g.name+(g.leader?' · Líder':'');
-   const url=portraitUrl(g.id);if(url){const img=element('img');img.src=url;img.alt='';img.width=32;img.height=32;b.append(img);}else b.append(element('span',initials(g.name),'portrait-initials'));return b;}));
+   // Ajustes de la sesión 7: si no hay retrato (solo cuatro supervivientes tienen uno provisional),
+   // o si la imagen no carga, iniciales sobre papel; nunca un círculo vacío.
+   const url=portraitUrl(g.id),mark=element('span',initials(g.name),'mate-initials');b.dataset.portrait=String(!!url);b.append(mark);if(url){const img=element('img');img.alt='';img.width=40;img.height=40;img.decoding='async';img.addEventListener('error',()=>{img.remove();b.dataset.portrait='false';},{once:true});img.src=url;b.append(img);}return b;}));
  }
  function paintSlots(slots){
   const box=$('bar-slots');if(!box)return;const key=JSON.stringify(slots||[]);if(key===slotKey)return;slotKey=key;

@@ -19,7 +19,7 @@
 | Interfaz v2 — sesión 3 | **En revisión** (PR #40), con ajustes: ventanas en el tono de la Lámpara; parpadeo errático con semilla, ahora siempre (de día tenue); noche más marcada mientras se presentan las tiradas nocturnas, con el D12 bajo la localidad que tira; marcas de daño en una fila | [121](121-interfaz-v2-sesion-3.md) |
 | Interfaz v2 — sesión 5 | **En revisión** (rama `feature/interfaz-v2-sesion-5`): paneles plegables con «H», globos en las chapas, zoom que cubre el mapa, enfoque más cercano (tope 2), luces más notorias, tres contornos corregidos y Bitter y Alegreya Sans autoalojadas | [123](123-interfaz-v2-sesion-5.md) |
 | Interfaz v2 — sesión 6 | **En revisión** (rama `feature/interfaz-v2-sesion-6`), con ajustes: los paneles se pliegan y despliegan tocándolos, sin pestañas con flecha, incluido el texto de las tarjetas y las chapas; el detalle de Objetivo y Crisis va en globos; tirada de dados de 1200 ms con freno y pausa final, que un toque adelanta | [125](125-interfaz-v2-sesion-6.md) |
-| Interfaz v2 — sesión 7 | **En revisión** (rama `feature/interfaz-v2-sesion-7`): la barra es el único lugar de acción (principales siempre visibles con motivo en globo, «Más» en abanico, tira de acción en curso, diálogos en papel al centro); la ficha pasa a expediente de solo lectura (retrato o E); atajos B/A/M/E/1–4/Espacio; dado nocturno centrado en papel; Objetivo y Crisis del mismo ancho | [126](126-interfaz-v2-sesion-7.md) |
+| Interfaz v2 — sesión 7 | **En revisión** (rama `feature/interfaz-v2-sesion-7`), con ajustes. Base: la barra es el único lugar de acción, con abanico, tira y papel al centro; el expediente es de solo lectura y hay atajos. Ajustes: el grupo flota en círculos sobre la barra; «Cartas» con dos secciones, «De uso» y «Equipables»; la misma casilla de papel para todas las tiradas; papel con relieve, grano y bordes con semilla; Alegreya Sans y Bitter en toda la interfaz; el papel de búsqueda se ajusta a la cantidad de cartas; nada se monta sobre el papel central | [126](126-interfaz-v2-sesion-7.md) |
 | Interfaz v2 — sesión 4 | **En revisión** (rama `feature/interfaz-v2-sesion-4`): barra de acción permanente con superviviente, dados y acciones; tarjetas de Objetivo y Crisis; papel viejo con sangre seca en vez de nieve en los paneles; transiciones de paneles; comida en peligro desde el motor | [122](122-interfaz-v2-sesion-4.md) |
 | Singleplayer (SP-00 a SP-08) | **Diseño en papel**; capítulo piloto «La última guardia» en ficha | [63](63-hoja-de-ruta-planificacion-singleplayer.md), [105](105-ficha-capitulo-la-ultima-guardia.md) |
 
@@ -30,12 +30,12 @@ El mapa permite preparar, jugar y terminar una partida completa (contra la IA, d
 **Revisar las sesiones 5 a 7 de la interfaz v2 ([123](123-interfaz-v2-sesion-5.md), [125](125-interfaz-v2-sesion-6.md), [126](126-interfaz-v2-sesion-7.md)).**
 
 1. Abrir los PR de `feature/interfaz-v2-sesion-5` (base: sesión 4), `-6` (base: 5) y `-7` (base: 6) y esperar el CI. En la sesión 7, mirar sobre todo las baterías de navegador modificadas (tabla en [126](126-interfaz-v2-sesion-7.md)).
-2. Jugar en escritorio y decidir sobre la sesión 7:
-   - la barra única con abanico;
-   - la tira de acción y el papel al centro (si tapa demasiado con el expediente abierto);
-   - el expediente que se abre solo con el retrato o E;
-   - los atajos;
-   - el dado nocturno centrado.
+2. Jugar en escritorio y decidir sobre la sesión 7 y sus ajustes:
+   - la barra única con abanico y el grupo flotante;
+   - «Cartas» y el papel de búsqueda (tocar la carta la conserva);
+   - la casilla única de tiradas (noche y exposición);
+   - la intensidad del papel nuevo (`--papel-arrugas`, `--papel-grano`) y la tipografía en toda la interfaz;
+   - el expediente que se abre solo con el retrato o E, y los atajos.
 3. Siguen pendientes de las sesiones 5 y 6:
    - el plegado por toque y si alcanza la señal de cursor y tono;
    - la tirada lenta y el toque que la adelanta;
@@ -74,21 +74,24 @@ El mapa permite preparar, jugar y terminar una partida completa (contra la IA, d
 | 19 | Residuos en peligro | No se hizo: el umbral (10) es un literal dentro de `colony()`; la comida sí ([122](122-interfaz-v2-sesion-4.md)) | Decisión del creador |
 | 20 | Tocar una ficha del mapa abre la ficha lateral | **Decidido** (sesión 7): la hace activa en la barra y no abre el expediente, que se abre solo con el retrato o E. También se aplicó a los edificios: si el jugador eligió una localidad, el expediente la muestra al abrirlo ([126](126-interfaz-v2-sesion-7.md)) | Confirmar jugando lo de los edificios |
 | 22 | Acciones apagadas sin motivo del motor | Superviviente ajeno, turno ajeno, acción en curso y códigos `reason` sin texto quedan apagados sin globo; «Usar carta» trae motivo por carta, no global ([126](126-interfaz-v2-sesion-7.md)) | Decidir si el motor debe exponer un motivo global |
-| 23 | Barra completa a 1365 px | Grupo, ranuras, dados, acciones y «Terminar turno» entran sin desbordar; debajo de 1250 px se ocultan las miniaturas del grupo y el estado del ciclo; en el teléfono, también las ranuras | Ver jugando y en el A15 |
+| 23 | Barra completa a 1365 px | Ranuras, dados, acciones y «Terminar turno» entran sin desbordar; el grupo flota sobre la barra en todos los tamaños (en el teléfono, más chico y oculto mientras hay una tira de acción); debajo de 1250 px se oculta el estado del ciclo, y en el teléfono también las ranuras | Ver jugando y en el A15 |
+| 24 | Retratos provisionales | Solo cuatro supervivientes tienen retrato (`h0`, `h1`, `a0`, `a1`). Por eso el tercero del grupo (Iris, `h2`) salía como un círculo oscuro vacío; ahora muestra sus iniciales sobre papel ([126](126-interfaz-v2-sesion-7.md), ajustes) | Arte de retratos para el resto del plantel |
+| 25 | Contraste del papel nuevo | La tinta queda por encima de AA en el 99 % del papel, en el peor caso combinado; en motas sueltas del grano (0,1 % de los píxeles) baja a unos 3,6:1 local | Ver jugando; bajar `--papel-grano` si molesta |
 | 21 | Plegado por toque y globos con pulsación larga | Sin pestañas; el toque pliega también sobre el texto de las tarjetas y las chapas (`data-fold-pass`); la pulsación larga muestra el globo sin plegar. Probado con Edge en escritorio y 852×393 emulado ([125](125-interfaz-v2-sesion-6.md)) | Probar en el A15 |
 | 15 | Zona de imagen de la encrucijada sin arte | «Al otro lado» es una pantalla compuesta y no sirve como imagen | Arte de encrucijadas (cola 2) |
 
-## 5. Verificación de la interfaz v2, sesión 7 (rama `feature/interfaz-v2-sesion-7`)
+## 5. Verificación de la interfaz v2, sesión 7 y ajustes (rama `feature/interfaz-v2-sesion-7`)
 
-- [x] **944 pruebas, 0 fallos**: 14 nuevas en `interfaz-v2-sesion-7`; `interfaz-v2-sesion-4` y `-6` se ajustaron a la barra única.
+- [x] **955 pruebas, 0 fallos**: 11 nuevas en `interfaz-v2-sesion-7-ajustes`; `interfaz-v2-sesion-7` se ajustó a la casilla única y a «Cartas».
 - [x] `check:build` y `check:mapa-build` en verde; `src/` sin cambios.
 - [x] Guion propio con Edge a 1365×768 y 852×393, en una partida real «un grupo» con La noche:
-  - abanico, globo con motivo, expediente con E y Esc;
-  - tira y tecla 1 en la búsqueda, con la carta al centro;
-  - Espacio para terminar el turno;
-  - D12 nocturno centrado en papel;
+  - el grupo flotante en círculos de 44 px, con iniciales para Iris;
+  - «Cartas» con «De uso» y «Equipables»;
+  - el dado de exposición centrado en papel;
+  - búsqueda con 1 y con 3 cartas (330 y 800 px de ancho);
+  - Objetivo y Crisis plegadas mientras hay papel central, y restauradas al cerrarlo;
   - sin desbordes ni errores.
-- [ ] CI del PR: 14 archivos de baterías de navegador modificados (ninguno borrado) y el oráculo `test:poc` (EPERM en Windows).
+- [ ] CI del PR: baterías de navegador (los ajustes no cambiaron ninguna) y el oráculo `test:poc` (EPERM en Windows).
 - [ ] Ver jugando en escritorio y en el Galaxy A15 (barra compacta, abanico y tira al tacto).
 - [ ] Decisión de merge del creador.
 

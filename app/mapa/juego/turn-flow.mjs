@@ -37,28 +37,38 @@ export function actionInProgress(p,c={}){
  if(['choosing','confirming'].includes(m?.phase)&&m.intent){const dest=p.locations?.find(l=>l.engineIndex===m.intent.destination)?.name;
   return {kind:'move',text:'Moverse · '+nameOf(p,m.intent.actorId)+(m.phase==='confirming'&&dest?' a '+dest+' · confirmá':' · elegí un edificio iluminado'),dice:null,chosen:null};}
  if(['browsing','picking'].includes(inv?.phase)&&['use','crisis'].includes(inv.purpose)){const own=p.inventory?.private,card=[...(own?.hand||[]),...(own?.equipment||[])].find(x=>x.uid===inv.intent?.cardId);
-  const label=inv.purpose==='crisis'?'Aportar a la crisis':'Usar carta';
+  const label=inv.purpose==='crisis'?'Aportar a la crisis':'Cartas';
   return {kind:'inventory',text:inv.phase==='picking'&&card?label+' · '+card.name+' · confirmá':label+' · elegí una carta',dice:null,chosen:null};}
  return null;
 }
 
 // Inventario con propósitos (un solo componente, informe 126):
-// - use: abanico «Usar carta», solo cartas de uso (todo lo que no se equipa), en el centro;
+// - use: abanico «Cartas», en el centro, con dos secciones: «De uso» (todo lo que no se equipa)
+//   y «Equipables» (las que el motor deja equipar ahora al superviviente activo: opciones
+//   allowed de inventory.private.options para ese actorId; nada se calcula acá);
 // - manage: expediente, cartas para equipar y equipo para «Dar a…»;
 // - crisis: la tarjeta de crisis, solo lo legal para aportar;
 // - all: la vista clásica (fuera de la interfaz unificada).
-export function inventoryView(own,purpose='all'){
+export function equipableCards(own,actorId){
+ const ok=new Set((own?.options||[]).filter(q=>q.allowed&&q.mode==='use'&&(actorId==null||q.actorId===actorId)).map(q=>q.cardId));
+ return (own?.hand||[]).filter(c=>c.effect==='equip'&&ok.has(c.uid));
+}
+export function inventoryView(own,purpose='all',actorId=null){
  const hand=own?.hand||[],equipment=own?.equipment||[];
- if(purpose==='use')return {hand:hand.filter(c=>c.effect!=='equip'),equipment:[],cardAction:true,contribute:false,give:false};
+ if(purpose==='use')return {hand:hand.filter(c=>c.effect!=='equip'),equipables:equipableCards(own,actorId),equipment:[],cardAction:true,contribute:false,give:false};
  if(purpose==='manage')return {hand:hand.filter(c=>c.effect==='equip'),equipment,cardAction:true,contribute:false,give:true};
  if(purpose==='crisis'){const allowed=new Set((own?.options||[]).filter(q=>q.mode==='contribute'&&q.allowed).map(q=>q.cardId));return {hand:hand.filter(c=>allowed.has(c.uid)),equipment:equipment.filter(c=>allowed.has(c.uid)),cardAction:false,contribute:true,give:false};}
  return {hand,equipment,cardAction:true,contribute:true,give:true};
 }
-// «Usar carta» aparece en el abanico solo si el motor permite usar alguna carta de uso ahora.
+// «Usar carta» (sesión 7) aparece en el abanico solo si el motor permite usar alguna carta de uso ahora.
 export function useCardAllowed(own){
  if(!own)return false;const usable=new Set((own.hand||[]).filter(c=>c.effect!=='equip').map(c=>c.uid));
  return (own.options||[]).some(q=>q.allowed&&q.mode==='use'&&usable.has(q.cardId));
 }
+
+// «Cartas» (ajustes de la sesión 7): se habilita si hay alguna carta de uso permitida o alguna
+// equipable para el superviviente activo.
+export function cardsAllowed(own,actorId=null){return useCardAllowed(own)||equipableCards(own,actorId).length>0;}
 
 // Atajos de escritorio: B buscar, A atacar, M moverse, E expediente, 1–4 dado de la acción en
 // curso, Espacio terminar turno. Nunca con modificadores, autorrepetición, dentro de campos de

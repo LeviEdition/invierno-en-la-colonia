@@ -14,7 +14,7 @@
 /* Globo de daño anclado a su ficha (informe 120, punto 7): marcas apiladas dentro de un
    recuadro centrado sobre la ficha, con una punta que baja hasta ella. El tamaño de letra
    (damageBubble) hace que el globo no sea más ancho que la ficha. */
-#map-app .actor-marker>.damage-marks{position:absolute;left:50%;bottom:calc(100% + 4px);transform:translateX(-50%);display:flex;flex-direction:row;align-items:center;gap:2px;padding:2px;border:1px solid var(--acero);border-radius:5px;background:#0f141af0;box-shadow:0 1px 3px #000a;pointer-events:none;font:700 11px/1.15 system-ui,sans-serif;font-variant-numeric:lining-nums tabular-nums;letter-spacing:-.02em;text-shadow:none;white-space:nowrap;z-index:1}
+#map-app .actor-marker>.damage-marks{position:absolute;left:50%;bottom:calc(100% + 4px);transform:translateX(-50%);display:flex;flex-direction:row;align-items:center;gap:2px;padding:2px;border:1px solid var(--acero);border-radius:5px;background:#0f141af0;box-shadow:0 1px 3px #000a;pointer-events:none;font:700 11px/1.15 var(--fuente-ui,system-ui),sans-serif;font-variant-numeric:lining-nums tabular-nums;letter-spacing:-.02em;text-shadow:none;white-space:nowrap;z-index:1}
 #map-app .actor-marker>.damage-marks::after{content:'';position:absolute;left:50%;top:100%;transform:translateX(-50%);border:4px solid transparent;border-top-color:var(--acero);border-bottom:0}
 #map-app .damage-mark{display:inline-flex;align-items:center;gap:0;padding:0 2px 0 1px;border:1px solid;border-radius:4px;background:transparent}
 #map-app .damage-count{color:var(--nieve)}
@@ -28,7 +28,7 @@
 /* ── Aviso de orientación ── */
 #rotate-notice{display:none}
 @media (max-width:600px) and (orientation:portrait){
- body[data-interfaz=v2] #rotate-notice{display:block;position:fixed;z-index:44;left:50%;top:42%;transform:translate(-50%,-50%);width:max-content;max-width:calc(100vw - 48px);margin:0;padding:10px 14px;border:1px solid var(--acero);border-radius:6px;background:#1c242df0;color:var(--nieve);font:15px/1.4 system-ui,sans-serif;text-align:center;pointer-events:none;box-shadow:0 4px 16px #0008}
+ body[data-interfaz=v2] #rotate-notice{display:block;position:fixed;z-index:44;left:50%;top:42%;transform:translate(-50%,-50%);width:max-content;max-width:calc(100vw - 48px);margin:0;padding:10px 14px;border:1px solid var(--acero);border-radius:6px;background:#1c242df0;color:var(--nieve);font:15px/1.4 var(--fuente-ui,system-ui),sans-serif;text-align:center;pointer-events:none;box-shadow:0 4px 16px #0008}
 }
 
 /* ── Disposición v2: horizontal y pantallas anchas ── */
@@ -51,8 +51,8 @@
  body[data-interfaz=v2] #map-app .brand{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
  body[data-interfaz=v2] #map-app .stats{display:flex;flex:1;gap:12px;margin:0;justify-content:flex-start}
  body[data-interfaz=v2] #map-app .stats div{display:block;min-width:0}
- body[data-interfaz=v2] #map-app .stats dt{font:10px/1.2 system-ui,sans-serif;color:var(--niebla);text-transform:uppercase;letter-spacing:.04em}
- body[data-interfaz=v2] #map-app .stats dd{margin:0;font:600 15px/1.25 system-ui,sans-serif;color:var(--nieve);font-variant-numeric:lining-nums tabular-nums;white-space:nowrap}
+ body[data-interfaz=v2] #map-app .stats dt{font:10px/1.2 var(--fuente-ui,system-ui),sans-serif;color:var(--niebla);text-transform:uppercase;letter-spacing:.04em}
+ body[data-interfaz=v2] #map-app .stats dd{margin:0;font:600 15px/1.25 var(--fuente-ui,system-ui),sans-serif;color:var(--nieve);font-variant-numeric:lining-nums tabular-nums;white-space:nowrap}
  body[data-interfaz=v2] #map-app .menu-toggle{top:var(--v2-gap);right:var(--v2-gap);border:1px solid var(--acero)}
  body[data-interfaz=v2] #map-app .floating-menu{top:var(--v2-top);right:var(--v2-gap);background:var(--pizarra);border:1px solid var(--acero)}
 
@@ -100,7 +100,7 @@
 /* Recursos como chapas redondas con ícono; ronda, turno y hambre siguen como texto. */
 body[data-interfaz=v2] #map-app .stats .resource{display:flex;align-items:center;gap:4px;padding:2px 8px 2px 2px;border:1px solid var(--acero);border-radius:999px;background:#0f141acc;min-width:0}
 body[data-interfaz=v2] #map-app .stats .resource dt{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
-body[data-interfaz=v2] #map-app .stats .resource dd{margin:0;font:600 15px/1 system-ui,sans-serif;font-variant-numeric:lining-nums tabular-nums}
+body[data-interfaz=v2] #map-app .stats .resource dd{margin:0;font:600 15px/1 var(--fuente-ui,system-ui),sans-serif;font-variant-numeric:lining-nums tabular-nums}
 body[data-interfaz=v2] #map-app .resource-icon{flex:none;width:24px;height:24px;padding:3px;box-sizing:border-box;border-radius:50%;background:var(--pizarra);fill:var(--hielo);color:var(--hielo)}
 /* La fogata (moral) es el único recurso en Lámpara: esperanza (109 §2.1 y §8). */
 body[data-interfaz=v2] #map-app [data-resource=morale] .resource-icon{fill:var(--lampara);color:var(--lampara)}
@@ -111,7 +111,7 @@ body[data-interfaz=v2] #map-app [data-resource=morale] .resource-icon{fill:var(-
 
 /* Rótulos de localidad: aparecen con la interacción, se desvanecen; la seleccionada lo conserva. */
 #locality-labels{position:absolute;inset:0;overflow:hidden;pointer-events:none}
-#map-app .locality-label{position:absolute;transform:translate(-50%,-50%);padding:4px 11px;background:var(--pizarra);color:var(--nieve);font:600 12px/14px system-ui,sans-serif;letter-spacing:.02em;white-space:nowrap;clip-path:var(--torn);opacity:0;pointer-events:none}
+#map-app .locality-label{position:absolute;transform:translate(-50%,-50%);padding:4px 11px;background:var(--pizarra);color:var(--nieve);font:600 12px/14px var(--fuente-ui,system-ui),sans-serif;letter-spacing:.02em;white-space:nowrap;clip-path:var(--torn);opacity:0;pointer-events:none}
 #map-app .locality-label.is-awake,#map-app .locality-label.is-selected{opacity:1}
 
 /* Papel rasgado en el aviso temporal, el resultado de encrucijada y los recuadros de consulta. */
@@ -131,7 +131,7 @@ body[data-interfaz=v2] #info-dialog{background:var(--pizarra);color:var(--nieve)
 /* Encrucijada en viñeta de borde a borde; la barra de resultado va debajo de la imagen. */
 #play-dialog.crossroads{width:100vw;max-width:100vw;max-height:100dvh;margin:auto 0;padding:10px 0 18px;box-sizing:border-box;border:0;border-block:1px solid var(--acero);background:var(--noche);color:var(--nieve)}
 #play-dialog.crossroads>*{margin-inline:24px}
-#play-dialog.crossroads>h2{margin-block:4px;font:11px/1.2 system-ui,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:var(--niebla);text-align:center}
+#play-dialog.crossroads>h2{margin-block:4px;font:11px/1.2 var(--fuente-ui,system-ui),sans-serif;letter-spacing:.3em;text-transform:uppercase;color:var(--niebla);text-align:center}
 #play-dialog.crossroads>[role=status]:empty{display:none}
 #play-dialog.crossroads .cross-title{margin:2px 24px 10px;text-align:center;font:600 26px/1.2 var(--fuente-titulo,Georgia,serif);color:var(--nieve)}
 #play-dialog.crossroads .cross-vignette{margin:0}
@@ -151,5 +151,5 @@ body[data-interfaz=v2] #info-dialog{background:var(--pizarra);color:var(--nieve)
 /* Dados de acción con puntos también en los botones del diálogo de juego. */
 #play-dialog .die-choice{display:inline-flex;align-items:center;gap:8px}
 #play-dialog .die-small{display:inline-grid;grid-template:repeat(3,1fr)/repeat(3,1fr);gap:2px;width:26px;height:26px;padding:4px;box-sizing:border-box;background:#d0c19b;border:1px solid #e9dcb3;border-radius:3px;flex:none}
-#play-dialog .die-small.numeric{place-items:center;grid-template:1fr/1fr;color:#252c25;font:bold 14px system-ui}
+#play-dialog .die-small.numeric{place-items:center;grid-template:1fr/1fr;color:#252c25;font:bold 14px var(--fuente-ui,system-ui)}
 #play-dialog .die-small .pip{width:4px;height:4px;border-radius:50%;background:#252c25;justify-self:center;align-self:center}
