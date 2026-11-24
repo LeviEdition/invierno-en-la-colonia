@@ -53,11 +53,21 @@ export function equipableCards(own,actorId){
  const ok=new Set((own?.options||[]).filter(q=>q.allowed&&q.mode==='use'&&(actorId==null||q.actorId===actorId)).map(q=>q.cardId));
  return (own?.hand||[]).filter(c=>c.effect==='equip'&&ok.has(c.uid));
 }
+// Copias iguales (ajustes 2 de la sesión 7): el motor da una entrada por carta, cada una con su
+// uid. La vista agrupa las que son la misma carta en una ficha «×N» que actúa con la PRIMERA
+// copia (uid) y conserva la lista (uids). Usarla descuenta una: el motor quita esa copia y la
+// próxima proyección trae N−1. No cambia el orden: cada grupo queda donde apareció su primera.
+export function groupCopies(cards){
+ const out=[],at=new Map();
+ for(const c of cards||[]){const k=JSON.stringify([c.name,c.description,c.kind,c.effect,c.ownerId??null]),g=at.get(k);
+  if(g){g.quantity+=c.quantity||1;g.uids.push(c.uid);}else{const n={...c,quantity:c.quantity||1,uids:[c.uid]};at.set(k,n);out.push(n);}}
+ return out;
+}
 export function inventoryView(own,purpose='all',actorId=null){
  const hand=own?.hand||[],equipment=own?.equipment||[];
- if(purpose==='use')return {hand:hand.filter(c=>c.effect!=='equip'),equipables:equipableCards(own,actorId),equipment:[],cardAction:true,contribute:false,give:false};
- if(purpose==='manage')return {hand:hand.filter(c=>c.effect==='equip'),equipment,cardAction:true,contribute:false,give:true};
- if(purpose==='crisis'){const allowed=new Set((own?.options||[]).filter(q=>q.mode==='contribute'&&q.allowed).map(q=>q.cardId));return {hand:hand.filter(c=>allowed.has(c.uid)),equipment:equipment.filter(c=>allowed.has(c.uid)),cardAction:false,contribute:true,give:false};}
+ if(purpose==='use')return {hand:groupCopies(hand.filter(c=>c.effect!=='equip')),equipables:groupCopies(equipableCards(own,actorId)),equipment:[],cardAction:true,contribute:false,give:false};
+ if(purpose==='manage')return {hand:groupCopies(hand.filter(c=>c.effect==='equip')),equipment,cardAction:true,contribute:false,give:true};
+ if(purpose==='crisis'){const allowed=new Set((own?.options||[]).filter(q=>q.mode==='contribute'&&q.allowed).map(q=>q.cardId));return {hand:groupCopies(hand.filter(c=>allowed.has(c.uid))),equipment:equipment.filter(c=>allowed.has(c.uid)),cardAction:false,contribute:true,give:false};}
  return {hand,equipment,cardAction:true,contribute:true,give:true};
 }
 // «Usar carta» (sesión 7) aparece en el abanico solo si el motor permite usar alguna carta de uso ahora.
@@ -69,6 +79,13 @@ export function useCardAllowed(own){
 // «Cartas» (ajustes de la sesión 7): se habilita si hay alguna carta de uso permitida o alguna
 // equipable para el superviviente activo.
 export function cardsAllowed(own,actorId=null){return useCardAllowed(own)||equipableCards(own,actorId).length>0;}
+
+// Toque sobre un superviviente (mapa o grupo flotante; ajustes 2 de la sesión 7): el primero lo
+// hace activo en la barra; uno sobre el que YA es activo abre su expediente. Nunca ejecuta una
+// acción. Bloqueada la partida (pase de dispositivo, muerte, espera) no abre nada.
+export function tapIntent(activeId,tappedId,{blocked=false}={}){
+ if(!tappedId)return null;if(tappedId===activeId)return blocked?null:'dossier';return 'select';
+}
 
 // Atajos de escritorio: B buscar, A atacar, M moverse, E expediente, 1–4 dado de la acción en
 // curso, Espacio terminar turno. Nunca con modificadores, autorrepetición, dentro de campos de

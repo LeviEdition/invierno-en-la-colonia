@@ -42,7 +42,9 @@ export function tornPolygon(seed,{depth=4}={}){
 export const PAPER_SURFACES=Object.freeze([
  ['#objective-card','layer'],['#crisis-card','layer'],['#action-bar','layer'],['#dossier','layer'],['#stat-tip','layer'],
  ['#bar-fan','own'],['#action-strip','own'],['#move-planner','own'],['#move-sequence','own'],
- ['#search-panel','own'],['#action-panel','own'],['#play-dialog','own'],['#cycle-dialog','own'],['#inventory-dialog','own']
+ ['#search-panel','own'],['#action-panel','own'],['#play-dialog','own'],['#cycle-dialog','own'],['#inventory-dialog','own'],
+ // Ajustes 2: la barra superior, el zoom y el menú también son papel (solo el borde rasgado).
+ ['.topbar','edge'],['.map-tools','edge'],['#floating-menu','edge']
 ]);
 // Variables de un panel: bordes normal y grande, y desplazamiento de las texturas (así dos
 // paneles nunca muestran el mismo pedazo de papel).

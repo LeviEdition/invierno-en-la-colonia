@@ -4,6 +4,9 @@ const text=value=>typeof value==='string'?value:null;
 function freeze(value){if(value&&typeof value==='object'){for(const child of Object.values(value))freeze(child);Object.freeze(value);}return value;}
 const placeId=index=>Number.isInteger(index)?'place-'+index:null;
 function foodState(context,g){const need=typeof context.feedingNeed==='function'?number(context.feedingNeed(g)):null,food=number(g.food);return {need,danger:need!==null&&food!==null&&!(food>=need)};}
+// Residuos en peligro (decisión del creador): desde el tope del motor (wasteLimit) la colonia
+// pierde moral en la fase de colonia. La interfaz no conoce el número.
+function wasteState(context,g){const limit=number(context.wasteLimit),waste=number(g.waste);return {count:waste,limit,danger:limit!==null&&waste!==null&&waste>=limit};}
 export function projectVisibleState(context,{gate={},renderedPlayable=false,epoch=0}={}){
  const g=context.game,blocked=gate.setup?'setup':gate.pass?'handover':gate.death?'death':gate.modal?'decision':!g?'waiting':null;
  if(blocked)return freeze({schema:1,epoch,blocked,players:[],characters:[],locations:[],objective:null,crisis:null,log:[],dice:{ownerId:null,available:null,used:null},round:null,morale:null,food:null,resources:null});
@@ -30,6 +33,6 @@ export function projectVisibleState(context,{gate={},renderedPlayable=false,epoc
   dice:{ownerId:g.ended?null:context.controls.side,available:renderedPlayable?Array.from(context.controls.dice()||[]):null,used:null},
   // Recurso en peligro (informe 122), solo lectura: lo que el motor pedirá de comida en la
   // próxima fase de colonia (feedingNeed) y su misma condición (food>=need alcanza).
-  resources:{food:foodState(context,g)}
+  resources:{food:foodState(context,g),waste:wasteState(context,g)}
  });
 }

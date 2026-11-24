@@ -358,7 +358,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
 <div id="toastStack" class="toastStack" role="status" aria-live="polite"></div><div id="backdrop" class="modalBackdrop" data-command="backdropHide" data-args="[]"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modalHeader"><h2 id="modalTitle"></h2><button class="btn" data-command="hide" data-args="[]">✕ Cerrar</button></div><div class="modalContent" id="modalContent"></div></div></div>
 <script>(() => {
   // src/application/reference-contracts.mjs
-  var viewCapabilities = Object.freeze(["actionDice", "activeDialog", "aiCrossChoice", "aiRunning", "alive", "all", "canPickStartingLeader", "capacity", "catalog", "closeStatInfo", "controls", "crossroadsView", "currentHand", "dialogButtons", "drainToasts", "effectiveAttack", "effectiveSearch", "em", "equipIcons", "equipmentOf", "feedingNeed", "finishTurn", "focusHandover", "game", "groupLeader", "handoverDialog", "hide", "icons", "isLeader", "itemTitle", "kind", "nightEnabled", "nightWatch", "noiseLimit", "opened", "ownerGroup", "ownerOf", "paintDice", "pendingAttract", "pendingBite", "pendingHeal", "pendingLeaderSide", "pendingLoot", "pendingRecruitInfo", "pendingTransfer", "person", "picked", "places", "playable", "profileId", "renderModal", "renderSite", "selected", "show", "skipAI", "sleepingOutside", "statusText", "syncHandoverAccessibility", "target", "toggleFab", "token", "zcap"]), agentCapabilities = Object.freeze(["accessible", "actions", "alive", "applyFrost", "botContributeTools", "catalog", "crossAction", "crossDraw", "crossTrigger", "effectiveAttack", "effectiveSearch", "equipmentOf", "game", "kind", "message", "openAccess", "pause", "pendingBite", "replaceLastSurvivors", "verify", "waitForBite"]);
+  var viewCapabilities = Object.freeze(["actionDice", "activeDialog", "aiCrossChoice", "aiRunning", "alive", "all", "canPickStartingLeader", "capacity", "catalog", "closeStatInfo", "controls", "crossroadsView", "currentHand", "dialogButtons", "drainToasts", "effectiveAttack", "effectiveSearch", "em", "equipIcons", "equipmentOf", "feedingNeed", "finishTurn", "focusHandover", "game", "groupLeader", "handoverDialog", "hide", "icons", "isLeader", "itemTitle", "kind", "nightEnabled", "nightWatch", "noiseLimit", "opened", "ownerGroup", "ownerOf", "paintDice", "pendingAttract", "pendingBite", "pendingHeal", "pendingLeaderSide", "pendingLoot", "pendingRecruitInfo", "pendingTransfer", "person", "picked", "places", "playable", "profileId", "renderModal", "renderSite", "selected", "show", "skipAI", "sleepingOutside", "statusText", "syncHandoverAccessibility", "target", "toggleFab", "token", "wasteLimit", "zcap"]), agentCapabilities = Object.freeze(["accessible", "actions", "alive", "applyFrost", "botContributeTools", "catalog", "crossAction", "crossDraw", "crossTrigger", "effectiveAttack", "effectiveSearch", "equipmentOf", "game", "kind", "message", "openAccess", "pause", "pendingBite", "replaceLastSurvivors", "verify", "waitForBite"]);
   function capabilities(context, names) {
     let result = /* @__PURE__ */ Object.create(null);
     for (let name of names) Object.defineProperty(result, name, { enumerable: !0, get: () => context[name] });
@@ -409,7 +409,7 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
   }
 
   // src/domain/reference-state.mjs
-  var soloMode = (mode) => mode === "solo", NOISE_LIMIT = 4;
+  var soloMode = (mode) => mode === "solo", NOISE_LIMIT = 4, WASTE_LIMIT = 10;
   function createReferenceState({ gameMode, objective, places, catalog, testRules = TEST_RULE_DEFAULTS }) {
     let solo = soloMode(gameMode);
     return {
@@ -1234,6 +1234,9 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       },
       get noiseLimit() {
         return NOISE_LIMIT;
+      },
+      get wasteLimit() {
+        return WASTE_LIMIT;
       },
       get nightEnabled() {
         return () => nightEnabled(game);
@@ -2942,8 +2945,8 @@ header,.missionStrip,.statuswrap,.noticewrap{flex-shrink:0}
       message("⌂ Fase de colonia: alimentación → residuos → crisis → zombis.");
       let need = feedingNeed(game);
       if (game.food >= need ? (game.food -= need, message("🥫 Alimentación: " + need + " comida(s), quedan " + game.food + ".")) : (game.hunger++, game.morale = Math2.max(0, game.morale - game.hunger), message("⚠ HAMBRE acumulada: " + game.hunger + " ficha(s), -" + game.hunger + " moral. La comida existente permanece.")), verify(), game.ended) return;
-      if (game.waste >= 10) {
-        let loss = Math2.floor(game.waste / 10);
+      if (game.waste >= WASTE_LIMIT) {
+        let loss = Math2.floor(game.waste / WASTE_LIMIT);
         game.morale = Math2.max(0, game.morale - loss), message("♻ Basura: " + game.waste + " cartas, -" + loss + " moral.");
       }
       if (verify(), game.ended || (resolveCrisis(), verify(), game.ended)) return;

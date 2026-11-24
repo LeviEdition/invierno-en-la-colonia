@@ -23,7 +23,9 @@ body[data-interfaz=v2][data-panel-open=false] #map-app #dossier>.mancha{display:
 .v2-sr{position:absolute!important;width:1px;height:1px;margin:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 
 /* Botones sobre papel: chapa oscura con sombra dura; «Terminar turno» en Lámpara sólida. */
-body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button:not(#bar-portrait):not(#objective-details):not(#crisis-details):not(.fold-hit){min-height:44px;padding:5px 12px;border:2px solid #07090C;border-radius:3px;background:#262D35;color:var(--nieve);font:600 14px/1.1 var(--fuente-texto);box-shadow:var(--sombra-dura);cursor:pointer}
+body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button:not(#bar-portrait):not(#objective-details):not(#crisis-details):not(.fold-hit){min-height:44px;padding:5px 12px;border:2px solid var(--tinta);border-radius:3px;background:#F3E9D2;color:var(--tinta);font:600 14px/1.1 var(--fuente-texto);box-shadow:var(--sombra-dura);cursor:pointer}
+/* Ajustes 2 de la sesión 7: un solo estilo de botón, tinta sobre papel con sombra dura; apagado, desaturado y sin sombra (el motivo va en el globo). */
+body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button:not(#bar-portrait):not(#objective-details):not(#crisis-details):not(.fold-hit):disabled{background:#E4DCCB;color:#6F6457;border-color:#8C8070;box-shadow:none;filter:saturate(0);cursor:not-allowed}
 body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button:not(#bar-portrait):not(#objective-details):not(#crisis-details):not(.fold-hit):active:not(:disabled){translate:2px 2px;box-shadow:1px 1px 0 #07090C}
 body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button:disabled{opacity:.45;box-shadow:none;cursor:default}
 /* Misma cadena que la regla general, con el id del botón: gana sin !important. */
@@ -144,7 +146,7 @@ body[data-interfaz=v2][data-motion=reduced] #map-app .bar-die::before,body[data-
 
 /* Ficha en papel: los botones que eran transparentes sobre la pizarra llevan ahora chapa
    oscura, para que su texto claro siga legible. Los que ya tienen fondo propio no cambian. */
-body[data-interfaz=v2] #map-app #dossier :where(button:not(.die):not([data-ambient]):not(#ambient-enabled)){background-color:#262D35;border-color:#07090C}
+body[data-interfaz=v2] #map-app #dossier :where(button:not(.die):not([data-ambient]):not(#ambient-enabled)){background-color:#F3E9D2;border-color:var(--tinta);color:var(--tinta)}
 @media (max-height:500px) and (orientation:landscape){body[data-interfaz=v2] #map-app #public-summaries{top:calc(var(--v2-top) + 6px)}}
 /* Notas que estaban en tono claro para la pizarra: en tinta suave sobre el papel. */
 body[data-interfaz=v2] #map-app #dossier :is(.dice-section p,.provisional-note,dt,#locality-description){color:var(--tinta-suave)}

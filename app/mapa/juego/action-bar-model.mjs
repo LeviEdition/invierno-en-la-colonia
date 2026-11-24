@@ -44,7 +44,7 @@ export function cardsModel(p){
  const o=p.objective,c=p.crisis;
  return {
   // short: la tira de la tarjeta plegada (informe 123).
-  objective:o?{title:o.name||'Objetivo',progress:`${shown(count(o.samples))} de ${shown(count(o.goal))} muestras · R${shown(count(p.maxRounds))}`,short:`Objetivo ${shown(count(o.samples))}/${shown(count(o.goal))} · R${shown(count(p.maxRounds))}`,ratio:ratio(o.samples,o.goal)}:null,
+  objective:o?{title:o.name||'Objetivo',progress:`${shown(count(o.samples))} de ${shown(count(o.goal))} muestras · ronda ${shown(count(p.round))} de ${shown(count(p.maxRounds))}`,short:`Objetivo ${shown(count(o.samples))}/${shown(count(o.goal))} · ronda ${shown(count(p.round))}/${shown(count(p.maxRounds))}`,ratio:ratio(o.samples,o.goal)}:null,
   crisis:c?{title:'Crisis',progress:`${shown(count(c.need))} ${plural(c.need,c.type)} · ${shown(count(c.given))} de ${shown(count(c.need))}`,short:`Crisis ${shown(count(c.given))}/${shown(count(c.need))}`,ratio:ratio(c.given,c.need)}:null
  };
 }

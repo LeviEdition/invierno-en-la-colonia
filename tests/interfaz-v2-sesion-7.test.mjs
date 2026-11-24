@@ -136,17 +136,17 @@ test('Sesión 7 · barra: grupo, superviviente activo con tres ranuras y privaci
  for(const slot of ['herramienta','arma','educacion'])assert.ok(bar.includes(`data-slot="${slot}" data-empty="true"`),slot);
  assert.match(css,/\.bar-slot\[data-empty=true\]\{border-style:dashed;/);
  assert.match(css,/button\.bar-mate:not\(#bar-portrait\):not\(#objective-details\):not\(#crisis-details\):not\(\.fold-hit\)\[aria-pressed=true\]\{border:3px solid var\(--lampara\)/,'el activo con borde Lámpara');
- assert.match(view,/onSelect:id=>selectCharacter\(id,\{open:false\}\)/,'tocar una miniatura la hace activa sin abrir el expediente');
+ assert.match(view,/onSelect:id=>tapCharacter\(id\)/,'tocar una miniatura pasa por tapIntent: la primera la hace activa (ajustes 2)');
 });
 
 test('Sesión 7 · expediente: solo información; se abre con el retrato o E y no al tocar el mapa',()=>{
  assert.match(view,/function barDetail\(\)\{if\(panelTarget\)\{\$\('panel-toggle'\)\.click\(\);return;\}/,'el retrato y E lo cierran por el mismo camino que «×»');
  assert.match(view,/listen\('#bar-portrait','click',\(\)=>\{if\(barGuard\('portrait'\)\)barDetail\(\);\}\)/);
- assert.match(view,/if\(target\.characterId\)selectCharacter\(target\.characterId,\{open:false\}\);/,'tocar una ficha la hace activa y no abre el expediente');
+ assert.match(view,/if\(target\.characterId\)tapCharacter\(target\.characterId\);/,'el primer toque sobre una ficha solo la hace activa; el expediente se abre si ya era la activa (ajustes 2)');
  assert.doesNotMatch(view.slice(view.indexOf(' function selectLocality('),view.indexOf('\n',view.indexOf(' function selectLocality('))),/panel\(true\)/);
  assert.match(view,/applyFolds\(\);panel\(false\);/,'empieza cerrado');
  assert.match(css,/\[data-panel-open=false\] #map-app #dossier\{display:none\}/);
- assert.match(dossier,/class="dossier-links"[^]*data-info="registro"[^]*data-dossier-open="menu-settings"/,'registro y ajustes desde el expediente');
+ assert.match(dossier,/id="dossier-tabs"[^]*data-info="registro"/,'registro como pestaña del legajo (ajustes 2); ajustes y ayuda, en el menú');
  // Cerrar el expediente no cancela una acción de turno en curso.
  const ws=read('app/mapa/experiencia/workspace.mjs');assert.doesNotMatch(ws.slice(ws.indexOf("$('panel-toggle').addEventListener"),ws.indexOf('\n',ws.indexOf("$('panel-toggle').addEventListener"))),/cancelDrafts\(\)/);
 });

@@ -14,7 +14,7 @@ import {createMapPlay} from './map-play.mjs';
 import {resolveMapExposure} from '../domain/map-exposure.mjs';
 import {TEST_RULE_DEFAULTS,normalizeTestRules,describeTestRules,partialThreshold,halvedConsequence} from '../domain/test-rules.mjs';
 import {beginNight,continueNight,nightUnfinished,nightEnabled,nightWatch,sleepingOutside} from '../domain/reference-night.mjs';
-import {soloMode,NOISE_LIMIT} from '../domain/reference-state.mjs';
+import {soloMode,NOISE_LIMIT,WASTE_LIMIT} from '../domain/reference-state.mjs';
 const noop=()=>{};
 export function createEngine({Math=globalThis.Math,queueMicrotask=globalThis.queueMicrotask||((f)=>Promise.resolve().then(f)),setTimeout=globalThis.setTimeout,stateFactory=createReferenceState,rulesFactory=createRules,turnsFactory=createTurns,effects={},automation=null}={}){
 let view=new Proxy(effects,{get:(target,key)=>target[key]||noop});
@@ -96,6 +96,7 @@ get gameMode(){return gameMode;},set gameMode(value){gameMode=value;},
 get testRules(){return testRules;},
 get setTestRules(){return setTestRules;},
 get noiseLimit(){return NOISE_LIMIT;},
+get wasteLimit(){return WASTE_LIMIT;},
 get nightEnabled(){return ()=>nightEnabled(game);},
 get nightWatch(){return ()=>nightWatch(game);},
 get sleepingOutside(){return ()=>sleepingOutside(game);},
@@ -937,7 +938,7 @@ function colony(){
  else{game.hunger++;game.morale=Math.max(0,game.morale-game.hunger);if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.annotate({sufficient:false});message('⚠ HAMBRE acumulada: '+game.hunger+' ficha(s), -'+game.hunger+' moral. La comida existente permanece.');}
  verify();if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.after();if(game.ended)return;
  if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.before('waste',{loss:0});
- if(game.waste>=10){const loss=Math.floor(game.waste/10);if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.annotate({loss});game.morale=Math.max(0,game.morale-loss);message('♻ Basura: '+game.waste+' cartas, -'+loss+' moral.');}
+ if(game.waste>=WASTE_LIMIT){const loss=Math.floor(game.waste/WASTE_LIMIT);if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.annotate({loss});game.morale=Math.max(0,game.morale-loss);message('♻ Basura: '+game.waste+' cartas, -'+loss+' moral.');}
  verify();if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.after();if(game.ended)return;
  if(typeof __MAP_EXTENSION__!=='undefined'&&__MAP_EXTENSION__)c.mapCycle.before('crisis',{type:game.crisis.type,required:game.crisis.need,given:game.crisis.given,failure:game.crisis.fail});
  resolveCrisis();

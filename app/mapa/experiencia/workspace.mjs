@@ -13,6 +13,8 @@ export function mountWorkspace({getContext,panel,signal}){
  function focusBack(){const e=opener&&document.getElementById(opener);(visible(e)?e:$('menu-toggle')).focus({preventScroll:true});opener=null;}
  function closeQueries(){if($('info-dialog').open)$('info-dialog').close();$('settings-panel').hidden=true;if(inventory.inspect().phase==='browsing')inventory.close();if(play.inspect().page==='groups')play.close();}
  document.getElementById('floating-menu').addEventListener('click',e=>{if(!e.target.closest('button'))return;if(!cancelDrafts()){e.preventDefault();e.stopImmediatePropagation();return;}closeQueries();opener=e.target.id||'menu-toggle';},{capture:true,signal});
+ // Pestañas del legajo (ajustes 2): cambiar de pestaña cierra la consulta abierta antes de abrir la nueva; no toca las acciones de turno del centro.
+ $('dossier-tabs')?.addEventListener('click',e=>{if(!e.target.closest('button'))return;closeQueries();opener=e.target.closest('button').id||'panel-toggle';},{capture:true,signal});
  $('menu-settings').addEventListener('click',()=>{$('settings-panel').hidden=false;panel(true);document.body.dataset.sheetExpanded='true';render();$('floating-menu').hidden=true;$('menu-toggle').setAttribute('aria-expanded','false');$('settings-close').focus({preventScroll:true});},{signal});
  $('settings-close').addEventListener('click',()=>{$('settings-panel').hidden=true;render();},{signal});
  $('panel-expand').addEventListener('click',()=>{document.body.dataset.sheetExpanded=String(document.body.dataset.sheetExpanded!=='true');$('panel-expand').setAttribute('aria-expanded',document.body.dataset.sheetExpanded);render();},{signal});
@@ -35,7 +37,9 @@ export function mountWorkspace({getContext,panel,signal}){
   const chosen=candidates.find(id=>{const e=$(id);return e&&e.closest('#context-workspace')&&(e.tagName==='DIALOG'?e.open&&e.dataset.surface==='context':!e.hidden);})||null;
   const staged=[...($('action-stage')?.children||[])].some(e=>e.tagName==='DIALOG'?e.open:!e.hidden);document.body.dataset.stage=String(staged);
   for(const el of $('context-workspace').children)el.dataset.contextActive=String(el.id===chosen);
-  document.body.dataset.contextActive=String(!!chosen);$('context-default').hidden=!!chosen;$('character-navigation').hidden=!!chosen;
+  document.body.dataset.contextActive=String(!!chosen);
+  // Pestañas del legajo (ajustes 2): Mochila y Registro se abren en el expediente; Superviviente y Colonia son la vista propia.
+  {const shown=chosen==='inventory-dialog'?'backpack':chosen==='info-dialog'&&c.infoKind==='registro'?'registry':chosen?null:(c.dossierTab||'survivor');for(const b of document.querySelectorAll('#dossier-tabs [data-tab]'))b.setAttribute('aria-pressed',String(b.dataset.tab===shown));}$('context-default').hidden=!!chosen;$('character-navigation').hidden=!!chosen;
   if(chosen&&chosen!==current){opener=opener||$(chosen).dataset.opener||document.activeElement?.id||'menu-toggle';panel(true);document.body.dataset.sheetExpanded='true';$('panel-content').scrollTop=0;}
   if(!chosen&&current)focusBack();current=chosen;
   const titles={'inventory-dialog':'Inventario','play-dialog':play.inspect().page==='groups'?'Grupo y líderes':'Acción','cycle-dialog':'Colonia','settings-panel':'Ajustes','info-dialog':$('dialog-title').textContent,'search-panel':'Buscar','action-panel':$('action-title').textContent,'move-planner':'Moverse'};
@@ -43,5 +47,5 @@ export function mountWorkspace({getContext,panel,signal}){
   $('panel-expand').hidden=!matchMedia('(max-width:950px)').matches;
   $('panel-expand').textContent=document.body.dataset.sheetExpanded==='true'?'Compactar':'Ampliar';
  }
- return {render,rememberOpener(id){opener=id||'menu-toggle';},inspect:()=>({current})};
+ return {render,closeQueries,rememberOpener(id){opener=id||'menu-toggle';},inspect:()=>({current})};
 }

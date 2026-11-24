@@ -64,6 +64,7 @@ export function mountActionBar({portraitUrl,initials,onSelect=()=>{},onDie=()=>{
    const strip=$('action-strip');if(strip){const text=flow?.text||'';if(text!==stripText){stripText=text;setText($('action-strip-text'),text);strip.hidden=!text;if(text)fadeIn(strip);}}
    paintCard('objective',cards.objective);paintCard('crisis',cards.crisis);
    const food=document.querySelector('[data-resource=food]');if(food){const danger=!!resources?.food?.danger;food.classList.toggle('is-danger',danger);food.title=danger?'Comida en peligro: la colonia necesita '+resources.food.need+' en la próxima fase de colonia':'';}
+   const waste=document.querySelector('[data-resource=waste]');if(waste){const danger=!!resources?.waste?.danger;waste.classList.toggle('is-danger',danger);waste.title=danger?'Residuos en peligro: desde '+resources.waste.limit+' la colonia pierde moral en la fase de colonia':'';}
   },
   dice:()=>dice
  };

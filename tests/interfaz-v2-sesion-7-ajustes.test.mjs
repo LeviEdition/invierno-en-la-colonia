@@ -142,14 +142,16 @@ test('Ajustes · libro: ícono con tapas, lomo y hojas, mismo trazo que herramie
 });
 
 // J: un solo acceso por consulta. Dos botones con el mismo data-info rompían el modo estricto de
-// las baterías (check-exposure-d12, #44). El registro y la ayuda viven solo en el expediente.
-test('Ajustes · cada data-info aparece una sola vez, y registro y ayuda solo en el expediente',()=>{
+// las baterías (check-exposure-d12, #44). Ajustes 2: el registro es una pestaña del legajo y la
+// ayuda pasa al menú, cada uno una sola vez.
+test('Ajustes · cada data-info aparece una sola vez: registro en el legajo y ayuda en el menú',()=>{
  const html=read('app/mapa/index.html'),values=[...html.matchAll(/data-info="([^"]+)"/g)].map(m=>m[1]);
  assert.ok(values.length>0);assert.deepEqual(values,[...new Set(values)],'sin duplicados: '+values.join(', '));
- const dossier=html.slice(html.indexOf('<nav class="dossier-links"'),html.indexOf('</nav>',html.indexOf('<nav class="dossier-links"')));
- for(const k of ['registro','ayuda'])assert.match(dossier,new RegExp('data-info="'+k+'"'),k+' en el expediente');
+ const tabs=html.slice(html.indexOf('<nav id="dossier-tabs"'),html.indexOf('</nav>',html.indexOf('<nav id="dossier-tabs"')));
+ assert.match(tabs,/data-info="registro"/,'registro en las pestañas del legajo');assert.doesNotMatch(tabs,/data-info="ayuda"/);
  const menu=html.slice(html.indexOf('<nav id="floating-menu"'),html.indexOf('</nav>',html.indexOf('<nav id="floating-menu"')));
- assert.doesNotMatch(menu,/data-info=/,'el menú ya no repite consultas del expediente');
+ assert.match(menu,/data-info="ayuda"/,'ayuda en el menú');assert.doesNotMatch(menu,/data-info="registro"/,'el menú no repite el registro');
+ assert.ok(!html.includes('dossier-links'),'el expediente ya no tiene la fila de consultas');assert.equal((html.match(/id="menu-settings"/g)||[]).length,1);assert.ok(!html.includes('data-dossier-open'),'Ajustes solo en el menú');
  // Ningún módulo crea botones data-info en tiempo de ejecución.
  for(const f of ['map-view.mjs','juego/information.mjs','juego/panel.mjs','experiencia/workspace.mjs'])assert.doesNotMatch(read('app/mapa/'+f),/dataset\.info=|setAttribute\('data-info'/,f);
 });

@@ -221,3 +221,54 @@ Commits nuevos en la misma rama. `src/` no cambió y ninguna batería de navegad
 **Corrida local con Edge** (`CHROMIUM_PATH`, servidor QA en otro puerto):
 - `check-exposure-d12-browser` pasa a 1365×768 y 852×393, con `EXPOSURE_QUICK=1`.
 - `check-map-experience-browser` y `check-map-feedback-camera-browser` fallan antes de llegar al registro: el foco al cerrar el globo de Objetivo, y el enfoque del Hospital. Fallan igual en los commits de la sesión 6 (`29ec1b7`) y de la sesión 7 (`c665668`), así que no vienen de este cambio. Parece una diferencia de Edge en Windows. Las valida el CI.
+
+## Ajustes 2 (después de la prueba del creador)
+
+Base: `2972552`. Foco en escritorio (1365×768); a 852×393 no se rompe nada (sin desbordes ni errores en una corrida propia con Edge).
+
+| | Qué cambió |
+|---|---|
+| **A. Residuos en peligro** | El umbral pasó de un `10` literal en `colony()` a `WASTE_LIMIT` en `src/domain/reference-state.mjs`, expuesto como capacidad de solo lectura `wasteLimit` (como `noiseLimit`). El motor se comporta igual (−1 moral por cada 10). La proyección agrega `resources.waste` con `count`, `limit` y `danger`, y la chapa usa el mismo estado de peligro que la comida. Como en las sesiones 1 y 4, se regeneró `invierno_colonia_v9_9.html`; la etiqueta `v0.9.9-referencia-modular` no cambia. |
+| **B. Papeles centrales** | Las opciones del mismo tipo van en grilla y con el mismo tamaño (`paperOptions`), y las acciones abajo a la derecha (`paperActions`, una sola principal en Lámpara). Aplicado a «Mejorar dado» (un título, dados cuadrados con puntos, el elegido con borde Lámpara, «Mejorar · 1 comida» y «Cancelar»), limpiar, atraer, regresar, tratamiento, mordedura, carta de búsqueda, transferencia, encrucijada, recibos, preparación, búsqueda y ataque. Los ids no cambian. |
+| **C. Cartas del mismo tamaño** | 220 × 336 px en búsqueda, «Cartas» y mochila, a 15 px. Medido con «Hacha de bombero» (220 caracteres): necesita 285 px y entra sin desplazarse. |
+| **D. Copias agrupadas** | `groupCopies` junta las copias iguales en una ficha «×N» que actúa con la primera copia. Usarla descuenta una. Antes salían dos fichas «Ración de comida ×1». |
+| **E. «Cartas» sin cortes** | Si el papel no entra, aparece «Más abajo ▾» con un fundido, y se desplaza con rueda, teclado y tacto (`data-scroll`). |
+| **F. Un estilo de botón** | Tinta sobre papel con sombra dura en la barra, el abanico, los papeles, el zoom y el menú. Apagados: desaturados y sin sombra. Lámpara solo en «Terminar turno» y en la principal de cada papel. |
+| **G. Barra superior** | Decisión: papel rasgado, como tarjetas y barra. Ronda, turno y recursos son sellos de tinta con el número en Bitter y la etiqueta debajo. Hambre suma un ícono (cuenco). La moral es la chapa más grande, con anillo. |
+| **H. Textos** | «0 de 9 muestras · ronda 1 de 10», «Si falla: 1 herida al de menor influencia en la colonia» (y las demás consecuencias con artículo), y la búsqueda muestra solo la categoría. |
+| **I. Legajo** | Pestañas Superviviente, Mochila, Colonia y Registro. Superviviente: foto con clip y «Legajo n.º X», sello azul de guardia, tres medallones, casillas de daño y «muere a los 3», habilidad a la vista con su tipo y su estado, y tres ranuras. Sin «Dados de tu grupo» ni desplegable. «Ajustes» y «Ayuda y atajos» pasaron al menú. |
+| **J. Toque doble** | El primer toque sobre un superviviente (mapa o grupo) lo elige; uno sobre el elegido abre su legajo. «Activo» es el elegido: la vista previa del líder se elige con el primer toque, como antes. No hace nada durante el pase. |
+
+![Barra superior](evidencias/interfaz-v2/126-ajustes2-barra-superior.jpg) ![Residuos y comida en peligro](evidencias/interfaz-v2/126-ajustes2-residuos-peligro.jpg)
+
+![Mejorar dado](evidencias/interfaz-v2/126-ajustes2-mejorar-dado.jpg)
+
+![Cartas con secciones](evidencias/interfaz-v2/126-ajustes2-cartas.jpg) ![Legajo con sello de guardia](evidencias/interfaz-v2/126-ajustes2-legajo-guardia.jpg)
+
+**Decisiones que tomé y conviene revisar:**
+- **Límite de muerte.** El motor no lo expone: es un `3` literal en `map-exposure` y en la crisis parcial, y el pedido limitaba `src/` al umbral de residuos. El legajo usa `DEATH_DAMAGE = 3`, y una prueba lo compara con el motor (hallazgo 26).
+- **Tipo de habilidad.** Lo asigna la interfaz: botón para médica, enfermera y constructor; reacción para Resistencia; automática para el resto. El estado de uso sí sale del motor (`skill.used`).
+- **Selector de superviviente.** Sigue en la página, solo para teclado y lector de pantalla (y para las baterías, que lo usan).
+- **Pestaña Colonia.** Sin una localidad elegida, muestra la del superviviente.
+
+**Pruebas.** `npm test` pasa 963 de 963, con siete pruebas nuevas en `tests/interfaz-v2-sesion-7-ajustes-2.test.mjs`. `check:build` y `check:mapa-build` están en verde. Seis pruebas anteriores cambiaron porque el pedido cambia lo que fijaban:
+- los textos de Objetivo;
+- la proyección, que ahora lee residuos;
+- dónde están registro y ayuda;
+- el toque, que pasa por `tapCharacter`.
+
+`test:poc` sigue sin correr en Windows (EPERM, hallazgo 14).
+
+**Baterías.**
+
+| Batería | Cambio | Por qué |
+|---|---|---|
+| `check-map-experience-browser` | Agrega «Ayuda y atajos» a la lista esperada del menú. | El pedido movió la ayuda al menú. |
+
+Ninguna otra cambia. Corridas locales con Edge:
+- `check-exposure-d12-browser` pasa a 1365×768 y 852×393.
+- **`check-map-inventory-browser` falla, y ya fallaba antes de este cambio.** Corrí una copia sin vídeo (acá no hay ffmpeg) contra `2972552` y contra este commit, y las dos se detienen en la misma línea: `choose('Vendas')`. Desde la sesión 7, «Inventario» del menú abre la vista de equipables y la batería busca ahí una carta de uso. Hay que decidir si la batería pasa a «Cartas» o si el menú vuelve a mostrar la mano completa.
+- `check-map-migration-browser` usa el mismo camino; probablemente falle igual. No la corrí: graba vídeo.
+- Las demás las valida el CI.
+
+**Falta probar jugando:** la barra superior a distintos anchos, el sello y las pestañas en el A15, si el toque doble resulta natural, y el tamaño de las cartas en el teléfono, donde «Cartas» se desplaza.

@@ -4,6 +4,8 @@ import {TEST_RULE_DEFAULTS} from './test-rules.mjs';
 export const soloMode=mode=>mode==='solo';
 // Tope de fichas de ruido por localidad (regla fija del motor).
 export const NOISE_LIMIT=4;
+// Residuos desde los que la colonia pierde moral en la fase de colonia (1 por cada WASTE_LIMIT).
+export const WASTE_LIMIT=10;
 export function createReferenceState({gameMode,objective,places,catalog,testRules=TEST_RULE_DEFAULTS}){const solo=soloMode(gameMode);return {mode:gameMode,objective,round:1,max:objective.rounds,morale:9,food:testRules.comidaInicial,hunger:0,samples:0,goal:objective.need,waste:0,testRules:{...testRules},
  humans:[{id:'h0',name:'Mara',loc:0,wounds:0,frost:0,dead:false},{id:'h1',name:'Leo',loc:0,wounds:0,frost:0,dead:false},{id:'h2',name:'Iris',loc:0,wounds:0,frost:0,dead:false}],
  bots:solo?[]:[{id:'a0',name:'Ada',loc:0,wounds:0,frost:0,dead:false},{id:'a1',name:'Bruno',loc:0,wounds:0,frost:0,dead:false},{id:'a2',name:'Sol',loc:0,wounds:0,frost:0,dead:false}],

@@ -26,8 +26,8 @@ test('Sesión 4 · recurso en peligro: lo que el motor pedirá de comida, con su
  assert.match(read('app/mapa/estado/projection.mjs'),/danger:need!==null&&food!==null&&!\(food>=need\)/);
  assert.deepEqual(t.engine.snapshot(),before,'proyectar no cambia la partida');assert.equal(t.calls(),rng,'ni consume azar');
  for(const gate of [{pass:true},{setup:true},{death:true},{modal:true}])assert.equal(projectVisibleState(t.context,{gate,renderedPlayable:true}).resources,null);
- // Residuos: el umbral es un literal dentro del motor (game.waste>=10); no se expone ni se inventa.
- assert.doesNotMatch(read('app/mapa/estado/projection.mjs'),/waste/);
+ // Residuos (ajustes 2 de la sesión 7): el umbral viene del motor (wasteLimit); la proyección no escribe el número.
+ assert.match(read('app/mapa/estado/projection.mjs'),/context\.wasteLimit/);assert.doesNotMatch(read('app/mapa/estado/projection.mjs'),/waste[^\n]*\b10\b/);
 });
 
 test('Sesión 4 · privacidad del pase: la barra y las tarjetas quedan vacías',()=>{
@@ -49,7 +49,7 @@ test('Sesión 4 · barra: superviviente activo, vista previa y textos de las tar
  const preview=actionBarModel(p,{});assert.equal(preview.actor.id,'h1','sin selección: el líder del grupo en turno');assert.equal(preview.preview,true);assert.equal(preview.own,true);
  const chosen=actionBarModel(p,{selectedId:'h0',chosenIndex:1});assert.equal(chosen.preview,false);assert.equal(chosen.actor.location,'Hospital');
  assert.deepEqual(chosen.actor.damage.map(d=>d.kind+d.count),['wound2','frost1']);assert.deepEqual(chosen.dice.map(d=>d.chosen),[false,true]);
- assert.deepEqual(cardsModel(p),{objective:{title:'Encontrar la cura',progress:'4 de 7 muestras · R8',short:'Objetivo 4/7 · R8',ratio:4/7},crisis:{title:'Crisis',progress:'2 medicinas · 1 de 2',short:'Crisis 1/2',ratio:.5}});
+ assert.deepEqual(cardsModel(p),{objective:{title:'Encontrar la cura',progress:'4 de 7 muestras · ronda 2 de 8',short:'Objetivo 4/7 · ronda 2/8',ratio:4/7},crisis:{title:'Crisis',progress:'2 medicinas · 1 de 2',short:'Crisis 1/2',ratio:.5}});
  assert.equal(cardsModel({...p,crisis:{type:'combustible',need:1,given:0}}).crisis.progress,'1 combustible · 0 de 1');
  assert.equal(actionBarModel({...p,turn:'ai'},{selectedId:'h0'}).own,false,'fuera de turno no actúa');
 });
