@@ -150,3 +150,15 @@ body:not([data-interfaz=v2]) #map-app #panel-content>.scroll-more{display:none}
 body[data-interfaz=v2] #map-app .legajo #character-moved{margin:2px 0 0;font:600 13px/1.3 var(--fuente-texto);color:var(--tinta-suave)}
 body[data-interfaz=v2] #map-app .legajo #character-moved[hidden]{display:none}
 body[data-interfaz=v2] #map-app #panel-content:not([data-scroll=bottom]):not([data-scroll=both])>.scroll-more{display:none}
+/* ── Ajustes 5 ── */
+/* Construir: la habilidad es una casilla más, del mismo tamaño que los dados, con su texto a la vista. */
+body[data-interfaz=v2] #map-app #action-stage .search-die.action-ability{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:3px;text-align:center;color:var(--tinta)}
+body[data-interfaz=v2] #map-app #action-stage .search-die.action-ability strong{font:700 12px/1.05 var(--fuente-texto)}
+body[data-interfaz=v2] #map-app #action-stage .search-die.action-ability small{display:block;font:600 10px/1.05 var(--fuente-texto);color:var(--tinta-suave)}
+body[data-interfaz=v2] #map-app #action-stage #action-requirement{margin:0 0 8px;font:600 15px/1.3 var(--fuente-texto);color:var(--tinta)}
+body[data-interfaz=v2] #map-app #action-stage #action-plain{margin:10px 0 0;font:15px/1.35 var(--fuente-texto);color:var(--tinta)}
+body[data-interfaz=v2] #map-app #action-stage #action-plain[hidden],body[data-interfaz=v2] #map-app #action-stage #action-method-box[hidden]{display:none}
+/* Legajo: botón de la habilidad (tipo botón), en papel como el resto. */
+body[data-interfaz=v2] #map-app .legajo #legajo-habilidad-usar{margin:4px 0 2px}
+body[data-interfaz=v2] #map-app .legajo #legajo-habilidad-usar[hidden],body[data-interfaz=v2] #map-app .legajo #legajo-habilidad-motivo[hidden]{display:none}
+body[data-interfaz=v2] #map-app .legajo #legajo-habilidad-motivo{margin:0;font:italic 13px/1.3 var(--fuente-texto);color:var(--tinta-suave)}
