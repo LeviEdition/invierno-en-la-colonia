@@ -17,7 +17,7 @@ try{for(const [width,height]of (process.env.CYCLE_VIEWPORTS||'1365x768,852x393')
   const before=await raw();await p.locator('[id^="inventory-contribute-"]').first().click();await p.locator('#inventory-cancel').click();assert.deepEqual(await raw(),before);
   for(let i=0;i<2;i++){await p.locator('[id^="inventory-contribute-"]').first().click();await p.locator('#inventory-confirm').scrollIntoViewIfNeeded();await p.locator('#inventory-confirm').evaluate(b=>{b.click();b.click();});await p.waitForFunction(()=>h344Viewer.inspect().inventory.phase==='browsing');await t.inventoryDone(p);}
   await p.locator('#inventory-close').click();assert.match(await p.locator('#public-crisis').textContent(),/entregadas: 2/);assert.equal(JSON.stringify((await api()).projection.cycle).includes('Ración de comida'),false);
-  await t.panel(p);await p.locator('#survivor-select').evaluate(el=>{const d=el.closest('details');if(d)d.open=true;});await p.selectOption('#survivor-select','h0');await p.locator('#barricade-action').click();await p.locator('[data-action-die="0"]').click();await p.locator('#confirm-action').click();await t.actionDone(p);
+  await t.panel(p);await p.locator('#survivor-select').evaluate(el=>{const d=el.closest('details');if(d)d.open=true;});await p.selectOption('#survivor-select','h0');await t.more(p);await p.locator('#barricade-action').click();await p.locator('[data-action-die="0"]').click();await p.locator('#confirm-action').click();await t.actionDone(p);
   const cancel=await raw();await p.locator('#finish-turn').click();await p.locator('#cycle-cancel').click();assert.deepEqual(await raw(),cancel);
  }
  const viewBefore=await t.view(p),camera=viewBefore.camera;result.cameraBefore={scenario,width,camera,viewport:viewBefore.viewport};

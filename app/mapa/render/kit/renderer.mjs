@@ -22,7 +22,7 @@ export async function createWorkshopRenderer(canvas,kit,prepared,{signal,deadlin
  const assets=Object.fromEntries(kit.assets.map(a=>[a.id,a])),objects=new Map();let diagnostics,slots,atmosphere;
  const ready=new Promise((resolve,reject)=>{resolveReady=resolve;rejectReady=reject;});
  const wake=()=>{if(!disposed&&(!atmosphere||(!document.hidden&&!game.loop.running)))game.loop.wake();};
- const refreshLoop=()=>{if(atmosphere){const limit=atmosphere.isAnimating()?atmosphereFrameRate:0;if(game.loop.fpsLimit!==limit)game.loop.setFPSLimit(limit);}wake();};
+ const refreshLoop=()=>{if(atmosphere){const limit=atmosphere.isAnimating()?(atmosphere.frameRate?.()||atmosphereFrameRate):0;if(game.loop.fpsLimit!==limit)game.loop.setFPSLimit(limit);}wake();};
  const nextFrame=()=>new Promise(resolve=>{game.events.once(Phaser.Core.Events.POST_RENDER,resolve);wake();});
  const release=()=>{
   if(disposed)return;disposed=true;
@@ -41,7 +41,7 @@ export async function createWorkshopRenderer(canvas,kit,prepared,{signal,deadlin
    create(){try{
     if(disposed||signal?.aborted)return;world=this;
     for(const [id,p]of Object.entries(prepared))addIllustratedTexture(this.textures,'h33-'+id,p.image);
-    this.textures.addCanvas('h33-shadow',shadowTexture());slots=this.add.graphics().setDepth(1);diagnostics=this.add.graphics().setDepth(100);atmosphere=createAtmosphere?.(this);if(atmosphere&&this.game.loop.fpsLimit!==(atmosphere.isAnimating()?atmosphereFrameRate:0))this.game.loop.setFPSLimit(atmosphere.isAnimating()?atmosphereFrameRate:0);
+    this.textures.addCanvas('h33-shadow',shadowTexture());slots=this.add.graphics().setDepth(1);diagnostics=this.add.graphics().setDepth(100);atmosphere=createAtmosphere?.(this);if(atmosphere&&this.game.loop.fpsLimit!==(atmosphere.isAnimating()?(atmosphere.frameRate?.()||atmosphereFrameRate):0))this.game.loop.setFPSLimit(atmosphere.isAnimating()?(atmosphere.frameRate?.()||atmosphereFrameRate):0);
     if(atomicResize)this.game.events.on(Phaser.Core.Events.PRE_RENDER,()=>{if(pendingModel){const next=pendingModel;pendingModel=null;applyModel(next);}});
     this.game.events.on(Phaser.Core.Events.POST_RENDER,()=>{renderEvents++;if(model&&!atmosphere?.isAnimating())game.loop.sleep();});this.game.events.once(Phaser.Core.Events.POST_RENDER,resolveReady);
    }catch(error){rejectReady(error);}}
@@ -78,7 +78,7 @@ export async function createWorkshopRenderer(canvas,kit,prepared,{signal,deadlin
    }else if(state.layers.slots&&state.case!=='occlusion')for(const [color,positions]of [[0x227d8d,kit.survivorPositions],[0x9b6929,kit.accessPositions]]){slots.lineStyle(1.5/camera.zoom,color,1);for(const p of positions)slots.strokeEllipse(p.x,p.y,44,16);}
    diagnostics.clear();const line=1/camera.zoom;
    if(model.localityHover){diagnostics.lineStyle(.85*line,0xa3b3bb,.55);const p=model.localityHover;for(let i=0;i<p.length;i++){const a=p[i],b=p[(i+1)%p.length];diagnostics.lineBetween(a[0],a[1],b[0],b[1]);}}
-   if(model.localityHighlight){diagnostics.lineStyle((model.highlightWidth??1.5)*line,0xd8a54b,.8);const points=model.localityHighlight;for(let i=0;i<points.length;i++){const a=points[i],b=points[(i+1)%points.length];diagnostics.lineBetween(a[0],a[1],b[0],b[1]);}}
+   if(model.localityHighlight){diagnostics.lineStyle((model.highlightWidth??1.5)*line,0xf2c14e,1);const points=model.localityHighlight;for(let i=0;i<points.length;i++){const a=points[i],b=points[(i+1)%points.length];diagnostics.lineBetween(a[0],a[1],b[0],b[1]);}}
    if(state.grid){diagnostics.lineStyle(line,0x314b61,.25);const b=kit.bounds;let count=0;for(let x=Math.floor(b.x/state.gridStep)*state.gridStep;x<=b.x+b.width&&count++<300;x+=state.gridStep)diagnostics.lineBetween(x,b.y,x,b.y+b.height);count=0;for(let y=Math.floor(b.y/state.gridStep)*state.gridStep;y<=b.y+b.height&&count++<300;y+=state.gridStep)diagnostics.lineBetween(b.x,y,b.x+b.width,y);}
    if(state.axes){const p=kit.buildingPosition;diagnostics.lineStyle(2*line,0x9c3c38,1);diagnostics.lineBetween(p.x,p.y,p.x+90,p.y);diagnostics.lineStyle(2*line,0x287a64,1);diagnostics.lineBetween(p.x,p.y,p.x,p.y-90);}
    for(const node of nodes.filter(n=>n.visible&&n.role!=='ground')){

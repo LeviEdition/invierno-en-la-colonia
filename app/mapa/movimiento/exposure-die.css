@@ -1,4 +1,4 @@
-.exposure-d12,#exposure-die.exposure-d12{width:82px;height:auto;display:grid;gap:1px;background:none;border:0;border-radius:0;margin:0;place-items:center;color:#f7edcf;font:600 14px/1.25 system-ui}
+.exposure-d12,#exposure-die.exposure-d12{width:82px;height:auto;display:grid;gap:1px;background:none;border:0;border-radius:0;margin:0;place-items:center;color:#f7edcf;font:600 14px/1.25 var(--fuente-ui,system-ui)}
 .d12-solid{display:block;width:82px;height:82px;overflow:visible;filter:drop-shadow(0 2px 2px #0008)}
 .d12-solid polygon{stroke:#493d2c;stroke-width:.035;stroke-linejoin:round}
 .d12-symbol path{stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;fill:none}

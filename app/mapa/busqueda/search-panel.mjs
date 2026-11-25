@@ -39,15 +39,18 @@ export function mountSearchPanel({controller,getContext,onCancel,onNative,signal
   $('search-message').textContent=!visible?'':busy?s.message:choice?'Elegí una carta para conservar. Las demás vuelven al fondo del mazo.':op?.status==='empty'?'El motor no encontró una carta.':s.message;
   $('search-requirement').textContent=picking?site(s.intent.origin)+' · Requisito efectivo '+s.intent.requirement+'+ (incluye habilidad y equipo).':'';
   $('search-confirmation').textContent=picking&&s.intent.dieIndex!==null?`¿Buscar con ${actor?.name} en ${site(s.intent.origin)} usando el dado ${s.intent.dieIndex+1}, valor ${s.intent.dieValue}?`:'';
-  if(unified())$('confirm-search').textContent=s.intent?.dieValue?'Buscar · gastar dado '+s.intent.dieValue:'Buscar · elegí un dado';
+  if(unified())$('confirm-search').textContent=s.intent?.dieValue?'Buscar · dado '+s.intent.dieValue:'Buscar';
   $('confirm-search').disabled=!picking||s.intent.dieIndex===null;
   const nextDiceKey=picking?JSON.stringify([s.intent.actorId,q?.dice,s.intent.dieIndex]):'';
   if(nextDiceKey!==diceKey){diceKey=nextDiceKey;$('search-dice').replaceChildren(...(picking?(q?.dice||[]).map(d=>diceButton(d,s.intent.dieIndex)):[]));}
   const nextCardsKey=op?JSON.stringify([op.operationId,op.status,op.cards,busy]):'';
   if(nextCardsKey!==cardsKey){cardsKey=nextCardsKey;const cards=(op?.cards||[]).map(c=>{
-   const card=el('article',undefined,'search-card');card.append(el('small','Carta '+(c.index+1)+' · '+(c.kind||'Objeto')),el('h3',c.name),el('p',c.description));
+   // Ajustes de la sesión 7: en la interfaz unificada toda la carta es el botón «Conservar …»
+   // (con foco y aria-label); el controlador la conserva una sola vez (pasa a «sending»).
+   if(unified()){const card=el('button',undefined,'search-card');card.type='button';card.dataset.card=String(c.index);card.disabled=busy;card.setAttribute('aria-label','Conservar '+c.name);card.append(el('small',c.kind||'Objeto'),el('strong',c.name),el('span',c.description,'search-card-text'),el('span','Tocá para conservarla','search-card-keep'));return card;}
+   const card=el('article',undefined,'search-card');card.append(el('small',c.kind||'Objeto'),el('h3',c.name),el('p',c.description));
    const button=el('button','Conservar '+c.name);button.dataset.card=String(c.index);button.disabled=busy;card.append(button);return card;
-  });$('search-cards').replaceChildren(...cards);}
+  });$('search-cards').replaceChildren(...cards);$('search-cards').dataset.count=String(cards.length);$('search-panel').dataset.cards=String(Math.min(cards.length,3));}
   $('search-noise').disabled=!choice||busy||!op.canNoise;
   $('search-noise-status').textContent=choice?'Ruido en '+site(op.origin)+': '+op.noise+'. '+(op.canNoise?'Revelar otra carta cuesta +1 ruido.':'No se puede revelar otra carta con ruido ahora.'):'';
   $('search-continue').hidden=!op||op.generalDecision;$('search-continue').disabled=busy;

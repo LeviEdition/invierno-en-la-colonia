@@ -1,4 +1,4 @@
-import {projectExposureDie} from './exposure-die-geometry.mjs';
+import {projectExposureDie} from './exposure-die-geometry.mjs';import {rollEase} from './presentation-sequence.mjs';
 const ns='http://www.w3.org/2000/svg',views=new WeakMap();
 const path={
  wound:'M0-11C-3-6-8-2-8 3a8 8 0 0 0 16 0C8-2 3-6 0-11Z',
@@ -14,7 +14,7 @@ function mount(el,die){
 export function paintExposureDie(el,step){
  const e=step.exposure;el.hidden=step.stage==='travel'||!e.rolled;if(el.hidden)return;
  // El resultado viene del motor. El reloj solo orienta la malla; nunca tira.
- const die=e.die;if(die?.sides!==12){views.delete(el);el.classList.remove('exposure-d12');el.textContent=step.stage==='roll'?String(1+Math.floor(step.elapsed/80)%6):String(e.value??'');return;}
+ const die=e.die;if(die?.sides!==12){views.delete(el);el.classList.remove('exposure-d12');el.textContent=step.stage==='roll'&&!step.settling?String(1+Math.floor(rollEase(step.progress)*18)%6):String(e.value??'');return;}
  const view=views.get(el)||mount(el,die),rolling=step.stage==='roll',label=rolling?'Tirando…':die.label;
  el.dataset.face=String(die.face);el.dataset.outcome=die.outcome;el.dataset.rolling=String(rolling);
  const aria='Dado de exposición D12: '+label;if(el.getAttribute('aria-label')!==aria)el.setAttribute('aria-label',aria);

@@ -53,6 +53,7 @@ El amarillo solo marca lo que importa: esperanza, peligro, lo que hay que mirar 
 - Las tres tienen licencia SIL OFL: se incluyen en el repositorio (con su licencia) y no se cargan desde un servicio externo, para que el juego funcione sin conexión.
 - Tamaños mínimos en el teléfono: 16 px para narración, 14 px para etiquetas.
 - Descartada: Roboto Slab (duplica el papel de Bitter).
+- **Incluidas desde el informe 123:** Bitter 600 y 700, Alegreya Sans 400, 500 y 700, en `assets/fuentes/` (woff2, latino y latino extendido, con `OFL.txt`). Se usan con `--fuente-titulo` y `--fuente-texto` y `font-display: swap`. Alegreya (con serifa, para la narración) sigue pendiente; mientras tanto, la narración usa Alegreya Sans.
 
 ## 4. Escenas narrativas
 
@@ -97,7 +98,63 @@ Dos condiciones para que sea justo:
 - Acción seleccionada con borde y texto en Lámpara.
 - Señales de estado: heridas en Sangre fría, congelación en Escarcha, igual que los símbolos del D12.
 
+## 8. Interfaz v2 (decisiones del creador, 17/11/2026)
+
+Referencia visual: el lienzo de diseño «Invierno en la Colonia — dirección de interfaz» (claude.ai).
+
+- **Plataforma principal: teléfono en horizontal** (referencia 852×393). Escritorio usa la misma disposición, con el mapa como protagonista y los paneles más livianos. En vertical se muestra un aviso para girar el teléfono.
+- **El mapa manda:** ocupa toda la pantalla; los paneles flotan sobre él, compactos.
+- **Mapa en tonos fríos:** se aprueba el filtro de color sobre la ilustración existente (saturación 0,5, tono −28°, brillo 0,85, contraste 1,05), sin redibujarla. Cierra el pendiente de §7.
+- **Materiales:** chapa corrugada y oxidada en barras y marcos; ~~nieve acumulada en los bordes superiores~~ (retirada de los paneles en el informe 122: queda solo en el mapa); pinos del mapa en algunas esquinas (`assets/interfaz/`). **El óxido es un material, no una señal:** es textura apagada y nunca marca algo importante; la regla de la Lámpara (§2.1) sigue valiendo. Sin guirnaldas de luces.
+- **Papel rasgado** para los recuadros de texto (pensamiento, consecuencia «X recordará eso») y los rótulos de las localidades.
+- **Papel viejo en los paneles de lectura** (informe 122): la barra de acción, las tarjetas de Objetivo y Crisis y la ficha lateral son papel crema amarillento que oscurece hacia los bordes, con fibra y grano finos, un pliegue suave y el borde rasgado. Tres variantes (barra, tarjeta chica, ficha). El texto va en tinta `#2B2219` (secundario `#4E4134`); los botones sobre el papel son chapa oscura con sombra dura `3px 3px 0 #07090C`, y «Terminar turno» va en Lámpara sólida. La nieve queda solo en el mapa: ningún panel la lleva. Las texturas se generan una vez (`scripts/generar-papel.mjs`).
+- **Sangre seca sobre el papel:** marrón oxidado desaturado (referencia `#6A2E22`), oscuro y apagado, nunca el rojo de señal (Sangre fría `#B5473F`): no se lee como herida. Va en capa aparte del papel, para moverla o quitarla sin rehacerlo. Solo en esquinas y bordes, jamás debajo de un número, nombre, botón o dado; como máximo una mancha de borde por panel (la tarjeta de Crisis lleva una más grande). Posiciones fijas por tipo de panel, sorteadas con semilla.
+- **Recurso en peligro:** la chapa lleva anillo y su número en insignia, en Sangre fría (`#B5473F`), solo cuando el motor lo indica (hoy, la comida que no alcanza para la próxima fase de colonia y los residuos desde el tope del motor, `wasteLimit`, hoy 10). Desde los ajustes 2 de la sesión 7, el número queda en su lugar, en Sangre fría, sin insignia.
+- **Tipografía:** variables `--fuente-texto` (Alegreya Sans) y `--fuente-titulo` (Bitter), autoalojadas (§3).
+- **Paneles plegables** (informe 123): las tarjetas de Objetivo y Crisis, la fila de recursos y la ficha se pliegan y despliegan tocando el panel mismo, sin pestañas ni flechas (informe 125): plegado, cualquier parte de la tira lo despliega; desplegado, lo pliegan su encabezado o el papel libre (la ficha, solo su encabezado). Los controles internos (dados, botones, retrato, chapas con globo) nunca pliegan. La única señal es el cursor de mano y un leve aclarado del papel al pasar el mouse; para teclado, cada panel tiene un botón real invisible que muestra el foco sobre el panel entero. Plegadas quedan como una tira que sigue informando («Objetivo 4/7 · ronda 2/8», «Crisis 1/2», recursos con ícono y número). La barra de acción nunca desaparece: plegada conserva retrato, dados y «Terminar turno». Una crisis nueva despliega su tarjeta una vez. La tecla «H» pliega o despliega todo. El estado se recuerda entre partidas.
+- **Globos de las chapas:** al pasar el mouse, con el foco de teclado o con una pulsación larga, cada chapa muestra en papel su nombre y una línea de descripción (los textos de la ficha V9). El globo va debajo de la chapa, sin taparla ni salir de la pantalla.
+- **Cámara** (informe 123): el zoom mínimo cubre el área, así que el mapa nunca deja franjas. El enfoque de una localidad la lleva a cerca del 70 % del área libre, con tope en la resolución del fondo (2).
+- **Recursos como chapas redondas con ícono:** fogata (moral), lata (comida), adulto y chico (indefensos), bolsa (residuos), cuenco (hambre). Desde los ajustes 2 de la sesión 7 son sellos de tinta sobre la barra de papel, con la etiqueta corta debajo del número (ver «Barra superior»).
+- **Dados de acción con puntos**, como dados reales; el D12 conserva su forma y sus símbolos.
+- **Rótulos de las localidades:** aparecen al mover el mouse sobre el mapa, al tocarlo o al desplazarlo, y se desvanecen tras unos segundos sin interacción; la localidad seleccionada conserva el suyo.
+- **Movimiento:** los paneles entran y salen con transiciones fluidas, no de golpe; el cambio de localidad es rápido pero suave. Se respeta la preferencia de movimiento reducido. Desde el informe 122: fundido y 8–12 px desde el borde de donde viene cada panel, 200 ms de entrada y 180 ms de salida, solo opacidad y transformaciones, interrumpibles; con movimiento reducido, sin desplazamiento ni escala.
+- **Resultados de encrucijadas** en viñetas grandes, de borde a borde, con la barra de resultado debajo.
+- **Una sola barra para actuar** (informe 126). La barra de abajo es el único lugar de acción de turno. De izquierda a derecha:
+  - **grupo** (ajustes): los retratos de todo el grupo flotan en círculos sobre el borde superior izquierdo de la barra; el activo lleva anillo Lámpara y tocar otro lo hace activo. Sin retrato, iniciales en tinta sobre papel, nunca un círculo vacío. Se pliegan con la barra;
+  - **superviviente activo:** retrato, nombre, localidad, heridas y congelación, y tres ranuras de equipo (herramienta, arma, libro), con borde punteado si están vacías;
+  - **dados**, y «+1 (1 comida)» solo cuando el motor permite mejorar uno;
+  - **acciones:** Buscar, Atacar y Moverse, siempre visibles, y «Más»;
+  - **«Terminar turno»**, separado por una línea de puntos.
+
+  Una acción apagada sigue a la vista y muestra en el globo de papel el motivo que da el motor. Si el motor no da motivo, no tiene globo.
+- **Abanico de «Más»:** un papel rasgado sobre la barra con las demás acciones de turno que el motor permite en ese momento (barricada, limpiar residuos, atraer, regresar, habilidad, «Cartas»). Se cierra al elegir, con Esc o tocando fuera.
+- **Tira de la acción en curso:** una línea de papel sobre la barra que dice qué falta («Buscar en Biblioteca · elegí un dado de 3 o más») y lleva «Cancelar (Esc)». Los dados que el motor acepta se marcan en Lámpara y los demás se apagan.
+- **Papel al centro:** lo que resuelve una acción (dados, cartas reveladas grandes y lado a lado, curación, crisis, fin de turno) va en papel rasgado al centro, sin tapar la barra. El movimiento no tapa el mapa: su confirmación es un papel chico justo sobre la barra.
+- **Expediente** (la antigua ficha): solo información. Desde los ajustes 2 de la sesión 7 es un legajo con pestañas (ver «Legajo»); «Ajustes» y «Ayuda y atajos» están en el menú. Se abre y se cierra con el retrato o la tecla E, y se cierra también con Esc. Cerrado no ocupa pantalla. Tocar una ficha del mapa no lo abre: la hace activa en la barra.
+- **Atajos de escritorio:**
+  - B buscar, A atacar, M moverse;
+  - E expediente;
+  - 1–4 elegir dado en la acción en curso;
+  - Espacio terminar turno (si el foco no está en un botón);
+  - H plegar.
+
+  Ninguno actúa con Ctrl, Alt o Mayús, dentro de un campo de texto, con una ventana obligatoria abierta ni durante el pase de dispositivo.
+- **Casilla de tirada** (un solo componente para todos los dados animados del mapa): papel, título arriba («La noche en Biblioteca · Leo», «Exposición · Leo»), el dado centrado y «Tirando…» o el resultado abajo.
+- **«Cartas»** (antes «Usar carta», en el abanico): papel al centro con dos secciones, «De uso» y «Equipables» (las que el motor deja equipar al superviviente activo, cada una con «Equipar»). Una sección vacía no se muestra. «Equipar» sigue también en el expediente.
+- **Íconos de las ranuras:** herramienta, arma y libro con el mismo trazo (2 px, puntas redondas). El libro tiene tapas, lomo y canto de hojas.
+- **Papel real:** relieve de arrugas y grano de un escaneo (`assets/interfaz/papel-fuente/`), grises en soft-light sobre el crema, con una variable por capa (`--papel-arrugas`, `--papel-grano`). Los bordes rasgados se generan con código: irregulares, con fibras y alguna muesca, distintos por panel y fijos (semilla por panel). La sangre seca y el oscurecido de bordes siguen en sus capas.
+- **Tipografía en toda la interfaz:** la base de la página es Alegreya Sans, también en la barra superior, el zoom, el menú, los avisos y los rótulos. Los títulos y los números destacados (chapas, ronda, turno, contadores) van en Bitter.
+- **Un solo estilo de botón** (ajustes 2): todos los botones de acción (barra, abanico, papeles centrales, zoom, menú) son tinta sobre papel con sombra dura, como «Usar». Apagados: desaturados, sin sombra, con el motivo en el globo. **Lámpara sólido** solo para «Terminar turno» y para la acción principal de cada papel central (una por papel). Ningún bloque oscuro genérico.
+- **Papel de búsqueda:** mide según la cantidad de cartas (1, 2 o 3). Toda la carta es el botón «Conservar …».
+- **Nada sobre el papel central:** mientras está abierto, Objetivo y Crisis se pliegan solas, sin cambiar lo guardado, y los rótulos del mapa quedan debajo.
+- **Objetivo y Crisis:** del mismo ancho, en columna, debajo de la barra del zoom con el mismo margen. Plegadas, sus tiras también. Textos: «0 de 9 muestras · ronda 1 de 10» y «Si falla: 1 herida al de menor influencia en la colonia» (con artículo en todas las consecuencias).
+- **Papeles centrales: opciones alineadas** (ajustes 2). Las opciones del mismo tipo (dados, cartas, destinos, supervivientes, elecciones) miden lo mismo y van en su propia fila o grilla. Las acciones van abajo a la derecha, a la misma altura, con textos cortos («Mejorar · 1 comida», «Cancelar»). Un solo título por papel y una línea de explicación. Los dados son casillas cuadradas iguales con puntos, como en la barra; el elegido lleva borde Lámpara, sin la palabra «seleccionado». Sin desplegables de «forma de…»: una alternativa sin dado (habilidad) es una casilla más del mismo tamaño («Sin dado · Manos hábiles»), y debajo va una línea en lenguaje claro, con singular y plural correctos («Construye 1 barricada en Biblioteca · quedan 2 accesos libres»). La acción principal apagada dice en su globo qué falta («Elegí un dado»).
+- **Cartas de tamaño único** (ajustes 2): 220 × 336 px en búsqueda, «Cartas» y mochila, medidas para el texto más largo previsto (220 caracteres, «Hacha de bombero»), con la letra de siempre (15 px). Las cortas quedan con aire abajo, el lugar de la futura ilustración. Las copias iguales van en una sola ficha con «×N». Un papel que no entra muestra «Más abajo ▾» con un fundido en el borde y se desplaza con rueda, teclado y tacto.
+- **Barra superior** (ajustes 2): papel rasgado, como tarjetas y barra; ronda, turno y recursos van en sellos de tinta con el número en Bitter y la etiqueta corta debajo (Ronda, Turno, Moral, Comida, Indefensos, Residuos, Hambre). La moral es la chapa más grande, con anillo. El zoom y el menú también son papel.
+- **Legajo** (ajustes 2): pestañas arriba (Superviviente, Mochila, Colonia, Registro). Superviviente: foto con clip, apenas torcida, con «Legajo n.º X»; nombre en Bitter, oficio, rol, localidad y grupo; si hace guardia esta noche, un **sello de tinta azul oscura** «Guardia · recibe la tirada esta noche» (nunca rojo); Influencia, Ataque y Búsqueda en tres medallones; el daño con los símbolos del mapa en casillas llenas o vacías hasta el límite de muerte, y «muere a los N»; la habilidad a la vista, con su tipo (automática, botón o reacción) y si está disponible o ya se usó; tres ranuras de equipo iguales a las de la barra. Sin dados (están en la barra) ni desplegable de superviviente (se cambia tocando el grupo). Queda lugar para la ilustración y una o dos líneas de historia, que no se muestran mientras no haya datos. Se cierra con una «×» de papel, como cualquier botón; si no entra, se desplaza con «Más abajo ▾» (ajustes 3). «Ya se movió» va en su propia línea, debajo del daño. Si la habilidad es de botón, la ficha trae el botón con su verbo («Curar sin dado», «Construir sin dado»), apagado con el motivo cuando no se puede (ajustes 5).
+- **Toque doble** (ajustes 2): el primer toque sobre un superviviente (mapa o grupo flotante) lo hace activo; uno sobre el que ya es activo abre su legajo. El retrato de la barra y la tecla E siguen abriéndolo. Nunca ejecuta una acción, y en el pase de dispositivo no abre nada.
+
 ## 7. Pendiente
 
-- **Ajuste de color del mapa aprobado:** el mapa es violeta y la paleta nueva es azul y gris. Probar un ajuste de color sobre la ilustración existente, sin redibujarla, y decidir si se adopta.
+- ~~Ajuste de color del mapa~~: resuelto en §8 (filtro frío aprobado).
 - Sets de expresiones de los supervivientes y viñetas de la primera encrucijada con la paleta nueva.

@@ -1,0 +1,226 @@
+/* Interfaz v2, sesión 4 (informe 122; guía 109 §8): papel viejo en los paneles de lectura,
+   barra de acción permanente abajo y tarjetas de Objetivo y Crisis arriba a la izquierda.
+   La chapa sigue en la fila superior; la nieve queda solo en el mapa.
+   Texturas: scripts/generar-papel.mjs (assets/interfaz/papel/). Manchas: manchas.css. */
+:root{
+ /* Tipografía sin decidir (109 §3): se cambia acá, en un solo lugar. Sin fuentes en el repo. */
+ --fuente-texto:'Alegreya Sans',Georgia,'Times New Roman',serif;
+ --fuente-titulo:'Bitter',Georgia,'Times New Roman',serif;
+ /* Tinta sobre papel (contraste comprobado en el informe 122). */
+ --tinta:#2B2219;--tinta-suave:#4E4134;
+ --peligro:#B5473F;--sombra-dura:3px 3px 0 #07090C;
+ --v2-bar:72px;--v2-bottom:calc(var(--v2-bar) + 2*var(--v2-gap));
+}
+
+/* ── Papel: capa del fondo (::before) con tono por variante y grano multiplicado encima. La
+   mancha va en su propio elemento (.mancha), entre el papel y el contenido. ── */
+body[data-interfaz=v2] #map-app :is(.paper-card,#action-bar,#dossier){isolation:isolate;color:var(--tinta);font-family:var(--fuente-texto)}
+body[data-interfaz=v2] #map-app :is(.paper-card,#action-bar,#dossier)::before{content:'';position:absolute;inset:0;z-index:-1;clip-path:var(--torn);background:url(../../../assets/interfaz/papel/papel-grano.png) 0 0/128px 128px repeat,url(../../../assets/interfaz/papel/papel-tarjeta.png) 0 0/100% 100% no-repeat;background-blend-mode:multiply,normal;pointer-events:none}
+body[data-interfaz=v2] #map-app #action-bar::before{background-image:url(../../../assets/interfaz/papel/papel-grano.png),url(../../../assets/interfaz/papel/papel-barra.png)}
+body[data-interfaz=v2] #map-app #dossier::before{clip-path:var(--torn-lg);background-image:url(../../../assets/interfaz/papel/papel-grano.png),url(../../../assets/interfaz/papel/papel-ficha.png)}
+body[data-interfaz=v2] #map-app .mancha{position:absolute;z-index:-1;pointer-events:none}
+body[data-interfaz=v2][data-panel-open=false] #map-app #dossier>.mancha{display:none}
+.v2-sr{position:absolute!important;width:1px;height:1px;margin:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+/* Botones sobre papel: chapa oscura con sombra dura; «Terminar turno» en Lámpara sólida. */
+body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button:not(#bar-portrait):not(#objective-details):not(#crisis-details):not(.fold-hit){min-height:44px;padding:5px 12px;border:2px solid var(--tinta);border-radius:3px;background:#F3E9D2;color:var(--tinta);font:600 14px/1.1 var(--fuente-texto);box-shadow:var(--sombra-dura);cursor:pointer}
+/* Ajustes 2 de la sesión 7: un solo estilo de botón, tinta sobre papel con sombra dura; apagado, desaturado y sin sombra (el motivo va en el globo). */
+body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button:not(#bar-portrait):not(#objective-details):not(#crisis-details):not(.fold-hit):disabled{background:#E4DCCB;color:#6F6457;border-color:#8C8070;box-shadow:none;filter:saturate(0);cursor:not-allowed}
+body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button:not(#bar-portrait):not(#objective-details):not(#crisis-details):not(.fold-hit):active:not(:disabled){translate:2px 2px;box-shadow:1px 1px 0 #07090C}
+body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button:disabled{opacity:.45;box-shadow:none;cursor:default}
+/* Misma cadena que la regla general, con el id del botón: gana sin !important. */
+body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button#finish-turn:not(#bar-portrait):not(#objective-details):not(#crisis-details):not(.fold-hit){background:var(--lampara);color:#1A1408;border-color:#07090C}
+body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button:focus-visible{outline:2px solid var(--lampara);outline-offset:2px}
+
+/* ── Disposición v2 en horizontal y pantallas anchas ── */
+@media (min-width:601px),(orientation:landscape){
+ /* Barra de acción permanente abajo: superviviente, dados, acciones y turno. */
+ body[data-interfaz=v2] #map-app #action-bar{position:absolute;z-index:30;left:var(--v2-gap);right:var(--v2-gap);bottom:var(--v2-gap);height:var(--v2-bar);box-sizing:border-box;display:flex;align-items:center;gap:14px;padding:6px 28px 6px 48px;--v2-shift:0 10px}
+ body[data-interfaz=v2] #map-app #bar-who{display:flex;align-items:center;gap:10px;min-width:0;flex:0 1 250px}
+ body[data-interfaz=v2] #map-app #bar-who[hidden]{display:none}
+ body[data-interfaz=v2] #map-app #bar-portrait{flex:none;width:52px;height:52px;padding:0;border:2px solid var(--tinta);border-radius:50%;overflow:hidden;background:#1C242D;cursor:pointer;display:grid;place-items:center}
+ body[data-interfaz=v2] #map-app #bar-portrait img{width:100%;height:100%;object-fit:cover}
+ body[data-interfaz=v2] #map-app #bar-initials{color:var(--nieve);font:700 16px var(--fuente-texto)}
+ body[data-interfaz=v2] #map-app #bar-who[data-preview=true] #bar-portrait{border-style:dashed}
+ body[data-interfaz=v2] #map-app .bar-identity{display:grid;grid-template-columns:auto auto;align-items:baseline;column-gap:8px;row-gap:1px;min-width:0}
+ body[data-interfaz=v2] #map-app #bar-name{grid-column:1/-1;font:700 16px/1.15 var(--fuente-titulo);color:var(--tinta);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ body[data-interfaz=v2] #map-app :is(#bar-role,#bar-location){font:13px/1.2 var(--fuente-texto);color:var(--tinta-suave);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ body[data-interfaz=v2] #map-app .bar-damage{grid-column:1/-1;display:flex;gap:4px;min-height:0}
+ body[data-interfaz=v2] #map-app .bar-damage:empty{display:none}
+ /* Las señales de daño van sobre chapa oscura, como en el mapa: conservan Sangre fría y
+    Escarcha con contraste, y nunca se confunden con la sangre seca del papel. */
+ body[data-interfaz=v2] #map-app .bar-damage .damage-mark{padding:1px 5px 1px 4px;border:1px solid var(--acero);border-radius:4px;background:var(--noche);font:700 12px/1.2 var(--fuente-ui,system-ui),sans-serif}
+ body[data-interfaz=v2] #map-app .bar-damage .damage-count{color:var(--nieve)}
+ body[data-interfaz=v2] #map-app .bar-actions{display:flex;gap:8px;margin-left:auto}
+ body[data-interfaz=v2] #map-app #action-bar #turn-cycle-controls{display:flex;align-items:center;gap:8px;padding:0;background:none;border:0}
+ body[data-interfaz=v2] #map-app #action-bar #cycle-status{max-width:150px;font:12px/1.2 var(--fuente-texto);color:var(--tinta-suave)}
+ body[data-interfaz=v2] #map-app #action-bar #cycle-status:empty{display:none}
+
+ /* Tarjetas de Objetivo y Crisis, arriba a la izquierda, debajo de la cámara. */
+ body[data-interfaz=v2] #map-app #public-summaries{top:var(--v2-top);left:var(--v2-gap);right:auto;bottom:auto;width:244px;max-height:none;display:flex;flex-direction:column;gap:8px;padding:0;background:none;border:0;border-radius:0;box-shadow:none;z-index:29;--v2-shift:-10px 0}
+ body[data-interfaz=v2] #map-app .paper-card{position:relative;padding:9px 12px 10px}
+ body[data-interfaz=v2] #map-app .paper-card>div{display:flex;flex-direction:column;align-items:stretch;gap:6px}
+ body[data-interfaz=v2] #map-app :is(#objective-details,#crisis-details){display:grid;gap:4px;width:100%;padding:0;margin:0;border:0;background:none;box-shadow:none;color:inherit;text-align:left;font:inherit;cursor:pointer}
+ body[data-interfaz=v2] #map-app .card-text{display:grid;gap:1px;padding-right:22px}
+ body[data-interfaz=v2] #map-app #crisis-card .card-text{padding-right:36px}
+ body[data-interfaz=v2] #map-app .card-title{font:700 14px/1.2 var(--fuente-titulo);color:var(--tinta)}
+ body[data-interfaz=v2] #map-app .card-progress{font:600 13px/1.25 var(--fuente-texto);color:var(--tinta);font-variant-numeric:lining-nums tabular-nums}
+ body[data-interfaz=v2] #map-app .card-meter{display:block;height:6px;border-radius:3px;background:#2B22192e;overflow:hidden}
+ body[data-interfaz=v2] #map-app .card-meter>i{display:block;height:100%;background:var(--tinta);transform-origin:left center;transform:scaleX(0)}
+ body[data-interfaz=v2] #map-app #crisis-consequence{font:12px/1.25 var(--fuente-texto);color:var(--tinta-suave)}
+ /* Objetivos táctiles de 44 px como mínimo, también en las tarjetas. */
+ body[data-interfaz=v2] #map-app #crisis-contribute{align-self:flex-start;font-size:13px}
+ body[data-interfaz=v2] #map-app :is(#objective-details,#crisis-details){min-height:44px}
+ body[data-interfaz=v2] #map-app #public-summaries::after{display:none}
+
+ /* Ficha lateral: detalle en papel; termina arriba de la barra y no la tapa. */
+ body[data-interfaz=v2] #map-app #dossier,body[data-interfaz=v2][data-sheet-expanded=true] #map-app #dossier{background:none;border:0;border-radius:0;box-shadow:none;padding-bottom:28px;--v2-shift:12px 0}
+ body[data-interfaz=v2] #map-app #dossier .panel-heading{background:none;color:var(--tinta);border:0}
+ body[data-interfaz=v2] #map-app #dossier .panel-heading h2{color:var(--tinta);font-family:var(--fuente-titulo)}
+ body[data-interfaz=v2] #map-app #dossier .panel-content{color:var(--tinta)}
+ body[data-interfaz=v2][data-panel-open=false] #map-app #dossier{bottom:calc(var(--v2-bottom) + 2px);padding-bottom:0}
+ body[data-interfaz=v2] #map-app #dossier::after{display:none}
+
+ /* Avisos sobre el mapa: libres de la barra. */
+ body[data-interfaz=v2] #map-app #move-sequence{bottom:calc(var(--v2-bottom) + 6px)}
+ body[data-interfaz=v2][data-presentation=map] #movement-result:not(:empty){bottom:calc(var(--v2-bottom) + 6px)}
+}
+/* Teléfono horizontal (852×393): misma pieza, más compacta. */
+@media (max-height:500px) and (orientation:landscape){
+ :root{--v2-bar:54px}
+ body[data-interfaz=v2] #map-app #action-bar{gap:8px;padding:4px 26px 4px 44px}
+ body[data-interfaz=v2] #map-app #bar-portrait{width:40px;height:40px}
+ body[data-interfaz=v2] #map-app :is(#bar-role,#bar-location){display:none}
+ body[data-interfaz=v2] #map-app #bar-name{font-size:14px}
+ body[data-interfaz=v2] #map-app #bar-who{flex-basis:150px}
+ body[data-interfaz=v2] #map-app .bar-die{width:24px;height:24px;padding:3px}
+ body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button:not(#bar-portrait):not(#objective-details):not(#crisis-details):not(.fold-hit){min-height:44px;padding:3px 8px;font-size:12px}
+ body[data-interfaz=v2] #map-app #action-bar #cycle-status{display:none}
+ body[data-interfaz=v2] #map-app #public-summaries{width:196px;gap:5px}
+ body[data-interfaz=v2] #map-app .paper-card{padding:5px 9px 6px}
+ body[data-interfaz=v2] #map-app .card-title{font-size:12px}
+ body[data-interfaz=v2] #map-app .card-progress{font-size:11px}
+ body[data-interfaz=v2] #map-app #crisis-consequence{display:none}
+}
+
+/* ── Dados de la barra: con puntos; elegido con borde Lámpara, usado en gris (del motor). ── */
+body[data-interfaz=v2] #map-app .bar-dice{display:flex;gap:7px;align-items:center}
+body[data-interfaz=v2] #map-app .bar-dice[hidden]{display:none}
+body[data-interfaz=v2] #map-app .bar-die{position:relative;display:grid;grid-template:repeat(3,1fr)/repeat(3,1fr);width:30px;height:30px;padding:4px;box-sizing:border-box;border:1px solid #4A3D2E;border-radius:5px;background:#F4EEDC;box-shadow:2px 2px 0 #07090C}
+body[data-interfaz=v2] #map-app .bar-die.numeric{display:grid;place-items:center;font:700 15px var(--fuente-texto);color:var(--tinta)}
+body[data-interfaz=v2] #map-app .bar-die .pip{width:5px;height:5px;align-self:center;justify-self:center;border-radius:50%;background:var(--tinta)}
+body[data-interfaz=v2] #map-app .bar-die::before{content:'';position:absolute;inset:-1px;border-radius:5px;background:#7E8389;opacity:0}
+body[data-interfaz=v2] #map-app .bar-die::after{content:'';position:absolute;inset:-5px;border:2px solid var(--lampara);border-radius:8px;opacity:0}
+body[data-interfaz=v2] #map-app .bar-die.is-used::before{opacity:.85}
+body[data-interfaz=v2] #map-app .bar-die.is-used .pip{opacity:.5}
+body[data-interfaz=v2] #map-app .bar-die.is-chosen::after{opacity:1}
+body[data-interfaz=v2] #map-app .bar-die .pip{position:relative}
+
+/* ── Recurso en peligro: anillo y número en insignia, en el rojo de señal (#B5473F). ── */
+body[data-interfaz=v2] #map-app .stats .resource{position:relative}
+body[data-interfaz=v2] #map-app .stats .resource.is-danger{border-color:var(--peligro);box-shadow:0 0 0 1px var(--peligro)}
+body[data-interfaz=v2] #map-app .stats .resource.is-danger dd{position:absolute;top:-7px;right:-9px;min-width:18px;padding:2px 4px;box-sizing:border-box;border-radius:9px;background:var(--peligro);color:var(--nieve);font-size:12px;text-align:center}
+body[data-interfaz=v2] #map-app .stats .resource.is-danger .resource-icon{fill:var(--peligro);color:var(--peligro)}
+
+/* ── Transiciones (informe 122): solo opacity y transform; entrada con fundido y 8–12 px desde
+   su borde (--v2-shift), 200 ms ease-out; salida de 180 ms (experiencia/transitions.mjs). Con
+   movimiento reducido no hay desplazamiento ni escala: cambios instantáneos o fundidos de 60 ms. ── */
+@keyframes v2-slide{from{opacity:0;translate:var(--v2-shift,0 8px)}}
+@media (prefers-reduced-motion:no-preference){
+ body[data-interfaz=v2]:not([data-motion=reduced])[data-panel-open=true] #map-app #dossier,
+ body[data-interfaz=v2]:not([data-motion=reduced]) #map-app #action-bar,
+ body[data-interfaz=v2]:not([data-motion=reduced]) #map-app #public-summaries,
+ body[data-interfaz=v2]:not([data-motion=reduced]) #floating-menu:not([hidden]){animation:v2-slide var(--v2-in) ease-out}
+ /* La ficha entra entera; su contenido no repite la entrada. */
+ body[data-interfaz=v2]:not([data-motion=reduced]) #panel-content:not([hidden]){animation:none}
+ body[data-interfaz=v2]:not([data-motion=reduced]) #map-app .card-meter>i{transition:transform 300ms ease-out}
+ body[data-interfaz=v2]:not([data-motion=reduced]) #map-app .bar-die::before,
+ body[data-interfaz=v2]:not([data-motion=reduced]) #map-app .bar-die::after,
+ body[data-interfaz=v2]:not([data-motion=reduced]) #map-app .bar-die .pip{transition:opacity 200ms ease-out}
+}
+body[data-interfaz=v2][data-motion=reduced] #map-app .bar-die::before,body[data-interfaz=v2][data-motion=reduced] #map-app .bar-die::after,body[data-interfaz=v2][data-motion=reduced] #map-app .bar-die .pip{transition:opacity 60ms linear}
+@media (prefers-reduced-motion:reduce){
+ body[data-interfaz=v2] #map-app .bar-die::before,body[data-interfaz=v2] #map-app .bar-die::after,body[data-interfaz=v2] #map-app .bar-die .pip{transition:opacity 60ms linear}
+}
+#floating-menu{--v2-shift:0 -8px}
+
+/* Ficha en papel: los botones que eran transparentes sobre la pizarra llevan ahora chapa
+   oscura, para que su texto claro siga legible. Los que ya tienen fondo propio no cambian. */
+body[data-interfaz=v2] #map-app #dossier :where(button:not(.die):not([data-ambient]):not(#ambient-enabled)){background-color:#F3E9D2;border-color:var(--tinta);color:var(--tinta)}
+@media (max-height:500px) and (orientation:landscape){body[data-interfaz=v2] #map-app #public-summaries{top:calc(var(--v2-top) + 6px)}}
+/* Notas que estaban en tono claro para la pizarra: en tinta suave sobre el papel. */
+body[data-interfaz=v2] #map-app #dossier :is(.dice-section p,.provisional-note,dt,#locality-description){color:var(--tinta-suave)}
+/* Herramientas de desarrollo (solo con ?dev): arriba de la barra, sin tapar el retrato. */
+@media (min-width:601px),(orientation:landscape){body[data-interfaz=v2] #development-tools{bottom:calc(var(--v2-bottom) + 4px)}}
+body[data-interfaz=v2] #map-app #dossier #boost-reason{margin-top:6px}
+
+/* ══ Sesión 5 (informe 123): paneles plegables y globos de las chapas ══ */
+/* Sesión 6 (informe 125): sin pestañas ni flechas; el panel mismo se pliega al tocarlo (folds.mjs,
+   delegación). Para teclado y lectores, cada panel conserva un botón real (.fold-hit) invisible que
+   muestra el foco sobre el panel entero. Señal de que se puede tocar: cursor y un leve cambio de tono. */
+body[data-interfaz=v2] #map-app [data-fold-zone]{pointer-events:auto;cursor:pointer}
+body[data-interfaz=v2] #map-app [data-fold-zone] :is(button,select,input,[tabindex]:not([data-fold-pass]),[data-no-fold]){cursor:auto}
+body[data-interfaz=v2] #map-app [data-fold-zone] button{cursor:pointer}
+body[data-interfaz=v2] #map-app [data-fold-zone] [data-fold-pass]{cursor:pointer}
+body[data-interfaz=v2]:not([data-panel-open=false]) #map-app #dossier[data-fold-zone]{cursor:auto}
+body[data-interfaz=v2]:not([data-panel-open=false]) #map-app #dossier[data-fold-zone] .panel-heading{cursor:pointer}
+body[data-interfaz=v2] #map-app .fold-hit{position:absolute;width:1px;height:1px;min-width:0;min-height:0;margin:-1px;padding:0;border:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;background:none;box-shadow:none}
+body[data-interfaz=v2] #map-app [data-fold-zone]:has(>.fold-hit:focus-visible){outline:2px solid var(--lampara);outline-offset:2px}
+body[data-interfaz=v2] #map-app :is(.paper-card,#action-bar)[data-fold-zone]:hover:not(:has(:is(button,select,[tabindex]:not([data-fold-pass]),[data-no-fold]):hover))::before,
+body[data-interfaz=v2][data-panel-open=false] #map-app #dossier:hover:not(:has(button:hover))::before{filter:brightness(1.07) sepia(.12)}
+body[data-interfaz=v2] #map-app .topbar[data-fold-zone]:hover:not(:has(:is(button,[tabindex]:not([data-fold-pass])):hover)){background-color:color-mix(in srgb,var(--chapa) 88%,#E8DCC0)}
+body[data-interfaz=v2]:not([data-panel-open=false]) #map-app #dossier .panel-heading:hover:not(:has(button:hover)){background:#E8DCC026}
+
+/* Plegadas: una tira mínima que sigue informando. */
+body[data-interfaz=v2] #map-app .fold-strip{display:none;font:700 13px/1.2 var(--fuente-texto);color:var(--tinta);white-space:nowrap;font-variant-numeric:lining-nums tabular-nums}
+body[data-interfaz=v2] #map-app .paper-card[data-folded=true]{width:max-content;padding:6px 12px}
+body[data-interfaz=v2] #map-app .paper-card[data-folded=true] .fold-strip{display:block}
+body[data-interfaz=v2] #map-app .paper-card[data-folded=true]>:is(button:not(.fold-hit),div,.mancha),body[data-interfaz=v2] #map-app .paper-card[data-folded=true] :is(#objective-details,#crisis-details){display:none}
+body[data-interfaz=v2] #map-app #public-summaries:has(.paper-card[data-folded=true]){width:auto;align-items:flex-start}
+body[data-interfaz=v2] #map-app .topbar[data-folded=true] .stats>div:not(.resource){display:none}
+body[data-interfaz=v2] #map-app #action-bar[data-folded=true]{right:auto;height:58px;gap:10px;padding-right:12px}
+body[data-interfaz=v2] #map-app #action-bar[data-folded=true] :is(.bar-identity,#bar-actions,#cycle-status,.mancha){display:none}
+body[data-interfaz=v2] #map-app #action-bar[data-folded=true] #bar-portrait{width:44px;height:44px}
+
+/* Globo de las chapas: papel, debajo de la chapa, sin salir de la pantalla (stat-tips.mjs). */
+body[data-interfaz=v2] #map-app .stats>div{pointer-events:auto;cursor:help}
+body[data-interfaz=v2] #map-app .stats>div:focus-visible{outline:2px solid var(--lampara);outline-offset:2px}
+body[data-interfaz=v2] .stat-tip{position:fixed;z-index:60;max-width:260px;padding:9px 12px 10px;box-sizing:border-box;color:var(--tinta);font:13px/1.35 var(--fuente-texto);pointer-events:none;isolation:isolate}
+body[data-interfaz=v2] .stat-tip::before{content:'';position:absolute;inset:0;z-index:-1;clip-path:var(--torn);background:url(../../../assets/interfaz/papel/papel-grano.png) 0 0/128px 128px,url(../../../assets/interfaz/papel/papel-tarjeta.png) 0 0/100% 100%;background-blend-mode:multiply,normal}
+body[data-interfaz=v2] .stat-tip[hidden]{display:none}
+body[data-interfaz=v2] .stat-tip-title{display:block;margin-bottom:2px;font:700 14px/1.2 var(--fuente-titulo)}
+@media (prefers-reduced-motion:no-preference){body[data-interfaz=v2]:not([data-motion=reduced]) .stat-tip:not([hidden]){animation:v2-slide 160ms ease-out;--v2-shift:0 8px}}
+
+/* ══ Ajustes de la sesión 7 (informe 126, «Ajustes»; guía 109 §8): papel real y tipografía ══ */
+/* Relieve (arrugas, repetible) y grano (escaneo, no repetible) de assets/interfaz/papel-fuente/:
+   capas grises (128 = sin efecto) en soft-light sobre el crema. Una variable por capa; con
+   estos valores la tinta queda por encima de AA en el 99 % del papel (tests/interfaz-v2-sesion-7-ajustes). Bordes
+   y desplazamiento de las texturas: experiencia/papel.mjs (semilla por panel). */
+:root{
+ --papel-arrugas:.8;--papel-grano:.7;
+ --papel-arrugas-img:url(../../../assets/interfaz/papel-fuente/papel-arrugas.webp);
+ --papel-grano-img:url(../../../assets/interfaz/papel-fuente/papel-grano.webp);
+}
+/* Paneles con el crema en ::before: un elemento propio (.papel-relieve), primero entre sus
+   hijos, debajo de la mancha y del contenido. Dentro, grano y arrugas se combinan alrededor de
+   128 y el conjunto se mezcla en soft-light. */
+body[data-interfaz=v2] :is(#map-app,body) .papel-relieve{position:absolute;inset:0;z-index:-1;clip-path:var(--torn);background:#808080;mix-blend-mode:soft-light;pointer-events:none}
+body[data-interfaz=v2] #map-app #dossier>.papel-relieve{clip-path:var(--torn-lg)}
+body[data-interfaz=v2] .papel-relieve::before,body[data-interfaz=v2] .papel-relieve::after{content:'';position:absolute;inset:0}
+body[data-interfaz=v2] .papel-relieve::before{background:var(--papel-grano-img) var(--papel-x,0) var(--papel-y,0)/max(1024px,100%) auto no-repeat;opacity:var(--papel-grano)}
+body[data-interfaz=v2] .papel-relieve::after{background:var(--papel-arrugas-img) var(--papel-x,0) var(--papel-y,0)/640px 640px repeat;opacity:var(--papel-arrugas);mix-blend-mode:overlay}
+/* Paneles con el crema en su propio fondo (abanico, tira, movimiento, tirada, papel del
+   centro): el grano en ::before y las arrugas en ::after, cada una en soft-light. */
+body[data-interfaz=v2] #map-app :is(#bar-fan,#action-strip,#move-planner,#move-sequence[data-kind=roll],#action-stage>section,#action-stage>dialog){isolation:isolate}
+body[data-interfaz=v2] #map-app #action-stage>:is(section,dialog){position:relative}
+body[data-interfaz=v2] #map-app :is(#bar-fan,#action-strip,#move-planner,#move-sequence[data-kind=roll],#action-stage>section,#action-stage>dialog)::before,
+body[data-interfaz=v2] #map-app :is(#bar-fan,#action-strip,#move-planner,#move-sequence[data-kind=roll],#action-stage>section,#action-stage>dialog)::after{content:'';position:absolute;inset:0;z-index:-1;mix-blend-mode:soft-light;pointer-events:none}
+body[data-interfaz=v2] #map-app :is(#bar-fan,#action-strip,#move-planner,#move-sequence[data-kind=roll],#action-stage>section,#action-stage>dialog)::before{background:var(--papel-grano-img) var(--papel-x,0) var(--papel-y,0)/max(1024px,100%) auto no-repeat;opacity:var(--papel-grano)}
+body[data-interfaz=v2] #map-app :is(#bar-fan,#action-strip,#move-planner,#move-sequence[data-kind=roll],#action-stage>section,#action-stage>dialog)::after{background:var(--papel-arrugas-img) var(--papel-x,0) var(--papel-y,0)/640px 640px repeat;opacity:var(--papel-arrugas)}
+
+/* Tipografía en toda la interfaz: base Alegreya Sans; títulos y números destacados (chapas,
+   ronda, turno, contadores) en Bitter. Las reglas heredadas con la fuente del sistema pasan por
+   --fuente-ui, que en v2 vale la fuente de texto. Mismos archivos de assets/fuentes. */
+body[data-interfaz=v2]{--fuente-ui:var(--fuente-texto);font-family:var(--fuente-texto)}
+body[data-interfaz=v2] :is(button,select,input,textarea,output){font-family:inherit}
+body[data-interfaz=v2] #map-app :is(.stats dd,#zoom-value,.bar-die.numeric,.damage-count),body[data-interfaz=v2] :is(#map-app,dialog) :is(h1,h2,h3){--fuente-ui:var(--fuente-titulo);font-family:var(--fuente-titulo)}

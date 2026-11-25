@@ -28,7 +28,7 @@ try{
   const record={reduced,errors};result.records.push(record);
   try{
    await t.begin(p);await t.openMap(p);await t.panel(p);
-   await p.locator('.demo-controls').last().evaluate(el=>el.open=true);await p.selectOption('#survivor-select','h0');await t.frames(p);
+   await t.panel(p);await p.locator('.demo-controls').last().evaluate(el=>el.open=true);await p.selectOption('#survivor-select','h0');await t.frames(p);
    const camera=(await t.view(p)).camera;
    await p.locator('#move-action').click();await p.locator('#keyboard-destinations').evaluate(el=>el.open=true);await p.selectOption('#move-destination','2');
    await p.evaluate(()=>{

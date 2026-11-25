@@ -47,7 +47,7 @@ Abrir en el teléfono la URL «Red local» que imprime Node (no `127.0.0.1`). La
 | Carpeta | Contenido |
 |---|---|
 | `index.html`, `main.mjs`, `map-view.mjs` | Página, arranque del visor y vista del mapa (Phaser) |
-| `estilos/` | `maqueta.css` → `mapa.css` (importa `acciones.css` → `busqueda.css`) → `experiencia.css`, en ese orden |
+| `estilos/` | `maqueta.css` → `mapa.css` (importa `acciones.css` → `busqueda.css`) → `experiencia.css` → `interfaz-v2.css` (disposición v2, activa con `data-interfaz="v2"` en el `body`), en ese orden |
 | `escena/` | Composición: `scene.json` (localidades, fichas, 33 accesos), `environment.json` (vegetación, luces), `atmosphere.json` (nieve, viento, humo), cámara, presentación |
 | `acciones/`, `busqueda/`, `movimiento/`, `ciclo/`, `juego/`, `inventario/`, `experiencia/` | Controladores, paneles y brokers de cada parte de la partida |
 | `estado/` | Proyección pública del motor y observador |

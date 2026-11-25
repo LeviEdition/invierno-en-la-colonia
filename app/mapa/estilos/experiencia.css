@@ -1,5 +1,5 @@
 /* Una superficie contextual; la geometría y el arte del tablero son compartidos. */
-body[data-experience=unified]{font:14px/1.4 system-ui,sans-serif}
+body[data-experience=unified]{font:14px/1.4 var(--fuente-ui,system-ui),sans-serif}
 body[data-experience=unified] button,body[data-experience=unified] select,body[data-experience=unified] input{font:inherit}
 body[data-experience=unified] button,body[data-experience=unified] select,body[data-experience=unified] summary{min-height:44px;box-sizing:border-box}
 body[data-experience=unified] button:focus-visible,body[data-experience=unified] select:focus-visible,body[data-experience=unified] summary:focus-visible{outline:3px solid #ffe4a3;outline-offset:2px}
@@ -29,17 +29,17 @@ body[data-experience=unified] button:focus-visible,body[data-experience=unified]
 #map-app .feedback::before{content:none}
 #map-app #dossier{display:flex;flex-direction:column;min-width:0;min-height:0;max-height:none;width:auto;background:#222b29;border-left:1px solid #867858}
 #map-app .panel-heading{display:flex;align-items:center;gap:6px;padding:3px 8px;flex:none}
-#map-app .panel-heading h2{font:600 18px/1.2 system-ui;flex:1;margin:0;min-width:0}
+#map-app .panel-heading h2{font:600 18px/1.2 var(--fuente-ui,system-ui);flex:1;margin:0;min-width:0}
 #map-app .panel-heading button{min-width:44px;font-size:14px}
 #map-app #panel-content{max-height:none;padding:10px;overscroll-behavior:contain}
 #map-app #panel-content p{font-size:14px;line-height:1.4}
-#map-app #panel-content h2{font:600 19px/1.3 system-ui;margin:0 0 10px}
-#map-app #panel-content h3{font:600 16px/1.3 system-ui;margin:12px 0 6px}
+#map-app #panel-content h2{font:600 19px/1.3 var(--fuente-ui,system-ui);margin:0 0 10px}
+#map-app #panel-content h3{font:600 16px/1.3 var(--fuente-ui,system-ui);margin:12px 0 6px}
 #character-navigation{display:flex;gap:7px;align-items:center;margin-bottom:10px;font-size:13px}
 #character-navigation select{flex:1;min-width:0;width:100%}
 #context-default .identity{gap:10px}#character-name,#locality-name{display:none}
 #context-default #character-identity{font-size:13px}#context-default .portrait-row>img,#context-default .portrait-initials{width:64px;height:64px}
-#context-default .attributes{margin:8px 0}#context-default .attributes dd{font:600 16px system-ui}
+#context-default .attributes{margin:8px 0}#context-default .attributes dd{font:600 16px var(--fuente-ui,system-ui)}
 #context-default #character-inventory{width:100%;margin-bottom:8px}
 #context-default .dice-section{padding-block:8px;border-block:1px solid #5a6156;margin:10px 0}
 #context-default #dice-owner{font-size:14px;margin:0 0 8px}#context-default #dice-status{margin:4px 0;font-size:13px}
@@ -69,7 +69,7 @@ body[data-experience=unified] button:focus-visible,body[data-experience=unified]
 #development-tools{position:fixed;z-index:70;bottom:0;left:0;background:#202825;padding:6px;border:1px solid #a28d64}
 #development-tools nav{display:flex;flex-direction:column}
 body[data-panel-open=false] #map-app #dossier{bottom:30px;width:auto}
-dialog[data-surface=exclusive]{font:14px/1.45 system-ui;color:#e9e2cf;background:#252d29;border:1px solid #a28d64;max-width:calc(100vw - 24px);max-height:calc(100dvh - 24px)}
+dialog[data-surface=exclusive]{font:14px/1.45 var(--fuente-ui,system-ui);color:#e9e2cf;background:#252d29;border:1px solid #a28d64;max-width:calc(100vw - 24px);max-height:calc(100dvh - 24px)}
 dialog[data-surface=exclusive] button{font:inherit;min-height:44px;padding:8px 12px;max-width:100%;margin:4px}
 dialog[data-surface=exclusive]::backdrop{background:#071014b8}
 @media(max-width:950px){
@@ -130,5 +130,5 @@ body[data-panel-open=false] #panel-expand{display:none}
 #map-app .stats dd{min-width:0;white-space:normal;overflow-wrap:anywhere}
 body[data-context-active=true] #movement-result{display:none!important}
 
-#map-notice{position:absolute;z-index:45;top:68px;left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100% - 24px);box-sizing:border-box;padding:10px 14px;border:1px solid #b8a27a;border-radius:6px;background:#222d26f5;color:#fff3d6;box-shadow:0 3px 12px #0008;font:15px/1.4 system-ui;pointer-events:none}
+#map-notice{position:absolute;z-index:45;top:68px;left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100% - 24px);box-sizing:border-box;padding:10px 14px;border:1px solid #b8a27a;border-radius:6px;background:#222d26f5;color:#fff3d6;box-shadow:0 3px 12px #0008;font:15px/1.4 var(--fuente-ui,system-ui);pointer-events:none}
 #zoom-in:disabled{opacity:.45;cursor:default}

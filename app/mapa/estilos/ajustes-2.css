@@ -1,0 +1,164 @@
+/* ══ Ajustes 2 de la sesión 7 (informe 126, «Ajustes 2»; guía 109 §8.7–8.10) ══
+   Solo presentación: cartas de tamaño único, opciones alineadas y acciones abajo a la derecha
+   en los papeles centrales, un solo estilo de botón, barra superior de papel y el expediente
+   como legajo. */
+
+/* ── Cartas de tamaño único ──
+   Medidas para el texto más largo previsto (220 caracteres, «Hacha de bombero» del catálogo
+   nuevo) con la letra de siempre; las cortas quedan con aire abajo, el lugar de la futura
+   ilustración. Búsqueda, «Cartas» y mochila usan las mismas. */
+body[data-interfaz=v2] #map-app{--carta-w:220px;--carta-h:336px;--carta-gap:16px}
+body[data-interfaz=v2] #map-app :is(.carta,#action-stage .search-cards>.search-card,#search-kept-card){box-sizing:border-box;flex:0 0 var(--carta-w);width:var(--carta-w);height:var(--carta-h);min-height:0;margin:0;padding:14px;display:flex;flex-direction:column;align-items:stretch;gap:6px;overflow:hidden;text-align:left;white-space:normal;background:#F7F0DE;color:var(--tinta);border:2px solid var(--tinta);border-radius:4px;box-shadow:var(--sombra-dura);font:15px/1.4 var(--fuente-texto)}
+body[data-interfaz=v2] #map-app :is(.carta,#action-stage .search-cards>.search-card,#search-kept-card) small{font:600 12px/1.2 var(--fuente-texto);color:var(--tinta-suave);text-transform:none}
+body[data-interfaz=v2] #map-app :is(.carta,#action-stage .search-cards>.search-card,#search-kept-card) :is(strong,h3){margin:0;font:700 18px/1.2 var(--fuente-titulo);color:var(--tinta)}
+body[data-interfaz=v2] #map-app :is(.carta,#action-stage .search-cards>.search-card,#search-kept-card) :is(p,.search-card-text,span:not(.carta-copias):not(.search-card-keep)){flex:none;margin:0;font:15px/1.4 var(--fuente-texto);color:var(--tinta)}
+body[data-interfaz=v2] #map-app .carta .carta-copias{font:700 15px var(--fuente-titulo);color:var(--tinta-suave)}
+body[data-interfaz=v2] #map-app .carta>button,body[data-interfaz=v2] #map-app #action-stage .search-card-keep{margin:auto 0 0!important;width:100%}
+body[data-interfaz=v2] #map-app .inventory-cards{display:flex;flex-wrap:wrap;gap:var(--carta-gap);margin:6px 0 14px}
+body[data-interfaz=v2] #map-app #action-stage .search-cards{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--carta-gap)}
+/* El papel de búsqueda mide según la cantidad de cartas (de 1 a 3), con las cartas iguales. */
+body[data-interfaz=v2] #map-app #action-stage>#search-panel{width:min(calc(3*var(--carta-w) + 2*var(--carta-gap) + 44px),100%)}
+body[data-interfaz=v2] #map-app #action-stage>#search-panel[data-cards="1"]{width:min(calc(var(--carta-w) + 44px + 80px),100%)}
+body[data-interfaz=v2] #map-app #action-stage>#search-panel[data-cards="1"] .search-cards>.search-card{flex-basis:var(--carta-w);min-height:0}
+body[data-interfaz=v2] #map-app #action-stage>#search-panel[data-cards="2"]{width:min(calc(2*var(--carta-w) + var(--carta-gap) + 44px),100%)}
+body[data-interfaz=v2] #map-app #action-stage>#search-panel[data-cards="3"]{width:min(calc(3*var(--carta-w) + 2*var(--carta-gap) + 44px),100%)}
+/* «Cartas» con secciones: el papel abarca dos cartas por fila. */
+body[data-interfaz=v2] #map-app #action-stage>#inventory-dialog{width:min(calc(3*var(--carta-w) + 2*var(--carta-gap) + 44px),100%)}
+
+/* ── Papeles centrales: opciones alineadas, acciones abajo a la derecha ── */
+body[data-interfaz=v2] #map-app #action-stage .paper-options{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:12px 0}
+body[data-interfaz=v2] #map-app #action-stage .paper-options:not([data-options=dice])>button{margin:0;width:100%;min-height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-align:center}
+body[data-interfaz=v2] #map-app #action-stage .paper-options>button small{font:600 12px/1.2 var(--fuente-texto);color:var(--tinta-suave)}
+body[data-interfaz=v2] #map-app #action-stage .paper-options[data-options=cards]{grid-template-columns:repeat(auto-fill,var(--carta-w));justify-content:center;gap:var(--carta-gap)}
+body[data-interfaz=v2] #map-app #action-stage .paper-options[data-options=cards]>button{display:flex;align-items:stretch;justify-content:flex-start;text-align:left}
+/* Dados: casillas cuadradas iguales con puntos, como en la barra; el elegido con borde Lámpara. */
+body[data-interfaz=v2] #map-app #action-stage :is(.paper-options[data-options=dice],.search-dice){display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+body[data-interfaz=v2] #map-app #action-stage :is(.die-choice,.search-die){box-sizing:border-box;width:58px;height:58px;min-width:0;min-height:0;margin:0;padding:6px;display:grid;place-items:center;background:#F3E9D2;border:2px solid var(--tinta);border-radius:6px;box-shadow:var(--sombra-dura)}
+body[data-interfaz=v2] #map-app #action-stage :is(.die-choice,.search-die) small{display:none}
+body[data-interfaz=v2] #map-app #action-stage :is(.die-choice,.search-die)[aria-pressed=true]{outline:4px solid var(--lampara);outline-offset:1px;border-color:#07090C}
+body[data-interfaz=v2] #map-app #action-stage :is(.die-choice,.search-die):disabled{filter:saturate(0);opacity:.45;box-shadow:none}
+body[data-interfaz=v2] #map-app #action-stage :is(.paper-actions,.search-buttons){display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;gap:10px;margin:16px 0 0}
+body[data-interfaz=v2] #map-app #action-stage :is(.paper-actions,.search-buttons)>button{margin:0;min-height:44px}
+body[data-interfaz=v2] #map-app #action-stage :is(#search-continue,#search-native,#action-continue,#action-native,#search-noise){display:flex;margin:14px 0 0 auto}
+body[data-interfaz=v2] #map-app #action-stage #search-noise{width:auto}
+/* Una sola acción principal en Lámpara por papel. */
+body[data-interfaz=v2] #map-app #action-stage .paper-actions>button.is-primary{background:var(--lampara);color:#1A1408;border-color:#07090C}
+body[data-interfaz=v2] #map-app #action-stage .paper-actions>button.is-primary:disabled,body[data-interfaz=v2] #map-app #action-stage :is(#confirm-search,#confirm-action,#play-confirm,#inventory-confirm):disabled{background:#E4DCCB;color:#6F6457;border-color:#8C8070;filter:saturate(0)}
+/* Indicador de desplazamiento: si el papel no entra, «Más abajo» con un fundido en el borde. */
+body[data-interfaz=v2] #map-app .scroll-more{position:sticky;bottom:-16px;z-index:2;margin:10px -20px -16px;padding:22px 0 8px;text-align:center;font:700 13px/1 var(--fuente-texto);color:var(--tinta);background:linear-gradient(#EDE2C800,#EDE2C8 60%);pointer-events:none;visibility:hidden}
+body[data-interfaz=v2] #map-app .scroll-more::after{content:' ▾'}
+body[data-interfaz=v2] #map-app :is([data-scroll=bottom],[data-scroll=both])>.scroll-more{visibility:visible}
+
+/* ── Botones de acción: tinta sobre papel; Lámpara solo para «Terminar turno» y la principal ── */
+body[data-interfaz=v2] #map-app :is(#action-strip-cancel,.map-tools button,.map-tools select,#menu-toggle,#floating-menu button){background:#F3E9D2;color:var(--tinta);border:2px solid var(--tinta);border-radius:3px;box-shadow:var(--sombra-dura)}
+body[data-interfaz=v2] #map-app :is(.map-tools button,#floating-menu button):disabled{background:#E4DCCB;color:#6F6457;border-color:#8C8070;box-shadow:none;filter:saturate(0)}
+body[data-interfaz=v2] #map-app #action-bar .action-control>button svg{stroke:currentColor}
+
+/* ── Barra superior de papel (decisión: papel, como tarjetas y barra; las chapas son sellos de
+   tinta con su número y, debajo, la etiqueta corta) ── */
+body[data-interfaz=v2] #map-app :is(.topbar,.map-tools,#floating-menu){background:var(--papel-fondo);background-color:#EDE2C8;background-blend-mode:multiply;color:var(--tinta);border:0;border-radius:0;box-shadow:none;clip-path:var(--torn,none)}
+body[data-interfaz=v2] #map-app .topbar{min-height:58px;padding:4px 14px;filter:none}
+body[data-interfaz=v2] #map-app .stats{align-items:stretch;gap:4px}
+body[data-interfaz=v2] #map-app .stats>div,body[data-interfaz=v2] #map-app .stats>div.resource{display:grid;grid-template-columns:auto auto;grid-template-areas:"icono numero" "etiqueta etiqueta";align-items:center;justify-items:center;column-gap:4px;row-gap:1px;padding:2px 8px;border:0;border-radius:0;background:transparent;min-width:44px}
+body[data-interfaz=v2] #map-app .stats>div:not(.resource):not(.hunger){grid-template-columns:auto;grid-template-areas:"numero" "etiqueta"}
+body[data-interfaz=v2] #map-app .stats>div+div,body[data-interfaz=v2] #map-app .stats>div.resource+div{border-left:1px dashed #2B221944}
+body[data-interfaz=v2] #map-app .stats dt,body[data-interfaz=v2] #map-app .stats .resource dt{grid-area:etiqueta;position:static;width:auto;height:auto;overflow:visible;clip-path:none;font:600 11px/1.1 var(--fuente-texto);color:var(--tinta-suave);text-transform:none;letter-spacing:0;white-space:nowrap}
+body[data-interfaz=v2] #map-app .stats dd,body[data-interfaz=v2] #map-app .stats .resource dd{grid-area:numero;margin:0;font:700 18px/1.1 var(--fuente-titulo);color:var(--tinta)}
+body[data-interfaz=v2] #map-app .stats :is(.resource-icon,.stat-icon){grid-area:icono;width:22px;height:22px;padding:0;background:transparent;border-radius:50%;fill:var(--tinta);color:var(--tinta)}
+body[data-interfaz=v2] #map-app .stats .resource-icon [stroke="#0F141A"]{stroke:#EDE2C8}
+/* La moral se lee de un vistazo: la chapa más grande, con anillo. */
+body[data-interfaz=v2] #map-app .stats [data-resource=morale] dd{font-size:24px}
+body[data-interfaz=v2] #map-app .stats [data-resource=morale] .resource-icon{width:28px;height:28px;padding:3px;box-sizing:border-box;border:2px solid var(--tinta);fill:var(--tinta);color:var(--tinta)}
+/* Recurso en peligro (comida y residuos): anillo y número en #B5473F, sin moverlos. */
+body[data-interfaz=v2] #map-app .stats .resource.is-danger{border:0;box-shadow:none}
+body[data-interfaz=v2] #map-app .stats .resource.is-danger dd{position:static;min-width:0;padding:0;border-radius:0;background:transparent;color:var(--peligro);font-size:18px}
+body[data-interfaz=v2] #map-app .stats .resource.is-danger .resource-icon{fill:var(--peligro);color:var(--peligro);box-shadow:0 0 0 2px #EDE2C8,0 0 0 4px var(--peligro)}
+body[data-interfaz=v2] #map-app .stats .resource.is-danger dt{color:var(--peligro)}
+body[data-interfaz=v2] #map-app .map-tools{padding:4px 6px}
+body[data-interfaz=v2] #map-app #zoom-value{color:var(--tinta)}
+body[data-interfaz=v2] #map-app #menu-toggle{font:600 14px var(--fuente-texto)}
+body[data-interfaz=v2] #map-app #floating-menu{padding:8px}
+body[data-interfaz=v2] #map-app #floating-menu hr{border-color:#2B221944}
+
+/* ── Expediente como legajo ── */
+body[data-interfaz=v2] #map-app .dossier-tabs{display:flex;gap:3px;margin:0 0 12px;padding:0 2px;border-bottom:2px solid var(--tinta)}
+body[data-interfaz=v2] #map-app #dossier .dossier-tabs button{flex:1 1 0;min-width:0;min-height:36px;margin:0 0 -2px;padding:4px 2px;border:2px solid var(--tinta);border-bottom-color:var(--tinta);border-radius:5px 5px 0 0;background-color:#E2D5B9;background-image:none;color:var(--tinta);font:600 12px/1.1 var(--fuente-texto);box-shadow:none;cursor:pointer}
+body[data-interfaz=v2] #map-app #dossier .dossier-tabs button[aria-pressed=true]{background-color:#F7F0DE;border-bottom-color:#F7F0DE;font-weight:700}
+body[data-interfaz=v2] #map-app #dossier .dossier-tabs button:disabled{filter:saturate(0);opacity:.55;cursor:not-allowed}
+body[data-interfaz=v2] #map-app #dossier .dossier-tabs button:focus-visible{outline:2px solid var(--lampara);outline-offset:1px}
+body[data-interfaz=v2] #map-app .legajo{color:var(--tinta)}
+body[data-interfaz=v2] #map-app .legajo-cabecera{display:grid;grid-template-columns:108px 1fr;gap:14px;align-items:start}
+body[data-interfaz=v2] #map-app .legajo-foto{position:relative;margin:8px 0 0;padding:6px 6px 4px;background:#FBF7EE;box-shadow:2px 3px 0 #07090C55;rotate:-3deg}
+body[data-interfaz=v2] #map-app .legajo-foto :is(#portrait,#portrait-initials){display:block;width:92px;height:92px;object-fit:cover;border-radius:0;margin:0}
+body[data-interfaz=v2] #map-app .legajo-foto #portrait-initials{display:grid;place-items:center;background:#E2D5B9;color:var(--tinta);font:700 30px var(--fuente-titulo)}
+body[data-interfaz=v2] #map-app .legajo-foto #portrait-initials[hidden],body[data-interfaz=v2] #map-app .legajo-foto #portrait[hidden]{display:none}
+body[data-interfaz=v2] #map-app .legajo-clip{position:absolute;top:-10px;left:22px;width:12px;height:30px;border:3px solid #6F7780;border-radius:7px;rotate:8deg;z-index:1}
+body[data-interfaz=v2] #map-app .legajo-foto figcaption{margin-top:4px;font:600 11px/1.1 var(--fuente-texto);color:var(--tinta-suave);text-align:center}
+body[data-interfaz=v2] #map-app .legajo-datos p{margin:2px 0;font:14px/1.3 var(--fuente-texto);color:var(--tinta)}
+body[data-interfaz=v2] #map-app .legajo #character-name{margin:4px 0 2px;font:700 24px/1.1 var(--fuente-titulo);color:var(--tinta)}
+body[data-interfaz=v2] #map-app .legajo #character-identity{font-style:italic}
+body[data-interfaz=v2] #map-app .legajo #legajo-rol{display:inline-block;padding:0 6px;border:1.5px solid var(--tinta);font:700 12px/1.5 var(--fuente-titulo);text-transform:uppercase;letter-spacing:.06em}
+body[data-interfaz=v2] #map-app .legajo #legajo-rol[hidden]{display:none}
+/* Sello de guardia: tinta azul oscura, nunca rojo. */
+body[data-interfaz=v2] #map-app .legajo-sello{display:block;width:max-content;max-width:100%;margin:12px auto 2px;padding:5px 12px;border:3px double #1F3A5C;color:#1F3A5C;font:700 13px/1.25 var(--fuente-titulo);text-transform:uppercase;letter-spacing:.05em;rotate:-3deg;mix-blend-mode:multiply}
+body[data-interfaz=v2] #map-app .legajo-sello[data-sello=afuera]{border-style:dashed;border-width:2px;color:var(--tinta-suave);border-color:var(--tinta-suave)}
+body[data-interfaz=v2] #map-app .legajo-sello[hidden]{display:none}
+body[data-interfaz=v2] #map-app .legajo-medallones{display:flex;justify-content:space-around;gap:8px;margin:14px 0 10px}
+body[data-interfaz=v2] #map-app .legajo-medallones>div{display:flex;flex-direction:column-reverse;align-items:center;justify-content:center;width:78px;height:78px;box-sizing:border-box;border:2px solid var(--tinta);border-radius:50%;background:radial-gradient(#F7F0DE 58%,#E2D5B9 60%);box-shadow:2px 2px 0 #07090C66}
+body[data-interfaz=v2] #map-app .legajo-medallones dd{margin:0;font:700 21px/1 var(--fuente-titulo);color:var(--tinta)}
+body[data-interfaz=v2] #map-app .legajo-medallones dt{font:600 11px/1.2 var(--fuente-texto);color:var(--tinta-suave);text-transform:none}
+body[data-interfaz=v2] #map-app .legajo-dano{display:flex;align-items:center;gap:10px;margin:6px 0 10px}
+body[data-interfaz=v2] #map-app .legajo-casillas{display:flex;gap:5px}
+body[data-interfaz=v2] #map-app .legajo-casilla{width:26px;height:26px;box-sizing:border-box;display:grid;place-items:center;border:2px solid var(--tinta);border-radius:3px;font-size:15px;line-height:1}
+body[data-interfaz=v2] #map-app .legajo-casilla[data-kind=empty]{border-style:dashed;border-color:var(--tinta-suave)}
+body[data-interfaz=v2] #map-app .legajo-casilla[data-kind=wound]{background:var(--peligro);color:#FBF7EE}
+body[data-interfaz=v2] #map-app .legajo-casilla[data-kind=frost]{background:#7FC4E8;color:var(--tinta)}
+body[data-interfaz=v2] #map-app .legajo #character-state{margin:0;font:13px/1.3 var(--fuente-texto);color:var(--tinta)}
+body[data-interfaz=v2] #map-app .legajo-habilidad{margin:8px 0;padding:8px 0 0;border-top:1px dashed #2B221966}
+body[data-interfaz=v2] #map-app .legajo-habilidad h4{margin:0 0 4px;font:700 15px/1.2 var(--fuente-titulo);color:var(--tinta)}
+body[data-interfaz=v2] #map-app .legajo-habilidad p{margin:0 0 4px;font:14px/1.35 var(--fuente-texto);color:var(--tinta)}
+body[data-interfaz=v2] #map-app #legajo-habilidad-estado{font-weight:700}
+body[data-interfaz=v2] #map-app #legajo-habilidad-estado[data-status=usada]{color:var(--tinta-suave);font-weight:600}
+body[data-interfaz=v2] #map-app .legajo-equipo{margin:10px 0 4px;justify-content:flex-start}
+body[data-interfaz=v2] #map-app .legajo-historia[hidden]{display:none}
+
+@media (max-height:500px) and (orientation:landscape){
+ body[data-interfaz=v2] #map-app .topbar{min-height:44px;padding:2px 8px}
+ body[data-interfaz=v2] #map-app .stats dd,body[data-interfaz=v2] #map-app .stats .resource dd{font-size:15px}
+ body[data-interfaz=v2] #map-app .stats [data-resource=morale] dd{font-size:18px}
+ body[data-interfaz=v2] #map-app .stats dt,body[data-interfaz=v2] #map-app .stats .resource dt{font-size:10px}
+ body[data-interfaz=v2] #map-app .stats>div{padding:1px 4px}
+ body[data-interfaz=v2] #map-app #action-stage .search-cards>.search-card{flex-basis:var(--carta-w);min-height:0;padding:14px;font-size:15px}
+ body[data-interfaz=v2] #map-app #action-stage>#search-panel[data-cards="1"]{width:min(calc(var(--carta-w) + 44px),100%)}
+ body[data-interfaz=v2] #map-app #action-stage>#search-panel[data-cards="2"]{width:min(calc(2*var(--carta-w) + var(--carta-gap) + 44px),100%)}
+ body[data-interfaz=v2] #map-app #action-stage>#search-panel[data-cards="3"]{width:min(calc(3*var(--carta-w) + 2*var(--carta-gap) + 44px),100%)}
+}
+
+/* Dado dentro de la casilla: la cara ocupa la casilla, con los puntos de la barra. */
+body[data-interfaz=v2] #map-app #action-stage :is(.die-choice,.search-die){padding:0;overflow:hidden}
+body[data-interfaz=v2] #map-app #action-stage :is(.die-choice,.search-die) .die{width:100%;height:100%;box-sizing:border-box;margin:0;padding:10px;gap:3px;border:0;border-radius:0;background:#F3E9D2;box-shadow:none}
+body[data-interfaz=v2] #map-app #action-stage :is(.die-choice,.search-die) .die .pip{width:8px;height:8px;place-self:center;border-radius:50%;background:var(--tinta)}
+/* El papel mide según lo que lleva: elegir un dado no necesita el ancho de tres cartas. */
+body[data-interfaz=v2] #map-app #action-stage>#play-dialog:has(>.paper-options[data-options=dice]),body[data-interfaz=v2] #map-app #action-stage>#search-panel:has(#search-draft:not([hidden])),body[data-interfaz=v2] #map-app #action-stage>#action-panel{width:min(480px,100%)}
+/* ── Ajustes 3 ── */
+/* Legajo: la cruz de cerrar es un botón de papel con la «×» a la vista (sin el bloque oscuro heredado). */
+body[data-interfaz=v2] #map-app #dossier #panel-toggle{background-color:#F3E9D2;background-image:none;color:var(--tinta);border:2px solid var(--tinta);border-radius:5px;box-shadow:2px 2px 0 var(--tinta);font:700 24px/1 var(--fuente-titulo)}
+body[data-interfaz=v2] #map-app #dossier #panel-toggle:focus-visible{outline:2px solid var(--lampara);outline-offset:2px}
+/* Legajo: si no entra (768 px de alto o menos), el contenido se desplaza y avisa «Más abajo ▾», como «Cartas». */
+body[data-interfaz=v2] #map-app #panel-content>.scroll-more{margin:8px -10px -10px;bottom:-10px}
+body:not([data-interfaz=v2]) #map-app #panel-content>.scroll-more{display:none}
+body[data-interfaz=v2] #map-app .legajo #character-moved{margin:2px 0 0;font:600 13px/1.3 var(--fuente-texto);color:var(--tinta-suave)}
+body[data-interfaz=v2] #map-app .legajo #character-moved[hidden]{display:none}
+body[data-interfaz=v2] #map-app #panel-content:not([data-scroll=bottom]):not([data-scroll=both])>.scroll-more{display:none}
+/* ── Ajustes 5 ── */
+/* Construir: la habilidad es una casilla más, del mismo tamaño que los dados, con su texto a la vista. */
+body[data-interfaz=v2] #map-app #action-stage .search-die.action-ability{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:3px;text-align:center;color:var(--tinta)}
+body[data-interfaz=v2] #map-app #action-stage .search-die.action-ability strong{font:700 12px/1.05 var(--fuente-texto)}
+body[data-interfaz=v2] #map-app #action-stage .search-die.action-ability small{display:block;font:600 10px/1.05 var(--fuente-texto);color:var(--tinta-suave)}
+body[data-interfaz=v2] #map-app #action-stage #action-requirement{margin:0 0 8px;font:600 15px/1.3 var(--fuente-texto);color:var(--tinta)}
+body[data-interfaz=v2] #map-app #action-stage #action-plain{margin:10px 0 0;font:15px/1.35 var(--fuente-texto);color:var(--tinta)}
+body[data-interfaz=v2] #map-app #action-stage #action-plain[hidden],body[data-interfaz=v2] #map-app #action-stage #action-method-box[hidden]{display:none}
+/* Legajo: botón de la habilidad (tipo botón), en papel como el resto. */
+body[data-interfaz=v2] #map-app .legajo #legajo-habilidad-usar{margin:4px 0 2px}
+body[data-interfaz=v2] #map-app .legajo #legajo-habilidad-usar[hidden],body[data-interfaz=v2] #map-app .legajo #legajo-habilidad-motivo[hidden]{display:none}
+body[data-interfaz=v2] #map-app .legajo #legajo-habilidad-motivo{margin:0;font:italic 13px/1.3 var(--fuente-texto);color:var(--tinta-suave)}

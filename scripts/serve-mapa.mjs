@@ -5,9 +5,9 @@
 import http from 'node:http';import {readFile} from 'node:fs/promises';import {resolve,sep,extname} from 'node:path';import {fileURLToPath,pathToFileURL} from 'node:url';import {networkInterfaces} from 'node:os';
 import {buildMapa} from './build-mapa.mjs';
 const root=fileURLToPath(new URL('../',import.meta.url));
-const tipos={'.html':'text/html','.css':'text/css','.mjs':'application/javascript','.json':'application/json','.png':'image/png','.webp':'image/webp'};
+const tipos={'.html':'text/html','.css':'text/css','.mjs':'application/javascript','.json':'application/json','.png':'image/png','.webp':'image/webp','.jpg':'image/jpeg','.woff2':'font/woff2'};
 export function createMapaServer({qa=false}={}){
- const prefixes=['/app/mapa/','/dist/mapa/','/assets/mapa-horizontal/','/kit_arte_h33/assets/',...(qa?['/dist/mapa-qa/']:[])];
+ const prefixes=['/app/mapa/','/dist/mapa/','/assets/mapa-horizontal/','/assets/interfaz/','/assets/fuentes/','/kit_arte_h33/assets/',...(qa?['/dist/mapa-qa/']:[])];
  return http.createServer(async(req,res)=>{
   try{
    let path=decodeURIComponent(new URL(req.url,'http://localhost').pathname);

@@ -12,7 +12,7 @@ export function mountCyclePanel({controller,getContext,onNative,onRecover=onNati
   const newGame=document.getElementById('final-new-game');if(newGame)newGame.hidden=!c?.outcome;const final=document.getElementById('review-final');if(final)final.hidden=!c?.outcome;
   const visible=active&&!document.hidden&&!competing&&c&&s.phase!=='closed';if(!visible){if(dialog.open)dialog.close();dialog.replaceChildren();key='';if(lastVisible&&active)end.focus({preventScroll:true});lastVisible=false;return;}
   document.getElementById('floating-menu').hidden=true;document.getElementById('menu-toggle').setAttribute('aria-expanded','false');
-  lastVisible=true;const next=JSON.stringify([s,c]);if(key===next)return;key=next;const scroll=dialog.scrollTop;dialog.replaceChildren();dialog.append(el('h2',s.phase==='confirming'?'Terminar turno':c.review?'Fase de colonia':c.outcome?(c.outcome.reason==='victory'?'Victoria':'Derrota'):c.decision?.kind==='handover'?'Pase de dispositivo':c.decision?.kind==='leaderChoice'?'Elegir sucesor':c.decision?.kind==='death'?'Fallecimientos':'Fase de colonia'));
+  lastVisible=true;const next=JSON.stringify([s,c]);/* Si otro papel exclusivo lo cerró (encrucijada, aviso), se vuelve a presentar aunque el contenido no cambie: si no, el repaso queda sin botón (ajustes 3). */if(key===next&&dialog.open)return;key=next;const scroll=dialog.scrollTop;dialog.replaceChildren();dialog.append(el('h2',s.phase==='confirming'?'Terminar turno':c.review?'Fase de colonia':c.outcome?(c.outcome.reason==='victory'?'Victoria':'Derrota'):c.decision?.kind==='handover'?'Pase de dispositivo':c.decision?.kind==='leaderChoice'?'Elegir sucesor':c.decision?.kind==='death'?'Fallecimientos':'Fase de colonia'));
   if(c.outcome&&c.decision)dialog.append(el('p',c.outcome.label));
   if(s.message&&['confirming','unknown'].includes(s.phase))dialog.append(el('p',s.message));
   if(s.phase==='confirming')dialog.append(button('Confirmar fin de turno','cycle-confirm',()=>controller.confirm()),button('Cancelar','cycle-cancel',()=>controller.cancel()));
@@ -34,6 +34,7 @@ export function mountCyclePanel({controller,getContext,onNative,onRecover=onNati
   else if(s.phase==='unknown')dialog.append(button('Consultar estado','cycle-native',onRecover));
   else dialog.append(el('p','Estado actualizado.'),button('Volver al mapa','cycle-close',()=>controller.hide(),busy));
   if(p?.play&&(c.outcome||c.processing))dialog.append(button('Nueva partida','cycle-new-game',()=>document.getElementById('final-new-game')?.click()));
+  dialog.dataset.stage='true';// Sesión 7: fin de turno y fase de colonia, en el papel del centro.
   present(dialog,{exclusive:c.decision?.kind==='death'||!c.review&&(!!c.outcome||['handover','leaderChoice'].includes(c.decision?.kind))});if(unified()&&dialog.matches(':modal')&&!dialog.contains(document.activeElement))dialog.querySelector('button:not(:disabled)')?.focus({preventScroll:true});dialog.scrollTop=scroll;
  }
  document.addEventListener('visibilitychange',render,{signal});signal.addEventListener('abort',()=>{dialog.close();dialog.replaceChildren();},{once:true});return {render};

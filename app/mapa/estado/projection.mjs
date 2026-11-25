@@ -3,9 +3,13 @@ const number=value=>Number.isFinite(value)?value:null;
 const text=value=>typeof value==='string'?value:null;
 function freeze(value){if(value&&typeof value==='object'){for(const child of Object.values(value))freeze(child);Object.freeze(value);}return value;}
 const placeId=index=>Number.isInteger(index)?'place-'+index:null;
+function foodState(context,g){const need=typeof context.feedingNeed==='function'?number(context.feedingNeed(g)):null,food=number(g.food);return {need,danger:need!==null&&food!==null&&!(food>=need)};}
+// Residuos en peligro (decisión del creador): desde el tope del motor (wasteLimit) la colonia
+// pierde moral en la fase de colonia. La interfaz no conoce el número.
+function wasteState(context,g){const limit=number(context.wasteLimit),waste=number(g.waste);return {count:waste,limit,danger:limit!==null&&waste!==null&&waste>=limit};}
 export function projectVisibleState(context,{gate={},renderedPlayable=false,epoch=0}={}){
  const g=context.game,blocked=gate.setup?'setup':gate.pass?'handover':gate.death?'death':gate.modal?'decision':!g?'waiting':null;
- if(blocked)return freeze({schema:1,epoch,blocked,players:[],characters:[],locations:[],objective:null,crisis:null,log:[],dice:{ownerId:null,available:null,used:null},round:null,morale:null,food:null});
+ if(blocked)return freeze({schema:1,epoch,blocked,players:[],characters:[],locations:[],objective:null,crisis:null,log:[],dice:{ownerId:null,available:null,used:null},round:null,morale:null,food:null,resources:null});
  // En «un grupo» el bando de la IA no existe: no se proyecta un grupo vacío.
  const players=['human','ai'].filter(id=>(id==='human'?g.humans:g.bots).length).map(id=>({id,label:context.controls.display(id),leaderId:text(g.leaders?.[id]),initialLeaderConfirmed:!!(id==='human'?g.leaderChosen:g.localLeaderChosen)}));
  // «La noche»: el motor dice quién queda afuera y a quién le toca la tirada.
@@ -20,12 +24,15 @@ export function projectVisibleState(context,{gate={},renderedPlayable=false,epoc
  })));
  const locations=context.places.map((_,index)=>{
   const z=g.zones[index],id=placeId(index),members=characters.filter(c=>c.locationId===id),helpless=index===0?number(g.helpless):0,capacity=number(context.capacity[index]),exteriorCapacity=number(context.zcap[index]),zombies=number(z?.z),barricades=number(z?.b),occupied=helpless===null?null:members.length+helpless;
-  return {id,engineIndex:index,name:text(z?.name)||text(context.places[index]),survivors:members.length,characterIds:members.map(c=>c.id),helpless,occupied,capacity,available:capacity===null||occupied===null?null:capacity-occupied,zombies,barricades,exteriorCapacity,exteriorAvailable:[exteriorCapacity,zombies,barricades].some(x=>x===null)?null:exteriorCapacity-zombies-barricades,noise:number(z?.noise)};
+  return {id,engineIndex:index,name:text(z?.name)||text(context.places[index]),survivors:members.length,characterIds:members.map(c=>c.id),helpless,occupied,capacity,available:capacity===null||occupied===null?null:capacity-occupied,zombies,barricades,exteriorCapacity,exteriorAvailable:[exteriorCapacity,zombies,barricades].some(x=>x===null)?null:exteriorCapacity-zombies-barricades,noise:number(z?.noise),noiseLimit:number(context.noiseLimit)};
  });
  return freeze({schema:1,epoch,blocked:null,mode:text(g.mode),round:number(g.round),maxRounds:number(g.max),morale:number(g.morale),food:number(g.food),ended:!!g.ended,turn:text(g.turn),automationRunning:!!context.aiRunning,players,characters,locations,
   objective:g.objective?{name:text(g.objective.name),description:text(g.objective.description),samples:number(g.samples),goal:number(g.goal)}:null,
   crisis:g.crisis?{type:text(g.crisis.type),need:number(g.crisis.need),given:number(g.crisis.given),failure:text(g.crisis.fail)}:null,
   log:g.log.filter(entry=>typeof entry==='string').slice(),last:text(g.last),
-  dice:{ownerId:g.ended?null:context.controls.side,available:renderedPlayable?Array.from(context.controls.dice()||[]):null,used:null}
+  dice:{ownerId:g.ended?null:context.controls.side,available:renderedPlayable?Array.from(context.controls.dice()||[]):null,used:null},
+  // Recurso en peligro (informe 122), solo lectura: lo que el motor pedirá de comida en la
+  // próxima fase de colonia (feedingNeed) y su misma condición (food>=need alcanza).
+  resources:{food:foodState(context,g),waste:wasteState(context,g)}
  });
 }

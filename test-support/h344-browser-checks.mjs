@@ -34,12 +34,22 @@ async function begin(p,mode='local'){
 }
 async function reference(p){if(await p.locator('#reference-mode').isVisible())await p.locator('#reference-mode').click();else{if(!await p.locator('#floating-menu').isVisible())await p.locator('#menu-toggle').click();await p.locator('#return-reference').click();}}
 async function openMap(p){if(!integrated)await p.locator('#map-mode').click();await p.waitForFunction(()=>window.h344Viewer.inspect().view!==null);await frames(p);assert.equal((await api(p)).mode,'map');}
-async function panel(p){await frames(p);if(!await p.locator('#panel-content').isVisible())await p.locator('#panel-toggle').click();await frames(p);await p.locator('#panel-content').waitFor({state:'visible'});}
+// Sesión 7 (informe 126): el expediente se abre con el retrato del superviviente activo; si la barra
+// no muestra a nadie (partida bloqueada), por el botón «×/Expediente», que es el mismo camino.
+async function panel(p){await frames(p);if(!await p.locator('#panel-content').isVisible()){if(await p.locator('#bar-portrait').isVisible())await p.locator('#bar-portrait').click();else await p.locator('#panel-toggle').evaluate(b=>b.click());}await frames(p);await p.locator('#panel-content').waitFor({state:'visible'});}
+// «Más»: abre el abanico de la barra con las demás acciones de turno.
+async function more(p){await frames(p);if(!await p.locator('#bar-fan').isVisible())await p.locator('#bar-more').click();await p.locator('#bar-fan').waitFor({state:'visible'});}
 async function inventory(p){if(await p.evaluate(()=>document.body.dataset.experience==='unified')){if(!await p.locator('#floating-menu').isVisible())await p.locator('#menu-toggle').click();await p.locator('#menu-inventory').click();}else await p.locator('#inventory-open').click();}
+// Desde la sesión 7, «Inventario» del menú gestiona el equipo; las cartas de uso se juegan desde
+// «Más» → «Cartas» (purpose use). En el modo clásico sigue siendo el mismo inventario.
+async function cards(p){if(await p.evaluate(()=>document.body.dataset.experience==='unified')){await more(p);await p.locator('#use-card-action').click();}else await p.locator('#inventory-open').click();}
 async function inventoryDone(p){if(!await p.evaluate(()=>document.body.dataset.experience==='unified'))await p.locator('#inventory-continue').click();await p.waitForFunction(()=>h344Viewer.inspect().inventory.phase==='browsing');}
 async function actionDone(p){if(!await p.evaluate(()=>document.body.dataset.experience==='unified')){await p.waitForFunction(()=>h344Viewer.inspect().action.phase==='result');await p.locator('#action-continue').click();}await p.waitForFunction(()=>h344Viewer.inspect().action.phase==='idle');}
 async function searchDone(p){if(!await p.evaluate(()=>document.body.dataset.experience==='unified')){await p.waitForFunction(()=>h344Viewer.inspect().search.phase==='result');await p.locator('#search-continue').click();}await p.waitForFunction(()=>h344Viewer.inspect().search.phase==='idle');}
+// Registro: un solo acceso, dentro del expediente (informe 126, ajustes J). Abre el expediente si
+// estaba cerrado y, al cerrar el registro, lo deja como estaba.
+async function registry(p){const was=await p.locator('#panel-content').isVisible();await panel(p);await p.locator('[data-info=registro]').click();return async()=>{await p.locator('#close-dialog').click();if(!was&&await p.locator('#panel-content').isVisible())await p.locator('#panel-toggle').evaluate(b=>b.click());await frames(p);};}
 async function ambient(p){await panel(p);if(await p.evaluate(()=>document.body.dataset.experience==='unified')){await p.locator('#menu-toggle').click();await p.locator('#menu-settings').click();}await p.locator('#atmosphere-controls').evaluate(el=>el.open=true);}
 async function pick(p,point,touch=false){const a=await view(p),b=await p.locator('#scene').boundingBox(),x=b.x+a.camera.x+point.x*a.camera.zoom,y=b.y+a.camera.y+point.y*a.camera.zoom;assert.ok(x>b.x&&x<b.x+b.width&&y>b.y&&y<b.y+b.height);if(touch)await p.touchscreen.tap(x,y);else await p.mouse.click(x,y);await frames(p);}
- return {inventory,inventoryDone,actionDone,searchDone,api,view,frames,host,raw,rng,sleep,instrument,load,settle,dispatch,sync,correspondence,begin,openMap,reference,panel,ambient,pick};
+ return {inventory,cards,inventoryDone,actionDone,searchDone,api,view,frames,host,raw,rng,sleep,instrument,load,settle,dispatch,sync,correspondence,begin,openMap,reference,panel,more,registry,ambient,pick};
 }

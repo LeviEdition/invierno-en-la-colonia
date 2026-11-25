@@ -12,10 +12,12 @@ export async function checkRulePresentations(p,t){
  g.humans.forEach((h,i)=>{h.loc=i===2?5:2;h.wounds=0;h.frost=0;h.dead=false;h.moved=false;h.equipment=[];h.skill='';h.influence=[40,70,60][i];});
  await read(t.host(p),g=>h344Test.fixture(g),g);
  await p.waitForFunction(()=>h344Viewer.inspect().projection.characters.find(c=>c.id==='h0')?.locationId==='place-2',undefined,{timeout});
- if(!await p.locator('#panel-content').isVisible())await p.locator('#panel-toggle').click({timeout});
+ if(!await p.locator('#panel-content').isVisible())await p.locator('#bar-portrait').click({timeout});
  await p.locator('#panel-content').waitFor({state:'visible',timeout});
  await p.selectOption('#survivor-select','h0',{timeout});
  const rng=await read(t.host(p),()=>window.h344RandomCalls);
+ // Sesión 7 (informe 126): «Regresar a la colonia» vive en el abanico de «Más».
+ if(!await p.locator('#bar-fan').isVisible())await p.locator('#bar-more').click({timeout});
  await p.locator('#return-home-action').click({timeout});
  await p.locator('#play-confirm').waitFor({state:'visible',timeout});
  await read(p.locator('#play-confirm'),b=>{b.click();b.click();});

@@ -1,6 +1,7 @@
 import {createMapNotice} from './experiencia/map-notice.mjs';
 import {createRoutineResults} from './experiencia/routine-results.mjs';
 import {createEventPresentations} from './experiencia/event-presentations.mjs';
+import {nightCue} from './experiencia/night-lights.mjs';
 import {createPlayController} from './juego/controller.mjs';
 import {createCycleController,cycleOwnedDecision,decisionLabel} from './ciclo/controller.mjs';
 import {createInventoryController} from './inventario/controller.mjs';
@@ -34,15 +35,18 @@ lifetime.signal.addEventListener('abort',()=>mapNotice?.clear(),{once:true});
 const routine=createRoutineResults({action,search,inventory,play,onNotice:n=>{if(n){movementNoticeEnabled=false;$('movement-result').textContent='';}mapNotice?.show(n);}});
 // Conserva los datos públicos de cada instante; las decisiones y comandos esperan al visor.
 const eventFrame=p=>({...state,...p,blocked:null,movement:{...state.movement,options:{}},search:{...state.search,private:null,options:{}},action:{...state.action,operation:null,options:{}},inventory:null,cycle:null,play:null});
+const nightSignal=nightCue(kind=>viewer?.night?.(kind));
 eventPresentations=createEventPresentations({
  canPresent:()=>mode==='map'&&!!viewer&&!document.hidden&&!['sending','unknown'].includes(movement.inspect().phase),
  start(frame,done){
   const response={...frame,presentation:eventFrame(frame.presentation)};
   viewer.setState(eventFrame(frame.before));movement.present(response);
   const finish=()=>{movement.finishPresentation(frame.kind==='exposure'?'':movementSummary(response,response.presentation.locations));done();};
+  // Noche: empieza con la primera tirada nocturna presentada; termina cuando la cola se vacía.
+  nightSignal.start(frame);
   if(frame.kind==='exposure')viewer.startActionPresentation(response,finish);else viewer.startPresentation(response,finish);
  },
- stop(){viewer?.stopPresentation();movement.interruptPresentation();},onIdle:()=>applyAuthority(),
+ stop(){viewer?.stopPresentation();movement.interruptPresentation();nightSignal.stop();},onIdle:()=>{nightSignal.idle();applyAuthority();},
 });
 function clearPreviousResult(){if(!unified)return;movementNoticeEnabled=false;if($('movement-result').textContent)$('movement-result').textContent='';if(routine.inspect())routine.clear();}
 const managedCycle=p=>!!p?.cycle?.managed||!!p?.play?.managed;
@@ -180,6 +184,8 @@ $('reconnect-source')?.addEventListener('click',()=>connect(),{signal:lifetime.s
 $('reference-mode').addEventListener('click',showReference,{signal:lifetime.signal});$('return-reference')?.addEventListener('click',showReference,{signal:lifetime.signal});$('map-mode').addEventListener('click',showMap,{signal:lifetime.signal});$('resolve-decision').addEventListener('click',showDecision,{signal:lifetime.signal});
 for(const id of ['restart-view','retry-view'])$(id).addEventListener('click',()=>{if(mode==='map')void mountViewer();},{signal:lifetime.signal});
 document.addEventListener('visibilitychange',()=>{if(document.hidden){eventPresentations.interrupt();stopAction();interruptSearch();if(movementPresenting()){stopMovement();applyAuthority();}}},{signal:lifetime.signal});
+// Solo QA: fuerza la atmósfera de noche para capturas y mediciones. En producto no hace nada.
+export function qaNight(kind){if(__ACTION_MAP_QA__)viewer?.night?.(kind);}
 export function inspect(){return {mode,connected:!!port,starts,generation,projection:state?structuredClone(state):null,movement:movement.inspect(),search:search.inspect(),action:action.inspect(),inventory:inventory.inspect(),cycle:cycle.inspect(),play:play.inspect(),eventPresentations:eventPresentations.inspect(),view:viewer?.inspect()||null,lastDisposal,lastError};}
 export function worldAt(point){return viewer?.worldAt(point);}
 export function disposeViewer(){eventPresentations.interrupt();stopSearchClock();stopMovement();stopAction();search.interrupt();attempt?.abort();generation++;serial=serial.catch(()=>{}).then(clearViewer);return serial;}
