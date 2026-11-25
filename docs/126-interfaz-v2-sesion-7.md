@@ -318,3 +318,25 @@ Ninguna batería se borró ni se salteó. Donde fallaba un camino que ya no exis
 - El vídeo de las cuatro que lo graban sale solo en el CI.
 
 **Falta probar jugando:** reabrir el expediente y «Más» enseguida; el repaso del ciclo con la IA; el legajo desplazándose en el A15.
+
+## Ajustes 4 (`check-map-experience` en el CI)
+
+Base: `027f3ea`. En el CI (run 45624263281), `check-map-experience-browser` se cortó al arrancar con `#play-start-local`: `Cannot read properties of null (reading 'decision')` en `settle`, porque `projection.cycle` era `null`.
+
+**Causa: la batería, no el juego.** La proyección pone `cycle` en `null` a propósito en dos casos:
+- mientras el motor está en `setup` o `waiting` (preparación y pase de dispositivo; `ciclo/broker.mjs`);
+- en el cuadro público que se muestra durante una tirada (`eventFrame` en `main.mjs`), que además pone `play` en `null`.
+
+Medido con Edge: después de tocar «Dos jugadores», la proyección pasa unos 260 ms con `cycle:null` y `blocked:'setup'` (52 lecturas seguidas cada 5 ms). `settle` sondea a los 90 ms. En Windows el primer sondeo solía encontrar un botón para tocar y no llegaba a leer el ciclo; en el runner del CI cayó en esa ventana.
+
+**Arreglo en la batería.** `settle`, `ack` y el bucle del final toman un ciclo o un `play` ausente como «todavía no terminó» y siguen esperando. No se aflojó ninguna condición. `src/` y la proyección no cambian.
+
+**Qué se comprobó.**
+- El `TypeError` exacto **no se reprodujo localmente** en dos intentos: la batería sin arreglo, con la CPU cuatro veces más lenta, y una sonda del arranque con la CPU normal y ocho veces más lenta. La sonda sí mostró la ventana `setup` con `cycle:null`.
+- La batería arreglada pasa como la corre el workflow (1365×768, 852×393 y 393×852, con movimiento normal y reducido), con la CPU normal y cuatro veces más lenta.
+- Solo con Edge: Chromium no se instala en esta PC.
+- Las que siguen en el workflow pasan localmente: `feedback-camera`, `death-decisions`, `exposure-d12`, `map-2x` y `h344`.
+- `npm test`: 970 de 970 (una prueba nueva).
+- `test:poc`: EPERM en Windows; lo confirma el CI.
+
+**Falta:** confirmar en el CI con Chromium bajo Linux.

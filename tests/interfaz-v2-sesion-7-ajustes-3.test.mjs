@@ -61,3 +61,11 @@ test('Ajustes 3 · si un papel exclusivo cierra el repaso del ciclo, el repaso s
  assert.match(panel,/if\(key===next&&dialog\.open\)return;/,'contenido igual pero cerrado: se vuelve a presentar');
  assert.match(read('app/mapa/experiencia/surfaces.mjs'),/if\(exclusive\)\{for\(const other of document\.querySelectorAll\('dialog\[open\]'\)\)if\(other!==dialog\)other\.close\(\);/,'lo exclusivo cierra a los demás (la causa)');
 });
+
+test('Ajustes 4 · la batería de experiencia espera mientras el ciclo está oculto (preparación, pase o tirada)',()=>{
+ const broker=read('app/mapa/ciclo/broker.mjs'),main=read('app/mapa/main.mjs'),battery=read('scripts/check-map-experience-browser.mjs');
+ assert.match(broker,/visible=s&&!\['setup','waiting'\]\.includes\(rawBlocked\)/,'el ciclo se oculta en preparación y pase (correcto)');
+ assert.match(main,/inventory:null,cycle:null,play:null\}\);/,'y en el cuadro público de una tirada (correcto)');
+ assert.match(battery,/const s=await state\(\),c=s\.projection\?\.cycle,pl=s\.projection\?\.play;if\(c&&pl&&!s\.play\.pending&&!pl\.managed&&!c\.decision&&!c\.processing\)return;/,'settle: sin ciclo no terminó, sigue esperando');
+ assert.match(battery,/const pl=s\.projection\?\.play;return s\.play\.phase==='closed'&&!s\.play\.pending&&!!pl&&!pl\.receipt&&!pl\.managed;/);
+});
