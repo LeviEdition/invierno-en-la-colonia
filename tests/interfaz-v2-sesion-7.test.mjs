@@ -29,8 +29,8 @@ test('Sesión 7 · cada acción del inventario se alcanza desde la barra o el ab
 test('Sesión 7 · el abanico solo lista lo que el motor permite y se cierra al elegir, con Esc o tocando fuera',()=>{
  assert.match(view,/const off=b\.disabled\|\|c\.hidden;c\.dataset\.fanOff=String\(off\);/,'cada entrada se apaga si su botón (validado por el motor) está deshabilitado');
  assert.match(css,/#bar-fan \.action-control\[data-fan-off=true\]\{display:none\}/);
- assert.match(view,/listen\('#bar-fan','click',e=>\{if\(e\.target\.closest\('button'\)\)setFan\(false\);\}\);/,'se cierra al elegir');
- assert.match(view,/if\(fanOpen&&!e\.target\.closest\?\.\('#bar-fan,#bar-more'\)\)setFan\(false\);/,'se cierra tocando fuera');
+ assert.match(view,/listen\('#bar-fan','click',e=>\{if\(e\.target\.closest\('button'\)\)\{setFan\(false\);barGuard\.release\('more'\);\}\}\);/,'se cierra al elegir (y libera «Más», ajustes 3)');
+ assert.match(view,/if\(fanOpen&&!e\.target\.closest\?\.\('#bar-fan,#bar-more'\)\)\{setFan\(false\);barGuard\.release\('more'\);\}/,'se cierra tocando fuera');
  assert.match(view,/if\(e\.key==='Escape'&&fanOpen&&!e\.defaultPrevented\)\{e\.preventDefault\(\);e\.stopPropagation\(\);setFan\(false\);/,'se cierra con Esc');
  assert.match(view,/const more=!own\|\|!any\|\|!!flow;/,'«Más» se apaga sin acciones permitidas, en turno ajeno o con una acción en curso');
  // «Usar carta»: solo si el motor permite usar alguna carta de uso ahora.
@@ -140,7 +140,7 @@ test('Sesión 7 · barra: grupo, superviviente activo con tres ranuras y privaci
 });
 
 test('Sesión 7 · expediente: solo información; se abre con el retrato o E y no al tocar el mapa',()=>{
- assert.match(view,/function barDetail\(\)\{if\(panelTarget\)\{\$\('panel-toggle'\)\.click\(\);return;\}/,'el retrato y E lo cierran por el mismo camino que «×»');
+ assert.match(view,/function barDetail\(\)\{if\(panelTarget\)\{portraitClosing=true;try\{\$\('panel-toggle'\)\.click\(\);\}finally\{portraitClosing=false;\}return;\}/,'el retrato y E lo cierran por el mismo camino que «×»');
  assert.match(view,/listen\('#bar-portrait','click',\(\)=>\{if\(barGuard\('portrait'\)\)barDetail\(\);\}\)/);
  assert.match(view,/if\(target\.characterId\)tapCharacter\(target\.characterId\);/,'el primer toque sobre una ficha solo la hace activa; el expediente se abre si ya era la activa (ajustes 2)');
  assert.doesNotMatch(view.slice(view.indexOf(' function selectLocality('),view.indexOf('\n',view.indexOf(' function selectLocality('))),/panel\(true\)/);

@@ -5,6 +5,7 @@ import {actionMapChecks} from '../test-support/h344-browser-checks.mjs';
 import {capacityProjection,exteriorVolumes,boundsIntersectPolygon,overlaps} from '../test-support/horizontal-composition.mjs';
 import {localityFrame} from '../app/mapa/escena/presentation.mjs';
 import {pointInPolygon} from '../app/mapa/render/maqueta/model.mjs';
+import {safeInsets} from '../app/mapa/experiencia/state-marks.mjs';
 
 const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
 const baseline=process.env.PRESENTATION_BASELINE==='1';
@@ -29,6 +30,13 @@ function complete(view){
 }
 async function qaView(page){await t.frames(page);return page.evaluate(()=>capacityView.inspect());}
 async function closePanel(page){if(await page.locator('#panel-content').isVisible())await page.locator('#panel-toggle').click();await t.frames(page);}
+// Margen de desplazamiento que el juego concede por los paneles flotantes (map-view, panelSlack): la
+// ficha abierta y Objetivo y Crisis a los costados, el grupo flotante abajo. Misma regla, misma función.
+async function panelSlack(page){
+ const d=await page.evaluate(()=>{const R=s=>{const e=document.querySelector(s);return e?.getClientRects().length?e.getBoundingClientRect().toJSON():null;};return {box:R('.map-viewport'),dossier:document.body.dataset.panelOpen==='true'?R('#dossier'):null,summaries:R('#public-summaries'),group:R('#bar-group')};});
+ const slack={top:0,right:0,bottom:0,left:0};for(const r of [d.dossier,d.summaries]){if(!r)continue;const i=safeInsets(d.box,[r]);slack.left=Math.max(slack.left,i.left);slack.right=Math.max(slack.right,i.right);}
+ if(d.group&&d.group.top<d.box.bottom&&d.group.bottom>d.box.top)slack.bottom=Math.max(0,d.box.bottom-d.group.top);return slack;
+}
 async function togglePanel(page){if(await page.locator('#panel-content').isVisible()){await page.locator('#panel-toggle').click();await t.frames(page);}else await t.panel(page);}
 async function focus(page,id){await page.selectOption('#locality',id);await closePanel(page);}
 async function general(page){await closePanel(page);await page.locator('#reset-view').click();await t.frames(page);}
@@ -107,8 +115,13 @@ try{
    await q.screenshot({path:resolve(dir,'excedente-'+index+'.png')});await closePanel(q);
   }
   if(!baseline){
-   const badge=await q.locator('.qa-notice').boundingBox(),canvas=await q.locator('#scene').boundingBox();
-   assert.ok(badge.y+badge.height<=canvas.y+1,'cartel QA fuera del área de juego');r.qaOutsideMap=true;
+   // Desde la sesión 1 de la interfaz v2 el mapa ocupa toda la pantalla: el cartel ya no puede quedar
+   // arriba del lienzo. Se exige lo mismo en el sentido que importa: visible, por encima del mapa,
+   // sin tapar ningún control del juego y sin recibir toques (ajustes 3 de la sesión 7).
+   const qaCheck=await q.evaluate(()=>{const n=document.querySelector('.qa-notice'),r=n.getBoundingClientRect(),hit=(a,b)=>a.left<b.right&&b.left<a.right&&a.top<b.bottom&&b.top<a.bottom;
+    const covered=['.topbar','#public-summaries','#action-bar','#bar-group','.map-tools','#menu-toggle','#dossier'].map(s=>document.querySelector(s)).filter(e=>e?.getClientRects().length&&hit(r,e.getBoundingClientRect())).map(e=>e.id||e.className);
+    const canvas=document.querySelector('#scene');return {visible:r.width>0&&r.height>0&&r.left>=0&&r.top>=0&&r.right<=innerWidth&&r.bottom<=innerHeight,above:(parseInt(getComputedStyle(n).zIndex)||0)>(parseInt(getComputedStyle(canvas.closest('.map-viewport')).zIndex)||0),inert:getComputedStyle(n).pointerEvents==='none',covered};});
+   assert.deepEqual(qaCheck,{visible:true,above:true,inert:true,covered:[]},'cartel QA visible, sin tapar controles ni recibir toques');r.qaOutsideMap=true;r.qaNotice=qaCheck;
    const volumes=exteriorVolumes(scene,assets);
    for(const a of volumes)for(const o of obstacles)assert.equal(boundsIntersectPolygon(a,o.polygon),false,a.locality+' sobre '+o.id);
    for(let i=0;i<volumes.length;i++)for(let j=i+1;j<volumes.length;j++)if(volumes[i].locality!==volumes[j].locality||volumes[i].index!==volumes[j].index)assert.equal(overlaps(volumes[i],volumes[j],2),false,'cuerpos vecinos');
@@ -118,9 +131,9 @@ try{
    for(const id of ['place-0','place-2','general']){
     if(id==='general')await general(page);else{await page.selectOption('#locality',id);await closePanel(page);}
     for(let toggle=0;toggle<2;toggle++){
-     const before=await t.view(page);await togglePanel(page);const after=await t.view(page);
+     const before=await t.view(page);await togglePanel(page);const after=await t.view(page),slack=await panelSlack(page);
      assert.ok(Math.abs(before.camera.zoom-after.camera.zoom)<1e-8,'ficha conserva escala');
-     for(const [axis,size]of [['x','width'],['y','height']]){const extent=scene.bounds[size]*before.camera.zoom,available=after.viewport[size],expected=extent<=available?(available-extent)/2:Math.max(available-extent,Math.min(0,before.camera[axis]));assert.ok(Math.abs(after.camera[axis]-expected)<1e-6,'ficha solo ajusta bordes '+axis);}
+     for(const [axis,size,lead,trail]of [['x','width','left','right'],['y','height','top','bottom']]){const extent=scene.bounds[size]*before.camera.zoom,available=after.viewport[size],expected=extent<=available?(available-extent)/2:Math.max(available-extent-slack[trail],Math.min(slack[lead],before.camera[axis]));assert.ok(Math.abs(after.camera[axis]-expected)<1e-6,'ficha solo ajusta bordes '+axis);}
     }
     r.panel.push(id);if(id==='general'){await togglePanel(page);await page.locator('#reset-view').click();await t.frames(page);assert.ok(complete(await t.view(page)).every(z=>z.inside),'restablecer encuadra general con ficha abierta');await closePanel(page);}
    }
@@ -129,7 +142,10 @@ try{
    if(touch){const cdp=await context.newCDPSession(page),x=box.x+box.width*.5,y=box.y+box.height*.55;await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{id:1,x,y}]});for(let i=1;i<=8;i++)await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{id:1,x:x+45*i/8,y:y+25*i/8}]});await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await cdp.detach();}else{await page.mouse.move(box.x+box.width*.5,box.y+box.height*.55);await page.mouse.down();await page.mouse.move(box.x+box.width*.5+45,box.y+box.height*.55+25,{steps:8});await page.mouse.up();}await t.frames(page);
    const after=(await t.view(page)).camera;assert.ok(after.x!==before.x||after.y!==before.y,'desplazamiento');
    await page.locator('#reset-view').click();await t.frames(page);assert.ok(complete(await t.view(page)).every(z=>z.inside));r.panZoomReset=true;
-   for(const id of ['zoom-in','zoom-out','panel-toggle']){const box=await page.locator('#'+id).boundingBox();assert.ok(box.width>=44&&box.height>=44,id+'44px');}
+   // Desde la sesión 7 el expediente cerrado no deja botón propio: se abre desde el retrato de la barra
+   // y se cierra con su «×». Los dos, como el zoom, miden al menos 44 px (ajustes 3).
+   for(const id of ['zoom-in','zoom-out','bar-portrait']){const box=await page.locator('#'+id).boundingBox();assert.ok(box.width>=44&&box.height>=44,id+'44px');}
+   await t.panel(page);{const box=await page.locator('#panel-toggle').boundingBox();assert.ok(box.width>=44&&box.height>=44,'panel-toggle 44px');assert.equal((await page.locator('#panel-toggle').textContent()).trim(),'×');}await closePanel(page);
   }
   assert.deepEqual(await t.raw(page),raw);assert.equal(await t.rng(page),rng);assert.deepEqual(errors,[]);
   await q.evaluate(()=>capacityView.destroy());await context.close();

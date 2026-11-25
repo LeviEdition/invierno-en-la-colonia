@@ -140,3 +140,13 @@ body[data-interfaz=v2] #map-app #action-stage :is(.die-choice,.search-die) .die{
 body[data-interfaz=v2] #map-app #action-stage :is(.die-choice,.search-die) .die .pip{width:8px;height:8px;place-self:center;border-radius:50%;background:var(--tinta)}
 /* El papel mide según lo que lleva: elegir un dado no necesita el ancho de tres cartas. */
 body[data-interfaz=v2] #map-app #action-stage>#play-dialog:has(>.paper-options[data-options=dice]),body[data-interfaz=v2] #map-app #action-stage>#search-panel:has(#search-draft:not([hidden])),body[data-interfaz=v2] #map-app #action-stage>#action-panel{width:min(480px,100%)}
+/* ── Ajustes 3 ── */
+/* Legajo: la cruz de cerrar es un botón de papel con la «×» a la vista (sin el bloque oscuro heredado). */
+body[data-interfaz=v2] #map-app #dossier #panel-toggle{background-color:#F3E9D2;background-image:none;color:var(--tinta);border:2px solid var(--tinta);border-radius:5px;box-shadow:2px 2px 0 var(--tinta);font:700 24px/1 var(--fuente-titulo)}
+body[data-interfaz=v2] #map-app #dossier #panel-toggle:focus-visible{outline:2px solid var(--lampara);outline-offset:2px}
+/* Legajo: si no entra (768 px de alto o menos), el contenido se desplaza y avisa «Más abajo ▾», como «Cartas». */
+body[data-interfaz=v2] #map-app #panel-content>.scroll-more{margin:8px -10px -10px;bottom:-10px}
+body:not([data-interfaz=v2]) #map-app #panel-content>.scroll-more{display:none}
+body[data-interfaz=v2] #map-app .legajo #character-moved{margin:2px 0 0;font:600 13px/1.3 var(--fuente-texto);color:var(--tinta-suave)}
+body[data-interfaz=v2] #map-app .legajo #character-moved[hidden]{display:none}
+body[data-interfaz=v2] #map-app #panel-content:not([data-scroll=bottom]):not([data-scroll=both])>.scroll-more{display:none}

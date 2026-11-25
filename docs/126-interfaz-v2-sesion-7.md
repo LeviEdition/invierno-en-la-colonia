@@ -272,3 +272,49 @@ Ninguna otra cambia. Corridas locales con Edge:
 - Las demás las valida el CI.
 
 **Falta probar jugando:** la barra superior a distintos anchos, el sello y las pestañas en el A15, si el toque doble resulta natural, y el tamaño de las cartas en el teléfono, donde «Cartas» se desplaza.
+
+## Ajustes 3 (recorrido completo de baterías)
+
+Base: `73371b3`. El recorrido completo («Mapa — baterías de navegador» por `workflow_dispatch`, run 45505544633) falló en la primera batería. Era la primera vez que corría desde que empezó la interfaz v2: en los PR solo corre la versión reducida. Corrí localmente, con Edge y en el orden del workflow, las doce baterías del paso «Presentación y recorrido de acciones», con sus variables. Las que graban vídeo corrieron con un envoltorio de Playwright sin vídeo, porque acá no hay ffmpeg; el resto de lo que verifican es igual.
+
+| Batería | Falla | Causa | Origen | Arreglo |
+|---|---|---|---|---|
+| `check-horizontal-presentation` | `casilla hospital:0` a 1365×768 | Con 36 supervivientes, el grupo flotante (`#bar-group`, encima de la barra) tapa el primer acceso del hospital. El encuadre no lo medía y el borde del mapa no dejaba subirlo. | Ajustes de la sesión 7 (`a3300e6`) | **Juego:** `focusInset` mide el grupo, que también da margen inferior de desplazamiento (`panelSlack`). |
+| ídem | El expediente no se reabría | El anti-doble-toque (450 ms) se comía el retrato cuando el expediente se había cerrado con «×» un instante antes. | Sesión 7 (`c665668`) | **Juego:** cerrar con «×» libera el retrato (`createClickGuard().release`). El doble toque sobre el retrato sigue frenado. |
+| ídem | `cartel QA fuera del área de juego` | Desde la sesión 1 el mapa ocupa toda la pantalla, así que el cartel no puede quedar arriba del lienzo. Además quedaba tapado por el mapa. | Sesión 1 (`065fc2a`) | **Juego (solo QA):** el cartel flota debajo de la barra superior. **Batería:** exige que sea visible, que esté por encima del mapa, que no tape controles y que no reciba toques. |
+| ídem | `panel-toggle` sin caja (44 px) | El expediente cerrado ya no deja botón: se abre con el retrato. | Sesión 7 (`c665668`) | **Batería:** mide el retrato cerrado y la «×» abierta, los dos de 44 px o más. |
+| ídem | `ficha superpuesta seleccionable hospital` a 852×393 | Objetivo y Crisis tapan, a la izquierda, una ficha del hospital, y el borde del mapa frenaba la cámara. | Anterior a la sesión 7; no la aislé | **Juego:** Objetivo y Crisis dan margen lateral, como la ficha abierta. **Batería:** «la ficha solo ajusta bordes» calcula los bordes con ese margen, con la misma `safeInsets` del juego. |
+| `check-map-inventory` | `choose('Vendas')` | «Inventario» del menú gestiona el equipo y las cartas de uso se juegan desde «Más» → «Cartas». Además, las copias agrupadas «×N» muestran una sola ficha. | Sesión 7 y ajustes 2 | **Batería:** Vendas y Ración por «Cartas» (`t.cards`), Palanca por «Inventario». Se toca la ficha que agrupa las copias. |
+| `check-map-migration` | `#clean-action` invisible | «Limpiar» está en el abanico «Más». | Sesión 7 | **Batería:** abre «Más» si la acción está ahí. |
+| ídem | El abanico no abría | El mismo anti-doble-toque se comía «Más» después de elegir una acción del abanico. | Sesión 7 | **Juego:** cerrar el abanico por otra vía libera «Más». |
+| ídem | Equipo sin «Dar a…» | La transferencia vive en «Inventario». | Sesión 7 | **Batería:** equipa y transfiere por «Inventario»; el resto, por «Cartas». |
+| ídem | `No avanzó a ronda 2`, intermitente (2 de 5 corridas) | Un papel exclusivo (aviso de la encrucijada de la IA) cerraba el repaso del ciclo. Como su contenido no cambiaba, el render no lo reabría y la partida quedaba sin botón para seguir. | Sesión 7 (papel al centro) | **Juego:** si el repaso tiene que verse y está cerrado, se vuelve a presentar. Después: 4 de 4 corridas y el recorrido completo. |
+| `check-map-experience` | El foco no volvía a `objective-details` | El objetivo ya no abre una consulta: el papel se pliega tocándolo. | Sesión 6 (`29ec1b7`) | **Batería:** toca el papel dos veces (respetando `FOLD_GUARD_MS`) y comprueba que se pliegue, que se despliegue y que el estado no cambie. La vuelta del foco con Esc la sigue probando Ajustes. |
+| ídem | Mapa vertical (393×852) de menos de 576 px | En vertical la v2 conserva la pila anterior y muestra «Girá el teléfono» (informe 119). La pila creció: 590 px en la sesión 5, 553 en la 6, 375 en la 7 y 323 con los ajustes 2. | Sesión 6 en adelante | **Batería:** en vertical exige el aviso visible y sin bloquear toques, y el mapa a la vista. Los umbrales horizontales no cambian. Queda como hallazgo 29. |
+| `check-map-feedback-camera` | `aviso por encima de ficha móvil` | El aviso tiene borde rasgado (hasta 6 px); en las esquinas, a 2 px, se tocaba el mapa a través del recorte. | Sesión 2 (`a0e1189`) | **Batería:** mide las esquinas 8 px adentro. |
+| ídem | Enfoque y zoom máximo a 2560×1440 | El enfoque llega hasta el tope por resolución (2), como aprobó la sesión 5. | Sesión 5 (`3e4578e`) | **Batería:** usa ese tope y, si la cámara lo trae (`ceiling`), lo acepta como máximo. |
+| `check-map-capacities`, `check-map-cycle`, `check-map-death-decisions`, `check-exposure-d12`, `check-map-2x`, `check-h344` | — | — | — | Pasan sin cambios. |
+
+Ninguna batería se borró ni se salteó. Donde fallaba un camino que ya no existe, se prueba lo mismo por el camino nuevo.
+
+**Contornos.** El paso hacía `git fetch` de `26fe4ec` abreviado; GitHub no acepta un SHA abreviado y el `|| true` lo escondía. La comparación sí se hacía, porque con `fetch-depth: 0` el commit ya estaba: localmente salen los siete «antes». Ahora el paso usa el SHA completo, lo pide solo si falta, y el script termina con error si no puede dibujar el «antes», en vez de saltearlo en silencio.
+
+**Legajo.**
+- La «×» es un botón de papel con la cruz a la vista; antes heredaba un degradado oscuro.
+- Si el contenido no entra, se desplaza con «Más abajo ▾», como «Cartas». A 1365×768 entra entero en la partida de prueba; a 1365×600 y 852×393 muestra el aviso.
+- «Ya se movió» va en su propia línea.
+
+**Pruebas.**
+- `npm test`: 969 de 969, con seis nuevas en `tests/interfaz-v2-sesion-7-ajustes-3.test.mjs`. Tres anteriores fijaban el texto del código que cambió: el workflow de contornos, el cierre del abanico y el del retrato.
+- `check:build` y `check:mapa-build` en verde.
+- `test:poc` sigue sin correr en Windows (EPERM, hallazgo 14). `src/` no cambió, así que el 40/40 lo confirma el CI.
+- Baterías locales con Edge, todas en verde, en el orden del workflow:
+  - **presentación:** 1365×768 y 852×393;
+  - **capacidades, inventario, ciclo y migración:** sus tamaños, que incluyen 1365×768 y 852×393;
+  - **experiencia:** 1365×768, 852×393 y 393×852, con movimiento normal y reducido;
+  - **cámara:** hasta 2560×1440;
+  - **muertes, D12 y 2×:** sus tres tamaños;
+  - **`check-h344`:** `H344_VIEWPORTS=1365x768,852x393`.
+- El vídeo de las cuatro que lo graban sale solo en el CI.
+
+**Falta probar jugando:** reabrir el expediente y «Más» enseguida; el repaso del ciclo con la IA; el legajo desplazándose en el A15.

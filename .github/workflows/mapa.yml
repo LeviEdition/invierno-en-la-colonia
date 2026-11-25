@@ -86,8 +86,10 @@ jobs:
         if: always()
         shell: bash
         run: |
-          git fetch --no-tags --depth=1 origin 26fe4ec || true
-          node scripts/contornos-localidades.mjs /tmp/horizontal-contornos 26fe4ec
+          # SHA completo: GitHub no acepta uno abreviado en fetch. Con fetch-depth: 0 ya suele estar.
+          BEFORE=26fe4ec5cca82e780529c6dc41fe31cfaaae5f66
+          git cat-file -e "$BEFORE^{commit}" 2>/dev/null || git fetch --no-tags --depth=1 origin "$BEFORE"
+          node scripts/contornos-localidades.mjs /tmp/horizontal-contornos "$BEFORE"
       - uses: actions/upload-artifact@v4
         if: always()
         with:

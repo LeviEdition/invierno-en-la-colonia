@@ -100,7 +100,7 @@ test('Sesión 5 · contornos corregidos: escuela sin el aro, biblioteca sin la c
  const boxes=scene.zones.map(z=>({id:z.id,...outlineBox(z)}));
  for(let i=0;i<boxes.length;i++)for(let j=i+1;j<boxes.length;j++){const a=boxes[i],c=boxes[j];assert.ok(a.x+a.width<=c.x||c.x+c.width<=a.x||a.y+a.height<=c.y||c.y+c.height<=a.y,a.id+' y '+c.id);}
  for(const z of scene.zones)assert.ok(inside(z.outlinePolygon,[z.buildingBounds.x+z.buildingBounds.width/2,z.buildingBounds.y+z.buildingBounds.height/2]),z.id);
- assert.ok(read('scripts/contornos-localidades.mjs').includes('git show'),'capturas antes y después para el CI');assert.match(read('.github/workflows/mapa.yml'),/node scripts\/contornos-localidades\.mjs \/tmp\/horizontal-contornos 26fe4ec/);
+ assert.ok(read('scripts/contornos-localidades.mjs').includes('git show'),'capturas antes y después para el CI');{const wf=read('.github/workflows/mapa.yml');assert.match(wf,/BEFORE=26fe4ec5cca82e780529c6dc41fe31cfaaae5f66/,'SHA completo (ajustes 3 de la sesión 7)');assert.match(wf,/node scripts\/contornos-localidades\.mjs \/tmp\/horizontal-contornos "\$BEFORE"/);assert.doesNotMatch(wf,/origin 26fe4ec \|\| true/,'sin fetch abreviado silenciado');}
 });
 
 test('Sesión 5 · tipografías autoalojadas: OFL 1.1, latino y latino extendido, sin servidores externos',()=>{

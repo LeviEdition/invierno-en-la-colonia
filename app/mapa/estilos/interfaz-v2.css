@@ -153,3 +153,7 @@ body[data-interfaz=v2] #info-dialog{background:var(--pizarra);color:var(--nieve)
 #play-dialog .die-small{display:inline-grid;grid-template:repeat(3,1fr)/repeat(3,1fr);gap:2px;width:26px;height:26px;padding:4px;box-sizing:border-box;background:#d0c19b;border:1px solid #e9dcb3;border-radius:3px;flex:none}
 #play-dialog .die-small.numeric{place-items:center;grid-template:1fr/1fr;color:#252c25;font:bold 14px var(--fuente-ui,system-ui)}
 #play-dialog .die-small .pip{width:4px;height:4px;border-radius:50%;background:#252c25;justify-self:center;align-self:center}
+/* Cartel QA (solo dist/mapa-qa): el mapa ocupa toda la pantalla desde la sesión 1, así que el cartel
+   flota por encima, debajo de la barra superior, sin tapar controles ni recibir toques (ajustes 3). */
+body[data-interfaz=v2] #map-app>.qa-notice{position:absolute;z-index:31;top:70px;left:50%;transform:translateX(-50%);border:1px solid #8c8067;white-space:nowrap}
+@media (max-height:500px){body[data-interfaz=v2] #map-app>.qa-notice{top:58px}}

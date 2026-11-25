@@ -52,6 +52,8 @@ export function cardsModel(p){
 // activarse queda trabado un instante (más largo que cualquier transición). Los controladores
 // del motor ya rechazan solicitudes repetidas; esto evita además abrir dos veces un borrador.
 export function createClickGuard({ms=450,now=()=>performance.now()}={}){
- const last=new Map();
- return id=>{const t=now(),prev=last.get(id);if(prev!==undefined&&t-prev<ms)return false;last.set(id,t);return true;};
+ // release(id): otro control deshizo lo que este hizo (el «×» cerró el expediente que abrió el
+ // retrato); el próximo toque ya no es una repetición y no se traba (ajustes 3 de la sesión 7).
+ const last=new Map(),guard=id=>{const t=now(),prev=last.get(id);if(prev!==undefined&&t-prev<ms)return false;last.set(id,t);return true;};
+ guard.release=id=>{last.delete(id);};return guard;
 }

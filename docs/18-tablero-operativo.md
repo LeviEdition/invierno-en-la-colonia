@@ -19,7 +19,7 @@
 | Interfaz v2 — sesión 3 | **En revisión** (PR #40), con ajustes: ventanas en el tono de la Lámpara; parpadeo errático con semilla, ahora siempre (de día tenue); noche más marcada mientras se presentan las tiradas nocturnas, con el D12 bajo la localidad que tira; marcas de daño en una fila | [121](121-interfaz-v2-sesion-3.md) |
 | Interfaz v2 — sesión 5 | **En revisión** (rama `feature/interfaz-v2-sesion-5`): paneles plegables con «H», globos en las chapas, zoom que cubre el mapa, enfoque más cercano (tope 2), luces más notorias, tres contornos corregidos y Bitter y Alegreya Sans autoalojadas | [123](123-interfaz-v2-sesion-5.md) |
 | Interfaz v2 — sesión 6 | **En revisión** (rama `feature/interfaz-v2-sesion-6`), con ajustes: los paneles se pliegan y despliegan tocándolos, sin pestañas con flecha, incluido el texto de las tarjetas y las chapas; el detalle de Objetivo y Crisis va en globos; tirada de dados de 1200 ms con freno y pausa final, que un toque adelanta | [125](125-interfaz-v2-sesion-6.md) |
-| Interfaz v2 — sesión 7 | **En revisión** (rama `feature/interfaz-v2-sesion-7`), con ajustes. Base: la barra es el único lugar de acción, con abanico, tira y papel al centro; el expediente es de solo lectura y hay atajos. Ajustes: el grupo flota en círculos sobre la barra; «Cartas» con dos secciones, «De uso» y «Equipables»; la misma casilla de papel para todas las tiradas; papel con relieve, grano y bordes con semilla; Alegreya Sans y Bitter en toda la interfaz; el papel de búsqueda se ajusta a la cantidad de cartas; nada se monta sobre el papel central. Ajustes 2: residuos en peligro desde el motor (`wasteLimit`), papeles centrales con opciones alineadas y acciones abajo a la derecha, cartas de tamaño único y copias agrupadas, un solo estilo de botón, barra superior de papel con etiquetas, expediente como legajo con pestañas y toque doble para abrirlo | [126](126-interfaz-v2-sesion-7.md) |
+| Interfaz v2 — sesión 7 | **En revisión** (rama `feature/interfaz-v2-sesion-7`), con ajustes. Base: la barra es el único lugar de acción, con abanico, tira y papel al centro; el expediente es de solo lectura y hay atajos. Ajustes: el grupo flota en círculos sobre la barra; «Cartas» con dos secciones, «De uso» y «Equipables»; la misma casilla de papel para todas las tiradas; papel con relieve, grano y bordes con semilla; Alegreya Sans y Bitter en toda la interfaz; el papel de búsqueda se ajusta a la cantidad de cartas; nada se monta sobre el papel central. Ajustes 2: residuos en peligro desde el motor (`wasteLimit`), papeles centrales con opciones alineadas y acciones abajo a la derecha, cartas de tamaño único y copias agrupadas, un solo estilo de botón, barra superior de papel con etiquetas, expediente como legajo con pestañas y toque doble para abrirlo. Ajustes 3: las doce baterías del recorrido completo pasan localmente; cinco errores del juego corregidos (casilla tapada por el grupo, ficha tapada por Objetivo y Crisis, dos toques comidos por el anti-doble-toque, repaso del ciclo que no se reabría) | [126](126-interfaz-v2-sesion-7.md) |
 | Interfaz v2 — sesión 4 | **En revisión** (rama `feature/interfaz-v2-sesion-4`): barra de acción permanente con superviviente, dados y acciones; tarjetas de Objetivo y Crisis; papel viejo con sangre seca en vez de nieve en los paneles; transiciones de paneles; comida en peligro desde el motor | [122](122-interfaz-v2-sesion-4.md) |
 | Singleplayer (SP-00 a SP-08) | **Diseño en papel**; capítulo piloto «La última guardia» en ficha | [63](63-hoja-de-ruta-planificacion-singleplayer.md), [105](105-ficha-capitulo-la-ultima-guardia.md) |
 
@@ -29,7 +29,7 @@ El mapa permite preparar, jugar y terminar una partida completa (contra la IA, d
 
 **Revisar las sesiones 5 a 7 de la interfaz v2 ([123](123-interfaz-v2-sesion-5.md), [125](125-interfaz-v2-sesion-6.md), [126](126-interfaz-v2-sesion-7.md)).**
 
-1. Abrir los PR de `feature/interfaz-v2-sesion-5` (base: sesión 4), `-6` (base: 5) y `-7` (base: 6) y esperar el CI. En la sesión 7, mirar las baterías de navegador y decidir el hallazgo 27: `check-map-inventory` ya fallaba desde la sesión 7.
+1. Abrir los PR de `feature/interfaz-v2-sesion-5` (base: sesión 4), `-6` (base: 5) y `-7` (base: 6) y esperar el CI. En la sesión 7, lanzar además el recorrido completo por `workflow_dispatch` (hallazgo 28): localmente pasa entero.
 2. Jugar en escritorio y decidir sobre la sesión 7 y sus dos rondas de ajustes:
    - la barra única, el abanico y el grupo flotante;
    - la barra superior de papel con etiquetas, y la moral;
@@ -42,7 +42,7 @@ El mapa permite preparar, jugar y terminar una partida completa (contra la IA, d
    - el plegado por toque y si alcanza la señal de cursor y tono;
    - la tirada lenta y el toque que la adelanta;
    - «H», el enfoque con tope 2, el zoom que cubre, los destellos, los contornos y las tipografías.
-4. Decidir si el motor expone el límite de muerte, como `wasteLimit` (hallazgo 26).
+4. Decidir si el motor expone el límite de muerte, como `wasteLimit` (hallazgo 26), y si el teléfono vertical necesita una disposición propia (hallazgo 29).
 
 ## 3. Cola ordenada
 
@@ -75,7 +75,9 @@ El mapa permite preparar, jugar y terminar una partida completa (contra la IA, d
 | 17 | `luces.json` se detecta en la textura 1× | Válido mientras el arte 2× no se desplace respecto de la 1× | Regenerar (`node scripts/detectar-luces.mjs`) si cambia el arte |
 | 19 | Residuos en peligro | **Resuelto** (ajustes 2 de la sesión 7): `WASTE_LIMIT` en el dominio, capacidad `wasteLimit`; la chapa se pone roja desde 10 ([126](126-interfaz-v2-sesion-7.md)) | Ver jugando |
 | 26 | Límite de muerte sin capacidad del motor | El legajo muestra «muere a los 3» con `DEATH_DAMAGE`; el motor tiene el 3 literal (exposición, crisis parcial) y una prueba los compara | Decidir si se expone como `wasteLimit` |
-| 27 | `check-map-inventory` (y probablemente `check-map-migration`) | Falla desde la sesión 7, también en `2972552`: «Inventario» del menú abre la vista de equipables y la batería busca «Vendas» ([126](126-interfaz-v2-sesion-7.md), ajustes 2) | Decidir: la batería pasa por «Cartas» o el menú muestra la mano completa |
+| 27 | `check-map-inventory` y `check-map-migration` | **Resuelto** (ajustes 3): las cartas de uso pasan por «Cartas» y el equipo por «Inventario»; el menú no cambió ([126](126-interfaz-v2-sesion-7.md)) | — |
+| 28 | **El recorrido completo no corre en los PR** | Solo corre por `workflow_dispatch`; no corrió desde que empezó la interfaz v2 y acumuló catorce fallas, cinco de ellas del juego ([126](126-interfaz-v2-sesion-7.md), ajustes 3) | Correrlo antes de cada fusión |
+| 29 | Mapa en teléfono vertical | La v2 es horizontal y en vertical muestra «Girá el teléfono» sobre la pila anterior, pero la pila creció: el mapa pasó de 590 px (sesión 5) a 323 (ajustes 2) a 393×852 | Decidir si el vertical necesita disposición propia |
 | 20 | Tocar una ficha del mapa abre la ficha lateral | **Decidido** (sesión 7): la hace activa en la barra y no abre el expediente, que se abre solo con el retrato o E. También se aplicó a los edificios: si el jugador eligió una localidad, el expediente la muestra al abrirlo ([126](126-interfaz-v2-sesion-7.md)) | Confirmar jugando lo de los edificios |
 | 22 | Acciones apagadas sin motivo del motor | Superviviente ajeno, turno ajeno, acción en curso y códigos `reason` sin texto quedan apagados sin globo; «Usar carta» trae motivo por carta, no global ([126](126-interfaz-v2-sesion-7.md)) | Decidir si el motor debe exponer un motivo global |
 | 23 | Barra completa a 1365 px | Ranuras, dados, acciones y «Terminar turno» entran sin desbordar; el grupo flota sobre la barra en todos los tamaños (en el teléfono, más chico y oculto mientras hay una tira de acción); debajo de 1250 px se oculta el estado del ciclo, y en el teléfono también las ranuras | Ver jugando y en el A15 |
@@ -86,19 +88,11 @@ El mapa permite preparar, jugar y terminar una partida completa (contra la IA, d
 
 ## 5. Verificación de la interfaz v2, sesión 7 y ajustes (rama `feature/interfaz-v2-sesion-7`)
 
-- [x] **963 pruebas, 0 fallos**: 7 nuevas en `interfaz-v2-sesion-7-ajustes-2`; 6 anteriores se ajustaron porque el pedido cambia lo que fijaban (textos de Objetivo, residuos en la proyección, registro y ayuda, toque).
-- [x] `check:build` y `check:mapa-build` en verde. `src/` cambia solo para exponer `wasteLimit`; `invierno_colonia_v9_9.html` se regeneró, como en las sesiones 1 y 4.
-- [x] Guion propio con Edge a 1365×768 y 852×393, en una partida real «un grupo» con La noche:
-  - residuos 10 y comida corta en rojo;
-  - «Mejorar dado» con cuatro casillas de 58 px en fila y las acciones abajo a la derecha;
-  - «Cartas» con «Ración de comida ×2», seis cartas de 220×336 y «Más abajo»;
-  - la carta de 220 caracteres entra a 15 px;
-  - el legajo con el sello de guardia;
-  - el toque: el primero no abre el expediente, el segundo sí, y los dados no cambian;
-  - las cuatro pestañas y el menú con «Ayuda y atajos»;
-  - sin desbordes ni errores.
-- [x] `check-exposure-d12-browser` pasa en local con Edge en los dos tamaños.
-- [ ] CI del PR: las baterías de navegador (solo cambió la lista del menú en `check-map-experience`) y el oráculo `test:poc` (EPERM en Windows). `check-map-inventory` falla desde la sesión 7 (hallazgo 27).
+- [x] **969 pruebas, 0 fallos**: 6 nuevas en `interfaz-v2-sesion-7-ajustes-3`; 3 anteriores se ajustaron al código nuevo (contornos, cierre del abanico y del retrato).
+- [x] `check:build` y `check:mapa-build` en verde. `src/` no cambió en los ajustes 3.
+- [x] **Recorrido completo local con Edge**, las doce baterías del paso en el orden del workflow y con sus variables. Las que graban vídeo corrieron sin vídeo (no hay ffmpeg). Detalle y tamaños en [126](126-interfaz-v2-sesion-7.md), ajustes 3.
+- [x] Contornos: el paso usa el SHA completo de `26fe4ec` y falla si no puede dibujar el «antes»; localmente salen los siete.
+- [ ] CI: el recorrido completo por `workflow_dispatch` (con vídeo) y el oráculo `test:poc` (EPERM en Windows).
 - [ ] Ver jugando en escritorio y en el Galaxy A15.
 - [ ] Decisión de merge del creador.
 

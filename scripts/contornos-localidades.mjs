@@ -19,7 +19,7 @@ const [out,ref]=process.argv.slice(2);
 if(out){
  mkdirSync(out,{recursive:true});const img=decodePng(readFileSync(resolve(root,SOURCE)));
  const versions=[['despues',JSON.parse(readFileSync(resolve(root,SCENE),'utf8'))]];
- if(ref)try{versions.push(['antes',JSON.parse(execFileSync('git',['show',ref+':'+SCENE],{cwd:root,encoding:'utf8'}))]);}catch{console.log('Sin «antes»: el commit '+ref+' no está disponible.');}
+ if(ref)try{versions.push(['antes',JSON.parse(execFileSync('git',['show',ref+':'+SCENE],{cwd:root,encoding:'utf8'}))]);}catch{console.error('Sin «antes»: el commit '+ref+' no está disponible; la comparación no se hizo.');process.exitCode=1;}
  for(const [suffix,scene] of versions)for(const z of scene.zones)writeFileSync(resolve(out,`${z.id}-${suffix}.png`),encodePng(overlay(img,z.outlinePolygon)));
  console.log('Contornos: '+versions.map(v=>v[0]).join(' y ')+' en '+out);
 }
