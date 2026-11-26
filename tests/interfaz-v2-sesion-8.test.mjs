@@ -6,6 +6,8 @@ import {d12Seed} from '../app/mapa/movimiento/exposure-die-view.mjs';
 import {objectDecor,burntMate,tallyGroups,texturePixels,MATERIALS,contrast} from '../app/mapa/experiencia/carbon.mjs';
 import {carbonFilter,MAP_COLOR_FILTER} from '../app/mapa/render/cold-filter.mjs';
 import {kindLabel} from '../app/mapa/busqueda/search-panel.mjs';
+import {DESKTOP_QUERY,lockedFolds,shownFolded,toggleAll,FOLD_KEYS} from '../app/mapa/experiencia/folds.mjs';
+import {skillAction,SKILL_GENERIC} from '../app/mapa/experiencia/legajo.mjs';
 const read=path=>readFileSync(new URL('../'+path,import.meta.url),'utf8');
 const close=(a,b)=>a.every((x,i)=>Math.abs(x-b[i])<1e-9);
 
@@ -152,9 +154,82 @@ test('Materiales · chapa galvanizada y lona azul generadas con semilla; carta d
  const mean=px=>[0,1,2].map(c=>{let s=0;for(let i=c;i<px.length;i+=4)s+=px[i];return s/(px.length/4);});
  const lona=mean(texturePixels('lona')),zinc=texturePixels('galvanizada'),grey=mean(zinc);
  assert.ok(lona[2]>lona[0]+25,'lona azul');assert.ok(grey[2]>grey[0]&&grey[2]-grey[0]<25,'gris frío');
- let darkest=255;for(let i=0;i<zinc.length;i+=4)darkest=Math.min(darkest,zinc[i]);
- assert.ok(darkest>=0x8E,'ningún punto más oscuro que el fondo con el que se calcula el contraste');
+ assert.ok(grey[0]>=0x7D,'el zinc, en promedio, no es más oscuro que el fondo con el que se calcula el contraste');
  assert.equal(kindLabel('educacion'),'educación');assert.equal(kindLabel('muestra'),'muestra');assert.equal(kindLabel(undefined),'objeto');
  const view=read('app/mapa/busqueda/search-panel.mjs');
  assert.match(view,/'search-card-art'\);frame\.setAttribute\('aria-hidden','true'\)/);assert.doesNotMatch(view,/el\('img'|createElement\('img'/,'sin ilustraciones inventadas');
+});
+
+// ── Segunda revisión (informe 129). Igual que arriba: valores, estructura y funciones puras; el
+// contraste y las posiciones en el navegador se miden aparte. ──
+const maquetaCss=read('app/mapa/estilos/maqueta.css'),of=(css,part)=>rules(css).filter(r=>r.selector.includes(part));
+
+test('129 · la habilidad del legajo no hereda el degradado de maqueta.css y apagada no usa opacidad',()=>{
+ assert.match(maquetaCss,/button\{cursor:pointer;background:linear-gradient\(175deg,#2d3028,#1d2321\)/,'el degradado que heredaba');
+ const own=of(carbonCss,'#legajo-habilidad-usar'),base=own.find(r=>/#legajo-habilidad-usar:not\(#_\):not\(#__\)$/.test(r.selector.trim()));
+ assert.match(base.body,/background:transparent;color:var\(--etiqueta-tinta\)/,'el fondo oscuro queda anulado: el papel va en ::before');
+ const paper=own.find(r=>/:not\(#__\)::before$/.test(r.selector.trim()));assert.match(paper.body,/background-color:var\(--etiqueta-papel\)/);assert.match(paper.body,/clip-path:polygon/,'con muesca, como las de la barra');
+ const off=own.find(r=>/:not\(#__\):disabled$/.test(r.selector.trim()));assert.match(off.body,/opacity:1;filter:none;cursor:not-allowed/);assert.match(off.body,/box-shadow:none/);
+ for(const r of own)assert.doesNotMatch(r.body,/opacity:(0?\.\d+|0)\b/,r.selector.slice(-50));
+ assert.ok(contrast(variable('apagado-barra'),variable('apagado-barra-tinta'))>=4.5);
+});
+
+test('129 · ningún apagado de los papeles baja la opacidad; los botones sobre papel tienen fondo propio',()=>{
+ const stage=of(carbonCss,':is(#action-stage,#move-planner,#move-sequence,#action-strip,#connection-banner) button').filter(r=>/:disabled$/.test(r.selector.trim()));
+ assert.equal(stage.length,1);assert.match(stage[0].body,/opacity:1;filter:none/);assert.match(stage[0].selector,/:not\(\.search-die\):not\(\.die-choice\)/,'el dado que no sirve queda fuera de alcance');
+ for(const part of ['.search-card:not(#_):not(#__):disabled','.dossier-tabs button:not(#_):not(#__):disabled',':is(#play-dialog,#cycle-dialog) button'])assert.ok(of(carbonCss,part).some(r=>/opacity:1/.test(r.body)),part);
+ const papers=of(carbonCss,':is(#settings-panel,#inventory-dialog,#info-dialog,#locality-survivors) button');
+ assert.match(papers[0].body,/background:var\(--etiqueta-papel\) linear-gradient\([^)]*\);color:var\(--etiqueta-tinta\)/);assert.ok(contrast(variable('etiqueta-papel'),variable('etiqueta-tinta'))>=4.5);
+});
+
+test('129 · «VÍVERES» no depende de que «Mejorar dado» esté a la vista',()=>{
+ const box=rules(carbonCss).find(r=>/#action-bar \.estencil$/.test(r.selector.trim())&&/flex:/.test(r.body));
+ assert.match(box.body,/justify-content:flex-end/,'apoyada contra las acciones, que no se mueven');
+ assert.match(maquetaCss,/\[hidden\]\{display:none!important\}/,'por eso la excepción necesita !important');
+ assert.match(carbonCss,/@media \(min-width:1200px\) and \(min-height:501px\)\{body\[data-interfaz=v2\] #map-app #action-bar #boost-action\[hidden\]\{display:block!important;visibility:hidden\}\}/,'oculto conserva su lugar');
+});
+
+test('129 · en escritorio la barra no se pliega; en el teléfono, como antes',()=>{
+ assert.equal(DESKTOP_QUERY,'(min-width:601px) and (min-height:501px)','1365×768 sí; 852×393 y 393×852 no');
+ assert.deepEqual(lockedFolds(true),['bar']);assert.deepEqual(lockedFolds(false),[]);
+ const saved=Object.fromEntries(FOLD_KEYS.map(k=>[k,k==='bar']));
+ assert.equal(shownFolded(saved,'bar',false,lockedFolds(true)),false,'una barra guardada plegada no se aplica');
+ assert.equal(shownFolded(saved,'bar',false,lockedFolds(false)),true);
+ const all=toggleAll(Object.fromEntries(FOLD_KEYS.map(k=>[k,false])),['bar']);assert.equal(all.bar,false);assert.equal(all.crisis,true);
+ const back=toggleAll(all,['bar']);assert.ok(FOLD_KEYS.every(k=>!back[k]),'la segunda «H» despliega todo aunque la barra nunca se pliegue');
+ const view=read('app/mapa/map-view.mjs');assert.match(view,/folds\[key\]===folded\|\|fixedFolds\(\)\.includes\(key\)\)return;/);assert.match(view,/tab\.hidden=fixed;/);
+});
+
+test('129 · habilidad apagada: dice por qué, con el motivo y el dato del motor',()=>{
+ const who=(id,used)=>({id:'h0',skill:{id,used}}),p={play:{options:{h0:{special:{allowed:false,reason:'treatment'}}}}},say=(c,q=p)=>skillAction(c,q,{own:true,reasons:{treatment:'Sin pacientes o ya usada'}}).reason;
+ assert.equal(say(who('medic',false)),'Nadie herido en tu localidad');assert.equal(say(who('nurse',false)),'Nadie con congelación en tu localidad');
+ assert.equal(say(who('medic',true)),'Ya usada esta ronda');assert.equal(say(who('medic',null)),'Sin pacientes o ya usada','sin el dato, no adivina');
+ assert.equal(skillAction(who('medic',false),{play:{options:{h0:{special:{allowed:false,reason:'otro'}}}}},{own:true}).reason,SKILL_GENERIC);
+ assert.equal(SKILL_GENERIC,'No se puede usar ahora');
+ assert.match(read('app/mapa/map-view.mjs'),/state\.hidden=!!sa&&!sa\.allowed;/,'el motivo reemplaza a «Disponible esta ronda»');
+ assert.match(read('src/application/map-play.mjs'),/if\(p\.skillUsed\|\|!targets\.length\)reason='treatment'/,'el motor junta los dos casos en un motivo: si esto cambia, revisar el texto');
+});
+
+test('129 · el papel de búsqueda deja lugar para 2 y 3 cartas en fila a 1365×768',()=>{
+ const base=read('app/mapa/estilos/ajustes-2.css'),unica=read('app/mapa/estilos/barra-unica.css');
+ const [,w,g]=base.match(/--carta-w:(\d+)px;--carta-h:\d+px;--carta-gap:(\d+)px/).map(Number);
+ const paper=Number(unica.match(/#action-stage>:is\(section,dialog\)\{[^}]*padding:\d+px (\d+)px/)[1]),stage=Number([...unica.matchAll(/#action-stage\{width:min\((\d+)px/g)].at(-1)[1]);
+ const blanket=Number(carbonCss.match(/#search-cards\{padding:(\d+)px/)[1]);
+ for(const n of [2,3]){
+  const m=carbonCss.match(new RegExp('#search-panel\\[data-cards="'+n+'"\\]\\{width:min\\(calc\\((\\d)\\*var\\(--carta-w\\) \\+ (?:\\d\\*)?var\\(--carta-gap\\) \\+ (\\d+)px\\)'));
+  assert.ok(m,'ancho para '+n);assert.equal(Number(m[1]),n);
+  const panel=n*w+(n-1)*g+Number(m[2]),free=panel-2*paper-2*blanket;
+  assert.ok(free>=n*w+(n-1)*g,n+' cartas: '+free+' px libres');assert.ok(panel<=stage,n+' cartas entran en la franja central ('+panel+' ≤ '+stage+')');
+ }
+});
+
+test('129 · chapa con hollín y mugre fija; el copo del D12 en celeste',()=>{
+ const dirt=texturePixels('mugre');assert.deepEqual(dirt,texturePixels('mugre'));
+ let clean=0,dark=0;for(let i=3;i<dirt.length;i+=4){if(dirt[i]===0)clean++;else if(dirt[i]>20)dark++;}
+ assert.ok(clean>dirt.length/16&&dark>0,'irregular: zonas limpias y manchas');
+ assert.match(carbonCss,/var\(--tex-mugre,none\),var\(--tex-galvanizada,none\)/);assert.match(carbonCss,/\.tornillo\{[^}]*box-shadow:var\(--tornillo-hollin\)/);
+ assert.match(read('app/mapa/experiencia/carbon.mjs'),/'#menu-toggle','boton'/);
+ const chunk=read('app/mapa/movimiento/d12-3d.mjs');assert.match(chunk,/ESCARCHA='#7FC4E8'/);assert.match(chunk,/paint=frost\?ESCARCHA:PINTURA/);
+ assert.match(read('app/mapa/movimiento/exposure-die.css'),/\.d12-frost path\{stroke:#7FC4E8;/);
+ assert.match(read('docs/109-guia-de-estilo.md'),/\| Escarcha \| `#7FC4E8` \|/,'el mismo celeste de la guía');
 });

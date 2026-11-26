@@ -12,8 +12,13 @@ export function loadFolds(storage){
  catch{return unfolded();}
 }
 export function saveFolds(storage,state){try{storage?.setItem(FOLD_STORAGE,JSON.stringify(state));return !!storage;}catch{return false;}}
-// «H»: si queda algo desplegado, pliega todo; si no, despliega todo.
-export function toggleAll(state){const fold=FOLD_KEYS.some(k=>!state[k]);return Object.fromEntries(FOLD_KEYS.map(k=>[k,fold]));}
+// En escritorio la barra de acción queda siempre desplegada (informe 129): tocar junto al retrato
+// la plegaba y escondía «Buscar», «Atacar» y «Moverse». En el teléfono se pliega como antes. Lo
+// guardado no se borra: solo no se aplica mientras el panel esté fijo.
+export const DESKTOP_QUERY='(min-width:601px) and (min-height:501px)';
+export function lockedFolds(desktop){return desktop?['bar']:[];}
+// «H»: si queda algo desplegado, pliega todo; si no, despliega todo. Los fijos no cuentan.
+export function toggleAll(state,locked=[]){const free=FOLD_KEYS.filter(k=>!locked.includes(k)),fold=free.some(k=>!state[k]);return Object.fromEntries(FOLD_KEYS.map(k=>[k,locked.includes(k)?!!state[k]:fold]));}
 export function foldLabel(key,folded){return (folded?'Desplegar ':'Plegar ')+FOLD_LABELS[key];}
 // Una crisis NUEVA (otra ronda u otro pedido) despliega su tarjeta una vez. La primera que se
 // ve al abrir no cuenta como nueva; en el pase (proyección bloqueada) no hay crisis.
@@ -56,4 +61,4 @@ export function mountFoldPanels(panels,{isFolded,toggle,signal,gate=createFoldGa
 // plegadas para no montarse sobre él. Es solo presentación: el plegado guardado no cambia y,
 // al cerrarse el papel, cada tarjeta vuelve como estaba.
 export const STAGE_FOLDS=Object.freeze(['objective','crisis']);
-export function shownFolded(folds,key,staged=false){return !!folds?.[key]||(staged&&STAGE_FOLDS.includes(key));}
+export function shownFolded(folds,key,staged=false,locked=[]){return !locked.includes(key)&&(!!folds?.[key]||(staged&&STAGE_FOLDS.includes(key)));}

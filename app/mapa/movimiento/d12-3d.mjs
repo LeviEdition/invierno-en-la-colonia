@@ -6,11 +6,12 @@ import {D12_FACES} from './exposure-die-geometry.mjs';
 import {seededRandom} from './d12-orientation.mjs';
 
 const R=1/Math.sqrt(3),CHAMFER=.86,TEX=256;
-const MARFIL='#E6DCC3',MARFIL_GASTADO='#CFC2A3',PINTURA='#8E2F2A';
+const MARFIL='#E6DCC3',MARFIL_GASTADO='#CFC2A3',PINTURA='#8E2F2A',ESCARCHA='#7FC4E8';
 const sub=(a,b)=>a.map((x,i)=>x-b[i]),add=(a,b)=>a.map((x,i)=>x+b[i]),scale=(a,k)=>a.map(x=>x*k),dot=(a,b)=>a[0]*b[0]+a[1]*b[1]+a[2]*b[2];
 const key=p=>p.map(x=>x.toFixed(5)).join(',');
 
-// Cara tallada: marfil con grano, el símbolo hundido (sombra adentro) y la pintura roja saltada.
+// Cara tallada: marfil con grano, el símbolo hundido (sombra adentro) y la pintura saltada: roja,
+// salvo el copo de la congelación, en celeste (Escarcha, guía 109 §2).
 function faceTexture(outcome,paths,seed){
  const c=document.createElement('canvas');c.width=c.height=TEX;const g=c.getContext('2d'),r=seededRandom(seed);
  g.fillStyle=MARFIL;g.fillRect(0,0,TEX,TEX);
@@ -20,8 +21,10 @@ function faceTexture(outcome,paths,seed){
   const p=new Path2D(d);g.save();g.translate(TEX/2,TEX/2);g.scale(TEX/34,TEX/34);
   const stroke=outcome!=='wound';g.lineCap='round';g.lineJoin='round';
   // Talla: el hueco oscuro, corrido hacia abajo a la derecha (luz de arriba).
-  g.save();g.translate(.45,.55);g.strokeStyle='rgba(60,40,25,.55)';g.fillStyle='rgba(60,40,25,.55)';g.lineWidth=2.6;if(stroke)g.stroke(p);else g.fill(p);g.restore();
-  g.strokeStyle=PINTURA;g.fillStyle=PINTURA;g.lineWidth=2.1;if(stroke)g.stroke(p);else g.fill(p);
+  // El celeste es claro sobre el marfil: su hueco es más ancho y azul oscuro, para que el copo se lea.
+  const frost=outcome==='frost',carve=frost?'rgba(14,52,74,.92)':'rgba(60,40,25,.55)',paint=frost?ESCARCHA:PINTURA;
+  g.save();g.translate(.45,.55);g.strokeStyle=carve;g.fillStyle=carve;g.lineWidth=frost?3.7:2.6;if(stroke)g.stroke(p);else g.fill(p);g.restore();
+  g.strokeStyle=paint;g.fillStyle=paint;g.lineWidth=frost?1.9:2.1;if(stroke)g.stroke(p);else g.fill(p);
   g.restore();
   // Pintura saltada: se borran manchitas fijas (semilla por cara).
   g.globalCompositeOperation='source-atop';g.fillStyle=MARFIL_GASTADO;

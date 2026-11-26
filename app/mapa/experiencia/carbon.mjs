@@ -44,23 +44,33 @@ export function spanglePixels(size,seed,{base,cells=64,spread=9}){
  }
  return px;
 }
+// Mugre de las chapas: manchas irregulares de hollín y grasa (dos escalas de ruido) y motas.
+// Transparente donde está limpio; repetible en los dos sentidos.
+export function grimePixels(size,seed,{color=[22,17,12],max=120}={}){
+ const r=seededRandom(seed),px=new Uint8ClampedArray(size*size*4);
+ const lattice=n=>{const v=Array.from({length:n*n},()=>r());return (x,y)=>{const fx=x/size*n,fy=y/size*n,x0=Math.floor(fx),y0=Math.floor(fy),x1=(x0+1)%n,y1=(y0+1)%n,sx=fx-x0,sy=fy-y0,u=sx*sx*(3-2*sx),w=sy*sy*(3-2*sy);return (v[y0*n+x0]*(1-u)+v[y0*n+x1]*u)*(1-w)+(v[y1*n+x0]*(1-u)+v[y1*n+x1]*u)*w;};};
+ const broad=lattice(5),fine=lattice(19);
+ for(let y=0;y<size;y++)for(let x=0;x<size;x++){const n=broad(x,y)*.68+fine(x,y)*.32,speck=r()<.012?r()*max*.7:0;px.set([...color,Math.min(max,Math.max(0,n-.5)*2.2*max+speck)],(y*size+x)*4);}
+ return px;
+}
 export const TEXTURES=Object.freeze({
  grano:{size:192,seed:8101,kind:'grain'},
  lona:{size:96,seed:8102,kind:'weave',base:[44,62,88],thread:[60,82,112],dirt:.35},
  manta:{size:96,seed:8103,kind:'weave',base:[38,54,78],thread:[52,72,102],dirt:.2},
- galvanizada:{size:128,seed:8104,kind:'spangle',base:[160,168,175]}
+ galvanizada:{size:128,seed:8104,kind:'spangle',base:[132,139,145],spread:5},
+ mugre:{size:192,seed:8105,kind:'grime',max:48}
 });
-const painters={grain:(t)=>grainPixels(t.size,t.seed),weave:(t)=>weavePixels(t.size,t.seed,t),spangle:(t)=>spanglePixels(t.size,t.seed,t)};
+const painters={grain:(t)=>grainPixels(t.size,t.seed),weave:(t)=>weavePixels(t.size,t.seed,t),spangle:(t)=>spanglePixels(t.size,t.seed,t),grime:(t)=>grimePixels(t.size,t.seed,t)};
 export function texturePixels(name){const t=TEXTURES[name];return painters[t.kind](t);}
 
-// Contraste: color de fondo representativo de cada material (el caso más desfavorable) y el texto
-// que va encima (informes 127 y 128). El piso es AA: 4,5 (3 para texto grande).
+// Contraste: color de fondo representativo de cada material (el más desfavorable medido bajo un
+// texto) y el texto que va encima (informes 127 a 129). El piso es AA: 4,5 (3 para texto grande).
 export const MATERIALS=Object.freeze([
- {material:'chapa galvanizada (números en esténcil)',bg:'#8E969D',text:'#11161A',large:true},
- {material:'chapa galvanizada (etiquetas)',bg:'#8E969D',text:'#1C2329',large:false},
- {material:'chapa galvanizada (comida y residuos en peligro)',bg:'#8E969D',text:'#521308',large:false},
- {material:'pieza estampada (zoom y menú)',bg:'#A9B1B8',text:'#11161A',large:false},
- {material:'pieza estampada apagada',bg:'#98A0A7',text:'#232A30',large:false},
+ {material:'chapa galvanizada (números en esténcil)',bg:'#7D8488',text:'#06090B',large:true},
+ {material:'chapa galvanizada (etiquetas)',bg:'#7D8488',text:'#090D10',large:false},
+ {material:'chapa galvanizada (comida y residuos en peligro)',bg:'#7D8488',text:'#2F0802',large:false},
+ {material:'pieza estampada (zoom y menú)',bg:'#8A9197',text:'#06090B',large:false},
+ {material:'pieza estampada apagada',bg:'#767D83',text:'#070A0C',large:false},
  {material:'hoja del objetivo (lápiz)',bg:'#D9CFB8',text:'#3A342D',large:true},
  {material:'hoja del objetivo (título)',bg:'#D9CFB8',text:'#2B2219',large:false},
  {material:'cartón de la crisis (texto)',bg:'#A88A62',text:'#1E1610',large:false},
@@ -91,6 +101,8 @@ export function mountCarbon(doc=document){
  try{for(const name of Object.keys(TEXTURES))root.style.setProperty('--tex-'+name,texUrl(name));}catch{}
  const objects={'.topbar':'chapa','#objective-card':'hoja','#crisis-card':'carton','#dossier':'carpeta','#action-bar':'tablon','#map-notice':'nota'};
  for(const [sel,name] of Object.entries(objects)){const el=doc.querySelector(sel);if(!el)continue;const d=objectDecor(name);el.dataset.objeto=name;el.style.setProperty('--giro',d.tilt+'deg');el.style.setProperty('--hollin',String(d.soot));el.style.setProperty('--mancha-x',d.stain.x+'%');el.style.setProperty('--mancha-y',d.stain.y+'%');}
+ // Dónde cae la mugre en cada chapa: fijo por objeto.
+ for(const [sel,name]of [['.topbar','chapa'],['.map-tools','zoom'],['#floating-menu','menu'],['#menu-toggle','boton']]){const el=doc.querySelector(sel);if(!el)continue;const {stain}=objectDecor('mugre:'+name);el.style.setProperty('--mugre-x',stain.x*3+'px');el.style.setProperty('--mugre-y',stain.y*2+'px');}
  // La misma chapa atornillada en los recursos, el zoom y el menú desplegable.
  for(const sel of ['.topbar','.map-tools','#floating-menu']){const plate=doc.querySelector(sel);once(plate,'tornillo',()=>{for(const k of ['ti','td','bi','bd'])span('tornillo tornillo-'+k,plate);});}
  const obj=doc.querySelector('#objective-card');once(obj,'pliegues',()=>{span('pliegues',obj,obj.firstChild);span('escarcha',obj);});

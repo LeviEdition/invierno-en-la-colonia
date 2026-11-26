@@ -3,7 +3,7 @@
 .d12-solid polygon{stroke:#493d2c;stroke-width:.035;stroke-linejoin:round}
 .d12-symbol path{stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;fill:none}
 .d12-wound path{fill:#8e171d;stroke:#641018;stroke-width:1.1}
-.d12-frost path{stroke:#164e68;stroke-width:2.2}
+.d12-frost path{stroke:#7FC4E8;stroke-width:2.2;filter:drop-shadow(0 0 .5px #0e344a) drop-shadow(0 0 .5px #0e344a)}
 .d12-bite path{stroke:#791d27;stroke-width:2.5}
 .d12-caption{min-height:18px;white-space:nowrap}
 #move-sequence:has(#exposure-die.exposure-d12:not([hidden])){display:grid;grid-template-columns:82px minmax(0,1fr);gap:8px 12px;align-items:center;text-align:left;width:350px}

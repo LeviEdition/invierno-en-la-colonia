@@ -10,15 +10,16 @@
  --oxido:#8A3B2A;--oxido-claro:#D2654C;--grafito:#3A342D;--tinta-azul:#1F3A5C;
  --carta-acero:#5D6B78;--carta-sangre:#8E2F2A;--carta-lampara:#D0A23A;
  /* Colores de los materiales que llevan texto (informe 128): la prueba de contraste los lee de acá. */
- --galva:#A0A8AF;--galva-tinta:#11161A;--galva-rotulo:#1C2329;--oxido-chapa:#521308;
- --estampa:#B6BDC3;--estampa-sombra:#A9B1B8;--estampa-apagada:#98A0A7;--estampa-apagada-tinta:#232A30;
+ --galva:#81888E;--galva-tinta:#06090B;--galva-rotulo:#090D10;--oxido-chapa:#2F0802;
+ --estampa:#979EA4;--estampa-sombra:#8A9197;--estampa-apagada:#767D83;--estampa-apagada-tinta:#070A0C;
  --dado-tinta:#1E1610;
  --etiqueta-papel:#EFE5CB;--etiqueta-tinta:#1E1610;
  --apagado-barra:#A79C86;--apagado-barra-tinta:#241D15;--apagado-papel:#BDB29B;--apagado-papel-tinta:#2E271E;
  /* Mapa a carbón: regulable sin tocar el arte (cold-filter.mjs lee las dos primeras). */
  --mapa-saturacion:.72;--mapa-brillo:.8;--mapa-vineta:.78;--mapa-grano:.32;
  --grano-papel:url(../../../assets/interfaz/papel/papel-grano.png);
- --tornillo-acero:radial-gradient(circle at 35% 30%,#eef1f3 0 16%,#8a939b 48%,#363d43 82%);
+ --tornillo-acero:radial-gradient(circle at 35% 30%,#d5d9dc 0 16%,#727a81 48%,#262b30 82%);
+ --tornillo-hollin:0 1px 1px #000a,0 0 3px 2px #140e0abf,0 0 6px 3px #140e0a4d;
  --carton-img:url(../../../assets/interfaz/materiales/carton.webp);
  --tablas-img:url(../../../assets/interfaz/materiales/tablas-gastadas.webp);
 }
@@ -40,14 +41,15 @@ body[data-interfaz=v2] #map-app .paper-card{rotate:var(--giro,0deg)}
 @media (min-width:601px),(orientation:landscape){body[data-interfaz=v2][data-panel-open=true] #map-app #dossier{filter:var(--sombra-lampara)}}
 body[data-interfaz=v2] #map-app :is(#objective-card,#crisis-card,#dossier,#action-bar,.topbar)>.papel-relieve{opacity:.55}
 
-/* ── 1. Recursos, zoom y menú: la misma chapa galvanizada, atornillada. El óxido es solo la señal
-   de peligro (comida y residuos). La flor del zinc la genera carbon.mjs con semilla fija. ── */
+/* ── 1. Recursos, zoom y menú: la misma chapa galvanizada, atornillada, con hollín en los bordes y
+   alrededor de los tornillos y mugre irregular. El óxido es solo la señal de peligro (comida y
+   residuos). La flor del zinc y la mugre las genera carbon.mjs con semilla fija. ── */
 body[data-interfaz=v2] #map-app :is(.topbar,.map-tools,#floating-menu,#menu-toggle):not(#_):not(#__){--tinta:var(--galva-tinta);--tinta-suave:var(--galva-rotulo);color:var(--galva-tinta);border:0;border-radius:3px;clip-path:none;
- background-color:var(--galva);background-image:linear-gradient(#ffffff17,#0000 45%,#00000012),var(--tex-galvanizada,none);background-size:auto,128px 128px;background-repeat:repeat;background-blend-mode:normal;
- box-shadow:inset 0 0 9px 1px #0000004d,inset 0 1px 0 #ffffff8c,inset 0 -2px 0 #0000004d}
+ background-color:var(--galva);background-image:linear-gradient(90deg,rgb(18 12 8/var(--hollin,.6)),#120c0800 14px calc(100% - 14px),rgb(18 12 8/var(--hollin,.6))),linear-gradient(#ffffff12,#0000 45%,#0000000a),var(--tex-mugre,none),var(--tex-galvanizada,none);background-size:auto,auto,430px 192px,128px 128px;background-position:0 0,0 0,var(--mugre-x,0) var(--mugre-y,0),0 0;background-repeat:repeat;background-blend-mode:normal;
+ box-shadow:inset 0 0 4px 1px #140e0ab3,inset 0 1px 0 #ffffff59,inset 0 -2px 0 #00000059}
 body[data-interfaz=v2] #map-app :is(.map-tools,#floating-menu,#menu-toggle){filter:var(--sombra-lampara)}
 body[data-interfaz=v2] #map-app .topbar>.papel-relieve,body[data-interfaz=v2] #map-app .topbar::before,body[data-interfaz=v2] #map-app .topbar::after{display:none}
-body[data-interfaz=v2] #map-app :is(.topbar,.map-tools,#floating-menu) .tornillo{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--tornillo-acero);box-shadow:0 1px 1px #0009;pointer-events:none}
+body[data-interfaz=v2] #map-app :is(.topbar,.map-tools,#floating-menu) .tornillo{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--tornillo-acero);box-shadow:var(--tornillo-hollin);pointer-events:none}
 body[data-interfaz=v2] #map-app :is(.topbar,.map-tools,#floating-menu) .tornillo::after{content:'';position:absolute;left:1px;right:1px;top:50%;height:1px;background:#20262b;rotate:35deg}
 body[data-interfaz=v2] #map-app :is(.topbar,.map-tools,#floating-menu) .tornillo-ti{top:5px;left:6px}
 body[data-interfaz=v2] #map-app :is(.topbar,.map-tools,#floating-menu) .tornillo-td{top:5px;right:6px}
@@ -60,27 +62,37 @@ body[data-interfaz=v2] #map-app :is(.topbar,.map-tools,#floating-menu).map-tools
 body[data-interfaz=v2] #map-app #floating-menu{padding:15px}
 body[data-interfaz=v2] #map-app #floating-menu hr{border-color:#1c232966}
 /* Controles como piezas estampadas en la chapa: relieve arriba, canto abajo. */
-body[data-interfaz=v2] #map-app :is(.map-tools button,.map-tools select,#floating-menu button):not(#_):not(#__){background:linear-gradient(var(--estampa),var(--estampa-sombra));color:var(--galva-tinta);border:1px solid #4b545c;border-radius:3px;box-shadow:inset 0 1px 0 #ffffffb3,inset 0 -2px 0 #00000033,0 1px 0 #ffffff80}
+body[data-interfaz=v2] #map-app :is(.map-tools button,.map-tools select,#floating-menu button):not(#_):not(#__){background:linear-gradient(var(--estampa),var(--estampa-sombra));color:var(--galva-tinta);border:1px solid #4b545c;border-radius:3px;box-shadow:inset 0 1px 0 #ffffff73,inset 0 -2px 0 #00000047,0 1px 0 #ffffff4d,0 0 4px 1px #140e0a40}
 body[data-interfaz=v2] #map-app :is(.map-tools button,#floating-menu button,#menu-toggle):not(#_):not(#__):active:not(:disabled){translate:0 1px;box-shadow:inset 0 2px 4px #00000066}
 body[data-interfaz=v2] #map-app :is(.map-tools button,.map-tools select,#floating-menu button):not(#_):not(#__):disabled{background:var(--estampa-apagada);color:var(--estampa-apagada-tinta);box-shadow:none;opacity:1;filter:none;cursor:not-allowed}
-body[data-interfaz=v2] #map-app .map-tools #zoom-value{align-self:center;padding:4px 2px;border-radius:3px;background:#969ea5;color:var(--galva-tinta);box-shadow:inset 0 2px 3px #0000004d,0 1px 0 #ffffff80}
-body[data-interfaz=v2] #map-app #menu-toggle:not(#_):not(#__){padding-inline:17px}
-body[data-interfaz=v2] #map-app #menu-toggle::before,body[data-interfaz=v2] #map-app #menu-toggle::after{content:'';position:absolute;top:50%;translate:0 -50%;width:7px;height:7px;border-radius:50%;background:var(--tornillo-acero);box-shadow:0 1px 1px #0009}
+body[data-interfaz=v2] #map-app .map-tools #zoom-value{align-self:center;padding:4px 2px;border-radius:3px;background:#7E858B;color:var(--galva-tinta);box-shadow:inset 0 2px 3px #00000059,0 1px 0 #ffffff4d}
+/* La chapa del botón es chica: menos hollín en el borde, que no llegue al texto. */
+body[data-interfaz=v2] #map-app #menu-toggle:not(#_):not(#__){padding-inline:18px;background-image:linear-gradient(90deg,#120c0873,#120c0800 9px calc(100% - 9px),#120c0873),linear-gradient(#ffffff1f,#ffffff0f),var(--tex-mugre,none),var(--tex-galvanizada,none);background-size:auto,auto,430px 192px,128px 128px;background-position:0 0,0 0,var(--mugre-x,0) var(--mugre-y,0),0 0;box-shadow:inset 0 0 3px 1px #140e0a99,inset 0 1px 0 #ffffff59,inset 0 -2px 0 #00000059}
+/* Teléfono horizontal: la chapa es más apretada; el hollín del tornillo no llega al rótulo. */
+@media (max-height:500px){body[data-interfaz=v2] #map-app :is(.topbar,.map-tools,#floating-menu){--tornillo-hollin:0 1px 1px #000a,0 0 2px 1px #140e0a73}
+body[data-interfaz=v2] #map-app :is(.topbar,.map-tools,#floating-menu).topbar:not(#_):not(#__){box-shadow:inset 0 1px 0 #ffffff59,inset 0 -2px 0 #00000073}
+body[data-interfaz=v2] #map-app .topbar .tornillo:not(#_){width:7px;height:7px}
+body[data-interfaz=v2] #map-app .topbar .tornillo:not(#_):is(.tornillo-ti,.tornillo-bi){left:3px}
+body[data-interfaz=v2] #map-app .topbar .tornillo:not(#_):is(.tornillo-td,.tornillo-bd){right:3px}
+body[data-interfaz=v2] #map-app .topbar .tornillo:not(#_):is(.tornillo-bi,.tornillo-bd){bottom:3px}}
+body[data-interfaz=v2] #map-app #menu-toggle::before,body[data-interfaz=v2] #map-app #menu-toggle::after{content:'';position:absolute;top:50%;translate:0 -50%;width:7px;height:7px;border-radius:50%;background:var(--tornillo-acero);box-shadow:var(--tornillo-hollin)}
+body[data-interfaz=v2] #map-app #menu-toggle:not(#_)::before,body[data-interfaz=v2] #map-app #menu-toggle:not(#_)::after{box-shadow:0 1px 1px #000a,0 0 3px 1px #140e0a99}
 body[data-interfaz=v2] #map-app #menu-toggle::before{left:5px}
 body[data-interfaz=v2] #map-app #menu-toggle::after{right:5px}
-body[data-interfaz=v2] #map-app .topbar :is(.stats>div,.stats>div.resource){background:none;border:0;box-shadow:none;color:var(--galva-tinta)}
-body[data-interfaz=v2] #map-app .topbar .stats dd{font-family:'Stardos Stencil',var(--fuente-titulo);font-weight:700;color:var(--galva-tinta);text-shadow:0 1px 0 #ffffff73;letter-spacing:.02em}
+body[data-interfaz=v2] #map-app .topbar :is(.stats>div,.stats>div.resource){background:radial-gradient(closest-side,#ffffff17,#ffffff0f 55%,#fff0);border:0;box-shadow:none;color:var(--galva-tinta)}
+body[data-interfaz=v2] #map-app .topbar .stats dd{font-family:'Stardos Stencil',var(--fuente-titulo);font-weight:700;color:var(--galva-tinta);text-shadow:0 1px 0 #ffffff4d;letter-spacing:.02em}
 body[data-interfaz=v2] #map-app .topbar .stats dt{color:var(--galva-rotulo);font-family:var(--fuente-texto);font-weight:700}
 body[data-interfaz=v2] #map-app .topbar .stats :is(.resource-icon,.stat-icon){color:var(--galva-rotulo);fill:var(--galva-rotulo)}
 body[data-interfaz=v2] #map-app .topbar .stats .resource-icon [stroke="#0F141A"]{stroke:var(--galva)}
 body[data-interfaz=v2] #map-app .topbar .stats [data-resource=morale] .resource-icon{border-color:var(--galva-rotulo)}
-body[data-interfaz=v2] #map-app .topbar .stats>div:first-child{position:relative;padding-right:16px;border-right:2px solid #1c232966}
-body[data-interfaz=v2] #map-app .topbar .ronda-max{position:absolute;top:7px;left:calc(50% + 9px);font:700 13px/1 'Stardos Stencil',var(--fuente-titulo);color:var(--galva-rotulo);align-self:end}
+body[data-interfaz=v2] #map-app .topbar .stats>div:first-child{position:relative;padding-right:22px;border-right:2px solid #1c232966}
+body[data-interfaz=v2] #map-app .topbar .ronda-max{position:absolute;top:7px;right:5px;font:700 13px/1 'Stardos Stencil',var(--fuente-titulo);color:var(--galva-rotulo);align-self:end}
 body[data-interfaz=v2] #map-app .topbar .stats .resource.is-danger :is(dd,dt){color:var(--oxido-chapa)}
 body[data-interfaz=v2] #map-app .topbar .stats .resource.is-danger dd{position:relative}
 body[data-interfaz=v2] #map-app .topbar .stats .resource.is-danger .resource-icon{fill:var(--oxido-chapa);color:var(--oxido-chapa);box-shadow:0 0 0 2px var(--galva),0 0 0 3px var(--oxido-chapa)}
 body[data-interfaz=v2] #map-app .topbar .resource[data-resource=food].is-danger dd::after{content:'';position:absolute;inset:-5px -8px;border:2px solid var(--oxido-chapa);border-radius:52% 46% 55% 44%/48% 56% 44% 52%;rotate:-8deg;opacity:.9;pointer-events:none}
-body[data-interfaz=v2] #map-app .topbar .resource.is-danger{background:none}
+/* En peligro, el zinc alrededor queda más gastado y claro: el rojo óxido se lee sin volverse negro. */
+body[data-interfaz=v2] #map-app .topbar .stats>div.resource.is-danger{background:radial-gradient(closest-side,#ffffff52,#ffffff45 66%,#fff0)}
 body[data-interfaz=v2] #map-app .topbar .raya-conteo{display:flex;gap:4px;justify-content:center;min-height:9px}
 body[data-interfaz=v2] #map-app .topbar .raya-grupo{position:relative;display:inline-flex;gap:2px;height:9px}
 body[data-interfaz=v2] #map-app .topbar .raya-grupo i{display:block;width:1.5px;height:9px;background:var(--galva-rotulo);rotate:4deg}
@@ -144,12 +156,17 @@ body[data-interfaz=v2] #map-app #action-bar{--tinta:#EDE3CF;--tinta-suave:#CDBFA
 /* La madera es repetible (assets/interfaz/materiales): las dos capas se repiten, sin cortes. */
 body[data-interfaz=v2] #map-app #action-bar::before{clip-path:none;background-color:#2A2018;background-image:linear-gradient(#1a110bb3,#0f0a07cc),var(--tablas-img);background-size:auto,520px;background-repeat:repeat,repeat;background-blend-mode:normal;box-shadow:inset 0 0 22px 6px #000d,inset 0 2px 0 #ffffff12}
 /* Pintura en el hueco libre entre los dados y las acciones: está en el flujo (ningún control la
-   tapa) y se va si el hueco no alcanza. Los márgenes negativos (media separación de la barra a
-   cada lado) hacen que, sin hueco, los controles queden separados como antes. */
-body[data-interfaz=v2] #map-app #action-bar .estencil{flex:1 1 0;min-width:0;margin:0 -6px;display:flex;justify-content:center;align-items:center;overflow:hidden;container-type:inline-size;pointer-events:none}
-body[data-interfaz=v2] #map-app #action-bar .estencil>span{white-space:nowrap;font:700 22px/1.6 'Stardos Stencil',var(--fuente-titulo);letter-spacing:.14em;color:#D9C7A057;rotate:-2deg;
+   tapa) y se va si el hueco no alcanza. Va apoyada contra las acciones, que no se mueven; lo que
+   cambia de ancho (dados, «Mejorar dado», el nombre) queda del otro lado. Los márgenes negativos
+   (media separación de la barra a cada lado) hacen que, sin hueco, los controles queden separados
+   como antes. */
+body[data-interfaz=v2] #map-app #action-bar .estencil{flex:1 1 0;min-width:0;margin:0 -6px;padding-right:8px;display:flex;justify-content:flex-end;align-items:center;overflow:hidden;container-type:inline-size;pointer-events:none}
+body[data-interfaz=v2] #map-app #action-bar .estencil>span{white-space:nowrap;flex:none;font:700 20px/1.6 'Stardos Stencil',var(--fuente-titulo);letter-spacing:.12em;color:#D9C7A057;rotate:-2deg;
  -webkit-mask:linear-gradient(100deg,#000 0 18%,#000a 27%,#000 40% 61%,#0007 70%,#000 83%);mask:linear-gradient(100deg,#000 0 18%,#000a 27%,#000 40% 61%,#0007 70%,#000 83%)}
 @media (max-height:500px) and (orientation:landscape){body[data-interfaz=v2] #map-app #action-bar .estencil{margin:0 -3px}}
+/* Escritorio ancho: «Mejorar dado» oculto conserva su lugar, así la pintura no aparece ni
+   desaparece según se muestre ese botón (invisible, fuera del teclado y de los lectores). */
+@media (min-width:1200px) and (min-height:501px){body[data-interfaz=v2] #map-app #action-bar #boost-action[hidden]{display:block!important;visibility:hidden}}
 @container (max-width:112px){body[data-interfaz=v2] #map-app #action-bar .estencil>span{display:none}}
 body[data-interfaz=v2] #map-app #action-bar[data-folded=true] .estencil{display:none}
 body[data-interfaz=v2] #map-app #action-bar .bar-slot{background:#0e0a07;border:0;box-shadow:inset 0 3px 6px #000,inset 0 0 0 1px #ffffff0d}
@@ -194,6 +211,13 @@ body[data-interfaz=v2] #map-app #search-panel #search-cards>.search-card:not(#_)
 body[data-interfaz=v2] #map-app #search-panel .search-card-kind:not(#_):not(#__){padding-bottom:5px;border-bottom:2px dashed #4a1f1466;text-align:center;font:700 16px/1.2 'Stardos Stencil',var(--fuente-titulo);letter-spacing:.14em;text-transform:uppercase;color:#4A1F14}
 body[data-interfaz=v2] #map-app #search-panel .search-card-art:not(#_):not(#__){display:block;flex:1 1 0;min-height:0;margin:2px 0;border:1.5px dashed #2b221980;border-radius:2px;background:#2b22190d;box-shadow:inset 0 0 10px #3a2a1a29}
 
+/* El papel de la búsqueda suma el relleno de la manta (12 px por lado): dos y tres cartas entran
+   en fila (informe 129). */
+@media (min-height:501px){
+body[data-interfaz=v2] #map-app #action-stage>#search-panel[data-cards="2"]{width:min(calc(2*var(--carta-w) + var(--carta-gap) + 68px),100%)}
+body[data-interfaz=v2] #map-app #action-stage>#search-panel[data-cards="3"]{width:min(calc(3*var(--carta-w) + 2*var(--carta-gap) + 68px),100%)}
+}
+
 /* ── 8. Avisos del mapa: nota chica a lápiz, clavada; no un globo. ── */
 body[data-interfaz=v2] #map-notice{background:#E2D8C2;color:#2F2A24;font:600 19px/1.2 'Caveat',var(--fuente-texto);rotate:var(--giro,-1.2deg);box-shadow:none;filter:drop-shadow(0 6px 8px #000a)}
 body[data-interfaz=v2] #map-notice::before{content:'';position:absolute;top:5px;left:50%;width:9px;height:9px;translate:-50% 0;border-radius:50%;background:radial-gradient(circle at 35% 30%,#d7d2c8,#6a645a 60%,#2a2622);box-shadow:0 2px 2px #0008}
@@ -201,5 +225,29 @@ body[data-interfaz=v2] #map-app #action-bar .bar-mate .mate-initials{color:#2B22
 body[data-interfaz=v2] #map-app #crisis-card>.papel-relieve{display:none}
 body[data-interfaz=v2] #map-app #crisis-card>.mancha{opacity:.55}
 }
+/* ── 9. Botones sobre papel (informe 129): ninguno queda con el degradado oscuro de maqueta.css
+   bajo texto oscuro. Mismo criterio que la barra; apagado sin opacidad, sin sombra, papel apagado
+   y cursor. Vale en cualquier tamaño: solo cambia color, sombra y cursor. ── */
+body[data-interfaz=v2] #map-app :is(#settings-panel,#inventory-dialog,#info-dialog,#locality-survivors) button:not(#_):not(#__){background:var(--etiqueta-papel) linear-gradient(#ffffff24,#6b54301f);color:var(--etiqueta-tinta);border:1px solid #5a503f8c;border-radius:3px;box-shadow:0 3px 6px -2px #0007;opacity:1;filter:none}
+body[data-interfaz=v2] #map-app :is(#settings-panel,#inventory-dialog,#info-dialog,#locality-survivors) button:not(#_):not(#__) :is(span,small,strong){color:inherit}
+body[data-interfaz=v2] #map-app :is(#settings-panel,#inventory-dialog,#info-dialog,#locality-survivors) button:not(#_):not(#__)[aria-pressed=true]{box-shadow:inset 0 0 0 3px var(--lampara),0 3px 6px -2px #0007;font-weight:700}
+body[data-interfaz=v2] #map-app :is(#settings-panel,#inventory-dialog,#info-dialog,#locality-survivors) button:not(#_):not(#__):disabled{background:var(--apagado-papel);color:var(--apagado-papel-tinta);border-color:#5a503f66;box-shadow:none;cursor:not-allowed}
+/* La habilidad del legajo: etiqueta con muesca, como las de la barra. */
+body[data-interfaz=v2] #map-app #dossier #legajo-habilidad-usar:not(#_):not(#__){position:relative;z-index:0;min-height:44px;padding:8px 14px 8px 24px;background:transparent;color:var(--etiqueta-tinta);border:0;border-radius:0;box-shadow:none;opacity:1;font:700 14px/1.15 var(--fuente-texto);filter:drop-shadow(0 4px 3px #0008) drop-shadow(0 1px 1px #0006);cursor:pointer}
+body[data-interfaz=v2] #map-app #dossier #legajo-habilidad-usar:not(#_):not(#__)::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background-color:var(--etiqueta-papel);background-image:radial-gradient(circle at 10px 50%,#4a3c2c 0 3px,#0000 3.5px),linear-gradient(#ffffff24,#6b54301f);clip-path:polygon(0 22%,8px 0,100% 0,100% 100%,8px 100%,0 78%)}
+body[data-interfaz=v2] #map-app #dossier #legajo-habilidad-usar:not(#_):not(#__):disabled{background:transparent;color:var(--apagado-barra-tinta);box-shadow:none;opacity:1;filter:none;cursor:not-allowed}
+body[data-interfaz=v2] #map-app #dossier #legajo-habilidad-usar:not(#_):not(#__):disabled::before{background-color:var(--apagado-barra);background-image:radial-gradient(circle at 10px 50%,#4a3c2c 0 3px,#0000 3.5px)}
+/* Apagados de los papeles centrales y sus avisos. */
+body[data-interfaz=v2] #map-app :is(#action-stage,#move-planner,#move-sequence,#action-strip,#connection-banner) button:not(.search-die):not(.die-choice):not(.die):not(.search-card):not(#_):not(#__):disabled{opacity:1;filter:none;box-shadow:none;translate:none;background:var(--apagado-papel);color:var(--apagado-papel-tinta);border:1px solid #5a503f66;cursor:not-allowed}
+body[data-interfaz=v2] #map-app :is(#action-stage,#move-planner,#move-sequence,#action-strip,#connection-banner) button:not(.search-die):not(.die-choice):not(.die):not(.search-card):not(#_):not(#__):disabled :is(span,small,strong){color:inherit}
+body[data-interfaz=v2] #map-app #search-panel .search-card:not(#_):not(#__):disabled{opacity:1;box-shadow:none;cursor:progress}
+body[data-interfaz=v2] #map-app #dossier .dossier-tabs button:not(#_):not(#__):disabled{opacity:1;filter:none;background-color:#A9946E;color:#241D15;box-shadow:none;cursor:not-allowed}
+/* La preparación y los diálogos fuera del papel central: tampoco bajan la opacidad. */
+body[data-interfaz=v2] :is(#play-dialog,#cycle-dialog) button:not(.die-choice):not(#_):not(#__):disabled{opacity:1;filter:none;box-shadow:none;background:var(--apagado-papel);color:var(--apagado-papel-tinta);border:1px solid #5a503f66;cursor:not-allowed}
+body[data-interfaz=v2] :is(#play-dialog,#cycle-dialog) button:not(.die-choice):not(#_):not(#__):disabled :is(span,small,strong){color:inherit}
+body[data-interfaz=v2] #play-dialog button[aria-pressed=true]:not(.die-choice):not(#_):not(#__):disabled{box-shadow:inset 0 0 0 3px var(--lampara)}
+/* Panel fijo (la barra en escritorio): tocarlo no hace nada, así que no invita. */
+body[data-interfaz=v2] #map-app [data-fold-zone][data-fold-fixed=true]{cursor:auto}
+
 /* Vertical (max 600 px): queda la pila anterior con «Girá el teléfono» (informe 119); los adornos de la chapa y del tablón no se muestran, para no hacerla crecer. */
 @media (max-width:600px) and (orientation:portrait){body[data-interfaz=v2] #map-app :is(.ronda-max,.raya-conteo,.estencil,.tornillo){display:none}}
