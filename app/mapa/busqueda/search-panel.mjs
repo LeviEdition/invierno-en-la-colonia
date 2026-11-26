@@ -3,6 +3,10 @@ import {searchMessages} from './search-controller.mjs';
 import {dieFace} from '../movimiento/dice.mjs';
 const $=id=>document.getElementById(id);
 function el(tag,text,className){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(className)n.className=className;return n;}
+// Carta provisoria hasta el hito 2 (informe 128): el tipo que informa el motor, con su tilde, y un
+// recuadro vacío reservado para la ilustración. No se dibuja ninguna ilustración.
+export const kindLabel=kind=>kind==='educacion'?'educación':kind||'objeto';
+function artFrame(){const frame=el('span',undefined,'search-card-art');frame.setAttribute('aria-hidden','true');return frame;}
 function diceButton(d,selected){
  const button=el('button',undefined,'search-die');button.dataset.die=String(d.index);button.disabled=!d.allowed;
  button.setAttribute('aria-label',`Dado ${d.index+1}, valor ${d.value}${d.allowed?', válido':', no alcanza el requisito'}`);button.setAttribute('aria-pressed',String(selected===d.index));
@@ -47,8 +51,8 @@ export function mountSearchPanel({controller,getContext,onCancel,onNative,signal
   if(nextCardsKey!==cardsKey){cardsKey=nextCardsKey;const cards=(op?.cards||[]).map(c=>{
    // Ajustes de la sesión 7: en la interfaz unificada toda la carta es el botón «Conservar …»
    // (con foco y aria-label); el controlador la conserva una sola vez (pasa a «sending»).
-   if(unified()){const card=el('button',undefined,'search-card');card.type='button';card.dataset.card=String(c.index);card.disabled=busy;card.setAttribute('aria-label','Conservar '+c.name);card.append(el('small',c.kind||'Objeto'),el('strong',c.name),el('span',c.description,'search-card-text'),el('span','Tocá para conservarla','search-card-keep'));return card;}
-   const card=el('article',undefined,'search-card');card.append(el('small',c.kind||'Objeto'),el('h3',c.name),el('p',c.description));
+   if(unified()){const card=el('button',undefined,'search-card');card.type='button';card.dataset.card=String(c.index);card.disabled=busy;card.setAttribute('aria-label','Conservar '+c.name);card.append(el('small',kindLabel(c.kind),'search-card-kind'),artFrame(),el('strong',c.name),el('span',c.description,'search-card-text'),el('span','Tocá para conservarla','search-card-keep'));return card;}
+   const card=el('article',undefined,'search-card');card.append(el('small',kindLabel(c.kind),'search-card-kind'),el('h3',c.name),el('p',c.description));
    const button=el('button','Conservar '+c.name);button.dataset.card=String(c.index);button.disabled=busy;card.append(button);return card;
   });$('search-cards').replaceChildren(...cards);$('search-cards').dataset.count=String(cards.length);$('search-panel').dataset.cards=String(Math.min(cards.length,3));}
   $('search-noise').disabled=!choice||busy||!op.canNoise;
@@ -56,7 +60,7 @@ export function mountSearchPanel({controller,getContext,onCancel,onNative,signal
   $('search-continue').hidden=!op||op.generalDecision;$('search-continue').disabled=busy;
   $('search-native').hidden=!op?.generalDecision;$('search-native').disabled=busy;
   const result=op?.result;$('search-kept-card').hidden=!result;
-  $('search-kept-card').replaceChildren(...(result?[el('small',result.card.kind),el('h3',result.card.name),el('p',result.card.description)]:[]));
+  $('search-kept-card').replaceChildren(...(result?[el('small',kindLabel(result.card.kind),'search-card-kind'),...(unified()?[artFrame()]:[]),el('h3',result.card.name),el('p',result.card.description)]:[]));
   $('search-outcome').textContent=result?op.name+' conservó '+result.card.name+' · '+(result.handDelta>0?(inventoryLabel==='Inventario'?'añadida al inventario':'añadida a la mano'):(inventoryLabel==='Inventario'?'se aplicó el efecto de la carta':'consecuencia automática resuelta por el motor'))+' · ruido '+result.noise+'.':op?.status==='empty'?'No se añadió ninguna recompensa.':'';
   $('search-recruit').textContent=op?.recruit?(op.recruit.queued?'El rescate espera una plaza en la colonia.':op.recruit.name+' se incorporó a la colonia.')+' '+op.recruit.skill:'';
   const hand=visible&&!unified()?s.hand:[],nextHandKey=JSON.stringify([visible?s.ownerId:null,hand]);

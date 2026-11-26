@@ -2,7 +2,7 @@
 
 > **Cómo se usa este documento.** Arriba está solo lo vigente: dónde estamos, la única tarea siguiente, la cola ordenada y los hallazgos abiertos. Cada entrega actualiza estas secciones **reemplazando** su contenido, no agregando un bloque nuevo. El detalle de cada entrega va en su informe numerado y en el PR. Los bloques fechados anteriores al 16/11/2026 están en [18-historico-tablero.md](18-historico-tablero.md) y no se editan.
 
-**Actualizado:** 24/11/2026 · **main:** `4d5f1a1` (PR #34 mapa 2×, #37 reglas de prueba, #36 limpieza de `node_modules`) · **Tag vigente:** `v0.10.0-mapa-horizontal` · **Ramas en revisión, apiladas:** `feature/interfaz-v2-sesion-1` (PR #38, [119](119-interfaz-v2-sesion-1.md)) → `feature/interfaz-v2-sesion-2` (PR #39, [120](120-interfaz-v2-sesion-2.md)) → `feature/interfaz-v2-sesion-3` (PR #40, [121](121-interfaz-v2-sesion-3.md)) → `feature/interfaz-v2-sesion-4` ([122](122-interfaz-v2-sesion-4.md)) → `feature/interfaz-v2-sesion-5` ([123](123-interfaz-v2-sesion-5.md)) → `feature/interfaz-v2-sesion-6` ([125](125-interfaz-v2-sesion-6.md)) → `feature/interfaz-v2-sesion-7` ([126](126-interfaz-v2-sesion-7.md))
+**Actualizado:** 26/11/2026 · **main:** `b78ba3b` (PR #44: interfaz v2, sesiones 1 a 7) · **Tag vigente:** `v0.10.0-mapa-horizontal` · **Rama en revisión:** `feature/interfaz-v2-sesion-8` (PR #45)
 
 ## 1. Dónde estamos
 
@@ -13,26 +13,26 @@
 | 3 — Identidad visual y mapa jugable | **Cerrado** (16/11), tag `v0.10.0-mapa-horizontal` | [75](75-plan-hito-3-identidad-visual.md), [99](99-experiencia-unificada-del-mapa.md) |
 | Laboratorio SP-04 | **Cerrado** (17/11) | [111](111-laboratorio-sp04-cuarta-corrida.md), [115](115-laboratorio-sp04-septima-corrida.md) |
 | Interfaz v2 — sesiones 1 a 7 | **Integradas en `main`** (#44, `b78ba3b`), con el plantel ajustado y las fichas del hito (#43) | [119](119-interfaz-v2-sesion-1.md)–[126](126-interfaz-v2-sesion-7.md), [124](124-fichas-hito-contenido.md) |
-| Interfaz v2 — sesión 8 | **En revisión** (rama `feature/interfaz-v2-sesion-8`): dirección «objetos a carbón» (chapa, hoja doblada, cartón con cinta, carpeta manila, polaroids, tablón, lona y manta), mapa más oscuro regulable y D12 en 3D con Three.js en un chunk aparte | [127](127-interfaz-v2-sesion-8.md) |
+| Interfaz v2 — sesión 8 | **En revisión** (PR #45, borrador): «objetos a carbón» y D12 en 3D, más los ajustes de la revisión visual (barra, chapa galvanizada también en zoom y menú, botones apagados legibles y carta de búsqueda provisoria) | [127](127-interfaz-v2-sesion-8.md), [128](128-interfaz-v2-sesion-8-ajustes.md) |
 | Singleplayer (SP-00 a SP-08) | **Diseño en papel**; capítulo piloto «La última guardia» en ficha | [63](63-hoja-de-ruta-planificacion-singleplayer.md), [105](105-ficha-capitulo-la-ultima-guardia.md) |
 
 El mapa permite preparar, jugar y terminar una partida completa (contra la IA, dos jugadores locales y, con `?dev`, un grupo) con un único motor. Vive en `app/mapa/` (`npm run dev:mapa` → `http://127.0.0.1:8779/app/mapa/`).
 
 ## 2. Próxima tarea única
 
-**Revisar la sesión 8 de la interfaz v2 ([127](127-interfaz-v2-sesion-8.md)).**
+**Revisar en el PR #45 los ajustes de la sesión 8 ([128](128-interfaz-v2-sesion-8-ajustes.md)).**
 
-1. Abrir el PR de `feature/interfaz-v2-sesion-8` y lanzar el recorrido completo por `workflow_dispatch` (con vídeo y Chromium en Linux), además del CI del PR.
-2. Jugar en escritorio y decidir sobre cada objeto: chapa, hoja del objetivo, cartón de la crisis, carpeta del legajo, polaroids, tablón con etiquetas y «Terminar turno», manta de la búsqueda y notas del mapa.
-3. Probar el D12 en 3D: giro, rebote, toque que adelanta, movimiento reducido y si el marfil y la pintura saltada se leen a 82 px.
-4. Ajustar la oscuridad del mapa con `--mapa-saturacion`, `--mapa-brillo`, `--mapa-vineta` y `--mapa-grano`.
+1. Lanzar el recorrido completo por `workflow_dispatch` (con vídeo y Chromium en Linux), además del CI del PR.
+2. Jugar en escritorio y decidir sobre la barra, la chapa con zoom y menú, los botones apagados y la carta de búsqueda.
+3. Decidir el hallazgo 34 (cartas de búsqueda apiladas): corregirlo ensancha el papel de la búsqueda, sobre una manta ya aprobada.
+4. Decidir si se fusiona con el hallazgo 33 abierto.
 
 ## 3. Ruta por pasos
 
 Regla: **antes de cada fusión, el recorrido completo en verde** (hallazgo 28).
 
 1. **Cerrado:** fusión de #43 y #44; recorrido completo en verde en `main`.
-2. **Esta sesión:** interfaz v2, sesión 8: objetos a carbón y D12 en 3D ([127](127-interfaz-v2-sesion-8.md)).
+2. **En revisión:** interfaz v2, sesión 8: objetos a carbón y D12 en 3D ([127](127-interfaz-v2-sesion-8.md)) y sus ajustes ([128](128-interfaz-v2-sesion-8-ajustes.md)).
 3. **Hito 1a:** plantel de 31; daño por un solo punto con límite por personaje; muerte −2; límite de equipo; 3 de 5; habilidades automáticas.
 4. **Hitos 1b y 1c:** habilidades de botón y reacciones.
 5. **Hito 2:** objetos, encuentros, muestras, inventario con ilustraciones y la carta al pasar el mouse.
@@ -45,42 +45,21 @@ Regla: **antes de cada fusión, el recorrido completo en verde** (hallazgo 28).
 
 | # | Hallazgo | Estado | Próximo paso |
 |---|---|---|---|
-| 33 | **`check-map-death-decisions` intermitente en la sesión 8** | Falló 2 de 4 corridas, siempre a 393×852 al atacar: el clic en el dado no deja ninguno elegido. En `main`, 3 de 3 pasan. Causa no encontrada ([127](127-interfaz-v2-sesion-8.md)) | Reproducir y aislar antes de fusionar |
-| 31 | Notas del mapa sin ancla | Las notas a lápiz tienen el material nuevo, pero siguen en el lugar del aviso (arriba al centro), no clavadas junto a la ficha ([127](127-interfaz-v2-sesion-8.md)) | Anclarlas a la ficha, como los globos de daño |
+| 33 | **`check-map-death-decisions` intermitente en la sesión 8** | A 393×852 al atacar, el clic en el dado no deja ninguno elegido: 2 fallas en las 4 corridas del informe 127 y 1 en las 5 de verificación del 128. Seis corridas de investigación (30 intentos) sin reproducirlo; descartados mapa oscurecido, adornos, D12, desplazamiento, animación, aviso de girar y freno del doble clic ([128](128-interfaz-v2-sesion-8-ajustes.md)) | Si vuelve en el CI, registrar los eventos de esa corrida: queda sin descartar una actualización tardía del estado o un escucha global que coma el clic |
+| 34 | Cartas de búsqueda apiladas | Desde la sesión 8, dos o tres cartas quedan en columna y la segunda se corta (436 px útiles, hacen falta 456) ([128](128-interfaz-v2-sesion-8-ajustes.md)) | Decisión del creador: ensanchar el papel 24 px |
+| 31 | Notas del mapa sin ancla y aviso de herida con otro estilo | Las notas a lápiz siguen arriba al centro; el aviso de herida sale como etiqueta oscura lisa sobre las polaroids | Anclarlas a la ficha y unificar el estilo |
+| 35 | Expediente de localidad sin material propio | La pestaña Colonia sigue sin objeto asignado | Definir su material |
+| 36 | Detalles de la dirección a carbón | Los botones apagados de los papeles centrales bajan la opacidad; el dado que no sirve se muestra al 35 %; con la crisis plegada, las cintas tapan parte del rótulo | Revisar juntos en el próximo ajuste visual |
 | 32 | Ritmo del D12 3D con GPU real | Medido solo con SwiftShader (GPU emulada): 15 dibujos en 1,2 s y ninguno quieto ([127](127-interfaz-v2-sesion-8.md)) | Medir en escritorio con GPU y en el A15 |
-| 29 | Mapa en teléfono vertical | En vertical sigue la pila anterior con «Girá el teléfono». La barra ya había crecido antes de la sesión 8 (376 px en `main`); la sesión 8 oculta en vertical los adornos de la chapa y del tablón para no sumar altura | Decidir si el vertical necesita disposición propia |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+| 29 | Mapa en teléfono vertical | En vertical sigue la pila anterior con «Girá el teléfono»; los materiales no se aplican ahí | Decidir si el vertical necesita disposición propia |
 
 ## 5. Verificación de la interfaz v2, sesión 8 (rama `feature/interfaz-v2-sesion-8`)
 
-- [x] **984 pruebas, 0 fallos**: 9 nuevas en `interfaz-v2-sesion-8`; la de fuentes de la sesión 5 cuenta ahora solo Bitter y Alegreya Sans.
+- [x] **990 pruebas, 0 fallos**: 6 nuevas en `interfaz-v2-sesion-8` (leen estilos y marcado).
 - [x] `check:build` y `check:mapa-build` en verde; `src/` sin cambios.
-- [x] Partida real con Edge a 1365×768: el D12 3D gira y termina en la cara del motor; con movimiento reducido aparece quieto; sin WebGL queda el plano; la noche con el 3D; quieto no dibuja.
-- [x] Recorrido completo local con Edge, sin vídeo: pasan diez de las once baterías del paso; `check-exposure-d12` adaptada al 3D.
-- [ ] `check-map-death-decisions`: intermitente (hallazgo 33).
+- [x] Medido con Edge a 1365×768: contraste sobre los materiales reales de 4,5:1 o más en los rótulos medidos; «VÍVERES» sin superponerse a ningún control. A 852×393 sin desborde horizontal.
+- [x] Local con Edge, sin vídeo: pasan sobre el estado final las diez baterías restantes del recorrido y `check-map-reglas-de-prueba`.
+- [ ] `check-map-death-decisions`: 4 de 5 corridas en verde; **no se lograron las cinco seguidas** (hallazgo 33).
 - [ ] CI: recorrido completo por `workflow_dispatch` y oráculo `test:poc` (EPERM en Windows).
 - [ ] Ver jugando en escritorio y en el Galaxy A15; decisión de merge del creador.
 
@@ -98,6 +77,8 @@ Regla: **antes de cada fusión, el recorrido completo en verde** (hallazgo 28).
 - Dispositivos de prueba: escritorio y Samsung Galaxy A15.
 - Guía de estilo para arte, paleta, tipografía y escenas narrativas nuevas: [109](109-guia-de-estilo.md) (17/11). El mapa aprobado no se redibuja; el filtro frío aprobado (109 §8) se aplica en render.
 - Interfaz v2 ([109 §8](109-guia-de-estilo.md)): teléfono horizontal como plataforma principal; mapa a pantalla completa con paneles flotantes; daño (♥, ❄) y ruido siempre visibles en el mapa ([119](119-interfaz-v2-sesion-1.md)). Recursos como chapas con ícono, rótulos de localidad que aparecen con la interacción, papel rasgado, transiciones de 150–250 ms que nunca retrasan una acción y encrucijadas en viñeta con las consecuencias solo después de decidir ([120](120-interfaz-v2-sesion-2.md)).
+
+- Objetos a carbón ([109 §8.1](109-guia-de-estilo.md), [128](128-interfaz-v2-sesion-8-ajustes.md)): recursos, zoom y menú en chapa galvanizada; botones de la barra en papel crema; el estado apagado se reconoce sin bajar la opacidad del texto.
 
 ## 7. Reservas conocidas
 

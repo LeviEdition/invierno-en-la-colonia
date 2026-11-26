@@ -31,19 +31,36 @@ export function weavePixels(size,seed,{base,thread,dirt=.18}){
  }
  return px;
 }
+// Chapa galvanizada: la «flor» del zinc (celdas irregulares, cada una con su tono y su veta) y un
+// grano fino. Repetible: las distancias se miden dando la vuelta por los bordes.
+export function spanglePixels(size,seed,{base,cells=64,spread=9}){
+ const r=seededRandom(seed),px=new Uint8ClampedArray(size*size*4),flakes=Array.from({length:cells},()=>({x:r()*size,y:r()*size,tone:(r()-.5)*2*spread,angle:r()*Math.PI}));
+ const wrap=d=>d>size/2?d-size:d<-size/2?d+size:d;
+ for(let y=0;y<size;y++)for(let x=0;x<size;x++){
+  let near=null,first=Infinity,second=Infinity,nx=0,ny=0;
+  for(const f of flakes){const dx=wrap(x-f.x),dy=wrap(y-f.y),d=dx*dx+dy*dy;if(d<first){second=first;first=d;near=f;nx=dx;ny=dy;}else if(d<second)second=d;}
+  const vein=Math.sin((nx*Math.cos(near.angle)+ny*Math.sin(near.angle))*1.25)*2.5,edge=Math.sqrt(second)-Math.sqrt(first)<1.1?-4:0,shade=near.tone+vein+edge+(r()-.5)*5;
+  px.set([base[0]+shade,base[1]+shade,base[2]+shade,255],(y*size+x)*4);
+ }
+ return px;
+}
 export const TEXTURES=Object.freeze({
  grano:{size:192,seed:8101,kind:'grain'},
- lona:{size:96,seed:8102,kind:'weave',base:[92,82,64],thread:[108,97,76],dirt:.35},
- manta:{size:96,seed:8103,kind:'weave',base:[38,54,78],thread:[52,72,102],dirt:.2}
+ lona:{size:96,seed:8102,kind:'weave',base:[44,62,88],thread:[60,82,112],dirt:.35},
+ manta:{size:96,seed:8103,kind:'weave',base:[38,54,78],thread:[52,72,102],dirt:.2},
+ galvanizada:{size:128,seed:8104,kind:'spangle',base:[160,168,175]}
 });
-export function texturePixels(name){const t=TEXTURES[name];return t.kind==='grain'?grainPixels(t.size,t.seed):weavePixels(t.size,t.seed,t);}
+const painters={grain:(t)=>grainPixels(t.size,t.seed),weave:(t)=>weavePixels(t.size,t.seed,t),spangle:(t)=>spanglePixels(t.size,t.seed,t)};
+export function texturePixels(name){const t=TEXTURES[name];return painters[t.kind](t);}
 
-// Contraste: color de fondo representativo de cada material ya oscurecido (medido con Edge sobre
-// la pantalla real; informe 127) y el texto que va encima. El piso es AA: 4,5 (3 para texto grande).
+// Contraste: color de fondo representativo de cada material (el caso más desfavorable) y el texto
+// que va encima (informes 127 y 128). El piso es AA: 4,5 (3 para texto grande).
 export const MATERIALS=Object.freeze([
- {material:'chapa (números en esténcil)',bg:'#2B211B',text:'#EDE3CF',large:true},
- {material:'chapa (etiquetas)',bg:'#2B211B',text:'#D6C9AE',large:false},
- {material:'chapa (comida en peligro)',bg:'#2B211B',text:'#D2654C',large:true},
+ {material:'chapa galvanizada (números en esténcil)',bg:'#8E969D',text:'#11161A',large:true},
+ {material:'chapa galvanizada (etiquetas)',bg:'#8E969D',text:'#1C2329',large:false},
+ {material:'chapa galvanizada (comida y residuos en peligro)',bg:'#8E969D',text:'#521308',large:false},
+ {material:'pieza estampada (zoom y menú)',bg:'#A9B1B8',text:'#11161A',large:false},
+ {material:'pieza estampada apagada',bg:'#98A0A7',text:'#232A30',large:false},
  {material:'hoja del objetivo (lápiz)',bg:'#D9CFB8',text:'#3A342D',large:true},
  {material:'hoja del objetivo (título)',bg:'#D9CFB8',text:'#2B2219',large:false},
  {material:'cartón de la crisis (texto)',bg:'#A88A62',text:'#1E1610',large:false},
@@ -51,7 +68,10 @@ export const MATERIALS=Object.freeze([
  {material:'carpeta manila (texto)',bg:'#CDB58A',text:'#2B2219',large:false},
  {material:'carpeta manila (a máquina)',bg:'#CDB58A',text:'#2E2A26',large:false},
  {material:'tablón (texto de la barra)',bg:'#2A2018',text:'#EDE3CF',large:false},
- {material:'etiqueta de cartón (botones)',bg:'#C9AE84',text:'#1E1610',large:false},
+ {material:'etiqueta de papel crema (botones)',bg:'#E9DEC2',text:'#1E1610',large:false},
+ {material:'etiqueta apagada (barra)',bg:'#A79C86',text:'#241D15',large:false},
+ {material:'botón apagado en un papel',bg:'#BDB29B',text:'#2E271E',large:false},
+ {material:'carta de búsqueda (tipo en esténcil)',bg:'#DCCCA8',text:'#4A1F14',large:false},
  {material:'«Terminar turno» (Lámpara)',bg:'#F2C14E',text:'#1E1610',large:false},
  {material:'papel central',bg:'#E4DAC3',text:'#2B2219',large:false},
  {material:'nota a lápiz del mapa',bg:'#E2D8C2',text:'#2F2A24',large:true}
@@ -71,10 +91,13 @@ export function mountCarbon(doc=document){
  try{for(const name of Object.keys(TEXTURES))root.style.setProperty('--tex-'+name,texUrl(name));}catch{}
  const objects={'.topbar':'chapa','#objective-card':'hoja','#crisis-card':'carton','#dossier':'carpeta','#action-bar':'tablon','#map-notice':'nota'};
  for(const [sel,name] of Object.entries(objects)){const el=doc.querySelector(sel);if(!el)continue;const d=objectDecor(name);el.dataset.objeto=name;el.style.setProperty('--giro',d.tilt+'deg');el.style.setProperty('--hollin',String(d.soot));el.style.setProperty('--mancha-x',d.stain.x+'%');el.style.setProperty('--mancha-y',d.stain.y+'%');}
- const top=doc.querySelector('.topbar');once(top,'tornillo',()=>{for(const k of ['ti','td','bi','bd'])span('tornillo tornillo-'+k,top);});
+ // La misma chapa atornillada en los recursos, el zoom y el menú desplegable.
+ for(const sel of ['.topbar','.map-tools','#floating-menu']){const plate=doc.querySelector(sel);once(plate,'tornillo',()=>{for(const k of ['ti','td','bi','bd'])span('tornillo tornillo-'+k,plate);});}
  const obj=doc.querySelector('#objective-card');once(obj,'pliegues',()=>{span('pliegues',obj,obj.firstChild);span('escarcha',obj);});
  const cri=doc.querySelector('#crisis-card');once(cri,'cinta',()=>{span('cinta cinta-i',cri);span('cinta cinta-d',cri);});
- const bar=doc.querySelector('#action-bar');once(bar,'estencil',()=>{const s=span('estencil',bar,bar.firstChild);s.textContent='VÍVERES · NO ABRIR';});
+ // La pintura del tablón va en el flujo de la barra, entre los dados y las acciones: ocupa solo el
+ // hueco libre y ningún control puede taparla (informe 128).
+ const bar=doc.querySelector('#action-bar');once(bar,'estencil',()=>{const s=span('estencil',bar,bar.querySelector(':scope>#bar-actions'));const paint=doc.createElement('span');paint.textContent='VÍVERES';s.append(paint);});
 }
 // Residuos: rayas raspadas en grupos de cinco, además del número.
 export function paintTally(el,n){
