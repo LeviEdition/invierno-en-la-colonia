@@ -1,0 +1,130 @@
+/* ── Dirección «objetos a carbón» (sesión 8, informe 127; guía 109 §8) ──
+   Cada panel es un objeto encontrado, improvisado y gastado, bajo una sola lámpara. Solo cambia el
+   MATERIAL: mismos ids, mismo orden, misma accesibilidad. Fuera: cómic (contornos negros gruesos,
+   sombras duras desplazadas, globos de historieta) y lo acogedor (pizarras, chinches, fieltro).
+   Lo variable por objeto (giro, hollín, mancha) lo pone experiencia/carbon.mjs con semilla fija. */
+:root{
+ --sombra-dura:0 6px 12px -4px #000b,0 2px 4px #0007;           /* ya no es dura: sombra blanda de lámpara */
+ --sombra-lampara:drop-shadow(0 10px 12px #000a) drop-shadow(0 2px 3px #0008);
+ --hollin-color:#120c08;
+ --oxido:#8A3B2A;--oxido-claro:#D2654C;--grafito:#3A342D;--tinta-azul:#1F3A5C;
+ --carta-acero:#5D6B78;--carta-sangre:#8E2F2A;--carta-lampara:#D0A23A;
+ /* Mapa a carbón: regulable sin tocar el arte (cold-filter.mjs lee las dos primeras). */
+ --mapa-saturacion:.72;--mapa-brillo:.8;--mapa-vineta:.78;--mapa-grano:.32;
+ --chapa-img:url(../../../assets/interfaz/materiales/chapa-oxidada.webp);
+ --carton-img:url(../../../assets/interfaz/materiales/carton.webp);
+ --tablas-img:url(../../../assets/interfaz/materiales/tablas-gastadas.webp);
+}
+
+/* ── Mapa: viñeta negra y grano de carbón encima de la ilustración (la noche sigue debajo, más azul). ── */
+body[data-interfaz=v2] #map-app .map-viewport::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
+ background:radial-gradient(ellipse 75% 70% at 50% 48%,#0000 55%,rgb(0 0 0/var(--mapa-vineta)) 100%),var(--tex-grano,none) 0 0/192px 192px repeat;
+ opacity:1;mix-blend-mode:normal}
+body[data-interfaz=v2] #map-app .map-viewport::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:var(--tex-grano,none) 37px 53px/256px 256px repeat;opacity:var(--mapa-grano);mix-blend-mode:multiply}
+
+/* ── Todos los objetos: hollín en los bordes y sombra blanda hacia abajo (nunca desplazada y dura). ── */
+body[data-interfaz=v2] #map-app :is(.paper-card,#dossier)::before{box-shadow:inset 0 0 18px 3px rgb(18 12 8/var(--hollin,.55)),inset 0 0 3px 1px #0009}
+body[data-interfaz=v2] #map-app :is(.paper-card,#dossier,.topbar){filter:var(--sombra-lampara);box-shadow:none}
+body[data-interfaz=v2] #map-app #action-bar{filter:none;box-shadow:0 -2px 18px 2px #000b}
+body[data-interfaz=v2] #map-app :is(.paper-card,#dossier){rotate:var(--giro,0deg)}
+body[data-interfaz=v2] #map-app :is(#objective-card,#crisis-card,#dossier,#action-bar,.topbar)>.papel-relieve{opacity:.55}
+
+/* ── 1. Recursos: chapa atornillada, oxidada y muy oscurecida. ── */
+body[data-interfaz=v2] #map-app .topbar:not(#_){color:#EDE3CF;border:0;border-radius:3px;clip-path:none;
+ background-color:#2B211B;background-image:linear-gradient(#1a120ccc,#0f0a07e0),linear-gradient(#5A4334,#5A4334),var(--chapa-img);background-size:auto,auto,340px;background-blend-mode:normal,multiply,normal;
+ box-shadow:inset 0 0 16px 4px #000c,inset 0 1px 0 #ffffff14}
+body[data-interfaz=v2] #map-app .topbar>.papel-relieve,body[data-interfaz=v2] #map-app .topbar::before,body[data-interfaz=v2] #map-app .topbar::after{display:none}
+body[data-interfaz=v2] #map-app .topbar .tornillo{position:absolute;width:9px;height:9px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#b9aa95 0 18%,#5d5146 45%,#1d1814 80%);box-shadow:0 1px 1px #000a;pointer-events:none}
+body[data-interfaz=v2] #map-app .topbar .tornillo::after{content:'';position:absolute;left:1px;right:1px;top:4px;height:1px;background:#1a1410;rotate:35deg}
+.topbar .tornillo-ti{top:5px;left:6px}.topbar .tornillo-td{top:5px;right:6px}.topbar .tornillo-bi{bottom:5px;left:6px}.topbar .tornillo-bd{bottom:5px;right:6px}
+body[data-interfaz=v2] #map-app .topbar :is(.stats>div,.stats>div.resource){background:none;border:0;box-shadow:none;color:#EDE3CF}
+body[data-interfaz=v2] #map-app .topbar .stats dd{font-family:'Stardos Stencil',var(--fuente-titulo);font-weight:700;color:#EDE3CF;text-shadow:0 0 1px #0008,0 1px 0 #0006;letter-spacing:.02em}
+body[data-interfaz=v2] #map-app .topbar .stats dt{color:#D6C9AE;font-family:var(--fuente-texto);font-weight:600}
+body[data-interfaz=v2] #map-app .topbar .resource-icon{color:#CDBFA6;fill:#CDBFA6;opacity:.85}
+body[data-interfaz=v2] #map-app .topbar .stats>div:first-child{position:relative;padding-right:16px;border-right:2px solid #CDBFA64d}
+body[data-interfaz=v2] #map-app .topbar .ronda-max{position:absolute;top:7px;left:calc(50% + 9px);font:700 13px/1 'Stardos Stencil',var(--fuente-titulo);color:#D6C9AE;align-self:end}
+body[data-interfaz=v2] #map-app .topbar .resource.is-danger dd{color:var(--oxido-claro);position:relative}
+body[data-interfaz=v2] #map-app .topbar .resource[data-resource=food].is-danger dd::after{content:'';position:absolute;inset:-5px -8px;border:2px solid var(--oxido-claro);border-radius:52% 46% 55% 44%/48% 56% 44% 52%;rotate:-8deg;opacity:.9;pointer-events:none}
+body[data-interfaz=v2] #map-app .topbar .resource.is-danger{background:none}
+body[data-interfaz=v2] #map-app .topbar .raya-conteo{display:flex;gap:4px;justify-content:center;min-height:9px}
+body[data-interfaz=v2] #map-app .topbar .raya-grupo{position:relative;display:inline-flex;gap:2px;height:9px}
+body[data-interfaz=v2] #map-app .topbar .raya-grupo i{display:block;width:1.5px;height:9px;background:#D6C9AEcc;rotate:4deg}
+body[data-interfaz=v2] #map-app .topbar .raya-grupo b{position:absolute;left:-2px;right:-2px;top:4px;height:1.5px;background:#D6C9AE;rotate:-24deg}
+
+/* ── 2. Objetivo: hoja arrancada, doblada en cuatro, escrita a lápiz. ── */
+body[data-interfaz=v2] #map-app #objective-card .pliegues{position:absolute;inset:0;z-index:0;pointer-events:none;
+ background:linear-gradient(90deg,#0000 calc(50% - 1px),#4a3a2a2e 50%,#ffffff1f calc(50% + 1px),#0000 calc(50% + 3px)),linear-gradient(180deg,#0000 calc(50% - 1px),#4a3a2a26 50%,#ffffff1a calc(50% + 1px),#0000 calc(50% + 3px)),linear-gradient(135deg,#ffffff10,#0000 40%,#0000001a)}
+body[data-interfaz=v2] #map-app #objective-card .escarcha{position:absolute;top:0;right:0;width:46px;height:38px;z-index:0;pointer-events:none;background:radial-gradient(circle at 100% 0,#e8f3fbcc,#cfe3f066 40%,#0000 72%);mix-blend-mode:screen}
+body[data-interfaz=v2] #map-app #objective-card :is(#objective-progress,.card-progress){font:600 18px/1.15 'Caveat',var(--fuente-texto);color:var(--grafito)}
+body[data-interfaz=v2] #map-app #objective-card .card-title{font-family:var(--fuente-titulo);color:var(--tinta)}
+body[data-interfaz=v2] #map-app #objective-card .card-meter{background:#3a342d22;box-shadow:none;border:0}
+body[data-interfaz=v2] #map-app #objective-card .card-meter i{background:var(--grafito)}
+body[data-interfaz=v2] #map-app #objective-card>.mancha{left:var(--mancha-x,70%);top:var(--mancha-y,70%);width:34px;height:34px;border-radius:50%;background:radial-gradient(circle,#0000 52%,#7a4a2a40 56%,#7a4a2a26 66%,#0000 70%);opacity:1;mix-blend-mode:multiply}
+
+/* ── 3. Crisis: cartón con dos tiras de cinta americana y el título en marcador. ── */
+body[data-interfaz=v2] #map-app #crisis-card::before{background-color:#A88A62;background-image:linear-gradient(#e0c9a273,#d6bc9066),var(--carton-img);background-size:auto,420px;background-blend-mode:normal}
+body[data-interfaz=v2] #map-app #crisis-card{color:#1E1610}
+body[data-interfaz=v2] #map-app #crisis-card .card-title{font:400 19px/1.1 'Permanent Marker',var(--fuente-titulo);color:#6E1F15;text-transform:uppercase;letter-spacing:.02em}
+body[data-interfaz=v2] #map-app #crisis-card :is(.card-progress,p,small){color:#1E1610}
+body[data-interfaz=v2] #map-app #crisis-card .cinta{position:absolute;top:-7px;width:52px;height:17px;z-index:2;pointer-events:none;background:linear-gradient(#b9b9b3e6,#8f8f8ae6),repeating-linear-gradient(90deg,#0000 0 3px,#ffffff14 3px 4px);box-shadow:0 1px 2px #0006;clip-path:polygon(3% 8%,10% 0,20% 10%,30% 0,40% 7%,52% 0,64% 9%,76% 0,88% 8%,100% 2%,97% 92%,88% 100%,77% 90%,64% 100%,51% 91%,38% 100%,26% 92%,14% 100%,0 94%)}
+body[data-interfaz=v2] #map-app #crisis-card .cinta-i{left:-10px;rotate:-32deg}
+body[data-interfaz=v2] #map-app #crisis-card .cinta-d{right:-10px;rotate:28deg}
+@keyframes carbon-crisis{0%{translate:-46px -18px;rotate:-9deg;opacity:0}70%{translate:3px 1px;rotate:calc(var(--giro,0deg) + 1deg);opacity:1}100%{translate:0 0;rotate:var(--giro,0deg)}}
+@media (prefers-reduced-motion:no-preference){body[data-interfaz=v2]:not([data-motion=reduced]) #map-app #crisis-card.crisis-nueva{animation:carbon-crisis 520ms cubic-bezier(.2,.8,.3,1.05)}}
+
+/* ── 4. Legajo: carpeta manila de la policía, reutilizada. ── */
+body[data-interfaz=v2] #map-app #dossier::before{background-color:#CDB58A;background-image:url(../../../assets/interfaz/papel/papel-grano.png),linear-gradient(170deg,#d8c299,#c5aa7c);background-size:128px 128px,auto;background-blend-mode:multiply,normal}
+body[data-interfaz=v2] #map-app .legajo-encabezado{margin:0 0 10px;position:relative;line-height:1.1}
+body[data-interfaz=v2] #map-app .legajo-encabezado s{display:block;font:400 13px/1.2 'Special Elite',monospace;color:#2E2A26;text-decoration:line-through 1.5px #2E2A26;letter-spacing:.04em}
+body[data-interfaz=v2] #map-app .legajo-encabezado span{display:block;margin:-3px 0 0 18px;font:700 22px/1 'Caveat',var(--fuente-texto);color:var(--tinta-azul);rotate:-2deg;transform-origin:left}
+body[data-interfaz=v2] #map-app .legajo-foto{background:#F1ECE2;padding:6px 6px 18px;box-shadow:0 6px 10px -3px #0009,0 1px 2px #0006}
+body[data-interfaz=v2] #map-app .legajo-clip{border-color:#8D949B;box-shadow:inset 0 0 0 1px #c9ced3,0 1px 1px #0007}
+body[data-interfaz=v2] #map-app .legajo-sello{rotate:-5deg;color:var(--tinta-azul);border-color:var(--tinta-azul);opacity:.92}
+body[data-interfaz=v2] #map-app .legajo-medallones>div{border-width:3px;box-shadow:0 3px 6px -2px #0008}
+body[data-interfaz=v2] #map-app .legajo-medallones>div:nth-child(1){border-color:var(--carta-acero);background:#dfe3e6}
+body[data-interfaz=v2] #map-app .legajo-medallones>div:nth-child(2){border-color:var(--carta-sangre);background:#eddad5}
+body[data-interfaz=v2] #map-app .legajo-medallones>div:nth-child(3){border-color:var(--carta-lampara);background:#f1e6c8}
+body[data-interfaz=v2] #map-app .legajo-habilidad{position:relative;padding:12px 12px 8px 28px;border:0;background:#F4EFE3 repeating-linear-gradient(#0000 0 21px,#7f9cc066 21px 22px);background-position:0 9px;box-shadow:0 4px 8px -3px #0008;rotate:.6deg}
+body[data-interfaz=v2] #map-app .legajo-habilidad::before{content:'';position:absolute;top:0;bottom:0;left:20px;width:1px;background:#b4504a80}
+body[data-interfaz=v2] #map-app .legajo-habilidad::after{content:'';position:absolute;top:-8px;right:18px;width:10px;height:26px;border:2.5px solid #8D949B;border-radius:6px;rotate:-6deg}
+body[data-interfaz=v2] #map-app #dossier .dossier-tabs{border-bottom:0;gap:4px}
+body[data-interfaz=v2] #map-app #dossier .dossier-tabs button{border:0;border-radius:9px 9px 0 0;background-color:#B79E70;color:#2B2219;box-shadow:inset 0 -6px 8px -6px #0006}
+body[data-interfaz=v2] #map-app #dossier .dossier-tabs button[aria-pressed=true]{background-color:#CDB58A;box-shadow:none}
+body[data-interfaz=v2] #map-app #dossier>.mancha{left:auto;right:6%;top:auto;bottom:4%;opacity:.7}
+
+/* ── 5. Grupo flotante: polaroids pegadas con cinta, levemente torcidas. ── */
+:root body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button.bar-mate:not(#bar-portrait):not(#objective-details):not(#crisis-details):not(.fold-hit){width:40px;height:46px;padding:3px 3px 9px;border:0;border-radius:1px;background:#EEE9DF;box-shadow:0 5px 8px -3px #000c;overflow:visible}
+:root body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button.bar-mate:not(#bar-portrait):not(#objective-details):not(#crisis-details):not(.fold-hit)[aria-pressed=true]{border:0;outline:3px solid var(--lampara);outline-offset:0;box-shadow:0 0 14px #F2C14E66,0 5px 8px -3px #000c}
+body[data-interfaz=v2] #map-app #action-bar .bar-mate img{position:static;display:block;width:34px;height:34px;border-radius:0;filter:saturate(.75) brightness(.9)}
+body[data-interfaz=v2] #map-app #action-bar .bar-mate:nth-child(odd){rotate:-3deg}
+body[data-interfaz=v2] #map-app #action-bar .bar-mate:nth-child(even){rotate:2.5deg}
+body[data-interfaz=v2] #map-app #action-bar .bar-mate::before{content:'';position:absolute;top:-6px;left:50%;width:22px;height:9px;translate:-50% 0;rotate:-6deg;background:#c9c6bbd9;box-shadow:0 1px 1px #0005}
+body[data-interfaz=v2] #map-app #action-bar .bar-mate[data-quemada=true]::after{content:'';position:absolute;right:-1px;bottom:-1px;width:16px;height:16px;background:radial-gradient(circle at 100% 100%,#140c06 0 35%,#4a2a12 55%,#0000 72%);pointer-events:none}
+
+/* ── 6. Barra de acción: tablón de cajón, esténcil desvaído, dados sobre lona. ── */
+body[data-interfaz=v2] #map-app #action-bar{--tinta:#EDE3CF;--tinta-suave:#CDBFA5;color:#EDE3CF}
+body[data-interfaz=v2] #map-app #action-bar::before{clip-path:none;background-color:#2A2018;background-image:linear-gradient(#1a110bb3,#0f0a07cc),var(--tablas-img);background-size:auto,520px;background-blend-mode:normal;box-shadow:inset 0 0 22px 6px #000d,inset 0 2px 0 #ffffff12}
+body[data-interfaz=v2] #map-app #action-bar .estencil{position:absolute;left:50%;top:50%;translate:-50% -50%;z-index:0;pointer-events:none;white-space:nowrap;font:700 38px/1 'Stardos Stencil',var(--fuente-titulo);letter-spacing:.18em;color:#EDE3CF0f}
+body[data-interfaz=v2] #map-app #action-bar .bar-slot{background:#0e0a07;border:0;box-shadow:inset 0 3px 6px #000,inset 0 0 0 1px #ffffff0d}
+body[data-interfaz=v2] #map-app #action-bar #bar-dice{padding:6px 10px;background:var(--tex-lona,#5c5240) 0 0/96px 96px;clip-path:polygon(2% 6%,30% 0,62% 5%,98% 1%,100% 52%,97% 97%,64% 100%,33% 94%,3% 100%,0 48%);box-shadow:inset 0 0 12px #0008}
+/* Botones como etiquetas de cartón con muesca; «Terminar turno», tabla pintada de Lámpara. */
+:root body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) :is(#bar-actions,#bar-fan,.bar-dice-zone) button:not(.die):not(#bar-portrait):not(#objective-details):not(#crisis-details):not(.fold-hit):not(#finish-turn),
+:root body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button#bar-more:not(#bar-portrait):not(#objective-details):not(#crisis-details):not(.fold-hit){--tinta:#1E1610;border:0;border-radius:2px;color:#1E1610;padding-left:20px;
+ background:radial-gradient(circle at 9px 50%,#1a120c 0 3px,#0000 3.5px),linear-gradient(#0000,#3a2a1a1f),var(--carton-img) 0 0/300px,#C9AE84;background-blend-mode:normal,normal,multiply,normal;
+ clip-path:polygon(0 22%,8px 0,100% 0,100% 100%,8px 100%,0 78%);filter:drop-shadow(0 4px 4px #000a);box-shadow:none}
+:root body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button#finish-turn:not(#bar-portrait):not(#objective-details):not(#crisis-details):not(.fold-hit){border:0;color:#1E1610;font-family:'Stardos Stencil',var(--fuente-titulo);font-weight:700;letter-spacing:.05em;
+ background:linear-gradient(#F2C14Ed9,#E8B23Fd9),var(--tablas-img) 0 0/360px,var(--lampara);background-blend-mode:normal;box-shadow:0 5px 10px -3px #000c,0 0 16px #F2C14E33}
+:root body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button:not(#bar-portrait):not(#objective-details):not(#crisis-details):not(.fold-hit):disabled{filter:saturate(.2) brightness(.8);opacity:.7}
+
+/* ── 7. Papeles centrales: siguen en papel, con sombra blanda y hollín; cartas sobre la manta azul. ── */
+body[data-interfaz=v2] #map-app #action-stage>:is(section,dialog){filter:var(--sombra-lampara);box-shadow:inset 0 0 20px 2px rgb(18 12 8/.38)}
+:root body[data-interfaz=v2] #map-app #action-stage button:not(.search-die):not(.die-choice){border-width:1px;border-color:#2B221973;box-shadow:0 3px 6px -2px #0007}
+body[data-interfaz=v2] #map-app #search-cards{padding:12px;border-radius:3px;background:var(--tex-manta,#2a3b55) 0 0/96px 96px;box-shadow:inset 0 0 18px #000a}
+body[data-interfaz=v2] #map-app #search-cards .carta,body[data-interfaz=v2] #map-app #search-cards button{box-shadow:0 6px 10px -3px #000c}
+
+/* ── 8. Avisos del mapa: nota chica a lápiz, clavada; no un globo. ── */
+body[data-interfaz=v2] #map-notice{background:#E2D8C2;color:#2F2A24;font:600 19px/1.2 'Caveat',var(--fuente-texto);rotate:var(--giro,-1.2deg);box-shadow:none;filter:drop-shadow(0 6px 8px #000a)}
+body[data-interfaz=v2] #map-notice::before{content:'';position:absolute;top:5px;left:50%;width:9px;height:9px;translate:-50% 0;border-radius:50%;background:radial-gradient(circle at 35% 30%,#d7d2c8,#6a645a 60%,#2a2622);box-shadow:0 2px 2px #0008}
+body[data-interfaz=v2] #map-app #action-bar .bar-mate .mate-initials{color:#2B2219;font:700 13px/1 var(--fuente-titulo)}
+body[data-interfaz=v2] #map-app #crisis-card>.papel-relieve{display:none}
+body[data-interfaz=v2] #map-app #crisis-card>.mancha{opacity:.55}

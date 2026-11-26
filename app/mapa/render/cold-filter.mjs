@@ -69,3 +69,15 @@ export function withMapFilter(prepared,id='map',f=MAP_COLOR_FILTER){
  // generated: el renderer libera esta superficie al destruirse.
  return {...prepared,[id]:{...p,image:canvas,generated:true,colorFilter:cssFilter(f)}};
 }
+
+// Carbón (sesión 8, informe 127): el mapa más oscuro y apagado, regulable desde CSS sin tocar el
+// arte. --mapa-saturacion y --mapa-brillo multiplican los del filtro frío (1 = como antes). Las
+// fichas, la Lámpara y la noche no pasan por acá: solo la textura del fondo.
+export function carbonFilter(f=MAP_COLOR_FILTER,{saturacion=1,brillo=1}={}){
+ if(!f)return f;const n=(v,d)=>Number.isFinite(v)&&v>0?v:d;
+ return Object.freeze({...f,saturate:f.saturate*n(saturacion,1),brightness:f.brightness*n(brillo,1)});
+}
+export function carbonFromCss(root=globalThis.document?.documentElement){
+ if(!root||typeof getComputedStyle!=='function')return {};const s=getComputedStyle(root),num=k=>Number.parseFloat(s.getPropertyValue(k));
+ return {saturacion:num('--mapa-saturacion'),brillo:num('--mapa-brillo')};
+}

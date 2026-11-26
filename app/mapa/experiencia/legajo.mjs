@@ -66,6 +66,8 @@ export function legajoModel(character,p,{playerName=id=>id}={}){
 export function paintLegajo(m,{$=id=>document.getElementById(id),setText=(e,t)=>{if(e&&e.textContent!==t)e.textContent=t;}}={}){
  if(!m)return;
  setText($('legajo-numero'),'Legajo n.º '+m.number);
+ // Carpeta reutilizada (sesión 8): el rótulo oficial tachado y, encima, a mano, quién es ahora.
+ setText($('legajo-oficial'),'POLICÍA PROVINCIAL · LEGAJO N.º '+m.number);setText($('legajo-a-mano'),'La Colonia — '+m.name);
  setText($('character-identity'),m.job);
  const role=$('legajo-rol');if(role){role.hidden=!m.role;setText(role,m.role);}
  setText($('character-location'),m.place);setText($('character-group'),m.group);

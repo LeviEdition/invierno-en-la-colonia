@@ -105,7 +105,7 @@ test('Sesión 5 · contornos corregidos: escuela sin el aro, biblioteca sin la c
 
 test('Sesión 5 · tipografías autoalojadas: OFL 1.1, latino y latino extendido, sin servidores externos',()=>{
  const css=read('app/mapa/estilos/fuentes.css'),faces=css.match(/@font-face\{[^}]*\}/g);
- assert.equal(faces.length,10,'Bitter 600 y 700; Alegreya Sans 400, 500 y 700; dos subconjuntos');
+ assert.equal(faces.filter(f=>/'(Bitter|Alegreya Sans)'/.test(f)).length,10,'Bitter 600 y 700; Alegreya Sans 400, 500 y 700; dos subconjuntos (las de la sesión 8 se prueban aparte)');
  for(const f of faces){assert.match(f,/font-display:swap/);assert.match(f,/src:url\(\.\.\/\.\.\/\.\.\/assets\/fuentes\//);assert.match(f,/format\('woff2'\)/);}
  assert.doesNotMatch(css+read('app/mapa/index.html')+read('app/mapa/estilos/papel.css'),/fonts\.googleapis|fonts\.gstatic|https?:\/\/[^)"']*\.woff2?/);
  // El subconjunto latino cubre todo el español: ñ, tildes, ¿¡ y «».

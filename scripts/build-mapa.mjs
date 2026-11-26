@@ -18,7 +18,10 @@ export async function buildMapa({qa=false,check=false,write=true}={}){
  if(!hostInputs.includes('src/application/reference-engine.mjs')||hostInputs.some(p=>p.includes('node_modules/phaser')))throw Error('El host debe usar el motor real sin otro renderer');
  if(hostInputs.some(p=>p.startsWith('prototypes/')))throw Error('El producto no puede importar prototipos');
  if(!qa&&(/h344Test|h344DropReply|searchMessage|testBindings|__GAME_TEST__/.test(host.html)||/h344Test|__ACTION_MAP_QA__/.test(javascript)))throw Error('Instrumentación QA en producto');
- const files=[['map.mjs',mapBytes],['reference-host.html',Buffer.from(host.html)]];
+ // D12 en 3D (sesión 8, informe 127): chunk aparte con Three.js; el visor lo pide en tiempo de ejecución.
+ const d12=await build({absWorkingDir:root,entryPoints:['app/mapa/movimiento/d12-3d.mjs'],outfile:directory+'/d12-3d.mjs',bundle:true,format:'esm',platform:'browser',target:'es2022',minify:true,legalComments:'eof',write:false,metafile:true}),d12Bytes=d12.outputFiles[0].contents;
+ if(mapInputs.some(p=>p.includes('node_modules/three')))throw Error('Three.js va solo en el chunk del D12');
+ const files=[['map.mjs',mapBytes],['d12-3d.mjs',d12Bytes],['reference-host.html',Buffer.from(host.html)]];
  if(qa){
   // Copia QA de la página: estilos y bundle por rutas absolutas del servidor QA.
   let html=await readFile(resolve(root,'app/mapa/index.html'),'utf8');
@@ -31,7 +34,7 @@ export async function buildMapa({qa=false,check=false,write=true}={}){
   const html=(await readFile(resolve(root,'dist/mapa-qa/index.html'),'utf8')).replace(/<script type="module"[^>]*><\/script>/,'');
   await writeFile(resolve(root,'dist/mapa-qa/capacity.html'),html);
  }
- const info={phaser:'4.2.1',esbuild:'0.28.2',qa,map:{rawBytes:mapBytes.length,gzip9Bytes:gzipSync(mapBytes,{level:9}).length,sha256:digest(mapBytes),inputs:mapInputs},host:{rawBytes:Buffer.byteLength(host.html),sha256:digest(host.html),inputs:hostInputs}};
+ const info={phaser:'4.2.1',esbuild:'0.28.2',qa,d12:{rawBytes:d12Bytes.length,gzip9Bytes:gzipSync(d12Bytes,{level:9}).length,sha256:digest(d12Bytes)},map:{rawBytes:mapBytes.length,gzip9Bytes:gzipSync(mapBytes,{level:9}).length,sha256:digest(mapBytes),inputs:mapInputs},host:{rawBytes:Buffer.byteLength(host.html),sha256:digest(host.html),inputs:hostInputs}};
  if(write&&!check)await writeFile(resolve(out,'build.json'),JSON.stringify(info,null,2)+'\n');return {...info,html:host.html,javascript};
 }
 // Capacidades del mapa (33 accesos) inyectadas al motor en el build, sin tocar src/.

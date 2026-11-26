@@ -10,3 +10,7 @@
 #move-sequence:has(#exposure-die.exposure-d12:not([hidden])) #exposure-die{grid-column:1;grid-row:1/3}
 #move-sequence:has(#exposure-die.exposure-d12:not([hidden])) #sequence-status{grid-column:2}
 #move-sequence:has(#exposure-die.exposure-d12:not([hidden])) #resolve-decision{grid-column:2;margin-top:0}
+/* D12 en 3D (sesión 8): mismo lugar y tamaño que el plano; sombra blanda de lámpara sobre el papel. */
+.exposure-d12 .d12-3d{display:none;width:82px;height:82px}
+.exposure-d12[data-d12="3d"] .d12-3d{display:block;filter:drop-shadow(0 6px 5px #0007)}
+.exposure-d12[data-d12="3d"] .d12-solid{display:none}
