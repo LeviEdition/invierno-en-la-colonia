@@ -47,6 +47,10 @@ El amarillo solo marca lo que importa: esperanza, peligro, lo que hay que mirar 
 | **Bitter** | Títulos de escena, nombres de supervivientes y botones de **decisión narrativa** |
 | **Alegreya** | Narración y diálogos; cursiva para lo que se piensa o dice en voz alta |
 | **Alegreya Sans** | Todo lo mecánico: acciones del tablero, estadísticas, etiquetas, ronda y recursos |
+| **Caveat** | Lápiz: el Objetivo, lo escrito a mano en el legajo y las notas del mapa (frases cortas) |
+| **Stardos Stencil** | Esténcil: los números de la chapa, «Terminar turno», «VÍVERES» en el tablón y el tipo de las cartas de búsqueda |
+| **Special Elite** | Máquina de escribir: el rótulo oficial del legajo |
+| **Permanent Marker** | Marcador: el título de la crisis |
 
 - Botones de decisión narrativa en Bitter y acciones del tablero en Alegreya Sans: el jugador distingue sin pensarlo una decisión de historia de una de juego.
 - Cifras de estadísticas y contadores con números alineados y de ancho fijo (`font-variant-numeric: lining-nums tabular-nums`); Alegreya Sans usa por defecto números de alturas desparejas.
@@ -105,9 +109,9 @@ Referencia visual: el lienzo de diseño «Invierno en la Colonia — dirección 
 - **Plataforma principal: teléfono en horizontal** (referencia 852×393). Escritorio usa la misma disposición, con el mapa como protagonista y los paneles más livianos. En vertical se muestra un aviso para girar el teléfono.
 - **El mapa manda:** ocupa toda la pantalla; los paneles flotan sobre él, compactos.
 - **Mapa en tonos fríos:** se aprueba el filtro de color sobre la ilustración existente (saturación 0,5, tono −28°, brillo 0,85, contraste 1,05), sin redibujarla. Cierra el pendiente de §7.
-- **Materiales:** chapa corrugada y oxidada en barras y marcos; ~~nieve acumulada en los bordes superiores~~ (retirada de los paneles en el informe 122: queda solo en el mapa); pinos del mapa en algunas esquinas (`assets/interfaz/`). **El óxido es un material, no una señal:** es textura apagada y nunca marca algo importante; la regla de la Lámpara (§2.1) sigue valiendo. Sin guirnaldas de luces.
+- **Materiales:** desde la sesión 8, dirección **«objetos a carbón»** (§8.1). La chapa corrugada, el papel viejo y la sombra dura de las sesiones 2 a 7 quedan reemplazados por un objeto distinto por panel.
 - **Papel rasgado** para los recuadros de texto (pensamiento, consecuencia «X recordará eso») y los rótulos de las localidades.
-- **Papel viejo en los paneles de lectura** (informe 122): la barra de acción, las tarjetas de Objetivo y Crisis y la ficha lateral son papel crema amarillento que oscurece hacia los bordes, con fibra y grano finos, un pliegue suave y el borde rasgado. Tres variantes (barra, tarjeta chica, ficha). El texto va en tinta `#2B2219` (secundario `#4E4134`); los botones sobre el papel son chapa oscura con sombra dura `3px 3px 0 #07090C`, y «Terminar turno» va en Lámpara sólida. La nieve queda solo en el mapa: ningún panel la lleva. Las texturas se generan una vez (`scripts/generar-papel.mjs`).
+- **Papel viejo en los paneles de lectura** (informe 122): reemplazado en la sesión 8 por los objetos de §8.1. El papel queda en los papeles centrales (búsqueda, construir, cartas), en la hoja del Objetivo y en las notas del mapa.
 - **Sangre seca sobre el papel:** marrón oxidado desaturado (referencia `#6A2E22`), oscuro y apagado, nunca el rojo de señal (Sangre fría `#B5473F`): no se lee como herida. Va en capa aparte del papel, para moverla o quitarla sin rehacerlo. Solo en esquinas y bordes, jamás debajo de un número, nombre, botón o dado; como máximo una mancha de borde por panel (la tarjeta de Crisis lleva una más grande). Posiciones fijas por tipo de panel, sorteadas con semilla.
 - **Recurso en peligro:** la chapa lleva anillo y su número en insignia, en Sangre fría (`#B5473F`), solo cuando el motor lo indica (hoy, la comida que no alcanza para la próxima fase de colonia y los residuos desde el tope del motor, `wasteLimit`, hoy 10). Desde los ajustes 2 de la sesión 7, el número queda en su lugar, en Sangre fría, sin insignia.
 - **Tipografía:** variables `--fuente-texto` (Alegreya Sans) y `--fuente-titulo` (Bitter), autoalojadas (§3).
@@ -144,7 +148,7 @@ Referencia visual: el lienzo de diseño «Invierno en la Colonia — dirección 
 - **Íconos de las ranuras:** herramienta, arma y libro con el mismo trazo (2 px, puntas redondas). El libro tiene tapas, lomo y canto de hojas.
 - **Papel real:** relieve de arrugas y grano de un escaneo (`assets/interfaz/papel-fuente/`), grises en soft-light sobre el crema, con una variable por capa (`--papel-arrugas`, `--papel-grano`). Los bordes rasgados se generan con código: irregulares, con fibras y alguna muesca, distintos por panel y fijos (semilla por panel). La sangre seca y el oscurecido de bordes siguen en sus capas.
 - **Tipografía en toda la interfaz:** la base de la página es Alegreya Sans, también en la barra superior, el zoom, el menú, los avisos y los rótulos. Los títulos y los números destacados (chapas, ronda, turno, contadores) van en Bitter.
-- **Un solo estilo de botón** (ajustes 2): todos los botones de acción (barra, abanico, papeles centrales, zoom, menú) son tinta sobre papel con sombra dura, como «Usar». Apagados: desaturados, sin sombra, con el motivo en el globo. **Lámpara sólido** solo para «Terminar turno» y para la acción principal de cada papel central (una por papel). Ningún bloque oscuro genérico.
+- **Un solo estilo de botón** (ajustes 2), con material de la sesión 8: en la barra, **etiquetas de cartón** con muesca y ojal; en los papeles centrales, tinta sobre papel con borde fino. La sombra es siempre **blanda**, de lámpara, hacia abajo: la sombra dura desplazada se retiró. Apagados: desaturados. Lámpara sólido solo para «Terminar turno» (tabla pintada) y la acción principal de cada papel.
 - **Papel de búsqueda:** mide según la cantidad de cartas (1, 2 o 3). Toda la carta es el botón «Conservar …».
 - **Nada sobre el papel central:** mientras está abierto, Objetivo y Crisis se pliegan solas, sin cambiar lo guardado, y los rótulos del mapa quedan debajo.
 - **Objetivo y Crisis:** del mismo ancho, en columna, debajo de la barra del zoom con el mismo margen. Plegadas, sus tiras también. Textos: «0 de 9 muestras · ronda 1 de 10» y «Si falla: 1 herida al de menor influencia en la colonia» (con artículo en todas las consecuencias).
@@ -153,6 +157,38 @@ Referencia visual: el lienzo de diseño «Invierno en la Colonia — dirección 
 - **Barra superior** (ajustes 2): papel rasgado, como tarjetas y barra; ronda, turno y recursos van en sellos de tinta con el número en Bitter y la etiqueta corta debajo (Ronda, Turno, Moral, Comida, Indefensos, Residuos, Hambre). La moral es la chapa más grande, con anillo. El zoom y el menú también son papel.
 - **Legajo** (ajustes 2): pestañas arriba (Superviviente, Mochila, Colonia, Registro). Superviviente: foto con clip, apenas torcida, con «Legajo n.º X»; nombre en Bitter, oficio, rol, localidad y grupo; si hace guardia esta noche, un **sello de tinta azul oscura** «Guardia · recibe la tirada esta noche» (nunca rojo); Influencia, Ataque y Búsqueda en tres medallones; el daño con los símbolos del mapa en casillas llenas o vacías hasta el límite de muerte, y «muere a los N»; la habilidad a la vista, con su tipo (automática, botón o reacción) y si está disponible o ya se usó; tres ranuras de equipo iguales a las de la barra. Sin dados (están en la barra) ni desplegable de superviviente (se cambia tocando el grupo). Queda lugar para la ilustración y una o dos líneas de historia, que no se muestran mientras no haya datos. Se cierra con una «×» de papel, como cualquier botón; si no entra, se desplaza con «Más abajo ▾» (ajustes 3). «Ya se movió» va en su propia línea, debajo del daño. Si la habilidad es de botón, la ficha trae el botón con su verbo («Curar sin dado», «Construir sin dado»), apagado con el motivo cuando no se puede (ajustes 5).
 - **Toque doble** (ajustes 2): el primer toque sobre un superviviente (mapa o grupo flotante) lo hace activo; uno sobre el que ya es activo abre su legajo. El retrato de la barra y la tecla E siguen abriéndolo. Nunca ejecuta una acción, y en el pase de dispositivo no abre nada.
+
+### 8.1 Objetos a carbón (decisión del creador, 25/11/2026; informes 127 a 129)
+
+La interfaz deja de ser «el mismo papel en todos lados». Cada panel es un **objeto distinto del mundo de la colonia**: encontrado, improvisado y gastado. Atmósfera a carbón: oscura, fría y granulada, con los objetos conservando su color pero apagado, como bajo una sola lámpara. Es un juego adulto de supervivencia.
+
+**Queda fuera:**
+- **Cómic:** contornos negros gruesos, sombras duras planas, onomatopeyas, globos de historieta, cartuchos de narrador.
+- **Lo acogedor:** pizarras escolares, chinches de colores, fieltro verde, letra redondita.
+
+**Reglas generales**
+- **Sombras blandas de lámpara**, difusas y hacia abajo (`--sombra-lampara`); nunca la sombra dura desplazada.
+- **Bordes ennegrecidos de hollín** (sombra interior suave), rasgados o gastados según el material. El giro leve, la intensidad del hollín, las manchas y la esquina quemada son fijos por objeto: salen de una semilla (`experiencia/carbon.mjs`), nunca de `Math.random`.
+- **Mapa más oscuro:** menos saturación y brillo sobre la textura del fondo, viñeta negra en los bordes y grano de carbón generado. Todo se regula con variables CSS: `--mapa-saturacion`, `--mapa-brillo`, `--mapa-vineta` y `--mapa-grano`. Fichas, Lámpara y noche no pasan por ese filtro; la noche sigue encima, más azul y con escarcha.
+- **Lámpara** `#F2C14E`, solo para resaltar: selección, «Terminar turno» y la acción principal. El **rojo de peligro** se usa solo como señal (comida o residuos en peligro, crisis), en un rojo óxido apagado (`#2F0802` sobre la chapa galvanizada, `#6E1F15` en marcador sobre cartón).
+- **Botones** (informe 129): ningún botón queda con el fondo oscuro genérico bajo texto oscuro; sobre papel son etiquetas de papel crema. Todo texto de botón llega a 4,5:1.
+- **Apagado** (barra, legajo, papeles, zoom y menú; informes 128 y 129): nunca se baja la opacidad del texto. Excepción anotada: el dado que no sirve para la acción en curso. Se reconoce por la falta de sombra (queda apoyado), el material apagado y el cursor de «no permitido». El texto mantiene 4,5:1 o más.
+- **Sangre y óxido** como rastro en los bordes, nunca bajo el texto. Todo texto llega a contraste AA sobre su material; la tabla está en `MATERIALS` y una prueba la controla.
+- **Tipografías nuevas** (§3): Caveat (lápiz), Stardos Stencil (esténcil), Special Elite (máquina de escribir) y Permanent Marker (marcador), solo para frases cortas. Bitter y Alegreya Sans siguen para títulos y reglas.
+
+**Objeto por panel**
+
+| Panel | Objeto | Detalles |
+|---|---|---|
+| Recursos (arriba), zoom y menú | **Chapa galvanizada** gris fría y oscura, atornillada, con hollín en los extremos y alrededor de los tornillos y mugre irregular (flor de zinc y mugre generadas con semilla en `experiencia/carbon.mjs`) | Cuatro tornillos en recursos, zoom y menú desplegable; dos en «Menú ▾». Controles como piezas estampadas. Números grandes en esténcil oscuro y etiqueta chica debajo. El óxido es solo señal: comida en peligro y residuos desde el límite. Comida en peligro: número en rojo óxido con un círculo a mano. Residuos: además del número, rayas de conteo raspadas en grupos de cinco. Ronda «3/10», separada por una línea. |
+| Objetivo | **Hoja arrancada y doblada en cuatro** | Pliegues visibles, papel de siempre. A lápiz (Caveat) salvo el título (Bitter). Escarcha en una esquina, marca redonda de taza en el borde, apenas torcida. |
+| Crisis | **Cartón** (`materiales/carton.webp`) con dos tiras de cinta americana gris | Título en marcador rojo óxido (Permanent Marker); detalle y consecuencia en Alegreya Sans. Una crisis nueva entra deslizándose y se asienta (sin movimiento reducido). |
+| Legajo | **Carpeta manila de la policía, reutilizada** | Encabezado a máquina (Special Elite) «POLICÍA PROVINCIAL · LEGAJO N.º X», tachado; encima, a mano, «La Colonia — Mara». Foto como polaroid con clip metálico. Sello de guardia en tinta azul oscura, torcido. Medallones con los colores de las cartas: Influencia acero `#5D6B78`, Ataque sangre fría `#8E2F2A`, Búsqueda Lámpara `#D0A23A`. La habilidad en una ficha rayada con clip, con su botón. Pestañas como lengüetas de la carpeta. |
+| Grupo flotante | **Polaroids** pegadas con cinta, levemente torcidas | La activa, con marco Lámpara. Una del grupo, siempre la misma, tiene la esquina quemada. |
+| Barra de acción | **Tablón de cajón** (`materiales/tablas-gastadas.webp`) | «VÍVERES» en esténcil desvaído, fija contra las acciones (no se mueve cuando se oculta «Mejorar dado»; si no entra, no se muestra). En escritorio la barra no se pliega. Ranuras de equipo como huecos oscuros. Dados de acción sobre **lona azul**, de la familia de la manta, con los puntos en tinta oscura fija. Botones como **etiquetas de papel crema** con muesca. «Terminar turno», una tabla pintada de Lámpara con letra de esténcil: único acento cálido de la barra. |
+| Papeles centrales | **Papel**, con sombra blanda y hollín | Regla de alineación de los ajustes 2. En la búsqueda, las cartas se apoyan sobre una **manta azul tejida**; dos y tres cartas entran en fila. Carta de búsqueda, provisoria hasta el hito 2: papel con textura, tipo en esténcil arriba y un recuadro vacío para la ilustración (no se inventan ilustraciones). |
+| Avisos del mapa | **Nota chica a lápiz, clavada** | No es un globo. Por ahora sigue en su lugar de siempre, arriba al centro; falta llevarla junto a la ficha (informe 127). |
+| Dado D12 | **D12 de hueso en 3D** (Three.js, chunk aparte) | Marfil gastado con los símbolos tallados y la pintura medio saltada: roja, salvo el copo de la congelación en celeste (Escarcha); cae en la cara que dio el motor. Los dados de acción siguen en 2D. |
 
 ## 7. Pendiente
 

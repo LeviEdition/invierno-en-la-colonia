@@ -1,4 +1,4 @@
-// Vista de la barra de acción, las tarjetas de Objetivo y Crisis y el recurso en peligro
+import {burntMate} from '../experiencia/carbon.mjs';// Vista de la barra de acción, las tarjetas de Objetivo y Crisis y el recurso en peligro
 // (interfaz v2, informe 122). Dibuja lo que dicen los modelos (action-bar-model.mjs); las
 // transiciones son de experiencia/transitions.mjs y solo animan opacity y transform.
 import {dieFace} from '../movimiento/dice.mjs';
@@ -15,7 +15,7 @@ export function mountActionBar({portraitUrl,initials,onSelect=()=>{},onDie=()=>{
  $('bar-dice')?.addEventListener('click',e=>{const n=e.target.closest('.bar-die');if(!n||n.classList.contains('is-used'))return;const free=[...$('bar-dice').children].filter(x=>!x.classList.contains('is-used'));onDie(free.indexOf(n));},{signal});
  function paintGroup(list){
   const box=$('bar-group');if(!box)return;const key=list.map(g=>g.id+(g.active?'*':'')).join(' ');if(key===groupKey)return;groupKey=key;box.hidden=list.length<2;
-  box.replaceChildren(...list.map(g=>{const b=element('button',undefined,'bar-mate');b.type='button';b.dataset.groupId=g.id;b.setAttribute('aria-pressed',String(g.active));b.setAttribute('aria-label',(g.active?'Activo: ':'Elegir a ')+g.name);b.title=g.name+(g.leader?' · Líder':'');
+  box.replaceChildren(...list.map(g=>{const b=element('button',undefined,'bar-mate');b.type='button';b.dataset.groupId=g.id;if(g.id===burntMate(list.map(x=>x.id)))b.dataset.quemada='true';b.setAttribute('aria-pressed',String(g.active));b.setAttribute('aria-label',(g.active?'Activo: ':'Elegir a ')+g.name);b.title=g.name+(g.leader?' · Líder':'');
    // Ajustes de la sesión 7: si no hay retrato (solo cuatro supervivientes tienen uno provisional),
    // o si la imagen no carga, iniciales sobre papel; nunca un círculo vacío.
    const url=portraitUrl(g.id),mark=element('span',initials(g.name),'mate-initials');b.dataset.portrait=String(!!url);b.append(mark);if(url){const img=element('img');img.alt='';img.width=40;img.height=40;img.decoding='async';img.addEventListener('error',()=>{img.remove();b.dataset.portrait='false';},{once:true});img.src=url;b.append(img);}return b;}));

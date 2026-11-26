@@ -22,5 +22,8 @@
   "devDependencies": {
     "esbuild": "0.28.2",
     "phaser": "4.2.1"
+  },
+  "dependencies": {
+    "three": "0.187.0"
   }
 }

@@ -18,10 +18,19 @@ const SKILL_KIND_LABELS=Object.freeze({button:'Botón',reaction:'Reacción',auto
 // «Construir»; acá solo se decide el texto y si se puede, con el dato del motor (allowed/reason).
 const SKILL_ACTIONS=Object.freeze({medic:{kind:'special',label:'Curar sin dado'},nurse:{kind:'special',label:'Curar sin dado'},builder:{kind:'barricade-ability',label:'Construir sin dado'}});
 const SKILL_REASONS=Object.freeze({'skill-used':'Ya usada esta ronda',full:'Sin accesos libres',treatment:'Nadie herido o ya usada'});
+// Si el motor no da un motivo con texto propio, uno genérico: la interfaz no adivina reglas.
+export const SKILL_GENERIC='No se puede usar ahora';
+const NO_PATIENT=Object.freeze({medic:'Nadie herido en tu localidad',nurse:'Nadie con congelación en tu localidad'});
+// El motor informa «treatment» tanto si la habilidad ya se usó como si no hay a quién tratar;
+// su propio dato `skill.used` distingue los dos casos (informe 129).
+function skillMotive(skill,reason,reasons){
+ if(reason==='treatment'){if(skill.used===true)return SKILL_REASONS['skill-used'];if(skill.used===false&&NO_PATIENT[skill.id])return NO_PATIENT[skill.id];}
+ return reasons[reason]||SKILL_REASONS[reason]||SKILL_GENERIC;
+}
 export function skillAction(character,p,{own=false,busy=false,reasons={}}={}){
  const a=SKILL_ACTIONS[character?.skill?.id];if(!a||skillKind(character.skill.id)!=='button')return null;
  const q=a.kind==='special'?p?.play?.options?.[character.id]?.special:p?.action?.options?.[character.id]?.['barricade-ability'];
- const reason=!own?'No es tu turno':busy?'Hay una acción en curso':!q?'No disponible ahora':q.allowed?'':reasons[q.reason]||SKILL_REASONS[q.reason]||'No disponible ahora';
+ const reason=!own?'No es tu turno':busy?'Hay una acción en curso':!q?SKILL_GENERIC:q.allowed?'':skillMotive(character.skill,q.reason,reasons);
  return {kind:a.kind,label:a.label,allowed:!reason,reason};
 }
 export function skillKind(id){return SKILL_KINDS[id]||'automatic';}
@@ -66,6 +75,8 @@ export function legajoModel(character,p,{playerName=id=>id}={}){
 export function paintLegajo(m,{$=id=>document.getElementById(id),setText=(e,t)=>{if(e&&e.textContent!==t)e.textContent=t;}}={}){
  if(!m)return;
  setText($('legajo-numero'),'Legajo n.º '+m.number);
+ // Carpeta reutilizada (sesión 8): el rótulo oficial tachado y, encima, a mano, quién es ahora.
+ setText($('legajo-oficial'),'POLICÍA PROVINCIAL · LEGAJO N.º '+m.number);setText($('legajo-a-mano'),'La Colonia — '+m.name);
  setText($('character-identity'),m.job);
  const role=$('legajo-rol');if(role){role.hidden=!m.role;setText(role,m.role);}
  setText($('character-location'),m.place);setText($('character-group'),m.group);
