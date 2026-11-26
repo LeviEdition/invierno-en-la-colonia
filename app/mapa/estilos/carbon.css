@@ -22,11 +22,15 @@ body[data-interfaz=v2] #map-app .map-viewport::after{content:'';position:absolut
  opacity:1;mix-blend-mode:normal}
 body[data-interfaz=v2] #map-app .map-viewport::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:var(--tex-grano,none) 37px 53px/256px 256px repeat;opacity:var(--mapa-grano);mix-blend-mode:multiply}
 
+/* Los objetos se aplican en la disposición v2 (horizontal o ancha). En vertical queda la pila anterior con «Girá el teléfono» (informe 119), sin cambiar su altura. */
+@media (min-width:601px),(orientation:landscape){
 /* ── Todos los objetos: hollín en los bordes y sombra blanda hacia abajo (nunca desplazada y dura). ── */
 body[data-interfaz=v2] #map-app :is(.paper-card,#dossier)::before{box-shadow:inset 0 0 18px 3px rgb(18 12 8/var(--hollin,.55)),inset 0 0 3px 1px #0009}
-body[data-interfaz=v2] #map-app :is(.paper-card,#dossier,.topbar){filter:var(--sombra-lampara);box-shadow:none}
+body[data-interfaz=v2] #map-app :is(.paper-card,.topbar){filter:var(--sombra-lampara);box-shadow:none}
 body[data-interfaz=v2] #map-app #action-bar{filter:none;box-shadow:0 -2px 18px 2px #000b}
-body[data-interfaz=v2] #map-app :is(.paper-card,#dossier){rotate:var(--giro,0deg)}
+body[data-interfaz=v2] #map-app .paper-card{rotate:var(--giro,0deg)}
+/* El expediente contiene papeles con position:fixed (Grupo y líderes): filter y rotate lo volverían su contenedor. Solo en la disposición v2. */
+@media (min-width:601px),(orientation:landscape){body[data-interfaz=v2][data-panel-open=true] #map-app #dossier{filter:var(--sombra-lampara)}}
 body[data-interfaz=v2] #map-app :is(#objective-card,#crisis-card,#dossier,#action-bar,.topbar)>.papel-relieve{opacity:.55}
 
 /* ── 1. Recursos: chapa atornillada, oxidada y muy oscurecida. ── */
@@ -92,6 +96,8 @@ body[data-interfaz=v2] #map-app #dossier .dossier-tabs button{border:0;border-ra
 body[data-interfaz=v2] #map-app #dossier .dossier-tabs button[aria-pressed=true]{background-color:#CDB58A;box-shadow:none}
 body[data-interfaz=v2] #map-app #dossier>.mancha{left:auto;right:6%;top:auto;bottom:4%;opacity:.7}
 
+/* Grupo y barra: solo en la disposición v2 (horizontal o ancha). En vertical queda la pila anterior (informe 119) y estos tamaños la harían crecer. */
+@media (min-width:601px),(orientation:landscape){
 /* ── 5. Grupo flotante: polaroids pegadas con cinta, levemente torcidas. ── */
 :root body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button.bar-mate:not(#bar-portrait):not(#objective-details):not(#crisis-details):not(.fold-hit){width:40px;height:46px;padding:3px 3px 9px;border:0;border-radius:1px;background:#EEE9DF;box-shadow:0 5px 8px -3px #000c;overflow:visible}
 :root body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button.bar-mate:not(#bar-portrait):not(#objective-details):not(#crisis-details):not(.fold-hit)[aria-pressed=true]{border:0;outline:3px solid var(--lampara);outline-offset:0;box-shadow:0 0 14px #F2C14E66,0 5px 8px -3px #000c}
@@ -116,6 +122,7 @@ body[data-interfaz=v2] #map-app #action-bar #bar-dice{padding:6px 10px;backgroun
  background:linear-gradient(#F2C14Ed9,#E8B23Fd9),var(--tablas-img) 0 0/360px,var(--lampara);background-blend-mode:normal;box-shadow:0 5px 10px -3px #000c,0 0 16px #F2C14E33}
 :root body[data-interfaz=v2] #map-app :is(#action-bar,.paper-card) button:not(#bar-portrait):not(#objective-details):not(#crisis-details):not(.fold-hit):disabled{filter:saturate(.2) brightness(.8);opacity:.7}
 
+}
 /* ── 7. Papeles centrales: siguen en papel, con sombra blanda y hollín; cartas sobre la manta azul. ── */
 body[data-interfaz=v2] #map-app #action-stage>:is(section,dialog){filter:var(--sombra-lampara);box-shadow:inset 0 0 20px 2px rgb(18 12 8/.38)}
 :root body[data-interfaz=v2] #map-app #action-stage button:not(.search-die):not(.die-choice){border-width:1px;border-color:#2B221973;box-shadow:0 3px 6px -2px #0007}
@@ -128,3 +135,6 @@ body[data-interfaz=v2] #map-notice::before{content:'';position:absolute;top:5px;
 body[data-interfaz=v2] #map-app #action-bar .bar-mate .mate-initials{color:#2B2219;font:700 13px/1 var(--fuente-titulo)}
 body[data-interfaz=v2] #map-app #crisis-card>.papel-relieve{display:none}
 body[data-interfaz=v2] #map-app #crisis-card>.mancha{opacity:.55}
+}
+/* Vertical (max 600 px): queda la pila anterior con «Girá el teléfono» (informe 119); los adornos de la chapa y del tablón no se muestran, para no hacerla crecer. */
+@media (max-width:600px) and (orientation:portrait){body[data-interfaz=v2] #map-app :is(.ronda-max,.raya-conteo,.estencil,.tornillo){display:none}}
