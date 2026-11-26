@@ -14,6 +14,16 @@ export const DEATH_DAMAGE=3;
 // Construir sin dado), «reacción» si responde a un resultado, «automática» el resto.
 const SKILL_KINDS=Object.freeze({medic:'button',nurse:'button',builder:'button',resilient:'reaction'});
 const SKILL_KIND_LABELS=Object.freeze({button:'Botón',reaction:'Reacción',automatic:'Automática'});
+// Botón de la habilidad en el legajo (ajustes 5): la misma acción que «Más» → «Habilidad» o
+// «Construir»; acá solo se decide el texto y si se puede, con el dato del motor (allowed/reason).
+const SKILL_ACTIONS=Object.freeze({medic:{kind:'special',label:'Curar sin dado'},nurse:{kind:'special',label:'Curar sin dado'},builder:{kind:'barricade-ability',label:'Construir sin dado'}});
+const SKILL_REASONS=Object.freeze({'skill-used':'Ya usada esta ronda',full:'Sin accesos libres',treatment:'Nadie herido o ya usada'});
+export function skillAction(character,p,{own=false,busy=false,reasons={}}={}){
+ const a=SKILL_ACTIONS[character?.skill?.id];if(!a||skillKind(character.skill.id)!=='button')return null;
+ const q=a.kind==='special'?p?.play?.options?.[character.id]?.special:p?.action?.options?.[character.id]?.['barricade-ability'];
+ const reason=!own?'No es tu turno':busy?'Hay una acción en curso':!q?'No disponible ahora':q.allowed?'':reasons[q.reason]||SKILL_REASONS[q.reason]||'No disponible ahora';
+ return {kind:a.kind,label:a.label,allowed:!reason,reason};
+}
 export function skillKind(id){return SKILL_KINDS[id]||'automatic';}
 
 // Estado de la habilidad con el dato del motor (skill.used): solo las de una vez por ronda lo traen.

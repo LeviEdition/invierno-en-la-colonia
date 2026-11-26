@@ -340,3 +340,32 @@ Medido con Edge: después de tocar «Dos jugadores», la proyección pasa unos 2
 - `test:poc`: EPERM en Windows; lo confirma el CI.
 
 **Falta:** confirmar en el CI con Chromium bajo Linux.
+
+## Ajustes 5 (legajo que se reabre y construcción sin desplegable)
+
+Base: `58088dd`.
+
+**A. Cerrar el legajo.** La causa no era un toque que atravesara el panel: debajo de la «×» no hay nada que reciba el gesto, y el lienzo solo escucha sus propios eventos. Medido cuadro a cuadro con Edge, el problema era otro. Con `reclaimPanelSpace`, el cierre esperaba al siguiente cuadro del renderer, y un cuadro ya encolado volvía a aplicar «abierta» (`beforePresent → applyPanel(true)`). Eso reiniciaba la animación de entrada (`v2-slide`): la ficha pasaba a opacidad 0, volvía a aparecer durante unos 250 ms y recién ahí se cerraba. Ahora el cierre se aplica en el acto (`panel(false)` llama a `applyPanel(false)`); abrir sigue esperando al cuadro, para entrar con la cámara ya ajustada. No se tocaron tiempos de freno.
+- Comprobado con un guion propio, con las tres fichas del grupo debajo del legajo: con mouse a 1365×768 y con toque a 852×393, cerrando con «×», con Esc y con el retrato. En los seis casos: 0 cuadros con la ficha visible después de cerrarse y la selección intacta.
+- `check-map-experience` lo vigila en el CI.
+
+**B. Habilidad de botón en el legajo.** La ficha de la habilidad trae un botón con su verbo: «Curar sin dado» para médica y enfermera, «Construir sin dado» para el constructor. Usa los mismos controles que «Más»: `#special-action`, o «Construir» con la forma `barricade-ability`. No suma reglas, y el freno del doble toque lo dispara una sola vez. Apagado, muestra el motivo: el del motor con el texto de la barra («Ya usada esta ronda», «Sin pacientes o ya usada», «Accesos completos»), o «No es tu turno» y «Hay una acción en curso». En una partida «un grupo», el constructor construyó una barricada sin consumir dados, y después el botón quedó apagado con «Ya usada esta ronda».
+
+**C. Papel de construir.** En la interfaz unificada no hay desplegable:
+- **Arriba:** «Elegí un dado (1 o más) o tu habilidad».
+- **Opciones:** los dados en casillas de 58 × 58 y, si el superviviente tiene la habilidad, una casilla más del mismo tamaño: «Sin dado · Manos hábiles», apagada con el motivo si no está disponible. Tocar un dado después de la habilidad vuelve a construir con dado.
+- **Debajo:** «Construye 1 barricada en Biblioteca · quedan 2 accesos libres», con singular y plural correctos y sin «(s)».
+- **«Construir»:** se enciende al elegir; mientras tanto, el globo dice «Elegí un dado» (o «… o tu habilidad»).
+
+El desplegable `#action-method` queda solo para el modo clásico, y `#action-target` (el objetivo es siempre la localidad del superviviente) sigue oculto. Curar, limpiar y atraer ya no tenían desplegable desde los ajustes 2. Los únicos `<select>` que quedan en papeles son los de «Cartas» («a quién»), que no son de «forma de…» y no se tocaron.
+
+**Baterías.** `check-h344-edge` elegía la habilidad con el desplegable; ahora toca la casilla «Sin dado». Esa batería no está en el workflow y se corta antes, en la preparación: busca «2 JUGADORES LOCALES» en la pantalla vieja. Ya fallaba así y queda como hallazgo 30. `check-map-experience` suma la comprobación de A. Ninguna se borró.
+
+**Pruebas.**
+- `npm test`: 975 de 975, con cinco nuevas en `tests/interfaz-v2-sesion-7-ajustes-5.test.mjs`.
+- `check:build` y `check:mapa-build` en verde.
+- `src/` no cambió.
+- `test:poc` sigue sin correr en Windows (EPERM); el 40/40 lo confirma el CI.
+- Con Edge, en verde: presentación, migración, experiencia y `check-h344`. En la primera corrida fallaron dos cosas que eran mías, y ya están corregidas: la página de capacidad monta el mapa sin todos los controladores, y el botón nuevo guardaba el superviviente en `data-actor-id`, el atributo con el que `check-h344` cuenta fichas (ahora es `data-skill-actor`).
+
+**Falta probar jugando:** el cierre en el A15, y si «Sin dado · Manos hábiles» se lee bien en 58 px.
